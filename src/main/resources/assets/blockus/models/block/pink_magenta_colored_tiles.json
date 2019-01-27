@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "blockus:block/pink_magenta_colored_tiles"
+    }
+}

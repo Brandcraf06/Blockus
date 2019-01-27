@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "blockus:paper_block"
+  },
+  "result": "blockus:burned_paper_block",
+  "experience": 0.1,
+  "cookingtime": 200
+}

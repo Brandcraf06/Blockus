@@ -1,0 +1,13 @@
+{
+  "id": "blockus",
+  "name": "Blockus Mod",
+  "description": "A mod that mainly adds blocks!",
+  "version": "1.0.4",
+  "side": "universal",
+  "initializers": [
+    "com.brand.blockus.Blockus"
+  ],
+  "requires": {
+    "fabric": "*"
+  }
+}

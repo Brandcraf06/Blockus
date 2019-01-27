@@ -1,0 +1,35 @@
+# gradle
+
+.gradle/
+build/
+out/
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# fabric
+
+run/
+
+.mixin.out/
+crash-reports/
+logs/
+mods/
+resourcepacks/
+saves/
+screenshots/
+options.txt
+usercache.json
+*.launch

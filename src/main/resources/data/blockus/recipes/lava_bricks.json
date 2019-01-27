@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+	"SLS",
+	"SSS"
+  ],
+  "key": {
+    "L": {
+      "item": "minecraft:lava_bucket"
+    },
+	"S": {
+      "item": "minecraft:stone_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:lava_bricks",
+    "count": 8
+  }
+}
