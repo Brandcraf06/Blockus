@@ -2,7 +2,6 @@ package com.brand.blockus.blocks;
 
 import com.brand.blockus.Blockus;
 
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;

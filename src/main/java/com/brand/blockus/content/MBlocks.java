@@ -18,7 +18,6 @@ import com.brand.blockus.blocks.WoodenDoor;
 import com.brand.blockus.blocks.WoodenTrapdoor;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.item.ItemProvider;
 
 public class MBlocks {
 	
