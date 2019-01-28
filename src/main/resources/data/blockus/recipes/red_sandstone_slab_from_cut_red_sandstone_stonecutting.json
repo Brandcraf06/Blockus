@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "minecraft:smooth_red_sandstone"
+    "item": "minecraft:cut_red_sandstone"
   },
   "result": "blockus:red_sandstone_slab",
   "count": 2

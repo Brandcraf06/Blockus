@@ -6,6 +6,9 @@ import com.brand.blockus.blocks.BlockWood;
 import com.brand.blockus.blocks.ButtonWood;
 import com.brand.blockus.blocks.FenceBase;
 import com.brand.blockus.blocks.FenceGateBase;
+import com.brand.blockus.blocks.LightBlockBase;
+import com.brand.blockus.blocks.LightSlabBase;
+import com.brand.blockus.blocks.LightStairsBase;
 import com.brand.blockus.blocks.PillarBase;
 import com.brand.blockus.blocks.PressurePlateWood;
 import com.brand.blockus.blocks.RottenFleshBlock;
@@ -23,9 +26,15 @@ public class MBlocks {
 	
 	public static BlockBase PURPUR_BRICKS;
 	public static BlockBase SMOOTH_PURPUR_BLOCK;
-	public static BlockBase LAVA_BRICKS;
-	public static StairsBase LAVA_BRICKS_STAIRS;
-	public static SlabBase LAVA_BRICKS_SLAB;
+	public static BlockBase SANDSTONE_BRICKS;
+	public static StairsBase SANDSTONE_BRICKS_STAIRS;
+	public static SlabBase SANDSTONE_BRICKS_SLAB;
+	public static BlockBase RED_SANDSTONE_BRICKS;
+	public static StairsBase RED_SANDSTONE_BRICKS_STAIRS;
+	public static SlabBase RED_SANDSTONE_BRICKS_SLAB;
+	public static LightBlockBase LAVA_BRICKS;
+	public static LightStairsBase LAVA_BRICKS_STAIRS;
+	public static LightSlabBase LAVA_BRICKS_SLAB;
 	public static BlockPaper PAPER_BLOCK;
 	public static BlockPaper BURNED_PAPER_BLOCK;
 	public static BlockBase STARS_BLOCK;
@@ -73,9 +82,16 @@ public class MBlocks {
 		PURPUR_BRICKS = new BlockBase("purpur_bricks", 1.5f, 30.0f);
 		SMOOTH_PURPUR_BLOCK = new BlockBase("smooth_purpur_block", 1.5f, 30.0f);
 		
-		LAVA_BRICKS = new BlockBase("lava_bricks", 1.5f, 30.0f);
-		LAVA_BRICKS_STAIRS = new StairsBase(LAVA_BRICKS.getDefaultState(), "lava_bricks_stairs", 1.5f, 30.0f);
-		LAVA_BRICKS_SLAB = new SlabBase("lava_bricks_slab", 1.5f, 30.0f);
+		SANDSTONE_BRICKS = new BlockBase("sandstone_bricks", 8.0f, 4.0f);
+		SANDSTONE_BRICKS_STAIRS = new StairsBase(SANDSTONE_BRICKS.getDefaultState(), "sandstone_bricks_stairs", 8.0f, 4.0f);
+		SANDSTONE_BRICKS_SLAB = new SlabBase("sandstone_bricks_slab", 8.0f, 4.0f);
+		RED_SANDSTONE_BRICKS = new BlockBase("red_sandstone_bricks", 8.0f, 4.0f);
+		RED_SANDSTONE_BRICKS_STAIRS = new StairsBase(RED_SANDSTONE_BRICKS.getDefaultState(), "red_sandstone_bricks_stairs", 8.0f, 4.0f);
+		RED_SANDSTONE_BRICKS_SLAB = new SlabBase("red_sandstone_bricks_slab", 8.0f, 4.0f);
+		
+		LAVA_BRICKS = new LightBlockBase("lava_bricks", 1.5f, 30.0f);
+		LAVA_BRICKS_STAIRS = new LightStairsBase(LAVA_BRICKS.getDefaultState(), "lava_bricks_stairs", 1.5f, 30.0f);
+		LAVA_BRICKS_SLAB = new LightSlabBase("lava_bricks_slab", 1.5f, 30.0f);
 		
 		STARS_BLOCK = new BlockBase("stars_block", 5.0f, 30.0f);
 		ENDER_BLOCK = new BlockBase("ender_block", 5.0f, 30.0f);

@@ -1,6 +1,12 @@
 {
 	"block.blockus.purpur_bricks": "Purpur Bricks",
 	"block.blockus.smooth_purpur_block": "Smooth Purpur Block",
+	"block.blockus.sandstone_bricks": "Sandstone Bricks",
+	"block.blockus.sandstone_bricks_stairs": "Sandstone Bricks Stairs",
+	"block.blockus.sandstone_bricks_slab": "Sandstone Bricks Slab",
+	"block.blockus.red_sandstone_bricks": "Red Sandstone Bricks",
+	"block.blockus.red_sandstone_bricks_stairs": "Red Sandstone Bricks Stairs",
+	"block.blockus.red_sandstone_bricks_slab": "Red Sandstone Bricks Slab",
 	"block.blockus.lava_bricks": "Lava Bricks",
 	"block.blockus.lava_bricks_stairs": "Lava Bricks Stairs",
 	"block.blockus.lava_bricks_slab": "Lava Bricks Slab",
