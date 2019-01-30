@@ -6,18 +6,18 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 archivesBaseName = "blockus"
-version = "1.0.4"
+version = "1.0.5"
 
 minecraft {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:19w04b"
-	mappings "net.fabricmc:yarn:19w04b.2"
+	minecraft "com.mojang:minecraft:19w05a"
+	mappings "net.fabricmc:yarn:19w05a.4"
 	modCompile "net.fabricmc:fabric-loader:0.3.4.104"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modCompile "net.fabricmc:fabric:0.1.5.83"
+	modCompile "net.fabricmc:fabric:0.1.5.84"
 }
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
