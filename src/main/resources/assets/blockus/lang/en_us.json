@@ -1,4 +1,8 @@
 {
+    "block.blockus.blaze_bricks": "Blaze Bricks",
+	"block.blockus.blaze_bricks_wall": "Blaze Bricks Wall",
+	"block.blockus.blaze_bricks_stairs": "Blaze Bricks Stairs",
+	"block.blockus.blaze_bricks_slab": "Blaze Bricks Slab",
 	"block.blockus.purpur_bricks": "Purpur Bricks",
 	"block.blockus.smooth_purpur_block": "Smooth Purpur Block",
 	"block.blockus.sandstone_bricks": "Sandstone Bricks",
@@ -25,7 +29,6 @@
     "block.blockus.lime_stone_bricks": "Lime Stone Bricks",
     "block.blockus.pink_stone_bricks": "Pink Stone Bricks",
     "block.blockus.gray_stone_bricks": "Gray Stone Bricks",
-    "block.blockus.gray_stone_bricks": "Gray Stone Bricks",
     "block.blockus.cyan_stone_bricks": "Cyan Stone Bricks",
     "block.blockus.purple_stone_bricks": "Purple Stone Bricks",
     "block.blockus.blue_stone_bricks": "Blue Stone Bricks",
@@ -51,5 +54,8 @@
 	"block.blockus.bamboo_fence": "Bamboo Fence",
 	"block.blockus.bamboo_fence_gate": "Bamboo Fence Gate",
 	"block.blockus.bamboo_trapdoor": "Bamboo Trapdoor",
+	"block.blockus.polished_netherrack": "Polished Netherrack",
+	"block.blockus.polished_netherrack_stairs": "Polished Netherrack Stairs",
+	"block.blockus.polished_netherrack_slab": "Polished Netherrack Slab",
 	"block.blockus.stone_door": "Stone Door"
 }

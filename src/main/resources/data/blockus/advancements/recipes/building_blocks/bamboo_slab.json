@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:bamboo_slab"
+    ]
+  },
+  "criteria": {
+    "has_bamboo_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:bamboo_planks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:bamboo_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bamboo_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

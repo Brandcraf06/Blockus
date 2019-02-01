@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:polished_netherrack"
+    ]
+  },
+  "criteria": {
+    "has_lava_bucket": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:netherrack"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:polished_netherrack"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lava_bucket",
+      "has_the_recipe"
+    ]
+  ]
+}

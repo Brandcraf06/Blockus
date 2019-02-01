@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "type=bottom": { "model": "blockus:block/polished_netherrack_slab" },
+        "type=top": { "model": "blockus:block/polished_netherrack_slab_top" },
+        "type=double": { "model": "blockus:block/polished_netherrack" }
+    }
+}
+

@@ -9,6 +9,7 @@ import com.brand.blockus.blocks.FenceGateBase;
 import com.brand.blockus.blocks.LightBlockBase;
 import com.brand.blockus.blocks.LightSlabBase;
 import com.brand.blockus.blocks.LightStairsBase;
+import com.brand.blockus.blocks.LightWallBase;
 import com.brand.blockus.blocks.PillarBase;
 import com.brand.blockus.blocks.PressurePlateWood;
 import com.brand.blockus.blocks.RottenFleshBlock;
@@ -24,6 +25,10 @@ import net.minecraft.block.Blocks;
 
 public class MBlocks {
 	
+	public static LightBlockBase BLAZE_BRICKS;
+	public static LightWallBase BLAZE_BRICKS_WALL;
+	public static LightStairsBase BLAZE_BRICKS_STAIRS;
+	public static LightSlabBase BLAZE_BRICKS_SLAB;
 	public static BlockBase PURPUR_BRICKS;
 	public static BlockBase SMOOTH_PURPUR_BLOCK;
 	public static BlockBase SANDSTONE_BRICKS;
@@ -75,9 +80,17 @@ public class MBlocks {
 	public static ButtonWood BAMBOO_BUTTON;
 	public static WoodenDoor BAMBOO_DOOR;
 	public static WoodenTrapdoor BAMBOO_TRAPDOOR;
+	public static BlockBase POLISHED_NETHERRACK;
+	public static StairsBase POLISHED_NETHERRACK_STAIRS;
+	public static SlabBase POLISHED_NETHERRACK_SLAB;
 	public static StoneDoor STONE_DOOR;
 	
 	public static void init() {
+		
+		BLAZE_BRICKS = new LightBlockBase("blaze_bricks", 2f, 30.0f);
+		BLAZE_BRICKS_WALL = new LightWallBase("blaze_bricks_wall", 2f, 30.0f);
+		BLAZE_BRICKS_STAIRS = new LightStairsBase(BLAZE_BRICKS.getDefaultState(), "blaze_bricks_stairs", 2f, 30.0f);
+		BLAZE_BRICKS_SLAB = new LightSlabBase("blaze_bricks_slab", 2f, 30.0f);
 		
 		PURPUR_BRICKS = new BlockBase("purpur_bricks", 1.5f, 30.0f);
 		SMOOTH_PURPUR_BLOCK = new BlockBase("smooth_purpur_block", 1.5f, 30.0f);
@@ -129,15 +142,20 @@ public class MBlocks {
 		BLACK_WHITE_COLORED_TILES = new BlockBase("black_white_colored_tiles", 1.8f, 9.0f);
 		BLUE_CYAN_COLORED_TILES = new BlockBase("blue_cyan_colored_tiles", 1.8f, 9.0f);
 		
-		BAMBOO_PLANKS = new BlockWood("bamboo_planks", 2f, 15f);
-		BAMBOO_SLAB = new SlabWood("bamboo_slab", 2f, 15f);
-		BAMBOO_STAIRS = new StairsWood(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", 2f, 15f);
-		BAMBOO_FENCE = new FenceBase("bamboo_fence", 2f, 15f);
-		BAMBOO_FENCE_GATE = new FenceGateBase("bamboo_fence_gate", 2f, 15f);
-		BAMBOO_PRESSURE_PLATE = new PressurePlateWood("bamboo_pressure_plate", 2f, 15f);
-		BAMBOO_BUTTON = new ButtonWood("bamboo_button", 2f, 15f);
-		BAMBOO_DOOR = new WoodenDoor("bamboo_door", 2f, 15f);
-		BAMBOO_TRAPDOOR = new WoodenTrapdoor("bamboo_trapdoor", 2f, 15f);
+		BAMBOO_PLANKS = new BlockWood("bamboo_planks", 2.0f, 15.0f);
+		BAMBOO_SLAB = new SlabWood("bamboo_slab", 2.0f, 15.0f);
+		BAMBOO_STAIRS = new StairsWood(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", 2.0f, 15.0f);
+		BAMBOO_FENCE = new FenceBase("bamboo_fence", 2.0f, 15.0f);
+		BAMBOO_FENCE_GATE = new FenceGateBase("bamboo_fence_gate", 2.0f, 15.0f);
+		BAMBOO_PRESSURE_PLATE = new PressurePlateWood("bamboo_pressure_plate", 2.0f, 15.0f);
+		BAMBOO_BUTTON = new ButtonWood("bamboo_button", 2.0f, 15.0f);
+		BAMBOO_DOOR = new WoodenDoor("bamboo_door", 2.0f, 15.0f);
+		BAMBOO_TRAPDOOR = new WoodenTrapdoor("bamboo_trapdoor", 2.0f, 15.0f);
+		
+		POLISHED_NETHERRACK = new BlockBase("polished_netherrack", 0.4f, 2.0f);
+		POLISHED_NETHERRACK_STAIRS = new StairsBase(POLISHED_NETHERRACK.getDefaultState(),"polished_netherrack_stairs", 0.4f, 2.0f);
+		POLISHED_NETHERRACK_SLAB = new SlabBase("polished_netherrack_slab", 0.4f, 2.0f);
+		
 		
 		STONE_DOOR = new StoneDoor("stone_door", 1.5f, 20.0f);
 		

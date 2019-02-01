@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NB",
+	"BN"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+	"N": {
+      "item": "minecraft:nether_brick"
+    }
+  },
+  "result": {
+    "item": "blockus:blaze_bricks"
+  }
+}
