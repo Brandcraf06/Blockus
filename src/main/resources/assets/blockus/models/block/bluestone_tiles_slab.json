@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "blockus:block/bluestone_tiles",
+        "top": "blockus:block/bluestone_tiles",
+        "side": "blockus:block/bluestone_tiles"
+    }
+}

@@ -2,7 +2,7 @@
   "id": "blockus",
   "name": "Blockus",
   "description": "A mod that mainly adds blocks!",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "side": "universal",
   "initializers": [
     "com.brand.blockus.Blockus"

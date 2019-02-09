@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+	"BB"
+  ],
+  "key": {
+    "B": {
+      "item": "blockus:bluestone"
+    }
+  },
+  "result": {
+    "item": "blockus:bluestone_tiles",
+    "count": 4
+  }
+}

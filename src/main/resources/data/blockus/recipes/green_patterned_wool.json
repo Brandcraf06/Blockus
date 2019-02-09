@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "patterned_wools",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:green_wool"
+    }
+  },
+  "result": {
+    "item": "blockus:green_patterned_wool",
+    "count": 4
+  }
+}

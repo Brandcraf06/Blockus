@@ -10,6 +10,8 @@ import com.brand.blockus.blocks.LightBlockBase;
 import com.brand.blockus.blocks.LightSlabBase;
 import com.brand.blockus.blocks.LightStairsBase;
 import com.brand.blockus.blocks.LightWallBase;
+import com.brand.blockus.blocks.PaperWall;
+import com.brand.blockus.blocks.PatternedWool;
 import com.brand.blockus.blocks.PillarBase;
 import com.brand.blockus.blocks.PressurePlateWood;
 import com.brand.blockus.blocks.RottenFleshBlock;
@@ -42,6 +44,7 @@ public class MBlocks {
 	public static LightSlabBase LAVA_BRICKS_SLAB;
 	public static BlockPaper PAPER_BLOCK;
 	public static BlockPaper BURNED_PAPER_BLOCK;
+	public static PaperWall PAPER_WALL;
 	public static BlockBase STARS_BLOCK;
 	public static BlockBase ENDER_BLOCK;
 	public static RottenFleshBlock ROTTEN_FLESH_BLOCK;
@@ -83,6 +86,32 @@ public class MBlocks {
 	public static BlockBase POLISHED_NETHERRACK;
 	public static StairsBase POLISHED_NETHERRACK_STAIRS;
 	public static SlabBase POLISHED_NETHERRACK_SLAB;
+	public static BlockBase BLUESTONE;
+	public static StairsBase BLUESTONE_STAIRS;
+	public static SlabBase BLUESTONE_SLAB;
+	public static BlockBase BLUESTONE_TILES;
+	public static StairsBase BLUESTONE_TILES_STAIRS;
+	public static SlabBase BLUESTONE_TILES_SLAB;
+	public static PillarBase BLUESTONE_PILLAR;
+	public static BlockBase BLUESTONE_BRICKS;
+	public static BlockBase SMOOTH_BLUESTONE;
+	public static BlockBase LARGE_BRICKS;
+	public static PatternedWool WHITE_PATTERNED_WOOL;
+	public static PatternedWool ORANGE_PATTERNED_WOOL;
+	public static PatternedWool MAGENTA_PATTERNED_WOOL;
+	public static PatternedWool LIGHT_BLUE_PATTERNED_WOOL;
+	public static PatternedWool YELLOW_PATTERNED_WOOL;
+	public static PatternedWool LIME_PATTERNED_WOOL;
+	public static PatternedWool PINK_PATTERNED_WOOL;
+	public static PatternedWool GRAY_PATTERNED_WOOL;
+	public static PatternedWool LIGHT_GRAY_PATTERNED_WOOL;
+	public static PatternedWool CYAN_PATTERNED_WOOL;
+	public static PatternedWool PURPLE_PATTERNED_WOOL;
+	public static PatternedWool BLUE_PATTERNED_WOOL;
+	public static PatternedWool BROWN_PATTERNED_WOOL;
+	public static PatternedWool GREEN_PATTERNED_WOOL;
+	public static PatternedWool RED_PATTERNED_WOOL;
+	public static PatternedWool BLACK_PATTERNED_WOOL;
 	public static StoneDoor STONE_DOOR;
 	
 	public static void init() {
@@ -112,6 +141,7 @@ public class MBlocks {
 		
 		PAPER_BLOCK = new BlockPaper("paper_block", 0.1f, 4.0f);
 		BURNED_PAPER_BLOCK = new BlockPaper("burned_paper_block", 0.1f, 4.0f);
+		PAPER_WALL = new PaperWall("paper_wall", 0.1f, 4.0f);
 		
 		SMOOTH_STONE_STAIRS = new StairsBase(Blocks.SMOOTH_STONE.getDefaultState(), "smooth_stone_stairs", 1.5f, 30.0f);
 		STONE_BRICKS_PILLAR = new PillarBase("stone_bricks_pillar", 1.5f, 30.0f);
@@ -156,6 +186,34 @@ public class MBlocks {
 		POLISHED_NETHERRACK_STAIRS = new StairsBase(POLISHED_NETHERRACK.getDefaultState(),"polished_netherrack_stairs", 0.4f, 2.0f);
 		POLISHED_NETHERRACK_SLAB = new SlabBase("polished_netherrack_slab", 0.4f, 2.0f);
 		
+		BLUESTONE = new BlockBase("bluestone", 1.5f, 30.0f);
+		BLUESTONE_STAIRS = new StairsBase(BLUESTONE.getDefaultState(), "bluestone_stairs", 1.5f, 30.0f);
+		BLUESTONE_SLAB = new SlabBase("bluestone_slab", 1.5f, 30.0f);
+		BLUESTONE_TILES = new BlockBase("bluestone_tiles", 1.5f, 30.0f);
+		BLUESTONE_TILES_STAIRS = new StairsBase(BLUESTONE_TILES.getDefaultState(), "bluestone_tiles_stairs", 1.5f, 30.0f);
+		BLUESTONE_TILES_SLAB = new SlabBase("bluestone_tiles_slab", 1.5f, 30.0f);
+		BLUESTONE_PILLAR = new PillarBase("bluestone_pillar", 1.5f, 30.0f);
+		BLUESTONE_BRICKS = new BlockBase("bluestone_bricks", 1.5f, 30.0f);
+		SMOOTH_BLUESTONE = new BlockBase("smooth_bluestone", 1.5f, 30.0f);
+		
+		LARGE_BRICKS = new BlockBase("large_bricks", 2f, 30.0f);
+		
+		WHITE_PATTERNED_WOOL = new PatternedWool("white_patterned_wool", 0.8f, 4.0f);
+		ORANGE_PATTERNED_WOOL = new PatternedWool("orange_patterned_wool", 0.8f, 4.0f);
+		MAGENTA_PATTERNED_WOOL = new PatternedWool("magenta_patterned_wool", 0.8f, 4.0f);
+		LIGHT_BLUE_PATTERNED_WOOL = new PatternedWool("light_blue_patterned_wool", 0.8f, 4.0f);
+		YELLOW_PATTERNED_WOOL = new PatternedWool("yellow_patterned_wool", 0.8f, 4.0f);
+		LIME_PATTERNED_WOOL = new PatternedWool("lime_patterned_wool", 0.8f, 4.0f);
+		PINK_PATTERNED_WOOL = new PatternedWool("pink_patterned_wool", 0.8f, 4.0f);
+		GRAY_PATTERNED_WOOL = new PatternedWool("gray_patterned_wool", 0.8f, 4.0f);
+		LIGHT_GRAY_PATTERNED_WOOL = new PatternedWool("light_gray_patterned_wool", 0.8f, 4.0f);
+		CYAN_PATTERNED_WOOL = new PatternedWool("cyan_patterned_wool", 0.8f, 4.0f);
+		PURPLE_PATTERNED_WOOL = new PatternedWool("purple_patterned_wool", 0.8f, 4.0f);
+		BLUE_PATTERNED_WOOL = new PatternedWool("blue_patterned_wool", 0.8f, 4.0f);
+		BROWN_PATTERNED_WOOL = new PatternedWool("brown_patterned_wool", 0.8f, 4.0f);
+		GREEN_PATTERNED_WOOL = new PatternedWool("green_patterned_wool", 0.8f, 4.0f);
+		RED_PATTERNED_WOOL = new PatternedWool("red_patterned_wool", 0.8f, 4.0f);
+		BLACK_PATTERNED_WOOL = new PatternedWool("black_patterned_wool", 0.8f, 4.0f);
 		
 		STONE_DOOR = new StoneDoor("stone_door", 1.5f, 20.0f);
 		

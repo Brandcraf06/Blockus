@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "blockus:block/bluestone_pillar" },
+        "axis=z":   { "model": "blockus:block/bluestone_pillar", "x": 90 },
+        "axis=x":   { "model": "blockus:block/bluestone_pillar", "x": 90, "y": 90 }
+    }
+}
