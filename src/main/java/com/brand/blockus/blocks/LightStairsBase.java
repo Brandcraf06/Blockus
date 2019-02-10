@@ -2,7 +2,7 @@ package com.brand.blockus.blocks;
 
 import com.brand.blockus.Blockus;
 
-import net.fabricmc.fabric.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.StairsBlock;

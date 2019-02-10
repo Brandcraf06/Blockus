@@ -1,45 +1,41 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.MBlocks;
+import com.brand.blockus.content.BambooPlanks;
+import com.brand.blockus.content.BlazeBricks;
+import com.brand.blockus.content.Bluestone;
+import com.brand.blockus.content.ColoredTiles;
+import com.brand.blockus.content.LavaBricks;
+import com.brand.blockus.content.Other;
+import com.brand.blockus.content.PaperRelated;
+import com.brand.blockus.content.PatternedWools;
+import com.brand.blockus.content.PolishedNetherrack;
+import com.brand.blockus.content.PurpurRelated;
+import com.brand.blockus.content.SandstoneBricks;
+import com.brand.blockus.content.StainedStoneBricks;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Items;
 
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.0.6";
+	public static final String VERSION = "1.0.7";
 	public static final String NAME = "Blockus";
 	
 	@Override
 	public void onInitialize() {
-		MBlocks.init();
+		StainedStoneBricks.init();
+		PatternedWools.init();
+		ColoredTiles.init();
+		LavaBricks.init();
+		BlazeBricks.init();
+		Bluestone.init();
+		PurpurRelated.init();
+		SandstoneBricks.init();
+		PaperRelated.init();
+		PolishedNetherrack.init();
+		BambooPlanks.init();
+		Other.init();
+		instance.init();
 		
-		FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
-		FuelRegistry.INSTANCE.add(Blocks.SUGAR_CANE, 50);
-		FuelRegistry.INSTANCE.add(Items.PAPER, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.PAPER_BLOCK, 500);
-		FuelRegistry.INSTANCE.add(MBlocks.BURNED_PAPER_BLOCK, 50);
-		FuelRegistry.INSTANCE.add(MBlocks.WHITE_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.ORANGE_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.MAGENTA_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.LIGHT_BLUE_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.YELLOW_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.LIME_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.PINK_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.GRAY_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.LIGHT_GRAY_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.CYAN_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.PURPLE_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.BLUE_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.BROWN_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.GREEN_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.RED_PATTERNED_WOOL, 100);
-		FuelRegistry.INSTANCE.add(MBlocks.BLACK_PATTERNED_WOOL, 100);
-		CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.1f);
-		CompostingChanceRegistry.INSTANCE.add(MBlocks.ROTTEN_FLESH_BLOCK, 1.0f);
 	}
 }
