@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "blockus:block/blaze_pillar" },
+        "axis=z":   { "model": "blockus:block/blaze_pillar", "x": 90 },
+        "axis=x":   { "model": "blockus:block/blaze_pillar", "x": 90, "y": 90 }
+    }
+}

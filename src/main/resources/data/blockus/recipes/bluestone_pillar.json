@@ -1,15 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "B",
-	"B"
-  ],
-  "key": {
-    "B": {
-      "item": "blockus:bluestone_tiles_slab"
-    }
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:bluestone_tiles"
   },
-  "result": {
-    "item": "blockus:bluestone_pillar"
-  }
+  "result": "blockus:bluestone_pillar",
+  "count": 1
 }

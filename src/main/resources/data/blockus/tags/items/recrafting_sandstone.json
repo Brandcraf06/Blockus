@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:smooth_sandstone",
+	"minecraft:cut_sandstone",
+	"minecraft:chiseled_sandstone",
+	"blockus:sandstone_bricks"
+  ]
+}

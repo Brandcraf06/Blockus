@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:smooth_soul_sandstone",
+	"blockus:cut_soul_sandstone",
+	"blockus:chiseled_soul_sandstone",
+	"blockus:soul_sandstone_bricks"
+  ]
+}

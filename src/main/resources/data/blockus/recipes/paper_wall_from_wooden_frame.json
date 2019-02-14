@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "paper_wall",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "blockus:wooden_frame"
+    }
+  ],
+  "result": {
+    "item": "blockus:paper_wall"
+  }
+}

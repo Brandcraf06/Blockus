@@ -1,16 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "BB",
-	"BB"
-  ],
-  "key": {
-    "B": {
-      "item": "blockus:bluestone_tiles"
-    }
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:bluestone_tiles"
   },
-  "result": {
-    "item": "blockus:bluestone_bricks",
-    "count": 4
-  }
+  "result": "blockus:bluestone_bricks",
+  "count": 1
 }

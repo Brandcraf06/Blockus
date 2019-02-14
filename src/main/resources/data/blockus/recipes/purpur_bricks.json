@@ -1,16 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "FF",
-    "FF"
-  ],
-  "key": {
-    "F": {
-      "item": "minecraft:purpur_block"
-    }
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:purpur_block"
   },
-  "result": {
-    "item": "blockus:purpur_bricks",
-    "count": 4
-  }
+  "result": "blockus:purpur_bricks",
+  "count": 1
 }

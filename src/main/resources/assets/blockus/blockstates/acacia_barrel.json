@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=down": { "model": "blockus:block/acacia_barrel", "x": 180 },
+        "facing=up": { "model": "blockus:block/acacia_barrel" },
+        "facing=north": { "model": "blockus:block/acacia_barrel", "x": 90 },
+        "facing=south": { "model": "blockus:block/acacia_barrel", "x": 90, "y": 180 },
+        "facing=west": { "model": "blockus:block/acacia_barrel", "x": 90, "y": 270 },
+        "facing=east": { "model": "blockus:block/acacia_barrel", "x": 90, "y": 90 }
+    }
+}

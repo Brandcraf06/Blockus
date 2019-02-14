@@ -16,6 +16,7 @@
     "minecraft:end_stone_brick_wall",
     "minecraft:diorite_wall",
     "blockus:blaze_bricks_wall",
-	"blockus:lava_bricks_wall"
+	"blockus:lava_bricks_wall",
+	"blockus:soul_sandstone_wall"
   ]
 }

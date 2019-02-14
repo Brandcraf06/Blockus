@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+	"##"
+  ],
+  "key": {
+    "#": {
+      "tag": "blockus:recrafting_soul_sandstone"
+    }
+  },
+  "result": {
+    "item": "blockus:soul_sandstone",
+    "count": 4
+  }
+}

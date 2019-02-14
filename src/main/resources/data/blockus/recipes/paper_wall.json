@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "group": "paper_wall",
   "pattern": [
     "PP",
 	"PP"

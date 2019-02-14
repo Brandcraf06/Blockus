@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RMR",
+	"RRR",
+	"MRM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:magenta_dye"
+    },
+	"R": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:love_block"
+  }
+}

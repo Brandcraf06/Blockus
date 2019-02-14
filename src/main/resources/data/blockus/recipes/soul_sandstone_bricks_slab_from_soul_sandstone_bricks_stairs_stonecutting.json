@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:soul_sandstone_bricks_stairs"
+  },
+  "result": "blockus:soul_sandstone_bricks_slab",
+  "count": 1
+}

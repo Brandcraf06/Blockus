@@ -1,16 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:cut_sandstone"
-    }
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:sandstone"
   },
-  "result": {
-    "item": "blockus:sandstone_bricks",
-    "count": 4
-  }
+  "result": "blockus:sandstone_bricks",
+  "count": 1
 }

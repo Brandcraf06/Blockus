@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:stone_bricks_pillar",
+	"minecraft:chiseled_stone_bricks"
+  ]
+}

@@ -48,6 +48,7 @@ public class instance {
 		FuelRegistry.INSTANCE.add(BambooPlanks.BAMBOO_BUTTON, 100);
 		
 		FlammableBlockRegistry.getDefaultInstance().add(PaperRelated.PAPER_WALL, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(PaperRelated.PAPER_DOOR, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(PaperRelated.PAPER_BLOCK, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(PaperRelated.BURNED_PAPER_BLOCK, 5, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(PatternedWools.WHITE_PATTERNED_WOOL, 30, 60);
@@ -71,6 +72,7 @@ public class instance {
 		FlammableBlockRegistry.getDefaultInstance().add(BambooPlanks.BAMBOO_STAIRS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(BambooPlanks.BAMBOO_FENCE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(BambooPlanks.BAMBOO_FENCE_GATE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(Other.WOODEN_FRAME, 30, 60);
 		
 		CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.1f);
 		CompostingChanceRegistry.INSTANCE.add(Other.ROTTEN_FLESH_BLOCK, 1.0f);
