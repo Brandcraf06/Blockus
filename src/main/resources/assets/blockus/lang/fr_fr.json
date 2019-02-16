@@ -3,6 +3,7 @@
 	"block.blockus.blaze_bricks_wall": "Muret en briques de Blaze",
 	"block.blockus.blaze_bricks_stairs": "Escalier en briques de Blaze",
 	"block.blockus.blaze_bricks_slab": "Dalle en briques de Blaze",
+	"block.blockus.blaze_pillar": "Pilier de Blaze",
 	"block.blockus.sandstone_bricks": "Briques de grès",
 	"block.blockus.sandstone_bricks_stairs": "Escalier en briques de grès",
 	"block.blockus.sandstone_bricks_slab": "Dalle en briques de grès",
@@ -121,3 +122,5 @@
 	"block.blockus.chiseled_soul_sandstone": "Grès des âmes sculpté",
 	"block.blockus.quartz_bricks": "Briques de quartz",
 	"block.blockus.wooden_frame": "Armature en bois"
+		
+}
