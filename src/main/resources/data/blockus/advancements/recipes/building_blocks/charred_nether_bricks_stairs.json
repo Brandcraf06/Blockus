@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:charred_nether_bricks_stairs"
+    ]
+  },
+  "criteria": {
+    "has_charred_nether_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:charred_nether_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:charred_nether_bricks_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_charred_nether_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

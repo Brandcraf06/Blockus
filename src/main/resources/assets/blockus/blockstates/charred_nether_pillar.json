@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "blockus:block/charred_nether_pillar" },
+        "axis=z":   { "model": "blockus:block/charred_nether_pillar", "x": 90 },
+        "axis=x":   { "model": "blockus:block/charred_nether_pillar", "x": 90, "y": 90 }
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:membrane_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:phantom_membrane",
+    "count": 4
+  }
+}

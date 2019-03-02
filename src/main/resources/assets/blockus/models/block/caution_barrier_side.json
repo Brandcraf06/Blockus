@@ -1,0 +1,6 @@
+{
+    "parent": "blockus:block/template_barrier_side",
+    "textures": {
+        "barrier": "blockus:block/caution_block"
+    }
+}

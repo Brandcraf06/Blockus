@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:leaves"
+    }
+  },
+  "result": {
+    "item": "blockus:small_hedge",
+    "count": 6
+  }
+}

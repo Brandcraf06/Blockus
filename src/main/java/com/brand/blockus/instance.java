@@ -73,6 +73,7 @@ public class instance {
 		FlammableBlockRegistry.getDefaultInstance().add(BambooPlanks.BAMBOO_FENCE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(BambooPlanks.BAMBOO_FENCE_GATE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(Other.WOODEN_FRAME, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(Other.SMALL_HEDGE, 30, 60);
 		
 		CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.1f);
 		CompostingChanceRegistry.INSTANCE.add(Other.ROTTEN_FLESH_BLOCK, 1.0f);

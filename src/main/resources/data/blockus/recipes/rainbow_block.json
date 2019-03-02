@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:red_dye"
+    },
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    },
+	{
+      "item": "minecraft:lime_dye"
+    },
+	{
+      "item": "minecraft:light_blue_dye"
+    },
+	{
+      "item": "minecraft:blue_dye"
+    },
+	{
+      "item": "minecraft:purple_dye"
+    }
+  ],
+  "result": {
+    "item": "blockus:rainbow_block",
+    "count": 2
+  }
+}

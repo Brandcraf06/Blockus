@@ -2,6 +2,9 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.BlockBase;
 import com.brand.blockus.blocks.PillarBase;
+import com.brand.blockus.blocks.SlabBase;
+import com.brand.blockus.blocks.StairsBase;
+import com.brand.blockus.blocks.WallBase;
 
 public class NetherBricksRelated {
 	
@@ -9,6 +12,12 @@ public class NetherBricksRelated {
 	public static BlockBase SMOOTH_RED_NETHER_BRICKS;
 	public static PillarBase NETHER_PILLAR;
 	public static PillarBase RED_NETHER_PILLAR;
+	public static PillarBase CHARRED_NETHER_PILLAR;
+	public static BlockBase SMOOTH_CHARRED_NETHER_BRICKS;
+	public static WallBase CHARRED_NETHER_BRICKS_WALL;
+	public static StairsBase CHARRED_NETHER_BRICKS_STAIRS;
+	public static SlabBase CHARRED_NETHER_BRICKS_SLAB;
+	public static BlockBase CHARRED_NETHER_BRICKS;
 	
 	public static void init() {
 		
@@ -16,6 +25,12 @@ public class NetherBricksRelated {
 		SMOOTH_RED_NETHER_BRICKS = new BlockBase("smooth_red_nether_bricks", 2f, 30f);
 		NETHER_PILLAR = new PillarBase("nether_pillar", 2f, 30f);
 		RED_NETHER_PILLAR = new PillarBase("red_nether_pillar", 2f, 30f);
+		CHARRED_NETHER_BRICKS = new BlockBase("charred_nether_bricks", 2f, 30f);
+		CHARRED_NETHER_BRICKS_STAIRS = new StairsBase(NetherBricksRelated.CHARRED_NETHER_BRICKS.getDefaultState(), "charred_nether_bricks_stairs", 2f, 30f);
+		CHARRED_NETHER_BRICKS_SLAB = new SlabBase("charred_nether_bricks_slab", 2f, 30f);
+		CHARRED_NETHER_BRICKS_WALL = new WallBase("charred_nether_bricks_wall", 2f, 30f);
+		SMOOTH_CHARRED_NETHER_BRICKS = new BlockBase("smooth_charred_nether_bricks", 2f, 30f);
+		CHARRED_NETHER_PILLAR = new PillarBase("charred_nether_pillar", 2f, 30f);
 				
 	}
 

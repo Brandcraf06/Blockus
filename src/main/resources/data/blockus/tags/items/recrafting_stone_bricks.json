@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "blockus:stone_bricks_pillar",
-	"minecraft:chiseled_stone_bricks"
+	"minecraft:chiseled_stone_bricks",
+	"blockus:zigzagged_stone_bricks"
   ]
 }

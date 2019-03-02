@@ -17,6 +17,11 @@
     "minecraft:diorite_wall",
     "blockus:blaze_bricks_wall",
 	"blockus:lava_bricks_wall",
-	"blockus:soul_sandstone_wall"
+	"blockus:soul_sandstone_wall",
+	"blockus:small_hedge",
+	"blockus:caution_barrier",
+	"blockus:road_barrier",
+	"blockus:charred_nether_bricks_wall",
+	"blockus:soaked_bricks_wall"
   ]
 }

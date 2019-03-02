@@ -11,7 +11,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.block.BlockItem;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.Identifier;
@@ -23,8 +22,8 @@ public class LoveBlock extends Block {
 
 	public LoveBlock(String name, float hardness, float resistance) {
 		super(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).build());
-		Registry.BLOCK.register(new Identifier(Blockus.MOD_ID, name), this);
-		Registry.ITEM.register(new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(Blockus.BLOCKUS_DECORATIONS)));
 	}
 	
 	@Environment(EnvType.CLIENT)

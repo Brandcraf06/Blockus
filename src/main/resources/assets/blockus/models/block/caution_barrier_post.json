@@ -1,0 +1,6 @@
+{
+    "parent": "blockus:block/template_barrier_post",
+    "textures": {
+        "barrier": "blockus:block/barrier_post"
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+	"BWB",
+	"BBB"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+	"B": {
+      "item": "minecraft:bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:soaked_bricks",
+    "count": 8
+  }
+}

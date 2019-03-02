@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YYB",
+	"YBY",
+	"BYY"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:yellow_dye"
+    },
+	"B": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:caution_block",
+    "count": 6
+  }
+}

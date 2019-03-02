@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:soaked_bricks_stairs"
+  },
+  "result": "blockus:soaked_bricks_slab",
+  "count": 1
+}

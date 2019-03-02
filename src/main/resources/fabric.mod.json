@@ -2,10 +2,11 @@
   "id": "blockus",
   "name": "Blockus",
   "description": "A mod that mainly adds blocks!",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "side": "universal",
   "initializers": [
-    "com.brand.blockus.Blockus"
+    "com.brand.blockus.Blockus",
+	"com.brand.blockus.BlockusClient"
   ],
   "requires": {
     "fabric": "*"

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "blockus:block/rainbow_block",
+        "side": "blockus:block/rainbow_block"
+    }
+}
