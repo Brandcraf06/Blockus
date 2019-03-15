@@ -18,20 +18,27 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.client.MinecraftClient;
 
 public class SmallHedge extends WallBlock {
 	
 	private final VoxelShape[] UP_OUTLINE_SHAPES = this.createShapes(3.0F, 3.0F, 16.0F, 0.0F, 16.0F);
 	private final VoxelShape[] UP_COLLISION_SHAPES = this.createShapes(3.0F, 3.0F, 16.0F, 0.0F, 16.0F);
+	public static boolean translucentLeaves;
 
 	public SmallHedge(String name, float hardness, float resistance) {
 		super(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).strength(hardness, resistance).build());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(Blockus.BLOCKUS_DECORATIONS)));
 	}
+	
+	@Environment(EnvType.CLIENT)
+	public static void setRenderingMode(boolean boolean_1) {
+	    translucentLeaves = boolean_1;
+	}
 
 	public BlockRenderLayer getRenderLayer() {
-	    return MinecraftClient.isFancyGraphicsEnabled() ? BlockRenderLayer.TRANSLUCENT : BlockRenderLayer.SOLID;
+		return translucentLeaves ? BlockRenderLayer.SOLID : BlockRenderLayer.TRANSLUCENT;
 	}
 	
 	@Override
