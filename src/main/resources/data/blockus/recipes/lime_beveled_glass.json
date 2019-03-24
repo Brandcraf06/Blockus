@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "beveled_glass",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lime_stained_glass"
+    }
+  },
+  "result": {
+    "item": "blockus:lime_beveled_glass",
+    "count": 4
+  }
+}

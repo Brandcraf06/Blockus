@@ -14,10 +14,10 @@ public class SoakedBricks {
 
 	public static void init() {
 		
-		SOAKED_BRICKS = new BlockBase("soaked_bricks", 2f, 30.0f);
-		SOAKED_BRICKS_WALL = new WallBase("soaked_bricks_wall", 2f, 30.0f);
-		SOAKED_BRICKS_STAIRS = new StairsBase(SOAKED_BRICKS.getDefaultState(), "soaked_bricks_stairs", 2f, 30.0f);
-		SOAKED_BRICKS_SLAB = new SlabBase("soaked_bricks_slab", 2f, 30.0f);		
+		SOAKED_BRICKS = new BlockBase("soaked_bricks", 2.0f, 30.0f);
+		SOAKED_BRICKS_WALL = new WallBase("soaked_bricks_wall", 2.0f, 30.0f);
+		SOAKED_BRICKS_STAIRS = new StairsBase(SOAKED_BRICKS.getDefaultState(), "soaked_bricks_stairs", 2.0f, 30.0f);
+		SOAKED_BRICKS_SLAB = new SlabBase("soaked_bricks_slab", 2.0f, 30.0f);		
 	}
 
 }

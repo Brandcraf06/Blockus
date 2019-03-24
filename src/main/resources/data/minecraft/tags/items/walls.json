@@ -22,6 +22,7 @@
 	"blockus:caution_barrier",
 	"blockus:road_barrier",
 	"blockus:charred_nether_bricks_wall",
-	"blockus:soaked_bricks_wall"
+	"blockus:soaked_bricks_wall",
+	"blockus:magma_bricks_wall"
   ]
 }

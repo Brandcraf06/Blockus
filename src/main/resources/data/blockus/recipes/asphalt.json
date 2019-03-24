@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gravel"
+    },
+    "$": {
+      "item": "minecraft:coal"
+    }
+  },
+  "result": {
+    "item": "blockus:asphalt",
+    "count": 8
+  }
+}

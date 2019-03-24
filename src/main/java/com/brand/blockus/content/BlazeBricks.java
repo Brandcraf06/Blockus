@@ -16,11 +16,11 @@ public class BlazeBricks {
 	
 	public static void init() {
 		
-		BLAZE_BRICKS = new LightBlockBase("blaze_bricks", 2f, 30.0f);
+		BLAZE_BRICKS = new LightBlockBase("blaze_bricks", 2.0f, 30.0f);
 		BLAZE_BRICKS_WALL = new LightWallBase("blaze_bricks_wall", 2f, 30.0f);
-		BLAZE_BRICKS_STAIRS = new LightStairsBase(BLAZE_BRICKS.getDefaultState(), "blaze_bricks_stairs", 2f, 30.0f);
-		BLAZE_BRICKS_SLAB = new LightSlabBase("blaze_bricks_slab", 2f, 30.0f);
-		BLAZE_PILLAR = new LightPillarBase("blaze_pillar", 2f, 30.0f);
+		BLAZE_BRICKS_STAIRS = new LightStairsBase(BLAZE_BRICKS.getDefaultState(), "blaze_bricks_stairs", 2.0f, 30.0f);
+		BLAZE_BRICKS_SLAB = new LightSlabBase("blaze_bricks_slab", 2.0f, 30.0f);
+		BLAZE_PILLAR = new LightPillarBase("blaze_pillar", 2.0f, 30.0f);
 			
 	}
 

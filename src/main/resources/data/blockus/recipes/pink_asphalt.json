@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "colored_asphalt",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:asphalt"
+    },
+    "$": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:pink_asphalt",
+    "count": 8
+  }
+}

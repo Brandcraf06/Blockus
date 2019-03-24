@@ -18,7 +18,7 @@ public class StoneRelated {
 	
 	public static void init() {
 
-		SMOOTH_STONE_STAIRS = new StairsBase(Blocks.SMOOTH_STONE.getDefaultState(), "smooth_stone_stairs", 1.5f, 30.0f);
+		SMOOTH_STONE_STAIRS = new StairsBase(Blocks.SMOOTH_STONE.getDefaultState(), "smooth_stone_stairs", 2.0f, 30.0f);
 		STONE_BRICKS_PILLAR = new PillarBase("stone_bricks_pillar", 1.5f, 30.0f);
 		STONE_DOOR = new StoneDoor("stone_door", 1.5f, 20.0f);
 		STONE_TRAPDOOR = new StoneTrapdoor("stone_trapdoor", 1.5f, 20.0f);

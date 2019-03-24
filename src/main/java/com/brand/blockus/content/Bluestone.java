@@ -25,10 +25,10 @@ public class Bluestone {
 		
 		BLUESTONE = new BlockBase("bluestone", 1.5f, 30.0f);
 		BLUESTONE_STAIRS = new StairsBase(BLUESTONE.getDefaultState(), "bluestone_stairs", 1.5f, 30.0f);
-		BLUESTONE_SLAB = new SlabBase("bluestone_slab", 1.5f, 30.0f);
+		BLUESTONE_SLAB = new SlabBase("bluestone_slab", 2.0f, 30.0f);
 		BLUESTONE_TILES = new BlockBase("bluestone_tiles", 1.5f, 30.0f);
 		BLUESTONE_TILES_STAIRS = new StairsBase(BLUESTONE_TILES.getDefaultState(), "bluestone_tiles_stairs", 1.5f, 30.0f);
-		BLUESTONE_TILES_SLAB = new SlabBase("bluestone_tiles_slab", 1.5f, 30.0f);
+		BLUESTONE_TILES_SLAB = new SlabBase("bluestone_tiles_slab", 2.0f, 30.0f);
 		BLUESTONE_PILLAR = new PillarBase("bluestone_pillar", 1.5f, 30.0f);
 		BLUESTONE_BRICKS = new BlockBase("bluestone_bricks", 1.5f, 30.0f);
 		SMOOTH_BLUESTONE = new BlockBase("smooth_bluestone", 1.5f, 30.0f);

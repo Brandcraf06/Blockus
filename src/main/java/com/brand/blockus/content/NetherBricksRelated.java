@@ -21,16 +21,16 @@ public class NetherBricksRelated {
 	
 	public static void init() {
 		
-		SMOOTH_NETHER_BRICKS = new BlockBase("smooth_nether_bricks", 2f, 30f);
-		SMOOTH_RED_NETHER_BRICKS = new BlockBase("smooth_red_nether_bricks", 2f, 30f);
-		NETHER_PILLAR = new PillarBase("nether_pillar", 2f, 30f);
-		RED_NETHER_PILLAR = new PillarBase("red_nether_pillar", 2f, 30f);
-		CHARRED_NETHER_BRICKS = new BlockBase("charred_nether_bricks", 2f, 30f);
-		CHARRED_NETHER_BRICKS_STAIRS = new StairsBase(NetherBricksRelated.CHARRED_NETHER_BRICKS.getDefaultState(), "charred_nether_bricks_stairs", 2f, 30f);
-		CHARRED_NETHER_BRICKS_SLAB = new SlabBase("charred_nether_bricks_slab", 2f, 30f);
-		CHARRED_NETHER_BRICKS_WALL = new WallBase("charred_nether_bricks_wall", 2f, 30f);
-		SMOOTH_CHARRED_NETHER_BRICKS = new BlockBase("smooth_charred_nether_bricks", 2f, 30f);
-		CHARRED_NETHER_PILLAR = new PillarBase("charred_nether_pillar", 2f, 30f);
+		SMOOTH_NETHER_BRICKS = new BlockBase("smooth_nether_bricks", 2.0f, 30f);
+		SMOOTH_RED_NETHER_BRICKS = new BlockBase("smooth_red_nether_bricks", 2.0f, 30f);
+		NETHER_PILLAR = new PillarBase("nether_pillar", 2.0f, 30f);
+		RED_NETHER_PILLAR = new PillarBase("red_nether_pillar", 2.0f, 30f);
+		CHARRED_NETHER_BRICKS = new BlockBase("charred_nether_bricks", 2.0f, 30f);
+		CHARRED_NETHER_BRICKS_STAIRS = new StairsBase(NetherBricksRelated.CHARRED_NETHER_BRICKS.getDefaultState(), "charred_nether_bricks_stairs", 2.0f, 30f);
+		CHARRED_NETHER_BRICKS_SLAB = new SlabBase("charred_nether_bricks_slab", 2.0f, 30f);
+		CHARRED_NETHER_BRICKS_WALL = new WallBase("charred_nether_bricks_wall", 2.0f, 30f);
+		SMOOTH_CHARRED_NETHER_BRICKS = new BlockBase("smooth_charred_nether_bricks", 2.0f, 30f);
+		CHARRED_NETHER_PILLAR = new PillarBase("charred_nether_pillar", 2.0f, 30f);
 				
 	}
 

@@ -17,7 +17,7 @@ public class LavaBricks {
 		LAVA_BRICKS = new LightBlockBase("lava_bricks", 1.5f, 30.0f);
 		LAVA_BRICKS_WALL = new LightWallBase("lava_bricks_wall", 1.5f, 30.0f);
 		LAVA_BRICKS_STAIRS = new LightStairsBase(LAVA_BRICKS.getDefaultState(), "lava_bricks_stairs", 1.5f, 30.0f);
-		LAVA_BRICKS_SLAB = new LightSlabBase("lava_bricks_slab", 1.5f, 30.0f);
+		LAVA_BRICKS_SLAB = new LightSlabBase("lava_bricks_slab", 2.0f, 30.0f);
 				
 	}
 

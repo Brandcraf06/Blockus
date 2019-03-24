@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "beveled_glass_pane",
+  "pattern": [
+    "GGG",
+	"GGG"
+  ],
+  "key": {
+    "G": {
+      "item": "blockus:light_gray_beveled_glass"
+    }
+  },
+  "result": {
+    "item": "blockus:light_gray_beveled_glass_pane",
+    "count": 16
+  }
+}
