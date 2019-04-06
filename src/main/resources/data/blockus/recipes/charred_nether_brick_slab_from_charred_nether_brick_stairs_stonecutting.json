@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "minecraft:charred_nether_brick_stairs"
+    "item": "blockus:charred_nether_bricks_stairs"
   },
-  "result": "minecraft:charred_nether_brick_slab",
+  "result": "blockus:charred_nether_bricks_slab",
   "count": 1
 }
