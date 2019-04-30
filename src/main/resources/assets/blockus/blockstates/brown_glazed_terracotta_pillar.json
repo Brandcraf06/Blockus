@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "blockus:block/brown_glazed_terracotta_pillar" },
+        "axis=z":   { "model": "blockus:block/brown_glazed_terracotta_pillar", "x": 90 },
+        "axis=x":   { "model": "blockus:block/brown_glazed_terracotta_pillar", "x": 90, "y": 90 }
+    }
+}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:lava_bricks_stairs"
-  },
-  "result": "blockus:lava_bricks_slab",
-  "count": 1
-}

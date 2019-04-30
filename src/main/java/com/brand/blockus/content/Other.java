@@ -40,8 +40,7 @@ public class Other {
 	    CAUTION_BLOCK = new CautionBlock("caution_block", 1.5f, 6000.0f);
 	    CAUTION_BARRIER = new Barrier("caution_barrier", 1.5f, 6000.0f);
 	    ROAD_BARRIER = new Barrier("road_barrier", 2f, 30.0f);
-	    RAINBOW_BLOCK = new PillarBase("rainbow_block", 5.0f, 30.0f);
-			
+	    RAINBOW_BLOCK = new PillarBase("rainbow_block", 5.0f, 30.0f);			
+	    
 	}
-
 }

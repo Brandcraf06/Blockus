@@ -1,14 +1,33 @@
 {
+  "schemaVersion": 1,
   "id": "blockus",
+  "version": "1.1.6",
+   
   "name": "Blockus",
   "description": "A mod that mainly adds blocks!",
-  "version": "1.1.5.2",
-  "side": "universal",
-  "initializers": [
-    "com.brand.blockus.Blockus",
-	"com.brand.blockus.BlockusClient"
+  "authors": [
+    "Brandcraft06"
   ],
+  "contact": {
+    "homepage": "https://minecraft.curseforge.com/projects/blockus",
+    "sources": "https://github.com/Brandcraf06/Blockus",
+	"issues": "https://github.com/Brandcraf06/Blockus/issues"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/blockus/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.brand.blockus.Blockus"
+    ],
+	"client": [
+	  "com.brand.blockus.BlockusClient"
+    ]
+  },
   "requires": {
+    "fabricloader": ">=0.4.0",
     "fabric": "*"
   }
 }
