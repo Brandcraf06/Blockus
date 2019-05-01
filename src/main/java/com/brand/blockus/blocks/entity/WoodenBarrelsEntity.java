@@ -30,7 +30,7 @@ public class WoodenBarrelsEntity extends BarrelBlockEntity {
 			this.scheduleUpdate();
 		} else {
 			BlockState blockState_1 = this.getCachedState();
-			if (blockState_1.getBlock() != Barrels.OAK_BARREL || blockState_1.getBlock() != Barrels.BIRCH_BARREL || blockState_1.getBlock() != Barrels.JUNGLE_BARREL || blockState_1.getBlock() != Barrels.ACACIA_BARREL || blockState_1.getBlock() != Barrels.DARK_OAK_BARREL || blockState_1.getBlock() != Barrels.BAMBOO_BARREL) {
+			if (blockState_1.getBlock() != Barrels.OAK_BARREL && blockState_1.getBlock() != Barrels.BIRCH_BARREL && blockState_1.getBlock() != Barrels.JUNGLE_BARREL && blockState_1.getBlock() != Barrels.ACACIA_BARREL && blockState_1.getBlock() != Barrels.DARK_OAK_BARREL && blockState_1.getBlock() != Barrels.BAMBOO_BARREL) {
 				this.invalidate();
 				return;
 			}
