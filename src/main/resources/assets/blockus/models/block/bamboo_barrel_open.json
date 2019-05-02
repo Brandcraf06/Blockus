@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_bottom_top",
     "textures": {
-        "top": "blockus:block/bamboo_barrel_top_open",
+        "top": "blockus:block/bamboo_barrel_top",
         "side": "blockus:block/bamboo_barrel_side",
         "bottom": "blockus:block/bamboo_barrel_bottom"
     }

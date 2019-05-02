@@ -75,7 +75,14 @@ public class instance {
 		FlammableBlockRegistry.getDefaultInstance().add(Other.WOODEN_FRAME, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(Other.SMALL_HEDGE, 30, 60);
 		
-		CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.1f);
-		CompostingChanceRegistry.INSTANCE.add(Other.ROTTEN_FLESH_BLOCK, 1.0f);
+		CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Other.ROTTEN_FLESH_BLOCK, 0.85f);
+		CompostingChanceRegistry.INSTANCE.add(Other.SMALL_HEDGE, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.5f);
+		CompostingChanceRegistry.INSTANCE.add(Items.GRASS_BLOCK, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Items.PODZOL, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Items.MYCELIUM, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Items.DIRT, 0.15f);
+		CompostingChanceRegistry.INSTANCE.add(Items.COARSE_DIRT, 0.15f);
 	}
 }
