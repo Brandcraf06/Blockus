@@ -14,10 +14,10 @@ public class MagmaBricks {
 	
 	public static void init() {
 		
-		MAGMA_BRICKS = new LightBlockBase("magma_bricks", 0.5f, 5.0f);
-		MAGMA_BRICKS_WALL = new LightWallBase("magma_bricks_wall", 0.5f, 5.0f);
-		MAGMA_BRICKS_STAIRS = new LightStairsBase(MAGMA_BRICKS.getDefaultState(), "magma_bricks_stairs", 0.5f, 5.0f);
-		MAGMA_BRICKS_SLAB = new LightSlabBase("magma_bricks_slab", 1.0f, 5.0f);
+		MAGMA_BRICKS = new LightBlockBase("magma_bricks", 0.5f, 1.0f);
+		MAGMA_BRICKS_WALL = new LightWallBase("magma_bricks_wall", 0.5f, 1.0f);
+		MAGMA_BRICKS_STAIRS = new LightStairsBase(MAGMA_BRICKS.getDefaultState(), "magma_bricks_stairs", 0.5f, 1.0f);
+		MAGMA_BRICKS_SLAB = new LightSlabBase("magma_bricks_slab", 1.0f, 1.0f);
 				
 	}
 

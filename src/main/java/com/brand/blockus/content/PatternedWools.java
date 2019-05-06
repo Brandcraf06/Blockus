@@ -23,22 +23,22 @@ public class PatternedWools {
 	
 	public static void init() {
 		
-		WHITE_PATTERNED_WOOL = new PatternedWool("white_patterned_wool", 0.8f, 4.0f);
-		ORANGE_PATTERNED_WOOL = new PatternedWool("orange_patterned_wool", 0.8f, 4.0f);
-		MAGENTA_PATTERNED_WOOL = new PatternedWool("magenta_patterned_wool", 0.8f, 4.0f);
-		LIGHT_BLUE_PATTERNED_WOOL = new PatternedWool("light_blue_patterned_wool", 0.8f, 4.0f);
-		YELLOW_PATTERNED_WOOL = new PatternedWool("yellow_patterned_wool", 0.8f, 4.0f);
-		LIME_PATTERNED_WOOL = new PatternedWool("lime_patterned_wool", 0.8f, 4.0f);
-		PINK_PATTERNED_WOOL = new PatternedWool("pink_patterned_wool", 0.8f, 4.0f);
-		GRAY_PATTERNED_WOOL = new PatternedWool("gray_patterned_wool", 0.8f, 4.0f);
-		LIGHT_GRAY_PATTERNED_WOOL = new PatternedWool("light_gray_patterned_wool", 0.8f, 4.0f);
-		CYAN_PATTERNED_WOOL = new PatternedWool("cyan_patterned_wool", 0.8f, 4.0f);
-		PURPLE_PATTERNED_WOOL = new PatternedWool("purple_patterned_wool", 0.8f, 4.0f);
-		BLUE_PATTERNED_WOOL = new PatternedWool("blue_patterned_wool", 0.8f, 4.0f);
-		BROWN_PATTERNED_WOOL = new PatternedWool("brown_patterned_wool", 0.8f, 4.0f);
-		GREEN_PATTERNED_WOOL = new PatternedWool("green_patterned_wool", 0.8f, 4.0f);
-		RED_PATTERNED_WOOL = new PatternedWool("red_patterned_wool", 0.8f, 4.0f);
-		BLACK_PATTERNED_WOOL = new PatternedWool("black_patterned_wool", 0.8f, 4.0f);
+		WHITE_PATTERNED_WOOL = new PatternedWool("white_patterned_wool", 0.8f, 0.8f);
+		ORANGE_PATTERNED_WOOL = new PatternedWool("orange_patterned_wool", 0.8f, 0.8f);
+		MAGENTA_PATTERNED_WOOL = new PatternedWool("magenta_patterned_wool", 0.8f, 0.8f);
+		LIGHT_BLUE_PATTERNED_WOOL = new PatternedWool("light_blue_patterned_wool", 0.8f, 0.8f);
+		YELLOW_PATTERNED_WOOL = new PatternedWool("yellow_patterned_wool", 0.8f, 0.8f);
+		LIME_PATTERNED_WOOL = new PatternedWool("lime_patterned_wool", 0.8f, 0.8f);
+		PINK_PATTERNED_WOOL = new PatternedWool("pink_patterned_wool", 0.8f, 0.8f);
+		GRAY_PATTERNED_WOOL = new PatternedWool("gray_patterned_wool", 0.8f, 0.8f);
+		LIGHT_GRAY_PATTERNED_WOOL = new PatternedWool("light_gray_patterned_wool", 0.8f, 0.8f);
+		CYAN_PATTERNED_WOOL = new PatternedWool("cyan_patterned_wool", 0.8f, 0.8f);
+		PURPLE_PATTERNED_WOOL = new PatternedWool("purple_patterned_wool", 0.8f, 0.8f);
+		BLUE_PATTERNED_WOOL = new PatternedWool("blue_patterned_wool", 0.8f, 0.8f);
+		BROWN_PATTERNED_WOOL = new PatternedWool("brown_patterned_wool", 0.8f, 0.8f);
+		GREEN_PATTERNED_WOOL = new PatternedWool("green_patterned_wool", 0.8f, 0.8f);
+		RED_PATTERNED_WOOL = new PatternedWool("red_patterned_wool", 0.8f, 0.8f);
+		BLACK_PATTERNED_WOOL = new PatternedWool("black_patterned_wool", 0.8f, 0.8f);
 		
 	}
 

@@ -13,12 +13,12 @@ public class Barrels {
 	
 	public static void init() {
 		
-		OAK_BARREL = new WoodenBarrels("oak_barrel", 2.0f, 15.0f);
-		BIRCH_BARREL = new WoodenBarrels("birch_barrel", 2.0f, 15.0f);
-		JUNGLE_BARREL = new WoodenBarrels("jungle_barrel", 2.0f, 15.0f);
-		ACACIA_BARREL = new WoodenBarrels("acacia_barrel", 2.0f, 15.0f);
-		DARK_OAK_BARREL = new WoodenBarrels("dark_oak_barrel", 2.0f, 15.0f);
-		BAMBOO_BARREL = new WoodenBarrels("bamboo_barrel", 2.0f, 15.0f);
+		OAK_BARREL = new WoodenBarrels("oak_barrel", 2.0f, 3.0f);
+		BIRCH_BARREL = new WoodenBarrels("birch_barrel", 2.0f, 3.0f);
+		JUNGLE_BARREL = new WoodenBarrels("jungle_barrel", 2.0f, 3.0f);
+		ACACIA_BARREL = new WoodenBarrels("acacia_barrel", 2.0f, 3.0f);
+		DARK_OAK_BARREL = new WoodenBarrels("dark_oak_barrel", 2.0f, 3.0f);
+		BAMBOO_BARREL = new WoodenBarrels("bamboo_barrel", 2.0f, 3.0f);
 			
 	}
 

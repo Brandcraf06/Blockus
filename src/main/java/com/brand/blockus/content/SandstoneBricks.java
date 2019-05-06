@@ -15,12 +15,12 @@ public class SandstoneBricks {
 	
 	public static void init() {
 		
-		SANDSTONE_BRICKS = new BlockBase("sandstone_bricks", 0.8f, 4.0f);
-		SANDSTONE_BRICKS_STAIRS = new StairsBase(SANDSTONE_BRICKS.getDefaultState(), "sandstone_bricks_stairs", 0.8f, 4.0f);
-		SANDSTONE_BRICKS_SLAB = new SlabBase("sandstone_bricks_slab", 2.0f, 4.0f);
-		RED_SANDSTONE_BRICKS = new BlockBase("red_sandstone_bricks", 0.8f, 4.0f);
-		RED_SANDSTONE_BRICKS_STAIRS = new StairsBase(RED_SANDSTONE_BRICKS.getDefaultState(), "red_sandstone_bricks_stairs", 0.8f, 4.0f);
-		RED_SANDSTONE_BRICKS_SLAB = new SlabBase("red_sandstone_bricks_slab", 2.0f, 4.0f);
+		SANDSTONE_BRICKS = new BlockBase("sandstone_bricks", 0.8f, 0.8f);
+		SANDSTONE_BRICKS_STAIRS = new StairsBase(SANDSTONE_BRICKS.getDefaultState(), "sandstone_bricks_stairs", 0.8f, 0.8f);
+		SANDSTONE_BRICKS_SLAB = new SlabBase("sandstone_bricks_slab", 2.0f, 0.8f);
+		RED_SANDSTONE_BRICKS = new BlockBase("red_sandstone_bricks", 0.8f, 0.8f);
+		RED_SANDSTONE_BRICKS_STAIRS = new StairsBase(RED_SANDSTONE_BRICKS.getDefaultState(), "red_sandstone_bricks_stairs", 0.8f, 0.8f);
+		RED_SANDSTONE_BRICKS_SLAB = new SlabBase("red_sandstone_bricks_slab", 2.0f, 0.8f);
 			
 	}
 

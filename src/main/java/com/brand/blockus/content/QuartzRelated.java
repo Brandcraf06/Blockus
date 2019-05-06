@@ -8,7 +8,7 @@ public static BlockBase QUARTZ_BRICKS;
 	
 	public static void init() {
 	
-	QUARTZ_BRICKS= new BlockBase("quartz_bricks", 0.8f, 4f);
+	QUARTZ_BRICKS= new BlockBase("quartz_bricks", 0.8f, 0.8f);
 	
 	}
 }

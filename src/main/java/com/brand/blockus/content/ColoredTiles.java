@@ -16,15 +16,15 @@ public class ColoredTiles {
 	
 	public static void init() {
 		
-		GREEN_ORANGE_COLORED_TILES = new BlockBase("green_orange_colored_tiles", 1.8f, 9.0f);
-		LIME_YELLOW_COLORED_TILES = new BlockBase("lime_yellow_colored_tiles", 1.8f, 9.0f);
-		LIGHT_BLUE_YELLOW_COLORED_TILES = new BlockBase("light_blue_yellow_colored_tiles", 1.8f, 9.0f);
-		PINK_MAGENTA_COLORED_TILES = new BlockBase("pink_magenta_colored_tiles", 1.8f, 9.0f);
-		RED_BLUE_COLORED_TILES = new BlockBase("red_blue_colored_tiles", 1.8f, 9.0f);
-		LIGHT_BLUE_WHITE_COLORED_TILES = new BlockBase("light_blue_white_colored_tiles", 1.8f, 9.0f);
-		RED_WHITE_COLORED_TILES = new BlockBase("red_white_colored_tiles", 1.8f, 9.0f);
-		BLACK_WHITE_COLORED_TILES = new BlockBase("black_white_colored_tiles", 1.8f, 9.0f);
-		BLUE_CYAN_COLORED_TILES = new BlockBase("blue_cyan_colored_tiles", 1.8f, 9.0f);
+		GREEN_ORANGE_COLORED_TILES = new BlockBase("green_orange_colored_tiles", 1.8f, 1.8f);
+		LIME_YELLOW_COLORED_TILES = new BlockBase("lime_yellow_colored_tiles", 1.8f, 1.8f);
+		LIGHT_BLUE_YELLOW_COLORED_TILES = new BlockBase("light_blue_yellow_colored_tiles", 1.8f, 1.8f);
+		PINK_MAGENTA_COLORED_TILES = new BlockBase("pink_magenta_colored_tiles", 1.8f, 1.8f);
+		RED_BLUE_COLORED_TILES = new BlockBase("red_blue_colored_tiles", 1.8f, 1.8f);
+		LIGHT_BLUE_WHITE_COLORED_TILES = new BlockBase("light_blue_white_colored_tiles", 1.8f, 1.8f);
+		RED_WHITE_COLORED_TILES = new BlockBase("red_white_colored_tiles", 1.8f, 1.8f);
+		BLACK_WHITE_COLORED_TILES = new BlockBase("black_white_colored_tiles", 1.8f, 1.8f);
+		BLUE_CYAN_COLORED_TILES = new BlockBase("blue_cyan_colored_tiles", 1.8f, 1.8f);
 		
 	}
 
