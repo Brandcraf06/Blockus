@@ -37,9 +37,9 @@ public class Other {
 		MEMBRANE_BLOCK = new RottenFleshBlock("membrane_block", 5.0f, 6.0f);
 		BLAZE_BLOCK = new LightBlockBase("blaze_block", 2f, 6.0f);
 		SMALL_HEDGE = new SmallHedge("small_hedge", 0.2f, 0.2f);
-	    	CAUTION_BLOCK = new CautionBlock("caution_block", 1.5f, 1200.0f);
-	    	CAUTION_BARRIER = new Barrier("caution_barrier", 1.5f, 1200.0f);
-	    	ROAD_BARRIER = new Barrier("road_barrier", 2f, 6.0f);
+	    CAUTION_BLOCK = new CautionBlock("caution_block", 1.5f, 1200.0f);
+	    CAUTION_BARRIER = new Barrier("caution_barrier", 1.5f, 1200.0f);
+	    ROAD_BARRIER = new Barrier("road_barrier", 2f, 6.0f);
 	   	RAINBOW_BLOCK = new PillarBase("rainbow_block", 5.0f, 6.0f);			
 	    
 	}
