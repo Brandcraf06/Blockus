@@ -2,8 +2,6 @@ package com.brand.blockus.content;
 
 
 import com.brand.blockus.blocks.AsphaltBlock;
-import com.brand.blockus.blocks.AsphaltSlab;
-import com.brand.blockus.blocks.AsphaltStairs;
 
 public class Asphalt {
 
@@ -23,38 +21,6 @@ public class Asphalt {
 	public static AsphaltBlock BROWN_ASPHALT;
 	public static AsphaltBlock GREEN_ASPHALT;
 	public static AsphaltBlock RED_ASPHALT;
-	public static AsphaltSlab ASPHALT_SLAB;
-	public static AsphaltSlab WHITE_ASPHALT_SLAB;
-	public static AsphaltSlab ORANGE_ASPHALT_SLAB;
-	public static AsphaltSlab MAGENTA_ASPHALT_SLAB;
-	public static AsphaltSlab LIGHT_BLUE_ASPHALT_SLAB;
-	public static AsphaltSlab YELLOW_ASPHALT_SLAB;
-	public static AsphaltSlab LIME_ASPHALT_SLAB;
-	public static AsphaltSlab PINK_ASPHALT_SLAB;
-	public static AsphaltSlab GRAY_ASPHALT_SLAB;
-	public static AsphaltSlab LIGHT_GRAY_ASPHALT_SLAB;
-	public static AsphaltSlab CYAN_ASPHALT_SLAB;
-	public static AsphaltSlab PURPLE_ASPHALT_SLAB;
-	public static AsphaltSlab BLUE_ASPHALT_SLAB;
-	public static AsphaltSlab BROWN_ASPHALT_SLAB;
-	public static AsphaltSlab GREEN_ASPHALT_SLAB;
-	public static AsphaltSlab RED_ASPHALT_SLAB;
-	public static AsphaltStairs ASPHALT_STAIRS;
-	public static AsphaltStairs WHITE_ASPHALT_STAIRS;
-	public static AsphaltStairs ORANGE_ASPHALT_STAIRS;
-	public static AsphaltStairs MAGENTA_ASPHALT_STAIRS;
-	public static AsphaltStairs LIGHT_BLUE_ASPHALT_STAIRS;
-	public static AsphaltStairs YELLOW_ASPHALT_STAIRS;
-	public static AsphaltStairs LIME_ASPHALT_STAIRS;
-	public static AsphaltStairs PINK_ASPHALT_STAIRS;
-	public static AsphaltStairs GRAY_ASPHALT_STAIRS;
-	public static AsphaltStairs LIGHT_GRAY_ASPHALT_STAIRS;
-	public static AsphaltStairs CYAN_ASPHALT_STAIRS;
-	public static AsphaltStairs PURPLE_ASPHALT_STAIRS;
-	public static AsphaltStairs BLUE_ASPHALT_STAIRS;
-	public static AsphaltStairs BROWN_ASPHALT_STAIRS;
-	public static AsphaltStairs GREEN_ASPHALT_STAIRS;
-	public static AsphaltStairs RED_ASPHALT_STAIRS;
 
 	public static void init() {
 		
@@ -74,22 +40,6 @@ public class Asphalt {
 		BROWN_ASPHALT = new AsphaltBlock("brown_asphalt", 1.5f, 6.0f);
 		GREEN_ASPHALT = new AsphaltBlock("green_asphalt", 1.5f, 6.0f);
 		RED_ASPHALT = new AsphaltBlock("red_asphalt", 1.5f, 6.0f);
-		ASPHALT_SLAB = new AsphaltSlab("asphalt_slab", 1.5f, 6.0f);
-		WHITE_ASPHALT_SLAB = new AsphaltSlab("white_asphalt_slab", 1.5f, 6.0f);
-		ORANGE_ASPHALT_SLAB = new AsphaltSlab("orange_asphalt_slab", 1.5f, 6.0f);
-		MAGENTA_ASPHALT_SLAB = new AsphaltSlab("magenta_asphalt_slab", 1.5f, 6.0f);
-		LIGHT_BLUE_ASPHALT_SLAB = new AsphaltSlab("light_blue_asphalt_slab", 1.5f, 6.0f);
-		YELLOW_ASPHALT_SLAB = new AsphaltSlab("yellow_asphalt_slab", 1.5f, 6.0f);
-		LIME_ASPHALT_SLAB = new AsphaltSlab("lime_asphalt_slab", 1.5f, 6.0f);
-		PINK_ASPHALT_SLAB = new AsphaltSlab("pink_asphalt_slab", 1.5f, 6.0f);
-		LIGHT_GRAY_ASPHALT_SLAB = new AsphaltSlab("light_gray_asphalt_slab", 1.5f, 6.0f);
-		GRAY_ASPHALT_SLAB = new AsphaltSlab("gray_asphalt_slab", 1.5f, 6.0f);
-		CYAN_ASPHALT_SLAB = new AsphaltSlab( "cyan_asphalt_slab", 1.5f, 6.0f);
-		PURPLE_ASPHALT_SLAB = new AsphaltSlab("purple_asphalt_slab", 1.5f, 6.0f);
-		BLUE_ASPHALT_SLAB = new AsphaltSlab( "blue_asphalt_slab", 1.5f, 6.0f);
-		BROWN_ASPHALT_SLAB = new AsphaltSlab("brown_asphalt_slab", 1.5f, 6.0f);
-		GREEN_ASPHALT_SLAB = new AsphaltSlab("green_asphalt_slab", 1.5f, 6.0f);
-		RED_ASPHALT_SLAB = new AsphaltSlab("red_asphalt_slab", 1.5f, 6.0f);
 			
 	}
 
