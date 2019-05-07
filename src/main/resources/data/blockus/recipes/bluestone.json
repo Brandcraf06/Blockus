@@ -1,20 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "SSS",
-	"SLS",
-	"SSS"
+    " S ",
+	"SBS",
+	" S "
   ],
   "key": {
     "S": {
       "item": "minecraft:stone"
     },
-	"L": {
-      "item": "minecraft:lapis_lazuli"
+	"B": {
+      "item": "minecraft:blue_dye"
     }
   },
   "result": {
     "item": "blockus:bluestone",
-    "count": 8
+    "count": 4
   }
 }

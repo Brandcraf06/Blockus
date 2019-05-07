@@ -11,6 +11,7 @@ import com.brand.blockus.content.EndStoneRelated;
 import com.brand.blockus.content.GlassRelated;
 import com.brand.blockus.content.GlazedTerracottaPillars;
 import com.brand.blockus.content.LavaBricks;
+import com.brand.blockus.content.Limestone;
 import com.brand.blockus.content.MagmaBricks;
 import com.brand.blockus.content.NetherBricksRelated;
 import com.brand.blockus.content.Other;
@@ -24,6 +25,7 @@ import com.brand.blockus.content.SoakedBricks;
 import com.brand.blockus.content.SoulSandstone;
 import com.brand.blockus.content.StainedStoneBricks;
 import com.brand.blockus.content.StoneRelated;
+import com.brand.blockus.world.BlockusGen;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -35,7 +37,7 @@ import net.minecraft.util.Identifier;
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.1.6.2";
+	public static final String VERSION = "1.1.7";
 	public static final String NAME = "Blockus";
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LavaBricks.LAVA_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Other.SMALL_HEDGE));
@@ -59,6 +61,7 @@ public class Blockus implements ModInitializer {
 		SoulSandstone.init();
 		EndStoneRelated.init();
 		PurpurRelated.init();
+		Limestone.init();
 		Bluestone.init();
 		QuartzRelated.init();
 		PaperRelated.init();
@@ -69,6 +72,8 @@ public class Blockus implements ModInitializer {
 		Barrels.init();
 		Other.init();
 		instance.init();
+		
+		BlockusGen.addFeatures();
 		
    
 	}

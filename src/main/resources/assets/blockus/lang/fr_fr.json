@@ -230,5 +230,14 @@
     "block.blockus.brown_glazed_terracotta_pillar": "Pilier de terre cuite émaillée marron",
     "block.blockus.green_glazed_terracotta_pillar": "Pilier de terre cuite émaillée verte",
     "block.blockus.red_glazed_terracotta_pillar": "Pilier de terre cuite émaillée rouge",
-	"block.blockus.black_glazed_terracotta_pillar": "Pilier de terre cuite émaillée noire"
+	"block.blockus.black_glazed_terracotta_pillar": "Pilier de terre cuite émaillée noire",
+	"block.blockus.limestone": "Calcaire",
+	"block.blockus.limestone_stairs": "Escalier en calcaire",
+	"block.blockus.limestone_slab": "Dalle de calcaire",
+	"block.blockus.limestone_bricks": "Briques de calcaire",
+	"block.blockus.limestone_bricks_stairs": "Escalier en briques de calcaire",
+	"block.blockus.limestone_bricks_slab": "Dalle en briques de calcaire",
+	"block.blockus.limestone_bricks_wall": "Muret en briques de calcaire",
+    "block.blockus.limestone_pillar": "Pilier de calcaire",
+	"block.blockus.chiseled_limestone": "Calcaire sculpté"
 }

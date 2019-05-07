@@ -230,5 +230,15 @@
     "block.blockus.brown_glazed_terracotta_pillar": "Brown Glazed Terracotta Pillar",
     "block.blockus.green_glazed_terracotta_pillar": "Green Glazed Terracotta Pillar",
     "block.blockus.red_glazed_terracotta_pillar": "Red Glazed Terracotta Pillar",
-	"block.blockus.black_glazed_terracotta_pillar": "Black Glazed Terracotta Pillar"
+	"block.blockus.black_glazed_terracotta_pillar": "Black Glazed Terracotta Pillar",
+	"block.blockus.limestone": "Limestone",
+	"block.blockus.limestone_stairs": "Limestone Stairs",
+	"block.blockus.limestone_slab": "Limestone Slab",
+	"block.blockus.limestone_bricks": "Limestone Bricks",
+	"block.blockus.limestone_bricks_stairs": "Limestone Bricks Stairs",
+	"block.blockus.limestone_bricks_slab": "Limestone Bricks Slab",
+	"block.blockus.limestone_bricks_wall": "Limestone Bricks Wall",
+    "block.blockus.limestone_pillar": "Limestone Pillar",
+	"block.blockus.chiseled_limestone": "Chiseled Limestone"
+
 }
