@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:purple_asphalt"
+  },
+  "result": "blockus:purple_asphalt_stairs",
+  "count": 1
+}

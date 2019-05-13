@@ -9,7 +9,7 @@ import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.WallBlock;
-import net.minecraft.entity.VerticalEntityPosition;
+import net.minecraft.entity.EntityContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.sound.BlockSoundGroup;
@@ -41,11 +41,11 @@ public class SmallHedge extends WallBlock {
 	}
 	
 	@Override
-	public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, VerticalEntityPosition verticalEntityPosition_1) {
-	      return this.UP_OUTLINE_SHAPES[this.getShapeIndex(blockState_1)] ;
-	   }
+	public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, EntityContext entityContext_1) {
+	      return (Boolean)blockState_1.get(UP) ? this.UP_OUTLINE_SHAPES[this.getShapeIndex(blockState_1)] : super.getOutlineShape(blockState_1, blockView_1, blockPos_1, entityContext_1);
+	}
 	@Override
-    public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, VerticalEntityPosition verticalEntityPosition_1) {
-	      return this.UP_COLLISION_SHAPES[this.getShapeIndex(blockState_1)] ;
+	public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, EntityContext entityContext_1) {
+	      return (Boolean)blockState_1.get(UP) ? this.UP_COLLISION_SHAPES[this.getShapeIndex(blockState_1)] : super.getCollisionShape(blockState_1, blockView_1, blockPos_1, entityContext_1);
 	}
 }

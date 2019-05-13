@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "colored_asphalt_stairs_2",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:asphalt_stairs"
+    },
+    "$": {
+      "item": "minecraft:blue_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:blue_asphalt_stairs",
+    "count": 8
+  }
+}

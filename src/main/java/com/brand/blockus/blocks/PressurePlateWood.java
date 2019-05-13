@@ -13,8 +13,8 @@ import net.minecraft.util.registry.Registry;
 
 public class PressurePlateWood extends PressurePlateBlock {
 	
-	public PressurePlateWood(String name, float hardness, float resistance) {
-		super(PressurePlateBlock.Type.WOOD, FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(hardness, resistance).build());
+	public PressurePlateWood(String name, float hardness, float resistance, ActivationRule type) {
+		super(type, FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(hardness, resistance).build());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(Blockus.BLOCKUS_REDSTONE)));
 	}
