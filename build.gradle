@@ -6,14 +6,14 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 archivesBaseName = "blockus"
-version = "1.1.8"
+version = "1.1.8.1"
 
 minecraft {
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:1.14.1"
-    mappings "net.fabricmc:yarn:1.14.1+build.4"
+    mappings "net.fabricmc:yarn:1.14.1+build.10"
     modCompile "net.fabricmc:fabric-loader:0.4.7+build.147"
             
     //Fabric api
