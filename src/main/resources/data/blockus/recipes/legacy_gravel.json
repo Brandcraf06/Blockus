@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:gravel"
+  },
+  "result": "blockus:legacy_gravel",
+  "count": 1
+}

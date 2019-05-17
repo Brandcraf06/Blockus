@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IDI",
+	"IDI",
+	"IDI"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+	"I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "blockus:legacy_nether_reactor_core",
+    "count": 1
+  }
+}

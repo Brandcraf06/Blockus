@@ -272,5 +272,23 @@
     "block.blockus.brown_asphalt_slab": "Dalle d'asphalte marron",
     "block.blockus.green_asphalt_slab": "Dalle d'asphalte vert",
     "block.blockus.red_asphalt_slab": "Dalle d'asphalte rouge",
-    "block.blockus.paper_lamp": "Lampe de papier"
+    "block.blockus.paper_lamp": "Lampe de papier",
+    "block.blockus.legacy_bricks": "Briques (Ancien)",
+    "block.blockus.legacy_stonecutter": "Tailleur de pierre (Ancien)",
+    "block.blockus.legacy_grass_block": "Bloc d'herbe (Ancien)",
+    "block.blockus.legacy_leaves": "Feuillage (Ancien)",
+    "block.blockus.legacy_gravel": "Gravier (Ancien)",
+    "block.blockus.legacy_cobblestone": "Pierre (Ancien)",
+    "block.blockus.legacy_mossy_cobblestone": "Pierre moussue (Ancien)",
+    "block.blockus.legacy_iron_block": "Bloc de fer (Ancien)",
+    "block.blockus.legacy_gold_block": "Bloc d'or (Ancien)",
+    "block.blockus.legacy_explosion_proof_gold_block": "Bloc d'or (Ancien)",
+    "block.blockus.legacy_diamond_block": "Bloc de diamant (Ancien)",
+    "block.blockus.legacy_lapis_block": "Bloc de lapis-lazuli (Ancien)",
+    "block.blockus.legacy_sponge": "Eponge (Ancien)",
+    "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse",
+    "block.blockus.legacy_glowing_obsidian": "Obsidienne lumineuse",
+    "block.blockus.legacy_nether_reactor_core": "Cœur du réacteur du Nether",
+    "block.blockus.legacy_planks": "Planches (Ancien)"
+	
 }

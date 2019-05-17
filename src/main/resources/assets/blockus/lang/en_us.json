@@ -272,6 +272,23 @@
     "block.blockus.brown_asphalt_slab": "Brown Asphalt Slab",
     "block.blockus.green_asphalt_slab": "Green Asphalt Slab",
     "block.blockus.red_asphalt_slab": "Red Asphalt Slab",
-    "block.blockus.paper_lamp": "Paper Lamp"
+    "block.blockus.paper_lamp": "Paper Lamp",
+    "block.blockus.legacy_bricks": "Bricks (Legacy)",
+    "block.blockus.legacy_stonecutter": "Stonecutter (Legacy)",
+    "block.blockus.legacy_grass_block": "Grass Block (Legacy)",
+    "block.blockus.legacy_leaves": "Leaves (Legacy)",
+    "block.blockus.legacy_gravel": "Gravel (Legacy)",
+    "block.blockus.legacy_cobblestone": "Cobblestone (Legacy)",
+    "block.blockus.legacy_mossy_cobblestone": "Mossy Cobblestone (Legacy)",
+    "block.blockus.legacy_iron_block": "Iron Block (Legacy)",
+    "block.blockus.legacy_gold_block": "Gold Block (Legacy)",
+    "block.blockus.legacy_explosion_proof_gold_block": "Gold Block (Legacy)",
+    "block.blockus.legacy_diamond_block": "Diamond Block (Legacy)",
+    "block.blockus.legacy_lapis_block": "Lapis Lazuli Block (Legacy)",
+    "block.blockus.legacy_sponge": "Sponge (Legacy)",
+    "block.blockus.legacy_crying_obsidian": "Crying Obsidian",
+    "block.blockus.legacy_glowing_obsidian": "Glowing Obsidian",
+    "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core",
+    "block.blockus.legacy_planks": "Planks (Legacy)"
 
 }

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:oak_leaves"
+  },
+  "result": "blockus:legacy_leaves",
+  "count": 1
+}

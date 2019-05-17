@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:legacy_explosion_proof_gold_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gold_ingot",
+    "count": 9
+  }
+}

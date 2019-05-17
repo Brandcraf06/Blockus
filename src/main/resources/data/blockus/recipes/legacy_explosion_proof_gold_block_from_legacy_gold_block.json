@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:legacy_gold_block"
+  },
+  "result": "blockus:legacy_explosion_proof_gold_block",
+  "count": 1
+}
