@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "uncraftable",
   "ingredients": [
     {
-      "item": "minecraft:barrier"
+      "item": "blockus:redstone_sand"
     }
   ],
   "result": {
-    "item": "minecraft:barrier"
+    "item": "minecraft:redstone",
+    "count": 8
   }
 }

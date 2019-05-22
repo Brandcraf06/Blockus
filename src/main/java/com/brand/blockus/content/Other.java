@@ -3,6 +3,7 @@ package com.brand.blockus.content;
 import com.brand.blockus.blocks.BlockBase;
 import com.brand.blockus.blocks.Barrier;
 import com.brand.blockus.blocks.CautionBlock;
+import com.brand.blockus.blocks.FallingRedstoneBase;
 import com.brand.blockus.blocks.LightBlockBase;
 import com.brand.blockus.blocks.LoveBlock;
 import com.brand.blockus.blocks.PaperWall;
@@ -25,6 +26,7 @@ public class Other {
 	public static Barrier CAUTION_BARRIER;
 	public static Barrier ROAD_BARRIER;
 	public static PillarBase RAINBOW_BLOCK;
+	public static FallingRedstoneBase REDSTONE_SAND;
 	
 	public static void init() {
 
@@ -41,6 +43,7 @@ public class Other {
 	    CAUTION_BARRIER = new Barrier("caution_barrier", 1.5f, 6000.0f);
 	    ROAD_BARRIER = new Barrier("road_barrier", 2f, 30.0f);
 	    RAINBOW_BLOCK = new PillarBase("rainbow_block", 5.0f, 30.0f);			
+	    REDSTONE_SAND = new FallingRedstoneBase("redstone_sand", 2.0f, 30.0f);	
 	    
 	}
 }

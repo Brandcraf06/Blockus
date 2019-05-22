@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "blockus:block/redstone_sand" }
+    }
+}

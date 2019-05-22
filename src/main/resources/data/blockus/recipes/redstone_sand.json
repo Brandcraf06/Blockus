@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+	"BWB",
+	"BBB"
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:sand"
+    },
+	"B": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "blockus:redstone_sand",
+    "count": 1
+  }
+}
