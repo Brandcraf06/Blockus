@@ -69,7 +69,7 @@ public class Blockus implements ModInitializer {
 		NetherBricksRelated.init();
 		BlazeBricks.init();
 		BambooPlanks.init();
-		Barrels.init();
+		new Barrels();
 		Other.init();
 		LegacyBlocks.init();
 		instance.init();
