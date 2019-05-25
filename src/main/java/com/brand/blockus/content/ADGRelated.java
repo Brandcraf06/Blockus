@@ -1,6 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.BlockBase;
+import com.brand.blockus.blocks.CirclePavementBlock;
 import com.brand.blockus.blocks.SlabBase;
 import com.brand.blockus.blocks.StairsBase;
 
@@ -20,6 +21,9 @@ public class ADGRelated {
 	public static BlockBase ZIGZAGGED_ANDESITE;
 	public static BlockBase ZIGZAGGED_DIORITE;
 	public static BlockBase ZIGZAGGED_GRANITE;
+	public static CirclePavementBlock ANDESITE_CIRCLE_PAVEMENT;
+	public static CirclePavementBlock DIORITE_CIRCLE_PAVEMENT;
+	public static CirclePavementBlock GRANITE_CIRCLE_PAVEMENT;
 
 	public static void init() {
 
@@ -35,6 +39,9 @@ public class ADGRelated {
 		ZIGZAGGED_ANDESITE = new BlockBase("zigzagged_andesite", 1.5f, 30.0f);
 		ZIGZAGGED_DIORITE = new BlockBase("zigzagged_diorite", 1.5f, 30.0f);
 		ZIGZAGGED_GRANITE = new BlockBase("zigzagged_granite", 1.5f, 30.0f);
+		ANDESITE_CIRCLE_PAVEMENT = new CirclePavementBlock("andesite_circle_pavement", 1.5f, 30.0f);
+		DIORITE_CIRCLE_PAVEMENT = new CirclePavementBlock("diorite_circle_pavement", 1.5f, 30.0f);
+		GRANITE_CIRCLE_PAVEMENT = new CirclePavementBlock("granite_circle_pavement", 1.5f, 30.0f);
 			
 	}
 }

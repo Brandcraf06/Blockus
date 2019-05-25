@@ -1,6 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.BlockBase;
+import com.brand.blockus.blocks.CirclePavementBlock;
 import com.brand.blockus.blocks.PillarBase;
 import com.brand.blockus.blocks.StairsBase;
 import com.brand.blockus.blocks.StoneDoor;
@@ -15,6 +16,7 @@ public class StoneRelated {
 	public static StoneDoor STONE_DOOR;
 	public static StoneTrapdoor STONE_TRAPDOOR;
 	public static BlockBase ZIGZAGGED_STONE_BRICKS;
+	public static CirclePavementBlock STONE_CIRCLE_PAVEMENT;
 	
 	public static void init() {
 
@@ -23,6 +25,7 @@ public class StoneRelated {
 		STONE_DOOR = new StoneDoor("stone_door", 1.5f, 20.0f);
 		STONE_TRAPDOOR = new StoneTrapdoor("stone_trapdoor", 1.5f, 20.0f);
 		ZIGZAGGED_STONE_BRICKS = new BlockBase("zigzagged_stone_bricks", 1.5f, 30.0f);
+		STONE_CIRCLE_PAVEMENT = new CirclePavementBlock("stone_circle_pavement", 1.5f, 30.0f);
 			
 	}
 }

@@ -13,6 +13,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("deprecation")
 public class StairsWood extends StairsBlock {
 	
 	public StairsWood(BlockState state, String name, float hardness, float resistance) {

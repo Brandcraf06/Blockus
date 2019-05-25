@@ -4,6 +4,7 @@
     "minecraft:smooth_quartz",
 	"minecraft:quartz_pillar",
 	"minecraft:chiseled_quartz_block",
-	"blockus:quartz_bricks"
+	"blockus:quartz_bricks",
+	"blockus:quartz_circle_pavement"
   ]
 }

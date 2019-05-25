@@ -16,6 +16,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 
+@SuppressWarnings("deprecation")
 public class FallingRedstoneBase extends FallingBlock {
 		
 	public FallingRedstoneBase(String name, float hardness, float resistance) {

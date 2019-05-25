@@ -12,6 +12,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("deprecation")
 public class FallingGravelBase extends FallingBlock {
 		
 	public FallingGravelBase(String name, float hardness, float resistance) {

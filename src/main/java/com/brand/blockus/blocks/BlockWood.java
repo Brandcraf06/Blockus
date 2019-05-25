@@ -12,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("deprecation")
 public class BlockWood extends Block {
 	
 	public BlockWood(String name, float hardness, float resistance) {

@@ -12,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("deprecation")
 public class SlabWood extends SlabBlock {
 	
 	public SlabWood(String name, float hardness, float resistance) {

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
 	"blockus:granite_bricks",
-	"blockus:zigzagged_granite"
+	"blockus:zigzagged_granite",
+	"blockus:granite_circle_pavement"
   ]
 }

@@ -12,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("deprecation")
 public class WoodenDoor extends DoorBlock {
 	
 	public WoodenDoor(String name, float hardness, float resistance) {

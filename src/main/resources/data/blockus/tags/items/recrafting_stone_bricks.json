@@ -3,6 +3,7 @@
   "values": [
     "blockus:stone_bricks_pillar",
 	"minecraft:chiseled_stone_bricks",
-	"blockus:zigzagged_stone_bricks"
+	"blockus:zigzagged_stone_bricks",
+	"blockus:stone_circle_pavement"
   ]
 }

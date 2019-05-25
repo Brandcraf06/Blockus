@@ -1,6 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.BlockBase;
+import com.brand.blockus.blocks.CirclePavementBlock;
 import com.brand.blockus.blocks.PillarBase;
 import com.brand.blockus.blocks.SlabBase;
 import com.brand.blockus.blocks.StairsBase;
@@ -17,6 +18,7 @@ public class Limestone {
 	public static WallBase LIMESTONE_BRICKS_WALL;
 	public static PillarBase LIMESTONE_PILLAR;
 	public static BlockBase CHISELED_LIMESTONE;
+	public static CirclePavementBlock LIMESTONE_CIRCLE_PAVEMENT;
 	
 	public static void init() {
 		
@@ -29,6 +31,7 @@ public class Limestone {
 		LIMESTONE_BRICKS_WALL = new WallBase("limestone_bricks_wall", 2.0f, 30.0f);
 		LIMESTONE_PILLAR = new PillarBase("limestone_pillar", 1.5f, 30.0f);
 		CHISELED_LIMESTONE = new BlockBase("chiseled_limestone", 1.5f, 30.0f);
+		LIMESTONE_CIRCLE_PAVEMENT = new CirclePavementBlock("limestone_circle_pavement", 1.5f, 30.0f);
 		
 	}
 

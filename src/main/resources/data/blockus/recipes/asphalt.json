@@ -10,7 +10,7 @@
       "item": "minecraft:gravel"
     },
     "$": {
-      "item": "minecraft:coal"
+      "tag": "minecraft:coals"
     }
   },
   "result": {
