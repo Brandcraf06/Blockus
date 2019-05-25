@@ -8,10 +8,10 @@
   ],
   "key": {
     "P": {
-      "item": "minecraft:bamboo_planks"
+      "item": "blockus:bamboo_planks"
     },
     "S": {
-      "item": "minecraft:bamboo_slab"
+      "item": "blockus:bamboo_slab"
     }
   },
   "result": {
