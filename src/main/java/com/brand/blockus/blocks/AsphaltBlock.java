@@ -17,7 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
-public class AsphaltBlock extends Block {
+public class AsphaltBlock extends Block { 
 
 public AsphaltBlock(String name, float hardness, float resistance) {
 	super(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).build());
