@@ -24,6 +24,7 @@
 	"blockus:charred_nether_bricks_wall",
 	"blockus:soaked_bricks_wall",
 	"blockus:magma_bricks_wall",
-	"blockus:limestone_bricks_wall"
+	"blockus:limestone_bricks_wall",
+	"blockus:obsidian_bricks_wall"
   ]
 }

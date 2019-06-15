@@ -26,15 +26,15 @@ public class BambooPlanks {
 	
 	public static void init() {
 
-		BAMBOO_PLANKS = new BlockWood("bamboo_planks", 2.0f, 15.0f);
-		BAMBOO_SLAB = new SlabWood("bamboo_slab", 2.0f, 15.0f);
-		BAMBOO_STAIRS = new StairsWood(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", 2.0f, 15.0f);
-		BAMBOO_FENCE = new FenceBase("bamboo_fence", 2.0f, 15.0f);
-		BAMBOO_FENCE_GATE = new FenceGateBase("bamboo_fence_gate", 2.0f, 15.0f);
-		BAMBOO_PRESSURE_PLATE = new PressurePlateWood("bamboo_pressure_plate", 2.0f, 15.0f, ActivationRule.EVERYTHING);
-		BAMBOO_BUTTON = new ButtonWood("bamboo_button", 2.0f, 15.0f);
-		BAMBOO_DOOR = new WoodenDoor("bamboo_door", 2.0f, 15.0f);
-		BAMBOO_TRAPDOOR = new WoodenTrapdoor("bamboo_trapdoor", 2.0f, 15.0f);
+		BAMBOO_PLANKS = new BlockWood("bamboo_planks", 2.0f, 3.0f);
+		BAMBOO_SLAB = new SlabWood("bamboo_slab", 2.0f, 3.0f);
+		BAMBOO_STAIRS = new StairsWood(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", 2.0f, 3.0f);
+		BAMBOO_FENCE = new FenceBase("bamboo_fence", 2.0f, 3.0f);
+		BAMBOO_FENCE_GATE = new FenceGateBase("bamboo_fence_gate", 2.0f, 3.0f);
+		BAMBOO_PRESSURE_PLATE = new PressurePlateWood("bamboo_pressure_plate", 2.0f, 3.0f, ActivationRule.EVERYTHING);
+		BAMBOO_BUTTON = new ButtonWood("bamboo_button", 2.0f, 3.0f);
+		BAMBOO_DOOR = new WoodenDoor("bamboo_door", 2.0f, 3.0f);
+		BAMBOO_TRAPDOOR = new WoodenTrapdoor("bamboo_trapdoor", 2.0f, 3.0f);
 			
 	}
 

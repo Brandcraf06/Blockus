@@ -22,16 +22,16 @@ public class Limestone {
 	
 	public static void init() {
 		
-		LIMESTONE = new BlockBase("limestone", 1.5f, 30.0f);
-		LIMESTONE_STAIRS = new StairsBase(LIMESTONE.getDefaultState(), "limestone_stairs", 1.5f, 30.0f);
-		LIMESTONE_SLAB = new SlabBase("limestone_slab", 2.0f, 30.0f);
-		LIMESTONE_BRICKS = new BlockBase("limestone_bricks", 1.5f, 30.0f);
-		LIMESTONE_BRICKS_STAIRS = new StairsBase(LIMESTONE_BRICKS.getDefaultState(), "limestone_bricks_stairs", 1.5f, 30.0f);
-		LIMESTONE_BRICKS_SLAB = new SlabBase("limestone_bricks_slab", 2.0f, 30.0f);
-		LIMESTONE_BRICKS_WALL = new WallBase("limestone_bricks_wall", 2.0f, 30.0f);
-		LIMESTONE_PILLAR = new PillarBase("limestone_pillar", 1.5f, 30.0f);
-		CHISELED_LIMESTONE = new BlockBase("chiseled_limestone", 1.5f, 30.0f);
-		LIMESTONE_CIRCLE_PAVEMENT = new CirclePavementBlock("limestone_circle_pavement", 1.5f, 30.0f);
+		LIMESTONE = new BlockBase("limestone", 1.5f, 6.0f);
+		LIMESTONE_STAIRS = new StairsBase(LIMESTONE.getDefaultState(), "limestone_stairs", 1.5f, 6.0f);
+		LIMESTONE_SLAB = new SlabBase("limestone_slab", 2.0f, 6.0f);
+		LIMESTONE_BRICKS = new BlockBase("limestone_bricks", 1.5f, 6.0f);
+		LIMESTONE_BRICKS_STAIRS = new StairsBase(LIMESTONE_BRICKS.getDefaultState(), "limestone_bricks_stairs", 1.5f, 6.0f);
+		LIMESTONE_BRICKS_SLAB = new SlabBase("limestone_bricks_slab", 2.0f, 6.0f);
+		LIMESTONE_BRICKS_WALL = new WallBase("limestone_bricks_wall", 2.0f, 6.0f);
+		LIMESTONE_PILLAR = new PillarBase("limestone_pillar", 1.5f, 6.0f);
+		CHISELED_LIMESTONE = new BlockBase("chiseled_limestone", 1.5f, 6.0f);
+		LIMESTONE_CIRCLE_PAVEMENT = new CirclePavementBlock("limestone_circle_pavement", 1.5f, 6.0f);
 		
 	}
 

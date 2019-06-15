@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "blockus:block/obsidian_reinforced_door_bottom",
+        "top": "blockus:block/obsidian_reinforced_door_top"
+    }
+}

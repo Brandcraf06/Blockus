@@ -17,12 +17,12 @@ public class PaperRelated {
 	
 	public static void init() {
 		
-		PAPER_BLOCK = new BlockPaper("paper_block", 0.1f, 4.0f);
-		BURNED_PAPER_BLOCK = new BlockPaper("burned_paper_block", 0.1f, 4.0f);
-		PAPER_WALL = new PaperWall("paper_wall", 0.1f, 4.0f);
-		PAPER_DOOR = new PaperDoor("paper_door", 0.1f, 4.0f);
-		PAPER_TRAPDOOR = new PaperTrapdoor("paper_trapdoor", 0.1f, 4.0f);
-		PAPER_LAMP = new PaperLight("paper_lamp", 0.1f, 4.0f);
+		PAPER_BLOCK = new BlockPaper("paper_block", 0.1f, 0.8f);
+		BURNED_PAPER_BLOCK = new BlockPaper("burned_paper_block", 0.1f, 0.8f);
+		PAPER_WALL = new PaperWall("paper_wall", 0.1f, 0.8f);
+		PAPER_DOOR = new PaperDoor("paper_door", 0.1f, 0.8f);
+		PAPER_TRAPDOOR = new PaperTrapdoor("paper_trapdoor", 0.1f, 0.8f);
+		PAPER_LAMP = new PaperLight("paper_lamp", 0.1f, 0.8f);
 			
 	}
 

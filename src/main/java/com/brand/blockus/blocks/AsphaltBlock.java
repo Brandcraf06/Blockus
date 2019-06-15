@@ -22,7 +22,7 @@ public class AsphaltBlock extends Block {
 public AsphaltBlock(String name, float hardness, float resistance) {
 	super(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).build());
 	Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(Blockus.BLOCKUS_BUILDING_BLOCKS)));	
+	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));	
    }
 @Override
 public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity entity_1) {

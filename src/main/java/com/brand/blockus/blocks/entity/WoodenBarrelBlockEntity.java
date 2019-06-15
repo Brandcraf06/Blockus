@@ -84,8 +84,8 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 	
 	public void setInvStack(int int_1, ItemStack stack) {
 		this.inventory.set(int_1, stack);
-		if (stack.getAmount() > this.getInvMaxStackAmount()) {
-			stack.setAmount(this.getInvMaxStackAmount());
+		if (stack.getCount() > this.getInvMaxStackAmount()) {
+			stack.setCount(this.getInvMaxStackAmount());
 		}
 	}
 	

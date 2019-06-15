@@ -16,6 +16,7 @@ import com.brand.blockus.content.Limestone;
 import com.brand.blockus.content.MagmaBricks;
 import com.brand.blockus.content.NetherBricksRelated;
 import com.brand.blockus.content.NetherrackRelated;
+import com.brand.blockus.content.ObsidianRelated;
 import com.brand.blockus.content.Other;
 import com.brand.blockus.content.PaperRelated;
 import com.brand.blockus.content.PatternedWools;
@@ -39,7 +40,7 @@ import net.minecraft.util.Identifier;
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.1.11";
+	public static final String VERSION = "1.1.12";
 	public static final String NAME = "Blockus";
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LavaBricks.LAVA_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Other.SMALL_HEDGE));
@@ -63,6 +64,7 @@ public class Blockus implements ModInitializer {
 		PrismarineRelated.init();
 		EndStoneRelated.init();
 		PurpurRelated.init();
+		ObsidianRelated.init();
 		Limestone.init();
 		Bluestone.init();
 		QuartzRelated.init();

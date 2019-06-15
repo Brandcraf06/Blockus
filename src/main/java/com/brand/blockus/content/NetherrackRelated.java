@@ -15,10 +15,10 @@ public class NetherrackRelated {
 	
 	public static void init() {
 		
-		POLISHED_NETHERRACK = new BlockBase("polished_netherrack", 0.4f, 2.0f);
-		POLISHED_NETHERRACK_STAIRS = new StairsBase(POLISHED_NETHERRACK.getDefaultState(),"polished_netherrack_stairs", 0.4f, 2.0f);
-		POLISHED_NETHERRACK_SLAB = new SlabBase("polished_netherrack_slab", 1.0f, 2.0f);
-		NETHERRACK_CIRCLE_PAVEMENT = new CirclePavementBlock("netherrack_circle_pavement", 1.0f, 2.0f);
+		POLISHED_NETHERRACK = new BlockBase("polished_netherrack", 0.4f, 0.4f);
+		POLISHED_NETHERRACK_STAIRS = new StairsBase(POLISHED_NETHERRACK.getDefaultState(),"polished_netherrack_stairs", 0.4f, 0.4f);
+		POLISHED_NETHERRACK_SLAB = new SlabBase("polished_netherrack_slab", 1.0f, 0.4f);
+		NETHERRACK_CIRCLE_PAVEMENT = new CirclePavementBlock("netherrack_circle_pavement", 1.0f, 0.4f);
 			
 	}
 

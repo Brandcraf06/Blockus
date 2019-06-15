@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "blockus:block/obsidian_pillar" },
+        "axis=z":   { "model": "blockus:block/obsidian_pillar", "x": 90 },
+        "axis=x":   { "model": "blockus:block/obsidian_pillar", "x": 90, "y": 90 }
+    }
+}

@@ -20,7 +20,7 @@ public class BlockStonePickaxe extends Block {
 public BlockStonePickaxe(String name, float hardness, float resistance) {
 	super(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 1).strength(hardness, resistance).build());
 	Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(ItemGroup.BUILDING_BLOCKS)));
+	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(ItemGroup.BUILDING_BLOCKS)));
  
     }
   }

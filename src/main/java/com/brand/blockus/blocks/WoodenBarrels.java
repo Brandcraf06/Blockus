@@ -32,7 +32,7 @@ public class WoodenBarrels extends BarrelBlock {
 	public WoodenBarrels(String name, float hardness, float resistance) {
 		super(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance).build());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(Blockus.BLOCKUS_DECORATIONS)));
+		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
 	}
 	
 	@Override
@@ -64,10 +64,10 @@ public class WoodenBarrels extends BarrelBlock {
 	
 	@Override
 	public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
-		if (stack.hasDisplayName()) {
+		if (stack.hasCustomName()) {
 			BlockEntity be = world.getBlockEntity(pos);
 			if (be instanceof WoodenBarrelBlockEntity) {
-				((WoodenBarrelBlockEntity)be).setCustomName(stack.getDisplayName());
+				((WoodenBarrelBlockEntity)be).setCustomName(stack.getCustomName());
 			}
 		}
 	}

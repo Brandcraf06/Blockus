@@ -22,7 +22,7 @@ public class FallingRedstoneBase extends FallingBlock {
 	public FallingRedstoneBase(String name, float hardness, float resistance) {
 		super(FabricBlockSettings.of(Material.SAND).sounds(BlockSoundGroup.SAND).breakByTool(FabricToolTags.SHOVELS, 0).strength(hardness, resistance).build());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(Blockus.BLOCKUS_REDSTONE)));
+		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));
 	}
 
 	   public boolean emitsRedstonePower(BlockState blockState_1) {

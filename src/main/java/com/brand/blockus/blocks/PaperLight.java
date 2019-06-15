@@ -24,7 +24,7 @@ public class PaperLight extends Block {
 	public PaperLight(String name, float hardness, float resistance) {
 		super(FabricBlockSettings.of(Material.WOOL).sounds(BlockSoundGroup.GRASS).lightLevel(15).breakByHand(true).strength(hardness, resistance).build());	
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 	}
 	@Override
 	public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, EntityContext entityContext_1) {

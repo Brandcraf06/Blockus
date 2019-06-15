@@ -16,7 +16,7 @@ public class GlassBlockBase extends GlassBlock {
     public GlassBlockBase(String name, float hardness, float resistance) {
 	    super(FabricBlockSettings.of(Material.GLASS).sounds(BlockSoundGroup.GLASS).strength(hardness, resistance).build());
 	    Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-	    Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(64).itemGroup(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+	    Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
     
    }
 }
