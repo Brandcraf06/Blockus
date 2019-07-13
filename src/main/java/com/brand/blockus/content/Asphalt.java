@@ -57,7 +57,7 @@ public class Asphalt {
 	public static AsphaltStairs RED_ASPHALT_STAIRS;
 
 	public static void init() {
-		
+
 		ASPHALT = new AsphaltBlock("asphalt", 1.5f, 6.0f);
 		WHITE_ASPHALT = new AsphaltBlock("white_asphalt", 1.5f, 6.0f);
 		ORANGE_ASPHALT = new AsphaltBlock("orange_asphalt", 1.5f, 6.0f);
@@ -107,6 +107,5 @@ public class Asphalt {
 		GREEN_ASPHALT_STAIRS = new AsphaltStairs(GREEN_ASPHALT.getDefaultState(), "green_asphalt_stairs", 1.5f, 6.0f);
 		RED_ASPHALT_STAIRS = new AsphaltStairs(RED_ASPHALT.getDefaultState(), "red_asphalt_stairs", 1.5f, 6.0f);
 			
-	}
-
-}
+    }
+  }

@@ -1,5 +1,6 @@
 package com.brand.blockus;
 
+import com.brand.blockus.config.BlockusConfig;
 import com.brand.blockus.content.ADGRelated;
 import com.brand.blockus.content.Asphalt;
 import com.brand.blockus.content.BambooPlanks;
@@ -30,6 +31,8 @@ import com.brand.blockus.content.StainedStoneBricks;
 import com.brand.blockus.content.StoneRelated;
 import com.brand.blockus.world.BlockusGen;
 
+import me.sargunvohra.mcmods.autoconfig1.AutoConfig;
+import me.sargunvohra.mcmods.autoconfig1.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.block.Blocks;
@@ -40,8 +43,9 @@ import net.minecraft.util.Identifier;
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.1.12";
+	public static final String VERSION = "1.1.13";
 	public static final String NAME = "Blockus";
+	public static final BlockusConfig CONFIG = AutoConfig.register(BlockusConfig.class, GsonConfigSerializer::new).getConfig();
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LavaBricks.LAVA_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Other.SMALL_HEDGE));
 	public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(Blocks.REDSTONE_BLOCK));
@@ -78,7 +82,8 @@ public class Blockus implements ModInitializer {
 		LegacyBlocks.init();
 		instance.init();
 		
-		BlockusGen.addFeatures();
+		BlockusGen.addLimestone();
+		BlockusGen.addBluestone();
 		
    
 	}

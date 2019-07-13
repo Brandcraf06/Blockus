@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "blockus",
-  "version": "1.1.12",
+  "version": "1.1.13",
    
   "name": "Blockus",
   "description": "A mod that mainly adds blocks!",
@@ -9,7 +9,7 @@
     "Brandcraft06"
   ],
   "contact": {
-    "homepage": "https://minecraft.curseforge.com/projects/blockus",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/blockus",
     "sources": "https://github.com/Brandcraf06/Blockus",
 	"issues": "https://github.com/Brandcraf06/Blockus/issues"
   },

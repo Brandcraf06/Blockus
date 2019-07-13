@@ -2,6 +2,7 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.BlockBase;
 import com.brand.blockus.blocks.BlockStonePickaxe;
+import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Barrier;
 import com.brand.blockus.blocks.CautionBlock;
 import com.brand.blockus.blocks.FallingRedstoneBase;
@@ -32,8 +33,9 @@ public class Other {
 	public static FallingRedstoneBase REDSTONE_SAND;
 	
 	public static void init() {
-		
+		if (Blockus.CONFIG.enableNetherStarsBlock) {
 		NETHER_STARS_BLOCK = new NetherStarsBlock("nether_stars_block", 5.0f, 6.0f);
+		}
 		STARS_BLOCK = new BlockStonePickaxe("stars_block", 5.0f, 6.0f);
 		ENDER_BLOCK = new BlockStonePickaxe("ender_block", 5.0f, 6.0f);
 		ROTTEN_FLESH_BLOCK = new RottenFleshBlock("rotten_flesh_block", 1.5f, 1.5f);

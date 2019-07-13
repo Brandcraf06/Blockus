@@ -67,7 +67,7 @@ public class WoodenBarrels extends BarrelBlock {
 		if (stack.hasCustomName()) {
 			BlockEntity be = world.getBlockEntity(pos);
 			if (be instanceof WoodenBarrelBlockEntity) {
-				((WoodenBarrelBlockEntity)be).setCustomName(stack.getCustomName());
+				((WoodenBarrelBlockEntity)be).setCustomName(stack.getName());
 			}
 		}
 	}

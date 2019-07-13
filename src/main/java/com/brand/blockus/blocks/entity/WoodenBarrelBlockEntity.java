@@ -16,11 +16,11 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.DefaultedList;
 import net.minecraft.util.math.Vec3i;
 
@@ -30,7 +30,7 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 	
 	private WoodenBarrelBlockEntity(BlockEntityType<?> blockEntityType_1) {
 		super(blockEntityType_1);
-		this.inventory = DefaultedList.create(27, ItemStack.EMPTY);
+		this.inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
 	}
 	
 	public WoodenBarrelBlockEntity() {
@@ -47,7 +47,7 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 	
 	public void fromTag(CompoundTag tag) {
 		super.fromTag(tag);
-		this.inventory = DefaultedList.create(this.getInvSize(), ItemStack.EMPTY);
+		this.inventory = DefaultedList.ofSize(this.getInvSize(), ItemStack.EMPTY);
 		if (!this.deserializeLootTable(tag)) {
 			Inventories.fromTag(tag, this.inventory);
 		}
@@ -101,8 +101,8 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 		this.inventory = defaultedList_1;
 	}
 	
-	protected Component getContainerName() {
-		return new TranslatableComponent("container.barrel", new Object[0]);
+	protected Text getContainerName() {
+		return new TranslatableText("container.barrel", new Object[0]);
 	}
 	
 	protected Container createContainer(int int_1, PlayerInventory inventory) {
