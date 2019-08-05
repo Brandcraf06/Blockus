@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "blockus:block/red_redstone_lamp_on" }
+    }
+}

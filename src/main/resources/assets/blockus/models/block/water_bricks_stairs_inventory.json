@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "side": "blockus:block/water_bricks",
+		"top": "blockus:block/water_bricks",
+		"bottom": "blockus:block/water_bricks"
+    }
+}

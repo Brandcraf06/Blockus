@@ -1,6 +1,8 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BambooPlanks;
+import com.brand.blockus.content.FoodBlocks;
+import com.brand.blockus.content.Hedge;
 import com.brand.blockus.content.Other;
 import com.brand.blockus.content.PaperRelated;
 import com.brand.blockus.content.PatternedWools;
@@ -73,16 +75,28 @@ public class instance {
 		FlammableBlockRegistry.getDefaultInstance().add(BambooPlanks.BAMBOO_FENCE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(BambooPlanks.BAMBOO_FENCE_GATE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(Other.WOODEN_FRAME, 30, 60);
-		FlammableBlockRegistry.getDefaultInstance().add(Other.SMALL_HEDGE, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(Hedge.SMALL_HEDGE, 30, 60);
 		
 		CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.3f);
-		CompostingChanceRegistry.INSTANCE.add(Other.ROTTEN_FLESH_BLOCK, 0.85f);
-		CompostingChanceRegistry.INSTANCE.add(Other.SMALL_HEDGE, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.ROTTEN_FLESH_BLOCK, 0.85f);
+		CompostingChanceRegistry.INSTANCE.add(Hedge.SMALL_HEDGE, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Hedge.ACACIA_SMALL_HEDGE, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Hedge.BIRCH_SMALL_HEDGE, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Hedge.DARK_OAK_SMALL_HEDGE, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Hedge.JUNGLE_SMALL_HEDGE, 0.3f);
+		CompostingChanceRegistry.INSTANCE.add(Hedge.SPRUCE_SMALL_HEDGE, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.5f);
 		CompostingChanceRegistry.INSTANCE.add(Items.GRASS_BLOCK, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(Items.PODZOL, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(Items.MYCELIUM, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(Items.DIRT, 0.15f);
 		CompostingChanceRegistry.INSTANCE.add(Items.COARSE_DIRT, 0.15f);
+		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.APPLE_CRATE, 0.95f);
+		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.BEETROOT_CRATE, 0.95f);
+		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.BREAD_BOX, 1.0f);
+		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.CARROT_CRATE, 0.95f);
+		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.COOKIE_BLOCK, 1.0f);
+		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.POTATO_CRATE, 0.95f);
+		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.SWEET_BERRIES_CRATE, 0.50f);
 	}
 }

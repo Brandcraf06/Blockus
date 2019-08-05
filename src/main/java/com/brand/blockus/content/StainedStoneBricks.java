@@ -1,6 +1,6 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.BlockBase;
+import com.brand.blockus.blocks.Base.BlockBase;
 
 public class StainedStoneBricks {
 	

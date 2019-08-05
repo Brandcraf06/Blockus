@@ -1,9 +1,9 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.GlassBlockBase;
+import com.brand.blockus.blocks.Base.GlassBlockBase;
 import com.brand.blockus.blocks.GlassPane;
-import com.brand.blockus.blocks.StainedGlassBlockBase;
-import com.brand.blockus.blocks.StainedGlassPaneBlockBase;
+import com.brand.blockus.blocks.Base.StainedGlassBlockBase;
+import com.brand.blockus.blocks.Base.StainedGlassPaneBlockBase;
 
 import net.minecraft.util.DyeColor;
 

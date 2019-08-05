@@ -1,13 +1,13 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.ObsidianBlockBase;
-import com.brand.blockus.blocks.ObsidianCirclePavementBlock;
-import com.brand.blockus.blocks.ObsidianDoor;
-import com.brand.blockus.blocks.ObsidianPillarBase;
-import com.brand.blockus.blocks.ObsidianSlabBase;
-import com.brand.blockus.blocks.ObsidianStairsBase;
-import com.brand.blockus.blocks.ObsidianTrapdoor;
-import com.brand.blockus.blocks.ObsidianWallBase;
+import com.brand.blockus.blocks.Obsidian.ObsidianBlockBase;
+import com.brand.blockus.blocks.Obsidian.ObsidianCirclePavementBlock;
+import com.brand.blockus.blocks.Obsidian.ObsidianDoor;
+import com.brand.blockus.blocks.Obsidian.ObsidianPillarBase;
+import com.brand.blockus.blocks.Obsidian.ObsidianSlabBase;
+import com.brand.blockus.blocks.Obsidian.ObsidianStairsBase;
+import com.brand.blockus.blocks.Obsidian.ObsidianTrapdoor;
+import com.brand.blockus.blocks.Obsidian.ObsidianWallBase;
 
 public class ObsidianRelated {
 	

@@ -1,10 +1,10 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.LightBlockBase;
-import com.brand.blockus.blocks.LightPillarBase;
-import com.brand.blockus.blocks.LightSlabBase;
-import com.brand.blockus.blocks.LightStairsBase;
-import com.brand.blockus.blocks.LightWallBase;
+import com.brand.blockus.blocks.Light.LightBlockBase;
+import com.brand.blockus.blocks.Light.LightPillarBase;
+import com.brand.blockus.blocks.Light.LightSlabBase;
+import com.brand.blockus.blocks.Light.LightStairsBase;
+import com.brand.blockus.blocks.Light.LightWallBase;
 
 public class BlazeBricks {
 	

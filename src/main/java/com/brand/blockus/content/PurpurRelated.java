@@ -1,7 +1,7 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.BlockBase;
-import com.brand.blockus.blocks.PillarBase;
+import com.brand.blockus.blocks.Base.BlockBase;
+import com.brand.blockus.blocks.Base.PillarBase;
 
 public class PurpurRelated {
 	

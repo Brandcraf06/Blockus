@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "blockus:block/white_redstone_lamp_on"
+    }
+}

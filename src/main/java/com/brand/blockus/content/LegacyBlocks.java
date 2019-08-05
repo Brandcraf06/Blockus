@@ -1,12 +1,12 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.BaseGrassBlock;
-import com.brand.blockus.blocks.BaseSpongeBlock;
-import com.brand.blockus.blocks.BlockBase;
-import com.brand.blockus.blocks.BlockWood;
-import com.brand.blockus.blocks.FallingGravelBase;
 import com.brand.blockus.blocks.LeavesBlock;
-import com.brand.blockus.blocks.LightBlockBase;
+import com.brand.blockus.blocks.Base.BaseGrassBlock;
+import com.brand.blockus.blocks.Base.BaseSpongeBlock;
+import com.brand.blockus.blocks.Base.BlockBase;
+import com.brand.blockus.blocks.Base.FallingGravelBase;
+import com.brand.blockus.blocks.Light.LightBlockBase;
+import com.brand.blockus.blocks.Wood.BlockWood;
 
 public class LegacyBlocks {
 	

@@ -1,9 +1,8 @@
 package com.brand.blockus.content;
 
-
-import com.brand.blockus.blocks.AsphaltBlock;
-import com.brand.blockus.blocks.AsphaltSlab;
-import com.brand.blockus.blocks.AsphaltStairs;
+import com.brand.blockus.blocks.Asphalt.AsphaltBlock;
+import com.brand.blockus.blocks.Asphalt.AsphaltSlab;
+import com.brand.blockus.blocks.Asphalt.AsphaltStairs;
 
 public class Asphalt {
 

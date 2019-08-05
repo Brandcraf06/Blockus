@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:salmon_crate"
+    }
+  ],
+  "result": {
+    "item": "minecraft:salmon",
+    "count": 9
+  }
+}

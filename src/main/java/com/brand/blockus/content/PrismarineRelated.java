@@ -1,6 +1,6 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.CirclePavementBlock;
+import com.brand.blockus.blocks.Base.CirclePavementBlock;
 
 public class PrismarineRelated {
 	

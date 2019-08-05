@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:pufferfish_crate"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pufferfish",
+    "count": 9
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "top": "blockus:block/beetroot_crate",
+        "side": "blockus:block/beetroot_crate_side",
+        "bottom": "blockus:block/crate_bottom"
+    }
+}

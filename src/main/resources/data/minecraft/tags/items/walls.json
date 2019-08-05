@@ -18,13 +18,21 @@
     "blockus:blaze_bricks_wall",
 	"blockus:lava_bricks_wall",
 	"blockus:soul_sandstone_wall",
-	"blockus:small_hedge",
 	"blockus:caution_barrier",
 	"blockus:road_barrier",
 	"blockus:charred_nether_bricks_wall",
 	"blockus:soaked_bricks_wall",
 	"blockus:magma_bricks_wall",
 	"blockus:limestone_bricks_wall",
-	"blockus:obsidian_bricks_wall"
+	"blockus:obsidian_bricks_wall",
+	"blockus:rainbow_bricks_wall",
+	"blockus:water_bricks_wall",
+	"blockus:marble_bricks_wall",
+	"blockus:small_hedge",
+	"blockus:spruce_small_hedge",
+	"blockus:birch_small_hedge",
+	"blockus:jungle_small_hedge",
+	"blockus:acacia_small_hedge",
+	"blockus:dark_oak_small_hedge"
   ]
 }

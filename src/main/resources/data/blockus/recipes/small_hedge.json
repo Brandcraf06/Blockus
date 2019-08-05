@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
+  "group": "small_hedges",
   "pattern": [
     "###",
     "###"
   ],
   "key": {
     "#": {
-      "tag": "minecraft:leaves"
+      "item": "minecraft:oak_leaves"
     }
   },
   "result": {

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+	"FFF",
+	"FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:chorus_fruit"
+    }
+  },
+  "result": {
+    "item": "blockus:chorus_block",
+    "count": 1
+  }
+}

@@ -7,6 +7,7 @@ import me.sargunvohra.mcmods.autoconfig1.annotation.Config;
 public class BlockusConfig implements ConfigData {
     public boolean enableNetherStarsBlock = true;
 	public boolean enableLimestoneGeneration = true;
+	public boolean enableMarbleGeneration = true;
 	public boolean enableBluestoneGeneration = true;
 	public boolean enableLoveBlockParticles = true;
 	public boolean enableAsphaltEffect = true;

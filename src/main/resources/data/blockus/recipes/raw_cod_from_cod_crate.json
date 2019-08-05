@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:cod_crate"
+    }
+  ],
+  "result": {
+    "item": "minecraft:cod",
+    "count": 9
+  }
+}

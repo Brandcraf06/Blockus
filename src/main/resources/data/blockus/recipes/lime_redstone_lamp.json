@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "redstone_lamps",
+  "pattern": [
+    " D ",
+    "DLD",
+    " D "
+  ],
+  "key": {
+    "L": {
+      "item": "minecraft:redstone_lamp"
+    },
+    "D": {
+      "item": "minecraft:lime_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:lime_redstone_lamp"
+  }
+}

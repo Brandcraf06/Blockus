@@ -1,9 +1,9 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.BlockBase;
-import com.brand.blockus.blocks.CirclePavementBlock;
-import com.brand.blockus.blocks.SlabBase;
-import com.brand.blockus.blocks.StairsBase;
+import com.brand.blockus.blocks.Base.BlockBase;
+import com.brand.blockus.blocks.Base.CirclePavementBlock;
+import com.brand.blockus.blocks.Base.SlabBase;
+import com.brand.blockus.blocks.Base.StairsBase;
 
 
 public class NetherrackRelated {

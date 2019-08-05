@@ -22,7 +22,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
-@SuppressWarnings("deprecation")
 public class NetherStarsBlock extends Block {
 		
 public NetherStarsBlock(String name, float hardness, float resistance) {

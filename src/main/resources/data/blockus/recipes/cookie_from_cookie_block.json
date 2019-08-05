@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:cookie_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:cookie",
+    "count": 9
+  }
+}

@@ -1,6 +1,6 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.PillarBase;
+import com.brand.blockus.blocks.Base.PillarBase;
 
 public class GlazedTerracottaPillars {
 	

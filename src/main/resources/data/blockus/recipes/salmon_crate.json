@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+	"FFF",
+	"FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:salmon"
+    }
+  },
+  "result": {
+    "item": "blockus:salmon_crate",
+    "count": 1
+  }
+}

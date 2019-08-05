@@ -14,7 +14,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-@SuppressWarnings("deprecation")
 public class BlockStonePickaxe extends Block {
 		
 public BlockStonePickaxe(String name, float hardness, float resistance) {

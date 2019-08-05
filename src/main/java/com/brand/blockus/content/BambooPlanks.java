@@ -1,14 +1,15 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.BlockWood;
-import com.brand.blockus.blocks.ButtonWood;
-import com.brand.blockus.blocks.FenceBase;
-import com.brand.blockus.blocks.FenceGateBase;
-import com.brand.blockus.blocks.PressurePlateWood;
-import com.brand.blockus.blocks.SlabWood;
-import com.brand.blockus.blocks.StairsWood;
-import com.brand.blockus.blocks.WoodenDoor;
-import com.brand.blockus.blocks.WoodenTrapdoor;
+
+import com.brand.blockus.blocks.Wood.BlockWood;
+import com.brand.blockus.blocks.Wood.ButtonWood;
+import com.brand.blockus.blocks.Wood.FenceBase;
+import com.brand.blockus.blocks.Wood.FenceGateBase;
+import com.brand.blockus.blocks.Wood.PressurePlateWood;
+import com.brand.blockus.blocks.Wood.SlabWood;
+import com.brand.blockus.blocks.Wood.StairsWood;
+import com.brand.blockus.blocks.Wood.WoodenDoor;
+import com.brand.blockus.blocks.Wood.WoodenTrapdoor;
 
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
 

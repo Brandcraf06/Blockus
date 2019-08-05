@@ -1,8 +1,8 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.WoodenBarrels;
-import com.brand.blockus.blocks.entity.WoodenBarrelBlockEntity;
+import com.brand.blockus.blockentity.WoodenBarrelBlockEntity;
+import com.brand.blockus.blocks.Wood.WoodenBarrels;
 import com.mojang.datafixers.types.Type;
 
 import net.minecraft.block.entity.BlockEntity;

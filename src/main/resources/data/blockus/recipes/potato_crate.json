@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+	"FFF",
+	"FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:potato"
+    }
+  },
+  "result": {
+    "item": "blockus:potato_crate",
+    "count": 1
+  }
+}

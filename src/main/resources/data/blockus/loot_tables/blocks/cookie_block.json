@@ -1,0 +1,135 @@
+{
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "0"
+                  }
+                }
+              ],
+              "count": 9
+            },
+			{
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "1"
+                  }
+                }
+              ],
+              "count": 8
+            },
+			{
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "2"
+                  }
+                }
+              ],
+              "count": 7
+            },
+			{
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "3"
+                  }
+                }
+              ],
+              "count": 6
+            },
+			{
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "4"
+                  }
+                }
+              ],
+              "count": 5
+            },
+			{
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "5"
+                  }
+                }
+              ],
+              "count": 4
+            },
+			{
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "6"
+                  }
+                }
+              ],
+              "count": 3
+            },
+			{
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "7"
+                  }
+                }
+              ],
+              "count": 2
+            },
+			{
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "blockus:cookie_block",
+                  "properties": {
+                    "bites": "8"
+                  }
+                }
+              ],
+              "count": 1
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "minecraft:cookie"
+        }
+      ]
+    }
+  ]
+}

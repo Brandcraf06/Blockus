@@ -1,10 +1,10 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.BlockPaper;
-import com.brand.blockus.blocks.PaperDoor;
-import com.brand.blockus.blocks.PaperLight;
-import com.brand.blockus.blocks.PaperTrapdoor;
-import com.brand.blockus.blocks.PaperWall;
+import com.brand.blockus.blocks.Paper.BlockPaper;
+import com.brand.blockus.blocks.Paper.PaperDoor;
+import com.brand.blockus.blocks.Paper.PaperLight;
+import com.brand.blockus.blocks.Paper.PaperTrapdoor;
+import com.brand.blockus.blocks.Paper.PaperWall;
 
 public class PaperRelated {
 	
