@@ -15,6 +15,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.stat.Stats;
 import net.minecraft.item.BlockItem;
@@ -49,8 +50,8 @@ public class WoodenBarrels extends BarrelBlock {
 	}
 	
 	@Override
-	public void onScheduledTick(BlockState state, World world, BlockPos pos, Random random) {
-		BlockEntity be = world.getBlockEntity(pos);
+	public void onScheduledTick(BlockState state, ServerWorld serverWorld_1, BlockPos pos, Random random) {
+		BlockEntity be = serverWorld_1.getBlockEntity(pos);
 		if (be instanceof WoodenBarrelBlockEntity) {
 			((WoodenBarrelBlockEntity)be).tick();
 		}

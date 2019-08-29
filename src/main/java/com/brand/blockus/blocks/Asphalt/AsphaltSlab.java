@@ -21,7 +21,7 @@ public class AsphaltSlab extends SlabBase {
 	public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity entity_1) {
 	if (Blockus.CONFIG.enableAsphaltEffect) {
 		if (entity_1.getType() != EntityType.ITEM) {
-			((LivingEntity) entity_1).addPotionEffect(new StatusEffectInstance(StatusEffects.SPEED, 4, Blockus.CONFIG.AsphaltSpeedAmplifier, true, false, false));
+			((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 4, Blockus.CONFIG.AsphaltSpeedAmplifier, true, false, false));
 		}
 	}
   }
