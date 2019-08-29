@@ -1,1 +1,1 @@
-Blockus is a mod in 1.14 that mainly adds blocks!
+Blockus is a mod in 1.15 that mainly adds blocks!
