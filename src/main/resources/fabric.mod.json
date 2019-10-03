@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "blockus",
-  "version": "1.2.0",
+  "version": "1.2.0.1",
    
   "name": "Blockus",
   "description": "A mod that mainly adds blocks!",
@@ -26,7 +26,7 @@
 	  "com.brand.blockus.BlockusClient"
     ]
   },
-  "requires": {
+  "depends": {
     "fabricloader": ">=0.6.1",
     "fabric": "*"
   }
