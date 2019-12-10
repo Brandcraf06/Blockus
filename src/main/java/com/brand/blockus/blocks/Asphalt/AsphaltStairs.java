@@ -1,7 +1,6 @@
 package com.brand.blockus.blocks.Asphalt;
 
 
-import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Base.StairsBase;
 
 import net.minecraft.block.BlockState;
@@ -21,10 +20,8 @@ public class AsphaltStairs extends StairsBase {
 
 	@Override
 	public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity entity_1) {
-		if (Blockus.CONFIG.enableAsphaltEffect) {
 		if (entity_1.getType() != EntityType.ITEM) {
-			((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 10, Blockus.CONFIG.AsphaltSpeedAmplifier, true, false, false));
+			((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 10, 4, true, false, false));
 		}
 	}
   }
-}

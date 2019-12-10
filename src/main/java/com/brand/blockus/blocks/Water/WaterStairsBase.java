@@ -3,7 +3,6 @@ package com.brand.blockus.blocks.Water;
 import com.brand.blockus.Blockus;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
-import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.StairsBlock;
@@ -18,9 +17,6 @@ public class WaterStairsBase extends StairsBlock {
 		super(state, FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).build());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-	}
-	public BlockRenderLayer getRenderLayer() {
-	      return BlockRenderLayer.CUTOUT_MIPPED;
    }
 }
 	   

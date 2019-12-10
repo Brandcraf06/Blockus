@@ -19,6 +19,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.stat.Stats;
 import net.minecraft.item.BlockItem;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
@@ -36,21 +37,22 @@ public class WoodenBarrels extends BarrelBlock {
 	}
 	
 	@Override
-	public boolean activate(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hitResult) {
-		if (world.isClient) {
-			return true;
-		} else {
-			BlockEntity be = world.getBlockEntity(pos);
-			if (be instanceof WoodenBarrelBlockEntity) {
-				player.openContainer((WoodenBarrelBlockEntity)be);
-				player.incrementStat(Stats.OPEN_BARREL);
-			}
-			return true;
-		}
-	}
+	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+	      if (world.isClient) {
+	         return ActionResult.SUCCESS;
+	      } else {
+	         BlockEntity blockEntity = world.getBlockEntity(pos);
+	         if (blockEntity instanceof WoodenBarrelBlockEntity) {
+	            player.openContainer((WoodenBarrelBlockEntity)blockEntity);
+	            player.incrementStat(Stats.OPEN_BARREL);
+	         }
+
+	         return ActionResult.SUCCESS;
+	      }
+	   }
 	
 	@Override
-	public void onScheduledTick(BlockState state, ServerWorld serverWorld_1, BlockPos pos, Random random) {
+	public void scheduledTick(BlockState state, ServerWorld serverWorld_1, BlockPos pos, Random random) {
 		BlockEntity be = serverWorld_1.getBlockEntity(pos);
 		if (be instanceof WoodenBarrelBlockEntity) {
 			((WoodenBarrelBlockEntity)be).tick();

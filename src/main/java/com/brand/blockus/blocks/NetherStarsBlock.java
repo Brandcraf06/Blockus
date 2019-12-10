@@ -32,13 +32,11 @@ public NetherStarsBlock(String name, float hardness, float resistance) {
 	@Override
 	public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity entity_1) {
 	{
-	if (Blockus.CONFIG.enableNetherStarsBlockEffects) {
 		if (entity_1.getType() != EntityType.ITEM) {
 	    ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1, 4, true, false, false));
 	    ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100, 3, true, false, true));
 	    ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 4, true, false, true));
 	   }
 	  }
-	 }
 	}
    }

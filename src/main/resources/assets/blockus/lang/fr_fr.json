@@ -363,6 +363,10 @@
 	"block.blockus.jungle_small_hedge": "Petite haie en acajou",
 	"block.blockus.acacia_small_hedge": "Petite haie en acacia",
 	"block.blockus.dark_oak_small_hedge": "Petite haie en chêne noir",
+	"block.blockus.honeycomb_bricks": "Briques de rayon de miel",
+	"block.blockus.honeycomb_bricks_wall": "Muret de briques de rayon de miel",
+	"block.blockus.honeycomb_bricks_stairs": "Escalier en briques de rayon de miel",
+	"block.blockus.honeycomb_bricks_slab": "Dalle de briques de rayon de miel",
 	
     "block.blockus.legacy_bricks": "Briques (Ancien)",
     "block.blockus.legacy_stonecutter": "Tailleur de pierre (Ancien)",

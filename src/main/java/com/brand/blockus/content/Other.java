@@ -2,7 +2,6 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.BlockStonePickaxe;
-import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Barrier;
 import com.brand.blockus.blocks.CautionBlock;
 import com.brand.blockus.blocks.Base.FallingRedstoneBase;
@@ -30,9 +29,7 @@ public class Other {
 	public static RedstoneLampBaseLit REDSTONE_LAMP_LIT;
 	
 	public static void init() {
-		if (Blockus.CONFIG.enableNetherStarsBlock) {
 		NETHER_STARS_BLOCK = new NetherStarsBlock("nether_stars_block", 5.0f, 6.0f);
-		}
 		STARS_BLOCK = new BlockStonePickaxe("stars_block", 5.0f, 6.0f);
 		ENDER_BLOCK = new BlockStonePickaxe("ender_block", 5.0f, 6.0f);
 		LARGE_BRICKS = new BlockBase("large_bricks", 2f, 6.0f);

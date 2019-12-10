@@ -363,6 +363,10 @@
 	"block.blockus.jungle_small_hedge": "Jungle Small Hedge",
 	"block.blockus.acacia_small_hedge": "Acacia Small Hedge",
 	"block.blockus.dark_oak_small_hedge": "Dark Oak Small Hedge",
+	"block.blockus.honeycomb_bricks": "Honeycomb Bricks",
+	"block.blockus.honeycomb_bricks_wall": "Honeycomb  Brick Wall",
+	"block.blockus.honeycomb_bricks_stairs": "Honeycomb  Brick Stairs",
+	"block.blockus.honeycomb_bricks_slab": "Honeycomb  Brick Slab",
 	
 	
     "block.blockus.legacy_bricks": "Bricks (Legacy)",

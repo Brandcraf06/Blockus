@@ -1,6 +1,5 @@
 package com.brand.blockus.blocks;
 
-import net.minecraft.class_4538;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlacementEnvironment;
 import net.minecraft.block.BlockState;
@@ -10,7 +9,7 @@ import net.minecraft.entity.EntityContext;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateFactory;
+import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.tag.BlockTags;
@@ -19,6 +18,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.WorldView;
 
 public class HedgeBlock extends HorizontalConnectedBlock {
 	   public static final BooleanProperty UP;
@@ -27,7 +27,7 @@ public class HedgeBlock extends HorizontalConnectedBlock {
 
 	   public HedgeBlock(Block.Settings block$Settings_1) {
 	      super(0.0F, 3.0F, 0.0F, 16.0F, 24.0F, block$Settings_1);
-	      this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateFactory.getDefaultState()).with(UP, true)).with(NORTH, false)).with(EAST, false)).with(SOUTH, false)).with(WEST, false)).with(WATERLOGGED, false));
+	      this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(UP, true)).with(NORTH, false)).with(EAST, false)).with(SOUTH, false)).with(WEST, false)).with(WATERLOGGED, false));
 	      this.UP_OUTLINE_SHAPES = this.createShapes(3.0F, 3.0F, 16.0F, 0.0F, 16.0F);
 	      this.UP_COLLISION_SHAPES = this.createShapes(3.0F, 3.0F, 24.0F, 0.0F, 24.0F);
 	   }
@@ -51,7 +51,7 @@ public class HedgeBlock extends HorizontalConnectedBlock {
 	   }
 
 	   public BlockState getPlacementState(ItemPlacementContext itemPlacementContext_1) {
-		  class_4538 viewableWorld_1 = itemPlacementContext_1.getWorld();
+		  WorldView viewableWorld_1 = itemPlacementContext_1.getWorld();
 	      BlockPos blockPos_1 = itemPlacementContext_1.getBlockPos();
 	      FluidState fluidState_1 = itemPlacementContext_1.getWorld().getFluidState(itemPlacementContext_1.getBlockPos());
 	      BlockPos blockPos_2 = blockPos_1.north();
@@ -67,7 +67,7 @@ public class HedgeBlock extends HorizontalConnectedBlock {
 	      boolean boolean_3 = this.shouldConnectTo(blockState_3, blockState_3.isSideSolidFullSquare(viewableWorld_1, blockPos_4, Direction.NORTH), Direction.NORTH);
 	      boolean boolean_4 = this.shouldConnectTo(blockState_4, blockState_4.isSideSolidFullSquare(viewableWorld_1, blockPos_5, Direction.EAST), Direction.EAST);
 	      boolean boolean_5 = (!boolean_1 || boolean_2 || !boolean_3 || boolean_4) && (boolean_1 || !boolean_2 || boolean_3 || !boolean_4);
-	      return (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.getDefaultState().with(UP, boolean_5 || !viewableWorld_1.method_22347(blockPos_1.up()))).with(NORTH, boolean_1)).with(EAST, boolean_2)).with(SOUTH, boolean_3)).with(WEST, boolean_4)).with(WATERLOGGED, fluidState_1.getFluid() == Fluids.WATER);
+	      return (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.getDefaultState().with(UP, boolean_5 || !viewableWorld_1.isAir(blockPos_1.up()))).with(NORTH, boolean_1)).with(EAST, boolean_2)).with(SOUTH, boolean_3)).with(WEST, boolean_4)).with(WATERLOGGED, fluidState_1.getFluid() == Fluids.WATER);
 	   }
 
 	   public BlockState getStateForNeighborUpdate(BlockState blockState_1, Direction direction_1, BlockState blockState_2, IWorld iWorld_1, BlockPos blockPos_1, BlockPos blockPos_2) {
@@ -84,11 +84,11 @@ public class HedgeBlock extends HorizontalConnectedBlock {
 	         boolean boolean_3 = direction_1 == Direction.SOUTH ? this.shouldConnectTo(blockState_2, blockState_2.isSideSolidFullSquare(iWorld_1, blockPos_2, direction_2), direction_2) : (Boolean)blockState_1.get(SOUTH);
 	         boolean boolean_4 = direction_1 == Direction.WEST ? this.shouldConnectTo(blockState_2, blockState_2.isSideSolidFullSquare(iWorld_1, blockPos_2, direction_2), direction_2) : (Boolean)blockState_1.get(WEST);
 	         boolean boolean_5 = (!boolean_1 || boolean_2 || !boolean_3 || boolean_4) && (boolean_1 || !boolean_2 || boolean_3 || !boolean_4);
-	         return (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)blockState_1.with(UP, boolean_5 || !iWorld_1.method_22347(blockPos_1.up()))).with(NORTH, boolean_1)).with(EAST, boolean_2)).with(SOUTH, boolean_3)).with(WEST, boolean_4);
+	         return (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)blockState_1.with(UP, boolean_5 || !iWorld_1.isAir(blockPos_1.up()))).with(NORTH, boolean_1)).with(EAST, boolean_2)).with(SOUTH, boolean_3)).with(WEST, boolean_4);
 	      }
 	   }
 
-	   protected void appendProperties(StateFactory.Builder<Block, BlockState> stateFactory$Builder_1) {
+	   protected void appendProperties(StateManager.Builder<Block, BlockState> stateFactory$Builder_1) {
 	      stateFactory$Builder_1.add(UP, NORTH, EAST, WEST, SOUTH, WATERLOGGED);
 	   }
 

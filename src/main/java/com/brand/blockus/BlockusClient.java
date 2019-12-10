@@ -1,14 +1,17 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.Hedge;
+import com.brand.blockus.content.LegacyBlocks;
 import com.brand.blockus.content.WaterBricks;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.ColorProviderRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
+import net.minecraft.client.render.RenderLayer;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -26,6 +29,20 @@ public void onInitializeClient() {
 		registerBlockColor(WaterBricks.WATER_BRICKS_SLAB, Blocks.WATER);
 		registerBlockColor(WaterBricks.WATER_BRICKS_WALL, Blocks.WATER);
 		registerBlockColor(WaterBricks.CHISELED_WATER_BRICKS, Blocks.WATER);
+		
+		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.SMALL_HEDGE, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.SPRUCE_SMALL_HEDGE, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.BIRCH_SMALL_HEDGE, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.JUNGLE_SMALL_HEDGE, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.ACACIA_SMALL_HEDGE, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.DARK_OAK_SMALL_HEDGE, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS_STAIRS, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS_SLAB, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS_WALL, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.CHISELED_WATER_BRICKS, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getSolid());
+		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getTranslucent());
 		
 }
 	

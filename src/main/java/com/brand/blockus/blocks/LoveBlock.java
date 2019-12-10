@@ -27,7 +27,6 @@ public class LoveBlock extends Block {
 	}
 	@Environment(EnvType.CLIENT)
 	public void randomDisplayTick(BlockState blockState_1, World world_1, BlockPos blockPos_1, Random random_1) {
-	if (Blockus.CONFIG.enableLoveBlockParticles) {
 	    if (random_1.nextInt(5) == 0) {
 	        for(int int_1 = 0; int_1 < random_1.nextInt(1) + 1; ++int_1) {
 	            world_1.addParticle(ParticleTypes.HEART, (double)((float)blockPos_1.getX() + 0.5F), (double)((float)blockPos_1.getY() + 1.0F), (double)((float)blockPos_1.getZ() + 0.5F), (double)(random_1.nextFloat() / 2.0F), 5.0E-5D, (double)(random_1.nextFloat() / 2.0F));
@@ -35,4 +34,3 @@ public class LoveBlock extends Block {
 	    }
 	}
   }
-}
