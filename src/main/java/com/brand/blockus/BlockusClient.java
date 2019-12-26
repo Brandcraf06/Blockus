@@ -1,8 +1,7 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.Hedge;
-import com.brand.blockus.content.LegacyBlocks;
-import com.brand.blockus.content.WaterBricks;
+import com.brand.blockus.blocks.Paper.PaperWall;
+import com.brand.blockus.content.*;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -12,6 +11,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
+import org.lwjgl.opengl.GL;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -29,7 +29,7 @@ public void onInitializeClient() {
 		registerBlockColor(WaterBricks.WATER_BRICKS_SLAB, Blocks.WATER);
 		registerBlockColor(WaterBricks.WATER_BRICKS_WALL, Blocks.WATER);
 		registerBlockColor(WaterBricks.CHISELED_WATER_BRICKS, Blocks.WATER);
-		
+
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.SMALL_HEDGE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.SPRUCE_SMALL_HEDGE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.BIRCH_SMALL_HEDGE, RenderLayer.getCutoutMipped());
@@ -41,8 +41,51 @@ public void onInitializeClient() {
 		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS_SLAB, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS_WALL, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.CHISELED_WATER_BRICKS, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getSolid());
-		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getTranslucent());
+		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_DOOR, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_TRAPDOOR, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Other.WOODEN_FRAME, RenderLayer.getCutoutMipped());
+
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+				GlassRelated.BEVELED_GLASS,
+				GlassRelated.WHITE_BEVELED_GLASS,
+				GlassRelated.ORANGE_BEVELED_GLASS,
+				GlassRelated.MAGENTA_BEVELED_GLASS,
+				GlassRelated.LIGHT_BLUE_BEVELED_GLASS,
+				GlassRelated.YELLOW_BEVELED_GLASS,
+				GlassRelated.LIME_BEVELED_GLASS,
+				GlassRelated.PINK_BEVELED_GLASS,
+				GlassRelated.LIGHT_GRAY_BEVELED_GLASS,
+				GlassRelated.GRAY_BEVELED_GLASS,
+				GlassRelated.CYAN_BEVELED_GLASS,
+				GlassRelated.PURPLE_BEVELED_GLASS,
+				GlassRelated.BLUE_BEVELED_GLASS,
+				GlassRelated.BROWN_BEVELED_GLASS,
+				GlassRelated.GREEN_BEVELED_GLASS,
+				GlassRelated.RED_BEVELED_GLASS,
+				GlassRelated.BLACK_BEVELED_GLASS
+		);
+
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+				GlassRelated.BEVELED_GLASS_PANE,
+				GlassRelated.WHITE_BEVELED_GLASS_PANE,
+				GlassRelated.ORANGE_BEVELED_GLASS_PANE,
+				GlassRelated.MAGENTA_BEVELED_GLASS_PANE,
+				GlassRelated.LIGHT_BLUE_BEVELED_GLASS_PANE,
+				GlassRelated.YELLOW_BEVELED_GLASS_PANE,
+				GlassRelated.LIME_BEVELED_GLASS_PANE,
+				GlassRelated.PINK_BEVELED_GLASS_PANE,
+				GlassRelated.LIGHT_GRAY_BEVELED_GLASS_PANE,
+				GlassRelated.GRAY_BEVELED_GLASS_PANE,
+				GlassRelated.CYAN_BEVELED_GLASS_PANE,
+				GlassRelated.PURPLE_BEVELED_GLASS_PANE,
+				GlassRelated.BLUE_BEVELED_GLASS_PANE,
+				GlassRelated.BROWN_BEVELED_GLASS_PANE,
+				GlassRelated.GREEN_BEVELED_GLASS_PANE,
+				GlassRelated.RED_BEVELED_GLASS_PANE,
+				GlassRelated.BLACK_BEVELED_GLASS_PANE
+		);
+
 		
 }
 	
