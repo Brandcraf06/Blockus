@@ -16,7 +16,12 @@ import net.minecraft.item.Items;
 public class instance {
 
 	public static void init() {
-		
+		for (Biome biome : Biome.BIOMES)
+		{
+			BlockusGen.addBluestone(biome);
+			BlockusGen.addLimestone(biome);
+			BlockusGen.addMarble(biome);
+		}
 		FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
 		FuelRegistry.INSTANCE.add(Blocks.SUGAR_CANE, 50);
 		FuelRegistry.INSTANCE.add(Items.PAPER, 100);
