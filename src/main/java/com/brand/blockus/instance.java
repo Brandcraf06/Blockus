@@ -7,11 +7,13 @@ import com.brand.blockus.content.Other;
 import com.brand.blockus.content.PaperRelated;
 import com.brand.blockus.content.PatternedWools;
 
+import com.brand.blockus.world.BlockusGen;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
+import net.minecraft.world.biome.Biome;
 
 public class instance {
 
