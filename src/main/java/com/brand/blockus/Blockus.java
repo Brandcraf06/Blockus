@@ -6,9 +6,11 @@ import com.brand.blockus.content.BambooPlanks;
 import com.brand.blockus.content.Barrels;
 import com.brand.blockus.content.BlazeBricks;
 import com.brand.blockus.content.Bluestone;
+import com.brand.blockus.content.CharredPlanks;
 import com.brand.blockus.content.ColoredTiles;
 import com.brand.blockus.content.EndStoneRelated;
 import com.brand.blockus.content.FoodBlocks;
+import com.brand.blockus.content.FuturneoBlocks;
 import com.brand.blockus.content.GlassRelated;
 import com.brand.blockus.content.GlazedTerracottaPillars;
 import com.brand.blockus.content.Hedge;
@@ -46,7 +48,7 @@ import net.minecraft.util.Identifier;
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.3.0";
+	public static final String VERSION = "1.3.1";
 	public static final String NAME = "Blockus";
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LavaBricks.LAVA_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Hedge.SMALL_HEDGE));
@@ -57,6 +59,7 @@ public class Blockus implements ModInitializer {
 		StainedStoneBricks.init();
 		PatternedWools.init();
 		ColoredTiles.init();
+		FuturneoBlocks.init();
 		GlazedTerracottaPillars.init();
 		GlassRelated.init();
 		StoneRelated.init();
@@ -83,6 +86,7 @@ public class Blockus implements ModInitializer {
 		NetherBricksRelated.init();
 		BlazeBricks.init();
 		FoodBlocks.init();
+		CharredPlanks.init();
 		BambooPlanks.init();
 		Hedge.init();
 		HoneycombBricks.init();

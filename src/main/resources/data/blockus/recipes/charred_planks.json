@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "planks",
+  "pattern": [
+    "###",
+	"#L#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:flammable_planks"
+    },
+	"L": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "result": {
+    "item": "blockus:charred_planks",
+    "count": 8
+  }
+}

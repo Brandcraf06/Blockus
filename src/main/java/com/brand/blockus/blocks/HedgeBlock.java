@@ -47,7 +47,7 @@ public class HedgeBlock extends HorizontalConnectedBlock {
 	   private boolean shouldConnectTo(BlockState blockState_1, boolean boolean_1, Direction direction_1) {
 	      Block block_1 = blockState_1.getBlock();
 	      boolean boolean_2 = block_1.matches(BlockTags.WALLS) || block_1 instanceof FenceGateBlock && FenceGateBlock.canWallConnect(blockState_1, direction_1);
-	      return !canConnect(block_1) && boolean_1 || boolean_2;
+	      return !cannotConnect(block_1) && boolean_1 || boolean_2;
 	   }
 
 	   public BlockState getPlacementState(ItemPlacementContext itemPlacementContext_1) {

@@ -138,7 +138,7 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 			this.scheduleUpdate();
 		} else {
 			BlockState state = this.getCachedState();
-			if (state.getBlock() != Barrels.OAK_BARREL && state.getBlock() != Barrels.BIRCH_BARREL && state.getBlock() != Barrels.JUNGLE_BARREL && state.getBlock() != Barrels.ACACIA_BARREL && state.getBlock() != Barrels.DARK_OAK_BARREL && state.getBlock() != Barrels.BAMBOO_BARREL) {
+			if (state.getBlock() != Barrels.OAK_BARREL && state.getBlock() != Barrels.BIRCH_BARREL && state.getBlock() != Barrels.JUNGLE_BARREL && state.getBlock() != Barrels.ACACIA_BARREL && state.getBlock() != Barrels.DARK_OAK_BARREL && state.getBlock() != Barrels.BAMBOO_BARREL && state.getBlock() != Barrels.CHARRED_BARREL) {
 				this.markRemoved();
 				return;
 			}

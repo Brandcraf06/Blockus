@@ -1,17 +1,15 @@
 package com.brand.blockus;
 
-import com.brand.blockus.blocks.Paper.PaperWall;
 import com.brand.blockus.content.*;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.render.ColorProviderRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
-import org.lwjgl.opengl.GL;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -36,15 +34,20 @@ public void onInitializeClient() {
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.JUNGLE_SMALL_HEDGE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.ACACIA_SMALL_HEDGE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.DARK_OAK_SMALL_HEDGE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS_STAIRS, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS_SLAB, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.WATER_BRICKS_WALL, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(WaterBricks.CHISELED_WATER_BRICKS, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_DOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_TRAPDOOR, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(CharredPlanks.CHARRED_DOOR, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(CharredPlanks.CHARRED_TRAPDOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Other.WOODEN_FRAME, RenderLayer.getCutoutMipped());
+		
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+				WaterBricks.WATER_BRICKS,
+				WaterBricks.WATER_BRICKS_SLAB,
+				WaterBricks.WATER_BRICKS_STAIRS,
+				WaterBricks.WATER_BRICKS_WALL,
+				WaterBricks.CHISELED_WATER_BRICKS
+		);
 
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
 				GlassRelated.BEVELED_GLASS,

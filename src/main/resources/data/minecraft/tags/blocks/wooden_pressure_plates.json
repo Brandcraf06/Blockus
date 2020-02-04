@@ -7,6 +7,7 @@
     "minecraft:jungle_pressure_plate",
     "minecraft:acacia_pressure_plate",
     "minecraft:dark_oak_pressure_plate",
-    "blockus:bamboo_pressure_plate"
+    "blockus:bamboo_pressure_plate",
+    "blockus:charred_pressure_plate"
   ]
 }

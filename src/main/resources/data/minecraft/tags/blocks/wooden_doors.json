@@ -7,6 +7,7 @@
     "minecraft:jungle_door",
     "minecraft:acacia_door",
     "minecraft:dark_oak_door",
-    "blockus:bamboo_door"
+    "blockus:bamboo_door",
+    "blockus:charred_door"
   ]
 }

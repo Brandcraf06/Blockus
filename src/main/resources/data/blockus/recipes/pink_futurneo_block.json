@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "futurneo blocks",
+  "pattern": [
+    "#G#",
+    "GTG",
+    "#G#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:black_dye"
+    },
+    "G": {
+      "item": "minecraft:pink_stained_glass"
+    },
+    "T": {
+      "item": "minecraft:torch"
+    }	
+  },
+  "result": {
+    "item": "blockus:pink_futurneo_block",
+    "count": 6
+  }
+}

@@ -7,6 +7,7 @@
     "minecraft:jungle_button",
     "minecraft:acacia_button",
     "minecraft:dark_oak_button",
-    "blockus:bamboo_button"
+    "blockus:bamboo_button",
+    "blockus:charred_button"
   ]
 }

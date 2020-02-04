@@ -3,7 +3,6 @@ package com.brand.blockus.blocks.Base;
 import com.brand.blockus.Blockus;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
-import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.StainedGlassBlock;
 import net.minecraft.item.Item;
