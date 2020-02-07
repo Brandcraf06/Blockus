@@ -2,7 +2,7 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.BlockStonePickaxe;
-import com.brand.blockus.blocks.Barrier;
+import com.brand.blockus.blocks.BarrierBase;
 import com.brand.blockus.blocks.CautionBlock;
 import com.brand.blockus.blocks.Base.FallingRedstoneBase;
 import com.brand.blockus.blocks.LoveBlock;
@@ -23,8 +23,8 @@ public class Other {
 	public static MeatBlock MEMBRANE_BLOCK;
 	public static LightBlockBase BLAZE_BLOCK;
 	public static CautionBlock CAUTION_BLOCK;
-	public static Barrier CAUTION_BARRIER;
-	public static Barrier ROAD_BARRIER;
+	public static BarrierBase CAUTION_BARRIER;
+	public static BarrierBase ROAD_BARRIER;
 	public static FallingRedstoneBase REDSTONE_SAND;
 	public static RedstoneLampBaseLit REDSTONE_LAMP_LIT;
 	
@@ -38,8 +38,8 @@ public class Other {
 		MEMBRANE_BLOCK = new MeatBlock("membrane_block", 5.0f, 6.0f);
 		BLAZE_BLOCK = new LightBlockBase("blaze_block", 2f, 6.0f);
 	    CAUTION_BLOCK = new CautionBlock("caution_block", 1.5f, 1200.0f);
-	    CAUTION_BARRIER = new Barrier("caution_barrier", 1.5f, 1200.0f);
-	    ROAD_BARRIER = new Barrier("road_barrier", 2f, 6.0f);	
+	    CAUTION_BARRIER = new BarrierBase("caution_barrier", 1.5f, 1200.0f);
+	    ROAD_BARRIER = new BarrierBase("road_barrier", 2f, 6.0f);	
 	    REDSTONE_SAND = new FallingRedstoneBase("redstone_sand", 2.0f, 6.0f);
 	    REDSTONE_LAMP_LIT = new RedstoneLampBaseLit("redstone_lamp_lit", 0.3f, 0.3f);
 	    
