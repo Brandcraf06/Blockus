@@ -136,7 +136,7 @@ public class HedgeBlock extends Block implements Waterloggable {
 
 	   private boolean shouldConnectTo(BlockState state, boolean faceFullSquare, Direction side) {
 	      Block block = state.getBlock();
-	      boolean bl = block.matches(BlockTags.WALLS) || block instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
+	      boolean bl = block.isIn(BlockTags.WALLS) || block instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
 	      return !cannotConnect(block) && faceFullSquare || bl;
 	   }
 
