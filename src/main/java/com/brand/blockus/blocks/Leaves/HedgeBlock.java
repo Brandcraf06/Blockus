@@ -7,13 +7,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockPlacementEnvironment;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.Waterloggable;
 import net.minecraft.block.enums.WallShape;
 import net.minecraft.entity.EntityContext;
+import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -130,7 +130,7 @@ public class HedgeBlock extends Block implements Waterloggable {
 	      return (VoxelShape)this.collisionShapeMap.get(state);
 	   }
 
-	   public boolean canPlaceAtSide(BlockState world, BlockView view, BlockPos pos, BlockPlacementEnvironment env) {
+	   public boolean canPlaceAtSide(BlockState world, BlockView view, BlockPos pos, NavigationType env) {
 	      return false;
 	   }
 
