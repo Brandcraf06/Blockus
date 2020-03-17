@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlacementEnvironment;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.HorizontalConnectedBlock;
+import net.minecraft.block.HorizontalConnectingBlock;
 import net.minecraft.entity.EntityContext;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -20,7 +20,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.WorldView;
 
-public class HedgeBlock extends HorizontalConnectedBlock {
+public class HedgeBlock extends HorizontalConnectingBlock {
 	   public static final BooleanProperty UP;
 	   private final VoxelShape[] UP_OUTLINE_SHAPES;
 	   private final VoxelShape[] UP_COLLISION_SHAPES;

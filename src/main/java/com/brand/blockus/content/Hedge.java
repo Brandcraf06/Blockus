@@ -1,6 +1,6 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.SmallHedge;
+import com.brand.blockus.blocks.Leaves.SmallHedge;
 
 public class Hedge {
 	
@@ -10,6 +10,7 @@ public class Hedge {
 	public static SmallHedge JUNGLE_SMALL_HEDGE;
 	public static SmallHedge ACACIA_SMALL_HEDGE;
 	public static SmallHedge DARK_OAK_SMALL_HEDGE;
+	public static SmallHedge WHITE_OAK_SMALL_HEDGE;
 	
 	public static void init() {
 		
@@ -19,6 +20,7 @@ public class Hedge {
 		JUNGLE_SMALL_HEDGE = new SmallHedge("jungle_small_hedge", 0.2f, 1.0f);
 		ACACIA_SMALL_HEDGE = new SmallHedge("acacia_small_hedge", 0.2f, 1.0f);
 		DARK_OAK_SMALL_HEDGE = new SmallHedge("dark_oak_small_hedge", 0.2f, 1.0f);
+		WHITE_OAK_SMALL_HEDGE = new SmallHedge("white_oak_small_hedge", 0.2f, 1.0f);
 	    
 	}
 }

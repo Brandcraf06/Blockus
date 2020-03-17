@@ -37,6 +37,7 @@ import com.brand.blockus.content.SoulSandstone;
 import com.brand.blockus.content.StainedStoneBricks;
 import com.brand.blockus.content.StoneRelated;
 import com.brand.blockus.content.WaterBricks;
+import com.brand.blockus.content.WhiteOak;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -48,7 +49,7 @@ import net.minecraft.util.Identifier;
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.3.2";
+	public static final String VERSION = "1.4.0-1.15.2";
 	public static final String NAME = "Blockus";
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LavaBricks.LAVA_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Hedge.SMALL_HEDGE));
@@ -56,10 +57,11 @@ public class Blockus implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		StainedStoneBricks.init();
-		PatternedWools.init();
-		ColoredTiles.init();
-		FuturneoBlocks.init();
+		WhiteOak.init();
+		CharredPlanks.init();
+		BambooPlanks.init();
+		Hedge.init();
+		new Barrels();
 		GlazedTerracottaPillars.init();
 		GlassRelated.init();
 		StoneRelated.init();
@@ -70,6 +72,7 @@ public class Blockus implements ModInitializer {
 		MagmaBricks.init();
 		SoakedBricks.init();
 		SandstoneBricks.init();
+		HoneycombBricks.init();
 		SoulSandstone.init();
 		PrismarineRelated.init();
 		EndStoneRelated.init();
@@ -86,11 +89,10 @@ public class Blockus implements ModInitializer {
 		NetherBricksRelated.init();
 		BlazeBricks.init();
 		FoodBlocks.init();
-		CharredPlanks.init();
-		BambooPlanks.init();
-		Hedge.init();
-		HoneycombBricks.init();
-		new Barrels();
+		StainedStoneBricks.init();
+		PatternedWools.init();
+		ColoredTiles.init();
+		FuturneoBlocks.init();
 		Other.init();
 		LegacyBlocks.init();
 		instance.init();

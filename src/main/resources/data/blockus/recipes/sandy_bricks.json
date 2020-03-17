@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sandy_bricks",
+  "pattern": [
+    " # ",
+	"#B#",
+	" # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sand"
+    },
+	"B": {
+      "item": "minecraft:bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:sandy_bricks",
+    "count": 2
+  }
+}

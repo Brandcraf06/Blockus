@@ -1,0 +1,12 @@
+{
+    "required": true,
+    "package": "com.brand.blockus.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "minVersion": "0.7.11-SNAPSHOT",
+    "mixins": [
+		"AxeItemMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

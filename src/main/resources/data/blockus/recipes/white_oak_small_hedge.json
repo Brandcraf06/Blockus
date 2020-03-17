@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "small_hedges",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:white_oak_leaves"
+    }
+  },
+  "result": {
+    "item": "blockus:white_oak_small_hedge",
+    "count": 6
+  }
+}

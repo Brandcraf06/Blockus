@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "blockus",
-  "version": "1.3.2",
+  "version": "1.4.0-1.15.2",
    
   "name": "Blockus",
   "description": "A mod that mainly adds blocks!",
@@ -26,10 +26,12 @@
 	  "com.brand.blockus.BlockusClient"
     ]
   },
+  "mixins": [
+      "blockus.mixins.json"
+  ],
    "depends": {
     "fabricloader": ">=0.4.0",
-    "fabric": "*",
-    "minecraft": "1.15.x"
+    "fabric": "*"
   },
   "suggests": {
   }
