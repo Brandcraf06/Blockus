@@ -10,6 +10,7 @@ import com.brand.blockus.blocks.NetherStarsBlock;
 import com.brand.blockus.blocks.Paper.PaperWall;
 import com.brand.blockus.blocks.Base.RedstoneLampBaseLit;
 import com.brand.blockus.blocks.FoodBlocks.MeatBlock;
+import com.brand.blockus.blocks.IronGate.IronGateBase;
 import com.brand.blockus.blocks.Light.LightBlockBase;
 
 public class Other {
@@ -27,6 +28,7 @@ public class Other {
 	public static BarrierBase ROAD_BARRIER;
 	public static FallingRedstoneBase REDSTONE_SAND;
 	public static RedstoneLampBaseLit REDSTONE_LAMP_LIT;
+	public static IronGateBase IRON_GATE;
 	
 	public static void init() {
 		NETHER_STARS_BLOCK = new NetherStarsBlock("nether_stars_block", 5.0f, 6.0f);
@@ -42,6 +44,7 @@ public class Other {
 	    ROAD_BARRIER = new BarrierBase("road_barrier", 2f, 6.0f);	
 	    REDSTONE_SAND = new FallingRedstoneBase("redstone_sand", 2.0f, 6.0f);
 	    REDSTONE_LAMP_LIT = new RedstoneLampBaseLit("redstone_lamp_lit", 0.3f, 0.3f);
-	    
+	    IRON_GATE = new IronGateBase("iron_gate", 5.0f, 5.0f);
+
 	}
 }

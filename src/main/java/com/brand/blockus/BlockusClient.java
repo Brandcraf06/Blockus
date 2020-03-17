@@ -34,12 +34,16 @@ public void onInitializeClient() {
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.JUNGLE_SMALL_HEDGE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.ACACIA_SMALL_HEDGE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.DARK_OAK_SMALL_HEDGE, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.WHITE_OAK_SMALL_HEDGE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(WhiteOak.WHITE_OAK_LEAVES, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(WhiteOak.WHITE_OAK_SAPLING, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_DOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_TRAPDOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CharredPlanks.CHARRED_DOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CharredPlanks.CHARRED_TRAPDOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Other.WOODEN_FRAME, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Other.IRON_GATE, RenderLayer.getCutoutMipped());
 		
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
 				WaterBricks.WATER_BRICKS,

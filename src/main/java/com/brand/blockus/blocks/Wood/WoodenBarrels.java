@@ -12,6 +12,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -43,8 +44,9 @@ public class WoodenBarrels extends BarrelBlock {
 	      } else {
 	         BlockEntity blockEntity = world.getBlockEntity(pos);
 	         if (blockEntity instanceof WoodenBarrelBlockEntity) {
-	            player.openContainer((WoodenBarrelBlockEntity)blockEntity);
+	            player.openHandledScreen((WoodenBarrelBlockEntity)blockEntity);
 	            player.incrementStat(Stats.OPEN_BARREL);
+	            PiglinBrain.onGoldBlockBroken(player);
 	         }
 
 	         return ActionResult.SUCCESS;

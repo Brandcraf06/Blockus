@@ -1,13 +1,8 @@
 {
   "replace": false,
   "values": [
-    "minecraft:oak_fence",
-    "minecraft:acacia_fence",
-    "minecraft:dark_oak_fence",
-    "minecraft:spruce_fence",
-    "minecraft:birch_fence",
-    "minecraft:jungle_fence",
 	"blockus:bamboo_fence",
-	"blockus:charred_fence"
+	"blockus:charred_fence",
+	"blockus:white_oak_fence"
   ]
 }

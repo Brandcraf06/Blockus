@@ -1,10 +1,10 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.LeavesBlock;
 import com.brand.blockus.blocks.Base.BaseGrassBlock;
 import com.brand.blockus.blocks.Base.BaseSpongeBlock;
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.FallingGravelBase;
+import com.brand.blockus.blocks.Leaves.LegacyLeavesBlock;
 import com.brand.blockus.blocks.Light.LightBlockBase;
 import com.brand.blockus.blocks.Wood.BlockWood;
 
@@ -13,7 +13,7 @@ public class LegacyBlocks {
 	public static BlockBase LEGACY_BRICKS;
 	public static BlockBase LEGACY_STONECUTTER;
 	public static BaseGrassBlock LEGACY_GRASS_BLOCK;
-	public static LeavesBlock LEGACY_LEAVES;
+	public static LegacyLeavesBlock LEGACY_LEAVES;
 	public static FallingGravelBase LEGACY_GRAVEL;
 	public static BlockBase LEGACY_COBBLESTONE;
 	public static BlockBase LEGACY_MOSSY_COBBLESTONE;
@@ -33,7 +33,7 @@ public class LegacyBlocks {
 	LEGACY_BRICKS = new BlockBase("legacy_bricks", 2.0f, 6.0f);
 	LEGACY_STONECUTTER = new BlockBase("legacy_stonecutter", 1.5f, 17.5f);
 	LEGACY_GRASS_BLOCK = new BaseGrassBlock("legacy_grass_block", 0.6f, 3.0f);
-	LEGACY_LEAVES = new LeavesBlock("legacy_leaves", 0.6f, 3.0f);
+	LEGACY_LEAVES = new LegacyLeavesBlock("legacy_leaves", 0.6f, 3.0f);
 	LEGACY_GRAVEL = new FallingGravelBase("legacy_gravel", 2.0f, 6.0f);
 	LEGACY_COBBLESTONE = new BlockBase("legacy_cobblestone", 2.0f, 6.0f);
 	LEGACY_MOSSY_COBBLESTONE = new BlockBase("legacy_mossy_cobblestone", 2.0f, 6.0f);

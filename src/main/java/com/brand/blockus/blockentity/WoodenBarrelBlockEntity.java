@@ -9,13 +9,13 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
-import net.minecraft.container.Container;
-import net.minecraft.container.GenericContainer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.screen.GenericContainerScreenHandler;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -105,8 +105,8 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 		return new TranslatableText("container.barrel", new Object[0]);
 	}
 	
-	protected Container createContainer(int int_1, PlayerInventory inventory) {
-		return GenericContainer.createGeneric9x3(int_1, inventory, this);
+	protected ScreenHandler createContainer(int i, PlayerInventory playerInventory) {
+	      return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, this);
 	}
 	
 	public void onInvOpen(PlayerEntity player) {
@@ -142,9 +142,10 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 				state.getBlock() != Barrels.BIRCH_BARREL && 
 				state.getBlock() != Barrels.JUNGLE_BARREL && 
 				state.getBlock() != Barrels.ACACIA_BARREL && 
+				state.getBlock() != Barrels.DARK_OAK_BARREL && 
 				state.getBlock() != Barrels.CRIMSON_BARREL && 
 				state.getBlock() != Barrels.WARPED_BARREL && 
-				state.getBlock() != Barrels.DARK_OAK_BARREL && 
+				state.getBlock() != Barrels.WHITE_OAK_BARREL && 
 				state.getBlock() != Barrels.BAMBOO_BARREL && 
 				state.getBlock() != Barrels.CHARRED_BARREL) {
 				this.markRemoved();
