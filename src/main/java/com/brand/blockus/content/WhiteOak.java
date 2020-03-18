@@ -12,7 +12,6 @@ import com.brand.blockus.blocks.Wood.PressurePlateWood;
 import com.brand.blockus.blocks.Wood.SlabWood;
 import com.brand.blockus.blocks.Wood.StairsWood;
 import com.brand.blockus.blocks.Wood.WoodenDoor;
-import com.brand.blockus.blocks.Wood.WoodenPillarBase;
 import com.brand.blockus.blocks.Wood.WoodenTrapdoor;
 
 import net.minecraft.block.MaterialColor;
@@ -23,8 +22,8 @@ public class WhiteOak {
 	public static SaplingBlockBase WHITE_OAK_SAPLING;
 	public static LogBlockBase WHITE_OAK_LOG;
 	public static LogBlockBase STRIPPED_WHITE_OAK_LOG;
-	public static WoodenPillarBase WHITE_OAK_WOOD;
-	public static WoodenPillarBase STRIPPED_WHITE_OAK_WOOD;
+	public static LogBlockBase WHITE_OAK_WOOD;
+	public static LogBlockBase STRIPPED_WHITE_OAK_WOOD;
 	public static BlockWood WHITE_OAK_PLANKS;
 	public static SlabWood WHITE_OAK_SLAB;
 	public static StairsWood WHITE_OAK_STAIRS;
@@ -40,10 +39,10 @@ public class WhiteOak {
 	public static void init() {
 		
 		WHITE_OAK_SAPLING = new SaplingBlockBase(new WhiteOakSaplingGenerator(), "white_oak_sapling", 0.0f, 0.0f);
-		WHITE_OAK_LOG = new LogBlockBase(MaterialColor.WHITE, "white_oak_log", 2.0f, 2.0f);
-		STRIPPED_WHITE_OAK_LOG = new LogBlockBase(MaterialColor.WHITE, "stripped_white_oak_log", 2.0f, 2.0f);
-		WHITE_OAK_WOOD = new WoodenPillarBase("white_oak_wood", 2.0f, 2.0f);
-		STRIPPED_WHITE_OAK_WOOD = new WoodenPillarBase("stripped_white_oak_wood", 2.0f, 2.0f);
+		WHITE_OAK_LOG = new LogBlockBase(MaterialColor.WHITE, MaterialColor.LIGHT_GRAY_TERRACOTTA, "white_oak_log", 2.0f, 2.0f);
+		STRIPPED_WHITE_OAK_LOG = new LogBlockBase(MaterialColor.WHITE, MaterialColor.QUARTZ, "stripped_white_oak_log", 2.0f, 2.0f);
+		WHITE_OAK_WOOD = new LogBlockBase(MaterialColor.LIGHT_GRAY_TERRACOTTA, MaterialColor.LIGHT_GRAY_TERRACOTTA,"white_oak_wood", 2.0f, 2.0f);
+		STRIPPED_WHITE_OAK_WOOD = new LogBlockBase(MaterialColor.QUARTZ, MaterialColor.QUARTZ, "stripped_white_oak_wood", 2.0f, 2.0f);
 		WHITE_OAK_LEAVES = new LeavesBlockBase("white_oak_leaves", 2.0f, 2.0f);
 		WHITE_OAK_PLANKS = new BlockWood("white_oak_planks", 2.0f, 3.0f);
 		WHITE_OAK_SLAB = new SlabWood("white_oak_slab", 2.0f, 3.0f);
