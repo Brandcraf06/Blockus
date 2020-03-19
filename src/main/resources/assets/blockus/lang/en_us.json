@@ -394,8 +394,6 @@
 	"block.blockus.green_futurneo_block": "Green Futurneo Block",
 	"block.blockus.red_futurneo_block": "Red Futurneo Block",
 	"block.blockus.black_futurneo_block": "Black Futurneo Block",
-	"block.blockus.crimson_barrel": "Crimson Barrel",
-	"block.blockus.warped_barrel": "Warped Barrel",
 	"block.blockus.iron_gate": "Iron Gate",
     "block.blockus.sandy_bricks": "Sandy Bricks",
 	"block.blockus.sandy_bricks_wall": "Sandy Brick Wall",
@@ -434,7 +432,7 @@
     "block.blockus.legacy_diamond_block": "Diamond Block (Legacy)",
     "block.blockus.legacy_lapis_block": "Lapis Lazuli Block (Legacy)",
     "block.blockus.legacy_sponge": "Sponge (Legacy)",
-    "block.blockus.legacy_crying_obsidian": "Crying Obsidian (Legacy)",
+    "block.blockus.legacy_crying_obsidian": "Crying Obsidian",
     "block.blockus.legacy_glowing_obsidian": "Glowing Obsidian",
     "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core",
     "block.blockus.legacy_planks": "Planks (Legacy)"

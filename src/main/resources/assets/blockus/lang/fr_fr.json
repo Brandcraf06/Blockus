@@ -394,8 +394,6 @@
 	"block.blockus.green_futurneo_block": "Futurnéo vert",
 	"block.blockus.red_futurneo_block": "Futurnéo rouge",
 	"block.blockus.black_futurneo_block": "Futurnéo noir",
-	"block.blockus.crimson_barrel": "Tonneau carmin",
-	"block.blockus.warped_barrel": "Tonneau déformé",
 	"block.blockus.iron_gate": "Portail en fer",
 	,
     "block.blockus.sandy_bricks": "Briques sableuses",
@@ -434,7 +432,7 @@
     "block.blockus.legacy_diamond_block": "Bloc de diamant (Ancien)",
     "block.blockus.legacy_lapis_block": "Bloc de lapis-lazuli (Ancien)",
     "block.blockus.legacy_sponge": "Eponge (Ancien)",
-    "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse (Ancienne)",
+    "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse",
     "block.blockus.legacy_glowing_obsidian": "Obsidienne lumineuse",
     "block.blockus.legacy_nether_reactor_core": "Cœur du réacteur du Nether",
     "block.blockus.legacy_planks": "Planches (Ancien)"
