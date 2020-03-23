@@ -152,6 +152,7 @@
 	"block.blockus.soaked_bricks_wall": "Muret en briques trempées",
 	"block.blockus.soaked_bricks_stairs": "Escalier en briques trempées",
 	"block.blockus.soaked_bricks_slab": "Dalle de briques trempées",
+	
 	"block.blockus.beveled_glass": "Verre biseauté",
 	"block.blockus.white_beveled_glass": "Verre biseauté blanc",
     "block.blockus.orange_beveled_glass": "Verre biseauté orange",
@@ -186,12 +187,14 @@
     "block.blockus.green_beveled_glass_pane": "Vitre biseautée verte",
     "block.blockus.red_beveled_glass_pane": "Vitre biseautée rouge",
     "block.blockus.black_beveled_glass_pane": "Vitre biseautée noire",
+	
 	"block.blockus.magma_bricks": "Briques de magma",
 	"block.blockus.magma_bricks_wall": "Muret en briques de magma",
 	"block.blockus.magma_bricks_stairs": "Escalier en briques de magma",
 	"block.blockus.magma_bricks_slab": "Dalle en briques de magma",
 	"block.blockus.chiseled_end_stone_bricks": "Briques de l'End sculptées",
 	"block.blockus.zigzagged_end_stone_bricks": "Briques de l'End zigzaguées",
+	
 	"block.blockus.white_glazed_terracotta_pillar": "Pilier de terre cuite émaillée blanche",
     "block.blockus.orange_glazed_terracotta_pillar": "Pilier de terre cuite émaillée orange",
     "block.blockus.magenta_glazed_terracotta_pillar": "Pilier de terre cuite émaillée magenta",
@@ -208,6 +211,7 @@
     "block.blockus.green_glazed_terracotta_pillar": "Pilier de terre cuite émaillée verte",
     "block.blockus.red_glazed_terracotta_pillar": "Pilier de terre cuite émaillée rouge",
 	"block.blockus.black_glazed_terracotta_pillar": "Pilier de terre cuite émaillée noire",
+	
 	"block.blockus.limestone": "Calcaire",
 	"block.blockus.limestone_stairs": "Escalier en calcaire",
 	"block.blockus.limestone_slab": "Dalle de calcaire",
@@ -217,6 +221,7 @@
 	"block.blockus.limestone_bricks_wall": "Muret en briques de calcaire",
     "block.blockus.limestone_pillar": "Pilier de calcaire",
 	"block.blockus.chiseled_limestone": "Calcaire sculpté",
+	
 	"block.blockus.asphalt": "Asphalte",
 	"block.blockus.white_asphalt": "Asphalte blanc",
     "block.blockus.orange_asphalt": "Asphalte orange",
@@ -265,6 +270,7 @@
     "block.blockus.brown_asphalt_slab": "Dalle d'asphalte marron",
     "block.blockus.green_asphalt_slab": "Dalle d'asphalte vert",
     "block.blockus.red_asphalt_slab": "Dalle d'asphalte rouge",
+	
     "block.blockus.paper_lamp": "Lampe de papier",
     "block.blockus.redstone_sand": "Sable de redstone",
 	"block.blockus.stone_circle_pavement": "Pavé circulaire en pierre",
@@ -310,6 +316,7 @@
 	"block.blockus.rainbow_bricks_wall": "Muret en briques arc en ciel",
 	"block.blockus.rainbow_bricks_stairs": "Escalier en briques arc en ciel",
 	"block.blockus.rainbow_bricks_slab": "Dalle en briques arc en ciel",
+	
 	"block.blockus.rainbow_lamp": "Lampe arc en ciel",
 	"block.blockus.rainbow_lamp_lit": "Lampe arc en ciel allumée",
 	"block.blockus.redstone_lamp_lit": "Lampe à redstone allumée",
@@ -343,6 +350,7 @@
 	"block.blockus.green_redstone_lamp_lit": "Lampe à redstone verte allumée",
 	"block.blockus.red_redstone_lamp": "Lampe à redstone rouge",
 	"block.blockus.red_redstone_lamp_lit": "Lampe à redstone rouge allumée",
+	
 	"block.blockus.cod_crate": "Caisse de morue",
 	"block.blockus.salmon_crate": "Caisse de saumon",
 	"block.blockus.pufferfish_crate": "Caisse de poisson-globe",
@@ -357,6 +365,7 @@
 	"block.blockus.bread_box": "Boite à pain",
 	"block.blockus.chorus_block": "Bloc de chorus",
 	"block.blockus.cookie_block": "Bloc de cookie",
+	
     "block.blockus.small_hedge": "Petite haie en chêne",
 	"block.blockus.spruce_small_hedge": "Petite haie en sapin",
 	"block.blockus.birch_small_hedge": "Petite haie en bouleau",
@@ -421,6 +430,15 @@
 	"block.blockus.white_oak_small_hedge": "Petite haie en chêne blanc",
 	"block.blockus.white_oak_barrel": "Tonneau en chêne blanc",
 	
+	"block.blockus.teal_nether_bricks": "Briques sarcelles du Nether",
+	"block.blockus.teal_nether_brick_slab": "Dalle de briques sarcelles du Nether",
+	"block.blockus.teal_nether_brick_stairs": "Escalier en briques sarcelles du Nether",
+	"block.blockus.teal_nether_brick_wall": "Muret de briques sarcelles du Nether",
+	"block.blockus.smooth_teal_nether_bricks": "Briques sarcelles du Nether lisses",
+	"block.blockus.teal_nether_pillar": "Pilier sarcelle du Nether",
+	"block.blockus.lantern_block": "Bloc de lanterne",
+	"block.blockus.soul_lantern_block": "Bloc de lanterne des âmes",
+	
     "block.blockus.legacy_bricks": "Briques (Ancien)",
     "block.blockus.legacy_stonecutter": "Tailleur de pierre (Ancien)",
     "block.blockus.legacy_grass_block": "Bloc d'herbe (Ancien)",
@@ -437,6 +455,8 @@
     "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse (Ancienne)",
     "block.blockus.legacy_glowing_obsidian": "Obsidienne lumineuse",
     "block.blockus.legacy_nether_reactor_core": "Cœur du réacteur du Nether",
-    "block.blockus.legacy_planks": "Planches (Ancien)"
+    "block.blockus.legacy_planks": "Planches (Ancien)",
+	
+	"block.minecraft.nether_wart_block": "Bloc de verrues carmins"
 	
 }

@@ -48,7 +48,7 @@ public class Other {
 	    REDSTONE_SAND = new FallingRedstoneBase("redstone_sand", 2.0f, 6.0f);
 	    REDSTONE_LAMP_LIT = new RedstoneLampBaseLit("redstone_lamp_lit", 0.3f, 0.3f);
 	    IRON_GATE = new IronGateBase("iron_gate", 5.0f, 5.0f);
-	    LANTERN_BLOCK = new LanternFullBlock("lantern_block", 0.3f, 0.3f);
-	    SOUL_LANTERN_BLOCK = new LanternFullBlock("soul_lantern_block", 0.3f, 0.3f);
+	    LANTERN_BLOCK = new LanternFullBlock("lantern_block", 0.3f, 0.3f, 15);
+	    SOUL_LANTERN_BLOCK = new LanternFullBlock("soul_lantern_block", 0.3f, 0.3f, 10);
 	}
 }

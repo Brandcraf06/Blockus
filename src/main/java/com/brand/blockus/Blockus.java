@@ -49,7 +49,7 @@ import net.minecraft.util.Identifier;
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.4.1";
+	public static final String VERSION = "1.4.2";
 	public static final String NAME = "Blockus";
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LavaBricks.LAVA_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Hedge.SMALL_HEDGE));

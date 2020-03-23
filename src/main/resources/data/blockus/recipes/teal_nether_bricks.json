@@ -6,7 +6,7 @@
   ],
   "key": {
     "W": {
-      "item": "minecraft:nether_sprouts"
+      "tag": "blockus:warped_nether_grass"
     },
     "N": {
       "item": "minecraft:nether_brick"

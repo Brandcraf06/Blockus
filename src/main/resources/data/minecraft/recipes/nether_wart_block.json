@@ -7,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "tag": "blockus:warped_nether_grass"
+      "item": "minecraft:crimson_roots"
     }
   },
   "result": {
-    "item": "minecraft:warped_wart_block"
+    "item": "minecraft:nether_wart_block"
   }
 }
