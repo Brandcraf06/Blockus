@@ -298,9 +298,9 @@
 	"block.blockus.marble_stairs": "Marble Stairs",
 	"block.blockus.marble_slab": "Marble Slab",
 	"block.blockus.marble_bricks": "Marble Bricks",
-	"block.blockus.marble_bricks_stairs": "Marble Bricks Stairs",
-	"block.blockus.marble_bricks_slab": "Marble Bricks Slab",
-	"block.blockus.marble_bricks_wall": "Marble Bricks Wall",
+	"block.blockus.marble_bricks_stairs": "Marble Brick Stairs",
+	"block.blockus.marble_bricks_slab": "Marble Brick Slab",
+	"block.blockus.marble_bricks_wall": "Marble Brick Wall",
     "block.blockus.marble_pillar": "Marble Pillar",
 	"block.blockus.chiseled_marble_pillar": "Chiseled Marble Pillar",
 	"block.blockus.chiseled_marble": "Chiseled Marble",
@@ -420,6 +420,14 @@
 	"block.blockus.white_oak_small_hedge": "White Oak Small Hedge",
 	"block.blockus.white_oak_barrel": "White Oak Barrel",
 	
+	"block.blockus.teal_nether_bricks": "Teal Nether Bricks",
+	"block.blockus.teal_nether_brick_slab": "Teal Nether Brick Slab",
+	"block.blockus.teal_nether_brick_stairs": "Teal Nether Brick Stairs",
+	"block.blockus.teal_nether_brick_wall": "Teal Nether Brick Wall",
+	"block.blockus.smooth_teal_nether_bricks": "Smooth Teal Nether Bricks",
+	"block.blockus.teal_nether_pillar": "Teal Nether Pillar",
+	"block.blockus.lantern_block": "Lantern Block",
+	"block.blockus.soul_lantern_block": "Soul Lantern Block",
 	
     "block.blockus.legacy_bricks": "Bricks (Legacy)",
     "block.blockus.legacy_stonecutter": "Stonecutter (Legacy)",
@@ -437,6 +445,8 @@
     "block.blockus.legacy_crying_obsidian": "Crying Obsidian (Legacy)",
     "block.blockus.legacy_glowing_obsidian": "Glowing Obsidian",
     "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core",
-    "block.blockus.legacy_planks": "Planks (Legacy)"
+    "block.blockus.legacy_planks": "Planks (Legacy)",
+    
+    "block.minecraft.nether_wart_block": "Crimson Wart Block"
 
 }
