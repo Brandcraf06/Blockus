@@ -6,11 +6,11 @@
   ],
   "key": {
     "#": {
-      "tag": "blockus:recrafting_teal_nether_bricks"
+      "tag": "blockus:recrafting_polished_blackstone"
     }
   },
   "result": {
-    "item": "blockus:teal_nether_bricks",
+    "item": "minecraft:polished_blackstone",
     "count": 4
   }
 }

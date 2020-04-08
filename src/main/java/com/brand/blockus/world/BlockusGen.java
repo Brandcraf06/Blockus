@@ -18,6 +18,7 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.RandomFeatureConfig;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.BranchedTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
@@ -49,10 +50,10 @@ public class BlockusGen {
 	   static {
 	 OAK_LOG = Blocks.OAK_LOG.getDefaultState();
 	 OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState();
-	 OAK_TREE_CONFIG = (new BranchedTreeFeatureConfig.Builder(new SimpleBlockStateProvider(OAK_LOG), new SimpleBlockStateProvider(OAK_LEAVES), new BlobFoliagePlacer(2, 0))).baseHeight(4).heightRandA(2).foliageHeight(3).noVines().build();
+	 OAK_TREE_CONFIG = (new BranchedTreeFeatureConfig.Builder(new SimpleBlockStateProvider(OAK_LOG), new SimpleBlockStateProvider(OAK_LEAVES), new BlobFoliagePlacer(2, 0, 0, 0, 3), new StraightTrunkPlacer(4, 2, 0))).noVines().build();
      WHITE_OAK_LOG = WhiteOak.WHITE_OAK_LOG.getDefaultState();
      WHITE_OAK_LEAVES = WhiteOak.WHITE_OAK_LEAVES.getDefaultState();
-     WHITE_OAK_TREE_CONFIG = (new BranchedTreeFeatureConfig.Builder(new SimpleBlockStateProvider(WHITE_OAK_LOG), new SimpleBlockStateProvider(WHITE_OAK_LEAVES), new BlobFoliagePlacer(2, 0))).baseHeight(7).heightRandA(2).foliageHeight(5).noVines().build();
+     WHITE_OAK_TREE_CONFIG = (new BranchedTreeFeatureConfig.Builder(new SimpleBlockStateProvider(WHITE_OAK_LOG), new SimpleBlockStateProvider(WHITE_OAK_LEAVES), new BlobFoliagePlacer(2, 0, 0, 0, 5), new StraightTrunkPlacer(7, 2, 0))).noVines().build();
 		   
 	}
   }

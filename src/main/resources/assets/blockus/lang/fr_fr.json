@@ -122,7 +122,7 @@
 	"block.blockus.cut_soul_sandstone": "Grès des âmes taillé",
 	"block.blockus.cut_soul_sandstone_slab": "Dalle en grès des âmes taillé",
 	"block.blockus.chiseled_soul_sandstone": "Grès des âmes sculpté",
-	"block.blockus.quartz_bricks": "Briques de quartz",
+	"block.blockus.quartz_bricks": "Carrelage en quartz",
 	"block.blockus.wooden_frame": "Armature en bois",
 	"block.blockus.membrane_block": "Bloc de membrane",
 	"block.blockus.blaze_block": "Bloc de Blaze",
@@ -290,16 +290,36 @@
 	"block.blockus.obsidian_circle_pavement": "Pavé circulaire en obsidienne",
 	"block.blockus.obsidian_reinforced_door": "Porte blindée en obsidienne",
 	"block.blockus.obsidian_reinforced_trapdoor": "Trappe blindée en obsidienne",
+	
+	
 	"block.blockus.lava_bricks": "Briques de lave",
 	"block.blockus.lava_bricks_wall": "Muret en briques de lave",
 	"block.blockus.lava_bricks_stairs": "Escalier en briques de lave",
 	"block.blockus.lava_bricks_slab": "Dalle en briques de lave",
 	"block.blockus.chiseled_lava_bricks": "Briques de lave sculptée",
+	
+	"block.blockus.lava_polished_blackstone_bricks": "Briques noires de lave",
+	"block.blockus.lava_polished_blackstone_wall": "Muret en briques noires de lave",
+	"block.blockus.lava_polished_blackstone_stairs": "Escalier en briques noires de lave",
+	"block.blockus.lava_polished_blackstone_slab": "Dalle en briques noires de lave",
+	"block.blockus.chiseled_lava_polished_blackstone": "Briques noires de lave sculptée",
+	
 	"block.blockus.water_bricks": "Briques d'eau",
 	"block.blockus.water_bricks_wall": "Muret en briques d'eau",
 	"block.blockus.water_bricks_stairs": "Escalier en briques d'eau",
 	"block.blockus.water_bricks_slab": "Dalle en briques d'eau",
 	"block.blockus.chiseled_water_bricks": "Briques d'eau sculptée",
+	
+    "block.blockus.zigzagged_bricks": "Briques zigzaguée",
+    "block.blockus.zigzagged_nether_bricks": "Briques du Nether zigzaguées",
+    "block.blockus.zigzagged_red_nether_bricks": "Briques rouges du Nether zigzaguées",
+    "block.blockus.zigzagged_charred_nether_bricks": "Briques carbonisées du Nether zigzaguées",
+    "block.blockus.zigzagged_teal_nether_bricks": "Briques sarcelles du Nether zigzaguées",
+	"block.blockus.zigzagged_polished_blackstone": "Roche noire polie zigzaguées",
+	
+	"block.blockus.polished_blackstone_pillar": "Pilier de roche noire polie",
+    "block.blockus.polished_blackstone_circle_pavement": "Pavé circulaire en roche noire polie",
+	
 	"block.blockus.marble": "Marbre",
 	"block.blockus.marble_stairs": "Escalier en marbre",
 	"block.blockus.marble_slab": "Dalle de marbre",

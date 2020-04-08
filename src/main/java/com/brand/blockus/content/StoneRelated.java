@@ -18,6 +18,12 @@ public class StoneRelated {
 	public static BlockBase ZIGZAGGED_STONE_BRICKS;
 	public static CirclePavementBlock STONE_CIRCLE_PAVEMENT;
 	
+	public static PillarBase POLISHED_BLACKSTONE_PILLAR;
+	public static BlockBase ZIGZAGGED_POLISHED_BLACKSTONE;
+	public static CirclePavementBlock POLISHED_BLACKSTONE_CIRCLE_PAVEMENT;
+	public static StoneDoor POLISHED_BLACKSTONE_DOOR;
+	public static StoneTrapdoor POLISHED_BLACKSTONE_TRAPDOOR;
+	
 	public static void init() {
 
 		SMOOTH_STONE_STAIRS = new StairsBase(Blocks.SMOOTH_STONE.getDefaultState(), "smooth_stone_stairs", 2.0f, 6.0f);
@@ -26,6 +32,11 @@ public class StoneRelated {
 		STONE_TRAPDOOR = new StoneTrapdoor("stone_trapdoor", 1.5f, 20.0f);
 		ZIGZAGGED_STONE_BRICKS = new BlockBase("zigzagged_stone_bricks", 1.5f, 6.0f);
 		STONE_CIRCLE_PAVEMENT = new CirclePavementBlock("stone_circle_pavement", 1.5f, 6.0f);
+		
+ // blackstone		
+		POLISHED_BLACKSTONE_PILLAR = new PillarBase("polished_blackstone_pillar", 1.5f, 6.0f);
+		ZIGZAGGED_POLISHED_BLACKSTONE = new BlockBase("zigzagged_polished_blackstone", 1.5f, 6.0f);
+		POLISHED_BLACKSTONE_CIRCLE_PAVEMENT = new CirclePavementBlock("polished_blackstone_circle_pavement", 1.5f, 6.0f);
 			
 	}
 }

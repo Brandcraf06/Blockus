@@ -20,6 +20,7 @@ public class Other {
 	public static BlockStonePickaxe STARS_BLOCK;
 	public static BlockStonePickaxe ENDER_BLOCK;
 	public static BlockBase LARGE_BRICKS;
+	public static BlockBase ZIGZAGGED_BRICKS;
 	public static LoveBlock LOVE_BLOCK;
 	public static PaperWall WOODEN_FRAME;
 	public static MeatBlock MEMBRANE_BLOCK;
@@ -38,6 +39,7 @@ public class Other {
 		STARS_BLOCK = new BlockStonePickaxe("stars_block", 5.0f, 6.0f);
 		ENDER_BLOCK = new BlockStonePickaxe("ender_block", 5.0f, 6.0f);
 		LARGE_BRICKS = new BlockBase("large_bricks", 2f, 6.0f);
+		ZIGZAGGED_BRICKS = new BlockBase("zigzagged_bricks", 2f, 6.0f);
 		LOVE_BLOCK = new LoveBlock("love_block", 2f, 6.0f);
 		WOODEN_FRAME = new PaperWall("wooden_frame", 0.1f, 0.8f);
 		MEMBRANE_BLOCK = new MeatBlock("membrane_block", 5.0f, 6.0f);

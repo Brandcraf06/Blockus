@@ -3,6 +3,7 @@ package com.brand.blockus.blocks.Leaves;
 import com.brand.blockus.Blockus;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
@@ -16,7 +17,7 @@ public class LeavesBlockBase extends LeavesBlock {
 	public static boolean translucentLeaves;
 
 	public LeavesBlockBase(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).ticksRandomly().strength(hardness, resistance).nonOpaque().build());
+		super(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).breakByTool(FabricToolTags.HOES, 0).ticksRandomly().strength(hardness, resistance).nonOpaque().build());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 

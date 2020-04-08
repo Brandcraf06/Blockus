@@ -10,11 +10,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.DoorBlock;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.Material;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.DoorHinge;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.entity.EntityContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -56,7 +56,7 @@ public class IronGateBlock extends Block {
 	      this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH)).with(OPEN, false)).with(HINGE, DoorHinge.LEFT)).with(POWERED, false)).with(HALF, DoubleBlockHalf.LOWER));
 	   }
 
-	   public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, EntityContext context) {
+	   public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
 	      Direction direction = (Direction)state.get(FACING);
 	      boolean bl = !(Boolean)state.get(OPEN);
 	      boolean bl2 = state.get(HINGE) == DoorHinge.RIGHT;

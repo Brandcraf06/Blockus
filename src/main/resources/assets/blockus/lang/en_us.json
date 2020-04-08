@@ -126,7 +126,7 @@
 	"block.blockus.cut_soul_sandstone": "Cut Soul Sandstone",
 	"block.blockus.cut_soul_sandstone_slab": "Cut Soul Sandstone Slab",
 	"block.blockus.chiseled_soul_sandstone": "Chiseled Soul Sandstone",
-	"block.blockus.quartz_bricks": "Quartz Bricks",
+	"block.blockus.quartz_bricks": "Quartz Tiles",
 	"block.blockus.wooden_frame": "Wooden Frame",
 	"block.blockus.membrane_block": "Membrane Block",
 	"block.blockus.blaze_block": "Blaze Block",
@@ -304,11 +304,27 @@
 	"block.blockus.lava_bricks_slab": "Lava Brick Slab",
 	"block.blockus.chiseled_lava_bricks": "Chiseled Lava Bricks",
 	
+	"block.blockus.lava_polished_blackstone_bricks": "Lava Polished Blackstone Bricks",
+	"block.blockus.lava_polished_blackstone_wall": "Lava Polished Blackstone Brick Wall",
+	"block.blockus.lava_polished_blackstone_stairs": "Lava Polished Blackstone Brick Stairs",
+	"block.blockus.lava_polished_blackstone_slab": "Lava Polished Blackstone Brick Slab",
+	"block.blockus.chiseled_lava_polished_blackstone": "Chiseled Lava Polished Blackstone",
+	
 	"block.blockus.water_bricks": "Water Bricks",
 	"block.blockus.water_bricks_wall": "Water Brick Wall",
 	"block.blockus.water_bricks_stairs": "Water Brick Stairs",
 	"block.blockus.water_bricks_slab": "Water Brick Slab",
 	"block.blockus.chiseled_water_bricks": "Chiseled Water Bricks",
+	
+	"block.blockus.zigzagged_bricks": "Zigzagged Bricks",
+    "block.blockus.zigzagged_nether_bricks": "Zigzagged Nether Bricks",
+    "block.blockus.zigzagged_red_nether_bricks": "Zigzagged Red Nether Bricks",
+    "block.blockus.zigzagged_charred_nether_bricks": "Zigzagged Charred Nether Bricks",
+    "block.blockus.zigzagged_teal_nether_bricks": "Zigzagged Teal Nether Bricks",
+	"block.blockus.zigzagged_polished_blackstone": "Zigzagged Polished Blackstone",
+	
+	"block.blockus.polished_blackstone_pillar": "Polished Blackstone Pillar",
+    "block.blockus.polished_blackstone_circle_pavement": "Polished Blackstone Circle Pavement",
 	
 	"block.blockus.marble": "Marble",
 	"block.blockus.marble_stairs": "Marble Stairs",

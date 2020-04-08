@@ -1,7 +1,5 @@
 package com.brand.blockus.blockentity;
 
-import java.util.Iterator;
-
 import com.brand.blockus.content.Barrels;
 
 import net.minecraft.block.BarrelBlock;
@@ -45,52 +43,16 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 		return tag;
 	}
 	
-	public void fromTag(CompoundTag tag) {
-		super.fromTag(tag);
-		this.inventory = DefaultedList.ofSize(this.getInvSize(), ItemStack.EMPTY);
-		if (!this.deserializeLootTable(tag)) {
-			Inventories.fromTag(tag, this.inventory);
-		}
-	}
+	public void fromTag(BlockState blockState, CompoundTag compoundTag) {
+	      super.fromTag(blockState, compoundTag);
+	      this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
+	      if (!this.deserializeLootTable(compoundTag)) {
+	         Inventories.fromTag(compoundTag, this.inventory);
+	      }
+	   }
 	
-	public int getInvSize() {
+	public int size() {
 		return 27;
-	}
-	
-	@SuppressWarnings("rawtypes")
-	public boolean isInvEmpty() {
-		Iterator i = this.inventory.iterator();
-		ItemStack stack;
-		do {
-			if (!i.hasNext()) {
-				return true;
-			}
-			stack = (ItemStack)i.next();
-		} while(stack.isEmpty());
-		return false;
-	}
-	
-	public ItemStack getInvStack(int int_1) {
-		return (ItemStack)this.inventory.get(int_1);
-	}
-	
-	public ItemStack takeInvStack(int int_1, int int_2) {
-		return Inventories.splitStack(this.inventory, int_1, int_2);
-	}
-	
-	public ItemStack removeInvStack(int int_1) {
-		return Inventories.removeStack(this.inventory, int_1);
-	}
-	
-	public void setInvStack(int int_1, ItemStack stack) {
-		this.inventory.set(int_1, stack);
-		if (stack.getCount() > this.getInvMaxStackAmount()) {
-			stack.setCount(this.getInvMaxStackAmount());
-		}
-	}
-	
-	public void clear() {
-		this.inventory.clear();
 	}
 	
 	protected DefaultedList<ItemStack> getInvStackList() {
