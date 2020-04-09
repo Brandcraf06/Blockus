@@ -4,6 +4,7 @@ import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.BlockStonePickaxe;
 import com.brand.blockus.blocks.Barrier;
 import com.brand.blockus.blocks.CautionBlock;
+import com.brand.blockus.blocks.LanternFullBlock;
 import com.brand.blockus.blocks.Base.FallingRedstoneBase;
 import com.brand.blockus.blocks.LoveBlock;
 import com.brand.blockus.blocks.NetherStarsBlock;
@@ -19,6 +20,7 @@ public class Other {
 	public static BlockStonePickaxe STARS_BLOCK;
 	public static BlockStonePickaxe ENDER_BLOCK;
 	public static BlockBase LARGE_BRICKS;
+	public static BlockBase ZIGZAGGED_BRICKS;
 	public static LoveBlock LOVE_BLOCK;
 	public static PaperWall WOODEN_FRAME;
 	public static MeatBlock MEMBRANE_BLOCK;
@@ -29,12 +31,14 @@ public class Other {
 	public static FallingRedstoneBase REDSTONE_SAND;
 	public static RedstoneLampBaseLit REDSTONE_LAMP_LIT;
 	public static IronGateBase IRON_GATE;
+	public static LanternFullBlock LANTERN_BLOCK;
 	
 	public static void init() {
 		NETHER_STARS_BLOCK = new NetherStarsBlock("nether_stars_block", 5.0f, 6.0f);
 		STARS_BLOCK = new BlockStonePickaxe("stars_block", 5.0f, 6.0f);
 		ENDER_BLOCK = new BlockStonePickaxe("ender_block", 5.0f, 6.0f);
 		LARGE_BRICKS = new BlockBase("large_bricks", 2f, 6.0f);
+		ZIGZAGGED_BRICKS = new BlockBase("zigzagged_bricks", 2f, 6.0f);
 		LOVE_BLOCK = new LoveBlock("love_block", 2f, 6.0f);
 		WOODEN_FRAME = new PaperWall("wooden_frame", 0.1f, 0.8f);
 		MEMBRANE_BLOCK = new MeatBlock("membrane_block", 5.0f, 6.0f);
@@ -44,6 +48,7 @@ public class Other {
 	    ROAD_BARRIER = new Barrier("road_barrier", 2f, 6.0f);	
 	    REDSTONE_SAND = new FallingRedstoneBase("redstone_sand", 2.0f, 6.0f);
 	    REDSTONE_LAMP_LIT = new RedstoneLampBaseLit("redstone_lamp_lit", 0.3f, 0.3f);
+	    LANTERN_BLOCK = new LanternFullBlock("lantern_block", 0.3f, 0.3f, 15);
 	    IRON_GATE = new IronGateBase("iron_gate", 5.0f, 5.0f);
 
 	}

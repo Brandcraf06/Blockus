@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:polished_blackstone_pillar",
+	"minecraft:chiseled_polished_blackstone",
+	"blockus:zigzagged_polished_blackstone",
+	"blockus:polished_blackstone_circle_pavement"
+  ]
+}

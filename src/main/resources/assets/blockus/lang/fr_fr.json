@@ -152,6 +152,7 @@
 	"block.blockus.soaked_bricks_wall": "Muret en briques trempées",
 	"block.blockus.soaked_bricks_stairs": "Escalier en briques trempées",
 	"block.blockus.soaked_bricks_slab": "Dalle de briques trempées",
+	
 	"block.blockus.beveled_glass": "Verre biseauté",
 	"block.blockus.white_beveled_glass": "Verre biseauté blanc",
     "block.blockus.orange_beveled_glass": "Verre biseauté orange",
@@ -186,12 +187,14 @@
     "block.blockus.green_beveled_glass_pane": "Vitre biseautée verte",
     "block.blockus.red_beveled_glass_pane": "Vitre biseautée rouge",
     "block.blockus.black_beveled_glass_pane": "Vitre biseautée noire",
+	
 	"block.blockus.magma_bricks": "Briques de magma",
 	"block.blockus.magma_bricks_wall": "Muret en briques de magma",
 	"block.blockus.magma_bricks_stairs": "Escalier en briques de magma",
 	"block.blockus.magma_bricks_slab": "Dalle en briques de magma",
 	"block.blockus.chiseled_end_stone_bricks": "Briques de l'End sculptées",
 	"block.blockus.zigzagged_end_stone_bricks": "Briques de l'End zigzaguées",
+	
 	"block.blockus.white_glazed_terracotta_pillar": "Pilier de terre cuite émaillée blanche",
     "block.blockus.orange_glazed_terracotta_pillar": "Pilier de terre cuite émaillée orange",
     "block.blockus.magenta_glazed_terracotta_pillar": "Pilier de terre cuite émaillée magenta",
@@ -208,6 +211,7 @@
     "block.blockus.green_glazed_terracotta_pillar": "Pilier de terre cuite émaillée verte",
     "block.blockus.red_glazed_terracotta_pillar": "Pilier de terre cuite émaillée rouge",
 	"block.blockus.black_glazed_terracotta_pillar": "Pilier de terre cuite émaillée noire",
+	
 	"block.blockus.limestone": "Calcaire",
 	"block.blockus.limestone_stairs": "Escalier en calcaire",
 	"block.blockus.limestone_slab": "Dalle de calcaire",
@@ -217,6 +221,7 @@
 	"block.blockus.limestone_bricks_wall": "Muret en briques de calcaire",
     "block.blockus.limestone_pillar": "Pilier de calcaire",
 	"block.blockus.chiseled_limestone": "Calcaire sculpté",
+	
 	"block.blockus.asphalt": "Asphalte",
 	"block.blockus.white_asphalt": "Asphalte blanc",
     "block.blockus.orange_asphalt": "Asphalte orange",
@@ -265,6 +270,7 @@
     "block.blockus.brown_asphalt_slab": "Dalle d'asphalte marron",
     "block.blockus.green_asphalt_slab": "Dalle d'asphalte vert",
     "block.blockus.red_asphalt_slab": "Dalle d'asphalte rouge",
+	
     "block.blockus.paper_lamp": "Lampe de papier",
     "block.blockus.redstone_sand": "Sable de redstone",
 	"block.blockus.stone_circle_pavement": "Pavé circulaire en pierre",
@@ -284,16 +290,25 @@
 	"block.blockus.obsidian_circle_pavement": "Pavé circulaire en obsidienne",
 	"block.blockus.obsidian_reinforced_door": "Porte blindée en obsidienne",
 	"block.blockus.obsidian_reinforced_trapdoor": "Trappe blindée en obsidienne",
+	
+	
 	"block.blockus.lava_bricks": "Briques de lave",
 	"block.blockus.lava_bricks_wall": "Muret en briques de lave",
 	"block.blockus.lava_bricks_stairs": "Escalier en briques de lave",
 	"block.blockus.lava_bricks_slab": "Dalle en briques de lave",
 	"block.blockus.chiseled_lava_bricks": "Briques de lave sculptée",
+	
 	"block.blockus.water_bricks": "Briques d'eau",
 	"block.blockus.water_bricks_wall": "Muret en briques d'eau",
 	"block.blockus.water_bricks_stairs": "Escalier en briques d'eau",
 	"block.blockus.water_bricks_slab": "Dalle en briques d'eau",
 	"block.blockus.chiseled_water_bricks": "Briques d'eau sculptée",
+	
+    "block.blockus.zigzagged_bricks": "Briques zigzaguée",
+    "block.blockus.zigzagged_nether_bricks": "Briques du Nether zigzaguées",
+    "block.blockus.zigzagged_red_nether_bricks": "Briques rouges du Nether zigzaguées",
+    "block.blockus.zigzagged_charred_nether_bricks": "Briques carbonisées du Nether zigzaguées",
+	
 	"block.blockus.marble": "Marbre",
 	"block.blockus.marble_stairs": "Escalier en marbre",
 	"block.blockus.marble_slab": "Dalle de marbre",
@@ -310,6 +325,7 @@
 	"block.blockus.rainbow_bricks_wall": "Muret en briques arc en ciel",
 	"block.blockus.rainbow_bricks_stairs": "Escalier en briques arc en ciel",
 	"block.blockus.rainbow_bricks_slab": "Dalle en briques arc en ciel",
+	
 	"block.blockus.rainbow_lamp": "Lampe arc en ciel",
 	"block.blockus.rainbow_lamp_lit": "Lampe arc en ciel allumée",
 	"block.blockus.redstone_lamp_lit": "Lampe à redstone allumée",
@@ -343,6 +359,7 @@
 	"block.blockus.green_redstone_lamp_lit": "Lampe à redstone verte allumée",
 	"block.blockus.red_redstone_lamp": "Lampe à redstone rouge",
 	"block.blockus.red_redstone_lamp_lit": "Lampe à redstone rouge allumée",
+	
 	"block.blockus.cod_crate": "Caisse de morue",
 	"block.blockus.salmon_crate": "Caisse de saumon",
 	"block.blockus.pufferfish_crate": "Caisse de poisson-globe",
@@ -357,6 +374,7 @@
 	"block.blockus.bread_box": "Boite à pain",
 	"block.blockus.chorus_block": "Bloc de chorus",
 	"block.blockus.cookie_block": "Bloc de cookie",
+	
     "block.blockus.small_hedge": "Petite haie en chêne",
 	"block.blockus.spruce_small_hedge": "Petite haie en sapin",
 	"block.blockus.birch_small_hedge": "Petite haie en bouleau",
@@ -395,7 +413,7 @@
 	"block.blockus.red_futurneo_block": "Futurnéo rouge",
 	"block.blockus.black_futurneo_block": "Futurnéo noir",
 	"block.blockus.iron_gate": "Portail en fer",
-	,
+	
     "block.blockus.sandy_bricks": "Briques sableuses",
 	"block.blockus.sandy_bricks_wall": "Muret de briques sableuses",
 	"block.blockus.sandy_bricks_stairs": "Escalier en briques sableuses",
@@ -419,6 +437,8 @@
 	"block.blockus.white_oak_small_hedge": "Petite haie en chêne blanc",
 	"block.blockus.white_oak_barrel": "Tonneau en chêne blanc",
 	
+	"block.blockus.lantern_block": "Bloc de lanterne",
+	
     "block.blockus.legacy_bricks": "Briques (Ancien)",
     "block.blockus.legacy_stonecutter": "Tailleur de pierre (Ancien)",
     "block.blockus.legacy_grass_block": "Bloc d'herbe (Ancien)",
@@ -432,9 +452,11 @@
     "block.blockus.legacy_diamond_block": "Bloc de diamant (Ancien)",
     "block.blockus.legacy_lapis_block": "Bloc de lapis-lazuli (Ancien)",
     "block.blockus.legacy_sponge": "Eponge (Ancien)",
-    "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse",
+    "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse (Ancienne)",
     "block.blockus.legacy_glowing_obsidian": "Obsidienne lumineuse",
     "block.blockus.legacy_nether_reactor_core": "Cœur du réacteur du Nether",
-    "block.blockus.legacy_planks": "Planches (Ancien)"
+    "block.blockus.legacy_planks": "Planches (Ancien)",
+	
+	"block.minecraft.nether_wart_block": "Bloc de verrues carmins"
 	
 }
