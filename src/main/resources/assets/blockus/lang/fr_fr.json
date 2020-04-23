@@ -122,7 +122,7 @@
 	"block.blockus.cut_soul_sandstone": "Grès des âmes taillé",
 	"block.blockus.cut_soul_sandstone_slab": "Dalle en grès des âmes taillé",
 	"block.blockus.chiseled_soul_sandstone": "Grès des âmes sculpté",
-	"block.blockus.quartz_bricks": "Briques de quartz",
+	"block.blockus.quartz_bricks": "Carrelage en quartz",
 	"block.blockus.wooden_frame": "Armature en bois",
 	"block.blockus.membrane_block": "Bloc de membrane",
 	"block.blockus.blaze_block": "Bloc de Blaze",
@@ -192,8 +192,10 @@
 	"block.blockus.magma_bricks_wall": "Muret en briques de magma",
 	"block.blockus.magma_bricks_stairs": "Escalier en briques de magma",
 	"block.blockus.magma_bricks_slab": "Dalle en briques de magma",
+	
 	"block.blockus.chiseled_end_stone_bricks": "Briques de l'End sculptées",
 	"block.blockus.zigzagged_end_stone_bricks": "Briques de l'End zigzaguées",
+	"block.blockus.polished_end_stone": "Pierre de l'End polie",
 	
 	"block.blockus.white_glazed_terracotta_pillar": "Pilier de terre cuite émaillée blanche",
     "block.blockus.orange_glazed_terracotta_pillar": "Pilier de terre cuite émaillée orange",
@@ -452,11 +454,9 @@
     "block.blockus.legacy_diamond_block": "Bloc de diamant (Ancien)",
     "block.blockus.legacy_lapis_block": "Bloc de lapis-lazuli (Ancien)",
     "block.blockus.legacy_sponge": "Eponge (Ancien)",
-    "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse (Ancienne)",
+    "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse",
     "block.blockus.legacy_glowing_obsidian": "Obsidienne lumineuse",
     "block.blockus.legacy_nether_reactor_core": "Cœur du réacteur du Nether",
-    "block.blockus.legacy_planks": "Planches (Ancien)",
-	
-	"block.minecraft.nether_wart_block": "Bloc de verrues carmins"
+    "block.blockus.legacy_planks": "Planches (Ancien)"
 	
 }

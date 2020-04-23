@@ -126,7 +126,7 @@
 	"block.blockus.cut_soul_sandstone": "Cut Soul Sandstone",
 	"block.blockus.cut_soul_sandstone_slab": "Cut Soul Sandstone Slab",
 	"block.blockus.chiseled_soul_sandstone": "Chiseled Soul Sandstone",
-	"block.blockus.quartz_bricks": "Quartz Bricks",
+	"block.blockus.quartz_bricks": "Quartz Tiles",
 	"block.blockus.wooden_frame": "Wooden Frame",
 	"block.blockus.membrane_block": "Membrane Block",
 	"block.blockus.blaze_block": "Blaze Block",
@@ -158,6 +158,8 @@
 	"block.blockus.soaked_bricks_wall": "Soaked Brick Wall",
 	"block.blockus.soaked_bricks_stairs": "Soaked Brick Stairs",
 	"block.blockus.soaked_bricks_slab": "Soaked Brick Slab",
+	
+	
 	
 	"block.blockus.beveled_glass": "Beveled Glass",
 	"block.blockus.white_beveled_glass": "White Beveled Glass",
@@ -201,6 +203,8 @@
 	
 	"block.blockus.chiseled_end_stone_bricks": "Chiseled End Stone Bricks",
 	"block.blockus.zigzagged_end_stone_bricks": "Zigzagged End Stone Bricks",
+	"block.blockus.polished_end_stone": "Polished End Stone",
+	
 	"block.blockus.white_glazed_terracotta_pillar": "White Glazed Terracotta Pillar",
     "block.blockus.orange_glazed_terracotta_pillar": "Orange Glazed Terracotta Pillar",
     "block.blockus.magenta_glazed_terracotta_pillar": "Magenta Glazed Terracotta Pillar",
@@ -304,7 +308,6 @@
 	"block.blockus.lava_bricks_slab": "Lava Brick Slab",
 	"block.blockus.chiseled_lava_bricks": "Chiseled Lava Bricks",
 	
-	
 	"block.blockus.water_bricks": "Water Bricks",
 	"block.blockus.water_bricks_wall": "Water Brick Wall",
 	"block.blockus.water_bricks_stairs": "Water Brick Stairs",
@@ -406,7 +409,6 @@
 	"block.blockus.charred_trapdoor": "Charred Wooden Trapdoor",
 	"block.blockus.charred_barrel": "Charred Barrel",
 	
-	
 	"block.blockus.white_futurneo_block": "White Futurneo Block",
 	"block.blockus.orange_futurneo_block": "Orange Futurneo Block",
 	"block.blockus.magenta_futurneo_block": "Magenta Futurneo Block",
@@ -464,11 +466,9 @@
     "block.blockus.legacy_diamond_block": "Diamond Block (Legacy)",
     "block.blockus.legacy_lapis_block": "Lapis Lazuli Block (Legacy)",
     "block.blockus.legacy_sponge": "Sponge (Legacy)",
-    "block.blockus.legacy_crying_obsidian": "Crying Obsidian (Legacy)",
+    "block.blockus.legacy_crying_obsidian": "Crying Obsidian",
     "block.blockus.legacy_glowing_obsidian": "Glowing Obsidian",
     "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core",
-    "block.blockus.legacy_planks": "Planks (Legacy)",
-    
-    "block.minecraft.nether_wart_block": "Crimson Wart Block"
+    "block.blockus.legacy_planks": "Planks (Legacy)"
 
 }
