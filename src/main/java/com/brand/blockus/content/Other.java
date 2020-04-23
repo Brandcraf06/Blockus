@@ -1,6 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.Base.BlockBase;
+import com.brand.blockus.blocks.Base.ChainBlockBase;
 import com.brand.blockus.blocks.BlockStonePickaxe;
 import com.brand.blockus.blocks.BarrierBase;
 import com.brand.blockus.blocks.CautionBlock;
@@ -33,6 +34,7 @@ public class Other {
 	public static IronGateBase IRON_GATE;
 	public static LanternFullBlock LANTERN_BLOCK;
 	public static LanternFullBlock SOUL_LANTERN_BLOCK;
+	public static ChainBlockBase GOLDEN_CHAIN;
 	
 	public static void init() {
 		NETHER_STARS_BLOCK = new NetherStarsBlock("nether_stars_block", 5.0f, 6.0f);
@@ -52,5 +54,6 @@ public class Other {
 	    IRON_GATE = new IronGateBase("iron_gate", 5.0f, 5.0f);
 	    LANTERN_BLOCK = new LanternFullBlock("lantern_block", 0.3f, 0.3f, 15);
 	    SOUL_LANTERN_BLOCK = new LanternFullBlock("soul_lantern_block", 0.3f, 0.3f, 10);
+	    GOLDEN_CHAIN = new ChainBlockBase("golden_chain", 5.0F, 6.0F);
 	}
 }

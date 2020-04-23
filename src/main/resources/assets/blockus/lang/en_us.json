@@ -159,6 +159,8 @@
 	"block.blockus.soaked_bricks_stairs": "Soaked Brick Stairs",
 	"block.blockus.soaked_bricks_slab": "Soaked Brick Slab",
 	
+	
+	
 	"block.blockus.beveled_glass": "Beveled Glass",
 	"block.blockus.white_beveled_glass": "White Beveled Glass",
     "block.blockus.orange_beveled_glass": "Orange Beveled Glass",
@@ -201,6 +203,8 @@
 	
 	"block.blockus.chiseled_end_stone_bricks": "Chiseled End Stone Bricks",
 	"block.blockus.zigzagged_end_stone_bricks": "Zigzagged End Stone Bricks",
+	"block.blockus.polished_end_stone": "Polished End Stone",
+	
 	"block.blockus.white_glazed_terracotta_pillar": "White Glazed Terracotta Pillar",
     "block.blockus.orange_glazed_terracotta_pillar": "Orange Glazed Terracotta Pillar",
     "block.blockus.magenta_glazed_terracotta_pillar": "Magenta Glazed Terracotta Pillar",
@@ -304,12 +308,6 @@
 	"block.blockus.lava_bricks_slab": "Lava Brick Slab",
 	"block.blockus.chiseled_lava_bricks": "Chiseled Lava Bricks",
 	
-	"block.blockus.lava_polished_blackstone_bricks": "Lava Polished Blackstone Bricks",
-	"block.blockus.lava_polished_blackstone_wall": "Lava Polished Blackstone Brick Wall",
-	"block.blockus.lava_polished_blackstone_stairs": "Lava Polished Blackstone Brick Stairs",
-	"block.blockus.lava_polished_blackstone_slab": "Lava Polished Blackstone Brick Slab",
-	"block.blockus.chiseled_lava_polished_blackstone": "Chiseled Lava Polished Blackstone",
-	
 	"block.blockus.water_bricks": "Water Bricks",
 	"block.blockus.water_bricks_wall": "Water Brick Wall",
 	"block.blockus.water_bricks_stairs": "Water Brick Stairs",
@@ -320,10 +318,7 @@
     "block.blockus.zigzagged_nether_bricks": "Zigzagged Nether Bricks",
     "block.blockus.zigzagged_red_nether_bricks": "Zigzagged Red Nether Bricks",
     "block.blockus.zigzagged_charred_nether_bricks": "Zigzagged Charred Nether Bricks",
-    "block.blockus.zigzagged_teal_nether_bricks": "Zigzagged Teal Nether Bricks",
-	"block.blockus.zigzagged_polished_blackstone": "Zigzagged Polished Blackstone",
-	
-	"block.blockus.polished_blackstone_pillar": "Polished Blackstone Pillar",
+
     "block.blockus.polished_blackstone_circle_pavement": "Polished Blackstone Circle Pavement",
 	
 	"block.blockus.marble": "Marble",
@@ -416,9 +411,6 @@
 	"block.blockus.charred_trapdoor": "Charred Wooden Trapdoor",
 	"block.blockus.charred_barrel": "Charred Barrel",
 	
-	"block.blockus.crimson_barrel": "Crimson Barrel",
-	"block.blockus.warped_barrel": "Warped Barrel",
-	
 	"block.blockus.white_futurneo_block": "White Futurneo Block",
 	"block.blockus.orange_futurneo_block": "Orange Futurneo Block",
 	"block.blockus.magenta_futurneo_block": "Magenta Futurneo Block",
@@ -461,14 +453,45 @@
 	"block.blockus.white_oak_small_hedge": "White Oak Small Hedge",
 	"block.blockus.white_oak_barrel": "White Oak Barrel",
 	
+	"block.blockus.lantern_block": "Lantern Block",
+	
+	
+	"block.blockus.soul_lantern_block": "Soul Lantern Block",
+	"block.blockus.golden_chain": "Golden Chain",
+	
 	"block.blockus.teal_nether_bricks": "Teal Nether Bricks",
 	"block.blockus.teal_nether_brick_slab": "Teal Nether Brick Slab",
 	"block.blockus.teal_nether_brick_stairs": "Teal Nether Brick Stairs",
 	"block.blockus.teal_nether_brick_wall": "Teal Nether Brick Wall",
 	"block.blockus.smooth_teal_nether_bricks": "Smooth Teal Nether Bricks",
 	"block.blockus.teal_nether_pillar": "Teal Nether Pillar",
-	"block.blockus.lantern_block": "Lantern Block",
-	"block.blockus.soul_lantern_block": "Soul Lantern Block",
+	
+	"block.blockus.crimson_warty_blackstone_bricks": "Crimson Warty Blackstone Bricks",
+	"block.blockus.crimson_warty_blackstone_bricks_slab": "Crimson Warty Blackstone Brick Slab",
+	"block.blockus.crimson_warty_blackstone_bricks_stairs": "Crimson Warty Blackstone Brick Stairs",
+	"block.blockus.crimson_warty_blackstone_bricks_wall": "Crimson Warty Blackstone Brick Wall",
+	
+	"block.blockus.warped_warty_blackstone_bricks": "Warped Warty Blackstone Bricks",
+	"block.blockus.warped_warty_blackstone_bricks_slab": "Warped Warty Blackstone Brick Slab",
+	"block.blockus.warped_warty_blackstone_bricks_stairs": "Warped Warty Blackstone Brick Stairs",
+	"block.blockus.warped_warty_blackstone_bricks_wall": "Warped Warty Blackstone Brick Wall",
+	
+	"block.blockus.zigzagged_teal_nether_bricks": "Zigzagged Teal Nether Bricks",
+	"block.blockus.zigzagged_polished_blackstone": "Zigzagged Polished Blackstone",
+	
+	"block.blockus.crimson_barrel": "Crimson Barrel",
+	"block.blockus.warped_barrel": "Warped Barrel",
+	
+    "block.blockus.polished_blackstone_pillar": "Polished Blackstone Pillar",
+	
+	"block.blockus.lava_polished_blackstone_bricks": "Lava Polished Blackstone Bricks",
+	"block.blockus.lava_polished_blackstone_wall": "Lava Polished Blackstone Brick Wall",
+	"block.blockus.lava_polished_blackstone_stairs": "Lava Polished Blackstone Brick Stairs",
+	"block.blockus.lava_polished_blackstone_slab": "Lava Polished Blackstone Brick Slab",
+	"block.blockus.chiseled_lava_polished_blackstone": "Chiseled Lava Polished Blackstone",
+	
+	"block.minecraft.nether_wart_block": "Crimson Wart Block",
+	
 	
     "block.blockus.legacy_bricks": "Bricks (Legacy)",
     "block.blockus.legacy_stonecutter": "Stonecutter (Legacy)",
@@ -486,8 +509,6 @@
     "block.blockus.legacy_crying_obsidian": "Crying Obsidian (Legacy)",
     "block.blockus.legacy_glowing_obsidian": "Glowing Obsidian",
     "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core",
-    "block.blockus.legacy_planks": "Planks (Legacy)",
-    
-    "block.minecraft.nether_wart_block": "Crimson Wart Block"
+    "block.blockus.legacy_planks": "Planks (Legacy)"
 
 }

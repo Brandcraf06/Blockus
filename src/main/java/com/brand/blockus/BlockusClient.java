@@ -44,6 +44,7 @@ public void onInitializeClient() {
 		BlockRenderLayerMap.INSTANCE.putBlock(CharredPlanks.CHARRED_TRAPDOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Other.WOODEN_FRAME, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(Other.IRON_GATE, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(Other.GOLDEN_CHAIN, RenderLayer.getCutoutMipped());
 		
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
 				WaterBricks.WATER_BRICKS,

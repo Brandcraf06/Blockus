@@ -192,8 +192,10 @@
 	"block.blockus.magma_bricks_wall": "Muret en briques de magma",
 	"block.blockus.magma_bricks_stairs": "Escalier en briques de magma",
 	"block.blockus.magma_bricks_slab": "Dalle en briques de magma",
+	
 	"block.blockus.chiseled_end_stone_bricks": "Briques de l'End sculptées",
 	"block.blockus.zigzagged_end_stone_bricks": "Briques de l'End zigzaguées",
+	"block.blockus.polished_end_stone": "Pierre de l'End polie",
 	
 	"block.blockus.white_glazed_terracotta_pillar": "Pilier de terre cuite émaillée blanche",
     "block.blockus.orange_glazed_terracotta_pillar": "Pilier de terre cuite émaillée orange",
@@ -458,6 +460,19 @@
 	"block.blockus.teal_nether_pillar": "Pilier sarcelle du Nether",
 	"block.blockus.lantern_block": "Bloc de lanterne",
 	"block.blockus.soul_lantern_block": "Bloc de lanterne des âmes",
+	"block.blockus.golden_chain": "Chaîne en or",
+	
+	"block.blockus.crimson_warty_blackstone_bricks": "Pierre noire taillée verruqueuse carmin",
+	"block.blockus.crimson_warty_blackstone_bricks_slab": "Dalle de pierre noire taillée verruqueuse carmin",
+	"block.blockus.crimson_warty_blackstone_bricks_stairs": "Escalier en pierre noire taillée verruqueuse carmin",
+	"block.blockus.crimson_warty_blackstone_bricks_wall": "Muret de pierre noire taillée verruqueuse carmin",
+	
+	"block.blockus.warped_warty_blackstone_bricks": "Pierre noire taillée verruqueuse déformée",
+	"block.blockus.warped_warty_blackstone_bricks_slab": "Dalle de pierre noire taillée verruqueuse déformée",
+	"block.blockus.warped_warty_blackstone_bricks_stairs": "Escalier en pierre noire taillée verruqueuse déformée",
+	"block.blockus.warped_warty_blackstone_bricks_wall": "Muret de pierre noire taillée verruqueuse déformée",
+	
+	"block.minecraft.nether_wart_block": "Bloc de verrues carmin",
 	
     "block.blockus.legacy_bricks": "Briques (Ancien)",
     "block.blockus.legacy_stonecutter": "Tailleur de pierre (Ancien)",
@@ -475,8 +490,6 @@
     "block.blockus.legacy_crying_obsidian": "Obsidienne pleureuse (Ancienne)",
     "block.blockus.legacy_glowing_obsidian": "Obsidienne lumineuse",
     "block.blockus.legacy_nether_reactor_core": "Cœur du réacteur du Nether",
-    "block.blockus.legacy_planks": "Planches (Ancien)",
-	
-	"block.minecraft.nether_wart_block": "Bloc de verrues carmins"
+    "block.blockus.legacy_planks": "Planches (Ancien)"
 	
 }

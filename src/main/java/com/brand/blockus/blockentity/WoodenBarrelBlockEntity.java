@@ -43,8 +43,8 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 		return tag;
 	}
 	
-	public void fromTag(BlockState blockState, CompoundTag compoundTag) {
-	      super.fromTag(blockState, compoundTag);
+	public void fromTag(BlockState state, CompoundTag compoundTag) {
+	      super.fromTag(state, compoundTag);
 	      this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
 	      if (!this.deserializeLootTable(compoundTag)) {
 	         Inventories.fromTag(compoundTag, this.inventory);
@@ -71,21 +71,24 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 	      return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, this);
 	}
 	
-	public void onInvOpen(PlayerEntity player) {
-		if (!player.isSpectator()) {
-			if (this.viewerCount < 0) {
-				this.viewerCount = 0;
-			}
-			++this.viewerCount;
-			BlockState state = this.getCachedState();
-			boolean boolean_1 = state.get(BarrelBlock.OPEN);
-			if (!boolean_1) {
-				this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
-				this.setOpen(state, true);
-			}
-			this.scheduleUpdate();
-		}
-	}
+	public void onOpen(PlayerEntity player) {
+	      if (!player.isSpectator()) {
+	         if (this.viewerCount < 0) {
+	            this.viewerCount = 0;
+	         }
+
+	         ++this.viewerCount;
+	         BlockState state = this.getCachedState();
+	         boolean bl = (Boolean)state.get(BarrelBlock.OPEN);
+	         if (!bl) {
+	            this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
+	            this.setOpen(state, true);
+	         }
+
+	         this.scheduleUpdate();
+	      }
+
+	   }
 	
 	private void scheduleUpdate() {
 		this.world.getBlockTickScheduler().schedule(this.getPos(), this.getCachedState().getBlock(), 5);

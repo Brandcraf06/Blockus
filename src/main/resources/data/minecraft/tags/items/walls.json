@@ -24,6 +24,9 @@
 	"blockus:honeycomb_bricks_wall",
 	"blockus:sandy_bricks_wall",
 	"blockus:teal_nether_brick_wall",
-	"blockus:lava_polished_blackstone_wall"
+	"blockus:lava_polished_blackstone_wall",
+	"blockus:crimson_warty_blackstone_bricks_wall",
+	"blockus:warped_warty_blackstone_bricks_wall"
+	
   ]
 }

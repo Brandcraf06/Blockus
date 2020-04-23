@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:warped_warty_blackstone_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:warped_warty_blackstone_bricks_stairs",
+    "count": 4
+  }
+}
