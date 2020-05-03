@@ -1,6 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.Leaves.LeavesBlockBase;
+import com.brand.blockus.blocks.Sapling.PottedBlockBase;
 import com.brand.blockus.blocks.Sapling.SaplingBlockBase;
 import com.brand.blockus.blocks.Sapling.WhiteOakSaplingGenerator;
 import com.brand.blockus.blocks.Wood.BlockWood;
@@ -20,6 +21,7 @@ import net.minecraft.block.PressurePlateBlock.ActivationRule;
 public class WhiteOak {
 	
 	public static SaplingBlockBase WHITE_OAK_SAPLING;
+	public static PottedBlockBase POTTED_WHITE_OAK_SAPLING;
 	public static LogBlockBase WHITE_OAK_LOG;
 	public static LogBlockBase STRIPPED_WHITE_OAK_LOG;
 	public static LogBlockBase WHITE_OAK_WOOD;
@@ -39,6 +41,7 @@ public class WhiteOak {
 	public static void init() {
 		
 		WHITE_OAK_SAPLING = new SaplingBlockBase(new WhiteOakSaplingGenerator(), "white_oak_sapling", 0.0f, 0.0f);
+		POTTED_WHITE_OAK_SAPLING = new PottedBlockBase(WHITE_OAK_SAPLING, "potted_white_oak_sapling");
 		WHITE_OAK_LOG = new LogBlockBase(MaterialColor.WHITE, MaterialColor.LIGHT_GRAY_TERRACOTTA, "white_oak_log", 2.0f, 2.0f);
 		STRIPPED_WHITE_OAK_LOG = new LogBlockBase(MaterialColor.WHITE, MaterialColor.QUARTZ, "stripped_white_oak_log", 2.0f, 2.0f);
 		WHITE_OAK_WOOD = new LogBlockBase(MaterialColor.LIGHT_GRAY_TERRACOTTA, MaterialColor.LIGHT_GRAY_TERRACOTTA,"white_oak_wood", 2.0f, 2.0f);

@@ -38,6 +38,7 @@ public void onInitializeClient() {
 		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(WhiteOak.WHITE_OAK_LEAVES, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(WhiteOak.WHITE_OAK_SAPLING, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(WhiteOak.POTTED_WHITE_OAK_SAPLING, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_DOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_TRAPDOOR, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CharredPlanks.CHARRED_DOOR, RenderLayer.getCutoutMipped());
