@@ -1,6 +1,5 @@
 package com.brand.blockus.blocks.IronGate;
 
-import com.brand.blockus.blocks.Nullable;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -82,7 +81,7 @@ public class IronGateBlock extends Block {
 	      }
 	   }
 
-	   public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
+	   public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack stack) {
 	      super.afterBreak(world, player, pos, Blocks.AIR.getDefaultState(), blockEntity, stack);
 	   }
 
@@ -124,7 +123,6 @@ public class IronGateBlock extends Block {
 	      return this.material == Material.METAL ? 1005 : 1006;
 	   }
 
-	   @Nullable
 	   public BlockState getPlacementState(ItemPlacementContext ctx) {
 	      BlockPos blockPos = ctx.getBlockPos();
 	      if (blockPos.getY() < 255 && ctx.getWorld().getBlockState(blockPos.up()).canReplace(ctx)) {

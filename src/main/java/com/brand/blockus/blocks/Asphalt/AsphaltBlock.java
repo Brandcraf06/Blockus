@@ -2,7 +2,7 @@ package com.brand.blockus.blocks.Asphalt;
 
 import com.brand.blockus.Blockus;
 
-import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.entity.Entity;
@@ -19,8 +19,8 @@ import net.minecraft.world.World;
 
 public class AsphaltBlock extends Block { 
 
-public AsphaltBlock(String name, float hardness, float resistance) {
-	super(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).build());
+public AsphaltBlock(String name) {
+	super(FabricBlockSettings.of(Material.STONE).strength(1.5f, 6.0f));
 	Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));	
    }

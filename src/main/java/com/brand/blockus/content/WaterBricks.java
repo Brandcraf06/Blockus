@@ -1,26 +1,21 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.Water.WaterBlockBase;
-import com.brand.blockus.blocks.Water.WaterSlabBase;
-import com.brand.blockus.blocks.Water.WaterStairsBase;
-import com.brand.blockus.blocks.Water.WaterWallBase;
+import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.Base.BlockBase;
+import com.brand.blockus.blocks.Base.SlabBase;
+import com.brand.blockus.blocks.Base.StairsBase;
+import com.brand.blockus.blocks.Base.WallBase;
+
+import net.minecraft.block.Material;
+import net.minecraft.sound.BlockSoundGroup;
 
 public class WaterBricks {
 	
-	public static WaterBlockBase WATER_BRICKS;
-	public static WaterWallBase WATER_BRICKS_WALL;
-	public static WaterStairsBase WATER_BRICKS_STAIRS;
-	public static WaterSlabBase WATER_BRICKS_SLAB;
-	public static WaterBlockBase CHISELED_WATER_BRICKS;
+	public static final BlockBase WATER_BRICKS = new BlockBase("water_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final WallBase WATER_BRICKS_WALL = new WallBase("water_bricks_wall", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final StairsBase WATER_BRICKS_STAIRS = new StairsBase(WATER_BRICKS.getDefaultState(), "water_bricks_stairs", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final SlabBase WATER_BRICKS_SLAB = new SlabBase("water_bricks_slab", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final BlockBase CHISELED_WATER_BRICKS = new BlockBase("chiseled_water_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	
-	public static void init() {
-		
-		WATER_BRICKS = new WaterBlockBase("water_bricks", 1.5f, 6.0f);
-		WATER_BRICKS_WALL = new WaterWallBase("water_bricks_wall", 1.5f, 6.0f);
-		WATER_BRICKS_STAIRS = new WaterStairsBase(WATER_BRICKS.getDefaultState(), "water_bricks_stairs", 1.5f, 6.0f);
-		WATER_BRICKS_SLAB = new WaterSlabBase("water_bricks_slab", 2.0f, 6.0f);
-		CHISELED_WATER_BRICKS = new WaterBlockBase("chiseled_water_bricks", 1.5f, 6.0f);
-				
-	}
 
 }

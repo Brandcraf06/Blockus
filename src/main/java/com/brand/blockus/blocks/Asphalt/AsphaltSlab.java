@@ -2,18 +2,20 @@ package com.brand.blockus.blocks.Asphalt;
 
 import com.brand.blockus.blocks.Base.SlabBase;
 
+import net.minecraft.block.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class AsphaltSlab extends SlabBase {
 
-	public AsphaltSlab(String name, float hardness, float resistance) {
-		super(name, hardness, resistance);
+	public AsphaltSlab(String name) {
+		super(name, 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
 	}
 
 	@Override

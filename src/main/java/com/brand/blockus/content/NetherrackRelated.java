@@ -1,28 +1,20 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.Nether.NetherBlockBase;
-import com.brand.blockus.blocks.Nether.NetherSlabBase;
-import com.brand.blockus.blocks.Nether.NetherStairsBase;
-
+import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
-import com.brand.blockus.blocks.Nether.NetherCirclePavementBlock;
+import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.Base.BlockBase;
+import com.brand.blockus.blocks.Base.CirclePavementBlock;
+import com.brand.blockus.blocks.Base.SlabBase;
+import com.brand.blockus.blocks.Base.StairsBase;
 
 
 public class NetherrackRelated {
 	
-	public static NetherBlockBase POLISHED_NETHERRACK;
-	public static NetherStairsBase POLISHED_NETHERRACK_STAIRS;
-	public static NetherSlabBase POLISHED_NETHERRACK_SLAB;
-	public static NetherCirclePavementBlock NETHERRACK_CIRCLE_PAVEMENT;
-	
-	public static void init() {
-		
-		POLISHED_NETHERRACK = new NetherBlockBase("polished_netherrack", 0.4f, 0.4f, BlockSoundGroup.NETHERRACK);
-		POLISHED_NETHERRACK_STAIRS = new NetherStairsBase(POLISHED_NETHERRACK.getDefaultState(),"polished_netherrack_stairs", 0.4f, 0.4f, BlockSoundGroup.NETHERRACK);
-		POLISHED_NETHERRACK_SLAB = new NetherSlabBase("polished_netherrack_slab", 1.0f, 0.4f, BlockSoundGroup.NETHERRACK);
-		NETHERRACK_CIRCLE_PAVEMENT = new NetherCirclePavementBlock("netherrack_circle_pavement", 1.0f, 0.4f, BlockSoundGroup.NETHERRACK);
-			
-	}
+	public static final BlockBase POLISHED_NETHERRACK = new BlockBase("polished_netherrack", 0.4f, 0.4f, Material.STONE, BlockSoundGroup.NETHERRACK, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final StairsBase POLISHED_NETHERRACK_STAIRS = new StairsBase(POLISHED_NETHERRACK.getDefaultState(),"polished_netherrack_stairs", 0.4f, 0.4f, Material.STONE, BlockSoundGroup.NETHERRACK);
+	public static final SlabBase POLISHED_NETHERRACK_SLAB = new SlabBase("polished_netherrack_slab", 1.0f, 0.4f, Material.STONE, BlockSoundGroup.NETHERRACK);
+	public static final CirclePavementBlock NETHERRACK_CIRCLE_PAVEMENT = new CirclePavementBlock("netherrack_circle_pavement", 1.0f, 0.4f, Material.STONE, BlockSoundGroup.NETHERRACK);
 
 }
