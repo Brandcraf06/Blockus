@@ -38,6 +38,7 @@
     "block.blockus.green_stone_bricks": "Pierre taillée verte",
     "block.blockus.red_stone_bricks": "Pierre taillée rouge",
     "block.blockus.black_stone_bricks": "Pierre taillée noire",
+	
 	"block.blockus.green_orange_colored_tiles": "Carrelage coloré (Vert & orange)",
     "block.blockus.lime_yellow_colored_tiles": "Carrelage coloré (Vert clair & jaune)",
     "block.blockus.light_blue_yellow_colored_tiles": "Carrelage coloré (Bleu clair & jaune)",
@@ -47,6 +48,8 @@
     "block.blockus.red_white_colored_tiles": "Carrelage coloré (Rouge & blanc)",
     "block.blockus.black_white_colored_tiles": "Carrelage coloré (Noir & blanc)",
 	"block.blockus.blue_cyan_colored_tiles": "Carrelage coloré (Bleu & cyan)",
+	"block.blockus.rainbow_colored_tiles": "Carrelage coloré (Arc en ciel)",
+	
 	"block.blockus.bamboo_planks": "Planches de bambou",
 	"block.blockus.bamboo_door": "Porte en bambou",
 	"block.blockus.bamboo_slab": "Dalle en bambou",

@@ -17,5 +17,6 @@ public class ColoredTiles {
 	public static final BlockBase RED_WHITE_COLORED_TILES = new BlockBase("red_white_colored_tiles", 1.8f, 1.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final BlockBase BLACK_WHITE_COLORED_TILES = new BlockBase("black_white_colored_tiles", 1.8f, 1.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final BlockBase BLUE_CYAN_COLORED_TILES = new BlockBase("blue_cyan_colored_tiles", 1.8f, 1.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final BlockBase RAINBOW_COLORED_TILES = new BlockBase("rainbow_colored_tiles", 1.8f, 1.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
 }
