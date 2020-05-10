@@ -48,6 +48,7 @@
     "block.blockus.red_white_colored_tiles": "Colored Tiles (Red & White)",
     "block.blockus.black_white_colored_tiles": "Colored Tiles (Black & White)",
 	"block.blockus.blue_cyan_colored_tiles": "Colored Tiles (Blue & Cyan)",
+	"block.blockus.rainbow_colored_tiles": "Colored Tiles (Rainbow)",
 	
 	"block.blockus.bamboo_planks": "Bamboo Planks",
 	"block.blockus.bamboo_door": "Bamboo Door",
@@ -158,7 +159,6 @@
 	"block.blockus.soaked_bricks_wall": "Soaked Brick Wall",
 	"block.blockus.soaked_bricks_stairs": "Soaked Brick Stairs",
 	"block.blockus.soaked_bricks_slab": "Soaked Brick Slab",
-	
 	
 	
 	"block.blockus.beveled_glass": "Beveled Glass",
@@ -448,10 +448,26 @@
 	"block.blockus.stripped_white_oak_wood": "Stripped White Oak Wood",
 	"block.blockus.white_oak_leaves": "White Oak Leaves",
 	"block.blockus.white_oak_sapling": "White Oak Sapling",
+	"block.blockus.potted_white_oak_sapling": "Potted White Oak Sapling",
 	"block.blockus.white_oak_small_hedge": "White Oak Small Hedge",
 	"block.blockus.white_oak_barrel": "White Oak Barrel",
 	
 	"block.blockus.lantern_block": "Lantern Block",
+	
+	"block.blockus.large_flower_pot": "Large Flower Pot",
+	"block.blockus.potted_rose_bush": "Potted Rose Bush",
+	"block.blockus.potted_lilac": "Potted Lilac",
+	"block.blockus.potted_peony": "Potted Peony",
+	"block.blockus.potted_large_fern": "Potted Large Fern",
+	"block.blockus.potted_oak": "Potted Oak",
+	"block.blockus.potted_spruce": "Potted Spruce",
+	"block.blockus.potted_birch": "Potted Birch",
+	"block.blockus.potted_jungle": "Potted Jungle",
+	"block.blockus.potted_acacia": "Potted Acacia",
+	"block.blockus.potted_dark_oak": "Potted Dark Oak",
+	"block.blockus.potted_white_oak": "Potted White Oak",
+	"block.blockus.potted_huge_red_mushroom": "Potted Huge Red Mushroom",
+	"block.blockus.potted_huge_brown_mushroom": "Potted Huge Brown Mushroom",	
 	
     "block.blockus.legacy_bricks": "Bricks (Legacy)",
     "block.blockus.legacy_stonecutter": "Stonecutter (Legacy)",

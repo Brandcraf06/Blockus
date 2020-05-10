@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "colored tiles",
+  "ingredients": [
+    {
+      "item": "blockus:rainbow_block"
+    },
+    {
+      "item": "blockus:rainbow_block"
+    }
+  ],
+  "result": {
+    "item": "blockus:rainbow_colored_tiles",
+    "count": 2
+  }
+}

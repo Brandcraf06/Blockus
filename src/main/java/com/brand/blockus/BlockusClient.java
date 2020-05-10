@@ -27,33 +27,52 @@ public void onInitializeClient() {
 		registerBlockColor(WaterBricks.WATER_BRICKS_SLAB, Blocks.WATER);
 		registerBlockColor(WaterBricks.WATER_BRICKS_WALL, Blocks.WATER);
 		registerBlockColor(WaterBricks.CHISELED_WATER_BRICKS, Blocks.WATER);
-
-		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.SMALL_HEDGE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.SPRUCE_SMALL_HEDGE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.BIRCH_SMALL_HEDGE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.JUNGLE_SMALL_HEDGE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.ACACIA_SMALL_HEDGE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.DARK_OAK_SMALL_HEDGE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(Hedge.WHITE_OAK_SMALL_HEDGE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(LegacyBlocks.LEGACY_LEAVES, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(WhiteOak.WHITE_OAK_LEAVES, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(WhiteOak.WHITE_OAK_SAPLING, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_DOOR, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(ObsidianRelated.OBSIDIAN_REINFORCED_TRAPDOOR, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(CharredPlanks.CHARRED_DOOR, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(CharredPlanks.CHARRED_TRAPDOOR, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(Other.WOODEN_FRAME, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(Other.IRON_GATE, RenderLayer.getCutoutMipped());
+		registerBlockColor(LargeFlowerPots.POTTED_LARGE_FERN, Blocks.POTTED_FERN);
+		registerBlockColor(LargeFlowerPots.POTTED_OAK, Blocks.OAK_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_SPRUCE, Blocks.SPRUCE_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_BIRCH, Blocks.BIRCH_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_JUNGLE, Blocks.JUNGLE_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_ACACIA, Blocks.ACACIA_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_DARK_OAK, Blocks.DARK_OAK_LEAVES);
 		
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
+				Hedge.SMALL_HEDGE,
+				Hedge.SPRUCE_SMALL_HEDGE,
+				Hedge.BIRCH_SMALL_HEDGE,
+				Hedge.JUNGLE_SMALL_HEDGE,
+				Hedge.ACACIA_SMALL_HEDGE,
+				Hedge.DARK_OAK_SMALL_HEDGE,
+				Hedge.WHITE_OAK_SMALL_HEDGE,
+				LegacyBlocks.LEGACY_LEAVES,
+				WhiteOak.WHITE_OAK_LEAVES,
+				WhiteOak.WHITE_OAK_SAPLING,
+				WhiteOak.POTTED_WHITE_OAK_SAPLING,
+				ObsidianRelated.OBSIDIAN_REINFORCED_DOOR,
+				ObsidianRelated.OBSIDIAN_REINFORCED_TRAPDOOR,
+				CharredPlanks.CHARRED_DOOR,
+				CharredPlanks.CHARRED_TRAPDOOR,
+				Other.WOODEN_FRAME,
+				Other.IRON_GATE,
+				LargeFlowerPots.POTTED_ROSE_BUSH,
+				LargeFlowerPots.POTTED_LILAC,
+				LargeFlowerPots.POTTED_PEONY,
+				LargeFlowerPots.POTTED_LARGE_FERN,
+				LargeFlowerPots.POTTED_OAK,
+				LargeFlowerPots.POTTED_SPRUCE,
+				LargeFlowerPots.POTTED_BIRCH,
+				LargeFlowerPots.POTTED_JUNGLE,
+				LargeFlowerPots.POTTED_ACACIA,
+				LargeFlowerPots.POTTED_DARK_OAK,
+				LargeFlowerPots.POTTED_WHITE_OAK
+
+		);
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
 				WaterBricks.WATER_BRICKS,
 				WaterBricks.WATER_BRICKS_SLAB,
 				WaterBricks.WATER_BRICKS_STAIRS,
 				WaterBricks.WATER_BRICKS_WALL,
-				WaterBricks.CHISELED_WATER_BRICKS
-		);
-
-		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+				WaterBricks.CHISELED_WATER_BRICKS,
+				
 				GlassRelated.BEVELED_GLASS,
 				GlassRelated.WHITE_BEVELED_GLASS,
 				GlassRelated.ORANGE_BEVELED_GLASS,
@@ -70,10 +89,8 @@ public void onInitializeClient() {
 				GlassRelated.BROWN_BEVELED_GLASS,
 				GlassRelated.GREEN_BEVELED_GLASS,
 				GlassRelated.RED_BEVELED_GLASS,
-				GlassRelated.BLACK_BEVELED_GLASS
-		);
-
-		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+				GlassRelated.BLACK_BEVELED_GLASS,
+				
 				GlassRelated.BEVELED_GLASS_PANE,
 				GlassRelated.WHITE_BEVELED_GLASS_PANE,
 				GlassRelated.ORANGE_BEVELED_GLASS_PANE,

@@ -4,7 +4,7 @@ package com.brand.blockus.blocks;
 
 import com.brand.blockus.Blockus;
 
-import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -25,7 +25,7 @@ import net.minecraft.world.World;
 public class NetherStarsBlock extends Block {
 		
 public NetherStarsBlock(String name, float hardness, float resistance) {
-	super(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 1).strength(hardness, resistance).build());
+	super(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 1).strength(hardness, resistance));
 	Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(ItemGroup.BUILDING_BLOCKS).rarity(Rarity.EPIC)));
 }

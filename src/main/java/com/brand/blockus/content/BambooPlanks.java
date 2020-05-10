@@ -1,42 +1,32 @@
 package com.brand.blockus.content;
 
 
-import com.brand.blockus.blocks.Wood.BlockWood;
-import com.brand.blockus.blocks.Wood.ButtonWood;
-import com.brand.blockus.blocks.Wood.FenceBase;
-import com.brand.blockus.blocks.Wood.FenceGateBase;
-import com.brand.blockus.blocks.Wood.PressurePlateWood;
-import com.brand.blockus.blocks.Wood.SlabWood;
-import com.brand.blockus.blocks.Wood.StairsWood;
-import com.brand.blockus.blocks.Wood.WoodenDoor;
-import com.brand.blockus.blocks.Wood.WoodenTrapdoor;
+import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.Base.DoorBase;
+import com.brand.blockus.blocks.Base.FenceBase;
+import com.brand.blockus.blocks.Base.FenceGateBase;
+import com.brand.blockus.blocks.Base.PressurePlateBase;
+import com.brand.blockus.blocks.Base.TrapdoorBase;
+import com.brand.blockus.blocks.Base.SpecificTool.BlockBase2;
+import com.brand.blockus.blocks.Base.SpecificTool.SlabBase2;
+import com.brand.blockus.blocks.Base.SpecificTool.StairsBase2;
+import com.brand.blockus.blocks.Wood.WoodButtonBase;
 
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock.ActivationRule;
+import net.minecraft.sound.BlockSoundGroup;
 
 public class BambooPlanks {
 	
-	public static BlockWood BAMBOO_PLANKS;
-	public static SlabWood BAMBOO_SLAB;
-	public static StairsWood BAMBOO_STAIRS;
-	public static FenceBase BAMBOO_FENCE;
-	public static FenceGateBase BAMBOO_FENCE_GATE;
-	public static PressurePlateWood BAMBOO_PRESSURE_PLATE;
-	public static ButtonWood BAMBOO_BUTTON;
-	public static WoodenDoor BAMBOO_DOOR;
-	public static WoodenTrapdoor BAMBOO_TRAPDOOR;
+	public static final BlockBase2 BAMBOO_PLANKS = new BlockBase2("bamboo_planks", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
+	public static final SlabBase2 BAMBOO_SLAB = new SlabBase2("bamboo_slab", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);
+	public static final StairsBase2 BAMBOO_STAIRS = new StairsBase2(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);
+	public static final FenceBase BAMBOO_FENCE = new FenceBase("bamboo_fence", 2.0f, 3.0f);
+	public static final FenceGateBase BAMBOO_FENCE_GATE = new FenceGateBase("bamboo_fence_gate", 2.0f, 3.0f);
+	public static final PressurePlateBase BAMBOO_PRESSURE_PLATE = new PressurePlateBase("bamboo_pressure_plate", 2.0f, 3.0f, ActivationRule.EVERYTHING);
+	public static final WoodButtonBase BAMBOO_BUTTON = new WoodButtonBase("bamboo_button", 2.0f, 3.0f);
+	public static final DoorBase BAMBOO_DOOR = new DoorBase("bamboo_door", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);
+	public static final TrapdoorBase BAMBOO_TRAPDOOR = new TrapdoorBase("bamboo_trapdoor", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);
 	
-	public static void init() {
-
-		BAMBOO_PLANKS = new BlockWood("bamboo_planks", 2.0f, 3.0f);
-		BAMBOO_SLAB = new SlabWood("bamboo_slab", 2.0f, 3.0f);
-		BAMBOO_STAIRS = new StairsWood(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", 2.0f, 3.0f);
-		BAMBOO_FENCE = new FenceBase("bamboo_fence", 2.0f, 3.0f);
-		BAMBOO_FENCE_GATE = new FenceGateBase("bamboo_fence_gate", 2.0f, 3.0f);
-		BAMBOO_PRESSURE_PLATE = new PressurePlateWood("bamboo_pressure_plate", 2.0f, 3.0f, ActivationRule.EVERYTHING);
-		BAMBOO_BUTTON = new ButtonWood("bamboo_button", 2.0f, 3.0f);
-		BAMBOO_DOOR = new WoodenDoor("bamboo_door", 2.0f, 3.0f);
-		BAMBOO_TRAPDOOR = new WoodenTrapdoor("bamboo_trapdoor", 2.0f, 3.0f);
-			
-	}
-
 }

@@ -1,15 +1,14 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "###"
-  ],
-  "key": {
-    "#": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "blockus:caution_block"
+    },
+    {
+      "item": "blockus:road_barrier"
     }
-  },
+  ],
   "result": {
-    "item": "blockus:caution_barrier",
-    "count": 3
+    "item": "blockus:caution_barrier"
   }
 }

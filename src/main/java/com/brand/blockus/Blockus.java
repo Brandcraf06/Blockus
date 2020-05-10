@@ -1,5 +1,8 @@
 package com.brand.blockus;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.brand.blockus.content.ADGRelated;
 import com.brand.blockus.content.Asphalt;
 import com.brand.blockus.content.BambooPlanks;
@@ -15,6 +18,7 @@ import com.brand.blockus.content.GlassRelated;
 import com.brand.blockus.content.GlazedTerracottaPillars;
 import com.brand.blockus.content.Hedge;
 import com.brand.blockus.content.HoneycombBricks;
+import com.brand.blockus.content.LargeFlowerPots;
 import com.brand.blockus.content.LavaBricks;
 import com.brand.blockus.content.LegacyBlocks;
 import com.brand.blockus.content.Limestone;
@@ -49,52 +53,52 @@ import net.minecraft.util.Identifier;
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.5.1-1.15.2";
-	public static final String NAME = "Blockus";
+	public static final Logger LOGGER = LogManager.getLogger();
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LavaBricks.LAVA_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Hedge.SMALL_HEDGE));
 	public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(Blocks.REDSTONE_BLOCK));
 
 	@Override
 	public void onInitialize() {
-		WhiteOak.init();
-		CharredPlanks.init();
-		BambooPlanks.init();
-		Hedge.init();
+		new WhiteOak();
+		new CharredPlanks();
+		new BambooPlanks();
+		new Hedge();
+		new LargeFlowerPots();
 		new Barrels();
-		GlazedTerracottaPillars.init();
-		GlassRelated.init();
-		StoneRelated.init();
-		Asphalt.init();
-		ADGRelated.init();
-		LavaBricks.init();
-		WaterBricks.init();
-		MagmaBricks.init();
-		SoakedBricks.init();
-		SandstoneBricks.init();
-		HoneycombBricks.init();
-		SoulSandstone.init();
-		PrismarineRelated.init();
-		EndStoneRelated.init();
-		PurpurRelated.init();
-		ObsidianRelated.init();
-		Rainbow.init();
-		RedstoneLamps.init();
-		Limestone.init();
-		Marble.init();
-		Bluestone.init();
-		QuartzRelated.init();
-		PaperRelated.init();
-		NetherrackRelated.init();
-		NetherBricksRelated.init();
-		BlazeBricks.init();
-		FoodBlocks.init();
-		StainedStoneBricks.init();
-		PatternedWools.init();
-		ColoredTiles.init();
-		FuturneoBlocks.init();
-		Other.init();
-		LegacyBlocks.init();
+		new GlazedTerracottaPillars();
+		new GlassRelated();
+		new StoneRelated();
+		new Asphalt();
+		new ADGRelated();
+		new LavaBricks();
+		new WaterBricks();
+		new MagmaBricks();
+		new SoakedBricks();
+		new SandstoneBricks();
+		new HoneycombBricks();
+		new SoulSandstone();
+		new PrismarineRelated();
+		new EndStoneRelated();
+		new PurpurRelated();
+		new ObsidianRelated();
+		new Rainbow();
+		new RedstoneLamps();
+		new Limestone();
+		new Marble();
+		new Bluestone();
+		new QuartzRelated();
+		new PaperRelated();
+		new NetherrackRelated();
+		new NetherBricksRelated();
+		new BlazeBricks();
+		new FoodBlocks();
+		new StainedStoneBricks();
+		new PatternedWools();
+		new ColoredTiles();
+		new FuturneoBlocks();
+		new Other();
+		new LegacyBlocks();
 		instance.init();
 	
    
