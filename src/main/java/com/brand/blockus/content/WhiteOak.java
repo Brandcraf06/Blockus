@@ -2,6 +2,9 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Base.DoorBase;
+import com.brand.blockus.blocks.Base.FenceBase;
+import com.brand.blockus.blocks.Base.FenceGateBase;
+import com.brand.blockus.blocks.Base.PressurePlateBase;
 import com.brand.blockus.blocks.Base.TrapdoorBase;
 import com.brand.blockus.blocks.Base.SpecificTool.BlockBase2;
 import com.brand.blockus.blocks.Base.SpecificTool.SlabBase2;
@@ -10,11 +13,8 @@ import com.brand.blockus.blocks.Leaves.LeavesBlockBase;
 import com.brand.blockus.blocks.Sapling.PottedBlockBase;
 import com.brand.blockus.blocks.Sapling.SaplingBlockBase;
 import com.brand.blockus.blocks.Sapling.WhiteOakSaplingGenerator;
-import com.brand.blockus.blocks.Wood.ButtonWood;
-import com.brand.blockus.blocks.Wood.FenceBase;
-import com.brand.blockus.blocks.Wood.FenceGateBase;
 import com.brand.blockus.blocks.Wood.LogBlockBase;
-import com.brand.blockus.blocks.Wood.PressurePlateWood;
+import com.brand.blockus.blocks.Wood.WoodButtonBase;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
@@ -36,8 +36,8 @@ public class WhiteOak {
 	public static final StairsBase2 WHITE_OAK_STAIRS = new StairsBase2(WHITE_OAK_PLANKS.getDefaultState(), "white_oak_stairs", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);
 	public static final FenceBase WHITE_OAK_FENCE = new FenceBase("white_oak_fence", 2.0f, 3.0f);
 	public static final FenceGateBase WHITE_OAK_FENCE_GATE = new FenceGateBase("white_oak_fence_gate", 2.0f, 3.0f);
-	public static final PressurePlateWood WHITE_OAK_PRESSURE_PLATE = new PressurePlateWood("white_oak_pressure_plate", 2.0f, 3.0f, ActivationRule.EVERYTHING);
-	public static final ButtonWood WHITE_OAK_BUTTON = new ButtonWood("white_oak_button", 2.0f, 3.0f);
+	public static final PressurePlateBase WHITE_OAK_PRESSURE_PLATE = new PressurePlateBase("white_oak_pressure_plate", 2.0f, 3.0f, ActivationRule.EVERYTHING);
+	public static final WoodButtonBase WHITE_OAK_BUTTON = new WoodButtonBase("white_oak_button", 2.0f, 3.0f);
 	public static final DoorBase WHITE_OAK_DOOR = new DoorBase("white_oak_door", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);
 	public static final TrapdoorBase WHITE_OAK_TRAPDOOR = new TrapdoorBase("white_oak_trapdoor", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);
 

@@ -1,5 +1,8 @@
 package com.brand.blockus;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.brand.blockus.content.ADGRelated;
 import com.brand.blockus.content.Asphalt;
 import com.brand.blockus.content.BambooPlanks;
@@ -15,6 +18,7 @@ import com.brand.blockus.content.GlassRelated;
 import com.brand.blockus.content.GlazedTerracottaPillars;
 import com.brand.blockus.content.Hedge;
 import com.brand.blockus.content.HoneycombBricks;
+import com.brand.blockus.content.LargeFlowerPots;
 import com.brand.blockus.content.LavaBricks;
 import com.brand.blockus.content.LegacyBlocks;
 import com.brand.blockus.content.Limestone;
@@ -49,8 +53,7 @@ import net.minecraft.util.Identifier;
 public class Blockus implements ModInitializer {
 	
 	public static final String MOD_ID = "blockus";
-	public static final String VERSION = "1.5.1";
-	public static final String NAME = "Blockus";
+	public static final Logger LOGGER = LogManager.getLogger();
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LavaBricks.LAVA_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Hedge.SMALL_HEDGE));
 	public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(Blocks.REDSTONE_BLOCK));
@@ -61,6 +64,7 @@ public class Blockus implements ModInitializer {
 		new CharredPlanks();
 		new BambooPlanks();
 		new Hedge();
+		new LargeFlowerPots();
 		new Barrels();
 		new GlazedTerracottaPillars();
 		new GlassRelated();

@@ -1,0 +1,150 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "blockus:block/large_flower_pot",
+		"pot": "blockus:block/large_flower_pot",
+		"dirt": "block/dirt"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 3],
+			"to": [3, 14, 15],
+			"faces": {
+				"north": {"uv": [12, 9, 14, 16], "texture": "#pot"},
+				"east": {"uv": [2, 0, 14, 14], "texture": "#pot"},
+				"south": {"uv": [0, 0, 2, 14], "texture": "#pot"},
+				"west": {"uv": [2, 0, 14, 14], "texture": "#pot"},
+				"up": {"uv": [16, 12, 14, 0], "texture": "#pot"},
+				"down": {"uv": [16, 0, 14, 12], "texture": "#pot", "cullface": "down"}
+			}
+		},
+		{
+			"from": [13, 0, 1],
+			"to": [15, 14, 13],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 14], "texture": "#pot"},
+				"east": {"uv": [2, 0, 14, 14], "texture": "#pot"},
+				"south": {"uv": [26, 9, 28, 16], "texture": "#pot"},
+				"west": {"uv": [2, 0, 14, 14], "texture": "#pot"},
+				"up": {"uv": [16, 12, 14, 0], "texture": "#pot"},
+				"down": {"uv": [16, 0, 14, 12], "texture": "#pot", "cullface": "down"}
+			}
+		},
+		{
+			"from": [1, 0, 1],
+			"to": [13, 14, 3],
+			"faces": {
+				"north": {"uv": [2, 0, 14, 14], "texture": "#pot"},
+				"south": {"uv": [2, 0, 14, 14], "texture": "#pot"},
+				"west": {"uv": [0, 0, 2, 14], "texture": "#pot"},
+				"up": {"uv": [12, 16, 0, 14], "texture": "#pot"},
+				"down": {"uv": [12, 14, 0, 16], "texture": "#pot", "cullface": "down"}
+			}
+		},
+		{
+			"from": [3, 0, 13],
+			"to": [15, 14, 15],
+			"faces": {
+				"north": {"uv": [2, 0, 14, 14], "texture": "#pot"},
+				"east": {"uv": [0, 0, 2, 14], "texture": "#pot"},
+				"south": {"uv": [2, 0, 14, 14], "texture": "#pot"},
+				"west": {"uv": [14, 3.5, 16, 10.5], "texture": "#pot"},
+				"up": {"uv": [12, 16, 0, 14], "texture": "#pot"},
+				"down": {"uv": [12, 14, 0, 16], "texture": "#pot"}
+			}
+		},
+		{
+			"from": [3, 0, 3],
+			"to": [13, 13, 13],
+			"faces": {
+				"up": {"uv": [13, 13, 3, 3], "texture": "#dirt"},
+				"down": {"uv": [11, 1, 1, 11], "texture": "#pot", "cullface": "down"}
+			}
+		},
+		{
+			"name": "log",
+			"from": [6, 13, 6],
+			"to": [10, 17, 10],
+			"faces": {
+				"north": {"uv": [4, 4, 12, 12], "texture": "#log"},
+				"east": {"uv": [4, 4, 12, 12], "texture": "#log"},
+				"south": {"uv": [4, 4, 12, 12], "texture": "#log"},
+				"west": {"uv": [4, 4, 12, 12], "texture": "#log"}
+			}
+		},
+		{
+			"name": "log",
+			"from": [6, 17, 6],
+			"to": [10, 21, 10],
+			"faces": {
+				"north": {"uv": [4, 4, 12, 12], "texture": "#log"},
+				"east": {"uv": [4, 4, 12, 12], "texture": "#log"},
+				"south": {"uv": [4, 4, 12, 12], "texture": "#log"},
+				"west": {"uv": [4, 4, 12, 12], "texture": "#log"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#log_top"}
+			}
+		},
+		{
+			"name": "leaves",
+			"from": [13, 17, 3],
+			"to": [13, 27, 13],
+			"faces": {
+				"east": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0},
+				"west": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0}
+			}
+		},
+		{
+			"name": "leaves",
+			"from": [3, 17, 3],
+			"to": [3, 27, 13],
+			"faces": {
+				"east": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0},
+				"west": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0}
+			}
+		},
+		{
+			"name": "leaves",
+			"from": [3, 27, 3],
+			"to": [13, 27, 13],
+			"faces": {
+				"up": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0}
+			}
+		},
+		{
+			"name": "leaves",
+			"from": [3, 17, 3],
+			"to": [13, 17, 13],
+			"faces": {
+				"up": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0}
+			}
+		},
+		{
+			"name": "leaves",
+			"from": [3, 17, 13],
+			"to": [13, 27, 13],
+			"faces": {
+				"north": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0},
+				"south": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0}
+			}
+		},
+		{
+			"name": "leaves",
+			"from": [3, 17, 3],
+			"to": [13, 27, 3],
+			"faces": {
+				"north": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0},
+				"south": {"uv": [3, 3, 13, 13], "texture": "#leaves", "tintindex": 0}
+			}
+		}
+	],
+	"groups": [0, 1, 2, 3, 4, 5,
+		{
+			"name": "leaves",
+			"origin": [8, 8, 8],
+			"children": [6, 7, 8, 9, 10, 11]
+		}
+	]
+}

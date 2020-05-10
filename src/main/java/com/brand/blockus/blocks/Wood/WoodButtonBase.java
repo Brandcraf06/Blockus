@@ -11,9 +11,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class ButtonWood extends WoodButtonBlock {
+public class WoodButtonBase extends WoodButtonBlock {
 	
-	public ButtonWood(String name, float hardness, float resistance) {
+	public WoodButtonBase(String name, float hardness, float resistance) {
 		super(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));

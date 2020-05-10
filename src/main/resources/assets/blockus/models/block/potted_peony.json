@@ -1,0 +1,7 @@
+{
+  "parent": "blockus:block/large_flower_pot_cross",
+  "textures": {
+    "plant_top": "block/peony_top",
+	"plant_bottom": "block/peony_bottom"
+  }
+}

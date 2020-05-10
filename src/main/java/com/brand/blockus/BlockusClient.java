@@ -27,6 +27,13 @@ public void onInitializeClient() {
 		registerBlockColor(WaterBricks.WATER_BRICKS_SLAB, Blocks.WATER);
 		registerBlockColor(WaterBricks.WATER_BRICKS_WALL, Blocks.WATER);
 		registerBlockColor(WaterBricks.CHISELED_WATER_BRICKS, Blocks.WATER);
+		registerBlockColor(LargeFlowerPots.POTTED_LARGE_FERN, Blocks.POTTED_FERN);
+		registerBlockColor(LargeFlowerPots.POTTED_OAK, Blocks.OAK_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_SPRUCE, Blocks.SPRUCE_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_BIRCH, Blocks.BIRCH_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_JUNGLE, Blocks.JUNGLE_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_ACACIA, Blocks.ACACIA_LEAVES);
+		registerBlockColor(LargeFlowerPots.POTTED_DARK_OAK, Blocks.DARK_OAK_LEAVES);
 		
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
 				Hedge.SMALL_HEDGE,
@@ -46,7 +53,18 @@ public void onInitializeClient() {
 				CharredPlanks.CHARRED_TRAPDOOR,
 				Other.WOODEN_FRAME,
 				Other.IRON_GATE,
-				Other.GOLDEN_CHAIN
+				Other.GOLDEN_CHAIN,
+				LargeFlowerPots.POTTED_ROSE_BUSH,
+				LargeFlowerPots.POTTED_LILAC,
+				LargeFlowerPots.POTTED_PEONY,
+				LargeFlowerPots.POTTED_LARGE_FERN,
+				LargeFlowerPots.POTTED_OAK,
+				LargeFlowerPots.POTTED_SPRUCE,
+				LargeFlowerPots.POTTED_BIRCH,
+				LargeFlowerPots.POTTED_JUNGLE,
+				LargeFlowerPots.POTTED_ACACIA,
+				LargeFlowerPots.POTTED_DARK_OAK,
+				LargeFlowerPots.POTTED_WHITE_OAK
 
 		);
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),

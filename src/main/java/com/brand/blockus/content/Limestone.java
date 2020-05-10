@@ -2,12 +2,13 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Base.BlockBase;
-import com.brand.blockus.blocks.Base.CirclePavementBlock;
+import com.brand.blockus.blocks.Base.GlazedLikeBlockBase;
 import com.brand.blockus.blocks.Base.PillarBase;
 import com.brand.blockus.blocks.Base.SlabBase;
 import com.brand.blockus.blocks.Base.StairsBase;
 import com.brand.blockus.blocks.Base.WallBase;
 
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
@@ -22,6 +23,6 @@ public class Limestone {
 	public static final WallBase LIMESTONE_BRICKS_WALL = new WallBase("limestone_bricks_wall", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
 	public static final PillarBase LIMESTONE_PILLAR = new PillarBase("limestone_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
 	public static final BlockBase CHISELED_LIMESTONE = new BlockBase("chiseled_limestone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-	public static final CirclePavementBlock LIMESTONE_CIRCLE_PAVEMENT = new CirclePavementBlock("limestone_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final GlazedLikeBlockBase LIMESTONE_CIRCLE_PAVEMENT = new GlazedLikeBlockBase("limestone_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0);
 
 }

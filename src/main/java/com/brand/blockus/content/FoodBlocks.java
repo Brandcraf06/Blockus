@@ -29,5 +29,5 @@ public class FoodBlocks {
 	public static final RareCrate GOLDEN_APPLE_CRATE = new RareCrate("golden_apple_crate", 2.5f, 2.5f);
 	public static final BlockBase2 GOLDEN_CARROT_CRATE = new BlockBase2("golden_carrot_crate", 2.5f, 2.5f, Material.ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
 	public static final BlockBaseHand ROTTEN_FLESH_BLOCK = new BlockBaseHand("rotten_flesh_block", 1.5f, 1.5f, Material.ORGANIC, BlockSoundGroup.SLIME, Blockus.BLOCKUS_BUILDING_BLOCKS);
-
-}
+	
+	}

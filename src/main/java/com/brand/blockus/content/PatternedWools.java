@@ -1,24 +1,28 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.PatternedWool;
+import com.brand.blockus.blocks.Base.GlazedLikeBlockBase;
+
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.Material;
+import net.minecraft.sound.BlockSoundGroup;
 
 public class PatternedWools {
 	
-	public static final PatternedWool WHITE_PATTERNED_WOOL = new PatternedWool("white_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool ORANGE_PATTERNED_WOOL = new PatternedWool("orange_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool MAGENTA_PATTERNED_WOOL = new PatternedWool("magenta_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool LIGHT_BLUE_PATTERNED_WOOL = new PatternedWool("light_blue_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool YELLOW_PATTERNED_WOOL = new PatternedWool("yellow_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool LIME_PATTERNED_WOOL = new PatternedWool("lime_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool PINK_PATTERNED_WOOL = new PatternedWool("pink_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool GRAY_PATTERNED_WOOL = new PatternedWool("gray_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool LIGHT_GRAY_PATTERNED_WOOL = new PatternedWool("light_gray_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool CYAN_PATTERNED_WOOL = new PatternedWool("cyan_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool PURPLE_PATTERNED_WOOL = new PatternedWool("purple_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool BLUE_PATTERNED_WOOL = new PatternedWool("blue_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool BROWN_PATTERNED_WOOL = new PatternedWool("brown_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool GREEN_PATTERNED_WOOL = new PatternedWool("green_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool RED_PATTERNED_WOOL = new PatternedWool("red_patterned_wool", 0.8f, 0.8f);
-	public static final PatternedWool BLACK_PATTERNED_WOOL = new PatternedWool("black_patterned_wool", 0.8f, 0.8f);
+	public static final GlazedLikeBlockBase WHITE_PATTERNED_WOOL = new GlazedLikeBlockBase("white_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase ORANGE_PATTERNED_WOOL = new GlazedLikeBlockBase("orange_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase MAGENTA_PATTERNED_WOOL = new GlazedLikeBlockBase("magenta_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase LIGHT_BLUE_PATTERNED_WOOL = new GlazedLikeBlockBase("light_blue_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase YELLOW_PATTERNED_WOOL = new GlazedLikeBlockBase("yellow_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase LIME_PATTERNED_WOOL = new GlazedLikeBlockBase("lime_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase PINK_PATTERNED_WOOL = new GlazedLikeBlockBase("pink_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase GRAY_PATTERNED_WOOL = new GlazedLikeBlockBase("gray_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase LIGHT_GRAY_PATTERNED_WOOL = new GlazedLikeBlockBase("light_gray_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase CYAN_PATTERNED_WOOL = new GlazedLikeBlockBase("cyan_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase PURPLE_PATTERNED_WOOL = new GlazedLikeBlockBase("purple_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase BLUE_PATTERNED_WOOL = new GlazedLikeBlockBase("blue_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase BROWN_PATTERNED_WOOL = new GlazedLikeBlockBase("brown_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase GREEN_PATTERNED_WOOL = new GlazedLikeBlockBase("green_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase RED_PATTERNED_WOOL = new GlazedLikeBlockBase("red_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
+	public static final GlazedLikeBlockBase BLACK_PATTERNED_WOOL = new GlazedLikeBlockBase("black_patterned_wool", 0.8f, 0.8f, Material.WOOL, BlockSoundGroup.WOOL, FabricToolTags.SHEARS, 0);
 
 }

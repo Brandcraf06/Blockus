@@ -91,7 +91,7 @@ public class IronGateBlock extends Block {
 	      BlockState blockState = world.getBlockState(blockPos);
 	      if (blockState.getBlock() == this && blockState.get(HALF) != doubleBlockHalf) {
 	         world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), 35);
-	         world.playLevelEvent(player, 2001, blockPos, Block.getRawIdFromState(blockState));
+	         world.syncWorldEvent(player, 2001, blockPos, Block.getRawIdFromState(blockState));
 	         ItemStack itemStack = player.getMainHandStack();
 	         if (!world.isClient && !player.isCreative() && player.isUsingEffectiveTool(blockState)) {
 	            Block.dropStacks(state, world, pos, (BlockEntity)null, player, itemStack);
@@ -178,7 +178,7 @@ public class IronGateBlock extends Block {
 	      } else {
 	         state = (BlockState)state.cycle(OPEN);
 	         world.setBlockState(pos, state, 10);
-	         world.playLevelEvent(player, (Boolean)state.get(OPEN) ? this.getCloseSoundEventId() : this.getOpenSoundEventId(), pos, 0);
+	         world.syncWorldEvent(player, (Boolean)state.get(OPEN) ? this.getCloseSoundEventId() : this.getOpenSoundEventId(), pos, 0);
 	         return ActionResult.SUCCESS;
 	      }
 	   }
@@ -214,7 +214,7 @@ public class IronGateBlock extends Block {
 	   }
 
 	   private void playOpenCloseSound(World world, BlockPos pos, boolean open) {
-	      world.playLevelEvent((PlayerEntity)null, open ? this.getCloseSoundEventId() : this.getOpenSoundEventId(), pos, 0);
+	      world.syncWorldEvent((PlayerEntity)null, open ? this.getCloseSoundEventId() : this.getOpenSoundEventId(), pos, 0);
 	   }
 
 	   public PistonBehavior getPistonBehavior(BlockState state) {

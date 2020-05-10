@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.Wood;
+package com.brand.blockus.blocks.Base;
 
 import com.brand.blockus.Blockus;
 
@@ -11,9 +11,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class PressurePlateWood extends PressurePlateBlock {
+public class PressurePlateBase extends PressurePlateBlock {
 	
-	public PressurePlateWood(String name, float hardness, float resistance, ActivationRule type) {
+	public PressurePlateBase(String name, float hardness, float resistance, ActivationRule type) {
 		super(type, FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));

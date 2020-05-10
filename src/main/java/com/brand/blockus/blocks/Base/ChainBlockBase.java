@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 public class ChainBlockBase extends ChainBlock {
 		
 	public ChainBlockBase(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.field_24119).nonOpaque().strength(hardness, resistance));
+		super(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.CHAIN).nonOpaque().strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
 	}

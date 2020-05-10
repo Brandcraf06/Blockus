@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.Wood;
+package com.brand.blockus.blocks.Base;
 
 import com.brand.blockus.Blockus;
 
