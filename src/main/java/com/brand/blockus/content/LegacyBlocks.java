@@ -5,6 +5,7 @@ import com.brand.blockus.blocks.Base.BaseSpongeBlock;
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.FallingGravelBase;
 import com.brand.blockus.blocks.Base.SpecificTool.BlockBase2;
+import com.brand.blockus.blocks.Leaves.LegacyLeavesBlock;
 import com.brand.blockus.blocks.Light.LightBlockBase;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -16,7 +17,7 @@ public class LegacyBlocks {
 	public static final BlockBase LEGACY_BRICKS = new BlockBase("legacy_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final BlockBase LEGACY_STONECUTTER = new BlockBase("legacy_stonecutter", 1.5f, 17.5f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final BlockBase LEGACY_GRASS_BLOCK = new BlockBase("legacy_grass_block", 0.6f, 3.0f, Material.LEAVES, BlockSoundGroup.GRASS, Blockus.BLOCKUS_BUILDING_BLOCKS);
-	public static final BlockBase LEGACY_LEAVES = new BlockBase("legacy_leaves", 0.6f, 3.0f, Material.LEAVES, BlockSoundGroup.GRASS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final LegacyLeavesBlock LEGACY_LEAVES = new LegacyLeavesBlock("legacy_leaves", 0.6f, 3.0f);
 	public static final FallingGravelBase LEGACY_GRAVEL = new FallingGravelBase("legacy_gravel", 2.0f, 6.0f);
 	public static final BlockBase LEGACY_COBBLESTONE = new BlockBase("legacy_cobblestone", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final BlockBase LEGACY_MOSSY_COBBLESTONE = new BlockBase("legacy_mossy_cobblestone", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);

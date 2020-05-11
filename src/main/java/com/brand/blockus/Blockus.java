@@ -45,10 +45,14 @@ import com.brand.blockus.content.WhiteOak;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.BlockView;
 
 public class Blockus implements ModInitializer {
 	
@@ -100,7 +104,19 @@ public class Blockus implements ModInitializer {
 		new Other();
 		new LegacyBlocks();
 		instance.init();
+	 
+	}
 	
-   
+	public static boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+	      return type == EntityType.OCELOT || type == EntityType.PARROT;
+	}
+	
+	public static boolean never(BlockState state, BlockView world, BlockPos pos) {
+	      return false;
+	}
+	
+	public static boolean nothing(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+	      return false;
 	}
 }
+

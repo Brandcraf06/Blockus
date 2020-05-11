@@ -67,7 +67,7 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 		return new TranslatableText("container.barrel", new Object[0]);
 	}
 	
-	protected ScreenHandler createContainer(int i, PlayerInventory playerInventory) {
+	protected ScreenHandler createScreenHandler(int i, PlayerInventory playerInventory) {
 	      return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, this);
 	}
 	
