@@ -12,7 +12,7 @@ import net.minecraft.util.registry.Registry;
 public class PottedBlockBase extends FlowerPotBlock {
 
 	public PottedBlockBase(Block content, String name) {
-		super(content, FabricBlockSettings.of(Material.PART).breakInstantly().nonOpaque());
+		super(content, FabricBlockSettings.of(Material.SUPPORTED).breakInstantly().nonOpaque());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 	}
 }

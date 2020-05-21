@@ -26,7 +26,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public class LargeFlowerPotBlock extends Block {
@@ -83,7 +82,7 @@ public class LargeFlowerPotBlock extends Block {
 	      return this.content == Blocks.AIR ? super.getPickStack(world, pos, state) : new ItemStack(this.content);
 	   }
 
-	   public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, IWorld world, BlockPos pos, BlockPos posFrom) {
+	   public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, World world, BlockPos pos, BlockPos posFrom) {
 	      return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
 	   }
 

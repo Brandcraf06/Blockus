@@ -31,7 +31,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 @SuppressWarnings("rawtypes")
@@ -166,7 +166,7 @@ public class Barrier extends Block implements Waterloggable {
 	      return this.method_24422(worldView, blockState6, blockPos6, blockState5, bl, bl2, bl3, bl4);
 	   }
 
-	   public BlockState getStateForNeighborUpdate(BlockState state, Direction facing, BlockState neighborState, IWorld world, BlockPos pos, BlockPos neighborPos) {
+	   public BlockState getStateForNeighborUpdate(BlockState state, Direction facing, BlockState neighborState, World world, BlockPos pos, BlockPos neighborPos) {
 	      if ((Boolean)state.get(WATERLOGGED)) {
 	         world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
 	      }

@@ -14,7 +14,7 @@
 	"issues": "https://github.com/Brandcraf06/Blockus/issues"
   },
 
-  "license": "CC0-1.0",
+  "license": "GPLv3",
   "icon": "assets/blockus/icon.png",
 
   "environment": "*",

@@ -19,7 +19,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
@@ -51,7 +50,7 @@ public class CookieBlock extends Block {
 		      return this.tryEat(world, pos, state, player);
 		   }
 
-		   private ActionResult tryEat(IWorld world, BlockPos pos, BlockState state, PlayerEntity player) {
+		   private ActionResult tryEat(World world, BlockPos pos, BlockState state, PlayerEntity player) {
 		      if (!player.canConsume(false)) {
 		         return ActionResult.PASS;
 		      } else {
@@ -68,7 +67,7 @@ public class CookieBlock extends Block {
 		      }
 		   }
 
-	   public BlockState getStateForNeighborUpdate(BlockState blockState_1, Direction direction_1, BlockState blockState_2, IWorld iWorld_1, BlockPos blockPos_1, BlockPos blockPos_2) {
+	   public BlockState getStateForNeighborUpdate(BlockState blockState_1, Direction direction_1, BlockState blockState_2, World iWorld_1, BlockPos blockPos_1, BlockPos blockPos_2) {
 	      return direction_1 == Direction.DOWN && !blockState_1.canPlaceAt(iWorld_1, blockPos_1) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(blockState_1, direction_1, blockState_2, iWorld_1, blockPos_1, blockPos_2);
 	   }
 
