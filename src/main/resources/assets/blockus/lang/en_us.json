@@ -48,6 +48,13 @@
     "block.blockus.red_white_colored_tiles": "Colored Tiles (Red & White)",
     "block.blockus.black_white_colored_tiles": "Colored Tiles (Black & White)",
 	"block.blockus.blue_cyan_colored_tiles": "Colored Tiles (Blue & Cyan)",
+	"block.blockus.black_gray_colored_tiles": "Colored Tiles (Black & Gray)",
+	"block.blockus.black_red_colored_tiles": "Colored Tiles (Black & Red)",
+    "block.blockus.black_blue_colored_tiles": "Colored Tiles (Black & Blue)",
+    "block.blockus.magenta_black_colored_tiles": "Colored Tiles (Magenta & Black)",
+    "block.blockus.purple_orange_colored_tiles": "Colored Tiles (Purple & Orange)",
+    "block.blockus.purple_blue_colored_tiles": "Colored Tiles (Purple & Blue)",
+    "block.blockus.green_brown_colored_tiles": "Colored Tiles (Green & Brown)",
 	"block.blockus.rainbow_colored_tiles": "Colored Tiles (Rainbow)",
 	
 	"block.blockus.bamboo_planks": "Bamboo Planks",
@@ -319,8 +326,6 @@
     "block.blockus.zigzagged_nether_bricks": "Zigzagged Nether Bricks",
     "block.blockus.zigzagged_red_nether_bricks": "Zigzagged Red Nether Bricks",
     "block.blockus.zigzagged_charred_nether_bricks": "Zigzagged Charred Nether Bricks",
-
-    "block.blockus.polished_blackstone_circle_pavement": "Polished Blackstone Circle Pavement",
 	
 	"block.blockus.marble": "Marble",
 	"block.blockus.marble_stairs": "Marble Stairs",
@@ -457,6 +462,18 @@
 	
 	"block.blockus.lantern_block": "Lantern Block",
 	
+	"block.blockus.polished_andesite_pillar": "Polished Andesite Pillar",
+	"block.blockus.polished_diorite_pillar": "Polished Diorite Pillar",
+	"block.blockus.polished_granite_pillar": "Polished Granite Pillar",
+	"block.blockus.end_stone_pillar": "End Stone Pillar",
+    "block.blockus.cracked_andesite_bricks": "Cracked Andesite Bricks",
+	"block.blockus.cracked_diorite_bricks": "Cracked Diorite Bricks",
+	"block.blockus.cracked_granite_bricks": "Cracked Granite Bricks",
+	"block.blockus.cracked_end_stone_bricks": "Cracked End Stone Bricks",
+	"block.blockus.chiseled_andesite_bricks": "Chiseled Andesite Bricks",
+	"block.blockus.chiseled_diorite_bricks": "Chiseled Diorite Bricks",
+	"block.blockus.chiseled_granite_bricks": "Chiseled Granite Bricks",
+	
 	"block.blockus.large_flower_pot": "Large Flower Pot",
 	"block.blockus.potted_rose_bush": "Potted Rose Bush",
 	"block.blockus.potted_lilac": "Potted Lilac",
@@ -471,6 +488,7 @@
 	"block.blockus.potted_white_oak": "Potted White Oak",
 	"block.blockus.potted_huge_red_mushroom": "Potted Huge Red Mushroom",
 	"block.blockus.potted_huge_brown_mushroom": "Potted Huge Brown Mushroom",
+	
 	"block.blockus.potted_huge_crimson_fungus": "Potted Huge Crimson Fungus",
 	"block.blockus.potted_huge_warped_fungus": "Potted Huge Warped Fungus",
 	
@@ -502,6 +520,7 @@
 	"block.blockus.warped_barrel": "Warped Barrel",
 	
     "block.blockus.polished_blackstone_pillar": "Polished Blackstone Pillar",
+	"block.blockus.polished_blackstone_circle_pavement": "Polished Blackstone Circle Pavement",
 	
 	"block.blockus.lava_polished_blackstone_bricks": "Lava Polished Blackstone Bricks",
 	"block.blockus.lava_polished_blackstone_wall": "Lava Polished Blackstone Brick Wall",

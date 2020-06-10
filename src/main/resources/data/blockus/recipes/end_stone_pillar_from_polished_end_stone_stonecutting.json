@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:polished_end_stone"
+  },
+  "result": "blockus:end_stone_pillar",
+  "count": 1
+}

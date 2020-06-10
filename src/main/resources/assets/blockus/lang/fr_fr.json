@@ -48,7 +48,15 @@
     "block.blockus.red_white_colored_tiles": "Carrelage coloré (Rouge & blanc)",
     "block.blockus.black_white_colored_tiles": "Carrelage coloré (Noir & blanc)",
 	"block.blockus.blue_cyan_colored_tiles": "Carrelage coloré (Bleu & cyan)",
+	"block.blockus.black_gray_colored_tiles": "Carrelage coloré (Noir & gris)",
+	"block.blockus.black_red_colored_tiles": "Carrelage coloré (Noir & rouge)",
+    "block.blockus.black_blue_colored_tiles": "Carrelage coloré (Noir & bleu)",
+    "block.blockus.magenta_black_colored_tiles": "Carrelage coloré (Magenta & noir)",
+    "block.blockus.purple_orange_colored_tiles": "Carrelage coloré (Violet & orange)",
+    "block.blockus.purple_blue_colored_tiles": "Carrelage coloré (Violet & bleu)",
+    "block.blockus.green_brown_colored_tiles": "Carrelage coloré (Vert & marron)",
 	"block.blockus.rainbow_colored_tiles": "Carrelage coloré (Arc en ciel)",
+	
 	
 	"block.blockus.bamboo_planks": "Planches de bambou",
 	"block.blockus.bamboo_door": "Porte en bambou",
@@ -133,15 +141,15 @@
 	"block.blockus.zigzagged_andesite": "Andesite zigzaguée",
 	"block.blockus.zigzagged_diorite": "Diorite zigzaguée",
 	"block.blockus.zigzagged_granite": "Granite zigzaguée",
-	"block.blockus.andesite_bricks": "Briques d'andésite",
-	"block.blockus.andesite_bricks_stairs": "Escalier en briques d'andésite",
-	"block.blockus.andesite_bricks_slab": "Dalle de briques d'andésite",
-	"block.blockus.diorite_bricks": "Briques de diorite",
-	"block.blockus.diorite_bricks_stairs": "Escalier en briques de diorite",
-	"block.blockus.diorite_bricks_slab": "Dalle de briques de diorite",
-	"block.blockus.granite_bricks": "Briques de granite",
-	"block.blockus.granite_bricks_stairs": "Escalier en briques de granite",
-	"block.blockus.granite_bricks_slab": "Dalle de briques de granite",
+	"block.blockus.andesite_bricks": "Andésite taillée",
+	"block.blockus.andesite_bricks_stairs": "Escalier en andésite taillée",
+	"block.blockus.andesite_bricks_slab": "Dalle d'andésite taillée",
+	"block.blockus.diorite_bricks": "Diorite taillée",
+	"block.blockus.diorite_bricks_stairs": "Escalier en diorite taillée",
+	"block.blockus.diorite_bricks_slab": "Dalle de diorite taillée",
+	"block.blockus.granite_bricks": "Granité taillé",
+	"block.blockus.granite_bricks_stairs": "Escalier en granite taillé",
+	"block.blockus.granite_bricks_slab": "Dalle de granite taillé",
 	"block.blockus.caution_block": "Bloc de danger",
 	"block.blockus.caution_barrier": "Barriére de danger",
 	"block.blockus.road_barrier": "Barriére de route",
@@ -303,12 +311,6 @@
 	"block.blockus.lava_bricks_slab": "Dalle en briques de lave",
 	"block.blockus.chiseled_lava_bricks": "Briques de lave sculptée",
 	
-	"block.blockus.lava_polished_blackstone_bricks": "Briques noires de lave",
-	"block.blockus.lava_polished_blackstone_wall": "Muret en briques noires de lave",
-	"block.blockus.lava_polished_blackstone_stairs": "Escalier en briques noires de lave",
-	"block.blockus.lava_polished_blackstone_slab": "Dalle en briques noires de lave",
-	"block.blockus.chiseled_lava_polished_blackstone": "Briques noires de lave sculptée",
-	
 	"block.blockus.water_bricks": "Briques d'eau",
 	"block.blockus.water_bricks_wall": "Muret en briques d'eau",
 	"block.blockus.water_bricks_stairs": "Escalier en briques d'eau",
@@ -319,11 +321,6 @@
     "block.blockus.zigzagged_nether_bricks": "Briques du Nether zigzaguées",
     "block.blockus.zigzagged_red_nether_bricks": "Briques rouges du Nether zigzaguées",
     "block.blockus.zigzagged_charred_nether_bricks": "Briques carbonisées du Nether zigzaguées",
-    "block.blockus.zigzagged_teal_nether_bricks": "Briques sarcelles du Nether zigzaguées",
-	"block.blockus.zigzagged_polished_blackstone": "Roche noire polie zigzaguées",
-	
-	"block.blockus.polished_blackstone_pillar": "Pilier de roche noire polie",
-    "block.blockus.polished_blackstone_circle_pavement": "Pavé circulaire en roche noire polie",
 	
 	"block.blockus.marble": "Marbre",
 	"block.blockus.marble_stairs": "Escalier en marbre",
@@ -428,8 +425,6 @@
 	"block.blockus.green_futurneo_block": "Futurnéo vert",
 	"block.blockus.red_futurneo_block": "Futurnéo rouge",
 	"block.blockus.black_futurneo_block": "Futurnéo noir",
-	"block.blockus.crimson_barrel": "Tonneau carmin",
-	"block.blockus.warped_barrel": "Tonneau déformé",
 	"block.blockus.iron_gate": "Portail en fer",
 	
     "block.blockus.sandy_bricks": "Briques sableuses",
@@ -458,6 +453,18 @@
 	
 	"block.blockus.lantern_block": "Bloc de lanterne",
 	
+	"block.blockus.polished_andesite_pillar": "Pilier d'andésite polie",
+	"block.blockus.polished_diorite_pillar": "Pilier de diorite polie",
+	"block.blockus.polished_granite_pillar": "Pilier de granite poli",
+	"block.blockus.end_stone_pillar": "Pilier en pierre de l'End",
+    "block.blockus.cracked_andesite_bricks": "Andésite taillée craquelée",
+	"block.blockus.cracked_diorite_bricks": "Diorite taillée craquelée",
+	"block.blockus.cracked_granite_bricks": "Granite taillé craquelé",
+	"block.blockus.cracked_end_stone_bricks": "Briques de l'End craquelées",
+	"block.blockus.chiseled_andesite_bricks": "Andesite taillée sculptée",
+	"block.blockus.chiseled_diorite_bricks": "Diorite taillée sculptée",
+	"block.blockus.chiseled_granite_bricks": "Granite taillé sculpté",
+	
     "block.blockus.large_flower_pot": "Grand pot de fleur",
 	"block.blockus.potted_rose_bush": "Roseau en pot",
 	"block.blockus.potted_lilac": "Lilac en pot",
@@ -472,6 +479,7 @@
 	"block.blockus.potted_white_oak": "Chene blanc en pot",
 	"block.blockus.potted_huge_red_mushroom": "Champignon géant rouge en pot",
 	"block.blockus.potted_huge_brown_mushroom": "Champignon géant brun en pot",
+	
 	"block.blockus.potted_huge_crimson_fungus": "Champignon géant carmin en pot",
 	"block.blockus.potted_huge_warped_fungus": "Champignon géant biscornu en pot",
 	
@@ -494,6 +502,21 @@
 	"block.blockus.warped_warty_blackstone_bricks_slab": "Dalle de pierre noire taillée verruqueuse déformée",
 	"block.blockus.warped_warty_blackstone_bricks_stairs": "Escalier en pierre noire taillée verruqueuse déformée",
 	"block.blockus.warped_warty_blackstone_bricks_wall": "Muret de pierre noire taillée verruqueuse déformée",
+	
+	"block.blockus.zigzagged_teal_nether_bricks": "Briques sarcelles du Nether zigzaguées",
+	"block.blockus.zigzagged_polished_blackstone": "Roche noire polie zigzaguées",
+	
+    "block.blockus.crimson_barrel": "Tonneau carmin",
+	"block.blockus.warped_barrel": "Tonneau déformé",
+	
+	"block.blockus.polished_blackstone_pillar": "Pilier de roche noire polie",
+    "block.blockus.polished_blackstone_circle_pavement": "Pavé circulaire en roche noire polie",
+	
+	"block.blockus.lava_polished_blackstone_bricks": "Briques noires de lave",
+	"block.blockus.lava_polished_blackstone_wall": "Muret en briques noires de lave",
+	"block.blockus.lava_polished_blackstone_stairs": "Escalier en briques noires de lave",
+	"block.blockus.lava_polished_blackstone_slab": "Dalle en briques noires de lave",
+	"block.blockus.chiseled_lava_polished_blackstone": "Briques noires de lave sculptée",
 	
 	"block.minecraft.nether_wart_block": "Bloc de verrues carmin",
 	

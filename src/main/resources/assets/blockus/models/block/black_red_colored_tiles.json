@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "blockus:block/black_red_colored_tiles"
+    }
+}

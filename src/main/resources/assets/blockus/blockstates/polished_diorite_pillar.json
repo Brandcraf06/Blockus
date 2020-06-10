@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "blockus:block/polished_diorite_pillar" },
+        "axis=z":   { "model": "blockus:block/polished_diorite_pillar", "x": 90 },
+        "axis=x":   { "model": "blockus:block/polished_diorite_pillar", "x": 90, "y": 90 }
+    }
+}
