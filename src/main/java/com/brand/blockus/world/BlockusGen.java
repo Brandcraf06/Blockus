@@ -4,18 +4,16 @@ import com.brand.blockus.content.Bluestone;
 import com.brand.blockus.content.Limestone;
 import com.brand.blockus.content.Marble;
 import com.brand.blockus.content.WhiteOak;
-import com.google.common.collect.ImmutableList;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.gen.decorator.CountChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.CountDepthDecoratorConfig;
-import net.minecraft.world.gen.decorator.CountExtraChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.feature.RandomFeatureConfig;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
@@ -43,11 +41,15 @@ public class BlockusGen {
 	   biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Bluestone.BLUESTONE.getDefaultState(), 20)).createDecoratedFeature(Decorator.COUNT_DEPTH_AVERAGE.configure(new CountDepthDecoratorConfig(8, 16, 16))));
 	}
 	public static void addWhiteOakTrees(Biome biome) {
-		if (biome == Biomes.FOREST || biome == Biomes.WOODED_HILLS || biome == Biomes.FLOWER_FOREST || biome.getCategory() == Biome.Category.PLAINS) {
-	      biome.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(ImmutableList.of(Feature.TREE.configure(WHITE_OAK_TREE_CONFIG).withChance(0.04F)), Feature.TREE.configure(OAK_TREE_CONFIG))).createDecoratedFeature(Decorator.COUNT_EXTRA_HEIGHTMAP.configure(new CountExtraChanceDecoratorConfig(1, 0.1F, 1))));
+		if (biome == Biomes.FOREST || biome == Biomes.WOODED_HILLS || biome == Biomes.FLOWER_FOREST) {
+			biome.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, Feature.TREE.configure(WHITE_OAK_TREE_CONFIG).createDecoratedFeature(Decorator.COUNT_CHANCE_HEIGHTMAP.configure(new CountChanceDecoratorConfig(1, 0.05F))));
       }
     }
-
+	public static void addPlainsWhiteOakTrees(Biome biome) {
+		if (biome.getCategory() == Biome.Category.PLAINS) {
+			biome.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, Feature.TREE.configure(WHITE_OAK_TREE_CONFIG).createDecoratedFeature(Decorator.COUNT_CHANCE_HEIGHTMAP.configure(new CountChanceDecoratorConfig(1, 0.0085F))));
+      }
+    }
 	   static {
 	 OAK_LOG = Blocks.OAK_LOG.getDefaultState();
 	 OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState();
