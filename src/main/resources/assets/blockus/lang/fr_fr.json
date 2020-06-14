@@ -465,6 +465,17 @@
 	"block.blockus.chiseled_diorite_bricks": "Diorite taillée sculptée",
 	"block.blockus.chiseled_granite_bricks": "Granite taillé sculpté",
 	
+		
+    "block.blockus.teal_nether_bricks": "Briques sarcelles du Nether",
+	"block.blockus.teal_nether_brick_slab": "Dalle de briques sarcelles du Nether",
+	"block.blockus.teal_nether_brick_stairs": "Escalier en briques sarcelles du Nether",
+	"block.blockus.teal_nether_brick_wall": "Muret de briques sarcelles du Nether",
+	"block.blockus.smooth_teal_nether_bricks": "Briques sarcelles du Nether lisses",
+	"block.blockus.teal_nether_pillar": "Pilier sarcelle du Nether",
+		
+	"block.blockus.weight_storage_cube": "Weight Storage Cube",
+	"block.blockus.companion_cube": "Companion Cube",
+	
     "block.blockus.large_flower_pot": "Grand pot de fleur",
 	"block.blockus.potted_rose_bush": "Roseau en pot",
 	"block.blockus.potted_lilac": "Lilac en pot",
@@ -485,13 +496,6 @@
 	
 	"block.blockus.soul_lantern_block": "Bloc de lanterne des âmes",
 	"block.blockus.golden_chain": "Chaîne en or",
-	
-    "block.blockus.teal_nether_bricks": "Briques sarcelles du Nether",
-	"block.blockus.teal_nether_brick_slab": "Dalle de briques sarcelles du Nether",
-	"block.blockus.teal_nether_brick_stairs": "Escalier en briques sarcelles du Nether",
-	"block.blockus.teal_nether_brick_wall": "Muret de briques sarcelles du Nether",
-	"block.blockus.smooth_teal_nether_bricks": "Briques sarcelles du Nether lisses",
-	"block.blockus.teal_nether_pillar": "Pilier sarcelle du Nether",
 	
 	"block.blockus.crimson_warty_blackstone_bricks": "Pierre noire taillée verruqueuse carmin",
 	"block.blockus.crimson_warty_blackstone_bricks_slab": "Dalle de pierre noire taillée verruqueuse carmin",

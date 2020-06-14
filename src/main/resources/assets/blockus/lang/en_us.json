@@ -474,6 +474,17 @@
 	"block.blockus.chiseled_diorite_bricks": "Chiseled Diorite Bricks",
 	"block.blockus.chiseled_granite_bricks": "Chiseled Granite Bricks",
 	
+		
+	"block.blockus.teal_nether_bricks": "Teal Nether Bricks",
+	"block.blockus.teal_nether_brick_slab": "Teal Nether Brick Slab",
+	"block.blockus.teal_nether_brick_stairs": "Teal Nether Brick Stairs",
+	"block.blockus.teal_nether_brick_wall": "Teal Nether Brick Wall",
+	"block.blockus.smooth_teal_nether_bricks": "Smooth Teal Nether Bricks",
+	"block.blockus.teal_nether_pillar": "Teal Nether Pillar",
+	
+	"block.blockus.weight_storage_cube": "Weight Storage Cube",
+	"block.blockus.companion_cube": "Companion Cube",
+	
 	"block.blockus.large_flower_pot": "Large Flower Pot",
 	"block.blockus.potted_rose_bush": "Potted Rose Bush",
 	"block.blockus.potted_lilac": "Potted Lilac",
@@ -490,18 +501,10 @@
 	"block.blockus.potted_huge_brown_mushroom": "Potted Huge Brown Mushroom",
 	
 	"block.blockus.potted_huge_crimson_fungus": "Potted Huge Crimson Fungus",
-	"block.blockus.potted_huge_warped_fungus": "Potted Huge Warped Fungus",
-	
+	"block.blockus.potted_huge_warped_fungus": "Potted Huge Warped Fungus",	
 	
 	"block.blockus.soul_lantern_block": "Soul Lantern Block",
 	"block.blockus.golden_chain": "Golden Chain",
-	
-	"block.blockus.teal_nether_bricks": "Teal Nether Bricks",
-	"block.blockus.teal_nether_brick_slab": "Teal Nether Brick Slab",
-	"block.blockus.teal_nether_brick_stairs": "Teal Nether Brick Stairs",
-	"block.blockus.teal_nether_brick_wall": "Teal Nether Brick Wall",
-	"block.blockus.smooth_teal_nether_bricks": "Smooth Teal Nether Bricks",
-	"block.blockus.teal_nether_pillar": "Teal Nether Pillar",
 	
 	"block.blockus.crimson_warty_blackstone_bricks": "Crimson Warty Blackstone Bricks",
 	"block.blockus.crimson_warty_blackstone_bricks_slab": "Crimson Warty Blackstone Brick Slab",
