@@ -3,6 +3,7 @@ package com.brand.blockus.content;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.GlazedLikeBlockBase;
+import com.brand.blockus.blocks.Base.PillarBase;
 import com.brand.blockus.blocks.Base.SlabBase;
 import com.brand.blockus.blocks.Base.StairsBase;
 
@@ -18,6 +19,9 @@ public class ADGRelated {
 	public static final SlabBase ANDESITE_BRICKS_SLAB = new SlabBase("andesite_bricks_slab", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
 	public static final BlockBase ZIGZAGGED_ANDESITE = new BlockBase("zigzagged_andesite", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final GlazedLikeBlockBase ANDESITE_CIRCLE_PAVEMENT = new GlazedLikeBlockBase("andesite_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0);
+	public static final PillarBase POLISHED_ANDESITE_PILLAR = new PillarBase("polished_andesite_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final BlockBase CHISELED_ANDESITE_BRICKS = new BlockBase("chiseled_andesite_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final BlockBase CRACKED_ANDESITE_BRICKS = new BlockBase("cracked_andesite_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	
 	// diorite
 	public static final BlockBase DIORITE_BRICKS = new BlockBase("diorite_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -25,6 +29,9 @@ public class ADGRelated {
 	public static final SlabBase DIORITE_BRICKS_SLAB = new SlabBase("diorite_bricks_slab", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
 	public static final BlockBase ZIGZAGGED_DIORITE = new BlockBase("zigzagged_diorite", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final GlazedLikeBlockBase DIORITE_CIRCLE_PAVEMENT = new GlazedLikeBlockBase("diorite_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0);
+	public static final PillarBase POLISHED_DIORITE_PILLAR = new PillarBase("polished_diorite_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final BlockBase CHISELED_DIORITE_BRICKS = new BlockBase("chiseled_diorite_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final BlockBase CRACKED_DIORITE_BRICKS = new BlockBase("cracked_diorite_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	
 	// granite
 	public static final BlockBase GRANITE_BRICKS = new BlockBase("granite_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -32,4 +39,7 @@ public class ADGRelated {
 	public static final SlabBase GRANITE_BRICKS_SLAB = new SlabBase("granite_bricks_slab", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
 	public static final BlockBase ZIGZAGGED_GRANITE = new BlockBase("zigzagged_granite", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final GlazedLikeBlockBase GRANITE_CIRCLE_PAVEMENT = new GlazedLikeBlockBase("granite_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0);
+	public static final PillarBase POLISHED_GRANITE_PILLAR = new PillarBase("polished_granite_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final BlockBase CHISELED_GRANITE_BRICKS = new BlockBase("chiseled_granite_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final BlockBase CRACKED_GRANITE_BRICKS = new BlockBase("cracked_granite_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
   }

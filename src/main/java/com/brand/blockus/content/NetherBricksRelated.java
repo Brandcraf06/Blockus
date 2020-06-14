@@ -26,5 +26,13 @@ public class NetherBricksRelated {
 	public static final BlockBase SMOOTH_CHARRED_NETHER_BRICKS = new BlockBase("smooth_charred_nether_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final PillarBase CHARRED_NETHER_PILLAR = new PillarBase("charred_nether_pillar", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
 	public static final BlockBase ZIGZAGGED_CHARRED_NETHER_BRICKS = new BlockBase("zigzagged_charred_nether_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+//teal
+	public static final BlockBase TEAL_NETHER_BRICKS = new BlockBase("teal_nether_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final StairsBase TEAL_NETHER_BRICK_STAIRS = new StairsBase(NetherBricksRelated.TEAL_NETHER_BRICKS.getDefaultState(), "teal_nether_brick_stairs", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final SlabBase TEAL_NETHER_BRICK_SLAB = new SlabBase("teal_nether_brick_slab", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final WallBase TEAL_NETHER_BRICK_WALL = new WallBase("teal_nether_brick_wall", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final BlockBase SMOOTH_TEAL_NETHER_BRICKS = new BlockBase("smooth_teal_nether_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final PillarBase TEAL_NETHER_PILLAR = new PillarBase("teal_nether_pillar", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE);
+	public static final BlockBase ZIGZAGGED_TEAL_NETHER_BRICKS = new BlockBase("zigzagged_teal_nether_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
 	}

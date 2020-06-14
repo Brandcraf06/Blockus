@@ -15,7 +15,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +26,7 @@ public class NetherStarsBlock extends Block {
 public NetherStarsBlock(String name, float hardness, float resistance) {
 	super(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 1).strength(hardness, resistance));
 	Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(ItemGroup.BUILDING_BLOCKS).rarity(Rarity.EPIC)));
+	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS).rarity(Rarity.EPIC)));
 }
 	@Override
 	public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity entity_1) {

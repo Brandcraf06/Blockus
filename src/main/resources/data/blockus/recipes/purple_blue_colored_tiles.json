@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "colored tiles",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_concrete"
+    },
+    {
+      "item": "minecraft:blue_concrete"
+    }
+  ],
+  "result": {
+    "item": "blockus:purple_blue_colored_tiles",
+    "count": 2
+  }
+}
