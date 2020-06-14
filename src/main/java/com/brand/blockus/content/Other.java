@@ -10,6 +10,7 @@ import com.brand.blockus.blocks.Base.SpecificTool.BlockBaseHand;
 import com.brand.blockus.blocks.LoveBlock;
 import com.brand.blockus.blocks.NetherStarsBlock;
 import com.brand.blockus.blocks.Paper.PaperWall;
+import com.brand.blockus.blocks.PortalCubeBlock;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
@@ -35,6 +36,8 @@ public class Other {
     public static final FallingRedstoneBase REDSTONE_SAND = new FallingRedstoneBase("redstone_sand", 2.0f, 6.0f);
     public static final IronGateBase IRON_GATE = new IronGateBase("iron_gate", 5.0f, 5.0f);
     public static final LightBlockBase LANTERN_BLOCK = new LightBlockBase("lantern_block", 0.3f, 0.3f, Material.GLASS, BlockSoundGroup.GLASS, Blockus.BLOCKUS_BUILDING_BLOCKS, 15);
+    public static final PortalCubeBlock WEIGHT_STORAGE_CUBE= new PortalCubeBlock("weight_storage_cube", 1.5f, 6.0f);
+    public static final PortalCubeBlock COMPANION_CUBE = new PortalCubeBlock("companion_cube", 1.5f, 6.0f);
     public static final LightBlockBase SOUL_LANTERN_BLOCK = new LightBlockBase("soul_lantern_block", 0.3f, 0.3f, Material.GLASS, BlockSoundGroup.GLASS, Blockus.BLOCKUS_BUILDING_BLOCKS, 10);
     public static final ChainBlockBase GOLDEN_CHAIN = new ChainBlockBase("golden_chain", 5.0F, 6.0F);
 

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "blockus:weight_storage_cube"
+  },
+  "addition": {
+    "item": "minecraft:poppy"
+  },
+  "result": {
+    "item": "blockus:companion_cube"
+  }
+}
