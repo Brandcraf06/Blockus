@@ -1,7 +1,6 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.SpecificTool.BlockBase2;
 import com.brand.blockus.blocks.Base.SpecificTool.BlockBaseHand;
 import com.brand.blockus.blocks.FoodBlocks.EatableBase;
@@ -19,8 +18,8 @@ public class FoodBlocks {
 	public static final BlockBase2 PUFFERFISH_CRATE = new BlockBase2("pufferfish_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
 	public static final BlockBase2 TROPICAL_FISH_CRATE = new BlockBase2("tropical_fish_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
 	public static final BlockBase2 COD_CRATE = new BlockBase2("cod_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
-	public static final EatableBase COOKIE_BLOCK = new EatableBase("cookie_block", 1.5f, 1.5f);
-	public static final BlockBase CHORUS_BLOCK = new BlockBase("chorus_block", 1.5f, 1.5f, Material.LEAVES, BlockSoundGroup.GRASS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+	public static final EatableBase COOKIE_BLOCK = new EatableBase("cookie_block", 0.5f, 0.5f);
+	public static final BlockBaseHand CHORUS_BLOCK = new BlockBaseHand("chorus_block", 0.5f, 0.5f, Material.LEAVES, BlockSoundGroup.GRASS, Blockus.BLOCKUS_BUILDING_BLOCKS);
 	public static final BlockBase2 POTATO_CRATE = new BlockBase2("potato_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
 	public static final BlockBase2 APPLE_CRATE = new BlockBase2("apple_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
 	public static final BlockBase2 BEETROOT_CRATE = new BlockBase2("beetroot_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
