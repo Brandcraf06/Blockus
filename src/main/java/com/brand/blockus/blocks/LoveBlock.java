@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 public class LoveBlock extends Block {
 
 	public LoveBlock(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance)); 
+		super(FabricBlockSettings.of(Material.STONE).requiresTool().strength(hardness, resistance)); 
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
 	}

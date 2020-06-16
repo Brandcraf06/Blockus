@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 public class EatableBase extends CookieBlock {
 		
 	public EatableBase(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.SOLID_ORGANIC).sounds(BlockSoundGroup.GRASS).breakByHand(true).strength(hardness, resistance));
+		super(FabricBlockSettings.of(Material.SOLID_ORGANIC).sounds(BlockSoundGroup.GRASS).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 	}

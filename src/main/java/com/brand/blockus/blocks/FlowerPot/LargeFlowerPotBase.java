@@ -12,7 +12,7 @@ import net.minecraft.util.registry.Registry;
 public class LargeFlowerPotBase extends LargeFlowerPotBlock {
 
 	public LargeFlowerPotBase(Block content, String name) {
-		super(content, FabricBlockSettings.of(Material.SUPPORTED).breakByHand(true).strength(0.5F, 1.0F).nonOpaque());
+		super(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).nonOpaque());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
 		

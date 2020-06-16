@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 public class SlabBase extends SlabBlock {
 	
 	public SlabBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound) {
-		super(FabricBlockSettings.of(material).sounds(sound).strength(hardness, resistance));
+		super(FabricBlockSettings.of(material).sounds(sound).requiresTool().strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 	}

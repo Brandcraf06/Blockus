@@ -16,7 +16,7 @@ import net.minecraft.util.registry.Registry;
 public class LightBlockBase extends Block {
 
 	public LightBlockBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, ItemGroup itemgroup, int lightlevel) {
-		super(FabricBlockSettings.of(material).sounds(sound).lightLevel(lightlevel).strength(hardness, resistance));
+		super(FabricBlockSettings.of(material).sounds(sound).lightLevel(lightlevel).requiresTool().strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(itemgroup)));
 	}

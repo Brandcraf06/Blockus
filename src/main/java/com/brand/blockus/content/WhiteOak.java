@@ -30,7 +30,7 @@ public class WhiteOak {
 	public static final LogBlockBase STRIPPED_WHITE_OAK_LOG = new LogBlockBase(MaterialColor.WHITE, MaterialColor.QUARTZ, "stripped_white_oak_log", 2.0f, 2.0f);
 	public static final LogBlockBase WHITE_OAK_WOOD = new LogBlockBase(MaterialColor.LIGHT_GRAY_TERRACOTTA, MaterialColor.LIGHT_GRAY_TERRACOTTA,"white_oak_wood", 2.0f, 2.0f);
 	public static final LogBlockBase STRIPPED_WHITE_OAK_WOOD = new LogBlockBase(MaterialColor.QUARTZ, MaterialColor.QUARTZ, "stripped_white_oak_wood", 2.0f, 2.0f);
-	public static final LeavesBlockBase WHITE_OAK_LEAVES = new LeavesBlockBase("white_oak_leaves", 2.0f, 2.0f);
+	public static final LeavesBlockBase WHITE_OAK_LEAVES = new LeavesBlockBase("white_oak_leaves", 0.2f, 0.2f);
 	public static final BlockBase2 WHITE_OAK_PLANKS = new BlockBase2("white_oak_planks", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0);
 	public static final SlabBase2 WHITE_OAK_SLAB = new SlabBase2("white_oak_slab", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);
 	public static final StairsBase2 WHITE_OAK_STAIRS = new StairsBase2(WHITE_OAK_PLANKS.getDefaultState(), "white_oak_stairs", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0);

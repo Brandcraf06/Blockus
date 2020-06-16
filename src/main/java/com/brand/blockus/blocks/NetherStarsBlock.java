@@ -24,36 +24,16 @@ import net.minecraft.world.World;
 public class NetherStarsBlock extends Block {
 		
 public NetherStarsBlock(String name, float hardness, float resistance) {
-	super(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 1).strength(hardness, resistance));
+	super(FabricBlockSettings.of(Material.STONE).requiresTool().breakByTool(FabricToolTags.PICKAXES, 1).strength(hardness, resistance));
 	Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 	Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS).rarity(Rarity.EPIC)));
 }
 	@Override
 	public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity entity_1) {
-	{
-		if (entity_1.getType() != EntityType.ITEM && 
-				entity_1.getType() != EntityType.FALLING_BLOCK && 
-				entity_1.getType() != EntityType.EXPERIENCE_ORB &&
-				entity_1.getType() != EntityType.END_CRYSTAL && 
-			    entity_1.getType() != EntityType.EVOKER_FANGS && 
-			    entity_1.getType() != EntityType.LEASH_KNOT && 
-			    entity_1.getType() != EntityType.ITEM_FRAME &&
-			    entity_1.getType() != EntityType.TNT && 
-			    entity_1.getType() != EntityType.TRIDENT &&
-			    entity_1.getType() != EntityType.PAINTING &&
-				entity_1.getType() != EntityType.BOAT && 
-				entity_1.getType() != EntityType.MINECART && 
-				entity_1.getType() != EntityType.CHEST_MINECART && 
-				entity_1.getType() != EntityType.FURNACE_MINECART && 
-				entity_1.getType() != EntityType.HOPPER_MINECART && 
-				entity_1.getType() != EntityType.SPAWNER_MINECART && 
-				entity_1.getType() != EntityType.TNT_MINECART && 
-				entity_1.getType() != EntityType.COMMAND_BLOCK_MINECART && 
-				entity_1.getType() != EntityType.ARMOR_STAND) {
+		if (entity_1.getType() == EntityType.PLAYER) {
 	    ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1, 4, true, false, false));
 	    ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100, 3, true, false, true));
 	    ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 4, true, false, true));
-	   }
+	    }
 	  }
 	}
-   }
