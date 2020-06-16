@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 public class PortalCubeBlock extends FallingBlock {
 		
 	public PortalCubeBlock(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(hardness, resistance));
+		super(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).breakByHand(true).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 	}
