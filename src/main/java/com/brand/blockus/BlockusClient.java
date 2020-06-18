@@ -54,6 +54,7 @@ public void onInitializeClient() {
 				Other.WOODEN_FRAME,
 				Other.IRON_GATE,
 				Other.GOLDEN_CHAIN,
+				Other.GOLDEN_BARS,
 				LargeFlowerPots.POTTED_ROSE_BUSH,
 				LargeFlowerPots.POTTED_LILAC,
 				LargeFlowerPots.POTTED_PEONY,

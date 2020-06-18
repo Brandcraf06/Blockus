@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.Paper;
+package com.brand.blockus.blocks.Wood;
 
 import com.brand.blockus.Blockus;
 
@@ -12,10 +12,10 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class PaperWall extends PaneBlock {
+public class WoodenPaneBase extends PaneBlock {
 
-	public PaperWall(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
+	public WoodenPaneBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound) {
+		super(FabricBlockSettings.of(material).sounds(sound).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance).nonOpaque());
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
 	}

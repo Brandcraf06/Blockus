@@ -485,6 +485,8 @@
 	"block.blockus.weight_storage_cube": "Weight Storage Cube",
 	"block.blockus.companion_cube": "Companion Cube",
 	
+	"block.blockus.soul_o_lantern": "Soul o'Lantern",
+	
 	"block.blockus.large_flower_pot": "Large Flower Pot",
 	"block.blockus.potted_rose_bush": "Potted Rose Bush",
 	"block.blockus.potted_lilac": "Potted Lilac",
@@ -505,6 +507,7 @@
 	
 	"block.blockus.soul_lantern_block": "Soul Lantern Block",
 	"block.blockus.golden_chain": "Golden Chain",
+	"block.blockus.golden_bars": "Golden Bars",
 	
 	"block.blockus.crimson_warty_blackstone_bricks": "Crimson Warty Blackstone Bricks",
 	"block.blockus.crimson_warty_blackstone_bricks_slab": "Crimson Warty Blackstone Brick Slab",
