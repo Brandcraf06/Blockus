@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"ambientocclusion": true,
 	"textures": {
 		"1": "blockus:block/iron_gate",
 		"particle": "blockus:block/iron_gate"
@@ -128,12 +127,12 @@
 			"from": [0, 4, 0],
 			"to": [1, 5, 16],
 			"faces": {
-				"north": {"uv": [6, 0, 7, 16], "texture": "#1"},
-				"east": {"uv": [6, 0, 7, 16], "texture": "#1"},
-				"south": {"uv": [6, 0, 7, 16], "texture": "#1"},
-				"west": {"uv": [6, 0, 7, 16], "texture": "#1"},
-				"up": {"uv": [6, 0, 7, 16], "texture": "#1"},
-				"down": {"uv": [6, 0, 7, 16], "texture": "#1"}
+				"north": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"east": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"south": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"west": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"up": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"down": {"uv": [6, 15, 7, 16], "texture": "#1"}
 			}
 		},
 		{

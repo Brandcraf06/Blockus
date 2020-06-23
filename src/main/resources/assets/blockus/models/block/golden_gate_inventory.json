@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "blockus:block/iron_gate"
+		"1": "blockus:block/golden_gate"
 	},
 	"elements": [
 		{
@@ -113,12 +113,12 @@
 			"from": [8, 6, 0],
 			"to": [9, 7, 16],
 			"faces": {
-				"north": {"uv": [6, 15, 7, 16], "rotation": 180, "texture": "#1"},
-				"east": {"uv": [6, 15, 7, 16], "rotation": 180, "texture": "#1"},
-				"south": {"uv": [6, 15, 7, 16], "rotation": 180, "texture": "#1"},
-				"west": {"uv": [6, 15, 7, 16], "rotation": 180, "texture": "#1"},
-				"up": {"uv": [6, 15, 7, 16], "rotation": 180, "texture": "#1"},
-				"down": {"uv": [6, 15, 7, 16], "rotation": 180, "texture": "#1"}
+				"north": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"east": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"south": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"west": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"up": {"uv": [6, 15, 7, 16], "texture": "#1"},
+				"down": {"uv": [6, 15, 7, 16], "texture": "#1"}
 			}
 		},
 		{
@@ -537,7 +537,7 @@
 			"children": [10, 11, 12, 13, 14, 15, 16, 17]
 		}, 18,
 		{
-			"name": "iron_gate_top",
+			"name": "golden_gate_top",
 			"origin": [8, 8, 8],
 			"children": [19,
 				{

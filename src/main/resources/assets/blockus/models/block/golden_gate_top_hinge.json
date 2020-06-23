@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "blockus:block/iron_gate",
-		"particle": "blockus:block/iron_gate"
+		"1": "blockus:block/golden_gate",
+		"particle": "blockus:block/golden_gate"
 	},
 	"elements": [
 		{

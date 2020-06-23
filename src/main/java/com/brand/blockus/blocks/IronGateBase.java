@@ -1,9 +1,9 @@
-package com.brand.blockus.blocks.IronGate;
+package com.brand.blockus.blocks;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.IronGate.IronGateBlock;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
@@ -11,7 +11,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class IronGateBase extends IronGateBlock {
+public class IronGateBase extends DoorBlock {
 	
 	
 	public IronGateBase(String name, float hardness, float resistance) {
