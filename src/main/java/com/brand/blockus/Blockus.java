@@ -42,9 +42,11 @@ import com.brand.blockus.content.StainedStoneBricks;
 import com.brand.blockus.content.StoneRelated;
 import com.brand.blockus.content.WaterBricks;
 import com.brand.blockus.content.WhiteOak;
+import com.brand.blockus.world.BlockusGen;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -52,7 +54,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.biome.Biome;
 
 public class Blockus implements ModInitializer {
 	
@@ -64,6 +68,15 @@ public class Blockus implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		for (Biome biome : Registry.BIOME)
+		{
+			BlockusGen.addMineables(biome);
+			BlockusGen.addWhiteOakTrees(biome);
+			BlockusGen.addPlainsWhiteOakTrees(biome);
+		}
+		RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> BlockusGen.addMineables(biome));
+		RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> BlockusGen.addPlainsWhiteOakTrees(biome));
+		
 		new WhiteOak();
 		new CharredPlanks();
 		new BambooPlanks();

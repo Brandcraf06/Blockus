@@ -20,14 +20,7 @@ import net.minecraft.world.biome.Biome;
 public class instance {
 
 	public static void init() {
-		for (Biome biome : Biome.BIOMES)
-		{
-			BlockusGen.addBluestone(biome);
-			BlockusGen.addLimestone(biome);
-			BlockusGen.addMarble(biome);
-			BlockusGen.addWhiteOakTrees(biome);
-			BlockusGen.addPlainsWhiteOakTrees(biome);
-		}
+
 // Fuel
         // general
 		FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
