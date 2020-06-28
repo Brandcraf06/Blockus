@@ -1,20 +1,10 @@
-{   "parent": "block/block",
-    "display": {
-        "gui": {
-            "rotation": [ 30, 135, 0 ],
-            "translation": [ 0, 0, 0],
-            "scale":[ 0.625, 0.625, 0.625 ]
-        },
-        "fixed": {
-            "rotation": [ 0, 90, 0 ],
-            "translation": [ 0, 0, 0 ],
-            "scale": [ 0.5, 0.5, 0.5 ]
-        }
-    },
-    "ambientocclusion": false,
-    "textures": {
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"texture_size": [64, 64],
+	"textures": {
 		"0": "blockus:block/paper_lamp",
-		"1": "blockus:block/paper_block",
 		"particle": "blockus:block/paper_lamp"
 	},
 	"elements": [
@@ -22,30 +12,41 @@
 			"from": [1, 2, 1],
 			"to": [15, 14, 15],
 			"faces": {
-				"north": {"uv": [1, 2, 15, 14], "texture": "#0"},
-				"east": {"uv": [1, 2, 15, 14], "texture": "#0"},
-				"south": {"uv": [1, 2, 15, 14], "texture": "#0"},
-				"west": {"uv": [1, 2, 15, 14], "texture": "#0"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
+				"north": {"uv": [3.5, 0, 7, 3], "texture": "#0"},
+				"east": {"uv": [3.5, 0, 7, 3], "texture": "#0"},
+				"south": {"uv": [3.5, 0, 7, 3], "texture": "#0"},
+				"west": {"uv": [3.5, 0, 7, 3], "texture": "#0"},
+				"up": {"uv": [0, 0, 3.5, 3.5], "texture": "#0"},
+				"down": {"uv": [0, 0, 3.5, 3.5], "texture": "#0"}
 			}
 		},
 		{
-			"from": [2, 0, 2],
-			"to": [14, 16, 14],
+			"from": [3, 0, 3],
+			"to": [13, 16, 13],
 			"faces": {
-				"north": {"uv": [2, 0, 13, 16], "texture": "#0"},
-				"east": {"uv": [2, 0, 14, 16], "texture": "#0"},
-				"south": {"uv": [2, 0, 14, 16], "texture": "#0"},
-				"west": {"uv": [2, 0, 14, 16], "texture": "#0"},
-				"up": {"uv": [2, 2, 14, 14], "texture": "#1"},
-				"down": {"uv": [1, 2, 14, 14], "texture": "#1"}
+				"north": {"uv": [9.5, 9.5, 12, 13.5], "texture": "#0"},
+				"east": {"uv": [9.5, 9.5, 12, 13.5], "texture": "#0"},
+				"south": {"uv": [9.5, 9.5, 12, 13.5], "texture": "#0"},
+				"west": {"uv": [9.5, 9.5, 12, 13.5], "texture": "#0"},
+				"up": {"uv": [7, 4, 9.5, 6.5], "texture": "#0"},
+				"down": {"uv": [9.5, 0, 12, 2.5], "texture": "#0"}
 			}
 		}
 	],
+	"display": {
+		"gui": {
+			"rotation": [30, 135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
 	"groups": [
 		{
 			"name": "model",
+			"origin": [8, 8, 8],
 			"children": [0, 1]
 		}
 	]

@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
+import net.minecraft.block.MaterialColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.particle.ParticleTypes;
@@ -21,7 +22,7 @@ import net.minecraft.world.World;
 public class LoveBlock extends Block {
 
 	public LoveBlock(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.STONE).requiresTool().strength(hardness, resistance)); 
+		super(FabricBlockSettings.of(Material.STONE, MaterialColor.PINK).requiresTool().strength(hardness, resistance)); 
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
 	}

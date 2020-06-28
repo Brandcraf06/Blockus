@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.Material;
+import net.minecraft.block.MaterialColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.BlockSoundGroup;
@@ -18,8 +19,8 @@ import net.minecraft.util.registry.Registry;
 
 public class GlazedLikeBlockBase extends HorizontalFacingBlock {
 
-		public GlazedLikeBlockBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel) {
-			super(FabricBlockSettings.of(material).sounds(sound).requiresTool().breakByTool(tag, mininglevel).strength(hardness, resistance));
+		public GlazedLikeBlockBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MaterialColor color) {
+			super(FabricBlockSettings.of(material, color).sounds(sound).requiresTool().breakByTool(tag, mininglevel).strength(hardness, resistance));
 			Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 			Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 		}

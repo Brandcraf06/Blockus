@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
+import net.minecraft.block.MaterialColor;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
@@ -31,8 +32,8 @@ import net.minecraft.world.World;
 
 public class WoodenBarrels extends BarrelBlock {
 	
-	public WoodenBarrels(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
+	public WoodenBarrels(String name, float hardness, float resistance, MaterialColor color) {
+		super(FabricBlockSettings.of(Material.WOOD, color).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
 	}
@@ -46,7 +47,7 @@ public class WoodenBarrels extends BarrelBlock {
 	         if (blockEntity instanceof WoodenBarrelBlockEntity) {
 	            player.openHandledScreen((WoodenBarrelBlockEntity)blockEntity);
 	            player.incrementStat(Stats.OPEN_BARREL);
-	            PiglinBrain.onGoldBlockBroken(player, true);
+	            PiglinBrain.onGuardedBlockBroken(player, true);
 	         }
 
 	         return ActionResult.SUCCESS;

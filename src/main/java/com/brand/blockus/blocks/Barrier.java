@@ -6,11 +6,13 @@ import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.PaneBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.block.WallBlock;
 import net.minecraft.block.Waterloggable;
 import net.minecraft.block.enums.WallShape;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -31,13 +33,13 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
 @SuppressWarnings("rawtypes")
 
 public class Barrier extends Block implements Waterloggable {
-	   public static final BooleanProperty UP;
+	public static final BooleanProperty UP;
 	   public static final EnumProperty<WallShape> EAST_SHAPE;
 	   public static final EnumProperty<WallShape> NORTH_SHAPE;
 	   public static final EnumProperty<WallShape> SOUTH_SHAPE;
@@ -51,7 +53,7 @@ public class Barrier extends Block implements Waterloggable {
 	   private static final VoxelShape field_22166;
 	   private static final VoxelShape field_22167;
 
-	   public Barrier(Block.Settings settings) {
+	   public Barrier(AbstractBlock.Settings settings) {
 	      super(settings);
 	      this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(UP, true)).with(NORTH_SHAPE, WallShape.NONE)).with(EAST_SHAPE, WallShape.NONE)).with(SOUTH_SHAPE, WallShape.NONE)).with(WEST_SHAPE, WallShape.NONE)).with(WATERLOGGED, false));
 	      this.shapeMap = this.getShapeMap(2.0F, 2.0F, 16.0F, 0.0F, 14.0F, 16.0F);
@@ -66,7 +68,7 @@ public class Barrier extends Block implements Waterloggable {
 	      }
 	   }
 
-	private Map<BlockState, VoxelShape> getShapeMap(float f, float g, float h, float i, float j, float k) {
+	   private Map<BlockState, VoxelShape> getShapeMap(float f, float g, float h, float i, float j, float k) {
 	      float l = 8.0F - f;
 	      float m = 8.0F + f;
 	      float n = 8.0F - g;
@@ -84,7 +86,7 @@ public class Barrier extends Block implements Waterloggable {
 	      Iterator var21 = UP.getValues().iterator();
 
 	      while(var21.hasNext()) {
-	         Boolean var22 = (Boolean)var21.next();
+	         Boolean boolean_ = (Boolean)var21.next();
 	         Iterator var23 = EAST_SHAPE.getValues().iterator();
 
 	         while(var23.hasNext()) {
@@ -106,11 +108,11 @@ public class Barrier extends Block implements Waterloggable {
 	                     voxelShape10 = method_24426(voxelShape10, wallShape3, voxelShape4, voxelShape8);
 	                     voxelShape10 = method_24426(voxelShape10, wallShape2, voxelShape2, voxelShape6);
 	                     voxelShape10 = method_24426(voxelShape10, wallShape4, voxelShape3, voxelShape7);
-	                     if (var22) {
+	                     if (boolean_) {
 	                        voxelShape10 = VoxelShapes.union(voxelShape10, voxelShape);
 	                     }
 
-	                     BlockState blockState = (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.getDefaultState().with(UP, var22)).with(EAST_SHAPE, wallShape)).with(WEST_SHAPE, wallShape3)).with(NORTH_SHAPE, wallShape2)).with(SOUTH_SHAPE, wallShape4);
+	                     BlockState blockState = (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.getDefaultState().with(UP, boolean_)).with(EAST_SHAPE, wallShape)).with(WEST_SHAPE, wallShape3)).with(NORTH_SHAPE, wallShape2)).with(SOUTH_SHAPE, wallShape4);
 	                     builder.put(blockState.with(WATERLOGGED, false), voxelShape10);
 	                     builder.put(blockState.with(WATERLOGGED, true), voxelShape10);
 	                  }
@@ -122,26 +124,22 @@ public class Barrier extends Block implements Waterloggable {
 	      return builder.build();
 	   }
 
-	   public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ePos) {
+	   public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
 	      return (VoxelShape)this.shapeMap.get(state);
 	   }
 
-	   public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ePos) {
+	   public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
 	      return (VoxelShape)this.collisionShapeMap.get(state);
 	   }
 
-	   public boolean canPlaceAtSide(BlockState world, BlockView view, BlockPos pos, NavigationType env) {
+	   public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
 	      return false;
 	   }
 
 	   private boolean shouldConnectTo(BlockState state, boolean faceFullSquare, Direction side) {
 	      Block block = state.getBlock();
-	      boolean bl = block.isIn(BlockTags.WALLS) || block instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
-	      return !cannotConnect(block) && faceFullSquare || bl;
-	   }
-
-	   private static boolean forcePillar(Block block) {
-	      return block == Blocks.LANTERN || block == Blocks.TORCH || block == Blocks.REDSTONE_TORCH;
+	      boolean bl = block instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
+	      return state.isIn(BlockTags.WALLS) || !cannotConnect(block) && faceFullSquare || block instanceof PaneBlock || bl;
 	   }
 
 	   public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -157,7 +155,7 @@ public class Barrier extends Block implements Waterloggable {
 	      BlockState blockState2 = worldView.getBlockState(blockPos3);
 	      BlockState blockState3 = worldView.getBlockState(blockPos4);
 	      BlockState blockState4 = worldView.getBlockState(blockPos5);
-	      BlockState blockState5 = worldView.getBlockState(blockPos5);
+	      BlockState blockState5 = worldView.getBlockState(blockPos6);
 	      boolean bl = this.shouldConnectTo(blockState, blockState.isSideSolidFullSquare(worldView, blockPos2, Direction.SOUTH), Direction.SOUTH);
 	      boolean bl2 = this.shouldConnectTo(blockState2, blockState2.isSideSolidFullSquare(worldView, blockPos3, Direction.WEST), Direction.WEST);
 	      boolean bl3 = this.shouldConnectTo(blockState3, blockState3.isSideSolidFullSquare(worldView, blockPos4, Direction.NORTH), Direction.NORTH);
@@ -166,15 +164,15 @@ public class Barrier extends Block implements Waterloggable {
 	      return this.method_24422(worldView, blockState6, blockPos6, blockState5, bl, bl2, bl3, bl4);
 	   }
 
-	   public BlockState getStateForNeighborUpdate(BlockState state, Direction facing, BlockState neighborState, World world, BlockPos pos, BlockPos neighborPos) {
+	   public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
 	      if ((Boolean)state.get(WATERLOGGED)) {
 	         world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
 	      }
 
-	      if (facing == Direction.DOWN) {
-	         return super.getStateForNeighborUpdate(state, facing, neighborState, world, pos, neighborPos);
+	      if (direction == Direction.DOWN) {
+	         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
 	      } else {
-	         return facing == Direction.UP ? this.method_24421(world, state, neighborPos, neighborState) : this.method_24423(world, pos, state, neighborPos, neighborState, facing);
+	         return direction == Direction.UP ? this.method_24421(world, state, posFrom, newState) : this.method_24423(world, pos, state, posFrom, newState, direction);
 	      }
 	   }
 
@@ -207,9 +205,35 @@ public class Barrier extends Block implements Waterloggable {
 
 	   private BlockState method_24422(WorldView worldView, BlockState blockState, BlockPos blockPos, BlockState blockState2, boolean bl, boolean bl2, boolean bl3, boolean bl4) {
 	      VoxelShape voxelShape = blockState2.getCollisionShape(worldView, blockPos).getFace(Direction.DOWN);
-	      boolean bl5 = (!bl || bl2 || !bl3 || bl4) && (bl || !bl2 || bl3 || !bl4);
-	      boolean bl6 = bl5 || forcePillar(blockState2.getBlock()) || method_24427(voxelShape, field_22163);
-	      return this.method_24425((BlockState)blockState.with(UP, bl6), bl, bl2, bl3, bl4, voxelShape);
+	      BlockState blockState3 = this.method_24425(blockState, bl, bl2, bl3, bl4, voxelShape);
+	      return (BlockState)blockState3.with(UP, this.method_27092(blockState3, blockState2, voxelShape));
+	   }
+
+	   private boolean method_27092(BlockState blockState, BlockState blockState2, VoxelShape voxelShape) {
+	      boolean bl = blockState2.getBlock() instanceof WallBlock && (Boolean)blockState2.get(UP);
+	      if (bl) {
+	         return true;
+	      } else {
+	         WallShape wallShape = (WallShape)blockState.get(NORTH_SHAPE);
+	         WallShape wallShape2 = (WallShape)blockState.get(SOUTH_SHAPE);
+	         WallShape wallShape3 = (WallShape)blockState.get(EAST_SHAPE);
+	         WallShape wallShape4 = (WallShape)blockState.get(WEST_SHAPE);
+	         boolean bl2 = wallShape2 == WallShape.NONE;
+	         boolean bl3 = wallShape4 == WallShape.NONE;
+	         boolean bl4 = wallShape3 == WallShape.NONE;
+	         boolean bl5 = wallShape == WallShape.NONE;
+	         boolean bl6 = bl5 && bl2 && bl3 && bl4 || bl5 != bl2 || bl3 != bl4;
+	         if (bl6) {
+	            return true;
+	         } else {
+	            boolean bl7 = wallShape == WallShape.TALL && wallShape2 == WallShape.TALL || wallShape3 == WallShape.TALL && wallShape4 == WallShape.TALL;
+	            if (bl7) {
+	               return false;
+	            } else {
+	               return blockState2.getBlock().isIn(BlockTags.WALL_POST_OVERRIDE) || method_24427(voxelShape, field_22163);
+	            }
+	         }
+	      }
 	   }
 
 	   private BlockState method_24425(BlockState blockState, boolean bl, boolean bl2, boolean bl3, boolean bl4, VoxelShape voxelShape) {
@@ -228,7 +252,7 @@ public class Barrier extends Block implements Waterloggable {
 	      return (Boolean)state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
 	   }
 
-	   public boolean isTranslucent(BlockState state, BlockView view, BlockPos pos) {
+	   public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
 	      return !(Boolean)state.get(WATERLOGGED);
 	   }
 
