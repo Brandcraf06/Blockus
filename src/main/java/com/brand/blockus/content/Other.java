@@ -39,10 +39,10 @@ public class Other {
     public static final FallingRedstoneBase REDSTONE_SAND = new FallingRedstoneBase("redstone_sand", 2.0f, 6.0f);
     public static final IronGateBase IRON_GATE = new IronGateBase("iron_gate", 5.0f, 5.0f);
     public static final IronGateBase GOLDEN_GATE = new IronGateBase("golden_gate", 5.0f, 5.0f);
-    public static final LightBlockBase LANTERN_BLOCK = new LightBlockBase("lantern_block", 0.3f, 0.3f, Material.METAL, BlockSoundGroup.LANTERN, Blockus.BLOCKUS_BUILDING_BLOCKS, 15, MaterialColor.IRON);
+    public static final LightBlockBase LANTERN_BLOCK = new LightBlockBase("lantern_block", 3.5f, 5.0f, Material.METAL, BlockSoundGroup.LANTERN, Blockus.BLOCKUS_BUILDING_BLOCKS, 15, MaterialColor.IRON);
     public static final PortalCubeBlock WEIGHT_STORAGE_CUBE= new PortalCubeBlock("weight_storage_cube", 0.1f, 6.0f);
     public static final PortalCubeBlock COMPANION_CUBE = new PortalCubeBlock("companion_cube", 0.1f, 6.0f);
-    public static final LightBlockBase SOUL_LANTERN_BLOCK = new LightBlockBase("soul_lantern_block", 0.3f, 0.3f, Material.METAL,BlockSoundGroup.LANTERN, Blockus.BLOCKUS_BUILDING_BLOCKS, 10, MaterialColor.IRON);
+    public static final LightBlockBase SOUL_LANTERN_BLOCK = new LightBlockBase("soul_lantern_block", 3.5f, 5.0f, Material.METAL,BlockSoundGroup.LANTERN, Blockus.BLOCKUS_BUILDING_BLOCKS, 10, MaterialColor.IRON);
     public static final CarvedPumpkinBlockBase SOUL_O_LANTERN = new CarvedPumpkinBlockBase("soul_o_lantern", 1.0f, 1.0f);
     public static final ChainBlockBase GOLDEN_CHAIN = new ChainBlockBase("golden_chain", 5.0F, 6.0F);
 	public static final PaneBase GOLDEN_BARS = new PaneBase("golden_bars", 5.0F, 6.0f, Material.METAL, BlockSoundGroup.METAL);
