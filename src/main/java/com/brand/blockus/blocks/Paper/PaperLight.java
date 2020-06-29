@@ -18,7 +18,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
 public class PaperLight extends Block {
-	public static final VoxelShape LAMP = Block.createCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
+	public static final VoxelShape LAMP = Block.createCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
 
 	
 	public PaperLight(String name, float hardness, float resistance) {

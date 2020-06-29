@@ -16,6 +16,7 @@ import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
 import com.brand.blockus.blocks.IronGate.IronGateBase;
+import com.brand.blockus.blocks.Light.LanternBlockBase;
 import com.brand.blockus.blocks.Light.LightBlockBase;
 
 public class Other {
@@ -34,7 +35,7 @@ public class Other {
     public static final Barrier ROAD_BARRIER = new Barrier("road_barrier", 2f, 6.0f);	
     public static final FallingRedstoneBase REDSTONE_SAND = new FallingRedstoneBase("redstone_sand", 2.0f, 6.0f);
     public static final IronGateBase IRON_GATE = new IronGateBase("iron_gate", 5.0f, 5.0f);
-    public static final LightBlockBase LANTERN_BLOCK = new LightBlockBase("lantern_block", 0.3f, 0.3f, Material.GLASS, BlockSoundGroup.GLASS, Blockus.BLOCKUS_BUILDING_BLOCKS, 15);
+    public static final LanternBlockBase LANTERN_BLOCK = new LanternBlockBase("lantern_block", 3.5f, 5.0f, Material.GLASS, BlockSoundGroup.GLASS, Blockus.BLOCKUS_BUILDING_BLOCKS, 15);
     public static final PortalCubeBlock WEIGHT_STORAGE_CUBE= new PortalCubeBlock("weight_storage_cube", 0.1f, 6.0f);
     public static final PortalCubeBlock COMPANION_CUBE = new PortalCubeBlock("companion_cube", 0.1f, 6.0f);
 

@@ -4,6 +4,7 @@
     "minecraft:smooth_sandstone",
 	"minecraft:cut_sandstone",
 	"minecraft:chiseled_sandstone",
-	"blockus:sandstone_bricks"
+	"blockus:sandstone_bricks",
+	"blockus:small_sandstone_bricks"
   ]
 }
