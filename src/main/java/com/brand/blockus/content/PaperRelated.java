@@ -3,7 +3,7 @@ package com.brand.blockus.content;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Base.DoorBase;
 import com.brand.blockus.blocks.Base.TrapdoorBase;
-import com.brand.blockus.blocks.Base.SpecificTool.BlockBaseHand;
+import com.brand.blockus.blocks.Base.BetterTool.BlockBaseHand;
 import com.brand.blockus.blocks.Paper.PaperLight;
 import com.brand.blockus.blocks.Wood.WoodenPaneBase;
 

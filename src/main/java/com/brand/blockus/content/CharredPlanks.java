@@ -9,7 +9,7 @@ import com.brand.blockus.blocks.Base.PressurePlateBase;
 import com.brand.blockus.blocks.Base.SlabBase;
 import com.brand.blockus.blocks.Base.StairsBase;
 import com.brand.blockus.blocks.Base.TrapdoorBase;
-import com.brand.blockus.blocks.Base.SpecificTool.BlockBase2;
+import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Wood.WoodButtonBase;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -20,7 +20,7 @@ import net.minecraft.sound.BlockSoundGroup;
 
 public class CharredPlanks {
 	
-	public static final BlockBase2 CHARRED_PLANKS = new BlockBase2("charred_planks", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, MaterialColor.GRAY_TERRACOTTA);
+	public static final BlockBaseBT CHARRED_PLANKS = new BlockBaseBT("charred_planks", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, MaterialColor.GRAY_TERRACOTTA);
 	public static final SlabBase CHARRED_SLAB = new SlabBase("charred_slab", CHARRED_PLANKS);
 	public static final StairsBase CHARRED_STAIRS = new StairsBase(CHARRED_PLANKS.getDefaultState(), "charred_stairs", CHARRED_PLANKS);
 	public static final FenceBase CHARRED_FENCE = new FenceBase("charred_fence", 2.0f, 3.0f, CHARRED_PLANKS.getDefaultMaterialColor());

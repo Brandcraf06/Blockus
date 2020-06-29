@@ -4,7 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Base.BaseSpongeBlock;
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.FallingGravelBase;
-import com.brand.blockus.blocks.Base.SpecificTool.BlockBase2;
+import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Leaves.LegacyLeavesBlock;
 import com.brand.blockus.blocks.Light.LightBlockBase;
 
@@ -31,6 +31,6 @@ public class LegacyBlocks {
 	public static final BlockBase CRYING_OBSIDIAN = new BlockBase("legacy_crying_obsidian", 1.5f, 6000.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.BLACK);
 	public static final LightBlockBase GLOWING_OBSIDIAN = new LightBlockBase("legacy_glowing_obsidian", 1.5f, 6000.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, 15, MaterialColor.BLACK);
 	public static final BlockBase NETHER_REACTOR_CORE = new BlockBase("legacy_nether_reactor_core", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.LIGHT_BLUE);
-	public static final BlockBase2 LEGACY_PLANKS = new BlockBase2("legacy_planks", 2.0f, 15.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, MaterialColor.WOOD);
+	public static final BlockBaseBT LEGACY_PLANKS = new BlockBaseBT("legacy_planks", 2.0f, 15.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, MaterialColor.WOOD);
 
 }

@@ -8,7 +8,7 @@ import com.brand.blockus.blocks.Base.PressurePlateBase;
 import com.brand.blockus.blocks.Base.SlabBase;
 import com.brand.blockus.blocks.Base.StairsBase;
 import com.brand.blockus.blocks.Base.TrapdoorBase;
-import com.brand.blockus.blocks.Base.SpecificTool.BlockBase2;
+import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Leaves.LeavesBlockBase;
 import com.brand.blockus.blocks.Sapling.PottedBlockBase;
 import com.brand.blockus.blocks.Sapling.SaplingBlockBase;
@@ -31,7 +31,7 @@ public class WhiteOak {
 	public static final LogBlockBase WHITE_OAK_WOOD = new LogBlockBase(MaterialColor.LIGHT_GRAY_TERRACOTTA, MaterialColor.LIGHT_GRAY_TERRACOTTA,"white_oak_wood", 2.0f, 2.0f);
 	public static final LogBlockBase STRIPPED_WHITE_OAK_WOOD = new LogBlockBase(MaterialColor.WHITE_TERRACOTTA, MaterialColor.WHITE_TERRACOTTA, "stripped_white_oak_wood", 2.0f, 2.0f);
 	public static final LeavesBlockBase WHITE_OAK_LEAVES = new LeavesBlockBase("white_oak_leaves", 0.2f, 0.2f);
-	public static final BlockBase2 WHITE_OAK_PLANKS = new BlockBase2("white_oak_planks", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, MaterialColor.WHITE_TERRACOTTA);
+	public static final BlockBaseBT WHITE_OAK_PLANKS = new BlockBaseBT("white_oak_planks", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, MaterialColor.WHITE_TERRACOTTA);
 	public static final SlabBase WHITE_OAK_SLAB = new SlabBase("white_oak_slab", WHITE_OAK_PLANKS);
 	public static final StairsBase WHITE_OAK_STAIRS = new StairsBase(WHITE_OAK_PLANKS.getDefaultState(), "white_oak_stairs", WHITE_OAK_PLANKS);
 	public static final FenceBase WHITE_OAK_FENCE = new FenceBase("white_oak_fence", 2.0f, 3.0f, WHITE_OAK_PLANKS.getDefaultMaterialColor());

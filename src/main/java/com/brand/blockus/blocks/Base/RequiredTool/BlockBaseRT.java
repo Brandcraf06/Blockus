@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.Base.SpecificTool;
+package com.brand.blockus.blocks.Base.RequiredTool;
 
 import com.brand.blockus.Blockus;
 
@@ -14,10 +14,10 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class BlockBase2 extends Block {
+public class BlockBaseRT extends Block {
 		
-	public BlockBase2(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, ItemGroup itemgroup, Tag<Item> tag, int mininglevel, MaterialColor color) {
-		super(FabricBlockSettings.of(material, color).sounds(sound).breakByTool(tag, mininglevel).strength(hardness, resistance));
+	public BlockBaseRT(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, ItemGroup itemgroup, Tag<Item> tag, int mininglevel, MaterialColor color) {
+		super(FabricBlockSettings.of(material, color).sounds(sound).requiresTool().breakByTool(tag, mininglevel).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(itemgroup)));
 	}

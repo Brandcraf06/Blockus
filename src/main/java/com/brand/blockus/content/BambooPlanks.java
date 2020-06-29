@@ -9,7 +9,7 @@ import com.brand.blockus.blocks.Base.PressurePlateBase;
 import com.brand.blockus.blocks.Base.SlabBase;
 import com.brand.blockus.blocks.Base.StairsBase;
 import com.brand.blockus.blocks.Base.TrapdoorBase;
-import com.brand.blockus.blocks.Base.SpecificTool.BlockBase2;
+import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Wood.WoodButtonBase;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -20,7 +20,7 @@ import net.minecraft.sound.BlockSoundGroup;
 
 public class BambooPlanks {
 	
-	public static final BlockBase2 BAMBOO_PLANKS = new BlockBase2("bamboo_planks", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, MaterialColor.SAND);
+	public static final BlockBaseBT BAMBOO_PLANKS = new BlockBaseBT("bamboo_planks", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, MaterialColor.SAND);
 	public static final SlabBase BAMBOO_SLAB = new SlabBase("bamboo_slab", BAMBOO_PLANKS);
 	public static final StairsBase BAMBOO_STAIRS = new StairsBase(BAMBOO_PLANKS.getDefaultState(), "bamboo_stairs", BAMBOO_PLANKS);
 	public static final FenceBase BAMBOO_FENCE = new FenceBase("bamboo_fence", 2.0f, 3.0f, BAMBOO_PLANKS.getDefaultMaterialColor());

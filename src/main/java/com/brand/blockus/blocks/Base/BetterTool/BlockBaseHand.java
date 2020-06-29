@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.Base.SpecificTool;
+package com.brand.blockus.blocks.Base.BetterTool;
 
 import com.brand.blockus.Blockus;
 

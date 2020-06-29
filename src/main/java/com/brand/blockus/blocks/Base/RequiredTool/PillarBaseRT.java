@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.Base.SpecificTool;
+package com.brand.blockus.blocks.Base.RequiredTool;
 
 import com.brand.blockus.Blockus;
 
@@ -13,10 +13,10 @@ import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.tag.Tag;
 
-public class PillarBase2 extends PillarBlock {
+public class PillarBaseRT extends PillarBlock {
 	
-	public PillarBase2(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MaterialColor color) {
-		super(FabricBlockSettings.of(material, color).sounds(sound).breakByTool(tag, mininglevel).strength(hardness, resistance));
+	public PillarBaseRT(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MaterialColor color) {
+		super(FabricBlockSettings.of(material, color).sounds(sound).requiresTool().breakByTool(tag, mininglevel).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 	}
