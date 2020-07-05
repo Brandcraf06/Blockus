@@ -1,7 +1,6 @@
 package com.brand.blockus.blocks.FoodBlocks;
 
 import com.brand.blockus.BlockusProperties;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -23,85 +22,85 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 public class CookieBlock extends Block {
-	   public static final IntProperty BITES;
-	   protected static final VoxelShape[] BITES_TO_SHAPE;
+    public static final IntProperty BITES;
+    protected static final VoxelShape[] BITES_TO_SHAPE;
 
-	   protected CookieBlock(Block.Settings block$Settings_1) {
-	      super(block$Settings_1);
-	      this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(BITES, 0));
-	   }
+    static {
+        BITES = BlockusProperties.BITES_9;
+        BITES_TO_SHAPE = new VoxelShape[]
+                {Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(2.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(4.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(6.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(7.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(10.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(12.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
+    }
 
-	   public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, ShapeContext entityContext_1) {
-	      return BITES_TO_SHAPE[(Integer)blockState_1.get(BITES)];
-	   }
+    protected CookieBlock(Block.Settings block$Settings_1) {
+        super(block$Settings_1);
+        this.setDefaultState(this.stateManager.getDefaultState().with(BITES, 0));
+    }
 
-	   public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		      if (world.isClient) {
-		         ItemStack itemStack = player.getStackInHand(hand);
-		         if (this.tryEat(world, pos, state, player) == ActionResult.SUCCESS) {
-		            return ActionResult.SUCCESS;
-		         }
+    public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, ShapeContext entityContext_1) {
+        return BITES_TO_SHAPE[blockState_1.get(BITES)];
+    }
 
-		         if (itemStack.isEmpty()) {
-		            return ActionResult.CONSUME;
-		         }
-		      }
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (world.isClient) {
+            ItemStack itemStack = player.getStackInHand(hand);
+            if (this.tryEat(world, pos, state, player) == ActionResult.SUCCESS) {
+                return ActionResult.SUCCESS;
+            }
 
-		      return this.tryEat(world, pos, state, player);
-		   }
+            if (itemStack.isEmpty()) {
+                return ActionResult.CONSUME;
+            }
+        }
 
-		   private ActionResult tryEat(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-		      if (!player.canConsume(false)) {
-		         return ActionResult.PASS;
-		      } else {
-		         player.incrementStat(Stats.EAT_CAKE_SLICE);
-		         player.getHungerManager().add(2, 0.1F);
-		         int i = (Integer)state.get(BITES);
-		         if (i < 6) {
-		            world.setBlockState(pos, (BlockState)state.with(BITES, i + 1), 3);
-		         } else {
-		            world.removeBlock(pos, false);
-		         }
+        return this.tryEat(world, pos, state, player);
+    }
 
-		         return ActionResult.SUCCESS;
-		      }
-		   }
+    private ActionResult tryEat(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        if (!player.canConsume(false)) {
+            return ActionResult.PASS;
+        } else {
+            player.incrementStat(Stats.EAT_CAKE_SLICE);
+            player.getHungerManager().add(2, 0.1F);
+            int i = state.get(BITES);
+            if (i < 6) {
+                world.setBlockState(pos, state.with(BITES, i + 1), 3);
+            } else {
+                world.removeBlock(pos, false);
+            }
 
-	   public BlockState getStateForNeighborUpdate(BlockState blockState_1, Direction direction_1, BlockState blockState_2, World iWorld_1, BlockPos blockPos_1, BlockPos blockPos_2) {
-	      return direction_1 == Direction.DOWN && !blockState_1.canPlaceAt(iWorld_1, blockPos_1) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(blockState_1, direction_1, blockState_2, iWorld_1, blockPos_1, blockPos_2);
-	   }
+            return ActionResult.SUCCESS;
+        }
+    }
 
-	   public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-		      return world.getBlockState(pos.down()).getMaterial().isSolid();
-	   }
+    public BlockState getStateForNeighborUpdate(BlockState blockState_1, Direction direction_1, BlockState blockState_2, World iWorld_1, BlockPos blockPos_1, BlockPos blockPos_2) {
+        return direction_1 == Direction.DOWN && !blockState_1.canPlaceAt(iWorld_1, blockPos_1) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(blockState_1, direction_1, blockState_2, iWorld_1, blockPos_1, blockPos_2);
+    }
 
-	   protected void appendProperties(StateManager.Builder<Block, BlockState> stateFactory$Builder_1) {
-	      stateFactory$Builder_1.add(BITES);
-	   }
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        return world.getBlockState(pos.down()).getMaterial().isSolid();
+    }
 
-	   public int getComparatorOutput(BlockState blockState_1, World world_1, BlockPos blockPos_1) {
-	      return (9 - (Integer)blockState_1.get(BITES)) * 2;
-	   }
+    protected void appendProperties(StateManager.Builder<Block, BlockState> stateFactory$Builder_1) {
+        stateFactory$Builder_1.add(BITES);
+    }
 
-	   public boolean hasComparatorOutput(BlockState blockState_1) {
-	      return true;
-	   }
+    public int getComparatorOutput(BlockState blockState_1, World world_1, BlockPos blockPos_1) {
+        return (9 - blockState_1.get(BITES)) * 2;
+    }
 
-	   public boolean canPlaceAtSide(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, NavigationType blockPlacementEnvironment_1) {
-	      return false;
-	   }
+    public boolean hasComparatorOutput(BlockState blockState_1) {
+        return true;
+    }
 
-	   static {
-	      BITES = BlockusProperties.BITES_9;
-	      BITES_TO_SHAPE = new VoxelShape[]
-	    		  {Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), 
-	    		   Block.createCuboidShape(2.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), 
-	    		   Block.createCuboidShape(4.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), 
-	    		   Block.createCuboidShape(6.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-	    		   Block.createCuboidShape(7.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-	    		   Block.createCuboidShape(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), 
-	    		   Block.createCuboidShape(10.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), 
-	    		   Block.createCuboidShape(12.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D), 
-	    		   Block.createCuboidShape(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
-	   }
-	}
+    public boolean canPlaceAtSide(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, NavigationType blockPlacementEnvironment_1) {
+        return false;
+    }
+}
