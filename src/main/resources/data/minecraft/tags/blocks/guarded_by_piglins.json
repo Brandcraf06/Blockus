@@ -1,15 +1,8 @@
 {
   "replace": false,
   "values": [
-    "minecraft:gold_block",
 	"blockus:legacy_gold_block",
 	"blockus:legacy_explosion_proof_gold_block",
-    "#blockus:barrels",
-    "minecraft:chest",
-    "minecraft:ender_chest",
-    "minecraft:gilded_blackstone",
-    "minecraft:trapped_chest",
-    "#minecraft:shulker_boxes",
-    "#minecraft:gold_ores"
+    "#blockus:barrels"
   ]
 }

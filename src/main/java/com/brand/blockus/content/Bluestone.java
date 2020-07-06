@@ -21,6 +21,8 @@ public class Bluestone {
 	public static final PillarBase BLUESTONE_PILLAR = new PillarBase("bluestone_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MaterialColor.CYAN);
 	public static final BlockBase BLUESTONE_BRICKS = new BlockBase("bluestone_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.CYAN);
 	public static final BlockBase SMOOTH_BLUESTONE = new BlockBase("smooth_bluestone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.CYAN);
+	public static final StairsBase SMOOTH_BLUESTONE_STAIRS = new StairsBase(SMOOTH_BLUESTONE.getDefaultState(), "smooth_bluestone_stairs", SMOOTH_BLUESTONE);
+	public static final SlabBase SMOOTH_BLUESTONE_SLAB = new SlabBase("smooth_bluestone_slab", SMOOTH_BLUESTONE);
 	public static final BlockBase BLUESTONE_SQUARES = new BlockBase("bluestone_squares", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.CYAN);
 	public static final BlockBase BLUESTONE_LITTLE_BRICKS = new BlockBase("bluestone_little_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.CYAN);
 	public static final BlockBase CHISELED_BLUESTONE = new BlockBase("chiseled_bluestone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.CYAN);

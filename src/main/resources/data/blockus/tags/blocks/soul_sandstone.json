@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+	"blockus:soul_sandstone",
+	"blockus:soul_sandstone_slab",
+	"blockus:soul_sandstone_stairs",
+	"blockus:smooth_soul_sandstone",
+	"blockus:smooth_soul_sandstone_slab",
+	"blockus:smooth_soul_sandstone_stairs",
+	"blockus:soul_sandstone_bricks",
+	"blockus:soul_sandstone_bricks_slab",
+	"blockus:soul_sandstone_bricks_stairs",
+	"blockus:small_soul_sandstone_bricks",
+	"blockus:small_soul_sandstone_bricks_slab",
+	"blockus:small_soul_sandstone_bricks_stairs",
+	"blockus:cut_soul_sandstone",
+	"blockus:cut_soul_sandstone_slab",
+	"blockus:chiseled_soul_sandstone"
+  ]
+}

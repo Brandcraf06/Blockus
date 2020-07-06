@@ -1,7 +1,6 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BambooPlanks;
-import com.brand.blockus.content.CharredPlanks;
 import com.brand.blockus.content.FoodBlocks;
 import com.brand.blockus.content.Hedge;
 import com.brand.blockus.content.Other;
@@ -83,16 +82,6 @@ public class instance {
 		FuelRegistry.INSTANCE.add(WhiteOak.WHITE_OAK_BUTTON, 100);
 		FuelRegistry.INSTANCE.add(WhiteOak.WHITE_OAK_LEAVES, 100);
 		
-		// charred planks 0
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_PLANKS, 0);
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_SLAB, 0);
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_STAIRS, 0);
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_FENCE, 0);
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_FENCE_GATE, 0);
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_DOOR, 0);
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_TRAPDOOR, 0);
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_PRESSURE_PLATE, 0);
-		FuelRegistry.INSTANCE.add(CharredPlanks.CHARRED_BUTTON, 0);
 		
 // Flammable
 		

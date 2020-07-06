@@ -1,5 +1,5 @@
 {
-    "parent": "block/cube_all",
+    "parent": "blockus:block/cube_tiles",
     "textures": {
         "all": "blockus:block/green_orange_colored_tiles"
     }
