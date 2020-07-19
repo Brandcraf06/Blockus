@@ -24,6 +24,7 @@ public class SoulSandstone {
 	public static final SlabBase SMOOTH_SOUL_SANDSTONE_SLAB = new SlabBase("smooth_soul_sandstone_slab", SMOOTH_SOUL_SANDSTONE);
 	public static final BlockBase ROUGH_SOUL_SANDSTONE = new BlockBase("rough_soul_sandstone", 0.8f, 0.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.BROWN);
 	public static final StairsBase ROUGH_SOUL_SANDSTONE_STAIRS = new StairsBase(ROUGH_SOUL_SANDSTONE.getDefaultState(), "rough_soul_sandstone_stairs", ROUGH_SOUL_SANDSTONE);
+	public static final SlabBase ROUGH_SOUL_SANDSTONE_SLAB = new SlabBase("rough_soul_sandstone_slab", ROUGH_SOUL_SANDSTONE);
 	public static final BlockBase CUT_SOUL_SANDSTONE = new BlockBase("cut_soul_sandstone", 0.8f, 0.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.BROWN);
 	public static final SlabBase CUT_SOUL_SANDSTONE_SLAB = new SlabBase("cut_soul_sandstone_slab", CUT_SOUL_SANDSTONE);
 	public static final BlockBase CHISELED_SOUL_SANDSTONE = new BlockBase("chiseled_soul_sandstone", 0.8f, 0.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.BROWN);
