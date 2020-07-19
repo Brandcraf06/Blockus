@@ -2,17 +2,20 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.ChainBlockBase;
+import com.brand.blockus.blocks.Base.FallingBlockBase;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.BarrierBase;
 import com.brand.blockus.blocks.CarvedPumpkinBlockBase;
 import com.brand.blockus.blocks.IronGateBase;
 import com.brand.blockus.blocks.Base.FallingRedstoneBase;
 import com.brand.blockus.blocks.Base.PaneBase;
+import com.brand.blockus.blocks.Base.PathBase;
+import com.brand.blockus.blocks.Base.SlabBase;
+import com.brand.blockus.blocks.Base.StairsBase;
 import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Base.BetterTool.BlockBaseHand;
 import com.brand.blockus.blocks.LoveBlock;
 import com.brand.blockus.blocks.NetherStarsBlock;
-import com.brand.blockus.blocks.PortalCubeBlock;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
@@ -28,8 +31,6 @@ public class Other {
 	public static final NetherStarsBlock NETHER_STARS_BLOCK = new NetherStarsBlock("nether_stars_block", 5.0f, 6.0f);
 	public static final BlockBaseBT STARS_BLOCK = new BlockBaseBT("stars_block", 5.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.PICKAXES, 1, MaterialColor.BLACK);
 	public static final BlockBaseBT ENDER_BLOCK = new BlockBaseBT("ender_block", 5.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.PICKAXES, 1, MaterialColor.GREEN_TERRACOTTA);
-	public static final BlockBase LARGE_BRICKS = new BlockBase("large_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.RED);
-	public static final BlockBase ZIGZAGGED_BRICKS = new BlockBase("zigzagged_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.RED);
 	public static final LoveBlock LOVE_BLOCK = new LoveBlock("love_block", 2f, 6.0f);
 	public static final WoodenPaneBase WOODEN_FRAME = new WoodenPaneBase("wooden_frame", 0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD);
 	public static final BlockBaseHand MEMBRANE_BLOCK = new BlockBaseHand("membrane_block", 1.5f, 1.5f, Material.SOLID_ORGANIC, BlockSoundGroup.SLIME, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.WHITE_TERRACOTTA);
@@ -42,10 +43,19 @@ public class Other {
     public static final IronGateBase GOLDEN_GATE = new IronGateBase("golden_gate", 5.0f, 5.0f);
     public static final LanternBlockBase LANTERN_BLOCK = new LanternBlockBase("lantern_block", 3.5f, 5.0f, Material.METAL, BlockSoundGroup.LANTERN, Blockus.BLOCKUS_BUILDING_BLOCKS, 15, MaterialColor.IRON);
     public static final LanternBlockBase SOUL_LANTERN_BLOCK = new LanternBlockBase("soul_lantern_block", 3.5f, 5.0f, Material.METAL,BlockSoundGroup.LANTERN, Blockus.BLOCKUS_BUILDING_BLOCKS, 10, MaterialColor.IRON);
-    public static final PortalCubeBlock WEIGHT_STORAGE_CUBE= new PortalCubeBlock("weight_storage_cube", 0.1f, 6.0f);
-    public static final PortalCubeBlock COMPANION_CUBE = new PortalCubeBlock("companion_cube", 0.1f, 6.0f);
+    public static final FallingBlockBase WEIGHT_STORAGE_CUBE= new FallingBlockBase("weight_storage_cube", 0.1f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.IRON);
+    public static final FallingBlockBase COMPANION_CUBE = new FallingBlockBase("companion_cube", 0.1f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.IRON);
+    public static final FallingBlockBase SUGAR_BLOCK = new FallingBlockBase("sugar_block", 0.5f, 0.5f, Material.AGGREGATE, BlockSoundGroup.SAND, FabricToolTags.SHOVELS, 0, MaterialColor.QUARTZ);
     public static final CarvedPumpkinBlockBase SOUL_O_LANTERN = new CarvedPumpkinBlockBase("soul_o_lantern", 1.0f, 1.0f);
     public static final ChainBlockBase GOLDEN_CHAIN = new ChainBlockBase("golden_chain", 5.0F, 6.0F);
 	public static final PaneBase GOLDEN_BARS = new PaneBase("golden_bars", 5.0F, 6.0f, Material.METAL, BlockSoundGroup.METAL);
+	
+	public static final BlockBase IRON_PLATING = new BlockBase("iron_plating", 5.0F, 6.0F, Material.METAL, BlockSoundGroup.METAL, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.IRON);
+	public static final PathBase DIRT_PATH = new PathBase("dirt_path", 0.65F, 0.65F, Material.SOIL, BlockSoundGroup.GRASS, FabricToolTags.SHOVELS, 0, MaterialColor.DIRT);
+	
+	// Thatch
+	public static final BlockBaseBT THATCH = new BlockBaseBT("thatch", 0.5F, 0.5F, Material.SOLID_ORGANIC, BlockSoundGroup.GRASS, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.HOES, 0, MaterialColor.YELLOW);
+	public static final StairsBase THATCH_STAIRS = new StairsBase(Other.THATCH.getDefaultState(), "thatch_stairs", THATCH);
+	public static final SlabBase THATCH_SLAB = new SlabBase("thatch_slab", THATCH);
 
 }

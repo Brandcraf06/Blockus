@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "timber_frames",
+  "pattern": [
+    "PW",
+    "WP"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:acacia_planks"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "blockus:acacia_timber_frame",
+    "count": 2
+  }
+}

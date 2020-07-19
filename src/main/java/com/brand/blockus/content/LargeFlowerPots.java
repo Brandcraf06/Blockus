@@ -19,7 +19,7 @@ public class LargeFlowerPots {
 	public static final LargePottedDoublePlant POTTED_JUNGLE = new LargePottedDoublePlant(Blocks.JUNGLE_SAPLING, "potted_jungle");
 	public static final LargePottedDoublePlant POTTED_ACACIA = new LargePottedDoublePlant(Blocks.ACACIA_SAPLING, "potted_acacia");
 	public static final LargePottedDoublePlant POTTED_DARK_OAK = new LargePottedDoublePlant(Blocks.DARK_OAK_SAPLING, "potted_dark_oak");
-	public static final LargePottedDoublePlant POTTED_WHITE_OAK = new LargePottedDoublePlant(WhiteOak.WHITE_OAK_SAPLING, "potted_white_oak");
+	public static final LargePottedDoublePlant POTTED_WHITE_OAK = new LargePottedDoublePlant(NewWoods.WHITE_OAK_SAPLING, "potted_white_oak");
 	public static final LargePottedDoublePlant POTTED_HUGE_RED_MUSHROOM = new LargePottedDoublePlant(Blocks.RED_MUSHROOM, "potted_huge_red_mushroom");
 	public static final LargePottedDoublePlant POTTED_HUGE_BROWN_MUSHROOM = new LargePottedDoublePlant(Blocks.BROWN_MUSHROOM, "potted_huge_brown_mushroom");
 	public static final LargePottedDoublePlant POTTED_HUGE_CRIMSON_FUNGUS = new LargePottedDoublePlant(Blocks.CRIMSON_FUNGUS, "potted_huge_crimson_fungus");

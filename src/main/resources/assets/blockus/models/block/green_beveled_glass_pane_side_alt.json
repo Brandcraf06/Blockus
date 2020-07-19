@@ -1,7 +1,7 @@
 {
     "parent": "block/template_glass_pane_side_alt",
     "textures": {
-        "edge": "block/green_stained_glass_pane_top",
+        "edge": "blockus:block/beveled_glass_pane_top",
         "pane": "blockus:block/green_beveled_glass"
     }
 }

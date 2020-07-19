@@ -1,9 +1,7 @@
 package com.brand.blockus.world;
 
-import com.brand.blockus.content.Bluestone;
-import com.brand.blockus.content.Limestone;
-import com.brand.blockus.content.Marble;
-import com.brand.blockus.content.WhiteOak;
+import com.brand.blockus.content.NewStones;
+import com.brand.blockus.content.NewWoods;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -32,9 +30,9 @@ public class BlockusGen {
 	public static final TreeFeatureConfig OAK_TREE_CONFIG;
 	
 	public static void addMineables(Biome biome) {
-       biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Limestone.LIMESTONE.getDefaultState(), 33)).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(10, 0, 0, 120))));
-	   biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Marble.MARBLE.getDefaultState(), 70)).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(1, 0, 0, 75))));
-	   biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Bluestone.BLUESTONE.getDefaultState(), 20)).createDecoratedFeature(Decorator.COUNT_DEPTH_AVERAGE.configure(new CountDepthDecoratorConfig(8, 16, 16))));
+       biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, NewStones.LIMESTONE.getDefaultState(), 33)).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(10, 0, 0, 120))));
+	   biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, NewStones.MARBLE.getDefaultState(), 70)).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(1, 0, 0, 75))));
+	   biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, NewStones.BLUESTONE.getDefaultState(), 20)).createDecoratedFeature(Decorator.COUNT_DEPTH_AVERAGE.configure(new CountDepthDecoratorConfig(8, 16, 16))));
 	}
 	public static void addWhiteOakTrees(Biome biome) {
 		if (biome == Biomes.FOREST || biome == Biomes.WOODED_HILLS || biome == Biomes.FLOWER_FOREST) {
@@ -50,8 +48,8 @@ public class BlockusGen {
 	 OAK_LOG = Blocks.OAK_LOG.getDefaultState();
 	 OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState();
 	 OAK_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(OAK_LOG), new SimpleBlockStateProvider(OAK_LEAVES), new BlobFoliagePlacer(2, 0, 0, 0, 3), new StraightTrunkPlacer(4, 2, 0), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
-     WHITE_OAK_LOG = WhiteOak.WHITE_OAK_LOG.getDefaultState();
-     WHITE_OAK_LEAVES = WhiteOak.WHITE_OAK_LEAVES.getDefaultState();
+     WHITE_OAK_LOG = NewWoods.WHITE_OAK_LOG.getDefaultState();
+     WHITE_OAK_LEAVES = NewWoods.WHITE_OAK_LEAVES.getDefaultState();
      WHITE_OAK_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(WHITE_OAK_LOG), new SimpleBlockStateProvider(WHITE_OAK_LEAVES), new BlobFoliagePlacer(2, 0, 0, 0, 5), new StraightTrunkPlacer(7, 2, 0), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
 		   
 	}

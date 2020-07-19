@@ -1,7 +1,7 @@
 {
     "parent": "block/template_glass_pane_post",
     "textures": {
-        "edge": "block/cyan_stained_glass_pane_top",
+        "edge": "blockus:block/beveled_glass_pane_top",
         "pane": "blockus:block/cyan_beveled_glass"
     }
 }

@@ -20,9 +20,9 @@ public class Barrels {
 	public static final WoodenBarrels DARK_OAK_BARREL = new WoodenBarrels("dark_oak_barrel", 2.0f, 3.0f, Blocks.DARK_OAK_PLANKS.getDefaultMaterialColor());
 	public static final WoodenBarrels CRIMSON_BARREL = new WoodenBarrels("crimson_barrel", 2.0f, 3.0f, Blocks.CRIMSON_PLANKS.getDefaultMaterialColor());
 	public static final WoodenBarrels WARPED_BARREL = new WoodenBarrels("warped_barrel", 2.0f, 3.0f, Blocks.WARPED_PLANKS.getDefaultMaterialColor());
-	public static final WoodenBarrels WHITE_OAK_BARREL = new WoodenBarrels("white_oak_barrel", 2.0f, 3.0f, WhiteOak.WHITE_OAK_PLANKS.getDefaultMaterialColor());
-	public static final WoodenBarrels BAMBOO_BARREL = new WoodenBarrels("bamboo_barrel", 2.0f, 3.0f, BambooPlanks.BAMBOO_PLANKS.getDefaultMaterialColor());
-	public static final WoodenBarrels CHARRED_BARREL = new WoodenBarrels("charred_barrel", 2.0f, 3.0f, CharredPlanks.CHARRED_PLANKS.getDefaultMaterialColor());
+	public static final WoodenBarrels WHITE_OAK_BARREL = new WoodenBarrels("white_oak_barrel", 2.0f, 3.0f, NewWoods.WHITE_OAK_PLANKS.getDefaultMaterialColor());
+	public static final WoodenBarrels BAMBOO_BARREL = new WoodenBarrels("bamboo_barrel", 2.0f, 3.0f, NewWoods.BAMBOO_PLANKS.getDefaultMaterialColor());
+	public static final WoodenBarrels CHARRED_BARREL = new WoodenBarrels("charred_barrel", 2.0f, 3.0f, NewWoods.CHARRED_PLANKS.getDefaultMaterialColor());
 	
 	public static final BlockEntityType<WoodenBarrelBlockEntity> WOODEN_BARREL = registerBe("wooden_barrel", BlockEntityType.Builder.create(WoodenBarrelBlockEntity::new, OAK_BARREL, BIRCH_BARREL, JUNGLE_BARREL, ACACIA_BARREL, CRIMSON_BARREL, WARPED_BARREL, DARK_OAK_BARREL, WHITE_OAK_BARREL, BAMBOO_BARREL, CHARRED_BARREL));
 	

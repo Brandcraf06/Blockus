@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "small logs",
+  "ingredients": [
+    {
+      "item": "minecraft:acacia_log"
+    },
+    {
+      "item": "minecraft:acacia_log"
+    },
+    {
+      "item": "minecraft:acacia_log"
+    }
+  ],
+  "result": {
+    "item": "blockus:acacia_small_logs",
+    "count": 3
+  }
+}

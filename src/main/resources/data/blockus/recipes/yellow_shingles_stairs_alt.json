@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_shingles_stairs",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:shingles_stairs"
+    },
+    "$": {
+      "item": "minecraft:yellow_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:yellow_shingles_stairs",
+    "count": 8
+  }
+}

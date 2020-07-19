@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "small logs",
+  "ingredients": [
+    {
+      "item": "minecraft:dark_oak_log"
+    },
+    {
+      "item": "minecraft:dark_oak_log"
+    },
+    {
+      "item": "minecraft:dark_oak_log"
+    }
+  ],
+  "result": {
+    "item": "blockus:dark_oak_small_logs",
+    "count": 3
+  }
+}

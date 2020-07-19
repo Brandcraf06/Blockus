@@ -1,10 +1,10 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.Base.OrientableBlockBase;
 import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Base.BetterTool.BlockBaseHand;
 import com.brand.blockus.blocks.FoodBlocks.EatableBase;
-import com.brand.blockus.blocks.FoodBlocks.OrientableCrate;
 import com.brand.blockus.blocks.FoodBlocks.RareCrate;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -26,7 +26,7 @@ public class FoodBlocks {
 	public static final BlockBaseBT APPLE_CRATE = new BlockBaseBT("apple_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, Blocks.OAK_PLANKS.getDefaultMaterialColor());
 	public static final BlockBaseBT BEETROOT_CRATE = new BlockBaseBT("beetroot_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, Blocks.OAK_PLANKS.getDefaultMaterialColor());
 	public static final BlockBaseBT CARROT_CRATE = new BlockBaseBT("carrot_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, Blocks.OAK_PLANKS.getDefaultMaterialColor());
-	public static final OrientableCrate BREAD_BOX = new OrientableCrate("bread_box", 2.5f, 2.5f);
+	public static final OrientableBlockBase BREAD_BOX = new OrientableBlockBase("bread_box", 2.5f, 2.5f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0, Blocks.OAK_PLANKS.getDefaultMaterialColor());
 	public static final RareCrate GOLDEN_APPLE_CRATE = new RareCrate("golden_apple_crate", 2.5f, 2.5f);
 	public static final BlockBaseBT GOLDEN_CARROT_CRATE = new BlockBaseBT("golden_carrot_crate", 2.5f, 2.5f, Material.SOLID_ORGANIC, BlockSoundGroup.WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.AXES, 0, Blocks.OAK_PLANKS.getDefaultMaterialColor());
 	public static final BlockBaseHand ROTTEN_FLESH_BLOCK = new BlockBaseHand("rotten_flesh_block", 1.5f, 1.5f, Material.SOLID_ORGANIC, BlockSoundGroup.SLIME, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.RED_TERRACOTTA);

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "diagonal_timber_frames",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:jungle_timber_frame"
+    }
+  },
+  "result": {
+    "item": "blockus:jungle_diagonal_timber_frame",
+    "count": 4
+  }
+}

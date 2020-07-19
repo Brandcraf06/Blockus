@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "blockus:block/dark_oak_cross_timber_frame"
+  }
+}

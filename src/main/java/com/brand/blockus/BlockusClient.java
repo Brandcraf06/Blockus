@@ -22,11 +22,11 @@ public void onInitializeClient() {
 		registerBlockColor(Hedge.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
 		registerBlockColor(Hedge.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
 		registerBlockColor(Hedge.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
-		registerBlockColor(WaterBricks.WATER_BRICKS, Blocks.WATER);
-		registerBlockColor(WaterBricks.WATER_BRICKS_STAIRS, Blocks.WATER);
-		registerBlockColor(WaterBricks.WATER_BRICKS_SLAB, Blocks.WATER);
-		registerBlockColor(WaterBricks.WATER_BRICKS_WALL, Blocks.WATER);
-		registerBlockColor(WaterBricks.CHISELED_WATER_BRICKS, Blocks.WATER);
+		registerBlockColor(FluidBricks.WATER_BRICKS, Blocks.WATER);
+		registerBlockColor(FluidBricks.WATER_BRICKS_STAIRS, Blocks.WATER);
+		registerBlockColor(FluidBricks.WATER_BRICKS_SLAB, Blocks.WATER);
+		registerBlockColor(FluidBricks.WATER_BRICKS_WALL, Blocks.WATER);
+		registerBlockColor(FluidBricks.CHISELED_WATER_BRICKS, Blocks.WATER);
 		registerBlockColor(LargeFlowerPots.POTTED_LARGE_FERN, Blocks.POTTED_FERN);
 		registerBlockColor(LargeFlowerPots.POTTED_OAK, Blocks.OAK_LEAVES);
 		registerBlockColor(LargeFlowerPots.POTTED_SPRUCE, Blocks.SPRUCE_LEAVES);
@@ -44,13 +44,13 @@ public void onInitializeClient() {
 				Hedge.DARK_OAK_SMALL_HEDGE,
 				Hedge.WHITE_OAK_SMALL_HEDGE,
 				LegacyBlocks.LEGACY_LEAVES,
-				WhiteOak.WHITE_OAK_LEAVES,
-				WhiteOak.WHITE_OAK_SAPLING,
-				WhiteOak.POTTED_WHITE_OAK_SAPLING,
+				NewWoods.WHITE_OAK_LEAVES,
+				NewWoods.WHITE_OAK_SAPLING,
+				NewWoods.POTTED_WHITE_OAK_SAPLING,
 				ObsidianRelated.OBSIDIAN_REINFORCED_DOOR,
 				ObsidianRelated.OBSIDIAN_REINFORCED_TRAPDOOR,
-				CharredPlanks.CHARRED_DOOR,
-				CharredPlanks.CHARRED_TRAPDOOR,
+				NewWoods.CHARRED_DOOR,
+				NewWoods.CHARRED_TRAPDOOR,
 				Other.WOODEN_FRAME,
 				Other.IRON_GATE,
 				Other.GOLDEN_GATE,
@@ -70,11 +70,11 @@ public void onInitializeClient() {
 
 		);
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
-				WaterBricks.WATER_BRICKS,
-				WaterBricks.WATER_BRICKS_SLAB,
-				WaterBricks.WATER_BRICKS_STAIRS,
-				WaterBricks.WATER_BRICKS_WALL,
-				WaterBricks.CHISELED_WATER_BRICKS,
+				FluidBricks.WATER_BRICKS,
+				FluidBricks.WATER_BRICKS_SLAB,
+				FluidBricks.WATER_BRICKS_STAIRS,
+				FluidBricks.WATER_BRICKS_WALL,
+				FluidBricks.CHISELED_WATER_BRICKS,
 				
 				GlassRelated.BEVELED_GLASS,
 				GlassRelated.WHITE_BEVELED_GLASS,

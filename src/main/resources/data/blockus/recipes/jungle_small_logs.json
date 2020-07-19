@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "small logs",
+  "ingredients": [
+    {
+      "item": "minecraft:jungle_log"
+    },
+    {
+      "item": "minecraft:jungle_log"
+    },
+    {
+      "item": "minecraft:jungle_log"
+    }
+  ],
+  "result": {
+    "item": "blockus:jungle_small_logs",
+    "count": 3
+  }
+}

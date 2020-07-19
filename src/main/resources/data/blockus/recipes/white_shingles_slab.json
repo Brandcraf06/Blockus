@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "shingles_slab",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:white_shingles"
+    }
+  },
+  "result": {
+    "item": "blockus:white_shingles_slab",
+    "count": 6
+  }
+}

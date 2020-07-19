@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_shingles",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:shingles"
+    },
+    "$": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:black_shingles",
+    "count": 8
+  }
+}

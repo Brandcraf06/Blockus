@@ -1,0 +1,13 @@
+{
+    "parent": "block/cube",
+    "textures": {
+		"particle": "blockus:block/oak_diagonal_timber_frame_right",
+		"north": "blockus:block/oak_diagonal_timber_frame_right",
+		"south": "blockus:block/oak_diagonal_timber_frame_right",
+		"east": "blockus:block/oak_diagonal_timber_frame_left",
+		"west": "blockus:block/oak_diagonal_timber_frame_left",
+		"up": "blockus:block/oak_diagonal_timber_frame_left",
+		"down": "blockus:block/oak_diagonal_timber_frame_left"
+  }
+}
+

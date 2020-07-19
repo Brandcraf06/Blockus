@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "shingles",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:green_terracotta"
+    }
+  },
+  "result": {
+    "item": "blockus:green_shingles",
+    "count": 4
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "": [
+        {  "model": "blockus:block/dirtpath1", "weight": 9 },
+        {  "model": "blockus:block/dirtpath2", "weight": 4 },
+        {  "model": "blockus:block/dirtpath3", "weight": 7 },
+        {  "model": "blockus:block/dirtpath4", "weight": 4 },
+        {  "model": "blockus:block/dirtpath5", "weight": 3 },
+        {  "model": "blockus:block/dirtpath6", "weight": 6 },
+        {  "model": "blockus:block/dirtpath7", "weight": 4 },
+        {  "model": "blockus:block/dirtpath8", "weight": 4 }
+      ]
+    }
+}

@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.brand.blockus.content.WhiteOak;
+import com.brand.blockus.content.NewWoods;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 
@@ -42,7 +42,7 @@ public abstract class AxeItemMixin {
 	    		                                        .put(Blocks.SPRUCE_WOOD, Blocks.STRIPPED_SPRUCE_WOOD).put(Blocks.SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG)
 	    		                                        .put(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM).put(Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE)
 	    		                                        .put(Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM).put(Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE)
-	    		                                        .put(WhiteOak.WHITE_OAK_LOG, WhiteOak.STRIPPED_WHITE_OAK_LOG).put(WhiteOak.WHITE_OAK_WOOD, WhiteOak.STRIPPED_WHITE_OAK_WOOD).build();	  
+	    		                                        .put(NewWoods.WHITE_OAK_LOG, NewWoods.STRIPPED_WHITE_OAK_LOG).put(NewWoods.WHITE_OAK_WOOD, NewWoods.STRIPPED_WHITE_OAK_WOOD).build();	  
 		  Block block = (Block)STRIPPED_BLOCKS.get(blockState.getBlock());
 	      if (block != null) {
 	         PlayerEntity playerEntity = context.getPlayer();
