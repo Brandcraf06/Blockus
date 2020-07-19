@@ -15,6 +15,8 @@ public class SandstoneBricks {
 	// Sandstone
 	public static final BlockBase ROUGH_SANDSTONE = new BlockBase("rough_sandstone", 0.8f, 0.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.SAND);
 	public static final StairsBase ROUGH_SANDSTONE_STAIRS = new StairsBase(ROUGH_SANDSTONE.getDefaultState(), "rough_sandstone_stairs", ROUGH_SANDSTONE);
+	public static final SlabBase ROUGH_SANDSTONE_SLAB = new SlabBase("rough_sandstone_slab", ROUGH_SANDSTONE);
+
 	public static final BlockBase SANDSTONE_BRICKS = new BlockBase("sandstone_bricks", 0.8f, 0.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.SAND);
 	public static final StairsBase SANDSTONE_BRICKS_STAIRS = new StairsBase(SANDSTONE_BRICKS.getDefaultState(), "sandstone_bricks_stairs", SANDSTONE_BRICKS);
 	public static final SlabBase SANDSTONE_BRICKS_SLAB = new SlabBase("sandstone_bricks_slab", SANDSTONE_BRICKS);
