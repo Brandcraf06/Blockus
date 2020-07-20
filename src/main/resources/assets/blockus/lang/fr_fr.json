@@ -644,10 +644,22 @@
     "block.blockus.red_shingles_slab": "Dalle de tuiles rouges",
     "block.blockus.black_shingles_slab": "Dalle de tuiles noires",
 	
+		
+	"block.blockus.oak_small_logs": "Petites bûches de chêne",
+	"block.blockus.spruce_small_logs": "Petites bûches de sapin",
+	"block.blockus.birch_small_logs": "Petites bûches de bouleau",
+	"block.blockus.jungle_small_logs": "Petites bûches de jungle",
+	"block.blockus.acacia_small_logs": "Petites bûches d'acacia",
+	"block.blockus.dark_oak_small_logs": "Petites bûches de chêne noir",
+	"block.blockus.white_oak_small_logs": "Petites bûches de chêne blanc",
+	"block.blockus.crimson_small_stems": "Petites tiges carmins",
+	"block.blockus.warped_small_stems": "Petites tiges biscornues",
+	
 	"block.blockus.thatch": "Chaume",
 	"block.blockus.thatch_stairs": "Escalier en chaume",
 	"block.blockus.thatch_slab": "Dalle de chaume",
 	"block.blockus.iron_plating": "Placage en acier",
+	"block.blockus.dirt_path": "Chemin de terre",
 	
 	"block.minecraft.nether_wart_block": "Bloc de verrues carmin",
 	
