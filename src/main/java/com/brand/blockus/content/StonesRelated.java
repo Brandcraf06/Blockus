@@ -2,6 +2,7 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.SmoothStoneStairsBlock;
+import com.brand.blockus.blocks.SturdyStoneBlock;
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.DoorBase;
 import com.brand.blockus.blocks.Base.GlazedLikeBlockBase;
@@ -70,4 +71,7 @@ public class StonesRelated {
 	public static final WallBase WARPED_WARTY_BLACKSTONE_BRICKS_WALL = new WallBase("warped_warty_blackstone_bricks_wall", WARPED_WARTY_BLACKSTONE_BRICKS);
 	public static final StairsBase WARPED_WARTY_BLACKSTONE_BRICKS_STAIRS = new StairsBase(WARPED_WARTY_BLACKSTONE_BRICKS.getDefaultState(), "warped_warty_blackstone_bricks_stairs", WARPED_WARTY_BLACKSTONE_BRICKS);
 	public static final SlabBase WARPED_WARTY_BLACKSTONE_BRICKS_SLAB = new SlabBase("warped_warty_blackstone_bricks_slab", WARPED_WARTY_BLACKSTONE_BRICKS);
+
+	// sturdy stone
+	public static final SturdyStoneBlock STURDY_STONE = new SturdyStoneBlock("sturdy_stone");
   }

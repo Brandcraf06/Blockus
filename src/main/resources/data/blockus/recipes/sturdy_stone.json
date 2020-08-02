@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sturdy stone",
+  "pattern": [
+    "CSC",
+    "S S",
+    "CSC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "result": {
+    "item": "blockus:sturdy_stone"
+  }
+} 
