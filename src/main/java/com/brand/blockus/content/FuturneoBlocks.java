@@ -1,7 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.Light.LightBlockBase;
+import com.brand.blockus.blocks.Light.LitRedstoneLampBase;
 
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
@@ -9,22 +9,22 @@ import net.minecraft.sound.BlockSoundGroup;
 
 public class FuturneoBlocks {
 	
-public static final LightBlockBase WHITE_FUTURNEO_BLOCK = new LightBlockBase("white_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase ORANGE_FUTURNEO_BLOCK = new LightBlockBase("orange_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase MAGENTA_FUTURNEO_BLOCK = new LightBlockBase("magenta_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase LIGHT_BLUE_FUTURNEO_BLOCK = new LightBlockBase("light_blue_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase YELLOW_FUTURNEO_BLOCK = new LightBlockBase("yellow_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase LIME_FUTURNEO_BLOCK = new LightBlockBase("lime_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase PINK_FUTURNEO_BLOCK = new LightBlockBase("pink_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase GRAY_FUTURNEO_BLOCK = new LightBlockBase("gray_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase GRAY_BRIGHT_FUTURNEO_BLOCK = new LightBlockBase("gray_bright_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.WHITE);
-public static final LightBlockBase LIGHT_GRAY_FUTURNEO_BLOCK = new LightBlockBase("light_gray_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase CYAN_FUTURNEO_BLOCK = new LightBlockBase("cyan_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase PURPLE_FUTURNEO_BLOCK = new LightBlockBase("purple_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase BLUE_FUTURNEO_BLOCK = new LightBlockBase("blue_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase BROWN_FUTURNEO_BLOCK = new LightBlockBase("brown_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase GREEN_FUTURNEO_BLOCK = new LightBlockBase("green_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase RED_FUTURNEO_BLOCK = new LightBlockBase("red_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
-public static final LightBlockBase BLACK_FUTURNEO_BLOCK = new LightBlockBase("black_futurneo_block", 1.8f, 1.8f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase WHITE_FUTURNEO_BLOCK = new LitRedstoneLampBase("white_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase ORANGE_FUTURNEO_BLOCK = new LitRedstoneLampBase("orange_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase MAGENTA_FUTURNEO_BLOCK = new LitRedstoneLampBase("magenta_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase LIGHT_BLUE_FUTURNEO_BLOCK = new LitRedstoneLampBase("light_blue_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase YELLOW_FUTURNEO_BLOCK = new LitRedstoneLampBase("yellow_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase LIME_FUTURNEO_BLOCK = new LitRedstoneLampBase("lime_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase PINK_FUTURNEO_BLOCK = new LitRedstoneLampBase("pink_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase GRAY_FUTURNEO_BLOCK = new LitRedstoneLampBase("gray_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase GRAY_BRIGHT_FUTURNEO_BLOCK = new LitRedstoneLampBase("gray_bright_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.WHITE);
+public static final LitRedstoneLampBase LIGHT_GRAY_FUTURNEO_BLOCK = new LitRedstoneLampBase("light_gray_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase CYAN_FUTURNEO_BLOCK = new LitRedstoneLampBase("cyan_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase PURPLE_FUTURNEO_BLOCK = new LitRedstoneLampBase("purple_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase BLUE_FUTURNEO_BLOCK = new LitRedstoneLampBase("blue_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase BROWN_FUTURNEO_BLOCK = new LitRedstoneLampBase("brown_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase GREEN_FUTURNEO_BLOCK = new LitRedstoneLampBase("green_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase RED_FUTURNEO_BLOCK = new LitRedstoneLampBase("red_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
+public static final LitRedstoneLampBase BLACK_FUTURNEO_BLOCK = new LitRedstoneLampBase("black_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.BLACK);
 
 }
