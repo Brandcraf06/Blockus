@@ -22,6 +22,9 @@
     "main": [
       "com.brand.blockus.Blockus"
     ],
+    "cloth-early-init": [
+      "com.brand.blockus.Blockus"
+    ],
 	"client": [
 	  "com.brand.blockus.BlockusClient"
     ]
