@@ -21,6 +21,9 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
+
+    modImplementation "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_version}"
+    include "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_version}"
 }
 
 processResources {
