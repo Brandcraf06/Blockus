@@ -24,7 +24,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "blockus:bluestone_slab"
+          "name": "blockus:bluestone_tiles_slab"
         }
       ]
     }
