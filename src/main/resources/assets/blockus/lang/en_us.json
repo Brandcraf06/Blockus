@@ -2,6 +2,8 @@
     "itemGroup.blockus.blockus_building_blocks": "Building Blocks §3(Blockus)",
     "itemGroup.blockus.blockus_decorations": "Decoration Blocks §3(Blockus)",
     "itemGroup.blockus.blockus_redstone": "Redstone §3(Blockus)",
+	"blockus.blockItem.givespeed": "Gives Speed III effect to player standing on it.",
+		
     "block.blockus.blaze_bricks": "Blaze Bricks",
 	"block.blockus.blaze_bricks_wall": "Blaze Brick Wall",
 	"block.blockus.blaze_bricks_stairs": "Blaze Brick Stairs",
@@ -191,6 +193,11 @@
 	"block.blockus.charred_nether_bricks_slab": "Charred Nether Brick Slab",
 	"block.blockus.charred_nether_pillar": "Charred Nether Pillar",
 	"block.blockus.smooth_charred_nether_bricks": "Smooth Charred Nether Bricks",
+	
+	"block.blockus.charred_bricks": "Charred Bricks",
+	"block.blockus.charred_bricks_wall": "Charred Brick Wall",
+	"block.blockus.charred_bricks_stairs": "Charred Brick Stairs",
+	"block.blockus.charred_bricks_slab": "Charred Brick Slab",
 	
 	"block.blockus.soaked_bricks": "Soaked Bricks",
 	"block.blockus.soaked_bricks_wall": "Soaked Brick Wall",

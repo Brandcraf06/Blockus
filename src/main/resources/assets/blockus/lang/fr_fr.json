@@ -2,6 +2,8 @@
     "itemGroup.blockus.blockus_building_blocks": "Blocs de construction §3(Blockus)",
     "itemGroup.blockus.blockus_decorations": "Blocs décoratifs §3(Blockus)",
     "itemGroup.blockus.blockus_redstone": "Redstone §3(Blockus)",
+	"blockus.blockItem.givespeed": "Donne l'effet Rapidité III au joueur qui se tient dessus.",	
+	
     "block.blockus.blaze_bricks": "Briques de Blaze",
 	"block.blockus.blaze_bricks_wall": "Muret en briques de Blaze",
 	"block.blockus.blaze_bricks_stairs": "Escalier en briques de Blaze",
@@ -183,12 +185,20 @@
 	"block.blockus.caution_block": "Bloc de danger",
 	"block.blockus.caution_barrier": "Barriére de danger",
 	"block.blockus.road_barrier": "Barriére de route",
+	
 	"block.blockus.charred_nether_bricks": "Briques du Nether carbonisées",
 	"block.blockus.charred_nether_bricks_wall": "Muret en briques du Nether carbonisées",
 	"block.blockus.charred_nether_bricks_stairs": "Escalier en briques du Nether carbonisées",
 	"block.blockus.charred_nether_bricks_slab": "Dalle de briques du Nether carbonisées",
 	"block.blockus.charred_nether_pillar": "Pilier du Nether carbonisé",
 	"block.blockus.smooth_charred_nether_bricks": "Briques du Nether carbonisée lisses",
+	
+		
+	"block.blockus.charred_bricks": "Briques carbonisées",
+	"block.blockus.charred_bricks_wall": "Muret en briques carbonisées",
+	"block.blockus.charred_bricks_stairs": "Escalier en briques carbonisées",
+	"block.blockus.charred_bricks_slab": "Dalle de briques carbonisées",
+	
 	"block.blockus.soaked_bricks": "Briques trempées",
 	"block.blockus.soaked_bricks_wall": "Muret en briques trempées",
 	"block.blockus.soaked_bricks_stairs": "Escalier en briques trempées",
