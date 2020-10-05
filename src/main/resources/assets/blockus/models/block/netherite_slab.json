@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "block/netherite_block",
+        "top": "block/netherite_block",
+        "side": "block/netherite_block"
+    }
+}

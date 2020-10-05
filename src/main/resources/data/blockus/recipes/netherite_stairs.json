@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_block"
+    }
+  },
+  "result": {
+    "item": "blockus:netherite_stairs",
+    "count": 6
+  }
+}

@@ -47,7 +47,7 @@ public class WoodenBarrels extends BarrelBlock {
 	         if (blockEntity instanceof WoodenBarrelBlockEntity) {
 	            player.openHandledScreen((WoodenBarrelBlockEntity)blockEntity);
 	            player.incrementStat(Stats.OPEN_BARREL);
-	            PiglinBrain.onGuardedBlockBroken(player, true);
+	            PiglinBrain.onGuardedBlockInteracted(player, true);
 	         }
 
 	         return ActionResult.SUCCESS;

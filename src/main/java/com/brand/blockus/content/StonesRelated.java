@@ -1,7 +1,6 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.SmoothStoneStairsBlock;
 import com.brand.blockus.blocks.SturdyStoneBlock;
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.DoorBase;
@@ -13,6 +12,7 @@ import com.brand.blockus.blocks.Base.TrapdoorBase;
 import com.brand.blockus.blocks.Base.WallBase;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.sound.BlockSoundGroup;
@@ -20,7 +20,7 @@ import net.minecraft.sound.BlockSoundGroup;
 public class StonesRelated {
 	
 	// stone	
-	public static final SmoothStoneStairsBlock SMOOTH_STONE_STAIRS = new SmoothStoneStairsBlock("smooth_stone_stairs");
+	public static final StairsBase SMOOTH_STONE_STAIRS = new StairsBase(Blocks.SMOOTH_STONE.getDefaultState(),"smooth_stone_stairs", Blocks.SMOOTH_STONE);
 	public static final PillarBase STONE_BRICKS_PILLAR = new PillarBase("stone_bricks_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MaterialColor.STONE);
 	public static final DoorBase STONE_DOOR = new DoorBase("stone_door", 1.5f, 20.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.STONE);
 	public static final TrapdoorBase STONE_TRAPDOOR = new TrapdoorBase("stone_trapdoor", 1.5f, 20.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.STONE);

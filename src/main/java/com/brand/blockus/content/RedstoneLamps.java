@@ -1,7 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.Light.LitRedstoneLampBase;
+import com.brand.blockus.blocks.Light.LampBlockBase;
 import com.brand.blockus.blocks.Light.RedstoneLampBase;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
@@ -25,21 +25,21 @@ public static final RedstoneLampBase BROWN_REDSTONE_LAMP = new RedstoneLampBase(
 public static final RedstoneLampBase GREEN_REDSTONE_LAMP = new RedstoneLampBase("green_redstone_lamp", 0.3f, 0.3f);
 public static final RedstoneLampBase RED_REDSTONE_LAMP = new RedstoneLampBase("red_redstone_lamp", 0.3f, 0.3f);
 
-public static final LitRedstoneLampBase REDSTONE_LAMP_LIT = new LitRedstoneLampBase("redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase WHITE_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("white_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase ORANGE_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("orange_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase MAGENTA_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("magenta_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase LIGHT_BLUE_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("light_blue_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase YELLOW_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("yellow_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase LIME_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("lime_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase PINK_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("pink_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase GRAY_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("gray_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase LIGHT_GRAY_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("light_gray_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase CYAN_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("cyan_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase PURPLE_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("purple_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase BLUE_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("blue_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase BROWN_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("brown_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase GREEN_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("green_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
-public static final LitRedstoneLampBase RED_REDSTONE_LAMP_LIT = new LitRedstoneLampBase("red_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase REDSTONE_LAMP_LIT = new LampBlockBase("redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase WHITE_REDSTONE_LAMP_LIT = new LampBlockBase("white_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase ORANGE_REDSTONE_LAMP_LIT = new LampBlockBase("orange_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase MAGENTA_REDSTONE_LAMP_LIT = new LampBlockBase("magenta_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase LIGHT_BLUE_REDSTONE_LAMP_LIT = new LampBlockBase("light_blue_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase YELLOW_REDSTONE_LAMP_LIT = new LampBlockBase("yellow_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase LIME_REDSTONE_LAMP_LIT = new LampBlockBase("lime_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase PINK_REDSTONE_LAMP_LIT = new LampBlockBase("pink_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase GRAY_REDSTONE_LAMP_LIT = new LampBlockBase("gray_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase LIGHT_GRAY_REDSTONE_LAMP_LIT = new LampBlockBase("light_gray_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase CYAN_REDSTONE_LAMP_LIT = new LampBlockBase("cyan_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase PURPLE_REDSTONE_LAMP_LIT = new LampBlockBase("purple_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase BLUE_REDSTONE_LAMP_LIT = new LampBlockBase("blue_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase BROWN_REDSTONE_LAMP_LIT = new LampBlockBase("brown_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase GREEN_REDSTONE_LAMP_LIT = new LampBlockBase("green_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
+public static final LampBlockBase RED_REDSTONE_LAMP_LIT = new LampBlockBase("red_redstone_lamp_lit", 0.3f, 0.3f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, Blockus.BLOCKUS_DECORATIONS, 15, MaterialColor.CLEAR);
 
 }

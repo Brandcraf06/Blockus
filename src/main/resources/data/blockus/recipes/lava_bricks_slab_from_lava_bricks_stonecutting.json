@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "blockus:lava_bricks"
+    "item": "minecraft:netherite_block"
   },
-  "result": "blockus:lava_bricks_slab",
+  "result": "blockus:netherite_slab",
   "count": 2
 }

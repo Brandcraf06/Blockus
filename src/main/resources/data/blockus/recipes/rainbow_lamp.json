@@ -1,13 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
+  "group": "rainbow_lamp",
   "pattern": [
-    "GGG",
-    "GRG",
-    "GGG"
+    "GSG",
+    "SRS",
+    "GSG"
   ],
   "key": {
     "G": {
       "item": "minecraft:glowstone_dust"
+    },
+	"S": {
+      "item": "minecraft:redstone"
     },
     "R": {
       "item": "blockus:rainbow_block"

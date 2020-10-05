@@ -18,12 +18,13 @@ import com.brand.blockus.blocks.LoveBlock;
 import com.brand.blockus.blocks.NetherStarsBlock;
 
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.sound.BlockSoundGroup;
 
+import com.brand.blockus.blocks.Light.LampBlockBase;
 import com.brand.blockus.blocks.Light.LanternBlockBase;
-import com.brand.blockus.blocks.Light.LightBlockBase;
 import com.brand.blockus.blocks.Wood.WoodenPaneBase;
 
 public class Other {
@@ -34,7 +35,7 @@ public class Other {
 	public static final LoveBlock LOVE_BLOCK = new LoveBlock("love_block", 2f, 6.0f);
 	public static final WoodenPaneBase WOODEN_FRAME = new WoodenPaneBase("wooden_frame", 0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD);
 	public static final BlockBaseHand MEMBRANE_BLOCK = new BlockBaseHand("membrane_block", 1.5f, 1.5f, Material.SOLID_ORGANIC, BlockSoundGroup.SLIME, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.WHITE_TERRACOTTA);
-	public static final LightBlockBase BLAZE_BLOCK = new LightBlockBase("blaze_block", 2f, 6.0f, Material.GLASS, BlockSoundGroup.GLASS, Blockus.BLOCKUS_BUILDING_BLOCKS, 15, MaterialColor.ORANGE);
+	public static final LampBlockBase BLAZE_BLOCK = new LampBlockBase("blaze_block", 0.3F, 0.3F, Material.GLASS, BlockSoundGroup.GLASS, Blockus.BLOCKUS_BUILDING_BLOCKS, 15, MaterialColor.ORANGE);
 	public static final BlockBase CAUTION_BLOCK = new BlockBase("caution_block", 1.5f, 1200.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.ORANGE);
 	public static final BarrierBase CAUTION_BARRIER = new BarrierBase("caution_barrier", 1.5f, 1200.0f);
     public static final BarrierBase ROAD_BARRIER = new BarrierBase("road_barrier", 2f, 6.0f);	
@@ -52,6 +53,9 @@ public class Other {
 	
 	public static final BlockBase IRON_PLATING = new BlockBase("iron_plating", 5.0F, 6.0F, Material.METAL, BlockSoundGroup.METAL, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.IRON);
 	public static final PathBase DIRT_PATH = new PathBase("dirt_path", 0.65F, 0.65F, Material.SOIL, BlockSoundGroup.GRASS, FabricToolTags.SHOVELS, 0, MaterialColor.DIRT);
+	
+	public static final StairsBase NETHERITE_STAIRS = new StairsBase(Blocks.NETHERITE_BLOCK.getDefaultState(), "netherite_stairs", Blocks.NETHERITE_BLOCK);
+	public static final SlabBase NETHERITE_SLAB = new SlabBase("netherite_slab", Blocks.NETHERITE_BLOCK);
 	
 	// Thatch
 	public static final BlockBaseBT THATCH = new BlockBaseBT("thatch", 0.5F, 0.5F, Material.SOLID_ORGANIC, BlockSoundGroup.GRASS, Blockus.BLOCKUS_BUILDING_BLOCKS, FabricToolTags.HOES, 0, MaterialColor.YELLOW);

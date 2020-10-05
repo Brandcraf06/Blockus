@@ -3,10 +3,10 @@
   "group": "rainbow_lamp",
   "ingredients": [
     {
-      "item": "blockus:rainbow_lamp"
+      "item": "blockus:redstone_lamp_lit"
     },
     {
-      "item": "minecraft:redstone_torch"
+      "item": "blockus:rainbow_block"
     }
   ],
   "result": {
