@@ -1,7 +1,6 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.Wood.LogBlockBase;
-
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 

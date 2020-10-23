@@ -5,7 +5,6 @@ import com.brand.blockus.blocks.Glass.GlassBlockBase;
 import com.brand.blockus.blocks.Glass.GlassPane;
 import com.brand.blockus.blocks.Glass.StainedGlassBlockBase;
 import com.brand.blockus.blocks.Glass.StainedGlassPaneBlockBase;
-
 import net.minecraft.util.DyeColor;
 
 public class GlassRelated {

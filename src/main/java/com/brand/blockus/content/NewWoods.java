@@ -2,21 +2,14 @@ package com.brand.blockus.content;
 
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.Base.DoorBase;
-import com.brand.blockus.blocks.Base.FenceBase;
-import com.brand.blockus.blocks.Base.FenceGateBase;
-import com.brand.blockus.blocks.Base.PressurePlateBase;
-import com.brand.blockus.blocks.Base.SlabBase;
-import com.brand.blockus.blocks.Base.StairsBase;
-import com.brand.blockus.blocks.Base.TrapdoorBase;
 import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
+import com.brand.blockus.blocks.Base.*;
 import com.brand.blockus.blocks.Leaves.LeavesBlockBase;
 import com.brand.blockus.blocks.Sapling.PottedBlockBase;
 import com.brand.blockus.blocks.Sapling.SaplingBlockBase;
 import com.brand.blockus.blocks.Sapling.WhiteOakSaplingGenerator;
 import com.brand.blockus.blocks.Wood.LogBlockBase;
 import com.brand.blockus.blocks.Wood.WoodButtonBase;
-
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;

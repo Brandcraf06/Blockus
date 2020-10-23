@@ -1,9 +1,7 @@
 package com.brand.blockus.content;
 
 
-
 import com.brand.blockus.blocks.Base.GlazedLikeBlockBase;
-
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;

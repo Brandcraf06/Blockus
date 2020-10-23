@@ -1,14 +1,6 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.NewWoods;
-import com.brand.blockus.content.FoodBlocks;
-import com.brand.blockus.content.Hedge;
-import com.brand.blockus.content.Other;
-import com.brand.blockus.content.PaperRelated;
-import com.brand.blockus.content.PatternedWools;
-import com.brand.blockus.content.SmallLogs;
-import com.brand.blockus.content.TimberFrame;
-
+import com.brand.blockus.content.*;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;

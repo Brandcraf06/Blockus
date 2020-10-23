@@ -3,7 +3,6 @@ package com.brand.blockus.content;
 import com.brand.blockus.blocks.Asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.Asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.Asphalt.AsphaltStairs;
-
 import net.minecraft.util.DyeColor;
 
 public class Asphalt {

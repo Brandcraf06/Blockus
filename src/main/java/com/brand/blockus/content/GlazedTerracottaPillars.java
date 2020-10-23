@@ -1,7 +1,6 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.Base.PillarBase;
-
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.sound.BlockSoundGroup;

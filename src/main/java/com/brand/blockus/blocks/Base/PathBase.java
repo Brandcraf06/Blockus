@@ -1,7 +1,6 @@
 package com.brand.blockus.blocks.Base;
 
 import com.brand.blockus.Blockus;
-
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.GrassPathBlock;
 import net.minecraft.block.Material;

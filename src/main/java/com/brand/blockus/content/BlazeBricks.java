@@ -6,7 +6,6 @@ import com.brand.blockus.blocks.Base.StairsBase;
 import com.brand.blockus.blocks.Base.WallBase;
 import com.brand.blockus.blocks.Light.LightBlockBase;
 import com.brand.blockus.blocks.Light.LightPillarBase;
-
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.sound.BlockSoundGroup;

@@ -4,7 +4,6 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blockentity.WoodenBarrelBlockEntity;
 import com.brand.blockus.blocks.Wood.WoodenBarrels;
 import com.mojang.datafixers.types.Type;
-
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
