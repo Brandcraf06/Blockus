@@ -1,19 +1,18 @@
 package com.brand.blockus.blocks.Light;
 
-import java.util.function.ToIntFunction;
-
 import com.brand.blockus.Blockus;
-
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.RedstoneLampBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
-import net.minecraft.item.BlockItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import java.util.function.ToIntFunction;
 
 public class RedstoneLampBase extends RedstoneLampBlock {
 		

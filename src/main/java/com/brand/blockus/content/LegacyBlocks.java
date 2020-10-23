@@ -2,12 +2,11 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.Base.BaseSpongeBlock;
+import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Base.BlockBase;
 import com.brand.blockus.blocks.Base.FallingGravelBase;
-import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Leaves.LegacyLeavesBlock;
 import com.brand.blockus.blocks.Light.LightBlockBase;
-
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;

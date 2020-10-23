@@ -1,7 +1,6 @@
 package com.brand.blockus.blocks.FoodBlocks;
 
 import com.brand.blockus.BlockusProperties;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

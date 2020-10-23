@@ -1,8 +1,6 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.*;
-import com.brand.blockus.world.BlockusGen;
-import me.shedaniel.cloth.api.dynamic.registry.v1.DynamicRegistryCallback;
 import me.shedaniel.cloth.api.dynamic.registry.v1.EarlyInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -12,7 +10,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,6 +24,7 @@ public class Blockus implements ModInitializer, EarlyInitializer {
 	
 	@Override
 	public void onInitialize() {
+
 		new StonesRelated();
 		new NewStones();
 		new NewWoods();
@@ -63,16 +61,16 @@ public class Blockus implements ModInitializer, EarlyInitializer {
 		new Other();
 		new LegacyBlocks();
 		instance.init();
-		
 	}
 	
 	@Override
 	public void onEarlyInitialization() {
-		DynamicRegistryCallback.callback(Registry.BIOME_KEY).register((dynamicRegistryManager, registryKey, biome) -> {
-			BlockusGen.addMineables(registryKey, biome);
-			BlockusGen.addWhiteOakTrees(registryKey, biome);
-			BlockusGen.addPlainsWhiteOakTrees(registryKey, biome);
-		});
+		// See BlockusConfiguredFeatures for more detail of why this is commented out
+//		DynamicRegistryCallback.callback(Registry.BIOME_KEY).register((dynamicRegistryManager, registryKey, biome) -> {
+//			BlockusGen.addMineables(registryKey, biome);
+//			BlockusGen.addWhiteOakTrees(registryKey, biome);
+//			BlockusGen.addPlainsWhiteOakTrees(registryKey, biome);
+//		});
 	}
 	
 	public static boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {

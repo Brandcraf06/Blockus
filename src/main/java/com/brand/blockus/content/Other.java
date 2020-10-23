@@ -1,31 +1,18 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.Base.BlockBase;
-import com.brand.blockus.blocks.Base.ChainBlockBase;
-import com.brand.blockus.blocks.Base.FallingBlockBase;
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.BarrierBase;
-import com.brand.blockus.blocks.CarvedPumpkinBlockBase;
-import com.brand.blockus.blocks.IronGateBase;
-import com.brand.blockus.blocks.Base.FallingRedstoneBase;
-import com.brand.blockus.blocks.Base.PaneBase;
-import com.brand.blockus.blocks.Base.PathBase;
-import com.brand.blockus.blocks.Base.SlabBase;
-import com.brand.blockus.blocks.Base.StairsBase;
+import com.brand.blockus.blocks.*;
 import com.brand.blockus.blocks.Base.BetterTool.BlockBaseBT;
 import com.brand.blockus.blocks.Base.BetterTool.BlockBaseHand;
-import com.brand.blockus.blocks.LoveBlock;
-import com.brand.blockus.blocks.NetherStarsBlock;
-
+import com.brand.blockus.blocks.Base.*;
+import com.brand.blockus.blocks.Light.LampBlockBase;
+import com.brand.blockus.blocks.Light.LanternBlockBase;
+import com.brand.blockus.blocks.Wood.WoodenPaneBase;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.sound.BlockSoundGroup;
-
-import com.brand.blockus.blocks.Light.LampBlockBase;
-import com.brand.blockus.blocks.Light.LanternBlockBase;
-import com.brand.blockus.blocks.Wood.WoodenPaneBase;
 
 public class Other {
 	

@@ -1,7 +1,6 @@
 package com.brand.blockus.blockentity;
 
 import com.brand.blockus.content.Barrels;
-
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;

@@ -2,7 +2,6 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.blocks.FlowerPot.LargeFlowerPotBase;
 import com.brand.blockus.blocks.FlowerPot.LargePottedDoublePlant;
-
 import net.minecraft.block.Blocks;
 
 public class LargeFlowerPots {

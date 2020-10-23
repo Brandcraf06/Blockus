@@ -1,15 +1,9 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.Base.DoorBase;
-import com.brand.blockus.blocks.Base.GlazedLikeBlockBase;
-import com.brand.blockus.blocks.Base.SlabBase;
-import com.brand.blockus.blocks.Base.StairsBase;
-import com.brand.blockus.blocks.Base.TrapdoorBase;
-import com.brand.blockus.blocks.Base.WallBase;
+import com.brand.blockus.blocks.Base.*;
 import com.brand.blockus.blocks.Base.RequiredTool.BlockBaseRT;
 import com.brand.blockus.blocks.Base.RequiredTool.PillarBaseRT;
-
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
