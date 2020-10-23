@@ -4,7 +4,6 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.content.NewStones;
 import com.brand.blockus.content.NewWoods;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -24,12 +23,9 @@ import java.util.Map;
 
 public class BlockusConfiguredFeatures {
 
-    public static final TreeFeatureConfig WHITE_OAK_TREE_CONFIG;
     private static final BlockState WHITE_OAK_LOG;
     private static final BlockState WHITE_OAK_LEAVES;
-    private static final BlockState OAK_LOG;
-    private static final BlockState OAK_LEAVES;
-    public static final TreeFeatureConfig OAK_TREE_CONFIG;
+    public static final TreeFeatureConfig WHITE_OAK_TREE_CONFIG;
 
     public static final ConfiguredFeature<?, ?> LIMESTONE;
     public static final ConfiguredFeature<?, ?> BLUESTONE;
@@ -73,9 +69,6 @@ public class BlockusConfiguredFeatures {
 
     // Will run when registerAndAddConfiguredFeatures is called
     static{
-        OAK_LOG = Blocks.OAK_LOG.getDefaultState();
-        OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState();
-        OAK_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(OAK_LOG), new SimpleBlockStateProvider(OAK_LEAVES), new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3), new StraightTrunkPlacer(4, 2, 0), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
         WHITE_OAK_LOG = NewWoods.WHITE_OAK_LOG.getDefaultState();
         WHITE_OAK_LEAVES = NewWoods.WHITE_OAK_LEAVES.getDefaultState();
         WHITE_OAK_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(WHITE_OAK_LOG), new SimpleBlockStateProvider(WHITE_OAK_LEAVES), new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 5), new StraightTrunkPlacer(7, 2, 0), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
