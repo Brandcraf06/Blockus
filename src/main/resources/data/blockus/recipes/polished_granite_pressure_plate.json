@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:polished_granite"
+    }
+  },
+  "result": {
+    "item": "blockus:polished_granite_pressure_plate"
+  }
+}

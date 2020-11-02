@@ -506,7 +506,6 @@
 	"block.blockus.chiseled_diorite_bricks": "Diorite taillée sculptée",
 	"block.blockus.chiseled_granite_bricks": "Granite taillé sculpté",
 	
-		
     "block.blockus.teal_nether_bricks": "Briques sarcelles du Nether",
 	"block.blockus.teal_nether_brick_slab": "Dalle de briques sarcelles du Nether",
 	"block.blockus.teal_nether_brick_stairs": "Escalier en briques sarcelles du Nether",
@@ -670,6 +669,25 @@
 	"block.blockus.thatch_slab": "Dalle de chaume",
 	"block.blockus.iron_plating": "Placage en acier",
 	"block.blockus.dirt_path": "Chemin de terre",
+	
+	"block.blockus.sturdy_stone": "Roche solide",
+	
+	"block.blockus.polished_andesite_pressure_plate": "Plaque de pression en andesite polie",
+	"block.blockus.polished_andesite_button": "Bouton en andesite polie",
+	"block.blockus.polished_granite_pressure_plate": "Plaque de pression en granite poli",
+	"block.blockus.polished_granite_button": "Bouton en granite poli",
+	"block.blockus.polished_diorite_pressure_plate": "Plaque de pression en diorite polie",
+	"block.blockus.polished_diorite_button": "Bouton en diorite polie",
+	"block.blockus.limestone_pressure_plate": "Plaque de pression en calcaire",
+	"block.blockus.limestone_button": "Bouton en calcaire",
+	"block.blockus.marble_pressure_plate": "Plaque de pression en marbre",
+	"block.blockus.marble_button": "Bouton en marbre",
+	"block.blockus.bluestone_pressure_plate": "Plaque de pression en roche bleue",
+	"block.blockus.bluestone_button": "Bouton en roche bleue",
+	"block.blockus.polished_netherrack_pressure_plate": "Plaque de pression en netherrack polie",
+	"block.blockus.polished_netherrack_button": "Bouton en netherrack polie",
+	"block.blockus.polished_end_stone_pressure_plate": "Plaque de pression en pierre de l'End polie",
+	"block.blockus.polished_end_stone_button": "Bouton en pierre de l'End polie",
 	
 	"block.minecraft.nether_wart_block": "Bloc de verrues carmin",
 	

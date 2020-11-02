@@ -15,7 +15,7 @@ import net.minecraft.util.registry.Registry;
 public class CarvedPumpkinBlockBase extends CarvedPumpkinBlock {
 		
 	public CarvedPumpkinBlockBase(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.GOURD, MaterialColor.ORANGE).sounds(BlockSoundGroup.WOOD).lightLevel(10).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
+		super(FabricBlockSettings.of(Material.GOURD, MaterialColor.ORANGE).sounds(BlockSoundGroup.WOOD).luminance(10).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 	}

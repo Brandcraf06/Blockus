@@ -18,7 +18,7 @@ public class PaperLight extends Block {
 
 	
 	public PaperLight(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.WOOL, MaterialColor.QUARTZ).sounds(BlockSoundGroup.GRASS).lightLevel(15).strength(hardness, resistance));	
+		super(FabricBlockSettings.of(Material.WOOL, MaterialColor.QUARTZ).sounds(BlockSoundGroup.GRASS).luminance(15).strength(hardness, resistance));	
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
 	}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:bluestone"
+    }
+  ],
+  "result": {
+    "item": "blockus:bluestone_button"
+  }
+}

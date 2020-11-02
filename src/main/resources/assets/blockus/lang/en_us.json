@@ -680,6 +680,23 @@
 
 	"block.blockus.sturdy_stone": "Sturdy Stone",
 	
+	"block.blockus.polished_andesite_pressure_plate": "Polished Andesite Pressure Plate",
+	"block.blockus.polished_andesite_button": "Polished Andesite Button",
+	"block.blockus.polished_granite_pressure_plate": "Polished Granite Pressure Plate",
+	"block.blockus.polished_granite_button": "Polished Granite Button",
+	"block.blockus.polished_diorite_pressure_plate": "Polished Diorite Pressure Plate",
+	"block.blockus.polished_diorite_button": "Polished Diorite Button",
+	"block.blockus.limestone_pressure_plate": "Limestone Pressure Plate",
+	"block.blockus.limestone_button": "Limestone Button",
+	"block.blockus.marble_pressure_plate": "Marble Pressure Plate",
+	"block.blockus.marble_button": "Marble Button",
+	"block.blockus.bluestone_pressure_plate": "Bluestone Pressure Plate",
+	"block.blockus.bluestone_button": "Bluestone Button",
+	"block.blockus.polished_netherrack_pressure_plate": "Polished Netherrack Pressure Plate",
+	"block.blockus.polished_netherrack_button": "Polished Netherrack Button",
+	"block.blockus.polished_end_stone_pressure_plate": "Polished End Stone Pressure Plate",
+	"block.blockus.polished_end_stone_button": "Polished End Stone Button",
+	
 	"block.minecraft.nether_wart_block": "Crimson Wart Block",
 	
 	

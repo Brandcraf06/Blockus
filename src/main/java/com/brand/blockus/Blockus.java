@@ -61,6 +61,7 @@ public class Blockus implements ModInitializer, EarlyInitializer {
 		new FuturneoBlocks();
 		new Other();
 		new LegacyBlocks();
+		new StonesSwitches();
 		instance.init();
 	}
 	

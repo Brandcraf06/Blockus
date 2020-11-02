@@ -17,7 +17,7 @@ import java.util.function.ToIntFunction;
 public class RedstoneLampBase extends RedstoneLampBlock {
 		
 	public RedstoneLampBase(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.REDSTONE_LAMP).sounds(BlockSoundGroup.GLASS).lightLevel(createLightLevelFromBlockState(15)).strength(hardness, resistance));
+		super(FabricBlockSettings.of(Material.REDSTONE_LAMP).sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromBlockState(15)).strength(hardness, resistance));
 		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
 		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));
 	}
