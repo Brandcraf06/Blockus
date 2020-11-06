@@ -51,7 +51,7 @@ public class LargeFlowerPotBlock extends Block {
 	         if (bl2) {
 	            world.setBlockState(pos, block.getDefaultState(), 3);
 	            player.incrementStat(Stats.POT_FLOWER);
-	            if (!player.abilities.creativeMode) {
+	            if (!player.method_31549().creativeMode) {
 	               itemStack.decrement(1);
 	            }
 	         } else {

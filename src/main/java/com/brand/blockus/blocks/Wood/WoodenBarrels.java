@@ -24,7 +24,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -62,8 +61,8 @@ public class WoodenBarrels extends BarrelBlock {
 	}
 	
 	@Override
-	public BlockEntity createBlockEntity(BlockView blockView_1) {
-		return new WoodenBarrelBlockEntity();
+	public BlockEntity createBlockEntity(BlockPos blockPos, BlockState blockState) {
+		return new WoodenBarrelBlockEntity(blockPos, blockState);
 	}
 	
 	@Override

@@ -131,7 +131,7 @@ public class HedgeBlock extends Block implements Waterloggable {
 	   private boolean shouldConnectTo(BlockState state, boolean faceFullSquare, Direction side) {
 	      Block block = state.getBlock();
 	      boolean bl = block instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
-	      return state.isIn(BlockTags.WALLS) || !cannotConnect(block) && faceFullSquare || block instanceof PaneBlock || bl;
+	      return state.isIn(BlockTags.WALLS) || !cannotConnect(state) && faceFullSquare || block instanceof PaneBlock || bl;
 	   }
 
 	   public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -222,7 +222,7 @@ public class HedgeBlock extends Block implements Waterloggable {
 	            if (bl7) {
 	               return false;
 	            } else {
-	               return blockState2.getBlock().isIn(BlockTags.WALL_POST_OVERRIDE) || method_24427(voxelShape, field_22163);
+	               return blockState2.isIn(BlockTags.WALL_POST_OVERRIDE) || method_24427(voxelShape, field_22163);
 	            }
 	         }
 	      }

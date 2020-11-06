@@ -37,9 +37,11 @@ public abstract class ShovelItemMixin {
 	    	  cir.setReturnValue(ActionResult.PASS);
 	      } else {
 	         PlayerEntity playerEntity = context.getPlayer();
-	         HashMap<Block, BlockState> PATH_STATES = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Blocks.GRASS_PATH.getDefaultState(),
-	        		                                                                  Blocks.DIRT, Other.DIRT_PATH.getDefaultState(),
-	        		                                                                  Blocks.COARSE_DIRT, Other.DIRT_PATH.getDefaultState()));	                                                         
+	         HashMap<Block, BlockState> PATH_STATES = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Blocks.DIRT_PATH.getDefaultState(),
+	        		                                                                        Blocks.PODZOL, Blocks.DIRT_PATH.getDefaultState(),
+	        		                                                                        Blocks.MYCELIUM, Blocks.DIRT_PATH.getDefaultState(),
+	        		                                                                        Blocks.DIRT, Other.DIRT_PATH.getDefaultState(),
+	        		                                                                        Blocks.COARSE_DIRT, Other.DIRT_PATH.getDefaultState()));	                                                         
 	         BlockState blockState2 = (BlockState)PATH_STATES.get(blockState.getBlock());
 	         BlockState blockState3 = null;
 	         if (blockState2 != null && world.getBlockState(blockPos.up()).isAir()) {
