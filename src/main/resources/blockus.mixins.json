@@ -4,9 +4,7 @@
 	"compatibilityLevel": "JAVA_8",
 	"minVersion": "0.8",
 	"mixins": [
-		"AxeItemMixin",
-		"BootstrapMixin",
-		"ShovelItemMixin"
+		"BootstrapMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -26,6 +26,10 @@ dependencies {
     include "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_version}"
 }
 
+minecraft {
+	accessWidener = file("src/main/resources/blockus.aw")
+}
+
 processResources {
 	inputs.property "version", project.version
 

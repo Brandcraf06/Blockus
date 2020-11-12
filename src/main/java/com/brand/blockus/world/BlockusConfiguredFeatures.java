@@ -43,17 +43,17 @@ public class BlockusConfiguredFeatures {
 
     // Based on Applied-Energistics-2's way of registering and adding CFs.
     //
-    // We are making an instance of a ConfiguredFeature here in this class,
+    // We are making an Instance of a ConfiguredFeature here in this class,
     // registering it to BuiltInRegisteries and adding it to the BuiltInRegisteries biomes.
     //
     // Now when we click on a world to enter, the DynamicRegisteries fires, copies the BuiltInRegisteries
     // entries and **makes its own instances** of everything in there. A copy of the object but not the
     // same object. Since we registered to the BuiltInRegisteries and added the CFs to BuiltInRegisteries
-    // biomes, the CF instance in the DynamicRegistries' CF registry and in the DynamicRegistries' biomes
+    // biomes, the CF Instance in the DynamicRegistries' CF registry and in the DynamicRegistries' biomes
     // will now match and things work smoothly.
     //
     // If we registered the CF to the BuiltInRegisteries CF registry BUT add this CF to the DynamicRegistries's
-    // biomes by DynamicRegistryCallback.callback, the CF instance the DynamicRegistry will make for it's
+    // biomes by DynamicRegistryCallback.callback, the CF Instance the DynamicRegistry will make for it's
     // CF registry will not be the same object as the CF in the biome. THIS is the key point that causes so much
     // confusion. If we want to add to the biomes in the DynamicRegistries directly, we need to add our CF to the
     // DynamicRegistries's CF registry directly instead of the BuiltInRegistries. Basically, you can't mix and match
