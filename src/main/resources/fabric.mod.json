@@ -16,6 +16,7 @@
 
   "license": "GPLv3",
   "icon": "assets/blockus/icon.png",
+  "accessWidener": "blockus.aw",
 
   "environment": "*",
   "entrypoints": {

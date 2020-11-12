@@ -239,6 +239,8 @@ public class Instance {
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.COOKIE_BLOCK, 1.0f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.POTATO_CRATE, 0.95f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.SWEET_BERRIES_CRATE, 0.50f);
+		
+// Instance
 
 		addStrippables();
 		addPathBlocks();
@@ -253,6 +255,7 @@ public class Instance {
 
 	public static void addPathBlocks() {
 		ShovelItem.PATH_STATES = new HashMap<>(ShovelItem.PATH_STATES);
+		ShovelItem.PATH_STATES.put(Blocks.DIRT, Other.DIRT_PATH.getDefaultState());
 		ShovelItem.PATH_STATES.put(Blocks.COARSE_DIRT, Other.DIRT_PATH.getDefaultState());
 	}
 }
