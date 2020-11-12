@@ -62,7 +62,7 @@ public class Blockus implements ModInitializer, EarlyInitializer {
 		new Other();
 		new LegacyBlocks();
 		new StonesSwitches();
-		instance.init();
+		Instance.init();
 	}
 	
 	@Override

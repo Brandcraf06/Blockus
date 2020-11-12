@@ -5,9 +5,13 @@ import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.Items;
+import net.minecraft.item.ShovelItem;
 
-public class instance {
+import java.util.HashMap;
+
+public class Instance {
 
 	public static void init() {
 
@@ -235,5 +239,20 @@ public class instance {
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.COOKIE_BLOCK, 1.0f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.POTATO_CRATE, 0.95f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.SWEET_BERRIES_CRATE, 0.50f);
+
+		addStrippables();
+		addPathBlocks();
+	}
+
+
+	public static void addStrippables() {
+		AxeItem.STRIPPED_BLOCKS = new HashMap<>(AxeItem.STRIPPED_BLOCKS);
+		AxeItem.STRIPPED_BLOCKS.put(NewWoods.WHITE_OAK_LOG, NewWoods.STRIPPED_WHITE_OAK_LOG);
+		AxeItem.STRIPPED_BLOCKS.put(NewWoods.WHITE_OAK_WOOD, NewWoods.STRIPPED_WHITE_OAK_WOOD);
+	}
+
+	public static void addPathBlocks() {
+		ShovelItem.PATH_STATES = new HashMap<>(ShovelItem.PATH_STATES);
+		ShovelItem.PATH_STATES.put(Blocks.COARSE_DIRT, Other.DIRT_PATH.getDefaultState());
 	}
 }
