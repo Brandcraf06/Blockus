@@ -165,10 +165,10 @@
 	"block.blockus.small_soul_sandstone_bricks_stairs": "Escalier en petites briques de grès des âmes",
 	"block.blockus.small_soul_sandstone_bricks_slab": "Dalle en petites briques de grès des âmes",
 	
-	"block.blockus.quartz_bricks": "Carrelage en quartz",
+	"block.blockus.quartz_tiles": "Carrelage en quartz",
 	"block.blockus.wooden_frame": "Armature en bois",
 	"block.blockus.membrane_block": "Bloc de membrane",
-	"block.blockus.blaze_block": "Lanterne de Blaze",
+	"block.blockus.blaze_lantern": "Lanterne de Blaze",
 	"block.blockus.zigzagged_stone_bricks": "Pierre taillée zigzaguée",
 	"block.blockus.zigzagged_andesite": "Andesite zigzaguée",
 	"block.blockus.zigzagged_diorite": "Diorite zigzaguée",
@@ -668,7 +668,7 @@
 	"block.blockus.thatch_stairs": "Escalier en chaume",
 	"block.blockus.thatch_slab": "Dalle de chaume",
 	"block.blockus.iron_plating": "Placage en acier",
-	"block.blockus.dirt_path": "Chemin de terre",
+	"block.blockus.path": "Chemin",
 	
 	"block.blockus.sturdy_stone": "Roche solide",
 	

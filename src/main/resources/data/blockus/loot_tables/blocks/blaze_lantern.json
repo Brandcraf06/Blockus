@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:dirt"
+          "name": "blockus:blaze_lantern"
         }
       ],
       "conditions": [

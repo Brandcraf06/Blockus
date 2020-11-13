@@ -3,6 +3,6 @@
   "ingredient": {
     "item": "minecraft:quartz_block"
   },
-  "result": "blockus:quartz_bricks",
+  "result": "blockus:quartz_tiles",
   "count": 1
 }

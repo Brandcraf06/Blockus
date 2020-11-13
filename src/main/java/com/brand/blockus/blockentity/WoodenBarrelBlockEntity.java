@@ -2,9 +2,9 @@ package com.brand.blockus.blockentity;
 
 import com.brand.blockus.content.Barrels;
 
-import net.minecraft.class_5561;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.ChestStateManager;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -26,35 +26,35 @@ import net.minecraft.world.World;
 
 public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 	private DefaultedList<ItemStack> inventory;
-	private class_5561 field_27207;
-	
+	private ChestStateManager stateManager;
+
 	public WoodenBarrelBlockEntity(BlockPos blockPos, BlockState blockState) {
-	      super(Barrels.WOODEN_BARREL, blockPos, blockState);
+		super(Barrels.WOODEN_BARREL, blockPos, blockState);
 		this.inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
-		this.field_27207 = new class_5561() {
-	         protected void method_31681(World world, BlockPos blockPos, BlockState blockState) {
-	        	WoodenBarrelBlockEntity.this.playSound(blockState, SoundEvents.BLOCK_BARREL_OPEN);
-	        	WoodenBarrelBlockEntity.this.setOpen(blockState, true);
-	         }
+		this.stateManager = new ChestStateManager() {
+			protected void onChestOpened(World world, BlockPos blockPos, BlockState blockState) {
+				WoodenBarrelBlockEntity.this.playSound(blockState, SoundEvents.BLOCK_BARREL_OPEN);
+				WoodenBarrelBlockEntity.this.setOpen(blockState, true);
+			}
 
-	         protected void method_31683(World world, BlockPos blockPos, BlockState blockState) {
-	        	WoodenBarrelBlockEntity.this.playSound(blockState, SoundEvents.BLOCK_BARREL_CLOSE);
-	        	WoodenBarrelBlockEntity.this.setOpen(blockState, false);
-	         }
+			protected void onChestClosed(World world, BlockPos blockPos, BlockState blockState) {
+				WoodenBarrelBlockEntity.this.playSound(blockState, SoundEvents.BLOCK_BARREL_CLOSE);
+				WoodenBarrelBlockEntity.this.setOpen(blockState, false);
+			}
 
-	         protected void method_31682(World world, BlockPos blockPos, BlockState blockState, int i, int j) {
-	         }
+			protected void onInteracted(World world, BlockPos blockPos, BlockState blockState, int i, int j) {
+			}
 
-	         protected boolean method_31679(PlayerEntity playerEntity) {
-	            if (playerEntity.currentScreenHandler instanceof GenericContainerScreenHandler) {
-	               Inventory inventory = ((GenericContainerScreenHandler)playerEntity.currentScreenHandler).getInventory();
-	               return inventory == WoodenBarrelBlockEntity.this;
-	            } else {
-	               return false;
-	            }
-	         }
-	      };
-	   }
+			protected boolean isPlayerViewing(PlayerEntity playerEntity) {
+				if (playerEntity.currentScreenHandler instanceof GenericContainerScreenHandler) {
+					Inventory inventory = ((GenericContainerScreenHandler)playerEntity.currentScreenHandler).getInventory();
+					return inventory == WoodenBarrelBlockEntity.this;
+				} else {
+					return false;
+				}
+			}
+		};
+	}
 	public CompoundTag toTag(CompoundTag tag) {
 		super.toTag(tag);
 		if (!this.serializeLootTable(tag)) {
@@ -62,58 +62,58 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 		}
 		return tag;
 	}
-	
-	   public void fromTag(CompoundTag compoundTag) {
-		      super.fromTag(compoundTag);
-		      this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
-		      if (!this.deserializeLootTable(compoundTag)) {
-		         Inventories.fromTag(compoundTag, this.inventory);
-		      }
 
-		   }
-	
+	public void fromTag(CompoundTag compoundTag) {
+		super.fromTag(compoundTag);
+		this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
+		if (!this.deserializeLootTable(compoundTag)) {
+			Inventories.fromTag(compoundTag, this.inventory);
+		}
+
+	}
+
 	public int size() {
 		return 27;
 	}
-	
+
 	protected DefaultedList<ItemStack> getInvStackList() {
 		return this.inventory;
 	}
-	
+
 	protected void setInvStackList(DefaultedList<ItemStack> defaultedList_1) {
 		this.inventory = defaultedList_1;
 	}
-	
+
 	protected Text getContainerName() {
 		return new TranslatableText("container.barrel", new Object[0]);
 	}
-	
+
 	protected ScreenHandler createScreenHandler(int i, PlayerInventory playerInventory) {
-	      return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, this);
+		return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, this);
 	}
-	
+
 	public void onOpen(PlayerEntity player) {
-		      if (!player.isSpectator()) {
-		         this.field_27207.method_31684(this.getWorld(), this.getPos(), this.getCachedState());
-		      }
+		if (!player.isSpectator()) {
+			this.stateManager.openChest(this.getWorld(), this.getPos(), this.getCachedState());
+		}
 
-		   }
+	}
 
-		   public void onClose(PlayerEntity player) {
-		      if (!player.isSpectator()) {
-		         this.field_27207.method_31685(this.getWorld(), this.getPos(), this.getCachedState());
-		      }
+	public void onClose(PlayerEntity player) {
+		if (!player.isSpectator()) {
+			this.stateManager.closeChest(this.getWorld(), this.getPos(), this.getCachedState());
+		}
 
-		   }
+	}
 
-		   public void tick() {
-		      this.field_27207.method_31686(this.getWorld(), this.getPos(), this.getCachedState());
-		   }
-		
+	public void tick() {
+		this.stateManager.updateViewerCount(this.getWorld(), this.getPos(), this.getCachedState());
+	}
+
 	private void setOpen(BlockState state, boolean boolean_1) {
 		this.world.setBlockState(this.getPos(), state.with(BarrelBlock.OPEN, boolean_1), 3);
 	}
-	
+
 	private void playSound(BlockState state, SoundEvent sound) {
 		Vec3i vec3i_1 = state.get(BarrelBlock.FACING).getVector();
 		double double_1 = this.pos.getX() + 0.5D + vec3i_1.getX() / 2.0D;

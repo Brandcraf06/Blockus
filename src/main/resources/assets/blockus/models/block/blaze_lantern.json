@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "blockus:block/blaze_block"
+        "all": "blockus:block/blaze_lantern"
     }
 }

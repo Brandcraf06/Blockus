@@ -1,13 +1,15 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.*;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Items;
+import java.util.HashMap;
 
-public class instance {
+import com.brand.blockus.content.*;
+import net.fabricmc.fabric.api.registry.*;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.Items;
+import net.minecraft.item.ShovelItem;
+
+public class Instance {
 
 	public static void init() {
 
@@ -15,7 +17,7 @@ public class instance {
 // Flammable
 		
         // general		
-		FlammableBlockRegistry.getDefaultInstance().add(Other.WOODEN_FRAME, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(General.WOODEN_FRAME, 30, 60);
 		
         // small hedges
 		FlammableBlockRegistry.getDefaultInstance().add(Hedge.SMALL_HEDGE, 30, 60);
@@ -225,9 +227,9 @@ public class instance {
 		CompostingChanceRegistry.INSTANCE.add(Items.MYCELIUM, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(Items.DIRT, 0.15f);
 		CompostingChanceRegistry.INSTANCE.add(Items.COARSE_DIRT, 0.15f);
-		CompostingChanceRegistry.INSTANCE.add(Other.THATCH, 0.75f);
-		CompostingChanceRegistry.INSTANCE.add(Other.THATCH_STAIRS, 0.75f);
-		CompostingChanceRegistry.INSTANCE.add(Other.THATCH_SLAB, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(General.THATCH, 0.75f);
+		CompostingChanceRegistry.INSTANCE.add(General.THATCH_STAIRS, 0.75f);
+		CompostingChanceRegistry.INSTANCE.add(General.THATCH_SLAB, 0.65f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.APPLE_CRATE, 0.95f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.BEETROOT_CRATE, 0.95f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.BREAD_BOX, 1.0f);
@@ -235,5 +237,21 @@ public class instance {
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.COOKIE_BLOCK, 1.0f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.POTATO_CRATE, 0.95f);
 		CompostingChanceRegistry.INSTANCE.add(FoodBlocks.SWEET_BERRIES_CRATE, 0.50f);
+		
+// Other
+		addStrippables();
+		addPathBlocks();
+	}
+
+
+	public static void addStrippables() {
+		AxeItem.STRIPPED_BLOCKS = new HashMap<>(AxeItem.STRIPPED_BLOCKS);
+		AxeItem.STRIPPED_BLOCKS.put(NewWoods.WHITE_OAK_LOG, NewWoods.STRIPPED_WHITE_OAK_LOG);
+		AxeItem.STRIPPED_BLOCKS.put(NewWoods.WHITE_OAK_WOOD, NewWoods.STRIPPED_WHITE_OAK_WOOD);
+	}
+
+	public static void addPathBlocks() {
+		ShovelItem.PATH_STATES = new HashMap<>(ShovelItem.PATH_STATES);
+		ShovelItem.PATH_STATES.put(Blocks.DIRT_PATH, General.PATH.getDefaultState());
 	}
 }

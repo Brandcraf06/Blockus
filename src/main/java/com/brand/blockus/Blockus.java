@@ -21,7 +21,7 @@ public class Blockus implements ModInitializer, EarlyInitializer {
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(BlazeBricks.BLAZE_BRICKS));
 	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Hedge.SMALL_HEDGE));
-	public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(Other.REDSTONE_SAND));
+	public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(General.REDSTONE_SAND));
 	
 	@Override
 	public void onInitialize() {
@@ -49,7 +49,6 @@ public class Blockus implements ModInitializer, EarlyInitializer {
 		new ObsidianRelated();
 		new Rainbow();
 		new RedstoneLamps();
-		new QuartzRelated();
 		new PaperRelated();
 		new NetherrackRelated();
 		new NetherBricksRelated();
@@ -59,10 +58,10 @@ public class Blockus implements ModInitializer, EarlyInitializer {
 		new PatternedWools();
 		new ColoredTiles();
 		new FuturneoBlocks();
-		new Other();
+		new General();
 		new LegacyBlocks();
 		new StonesSwitches();
-		instance.init();
+		Instance.init();
 	}
 	
 	@Override

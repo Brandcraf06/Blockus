@@ -166,10 +166,10 @@
 	"block.blockus.small_soul_sandstone_bricks_stairs": "Small Soul Sandstone Brick Stairs",
 	"block.blockus.small_soul_sandstone_bricks_slab": "Small Soul Sandstone Brick Slab",
 	
-	"block.blockus.quartz_bricks": "Quartz Tiles",
+	"block.blockus.quartz_tiles": "Quartz Tiles",
 	"block.blockus.wooden_frame": "Wooden Frame",
 	"block.blockus.membrane_block": "Membrane Block",
-	"block.blockus.blaze_block": "Blaze Lantern",
+	"block.blockus.blaze_lantern": "Blaze Lantern",
 	"block.blockus.zigzagged_stone_bricks": "Zigzagged Stone Bricks",
 	"block.blockus.zigzagged_andesite": "Zigzagged Andesite",
 	"block.blockus.zigzagged_diorite": "Zigzagged Diorite",
@@ -674,7 +674,7 @@
 	"block.blockus.thatch_stairs": "Thatch Stairs",
 	"block.blockus.thatch_slab": "Thatch Slab",
 	"block.blockus.iron_plating": "Iron Plating",
-	"block.blockus.dirt_path": "Dirt Path",	
+	"block.blockus.path": "Path",	
 	"block.blockus.netherite_stairs": "Swaggiest Stairs Ever",
 	"block.blockus.netherite_slab": "Swaggiest Slab Ever",
 

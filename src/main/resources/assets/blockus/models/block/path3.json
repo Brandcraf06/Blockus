@@ -1,8 +1,8 @@
 {   "parent": "block/block",
     "textures": {
-        "particle": "blockus:block/dirt_path1",
-        "top": "blockus:block/dirt_path3",
-        "side": "blockus:block/dirt_path_side",
+        "particle": "blockus:block/path1",
+        "top": "blockus:block/path3",
+        "side": "blockus:block/path_side",
         "bottom": "block/dirt"
     },
     "elements": [

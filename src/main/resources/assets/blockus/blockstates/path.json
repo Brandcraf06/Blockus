@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "": [
+        {  "model": "blockus:block/path1", "weight": 9 },
+        {  "model": "blockus:block/path2", "weight": 4 },
+        {  "model": "blockus:block/path3", "weight": 7 },
+        {  "model": "blockus:block/path4", "weight": 4 },
+        {  "model": "blockus:block/path5", "weight": 3 },
+        {  "model": "blockus:block/path6", "weight": 6 },
+        {  "model": "blockus:block/path7", "weight": 4 },
+        {  "model": "blockus:block/path8", "weight": 4 }
+      ]
+    }
+}

@@ -7,7 +7,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = project.archives_base_name
-version = project.mod_version
+version = "${mod_version}+${minecraft_version}"
 group = project.maven_group
 
 dependencies {
@@ -24,6 +24,10 @@ dependencies {
 
     modImplementation "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_version}"
     include "me.shedaniel.cloth.api:cloth-dynamic-registry-api-v1:${project.cloth_version}"
+}
+
+minecraft {
+	accessWidener = file("src/main/resources/blockus.aw")
 }
 
 processResources {

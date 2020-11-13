@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blockus:blaze_block"
+          "name": "blockus:path"
         }
       ],
       "conditions": [
