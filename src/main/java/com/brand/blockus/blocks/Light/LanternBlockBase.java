@@ -15,10 +15,10 @@ import net.minecraft.util.registry.Registry;
 
 public class LanternBlockBase extends Block {
 
-	public LanternBlockBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, ItemGroup itemgroup, int luminance, MaterialColor color) {
-		super(FabricBlockSettings.of(material, color).sounds(sound).breakByTool(FabricToolTags.PICKAXES, 1).luminance(luminance).strength(hardness, resistance));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(itemgroup)));
-	}
-	
+    public LanternBlockBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, ItemGroup itemgroup, int luminance, MaterialColor color) {
+        super(FabricBlockSettings.of(material, color).sounds(sound).breakByTool(FabricToolTags.PICKAXES, 1).luminance(luminance).strength(hardness, resistance));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(itemgroup)));
+    }
+
 }

@@ -13,10 +13,10 @@ import net.minecraft.util.registry.Registry;
 
 public class LightPillarBase extends PillarBlock {
 
-	public LightPillarBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MaterialColor color) {
-		super(FabricBlockSettings.of(material, color).sounds(sound).luminance(luminance).requiresTool().strength(hardness, resistance));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-	}
+    public LightPillarBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MaterialColor color) {
+        super(FabricBlockSettings.of(material, color).sounds(sound).luminance(luminance).requiresTool().strength(hardness, resistance));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+    }
 
 }

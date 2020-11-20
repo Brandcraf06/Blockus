@@ -13,11 +13,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class FallingGravelBase extends GravelBlock {
-		
-	public FallingGravelBase(String name, float hardness, float resistance) {
-		super(FabricBlockSettings.of(Material.AGGREGATE, MaterialColor.STONE).sounds(BlockSoundGroup.GRAVEL).breakByTool(FabricToolTags.SHOVELS, 0).strength(hardness, resistance));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-	}
-	
+
+    public FallingGravelBase(String name, float hardness, float resistance) {
+        super(FabricBlockSettings.of(Material.AGGREGATE, MaterialColor.STONE).sounds(BlockSoundGroup.GRAVEL).breakByTool(FabricToolTags.SHOVELS, 0).strength(hardness, resistance));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+    }
+
 }

@@ -16,75 +16,75 @@ import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("deprecation")
 public class Blockus implements ModInitializer, EarlyInitializer {
-	
-	public static final String MOD_ID = "blockus";
-	public static final Logger LOGGER = LogManager.getLogger();
-	public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(BlazeBricks.BLAZE_BRICKS));
-	public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Hedge.SMALL_HEDGE));
-	public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(Other.REDSTONE_SAND));
-	
-	@Override
-	public void onInitialize() {
 
-		new StonesRelated();
-		new NewStones();
-		new NewWoods();
-		new SmallLogs();
-		new TimberFrame();
-		new Hedge();
-		new LargeFlowerPots();
-		new Barrels();
-		new GlazedTerracottaPillars();
-		new GlassRelated();
-		new Asphalt();
-		new Shingles();
-		new FluidBricks();
-		new MagmaBricks();
-		new NewBricks();
-		new SandstoneBricks();
-		new SoulSandstone();
-		new PrismarineRelated();
-		new EndStoneRelated();
-		new PurpurRelated();
-		new ObsidianRelated();
-		new Rainbow();
-		new RedstoneLamps();
-		new QuartzRelated();
-		new PaperRelated();
-		new NetherrackRelated();
-		new NetherBricksRelated();
-		new BlazeBricks();
-		new FoodBlocks();
-		new StainedStoneBricks();
-		new PatternedWools();
-		new ColoredTiles();
-		new FuturneoBlocks();
-		new Other();
-		new LegacyBlocks();
-		new StonesSwitches();
-		Instance.init();
-	}
-	
-	@Override
-	public void onEarlyInitialization() {
-		// See BlockusConfiguredFeatures for more detail of why this is commented out
+    public static final String MOD_ID = "blockus";
+    public static final Logger LOGGER = LogManager.getLogger();
+    public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(BlazeBricks.BLAZE_BRICKS));
+    public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(Hedge.SMALL_HEDGE));
+    public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(Other.REDSTONE_SAND));
+
+    public static boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+        return type == EntityType.OCELOT || type == EntityType.PARROT;
+    }
+
+    public static boolean never(BlockState state, BlockView world, BlockPos pos) {
+        return false;
+    }
+
+    public static boolean nothing(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+        return false;
+    }
+
+    @Override
+    public void onInitialize() {
+
+        new StonesRelated();
+        new NewStones();
+        new NewWoods();
+        new SmallLogs();
+        new TimberFrame();
+        new Hedge();
+        new LargeFlowerPots();
+        new Barrels();
+        new GlazedTerracottaPillars();
+        new GlassRelated();
+        new Asphalt();
+        new Shingles();
+        new FluidBricks();
+        new MagmaBricks();
+        new NewBricks();
+        new SandstoneBricks();
+        new SoulSandstone();
+        new PrismarineRelated();
+        new EndStoneRelated();
+        new PurpurRelated();
+        new ObsidianRelated();
+        new Rainbow();
+        new RedstoneLamps();
+        new QuartzRelated();
+        new PaperRelated();
+        new NetherrackRelated();
+        new NetherBricksRelated();
+        new BlazeBricks();
+        new FoodBlocks();
+        new StainedStoneBricks();
+        new PatternedWools();
+        new ColoredTiles();
+        new FuturneoBlocks();
+        new Other();
+        new LegacyBlocks();
+        new StonesSwitches();
+        Instance.init();
+    }
+
+    @Override
+    public void onEarlyInitialization() {
+        // See BlockusConfiguredFeatures for more detail of why this is commented out
 //		DynamicRegistryCallback.callback(Registry.BIOME_KEY).register((dynamicRegistryManager, registryKey, biome) -> {
 //			BlockusGen.addMineables(registryKey, biome);
 //			BlockusGen.addWhiteOakTrees(registryKey, biome);
 //			BlockusGen.addPlainsWhiteOakTrees(registryKey, biome);
 //		});
-	}
-	
-	public static boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
-		return type == EntityType.OCELOT || type == EntityType.PARROT;
-	}
-	
-	public static boolean never(BlockState state, BlockView world, BlockPos pos) {
-		return false;
-	}
-	
-	public static boolean nothing(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
-		return false;
-	}
+    }
 }
 

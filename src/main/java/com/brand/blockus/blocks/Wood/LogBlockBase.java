@@ -14,10 +14,10 @@ import net.minecraft.util.registry.Registry;
 
 public class LogBlockBase extends PillarBlock {
 
-	public LogBlockBase(String name, float hardness, float resistance, Material material, MaterialColor color) {
-		super(FabricBlockSettings.of(material, color).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-	}
+    public LogBlockBase(String name, float hardness, float resistance, Material material, MaterialColor color) {
+        super(FabricBlockSettings.of(material, color).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+    }
 }
 

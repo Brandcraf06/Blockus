@@ -8,7 +8,7 @@ import net.minecraft.block.MaterialColor;
 import net.minecraft.sound.BlockSoundGroup;
 
 public class PrismarineRelated {
-	
+
     public static final GlazedLikeBlockBase PRISMARINE_CIRCLE_PAVEMENT = new GlazedLikeBlockBase("prismarine_circle_pavement", 1.5f, 1.2f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.DIAMOND);
-	
+
 }

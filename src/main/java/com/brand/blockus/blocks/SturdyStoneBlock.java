@@ -12,14 +12,14 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class SturdyStoneBlock extends Block {
-	public SturdyStoneBlock(String name) {
-		super(FabricBlockSettings.copy(Blocks.STONE));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-	}
+    public SturdyStoneBlock(String name) {
+        super(FabricBlockSettings.copy(Blocks.STONE));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+    }
 
-	@Override
-	public PistonBehavior getPistonBehavior(BlockState state) {
-		return PistonBehavior.BLOCK;
-	}
+    @Override
+    public PistonBehavior getPistonBehavior(BlockState state) {
+        return PistonBehavior.BLOCK;
+    }
 }

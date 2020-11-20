@@ -13,11 +13,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class PressurePlateBase extends PressurePlateBlock {
-	
-	public PressurePlateBase(String name, BlockSoundGroup sound, ActivationRule type, MaterialColor color) {
-		super(type, FabricBlockSettings.of(Material.WOOD, color).sounds(sound).breakByTool(FabricToolTags.AXES, 0).noCollision().strength(0.5f));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));
-	}
+
+    public PressurePlateBase(String name, BlockSoundGroup sound, ActivationRule type, MaterialColor color) {
+        super(type, FabricBlockSettings.of(Material.WOOD, color).sounds(sound).breakByTool(FabricToolTags.AXES, 0).noCollision().strength(0.5f));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));
+    }
 
 }

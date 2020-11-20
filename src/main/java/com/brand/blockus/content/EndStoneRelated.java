@@ -15,6 +15,6 @@ public class EndStoneRelated {
     public static final BlockBase POLISHED_END_STONE = new BlockBase("polished_end_stone", 3.0F, 9.0F, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.SAND);
     public static final PillarBase END_STONE_PILLAR = new PillarBase("end_stone_pillar", 3.0F, 9.0F, Material.STONE, BlockSoundGroup.STONE, MaterialColor.SAND);
     public static final BlockBase CRACKED_END_STONE_BRICKS = new BlockBase("cracked_end_stone_bricks", 3.0F, 9.0F, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.SAND);
- 
-   } 
+
+}
 

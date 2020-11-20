@@ -30,49 +30,49 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class WoodenBarrels extends BarrelBlock {
-	
-	public WoodenBarrels(String name, float hardness, float resistance, MaterialColor color) {
-		super(FabricBlockSettings.of(Material.WOOD, color).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
-	}
-	
-	@Override
-	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-	      if (world.isClient) {
-	         return ActionResult.SUCCESS;
-	      } else {
-	         BlockEntity blockEntity = world.getBlockEntity(pos);
-	         if (blockEntity instanceof WoodenBarrelBlockEntity) {
-	            player.openHandledScreen((WoodenBarrelBlockEntity)blockEntity);
-	            player.incrementStat(Stats.OPEN_BARREL);
-	            PiglinBrain.onGuardedBlockInteracted(player, true);
-	         }
 
-	         return ActionResult.SUCCESS;
-	      }
-	   }
-	
-	@Override
-	public void scheduledTick(BlockState state, ServerWorld serverWorld_1, BlockPos pos, Random random) {
-		BlockEntity be = serverWorld_1.getBlockEntity(pos);
-		if (be instanceof WoodenBarrelBlockEntity) {
-			((WoodenBarrelBlockEntity)be).tick();
-		}
-	}
-	
-	@Override
-	public BlockEntity createBlockEntity(BlockView blockView_1) {
-		return new WoodenBarrelBlockEntity();
-	}
-	
-	@Override
-	public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
-		if (stack.hasCustomName()) {
-			BlockEntity be = world.getBlockEntity(pos);
-			if (be instanceof WoodenBarrelBlockEntity) {
-				((WoodenBarrelBlockEntity)be).setCustomName(stack.getName());
-			}
-		}
-	}
+    public WoodenBarrels(String name, float hardness, float resistance, MaterialColor color) {
+        super(FabricBlockSettings.of(Material.WOOD, color).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (world.isClient) {
+            return ActionResult.SUCCESS;
+        } else {
+            BlockEntity blockEntity = world.getBlockEntity(pos);
+            if (blockEntity instanceof WoodenBarrelBlockEntity) {
+                player.openHandledScreen((WoodenBarrelBlockEntity) blockEntity);
+                player.incrementStat(Stats.OPEN_BARREL);
+                PiglinBrain.onGuardedBlockInteracted(player, true);
+            }
+
+            return ActionResult.SUCCESS;
+        }
+    }
+
+    @Override
+    public void scheduledTick(BlockState state, ServerWorld serverWorld_1, BlockPos pos, Random random) {
+        BlockEntity be = serverWorld_1.getBlockEntity(pos);
+        if (be instanceof WoodenBarrelBlockEntity) {
+            ((WoodenBarrelBlockEntity) be).tick();
+        }
+    }
+
+    @Override
+    public BlockEntity createBlockEntity(BlockView blockView_1) {
+        return new WoodenBarrelBlockEntity();
+    }
+
+    @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
+        if (stack.hasCustomName()) {
+            BlockEntity be = world.getBlockEntity(pos);
+            if (be instanceof WoodenBarrelBlockEntity) {
+                ((WoodenBarrelBlockEntity) be).setCustomName(stack.getName());
+            }
+        }
+    }
 }

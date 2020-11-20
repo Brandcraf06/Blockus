@@ -18,15 +18,16 @@ import net.minecraft.world.World;
 
 public class AsphaltBlock extends Block {
 
-	public AsphaltBlock(String name, DyeColor color) {
-		super(FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6.0f));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new SpeedBlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));	
-	}
-	@Override
-	public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity target) {
-		if (target instanceof LivingEntity) {
-			((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 2, true, false, false));
-		}	
-	}
+    public AsphaltBlock(String name, DyeColor color) {
+        super(FabricBlockSettings.of(Material.STONE, color).requiresTool().strength(1.5f, 6.0f));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new SpeedBlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+    }
+
+    @Override
+    public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity target) {
+        if (target instanceof LivingEntity) {
+            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 2, true, false, false));
+        }
+    }
 }
