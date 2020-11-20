@@ -16,16 +16,16 @@ import java.util.List;
 
 public class SpeedBlockItem extends BlockItem {
 
-	public SpeedBlockItem(Block block, Settings settings) {
-		super(block, settings);
-	}
-		
-@Override
-@Environment(EnvType.CLIENT)
-	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-		super.appendTooltip(stack, world, tooltip, context);
-		this.getBlock().appendTooltip(stack, world, tooltip, context);
-		tooltip.add((new TranslatableText(Blockus.MOD_ID + ".blockItem.givespeed")).formatted(Formatting.DARK_PURPLE));
-		
-		}
-	}
+    public SpeedBlockItem(Block block, Settings settings) {
+        super(block, settings);
+    }
+
+    @Override
+    @Environment(EnvType.CLIENT)
+    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
+        super.appendTooltip(stack, world, tooltip, context);
+        this.getBlock().appendTooltip(stack, world, tooltip, context);
+        tooltip.add((new TranslatableText(Blockus.MOD_ID + ".blockItem.givespeed")).formatted(Formatting.DARK_PURPLE));
+
+    }
+}

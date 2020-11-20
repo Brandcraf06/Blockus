@@ -9,8 +9,8 @@ import net.minecraft.util.registry.Registry;
 
 public class LargePottedDoublePlant extends LargeFlowerPotBlock {
 
-	public LargePottedDoublePlant(Block content, String name) {
-		super(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).nonOpaque());
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-	}
+    public LargePottedDoublePlant(Block content, String name) {
+        super(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).nonOpaque());
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+    }
 }

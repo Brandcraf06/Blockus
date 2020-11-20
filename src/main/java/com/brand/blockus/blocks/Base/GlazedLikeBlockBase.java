@@ -14,18 +14,18 @@ import net.minecraft.util.registry.Registry;
 
 public class GlazedLikeBlockBase extends HorizontalFacingBlock {
 
-		public GlazedLikeBlockBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MapColor color) {
-			super(FabricBlockSettings.of(material, color).sounds(sound).requiresTool().breakByTool(tag, mininglevel).strength(hardness, resistance));
-			Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-			Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-		}
+    public GlazedLikeBlockBase(String name, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MapColor color) {
+        super(FabricBlockSettings.of(material, color).sounds(sound).requiresTool().breakByTool(tag, mininglevel).strength(hardness, resistance));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+    }
 
-		   protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-		      builder.add(FACING);
-		   }
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
+    }
 
-		   public BlockState getPlacementState(ItemPlacementContext ctx) {
-		      return (BlockState)this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
-		   }
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
+    }
 
-		}
+}

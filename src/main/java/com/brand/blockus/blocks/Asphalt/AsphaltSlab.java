@@ -17,16 +17,16 @@ import net.minecraft.world.World;
 
 public class AsphaltSlab extends SlabBlock {
 
-	public AsphaltSlab(String name, AbstractBlock copy) {
-		super(FabricBlockSettings.copy(copy));
-		Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-		Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, name), new SpeedBlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-	}
+    public AsphaltSlab(String name, AbstractBlock copy) {
+        super(FabricBlockSettings.copy(copy));
+        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new SpeedBlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+    }
 
-	@Override
-	public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity target) {
-		if (target instanceof LivingEntity) {
-	    ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 2, true, false, false));
-		}
-	}
+    @Override
+    public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity target) {
+        if (target instanceof LivingEntity) {
+            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 2, true, false, false));
+        }
+    }
 }
