@@ -81,14 +81,10 @@ public class Blockus implements ModInitializer, EarlyInitializer {
                         })
                 .add(ModificationPhase.ADDITIONS,
                         BiomeSelectors.foundInOverworld().and(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST)),
-                        context -> {
-                            context.getGenerationSettings().addBuiltInFeature(GenerationStep.Feature.VEGETAL_DECORATION, BlockusConfiguredFeatures.WHITE_OAK_TREE);
-                        })
+                        context -> context.getGenerationSettings().addBuiltInFeature(GenerationStep.Feature.VEGETAL_DECORATION, BlockusConfiguredFeatures.WHITE_OAK_TREE))
                 .add(ModificationPhase.ADDITIONS,
                         BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.PLAINS)),
-                        context -> {
-                            context.getGenerationSettings().addBuiltInFeature(GenerationStep.Feature.VEGETAL_DECORATION, BlockusConfiguredFeatures.WHITE_OAK_TREE_RARE);
-                        });
+                        context -> context.getGenerationSettings().addBuiltInFeature(GenerationStep.Feature.VEGETAL_DECORATION, BlockusConfiguredFeatures.WHITE_OAK_TREE_RARE));
     }
 
     public static boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {

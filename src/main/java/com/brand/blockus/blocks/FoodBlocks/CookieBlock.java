@@ -10,7 +10,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.ActionResult;
@@ -23,25 +22,12 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
 public class CookieBlock extends Block {
     public static final IntProperty BITES;
     protected static final VoxelShape[] BITES_TO_SHAPE;
-
-    static {
-        BITES = BlockusProperties.BITES_9;
-        BITES_TO_SHAPE = new VoxelShape[]
-                {Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                        Block.createCuboidShape(2.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                        Block.createCuboidShape(4.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                        Block.createCuboidShape(6.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                        Block.createCuboidShape(7.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                        Block.createCuboidShape(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                        Block.createCuboidShape(10.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                        Block.createCuboidShape(12.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                        Block.createCuboidShape(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
-    }
 
     public CookieBlock(String name, float hardness, float resistance, MaterialColor color) {
         super(FabricBlockSettings.of(Material.SOLID_ORGANIC, color).sounds(BlockSoundGroup.GRASS).strength(hardness, resistance));
@@ -50,14 +36,14 @@ public class CookieBlock extends Block {
         this.setDefaultState(this.stateManager.getDefaultState().with(BITES, 0));
     }
 
-    public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, ShapeContext entityContext_1) {
-        return BITES_TO_SHAPE[blockState_1.get(BITES)];
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return BITES_TO_SHAPE[state.get(BITES)];
     }
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) {
             ItemStack itemStack = player.getStackInHand(hand);
-            if (this.tryEat(world, pos, state, player) == ActionResult.SUCCESS) {
+            if (this.tryEat(world, pos, state, player).isAccepted()) {
                 return ActionResult.SUCCESS;
             }
 
@@ -69,14 +55,13 @@ public class CookieBlock extends Block {
         return this.tryEat(world, pos, state, player);
     }
 
-    private ActionResult tryEat(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+    private ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!player.canConsume(false)) {
             return ActionResult.PASS;
         } else {
-            player.incrementStat(Stats.EAT_CAKE_SLICE);
             player.getHungerManager().add(2, 0.1F);
             int i = state.get(BITES);
-            if (i < 6) {
+            if (i < 8) {
                 world.setBlockState(pos, state.with(BITES, i + 1), 3);
             } else {
                 world.removeBlock(pos, false);
@@ -86,27 +71,42 @@ public class CookieBlock extends Block {
         }
     }
 
-    public BlockState getStateForNeighborUpdate(BlockState blockState_1, Direction direction_1, BlockState blockState_2, World iWorld_1, BlockPos blockPos_1, BlockPos blockPos_2) {
-        return direction_1 == Direction.DOWN && !blockState_1.canPlaceAt(iWorld_1, blockPos_1) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(blockState_1, direction_1, blockState_2, iWorld_1, blockPos_1, blockPos_2);
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
+        return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }
 
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         return world.getBlockState(pos.down()).getMaterial().isSolid();
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> stateFactory$Builder_1) {
-        stateFactory$Builder_1.add(BITES);
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(BITES);
     }
 
-    public int getComparatorOutput(BlockState blockState_1, World world_1, BlockPos blockPos_1) {
-        return (9 - blockState_1.get(BITES)) * 2;
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return (9 - state.get(BITES)) * 2;
     }
 
     public boolean hasComparatorOutput(BlockState blockState_1) {
         return true;
     }
 
-    public boolean canPlaceAtSide(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, NavigationType blockPlacementEnvironment_1) {
+    public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return false;
+    }
+
+    static {
+        BITES = BlockusProperties.BITES_9;
+        BITES_TO_SHAPE = new VoxelShape[]
+                {
+                        Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(2.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(4.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(6.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(7.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(10.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(12.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                        Block.createCuboidShape(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
     }
 }

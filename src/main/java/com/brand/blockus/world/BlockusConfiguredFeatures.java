@@ -75,9 +75,9 @@ public class BlockusConfiguredFeatures {
     // make life easier.
     public static void registerAndAddConfiguredFeatures() {
         for (Map.Entry<RegistryKey<Biome>, Biome> entry : BuiltinRegistries.BIOME.getEntries()) {
-            BlockusGen.addMineables(entry.getKey(), entry.getValue());
+            BlockusGen.addMineables(entry.getValue());
             BlockusGen.addWhiteOakTrees(entry.getKey(), entry.getValue());
-            BlockusGen.addPlainsWhiteOakTrees(entry.getKey(), entry.getValue());
+            BlockusGen.addPlainsWhiteOakTrees(entry.getValue());
         }
     }
 }
