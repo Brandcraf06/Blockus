@@ -24,29 +24,29 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 
 public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
-    private final ChestStateManager stateManager;
+    private ChestStateManager stateManager;
     private DefaultedList<ItemStack> inventory;
 
-    public WoodenBarrelBlockEntity(BlockPos blockPos, BlockState blockState) {
-        super(Barrels.WOODEN_BARREL, blockPos, blockState);
+    public WoodenBarrelBlockEntity(BlockPos pos, BlockState state) {
+        super(Barrels.WOODEN_BARREL, pos, state);
         this.inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
         this.stateManager = new ChestStateManager() {
-            protected void onChestOpened(World world, BlockPos blockPos, BlockState blockState) {
-                WoodenBarrelBlockEntity.this.playSound(blockState, SoundEvents.BLOCK_BARREL_OPEN);
-                WoodenBarrelBlockEntity.this.setOpen(blockState, true);
+            protected void onChestOpened(World world, BlockPos pos, BlockState state) {
+                WoodenBarrelBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
+                WoodenBarrelBlockEntity.this.setOpen(state, true);
             }
 
-            protected void onChestClosed(World world, BlockPos blockPos, BlockState blockState) {
-                WoodenBarrelBlockEntity.this.playSound(blockState, SoundEvents.BLOCK_BARREL_CLOSE);
-                WoodenBarrelBlockEntity.this.setOpen(blockState, false);
+            protected void onChestClosed(World world, BlockPos pos, BlockState state) {
+                WoodenBarrelBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_CLOSE);
+                WoodenBarrelBlockEntity.this.setOpen(state, false);
             }
 
-            protected void onInteracted(World world, BlockPos blockPos, BlockState blockState, int i, int j) {
+            protected void onInteracted(World world, BlockPos pos, BlockState state, int oldViewerCount, int newViewerCount) {
             }
 
-            protected boolean isPlayerViewing(PlayerEntity playerEntity) {
-                if (playerEntity.currentScreenHandler instanceof GenericContainerScreenHandler) {
-                    Inventory inventory = ((GenericContainerScreenHandler) playerEntity.currentScreenHandler).getInventory();
+            protected boolean isPlayerViewing(PlayerEntity player) {
+                if (player.currentScreenHandler instanceof GenericContainerScreenHandler) {
+                    Inventory inventory = ((GenericContainerScreenHandler) player.currentScreenHandler).getInventory();
                     return inventory == WoodenBarrelBlockEntity.this;
                 } else {
                     return false;
@@ -80,16 +80,16 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
         return this.inventory;
     }
 
-    protected void setInvStackList(DefaultedList<ItemStack> defaultedList_1) {
-        this.inventory = defaultedList_1;
+    protected void setInvStackList(DefaultedList<ItemStack> list) {
+        this.inventory = list;
     }
 
     protected Text getContainerName() {
         return new TranslatableText("container.barrel", new Object[0]);
     }
 
-    protected ScreenHandler createScreenHandler(int i, PlayerInventory playerInventory) {
-        return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, this);
+    protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
+        return GenericContainerScreenHandler.createGeneric9x3(syncId, playerInventory, this);
     }
 
     public void onOpen(PlayerEntity player) {
@@ -110,15 +110,15 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
         this.stateManager.updateViewerCount(this.getWorld(), this.getPos(), this.getCachedState());
     }
 
-    private void setOpen(BlockState state, boolean boolean_1) {
-        this.world.setBlockState(this.getPos(), state.with(BarrelBlock.OPEN, boolean_1), 3);
+    private void setOpen(BlockState state, boolean open) {
+        this.world.setBlockState(this.getPos(), state.with(BarrelBlock.OPEN, open), 3);
     }
 
-    private void playSound(BlockState state, SoundEvent sound) {
-        Vec3i vec3i_1 = state.get(BarrelBlock.FACING).getVector();
-        double double_1 = this.pos.getX() + 0.5D + vec3i_1.getX() / 2.0D;
-        double double_2 = this.pos.getY() + 0.5D + vec3i_1.getY() / 2.0D;
-        double double_3 = this.pos.getZ() + 0.5D + vec3i_1.getZ() / 2.0D;
-        this.world.playSound(null, double_1, double_2, double_3, sound, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+    private void playSound(BlockState state, SoundEvent soundEvent) {
+        Vec3i vec3i = state.get(BarrelBlock.FACING).getVector();
+        double d = this.pos.getX() + 0.5D + vec3i.getX() / 2.0D;
+        double e = this.pos.getY() + 0.5D + vec3i.getY() / 2.0D;
+        double f = this.pos.getZ() + 0.5D + vec3i.getZ() / 2.0D;
+        this.world.playSound(null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
     }
 }

@@ -57,6 +57,6 @@ public class General {
 
     // Quartz Blocks
     public static final BlockBase QUARTZ_TILES = new BlockBase("quartz_tiles", 0.8f, 0.8f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MapColor.QUARTZ);
-    public static final GlazedLikeBlockBase QUARTZ_CIRCLE_PAVEMENT = new GlazedLikeBlockBase("quartz_circle_pavement", 0.8f, 0.8f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MapColor.QUARTZ);
+    public static final PlayerFacingBlockBase QUARTZ_CIRCLE_PAVEMENT = new PlayerFacingBlockBase("quartz_circle_pavement", 0.8f, 0.8f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MapColor.QUARTZ);
 
 }
