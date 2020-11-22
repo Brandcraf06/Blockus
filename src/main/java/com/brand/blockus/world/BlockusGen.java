@@ -9,7 +9,7 @@ import net.minecraft.world.gen.GenerationStep;
 public class BlockusGen {
 
 
-    public static void addMineables(RegistryKey<Biome> registryKey, Biome biome) {
+    public static void addMineables(Biome biome) {
         BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> BlockusConfiguredFeatures.LIMESTONE);
         BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> BlockusConfiguredFeatures.BLUESTONE);
         BiomesRegistry.registerFeature(biome, GenerationStep.Feature.UNDERGROUND_ORES, () -> BlockusConfiguredFeatures.MARBLE);
@@ -21,7 +21,7 @@ public class BlockusGen {
         }
     }
 
-    public static void addPlainsWhiteOakTrees(RegistryKey<Biome> registryKey, Biome biome) {
+    public static void addPlainsWhiteOakTrees(Biome biome) {
         if (biome.getCategory() == Biome.Category.PLAINS) {
             BiomesRegistry.registerFeature(biome, GenerationStep.Feature.VEGETAL_DECORATION, () -> BlockusConfiguredFeatures.WHITE_OAK_TREE_RARE);
         }

@@ -38,9 +38,9 @@ public class BlockusConfiguredFeatures {
         WHITE_OAK_LEAVES = NewWoods.WHITE_OAK_LEAVES.getDefaultState();
         WHITE_OAK_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(WHITE_OAK_LOG), new SimpleBlockStateProvider(WHITE_OAK_LEAVES), new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 5), new StraightTrunkPlacer(7, 2, 0), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
 
-        LIMESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, NewStones.LIMESTONE.getDefaultState(), 33)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(25, 0, 120)).spreadHorizontally().repeat(10));
-        BLUESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, NewStones.BLUESTONE.getDefaultState(), 30)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 25)).spreadHorizontally().repeat(8));
-        MARBLE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, NewStones.MARBLE.getDefaultState(), 50)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 75)).spreadHorizontally().repeat(1));
+        LIMESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, NewStones.LIMESTONE.getDefaultState(), 33)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(25, 0, 120)).spreadHorizontally().repeat(8));
+        BLUESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, NewStones.BLUESTONE.getDefaultState(), 30)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 25)).spreadHorizontally().repeat(6));
+        MARBLE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, NewStones.MARBLE.getDefaultState(), 40)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 75)).spreadHorizontally().repeat(1));
         WHITE_OAK_TREE = Feature.TREE.configure(WHITE_OAK_TREE_CONFIG).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.05F, 1)));
         WHITE_OAK_TREE_RARE = Feature.TREE.configure(WHITE_OAK_TREE_CONFIG).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.0085F, 1)));
 
@@ -75,9 +75,9 @@ public class BlockusConfiguredFeatures {
     // make life easier.
     public static void registerAndAddConfiguredFeatures() {
         for (Map.Entry<RegistryKey<Biome>, Biome> entry : BuiltinRegistries.BIOME.getEntries()) {
-            BlockusGen.addMineables(entry.getKey(), entry.getValue());
+            BlockusGen.addMineables(entry.getValue());
             BlockusGen.addWhiteOakTrees(entry.getKey(), entry.getValue());
-            BlockusGen.addPlainsWhiteOakTrees(entry.getKey(), entry.getValue());
+            BlockusGen.addPlainsWhiteOakTrees(entry.getValue());
         }
     }
 }
