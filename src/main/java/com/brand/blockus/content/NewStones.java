@@ -19,7 +19,7 @@ public class NewStones {
     public static final WallBase LIMESTONE_BRICKS_WALL = new WallBase("limestone_bricks_wall", LIMESTONE_BRICKS);
     public static final PillarBase LIMESTONE_PILLAR = new PillarBase("limestone_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MaterialColor.WOOD);
     public static final BlockBase CHISELED_LIMESTONE = new BlockBase("chiseled_limestone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.WOOD);
-    public static final GlazedLikeBlockBase LIMESTONE_CIRCLE_PAVEMENT = new GlazedLikeBlockBase("limestone_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.WOOD);
+    public static final PlayerFacingBlockBase LIMESTONE_CIRCLE_PAVEMENT = new PlayerFacingBlockBase("limestone_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.WOOD);
 
     // marble
     public static final BlockBase MARBLE = new BlockBase("marble", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.QUARTZ);
@@ -32,7 +32,7 @@ public class NewStones {
     public static final PillarBase MARBLE_PILLAR = new PillarBase("marble_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MaterialColor.QUARTZ);
     public static final PillarBase CHISELED_MARBLE_PILLAR = new PillarBase("chiseled_marble_pillar", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MaterialColor.QUARTZ);
     public static final BlockBase CHISELED_MARBLE = new BlockBase("chiseled_marble", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.QUARTZ);
-    public static final GlazedLikeBlockBase MARBLE_CIRCLE_PAVEMENT = new GlazedLikeBlockBase("marble_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.QUARTZ);
+    public static final PlayerFacingBlockBase MARBLE_CIRCLE_PAVEMENT = new PlayerFacingBlockBase("marble_circle_pavement", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.QUARTZ);
 
     // bluestone
     public static final BlockBase BLUESTONE = new BlockBase("bluestone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, Blockus.BLOCKUS_BUILDING_BLOCKS, MaterialColor.CYAN);
