@@ -1,6 +1,6 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.*;
+import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -15,101 +15,101 @@ public class BlockusClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        registerBlockColor(Hedge.SMALL_HEDGE, Blocks.OAK_LEAVES);
-        registerBlockColor(Hedge.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES);
-        registerBlockColor(Hedge.BIRCH_SMALL_HEDGE, Blocks.BIRCH_LEAVES);
-        registerBlockColor(Hedge.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
-        registerBlockColor(Hedge.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
-        registerBlockColor(Hedge.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
-        registerBlockColor(FluidBricks.WATER_BRICKS, Blocks.WATER);
-        registerBlockColor(FluidBricks.WATER_BRICKS_STAIRS, Blocks.WATER);
-        registerBlockColor(FluidBricks.WATER_BRICKS_SLAB, Blocks.WATER);
-        registerBlockColor(FluidBricks.WATER_BRICKS_WALL, Blocks.WATER);
-        registerBlockColor(FluidBricks.CHISELED_WATER_BRICKS, Blocks.WATER);
-        registerBlockColor(LargeFlowerPots.POTTED_LARGE_FERN, Blocks.POTTED_FERN);
-        registerBlockColor(LargeFlowerPots.POTTED_OAK, Blocks.OAK_LEAVES);
-        registerBlockColor(LargeFlowerPots.POTTED_SPRUCE, Blocks.SPRUCE_LEAVES);
-        registerBlockColor(LargeFlowerPots.POTTED_BIRCH, Blocks.BIRCH_LEAVES);
-        registerBlockColor(LargeFlowerPots.POTTED_JUNGLE, Blocks.JUNGLE_LEAVES);
-        registerBlockColor(LargeFlowerPots.POTTED_ACACIA, Blocks.ACACIA_LEAVES);
-        registerBlockColor(LargeFlowerPots.POTTED_DARK_OAK, Blocks.DARK_OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES);
+        registerBlockColor(BlockusBlocks.BIRCH_SMALL_HEDGE, Blocks.BIRCH_LEAVES);
+        registerBlockColor(BlockusBlocks.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
+        registerBlockColor(BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
+        registerBlockColor(BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.WATER_BRICKS, Blocks.WATER);
+        registerBlockColor(BlockusBlocks.WATER_BRICKS_STAIRS, Blocks.WATER);
+        registerBlockColor(BlockusBlocks.WATER_BRICKS_SLAB, Blocks.WATER);
+        registerBlockColor(BlockusBlocks.WATER_BRICKS_WALL, Blocks.WATER);
+        registerBlockColor(BlockusBlocks.CHISELED_WATER_BRICKS, Blocks.WATER);
+        registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN, Blocks.POTTED_FERN);
+        registerBlockColor(BlockusBlocks.POTTED_OAK, Blocks.OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_SPRUCE, Blocks.SPRUCE_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_BIRCH, Blocks.BIRCH_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_JUNGLE, Blocks.JUNGLE_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_ACACIA, Blocks.ACACIA_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_DARK_OAK, Blocks.DARK_OAK_LEAVES);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
-                Hedge.SMALL_HEDGE,
-                Hedge.SPRUCE_SMALL_HEDGE,
-                Hedge.BIRCH_SMALL_HEDGE,
-                Hedge.JUNGLE_SMALL_HEDGE,
-                Hedge.ACACIA_SMALL_HEDGE,
-                Hedge.DARK_OAK_SMALL_HEDGE,
-                Hedge.WHITE_OAK_SMALL_HEDGE,
-                LegacyBlocks.LEGACY_LEAVES,
-                NewWoods.WHITE_OAK_LEAVES,
-                NewWoods.WHITE_OAK_SAPLING,
-                NewWoods.POTTED_WHITE_OAK_SAPLING,
-                ObsidianRelated.OBSIDIAN_REINFORCED_DOOR,
-                ObsidianRelated.OBSIDIAN_REINFORCED_TRAPDOOR,
-                NewWoods.CHARRED_DOOR,
-                NewWoods.CHARRED_TRAPDOOR,
-                General.WOODEN_FRAME,
-                General.IRON_GATE,
-                General.GOLDEN_GATE,
-                General.GOLDEN_CHAIN,
-                General.GOLDEN_BARS,
-                LargeFlowerPots.POTTED_ROSE_BUSH,
-                LargeFlowerPots.POTTED_LILAC,
-                LargeFlowerPots.POTTED_PEONY,
-                LargeFlowerPots.POTTED_LARGE_FERN,
-                LargeFlowerPots.POTTED_OAK,
-                LargeFlowerPots.POTTED_SPRUCE,
-                LargeFlowerPots.POTTED_BIRCH,
-                LargeFlowerPots.POTTED_JUNGLE,
-                LargeFlowerPots.POTTED_ACACIA,
-                LargeFlowerPots.POTTED_DARK_OAK,
-                LargeFlowerPots.POTTED_WHITE_OAK
+                BlockusBlocks.OAK_SMALL_HEDGE,
+                BlockusBlocks.SPRUCE_SMALL_HEDGE,
+                BlockusBlocks.BIRCH_SMALL_HEDGE,
+                BlockusBlocks.JUNGLE_SMALL_HEDGE,
+                BlockusBlocks.ACACIA_SMALL_HEDGE,
+                BlockusBlocks.DARK_OAK_SMALL_HEDGE,
+                BlockusBlocks.WHITE_OAK_SMALL_HEDGE,
+                BlockusBlocks.LEGACY_LEAVES,
+                BlockusBlocks.WHITE_OAK_LEAVES,
+                BlockusBlocks.WHITE_OAK_SAPLING,
+                BlockusBlocks.POTTED_WHITE_OAK_SAPLING,
+                BlockusBlocks.OBSIDIAN_REINFORCED_DOOR,
+                BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR,
+                BlockusBlocks.CHARRED_DOOR,
+                BlockusBlocks.CHARRED_TRAPDOOR,
+                BlockusBlocks.WOODEN_FRAME,
+                BlockusBlocks.IRON_GATE,
+                BlockusBlocks.GOLDEN_GATE,
+                BlockusBlocks.GOLDEN_CHAIN,
+                BlockusBlocks.GOLDEN_BARS,
+                BlockusBlocks.POTTED_ROSE_BUSH,
+                BlockusBlocks.POTTED_LILAC,
+                BlockusBlocks.POTTED_PEONY,
+                BlockusBlocks.POTTED_LARGE_FERN,
+                BlockusBlocks.POTTED_OAK,
+                BlockusBlocks.POTTED_SPRUCE,
+                BlockusBlocks.POTTED_BIRCH,
+                BlockusBlocks.POTTED_JUNGLE,
+                BlockusBlocks.POTTED_ACACIA,
+                BlockusBlocks.POTTED_DARK_OAK,
+                BlockusBlocks.POTTED_WHITE_OAK
 
         );
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
-                FluidBricks.WATER_BRICKS,
-                FluidBricks.WATER_BRICKS_SLAB,
-                FluidBricks.WATER_BRICKS_STAIRS,
-                FluidBricks.WATER_BRICKS_WALL,
-                FluidBricks.CHISELED_WATER_BRICKS,
+                BlockusBlocks.WATER_BRICKS,
+                BlockusBlocks.WATER_BRICKS_SLAB,
+                BlockusBlocks.WATER_BRICKS_STAIRS,
+                BlockusBlocks.WATER_BRICKS_WALL,
+                BlockusBlocks.CHISELED_WATER_BRICKS,
 
-                GlassRelated.BEVELED_GLASS,
-                GlassRelated.WHITE_BEVELED_GLASS,
-                GlassRelated.ORANGE_BEVELED_GLASS,
-                GlassRelated.MAGENTA_BEVELED_GLASS,
-                GlassRelated.LIGHT_BLUE_BEVELED_GLASS,
-                GlassRelated.YELLOW_BEVELED_GLASS,
-                GlassRelated.LIME_BEVELED_GLASS,
-                GlassRelated.PINK_BEVELED_GLASS,
-                GlassRelated.LIGHT_GRAY_BEVELED_GLASS,
-                GlassRelated.GRAY_BEVELED_GLASS,
-                GlassRelated.CYAN_BEVELED_GLASS,
-                GlassRelated.PURPLE_BEVELED_GLASS,
-                GlassRelated.BLUE_BEVELED_GLASS,
-                GlassRelated.BROWN_BEVELED_GLASS,
-                GlassRelated.GREEN_BEVELED_GLASS,
-                GlassRelated.RED_BEVELED_GLASS,
-                GlassRelated.BLACK_BEVELED_GLASS,
+                BlockusBlocks.BEVELED_GLASS,
+                BlockusBlocks.WHITE_BEVELED_GLASS,
+                BlockusBlocks.ORANGE_BEVELED_GLASS,
+                BlockusBlocks.MAGENTA_BEVELED_GLASS,
+                BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS,
+                BlockusBlocks.YELLOW_BEVELED_GLASS,
+                BlockusBlocks.LIME_BEVELED_GLASS,
+                BlockusBlocks.PINK_BEVELED_GLASS,
+                BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS,
+                BlockusBlocks.GRAY_BEVELED_GLASS,
+                BlockusBlocks.CYAN_BEVELED_GLASS,
+                BlockusBlocks.PURPLE_BEVELED_GLASS,
+                BlockusBlocks.BLUE_BEVELED_GLASS,
+                BlockusBlocks.BROWN_BEVELED_GLASS,
+                BlockusBlocks.GREEN_BEVELED_GLASS,
+                BlockusBlocks.RED_BEVELED_GLASS,
+                BlockusBlocks.BLACK_BEVELED_GLASS,
 
-                GlassRelated.BEVELED_GLASS_PANE,
-                GlassRelated.WHITE_BEVELED_GLASS_PANE,
-                GlassRelated.ORANGE_BEVELED_GLASS_PANE,
-                GlassRelated.MAGENTA_BEVELED_GLASS_PANE,
-                GlassRelated.LIGHT_BLUE_BEVELED_GLASS_PANE,
-                GlassRelated.YELLOW_BEVELED_GLASS_PANE,
-                GlassRelated.LIME_BEVELED_GLASS_PANE,
-                GlassRelated.PINK_BEVELED_GLASS_PANE,
-                GlassRelated.LIGHT_GRAY_BEVELED_GLASS_PANE,
-                GlassRelated.GRAY_BEVELED_GLASS_PANE,
-                GlassRelated.CYAN_BEVELED_GLASS_PANE,
-                GlassRelated.PURPLE_BEVELED_GLASS_PANE,
-                GlassRelated.BLUE_BEVELED_GLASS_PANE,
-                GlassRelated.BROWN_BEVELED_GLASS_PANE,
-                GlassRelated.GREEN_BEVELED_GLASS_PANE,
-                GlassRelated.RED_BEVELED_GLASS_PANE,
-                GlassRelated.BLACK_BEVELED_GLASS_PANE
+                BlockusBlocks.BEVELED_GLASS_PANE,
+                BlockusBlocks.WHITE_BEVELED_GLASS_PANE,
+                BlockusBlocks.ORANGE_BEVELED_GLASS_PANE,
+                BlockusBlocks.MAGENTA_BEVELED_GLASS_PANE,
+                BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS_PANE,
+                BlockusBlocks.YELLOW_BEVELED_GLASS_PANE,
+                BlockusBlocks.LIME_BEVELED_GLASS_PANE,
+                BlockusBlocks.PINK_BEVELED_GLASS_PANE,
+                BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS_PANE,
+                BlockusBlocks.GRAY_BEVELED_GLASS_PANE,
+                BlockusBlocks.CYAN_BEVELED_GLASS_PANE,
+                BlockusBlocks.PURPLE_BEVELED_GLASS_PANE,
+                BlockusBlocks.BLUE_BEVELED_GLASS_PANE,
+                BlockusBlocks.BROWN_BEVELED_GLASS_PANE,
+                BlockusBlocks.GREEN_BEVELED_GLASS_PANE,
+                BlockusBlocks.RED_BEVELED_GLASS_PANE,
+                BlockusBlocks.BLACK_BEVELED_GLASS_PANE
         );
 
 

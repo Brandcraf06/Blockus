@@ -1,6 +1,6 @@
 package com.brand.blockus.blocks.FlowerPot;
 
-import com.brand.blockus.content.LargeFlowerPots;
+import com.brand.blockus.content.BlockusBlocks;
 import com.google.common.collect.Maps;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -28,7 +28,7 @@ public class LargeFlowerPotBlock extends Block {
     private static final Map<Block, Block> CONTENT_TO_POTTED = Maps.newHashMap();
     private final Block content;
 
-    public LargeFlowerPotBlock(Block content, AbstractBlock.Settings settings) {
+    public LargeFlowerPotBlock(Block content, Settings settings) {
         super(settings);
         this.content = content;
         CONTENT_TO_POTTED.put(content, this);
@@ -63,7 +63,7 @@ public class LargeFlowerPotBlock extends Block {
                     player.dropItem(itemStack2, false);
                 }
 
-                world.setBlockState(pos, LargeFlowerPots.LARGE_FLOWER_POT.getDefaultState(), 3);
+                world.setBlockState(pos, BlockusBlocks.LARGE_FLOWER_POT.getDefaultState(), 3);
             }
 
             return ActionResult.SUCCESS;

@@ -24,7 +24,7 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 
 public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
-    private ChestStateManager stateManager;
+    private final ChestStateManager stateManager;
     private DefaultedList<ItemStack> inventory;
 
     public WoodenBarrelBlockEntity(BlockPos pos, BlockState state) {
