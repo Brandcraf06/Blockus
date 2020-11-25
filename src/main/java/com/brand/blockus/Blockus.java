@@ -2,7 +2,6 @@ package com.brand.blockus;
 
 import com.brand.blockus.content.*;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
-import me.shedaniel.cloth.api.dynamic.registry.v1.EarlyInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -21,8 +20,7 @@ import net.minecraft.world.gen.GenerationStep;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@SuppressWarnings("deprecation")
-public class Blockus implements ModInitializer, EarlyInitializer {
+public class Blockus implements ModInitializer {
 
     public static final String MOD_ID = "blockus";
     public static final Logger LOGGER = LogManager.getLogger();
@@ -89,7 +87,6 @@ public class Blockus implements ModInitializer, EarlyInitializer {
     public static boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
         return type == EntityType.OCELOT || type == EntityType.PARROT;
     }
-
     public static boolean never(BlockState state, BlockView world, BlockPos pos) {
         return false;
     }
@@ -98,9 +95,5 @@ public class Blockus implements ModInitializer, EarlyInitializer {
         return false;
     }
 
-    @Override
-    public void onEarlyInitialization() {
-
     }
-}
 

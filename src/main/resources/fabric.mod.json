@@ -4,7 +4,7 @@
   "version": "${version}",
    
   "name": "Blockus",
-  "description": "A mod that mainly adds blocks!",
+  "description": "A mod that adds blocks!",
   "authors": [
     "Brandcraft06"
   ],
@@ -21,9 +21,6 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.brand.blockus.Blockus"
-    ],
-    "cloth-early-init": [
       "com.brand.blockus.Blockus"
     ],
 	"client": [
