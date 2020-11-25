@@ -3,7 +3,6 @@ package com.brand.blockus;
 import com.brand.blockus.content.Barrels;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
-import me.shedaniel.cloth.api.dynamic.registry.v1.EarlyInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -18,8 +17,7 @@ import net.minecraft.world.gen.GenerationStep;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@SuppressWarnings("deprecation")
-public class Blockus implements ModInitializer, EarlyInitializer {
+public class Blockus implements ModInitializer {
 
     public static final String MOD_ID = "blockus";
     public static final Logger LOGGER = LogManager.getLogger();
@@ -48,11 +46,6 @@ public class Blockus implements ModInitializer, EarlyInitializer {
                 .add(ModificationPhase.ADDITIONS,
                         BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.PLAINS)),
                         context -> context.getGenerationSettings().addBuiltInFeature(GenerationStep.Feature.VEGETAL_DECORATION, BlockusConfiguredFeatures.WHITE_OAK_TREE_RARE));
-    }
-
-    @Override
-    public void onEarlyInitialization() {
-
     }
 }
 

@@ -1,6 +1,6 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.blocks.WhiteOakSaplingGenerator;
+import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;

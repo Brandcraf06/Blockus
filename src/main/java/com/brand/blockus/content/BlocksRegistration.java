@@ -1,19 +1,13 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.Asphalt.AsphaltBlock;
-import com.brand.blockus.blocks.Asphalt.AsphaltSlab;
-import com.brand.blockus.blocks.Asphalt.AsphaltStairs;
-import com.brand.blockus.blocks.*;
-import com.brand.blockus.blocks.Base.*;
-import com.brand.blockus.blocks.BlockItem.SpeedBlockItem;
-import com.brand.blockus.blocks.FlowerPot.LargeFlowerPotBlock;
-import com.brand.blockus.blocks.FlowerPot.SaplingBlockBase;
-import com.brand.blockus.blocks.FoodBlocks.CookieBlock;
-import com.brand.blockus.blocks.Glass.PaneBlockBase;
-import com.brand.blockus.blocks.Switches.PressurePlateBase;
-import com.brand.blockus.blocks.Switches.StoneButtonBase;
-import com.brand.blockus.blocks.Switches.WoodenButtonBase;
+import com.brand.blockus.blocks.base.*;
+import com.brand.blockus.blocks.base.redstone.*;
+import com.brand.blockus.blocks.blockitem.SpeedBlockItem;
+import com.brand.blockus.blocks.special.*;
+import com.brand.blockus.blocks.special.asphalt.AsphaltBlock;
+import com.brand.blockus.blocks.special.asphalt.AsphaltSlab;
+import com.brand.blockus.blocks.special.asphalt.AsphaltStairs;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
@@ -283,7 +277,7 @@ public class BlocksRegistration {
 
     // Other
     public static Block registerRedstoneSand(String id) {
-        return registerRedstone(id, new FallingRedstoneBase(FabricBlockSettings.of(Material.AGGREGATE, MapColor.LAVA).strength(2.0f, 6.0f).sounds(BlockSoundGroup.SAND).breakByTool(FabricToolTags.SHOVELS, 0)));
+        return registerRedstone(id, new FallingRedstoneBlock(FabricBlockSettings.of(Material.AGGREGATE, MapColor.LAVA).strength(2.0f, 6.0f).sounds(BlockSoundGroup.SAND).breakByTool(FabricToolTags.SHOVELS, 0)));
     }
 
     public static Block registerCookieBlock(String id) {
