@@ -1,6 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.base.BarrelBlockBase;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.blocks.base.PaneBlockBase;
 import com.brand.blockus.blocks.base.StairsBase;
@@ -204,6 +205,10 @@ public class BlocksRegistration {
 
     public static Block registerChain(String id, Block base) {
         return register(id + "_chain", new ChainBlock(FabricBlockSettings.copy(base)));
+    }
+
+    public static Block registerBarrel(String id, MapColor color) {
+        return register_decoration(id + "_barrel", new BarrelBlockBase(FabricBlockSettings.of(Material.WOOD, color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
     }
 
     // Light

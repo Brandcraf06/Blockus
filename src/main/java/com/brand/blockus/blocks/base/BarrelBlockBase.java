@@ -1,46 +1,32 @@
 package com.brand.blockus.blocks.base;
 
-import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
 public class BarrelBlockBase extends BarrelBlock {
 
-    public BarrelBlockBase(String name, float hardness, float resistance, MapColor color) {
-        super(FabricBlockSettings.of(Material.WOOD, color).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0).strength(hardness, resistance));
-        Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, name), this);
-        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
+    public BarrelBlockBase(Settings settings) {
+        super(settings);
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (world.isClient) {
-            return ActionResult.SUCCESS;
-        } else {
+        if (!world.isClient) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelBlockEntity) {
                 player.openHandledScreen((WoodenBarrelBlockEntity) blockEntity);
@@ -48,29 +34,29 @@ public class BarrelBlockBase extends BarrelBlock {
                 PiglinBrain.onGuardedBlockInteracted(player, true);
             }
 
-            return ActionResult.SUCCESS;
+        }
+        return ActionResult.SUCCESS;
+    }
+
+    @Override
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (blockEntity instanceof WoodenBarrelBlockEntity) {
+            ((WoodenBarrelBlockEntity) blockEntity).tick();
         }
     }
 
     @Override
-    public void scheduledTick(BlockState state, ServerWorld serverWorld_1, BlockPos pos, Random random) {
-        BlockEntity be = serverWorld_1.getBlockEntity(pos);
-        if (be instanceof WoodenBarrelBlockEntity) {
-            ((WoodenBarrelBlockEntity) be).tick();
-        }
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new WoodenBarrelBlockEntity(pos, state);
     }
 
     @Override
-    public BlockEntity createBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new WoodenBarrelBlockEntity(blockPos, blockState);
-    }
-
-    @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
-        if (stack.hasCustomName()) {
-            BlockEntity be = world.getBlockEntity(pos);
-            if (be instanceof WoodenBarrelBlockEntity) {
-                ((WoodenBarrelBlockEntity) be).setCustomName(stack.getName());
+    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
+        if (itemStack.hasCustomName()) {
+            BlockEntity blockEntity = world.getBlockEntity(pos);
+            if (blockEntity instanceof WoodenBarrelBlockEntity) {
+                ((WoodenBarrelBlockEntity) blockEntity).setCustomName(itemStack.getName());
             }
         }
     }

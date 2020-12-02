@@ -1,6 +1,5 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.Barrels;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
@@ -29,7 +28,6 @@ public class Blockus implements ModInitializer {
     public void onInitialize() {
 
         new BlockusBlocks();
-        new Barrels();
         Instance.init();
 
         BiomeModifications.create(new Identifier(MOD_ID, "world_features"))

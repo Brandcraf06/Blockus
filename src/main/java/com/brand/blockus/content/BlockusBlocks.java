@@ -398,6 +398,18 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GOLDEN_APPLE_CRATE = registerCrates("golden_apple");
     public static final Block GOLDEN_CARROT_CRATE = registerCrates("golden_carrot");
 
+    // Barrels
+    public static final Block OAK_BARREL = registerBarrel("oak",  Blocks.OAK_PLANKS.getDefaultMapColor());
+    public static final Block BIRCH_BARREL = registerBarrel("birch", Blocks.BIRCH_PLANKS.getDefaultMapColor());
+    public static final Block JUNGLE_BARREL = registerBarrel("jungle", Blocks.JUNGLE_PLANKS.getDefaultMapColor());
+    public static final Block ACACIA_BARREL = registerBarrel("acacia", Blocks.ACACIA_PLANKS.getDefaultMapColor());
+    public static final Block DARK_OAK_BARREL = registerBarrel("dark_oak", Blocks.DARK_OAK_PLANKS.getDefaultMapColor());
+    public static final Block CRIMSON_BARREL = registerBarrel("crimson", Blocks.CRIMSON_PLANKS.getDefaultMapColor());
+    public static final Block WARPED_BARREL = registerBarrel("warped", Blocks.WARPED_PLANKS.getDefaultMapColor());
+    public static final Block WHITE_OAK_BARREL = registerBarrel("white_oak", BlockusBlocks.WHITE_OAK_PLANKS.getDefaultMapColor());
+    public static final Block BAMBOO_BARREL = registerBarrel("bamboo", BlockusBlocks.BAMBOO_PLANKS.getDefaultMapColor());
+    public static final Block CHARRED_BARREL = registerBarrel("charred", BlockusBlocks.CHARRED_PLANKS.getDefaultMapColor());
+
     // Rainbow
     public static final Block RAINBOW_BLOCK = register("rainbow_block", new PillarBlock(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(5.0f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
     public static final Block RAINBOW_BRICKS = register("rainbow_bricks", new Block(FabricBlockSettings.of(Material.STONE, MapColor.QUARTZ).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));

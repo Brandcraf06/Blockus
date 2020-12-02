@@ -1,6 +1,6 @@
 package com.brand.blockus.blocks.blockentity;
 
-import com.brand.blockus.content.Barrels;
+import com.brand.blockus.content.BlockEntities;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.ChestStateManager;
@@ -28,7 +28,7 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     private DefaultedList<ItemStack> inventory;
 
     public WoodenBarrelBlockEntity(BlockPos pos, BlockState state) {
-        super(Barrels.WOODEN_BARREL, pos, state);
+        super(BlockEntities.WOODEN_BARREL, pos, state);
         this.inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
         this.stateManager = new ChestStateManager() {
             protected void onChestOpened(World world, BlockPos pos, BlockState state) {
@@ -94,14 +94,14 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 
     public void onOpen(PlayerEntity player) {
         if (!player.isSpectator()) {
-            this.stateManager.openChest(this.getWorld(), this.getPos(), this.getCachedState());
+            this.stateManager.openChest(player,this.getWorld(), this.getPos(), this.getCachedState());
         }
 
     }
 
     public void onClose(PlayerEntity player) {
         if (!player.isSpectator()) {
-            this.stateManager.closeChest(this.getWorld(), this.getPos(), this.getCachedState());
+            this.stateManager.closeChest(player,this.getWorld(), this.getPos(), this.getCachedState());
         }
 
     }
