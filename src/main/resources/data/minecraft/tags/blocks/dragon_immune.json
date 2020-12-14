@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:obsidian_bricks",
+	"blockus:obsidian_bricks_stairs",
+    "blockus:obsidian_bricks_slab",
+	"blockus:obsidian_bricks_wall",
+	"blockus:obsidian_pillar",
+	"blockus:obsidian_circle_pavement",
+	"blockus:obsidian_reinforced_door",
+    "blockus:obsidian_reinforced_trapdoor",
+	"blockus:glowing_obsidian",
+	"blockus:legacy_crying_obsidian",
+	"blockus:legacy_glowing_obsidian",
+    "blockus:nether_stars_block"
+  ]
+}

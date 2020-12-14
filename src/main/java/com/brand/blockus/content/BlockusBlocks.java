@@ -179,6 +179,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block OBSIDIAN_CIRCLE_PAVEMENT = registerCirclePavement("obsidian", OBSIDIAN_BRICKS);
     public static final Block OBSIDIAN_REINFORCED_DOOR = registerDoor2("obsidian_reinforced", 50.0F, 1200.0F, Material.METAL, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 3, MapColor.BLACK);
     public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = registerTrapdoor2("obsidian_reinforced", 50.0F, 1200.0F, Material.METAL, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 3, MapColor.BLACK);
+    public static final Block GLOWING_OBSIDIAN = registerLightBlock("glowing_obsidian", 50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 15, MapColor.BLACK);
 
     // Quartz Blocks
     public static final Block QUARTZ_TILES = registerBlockCopy("quartz_tiles", Blocks.QUARTZ_BLOCK);
@@ -774,7 +775,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_SPONGE = register("legacy_sponge", new SpongeBlockBase(FabricBlockSettings.copy(Blocks.SPONGE)));
     public static final Block LEGACY_CRYING_OBSIDIAN = registerBlockCopy("legacy_crying_obsidian", Blocks.CRYING_OBSIDIAN);
     public static final Block LEGACY_STONECUTTER = register("legacy_stonecutter", new Block(FabricBlockSettings.of(Material.STONE, MapColor.STONE).strength(1.5f, 17.5f).sounds(BlockSoundGroup.STONE).requiresTool()));
-    public static final Block GLOWING_OBSIDIAN = registerLightBlock("legacy_glowing_obsidian", 1.5f, 6000.0f, Material.STONE, BlockSoundGroup.STONE, 15, MapColor.BLACK);
+    public static final Block LEGACY_GLOWING_OBSIDIAN = registerLightBlock("legacy_glowing_obsidian", 50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MapColor.BLACK);
     public static final Block NETHER_REACTOR_CORE = register("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
 
 }
