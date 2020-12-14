@@ -1,14 +1,8 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:water_bucket"
-    },
-    {
-      "item": "minecraft:obsidian"
-    }
-  ],
-  "result": {
-    "item": "blockus:legacy_crying_obsidian"
-  }
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:crying_obsidian"
+  },
+  "result": "blockus:legacy_crying_obsidian",
+  "count": 1
 }

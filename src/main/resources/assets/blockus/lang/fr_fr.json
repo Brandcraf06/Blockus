@@ -335,6 +335,7 @@
 	"block.blockus.netherrack_circle_pavement": "Pavé circulaire en netherrack",
 	"block.blockus.prismarine_circle_pavement": "Pavé circulaire en prismarine",
 	"block.blockus.nether_stars_block": "Bloc d'étoiles du Nether",	
+	
 	"block.blockus.obsidian_bricks": "Briques d'obsidienne",
 	"block.blockus.obsidian_bricks_stairs": "Escalier en briques d'obsidienne",
 	"block.blockus.obsidian_bricks_slab": "Dalle de briques d'obsidienne",
@@ -343,6 +344,7 @@
 	"block.blockus.obsidian_circle_pavement": "Pavé circulaire en obsidienne",
 	"block.blockus.obsidian_reinforced_door": "Porte blindée en obsidienne",
 	"block.blockus.obsidian_reinforced_trapdoor": "Trappe blindée en obsidienne",
+    "block.blockus.glowing_obsidian": "Obsidienne lumineuse",
 	
 	
 	"block.blockus.lava_bricks": "Briques de lave",
