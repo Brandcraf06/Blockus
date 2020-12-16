@@ -27,9 +27,6 @@
 	  "com.brand.blockus.BlockusClient"
     ]
   },
-  "mixins": [
-      "blockus.mixins.json"
-  ],
    "depends": {
     "fabricloader": ">=0.8.8",
     "fabric": "*",

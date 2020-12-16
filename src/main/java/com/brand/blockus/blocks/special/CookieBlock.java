@@ -1,6 +1,6 @@
 package com.brand.blockus.blocks.special;
 
-import com.brand.blockus.BlockusProperties;
+import com.brand.blockus.utils.BlockusProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
