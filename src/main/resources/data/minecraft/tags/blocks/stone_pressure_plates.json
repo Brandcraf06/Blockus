@@ -3,11 +3,11 @@
   "values": [
     "blockus:polished_andesite_pressure_plate",
     "blockus:polished_diorite_pressure_plate",
-	"blockus:polished_granite_pressure_plate",
-	"blockus:limestone_pressure_plate",
+    "blockus:polished_granite_pressure_plate",
+    "blockus:limestone_pressure_plate",
     "blockus:marble_pressure_plate",
-	"blockus:bluestone_pressure_plate",
-	"blockus:polished_netherrack_pressure_plate",
-	"blockus:polished_end_stone_pressure_plate"
+    "blockus:bluestone_pressure_plate",
+    "blockus:polished_netherrack_pressure_plate",
+    "blockus:polished_end_stone_pressure_plate"
   ]
 }

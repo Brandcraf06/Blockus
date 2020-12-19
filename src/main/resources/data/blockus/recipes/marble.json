@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:calcite"
+    },
+    {
+      "item": "blockus:limestone"
+    }
+  ],
+  "result": {
+    "item": "blockus:marble",
+    "count": 2
+  }
+}

@@ -139,15 +139,15 @@ public class BlocksRegistration {
 
     // Plants
     public static Block registerPottedPlant(Block content, String id) {
-        return register_noitem("potted_" + id, new FlowerPotBlock(content, FabricBlockSettings.of(Material.SUPPORTED).breakInstantly().nonOpaque()));
+        return register_noitem("potted_" + id, new FlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).breakInstantly().nonOpaque()));
     }
 
     public static Block registerLargeFlowerPot(Block content, String id) {
-        return register_decoration(id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).nonOpaque()));
+        return register_decoration(id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque()));
     }
 
     public static Block registerPottedDoublePlant(Block content, String id) {
-        return register_noitem("potted_" + id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).nonOpaque()));
+        return register_noitem("potted_" + id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque()));
     }
 
     public static Block registerLeaves(String id, Block base) {
