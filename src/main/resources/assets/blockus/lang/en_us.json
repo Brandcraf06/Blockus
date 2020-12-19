@@ -3,13 +3,13 @@
     "itemGroup.blockus.blockus_decorations": "Decoration Blocks §3(Blockus)",
     "itemGroup.blockus.blockus_redstone": "Redstone §3(Blockus)",
 	"blockus.blockItem.givespeed": "Gives Speed III effect to player standing on it.",
-		
+
     "block.blockus.blaze_bricks": "Blaze Bricks",
 	"block.blockus.blaze_bricks_wall": "Blaze Brick Wall",
 	"block.blockus.blaze_bricks_stairs": "Blaze Brick Stairs",
 	"block.blockus.blaze_bricks_slab": "Blaze Brick Slab",
 	"block.blockus.blaze_pillar": "Blaze Pillar",
-	
+
 	"block.blockus.rough_sandstone": "Rough Sandstone",
 	"block.blockus.rough_sandstone_stairs": "Rough Sandstone Stairs",
 	"block.blockus.rough_sandstone_slab": "Rough Sandstone Slab",
@@ -19,7 +19,8 @@
 	"block.blockus.small_sandstone_bricks": "Small Sandstone Bricks",
 	"block.blockus.small_sandstone_bricks_stairs": "Small Sandstone Brick Stairs",
 	"block.blockus.small_sandstone_bricks_slab": "Small Sandstone Brick Slab",
-	
+	"block.blockus.sandstone_pillar": "Sandstone Pillar",
+
 	"block.blockus.rough_red_sandstone": "Rough Red Sandstone",
 	"block.blockus.rough_red_sandstone_stairs": "Rough Red Sandstone Stairs",
 	"block.blockus.rough_red_sandstone_slab": "Rough Red Sandstone Slab",
@@ -29,18 +30,40 @@
 	"block.blockus.small_red_sandstone_bricks": "Small Red Sandstone Bricks",
 	"block.blockus.small_red_sandstone_bricks_stairs": "Small Red Sandstone Brick Stairs",
 	"block.blockus.small_red_sandstone_bricks_slab": "Small Red Sandstone Brick Slab",
-	
+	"block.blockus.red_sandstone_pillar": "Red Sandstone Pillar",
+
+	"block.blockus.soul_sandstone": "Soul Sandstone",
+	"block.blockus.soul_sandstone_stairs": "Soul Sandstone Stairs",
+	"block.blockus.soul_sandstone_slab": "Soul Sandstone Slab",
+	"block.blockus.soul_sandstone_wall": "Soul Sandstone Wall",
+	"block.blockus.smooth_soul_sandstone": "Smooth Soul Sandstone",
+	"block.blockus.smooth_soul_sandstone_stairs": "Smooth Soul Sandstone Stairs",
+	"block.blockus.smooth_soul_sandstone_slab": "Smooth Soul Sandstone Slab",
+	"block.blockus.rough_soul_sandstone": "Rough Soul Sandstone",
+	"block.blockus.rough_soul_sandstone_stairs": "Rough Soul Sandstone Stairs",
+	"block.blockus.rough_soul_sandstone_slab": "Rough Soul Sandstone Slab",
+	"block.blockus.soul_sandstone_bricks": "Soul Sandstone Bricks",
+	"block.blockus.soul_sandstone_bricks_stairs": "Soul Sandstone Brick Stairs",
+	"block.blockus.soul_sandstone_bricks_slab": "Soul Sandstone Brick Slab",
+	"block.blockus.cut_soul_sandstone": "Cut Soul Sandstone",
+	"block.blockus.cut_soul_sandstone_slab": "Cut Soul Sandstone Slab",
+	"block.blockus.chiseled_soul_sandstone": "Chiseled Soul Sandstone",
+	"block.blockus.small_soul_sandstone_bricks": "Small Soul Sandstone Bricks",
+	"block.blockus.small_soul_sandstone_bricks_stairs": "Small Soul Sandstone Brick Stairs",
+	"block.blockus.small_soul_sandstone_bricks_slab": "Small Soul Sandstone Brick Slab",
+	"block.blockus.soul_sandstone_pillar": "Soul Sandstone Pillar",
+
 	"block.blockus.paper_block": "Paper Block",
 	"block.blockus.burned_paper_block": "Burned Paper Block",
 	"block.blockus.paper_wall": "Paper Wall",
 	"block.blockus.paper_door": "Paper Door",
 	"block.blockus.paper_trapdoor": "Paper Trapdoor",
-	
+
 	"block.blockus.stars_block": "Stars Block",
 	"block.blockus.ender_block": "Ender Block",
 	"block.blockus.rotten_flesh_block": "Rotten Flesh Block",
 	"block.blockus.sugar_block": "Sugar Block",
-	
+
 	"block.blockus.smooth_stone_stairs": "Smooth Stone Stairs",
 	"block.blockus.stone_bricks_pillar": "Stone Brick Pillar",
     "block.blockus.white_stone_bricks": "White Stone Bricks",
@@ -58,7 +81,7 @@
     "block.blockus.green_stone_bricks": "Green Stone Bricks",
     "block.blockus.red_stone_bricks": "Red Stone Bricks",
     "block.blockus.black_stone_bricks": "Black Stone Bricks",
-	
+
 	"block.blockus.green_orange_colored_tiles": "Colored Tiles (Green & Orange)",
     "block.blockus.lime_yellow_colored_tiles": "Colored Tiles (Lime & Yellow)",
     "block.blockus.light_blue_yellow_colored_tiles": "Colored Tiles (Light Blue & Yellow)",
@@ -76,7 +99,7 @@
     "block.blockus.purple_blue_colored_tiles": "Colored Tiles (Purple & Blue)",
     "block.blockus.green_brown_colored_tiles": "Colored Tiles (Green & Brown)",
 	"block.blockus.rainbow_colored_tiles": "Colored Tiles (Rainbow)",
-	
+
 	"block.blockus.bamboo_planks": "Bamboo Planks",
 	"block.blockus.bamboo_door": "Bamboo Door",
 	"block.blockus.bamboo_slab": "Bamboo Slab",
@@ -105,7 +128,7 @@
 	"block.blockus.smooth_bluestone_slab": "Smooth Bluestone Slab",
 	"block.blockus.smooth_bluestone_stairs": "Smooth Bluestone Stairs",
 	"block.blockus.large_bricks": "Large Bricks",
-	
+
 	"block.blockus.white_patterned_wool": "White Patterned Wool",
     "block.blockus.orange_patterned_wool": "Orange Patterned Wool",
     "block.blockus.magenta_patterned_wool": "Magenta Patterned Wool",
@@ -122,7 +145,7 @@
     "block.blockus.green_patterned_wool": "Green Patterned Wool",
     "block.blockus.red_patterned_wool": "Red Patterned Wool",
     "block.blockus.black_patterned_wool": "Black Patterned Wool",
-	
+
 	"block.blockus.stone_door": "Stone Door",
 	"block.blockus.stone_trapdoor": "Stone Trapdoor",
 	"block.blockus.oak_barrel": "Oak Barrel",
@@ -145,27 +168,7 @@
 	"block.blockus.red_nether_pillar": "Red Nether Pillar",
 	"block.blockus.smooth_nether_bricks": "Smooth Nether Bricks",
 	"block.blockus.smooth_red_nether_bricks": "Smooth Red Nether Bricks",
-	
-	"block.blockus.soul_sandstone": "Soul Sandstone",
-	"block.blockus.soul_sandstone_stairs": "Soul Sandstone Stairs",
-	"block.blockus.soul_sandstone_slab": "Soul Sandstone Slab",
-	"block.blockus.soul_sandstone_wall": "Soul Sandstone Wall",
-	"block.blockus.smooth_soul_sandstone": "Smooth Soul Sandstone",
-	"block.blockus.smooth_soul_sandstone_stairs": "Smooth Soul Sandstone Stairs",
-	"block.blockus.smooth_soul_sandstone_slab": "Smooth Soul Sandstone Slab",
-	"block.blockus.rough_soul_sandstone": "Rough Soul Sandstone",
-	"block.blockus.rough_soul_sandstone_stairs": "Rough Soul Sandstone Stairs",
-	"block.blockus.rough_soul_sandstone_slab": "Rough Soul Sandstone Slab",
-	"block.blockus.soul_sandstone_bricks": "Soul Sandstone Bricks",
-	"block.blockus.soul_sandstone_bricks_stairs": "Soul Sandstone Brick Stairs",
-	"block.blockus.soul_sandstone_bricks_slab": "Soul Sandstone Brick Slab",
-	"block.blockus.cut_soul_sandstone": "Cut Soul Sandstone",
-	"block.blockus.cut_soul_sandstone_slab": "Cut Soul Sandstone Slab",
-	"block.blockus.chiseled_soul_sandstone": "Chiseled Soul Sandstone",
-	"block.blockus.small_soul_sandstone_bricks": "Small Soul Sandstone Bricks",
-	"block.blockus.small_soul_sandstone_bricks_stairs": "Small Soul Sandstone Brick Stairs",
-	"block.blockus.small_soul_sandstone_bricks_slab": "Small Soul Sandstone Brick Slab",
-	
+
 	"block.blockus.quartz_bricks": "Quartz Tiles",
 	"block.blockus.wooden_frame": "Wooden Frame",
 	"block.blockus.membrane_block": "Membrane Block",
@@ -186,26 +189,26 @@
 	"block.blockus.caution_block": "Caution Block",
 	"block.blockus.caution_barrier": "Caution Barrier",
 	"block.blockus.road_barrier": "Road Barrier",
-	
+
 	"block.blockus.charred_nether_bricks": "Charred Nether Bricks",
 	"block.blockus.charred_nether_bricks_wall": "Charred Nether Brick Wall",
 	"block.blockus.charred_nether_bricks_stairs": "Charred Nether Brick Stairs",
 	"block.blockus.charred_nether_bricks_slab": "Charred Nether Brick Slab",
 	"block.blockus.charred_nether_pillar": "Charred Nether Pillar",
 	"block.blockus.smooth_charred_nether_bricks": "Smooth Charred Nether Bricks",
-	
+
 	"block.blockus.charred_bricks": "Charred Bricks",
 	"block.blockus.charred_bricks_wall": "Charred Brick Wall",
 	"block.blockus.charred_bricks_stairs": "Charred Brick Stairs",
 	"block.blockus.charred_bricks_slab": "Charred Brick Slab",
-	
+
 	"block.blockus.soaked_bricks": "Soaked Bricks",
 	"block.blockus.soaked_bricks_wall": "Soaked Brick Wall",
 	"block.blockus.soaked_bricks_stairs": "Soaked Brick Stairs",
 	"block.blockus.soaked_bricks_slab": "Soaked Brick Slab",
-	
-	
-	
+
+
+
 	"block.blockus.beveled_glass": "Beveled Glass",
 	"block.blockus.white_beveled_glass": "White Beveled Glass",
     "block.blockus.orange_beveled_glass": "Orange Beveled Glass",
@@ -240,16 +243,16 @@
     "block.blockus.green_beveled_glass_pane": "Green Beveled Glass Pane",
     "block.blockus.red_beveled_glass_pane": "Red Beveled Glass Pane",
     "block.blockus.black_beveled_glass_pane": "Black Beveled Glass Pane",
-	
+
 	"block.blockus.magma_bricks": "Magma Bricks",
 	"block.blockus.magma_bricks_wall": "Magma Brick Wall",
 	"block.blockus.magma_bricks_stairs": "Magma Brick Stairs",
 	"block.blockus.magma_bricks_slab": "Magma Brick Slab",
-	
+
 	"block.blockus.chiseled_end_stone_bricks": "Chiseled End Stone Bricks",
 	"block.blockus.zigzagged_end_stone_bricks": "Zigzagged End Stone Bricks",
 	"block.blockus.polished_end_stone": "Polished End Stone",
-	
+
 	"block.blockus.white_glazed_terracotta_pillar": "White Glazed Terracotta Pillar",
     "block.blockus.orange_glazed_terracotta_pillar": "Orange Glazed Terracotta Pillar",
     "block.blockus.magenta_glazed_terracotta_pillar": "Magenta Glazed Terracotta Pillar",
@@ -266,7 +269,7 @@
     "block.blockus.green_glazed_terracotta_pillar": "Green Glazed Terracotta Pillar",
     "block.blockus.red_glazed_terracotta_pillar": "Red Glazed Terracotta Pillar",
 	"block.blockus.black_glazed_terracotta_pillar": "Black Glazed Terracotta Pillar",
-	
+
 	"block.blockus.limestone": "Limestone",
 	"block.blockus.limestone_stairs": "Limestone Stairs",
 	"block.blockus.limestone_slab": "Limestone Slab",
@@ -276,7 +279,7 @@
 	"block.blockus.limestone_bricks_wall": "Limestone Brick Wall",
     "block.blockus.limestone_pillar": "Limestone Pillar",
 	"block.blockus.chiseled_limestone": "Chiseled Limestone",
-	
+
 	"block.blockus.asphalt": "Asphalt",
 	"block.blockus.white_asphalt": "White Asphalt",
     "block.blockus.orange_asphalt": "Orange Asphalt",
@@ -325,7 +328,7 @@
     "block.blockus.brown_asphalt_slab": "Brown Asphalt Slab",
     "block.blockus.green_asphalt_slab": "Green Asphalt Slab",
     "block.blockus.red_asphalt_slab": "Red Asphalt Slab",
-	
+
     "block.blockus.paper_lamp": "Paper Lamp",
     "block.blockus.redstone_sand": "Redstone Sand",
 	"block.blockus.stone_circle_pavement": "Stone Circle Pavement",
@@ -336,9 +339,10 @@
 	"block.blockus.quartz_circle_pavement": "Quartz Circle Pavement",
 	"block.blockus.netherrack_circle_pavement": "Netherrack Circle Pavement",
 	"block.blockus.prismarine_circle_pavement": "Prismarine Circle Pavement",
-	"block.blockus.nether_stars_block": "Nether Stars Block",	
-	
+	"block.blockus.nether_stars_block": "Nether Stars Block",
+
 	"block.blockus.obsidian_bricks": "Obsidian Bricks",
+	"block.blockus.cracked_obsidian_bricks": "Cracked Obsidian Bricks",
 	"block.blockus.obsidian_bricks_stairs": "Obsidian Brick Stairs",
 	"block.blockus.obsidian_bricks_slab": "Obsidian Brick Slab",
 	"block.blockus.obsidian_bricks_wall": "Obsidian Brick Wall",
@@ -347,24 +351,24 @@
 	"block.blockus.obsidian_reinforced_door": "Obsidian Reinforced Door",
 	"block.blockus.obsidian_reinforced_trapdoor": "Obsidian Reinforced Trapdoor",
     "block.blockus.glowing_obsidian": "Glowing Obsidian",
-	
+
 	"block.blockus.lava_bricks": "Lava Bricks",
 	"block.blockus.lava_bricks_wall": "Lava Brick Wall",
 	"block.blockus.lava_bricks_stairs": "Lava Brick Stairs",
 	"block.blockus.lava_bricks_slab": "Lava Brick Slab",
 	"block.blockus.chiseled_lava_bricks": "Chiseled Lava Bricks",
-	
+
 	"block.blockus.water_bricks": "Water Bricks",
 	"block.blockus.water_bricks_wall": "Water Brick Wall",
 	"block.blockus.water_bricks_stairs": "Water Brick Stairs",
 	"block.blockus.water_bricks_slab": "Water Brick Slab",
 	"block.blockus.chiseled_water_bricks": "Chiseled Water Bricks",
-	
+
 	"block.blockus.zigzagged_bricks": "Zigzagged Bricks",
     "block.blockus.zigzagged_nether_bricks": "Zigzagged Nether Bricks",
     "block.blockus.zigzagged_red_nether_bricks": "Zigzagged Red Nether Bricks",
     "block.blockus.zigzagged_charred_nether_bricks": "Zigzagged Charred Nether Bricks",
-	
+
 	"block.blockus.marble": "Marble",
 	"block.blockus.marble_stairs": "Marble Stairs",
 	"block.blockus.marble_slab": "Marble Slab",
@@ -376,13 +380,13 @@
 	"block.blockus.chiseled_marble_pillar": "Chiseled Marble Pillar",
 	"block.blockus.chiseled_marble": "Chiseled Marble",
 	"block.blockus.marble_circle_pavement": "Marble Circle Pavement",
-	
+
 	"block.blockus.rainbow_block": "Rainbow Block",
 	"block.blockus.rainbow_bricks": "Rainbow Bricks",
 	"block.blockus.rainbow_bricks_wall": "Rainbow Brick Wall",
 	"block.blockus.rainbow_bricks_stairs": "Rainbow Brick Stairs",
 	"block.blockus.rainbow_bricks_slab": "Rainbow Brick Slab",
-	
+
 	"block.blockus.rainbow_lamp": "Rainbow Lamp",
 	"block.blockus.rainbow_lamp_lit": "Lit Rainbow Lamp",
 	"block.blockus.redstone_lamp_lit": "Lit Redstone Lamp",
@@ -416,7 +420,7 @@
 	"block.blockus.green_redstone_lamp_lit": "Lit Green Redstone Lamp",
 	"block.blockus.red_redstone_lamp": "Red Redstone Lamp",
 	"block.blockus.red_redstone_lamp_lit": "Lit Red Redstone Lamp",
-	
+
 	"block.blockus.cod_crate": "Cod Crate",
 	"block.blockus.salmon_crate": "Salmon Crate",
 	"block.blockus.pufferfish_crate": "Pufferfish Crate",
@@ -431,19 +435,19 @@
 	"block.blockus.bread_box": "Bread Box",
 	"block.blockus.chorus_block": "Chorus Block",
 	"block.blockus.cookie_block": "Block of Cookie",
-	
+
 	"block.blockus.small_hedge": "Oak Small Hedge",
 	"block.blockus.spruce_small_hedge": "Spruce Small Hedge",
 	"block.blockus.birch_small_hedge": "Birch Small Hedge",
 	"block.blockus.jungle_small_hedge": "Jungle Small Hedge",
 	"block.blockus.acacia_small_hedge": "Acacia Small Hedge",
 	"block.blockus.dark_oak_small_hedge": "Dark Oak Small Hedge",
-	
+
 	"block.blockus.honeycomb_bricks": "Honeycomb Bricks",
 	"block.blockus.honeycomb_bricks_wall": "Honeycomb Brick Wall",
 	"block.blockus.honeycomb_bricks_stairs": "Honeycomb Brick Stairs",
 	"block.blockus.honeycomb_bricks_slab": "Honeycomb Brick Slab",
-	
+
 	"block.blockus.charred_planks": "Charred Planks",
 	"block.blockus.charred_door": "Charred Wooden Door",
 	"block.blockus.charred_slab": "Charred Wooden Slab",
@@ -454,7 +458,7 @@
 	"block.blockus.charred_fence_gate": "Charred Fence Gate",
 	"block.blockus.charred_trapdoor": "Charred Wooden Trapdoor",
 	"block.blockus.charred_barrel": "Charred Barrel",
-	
+
 	"block.blockus.white_futurneo_block": "White Futurneo Block",
 	"block.blockus.orange_futurneo_block": "Orange Futurneo Block",
 	"block.blockus.magenta_futurneo_block": "Magenta Futurneo Block",
@@ -472,14 +476,14 @@
 	"block.blockus.green_futurneo_block": "Green Futurneo Block",
 	"block.blockus.red_futurneo_block": "Red Futurneo Block",
 	"block.blockus.black_futurneo_block": "Black Futurneo Block",
-	
+
 	"block.blockus.iron_gate": "Iron Gate",
 	"block.blockus.golden_gate": "Golden Gate",
     "block.blockus.sandy_bricks": "Sandy Bricks",
 	"block.blockus.sandy_bricks_wall": "Sandy Brick Wall",
 	"block.blockus.sandy_bricks_stairs": "Sandy Brick Stairs",
 	"block.blockus.sandy_bricks_slab": "Sandy Brick Slab",
-	
+
     "block.blockus.white_oak_planks": "White Oak Planks",
 	"block.blockus.white_oak_door": "White Oak Door",
 	"block.blockus.white_oak_slab": "White Oak Slab",
@@ -498,9 +502,9 @@
 	"block.blockus.potted_white_oak_sapling": "Potted White Oak Sapling",
 	"block.blockus.white_oak_small_hedge": "White Oak Small Hedge",
 	"block.blockus.white_oak_barrel": "White Oak Barrel",
-	
+
 	"block.blockus.lantern_block": "Lantern Block",
-	
+
 	"block.blockus.polished_andesite_pillar": "Polished Andesite Pillar",
 	"block.blockus.polished_diorite_pillar": "Polished Diorite Pillar",
 	"block.blockus.polished_granite_pillar": "Polished Granite Pillar",
@@ -512,20 +516,20 @@
 	"block.blockus.chiseled_andesite_bricks": "Chiseled Andesite Bricks",
 	"block.blockus.chiseled_diorite_bricks": "Chiseled Diorite Bricks",
 	"block.blockus.chiseled_granite_bricks": "Chiseled Granite Bricks",
-	
-		
+
+
 	"block.blockus.teal_nether_bricks": "Teal Nether Bricks",
 	"block.blockus.teal_nether_brick_slab": "Teal Nether Brick Slab",
 	"block.blockus.teal_nether_brick_stairs": "Teal Nether Brick Stairs",
 	"block.blockus.teal_nether_brick_wall": "Teal Nether Brick Wall",
 	"block.blockus.smooth_teal_nether_bricks": "Smooth Teal Nether Bricks",
 	"block.blockus.teal_nether_pillar": "Teal Nether Pillar",
-	
+
 	"block.blockus.weight_storage_cube": "Weight Storage Cube",
 	"block.blockus.companion_cube": "Companion Cube",
-	
+
 	"block.blockus.soul_o_lantern": "Soul o'Lantern",
-	
+
 	"block.blockus.large_flower_pot": "Large Flower Pot",
 	"block.blockus.potted_rose_bush": "Potted Rose Bush",
 	"block.blockus.potted_lilac": "Potted Lilac",
@@ -540,39 +544,39 @@
 	"block.blockus.potted_white_oak": "Potted White Oak",
 	"block.blockus.potted_huge_red_mushroom": "Potted Huge Red Mushroom",
 	"block.blockus.potted_huge_brown_mushroom": "Potted Huge Brown Mushroom",
-	
+
 	"block.blockus.potted_huge_crimson_fungus": "Potted Huge Crimson Fungus",
-	"block.blockus.potted_huge_warped_fungus": "Potted Huge Warped Fungus",	
-	
+	"block.blockus.potted_huge_warped_fungus": "Potted Huge Warped Fungus",
+
 	"block.blockus.soul_lantern_block": "Soul Lantern Block",
 	"block.blockus.golden_chain": "Golden Chain",
 	"block.blockus.golden_bars": "Golden Bars",
-	
+
 	"block.blockus.crimson_warty_blackstone_bricks": "Crimson Warty Blackstone Bricks",
 	"block.blockus.crimson_warty_blackstone_bricks_slab": "Crimson Warty Blackstone Brick Slab",
 	"block.blockus.crimson_warty_blackstone_bricks_stairs": "Crimson Warty Blackstone Brick Stairs",
 	"block.blockus.crimson_warty_blackstone_bricks_wall": "Crimson Warty Blackstone Brick Wall",
-	
+
 	"block.blockus.warped_warty_blackstone_bricks": "Warped Warty Blackstone Bricks",
 	"block.blockus.warped_warty_blackstone_bricks_slab": "Warped Warty Blackstone Brick Slab",
 	"block.blockus.warped_warty_blackstone_bricks_stairs": "Warped Warty Blackstone Brick Stairs",
 	"block.blockus.warped_warty_blackstone_bricks_wall": "Warped Warty Blackstone Brick Wall",
-	
+
 	"block.blockus.zigzagged_teal_nether_bricks": "Zigzagged Teal Nether Bricks",
 	"block.blockus.zigzagged_polished_blackstone": "Zigzagged Polished Blackstone",
-	
+
 	"block.blockus.crimson_barrel": "Crimson Barrel",
 	"block.blockus.warped_barrel": "Warped Barrel",
-	
+
     "block.blockus.polished_blackstone_pillar": "Polished Blackstone Pillar",
 	"block.blockus.polished_blackstone_circle_pavement": "Polished Blackstone Circle Pavement",
-	
+
 	"block.blockus.lava_polished_blackstone_bricks": "Lava Polished Blackstone Bricks",
 	"block.blockus.lava_polished_blackstone_wall": "Lava Polished Blackstone Brick Wall",
 	"block.blockus.lava_polished_blackstone_stairs": "Lava Polished Blackstone Brick Stairs",
 	"block.blockus.lava_polished_blackstone_slab": "Lava Polished Blackstone Brick Slab",
 	"block.blockus.chiseled_lava_polished_blackstone": "Chiseled Lava Polished Blackstone",
-	
+
 	"block.blockus.oak_timber_frame": "Oak Timber Frame",
 	"block.blockus.spruce_timber_frame": "Spruce Timber Frame",
 	"block.blockus.birch_timber_frame": "Birch Timber Frame",
@@ -584,7 +588,7 @@
 	"block.blockus.bamboo_timber_frame": "Bamboo Timber Frame",
 	"block.blockus.crimson_timber_frame": "Crimson Timber Frame",
 	"block.blockus.warped_timber_frame": "Warped Timber Frame",
-	
+
 	"block.blockus.oak_diagonal_timber_frame": "Oak Diagonal Timber Frame",
 	"block.blockus.spruce_diagonal_timber_frame": "Spruce Diagonal Timber Frame",
 	"block.blockus.birch_diagonal_timber_frame": "Birch Diagonal Timber Frame",
@@ -596,7 +600,7 @@
 	"block.blockus.bamboo_diagonal_timber_frame": "Bamboo Diagonal Timber Frame",
 	"block.blockus.crimson_diagonal_timber_frame": "Crimson Diagonal Timber Frame",
 	"block.blockus.warped_diagonal_timber_frame": "Warped Diagonal Timber Frame",
-	
+
 	"block.blockus.oak_cross_timber_frame": "Oak Cross Timber Frame",
 	"block.blockus.spruce_cross_timber_frame": "Spruce Cross Timber Frame",
 	"block.blockus.birch_cross_timber_frame": "Birch Cross Timber Frame",
@@ -608,8 +612,8 @@
 	"block.blockus.bamboo_cross_timber_frame": "Bamboo Cross Timber Frame",
 	"block.blockus.crimson_cross_timber_frame": "Crimson Cross Timber Frame",
 	"block.blockus.warped_cross_timber_frame": "Warped Cross Timber Frame",
-	
-	"block.blockus.shingles": "Shingles",	
+
+	"block.blockus.shingles": "Shingles",
 	"block.blockus.white_shingles": "White Shingles",
     "block.blockus.orange_shingles": "Orange Shingles",
     "block.blockus.magenta_shingles": "Magenta Shingles",
@@ -626,7 +630,7 @@
     "block.blockus.green_shingles": "Green Shingles",
     "block.blockus.red_shingles": "Red Shingles",
 	"block.blockus.black_shingles": "Black Shingles",
-	"block.blockus.shingles_stairs": "Shingles Stairs",	
+	"block.blockus.shingles_stairs": "Shingles Stairs",
 	"block.blockus.white_shingles_stairs": "White Shingles Stairs",
     "block.blockus.orange_shingles_stairs": "Orange Shingles Stairs",
     "block.blockus.magenta_shingles_stairs": "Magenta Shingles Stairs",
@@ -660,7 +664,7 @@
     "block.blockus.green_shingles_slab": "Green Shingles Slab",
     "block.blockus.red_shingles_slab": "Red Shingles Slab",
 	"block.blockus.black_shingles_slab": "Black Shingles Slab",
-	
+
 	"block.blockus.oak_small_logs": "Small Oak Logs",
 	"block.blockus.spruce_small_logs": "Small Spruce Logs",
 	"block.blockus.birch_small_logs": "Small Birch Logs",
@@ -670,17 +674,21 @@
 	"block.blockus.white_oak_small_logs": "Small White Oak Logs",
 	"block.blockus.crimson_small_stems": "Small Crimson Stems",
 	"block.blockus.warped_small_stems": "Small Warped Stems",
-	
+
 	"block.blockus.thatch": "Thatch",
 	"block.blockus.thatch_stairs": "Thatch Stairs",
 	"block.blockus.thatch_slab": "Thatch Slab",
+	
 	"block.blockus.iron_plating": "Iron Plating",
-	"block.blockus.dirt_path": "Dirt Path",	
+	"block.blockus.iron_plating_stairs": "Iron Plating Stairs",
+	"block.blockus.iron_plating_slab": "Iron Plating Slab",
+	
+	"block.blockus.dirt_path": "Dirt Path",
 	"block.blockus.netherite_stairs": "Swaggiest Stairs Ever",
 	"block.blockus.netherite_slab": "Swaggiest Slab Ever",
 
 	"block.blockus.sturdy_stone": "Sturdy Stone",
-	
+
 	"block.blockus.polished_andesite_pressure_plate": "Polished Andesite Pressure Plate",
 	"block.blockus.polished_andesite_button": "Polished Andesite Button",
 	"block.blockus.polished_granite_pressure_plate": "Polished Granite Pressure Plate",
@@ -697,10 +705,18 @@
 	"block.blockus.polished_netherrack_button": "Polished Netherrack Button",
 	"block.blockus.polished_end_stone_pressure_plate": "Polished End Stone Pressure Plate",
 	"block.blockus.polished_end_stone_button": "Polished End Stone Button",
-	
+
+	"block.blockus.snow_bricks": "Snow Bricks",
+	"block.blockus.snow_bricks_wall": "Snow Brick Wall",
+	"block.blockus.snow_bricks_stairs": "Snow Brick Stairs",
+	"block.blockus.snow_bricks_slab": "Snow Brick Slab",
+	"block.blockus.snow_pillar": "Snow Pillar",
+	"block.blockus.ice_bricks": "Ice Bricks",
+	"block.blockus.ice_bricks_wall": "Ice Brick Wall",
+	"block.blockus.ice_pillar": "Ice Pillar",
+
 	"block.minecraft.nether_wart_block": "Crimson Wart Block",
-	
-	
+
     "block.blockus.legacy_bricks": "Bricks (Legacy)",
     "block.blockus.legacy_stonecutter": "Stonecutter (Legacy)",
     "block.blockus.legacy_grass_block": "Grass Block (Legacy)",

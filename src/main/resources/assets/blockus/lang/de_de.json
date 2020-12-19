@@ -275,7 +275,7 @@
 	"block.blockus.quartz_circle_pavement": "Kreisförmiges Quartzpflaster",
 	"block.blockus.netherrack_circle_pavement": "Kreisförmiges Netherrackpflaster",
 	"block.blockus.prismarine_circle_pavement": "Kreisförmiges Prismarinpflaster",
-	"block.blockus.nether_stars_block": "Nether Stern Block",	
+	"block.blockus.nether_stars_block": "Nether Stern Block",
 	"block.blockus.obsidian_bricks": "Obsidianziegel",
 	"block.blockus.obsidian_bricks_stairs": "ObsidianZiegelstufe",
 	"block.blockus.obsidian_bricks_slab": "Obsidianziegelstufe",
@@ -363,8 +363,8 @@
 	"block.blockus.jungle_small_hedge": "Kleine Jungleholzhecke",
 	"block.blockus.acacia_small_hedge": "Kleine Akazienhecke",
 	"block.blockus.dark_oak_small_hedge": "Kleine Dunkeleichenhecke",
-	
-	
+
+
     "block.blockus.legacy_bricks": "Ziegel (Alt)",
     "block.blockus.legacy_stonecutter": "Steinschneider (Alt)",
     "block.blockus.legacy_grass_block": "Gras Block (Alt)",
