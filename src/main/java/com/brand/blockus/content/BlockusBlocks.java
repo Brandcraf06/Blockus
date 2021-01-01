@@ -1,13 +1,20 @@
 package com.brand.blockus.content;
 
+import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
+import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
 import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
 import com.brand.blockus.blocks.special.*;
+import com.mojang.datafixers.types.Type;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class BlockusBlocks extends BlocksRegistration {
     // Stone
@@ -415,18 +422,6 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GOLDEN_APPLE_CRATE = registerCrates("golden_apple");
     public static final Block GOLDEN_CARROT_CRATE = registerCrates("golden_carrot");
 
-    // Barrels
-    public static final Block OAK_BARREL = registerBarrel("oak", Blocks.OAK_PLANKS.getDefaultMaterialColor());
-    public static final Block BIRCH_BARREL = registerBarrel("birch", Blocks.BIRCH_PLANKS.getDefaultMaterialColor());
-    public static final Block JUNGLE_BARREL = registerBarrel("jungle", Blocks.JUNGLE_PLANKS.getDefaultMaterialColor());
-    public static final Block ACACIA_BARREL = registerBarrel("acacia", Blocks.ACACIA_PLANKS.getDefaultMaterialColor());
-    public static final Block DARK_OAK_BARREL = registerBarrel("dark_oak", Blocks.DARK_OAK_PLANKS.getDefaultMaterialColor());
-    public static final Block CRIMSON_BARREL = registerBarrel("crimson", Blocks.CRIMSON_PLANKS.getDefaultMaterialColor());
-    public static final Block WARPED_BARREL = registerBarrel("warped", Blocks.WARPED_PLANKS.getDefaultMaterialColor());
-    public static final Block WHITE_OAK_BARREL = registerBarrel("white_oak", BlockusBlocks.WHITE_OAK_PLANKS.getDefaultMaterialColor());
-    public static final Block BAMBOO_BARREL = registerBarrel("bamboo", BlockusBlocks.BAMBOO_PLANKS.getDefaultMaterialColor());
-    public static final Block CHARRED_BARREL = registerBarrel("charred", BlockusBlocks.CHARRED_PLANKS.getDefaultMaterialColor());
-
     // Rainbow
     public static final Block RAINBOW_BLOCK = register("rainbow_block", new PillarBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.LIGHT_BLUE).strength(5.0f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
     public static final Block RAINBOW_BRICKS = register("rainbow_bricks", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.QUARTZ).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
@@ -759,8 +754,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ROAD_BARRIER_BLOCK = registerBarrier("road", 2f, 6.0f);
 
     // Netherite Blocks
-    public static final Block NETHERITE_STAIRS = registerStairs("netherite", Blocks.NETHERITE_BLOCK);
-    public static final Block NETHERITE_SLAB = registerSlab("netherite", Blocks.NETHERITE_BLOCK);
+    public static final Block NETHERITE_STAIRS = registerFireproofStairs("netherite", Blocks.NETHERITE_BLOCK);
+    public static final Block NETHERITE_SLAB = registerFireproofSlab("netherite", Blocks.NETHERITE_BLOCK);
 
     // Other
     public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.of(Material.WOOD, MaterialColor.BLACK).strength(5.0f, 6.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.PICKAXES, 1)));
@@ -797,4 +792,23 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_GLOWING_OBSIDIAN = registerLightBlock("legacy_glowing_obsidian", 50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MaterialColor.BLACK);
     public static final Block NETHER_REACTOR_CORE = register("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.LIGHT_BLUE).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
 
+    // Barrels
+    public static final BarrelBlockBase OAK_BARREL = new BarrelBlockBase("oak_barrel", Blocks.OAK_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase BIRCH_BARREL = new BarrelBlockBase("birch_barrel", Blocks.BIRCH_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase JUNGLE_BARREL = new BarrelBlockBase("jungle_barrel", Blocks.JUNGLE_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase ACACIA_BARREL = new BarrelBlockBase("acacia_barrel", Blocks.ACACIA_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase DARK_OAK_BARREL = new BarrelBlockBase("dark_oak_barrel", Blocks.DARK_OAK_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase CRIMSON_BARREL = new BarrelBlockBase("crimson_barrel", Blocks.CRIMSON_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase WARPED_BARREL = new BarrelBlockBase("warped_barrel", Blocks.WARPED_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase WHITE_OAK_BARREL = new BarrelBlockBase("white_oak_barrel", BlockusBlocks.WHITE_OAK_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase BAMBOO_BARREL = new BarrelBlockBase("bamboo_barrel", BlockusBlocks.BAMBOO_PLANKS.getDefaultMaterialColor());
+    public static final BarrelBlockBase CHARRED_BARREL = new BarrelBlockBase("charred_barrel", BlockusBlocks.CHARRED_PLANKS.getDefaultMaterialColor());
+
+    public static final BlockEntityType<WoodenBarrelBlockEntity> WOODEN_BARREL = registerBe("wooden_barrel", BlockEntityType.Builder.create(WoodenBarrelBlockEntity::new, OAK_BARREL, BIRCH_BARREL, JUNGLE_BARREL, ACACIA_BARREL, DARK_OAK_BARREL, CRIMSON_BARREL, WARPED_BARREL, WHITE_OAK_BARREL, BAMBOO_BARREL, CHARRED_BARREL));
+
+    @SuppressWarnings("rawtypes")
+    private static <T extends BlockEntity> BlockEntityType<T> registerBe(String name, BlockEntityType.Builder<T> builder) {
+        Type type = null;
+        return Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Blockus.MOD_ID, name), builder.build(type));
+    }
 }

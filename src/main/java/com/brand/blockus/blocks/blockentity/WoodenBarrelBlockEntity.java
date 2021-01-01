@@ -1,6 +1,5 @@
 package com.brand.blockus.blocks.blockentity;
 
-import com.brand.blockus.content.BlockEntities;
 import com.brand.blockus.content.BlockusBlocks;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
@@ -20,19 +19,20 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
 
 public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     private DefaultedList<ItemStack> inventory;
     private int viewerCount;
 
-    private WoodenBarrelBlockEntity(BlockEntityType<?> blockEntityType_1) {
-        super(blockEntityType_1);
+    private WoodenBarrelBlockEntity(BlockEntityType<?> type) {
+        super(type);
         this.inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
     }
 
     public WoodenBarrelBlockEntity() {
-        this(BlockEntities.WOODEN_BARREL);
+        this(BlockusBlocks.WOODEN_BARREL);
     }
 
     public CompoundTag toTag(CompoundTag tag) {
@@ -40,15 +40,17 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
         if (!this.serializeLootTable(tag)) {
             Inventories.toTag(tag, this.inventory);
         }
+
         return tag;
     }
 
-    public void fromTag(BlockState state, CompoundTag compoundTag) {
-        super.fromTag(state, compoundTag);
+    public void fromTag(BlockState state, CompoundTag tag) {
+        super.fromTag(state, tag);
         this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
-        if (!this.deserializeLootTable(compoundTag)) {
-            Inventories.fromTag(compoundTag, this.inventory);
+        if (!this.deserializeLootTable(tag)) {
+            Inventories.fromTag(tag, this.inventory);
         }
+
     }
 
     public int size() {
@@ -59,16 +61,16 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
         return this.inventory;
     }
 
-    protected void setInvStackList(DefaultedList<ItemStack> defaultedList_1) {
-        this.inventory = defaultedList_1;
+    protected void setInvStackList(DefaultedList<ItemStack> list) {
+        this.inventory = list;
     }
 
     protected Text getContainerName() {
-        return new TranslatableText("container.barrel", new Object[0]);
+        return new TranslatableText("container.barrel");
     }
 
-    protected ScreenHandler createScreenHandler(int i, PlayerInventory playerInventory) {
-        return GenericContainerScreenHandler.createGeneric9x3(i, playerInventory, this);
+    protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
+        return GenericContainerScreenHandler.createGeneric9x3(syncId, playerInventory, this);
     }
 
     public void onOpen(PlayerEntity player) {
@@ -78,11 +80,11 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
             }
 
             ++this.viewerCount;
-            BlockState state = this.getCachedState();
-            boolean bl = state.get(BarrelBlock.OPEN);
+            BlockState blockState = this.getCachedState();
+            boolean bl = (Boolean)blockState.get(BarrelBlock.OPEN);
             if (!bl) {
-                this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
-                this.setOpen(state, true);
+                this.playSound(blockState, SoundEvents.BLOCK_BARREL_OPEN);
+                this.setOpen(blockState, true);
             }
 
             this.scheduleUpdate();
@@ -95,50 +97,53 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     }
 
     public void tick() {
-        int int_1 = this.pos.getX();
-        int int_2 = this.pos.getY();
-        int int_3 = this.pos.getZ();
-        this.viewerCount = ChestBlockEntity.countViewers(this.world, this, int_1, int_2, int_3);
+        int i = this.pos.getX();
+        int j = this.pos.getY();
+        int k = this.pos.getZ();
+        this.viewerCount = ChestBlockEntity.countViewers(this.world, this, i, j, k);
         if (this.viewerCount > 0) {
             this.scheduleUpdate();
         } else {
-            BlockState state = this.getCachedState();
-            if (state.getBlock() != BlockusBlocks.OAK_BARREL &&
-                    state.getBlock() != BlockusBlocks.BIRCH_BARREL &&
-                    state.getBlock() != BlockusBlocks.JUNGLE_BARREL &&
-                    state.getBlock() != BlockusBlocks.ACACIA_BARREL &&
-                    state.getBlock() != BlockusBlocks.DARK_OAK_BARREL &&
-                    state.getBlock() != BlockusBlocks.CRIMSON_BARREL &&
-                    state.getBlock() != BlockusBlocks.WARPED_BARREL &&
-                    state.getBlock() != BlockusBlocks.WHITE_OAK_BARREL &&
-                    state.getBlock() != BlockusBlocks.BAMBOO_BARREL &&
-                    state.getBlock() != BlockusBlocks.CHARRED_BARREL) {
+            BlockState blockState = this.getCachedState();
+            if (blockState.getBlock() != BlockusBlocks.OAK_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.BIRCH_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.JUNGLE_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.ACACIA_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.DARK_OAK_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.CRIMSON_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.WARPED_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.WHITE_OAK_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.BAMBOO_BARREL &&
+                    blockState.getBlock() != BlockusBlocks.CHARRED_BARREL) {
                 this.markRemoved();
                 return;
             }
-            boolean boolean_1 = state.get(BarrelBlock.OPEN);
-            if (boolean_1) {
-                this.playSound(state, SoundEvents.BLOCK_BARREL_CLOSE);
-                this.setOpen(state, false);
+
+            boolean bl = (Boolean)blockState.get(BarrelBlock.OPEN);
+            if (bl) {
+                this.playSound(blockState, SoundEvents.BLOCK_BARREL_CLOSE);
+                this.setOpen(blockState, false);
             }
         }
+
     }
 
-    public void onInvClose(PlayerEntity player) {
+    public void onClose(PlayerEntity player) {
         if (!player.isSpectator()) {
             --this.viewerCount;
         }
+
     }
 
-    private void setOpen(BlockState state, boolean boolean_1) {
-        this.world.setBlockState(this.getPos(), state.with(BarrelBlock.OPEN, boolean_1), 3);
+    private void setOpen(BlockState state, boolean open) {
+        this.world.setBlockState(this.getPos(), (BlockState)state.with(BarrelBlock.OPEN, open), 3);
     }
 
-    private void playSound(BlockState state, SoundEvent sound) {
-        Vec3i vec3i_1 = state.get(BarrelBlock.FACING).getVector();
-        double double_1 = this.pos.getX() + 0.5D + vec3i_1.getX() / 2.0D;
-        double double_2 = this.pos.getY() + 0.5D + vec3i_1.getY() / 2.0D;
-        double double_3 = this.pos.getZ() + 0.5D + vec3i_1.getZ() / 2.0D;
-        this.world.playSound(null, double_1, double_2, double_3, sound, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+    private void playSound(BlockState blockState, SoundEvent soundEvent) {
+        Vec3i vec3i = ((Direction)blockState.get(BarrelBlock.FACING)).getVector();
+        double d = (double)this.pos.getX() + 0.5D + (double)vec3i.getX() / 2.0D;
+        double e = (double)this.pos.getY() + 0.5D + (double)vec3i.getY() / 2.0D;
+        double f = (double)this.pos.getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
+        this.world.playSound((PlayerEntity)null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
     }
 }
