@@ -1,7 +1,6 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.BarrelBlockBase;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.blocks.base.PaneBlockBase;
 import com.brand.blockus.blocks.base.StairsBase;
@@ -79,6 +78,10 @@ public class BlocksRegistration {
         return registerSlab(Registry.BLOCK.getId(base).getPath(), base);
     }
 
+    public static Block registerFireproofSlab(String id, Block base) {
+        return register_fireproof(id + "_slab", new SlabBlock(FabricBlockSettings.copy(base)));
+    }
+
     // Stairs
     public static Block registerStairs(String id, Block base) {
         return register(id + "_stairs", new StairsBase(base.getDefaultState(), FabricBlockSettings.copy(base)));
@@ -86,6 +89,10 @@ public class BlocksRegistration {
 
     public static Block registerStairs(Block base) {
         return registerStairs(Registry.BLOCK.getId(base).getPath(), base);
+    }
+
+    public static Block registerFireproofStairs(String id, Block base) {
+        return register_fireproof(id + "_stairs", new StairsBase(base.getDefaultState(), FabricBlockSettings.copy(base)));
     }
 
     // Wall
@@ -108,10 +115,6 @@ public class BlocksRegistration {
     // Fence
     public static Block registerFence(String id, Block base) {
         return register(id + "_fence", new FenceBlock(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerFence(Block base) {
-        return registerFence(Registry.BLOCK.getId(base).getPath(), base);
     }
 
     // Fence Gate
@@ -205,10 +208,6 @@ public class BlocksRegistration {
 
     public static Block registerChain(String id, Block base) {
         return register(id + "_chain", new ChainBlock(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerBarrel(String id, MapColor color) {
-        return register_decoration(id + "_barrel", new BarrelBlockBase(FabricBlockSettings.of(Material.WOOD, color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
     }
 
     // Light
@@ -311,6 +310,15 @@ public class BlocksRegistration {
         return Registry.register(Registry.BLOCK, identifier, block);
     }
 
+    public static Block register_fireproof(String id, Block block, boolean registerItem) {
+        Identifier identifier = new Identifier(Blockus.MOD_ID, id);
+        Block registeredBlock = Registry.register(Registry.BLOCK, identifier, block);
+        if (registerItem) {
+            Registry.register(Registry.ITEM, identifier, new BlockItem(registeredBlock, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS).fireproof()));
+        }
+        return registeredBlock;
+    }
+
     public static Block register(String id, Block block) {
         return register(id, block, true);
     }
@@ -325,6 +333,10 @@ public class BlocksRegistration {
 
     public static Block register_asphalt(String id, Block block) {
         return register_asphalt(id, block, true);
+    }
+
+    public static Block register_fireproof(String id, Block block) {
+        return register_fireproof(id, block, true);
     }
 
     private static Boolean always(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
