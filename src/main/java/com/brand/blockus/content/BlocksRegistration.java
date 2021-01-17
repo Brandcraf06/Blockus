@@ -1,7 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.BlockItem.SpeedBlockItem;
+import com.brand.blockus.blocks.blockitem.SpeedBlockItem;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.blocks.base.PaneBlockBase;
 import com.brand.blockus.blocks.base.StairsBase;
