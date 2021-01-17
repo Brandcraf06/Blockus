@@ -34,7 +34,7 @@ public class BarrelBlockBase extends BarrelBlock {
     public BarrelBlockBase(String id, MapColor color) {
         super(FabricBlockSettings.of(Material.WOOD, color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0));
         Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, id), this);
-        Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, id), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, id), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
     }
 
     @Override
@@ -44,7 +44,7 @@ public class BarrelBlockBase extends BarrelBlock {
         } else {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelBlockEntity) {
-                player.openHandledScreen((WoodenBarrelBlockEntity)blockEntity);
+                player.openHandledScreen((WoodenBarrelBlockEntity) blockEntity);
                 player.incrementStat(Stats.OPEN_BARREL);
                 PiglinBrain.onGuardedBlockInteracted(player, true);
             }
@@ -57,7 +57,7 @@ public class BarrelBlockBase extends BarrelBlock {
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof WoodenBarrelBlockEntity) {
-            ((WoodenBarrelBlockEntity)blockEntity).tick();
+            ((WoodenBarrelBlockEntity) blockEntity).tick();
         }
 
     }
@@ -73,7 +73,7 @@ public class BarrelBlockBase extends BarrelBlock {
         if (itemStack.hasCustomName()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelBlockEntity) {
-                ((WoodenBarrelBlockEntity)blockEntity).setCustomName(itemStack.getName());
+                ((WoodenBarrelBlockEntity) blockEntity).setCustomName(itemStack.getName());
             }
         }
     }
