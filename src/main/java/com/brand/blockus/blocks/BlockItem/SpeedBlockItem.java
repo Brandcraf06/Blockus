@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.blockitem;
+package com.brand.blockus.blocks.BlockItem;
 
 import com.brand.blockus.Blockus;
 import net.fabricmc.api.EnvType;

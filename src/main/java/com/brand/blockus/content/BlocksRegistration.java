@@ -1,11 +1,11 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.BlockItem.SpeedBlockItem;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.blocks.base.PaneBlockBase;
 import com.brand.blockus.blocks.base.StairsBase;
 import com.brand.blockus.blocks.base.redstone.*;
-import com.brand.blockus.blocks.blockitem.SpeedBlockItem;
 import com.brand.blockus.blocks.special.Barrier;
 import com.brand.blockus.blocks.special.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.special.SmallHedgeBlock;
@@ -115,10 +115,6 @@ public class BlocksRegistration {
     // Fence
     public static Block registerFence(String id, Block base) {
         return register(id + "_fence", new FenceBlock(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerFence(Block base) {
-        return registerFence(Registry.BLOCK.getId(base).getPath(), base);
     }
 
     // Fence Gate
