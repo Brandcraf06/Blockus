@@ -1,11 +1,11 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.blockitem.SpeedBlockItem;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.blocks.base.PaneBlockBase;
 import com.brand.blockus.blocks.base.StairsBase;
 import com.brand.blockus.blocks.base.redstone.*;
+import com.brand.blockus.blocks.blockitem.SpeedBlockItem;
 import com.brand.blockus.blocks.special.Barrier;
 import com.brand.blockus.blocks.special.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.special.SmallHedgeBlock;

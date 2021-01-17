@@ -34,7 +34,7 @@ public class BarrelBlockBase extends BarrelBlock {
     public BarrelBlockBase(String id, MaterialColor color) {
         super(FabricBlockSettings.of(Material.WOOD, color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0));
         Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, id), this);
-        Registry.register(Registry.ITEM,new Identifier(Blockus.MOD_ID, id), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, id), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
     }
 
     @Override
