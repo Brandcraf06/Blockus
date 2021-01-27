@@ -14,6 +14,7 @@ public class BlockusClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xffebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
 
         registerBlockColor(BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);
         registerBlockColor(BlockusBlocks.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES);
