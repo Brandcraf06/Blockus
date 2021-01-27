@@ -1,6 +1,21 @@
 {
-    "parent": "blockus:block/template_small_hedge_side",
-    "textures": {
-        "hedge": "blockus:block/white_oak_leaves"
+  "parent": "blockus:block/template_small_hedge_side",
+  "textures": {
+    "hedge": "blockus:block/white_oak_leaves"
+  },
+  "elements": [
+    {
+      "from": [ 5, 0, 0 ],
+      "to": [ 11, 16, 8 ],
+      "faces": {
+        "down":  { "texture": "#hedge", "cullface": "down" },
+        "up":    { "texture": "#hedge" },
+        "north": { "texture": "#hedge", "cullface": "north" },
+        "south": { "texture": "#hedge", "cullface": "south" },
+        "west":  { "texture": "#hedge" },
+        "east":  { "texture": "#hedge" }
+      },
+      "__comment": "hedge"
     }
+  ]
 }
