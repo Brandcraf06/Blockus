@@ -44,10 +44,6 @@ public class BlocksRegistration {
         return register(id + "_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(base)));
     }
 
-    public static Block registerLogs(String id, Block base) {
-        return register(id, new PillarBlock(FabricBlockSettings.copy(base)));
-    }
-
     public static Block registerPane(String id, Block base) {
         return register(id, new PaneBlockBase(FabricBlockSettings.copy(base)));
     }
@@ -109,7 +105,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerSmallHedge(String id, Block base) {
-        return register_decoration(id, new SmallHedgeBlock(FabricBlockSettings.copy(base)));
+        return register_decoration(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).breakByTool(FabricToolTags.HOES).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
     // Fence
@@ -154,7 +150,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerLeaves(String id, Block base) {
-        return register(id, new LeavesBlock(FabricBlockSettings.copy(base)));
+        return register(id, new LeavesBlock(FabricBlockSettings.copyOf(base).breakByTool(FabricToolTags.HOES).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
     // Door & Trapdoor
@@ -224,11 +220,11 @@ public class BlocksRegistration {
     }
 
     public static Block registerRedstoneLamp(String id) {
-        return register_redstone(id, new RedstoneLampBlock(FabricBlockSettings.of(Material.REDSTONE_LAMP).luminance(createLightLevelFromBlockState(15)).strength(0.3F).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlocksRegistration::always)));
+        return register_redstone(id, new RedstoneLampBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).allowsSpawning(BlocksRegistration::always)));
     }
 
     public static Block registerLitRedstoneLamp(String id) {
-        return register_redstone(id + "_lit", new Block(FabricBlockSettings.of(Material.REDSTONE_LAMP).luminance(15).strength(0.3F).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlocksRegistration::always)));
+        return register_redstone(id + "_lit", new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).luminance(15).allowsSpawning(BlocksRegistration::always)));
     }
 
     private static ToIntFunction<BlockState> createLightLevelFromBlockState(int litLevel) {
@@ -241,7 +237,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerStainedGlass(String id, DyeColor color, Block base) {
-        return register(id, new StainedGlassBlock(color, FabricBlockSettings.copy(base)));
+        return register(id, new StainedGlassBlock(color, FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
     public static Block registerStainedGlassPane(String id, DyeColor color, Block base) {
@@ -339,7 +335,20 @@ public class BlocksRegistration {
         return register_fireproof(id, block, true);
     }
 
-    private static Boolean always(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+    public static Boolean always(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
         return true;
     }
+
+    public static boolean never(BlockState state, BlockView world, BlockPos pos) {
+        return false;
+    }
+
+    public static Boolean never(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+        return false;
+    }
+
+    public static Boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+        return type == EntityType.OCELOT || type == EntityType.PARROT;
+    }
+
 }
