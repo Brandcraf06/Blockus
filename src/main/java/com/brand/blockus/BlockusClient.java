@@ -34,6 +34,11 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.POTTED_ACACIA, Blocks.ACACIA_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_DARK_OAK, Blocks.DARK_OAK_LEAVES);
 
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
+
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
                 BlockusBlocks.OAK_SMALL_HEDGE,
                 BlockusBlocks.SPRUCE_SMALL_HEDGE,
