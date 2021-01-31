@@ -1,6 +1,7 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.base.HorizontalAxisBlockBase;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.blocks.base.PaneBlockBase;
 import com.brand.blockus.blocks.base.StairsBase;
@@ -19,15 +20,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.state.property.Properties;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
-
-import java.util.function.ToIntFunction;
 
 public class BlocksRegistration {
 
@@ -149,10 +147,6 @@ public class BlocksRegistration {
         return register_noitem("potted_" + id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).nonOpaque()));
     }
 
-    public static Block registerLeaves(String id, Block base) {
-        return register(id, new LeavesBlock(FabricBlockSettings.copyOf(base).breakByTool(FabricToolTags.HOES).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
-    }
-
     // Door & Trapdoor
     public static Block registerDoor(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MaterialColor color) {
         return register_redstone(id + "_door", new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque()));
@@ -184,27 +178,6 @@ public class BlocksRegistration {
         return register(id + "_timber_frame", new OrientableBlockBase(FabricBlockSettings.copy(base)));
     }
 
-    // Types
-
-    public static Block registerColoredTiles(String id, MaterialColor color) {
-        return register(id + "_colored_tiles", new Block(FabricBlockSettings.of(Material.STONE, color).strength(1.8f).sounds(BlockSoundGroup.STONE).requiresTool()));
-    }
-
-    public static Block registerCrates(String id) {
-        return register(id + "_crate", new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, Blocks.OAK_PLANKS.getDefaultMaterialColor()).strength(2.5f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
-    }
-
-    public static Block registerPatternedWool(String id, Block base) {
-        return register(id + "_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerColoredStoneBricks(String id, MaterialColor color) {
-        return register(id + "_stone_bricks", new Block(FabricBlockSettings.of(Material.STONE, color).strength(1.5F, 6.0F).requiresTool()));
-    }
-
-    public static Block registerChain(String id, Block base) {
-        return register(id + "_chain", new ChainBlock(FabricBlockSettings.copy(base)));
-    }
 
     // Light
     public static Block registerLightBlock(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MaterialColor color) {
@@ -227,8 +200,26 @@ public class BlocksRegistration {
         return register_redstone(id + "_lit", new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).luminance(15).allowsSpawning(BlocksRegistration::always)));
     }
 
-    private static ToIntFunction<BlockState> createLightLevelFromBlockState(int litLevel) {
-        return (blockState) -> (Boolean) blockState.get(Properties.LIT) ? litLevel : 0;
+    public static Block registerFuturneoBlock(String id, MaterialColor color) {
+        return register(id + "_futurneo_block", new Block(FabricBlockSettings.of(Material.REDSTONE_LAMP, color).luminance(15).strength(0.5f, 0.5f).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlocksRegistration::always)));
+    }
+
+    // Colors
+
+    public static Block registerColoredTiles(String id, Block base) {
+        return register(id + "_colored_tiles", new Block(FabricBlockSettings.copy(base)));
+    }
+
+    public static Block registerColoredTiles2(String id, Block base) {
+        return register(id + "_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(base)));
+    }
+
+    public static Block registerPatternedWool(String id, Block base) {
+        return register(id + "_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(base)));
+    }
+
+    public static Block registerColoredStoneBricks(String id, MaterialColor color) {
+        return register(id + "_stone_bricks", new Block(FabricBlockSettings.of(Material.STONE, color).strength(1.5F, 6.0F).requiresTool()));
     }
 
     // Glass
@@ -263,6 +254,16 @@ public class BlocksRegistration {
 
     public static Block registerAsphaltStairs(Block base) {
         return registerAsphaltStairs(Registry.BLOCK.getId(base).getPath(), base);
+    }
+
+    // Other
+
+    public static Block registerCrates(String id) {
+        return register(id + "_crate", new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, Blocks.OAK_PLANKS.getDefaultMaterialColor()).strength(2.5f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
+    }
+
+    public static Block registerChain(String id, Block base) {
+        return register(id + "_chain", new ChainBlock(FabricBlockSettings.copy(base)));
     }
 
     public static Block register(String id, Block block, boolean registerItem) {
