@@ -114,6 +114,7 @@ public class Instance {
         // general
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
         FuelRegistry.INSTANCE.add(Blocks.SUGAR_CANE, 50);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
 
         // small hedges
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 100);

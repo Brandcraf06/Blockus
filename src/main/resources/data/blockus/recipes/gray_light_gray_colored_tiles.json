@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "multi colored tiles",
+  "ingredients": [
+    {
+      "item": "minecraft:gray_concrete"
+    },
+    {
+      "item": "minecraft:light_gray_concrete"
+    }
+  ],
+  "result": {
+    "item": "blockus:gray_light_gray_colored_tiles",
+    "count": 2
+  }
+}

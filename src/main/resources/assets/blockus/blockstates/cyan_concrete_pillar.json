@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "blockus:block/cyan_concrete_pillar" },
+        "axis=z":   { "model": "blockus:block/cyan_concrete_pillar", "x": 90 },
+        "axis=x":   { "model": "blockus:block/cyan_concrete_pillar", "x": 90, "y": 90 }
+    }
+}

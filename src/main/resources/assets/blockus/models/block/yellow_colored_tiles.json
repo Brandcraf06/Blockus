@@ -1,0 +1,7 @@
+{
+    "parent": "blockus:block/cube_tiles",
+    "textures": {
+        "tile_1": "blockus:block/yellow_tile",
+		"tile_2": "blockus:block/yellow_tile"
+    }
+}

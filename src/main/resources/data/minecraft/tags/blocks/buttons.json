@@ -8,6 +8,7 @@
     "blockus:marble_button",
     "blockus:bluestone_button",
     "blockus:polished_netherrack_button",
-    "blockus:polished_end_stone_button"
+    "blockus:polished_end_stone_button",
+    "blockus:polished_basalt_button"
   ]
 }

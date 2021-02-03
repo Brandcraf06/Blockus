@@ -67,9 +67,20 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_STAIRS = registerStairs(WARPED_WARTY_BLACKSTONE_BRICKS);
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_SLAB = registerSlab(WARPED_WARTY_BLACKSTONE_BRICKS);
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_WALL = registerWall(WARPED_WARTY_BLACKSTONE_BRICKS);
+    public static final Block BLACKSTONE_DOOR = registerDoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.BLACK);
+    public static final Block BLACKSTONE_TRAPDOOR = registerTrapdoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.BLACK);
+
+    // Basalt
+    public static final Block BASALT_BRICKS = registerBlockCopy("basalt_bricks", Blocks.BASALT);
+    public static final Block BASALT_BRICKS_STAIRS = registerStairs(BASALT_BRICKS);
+    public static final Block BASALT_BRICKS_SLAB = registerSlab(BASALT_BRICKS);
+    public static final Block BASALT_BRICKS_WALL = registerWall(BASALT_BRICKS);
+    public static final Block CRACKED_BASALT_BRICKS = registerBlockCopy("cracked_basalt_bricks", Blocks.BASALT);
+    public static final Block BASALT_PILLAR = registerPillar("basalt", BASALT_BRICKS);
+    public static final Block CHISELED_BASALT = registerBlockCopy("chiseled_basalt", Blocks.BASALT);
 
     // Limestone
-    public static final Block LIMESTONE = register("limestone", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.WOOD).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block LIMESTONE = register("limestone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.WOOD)));
     public static final Block LIMESTONE_STAIRS = registerStairs(LIMESTONE);
     public static final Block LIMESTONE_SLAB = registerSlab(LIMESTONE);
     public static final Block LIMESTONE_BRICKS = registerBlockCopy("limestone_bricks", LIMESTONE);
@@ -81,7 +92,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LIMESTONE_CIRCLE_PAVEMENT = registerCirclePavement("limestone", LIMESTONE);
 
     // Marble
-    public static final Block MARBLE = register("marble", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.QUARTZ).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block MARBLE = register("marble", new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.QUARTZ)));
     public static final Block MARBLE_STAIRS = registerStairs(MARBLE);
     public static final Block MARBLE_SLAB = registerSlab(MARBLE);
     public static final Block MARBLE_BRICKS = registerBlockCopy("marble_bricks", MARBLE);
@@ -94,7 +105,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block MARBLE_CIRCLE_PAVEMENT = registerCirclePavement("marble", MARBLE);
 
     // Bluestone
-    public static final Block BLUESTONE = register("bluestone", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.CYAN).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block BLUESTONE = register("bluestone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.CYAN)));
     public static final Block BLUESTONE_STAIRS = registerStairs(BLUESTONE);
     public static final Block BLUESTONE_SLAB = registerSlab(BLUESTONE);
     public static final Block BLUESTONE_TILES = registerBlockCopy("bluestone_tiles", BLUESTONE);
@@ -172,7 +183,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RED_NETHER_PILLAR = registerPillar("red_nether", Blocks.NETHER_BRICKS);
 
     // Charred Nether Bricks
-    public static final Block CHARRED_NETHER_BRICKS = register("charred_nether_bricks", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK).strength(2.0f, 6.0f).sounds(BlockSoundGroup.NETHER_BRICKS).requiresTool()));
+    public static final Block CHARRED_NETHER_BRICKS = register("charred_nether_bricks", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_BRICKS).materialColor(MaterialColor.BLACK)));
     public static final Block CHARRED_NETHER_BRICKS_STAIRS = registerStairs(CHARRED_NETHER_BRICKS);
     public static final Block CHARRED_NETHER_BRICKS_SLAB = registerSlab(CHARRED_NETHER_BRICKS);
     public static final Block CHARRED_NETHER_BRICKS_WALL = registerWall(CHARRED_NETHER_BRICKS);
@@ -181,7 +192,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block CHARRED_NETHER_PILLAR = registerPillar("charred_nether", CHARRED_NETHER_BRICKS);
 
     // Teal Nether Bricks
-    public static final Block TEAL_NETHER_BRICKS = register("teal_nether_bricks", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.CYAN).strength(2.0f, 6.0f).sounds(BlockSoundGroup.NETHER_BRICKS).requiresTool()));
+    public static final Block TEAL_NETHER_BRICKS = register("teal_nether_bricks", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_BRICKS).materialColor(MaterialColor.CYAN)));
     public static final Block TEAL_NETHER_BRICK_STAIRS = registerStairs("teal_nether_brick", TEAL_NETHER_BRICKS);
     public static final Block TEAL_NETHER_BRICK_SLAB = registerSlab("teal_nether_brick", TEAL_NETHER_BRICKS);
     public static final Block TEAL_NETHER_BRICK_WALL = registerWall("teal_nether_brick", TEAL_NETHER_BRICKS);
@@ -207,25 +218,29 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Prismarine
     public static final Block PRISMARINE_CIRCLE_PAVEMENT = registerCirclePavement("prismarine", Blocks.PRISMARINE);
+    public static final Block CHISELED_PRISMARINE = registerBlockCopy("chiseled_prismarine", Blocks.PRISMARINE);
+    public static final Block PRISMARINE_PILLAR = registerPillar("prismarine", Blocks.PRISMARINE);
+    public static final Block CHISELED_DARK_PRISMARINE = registerBlockCopy("chiseled_dark_prismarine", Blocks.DARK_PRISMARINE);
+    public static final Block DARK_PRISMARINE_PILLAR = registerPillar("dark_prismarine", Blocks.DARK_PRISMARINE);
 
     // Bricks
     public static final Block LARGE_BRICKS = registerBlockCopy("large_bricks", Blocks.BRICKS);
     public static final Block ZIGZAGGED_BRICKS = registerBlockCopy("zigzagged_bricks", Blocks.BRICKS);
 
     // Soaked Bricks
-    public static final Block SOAKED_BRICKS = register("soaked_bricks", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.CYAN).strength(2.0f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block SOAKED_BRICKS = register("soaked_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BRICKS).materialColor(MaterialColor.CYAN)));
     public static final Block SOAKED_BRICKS_STAIRS = registerStairs(SOAKED_BRICKS);
     public static final Block SOAKED_BRICKS_SLAB = registerSlab(SOAKED_BRICKS);
     public static final Block SOAKED_BRICKS_WALL = registerWall(SOAKED_BRICKS);
 
     // Sandy Bricks
-    public static final Block SANDY_BRICKS = register("sandy_bricks", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.SPRUCE).strength(2.0f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block SANDY_BRICKS = register("sandy_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BRICKS).materialColor(MaterialColor.SPRUCE)));
     public static final Block SANDY_BRICKS_STAIRS = registerStairs(SANDY_BRICKS);
     public static final Block SANDY_BRICKS_SLAB = registerSlab(SANDY_BRICKS);
     public static final Block SANDY_BRICKS_WALL = registerWall(SANDY_BRICKS);
 
     // Charred Bricks
-    public static final Block CHARRED_BRICKS = register("charred_bricks", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK).strength(2.0f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block CHARRED_BRICKS = register("charred_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BRICKS).materialColor(MaterialColor.BLACK)));
     public static final Block CHARRED_BRICKS_STAIRS = registerStairs(CHARRED_BRICKS);
     public static final Block CHARRED_BRICKS_SLAB = registerSlab(CHARRED_BRICKS);
     public static final Block CHARRED_BRICKS_WALL = registerWall(CHARRED_BRICKS);
@@ -255,7 +270,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RED_SANDSTONE_PILLAR = registerPillar("red_sandstone", Blocks.RED_SANDSTONE);
 
     // Soul Sandstone
-    public static final Block SOUL_SANDSTONE = register("soul_sandstone", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.BROWN).strength(0.8f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block SOUL_SANDSTONE = register("soul_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE).materialColor(MaterialColor.BROWN)));
     public static final Block SOUL_SANDSTONE_STAIRS = registerStairs(SOUL_SANDSTONE);
     public static final Block SOUL_SANDSTONE_SLAB = registerSlab(SOUL_SANDSTONE);
     public static final Block SOUL_SANDSTONE_WALL = registerWall(SOUL_SANDSTONE);
@@ -300,7 +315,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block PURPUR_LINES = registerPillar2("purpur_lines", Blocks.PURPUR_BLOCK);
 
     // Bamboo Wood
-    public static final Block BAMBOO_PLANKS = register("bamboo_planks", new Block(FabricBlockSettings.of(Material.WOOD, MaterialColor.SAND).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
+    public static final Block BAMBOO_PLANKS = register("bamboo_planks", new Block(FabricBlockSettings.of(Material.WOOD, MaterialColor.SAND).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
     public static final Block BAMBOO_STAIRS = registerStairs("bamboo", BAMBOO_PLANKS);
     public static final Block BAMBOO_SLAB = registerSlab("bamboo", BAMBOO_PLANKS);
     public static final Block BAMBOO_FENCE = registerFence("bamboo", BAMBOO_PLANKS);
@@ -309,7 +324,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BAMBOO_TRAPDOOR = registerTrapdoor("bamboo", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0, BAMBOO_PLANKS.getDefaultMaterialColor());
 
     // Charred Wood
-    public static final Block CHARRED_PLANKS = register("charred_planks", new Block(FabricBlockSettings.of(Material.WOOD, MaterialColor.GRAY_TERRACOTTA).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
+    public static final Block CHARRED_PLANKS = register("charred_planks", new Block(FabricBlockSettings.of(Material.WOOD, MaterialColor.GRAY_TERRACOTTA).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
     public static final Block CHARRED_STAIRS = registerStairs("charred", CHARRED_PLANKS);
     public static final Block CHARRED_SLAB = registerSlab("charred", CHARRED_PLANKS);
     public static final Block CHARRED_FENCE = registerFence("charred", CHARRED_PLANKS);
@@ -320,12 +335,12 @@ public class BlockusBlocks extends BlocksRegistration {
     // White Oak Wood
     public static final Block WHITE_OAK_SAPLING = register_decoration("white_oak_sapling", new SaplingBlockBase(new WhiteOakSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
     public static final Block POTTED_WHITE_OAK_SAPLING = registerPottedPlant(WHITE_OAK_SAPLING, "white_oak_sapling");
-    public static final Block WHITE_OAK_LOG = register("white_oak_log", new PillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.LIGHT_GRAY_TERRACOTTA).strength(2.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
-    public static final Block STRIPPED_WHITE_OAK_LOG = registerLogs("stripped_white_oak_log", WHITE_OAK_LOG);
-    public static final Block WHITE_OAK_WOOD = registerLogs("white_oak_wood", WHITE_OAK_LOG);
-    public static final Block STRIPPED_WHITE_OAK_WOOD = registerLogs("stripped_white_oak_wood", WHITE_OAK_LOG);
-    public static final Block WHITE_OAK_LEAVES = registerLeaves("white_oak_leaves", Blocks.OAK_LEAVES);
-    public static final Block WHITE_OAK_PLANKS = register("white_oak_planks", new Block(FabricBlockSettings.of(Material.WOOD, MaterialColor.WHITE_TERRACOTTA).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
+    public static final Block WHITE_OAK_LOG = register("white_oak_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).materialColor(MaterialColor.LIGHT_GRAY_TERRACOTTA)));
+    public static final Block STRIPPED_WHITE_OAK_LOG = registerPillar2("stripped_white_oak_log", WHITE_OAK_LOG);
+    public static final Block WHITE_OAK_WOOD = registerPillar2("white_oak_wood", WHITE_OAK_LOG);
+    public static final Block STRIPPED_WHITE_OAK_WOOD = registerPillar2("stripped_white_oak_wood", WHITE_OAK_LOG);
+    public static final Block WHITE_OAK_LEAVES = register("white_oak_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).materialColor(MaterialColor.ORANGE).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
+    public static final Block WHITE_OAK_PLANKS = register("white_oak_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).materialColor(MaterialColor.WHITE_TERRACOTTA)));
     public static final Block WHITE_OAK_STAIRS = registerStairs("white_oak", WHITE_OAK_PLANKS);
     public static final Block WHITE_OAK_SLAB = registerSlab("white_oak", WHITE_OAK_PLANKS);
     public static final Block WHITE_OAK_FENCE = registerFence("white_oak", WHITE_OAK_PLANKS);
@@ -334,15 +349,15 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WHITE_OAK_TRAPDOOR = registerTrapdoor("white_oak", 2.0f, 3.0f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0, WHITE_OAK_PLANKS.getDefaultMaterialColor());
 
     // Small Logs
-    public static final Block OAK_SMALL_LOGS = registerLogs("oak_small_logs", Blocks.OAK_LOG);
-    public static final Block SPRUCE_SMALL_LOGS = registerLogs("spruce_small_logs", Blocks.SPRUCE_LOG);
-    public static final Block BIRCH_SMALL_LOGS = registerLogs("birch_small_logs", Blocks.BIRCH_LOG);
-    public static final Block JUNGLE_SMALL_LOGS = registerLogs("jungle_small_logs", Blocks.JUNGLE_LOG);
-    public static final Block ACACIA_SMALL_LOGS = registerLogs("acacia_small_logs", Blocks.ACACIA_LOG);
-    public static final Block DARK_OAK_SMALL_LOGS = registerLogs("dark_oak_small_logs", Blocks.DARK_OAK_LOG);
-    public static final Block WARPED_SMALL_STEMS = registerLogs("warped_small_stems", Blocks.WARPED_STEM);
-    public static final Block CRIMSON_SMALL_STEMS = registerLogs("crimson_small_stems", Blocks.CRIMSON_STEM);
-    public static final Block WHITE_OAK_SMALL_LOGS = registerLogs("white_oak_small_logs", WHITE_OAK_LOG);
+    public static final Block OAK_SMALL_LOGS = registerPillar2("oak_small_logs", Blocks.OAK_LOG);
+    public static final Block SPRUCE_SMALL_LOGS = registerPillar2("spruce_small_logs", Blocks.SPRUCE_LOG);
+    public static final Block BIRCH_SMALL_LOGS = registerPillar2("birch_small_logs", Blocks.BIRCH_LOG);
+    public static final Block JUNGLE_SMALL_LOGS = registerPillar2("jungle_small_logs", Blocks.JUNGLE_LOG);
+    public static final Block ACACIA_SMALL_LOGS = registerPillar2("acacia_small_logs", Blocks.ACACIA_LOG);
+    public static final Block DARK_OAK_SMALL_LOGS = registerPillar2("dark_oak_small_logs", Blocks.DARK_OAK_LOG);
+    public static final Block WARPED_SMALL_STEMS = registerPillar2("warped_small_stems", Blocks.WARPED_STEM);
+    public static final Block CRIMSON_SMALL_STEMS = registerPillar2("crimson_small_stems", Blocks.CRIMSON_STEM);
+    public static final Block WHITE_OAK_SMALL_LOGS = registerPillar2("white_oak_small_logs", WHITE_OAK_LOG);
 
     // Timber Frames
     public static final Block OAK_TIMBER_FRAME = registerTimberFrame("oak", Blocks.OAK_PLANKS);
@@ -418,13 +433,13 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block APPLE_CRATE = registerCrates("apple");
     public static final Block BEETROOT_CRATE = registerCrates("beetroot");
     public static final Block CARROT_CRATE = registerCrates("carrot");
-    public static final Block BREAD_BOX = register("bread_box", new OrientableBlockBase(FabricBlockSettings.of(Material.WOOD, Blocks.OAK_PLANKS.getDefaultMaterialColor()).strength(2.5f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES, 0)));
+    public static final Block BREAD_BOX = register("bread_box", new OrientableBlockBase(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.5f)));
     public static final Block GOLDEN_APPLE_CRATE = registerCrates("golden_apple");
     public static final Block GOLDEN_CARROT_CRATE = registerCrates("golden_carrot");
 
     // Rainbow
-    public static final Block RAINBOW_BLOCK = register("rainbow_block", new PillarBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.LIGHT_BLUE).strength(5.0f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
-    public static final Block RAINBOW_BRICKS = register("rainbow_bricks", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.QUARTZ).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block RAINBOW_BLOCK = register("rainbow_block", new PillarBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.LIGHT_BLUE).strength(5.0f, 6.0f).requiresTool()));
+    public static final Block RAINBOW_BRICKS = register("rainbow_bricks", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.QUARTZ).strength(1.5f, 6.0f).requiresTool()));
     public static final Block RAINBOW_BRICKS_STAIRS = registerStairs(RAINBOW_BRICKS);
     public static final Block RAINBOW_BRICKS_SLAB = registerSlab(RAINBOW_BRICKS);
     public static final Block RAINBOW_BRICKS_WALL = registerWall(RAINBOW_BRICKS);
@@ -445,6 +460,58 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GREEN_STONE_BRICKS = registerColoredStoneBricks("green", MaterialColor.GREEN);
     public static final Block RED_STONE_BRICKS = registerColoredStoneBricks("red", MaterialColor.RED);
     public static final Block BLACK_STONE_BRICKS = registerColoredStoneBricks("black", MaterialColor.BLACK);
+
+    // Concrete
+    public static final Block WHITE_CONCRETE_BRICKS = registerBlockCopy("white_concrete_bricks", Blocks.WHITE_CONCRETE);
+    public static final Block ORANGE_CONCRETE_BRICKS = registerBlockCopy("orange_concrete_bricks", Blocks.ORANGE_CONCRETE);
+    public static final Block MAGENTA_CONCRETE_BRICKS = registerBlockCopy("magenta_concrete_bricks", Blocks.MAGENTA_CONCRETE);
+    public static final Block LIGHT_BLUE_CONCRETE_BRICKS = registerBlockCopy("light_blue_concrete_bricks", Blocks.LIGHT_BLUE_CONCRETE);
+    public static final Block YELLOW_CONCRETE_BRICKS = registerBlockCopy("yellow_concrete_bricks", Blocks.YELLOW_CONCRETE);
+    public static final Block LIME_CONCRETE_BRICKS = registerBlockCopy("lime_concrete_bricks", Blocks.LIME_CONCRETE);
+    public static final Block PINK_CONCRETE_BRICKS = registerBlockCopy("pink_concrete_bricks", Blocks.PINK_CONCRETE);
+    public static final Block GRAY_CONCRETE_BRICKS = registerBlockCopy("gray_concrete_bricks", Blocks.GRAY_CONCRETE);
+    public static final Block LIGHT_GRAY_CONCRETE_BRICKS = registerBlockCopy("light_gray_concrete_bricks", Blocks.LIGHT_GRAY_CONCRETE);
+    public static final Block CYAN_CONCRETE_BRICKS = registerBlockCopy("cyan_concrete_bricks", Blocks.CYAN_CONCRETE);
+    public static final Block PURPLE_CONCRETE_BRICKS = registerBlockCopy("purple_concrete_bricks", Blocks.PURPLE_CONCRETE);
+    public static final Block BLUE_CONCRETE_BRICKS = registerBlockCopy("blue_concrete_bricks", Blocks.BLUE_CONCRETE);
+    public static final Block BROWN_CONCRETE_BRICKS = registerBlockCopy("brown_concrete_bricks", Blocks.BROWN_CONCRETE);
+    public static final Block GREEN_CONCRETE_BRICKS = registerBlockCopy("green_concrete_bricks", Blocks.GREEN_CONCRETE);
+    public static final Block RED_CONCRETE_BRICKS = registerBlockCopy("red_concrete_bricks", Blocks.RED_CONCRETE);
+    public static final Block BLACK_CONCRETE_BRICKS = registerBlockCopy("black_concrete_bricks", Blocks.BLACK_CONCRETE);
+
+    public static final Block CHISELED_WHITE_CONCRETE = registerBlockCopy("chiseled_white_concrete", Blocks.WHITE_CONCRETE);
+    public static final Block CHISELED_ORANGE_CONCRETE = registerBlockCopy("chiseled_orange_concrete", Blocks.ORANGE_CONCRETE);
+    public static final Block CHISELED_MAGENTA_CONCRETE = registerBlockCopy("chiseled_magenta_concrete", Blocks.MAGENTA_CONCRETE);
+    public static final Block CHISELED_LIGHT_BLUE_CONCRETE = registerBlockCopy("chiseled_light_blue_concrete", Blocks.LIGHT_BLUE_CONCRETE);
+    public static final Block CHISELED_YELLOW_CONCRETE = registerBlockCopy("chiseled_yellow_concrete", Blocks.YELLOW_CONCRETE);
+    public static final Block CHISELED_LIME_CONCRETE = registerBlockCopy("chiseled_lime_concrete", Blocks.LIME_CONCRETE);
+    public static final Block CHISELED_PINK_CONCRETE = registerBlockCopy("chiseled_pink_concrete", Blocks.PINK_CONCRETE);
+    public static final Block CHISELED_GRAY_CONCRETE = registerBlockCopy("chiseled_gray_concrete", Blocks.GRAY_CONCRETE);
+    public static final Block CHISELED_LIGHT_GRAY_CONCRETE = registerBlockCopy("chiseled_light_gray_concrete", Blocks.LIGHT_GRAY_CONCRETE);
+    public static final Block CHISELED_CYAN_CONCRETE = registerBlockCopy("chiseled_cyan_concrete", Blocks.CYAN_CONCRETE);
+    public static final Block CHISELED_PURPLE_CONCRETE = registerBlockCopy("chiseled_purple_concrete", Blocks.PURPLE_CONCRETE);
+    public static final Block CHISELED_BLUE_CONCRETE = registerBlockCopy("chiseled_blue_concrete", Blocks.BLUE_CONCRETE);
+    public static final Block CHISELED_BROWN_CONCRETE = registerBlockCopy("chiseled_brown_concrete", Blocks.BROWN_CONCRETE);
+    public static final Block CHISELED_GREEN_CONCRETE = registerBlockCopy("chiseled_green_concrete", Blocks.GREEN_CONCRETE);
+    public static final Block CHISELED_RED_CONCRETE = registerBlockCopy("chiseled_red_concrete", Blocks.RED_CONCRETE);
+    public static final Block CHISELED_BLACK_CONCRETE = registerBlockCopy("chiseled_black_concrete", Blocks.BLACK_CONCRETE);
+
+    public static final Block WHITE_CONCRETE_PILLAR = registerPillar("white_concrete", Blocks.WHITE_CONCRETE);
+    public static final Block ORANGE_CONCRETE_PILLAR = registerPillar("orange_concrete", Blocks.ORANGE_CONCRETE);
+    public static final Block MAGENTA_CONCRETE_PILLAR = registerPillar("magenta_concrete", Blocks.MAGENTA_CONCRETE);
+    public static final Block LIGHT_BLUE_CONCRETE_PILLAR = registerPillar("light_blue_concrete", Blocks.LIGHT_BLUE_CONCRETE);
+    public static final Block YELLOW_CONCRETE_PILLAR = registerPillar("yellow_concrete", Blocks.YELLOW_CONCRETE);
+    public static final Block LIME_CONCRETE_PILLAR = registerPillar("lime_concrete", Blocks.LIME_CONCRETE);
+    public static final Block PINK_CONCRETE_PILLAR = registerPillar("pink_concrete", Blocks.PINK_CONCRETE);
+    public static final Block GRAY_CONCRETE_PILLAR = registerPillar("gray_concrete", Blocks.GRAY_CONCRETE);
+    public static final Block LIGHT_GRAY_CONCRETE_PILLAR = registerPillar("light_gray_concrete", Blocks.LIGHT_GRAY_CONCRETE);
+    public static final Block CYAN_CONCRETE_PILLAR = registerPillar("cyan_concrete", Blocks.CYAN_CONCRETE);
+    public static final Block PURPLE_CONCRETE_PILLAR = registerPillar("purple_concrete", Blocks.PURPLE_CONCRETE);
+    public static final Block BLUE_CONCRETE_PILLAR = registerPillar("blue_concrete", Blocks.BLUE_CONCRETE);
+    public static final Block BROWN_CONCRETE_PILLAR = registerPillar("brown_concrete", Blocks.BROWN_CONCRETE);
+    public static final Block GREEN_CONCRETE_PILLAR = registerPillar("green_concrete", Blocks.GREEN_CONCRETE);
+    public static final Block RED_CONCRETE_PILLAR = registerPillar("red_concrete", Blocks.RED_CONCRETE);
+    public static final Block BLACK_CONCRETE_PILLAR = registerPillar("black_concrete", Blocks.BLACK_CONCRETE);
 
     // Redstone Lamps
     public static final Block WHITE_REDSTONE_LAMP = registerRedstoneLamp("white_redstone_lamp");
@@ -482,23 +549,23 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RAINBOW_LAMP_LIT = registerLitRedstoneLamp("rainbow_lamp");
 
     // Futurneo Blocks
-    public static final Block WHITE_FUTURNEO_BLOCK = registerLampBlock("white_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block ORANGE_FUTURNEO_BLOCK = registerLampBlock("orange_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block MAGENTA_FUTURNEO_BLOCK = registerLampBlock("magenta_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block LIGHT_BLUE_FUTURNEO_BLOCK = registerLampBlock("light_blue_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block YELLOW_FUTURNEO_BLOCK = registerLampBlock("yellow_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block LIME_FUTURNEO_BLOCK = registerLampBlock("lime_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block PINK_FUTURNEO_BLOCK = registerLampBlock("pink_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block GRAY_FUTURNEO_BLOCK = registerLampBlock("gray_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block GRAY_BRIGHT_FUTURNEO_BLOCK = registerLampBlock("gray_bright_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.WHITE);
-    public static final Block LIGHT_GRAY_FUTURNEO_BLOCK = registerLampBlock("light_gray_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block CYAN_FUTURNEO_BLOCK = registerLampBlock("cyan_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block PURPLE_FUTURNEO_BLOCK = registerLampBlock("purple_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block BLUE_FUTURNEO_BLOCK = registerLampBlock("blue_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block BROWN_FUTURNEO_BLOCK = registerLampBlock("brown_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block GREEN_FUTURNEO_BLOCK = registerLampBlock("green_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block RED_FUTURNEO_BLOCK = registerLampBlock("red_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
-    public static final Block BLACK_FUTURNEO_BLOCK = registerLampBlock("black_futurneo_block", 0.5f, 0.5f, Material.REDSTONE_LAMP, BlockSoundGroup.GLASS, 15, MaterialColor.BLACK);
+    public static final Block WHITE_FUTURNEO_BLOCK = registerFuturneoBlock("white", MaterialColor.BLACK);
+    public static final Block ORANGE_FUTURNEO_BLOCK = registerFuturneoBlock("orange", MaterialColor.BLACK);
+    public static final Block MAGENTA_FUTURNEO_BLOCK = registerFuturneoBlock("magenta", MaterialColor.BLACK);
+    public static final Block LIGHT_BLUE_FUTURNEO_BLOCK = registerFuturneoBlock("light_blue", MaterialColor.BLACK);
+    public static final Block YELLOW_FUTURNEO_BLOCK = registerFuturneoBlock("yellow", MaterialColor.BLACK);
+    public static final Block LIME_FUTURNEO_BLOCK = registerFuturneoBlock("lime", MaterialColor.BLACK);
+    public static final Block PINK_FUTURNEO_BLOCK = registerFuturneoBlock("pink", MaterialColor.BLACK);
+    public static final Block GRAY_FUTURNEO_BLOCK = registerFuturneoBlock("gray", MaterialColor.BLACK);
+    public static final Block GRAY_BRIGHT_FUTURNEO_BLOCK = registerFuturneoBlock("gray_bright", MaterialColor.WHITE);
+    public static final Block LIGHT_GRAY_FUTURNEO_BLOCK = registerFuturneoBlock("light_gray", MaterialColor.BLACK);
+    public static final Block CYAN_FUTURNEO_BLOCK = registerFuturneoBlock("cyan", MaterialColor.BLACK);
+    public static final Block PURPLE_FUTURNEO_BLOCK = registerFuturneoBlock("purple", MaterialColor.BLACK);
+    public static final Block BLUE_FUTURNEO_BLOCK = registerFuturneoBlock("blue", MaterialColor.BLACK);
+    public static final Block BROWN_FUTURNEO_BLOCK = registerFuturneoBlock("brown", MaterialColor.BLACK);
+    public static final Block GREEN_FUTURNEO_BLOCK = registerFuturneoBlock("green", MaterialColor.BLACK);
+    public static final Block RED_FUTURNEO_BLOCK = registerFuturneoBlock("red", MaterialColor.BLACK);
+    public static final Block BLACK_FUTURNEO_BLOCK = registerFuturneoBlock("black", MaterialColor.BLACK);
 
     // Asphalt
     public static final Block ASPHALT = register_asphalt("asphalt", DyeColor.BLACK);
@@ -658,23 +725,41 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLACK_PATTERNED_WOOL = registerPatternedWool("black", Blocks.BLACK_WOOL);
 
     // Colored Tiles
-    public static final Block LIGHT_BLUE_WHITE_COLORED_TILES = registerColoredTiles("light_blue_white", MaterialColor.LIGHT_BLUE);
-    public static final Block RED_WHITE_COLORED_TILES = registerColoredTiles("red_white", MaterialColor.RED);
-    public static final Block BLACK_WHITE_COLORED_TILES = registerColoredTiles("black_white", MaterialColor.BLACK);
-    public static final Block LIME_YELLOW_COLORED_TILES = registerColoredTiles("lime_yellow", MaterialColor.LIME);
-    public static final Block LIGHT_BLUE_YELLOW_COLORED_TILES = registerColoredTiles("light_blue_yellow", MaterialColor.LIGHT_BLUE);
-    public static final Block PINK_MAGENTA_COLORED_TILES = registerColoredTiles("pink_magenta", MaterialColor.PINK);
-    public static final Block RED_BLUE_COLORED_TILES = registerColoredTiles("red_blue", MaterialColor.RED);
-    public static final Block BLUE_CYAN_COLORED_TILES = registerColoredTiles("blue_cyan", MaterialColor.BLUE);
-    public static final Block GREEN_ORANGE_COLORED_TILES = registerColoredTiles("green_orange", MaterialColor.GREEN);
-    public static final Block BLACK_GRAY_COLORED_TILES = registerColoredTiles("black_gray", MaterialColor.BLACK);
-    public static final Block BLACK_RED_COLORED_TILES = registerColoredTiles("black_red", MaterialColor.BLACK);
-    public static final Block BLACK_BLUE_COLORED_TILES = registerColoredTiles("black_blue", MaterialColor.BLACK);
-    public static final Block MAGENTA_BLACK_COLORED_TILES = registerColoredTiles("magenta_black", MaterialColor.MAGENTA);
-    public static final Block PURPLE_ORANGE_COLORED_TILES = registerColoredTiles("purple_orange", MaterialColor.PURPLE);
-    public static final Block PURPLE_BLUE_COLORED_TILES = registerColoredTiles("purple_blue", MaterialColor.PURPLE);
-    public static final Block GREEN_BROWN_COLORED_TILES = registerColoredTiles("green_brown", MaterialColor.GREEN);
-    public static final Block RAINBOW_COLORED_TILES = registerColoredTiles("rainbow", MaterialColor.LIGHT_BLUE);
+    public static final Block WHITE_COLORED_TILES = registerColoredTiles("white", Blocks.WHITE_CONCRETE);
+    public static final Block ORANGE_COLORED_TILES = registerColoredTiles("orange", Blocks.ORANGE_CONCRETE);
+    public static final Block MAGENTA_COLORED_TILES = registerColoredTiles("magenta", Blocks.MAGENTA_CONCRETE);
+    public static final Block LIGHT_BLUE_COLORED_TILES = registerColoredTiles("light_blue", Blocks.LIGHT_BLUE_CONCRETE);
+    public static final Block YELLOW_COLORED_TILES = registerColoredTiles("yellow", Blocks.YELLOW_CONCRETE);
+    public static final Block LIME_COLORED_TILES = registerColoredTiles("lime", Blocks.LIME_CONCRETE);
+    public static final Block PINK_COLORED_TILES = registerColoredTiles("pink", Blocks.PINK_CONCRETE);
+    public static final Block GRAY_COLORED_TILES = registerColoredTiles("gray", Blocks.GRAY_CONCRETE);
+    public static final Block LIGHT_GRAY_COLORED_TILES = registerColoredTiles("light_gray", Blocks.LIGHT_GRAY_CONCRETE);
+    public static final Block CYAN_COLORED_TILES = registerColoredTiles("cyan", Blocks.CYAN_CONCRETE);
+    public static final Block PURPLE_COLORED_TILES = registerColoredTiles("purple", Blocks.PURPLE_CONCRETE);
+    public static final Block BLUE_COLORED_TILES = registerColoredTiles("blue", Blocks.BLUE_CONCRETE);
+    public static final Block BROWN_COLORED_TILES = registerColoredTiles("brown", Blocks.BROWN_CONCRETE);
+    public static final Block GREEN_COLORED_TILES = registerColoredTiles("green", Blocks.GREEN_CONCRETE);
+    public static final Block RED_COLORED_TILES = registerColoredTiles("red", Blocks.RED_CONCRETE);
+    public static final Block BLACK_COLORED_TILES = registerColoredTiles("black", Blocks.BLACK_CONCRETE);
+
+    public static final Block LIGHT_BLUE_WHITE_COLORED_TILES = registerColoredTiles2("light_blue_white", Blocks.LIGHT_BLUE_CONCRETE);
+    public static final Block RED_WHITE_COLORED_TILES = registerColoredTiles2("red_white", Blocks.RED_CONCRETE);
+    public static final Block BLACK_WHITE_COLORED_TILES = registerColoredTiles2("black_white", Blocks.BLACK_CONCRETE);
+    public static final Block LIME_YELLOW_COLORED_TILES = registerColoredTiles2("lime_yellow", Blocks.LIME_CONCRETE);
+    public static final Block LIGHT_BLUE_YELLOW_COLORED_TILES = registerColoredTiles2("light_blue_yellow", Blocks.LIGHT_BLUE_CONCRETE);
+    public static final Block PINK_MAGENTA_COLORED_TILES = registerColoredTiles2("pink_magenta", Blocks.PINK_CONCRETE);
+    public static final Block RED_BLUE_COLORED_TILES = registerColoredTiles2("red_blue", Blocks.RED_CONCRETE);
+    public static final Block BLUE_CYAN_COLORED_TILES = registerColoredTiles2("blue_cyan", Blocks.BLUE_CONCRETE);
+    public static final Block GREEN_ORANGE_COLORED_TILES = registerColoredTiles2("green_orange", Blocks.GREEN_CONCRETE);
+    public static final Block BLACK_GRAY_COLORED_TILES = registerColoredTiles2("black_gray", Blocks.BLACK_CONCRETE);
+    public static final Block BLACK_RED_COLORED_TILES = registerColoredTiles2("black_red", Blocks.BLACK_CONCRETE);
+    public static final Block BLACK_BLUE_COLORED_TILES = registerColoredTiles2("black_blue", Blocks.BLACK_CONCRETE);
+    public static final Block MAGENTA_BLACK_COLORED_TILES = registerColoredTiles2("magenta_black", Blocks.MAGENTA_CONCRETE);
+    public static final Block PURPLE_ORANGE_COLORED_TILES = registerColoredTiles2("purple_orange", Blocks.PURPLE_CONCRETE);
+    public static final Block PURPLE_BLUE_COLORED_TILES = registerColoredTiles2("purple_blue", Blocks.PURPLE_CONCRETE);
+    public static final Block GREEN_BROWN_COLORED_TILES = registerColoredTiles2("green_brown", Blocks.GREEN_CONCRETE);
+    public static final Block GRAY_LIGHT_GRAY_COLORED_TILES = registerColoredTiles2("gray_light_gray", Blocks.GRAY_CONCRETE);
+    public static final Block RAINBOW_COLORED_TILES = registerColoredTiles("rainbow", Blocks.LIGHT_BLUE_CONCRETE);
 
     // Glazed Terracotta Pillars
     public static final Block WHITE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.WHITE_GLAZED_TERRACOTTA);
@@ -706,6 +791,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BAMBOO_PRESSURE_PLATE = registerPressurePlate("bamboo", PressurePlateBlock.ActivationRule.EVERYTHING, BAMBOO_PLANKS);
     public static final Block CHARRED_PRESSURE_PLATE = registerPressurePlate("charred", PressurePlateBlock.ActivationRule.EVERYTHING, CHARRED_PLANKS);
     public static final Block WHITE_OAK_PRESSURE_PLATE = registerPressurePlate("white_oak", PressurePlateBlock.ActivationRule.EVERYTHING, WHITE_OAK_PLANKS);
+    public static final Block POLISHED_BASALT_PRESSURE_PLATE = registerPressurePlate("polished_basalt", PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_BASALT);
 
     // Buttons
     public static final Block POLISHED_ANDESITE_BUTTON = registerStoneButton(Blocks.POLISHED_ANDESITE);
@@ -719,6 +805,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BAMBOO_BUTTON = registerWoodenButton("bamboo", BAMBOO_PLANKS);
     public static final Block CHARRED_BUTTON = registerWoodenButton("charred", CHARRED_PLANKS);
     public static final Block WHITE_OAK_BUTTON = registerWoodenButton("white_oak", WHITE_OAK_PLANKS);
+    public static final Block POLISHED_BASALT_BUTTON = registerStoneButton("polished_basalt", Blocks.POLISHED_BASALT);
 
     // Thatch
     public static final Block THATCH = registerBlockCopy("thatch", Blocks.HAY_BLOCK);
@@ -727,7 +814,7 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Paper
     public static final Block PAPER_BLOCK = register("paper_block", new Block(FabricBlockSettings.of(Material.WOOL, MaterialColor.QUARTZ).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
-    public static final Block BURNED_PAPER_BLOCK = register("burned_paper_block", new Block(FabricBlockSettings.of(Material.WOOL, MaterialColor.STONE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
+    public static final Block BURNED_PAPER_BLOCK = registerBlockCopy("burned_paper_block", new Block(FabricBlockSettings.of(Material.WOOL, MaterialColor.STONE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
     public static final Block PAPER_WALL = registerWoodenPane("paper_wall");
     public static final Block PAPER_DOOR = registerDoor("paper", 0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0, MaterialColor.QUARTZ);
     public static final Block PAPER_TRAPDOOR = registerTrapdoor("paper", 0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0, MaterialColor.QUARTZ);
@@ -747,7 +834,7 @@ public class BlockusBlocks extends BlocksRegistration {
     // Lantern Blocks
     public static final Block LANTERN_BLOCK = registerLanternBlock("lantern_block", Blocks.LANTERN);
     public static final Block SOUL_LANTERN_BLOCK = registerLanternBlock("soul_lantern_block", Blocks.SOUL_LANTERN);
-    public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlockBase(FabricBlockSettings.of(Material.GOURD, MaterialColor.ORANGE).strength(1).sounds(BlockSoundGroup.WOOD).luminance(10).breakByTool(FabricToolTags.AXES, 0)));
+    public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlockBase(FabricBlockSettings.copyOf(Blocks.JACK_O_LANTERN).luminance(10)));
 
     // Barriers
     public static final Block CAUTION_BARRIER_BLOCK = registerBarrier("caution", 1.5f, 1200.0f);
@@ -758,13 +845,13 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block NETHERITE_SLAB = registerFireproofSlab("netherite", Blocks.NETHERITE_BLOCK);
 
     // Other
-    public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.of(Material.WOOD, MaterialColor.BLACK).strength(5.0f, 6.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.PICKAXES, 1)));
-    public static final Block ENDER_BLOCK = register("ender_block", new Block(FabricBlockSettings.of(Material.WOOD, MaterialColor.GREEN_TERRACOTTA).strength(5.0f, 6.0f).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.PICKAXES, 1)));
+    public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK).strength(5.0f, 6.0f).breakByTool(FabricToolTags.PICKAXES, 1)));
+    public static final Block ENDER_BLOCK = register("ender_block", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.GREEN_TERRACOTTA).strength(5.0f, 6.0f).breakByTool(FabricToolTags.PICKAXES, 1)));
     public static final Block MEMBRANE_BLOCK = register("membrane_block", new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, MaterialColor.WHITE_TERRACOTTA).strength(1.5f).sounds(BlockSoundGroup.SLIME)));
     public static final Block ROTTEN_FLESH_BLOCK = register("rotten_flesh_block", new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, MaterialColor.RED_TERRACOTTA).strength(1.5f).sounds(BlockSoundGroup.SLIME)));
     public static final Block NETHER_STARS_BLOCK = register("nether_stars_block", new NetherStarsBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.QUARTZ).strength(5.0f, 6.0f).breakByTool(FabricToolTags.PICKAXES, 1).requiresTool()));
     public static final Block STURDY_STONE = register("sturdy_stone", new SturdyStoneBlock(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block CAUTION_BLOCK = register("caution_block", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.ORANGE).strength(1.5f, 1200.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block CAUTION_BLOCK = register("caution_block", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.ORANGE).strength(1.5f, 1200.0f).requiresTool()));
     public static final Block WOODEN_FRAME = registerWoodenPane("wooden_frame");
     public static final Block SUGAR_BLOCK = registerFallingBlock("sugar_block", 0.5f, 0.5f, Material.AGGREGATE, BlockSoundGroup.SAND, FabricToolTags.SHOVELS, 0, MaterialColor.QUARTZ);
     public static final Block REDSTONE_SAND = register_redstone("redstone_sand", new FallingRedstoneBlock(FabricBlockSettings.of(Material.AGGREGATE, MaterialColor.LAVA).strength(2.0f, 6.0f).sounds(BlockSoundGroup.SAND).breakByTool(FabricToolTags.SHOVELS, 0)));
@@ -774,23 +861,27 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block PATH = register_decoration("dirt_path", new PathBlock(FabricBlockSettings.copy(Blocks.GRASS_PATH)));
 
     // Legacy
+    public static final Block LEGACY_FIRST_GRASS_BLOCK = registerBlockCopy("legacy_first_grass_block", Blocks.GRASS_BLOCK);
     public static final Block LEGACY_GRASS_BLOCK = registerBlockCopy("legacy_grass_block", Blocks.GRASS_BLOCK);
-    public static final Block LEGACY_LEAVES = registerLeaves("legacy_leaves", Blocks.OAK_LEAVES);
+    public static final Block LEGACY_LEAVES = register("legacy_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).materialColor(MaterialColor.LIME).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
     public static final Block LEGACY_BRICKS = registerBlockCopy("legacy_bricks", Blocks.BRICKS);
     public static final Block LEGACY_PLANKS = registerBlockCopy("legacy_planks", Blocks.OAK_PLANKS);
+    public static final Block LEGACY_FIRST_COBBLESTONE = registerBlockCopy("legacy_first_cobblestone", Blocks.COBBLESTONE);
     public static final Block LEGACY_COBBLESTONE = registerBlockCopy("legacy_cobblestone", Blocks.COBBLESTONE);
     public static final Block LEGACY_MOSSY_COBBLESTONE = registerBlockCopy("legacy_mossy_cobblestone", Blocks.MOSSY_COBBLESTONE);
     public static final Block LEGACY_GRAVEL = register("legacy_gravel", new GravelBlock(FabricBlockSettings.copy(Blocks.GRAVEL)));
     public static final Block LEGACY_IRON_BLOCK = registerBlockCopy("legacy_iron_block", Blocks.IRON_BLOCK);
     public static final Block LEGACY_GOLD_BLOCK = registerBlockCopy("legacy_gold_block", Blocks.GOLD_BLOCK);
-    public static final Block EXPLOSION_PROOF_LEGACY_GOLD_BLOCK = register("legacy_explosion_proof_gold_block", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.GOLD).strength(5.0f, 6000.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block LEGACY_COAL_BLOCK = registerBlockCopy("legacy_coal_block", Blocks.COAL_BLOCK);
+    public static final Block EXPLOSION_PROOF_LEGACY_GOLD_BLOCK = register("legacy_explosion_proof_gold_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)));
     public static final Block LEGACY_DIAMOND_BLOCK = registerBlockCopy("legacy_diamond_block", Blocks.DIAMOND_BLOCK);
     public static final Block LEGACY_LAPIS_BLOCK = registerBlockCopy("legacy_lapis_block", Blocks.LAPIS_BLOCK);
     public static final Block LEGACY_SPONGE = register("legacy_sponge", new SpongeBlockBase(FabricBlockSettings.copy(Blocks.SPONGE)));
     public static final Block LEGACY_CRYING_OBSIDIAN = registerBlockCopy("legacy_crying_obsidian", Blocks.CRYING_OBSIDIAN);
-    public static final Block LEGACY_STONECUTTER = register("legacy_stonecutter", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE).strength(1.5f, 17.5f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block LEGACY_GLOWSTONE = registerBlockCopy("legacy_glowstone", Blocks.GLOWSTONE);
+    public static final Block LEGACY_STONECUTTER = register("legacy_stonecutter", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f, 17.5f).requiresTool()));
     public static final Block LEGACY_GLOWING_OBSIDIAN = registerLightBlock("legacy_glowing_obsidian", 50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MaterialColor.BLACK);
-    public static final Block NETHER_REACTOR_CORE = register("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.LIGHT_BLUE).strength(1.5f, 6.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
+    public static final Block NETHER_REACTOR_CORE = register("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
 
     // Barrels
     public static final BarrelBlockBase OAK_BARREL = new BarrelBlockBase("oak_barrel", Blocks.OAK_PLANKS.getDefaultMaterialColor());

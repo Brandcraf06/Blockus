@@ -28,7 +28,8 @@
 	"blockus:lava_polished_blackstone_wall",
 	"blockus:crimson_warty_blackstone_bricks_wall",
 	"blockus:warped_warty_blackstone_bricks_wall",
-	"blockus:snow_bricks_wall",	
-	"blockus:ice_bricks_wall"	
+	"blockus:snow_bricks_wall",
+	"blockus:ice_bricks_wall",
+	"blockus:basalt_bricks_wall"
   ]
 }

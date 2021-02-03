@@ -8,6 +8,7 @@
     "blockus:marble_pressure_plate",
     "blockus:bluestone_pressure_plate",
     "blockus:polished_netherrack_pressure_plate",
-    "blockus:polished_end_stone_pressure_plate"
+    "blockus:polished_end_stone_pressure_plate",
+    "blockus:polished_basalt_pressure_plate"
   ]
 }

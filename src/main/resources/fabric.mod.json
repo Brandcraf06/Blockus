@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "blockus",
   "version": "${version}",
-   
+
   "name": "Blockus",
   "description": "A mod that mainly adds blocks!",
   "authors": [
