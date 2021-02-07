@@ -225,11 +225,6 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SAPLING, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.5f);
-        CompostingChanceRegistry.INSTANCE.add(Items.GRASS_BLOCK, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(Items.PODZOL, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(Items.MYCELIUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(Items.DIRT, 0.15f);
-        CompostingChanceRegistry.INSTANCE.add(Items.COARSE_DIRT, 0.15f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_STAIRS, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_SLAB, 0.65f);

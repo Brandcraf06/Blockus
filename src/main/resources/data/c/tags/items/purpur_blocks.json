@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:purpur_bricks",
+    "blockus:smooth_purpur",
+    "blockus:purpur_squares",
+    "blockus:purpur_little_bricks",
+    "blockus:chiseled_purpur",
+    "blockus:purpur_lines"
+  ]
+}
