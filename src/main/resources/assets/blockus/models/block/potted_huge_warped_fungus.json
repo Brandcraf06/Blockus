@@ -4,6 +4,6 @@
     "log_top": "block/warped_stem_top",
 	"log": "block/warped_stem",
 	"leaves": "block/warped_wart_block",
-	"dirt": "block/warped_nylium"
+	"soil": "block/warped_nylium"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:sandstone_bricks",
+    "blockus:small_sandstone_bricks",
+    "blockus:rough_sandstone",
+    "blockus:sandstone_pillar"
+  ]
+}

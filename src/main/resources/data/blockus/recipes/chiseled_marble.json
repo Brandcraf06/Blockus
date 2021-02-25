@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "blockus:marble"
+    "item": "blockus:marble_bricks"
   },
   "result": "blockus:chiseled_marble",
   "count": 1

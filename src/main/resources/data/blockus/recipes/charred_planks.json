@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "tag": "minecraft:flammable_planks"
+    "tag": "c:planks_that_burn"
   },
   "result": "blockus:charred_planks",
   "experience": 0.1,

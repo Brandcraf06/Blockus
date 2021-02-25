@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "minecraft:polished_diorite"
+    "item": "blockus:diorite_bricks"
   },
   "result": "blockus:chiseled_diorite_bricks",
   "count": 1

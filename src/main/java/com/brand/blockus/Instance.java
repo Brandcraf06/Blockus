@@ -114,6 +114,8 @@ public class Instance {
         // general
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
         FuelRegistry.INSTANCE.add(Blocks.SUGAR_CANE, 50);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
 
         // small hedges
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 100);
@@ -224,11 +226,6 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SAPLING, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.5f);
-        CompostingChanceRegistry.INSTANCE.add(Items.GRASS_BLOCK, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(Items.PODZOL, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(Items.MYCELIUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(Items.DIRT, 0.15f);
-        CompostingChanceRegistry.INSTANCE.add(Items.COARSE_DIRT, 0.15f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_STAIRS, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_SLAB, 0.65f);

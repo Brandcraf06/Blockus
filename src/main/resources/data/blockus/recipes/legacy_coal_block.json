@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:coal_block"
+  },
+  "result": "blockus:legacy_coal_block",
+  "count": 1
+}

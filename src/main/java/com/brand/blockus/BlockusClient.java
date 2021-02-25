@@ -14,7 +14,6 @@ public class BlockusClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xffebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
 
         registerBlockColor(BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);
         registerBlockColor(BlockusBlocks.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES);
@@ -34,6 +33,11 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.POTTED_JUNGLE, Blocks.JUNGLE_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_ACACIA, Blocks.ACACIA_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_DARK_OAK, Blocks.DARK_OAK_LEAVES);
+
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.POTTED_WHITE_OAK);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
                 BlockusBlocks.OAK_SMALL_HEDGE,
@@ -66,7 +70,11 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.POTTED_JUNGLE,
                 BlockusBlocks.POTTED_ACACIA,
                 BlockusBlocks.POTTED_DARK_OAK,
-                BlockusBlocks.POTTED_WHITE_OAK
+                BlockusBlocks.POTTED_WHITE_OAK,
+                BlockusBlocks.POTTED_CACTUS_LARGE,
+                BlockusBlocks.POTTED_BAMBOO_LARGE,
+                BlockusBlocks.BLACKSTONE_DOOR,
+                BlockusBlocks.BLACKSTONE_TRAPDOOR
 
         );
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),

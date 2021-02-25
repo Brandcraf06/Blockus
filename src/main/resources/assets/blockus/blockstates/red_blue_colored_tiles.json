@@ -1,5 +1,6 @@
 {
     "variants": {
-        "": { "model": "blockus:block/red_blue_colored_tiles" }
+        "axis=x": { "model": "blockus:block/red_blue_colored_tiles" },
+        "axis=z":  { "model": "blockus:block/red_blue_colored_tiles_2" }
     }
 }

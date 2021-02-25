@@ -1,21 +1,6 @@
 {
-  "parent": "blockus:block/template_small_hedge_end",
-  "textures": {
-    "hedge": "blockus:block/white_oak_leaves"
-  },
-  "elements": [
-    {
-      "from": [ 5, 0, 5 ],
-      "to": [ 11, 16, 11 ],
-      "faces": {
-        "down":  { "texture": "#hedge", "cullface": "down" },
-        "up":    { "texture": "#hedge", "cullface": "up" },
-        "north": { "texture": "#hedge" },
-        "south": { "texture": "#hedge" },
-        "west":  { "texture": "#hedge" },
-        "east":  { "texture": "#hedge" }
-      },
-      "__comment": "Hedge end"
+    "parent": "blockus:block/template_small_hedge_end",
+    "textures": {
+        "hedge": "blockus:block/white_oak_leaves"
     }
-  ]
 }

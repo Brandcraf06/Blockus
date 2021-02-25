@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "minecraft:polished_granite"
+    "item": "blockus:granite_bricks"
   },
   "result": "blockus:zigzagged_granite",
   "count": 1
