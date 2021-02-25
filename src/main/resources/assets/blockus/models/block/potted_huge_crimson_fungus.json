@@ -4,6 +4,6 @@
     "log_top": "block/crimson_stem_top",
 	"log": "block/crimson_stem",
 	"leaves": "block/nether_wart_block",
-	"dirt": "block/crimson_nylium"
+	"soil": "block/crimson_nylium"
   }
 }

@@ -9,6 +9,7 @@
   "block.blockus.gray_patterned_wool": "Grey Patterned Wool",
   "block.blockus.light_gray_patterned_wool": "Light Grey Patterned Wool",
   "block.blockus.chiseled_purpur": "Chiselled Purpur",
+  "block.blockus.chiseled_phantom_purpur": "Chiselled Phantom Purpur",
   "block.blockus.light_gray_beveled_glass": "Light Grey Beveled Glass",
   "block.blockus.gray_beveled_glass": "Grey Beveled Glass",
   "block.blockus.light_gray_beveled_glass_pane": "Light Grey Beveled Glass Pane",
@@ -64,7 +65,6 @@
   "block.blockus.chiseled_green_concrete": "Chiselled Green Concrete",
   "block.blockus.chiseled_red_concrete": "Chiselled Red Concrete",
   "block.blockus.chiseled_black_concrete": "Chiselled Black Concrete",
-  "block.blockus.chiseled_basalt": "Chiselled Basalt",
-  "block.blockus.chiseled_dark_prismarine": "Chiselled Dark Prismarine",
-  "block.blockus.chiseled_prismarine": "Chiselled Prismarine"
+  "block.blockus.chiseled_polished_basalt": "Chiselled Polished Basalt",
+  "block.blockus.chiseled_dark_prismarine": "Chiselled Dark Prismarine"
 }

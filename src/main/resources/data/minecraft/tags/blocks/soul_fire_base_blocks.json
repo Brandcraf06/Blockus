@@ -7,6 +7,14 @@
 	"blockus:small_soul_sandstone_bricks",
 	"blockus:cut_soul_sandstone",
 	"blockus:chiseled_soul_sandstone",
-    "blockus:soul_sandstone_pillar"
+    "blockus:soul_sandstone_pillar",
+	"blockus:phantom_purpur_block",
+	"blockus:phantom_purpur_pillar",
+	"blockus:phantom_purpur_bricks",
+    "blockus:smooth_phantom_purpur",
+    "blockus:phantom_purpur_squares",
+    "blockus:phantom_purpur_little_bricks",
+    "blockus:chiseled_phantom_purpur",
+    "blockus:phantom_purpur_lines"
   ]
 }

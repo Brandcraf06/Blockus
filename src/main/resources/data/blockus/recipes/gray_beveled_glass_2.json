@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "beveled_glass_2",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:beveled_glass"
+    },
+    "$": {
+      "item": "minecraft:gray_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:gray_beveled_glass",
+    "count": 8
+  }
+}

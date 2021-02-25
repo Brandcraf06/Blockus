@@ -19,12 +19,12 @@
         {   "from": [ 5, 0, 0 ],
             "to": [ 11, 16, 16 ],
             "faces": {
-                "down":  { "uv": [ 0, 3, 16, 16 ], "texture": "#hedge", "tintindex": 0, "cullface": "down" },
-                "up":    { "uv": [ 0, 3, 16, 16 ], "texture": "#hedge", "tintindex": 0 },
-                "north": { "uv": [ 0, 3, 16, 16 ], "texture": "#hedge", "tintindex": 0, "cullface": "north" },
-                "south": { "uv": [ 0, 3, 16, 16 ], "texture": "#hedge", "tintindex": 0, "cullface": "south" },
-                "west":  { "uv": [ 0, 3, 16, 16 ], "texture": "#hedge", "tintindex": 0 },
-                "east":  { "uv": [ 0, 3, 16, 16 ], "texture": "#hedge", "tintindex": 0 }
+                "down":  { "texture": "#hedge", "tintindex": 0, "cullface": "down" },
+                "up":    { "texture": "#hedge", "tintindex": 0 },
+                "north": { "texture": "#hedge", "tintindex": 0, "cullface": "north" },
+                "south": { "texture": "#hedge", "tintindex": 0, "cullface": "south" },
+                "west":  { "texture": "#hedge", "tintindex": 0 },
+                "east":  { "texture": "#hedge", "tintindex": 0 }
             },
             "__comment": "Hedge"
         }

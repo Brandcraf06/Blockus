@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "blockus:block/prismarine_pillar" },
-        "axis=z":   { "model": "blockus:block/prismarine_pillar", "x": 90 },
-        "axis=x":   { "model": "blockus:block/prismarine_pillar", "x": 90, "y": 90 }
-    }
-}

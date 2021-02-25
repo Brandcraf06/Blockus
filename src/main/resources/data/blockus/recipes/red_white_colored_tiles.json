@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "multi colored tiles",
+  "group": "white multi colored tiles",
   "ingredients": [
     {
       "item": "minecraft:red_concrete"

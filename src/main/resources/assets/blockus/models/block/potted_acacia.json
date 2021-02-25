@@ -3,6 +3,7 @@
   "textures": {
     "log_top": "block/acacia_log_top",
 	"log": "block/acacia_log",
-	"leaves": "block/acacia_leaves"
+	"leaves": "block/acacia_leaves",
+	"soil": "block/dirt"
   }
 }

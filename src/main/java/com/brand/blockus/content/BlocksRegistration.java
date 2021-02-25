@@ -266,6 +266,10 @@ public class BlocksRegistration {
         return register(id + "_chain", new ChainBlock(FabricBlockSettings.copy(base)));
     }
 
+    public static Block registerShingles(String id, Block base) {
+        return register(id, new Block(FabricBlockSettings.copyOf(base).sounds(BlockSoundGroup.NETHER_BRICKS)));
+    }
+
     public static Block register(String id, Block block, boolean registerItem) {
         Identifier identifier = new Identifier(Blockus.MOD_ID, id);
         Block registeredBlock = Registry.register(Registry.BLOCK, identifier, block);

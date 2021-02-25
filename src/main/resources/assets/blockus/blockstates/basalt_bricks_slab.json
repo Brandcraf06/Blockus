@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "blockus:block/basalt_bricks_slab" },
-        "type=top": { "model": "blockus:block/basalt_bricks_slab_top" },
-        "type=double": { "model": "blockus:block/basalt_bricks" }
-    }
-}
-

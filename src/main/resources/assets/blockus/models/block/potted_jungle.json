@@ -3,6 +3,7 @@
   "textures": {
     "log_top": "block/jungle_log_top",
 	"log": "block/jungle_log",
-	"leaves": "block/jungle_leaves"
+	"leaves": "block/jungle_leaves",
+	"soil": "block/dirt"
   }
 }

@@ -4,6 +4,6 @@
     "log_top": "block/mushroom_stem",
 	"log": "block/mushroom_stem",
 	"leaves": "block/red_mushroom_block",
-	"dirt": "block/mycelium_top"
+	"soil": "block/mycelium_top"
   }
 }

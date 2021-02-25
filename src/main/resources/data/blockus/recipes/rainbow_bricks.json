@@ -1,8 +1,16 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:rainbow_block"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:rainbow_block"
+    }
   },
-  "result": "blockus:rainbow_bricks",
-  "count": 1
+  "result": {
+    "item": "blockus:rainbow_bricks",
+    "count": 4
+  }
 }
