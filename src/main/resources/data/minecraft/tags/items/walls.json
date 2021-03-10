@@ -21,6 +21,11 @@
 	"blockus:acacia_small_hedge",
 	"blockus:dark_oak_small_hedge",
 	"blockus:white_oak_small_hedge",
+	"blockus:azalea_small_hedge",
+	"blockus:azalea_small_hedge_flowers",
+	"blockus:moss_small_hedge",	
+	"blockus:crimson_small_hedge",	
+	"blockus:warped_small_hedge",	
 	"blockus:honeycomb_bricks_wall",
 	"blockus:sandy_bricks_wall",
 	"blockus:charred_bricks_wall",
@@ -34,5 +39,6 @@
 	"blockus:bluestone_bricks_wall",
 	"blockus:purpur_bricks_wall",
 	"blockus:phantom_purpur_bricks_wall"
+	
   ]
 }

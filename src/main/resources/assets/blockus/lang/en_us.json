@@ -789,5 +789,11 @@
   "block.blockus.legacy_glowing_obsidian": "Glowing Obsidian (Legacy)",
   "block.blockus.legacy_glowstone": "Glowstone (Legacy)",
   "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core (Legacy)",
-  "block.blockus.legacy_planks": "Planks (Legacy)"
+  "block.blockus.legacy_planks": "Planks (Legacy)",
+
+  "block.blockus.warped_small_hedge": "Warped Small Hedge",
+  "block.blockus.crimson_small_hedge": "Crimson Small Hedge",
+  "block.blockus.azalea_small_hedge": "Azalea Small Hedge",
+  "block.blockus.azalea_small_hedge_flowers": "Flowering Azalea Small Hedge",
+  "block.blockus.moss_small_hedge": "Moss Small Hedge"
 }

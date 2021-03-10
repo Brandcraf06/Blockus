@@ -790,5 +790,11 @@
   "block.blockus.legacy_glowing_obsidian": "Obsidienne lumineuse (Ancien)",
   "block.blockus.legacy_glowstone": "Pierre lumineuse (Ancien)",
   "block.blockus.legacy_nether_reactor_core": "Cœur du réacteur du Nether (Ancien)",
-  "block.blockus.legacy_planks": "Planches (Ancien)"
+  "block.blockus.legacy_planks": "Planches (Ancien)",
+
+  "block.blockus.warped_small_hedge": "Petite haie biscornue",
+  "block.blockus.crimson_small_hedge": "Petite haie carmin",
+  "block.blockus.azalea_small_hedge": "Petite haie d'azalée",
+  "block.blockus.azalea_small_hedge_flowers": "Petite haie d'azalée fleurie",
+  "block.blockus.moss_small_hedge": "Petite haie de mousse"
 }

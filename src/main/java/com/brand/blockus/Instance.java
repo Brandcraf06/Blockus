@@ -29,6 +29,8 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.JUNGLE_SMALL_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.SPRUCE_SMALL_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.AZALEA_SMALL_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.AZALEA_SMALL_HEDGE_FLOWERS, 30, 60);
 
         // paper
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_WALL, 30, 60);
@@ -117,17 +119,10 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
         FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
 
-        // small hedges
-        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_HEDGE, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_SMALL_HEDGE, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_HEDGE, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_SMALL_HEDGE, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_SMALL_HEDGE, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, 100);
-
         // paper
         FuelRegistry.INSTANCE.add(Items.PAPER, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_TRAPDOOR, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_DOOR, 67);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_WALL, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_BLOCK, 500);
 
@@ -213,29 +208,34 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 300);
 
 // Composting
-
-        CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.ROTTEN_FLESH_BLOCK, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_HEDGE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BIRCH_SMALL_HEDGE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_HEDGE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_SMALL_HEDGE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_SMALL_HEDGE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SAPLING, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.5f);
+        CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BIRCH_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.AZALEA_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SAPLING, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SWEET_BERRIES_CRATE, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.AZALEA_SMALL_HEDGE_FLOWERS, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.MOSS_SMALL_HEDGE, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_SLAB, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_STAIRS, 0.75f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_SLAB, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WARPED_SMALL_HEDGE, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.CRIMSON_SMALL_HEDGE, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.ROTTEN_FLESH_BLOCK, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.APPLE_CRATE, 0.95f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BEETROOT_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BREAD_BOX, 1.0f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.CARROT_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.COOKIE_BLOCK, 1.0f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.POTATO_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SWEET_BERRIES_CRATE, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BREAD_BOX, 1.0f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.COOKIE_BLOCK, 1.0f);
+
 
 // Instance
 

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "small_hedges",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:warped_wart_block"
+    }
+  },
+  "result": {
+    "item": "blockus:warped_small_hedge",
+    "count": 6
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "small_hedges",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:azalea_leaves_flowers"
+    }
+  },
+  "result": {
+    "item": "blockus:azalea_small_hedge_flowers",
+    "count": 6
+  }
+}
