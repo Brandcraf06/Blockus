@@ -425,6 +425,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ACACIA_SMALL_HEDGE = registerSmallHedge("acacia_small_hedge", Blocks.ACACIA_LEAVES);
     public static final Block DARK_OAK_SMALL_HEDGE = registerSmallHedge("dark_oak_small_hedge", Blocks.DARK_OAK_LEAVES);
     public static final Block WHITE_OAK_SMALL_HEDGE = registerSmallHedge("white_oak_small_hedge", BlockusBlocks.WHITE_OAK_LEAVES);
+    public static final Block CRIMSON_SMALL_HEDGE = registerSmallHedge("crimson_small_hedge", Blocks.NETHER_WART_BLOCK);
+    public static final Block WARPED_SMALL_HEDGE = registerSmallHedge("warped_small_hedge", Blocks.WARPED_WART_BLOCK);
 
     // Large Flower Pots
     public static final Block LARGE_FLOWER_POT = registerLargeFlowerPot(Blocks.AIR, "large_flower_pot");
