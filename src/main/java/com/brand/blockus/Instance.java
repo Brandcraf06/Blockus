@@ -115,7 +115,6 @@ public class Instance {
 // Fuel
         // general
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
-        FuelRegistry.INSTANCE.add(Blocks.SUGAR_CANE, 50);
         FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
         FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
 
@@ -208,7 +207,6 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 300);
 
 // Composting
-        CompostingChanceRegistry.INSTANCE.add(Items.ROTTEN_FLESH, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_HEDGE, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BIRCH_SMALL_HEDGE, 0.30f);
@@ -228,7 +226,6 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_STAIRS, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WARPED_SMALL_HEDGE, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.CRIMSON_SMALL_HEDGE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.ROTTEN_FLESH_BLOCK, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.APPLE_CRATE, 0.95f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BEETROOT_CRATE, 0.95f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.CARROT_CRATE, 0.95f);
