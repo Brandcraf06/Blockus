@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sturdy blackstone",
+  "pattern": [
+    "SCS",
+    "C C",
+    "SCS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:polished_blackstone"
+    },
+    "C": {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "result": {
+    "item": "blockus:sturdy_blackstone",
+    "count": 2
+  }
+} 
