@@ -893,6 +893,7 @@ public class BlockusBlocks extends BlocksRegistration {
     // Other
     public static final Block PATH = register_decoration("path", new PathBlock(FabricBlockSettings.copyOf(Blocks.DIRT_PATH).breakByTool(FabricToolTags.SHOVELS)));
     public static final Block STURDY_STONE = register("sturdy_stone", new SturdyStoneBlock(FabricBlockSettings.copy(Blocks.STONE)));
+    public static final Block STURDY_BLACKSTONE = register("sturdy_blackstone", new SturdyStoneBlock(FabricBlockSettings.copy(Blocks.POLISHED_BLACKSTONE)));
     public static final Block CHARCOAL_BLOCK = registerBlockCopy("charcoal_block", Blocks.COAL_BLOCK);
     public static final Block SUGAR_BLOCK = registerFallingBlock("sugar_block", 0.5f, 0.5f, Material.AGGREGATE, BlockSoundGroup.SAND, FabricToolTags.SHOVELS, 0, MapColor.OFF_WHITE);
     public static final Block ENDER_BLOCK = register("ender_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.TERRACOTTA_GREEN).strength(5.0f, 6.0f).breakByTool(FabricToolTags.PICKAXES, 1)));
