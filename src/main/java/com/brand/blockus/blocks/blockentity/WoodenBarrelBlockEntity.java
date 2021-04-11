@@ -10,7 +10,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.sound.SoundCategory;
@@ -55,22 +55,21 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
         };
     }
 
-    public CompoundTag writeNbt(CompoundTag tag) {
-        super.writeNbt(tag);
-        if (!this.serializeLootTable(tag)) {
-            Inventories.writeNbt(tag, this.inventory);
+    public NbtCompound writeNbt(NbtCompound nbt) {
+        super.writeNbt(nbt);
+        if (!this.serializeLootTable(nbt)) {
+            Inventories.writeNbt(nbt, this.inventory);
         }
 
-        return tag;
+        return nbt;
     }
 
-    public void readNbt(CompoundTag tag) {
-        super.readNbt(tag);
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
         this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
-        if (!this.deserializeLootTable(tag)) {
-            Inventories.readNbt(tag, this.inventory);
+        if (!this.deserializeLootTable(nbt)) {
+            Inventories.readNbt(nbt, this.inventory);
         }
-
     }
 
     public int size() {
