@@ -1,11 +1,13 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:stone"
-  },
-  "addition": {
-    "item": "minecraft:iron_nugget"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:stone"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    }
+  ],
   "result": {
     "item": "blockus:weight_storage_cube"
   }
