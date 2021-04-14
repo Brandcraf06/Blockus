@@ -313,9 +313,14 @@ public class BlocksRegistration {
         Identifier identifier = new Identifier(Blockus.MOD_ID, id);
         Block registeredBlock = Registry.register(Registry.BLOCK, identifier, block);
         if (registerItem) {
-            Registry.register(Registry.ITEM, identifier, new BlockItem(registeredBlock, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
+            register_decoration_item(id, registeredBlock);
         }
         return registeredBlock;
+    }
+
+    public static Item register_decoration_item(String id, Block block) {
+        Identifier identifier = new Identifier(Blockus.MOD_ID, id);
+        return Registry.register(Registry.ITEM, identifier, new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
     }
 
     public static Block register_decoration(String id, Block block) {

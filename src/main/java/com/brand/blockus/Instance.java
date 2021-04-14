@@ -1,15 +1,23 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
+
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.ShovelItem;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.TradeOffers;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class Instance {
 
@@ -231,10 +239,16 @@ public class Instance {
 
 // Instance
 
+       addTradeOffers();
         addStrippables();
         addPathBlocks();
     }
 
+    public static void addTradeOffers() {
+        TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
+            factories.add(new SellSaplingFactory(BlockusBlocks.WHITE_OAK_SAPLING_ITEM));
+        });
+    }
 
     public static void addStrippables() {
         AxeItem.STRIPPED_BLOCKS = new HashMap<>(AxeItem.STRIPPED_BLOCKS);
@@ -247,5 +261,17 @@ public class Instance {
         ShovelItem.PATH_STATES.put(Blocks.DIRT, BlockusBlocks.PATH.getDefaultState());
         ShovelItem.PATH_STATES.put(Blocks.COARSE_DIRT, BlockusBlocks.PATH.getDefaultState());
         ShovelItem.PATH_STATES.put(Blocks.GRASS_PATH, BlockusBlocks.PATH.getDefaultState());
+    }
+
+    private static class SellSaplingFactory implements TradeOffers.Factory {
+        private final ItemStack sapling;
+
+        public SellSaplingFactory(ItemConvertible sapling) {
+            this.sapling = new ItemStack(sapling);
+        }
+
+        public TradeOffer create(Entity entity, Random random) {
+            return new TradeOffer(new ItemStack(Items.EMERALD, 5), this.sapling, 8, 1, 0.05f);
+        }
     }
 }
