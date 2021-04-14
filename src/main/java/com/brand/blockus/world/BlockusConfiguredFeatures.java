@@ -31,9 +31,9 @@ public class BlockusConfiguredFeatures {
     public static final ConfiguredFeature<?, ?> WHITE_OAK_TREE_RARE;
 
     static {
-        LIMESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 64)).rangeOf(YOffset.fixed(32), YOffset.fixed(128)).spreadHorizontally().repeat(2);
-        MARBLE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 64)).rangeOf(YOffset.fixed(0), YOffset.fixed(75)).spreadHorizontally().repeat(2);
-        BLUESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.BLUESTONE.getDefaultState(), 64)).rangeOf(YOffset.getBottom(), YOffset.fixed(0)).spreadHorizontally().repeat(2);
+        LIMESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 33)).method_36296(YOffset.fixed(32), YOffset.fixed(128)).spreadHorizontally().repeat(10);
+        MARBLE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 33)).method_36296(YOffset.fixed(0), YOffset.fixed(75)).spreadHorizontally().repeat(10);
+        BLUESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.BLUESTONE.getDefaultState(), 33)).method_36296(YOffset.getBottom(), YOffset.fixed(25)).spreadHorizontally().repeat(10);
         WHITE_OAK_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(BlockusBlocks.WHITE_OAK_LOG.getDefaultState()),
                 new StraightTrunkPlacer(7, 2, 0),
                 new SimpleBlockStateProvider(BlockusBlocks.WHITE_OAK_LEAVES.getDefaultState()),
