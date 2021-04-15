@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " S ",
-	"SBS",
-	" S "
+    " A ",
+	"ABA",
+	" A "
   ],
   "key": {
-    "S": {
+    "A": {
       "item": "minecraft:stone"
     },
 	"B": {
