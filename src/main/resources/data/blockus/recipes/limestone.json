@@ -6,14 +6,14 @@
   ],
   "key": {
     "A": {
-      "item": "blockus:limestone"
+      "item": "minecraft:cobblestone"
     },
     "B": {
       "item": "minecraft:bone_meal"
     }
   },
   "result": {
-    "item": "blockus:marble",
+    "item": "blockus:limestone",
     "count": 2
   }
 }
