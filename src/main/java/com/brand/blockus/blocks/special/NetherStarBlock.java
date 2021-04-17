@@ -10,9 +10,9 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class NetherStarsBlock extends Block {
+public class NetherStarBlock extends Block {
 
-    public NetherStarsBlock(Settings settings) {
+    public NetherStarBlock(Settings settings) {
         super(settings);
     }
 
