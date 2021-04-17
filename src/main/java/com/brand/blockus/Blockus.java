@@ -1,6 +1,7 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -17,11 +18,13 @@ public class Blockus implements ModInitializer {
     public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(BlockusBlocks.BLAZE_BRICKS));
     public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(BlockusBlocks.OAK_SMALL_HEDGE));
     public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(BlockusBlocks.REDSTONE_SAND));
+    public static final ItemGroup BLOCKUS_LEGACY = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_legacy"), () -> new ItemStack(BlockusBlocks.LEGACY_BRICKS));
 
     @Override
     public void onInitialize() {
 
         new BlockusBlocks();
+        new BlockusItems();
         Instance.init();
         BlockusConfiguredFeatures.registerConfiguredFeature();
         BlockusConfiguredFeatures.registerBiomeModifications();

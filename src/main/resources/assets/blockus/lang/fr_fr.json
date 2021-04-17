@@ -2,6 +2,7 @@
   "itemGroup.blockus.blockus_building_blocks": "Blocs de construction §3(Blockus)",
   "itemGroup.blockus.blockus_decorations": "Blocs décoratifs §3(Blockus)",
   "itemGroup.blockus.blockus_redstone": "Redstone §3(Blockus)",
+  "itemGroup.blockus.blockus_legacy": "Blocs anciens §3(Blockus)",
   "blockus.blockItem.givespeed": "Donne l'effet Rapidité III au joueur qui se tient dessus.",
   "block.blockus.blaze_bricks": "Briques de Blaze",
   "block.blockus.blaze_bricks_wall": "Muret en briques de Blaze",
