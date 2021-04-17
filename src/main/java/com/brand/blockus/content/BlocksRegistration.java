@@ -6,7 +6,6 @@ import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.blocks.base.PaneBlockBase;
 import com.brand.blockus.blocks.base.StairsBase;
 import com.brand.blockus.blocks.base.redstone.*;
-import com.brand.blockus.blocks.blockitem.SpeedBlockItem;
 import com.brand.blockus.blocks.special.Barrier;
 import com.brand.blockus.blocks.special.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.special.SmallHedgeBlock;
@@ -17,7 +16,6 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.tag.Tag;
@@ -55,7 +53,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerWoodenPane(String id) {
-        return register_decoration(id, new PaneBlockBase(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD)));
+        return register(id, new PaneBlockBase(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD)));
     }
 
     // Pillar
@@ -89,7 +87,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerFireproofSlab(String id, Block base) {
-        return register_fireproof(id + "_slab", new SlabBlock(FabricBlockSettings.copy(base)));
+        return register(id + "_slab", new SlabBlock(FabricBlockSettings.copy(base)));
     }
 
     // Stairs
@@ -106,12 +104,12 @@ public class BlocksRegistration {
     }
 
     public static Block registerFireproofStairs(String id, Block base) {
-        return register_fireproof(id + "_stairs", new StairsBase(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        return register(id + "_stairs", new StairsBase(base.getDefaultState(), FabricBlockSettings.copy(base)));
     }
 
     // Wall
     public static Block registerWall(String id, Block base) {
-        return register_decoration(id + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
+        return register(id + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerWall(Block base) {
@@ -123,11 +121,11 @@ public class BlocksRegistration {
     }
 
     public static Block registerBarrier(String id, float hardness, float resistance) {
-        return register_decoration(id + "_barrier", new Barrier(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).requiresTool()));
+        return register(id + "_barrier", new Barrier(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).requiresTool()));
     }
 
     public static Block registerSmallHedge(String id, Block base) {
-        return register_decoration(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).breakByTool(FabricToolTags.HOES).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
+        return register(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).breakByTool(FabricToolTags.HOES).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
     // Fence
@@ -137,21 +135,21 @@ public class BlocksRegistration {
 
     // Fence Gate
     public static Block registerFenceGate(String id, Block base) {
-        return register_redstone(id + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copy(base)));
+        return register(id + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copy(base)));
     }
 
     // Pressure Plate
     public static Block registerPressurePlate(String id, PressurePlateBlock.ActivationRule type, Block base) {
-        return register_redstone(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base)));
+        return register(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base)));
     }
 
     // Button
     public static Block registerWoodenButton(String id, Block base) {
-        return register_redstone(id + "_button", new WoodenButtonBase(FabricBlockSettings.copy(base)));
+        return register(id + "_button", new WoodenButtonBase(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerStoneButton(String id, Block base) {
-        return register_redstone(id + "_button", new StoneButtonBase(FabricBlockSettings.copy(base)));
+        return register(id + "_button", new StoneButtonBase(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerStoneButton(Block base) {
@@ -160,36 +158,36 @@ public class BlocksRegistration {
 
     // Plants
     public static Block registerPottedPlant(Block content, String id) {
-        return register_noitem("potted_" + id, new FlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).breakInstantly().nonOpaque()));
+        return register("potted_" + id, new FlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).breakInstantly().nonOpaque()));
     }
 
     public static Block registerLargeFlowerPot(Block content, String id) {
-        return register_decoration(id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque()));
+        return register(id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque()));
     }
 
     public static Block registerPottedDoublePlant(Block content, String id) {
-        return register_noitem("potted_" + id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque()));
+        return register("potted_" + id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque()));
     }
 
     // Door & Trapdoor
     public static Block registerDoor(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MapColor color) {
-        return register_redstone(id + "_door", new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque()));
+        return register(id + "_door", new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque()));
     }
 
     public static Block registerDoor2(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MapColor color) {
-        return register_redstone(id + "_door", new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque().requiresTool()));
+        return register(id + "_door", new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque().requiresTool()));
     }
 
     public static Block registerTrapdoor(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MapColor color) {
-        return register_redstone(id + "_trapdoor", new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque()));
+        return register(id + "_trapdoor", new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque()));
     }
 
     public static Block registerTrapdoor2(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, Tag<Item> tag, int mininglevel, MapColor color) {
-        return register_redstone(id + "_trapdoor", new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque().requiresTool()));
+        return register(id + "_trapdoor", new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).breakByTool(tag, mininglevel).nonOpaque().requiresTool()));
     }
 
     public static Block registerGate(String id, Block base) {
-        return register_redstone(id + "_gate", new DoorBase(FabricBlockSettings.copy(base)));
+        return register(id + "_gate", new DoorBase(FabricBlockSettings.copy(base)));
     }
 
     // Timber Frames
@@ -217,11 +215,11 @@ public class BlocksRegistration {
     }
 
     public static Block registerRedstoneLamp(String id) {
-        return register_redstone(id, new RedstoneLampBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).allowsSpawning(BlocksRegistration::always)));
+        return register(id, new RedstoneLampBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).allowsSpawning(BlocksRegistration::always)));
     }
 
     public static Block registerLitRedstoneLamp(String id) {
-        return register_redstone(id + "_lit", new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).luminance(15).allowsSpawning(BlocksRegistration::always)));
+        return register(id + "_lit", new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).luminance(15).allowsSpawning(BlocksRegistration::always)));
     }
 
     public static Block registerFuturneoBlock(String id, MapColor color) {
@@ -260,12 +258,12 @@ public class BlocksRegistration {
     }
 
     // Asphalt
-    public static Block register_asphalt(String id, DyeColor color) {
-        return register_asphalt(id, new AsphaltBlock(FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool()));
+    public static Block register(String id, DyeColor color) {
+        return register(id, new AsphaltBlock(FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool()));
     }
 
     public static Block registerAsphaltSlab(String id, Block base) {
-        return register_asphalt(id + "_slab", new AsphaltSlab(FabricBlockSettings.copy(base)));
+        return register(id + "_slab", new AsphaltSlab(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerAsphaltSlab(Block base) {
@@ -273,7 +271,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerAsphaltStairs(String id, Block base) {
-        return register_asphalt(id + "_stairs", new AsphaltStairs(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        return register(id + "_stairs", new AsphaltStairs(base.getDefaultState(), FabricBlockSettings.copy(base)));
     }
 
     public static Block registerAsphaltStairs(Block base) {
@@ -296,74 +294,9 @@ public class BlocksRegistration {
 
     // Register
 
-    public static Block register(String id, Block block, boolean registerItem) {
-        Identifier identifier = new Identifier(Blockus.MOD_ID, id);
-        Block registeredBlock = Registry.register(Registry.BLOCK, identifier, block);
-        if (registerItem) {
-            Registry.register(Registry.ITEM, identifier, new BlockItem(registeredBlock, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-        }
-        return registeredBlock;
-    }
-
     public static Block register(String id, Block block) {
-        return register(id, block, true);
-    }
+        return Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, id), block);
 
-    public static Block register_decoration(String id, Block block, boolean registerItem) {
-        Identifier identifier = new Identifier(Blockus.MOD_ID, id);
-        Block registeredBlock = Registry.register(Registry.BLOCK, identifier, block);
-        if (registerItem) {
-            Registry.register(Registry.ITEM, identifier, new BlockItem(registeredBlock, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
-        }
-        return registeredBlock;
-    }
-
-    public static Block register_decoration(String id, Block block) {
-        return register_decoration(id, block, true);
-    }
-
-    public static Block register_redstone(String id, Block block, boolean registerItem) {
-        Identifier identifier = new Identifier(Blockus.MOD_ID, id);
-        Block registeredBlock = Registry.register(Registry.BLOCK, identifier, block);
-        if (registerItem) {
-            Registry.register(Registry.ITEM, identifier, new BlockItem(registeredBlock, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));
-        }
-        return registeredBlock;
-    }
-
-    public static Block register_redstone(String id, Block block) {
-        return register_redstone(id, block, true);
-    }
-
-    public static Block register_asphalt(String id, Block block, boolean registerItem) {
-        Identifier identifier = new Identifier(Blockus.MOD_ID, id);
-        Block registeredBlock = Registry.register(Registry.BLOCK, identifier, block);
-        if (registerItem) {
-            Registry.register(Registry.ITEM, identifier, new SpeedBlockItem(registeredBlock, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-        }
-        return registeredBlock;
-    }
-
-    public static Block register_asphalt(String id, Block block) {
-        return register_asphalt(id, block, true);
-    }
-
-    public static Block register_fireproof(String id, Block block, boolean registerItem) {
-        Identifier identifier = new Identifier(Blockus.MOD_ID, id);
-        Block registeredBlock = Registry.register(Registry.BLOCK, identifier, block);
-        if (registerItem) {
-            Registry.register(Registry.ITEM, identifier, new BlockItem(registeredBlock, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS).fireproof()));
-        }
-        return registeredBlock;
-    }
-
-    public static Block register_fireproof(String id, Block block) {
-        return register_fireproof(id, block, true);
-    }
-
-    public static Block register_noitem(String id, Block block) {
-        Identifier identifier = new Identifier(Blockus.MOD_ID, id);
-        return Registry.register(Registry.BLOCK, identifier, block);
     }
 
 
