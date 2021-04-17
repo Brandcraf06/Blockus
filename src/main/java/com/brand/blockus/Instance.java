@@ -1,18 +1,14 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
-
+import com.brand.blockus.content.BlockusItems;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.*;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 
@@ -239,14 +235,14 @@ public class Instance {
 
 // Instance
 
-       addTradeOffers();
+        addTradeOffers();
         addStrippables();
         addPathBlocks();
     }
 
     public static void addTradeOffers() {
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
-            factories.add(new SellSaplingFactory(BlockusBlocks.WHITE_OAK_SAPLING_ITEM));
+            factories.add(new SellSaplingFactory(BlockusItems.WHITE_OAK_SAPLING));
         });
     }
 
