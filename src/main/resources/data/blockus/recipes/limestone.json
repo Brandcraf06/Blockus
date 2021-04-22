@@ -13,6 +13,7 @@
     }
   },
   "result": {
-    "item": "blockus:limestone"
+    "item": "blockus:limestone",
+    "count": 2
   }
 }
