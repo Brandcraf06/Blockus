@@ -13,6 +13,7 @@
     }
   },
   "result": {
-    "item": "blockus:marble"
+    "item": "blockus:marble",
+    "count": 2
   }
 }
