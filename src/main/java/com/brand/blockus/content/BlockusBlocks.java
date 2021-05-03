@@ -224,6 +224,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block PRISMARINE_CIRCLE_PAVEMENT = registerCirclePavement("prismarine", Blocks.PRISMARINE_BRICKS);
     public static final Block CHISELED_DARK_PRISMARINE = registerBlockCopy("chiseled_dark_prismarine", Blocks.DARK_PRISMARINE);
     public static final Block DARK_PRISMARINE_PILLAR = registerPillar("dark_prismarine", Blocks.DARK_PRISMARINE);
+    public static final Block CHISELED_PRISMARINE = registerBlockCopy("chiseled_prismarine", Blocks.PRISMARINE_BRICKS);
+    public static final Block PRISMARINE_PILLAR = registerPillar("prismarine", Blocks.PRISMARINE_BRICKS);
 
     // Bricks
     public static final Block LARGE_BRICKS = registerBlockCopy("large_bricks", Blocks.BRICKS);
