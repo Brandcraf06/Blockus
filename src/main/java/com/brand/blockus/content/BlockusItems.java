@@ -218,6 +218,8 @@ public class BlockusItems {
     public static final Item PRISMARINE_CIRCLE_PAVEMENT = register(BlockusBlocks.PRISMARINE_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item CHISELED_DARK_PRISMARINE = register(BlockusBlocks.CHISELED_DARK_PRISMARINE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item DARK_PRISMARINE_PILLAR = register(BlockusBlocks.DARK_PRISMARINE_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item CHISELED_PRISMARINE = register(BlockusBlocks.CHISELED_PRISMARINE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item PRISMARINE_PILLAR = register(BlockusBlocks.PRISMARINE_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Bricks
     public static final Item LARGE_BRICKS = register(BlockusBlocks.LARGE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
