@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "gold_decorated_polished_blackstone",
+  "pattern": [
+    "##",
+	"SS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:polished_blackstone_bricks"
+    },
+	"#": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "blockus:gold_decorated_polished_blackstone",
+    "count": 4
+  }
+}

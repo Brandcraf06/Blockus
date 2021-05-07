@@ -774,6 +774,13 @@
   "block.blockus.ice_bricks": "Ice Bricks",
   "block.blockus.ice_bricks_wall": "Ice Brick Wall",
   "block.blockus.ice_pillar": "Ice Pillar",
+  "block.blockus.purpur_decorated_end_stone": "Purpur-Decorated End Stone",
+  "block.blockus.lapis_decorated_sandstone": "Lapis-Decorated Sandstone",
+  "block.blockus.gold_decorated_sandstone": "Gold-Decorated Sandstone",
+  "block.blockus.gold_decorated_red_sandstone": "Gold-Decorated Red Sandstone",
+  "block.blockus.gold_decorated_soul_sandstone": "Gold-Decorated Soul Sandstone",
+  "block.blockus.gold_decorated_polished_blackstone": "Gold-Decorated Polished Blackstone",
+  
   "block.minecraft.nether_wart_block": "Crimson Wart Block",
   "block.blockus.legacy_bricks": "Bricks (Legacy)",
   "block.blockus.legacy_stonecutter": "Stonecutter (Legacy)",

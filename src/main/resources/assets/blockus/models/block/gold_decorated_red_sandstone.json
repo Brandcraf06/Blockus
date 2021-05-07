@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "minecraft:block/red_sandstone_top",
+    "side": "blockus:block/gold_decorated_red_sandstone"
+  }
+}
