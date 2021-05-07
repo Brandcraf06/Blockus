@@ -68,8 +68,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_STAIRS = registerStairs(WARPED_WARTY_BLACKSTONE_BRICKS);
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_SLAB = registerSlab(WARPED_WARTY_BLACKSTONE_BRICKS);
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_WALL = registerWall(WARPED_WARTY_BLACKSTONE_BRICKS);
+    public static final Block GOLD_DECORATED_POLISHED_BLACKSTONE = registerBlockCopy("gold_decorated_polished_blackstone", Blocks.POLISHED_BLACKSTONE);
     public static final Block BLACKSTONE_DOOR = registerDoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MapColor.BLACK);
     public static final Block BLACKSTONE_TRAPDOOR = registerTrapdoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MapColor.BLACK);
+
 
     // Basalt
     public static final Block POLISHED_BASALT_BRICKS = registerBlockCopy("polished_basalt_bricks", Blocks.POLISHED_BASALT);
@@ -260,6 +262,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_SANDSTONE_BRICKS_STAIRS = registerStairs(SMALL_SANDSTONE_BRICKS);
     public static final Block SMALL_SANDSTONE_BRICKS_SLAB = registerSlab(SMALL_SANDSTONE_BRICKS);
     public static final Block SANDSTONE_PILLAR = registerPillar("sandstone", Blocks.SANDSTONE);
+    public static final Block GOLD_DECORATED_SANDSTONE = registerBlockCopy("gold_decorated_sandstone", Blocks.SANDSTONE);
+    public static final Block LAPIS_DECORATED_SANDSTONE = registerBlockCopy("lapis_decorated_sandstone", Blocks.SANDSTONE);
 
     // Red Sandstone
     public static final Block ROUGH_RED_SANDSTONE = registerBlockCopy("rough_red_sandstone", Blocks.RED_SANDSTONE);
@@ -272,6 +276,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_RED_SANDSTONE_BRICKS_STAIRS = registerStairs(SMALL_RED_SANDSTONE_BRICKS);
     public static final Block SMALL_RED_SANDSTONE_BRICKS_SLAB = registerSlab(SMALL_RED_SANDSTONE_BRICKS);
     public static final Block RED_SANDSTONE_PILLAR = registerPillar("red_sandstone", Blocks.RED_SANDSTONE);
+    public static final Block GOLD_DECORATED_RED_SANDSTONE = registerBlockCopy("gold_decorated_red_sandstone", Blocks.RED_SANDSTONE);
 
     // Soul Sandstone
     public static final Block SOUL_SANDSTONE = register("soul_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.BROWN)));
@@ -294,6 +299,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_SOUL_SANDSTONE_BRICKS_STAIRS = registerStairs(SMALL_SOUL_SANDSTONE_BRICKS);
     public static final Block SMALL_SOUL_SANDSTONE_BRICKS_SLAB = registerSlab(SMALL_SOUL_SANDSTONE_BRICKS);
     public static final Block SOUL_SANDSTONE_PILLAR = registerPillar("soul_sandstone", SOUL_SANDSTONE);
+    public static final Block GOLD_DECORATED_SOUL_SANDSTONE = registerBlockCopy("gold_decorated_soul_sandstone", SOUL_SANDSTONE);
 
     // Honeycomb Bricks
     public static final Block HONEYCOMB_BRICKS = registerBlockCopy("honeycomb_bricks", Blocks.HONEYCOMB_BLOCK);
@@ -309,6 +315,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_END_STONE_SLAB = registerSlab(POLISHED_END_STONE);
     public static final Block CRACKED_END_STONE_BRICKS = registerBlockCopy("cracked_end_stone_bricks", Blocks.END_STONE_BRICKS);
     public static final Block END_STONE_PILLAR = registerPillar("end_stone", Blocks.END_STONE_BRICKS);
+    public static final Block PURPUR_DECORATED_END_STONE = registerBlockCopy("purpur_decorated_end_stone", Blocks.END_STONE_BRICKS);
 
     // Purpur Blocks
     public static final Block PURPUR_BRICKS = registerBlockCopy("purpur_bricks", Blocks.PURPUR_BLOCK);
