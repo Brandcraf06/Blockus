@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:purpur_little_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:purpur_little_bricks_slab",
+    "count": 6
+  }
+}

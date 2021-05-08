@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "blockus:block/quartz_bricks" }
+        "": { "model": "blockus:block/quartz_tiles" }
     }
 }

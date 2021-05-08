@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "blockus:block/quartz_bricks"
+        "all": "blockus:block/quartz_tiles"
     }
 }

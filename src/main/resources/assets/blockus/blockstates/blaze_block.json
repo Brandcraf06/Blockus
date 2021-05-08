@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "blockus:block/blaze_block" }
+        "": { "model": "blockus:block/blaze_lantern" }
     }
 }
