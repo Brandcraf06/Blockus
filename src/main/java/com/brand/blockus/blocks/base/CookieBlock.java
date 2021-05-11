@@ -1,6 +1,6 @@
-package com.brand.blockus.blocks.special;
+package com.brand.blockus.blocks.base;
 
-import com.brand.blockus.utils.BlockusProperties;
+import com.brand.blockus.blocks.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -90,7 +90,7 @@ public class CookieBlock extends Block {
     }
 
     static {
-        BITES = BlockusProperties.BITES_9;
+        BITES = Utils.BITES_9;
         BITES_TO_SHAPE = new VoxelShape[]
                 {
                         Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),

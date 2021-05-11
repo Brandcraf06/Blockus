@@ -1,6 +1,6 @@
-package com.brand.blockus.blocks.special.asphalt;
+package com.brand.blockus.blocks.base.asphalt;
 
-import net.minecraft.block.SlabBlock;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -8,9 +8,9 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class AsphaltSlab extends SlabBlock {
+public class AsphaltBlock extends Block {
 
-    public AsphaltSlab(Settings settings) {
+    public AsphaltBlock(Settings settings) {
         super(settings);
     }
 

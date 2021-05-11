@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.special;
+package com.brand.blockus.blocks.base;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.google.common.collect.Maps;

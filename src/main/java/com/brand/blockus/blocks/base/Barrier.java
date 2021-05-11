@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.special;
+package com.brand.blockus.blocks.base;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
@@ -27,7 +27,7 @@ import net.minecraft.world.WorldView;
 
 import java.util.Map;
 
-public class SmallHedgeBlock extends Block implements Waterloggable {
+public class Barrier extends Block implements Waterloggable {
     public static final BooleanProperty UP;
     public static final EnumProperty<WallShape> EAST_SHAPE;
     public static final EnumProperty<WallShape> NORTH_SHAPE;
@@ -57,11 +57,11 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
     private final Map<BlockState, VoxelShape> shapeMap;
     private final Map<BlockState, VoxelShape> collisionShapeMap;
 
-    public SmallHedgeBlock(Settings settings) {
+    public Barrier(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(UP, true).with(NORTH_SHAPE, WallShape.NONE).with(EAST_SHAPE, WallShape.NONE).with(SOUTH_SHAPE, WallShape.NONE).with(WEST_SHAPE, WallShape.NONE).with(WATERLOGGED, false));
-        this.shapeMap = this.getShapeMap(3.0F, 3.0F, 16.0F, 0.0F, 16.0F, 16.0F);
-        this.collisionShapeMap = this.getShapeMap(3.0F, 3.0F, 24.0F, 0.0F, 24.0F, 24.0F);
+        this.shapeMap = this.getShapeMap(2.0F, 1.0F, 16.0F, 0.0F, 14.0F, 16.0F);
+        this.collisionShapeMap = this.getShapeMap(2.0F, 1.0F, 24.0F, 0.0F, 24.0F, 24.0F);
     }
 
     private static VoxelShape method_24426(VoxelShape voxelShape, WallShape wallShape, VoxelShape voxelShape2, VoxelShape voxelShape3) {
