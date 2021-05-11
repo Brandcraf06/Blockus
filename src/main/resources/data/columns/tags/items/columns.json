@@ -8,6 +8,7 @@
         },
         "values": [
           "blockus:blaze_brick_column",
+          "blockus:snow_brick_column",
           "blockus:water_brick_column"
         ]
       }

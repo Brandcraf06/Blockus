@@ -816,5 +816,6 @@
   "block.blockus.legacy_planks": "Planks (Legacy)",
 
   "block.blockus.water_brick_column": "Water Brick Column",
+  "block.blockus.snow_brick_column": "Snow Brick Column",
   "block.blockus.blaze_brick_column": "Blaze Brick Column"
 }

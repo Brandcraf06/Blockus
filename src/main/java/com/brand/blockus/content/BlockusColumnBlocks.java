@@ -27,6 +27,7 @@ public final class BlockusColumnBlocks {
 
     public static void init() {
         registerColumnBlockAndItem("water_brick_column", BlockusBlocks.WATER_BRICKS);
+        registerColumnBlockAndItem("snow_brick_column", BlockusBlocks.SNOW_BRICKS);
         registerColumnBlockAndItem("blaze_brick_column", BlockusBlocks.BLAZE_BRICKS);
     }
 }
