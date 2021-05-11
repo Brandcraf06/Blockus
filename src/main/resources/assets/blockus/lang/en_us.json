@@ -823,5 +823,6 @@
   "block.blockus.charred_nether_brick_column": "Charred Nether Brick Column",
   "block.blockus.teal_nether_brick_column": "Teal Nether Brick Column",
   "block.blockus.obsidian_brick_column": "Obsidian Brick Column",
-  "block.blockus.large_brick_column": "Large Brick Column"
+  "block.blockus.large_brick_column": "Large Brick Column",
+  "block.blockus.soaked_brick_column": "Soaked Brick Column"
 }
