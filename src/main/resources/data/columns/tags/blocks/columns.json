@@ -7,7 +7,8 @@
           "libcd:mod_loaded": "columns"
         },
         "values": [
-          "blockus:blaze_brick_column"
+          "blockus:blaze_brick_column",
+          "blockus:water_brick_column"
         ]
       }
     ]

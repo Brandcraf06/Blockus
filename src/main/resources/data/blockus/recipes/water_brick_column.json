@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "blockus:concrete_column",
+  "pattern": [
+    "www",
+    " w ",
+    "www"
+  ],
+  "key": {
+    "w": {
+      "item": "blockus:water_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:water_brick_column",
+    "count": 6
+  }
+}
