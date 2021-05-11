@@ -36,5 +36,6 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("obsidian_brick_column", BlockusBlocks.OBSIDIAN_BRICKS);
         registerColumnBlockAndItem("large_brick_column", BlockusBlocks.LARGE_BRICKS);
         registerColumnBlockAndItem("soaked_brick_column", BlockusBlocks.SOAKED_BRICKS);
+        registerColumnBlockAndItem("sandy_brick_column", BlockusBlocks.SANDY_BRICKS);
     }
 }
