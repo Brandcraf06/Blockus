@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "blockus:terracotta_column",
+  "ingredient": {
+    "item": "blockus:ice_bricks"
+  },
+  "result": "blockus:ice_brick_column",
+  "count": 1
+}
