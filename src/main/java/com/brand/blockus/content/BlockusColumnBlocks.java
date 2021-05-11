@@ -29,6 +29,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("water_brick_column", BlockusBlocks.WATER_BRICKS);
         registerColumnBlockAndItem("snow_brick_column", BlockusBlocks.SNOW_BRICKS);
         registerColumnBlockAndItem("ice_brick_column", BlockusBlocks.ICE_BRICKS);
+        registerColumnBlockAndItem("magma_brick_column", BlockusBlocks.MAGMA_BRICKS);
         registerColumnBlockAndItem("blaze_brick_column", BlockusBlocks.BLAZE_BRICKS);
     }
 }

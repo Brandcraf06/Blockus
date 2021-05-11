@@ -818,5 +818,6 @@
   "block.blockus.water_brick_column": "Water Brick Column",
   "block.blockus.snow_brick_column": "Snow Brick Column",
   "block.blockus.ice_brick_column": "Ice Brick Column",
+  "block.blockus.magma_brick_column": "Magma Brick Column",
   "block.blockus.blaze_brick_column": "Blaze Brick Column"
 }
