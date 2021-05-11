@@ -34,5 +34,6 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("charred_nether_brick_column", BlockusBlocks.CHARRED_NETHER_BRICKS);
         registerColumnBlockAndItem("teal_nether_brick_column", BlockusBlocks.TEAL_NETHER_BRICKS);
         registerColumnBlockAndItem("obsidian_brick_column", BlockusBlocks.OBSIDIAN_BRICKS);
+        registerColumnBlockAndItem("large_brick_column", BlockusBlocks.LARGE_BRICKS);
     }
 }
