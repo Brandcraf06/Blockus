@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "blockus:terracotta_column",
+  "ingredient": {
+    "item": "blockus:teal_nether_bricks"
+  },
+  "result": "blockus:teal_nether_brick_column",
+  "count": 1
+}
