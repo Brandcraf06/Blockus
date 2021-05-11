@@ -1,10 +1,12 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.BlockusColumnBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -25,6 +27,11 @@ public class Blockus implements ModInitializer {
 
         new BlockusBlocks();
         new BlockusItems();
+
+        if (FabricLoader.getInstance().isModLoaded("columns")) {
+            BlockusColumnBlocks.init();
+        }
+
         Instance.init();
         BlockusConfiguredFeatures.registerConfiguredFeature();
         BlockusConfiguredFeatures.registerBiomeModifications();

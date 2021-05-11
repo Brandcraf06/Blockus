@@ -813,5 +813,7 @@
   "block.blockus.legacy_glowing_obsidian": "Glowing Obsidian (Legacy)",
   "block.blockus.legacy_glowstone": "Glowstone (Legacy)",
   "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core (Legacy)",
-  "block.blockus.legacy_planks": "Planks (Legacy)"
+  "block.blockus.legacy_planks": "Planks (Legacy)",
+
+  "block.blockus.blaze_brick_column": "Blaze Brick Column"
 }
