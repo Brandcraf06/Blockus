@@ -31,5 +31,6 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("ice_brick_column", BlockusBlocks.ICE_BRICKS);
         registerColumnBlockAndItem("magma_brick_column", BlockusBlocks.MAGMA_BRICKS);
         registerColumnBlockAndItem("blaze_brick_column", BlockusBlocks.BLAZE_BRICKS);
+        registerColumnBlockAndItem("charred_nether_brick_column", BlockusBlocks.CHARRED_NETHER_BRICKS);
     }
 }
