@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "blockus:terracotta_column",
+  "ingredient": {
+    "item": "blockus:obsidian_bricks"
+  },
+  "result": "blockus:obsidian_brick_column",
+  "count": 1
+}

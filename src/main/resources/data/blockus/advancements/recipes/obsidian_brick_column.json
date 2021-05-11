@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:obsidian_brick_column"
+    ]
+  },
+  "criteria": {
+    "has_obsidian_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:obsidian_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:obsidian_brick_column"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_obsidian_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}
