@@ -26,7 +26,20 @@
 	"blockus:polished_basalt_bricks_wall",
 	"blockus:bluestone_bricks_wall",
 	"blockus:purpur_bricks_wall",
-	"blockus:phantom_purpur_bricks_wall"
-	
+	"blockus:andesite_bricks_wall",
+	"blockus:diorite_bricks_wall",	
+	"blockus:granite_bricks_wall",
+	"blockus:limestone_wall",
+	"blockus:marble_wall",	
+	"blockus:bluestone_wall",
+    "blockus:sandstone_bricks_wall",
+	"blockus:small_sandstone_bricks_wall",
+	"blockus:red_sandstone_bricks_wall",
+	"blockus:small_red_sandstone_bricks_wall",
+	"blockus:soul_sandstone_bricks_wall",
+	"blockus:small_soul_sandstone_bricks_wall",
+	"blockus:purpur_bricks_wall",
+	"blockus:phantom_purpur_bricks_wall",
+	"blockus:large_bricks_wall"
   ]
 }
