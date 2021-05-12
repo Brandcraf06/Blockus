@@ -42,5 +42,6 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("honeycomb_brick_column", BlockusBlocks.HONEYCOMB_BRICKS);
         registerColumnBlockAndItem("purpur_brick_column", BlockusBlocks.PURPUR_BRICKS);
         registerColumnBlockAndItem("phantom_purpur_brick_column", BlockusBlocks.PHANTOM_PURPUR_BRICKS);
+        registerColumnBlockAndItem("rainbow_column", BlockusBlocks.RAINBOW_BRICKS);
     }
 }

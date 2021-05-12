@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "blockus:terracotta_column",
+  "ingredient": {
+    "item": "blockus:rainbow_bricks"
+  },
+  "result": "blockus:rainbow_brick_column",
+  "count": 1
+}
