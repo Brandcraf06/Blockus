@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:polished_basalt_brick_column_from_stonecutting"
+    ]
+  },
+  "criteria": {
+    "has_polished_basalt_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:polished_basalt_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:polished_basalt_brick_column_from_stonecutting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_basalt_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}
