@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "blockus:terracotta_column",
+  "ingredient": {
+    "item": "blockus:lava_polished_blackstone"
+  },
+  "result": "blockus:lava_polished_blackstone_column",
+  "count": 1
+}
