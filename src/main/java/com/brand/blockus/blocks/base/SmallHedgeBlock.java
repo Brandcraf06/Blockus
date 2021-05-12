@@ -1,6 +1,6 @@
 package com.brand.blockus.blocks.base;
 
-import com.brand.blockus.blocks.Utils;
+import com.brand.blockus.utils.Utils;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import net.minecraft.block.*;

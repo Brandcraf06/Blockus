@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks;
+package com.brand.blockus.utils;
 
 import com.brand.blockus.Blockus;
 import net.fabricmc.fabric.api.tag.TagRegistry;
