@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "blockus:concrete_column",
+  "pattern": [
+    "hhh",
+    " h ",
+    "hhh"
+  ],
+  "key": {
+    "h": {
+      "item": "blockus:honeycomb_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:honeycomb_brick_column",
+    "count": 6
+  }
+}
