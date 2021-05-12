@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    " b ",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "blockus:bluestone"
+    }
+  },
+  "result": {
+    "item": "blockus:bluestone_column",
+    "count": 6
+  }
+}

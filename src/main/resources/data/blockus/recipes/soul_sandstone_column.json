@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    " s ",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "blockus:soul_sandstone"
+    }
+  },
+  "result": {
+    "item": "blockus:soul_sandstone_column",
+    "count": 6
+  }
+}

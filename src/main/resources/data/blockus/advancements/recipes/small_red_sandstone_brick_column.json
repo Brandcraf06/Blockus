@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:small_red_sandstone_brick_column"
+    ]
+  },
+  "criteria": {
+    "has_small_red_sandstone_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:small_red_sandstone_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:small_red_sandstone_brick_column"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_small_red_sandstone_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

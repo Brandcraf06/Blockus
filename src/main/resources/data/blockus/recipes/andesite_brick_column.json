@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    " a ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "blockus:andesite_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:andesite_brick_column",
+    "count": 6
+  }
+}
