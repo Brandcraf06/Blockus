@@ -29,6 +29,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ANDESITE_BRICKS = registerBlockCopy("andesite_bricks", Blocks.POLISHED_ANDESITE);
     public static final Block ANDESITE_BRICKS_STAIRS = registerStairs(ANDESITE_BRICKS);
     public static final Block ANDESITE_BRICKS_SLAB = registerSlab(ANDESITE_BRICKS);
+    public static final Block ANDESITE_BRICKS_WALL = registerWall(ANDESITE_BRICKS);
     public static final Block ZIGZAGGED_ANDESITE = registerBlockCopy("zigzagged_andesite", Blocks.POLISHED_ANDESITE);
     public static final Block CHISELED_ANDESITE_BRICKS = registerBlockCopy("chiseled_andesite_bricks", Blocks.POLISHED_ANDESITE);
     public static final Block CRACKED_ANDESITE_BRICKS = registerBlockCopy("cracked_andesite_bricks", Blocks.POLISHED_ANDESITE);
@@ -39,6 +40,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block DIORITE_BRICKS = registerBlockCopy("diorite_bricks", Blocks.POLISHED_DIORITE);
     public static final Block DIORITE_BRICKS_STAIRS = registerStairs(DIORITE_BRICKS);
     public static final Block DIORITE_BRICKS_SLAB = registerSlab(DIORITE_BRICKS);
+    public static final Block DIORITE_BRICKS_WALL = registerWall(DIORITE_BRICKS);
     public static final Block ZIGZAGGED_DIORITE = registerBlockCopy("zigzagged_diorite", Blocks.POLISHED_DIORITE);
     public static final Block CHISELED_DIORITE_BRICKS = registerBlockCopy("chiseled_diorite_bricks", Blocks.POLISHED_DIORITE);
     public static final Block CRACKED_DIORITE_BRICKS = registerBlockCopy("cracked_diorite_bricks", Blocks.POLISHED_DIORITE);
@@ -49,6 +51,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GRANITE_BRICKS = registerBlockCopy("granite_bricks", Blocks.POLISHED_GRANITE);
     public static final Block GRANITE_BRICKS_STAIRS = registerStairs(GRANITE_BRICKS);
     public static final Block GRANITE_BRICKS_SLAB = registerSlab(GRANITE_BRICKS);
+    public static final Block GRANITE_BRICKS_WALL = registerWall(GRANITE_BRICKS);
     public static final Block ZIGZAGGED_GRANITE = registerBlockCopy("zigzagged_granite", Blocks.POLISHED_GRANITE);
     public static final Block CHISELED_GRANITE_BRICKS = registerBlockCopy("chiseled_granite_bricks", Blocks.POLISHED_GRANITE);
     public static final Block CRACKED_GRANITE_BRICKS = registerBlockCopy("cracked_granite_bricks", Blocks.POLISHED_GRANITE);
@@ -84,6 +87,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LIMESTONE = registerBlockCopy("limestone", Blocks.STONE, MaterialColor.WOOD);
     public static final Block LIMESTONE_STAIRS = registerStairs(LIMESTONE);
     public static final Block LIMESTONE_SLAB = registerSlab(LIMESTONE);
+    public static final Block LIMESTONE_WALL = registerWall(LIMESTONE);
     public static final Block LIMESTONE_BRICKS = registerBlockCopy("limestone_bricks", LIMESTONE);
     public static final Block LIMESTONE_BRICKS_STAIRS = registerStairs(LIMESTONE_BRICKS);
     public static final Block LIMESTONE_BRICKS_SLAB = registerSlab(LIMESTONE_BRICKS);
@@ -96,6 +100,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block MARBLE = registerBlockCopy("marble", Blocks.STONE, MaterialColor.QUARTZ);
     public static final Block MARBLE_STAIRS = registerStairs(MARBLE);
     public static final Block MARBLE_SLAB = registerSlab(MARBLE);
+    public static final Block MARBLE_WALL = registerWall(MARBLE);
     public static final Block MARBLE_BRICKS = registerBlockCopy("marble_bricks", MARBLE);
     public static final Block MARBLE_BRICKS_STAIRS = registerStairs(MARBLE_BRICKS);
     public static final Block MARBLE_BRICKS_SLAB = registerSlab(MARBLE_BRICKS);
@@ -109,6 +114,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLUESTONE = registerBlockCopy("bluestone", Blocks.STONE, MaterialColor.CYAN);
     public static final Block BLUESTONE_STAIRS = registerStairs(BLUESTONE);
     public static final Block BLUESTONE_SLAB = registerSlab(BLUESTONE);
+    public static final Block BLUESTONE_WALL = registerWall(BLUESTONE);
     public static final Block BLUESTONE_TILES = registerBlockCopy("bluestone_tiles", BLUESTONE);
     public static final Block BLUESTONE_TILES_STAIRS = registerStairs(BLUESTONE_TILES);
     public static final Block BLUESTONE_TILES_SLAB = registerSlab(BLUESTONE_TILES);
@@ -263,9 +269,11 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SANDSTONE_BRICKS = registerBlockCopy("sandstone_bricks", Blocks.SANDSTONE);
     public static final Block SANDSTONE_BRICKS_STAIRS = registerStairs(SANDSTONE_BRICKS);
     public static final Block SANDSTONE_BRICKS_SLAB = registerSlab(SANDSTONE_BRICKS);
+    public static final Block SANDSTONE_BRICKS_WALL = registerWall(SANDSTONE_BRICKS);
     public static final Block SMALL_SANDSTONE_BRICKS = registerBlockCopy("small_sandstone_bricks", Blocks.SANDSTONE);
     public static final Block SMALL_SANDSTONE_BRICKS_STAIRS = registerStairs(SMALL_SANDSTONE_BRICKS);
     public static final Block SMALL_SANDSTONE_BRICKS_SLAB = registerSlab(SMALL_SANDSTONE_BRICKS);
+    public static final Block SMALL_SANDSTONE_BRICKS_WALL = registerWall(SMALL_SANDSTONE_BRICKS);
     public static final Block SANDSTONE_PILLAR = registerPillar("sandstone", Blocks.SANDSTONE);
     public static final Block GOLD_DECORATED_SANDSTONE = registerBlockCopy("gold_decorated_sandstone", Blocks.SANDSTONE);
     public static final Block LAPIS_DECORATED_SANDSTONE = registerBlockCopy("lapis_decorated_sandstone", Blocks.SANDSTONE);
@@ -277,9 +285,11 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RED_SANDSTONE_BRICKS = registerBlockCopy("red_sandstone_bricks", Blocks.RED_SANDSTONE);
     public static final Block RED_SANDSTONE_BRICKS_STAIRS = registerStairs(RED_SANDSTONE_BRICKS);
     public static final Block RED_SANDSTONE_BRICKS_SLAB = registerSlab(RED_SANDSTONE_BRICKS);
+    public static final Block RED_SANDSTONE_BRICKS_WALL = registerWall(RED_SANDSTONE_BRICKS);
     public static final Block SMALL_RED_SANDSTONE_BRICKS = registerBlockCopy("small_red_sandstone_bricks", Blocks.RED_SANDSTONE);
     public static final Block SMALL_RED_SANDSTONE_BRICKS_STAIRS = registerStairs(SMALL_RED_SANDSTONE_BRICKS);
     public static final Block SMALL_RED_SANDSTONE_BRICKS_SLAB = registerSlab(SMALL_RED_SANDSTONE_BRICKS);
+    public static final Block SMALL_RED_SANDSTONE_BRICKS_WALL = registerWall(SMALL_RED_SANDSTONE_BRICKS);
     public static final Block RED_SANDSTONE_PILLAR = registerPillar("red_sandstone", Blocks.RED_SANDSTONE);
     public static final Block GOLD_DECORATED_RED_SANDSTONE = registerBlockCopy("gold_decorated_red_sandstone", Blocks.RED_SANDSTONE);
 
@@ -291,6 +301,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SOUL_SANDSTONE_BRICKS = registerBlockCopy("soul_sandstone_bricks", SOUL_SANDSTONE);
     public static final Block SOUL_SANDSTONE_BRICKS_STAIRS = registerStairs(SOUL_SANDSTONE_BRICKS);
     public static final Block SOUL_SANDSTONE_BRICKS_SLAB = registerSlab(SOUL_SANDSTONE_BRICKS);
+    public static final Block SOUL_SANDSTONE_BRICKS_WALL = registerWall(SOUL_SANDSTONE_BRICKS);
     public static final Block SMOOTH_SOUL_SANDSTONE = registerBlockCopy("smooth_soul_sandstone", SOUL_SANDSTONE);
     public static final Block SMOOTH_SOUL_SANDSTONE_STAIRS = registerStairs(SMOOTH_SOUL_SANDSTONE);
     public static final Block SMOOTH_SOUL_SANDSTONE_SLAB = registerSlab(SMOOTH_SOUL_SANDSTONE);
@@ -303,6 +314,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_SOUL_SANDSTONE_BRICKS = registerBlockCopy("small_soul_sandstone_bricks", SOUL_SANDSTONE);
     public static final Block SMALL_SOUL_SANDSTONE_BRICKS_STAIRS = registerStairs(SMALL_SOUL_SANDSTONE_BRICKS);
     public static final Block SMALL_SOUL_SANDSTONE_BRICKS_SLAB = registerSlab(SMALL_SOUL_SANDSTONE_BRICKS);
+    public static final Block SMALL_SOUL_SANDSTONE_BRICKS_WALL = registerWall(SMALL_SOUL_SANDSTONE_BRICKS);
     public static final Block SOUL_SANDSTONE_PILLAR = registerPillar("soul_sandstone", SOUL_SANDSTONE);
     public static final Block GOLD_DECORATED_SOUL_SANDSTONE = registerBlockCopy("gold_decorated_soul_sandstone", SOUL_SANDSTONE);
 
