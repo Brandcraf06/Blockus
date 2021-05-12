@@ -1,8 +1,8 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.blockitem.NetherStarBlockItem;
-import com.brand.blockus.blocks.blockitem.SpeedBlockItem;
+import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
+import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
