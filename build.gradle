@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.6-SNAPSHOT'
+	id 'fabric-loom' version '0.8-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -20,7 +20,7 @@ group = project.maven_group
 
 // This field defines the Java version your mod target.
 // The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too.
-def targetJavaVersion = 8
+def targetJavaVersion = 16
 
 dependencies {
 	//to change the versions see the gradle.properties file
@@ -95,5 +95,6 @@ publishing {
 		// mavenLocal()
 	}
 }
+
   
   
