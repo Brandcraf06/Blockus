@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rrr",
+    " r ",
+    "rrr"
+  ],
+  "key": {
+    "r": {
+      "item": "blockus:rainbow_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:rainbow_brick_column",
+    "count": 6
+  }
+}

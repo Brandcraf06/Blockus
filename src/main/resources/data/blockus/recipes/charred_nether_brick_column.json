@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ccc",
+    " c ",
+    "ccc"
+  ],
+  "key": {
+    "c": {
+      "item": "blockus:charred_nether_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:charred_nether_brick_column",
+    "count": 6
+  }
+}

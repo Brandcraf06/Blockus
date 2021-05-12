@@ -778,6 +778,8 @@
   "block.blockus.gold_decorated_red_sandstone": "Gold-Decorated Red Sandstone",
   "block.blockus.gold_decorated_soul_sandstone": "Gold-Decorated Soul Sandstone",
   "block.blockus.gold_decorated_polished_blackstone": "Gold-Decorated Polished Blackstone",
+  "block.blockus.warped_small_hedge": "Warped Small Hedge",
+  "block.blockus.crimson_small_hedge": "Crimson Small Hedge",
   
   "block.minecraft.nether_wart_block": "Crimson Wart Block",
   "block.blockus.legacy_bricks": "Bricks (Legacy)",
@@ -802,9 +804,34 @@
   "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core (Legacy)",
   "block.blockus.legacy_planks": "Planks (Legacy)",
 
-  "block.blockus.warped_small_hedge": "Warped Small Hedge",
-  "block.blockus.crimson_small_hedge": "Crimson Small Hedge",
   "block.blockus.azalea_small_hedge": "Azalea Small Hedge",
   "block.blockus.azalea_small_hedge_flowers": "Flowering Azalea Small Hedge",
   "block.blockus.moss_small_hedge": "Moss Small Hedge"
+
+  "block.blockus.crimson_warty_blackstone_brick_column": "Crimson Warty Blackstone Brick Column",
+  "block.blockus.warped_warty_blackstone_brick_column": "Warped Warty Blackstone Brick Column",
+  "block.blockus.polished_basalt_brick_column": "Polished Basalt Brick Column",
+  "block.blockus.limestone_brick_column": "Limestone Brick Column",
+  "block.blockus.marble_brick_column": "Marble Brick Column",
+  "block.blockus.bluestone_brick_column": "Bluestone Brick Column",
+  "block.blockus.lava_brick_column": "Lava Brick Column",
+  "block.blockus.lava_polished_blackstone_brick_column": "Lava Polished Blackstone Brick Column",
+  "block.blockus.water_brick_column": "Water Brick Column",
+  "block.blockus.snow_brick_column": "Snow Brick Column",
+  "block.blockus.ice_brick_column": "Ice Brick Column",
+  "block.blockus.magma_brick_column": "Magma Brick Column",
+  "block.blockus.blaze_brick_column": "Blaze Brick Column",
+  "block.blockus.charred_nether_brick_column": "Charred Nether Brick Column",
+  "block.blockus.teal_nether_brick_column": "Teal Nether Brick Column",
+  "block.blockus.obsidian_brick_column": "Obsidian Brick Column",
+  "block.blockus.large_brick_column": "Large Brick Column",
+  "block.blockus.soaked_brick_column": "Soaked Brick Column",
+  "block.blockus.sandy_brick_column": "Sandy Brick Column",
+  "block.blockus.charred_brick_column": "Charred Brick Column",
+  "block.blockus.soul_sandstone_brick_column": "Soul Sandstone Brick Column",
+  "block.blockus.honeycomb_brick_column": "Honeycomb Brick Column",
+  "block.blockus.purpur_brick_column": "Purpur Brick Column",
+  "block.blockus.phantom_purpur_brick_column": "Phantom Purpur Brick Column",
+  "block.blockus.rainbow_brick_column": "Rainbow Brick Column"
+
 }

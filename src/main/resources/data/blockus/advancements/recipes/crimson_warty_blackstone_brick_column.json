@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:crimson_warty_blackstone_brick_column"
+    ]
+  },
+  "criteria": {
+    "has_crimson_warty_blackstone_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:crimson_warty_blackstone_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:crimson_warty_blackstone_brick_column"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crimson_warty_blackstone_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

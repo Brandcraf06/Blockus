@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    " i ",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "blockus:ice_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:ice_brick_column",
+    "count": 6
+  }
+}

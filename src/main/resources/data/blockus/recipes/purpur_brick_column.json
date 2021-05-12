@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    " p ",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "blockus:purpur_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:purpur_brick_column",
+    "count": 6
+  }
+}

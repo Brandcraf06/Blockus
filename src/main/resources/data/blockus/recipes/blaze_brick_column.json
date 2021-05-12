@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    " b ",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "blockus:blaze_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:blaze_brick_column",
+    "count": 6
+  }
+}
