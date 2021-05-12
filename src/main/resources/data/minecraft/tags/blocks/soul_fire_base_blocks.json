@@ -24,7 +24,8 @@
           "libcd:mod_loaded": "columns"
         },
         "values": [
-          "blockus:soul_sandstone_brick_column"
+          "blockus:soul_sandstone_brick_column",
+          "blockus:phantom_purpur_brick_column"
         ]
       }
     ]

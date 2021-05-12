@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "blockus:terracotta_column",
+  "ingredient": {
+    "item": "blockus:phantom_purpur_bricks"
+  },
+  "result": "blockus:phantom_purpur_brick_column",
+  "count": 1
+}
