@@ -32,6 +32,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("crimson_warty_blackstone_brick_column", BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS);
         registerColumnBlockAndItem("warped_warty_blackstone_brick_column", BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS);
         registerColumnBlockAndItem("polished_basalt_brick_column", BlockusBlocks.POLISHED_BASALT_BRICKS);
+        registerColumnBlockAndItem("limestone_column", BlockusBlocks.LIMESTONE);
         registerColumnBlockAndItem("limestone_brick_column", BlockusBlocks.LIMESTONE_BRICKS);
         registerColumnBlockAndItem("marble_brick_column", BlockusBlocks.MARBLE_BRICKS);
         registerColumnBlockAndItem("bluestone_brick_column", BlockusBlocks.BLUESTONE_BRICKS);
