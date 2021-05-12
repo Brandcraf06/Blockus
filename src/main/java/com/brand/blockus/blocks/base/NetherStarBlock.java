@@ -17,11 +17,11 @@ public class NetherStarBlock extends Block {
     }
 
     @Override
-    public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity entity_1) {
-        if (entity_1.getType() == EntityType.PLAYER) {
-            ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1, 4, true, false, false));
-            ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100, 3, true, false, true));
-            ((LivingEntity) entity_1).addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 4, true, false, true));
+    public void onSteppedOn(World world, BlockPos pos, Entity entity) {
+        if (entity.getType() == EntityType.PLAYER) {
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1, 4, true, false, false));
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100, 3, true, false, true));
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 4, true, false, true));
         }
     }
 }
