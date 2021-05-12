@@ -129,7 +129,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMOOTH_BLUESTONE_STAIRS = registerStairs(SMOOTH_BLUESTONE);
     public static final Block SMOOTH_BLUESTONE_SLAB = registerSlab(SMOOTH_BLUESTONE);
     public static final Block BLUESTONE_SQUARES = registerBlockCopy("bluestone_squares", BLUESTONE);
-    public static final Block BLUESTONE_LITTLE_BRICKS = registerBlockCopy("bluestone_little_bricks", BLUESTONE);
+    public static final Block SMALL_BLUESTONE_BRICKS = registerBlockCopy("bluestone_little_bricks", BLUESTONE);
+    public static final Block SMALL_BLUESTONE_BRICKS_STAIRS = registerStairs(SMALL_BLUESTONE_BRICKS);
+    public static final Block SMALL_BLUESTONE_BRICKS_SLAB = registerSlab(SMALL_BLUESTONE_BRICKS);
     public static final Block CHISELED_BLUESTONE = registerBlockCopy("chiseled_bluestone", BLUESTONE);
     public static final Block BLUESTONE_LINES = registerPillar2("bluestone_lines", BLUESTONE);
 
@@ -226,6 +228,8 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Quartz Blocks
     public static final Block QUARTZ_TILES = registerBlockCopy("quartz_tiles", Blocks.QUARTZ_BLOCK);
+    public static final Block QUARTZ_TILES_STAIRS = registerStairs("quartz_tiles", QUARTZ_TILES);
+    public static final Block QUARTZ_TILES_SLAB = registerSlab("quartz_tiles", QUARTZ_TILES);
     public static final Block QUARTZ_CIRCLE_PAVEMENT = registerCirclePavement("quartz", QUARTZ_TILES);
 
     // Prismarine
@@ -237,6 +241,9 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Bricks
     public static final Block LARGE_BRICKS = registerBlockCopy("large_bricks", Blocks.BRICKS);
+    public static final Block LARGE_BRICKS_STAIRS = registerStairs(LARGE_BRICKS);
+    public static final Block LARGE_BRICKS_SLAB = registerSlab(LARGE_BRICKS);
+    public static final Block LARGE_BRICKS_WALL = registerWall(LARGE_BRICKS);
     public static final Block ZIGZAGGED_BRICKS = registerBlockCopy("zigzagged_bricks", Blocks.BRICKS);
 
     // Soaked Bricks
@@ -338,7 +345,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMOOTH_PURPUR_STAIRS = registerStairs(SMOOTH_PURPUR);
     public static final Block SMOOTH_PURPUR_SLAB = registerSlab(SMOOTH_PURPUR);
     public static final Block PURPUR_SQUARES = registerBlockCopy("purpur_squares", Blocks.PURPUR_BLOCK);
-    public static final Block PURPUR_LITTLE_BRICKS = registerBlockCopy("purpur_little_bricks", Blocks.PURPUR_BLOCK);
+    public static final Block SMALL_PURPUR_BRICKS = registerBlockCopy("purpur_little_bricks", Blocks.PURPUR_BLOCK);
+    public static final Block SMALL_PURPUR_BRICKS_STAIRS = registerStairs(SMALL_PURPUR_BRICKS);
+    public static final Block SMALL_PURPUR_BRICKS_SLAB = registerSlab(SMALL_PURPUR_BRICKS);
     public static final Block CHISELED_PURPUR = registerBlockCopy("chiseled_purpur", Blocks.PURPUR_BLOCK);
     public static final Block PURPUR_LINES = registerPillar2("purpur_lines", Blocks.PURPUR_BLOCK);
 
@@ -355,7 +364,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMOOTH_PHANTOM_PURPUR_STAIRS = registerStairs(SMOOTH_PHANTOM_PURPUR);
     public static final Block SMOOTH_PHANTOM_PURPUR_SLAB = registerSlab(SMOOTH_PHANTOM_PURPUR);
     public static final Block PHANTOM_PURPUR_SQUARES = registerBlockCopy("phantom_purpur_squares", PHANTOM_PURPUR_BLOCK);
-    public static final Block PHANTOM_PURPUR_LITTLE_BRICKS = registerBlockCopy("phantom_purpur_little_bricks", PHANTOM_PURPUR_BLOCK);
+    public static final Block SMALL_PHANTOM_PURPUR_BRICKS = registerBlockCopy("phantom_purpur_little_bricks", PHANTOM_PURPUR_BLOCK);
+    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_STAIRS = registerStairs(SMALL_PHANTOM_PURPUR_BRICKS);
+    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_SLAB = registerSlab(SMALL_PHANTOM_PURPUR_BRICKS);
     public static final Block CHISELED_PHANTOM_PURPUR = registerBlockCopy("chiseled_phantom_purpur", PHANTOM_PURPUR_BLOCK);
     public static final Block PHANTOM_PURPUR_LINES = registerPillar2("phantom_purpur_lines", PHANTOM_PURPUR_BLOCK);
 
