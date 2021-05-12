@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "blockus:concrete_column",
+  "pattern": [
+    "mmm",
+    " m ",
+    "mmm"
+  ],
+  "key": {
+    "m": {
+      "item": "blockus:marble_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:marble_brick_column",
+    "count": 6
+  }
+}
