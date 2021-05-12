@@ -3,6 +3,17 @@ plugins {
 	id 'maven-publish'
 }
 
+repositories {
+	maven {
+		name = "Cotton"
+		url = "https://server.bbkr.space/artifactory/libs-release"
+	}
+	maven {
+		name = "Curse"
+		url = "https://www.cursemaven.com"
+	}
+}
+
 archivesBaseName = project.archives_base_name
 version = "${mod_version}+${minecraft_version}"
 group = project.maven_group
@@ -22,6 +33,13 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
+
+	// LibCD
+	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
+	include "io.github.cottonmc:LibCD:${project.libcd_version}"
+
+	// Columns
+	modImplementation "curse.maven:columns-385230:3107117"
 }
 
 minecraft {

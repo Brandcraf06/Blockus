@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    " s ",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "blockus:snow_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:snow_brick_column",
+    "count": 6
+  }
+}

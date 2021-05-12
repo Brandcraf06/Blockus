@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    " s ",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "blockus:sandy_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:sandy_brick_column",
+    "count": 6
+  }
+}

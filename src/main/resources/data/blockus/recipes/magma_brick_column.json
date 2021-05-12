@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "mmm",
+    " m ",
+    "mmm"
+  ],
+  "key": {
+    "m": {
+      "item": "blockus:magma_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:magma_brick_column",
+    "count": 6
+  }
+}

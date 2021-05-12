@@ -1,0 +1,39 @@
+{
+  "values": [],
+  "libcd": {
+    "entries": [
+      {
+        "when": {
+          "libcd:mod_loaded": "columns"
+        },
+        "values": [
+          "blockus:blaze_brick_column",
+          "blockus:bluestone_brick_column",
+          "blockus:charred_brick_column",
+          "blockus:charred_nether_brick_column",
+          "blockus:crimson_warty_blackstone_brick_column",
+          "blockus:honeycomb_brick_column",
+          "blockus:ice_brick_column",
+          "blockus:large_brick_column",
+          "blockus:lava_brick_column",
+          "blockus:lava_polished_blackstone_brick_column",
+          "blockus:limestone_brick_column",
+          "blockus:magma_brick_column",
+          "blockus:marble_brick_column",
+          "blockus:obsidian_brick_column",
+          "blockus:phantom_purpur_brick_column",
+          "blockus:polished_basalt_brick_column",
+          "blockus:purpur_brick_column",
+          "blockus:rainbow_brick_column",
+          "blockus:sandy_brick_column",
+          "blockus:snow_brick_column",
+          "blockus:soaked_brick_column",
+          "blockus:soul_sandstone_brick_column",
+          "blockus:teal_nether_brick_column",
+          "blockus:warped_warty_blackstone_brick_column",
+          "blockus:water_brick_column"
+        ]
+      }
+    ]
+  }
+}

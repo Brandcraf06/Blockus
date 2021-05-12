@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:ice_brick_column_from_stonecutting"
+    ]
+  },
+  "criteria": {
+    "has_ice_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:ice_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:ice_brick_column_from_stonecutting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ice_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ooo",
+    " o ",
+    "ooo"
+  ],
+  "key": {
+    "o": {
+      "item": "blockus:obsidian_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:obsidian_brick_column",
+    "count": 6
+  }
+}
