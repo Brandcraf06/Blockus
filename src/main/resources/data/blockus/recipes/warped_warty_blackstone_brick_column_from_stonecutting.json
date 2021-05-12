@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "blockus:terracotta_column",
+  "ingredient": {
+    "item": "blockus:warped_warty_blackstone_bricks"
+  },
+  "result": "blockus:warped_warty_blackstone_brick_column",
+  "count": 1
+}
