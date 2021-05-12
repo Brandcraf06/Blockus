@@ -4,6 +4,7 @@
     "blockus:soul_sandstone",
     "blockus:soul_sandstone_slab",
     "blockus:soul_sandstone_stairs",
+	  "blockus:soul_sandstone_wall",
     "blockus:rough_soul_sandstone",
     "blockus:rough_soul_sandstone_slab",
     "blockus:rough_soul_sandstone_stairs",
@@ -19,6 +20,7 @@
     "blockus:cut_soul_sandstone",
     "blockus:cut_soul_sandstone_slab",
     "blockus:chiseled_soul_sandstone",
+    "blockus:gold_decorated_soul_sandstone",
     "blockus:soul_sandstone_pillar"
   ],
   "libcd": {

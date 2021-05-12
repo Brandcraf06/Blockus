@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.special.asphalt;
+package com.brand.blockus.blocks.base.asphalt;
 
 
 import net.minecraft.block.BlockState;
@@ -17,9 +17,9 @@ public class AsphaltStairs extends StairsBlock {
     }
 
     @Override
-    public void onSteppedOn(World world_1, BlockPos blockPos_1, Entity target) {
-        if (target instanceof LivingEntity) {
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 2, true, false, false));
+    public void onSteppedOn(World world, BlockPos pos, Entity entity) {
+        if (entity instanceof LivingEntity) {
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 2, true, false, false));
         }
     }
 }

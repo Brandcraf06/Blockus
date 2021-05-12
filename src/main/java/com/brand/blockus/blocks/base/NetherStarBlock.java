@@ -1,0 +1,27 @@
+package com.brand.blockus.blocks.base;
+
+
+import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+
+public class NetherStarBlock extends Block {
+
+    public NetherStarBlock(Settings settings) {
+        super(settings);
+    }
+
+    @Override
+    public void onSteppedOn(World world, BlockPos pos, Entity entity) {
+        if (entity.getType() == EntityType.PLAYER) {
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1, 4, true, false, false));
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 100, 3, true, false, true));
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 4, true, false, true));
+        }
+    }
+}

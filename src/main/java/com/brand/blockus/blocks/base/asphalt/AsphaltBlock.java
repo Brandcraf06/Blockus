@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.special.asphalt;
+package com.brand.blockus.blocks.base.asphalt;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;

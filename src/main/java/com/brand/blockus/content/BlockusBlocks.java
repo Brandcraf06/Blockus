@@ -2,9 +2,9 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
+import com.brand.blockus.blocks.base.redstone.FallingRedstoneBlock;
 import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
 import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
-import com.brand.blockus.blocks.special.*;
 import com.mojang.datafixers.types.Type;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;

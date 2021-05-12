@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.special;
+package com.brand.blockus.blocks.base;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
