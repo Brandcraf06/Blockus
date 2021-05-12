@@ -1,6 +1,5 @@
 {
   "type": "minecraft:stonecutting",
-  "group": "blockus:terracotta_column",
   "ingredient": {
     "item": "blockus:crimson_warty_blackstone_bricks"
   },

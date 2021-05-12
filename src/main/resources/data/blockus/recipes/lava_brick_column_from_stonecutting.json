@@ -1,6 +1,5 @@
 {
   "type": "minecraft:stonecutting",
-  "group": "blockus:terracotta_column",
   "ingredient": {
     "item": "blockus:lava_bricks"
   },

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "blockus:concrete_column",
   "pattern": [
     "ccc",
     " c ",
