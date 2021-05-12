@@ -55,6 +55,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("sandstone_brick_column", BlockusBlocks.SANDSTONE_BRICKS);
         registerColumnBlockAndItem("small_sandstone_brick_column", BlockusBlocks.SMALL_SANDSTONE_BRICKS);
         registerColumnBlockAndItem("red_sandstone_brick_column", BlockusBlocks.RED_SANDSTONE_BRICKS);
+        registerColumnBlockAndItem("small_red_sandstone_brick_column", BlockusBlocks.SMALL_RED_SANDSTONE_BRICKS);
         registerColumnBlockAndItem("soul_sandstone_brick_column", BlockusBlocks.SOUL_SANDSTONE_BRICKS);
         registerColumnBlockAndItem("honeycomb_brick_column", BlockusBlocks.HONEYCOMB_BRICKS);
         registerColumnBlockAndItem("purpur_brick_column", BlockusBlocks.PURPUR_BRICKS);

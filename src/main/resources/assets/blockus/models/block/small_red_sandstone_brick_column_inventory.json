@@ -1,0 +1,6 @@
+{
+  "parent": "columns:block/column_inventory",
+  "textures": {
+    "all": "blockus:block/small_red_sandstone_bricks"
+  }
+}
