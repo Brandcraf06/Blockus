@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    " s ",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "blockus:small_sandstone_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:small_sandstone_brick_column",
+    "count": 6
+  }
+}

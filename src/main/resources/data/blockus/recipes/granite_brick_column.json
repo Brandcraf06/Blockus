@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ggg",
+    " g ",
+    "ggg"
+  ],
+  "key": {
+    "g": {
+      "item": "blockus:granite_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:granite_brick_column",
+    "count": 6
+  }
+}

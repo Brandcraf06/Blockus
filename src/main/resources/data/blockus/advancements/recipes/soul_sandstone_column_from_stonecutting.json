@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:soul_sandstone_column_from_stonecutting"
+    ]
+  },
+  "criteria": {
+    "has_soul_sandstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:soul_sandstone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:soul_sandstone_column_from_stonecutting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_soul_sandstone",
+      "has_the_recipe"
+    ]
+  ]
+}
