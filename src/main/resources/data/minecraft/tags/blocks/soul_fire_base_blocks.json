@@ -16,5 +16,17 @@
     "blockus:phantom_purpur_little_bricks",
     "blockus:chiseled_phantom_purpur",
     "blockus:phantom_purpur_lines"
-  ]
+  ],
+  "libcd": {
+    "entries": [
+      {
+        "when": {
+          "libcd:mod_loaded": "columns"
+        },
+        "values": [
+          "blockus:soul_sandstone_brick_column"
+        ]
+      }
+    ]
+  }
 }

@@ -20,5 +20,17 @@
     "blockus:cut_soul_sandstone_slab",
     "blockus:chiseled_soul_sandstone",
     "blockus:soul_sandstone_pillar"
-  ]
+  ],
+  "libcd": {
+    "entries": [
+      {
+        "when": {
+          "libcd:mod_loaded": "columns"
+        },
+        "values": [
+          "blockus:soul_sandstone_brick_column"
+        ]
+      }
+    ]
+  }
 }

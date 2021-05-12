@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "blockus:terracotta_column",
+  "ingredient": {
+    "item": "blockus:soul_sandstone_bricks"
+  },
+  "result": "blockus:soul_sandstone_brick_column",
+  "count": 1
+}

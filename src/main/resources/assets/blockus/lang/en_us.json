@@ -826,5 +826,6 @@
   "block.blockus.large_brick_column": "Large Brick Column",
   "block.blockus.soaked_brick_column": "Soaked Brick Column",
   "block.blockus.sandy_brick_column": "Sandy Brick Column",
-  "block.blockus.charred_brick_column": "Charred Brick Column"
+  "block.blockus.charred_brick_column": "Charred Brick Column",
+  "block.blockus.soul_sandstone_brick_column": "Soul Sandstone Brick Column"
 }
