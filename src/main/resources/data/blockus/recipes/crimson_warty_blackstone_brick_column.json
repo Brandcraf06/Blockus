@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ccc",
+    " c ",
+    "ccc"
+  ],
+  "key": {
+    "c": {
+      "item": "blockus:crimson_warty_blackstone_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:crimson_warty_blackstone_brick_column",
+    "count": 6
+  }
+}

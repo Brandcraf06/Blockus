@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ttt",
+    " t ",
+    "ttt"
+  ],
+  "key": {
+    "t": {
+      "item": "blockus:teal_nether_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:teal_nether_brick_column",
+    "count": 6
+  }
+}

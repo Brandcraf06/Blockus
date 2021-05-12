@@ -30,8 +30,10 @@
    "depends": {
     "fabricloader": ">=0.8.8",
     "fabric": "*",
+    "libcd": "*",
 	"minecraft": "1.17.x"
   },
   "suggests": {
+    "columns": "*"
   }
 }
