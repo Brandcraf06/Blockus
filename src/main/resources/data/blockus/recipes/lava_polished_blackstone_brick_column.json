@@ -7,11 +7,11 @@
   ],
   "key": {
     "l": {
-      "item": "blockus:lava_polished_blackstone"
+      "item": "blockus:lava_polished_blackstone_bricks"
     }
   },
   "result": {
-    "item": "blockus:lava_polished_blackstone_column",
+    "item": "blockus:lava_polished_blackstone_brick_column",
     "count": 6
   }
 }

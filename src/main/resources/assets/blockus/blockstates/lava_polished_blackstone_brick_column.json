@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "blockus:block/lava_polished_blackstone_column_center"
+        "model": "blockus:block/lava_polished_blackstone_brick_column_center"
       }
     },
     {
@@ -10,7 +10,7 @@
         "down": true
       },
       "apply": {
-        "model": "blockus:block/lava_polished_blackstone_column_end"
+        "model": "blockus:block/lava_polished_blackstone_brick_column_end"
       }
     },
     {
@@ -18,7 +18,7 @@
         "up": true
       },
       "apply": {
-        "model": "blockus:block/lava_polished_blackstone_column_end",
+        "model": "blockus:block/lava_polished_blackstone_brick_column_end",
         "x": 180,
         "uvlock": true
       }

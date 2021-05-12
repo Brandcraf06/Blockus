@@ -1,6 +1,6 @@
 {
   "parent": "columns:block/column_center",
   "textures": {
-    "all": "blockus:block/lava_polished_blackstone"
+    "all": "blockus:block/lava_polished_blackstone_bricks"
   }
 }

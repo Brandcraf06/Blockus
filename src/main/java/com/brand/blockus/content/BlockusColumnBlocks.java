@@ -33,7 +33,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("marble_brick_column", BlockusBlocks.MARBLE_BRICKS);
         registerColumnBlockAndItem("bluestone_brick_column", BlockusBlocks.BLUESTONE_BRICKS);
         registerColumnBlockAndItem("lava_brick_column", BlockusBlocks.LAVA_BRICKS);
-        registerColumnBlockAndItem("lava_polished_blackstone_column", BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS);
+        registerColumnBlockAndItem("lava_polished_blackstone_brick_column", BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS);
         registerColumnBlockAndItem("water_brick_column", BlockusBlocks.WATER_BRICKS);
         registerColumnBlockAndItem("snow_brick_column", BlockusBlocks.SNOW_BRICKS);
         registerColumnBlockAndItem("ice_brick_column", BlockusBlocks.ICE_BRICKS);
@@ -50,6 +50,6 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("honeycomb_brick_column", BlockusBlocks.HONEYCOMB_BRICKS);
         registerColumnBlockAndItem("purpur_brick_column", BlockusBlocks.PURPUR_BRICKS);
         registerColumnBlockAndItem("phantom_purpur_brick_column", BlockusBlocks.PHANTOM_PURPUR_BRICKS);
-        registerColumnBlockAndItem("rainbow_column", BlockusBlocks.RAINBOW_BRICKS);
+        registerColumnBlockAndItem("rainbow_brick_column", BlockusBlocks.RAINBOW_BRICKS);
     }
 }

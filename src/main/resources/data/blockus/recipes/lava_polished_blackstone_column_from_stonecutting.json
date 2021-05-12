@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:lava_polished_blackstone"
-  },
-  "result": "blockus:lava_polished_blackstone_column",
-  "count": 1
-}

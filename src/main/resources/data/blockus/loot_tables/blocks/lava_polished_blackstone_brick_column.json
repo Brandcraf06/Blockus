@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blockus:lava_polished_blackstone_column"
+          "name": "blockus:lava_polished_blackstone_brick_column"
         }
       ],
       "conditions": [
