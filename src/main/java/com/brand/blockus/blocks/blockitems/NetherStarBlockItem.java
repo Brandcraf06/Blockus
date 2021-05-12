@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.blockitem;
+package com.brand.blockus.blocks.blockitems;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;

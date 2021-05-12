@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.special;
+package com.brand.blockus.blocks.base.redstone;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FallingBlock;
