@@ -36,6 +36,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("limestone_brick_column", BlockusBlocks.LIMESTONE_BRICKS);
         registerColumnBlockAndItem("marble_column", BlockusBlocks.MARBLE);
         registerColumnBlockAndItem("marble_brick_column", BlockusBlocks.MARBLE_BRICKS);
+        registerColumnBlockAndItem("bluestone_column", BlockusBlocks.BLUESTONE);
         registerColumnBlockAndItem("bluestone_brick_column", BlockusBlocks.BLUESTONE_BRICKS);
         registerColumnBlockAndItem("lava_brick_column", BlockusBlocks.LAVA_BRICKS);
         registerColumnBlockAndItem("lava_polished_blackstone_brick_column", BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS);

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:bluestone_column_from_stonecutting"
+    ]
+  },
+  "criteria": {
+    "has_bluestone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "blockus:bluestone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:bluestone_column_from_stonecutting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bluestone",
+      "has_the_recipe"
+    ]
+  ]
+}
