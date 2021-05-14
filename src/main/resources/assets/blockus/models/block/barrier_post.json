@@ -1,6 +1,7 @@
 {
     "textures": {
-        "particle": "#barrier"
+        "particle": "#barrier",
+		"barrier": "blockus:block/barrier_post"
     },
     "elements": [
         {   "from": [ 6, 0, 6 ],
@@ -12,8 +13,7 @@
                 "south": { "texture": "#barrier", "tintindex": 0 },
                 "west":  { "texture": "#barrier", "tintindex": 0 },
                 "east":  { "texture": "#barrier", "tintindex": 0 }
-            },
-            "__comment": "barrier post"
+            }
         }
     ]
 }

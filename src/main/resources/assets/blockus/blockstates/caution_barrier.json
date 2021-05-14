@@ -1,31 +1,31 @@
 {
     "multipart": [
         {   "when": { "up": "true" },
-            "apply": { "model": "blockus:block/caution_barrier_post" }
+            "apply": { "model": "blockus:block/barrier_post" }
         },
         {   "when": { "north": "low" },
-            "apply": { "model": "blockus:block/caution_barrier_side", "uvlock": true }
+            "apply": { "model": "blockus:block/caution_barrier_side" }
         },
         {   "when": { "east": "low" },
-            "apply": { "model": "blockus:block/caution_barrier_side", "y": 90, "uvlock": true }
+            "apply": { "model": "blockus:block/caution_barrier_side", "y": 90 }
         },
         {   "when": { "south": "low" },
-            "apply": { "model": "blockus:block/caution_barrier_side", "y": 180, "uvlock": true }
+            "apply": { "model": "blockus:block/caution_barrier_side", "y": 180 }
         },
         {   "when": { "west": "low" },
-            "apply": { "model": "blockus:block/caution_barrier_side", "y": 270, "uvlock": true }
+            "apply": { "model": "blockus:block/caution_barrier_side", "y": 270 }
         },
         {   "when": { "north": "tall" },
-            "apply": { "model": "blockus:block/caution_barrier_side_tall", "uvlock": true }
+            "apply": { "model": "blockus:block/caution_barrier_side_tall" }
         },
         {   "when": { "east": "tall" },
-            "apply": { "model": "blockus:block/caution_barrier_side_tall", "y": 90, "uvlock": true }
+            "apply": { "model": "blockus:block/caution_barrier_side_tall", "y": 90 }
         },
         {   "when": { "south": "tall" },
-            "apply": { "model": "blockus:block/caution_barrier_side_tall", "y": 180, "uvlock": true }
+            "apply": { "model": "blockus:block/caution_barrier_side_tall", "y": 180 }
         },
         {   "when": { "west": "tall" },
-            "apply": { "model": "blockus:block/caution_barrier_side_tall", "y": 270, "uvlock": true }
+            "apply": { "model": "blockus:block/caution_barrier_side_tall", "y": 270 }
         }
     ]
 }
