@@ -367,7 +367,7 @@ public class BlockusItems {
     public static final Item BAMBOO_STAIRS = register(BlockusBlocks.BAMBOO_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item BAMBOO_SLAB = register(BlockusBlocks.BAMBOO_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item BAMBOO_FENCE = register(BlockusBlocks.BAMBOO_FENCE, Blockus.BLOCKUS_DECORATIONS);
-    public static final Item BAMBOO_FENCE_GATE = register(BlockusBlocks.BAMBOO_FENCE_GATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item BAMBOO_FENCE_GATE = register(BlockusBlocks.BAMBOO_FENCE_GATE, Blockus.BLOCKUS_REDSTONE);
     public static final Item BAMBOO_DOOR = register(BlockusBlocks.BAMBOO_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item BAMBOO_TRAPDOOR = register(BlockusBlocks.BAMBOO_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
 
@@ -376,7 +376,7 @@ public class BlockusItems {
     public static final Item CHARRED_STAIRS = register(BlockusBlocks.CHARRED_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item CHARRED_SLAB = register(BlockusBlocks.CHARRED_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item CHARRED_FENCE = register(BlockusBlocks.CHARRED_FENCE, Blockus.BLOCKUS_DECORATIONS);
-    public static final Item CHARRED_FENCE_GATE = register(BlockusBlocks.CHARRED_FENCE_GATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item CHARRED_FENCE_GATE = register(BlockusBlocks.CHARRED_FENCE_GATE, Blockus.BLOCKUS_REDSTONE);
     public static final Item CHARRED_DOOR = register(BlockusBlocks.CHARRED_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item CHARRED_TRAPDOOR = register(BlockusBlocks.CHARRED_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
 
@@ -391,7 +391,7 @@ public class BlockusItems {
     public static final Item WHITE_OAK_STAIRS = register(BlockusBlocks.WHITE_OAK_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item WHITE_OAK_SLAB = register(BlockusBlocks.WHITE_OAK_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item WHITE_OAK_FENCE = register(BlockusBlocks.WHITE_OAK_FENCE, Blockus.BLOCKUS_DECORATIONS);
-    public static final Item WHITE_OAK_FENCE_GATE = register(BlockusBlocks.WHITE_OAK_FENCE_GATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item WHITE_OAK_FENCE_GATE = register(BlockusBlocks.WHITE_OAK_FENCE_GATE, Blockus.BLOCKUS_REDSTONE);
     public static final Item WHITE_OAK_DOOR = register(BlockusBlocks.WHITE_OAK_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item WHITE_OAK_TRAPDOOR = register(BlockusBlocks.WHITE_OAK_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
 
@@ -832,32 +832,32 @@ public class BlockusItems {
     public static final Item BLACK_GLAZED_TERRACOTTA_PILLAR = register(BlockusBlocks.BLACK_GLAZED_TERRACOTTA_PILLAR, Blockus.BLOCKUS_DECORATIONS);
 
     // Pressure Plates
-    public static final Item POLISHED_ANDESITE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_ANDESITE_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_DIORITE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_DIORITE_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_GRANITE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_GRANITE_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item LIMESTONE_PRESSURE_PLATE = register(BlockusBlocks.LIMESTONE_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item MARBLE_PRESSURE_PLATE = register(BlockusBlocks.MARBLE_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item BLUESTONE_PRESSURE_PLATE = register(BlockusBlocks.BLUESTONE_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_NETHERRACK_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_END_STONE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item BAMBOO_PRESSURE_PLATE = register(BlockusBlocks.BAMBOO_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item CHARRED_PRESSURE_PLATE = register(BlockusBlocks.CHARRED_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item WHITE_OAK_PRESSURE_PLATE = register(BlockusBlocks.WHITE_OAK_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_BASALT_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item POLISHED_ANDESITE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_ANDESITE_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_DIORITE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_DIORITE_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_GRANITE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_GRANITE_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item LIMESTONE_PRESSURE_PLATE = register(BlockusBlocks.LIMESTONE_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item MARBLE_PRESSURE_PLATE = register(BlockusBlocks.MARBLE_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item BLUESTONE_PRESSURE_PLATE = register(BlockusBlocks.BLUESTONE_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_NETHERRACK_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_END_STONE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item BAMBOO_PRESSURE_PLATE = register(BlockusBlocks.BAMBOO_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item CHARRED_PRESSURE_PLATE = register(BlockusBlocks.CHARRED_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item WHITE_OAK_PRESSURE_PLATE = register(BlockusBlocks.WHITE_OAK_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_BASALT_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
 
     // Buttons
-    public static final Item POLISHED_ANDESITE_BUTTON = register(BlockusBlocks.POLISHED_ANDESITE_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_DIORITE_BUTTON = register(BlockusBlocks.POLISHED_DIORITE_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_GRANITE_BUTTON = register(BlockusBlocks.POLISHED_GRANITE_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item LIMESTONE_BUTTON = register(BlockusBlocks.LIMESTONE_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item MARBLE_BUTTON = register(BlockusBlocks.MARBLE_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item BLUESTONE_BUTTON = register(BlockusBlocks.BLUESTONE_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_NETHERRACK_BUTTON = register(BlockusBlocks.POLISHED_NETHERRACK_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_END_STONE_BUTTON = register(BlockusBlocks.POLISHED_END_STONE_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item BAMBOO_BUTTON = register(BlockusBlocks.BAMBOO_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item CHARRED_BUTTON = register(BlockusBlocks.CHARRED_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item WHITE_OAK_BUTTON = register(BlockusBlocks.WHITE_OAK_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item POLISHED_BASALT_BUTTON = register(BlockusBlocks.POLISHED_BASALT_BUTTON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item POLISHED_ANDESITE_BUTTON = register(BlockusBlocks.POLISHED_ANDESITE_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_DIORITE_BUTTON = register(BlockusBlocks.POLISHED_DIORITE_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_GRANITE_BUTTON = register(BlockusBlocks.POLISHED_GRANITE_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item LIMESTONE_BUTTON = register(BlockusBlocks.LIMESTONE_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item MARBLE_BUTTON = register(BlockusBlocks.MARBLE_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item BLUESTONE_BUTTON = register(BlockusBlocks.BLUESTONE_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_NETHERRACK_BUTTON = register(BlockusBlocks.POLISHED_NETHERRACK_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_END_STONE_BUTTON = register(BlockusBlocks.POLISHED_END_STONE_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item BAMBOO_BUTTON = register(BlockusBlocks.BAMBOO_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item CHARRED_BUTTON = register(BlockusBlocks.CHARRED_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item WHITE_OAK_BUTTON = register(BlockusBlocks.WHITE_OAK_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_BASALT_BUTTON = register(BlockusBlocks.POLISHED_BASALT_BUTTON, Blockus.BLOCKUS_REDSTONE);
 
     // Thatch
     public static final Item THATCH = register(BlockusBlocks.THATCH, Blockus.BLOCKUS_BUILDING_BLOCKS);
