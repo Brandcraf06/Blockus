@@ -35,6 +35,7 @@
     "java": ">=16"
   },
   "suggests": {
-    "columns": "*"
+    "columns": "*",
+    "woodenhoppers": "*"
   }
 }

@@ -1,6 +1,7 @@
-package com.brand.blockus.content;
+package com.brand.blockus.content.compatibility;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.content.BlockusBlocks;
 
 import io.github.haykam821.columns.block.ColumnBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;

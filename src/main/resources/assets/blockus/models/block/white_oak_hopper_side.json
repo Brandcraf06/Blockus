@@ -1,0 +1,9 @@
+{
+    "parent": "block/hopper_side",
+    "textures": {
+        "particle": "blockus:block/white_oak_planks",
+        "top": "blockus:block/white_oak_planks",
+        "side": "blockus:block/white_oak_planks",
+        "inside": "blockus:block/white_oak_planks"
+    }
+}
