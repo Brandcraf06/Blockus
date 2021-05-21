@@ -17,10 +17,11 @@ import net.minecraft.util.registry.Registry;
 
 public final class BlockusWoodenHopperBlocks {
     private static final Block BAMBOO_HOPPER = registerHopperBlockAndItem("bamboo_hopper", BlockusBlocks.BAMBOO_PLANKS);
+    private static final Block CHARRED_HOPPER = registerHopperBlockAndItem("charred_hopper", BlockusBlocks.CHARRED_PLANKS);
 
     private static final Identifier BLOCK_ENTITY_TYPE_ID = new Identifier(Blockus.MOD_ID, "wooden_hopper");
     public static final BlockEntityType<WoodenHopperBlockEntity> BLOCK_ENTITY_TYPE = BlockEntityType.Builder
-        .create(WoodenHopperBlockEntity::new, BAMBOO_HOPPER)
+        .create(WoodenHopperBlockEntity::new, BAMBOO_HOPPER, CHARRED_HOPPER)
         .build(null);
 
     private BlockusWoodenHopperBlocks() {

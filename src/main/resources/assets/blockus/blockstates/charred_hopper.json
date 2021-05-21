@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "facing=down": {
+            "model": "blockus:block/charred_hopper"
+        },
+        "facing=east": {
+            "model": "blockus:block/charred_hopper_side",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "blockus:block/charred_hopper_side"
+        },
+        "facing=south": {
+            "model": "blockus:block/charred_hopper_side",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "blockus:block/charred_hopper_side",
+            "y": 270
+        }
+    }
+}
