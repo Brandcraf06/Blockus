@@ -1,0 +1,9 @@
+{
+    "parent": "block/hopper_side",
+    "textures": {
+        "particle": "blockus:block/bamboo_planks",
+        "top": "blockus:block/bamboo_planks",
+        "side": "blockus:block/bamboo_planks",
+        "inside": "blockus:block/bamboo_planks"
+    }
+}
