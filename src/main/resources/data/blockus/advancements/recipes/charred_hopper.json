@@ -1,0 +1,32 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": [
+            "blockus:charred_hopper"
+        ]
+    },
+    "criteria": {
+        "has_charred_planks": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "blockus:charred_planks"
+                    }
+                ]
+            }
+        },
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "blockus:charred_hopper"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_charred_planks",
+            "has_the_recipe"
+        ]
+    ]
+}

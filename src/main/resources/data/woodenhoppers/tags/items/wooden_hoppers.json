@@ -1,0 +1,17 @@
+{
+  "values": [],
+  "libcd": {
+    "entries": [
+      {
+        "when": {
+          "libcd:mod_loaded": "woodenhoppers"
+        },
+        "values": [
+          "blockus:bamboo_hopper",
+          "blockus:charred_hopper",
+          "blockus:white_oak_hopper"
+        ]
+      }
+    ]
+  }
+}
