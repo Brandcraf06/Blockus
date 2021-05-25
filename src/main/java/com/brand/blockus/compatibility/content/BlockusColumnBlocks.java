@@ -1,4 +1,4 @@
-package com.brand.blockus.content.compatibility;
+package com.brand.blockus.compatibility.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
