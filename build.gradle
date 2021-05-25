@@ -40,9 +40,6 @@ dependencies {
 
 	// Columns
 	modImplementation "curse.maven:columns-385230:3107117"
-
-	// Wooden Hoppers
-	modImplementation "curse.maven:woodenhoppers-406021:3048188"
 }
 
 minecraft {
