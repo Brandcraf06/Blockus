@@ -1,4 +1,4 @@
-package com.brand.blockus.blocks.compatibility;
+package com.brand.blockus.compatibility.blocks;
 
 import io.github.haykam821.woodenhoppers.block.WoodenHopperBlock;
 import net.minecraft.block.entity.BlockEntity;

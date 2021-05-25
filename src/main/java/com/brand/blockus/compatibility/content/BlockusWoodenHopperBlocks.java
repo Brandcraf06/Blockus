@@ -1,10 +1,10 @@
-package com.brand.blockus.content.compatibility;
+package com.brand.blockus.compatibility.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.compatibility.BlockusWoodenHopperBlock;
+import com.brand.blockus.compatibility.blocks.BlockusWoodenHopperBlock;
+import com.brand.blockus.compatibility.blocks.BlockusWoodenHopperBlockEntity;
 import com.brand.blockus.content.BlockusBlocks;
 
-import io.github.haykam821.woodenhoppers.block.entity.WoodenHopperBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -21,8 +21,8 @@ public final class BlockusWoodenHopperBlocks {
     private static final Block WHITE_OAK_HOPPER = registerHopperBlockAndItem("white_oak_hopper", BlockusBlocks.WHITE_OAK_PLANKS);
 
     private static final Identifier BLOCK_ENTITY_TYPE_ID = new Identifier(Blockus.MOD_ID, "wooden_hopper");
-    public static final BlockEntityType<WoodenHopperBlockEntity> BLOCK_ENTITY_TYPE = BlockEntityType.Builder
-        .create(WoodenHopperBlockEntity::new, BAMBOO_HOPPER, CHARRED_HOPPER, WHITE_OAK_HOPPER)
+    public static final BlockEntityType<BlockusWoodenHopperBlockEntity> BLOCK_ENTITY_TYPE = BlockEntityType.Builder
+        .create(BlockusWoodenHopperBlockEntity::new, BAMBOO_HOPPER, CHARRED_HOPPER, WHITE_OAK_HOPPER)
         .build(null);
 
     private BlockusWoodenHopperBlocks() {
