@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-	"blockus:stone_bricks_pillar",
+    "blockus:stone_bricks_pillar",
     "blockus:zigzagged_stone_bricks",
-	"blockus:stone_circle_pavement",
-	"blockus:smooth_stone_stairs"
+    "blockus:stone_circle_pavement",
+    "blockus:smooth_stone_stairs"
   ]
 }

@@ -17,7 +17,6 @@
     "blockus:green_concrete_bricks",
     "blockus:red_concrete_bricks",
     "blockus:black_concrete_bricks",
-	
     "blockus:chiseled_white_concrete",
     "blockus:chiseled_orange_concrete",
     "blockus:chiseled_magenta_concrete",
@@ -34,8 +33,7 @@
     "blockus:chiseled_green_concrete",
     "blockus:chiseled_red_concrete",
     "blockus:chiseled_black_concrete",
-	
-	"blockus:white_concrete_pillar",
+    "blockus:white_concrete_pillar",
     "blockus:orange_concrete_pillar",
     "blockus:magenta_concrete_pillar",
     "blockus:light_blue_concrete_pillar",
@@ -51,6 +49,5 @@
     "blockus:green_concrete_pillar",
     "blockus:red_concrete_pillar",
     "blockus:black_concrete_pillar"
-	
   ]
 }

@@ -1,17 +1,17 @@
 {
   "replace": false,
   "values": [
-	"blockus:sweet_berries_crate",
+    "blockus:sweet_berries_crate",
     "blockus:salmon_crate",
-	"blockus:pufferfish_crate",
-	"blockus:tropical_fish_crate",
-	"blockus:cod_crate",
+    "blockus:pufferfish_crate",
+    "blockus:tropical_fish_crate",
+    "blockus:cod_crate",
     "blockus:potato_crate",
-	"blockus:apple_crate",
-	"blockus:beetroot_crate",
-	"blockus:carrot_crate",
+    "blockus:apple_crate",
+    "blockus:beetroot_crate",
+    "blockus:carrot_crate",
     "blockus:bread_box",
-	"blockus:golden_apple_crate",
-	"blockus:golden_carrot_crate"
+    "blockus:golden_apple_crate",
+    "blockus:golden_carrot_crate"
   ]
 }

@@ -2,11 +2,11 @@
   "replace": false,
   "values": [
     "blockus:limestone",
-	"blockus:limestone_stairs",
-	"blockus:limestone_slab",
+    "blockus:limestone_stairs",
+    "blockus:limestone_slab",
     "blockus:limestone_bricks",
     "blockus:limestone_bricks_stairs",
-	"blockus:limestone_bricks_slab",
+    "blockus:limestone_bricks_slab",
     "blockus:limestone_pillar",
     "blockus:chiseled_limestone",
     "blockus:limestone_circle_pavement"

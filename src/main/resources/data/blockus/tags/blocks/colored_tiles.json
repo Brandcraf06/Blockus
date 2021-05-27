@@ -16,9 +16,8 @@
     "blockus:brown_colored_tiles",
     "blockus:green_colored_tiles",
     "blockus:red_colored_tiles",
-	"blockus:black_colored_tiles",
-	
-	"blockus:orange_white_colored_tiles",
+    "blockus:black_colored_tiles",
+    "blockus:orange_white_colored_tiles",
     "blockus:magenta_white_colored_tiles",
     "blockus:light_blue_white_colored_tiles",
     "blockus:yellow_white_colored_tiles",
@@ -32,8 +31,7 @@
     "blockus:brown_white_colored_tiles",
     "blockus:green_white_colored_tiles",
     "blockus:red_white_colored_tiles",
-	"blockus:black_white_colored_tiles",
-	
+    "blockus:black_white_colored_tiles",
     "blockus:gray_light_gray_colored_tiles",
     "blockus:black_gray_colored_tiles",
     "blockus:black_red_colored_tiles",
@@ -48,6 +46,6 @@
     "blockus:light_blue_yellow_colored_tiles",
     "blockus:blue_cyan_colored_tiles",
     "blockus:red_blue_colored_tiles",
-	"blockus:rainbow_colored_tiles"
+    "blockus:rainbow_colored_tiles"
   ]
 }

@@ -17,10 +17,9 @@
     "blockus:brown_shingles",
     "blockus:green_shingles",
     "blockus:red_shingles",
-	"blockus:black_shingles",
-	
-    "blockus:shingles_stairs",	
-	"blockus:white_shingles_stairs",
+    "blockus:black_shingles",
+    "blockus:shingles_stairs",
+    "blockus:white_shingles_stairs",
     "blockus:orange_shingles_stairs",
     "blockus:magenta_shingles_stairs",
     "blockus:light_blue_shingles_stairs",
@@ -36,9 +35,8 @@
     "blockus:green_shingles_stairs",
     "blockus:red_shingles_stairs",
     "blockus:black_shingles_stairs",
-	
-    "blockus:shingles_slab",	
-	"blockus:white_shingles_slab",
+    "blockus:shingles_slab",
+    "blockus:white_shingles_slab",
     "blockus:orange_shingles_slab",
     "blockus:magenta_shingles_slab",
     "blockus:light_blue_shingles_slab",
@@ -53,7 +51,6 @@
     "blockus:brown_shingles_slab",
     "blockus:green_shingles_slab",
     "blockus:red_shingles_slab",
-	"blockus:black_shingles_slab"
-	
+    "blockus:black_shingles_slab"
   ]
 }

@@ -3,11 +3,11 @@
   "values": [
     "blockus:diorite_bricks",
     "blockus:diorite_bricks_stairs",
-	"blockus:diorite_bricks_slab",
-	"blockus:zigzagged_diorite",
+    "blockus:diorite_bricks_slab",
+    "blockus:zigzagged_diorite",
     "blockus:chiseled_diorite_bricks",
     "blockus:cracked_diorite_bricks",
-	"blockus:polished_diorite_pillar",
+    "blockus:polished_diorite_pillar",
     "blockus:diorite_circle_pavement"
   ]
 }

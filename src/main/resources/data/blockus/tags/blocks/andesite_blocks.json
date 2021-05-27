@@ -3,11 +3,11 @@
   "values": [
     "blockus:andesite_bricks",
     "blockus:andesite_bricks_stairs",
-	"blockus:andesite_bricks_slab",
-	"blockus:zigzagged_andesite",
+    "blockus:andesite_bricks_slab",
+    "blockus:zigzagged_andesite",
     "blockus:chiseled_andesite_bricks",
     "blockus:cracked_andesite_bricks",
-	"blockus:polished_andesite_pillar",
+    "blockus:polished_andesite_pillar",
     "blockus:andesite_circle_pavement"
   ]
 }

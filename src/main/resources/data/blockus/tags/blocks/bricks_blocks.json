@@ -3,19 +3,16 @@
   "values": [
     "blockus:large_bricks",
     "blockus:large_bricks_stairs",
-	"blockus:large_bricks_slab",
+    "blockus:large_bricks_slab",
     "blockus:zigzagged_bricks",
-	
     "blockus:soaked_bricks",
     "blockus:soaked_bricks_stairs",
-	"blockus:soaked_bricks_slab",
-	
+    "blockus:soaked_bricks_slab",
     "blockus:sandy_bricks",
     "blockus:sandy_bricks_stairs",
-	"blockus:sandy_bricks_slab",
-	
+    "blockus:sandy_bricks_slab",
     "blockus:charred_bricks",
     "blockus:charred_bricks_stairs",
-	"blockus:charred_bricks_slab"
+    "blockus:charred_bricks_slab"
   ]
 }

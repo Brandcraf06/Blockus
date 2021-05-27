@@ -17,9 +17,8 @@
     "blockus:brown_asphalt",
     "blockus:green_asphalt",
     "blockus:red_asphalt",
-	
-    "blockus:asphalt_stairs",	
-	"blockus:white_asphalt_stairs",
+    "blockus:asphalt_stairs",
+    "blockus:white_asphalt_stairs",
     "blockus:orange_asphalt_stairs",
     "blockus:magenta_asphalt_stairs",
     "blockus:light_blue_asphalt_stairs",
@@ -34,9 +33,8 @@
     "blockus:brown_asphalt_stairs",
     "blockus:green_asphalt_stairs",
     "blockus:red_asphalt_stairs",
-	
-    "blockus:asphalt_slab",	
-	"blockus:white_asphalt_slab",
+    "blockus:asphalt_slab",
+    "blockus:white_asphalt_slab",
     "blockus:orange_asphalt_slab",
     "blockus:magenta_asphalt_slab",
     "blockus:light_blue_asphalt_slab",
@@ -51,6 +49,5 @@
     "blockus:brown_asphalt_slab",
     "blockus:green_asphalt_slab",
     "blockus:red_asphalt_slab"
-	
   ]
 }

@@ -1,8 +1,8 @@
 {
   "replace": false,
-  "values": [	
+  "values": [
     "blockus:honeycomb_bricks",
     "blockus:honeycomb_bricks_stairs",
-	"blockus:honeycomb_bricks_slab"
+    "blockus:honeycomb_bricks_slab"
   ]
 }

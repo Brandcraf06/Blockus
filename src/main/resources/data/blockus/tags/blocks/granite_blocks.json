@@ -3,11 +3,11 @@
   "values": [
     "blockus:granite_bricks",
     "blockus:granite_bricks_stairs",
-	"blockus:granite_bricks_slab",
-	"blockus:zigzagged_granite",
+    "blockus:granite_bricks_slab",
+    "blockus:zigzagged_granite",
     "blockus:chiseled_granite_bricks",
     "blockus:cracked_granite_bricks",
-	"blockus:polished_granite_pillar",
+    "blockus:polished_granite_pillar",
     "blockus:granite_circle_pavement"
   ]
 }
