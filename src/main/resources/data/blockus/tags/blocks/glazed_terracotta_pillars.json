@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:white_glazed_terracotta_pillar",
+    "blockus:orange_glazed_terracotta_pillar",
+    "blockus:magenta_glazed_terracotta_pillar",
+    "blockus:light_blue_glazed_terracotta_pillar",
+    "blockus:yellow_glazed_terracotta_pillar",
+    "blockus:lime_glazed_terracotta_pillar",
+    "blockus:pink_glazed_terracotta_pillar",
+    "blockus:gray_glazed_terracotta_pillar",
+    "blockus:light_gray_glazed_terracotta_pillar",
+    "blockus:cyan_glazed_terracotta_pillar",
+    "blockus:purple_glazed_terracotta_pillar",
+    "blockus:blue_glazed_terracotta_pillar",
+    "blockus:brown_glazed_terracotta_pillar",
+    "blockus:green_glazed_terracotta_pillar",
+    "blockus:red_glazed_terracotta_pillar",
+	"blockus:black_glazed_terracotta_pillar"
+  ]
+}

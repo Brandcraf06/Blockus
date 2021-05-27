@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+  	"blockus:polished_blackstone_pillar",
+	"blockus:zigzagged_polished_blackstone",
+    "blockus:polished_blackstone_circle_pavement",
+	"blockus:crimson_warty_blackstone_bricks",
+    "blockus:crimson_warty_blackstone_bricks_stairs",
+	"blockus:crimson_warty_blackstone_bricks_slab",
+	"blockus:warped_warty_blackstone_bricks",
+    "blockus:warped_warty_blackstone_bricks_stairs",
+	"blockus:warped_warty_blackstone_bricks_slab",
+    "blockus:gold_decorated_polished_blackstone"
+  ]
+}

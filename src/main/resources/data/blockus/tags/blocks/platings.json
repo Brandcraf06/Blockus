@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:iron_plating",
+    "blockus:iron_plating_stairs",
+    "blockus:iron_plating_slab"
+  ]
+}

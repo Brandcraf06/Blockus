@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+	"blockus:thatch",
+    "blockus:thatch_stairs",
+	"blockus:thatch_slab"
+  ]
+}
