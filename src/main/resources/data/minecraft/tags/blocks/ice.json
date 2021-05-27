@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "blockus:ice_bricks",
-	"blockus:ice_pillar",
+    "blockus:ice_pillar",
     "blockus:ice_bricks_wall"
   ]
 }

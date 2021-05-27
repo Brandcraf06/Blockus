@@ -2,11 +2,11 @@
   "replace": false,
   "values": [
     "#blockus:white_oak_logs",
-	"blockus:oak_small_logs",
-	"blockus:spruce_small_logs",
+    "blockus:oak_small_logs",
+    "blockus:spruce_small_logs",
     "blockus:birch_small_logs",
-	"blockus:jungle_small_logs",
-	"blockus:acacia_small_logs",
-	"blockus:dark_oak_small_logs"
+    "blockus:jungle_small_logs",
+    "blockus:acacia_small_logs",
+    "blockus:dark_oak_small_logs"
   ]
 }
