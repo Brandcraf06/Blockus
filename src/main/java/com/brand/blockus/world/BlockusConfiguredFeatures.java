@@ -61,10 +61,10 @@ public class BlockusConfiguredFeatures {
                             context.getGenerationSettings().addBuiltInFeature(GenerationStep.Feature.UNDERGROUND_ORES, BLUESTONE);
                         })
                 .add(ModificationPhase.ADDITIONS,
-                        BiomeSelectors.foundInOverworld().and(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST)),
+                        BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST),
                         context -> context.getGenerationSettings().addBuiltInFeature(GenerationStep.Feature.VEGETAL_DECORATION, WHITE_OAK_TREE))
                 .add(ModificationPhase.ADDITIONS,
-                        BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.PLAINS)),
+                        BiomeSelectors.categories(Biome.Category.PLAINS),
                         context -> context.getGenerationSettings().addBuiltInFeature(GenerationStep.Feature.VEGETAL_DECORATION, WHITE_OAK_TREE_RARE));
     }
 }
