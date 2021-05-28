@@ -162,11 +162,11 @@ public class BlocksRegistration {
     }
 
     public static Block registerLargeFlowerPot(Block content, String id) {
-        return register(id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).nonOpaque()));
+        return register(id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).breakByTool(FabricToolTags.PICKAXES).nonOpaque()));
     }
 
     public static Block registerPottedDoublePlant(Block content, String id) {
-        return register("potted_" + id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).nonOpaque()));
+        return register("potted_" + id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.SUPPORTED).strength(0.5F, 1.0F).breakByTool(FabricToolTags.PICKAXES).nonOpaque()));
     }
 
     // Door & Trapdoor
