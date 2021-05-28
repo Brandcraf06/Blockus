@@ -64,6 +64,7 @@
     "#blockus:shingles",
     "#blockus:colored_tiles",
     "#blockus:glazed_terracotta_pillars",
-    "#blockus:platings"
+    "#blockus:platings",
+    "#blockus:large_flower_pots"
   ]
 }
