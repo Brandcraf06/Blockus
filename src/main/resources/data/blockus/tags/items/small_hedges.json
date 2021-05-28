@@ -9,6 +9,9 @@
     "blockus:dark_oak_small_hedge",
     "blockus:white_oak_small_hedge",
     "blockus:crimson_small_hedge",
-    "blockus:warped_small_hedge"
+    "blockus:warped_small_hedge",
+	"blockus:azalea_small_hedge",
+    "blockus:azalea_small_hedge_flowers",
+    "blockus:moss_small_hedge"
   ]
 }
