@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped"
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:tinted_glass"
+    }
+  },
+  "result": {
+    "item": "blockus:tinted_beveled_glass",
+    "count": 4
+  }
+}

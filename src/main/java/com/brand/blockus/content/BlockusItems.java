@@ -742,6 +742,7 @@ public class BlockusItems {
     public static final Item GREEN_BEVELED_GLASS_PANE = register(BlockusBlocks.GREEN_BEVELED_GLASS_PANE, Blockus.BLOCKUS_DECORATIONS);
     public static final Item RED_BEVELED_GLASS_PANE = register(BlockusBlocks.RED_BEVELED_GLASS_PANE, Blockus.BLOCKUS_DECORATIONS);
     public static final Item BLACK_BEVELED_GLASS_PANE = register(BlockusBlocks.BLACK_BEVELED_GLASS_PANE, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item TINTED_BEVELED_GLASS = register(BlockusBlocks.TINTED_BEVELED_GLASS, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Patterned Wools
     public static final Item WHITE_PATTERNED_WOOL = register(BlockusBlocks.WHITE_PATTERNED_WOOL, Blockus.BLOCKUS_BUILDING_BLOCKS);

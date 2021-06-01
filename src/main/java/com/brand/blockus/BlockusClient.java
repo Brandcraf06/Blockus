@@ -120,7 +120,9 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.BROWN_BEVELED_GLASS_PANE,
                 BlockusBlocks.GREEN_BEVELED_GLASS_PANE,
                 BlockusBlocks.RED_BEVELED_GLASS_PANE,
-                BlockusBlocks.BLACK_BEVELED_GLASS_PANE
+                BlockusBlocks.BLACK_BEVELED_GLASS_PANE,
+
+                BlockusBlocks.TINTED_BEVELED_GLASS
         );
 
 
