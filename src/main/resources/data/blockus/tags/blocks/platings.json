@@ -3,6 +3,9 @@
   "values": [
     "blockus:iron_plating",
     "blockus:iron_plating_stairs",
-    "blockus:iron_plating_slab"
+    "blockus:iron_plating_slab",
+	"blockus:gold_plating",
+    "blockus:gold_plating_stairs",
+    "blockus:gold_plating_slab"
   ]
 }

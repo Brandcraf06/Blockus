@@ -26,6 +26,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
+import java.util.Iterator;
 import java.util.Map;
 
 public class SmallHedgeBlock extends Block implements Waterloggable {
@@ -35,28 +36,13 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
     public static final EnumProperty<WallShape> SOUTH_SHAPE;
     public static final EnumProperty<WallShape> WEST_SHAPE;
     public static final BooleanProperty WATERLOGGED;
-    private static final VoxelShape field_22163;
-    private static final VoxelShape field_22164;
-    private static final VoxelShape field_22165;
-    private static final VoxelShape field_22166;
-    private static final VoxelShape field_22167;
-
-    static {
-        UP = Properties.UP;
-        EAST_SHAPE = Properties.EAST_WALL_SHAPE;
-        NORTH_SHAPE = Properties.NORTH_WALL_SHAPE;
-        SOUTH_SHAPE = Properties.SOUTH_WALL_SHAPE;
-        WEST_SHAPE = Properties.WEST_WALL_SHAPE;
-        WATERLOGGED = Properties.WATERLOGGED;
-        field_22163 = Block.createCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
-        field_22164 = Block.createCuboidShape(5.0D, 0.0D, 0.0D, 11.0D, 16.0D, 11.0D);
-        field_22165 = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 16.0D);
-        field_22166 = Block.createCuboidShape(0.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
-        field_22167 = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 16.0D, 16.0D, 11.0D);
-    }
-
     private final Map<BlockState, VoxelShape> shapeMap;
     private final Map<BlockState, VoxelShape> collisionShapeMap;
+    private static final VoxelShape TALL_POST_SHAPE;
+    private static final VoxelShape TALL_NORTH_SHAPE;
+    private static final VoxelShape TALL_SOUTH_SHAPE;
+    private static final VoxelShape TALL_WEST_SHAPE;
+    private static final VoxelShape TALL_EAST_SHAPE;
 
     public SmallHedgeBlock(Settings settings) {
         super(settings);
@@ -71,14 +57,6 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
         } else {
             return wallShape == WallShape.LOW ? VoxelShapes.union(voxelShape, voxelShape2) : voxelShape;
         }
-    }
-
-    private static boolean method_24424(BlockState blockState, Property<WallShape> property) {
-        return blockState.get(property) != WallShape.NONE;
-    }
-
-    private static boolean method_24427(VoxelShape voxelShape, VoxelShape voxelShape2) {
-        return !VoxelShapes.matchesAnywhere(voxelShape2, voxelShape, BooleanBiFunction.ONLY_FIRST);
     }
 
     private Map<BlockState, VoxelShape> getShapeMap(float f, float g, float h, float i, float j, float k) {
@@ -96,16 +74,26 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
         VoxelShape voxelShape8 = Block.createCuboidShape(0.0D, i, n, o, k, o);
         VoxelShape voxelShape9 = Block.createCuboidShape(n, i, n, 16.0D, k, o);
         Builder<BlockState, VoxelShape> builder = ImmutableMap.builder();
+        Iterator var21 = UP.getValues().iterator();
 
-        for (Boolean boolean_ : UP.getValues()) {
+        while(var21.hasNext()) {
+            Boolean boolean_ = (Boolean)var21.next();
+            Iterator var23 = EAST_SHAPE.getValues().iterator();
 
-            for (WallShape wallShape : EAST_SHAPE.getValues()) {
+            while(var23.hasNext()) {
+                WallShape wallShape = (WallShape)var23.next();
+                Iterator var25 = NORTH_SHAPE.getValues().iterator();
 
-                for (WallShape wallShape2 : NORTH_SHAPE.getValues()) {
+                while(var25.hasNext()) {
+                    WallShape wallShape2 = (WallShape)var25.next();
+                    Iterator var27 = WEST_SHAPE.getValues().iterator();
 
-                    for (WallShape wallShape3 : WEST_SHAPE.getValues()) {
+                    while(var27.hasNext()) {
+                        WallShape wallShape3 = (WallShape)var27.next();
+                        Iterator var29 = SOUTH_SHAPE.getValues().iterator();
 
-                        for (WallShape wallShape4 : SOUTH_SHAPE.getValues()) {
+                        while(var29.hasNext()) {
+                            WallShape wallShape4 = (WallShape)var29.next();
                             VoxelShape voxelShape10 = VoxelShapes.empty();
                             voxelShape10 = method_24426(voxelShape10, wallShape, voxelShape5, voxelShape9);
                             voxelShape10 = method_24426(voxelShape10, wallShape3, voxelShape4, voxelShape8);
@@ -179,6 +167,14 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
         }
     }
 
+    private static boolean method_24424(BlockState blockState, Property<WallShape> property) {
+        return blockState.get(property) != WallShape.NONE;
+    }
+
+    private static boolean method_24427(VoxelShape voxelShape, VoxelShape voxelShape2) {
+        return !VoxelShapes.matchesAnywhere(voxelShape2, voxelShape, BooleanBiFunction.ONLY_FIRST);
+    }
+
     private BlockState method_24421(WorldView worldView, BlockState blockState, BlockPos blockPos, BlockState blockState2) {
         boolean bl = method_24424(blockState, NORTH_SHAPE);
         boolean bl2 = method_24424(blockState, EAST_SHAPE);
@@ -225,14 +221,14 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
                 if (bl7) {
                     return false;
                 } else {
-                    return blockState2.getBlock().isIn(BlockTags.WALL_POST_OVERRIDE) || method_24427(voxelShape, field_22163);
+                    return blockState2.getBlock().isIn(BlockTags.WALL_POST_OVERRIDE) || method_24427(voxelShape, TALL_POST_SHAPE);
                 }
             }
         }
     }
 
     private BlockState method_24425(BlockState blockState, boolean bl, boolean bl2, boolean bl3, boolean bl4, VoxelShape voxelShape) {
-        return blockState.with(NORTH_SHAPE, this.method_24428(bl, voxelShape, field_22164)).with(EAST_SHAPE, this.method_24428(bl2, voxelShape, field_22167)).with(SOUTH_SHAPE, this.method_24428(bl3, voxelShape, field_22165)).with(WEST_SHAPE, this.method_24428(bl4, voxelShape, field_22166));
+        return blockState.with(NORTH_SHAPE, this.method_24428(bl, voxelShape, TALL_NORTH_SHAPE)).with(EAST_SHAPE, this.method_24428(bl2, voxelShape, TALL_EAST_SHAPE)).with(SOUTH_SHAPE, this.method_24428(bl3, voxelShape, TALL_SOUTH_SHAPE)).with(WEST_SHAPE, this.method_24428(bl4, voxelShape, TALL_WEST_SHAPE));
     }
 
     private WallShape method_24428(boolean bl, VoxelShape voxelShape, VoxelShape voxelShape2) {
@@ -248,7 +244,7 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
     }
 
     public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
-        return !(Boolean) state.get(WATERLOGGED);
+        return !(Boolean)state.get(WATERLOGGED);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
@@ -256,7 +252,7 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
     }
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {
-        switch (rotation) {
+        switch(rotation) {
             case CLOCKWISE_180:
                 return state.with(NORTH_SHAPE, state.get(SOUTH_SHAPE)).with(EAST_SHAPE, state.get(WEST_SHAPE)).with(SOUTH_SHAPE, state.get(NORTH_SHAPE)).with(WEST_SHAPE, state.get(EAST_SHAPE));
             case COUNTERCLOCKWISE_90:
@@ -269,7 +265,7 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
     }
 
     public BlockState mirror(BlockState state, BlockMirror mirror) {
-        switch (mirror) {
+        switch(mirror) {
             case LEFT_RIGHT:
                 return state.with(NORTH_SHAPE, state.get(SOUTH_SHAPE)).with(SOUTH_SHAPE, state.get(NORTH_SHAPE));
             case FRONT_BACK:
@@ -277,5 +273,19 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
             default:
                 return super.mirror(state, mirror);
         }
+    }
+
+    static {
+        UP = Properties.UP;
+        EAST_SHAPE = Properties.EAST_WALL_SHAPE;
+        NORTH_SHAPE = Properties.NORTH_WALL_SHAPE;
+        SOUTH_SHAPE = Properties.SOUTH_WALL_SHAPE;
+        WEST_SHAPE = Properties.WEST_WALL_SHAPE;
+        WATERLOGGED = Properties.WATERLOGGED;
+        TALL_POST_SHAPE = Block.createCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
+        TALL_NORTH_SHAPE = Block.createCuboidShape(5.0D, 0.0D, 0.0D, 11.0D, 16.0D, 11.0D);
+        TALL_SOUTH_SHAPE = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 16.0D);
+        TALL_WEST_SHAPE = Block.createCuboidShape(0.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
+        TALL_EAST_SHAPE = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 16.0D, 16.0D, 11.0D);
     }
 }

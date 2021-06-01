@@ -873,6 +873,9 @@ public class BlockusItems {
     public static final Item IRON_PLATING = register(BlockusBlocks.IRON_PLATING, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item IRON_PLATING_STAIRS = register(BlockusBlocks.IRON_PLATING_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item IRON_PLATING_SLAB = register(BlockusBlocks.IRON_PLATING_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GOLD_PLATING = register(BlockusBlocks.GOLD_PLATING, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GOLD_PLATING_STAIRS = register(BlockusBlocks.GOLD_PLATING_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GOLD_PLATING_SLAB = register(BlockusBlocks.GOLD_PLATING_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Gates - chains - bars
     public static final Item IRON_GATE = register(BlockusBlocks.IRON_GATE, Blockus.BLOCKUS_REDSTONE);

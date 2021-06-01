@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:gold_plating"
+    }
+  },
+  "result": {
+    "item": "blockus:gold_plating_slab",
+    "count": 6
+  }
+}

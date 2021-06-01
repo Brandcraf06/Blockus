@@ -1,7 +1,6 @@
 package com.brand.blockus.compatibility.blocks;
 
 import com.brand.blockus.compatibility.content.BlockusWoodenHopperBlocks;
-
 import io.github.haykam821.woodenhoppers.block.entity.WoodenHopperBlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 

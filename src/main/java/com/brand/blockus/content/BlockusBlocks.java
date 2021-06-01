@@ -893,10 +893,13 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block PAPER_TRAPDOOR = registerTrapdoor("paper", 0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0, MaterialColor.QUARTZ);
     public static final Block PAPER_LAMP = register("paper_lamp", new PaperLampBlock(FabricBlockSettings.of(Material.WOOL, MaterialColor.QUARTZ).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS).luminance(15)));
 
-    // Iron Plating
+    // Plating
     public static final Block IRON_PLATING = registerBlockCopy("iron_plating", Blocks.IRON_BLOCK);
     public static final Block IRON_PLATING_STAIRS = registerStairs(IRON_PLATING);
     public static final Block IRON_PLATING_SLAB = registerSlab(IRON_PLATING);
+    public static final Block GOLD_PLATING = registerBlockCopy("gold_plating", Blocks.GOLD_BLOCK);
+    public static final Block GOLD_PLATING_STAIRS = registerStairs(GOLD_PLATING);
+    public static final Block GOLD_PLATING_SLAB = registerSlab(GOLD_PLATING);
 
     // Gates - chains - bars
     public static final Block IRON_GATE = registerGate("iron", Blocks.IRON_DOOR);

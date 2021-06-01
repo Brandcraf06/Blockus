@@ -4,10 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.BarrelBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
@@ -39,7 +36,9 @@ public class BarrelBlockBase extends BarrelBlock {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
+        if (world.isClient) {
+            return ActionResult.SUCCESS;
+        } else {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelBlockEntity) {
                 player.openHandledScreen((WoodenBarrelBlockEntity) blockEntity);
@@ -47,30 +46,32 @@ public class BarrelBlockBase extends BarrelBlock {
                 PiglinBrain.onGuardedBlockInteracted(player, true);
             }
 
-        }
-        return ActionResult.SUCCESS;
-    }
-
-    @Override
-    public void scheduledTick(BlockState state, ServerWorld serverWorld_1, BlockPos pos, Random random) {
-        BlockEntity be = serverWorld_1.getBlockEntity(pos);
-        if (be instanceof WoodenBarrelBlockEntity) {
-            ((WoodenBarrelBlockEntity) be).tick();
+            return ActionResult.CONSUME;
         }
     }
 
     @Override
-    public BlockEntity createBlockEntity(BlockView blockView_1) {
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (blockEntity instanceof WoodenBarrelBlockEntity) {
+            ((WoodenBarrelBlockEntity)blockEntity).tick();
+        }
+    }
+
+    @Override
+    public BlockEntity createBlockEntity(BlockView world) {
         return new WoodenBarrelBlockEntity();
     }
 
     @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
-        if (stack.hasCustomName()) {
-            BlockEntity be = world.getBlockEntity(pos);
-            if (be instanceof WoodenBarrelBlockEntity) {
-                ((WoodenBarrelBlockEntity) be).setCustomName(stack.getName());
+    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
+        if (itemStack.hasCustomName()) {
+            BlockEntity blockEntity = world.getBlockEntity(pos);
+            if (blockEntity instanceof WoodenBarrelBlockEntity) {
+                ((WoodenBarrelBlockEntity)blockEntity).setCustomName(itemStack.getName());
             }
         }
     }
 }
+
+
