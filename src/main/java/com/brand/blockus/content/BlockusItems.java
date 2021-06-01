@@ -450,7 +450,7 @@ public class BlockusItems {
     public static final Item DARK_OAK_SMALL_HEDGE = register(BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
     public static final Item WHITE_OAK_SMALL_HEDGE = register(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
     public static final Item AZALEA_SMALL_HEDGE = register(BlockusBlocks.AZALEA_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
-    public static final Item AZALEA_SMALL_HEDGE_FLOWERS = register(BlockusBlocks.AZALEA_SMALL_HEDGE_FLOWERS, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item FLOWERING_AZALEA_SMALL_HEDGE = register(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
     public static final Item MOSS_SMALL_HEDGE = register(BlockusBlocks.MOSS_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
     public static final Item CRIMSON_SMALL_HEDGE = register(BlockusBlocks.CRIMSON_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
     public static final Item WARPED_SMALL_HEDGE = register(BlockusBlocks.WARPED_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
@@ -876,6 +876,9 @@ public class BlockusItems {
     public static final Item IRON_PLATING = register(BlockusBlocks.IRON_PLATING, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item IRON_PLATING_STAIRS = register(BlockusBlocks.IRON_PLATING_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item IRON_PLATING_SLAB = register(BlockusBlocks.IRON_PLATING_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GOLD_PLATING = register(BlockusBlocks.GOLD_PLATING, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GOLD_PLATING_STAIRS = register(BlockusBlocks.GOLD_PLATING_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GOLD_PLATING_SLAB = register(BlockusBlocks.GOLD_PLATING_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Gates - chains - bars
     public static final Item IRON_GATE = register(BlockusBlocks.IRON_GATE, Blockus.BLOCKUS_REDSTONE);

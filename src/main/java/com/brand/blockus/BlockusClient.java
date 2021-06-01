@@ -48,7 +48,7 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.DARK_OAK_SMALL_HEDGE,
                 BlockusBlocks.WHITE_OAK_SMALL_HEDGE,
                 BlockusBlocks.AZALEA_SMALL_HEDGE,
-                BlockusBlocks.AZALEA_SMALL_HEDGE_FLOWERS,
+                BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE,
                 BlockusBlocks.LEGACY_LEAVES,
                 BlockusBlocks.WHITE_OAK_LEAVES,
                 BlockusBlocks.WHITE_OAK_SAPLING,

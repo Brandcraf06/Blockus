@@ -1,17 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "small_hedges",
   "pattern": [
-    "###",
     "###"
   ],
   "key": {
     "#": {
-      "item": "minecraft:flowering_azalea_leaves"
+      "item": "blockus:gold_plating"
     }
   },
   "result": {
-    "item": "blockus:azalea_small_hedge_flowers",
+    "item": "blockus:gold_plating_slab",
     "count": 6
   }
 }

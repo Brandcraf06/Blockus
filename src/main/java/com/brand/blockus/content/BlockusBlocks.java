@@ -459,7 +459,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block DARK_OAK_SMALL_HEDGE = registerSmallHedge("dark_oak_small_hedge", Blocks.DARK_OAK_LEAVES);
     public static final Block WHITE_OAK_SMALL_HEDGE = registerSmallHedge("white_oak_small_hedge", BlockusBlocks.WHITE_OAK_LEAVES);
     public static final Block AZALEA_SMALL_HEDGE = registerSmallHedge("azalea_small_hedge", Blocks.AZALEA_LEAVES);
-    public static final Block AZALEA_SMALL_HEDGE_FLOWERS = registerSmallHedge("azalea_small_hedge_flowers", Blocks.AZALEA_LEAVES_FLOWERS);
+    public static final Block FLOWERING_AZALEA_SMALL_HEDGE = registerSmallHedge("azalea_small_hedge_flowers", Blocks.FLOWERING_AZALEA_LEAVES);
     public static final Block MOSS_SMALL_HEDGE = registerSmallHedge("moss_small_hedge", Blocks.MOSS_BLOCK);
     public static final Block CRIMSON_SMALL_HEDGE = registerSmallHedge("crimson_small_hedge", Blocks.NETHER_WART_BLOCK);
     public static final Block WARPED_SMALL_HEDGE = registerSmallHedge("warped_small_hedge", Blocks.WARPED_WART_BLOCK);
@@ -898,10 +898,13 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block PAPER_TRAPDOOR = registerTrapdoor("paper", 0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, FabricToolTags.AXES, 0, MapColor.OFF_WHITE);
     public static final Block PAPER_LAMP = register("paper_lamp", new PaperLampBlock(FabricBlockSettings.of(Material.WOOL, MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS).luminance(15)));
 
-    // Iron Plating
+    // Plating
     public static final Block IRON_PLATING = registerBlockCopy("iron_plating", Blocks.IRON_BLOCK);
     public static final Block IRON_PLATING_STAIRS = registerStairs(IRON_PLATING);
     public static final Block IRON_PLATING_SLAB = registerSlab(IRON_PLATING);
+    public static final Block GOLD_PLATING = registerBlockCopy("gold_plating", Blocks.GOLD_BLOCK);
+    public static final Block GOLD_PLATING_STAIRS = registerStairs(GOLD_PLATING);
+    public static final Block GOLD_PLATING_SLAB = registerSlab(GOLD_PLATING);
 
     // Gates - chains - bars
     public static final Block IRON_GATE = registerGate("iron", Blocks.IRON_DOOR);

@@ -1,8 +1,8 @@
 package com.brand.blockus;
 
+import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
