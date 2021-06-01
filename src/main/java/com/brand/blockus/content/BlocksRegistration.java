@@ -240,11 +240,11 @@ public class BlocksRegistration {
 
     // Glass
     public static Block registerGlass(String id, Block base) {
-        return register(id, new GlassBlock(FabricBlockSettings.copy(base)));
+        return register(id, new GlassBlock(FabricBlockSettings.copy(base).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
     public static Block registerStainedGlass(String id, DyeColor color, Block base) {
-        return register(id, new StainedGlassBlock(color, FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
+        return register(id, new StainedGlassBlock(color, FabricBlockSettings.copy(base).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
     public static Block registerStainedGlassPane(String id, DyeColor color, Block base) {
