@@ -768,7 +768,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GREEN_BEVELED_GLASS_PANE = registerStainedGlassPane("green_beveled_glass_pane", DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS);
     public static final Block RED_BEVELED_GLASS_PANE = registerStainedGlassPane("red_beveled_glass_pane", DyeColor.RED, Blocks.RED_STAINED_GLASS);
     public static final Block BLACK_BEVELED_GLASS_PANE = registerStainedGlassPane("black_beveled_glass_pane", DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS);
-    public static final Block TINTED_BEVELED_GLASS = register("tinted_beveled_glass", new TintedGlassBlock(FabricBlockSettings.copyOf(Blocks.TINTED_GLASS).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
+    public static final Block TINTED_BEVELED_GLASS = register("tinted_beveled_glass", new TintedGlassBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
 
     // Patterned Wools
     public static final Block WHITE_PATTERNED_WOOL = registerPatternedWool("white", Blocks.WHITE_WOOL);
