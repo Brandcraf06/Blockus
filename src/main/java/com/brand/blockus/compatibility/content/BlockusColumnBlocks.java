@@ -63,5 +63,6 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("purpur_brick_column", BlockusBlocks.PURPUR_BRICKS);
         registerColumnBlockAndItem("phantom_purpur_brick_column", BlockusBlocks.PHANTOM_PURPUR_BRICKS);
         registerColumnBlockAndItem("rainbow_brick_column", BlockusBlocks.RAINBOW_BRICKS);
+        registerColumnBlockAndItem("mossy_deepslate_brick_column", BlockusBlocks.MOSSY_DEEPSLATE_BRICKS);
     }
 }
