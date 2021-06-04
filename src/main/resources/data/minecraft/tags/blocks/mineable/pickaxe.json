@@ -3,8 +3,6 @@
   "values": [
     "blockus:netherite_stairs",
     "blockus:netherite_slab",
-    "blockus:sturdy_stone",
-    "blockus:sturdy_blackstone",
     "blockus:charcoal_block",
     "blockus:ender_block",
     "blockus:nether_stars_block",
@@ -60,6 +58,7 @@
     "#blockus:end_stone_blocks",
     "#blockus:rainbow_blocks",
     "#blockus:concrete_blocks",
+    "#blockus:deepslate_blocks",
     "#blockus:asphalt",
     "#blockus:shingles",
     "#blockus:colored_tiles",

@@ -1,9 +1,12 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.base.SturdyStoneBlock;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -52,6 +55,16 @@ public class BlockusItems {
     public static final Item CRACKED_GRANITE_BRICKS = register(BlockusBlocks.CRACKED_GRANITE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_GRANITE_PILLAR = register(BlockusBlocks.POLISHED_GRANITE_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item GRANITE_CIRCLE_PAVEMENT = register(BlockusBlocks.GRANITE_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
+
+    // Deepslate
+    public static final Item MOSSY_DEEPSLATE_BRICKS = register(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item MOSSY_DEEPSLATE_BRICKS_STAIRS = register(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item MOSSY_DEEPSLATE_BRICKS_SLAB = register(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item MOSSY_DEEPSLATE_BRICKS_WALL = register(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS_WALL, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item DEEPSLATE_PILLAR = register(BlockusBlocks.DEEPSLATE_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item ZIGZAGGED_DEEPSLATE = register(BlockusBlocks.ZIGZAGGED_DEEPSLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item DEEPSLATE_CIRCLE_PAVEMENT = register(BlockusBlocks.DEEPSLATE_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item STURDY_DEEPSLATE = register(BlockusBlocks.STURDY_DEEPSLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Blackstone
     public static final Item POLISHED_BLACKSTONE_PILLAR = register(BlockusBlocks.POLISHED_BLACKSTONE_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);

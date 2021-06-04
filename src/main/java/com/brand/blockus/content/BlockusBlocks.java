@@ -59,6 +59,16 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_GRANITE_PILLAR = registerPillar(Blocks.POLISHED_GRANITE);
     public static final Block GRANITE_CIRCLE_PAVEMENT = registerCirclePavement("granite", Blocks.POLISHED_GRANITE);
 
+    // Deepslate
+    public static final Block MOSSY_DEEPSLATE_BRICKS = registerBlockCopy("mossy_deepslate_bricks", Blocks.DEEPSLATE_BRICKS);
+    public static final Block MOSSY_DEEPSLATE_BRICKS_STAIRS = registerStairs(MOSSY_DEEPSLATE_BRICKS);
+    public static final Block MOSSY_DEEPSLATE_BRICKS_SLAB = registerSlab(MOSSY_DEEPSLATE_BRICKS);
+    public static final Block MOSSY_DEEPSLATE_BRICKS_WALL = registerWall(MOSSY_DEEPSLATE_BRICKS);
+    public static final Block DEEPSLATE_PILLAR = registerPillar(Blocks.POLISHED_DEEPSLATE);
+    public static final Block ZIGZAGGED_DEEPSLATE = registerBlockCopy("zigzagged_deepslate", Blocks.POLISHED_DEEPSLATE);
+    public static final Block DEEPSLATE_CIRCLE_PAVEMENT = registerCirclePavement("deepslate", Blocks.POLISHED_DEEPSLATE);
+    public static final Block STURDY_DEEPSLATE = register("sturdy_deepslate", new SturdyStoneBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE)));
+
     // Blackstone
     public static final Block POLISHED_BLACKSTONE_PILLAR = registerPillar(Blocks.POLISHED_BLACKSTONE);
     public static final Block ZIGZAGGED_POLISHED_BLACKSTONE = registerBlockCopy("zigzagged_polished_blackstone", Blocks.POLISHED_BLACKSTONE);

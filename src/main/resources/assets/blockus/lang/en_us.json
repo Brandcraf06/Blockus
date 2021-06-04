@@ -834,6 +834,15 @@
   "block.blockus.azalea_small_hedge": "Azalea Small Hedge",
   "block.blockus.azalea_small_hedge_flowers": "Flowering Azalea Small Hedge",
   "block.blockus.moss_small_hedge": "Moss Small Hedge",
+  
+  "block.blockus.mossy_deepslate_bricks": "Mossy Deepslate Bricks",
+  "block.blockus.mossy_deepslate_bricks_stairs": "Mossy Deepslate Bricks Stairs",
+  "block.blockus.mossy_deepslate_bricks_slab": "Mossy Deepslate Bricks Slab",
+  "block.blockus.mossy_deepslate_bricks_wall": "Mossy Deepslate Bricks Wall",
+  "block.blockus.deepslate_pillar": "Deepslate Pillar",
+  "block.blockus.zigzagged_deepslate": "Zigzagged Deepslate",
+  "block.blockus.deepslate_circle_pavement": "Deepslate Circle Pavement",
+  "block.blockus.sturdy_deepslate": "Sturdy Deepslate",
 
 
   "block.blockus.andesite_brick_column": "Andesite Brick Column",

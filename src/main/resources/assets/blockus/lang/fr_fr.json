@@ -831,7 +831,16 @@
 
   "block.blockus.warped_small_hedge": "Petite haie biscornue",
   "block.blockus.crimson_small_hedge": "Petite haie carmin",
+  
   "block.blockus.azalea_small_hedge": "Petite haie d'azalée",
   "block.blockus.azalea_small_hedge_flowers": "Petite haie d'azalée fleurie",
-  "block.blockus.moss_small_hedge": "Petite haie de mousse"
+  "block.blockus.moss_small_hedge": "Petite haie de mousse",
+  "block.blockus.mossy_deepslate_bricks": "Ardoise des abîmes taillée moussue",
+  "block.blockus.mossy_deepslate_bricks_stairs": "Escalier en ardoise des abîmes taillée moussue",
+  "block.blockus.mossy_deepslate_bricks_slab": "Dalle en ardoise des abîmes taillée moussue",
+  "block.blockus.mossy_deepslate_bricks_wall": "Muret en ardoise des abîmes taillée moussue",
+  "block.blockus.deepslate_pillar": "Pilier en ardoise des abîmes",
+  "block.blockus.zigzagged_deepslate": "Ardoise des abîmes zigzaguée,
+  "block.blockus.deepslate_circle_pavement": "Pavé circulaire en ardoise des abîmes ",
+  "block.blockus.sturdy_deepslate": "Ardoise des abîmes solide"
 }
