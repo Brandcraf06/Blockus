@@ -24,6 +24,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block STONE_DOOR = registerDoor2("stone", 1.5f, 20.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.STONE);
     public static final Block STONE_TRAPDOOR = registerTrapdoor2("stone", 1.5f, 20.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.STONE);
     public static final Block SMOOTH_STONE_STAIRS = registerStairs(Blocks.SMOOTH_STONE);
+    public static final Block STURDY_STONE = registerSturdy("sturdy_stone", Blocks.STONE);
 
     // Andesite
     public static final Block ANDESITE_BRICKS = registerBlockCopy("andesite_bricks", Blocks.POLISHED_ANDESITE);
@@ -71,6 +72,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_SLAB = registerSlab(WARPED_WARTY_BLACKSTONE_BRICKS);
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_WALL = registerWall(WARPED_WARTY_BLACKSTONE_BRICKS);
     public static final Block GOLD_DECORATED_POLISHED_BLACKSTONE = registerBlockCopy("gold_decorated_polished_blackstone", Blocks.POLISHED_BLACKSTONE);
+    public static final Block STURDY_BLACKSTONE = registerSturdy("sturdy_blackstone", Blocks.BLACKSTONE);
     public static final Block BLACKSTONE_DOOR = registerDoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.BLACK);
     public static final Block BLACKSTONE_TRAPDOOR = registerTrapdoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MaterialColor.BLACK);
 
@@ -922,8 +924,6 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Other
     public static final Block PATH = register("dirt_path", new PathBlock(FabricBlockSettings.copyOf(Blocks.GRASS_PATH).breakByTool(FabricToolTags.SHOVELS)));
-    public static final Block STURDY_STONE = register("sturdy_stone", new SturdyStoneBlock(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block STURDY_BLACKSTONE = register("sturdy_blackstone", new SturdyStoneBlock(FabricBlockSettings.copy(Blocks.POLISHED_BLACKSTONE)));
     public static final Block CHARCOAL_BLOCK = registerBlockCopy("charcoal_block", Blocks.COAL_BLOCK);
     public static final Block SUGAR_BLOCK = registerFallingBlock("sugar_block", 0.5f, 0.5f, Material.AGGREGATE, BlockSoundGroup.SAND, FabricToolTags.SHOVELS, 0, MaterialColor.QUARTZ);
     public static final Block ENDER_BLOCK = register("ender_block", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.GREEN_TERRACOTTA).strength(5.0f, 6.0f).breakByTool(FabricToolTags.PICKAXES, 1)));

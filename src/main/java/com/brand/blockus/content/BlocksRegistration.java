@@ -50,6 +50,10 @@ public class BlocksRegistration {
         return register(id, new PaneBlockBase(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD)));
     }
 
+    public static Block registerSturdy(String id, Block base) {
+        return register(id, new SturdyStoneBlock(FabricBlockSettings.copy(base)));
+    }
+
     // Pillar
     public static Block registerPillar(String id, Block base) {
         return register(id + "_pillar", new PillarBlock(FabricBlockSettings.copy(base)));

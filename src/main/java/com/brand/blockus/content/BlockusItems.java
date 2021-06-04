@@ -19,6 +19,7 @@ public class BlockusItems {
     public static final Item STONE_DOOR = register(BlockusBlocks.STONE_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item STONE_TRAPDOOR = register(BlockusBlocks.STONE_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item SMOOTH_STONE_STAIRS = register(BlockusBlocks.SMOOTH_STONE_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item STURDY_STONE = register(BlockusBlocks.STURDY_STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Andesite
     public static final Item ANDESITE_BRICKS = register(BlockusBlocks.ANDESITE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -66,6 +67,7 @@ public class BlockusItems {
     public static final Item WARPED_WARTY_BLACKSTONE_BRICKS_SLAB = register(BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item WARPED_WARTY_BLACKSTONE_BRICKS_WALL = register(BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS_WALL, Blockus.BLOCKUS_DECORATIONS);
     public static final Item GOLD_DECORATED_POLISHED_BLACKSTONE = register(BlockusBlocks.GOLD_DECORATED_POLISHED_BLACKSTONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item STURDY_BLACKSTONE = register(BlockusBlocks.STURDY_BLACKSTONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item BLACKSTONE_DOOR = register(BlockusBlocks.BLACKSTONE_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item BLACKSTONE_TRAPDOOR = register(BlockusBlocks.BLACKSTONE_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
     // Basalt
@@ -898,8 +900,6 @@ public class BlockusItems {
 
     // Other
     public static final Item PATH = register(BlockusBlocks.PATH, Blockus.BLOCKUS_DECORATIONS);
-    public static final Item STURDY_STONE = register(BlockusBlocks.STURDY_STONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item STURDY_BLACKSTONE = register(BlockusBlocks.STURDY_BLACKSTONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item CHARCOAL_BLOCK = register(BlockusBlocks.CHARCOAL_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item SUGAR_BLOCK = register(BlockusBlocks.SUGAR_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item ENDER_BLOCK = register(BlockusBlocks.ENDER_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
