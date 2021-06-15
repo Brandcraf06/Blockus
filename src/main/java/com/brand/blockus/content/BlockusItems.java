@@ -467,11 +467,11 @@ public class BlockusItems {
     public static final Item CHORUS_BLOCK = register(BlockusBlocks.CHORUS_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POTATO_CRATE = register(BlockusBlocks.POTATO_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item APPLE_CRATE = register(BlockusBlocks.APPLE_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GOLDEN_APPLE_CRATE = register(BlockusBlocks.GOLDEN_APPLE_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item BEETROOT_CRATE = register(BlockusBlocks.BEETROOT_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item CARROT_CRATE = register(BlockusBlocks.CARROT_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item BREAD_BOX = register(BlockusBlocks.BREAD_BOX, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item GOLDEN_APPLE_CRATE = register(BlockusBlocks.GOLDEN_APPLE_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item GOLDEN_CARROT_CRATE = register(BlockusBlocks.GOLDEN_CARROT_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item BREAD_BOX = register(BlockusBlocks.BREAD_BOX, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Rainbow
     public static final Item RAINBOW_BLOCK = register(BlockusBlocks.RAINBOW_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
