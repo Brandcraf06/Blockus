@@ -475,6 +475,7 @@ public class BlockusItems {
 
     // Food Blocks
     public static final Item SWEET_BERRIES_CRATE = register(BlockusBlocks.SWEET_BERRIES_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GLOW_BERRIES_CRATE = register(BlockusBlocks.GLOW_BERRIES_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item SALMON_CRATE = register(BlockusBlocks.SALMON_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item PUFFERFISH_CRATE = register(BlockusBlocks.PUFFERFISH_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item TROPICAL_FISH_CRATE = register(BlockusBlocks.TROPICAL_FISH_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -483,11 +484,11 @@ public class BlockusItems {
     public static final Item CHORUS_BLOCK = register(BlockusBlocks.CHORUS_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POTATO_CRATE = register(BlockusBlocks.POTATO_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item APPLE_CRATE = register(BlockusBlocks.APPLE_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GOLDEN_APPLE_CRATE = register(BlockusBlocks.GOLDEN_APPLE_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item BEETROOT_CRATE = register(BlockusBlocks.BEETROOT_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item CARROT_CRATE = register(BlockusBlocks.CARROT_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item BREAD_BOX = register(BlockusBlocks.BREAD_BOX, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item GOLDEN_APPLE_CRATE = register(BlockusBlocks.GOLDEN_APPLE_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item GOLDEN_CARROT_CRATE = register(BlockusBlocks.GOLDEN_CARROT_CRATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item BREAD_BOX = register(BlockusBlocks.BREAD_BOX, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Rainbow
     public static final Item RAINBOW_BLOCK = register(BlockusBlocks.RAINBOW_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);

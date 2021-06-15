@@ -477,6 +477,7 @@
   "block.blockus.golden_carrot_crate": "Caisse de carotte dorée",
   "block.blockus.beetroot_crate": "Caisse de betterave",
   "block.blockus.sweet_berries_crate": "Caisse de baies sucrées",
+  "block.blockus.glow_berries_crate": "Caisse de baies lumineuses",
   "block.blockus.bread_box": "Boite à pain",
   "block.blockus.chorus_block": "Bloc de chorus",
   "block.blockus.cookie_block": "Bloc de cookie",
@@ -840,7 +841,7 @@
   "block.blockus.mossy_deepslate_bricks_slab": "Dalle en ardoise des abîmes taillée moussue",
   "block.blockus.mossy_deepslate_bricks_wall": "Muret en ardoise des abîmes taillée moussue",
   "block.blockus.deepslate_pillar": "Pilier en ardoise des abîmes",
-  "block.blockus.zigzagged_deepslate": "Ardoise des abîmes zigzaguée,
+  "block.blockus.zigzagged_deepslate": "Ardoise des abîmes zigzaguée",
   "block.blockus.deepslate_circle_pavement": "Pavé circulaire en ardoise des abîmes ",
   "block.blockus.sturdy_deepslate": "Ardoise des abîmes solide"
 }
