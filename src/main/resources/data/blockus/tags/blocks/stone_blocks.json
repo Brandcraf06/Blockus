@@ -5,6 +5,8 @@
     "blockus:zigzagged_stone_bricks",
     "blockus:stone_circle_pavement",
     "blockus:smooth_stone_stairs",
+	"blockus:stone_door",
+    "blockus:stone_trapdoor",
     "blockus:sturdy_stone"
   ]
 }
