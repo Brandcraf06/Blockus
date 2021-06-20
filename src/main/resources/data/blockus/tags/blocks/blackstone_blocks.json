@@ -11,6 +11,8 @@
     "blockus:warped_warty_blackstone_bricks_stairs",
     "blockus:warped_warty_blackstone_bricks_slab",
     "blockus:gold_decorated_polished_blackstone",
+	"blockus:blackstone_door",
+    "blockus:blackstone_trapdoor",
     "blockus:sturdy_blackstone"
   ]
 }

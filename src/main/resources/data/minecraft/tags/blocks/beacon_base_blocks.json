@@ -6,6 +6,7 @@
     "blockus:legacy_iron_block",
     "blockus:legacy_diamond_block",
     "blockus:netherite_slab",
-    "blockus:netherite_stairs"
+    "blockus:netherite_stairs",
+    "blockus:nether_stars_block"
   ]
 }
