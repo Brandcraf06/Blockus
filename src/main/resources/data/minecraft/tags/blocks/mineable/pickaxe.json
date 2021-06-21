@@ -25,6 +25,8 @@
     "blockus:legacy_nether_reactor_core",
     "blockus:golden_bars",
     "blockus:golden_chain",
+	"blockus:golden_gate",
+    "blockus:iron_gate",
     "blockus:lantern_block",
     "blockus:soul_lantern_block",
     "#blockus:obsidian",
@@ -64,6 +66,8 @@
     "#blockus:colored_tiles",
     "#blockus:glazed_terracotta_pillars",
     "#blockus:platings",
-    "#blockus:large_flower_pots"
+    "#blockus:large_flower_pots",
+    "#blockus:stone_buttons",
+    "#minecraft:stone_pressure_plates"
   ]
 }
