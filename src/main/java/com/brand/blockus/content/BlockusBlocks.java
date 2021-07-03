@@ -60,12 +60,24 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_GRANITE_PILLAR = registerPillar(Blocks.POLISHED_GRANITE);
     public static final Block GRANITE_CIRCLE_PAVEMENT = registerCirclePavement("granite", Blocks.POLISHED_GRANITE);
 
+    // Tuff
+    public static final Block POLISHED_TUFF = registerBlockCopy("polished_tuff", Blocks.TUFF);
+    public static final Block TUFF_BRICKS = registerBlockCopy("tuff_bricks", BlockusBlocks.POLISHED_TUFF);
+    public static final Block TUFF_BRICKS_STAIRS = registerStairs(TUFF_BRICKS);
+    public static final Block TUFF_BRICKS_SLAB = registerSlab(TUFF_BRICKS);
+    public static final Block TUFF_BRICKS_WALL = registerWall(TUFF_BRICKS);
+    public static final Block CRACKED_TUFF_BRICKS = registerBlockCopy("cracked_tuff_bricks", BlockusBlocks.TUFF_BRICKS);
+    public static final Block CHISELED_TUFF = registerBlockCopy("chiseled_tuff", BlockusBlocks.POLISHED_TUFF);
+    public static final Block TUFF_PILLAR = registerPillar("tuff", BlockusBlocks.POLISHED_TUFF);
+    public static final Block ZIGZAGGED_TUFF = registerBlockCopy("zigzagged_tuff", BlockusBlocks.POLISHED_TUFF);
+    public static final Block TUFF_CIRCLE_PAVEMENT = registerCirclePavement("tuff", BlockusBlocks.POLISHED_TUFF);
+
     // Deepslate
     public static final Block MOSSY_DEEPSLATE_BRICKS = registerBlockCopy("mossy_deepslate_bricks", Blocks.DEEPSLATE_BRICKS);
     public static final Block MOSSY_DEEPSLATE_BRICKS_STAIRS = registerStairs(MOSSY_DEEPSLATE_BRICKS);
     public static final Block MOSSY_DEEPSLATE_BRICKS_SLAB = registerSlab(MOSSY_DEEPSLATE_BRICKS);
     public static final Block MOSSY_DEEPSLATE_BRICKS_WALL = registerWall(MOSSY_DEEPSLATE_BRICKS);
-    public static final Block DEEPSLATE_PILLAR = registerPillar(Blocks.DEEPSLATE);
+    public static final Block DEEPSLATE_PILLAR = registerPillar("deepslate", Blocks.POLISHED_DEEPSLATE);
     public static final Block ZIGZAGGED_DEEPSLATE = registerBlockCopy("zigzagged_deepslate", Blocks.POLISHED_DEEPSLATE);
     public static final Block DEEPSLATE_CIRCLE_PAVEMENT = registerCirclePavement("deepslate", Blocks.POLISHED_DEEPSLATE);
     public static final Block STURDY_DEEPSLATE = registerSturdy("sturdy_deepslate", Blocks.DEEPSLATE);

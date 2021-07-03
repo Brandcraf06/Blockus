@@ -57,6 +57,18 @@ public class BlockusItems {
     public static final Item POLISHED_GRANITE_PILLAR = register(BlockusBlocks.POLISHED_GRANITE_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item GRANITE_CIRCLE_PAVEMENT = register(BlockusBlocks.GRANITE_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
+    // Tuff
+    public static final Item POLISHED_TUFF = register(BlockusBlocks.POLISHED_TUFF, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item TUFF_BRICKS = register(BlockusBlocks.TUFF_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item TUFF_BRICKS_STAIRS = register(BlockusBlocks.TUFF_BRICKS_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item TUFF_BRICKS_SLAB = register(BlockusBlocks.TUFF_BRICKS_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item TUFF_BRICKS_WALL = register(BlockusBlocks.TUFF_BRICKS_WALL, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item CRACKED_TUFF_BRICKS =  register(BlockusBlocks.CRACKED_TUFF_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item CHISELED_TUFF =  register(BlockusBlocks.CHISELED_TUFF, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item TUFF_PILLAR = register(BlockusBlocks.TUFF_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item ZIGZAGGED_TUFF = register(BlockusBlocks.ZIGZAGGED_TUFF, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item TUFF_CIRCLE_PAVEMENT = register(BlockusBlocks.TUFF_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
+
     // Deepslate
     public static final Item MOSSY_DEEPSLATE_BRICKS = register(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item MOSSY_DEEPSLATE_BRICKS_STAIRS = register(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);

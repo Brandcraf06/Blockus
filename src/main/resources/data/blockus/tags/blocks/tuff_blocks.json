@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:polished_tuff",
+    "blockus:tuff_bricks",
+    "blockus:tuff_bricks_stairs",
+    "blockus:tuff_bricks_slab",
+	"blockus:cracked_tuff_bricks",
+	"blockus:chiseled_tuff",
+    "blockus:zigzagged_tuff",
+    "blockus:tuff_pillar",
+    "blockus:tuff_circle_pavement"
+  ]
+}

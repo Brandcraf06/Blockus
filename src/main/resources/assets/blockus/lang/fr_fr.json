@@ -836,6 +836,18 @@
   "block.blockus.azalea_small_hedge": "Petite haie d'azalée",
   "block.blockus.azalea_small_hedge_flowers": "Petite haie d'azalée fleurie",
   "block.blockus.moss_small_hedge": "Petite haie de mousse",
+
+  "block.blockus.polished_tuff": "Tuf poli",
+  "block.blockus.tuff_bricks": "Tuf taillé",
+  "block.blockus.tuff_bricks_stairs": "Escalier en tuf taillé",
+  "block.blockus.tuff_bricks_slab": "Dalle en tuf taillé",
+  "block.blockus.tuff_bricks_wall": "Muret en tuf taillé",
+  "block.blockus.cracked_tuff_bricks": "Tuf taillé craquelé",
+  "block.blockus.chiseled_tuff": "Tuf sculpté",
+  "block.blockus.tuff_pillar": "Pilier en tuf",
+  "block.blockus.zigzagged_tuff": "Tuf zigzagué",
+  "block.blockus.tuff_circle_pavement": "Pavé circulaire en tuf",
+
   "block.blockus.mossy_deepslate_bricks": "Ardoise des abîmes taillée moussue",
   "block.blockus.mossy_deepslate_bricks_stairs": "Escalier en ardoise des abîmes taillée moussue",
   "block.blockus.mossy_deepslate_bricks_slab": "Dalle en ardoise des abîmes taillée moussue",
