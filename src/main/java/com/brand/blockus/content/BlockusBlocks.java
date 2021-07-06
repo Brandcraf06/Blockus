@@ -62,6 +62,8 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Tuff
     public static final Block POLISHED_TUFF = registerBlockCopy("polished_tuff", Blocks.TUFF);
+    public static final Block POLISHED_TUFF_STAIRS = registerStairs(POLISHED_TUFF);
+    public static final Block POLISHED_TUFF_SLAB = registerSlab(POLISHED_TUFF);
     public static final Block TUFF_BRICKS = registerBlockCopy("tuff_bricks", BlockusBlocks.POLISHED_TUFF);
     public static final Block TUFF_BRICKS_STAIRS = registerStairs(TUFF_BRICKS);
     public static final Block TUFF_BRICKS_SLAB = registerSlab(TUFF_BRICKS);

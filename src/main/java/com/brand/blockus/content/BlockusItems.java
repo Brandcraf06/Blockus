@@ -59,6 +59,8 @@ public class BlockusItems {
 
     // Tuff
     public static final Item POLISHED_TUFF = register(BlockusBlocks.POLISHED_TUFF, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item POLISHED_TUFF_STAIRS = register(BlockusBlocks.POLISHED_TUFF_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item POLISHED_TUFF_SLAB = register(BlockusBlocks.POLISHED_TUFF_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item TUFF_BRICKS = register(BlockusBlocks.TUFF_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item TUFF_BRICKS_STAIRS = register(BlockusBlocks.TUFF_BRICKS_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item TUFF_BRICKS_SLAB = register(BlockusBlocks.TUFF_BRICKS_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
