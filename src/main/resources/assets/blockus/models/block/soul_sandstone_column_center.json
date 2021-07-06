@@ -1,6 +1,6 @@
 {
   "parent": "columns:block/column_center",
   "textures": {
-    "all": "blockus:block/soul_sandstone"
+    "all": "blockus:block/soul_sandstone_top"
   }
 }
