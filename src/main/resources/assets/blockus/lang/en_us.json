@@ -863,6 +863,7 @@
   "block.blockus.diorite_brick_column": "Diorite Brick Column",
   "block.blockus.granite_brick_column": "Granite Brick Column",
   "block.blockus.tuff_brick_column": "Tuff Brick Column",
+  "block.blockus.mossy_deepslate_brick_column": "Mossy Deepslate Brick Column",
   "block.blockus.crimson_warty_blackstone_brick_column": "Crimson Warty Blackstone Brick Column",
   "block.blockus.warped_warty_blackstone_brick_column": "Warped Warty Blackstone Brick Column",
   "block.blockus.polished_basalt_brick_column": "Polished Basalt Brick Column",
@@ -896,6 +897,5 @@
   "block.blockus.honeycomb_brick_column": "Honeycomb Brick Column",
   "block.blockus.purpur_brick_column": "Purpur Brick Column",
   "block.blockus.phantom_purpur_brick_column": "Phantom Purpur Brick Column",
-  "block.blockus.rainbow_brick_column": "Rainbow Brick Column",
-  "block.blockus.mossy_deepslate_brick_column": "Mossy Deepslate Brick Column"
+  "block.blockus.rainbow_brick_column": "Rainbow Brick Column"
 }
