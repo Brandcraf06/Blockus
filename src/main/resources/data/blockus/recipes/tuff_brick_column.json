@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ttt",
+    " t ",
+    "ttt"
+  ],
+  "key": {
+    "t": {
+      "item": "blockus:tuff_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:tuff_brick_column",
+    "count": 6
+  }
+}
