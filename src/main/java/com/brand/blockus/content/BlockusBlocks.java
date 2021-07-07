@@ -145,6 +145,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLUESTONE_TILES = registerBlockCopy("bluestone_tiles", BLUESTONE);
     public static final Block BLUESTONE_TILES_STAIRS = registerStairs(BLUESTONE_TILES);
     public static final Block BLUESTONE_TILES_SLAB = registerSlab(BLUESTONE_TILES);
+    public static final Block BLUESTONE_TILE_WALL = registerWall("bluestone_tile", BLUESTONE_TILES);
     public static final Block BLUESTONE_PILLAR = registerPillar(BLUESTONE);
     public static final Block BLUESTONE_BRICKS = registerBlockCopy("bluestone_bricks", BLUESTONE);
     public static final Block BLUESTONE_BRICKS_STAIRS = registerStairs(BLUESTONE_BRICKS);
