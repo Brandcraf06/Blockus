@@ -251,6 +251,7 @@ public class BlockusItems {
     public static final Item QUARTZ_TILES = register(BlockusBlocks.QUARTZ_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item QUARTZ_TILES_STAIRS = register(BlockusBlocks.QUARTZ_TILES_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item QUARTZ_TILES_SLAB = register(BlockusBlocks.QUARTZ_TILES_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item QUARTZ_TILE_WALL = register(BlockusBlocks.QUARTZ_TILE_WALL, Blockus.BLOCKUS_DECORATIONS);
     public static final Item QUARTZ_CIRCLE_PAVEMENT = register(BlockusBlocks.QUARTZ_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Prismarine
