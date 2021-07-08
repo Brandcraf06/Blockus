@@ -31,7 +31,7 @@ public final class BlockusWoodenHopperBlocks {
     private static Block registerHopperBlockAndItem(String path, Block base) {
         Identifier id = new Identifier(Blockus.MOD_ID, path);
 
-        Block block = new BlockusWoodenHopperBlock(FabricBlockSettings.of(Material.WOOD, base.getDefaultMaterialColor()).strength(2).sounds(BlockSoundGroup.WOOD).nonOpaque());
+        Block block = new BlockusWoodenHopperBlock(FabricBlockSettings.of(Material.WOOD, base.getDefaultMapColor()).strength(2).sounds(BlockSoundGroup.WOOD).nonOpaque());
         Registry.register(Registry.BLOCK, id, block);
 
         Item item = new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_REDSTONE));
