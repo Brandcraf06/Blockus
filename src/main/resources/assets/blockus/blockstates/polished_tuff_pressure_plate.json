@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "blockus:block/polished_tuff_pressure_plate" },
+        "powered=true": { "model": "blockus:block/polished_tuff_pressure_plate_down" }
+    }
+}

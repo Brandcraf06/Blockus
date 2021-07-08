@@ -1,12 +1,9 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.SturdyStoneBlock;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -877,6 +874,8 @@ public class BlockusItems {
     public static final Item CHARRED_PRESSURE_PLATE = register(BlockusBlocks.CHARRED_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
     public static final Item WHITE_OAK_PRESSURE_PLATE = register(BlockusBlocks.WHITE_OAK_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
     public static final Item POLISHED_BASALT_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_DEEPSLATE_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_TUFF_PRESSURE_PLATE = register(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE, Blockus.BLOCKUS_REDSTONE);
 
     // Buttons
     public static final Item POLISHED_ANDESITE_BUTTON = register(BlockusBlocks.POLISHED_ANDESITE_BUTTON, Blockus.BLOCKUS_REDSTONE);
@@ -891,6 +890,8 @@ public class BlockusItems {
     public static final Item CHARRED_BUTTON = register(BlockusBlocks.CHARRED_BUTTON, Blockus.BLOCKUS_REDSTONE);
     public static final Item WHITE_OAK_BUTTON = register(BlockusBlocks.WHITE_OAK_BUTTON, Blockus.BLOCKUS_REDSTONE);
     public static final Item POLISHED_BASALT_BUTTON = register(BlockusBlocks.POLISHED_BASALT_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_DEEPSLATE_BUTTON = register(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON, Blockus.BLOCKUS_REDSTONE);
+    public static final Item POLISHED_TUFF_BUTTON = register(BlockusBlocks.POLISHED_TUFF_BUTTON, Blockus.BLOCKUS_REDSTONE);
 
     // Thatch
     public static final Item THATCH = register(BlockusBlocks.THATCH, Blockus.BLOCKUS_BUILDING_BLOCKS);
