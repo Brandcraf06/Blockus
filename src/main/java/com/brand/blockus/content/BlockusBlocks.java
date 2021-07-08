@@ -145,6 +145,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLUESTONE_TILES = registerBlockCopy("bluestone_tiles", BLUESTONE);
     public static final Block BLUESTONE_TILES_STAIRS = registerStairs(BLUESTONE_TILES);
     public static final Block BLUESTONE_TILES_SLAB = registerSlab(BLUESTONE_TILES);
+    public static final Block BLUESTONE_TILE_WALL = registerWall("bluestone_tile", BLUESTONE_TILES);
     public static final Block BLUESTONE_PILLAR = registerPillar(BLUESTONE);
     public static final Block BLUESTONE_BRICKS = registerBlockCopy("bluestone_bricks", BLUESTONE);
     public static final Block BLUESTONE_BRICKS_STAIRS = registerStairs(BLUESTONE_BRICKS);
@@ -255,6 +256,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block QUARTZ_TILES = registerBlockCopy("quartz_tiles", Blocks.QUARTZ_BLOCK);
     public static final Block QUARTZ_TILES_STAIRS = registerStairs("quartz_tiles", QUARTZ_TILES);
     public static final Block QUARTZ_TILES_SLAB = registerSlab("quartz_tiles", QUARTZ_TILES);
+    public static final Block QUARTZ_TILE_WALL = registerWall("quartz_tile", QUARTZ_TILES);
     public static final Block QUARTZ_CIRCLE_PAVEMENT = registerCirclePavement("quartz", QUARTZ_TILES);
 
     // Prismarine
