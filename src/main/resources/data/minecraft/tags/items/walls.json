@@ -32,6 +32,7 @@
     "blockus:limestone_wall",
     "blockus:marble_wall",
     "blockus:bluestone_wall",
+    "blockus:bluestone_tile_wall",
     "blockus:sandstone_bricks_wall",
     "blockus:small_sandstone_bricks_wall",
     "blockus:red_sandstone_bricks_wall",
@@ -40,6 +41,7 @@
     "blockus:small_soul_sandstone_bricks_wall",
     "blockus:purpur_bricks_wall",
     "blockus:phantom_purpur_bricks_wall",
+    "blockus:quartz_tile_wall",
     "blockus:large_bricks_wall",
 	"#blockus:barriers"
   ]
