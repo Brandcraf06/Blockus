@@ -42,6 +42,11 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_BLOCK, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BURNED_PAPER_BLOCK, 5, 60);
 
+        // thatch
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH, 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH_SLAB, 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH_STAIRS, 60, 20);
+
         // timber frames
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ACACIA_CROSS_TIMBER_FRAME, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ACACIA_DIAGONAL_TIMBER_FRAME, 5, 20);

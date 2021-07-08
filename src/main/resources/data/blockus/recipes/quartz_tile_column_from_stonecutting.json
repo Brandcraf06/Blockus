@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:quartz_tiles"
+  },
+  "result": "blockus:quartz_tile_column",
+  "count": 1
+}

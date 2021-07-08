@@ -254,8 +254,8 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Quartz Blocks
     public static final Block QUARTZ_TILES = registerBlockCopy("quartz_tiles", Blocks.QUARTZ_BLOCK);
-    public static final Block QUARTZ_TILES_STAIRS = registerStairs("quartz_tiles", QUARTZ_TILES);
-    public static final Block QUARTZ_TILES_SLAB = registerSlab("quartz_tiles", QUARTZ_TILES);
+    public static final Block QUARTZ_TILES_STAIRS = registerStairs(QUARTZ_TILES);
+    public static final Block QUARTZ_TILES_SLAB = registerSlab(QUARTZ_TILES);
     public static final Block QUARTZ_TILE_WALL = registerWall("quartz_tile", QUARTZ_TILES);
     public static final Block QUARTZ_CIRCLE_PAVEMENT = registerCirclePavement("quartz", QUARTZ_TILES);
 
