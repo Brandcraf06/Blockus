@@ -52,8 +52,6 @@ minecraft {
 java {
 	sourceCompatibility = JavaVersion.toVersion(targetJavaVersion)
 	targetCompatibility = JavaVersion.toVersion(targetJavaVersion)
-
-	withSourcesJar()
 }
 
 tasks.withType(JavaCompile).configureEach {
