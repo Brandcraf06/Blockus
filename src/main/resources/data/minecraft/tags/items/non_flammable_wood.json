@@ -9,6 +9,8 @@
     "blockus:charred_fence_gate",
     "blockus:charred_stairs",
     "blockus:charred_button",
-    "blockus:charred_door"
+    "blockus:charred_door",
+    "blockus:warped_small_stems",
+    "blockus:crimson_small_stems"
   ]
 }

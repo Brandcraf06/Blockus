@@ -37,6 +37,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("marble_column", BlockusBlocks.MARBLE);
         registerColumnBlockAndItem("marble_brick_column", BlockusBlocks.MARBLE_BRICKS);
         registerColumnBlockAndItem("bluestone_column", BlockusBlocks.BLUESTONE);
+        registerColumnBlockAndItem("bluestone_tile_column", BlockusBlocks.BLUESTONE_TILES);
         registerColumnBlockAndItem("bluestone_brick_column", BlockusBlocks.BLUESTONE_BRICKS);
         registerColumnBlockAndItem("lava_brick_column", BlockusBlocks.LAVA_BRICKS);
         registerColumnBlockAndItem("lava_polished_blackstone_brick_column", BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS);
@@ -48,6 +49,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("charred_nether_brick_column", BlockusBlocks.CHARRED_NETHER_BRICKS);
         registerColumnBlockAndItem("teal_nether_brick_column", BlockusBlocks.TEAL_NETHER_BRICKS);
         registerColumnBlockAndItem("obsidian_brick_column", BlockusBlocks.OBSIDIAN_BRICKS);
+        registerColumnBlockAndItem("quartz_tile_column", BlockusBlocks.QUARTZ_TILES);
         registerColumnBlockAndItem("large_brick_column", BlockusBlocks.LARGE_BRICKS);
         registerColumnBlockAndItem("soaked_brick_column", BlockusBlocks.SOAKED_BRICKS);
         registerColumnBlockAndItem("sandy_brick_column", BlockusBlocks.SANDY_BRICKS);

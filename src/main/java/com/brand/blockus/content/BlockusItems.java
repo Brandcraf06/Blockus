@@ -385,12 +385,12 @@ public class BlockusItems {
     public static final Item CHARRED_TRAPDOOR = register(BlockusBlocks.CHARRED_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
 
     // White Oak Wood
-    public static final Item WHITE_OAK_SAPLING = register(BlockusBlocks.WHITE_OAK_SAPLING, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item WHITE_OAK_SAPLING = register(BlockusBlocks.WHITE_OAK_SAPLING, Blockus.BLOCKUS_DECORATIONS);
     public static final Item WHITE_OAK_LOG = register(BlockusBlocks.WHITE_OAK_LOG, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item STRIPPED_WHITE_OAK_LOG = register(BlockusBlocks.STRIPPED_WHITE_OAK_LOG, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item WHITE_OAK_WOOD = register(BlockusBlocks.WHITE_OAK_WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item STRIPPED_WHITE_OAK_WOOD = register(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item WHITE_OAK_LEAVES = register(BlockusBlocks.WHITE_OAK_LEAVES, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item WHITE_OAK_LEAVES = register(BlockusBlocks.WHITE_OAK_LEAVES, Blockus.BLOCKUS_DECORATIONS);
     public static final Item WHITE_OAK_PLANKS = register(BlockusBlocks.WHITE_OAK_PLANKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item WHITE_OAK_STAIRS = register(BlockusBlocks.WHITE_OAK_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item WHITE_OAK_SLAB = register(BlockusBlocks.WHITE_OAK_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
