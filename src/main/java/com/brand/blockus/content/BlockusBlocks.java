@@ -519,7 +519,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block TROPICAL_FISH_CRATE = registerCrates("tropical_fish");
     public static final Block COD_CRATE = registerCrates("cod");
     public static final Block COOKIE_BLOCK = register("cookie_block", new CookieBlock(FabricBlockSettings.of(Material.SOLID_ORGANIC, MapColor.ORANGE).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
-    public static final Block CHORUS_BLOCK = register("chorus_block", new Block(FabricBlockSettings.of(Material.LEAVES, MapColor.PURPLE).strength(0.5f).sounds(BlockSoundGroup.GRASS)));
+    public static final Block CHORUS_BLOCK = register("chorus_block", new PillarBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.PURPLE).strength(0.5f).sounds(BlockSoundGroup.GRASS)));
     public static final Block POTATO_CRATE = registerCrates("potato");
     public static final Block APPLE_CRATE = registerCrates("apple");
     public static final Block GOLDEN_APPLE_CRATE = registerCrates("golden_apple");
