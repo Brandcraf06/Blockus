@@ -510,6 +510,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POTTED_HUGE_WARPED_FUNGUS = registerPottedDoublePlant(Blocks.WARPED_FUNGUS, "huge_warped_fungus");
     public static final Block POTTED_CACTUS_LARGE = registerPottedDoublePlant(Blocks.CACTUS, "cactus_large");
     public static final Block POTTED_BAMBOO_LARGE = registerPottedDoublePlant(Blocks.BAMBOO, "bamboo_large");
+    public static final Block POTTED_AZALEA_LARGE = registerPottedDoublePlant(Blocks.AZALEA, "azalea_large");
+    public static final Block POTTED_FLOWERING_AZALEA_LARGE = registerPottedDoublePlant(Blocks.FLOWERING_AZALEA, "flowering_azalea_large");
+
 
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = registerCrates("sweet_berries");

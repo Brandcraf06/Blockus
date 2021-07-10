@@ -75,6 +75,8 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.POTTED_WHITE_OAK,
                 BlockusBlocks.POTTED_CACTUS_LARGE,
                 BlockusBlocks.POTTED_BAMBOO_LARGE,
+                BlockusBlocks.POTTED_AZALEA_LARGE,
+                BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE,
                 BlockusBlocks.BLACKSTONE_DOOR,
                 BlockusBlocks.BLACKSTONE_TRAPDOOR
 

@@ -1,0 +1,7 @@
+{
+  "parent": "blockus:block/template_potted_azalea_large",
+  "textures": {
+    "side": "block/flowering_azalea_side",
+	"top": "block/flowering_azalea_top"
+  }
+}
