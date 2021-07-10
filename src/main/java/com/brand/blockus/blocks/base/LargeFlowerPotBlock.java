@@ -20,12 +20,14 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.event.GameEvent;
 
 import java.util.Map;
 
 public class LargeFlowerPotBlock extends Block {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
     private static final Map<Block, Block> CONTENT_TO_POTTED = Maps.newHashMap();
+    public static final float field_31095 = 3.0F;
     private final Block content;
 
     public LargeFlowerPotBlock(Block content, Settings settings) {
@@ -45,12 +47,12 @@ public class LargeFlowerPotBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
         Item item = itemStack.getItem();
-        Block block = item instanceof BlockItem ? CONTENT_TO_POTTED.getOrDefault(((BlockItem) item).getBlock(), Blocks.AIR) : Blocks.AIR;
-        boolean bl = block == Blocks.AIR;
-        boolean bl2 = this.content == Blocks.AIR;
+        BlockState blockState = (item instanceof BlockItem ? CONTENT_TO_POTTED.getOrDefault(((BlockItem)item).getBlock(), Blocks.AIR) : Blocks.AIR).getDefaultState();
+        boolean bl = blockState.isOf(Blocks.AIR);
+        boolean bl2 = this.isEmpty();
         if (bl != bl2) {
             if (bl2) {
-                world.setBlockState(pos, block.getDefaultState(), 3);
+                world.setBlockState(pos, blockState, 3);
                 player.incrementStat(Stats.POT_FLOWER);
                 if (!player.getAbilities().creativeMode) {
                     itemStack.decrement(1);
@@ -66,7 +68,8 @@ public class LargeFlowerPotBlock extends Block {
                 world.setBlockState(pos, BlockusBlocks.LARGE_FLOWER_POT.getDefaultState(), 3);
             }
 
-            return ActionResult.SUCCESS;
+            world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+            return ActionResult.success(world.isClient);
         } else {
             return ActionResult.CONSUME;
         }
@@ -77,8 +80,13 @@ public class LargeFlowerPotBlock extends Block {
         return this.content == Blocks.AIR ? super.getPickStack(world, pos, state) : new ItemStack(this.content);
     }
 
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
-        return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
+    private boolean isEmpty() {
+        return this.content == Blocks.AIR;
+    }
+
+
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
     public Block getContent() {
@@ -88,5 +96,4 @@ public class LargeFlowerPotBlock extends Block {
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return false;
     }
-
 }
