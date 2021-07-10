@@ -109,16 +109,16 @@ public class BlocksRegistration {
 
     // Pressure Plate
     public static Block registerPressurePlate(String id, PressurePlateBlock.ActivationRule type, Block base) {
-        return register(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base)));
+        return register(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base).noCollision()));
     }
 
     // Button
     public static Block registerWoodenButton(String id, Block base) {
-        return register(id + "_button", new WoodenButtonBase(FabricBlockSettings.copy(base)));
+        return register(id + "_button", new WoodenButtonBase(FabricBlockSettings.copy(base).noCollision()));
     }
 
     public static Block registerStoneButton(String id, Block base) {
-        return register(id + "_button", new StoneButtonBase(FabricBlockSettings.copy(base)));
+        return register(id + "_button", new StoneButtonBase(FabricBlockSettings.copy(base).noCollision()));
     }
 
     public static Block registerStoneButton(Block base) {
