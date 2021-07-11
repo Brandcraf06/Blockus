@@ -64,15 +64,15 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_TUFF = registerBlockCopy("polished_tuff", Blocks.TUFF);
     public static final Block POLISHED_TUFF_STAIRS = registerStairs(POLISHED_TUFF);
     public static final Block POLISHED_TUFF_SLAB = registerSlab(POLISHED_TUFF);
-    public static final Block TUFF_BRICKS = registerBlockCopy("tuff_bricks", BlockusBlocks.POLISHED_TUFF);
+    public static final Block TUFF_BRICKS = registerBlockCopy("tuff_bricks", POLISHED_TUFF);
     public static final Block TUFF_BRICKS_STAIRS = registerStairs(TUFF_BRICKS);
     public static final Block TUFF_BRICKS_SLAB = registerSlab(TUFF_BRICKS);
     public static final Block TUFF_BRICKS_WALL = registerWall(TUFF_BRICKS);
-    public static final Block CRACKED_TUFF_BRICKS = registerBlockCopy("cracked_tuff_bricks", BlockusBlocks.TUFF_BRICKS);
-    public static final Block CHISELED_TUFF = registerBlockCopy("chiseled_tuff", BlockusBlocks.POLISHED_TUFF);
-    public static final Block TUFF_PILLAR = registerPillar("tuff", BlockusBlocks.POLISHED_TUFF);
-    public static final Block ZIGZAGGED_TUFF = registerBlockCopy("zigzagged_tuff", BlockusBlocks.POLISHED_TUFF);
-    public static final Block TUFF_CIRCLE_PAVEMENT = registerCirclePavement("tuff", BlockusBlocks.POLISHED_TUFF);
+    public static final Block CRACKED_TUFF_BRICKS = registerBlockCopy("cracked_tuff_bricks", TUFF_BRICKS);
+    public static final Block CHISELED_TUFF = registerBlockCopy("chiseled_tuff", POLISHED_TUFF);
+    public static final Block TUFF_PILLAR = registerPillar("tuff", POLISHED_TUFF);
+    public static final Block ZIGZAGGED_TUFF = registerBlockCopy("zigzagged_tuff", POLISHED_TUFF);
+    public static final Block TUFF_CIRCLE_PAVEMENT = registerCirclePavement("tuff", POLISHED_TUFF);
 
     // Deepslate
     public static final Block MOSSY_DEEPSLATE_BRICKS = registerBlockCopy("mossy_deepslate_bricks", Blocks.DEEPSLATE_BRICKS);
@@ -912,7 +912,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WHITE_OAK_PRESSURE_PLATE = registerPressurePlate("white_oak", PressurePlateBlock.ActivationRule.EVERYTHING, WHITE_OAK_PLANKS);
     public static final Block POLISHED_BASALT_PRESSURE_PLATE = registerPressurePlate("polished_basalt", PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_BASALT);
     public static final Block POLISHED_DEEPSLATE_PRESSURE_PLATE = registerPressurePlate("polished_deepslate", PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_DEEPSLATE);
-    public static final Block POLISHED_TUFF_PRESSURE_PLATE = registerPressurePlate("polished_tuff", PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.POLISHED_TUFF);
+    public static final Block POLISHED_TUFF_PRESSURE_PLATE = registerPressurePlate("polished_tuff", PressurePlateBlock.ActivationRule.MOBS, POLISHED_TUFF);
 
     // Buttons
     public static final Block POLISHED_ANDESITE_BUTTON = registerStoneButton(Blocks.POLISHED_ANDESITE);
@@ -928,7 +928,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WHITE_OAK_BUTTON = registerWoodenButton("white_oak", WHITE_OAK_PLANKS);
     public static final Block POLISHED_BASALT_BUTTON = registerStoneButton("polished_basalt", Blocks.POLISHED_BASALT);
     public static final Block POLISHED_DEEPSLATE_BUTTON = registerStoneButton("polished_deepslate", Blocks.POLISHED_DEEPSLATE);
-    public static final Block POLISHED_TUFF_BUTTON = registerStoneButton("polished_tuff", BlockusBlocks.POLISHED_TUFF);
+    public static final Block POLISHED_TUFF_BUTTON = registerStoneButton("polished_tuff", POLISHED_TUFF);
 
     // Thatch
     public static final Block THATCH = registerBlockCopy("thatch", Blocks.HAY_BLOCK);
