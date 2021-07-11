@@ -106,9 +106,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_BASALT_BRICKS_STAIRS = registerStairs(POLISHED_BASALT_BRICKS);
     public static final Block POLISHED_BASALT_BRICKS_SLAB = registerSlab(POLISHED_BASALT_BRICKS);
     public static final Block POLISHED_BASALT_BRICKS_WALL = registerWall(POLISHED_BASALT_BRICKS);
-    public static final Block CRACKED_POLISHED_BASALT_BRICKS = registerBlockCopy("cracked_polished_basalt_bricks", Blocks.BASALT);
+    public static final Block CRACKED_POLISHED_BASALT_BRICKS = registerBlockCopy("cracked_polished_basalt_bricks", POLISHED_BASALT_BRICKS);
     public static final Block POLISHED_BASALT_PILLAR = registerPillar("polished_basalt", POLISHED_BASALT_BRICKS);
-    public static final Block CHISELED_POLISHED_BASALT = registerBlockCopy("chiseled_polished_basalt", Blocks.BASALT);
+    public static final Block CHISELED_POLISHED_BASALT = registerBlockCopy("chiseled_polished_basalt", Blocks.POLISHED_BASALT);
+    public static final Block POLISHED_BASALT_CIRCLE_PAVEMENT = registerCirclePavement("polished_basalt", Blocks.POLISHED_BASALT);
 
     // Limestone
     public static final Block LIMESTONE = registerBlockCopy("limestone", Blocks.STONE, MapColor.OAK_TAN);
@@ -159,7 +160,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_BLUESTONE_BRICKS_STAIRS = registerStairs(SMALL_BLUESTONE_BRICKS);
     public static final Block SMALL_BLUESTONE_BRICKS_SLAB = registerSlab(SMALL_BLUESTONE_BRICKS);
     public static final Block CHISELED_BLUESTONE = registerBlockCopy("chiseled_bluestone", BLUESTONE);
+    public static final Block BLUESTONE_CIRCLE_PAVEMENT = registerCirclePavement("bluestone", BLUESTONE);
     public static final Block BLUESTONE_LINES = registerPillar2("bluestone_lines", BLUESTONE);
+
 
     // Lava	Bricks
     public static final Block LAVA_BRICKS = registerLightBlock("lava_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, 15, MapColor.STONE_GRAY);
@@ -278,18 +281,21 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SOAKED_BRICKS_STAIRS = registerStairs(SOAKED_BRICKS);
     public static final Block SOAKED_BRICKS_SLAB = registerSlab(SOAKED_BRICKS);
     public static final Block SOAKED_BRICKS_WALL = registerWall(SOAKED_BRICKS);
+    public static final Block ZIGZAGGED_SOAKED_BRICKS = registerBlockCopy("zigzagged_soaked_bricks", SOAKED_BRICKS);
 
     // Sandy Bricks
     public static final Block SANDY_BRICKS = register("sandy_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BRICKS).mapColor(MapColor.SPRUCE_BROWN)));
     public static final Block SANDY_BRICKS_STAIRS = registerStairs(SANDY_BRICKS);
     public static final Block SANDY_BRICKS_SLAB = registerSlab(SANDY_BRICKS);
     public static final Block SANDY_BRICKS_WALL = registerWall(SANDY_BRICKS);
+    public static final Block ZIGZAGGED_SANDY_BRICKS = registerBlockCopy("zigzagged_sandy_bricks", SANDY_BRICKS);
 
     // Charred Bricks
     public static final Block CHARRED_BRICKS = register("charred_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BRICKS).mapColor(MapColor.BLACK)));
     public static final Block CHARRED_BRICKS_STAIRS = registerStairs(CHARRED_BRICKS);
     public static final Block CHARRED_BRICKS_SLAB = registerSlab(CHARRED_BRICKS);
     public static final Block CHARRED_BRICKS_WALL = registerWall(CHARRED_BRICKS);
+    public static final Block ZIGZAGGED_CHARRED_BRICKS = registerBlockCopy("zigzagged_charred_bricks", CHARRED_BRICKS);
 
     // Sandstone
     public static final Block ROUGH_SANDSTONE = registerBlockCopy("rough_sandstone", Blocks.SANDSTONE);
@@ -487,7 +493,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block JUNGLE_SMALL_HEDGE = registerSmallHedge("jungle_small_hedge", Blocks.JUNGLE_LEAVES);
     public static final Block ACACIA_SMALL_HEDGE = registerSmallHedge("acacia_small_hedge", Blocks.ACACIA_LEAVES);
     public static final Block DARK_OAK_SMALL_HEDGE = registerSmallHedge("dark_oak_small_hedge", Blocks.DARK_OAK_LEAVES);
-    public static final Block WHITE_OAK_SMALL_HEDGE = registerSmallHedge("white_oak_small_hedge", BlockusBlocks.WHITE_OAK_LEAVES);
+    public static final Block WHITE_OAK_SMALL_HEDGE = registerSmallHedge("white_oak_small_hedge", WHITE_OAK_LEAVES);
     public static final Block AZALEA_SMALL_HEDGE = registerSmallHedge("azalea_small_hedge", Blocks.AZALEA_LEAVES);
     public static final Block FLOWERING_AZALEA_SMALL_HEDGE = registerSmallHedge("azalea_small_hedge_flowers", Blocks.FLOWERING_AZALEA_LEAVES);
     public static final Block MOSS_SMALL_HEDGE = registerSmallHedge("moss_small_hedge", Blocks.MOSS_BLOCK);
@@ -506,7 +512,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POTTED_JUNGLE = registerPottedDoublePlant(Blocks.JUNGLE_SAPLING, "jungle");
     public static final Block POTTED_ACACIA = registerPottedDoublePlant(Blocks.ACACIA_SAPLING, "acacia");
     public static final Block POTTED_DARK_OAK = registerPottedDoublePlant(Blocks.DARK_OAK_SAPLING, "dark_oak");
-    public static final Block POTTED_WHITE_OAK = registerPottedDoublePlant(BlockusBlocks.WHITE_OAK_SAPLING, "white_oak");
+    public static final Block POTTED_WHITE_OAK = registerPottedDoublePlant(WHITE_OAK_SAPLING, "white_oak");
     public static final Block POTTED_HUGE_RED_MUSHROOM = registerPottedDoublePlant(Blocks.RED_MUSHROOM, "huge_red_mushroom");
     public static final Block POTTED_HUGE_BROWN_MUSHROOM = registerPottedDoublePlant(Blocks.BROWN_MUSHROOM, "huge_brown_mushroom");
     public static final Block POTTED_HUGE_CRIMSON_FUNGUS = registerPottedDoublePlant(Blocks.CRIMSON_FUNGUS, "huge_crimson_fungus");
@@ -899,8 +905,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LIMESTONE_PRESSURE_PLATE = registerPressurePlate("limestone", PressurePlateBlock.ActivationRule.MOBS, LIMESTONE);
     public static final Block MARBLE_PRESSURE_PLATE = registerPressurePlate("marble", PressurePlateBlock.ActivationRule.MOBS, MARBLE);
     public static final Block BLUESTONE_PRESSURE_PLATE = registerPressurePlate("bluestone", PressurePlateBlock.ActivationRule.MOBS, BLUESTONE);
-    public static final Block POLISHED_NETHERRACK_PRESSURE_PLATE = registerPressurePlate("polished_netherrack", PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.POLISHED_NETHERRACK);
-    public static final Block POLISHED_END_STONE_PRESSURE_PLATE = registerPressurePlate("polished_end_stone", PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.POLISHED_END_STONE);
+    public static final Block POLISHED_NETHERRACK_PRESSURE_PLATE = registerPressurePlate("polished_netherrack", PressurePlateBlock.ActivationRule.MOBS, POLISHED_NETHERRACK);
+    public static final Block POLISHED_END_STONE_PRESSURE_PLATE = registerPressurePlate("polished_end_stone", PressurePlateBlock.ActivationRule.MOBS, POLISHED_END_STONE);
     public static final Block BAMBOO_PRESSURE_PLATE = registerPressurePlate("bamboo", PressurePlateBlock.ActivationRule.EVERYTHING, BAMBOO_PLANKS);
     public static final Block CHARRED_PRESSURE_PLATE = registerPressurePlate("charred", PressurePlateBlock.ActivationRule.EVERYTHING, CHARRED_PLANKS);
     public static final Block WHITE_OAK_PRESSURE_PLATE = registerPressurePlate("white_oak", PressurePlateBlock.ActivationRule.EVERYTHING, WHITE_OAK_PLANKS);
@@ -1011,9 +1017,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final BarrelBlockBase DARK_OAK_BARREL = new BarrelBlockBase("dark_oak_barrel", Blocks.DARK_OAK_PLANKS.getDefaultMapColor());
     public static final BarrelBlockBase CRIMSON_BARREL = new BarrelBlockBase("crimson_barrel", Blocks.CRIMSON_PLANKS.getDefaultMapColor());
     public static final BarrelBlockBase WARPED_BARREL = new BarrelBlockBase("warped_barrel", Blocks.WARPED_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase WHITE_OAK_BARREL = new BarrelBlockBase("white_oak_barrel", BlockusBlocks.WHITE_OAK_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase BAMBOO_BARREL = new BarrelBlockBase("bamboo_barrel", BlockusBlocks.BAMBOO_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase CHARRED_BARREL = new BarrelBlockBase("charred_barrel", BlockusBlocks.CHARRED_PLANKS.getDefaultMapColor());
+    public static final BarrelBlockBase WHITE_OAK_BARREL = new BarrelBlockBase("white_oak_barrel", WHITE_OAK_PLANKS.getDefaultMapColor());
+    public static final BarrelBlockBase BAMBOO_BARREL = new BarrelBlockBase("bamboo_barrel", BAMBOO_PLANKS.getDefaultMapColor());
+    public static final BarrelBlockBase CHARRED_BARREL = new BarrelBlockBase("charred_barrel", CHARRED_PLANKS.getDefaultMapColor());
 
     public static final BlockEntityType<WoodenBarrelBlockEntity> WOODEN_BARREL = registerBe("wooden_barrel", FabricBlockEntityTypeBuilder.create(WoodenBarrelBlockEntity::new, OAK_BARREL, BIRCH_BARREL, JUNGLE_BARREL, ACACIA_BARREL, DARK_OAK_BARREL, CRIMSON_BARREL, WARPED_BARREL, WHITE_OAK_BARREL, BAMBOO_BARREL, CHARRED_BARREL));
 
