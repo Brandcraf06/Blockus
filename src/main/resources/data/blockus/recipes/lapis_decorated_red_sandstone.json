@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+	"SS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:cut_red_sandstone"
+    },
+	"#": {
+      "item": "minecraft:lapis_lazuli"
+    }
+  },
+  "result": {
+    "item": "blockus:lapis_decorated_red_sandstone",
+    "count": 4
+  }
+}
