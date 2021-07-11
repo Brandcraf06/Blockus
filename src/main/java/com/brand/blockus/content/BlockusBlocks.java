@@ -108,6 +108,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_BASALT_BRICKS_WALL = registerWall(POLISHED_BASALT_BRICKS);
     public static final Block CRACKED_POLISHED_BASALT_BRICKS = registerBlockCopy("cracked_polished_basalt_bricks", POLISHED_BASALT_BRICKS);
     public static final Block POLISHED_BASALT_PILLAR = registerPillar("polished_basalt", POLISHED_BASALT_BRICKS);
+    public static final Block ZIGZAGGED_POLISHED_BASALT = registerBlockCopy("zigzagged_polished_basalt", Blocks.POLISHED_BASALT);
     public static final Block CHISELED_POLISHED_BASALT = registerBlockCopy("chiseled_polished_basalt", Blocks.POLISHED_BASALT);
     public static final Block POLISHED_BASALT_CIRCLE_PAVEMENT = registerCirclePavement("polished_basalt", Blocks.POLISHED_BASALT);
 

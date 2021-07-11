@@ -94,6 +94,7 @@ public class BlockusItems {
     public static final Item STURDY_BLACKSTONE = register(BlockusBlocks.STURDY_BLACKSTONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item BLACKSTONE_DOOR = register(BlockusBlocks.BLACKSTONE_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item BLACKSTONE_TRAPDOOR = register(BlockusBlocks.BLACKSTONE_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
+
     // Basalt
     public static final Item POLISHED_BASALT_BRICKS = register(BlockusBlocks.POLISHED_BASALT_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_BASALT_BRICKS_STAIRS = register(BlockusBlocks.POLISHED_BASALT_BRICKS_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -101,6 +102,7 @@ public class BlockusItems {
     public static final Item POLISHED_BASALT_BRICKS_WALL = register(BlockusBlocks.POLISHED_BASALT_BRICKS_WALL, Blockus.BLOCKUS_DECORATIONS);
     public static final Item CRACKED_POLISHED_BASALT_BRICKS = register(BlockusBlocks.CRACKED_POLISHED_BASALT_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_BASALT_PILLAR = register(BlockusBlocks.POLISHED_BASALT_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item ZIGZAGGED_POLISHED_BASALT = register(BlockusBlocks.ZIGZAGGED_POLISHED_BASALT, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item CHISELED_POLISHED_BASALT = register(BlockusBlocks.CHISELED_POLISHED_BASALT, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_BASALT_CIRCLE_PAVEMENT = register(BlockusBlocks.POLISHED_BASALT_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
