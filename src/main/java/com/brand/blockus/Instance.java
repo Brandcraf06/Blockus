@@ -204,7 +204,6 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_TRAPDOOR, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_PRESSURE_PLATE, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_BUTTON, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 100);
 
         // small logs
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_LOGS, 300);
