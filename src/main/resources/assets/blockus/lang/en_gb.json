@@ -5,6 +5,8 @@
   "block.blockus.gray_light_gray_colored_tiles": "Colored Tiles (Grey & Light Grey)",
   "block.blockus.gray_colored_tiles": "Grey Colored Tiles",
   "block.blockus.light_gray_colored_tiles": "Light Grey Colored Tiles",
+  "block.blockus.gray_white_colored_tiles": "Colored Tiles (Grey & White)",
+  "block.blockus.light_gray_white_colored_tiles": "Colored Tiles (Light Grey & White)",
   "block.blockus.chiseled_bluestone": "Chiselled Bluestone",
   "block.blockus.gray_patterned_wool": "Grey Patterned Wool",
   "block.blockus.light_gray_patterned_wool": "Light Grey Patterned Wool",
@@ -66,5 +68,6 @@
   "block.blockus.chiseled_red_concrete": "Chiselled Red Concrete",
   "block.blockus.chiseled_black_concrete": "Chiselled Black Concrete",
   "block.blockus.chiseled_polished_basalt": "Chiselled Polished Basalt",
-  "block.blockus.chiseled_dark_prismarine": "Chiselled Dark Prismarine"
+  "block.blockus.chiseled_dark_prismarine": "Chiselled Dark Prismarine",
+  "block.blockus.chiseled_prismarine": "Chiselled Prismarine"
 }

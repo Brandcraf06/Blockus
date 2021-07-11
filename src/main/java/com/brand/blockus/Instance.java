@@ -124,12 +124,14 @@ public class Instance {
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
         FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
         FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WOODEN_FRAME, 300);
 
         // paper
         FuelRegistry.INSTANCE.add(Items.PAPER, 100);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_TRAPDOOR, 100);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_DOOR, 67);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_WALL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_LAMP, 400);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_BLOCK, 500);
 
         // timber frames
@@ -212,6 +214,15 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_LOGS, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_LOGS, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 300);
+
+        // barrels
+        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_BARREL, 300);
 
 // Composting
 
