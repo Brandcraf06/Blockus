@@ -321,6 +321,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_RED_SANDSTONE_BRICKS_WALL = registerWall(SMALL_RED_SANDSTONE_BRICKS);
     public static final Block RED_SANDSTONE_PILLAR = registerPillar("red_sandstone", Blocks.RED_SANDSTONE);
     public static final Block GOLD_DECORATED_RED_SANDSTONE = registerBlockCopy("gold_decorated_red_sandstone", Blocks.RED_SANDSTONE);
+    public static final Block LAPIS_DECORATED_RED_SANDSTONE = registerBlockCopy("lapis_decorated_red_sandstone", Blocks.RED_SANDSTONE);
 
     // Soul Sandstone
     public static final Block SOUL_SANDSTONE = register("soul_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.BROWN)));
@@ -346,6 +347,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_SOUL_SANDSTONE_BRICKS_WALL = registerWall(SMALL_SOUL_SANDSTONE_BRICKS);
     public static final Block SOUL_SANDSTONE_PILLAR = registerPillar("soul_sandstone", SOUL_SANDSTONE);
     public static final Block GOLD_DECORATED_SOUL_SANDSTONE = registerBlockCopy("gold_decorated_soul_sandstone", SOUL_SANDSTONE);
+    public static final Block LAPIS_DECORATED_SOUL_SANDSTONE = registerBlockCopy("lapis_decorated_soul_sandstone", SOUL_SANDSTONE);
 
     // Honeycomb Bricks
     public static final Block HONEYCOMB_BRICKS = registerBlockCopy("honeycomb_bricks", Blocks.HONEYCOMB_BLOCK);
@@ -362,6 +364,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block CRACKED_END_STONE_BRICKS = registerBlockCopy("cracked_end_stone_bricks", Blocks.END_STONE_BRICKS);
     public static final Block END_STONE_PILLAR = registerPillar("end_stone", Blocks.END_STONE_BRICKS);
     public static final Block PURPUR_DECORATED_END_STONE = registerBlockCopy("purpur_decorated_end_stone", Blocks.END_STONE_BRICKS);
+    public static final Block PHANTOM_PURPUR_DECORATED_END_STONE = registerBlockCopy("phantom_purpur_decorated_end_stone", Blocks.END_STONE_BRICKS);
 
     // Purpur Blocks
     public static final Block PURPUR_BRICKS = registerBlockCopy("purpur_bricks", Blocks.PURPUR_BLOCK);
