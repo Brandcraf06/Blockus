@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_bottom_top",
     "textures": {
-        "bottom": "blockus:block/soul_sandstone_bottom",
+        "bottom": "blockus:block/soul_sandstone_top",
         "top": "blockus:block/soul_sandstone_top",
         "side": "blockus:block/chiseled_soul_sandstone"
     }
