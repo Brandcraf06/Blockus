@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#blockus:end_stone_blocks",
     "#blockus:obsidian",
     "blockus:obsidian_bricks_wall",
     "blockus:nether_stars_block"
