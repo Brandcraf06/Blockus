@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:end_stone_bricks"
+  },
+  "result": "blockus:small_end_stone_bricks_stairs",
+  "count": 1
+}

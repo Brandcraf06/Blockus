@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:obsidian_bricks"
+  },
+  "result": "blockus:small_obsidian_bricks",
+  "count": 1
+}

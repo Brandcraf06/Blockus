@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "#blockus:obsidian",
-    "blockus:obsidian_bricks_wall",
     "blockus:nether_stars_block"
   ]
 }

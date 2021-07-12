@@ -121,6 +121,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LIMESTONE_BRICKS_STAIRS = registerStairs(LIMESTONE_BRICKS);
     public static final Block LIMESTONE_BRICKS_SLAB = registerSlab(LIMESTONE_BRICKS);
     public static final Block LIMESTONE_BRICKS_WALL = registerWall(LIMESTONE_BRICKS);
+    public static final Block SMALL_LIMESTONE_BRICKS = registerBlockCopy("small_limestone_bricks", LIMESTONE_BRICKS);
+    public static final Block SMALL_LIMESTONE_BRICKS_STAIRS = registerStairs(SMALL_LIMESTONE_BRICKS);
+    public static final Block SMALL_LIMESTONE_BRICKS_SLAB = registerSlab(SMALL_LIMESTONE_BRICKS);
+    public static final Block SMALL_LIMESTONE_BRICKS_WALL = registerWall(SMALL_LIMESTONE_BRICKS);
     public static final Block LIMESTONE_PILLAR = registerPillar(LIMESTONE);
     public static final Block CHISELED_LIMESTONE = registerBlockCopy("chiseled_limestone", LIMESTONE);
     public static final Block LIMESTONE_CIRCLE_PAVEMENT = registerCirclePavement("limestone", LIMESTONE);
@@ -134,6 +138,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block MARBLE_BRICKS_STAIRS = registerStairs(MARBLE_BRICKS);
     public static final Block MARBLE_BRICKS_SLAB = registerSlab(MARBLE_BRICKS);
     public static final Block MARBLE_BRICKS_WALL = registerWall(MARBLE_BRICKS);
+    public static final Block SMALL_MARBLE_BRICKS = registerBlockCopy("small_marble_bricks", MARBLE_BRICKS);
+    public static final Block SMALL_MARBLE_BRICKS_STAIRS = registerStairs(SMALL_MARBLE_BRICKS);
+    public static final Block SMALL_MARBLE_BRICKS_SLAB = registerSlab(SMALL_MARBLE_BRICKS);
+    public static final Block SMALL_MARBLE_BRICKS_WALL = registerWall(SMALL_MARBLE_BRICKS);
     public static final Block MARBLE_PILLAR = registerPillar(MARBLE);
     public static final Block CHISELED_MARBLE = registerBlockCopy("chiseled_marble", MARBLE);
     public static final Block CHISELED_MARBLE_PILLAR = registerPillar(CHISELED_MARBLE);
@@ -160,6 +168,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_BLUESTONE_BRICKS = registerBlockCopy("bluestone_little_bricks", BLUESTONE);
     public static final Block SMALL_BLUESTONE_BRICKS_STAIRS = registerStairs(SMALL_BLUESTONE_BRICKS);
     public static final Block SMALL_BLUESTONE_BRICKS_SLAB = registerSlab(SMALL_BLUESTONE_BRICKS);
+    public static final Block SMALL_BLUESTONE_BRICKS_WALL = registerWall("small_bluestone_bricks", SMALL_BLUESTONE_BRICKS);
     public static final Block CHISELED_BLUESTONE = registerBlockCopy("chiseled_bluestone", BLUESTONE);
     public static final Block BLUESTONE_CIRCLE_PAVEMENT = registerCirclePavement("bluestone", BLUESTONE);
     public static final Block BLUESTONE_LINES = registerPillar2("bluestone_lines", BLUESTONE);
@@ -249,6 +258,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block OBSIDIAN_BRICKS_STAIRS = registerStairs(OBSIDIAN_BRICKS);
     public static final Block OBSIDIAN_BRICKS_SLAB = registerSlab(OBSIDIAN_BRICKS);
     public static final Block OBSIDIAN_BRICKS_WALL = registerWall(OBSIDIAN_BRICKS);
+    public static final Block SMALL_OBSIDIAN_BRICKS = registerBlockCopy("small_obsidian_bricks", OBSIDIAN_BRICKS);
+    public static final Block SMALL_OBSIDIAN_BRICKS_STAIRS = registerStairs(SMALL_OBSIDIAN_BRICKS);
+    public static final Block SMALL_OBSIDIAN_BRICKS_SLAB = registerSlab(SMALL_OBSIDIAN_BRICKS);
+    public static final Block SMALL_OBSIDIAN_BRICKS_WALL = registerWall(SMALL_OBSIDIAN_BRICKS);
     public static final Block CRACKED_OBSIDIAN_BRICKS = registerBlockCopy("cracked_obsidian_bricks", OBSIDIAN_BRICKS);
     public static final Block OBSIDIAN_PILLAR = registerPillar("obsidian", OBSIDIAN_BRICKS);
     public static final Block OBSIDIAN_CIRCLE_PAVEMENT = registerCirclePavement("obsidian", OBSIDIAN_BRICKS);
@@ -369,6 +382,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_END_STONE_STAIRS = registerStairs(POLISHED_END_STONE);
     public static final Block POLISHED_END_STONE_SLAB = registerSlab(POLISHED_END_STONE);
     public static final Block CRACKED_END_STONE_BRICKS = registerBlockCopy("cracked_end_stone_bricks", Blocks.END_STONE_BRICKS);
+    public static final Block SMALL_END_STONE_BRICKS = registerBlockCopy("small_end_stone_bricks", Blocks.END_STONE_BRICKS);
+    public static final Block SMALL_END_STONE_BRICKS_STAIRS = registerStairs(SMALL_END_STONE_BRICKS);
+    public static final Block SMALL_END_STONE_BRICKS_SLAB = registerSlab(SMALL_END_STONE_BRICKS);
+    public static final Block SMALL_END_STONE_BRICKS_WALL = registerWall(SMALL_END_STONE_BRICKS);
     public static final Block END_STONE_PILLAR = registerPillar("end_stone", Blocks.END_STONE_BRICKS);
     public static final Block PURPUR_DECORATED_END_STONE = registerBlockCopy("purpur_decorated_end_stone", Blocks.END_STONE_BRICKS);
     public static final Block PHANTOM_PURPUR_DECORATED_END_STONE = registerBlockCopy("phantom_purpur_decorated_end_stone", Blocks.END_STONE_BRICKS);
@@ -385,6 +402,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_PURPUR_BRICKS = registerBlockCopy("purpur_little_bricks", Blocks.PURPUR_BLOCK);
     public static final Block SMALL_PURPUR_BRICKS_STAIRS = registerStairs(SMALL_PURPUR_BRICKS);
     public static final Block SMALL_PURPUR_BRICKS_SLAB = registerSlab(SMALL_PURPUR_BRICKS);
+    public static final Block SMALL_PURPUR_BRICKS_WALL = registerWall("small_purpur_bricks", SMALL_PURPUR_BRICKS);
     public static final Block CHISELED_PURPUR = registerBlockCopy("chiseled_purpur", Blocks.PURPUR_BLOCK);
     public static final Block PURPUR_LINES = registerPillar2("purpur_lines", Blocks.PURPUR_BLOCK);
 
@@ -404,6 +422,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_PHANTOM_PURPUR_BRICKS = registerBlockCopy("phantom_purpur_little_bricks", PHANTOM_PURPUR_BLOCK);
     public static final Block SMALL_PHANTOM_PURPUR_BRICKS_STAIRS = registerStairs(SMALL_PHANTOM_PURPUR_BRICKS);
     public static final Block SMALL_PHANTOM_PURPUR_BRICKS_SLAB = registerSlab(SMALL_PHANTOM_PURPUR_BRICKS);
+    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_WALL = registerWall("small_phantom_purpur_bricks", SMALL_PHANTOM_PURPUR_BRICKS);
     public static final Block CHISELED_PHANTOM_PURPUR = registerBlockCopy("chiseled_phantom_purpur", PHANTOM_PURPUR_BLOCK);
     public static final Block PHANTOM_PURPUR_LINES = registerPillar2("phantom_purpur_lines", PHANTOM_PURPUR_BLOCK);
 

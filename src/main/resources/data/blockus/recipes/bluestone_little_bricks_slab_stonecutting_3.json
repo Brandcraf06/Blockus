@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "blockus:bluestone_tiles"
+    "item": "blockus:bluestone"
   },
   "result": "blockus:bluestone_little_bricks_slab",
   "count": 2

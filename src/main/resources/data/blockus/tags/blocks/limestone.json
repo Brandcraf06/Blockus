@@ -8,6 +8,9 @@
     "blockus:limestone_bricks_stairs",
     "blockus:limestone_bricks_slab",
     "blockus:limestone_pillar",
+	"blockus:small_limestone_bricks",
+    "blockus:small_limestone_bricks_stairs",
+    "blockus:small_limestone_bricks_slab",
     "blockus:chiseled_limestone",
     "blockus:limestone_circle_pavement"
   ]
