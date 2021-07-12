@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "blockus:bluestone"
+    "item": "blockus:marble"
   },
-  "result": "blockus:bluestone_bricks",
+  "result": "blockus:small_marble_bricks",
   "count": 1
 }

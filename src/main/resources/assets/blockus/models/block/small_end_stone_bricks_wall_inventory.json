@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_inventory",
+    "textures": {
+        "wall": "blockus:block/small_end_stone_bricks"
+    }
+}
