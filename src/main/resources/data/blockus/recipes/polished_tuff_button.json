@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:polished_tuff"
+    }
+  ],
+  "result": {
+    "item": "blockus:polished_tuff_button"
+  }
+}

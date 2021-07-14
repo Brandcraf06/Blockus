@@ -48,7 +48,7 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.DARK_OAK_SMALL_HEDGE,
                 BlockusBlocks.WHITE_OAK_SMALL_HEDGE,
                 BlockusBlocks.AZALEA_SMALL_HEDGE,
-                BlockusBlocks.AZALEA_SMALL_HEDGE_FLOWERS,
+                BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE,
                 BlockusBlocks.LEGACY_LEAVES,
                 BlockusBlocks.WHITE_OAK_LEAVES,
                 BlockusBlocks.WHITE_OAK_SAPLING,
@@ -75,6 +75,8 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.POTTED_WHITE_OAK,
                 BlockusBlocks.POTTED_CACTUS_LARGE,
                 BlockusBlocks.POTTED_BAMBOO_LARGE,
+                BlockusBlocks.POTTED_AZALEA_LARGE,
+                BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE,
                 BlockusBlocks.BLACKSTONE_DOOR,
                 BlockusBlocks.BLACKSTONE_TRAPDOOR
 
@@ -120,7 +122,9 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.BROWN_BEVELED_GLASS_PANE,
                 BlockusBlocks.GREEN_BEVELED_GLASS_PANE,
                 BlockusBlocks.RED_BEVELED_GLASS_PANE,
-                BlockusBlocks.BLACK_BEVELED_GLASS_PANE
+                BlockusBlocks.BLACK_BEVELED_GLASS_PANE,
+
+                BlockusBlocks.TINTED_BEVELED_GLASS
         );
 
 

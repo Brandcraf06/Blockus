@@ -1,1 +1,1 @@
-Blockus is a mod in 1.17 that adds blocks!
+Blockus is a mod for Minecraft 1.18 that adds blocks!

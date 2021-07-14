@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:rotten_flesh_block",
+    "blockus:chorus_block",
+    "blockus:legacy_sponge",
+    "#blockus:thatch",
+    "#blockus:small_hedges"
+  ]
+}

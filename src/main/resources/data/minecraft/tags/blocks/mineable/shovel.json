@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:path",
+    "blockus:sugar_block",
+    "blockus:redstone_sand",
+    "blockus:legacy_first_grass_block",
+    "blockus:legacy_grass_block",
+    "blockus:legacy_gravel",
+    "blockus:sugar_block"
+  ]
+}

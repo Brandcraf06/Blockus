@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:prismarine_circle_pavement",
+    "blockus:chiseled_dark_prismarine",
+    "blockus:dark_prismarine_pillar",
+    "blockus:chiseled_prismarine",
+    "blockus:prismarine_pillar"
+  ]
+}

@@ -34,13 +34,18 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.SPRUCE_SMALL_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.AZALEA_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.AZALEA_SMALL_HEDGE_FLOWERS, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, 30, 60);
 
         // paper
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_WALL, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_DOOR, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_BLOCK, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BURNED_PAPER_BLOCK, 5, 60);
+
+        // thatch
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH, 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH_SLAB, 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH_STAIRS, 60, 20);
 
         // timber frames
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ACACIA_CROSS_TIMBER_FRAME, 5, 20);
@@ -121,12 +126,14 @@ public class Instance {
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
         FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
         FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WOODEN_FRAME, 300);
 
         // paper
         FuelRegistry.INSTANCE.add(Items.PAPER, 100);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_TRAPDOOR, 100);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_DOOR, 67);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_WALL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_LAMP, 400);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_BLOCK, 500);
 
         // timber frames
@@ -199,7 +206,6 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_TRAPDOOR, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_PRESSURE_PLATE, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_BUTTON, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 100);
 
         // small logs
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_LOGS, 300);
@@ -209,6 +215,15 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_LOGS, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_LOGS, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 300);
+
+        // barrels
+        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_BARREL, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_BARREL, 300);
 
 // Composting
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 0.30f);
@@ -223,7 +238,7 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SWEET_BERRIES_CRATE, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.AZALEA_SMALL_HEDGE_FLOWERS, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.MOSS_SMALL_HEDGE, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH_SLAB, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.THATCH, 0.75f);

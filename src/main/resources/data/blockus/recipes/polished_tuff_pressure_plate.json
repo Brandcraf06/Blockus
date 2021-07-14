@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:polished_tuff"
+    }
+  },
+  "result": {
+    "item": "blockus:polished_tuff_pressure_plate"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:bluestone",
+    "blockus:bluestone_slab",
+    "blockus:bluestone_stairs",
+    "blockus:bluestone_pillar",
+    "blockus:bluestone_bricks",
+    "blockus:bluestone_bricks_stairs",
+    "blockus:bluestone_bricks_slab",
+    "blockus:bluestone_tiles",
+    "blockus:bluestone_tiles_stairs",
+    "blockus:bluestone_tiles_slab",
+    "blockus:smooth_bluestone",
+    "blockus:smooth_bluestone_stairs",
+    "blockus:smooth_bluestone_slab",
+    "blockus:bluestone_squares",
+    "blockus:bluestone_little_bricks",
+    "blockus:bluestone_little_bricks_stairs",
+    "blockus:bluestone_little_bricks_slab",
+    "blockus:chiseled_bluestone",
+    "blockus:bluestone_circle_pavement",
+    "blockus:bluestone_lines"
+  ]
+}

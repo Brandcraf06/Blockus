@@ -1,7 +1,7 @@
 package com.brand.blockus;
 
+import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.BlockusColumnBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
@@ -34,7 +34,7 @@ public class Blockus implements ModInitializer {
 
         Instance.init();
         BlockusConfiguredFeatures.registerConfiguredFeature();
-        BlockusConfiguredFeatures.registerBiomeModifications();
+        /* BlockusConfiguredFeatures.registerBiomeModifications(); */
     }
 }
 

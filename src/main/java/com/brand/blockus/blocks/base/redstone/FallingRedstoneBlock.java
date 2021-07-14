@@ -12,11 +12,12 @@ public class FallingRedstoneBlock extends FallingBlock {
         super(settings);
     }
 
-    public boolean emitsRedstonePower(BlockState blockState_1) {
+    public boolean emitsRedstonePower(BlockState state) {
         return true;
     }
 
-    public int getWeakRedstonePower(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, Direction direction_1) {
+    public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return 15;
     }
 }
+

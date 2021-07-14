@@ -1,7 +1,14 @@
 plugins {
-	id 'fabric-loom' version '0.6-SNAPSHOT'
+	id 'fabric-loom' version '0.8-SNAPSHOT'
 	id 'maven-publish'
 }
+
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
+
+archivesBaseName = project.archives_base_name
+version = "${mod_version}+${minecraft_version}"
+group = project.maven_group
 
 repositories {
 	maven {
@@ -14,25 +21,14 @@ repositories {
 	}
 }
 
-archivesBaseName = project.archives_base_name
-version = "${mod_version}+${minecraft_version}"
-group = project.maven_group
-
-// This field defines the Java version your mod target.
-// The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too.
-def targetJavaVersion = 8
-
 dependencies {
-	//to change the versions see the gradle.properties file
+	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	// Fabric API. This is technically optional, but you probably want it anyway.
+	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-	// You may need to force-disable transitiveness on them.
 
 	// LibCD
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
@@ -42,23 +38,12 @@ dependencies {
 	modImplementation "curse.maven:columns-385230:3107117"
 }
 
+loom {
+	customManifest = "https://gist.githubusercontent.com/modmuss50/6e00baf80dcbaa42f3a2fc846b290128/raw/f035ef8f75164f56ec6352809a34841d326bae1c/1_18_experimental-snapshot-1.json"
+}
+
 minecraft {
 	accessWidener = file("src/main/resources/blockus.aw")
-}
-
-java {
-	sourceCompatibility = JavaVersion.toVersion(targetJavaVersion)
-	targetCompatibility = JavaVersion.toVersion(targetJavaVersion)
-
-	withSourcesJar()
-}
-
-tasks.withType(JavaCompile).configureEach {
-	it.options.encoding = "UTF-8"
-
-	if (JavaVersion.current().isJava9Compatible()) {
-		it.options.release.set(targetJavaVersion)
-	}
 }
 
 processResources {
@@ -69,31 +54,17 @@ processResources {
 	}
 }
 
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = "UTF-8"
+
+	it.options.release = 16
+}
+
 jar {
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}" }
 	}
 }
 
-// configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			// add all the jars that should be included when publishing to maven
-			artifact(remapJar) {
-				builtBy remapJar
-			}
-			artifact(sourcesJar) {
-				builtBy remapSourcesJar
-			}
-		}
-	}
-
-	// select the repositories you want to publish to
-	repositories {
-		// uncomment to publish to the local maven
-		// mavenLocal()
-	}
-}
   
   

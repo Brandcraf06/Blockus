@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    " a ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "blockus:bluestone_tiles"
+    }
+  },
+  "result": {
+    "item": "blockus:bluestone_tile_column",
+    "count": 6
+  }
+}

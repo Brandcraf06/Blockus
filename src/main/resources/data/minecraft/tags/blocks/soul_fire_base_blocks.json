@@ -1,55 +1,7 @@
 {
   "replace": false,
   "values": [
-    "blockus:soul_sandstone",
-    "blockus:soul_sandstone_slab",
-    "blockus:soul_sandstone_stairs",
-    "blockus:rough_soul_sandstone",
-    "blockus:rough_soul_sandstone_slab",
-    "blockus:rough_soul_sandstone_stairs",
-    "blockus:smooth_soul_sandstone",
-    "blockus:smooth_soul_sandstone_slab",
-    "blockus:smooth_soul_sandstone_stairs",
-    "blockus:soul_sandstone_bricks",
-    "blockus:soul_sandstone_bricks_slab",
-    "blockus:soul_sandstone_bricks_stairs",
-    "blockus:small_soul_sandstone_bricks",
-    "blockus:small_soul_sandstone_bricks_slab",
-    "blockus:small_soul_sandstone_bricks_stairs",
-    "blockus:cut_soul_sandstone",
-    "blockus:cut_soul_sandstone_slab",
-    "blockus:chiseled_soul_sandstone",
-    "blockus:soul_sandstone_pillar",
-	"blockus:gold_decorated_soul_sandstone",
-	
-	"blockus:phantom_purpur_block",
-	"blockus:phantom_purpur_slab",
-	"blockus:phantom_purpur_stairs",
-	"blockus:phantom_purpur_pillar",
-	"blockus:phantom_purpur_bricks",
-	"blockus:phantom_purpur_bricks_stairs",
-	"blockus:phantom_purpur_bricks_slab",
-    "blockus:smooth_phantom_purpur",
-	"blockus:smooth_phantom_purpur_stairs",
-	"blockus:smooth_phantom_purpur_slab",
-    "blockus:phantom_purpur_squares",
-    "blockus:phantom_purpur_little_bricks",
-	"blockus:phantom_purpur_little_bricks_stairs",
-	"blockus:phantom_purpur_little_bricks_slab",
-    "blockus:chiseled_phantom_purpur",
-    "blockus:phantom_purpur_lines"
-  ],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "columns"
-        },
-        "values": [
-          "blockus:soul_sandstone_brick_column",
-          "blockus:phantom_purpur_brick_column"
-        ]
-      }
-    ]
-  }
+    "#blockus:soul_sandstone",
+    "#blockus:phantom_purpur_blocks"
+  ]
 }

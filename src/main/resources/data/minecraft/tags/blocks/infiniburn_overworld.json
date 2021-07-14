@@ -1,13 +1,8 @@
 {
   "replace": false,
   "values": [
-    "blockus:polished_netherrack",
-	"blockus:polished_netherrack_slab",
-    "blockus:polished_netherrack_stairs",
-    "blockus:netherrack_circle_pavement",
-	"blockus:magma_bricks",
-	"blockus:magma_bricks_slab",
-	"blockus:magma_bricks_stairs",
-	"blockus:charcoal_block"
+    "#blockus:netherrack_blocks",
+    "#blockus:magma_bricks",
+    "blockus:charcoal_block"
   ]
 }

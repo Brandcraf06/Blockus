@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:wooden_frame",
+    "blockus:paper_wall",
+    "blockus:legacy_planks",
+    "blockus:soul_o_lantern",
+    "#blockus:barrels",
+    "#blockus:timber_frames",
+    "#blockus:food_crates"
+  ]
+}

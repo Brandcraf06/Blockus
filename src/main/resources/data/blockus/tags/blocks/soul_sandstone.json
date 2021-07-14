@@ -4,7 +4,6 @@
     "blockus:soul_sandstone",
     "blockus:soul_sandstone_slab",
     "blockus:soul_sandstone_stairs",
-	"blockus:soul_sandstone_wall",
     "blockus:rough_soul_sandstone",
     "blockus:rough_soul_sandstone_slab",
     "blockus:rough_soul_sandstone_stairs",
@@ -14,15 +13,14 @@
     "blockus:soul_sandstone_bricks",
     "blockus:soul_sandstone_bricks_slab",
     "blockus:soul_sandstone_bricks_stairs",
-	"blockus:soul_sandstone_bricks_wall",
     "blockus:small_soul_sandstone_bricks",
     "blockus:small_soul_sandstone_bricks_slab",
     "blockus:small_soul_sandstone_bricks_stairs",
-	"blockus:small_soul_sandstone_bricks_wall",
     "blockus:cut_soul_sandstone",
     "blockus:cut_soul_sandstone_slab",
     "blockus:chiseled_soul_sandstone",
     "blockus:gold_decorated_soul_sandstone",
+    "blockus:lapis_decorated_soul_sandstone",
     "blockus:soul_sandstone_pillar"
   ],
   "libcd": {
@@ -32,7 +30,9 @@
           "libcd:mod_loaded": "columns"
         },
         "values": [
-          "blockus:soul_sandstone_brick_column"
+          "blockus:soul_sandstone_column",
+          "blockus:soul_sandstone_brick_column",
+          "blockus:small_soul_sandstone_brick_column"
         ]
       }
     ]
