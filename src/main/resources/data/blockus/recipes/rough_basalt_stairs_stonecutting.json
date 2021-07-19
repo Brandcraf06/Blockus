@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:rough_basalt"
+  },
+  "result": "blockus:rough_basalt_stairs",
+  "count": 1
+}
