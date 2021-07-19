@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "blockus:rough_basalt",
+    "blockus:rough_basalt_slab",
+    "blockus:rough_basalt_stairs",
     "blockus:polished_basalt_bricks",
     "blockus:polished_basalt_bricks_stairs",
     "blockus:polished_basalt_bricks_slab",

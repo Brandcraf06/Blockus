@@ -77,6 +77,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLACKSTONE_TRAPDOOR = registerTrapdoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, FabricToolTags.PICKAXES, 0, MapColor.BLACK);
 
     // Basalt
+    public static final Block ROUGH_BASALT = registerBlockCopy("rough_basalt", Blocks.BASALT);
+    public static final Block ROUGH_BASALT_STAIRS = registerStairs(ROUGH_BASALT);
+    public static final Block ROUGH_BASALT_SLAB = registerSlab(ROUGH_BASALT);
     public static final Block POLISHED_BASALT_BRICKS = registerBlockCopy("polished_basalt_bricks", Blocks.POLISHED_BASALT);
     public static final Block POLISHED_BASALT_BRICKS_STAIRS = registerStairs(POLISHED_BASALT_BRICKS);
     public static final Block POLISHED_BASALT_BRICKS_SLAB = registerSlab(POLISHED_BASALT_BRICKS);
