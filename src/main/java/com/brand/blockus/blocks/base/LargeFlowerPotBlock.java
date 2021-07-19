@@ -71,7 +71,7 @@ public class LargeFlowerPotBlock extends Block {
             world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
             return ActionResult.success(world.isClient);
         } else {
-            return ActionResult.CONSUME;
+            return ActionResult.field_21466;
         }
     }
 

@@ -4,6 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -96,6 +97,9 @@ public class BlockusItems {
     public static final Item BLACKSTONE_TRAPDOOR = register(BlockusBlocks.BLACKSTONE_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
 
     // Basalt
+    public static final Item ROUGH_BASALT = register(BlockusBlocks.ROUGH_BASALT, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item ROUGH_BASALT_STAIRS = register(BlockusBlocks.ROUGH_BASALT_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item ROUGH_BASALT_SLAB = register(BlockusBlocks.ROUGH_BASALT_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_BASALT_BRICKS = register(BlockusBlocks.POLISHED_BASALT_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_BASALT_BRICKS_STAIRS = register(BlockusBlocks.POLISHED_BASALT_BRICKS_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_BASALT_BRICKS_SLAB = register(BlockusBlocks.POLISHED_BASALT_BRICKS_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
