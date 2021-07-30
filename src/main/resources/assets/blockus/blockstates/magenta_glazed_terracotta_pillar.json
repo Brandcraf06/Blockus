@@ -1,7 +1,16 @@
 {
     "variants": {
-        "axis=y":  { "model": "blockus:block/magenta_glazed_terracotta_pillar" },
-        "axis=z":   { "model": "blockus:block/magenta_glazed_terracotta_pillar", "x": 90 },
-        "axis=x":   { "model": "blockus:block/magenta_glazed_terracotta_pillar", "x": 90, "y": 90 }
+        "axis=x": {
+            "model": "blockus:block/magenta_glazed_terracotta_pillar_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "blockus:block/magenta_glazed_terracotta_pillar"
+        },
+        "axis=z": {
+            "model": "blockus:block/magenta_glazed_terracotta_pillar_horizontal",
+            "x": 90
+        }
     }
 }
