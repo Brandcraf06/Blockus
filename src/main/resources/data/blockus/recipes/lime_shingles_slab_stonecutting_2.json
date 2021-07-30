@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:lime_terracotta"
-  },
-  "result": "blockus:lime_shingles_slab",
-  "count": 2
-}

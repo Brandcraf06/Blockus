@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "blockus:bluestone_little_bricks"
+    },
+    "result": "blockus:small_bluestone_bricks_wall",
+    "count": 1
+}

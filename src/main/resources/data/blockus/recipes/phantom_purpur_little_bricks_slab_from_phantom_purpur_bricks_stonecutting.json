@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "blockus:phantom_purpur_bricks"
+    },
+    "result": "blockus:phantom_purpur_little_bricks_slab",
+    "count": 2
+}
