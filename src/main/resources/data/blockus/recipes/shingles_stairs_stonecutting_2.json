@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:terracotta"
-  },
-  "result": "blockus:shingles_stairs",
-  "count": 1
-}

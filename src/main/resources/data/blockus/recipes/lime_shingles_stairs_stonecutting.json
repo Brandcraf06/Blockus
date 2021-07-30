@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:lime_shingles"
-  },
-  "result": "blockus:lime_shingles_stairs",
-  "count": 1
-}
