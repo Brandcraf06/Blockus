@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-public class CookieBlock extends Block {
+public class CookieBlock extends Block { 
     public static final IntProperty BITES;
     protected static final VoxelShape[] BITES_TO_SHAPE;
 
@@ -35,11 +35,11 @@ public class CookieBlock extends Block {
         if (world.isClient) {
             ItemStack itemStack = player.getStackInHand(hand);
             if (this.tryEat(world, pos, state, player).isAccepted()) {
-                return ActionResult.field_5812;
+                return ActionResult.SUCCESS;
             }
 
             if (itemStack.isEmpty()) {
-                return ActionResult.field_21466;
+                return ActionResult.CONSUME;
             }
         }
 
@@ -48,7 +48,7 @@ public class CookieBlock extends Block {
 
     private ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!player.canConsume(false)) {
-            return ActionResult.field_5811;
+            return ActionResult.PASS;
         } else {
             player.getHungerManager().add(2, 0.1F);
             int i = state.get(BITES);
@@ -58,7 +58,7 @@ public class CookieBlock extends Block {
                 world.removeBlock(pos, false);
             }
 
-            return ActionResult.field_5812;
+            return ActionResult.SUCCESS;
         }
     }
 

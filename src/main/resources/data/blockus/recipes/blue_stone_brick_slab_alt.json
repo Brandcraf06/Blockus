@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_stone_brick_slab_2",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stone_brick_slab"
+    },
+    "$": {
+      "item": "minecraft:blue_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:blue_stone_brick_slab",
+    "count": 8
+  }
+}

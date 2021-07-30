@@ -3,8 +3,8 @@ package com.brand.blockus.blocks.blockentity;
 import com.brand.blockus.content.BlockusBlocks;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.ChestStateManager;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
+import net.minecraft.block.entity.ViewerCountManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -24,24 +24,24 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 
 public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
-    private final ChestStateManager stateManager;
     private DefaultedList<ItemStack> inventory;
+    private ViewerCountManager stateManager;
 
     public WoodenBarrelBlockEntity(BlockPos pos, BlockState state) {
         super(BlockusBlocks.WOODEN_BARREL, pos, state);
         this.inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
-        this.stateManager = new ChestStateManager() {
-            protected void onChestOpened(World world, BlockPos pos, BlockState state) {
+        this.stateManager = new ViewerCountManager() {
+            protected void onContainerOpen(World world, BlockPos pos, BlockState state) {
                 WoodenBarrelBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
                 WoodenBarrelBlockEntity.this.setOpen(state, true);
             }
 
-            protected void onChestClosed(World world, BlockPos pos, BlockState state) {
+            protected void onContainerClose(World world, BlockPos pos, BlockState state) {
                 WoodenBarrelBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_CLOSE);
                 WoodenBarrelBlockEntity.this.setOpen(state, false);
             }
 
-            protected void onInteracted(World world, BlockPos pos, BlockState state, int oldViewerCount, int newViewerCount) {
+            protected void onViewerCountUpdate(World world, BlockPos pos, BlockState state, int oldViewerCount, int newViewerCount) {
             }
 
             protected boolean isPlayerViewing(PlayerEntity player) {
@@ -94,14 +94,14 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 
     public void onOpen(PlayerEntity player) {
         if (!player.isSpectator()) {
-            this.stateManager.openChest(player, this.getWorld(), this.getPos(), this.getCachedState());
+            this.stateManager.openContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
         }
 
     }
 
     public void onClose(PlayerEntity player) {
         if (!player.isSpectator()) {
-            this.stateManager.closeChest(player, this.getWorld(), this.getPos(), this.getCachedState());
+            this.stateManager.closeContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
         }
 
     }
