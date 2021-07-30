@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stained_stone_brick_wall_2",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stone_brick_wall"
+    },
+    "$": {
+      "item": "minecraft:yellow_dye"
+    }
+  },
+  "result": {
+    "item": "blockus:yellow_stone_brick_wall",
+    "count": 8
+  }
+}
