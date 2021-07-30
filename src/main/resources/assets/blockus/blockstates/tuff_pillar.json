@@ -1,7 +1,16 @@
 {
     "variants": {
-        "axis=y":  { "model": "blockus:block/tuff_pillar" },
-        "axis=z":   { "model": "blockus:block/tuff_pillar", "x": 90 },
-        "axis=x":   { "model": "blockus:block/tuff_pillar", "x": 90, "y": 90 }
+        "axis=x": {
+            "model": "blockus:block/tuff_pillar_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "blockus:block/tuff_pillar"
+        },
+        "axis=z": {
+            "model": "blockus:block/tuff_pillar_horizontal",
+            "x": 90
+        }
     }
 }

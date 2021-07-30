@@ -1,5 +1,5 @@
 {
-    "parent": "block/cube_column",
+    "parent": "minecraft:block/cube_column",
     "textures": {
         "end": "blockus:block/polished_diorite_pillar_top",
         "side": "blockus:block/polished_diorite_pillar"
