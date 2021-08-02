@@ -38,8 +38,8 @@ dependencies {
 	modImplementation "curse.maven:columns-385230:3107117"
 }
 
-minecraft {
-	accessWidener = file("src/main/resources/blockus.aw")
+loom {
+	accessWidenerPath = file("src/main/resources/blockus.aw")
 }
 
 processResources {
