@@ -13,8 +13,7 @@
         "north": "low"
       },
       "apply": {
-        "model": "blockus:block/caution_barrier_side",
-        "uvlock": true
+        "model": "blockus:block/caution_barrier_side"
       }
     },
     {
@@ -23,8 +22,7 @@
       },
       "apply": {
         "model": "blockus:block/caution_barrier_side",
-        "y": 90,
-        "uvlock": true
+        "y": 90
       }
     },
     {
@@ -33,8 +31,7 @@
       },
       "apply": {
         "model": "blockus:block/caution_barrier_side",
-        "y": 180,
-        "uvlock": true
+        "y": 180
       }
     },
     {
@@ -43,8 +40,7 @@
       },
       "apply": {
         "model": "blockus:block/caution_barrier_side",
-        "y": 270,
-        "uvlock": true
+        "y": 270
       }
     },
     {
@@ -52,8 +48,7 @@
         "north": "tall"
       },
       "apply": {
-        "model": "blockus:block/caution_barrier_side_tall",
-        "uvlock": true
+        "model": "blockus:block/caution_barrier_side_tall"
       }
     },
     {
@@ -62,8 +57,7 @@
       },
       "apply": {
         "model": "blockus:block/caution_barrier_side_tall",
-        "y": 90,
-        "uvlock": true
+        "y": 90
       }
     },
     {
@@ -72,8 +66,7 @@
       },
       "apply": {
         "model": "blockus:block/caution_barrier_side_tall",
-        "y": 180,
-        "uvlock": true
+        "y": 180
       }
     },
     {
@@ -82,8 +75,7 @@
       },
       "apply": {
         "model": "blockus:block/caution_barrier_side_tall",
-        "y": 270,
-        "uvlock": true
+        "y": 270
       }
     }
   ]
