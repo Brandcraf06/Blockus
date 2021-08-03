@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/light_gray_concrete_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/light_gray_concrete_bricks"
     }
+  }
 }

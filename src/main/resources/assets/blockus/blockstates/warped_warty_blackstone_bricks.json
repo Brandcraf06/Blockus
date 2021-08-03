@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/warped_warty_blackstone_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/warped_warty_blackstone_bricks"
     }
+  }
 }

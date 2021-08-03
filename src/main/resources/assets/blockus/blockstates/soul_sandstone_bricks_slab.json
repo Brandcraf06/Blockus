@@ -1,8 +1,14 @@
 {
-    "variants": {
-        "type=bottom": { "model": "blockus:block/soul_sandstone_bricks_slab" },
-        "type=top": { "model": "blockus:block/soul_sandstone_bricks_slab_top" },
-        "type=double": { "model": "blockus:block/soul_sandstone_bricks" }
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/soul_sandstone_bricks_slab"
+    },
+    "type=top": {
+      "model": "blockus:block/soul_sandstone_bricks_slab_top"
+    },
+    "type=double": {
+      "model": "blockus:block/soul_sandstone_bricks"
     }
+  }
 }
 

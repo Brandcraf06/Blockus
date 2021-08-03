@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/lapis_decorated_soul_sandstone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/lapis_decorated_soul_sandstone"
     }
+  }
 }
