@@ -5,7 +5,7 @@
         "up": "true"
       },
       "apply": {
-        "model": "blockus:block/barrier_post"
+        "model": "blockus:block/caution_barrier_post"
       }
     },
     {
