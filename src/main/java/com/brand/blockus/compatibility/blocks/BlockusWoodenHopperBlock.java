@@ -8,7 +8,7 @@ public class BlockusWoodenHopperBlock extends WoodenHopperBlock {
     public BlockusWoodenHopperBlock(Settings settings) {
         super(settings);
     }
-    
+
     @Override
     public BlockEntity createBlockEntity(BlockView world) {
         return new BlockusWoodenHopperBlockEntity();

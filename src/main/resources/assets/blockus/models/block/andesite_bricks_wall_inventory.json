@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_inventory",
-    "textures": {
-        "wall": "blockus:block/andesite_bricks"
-    }
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "blockus:block/andesite_bricks"
+  }
 }

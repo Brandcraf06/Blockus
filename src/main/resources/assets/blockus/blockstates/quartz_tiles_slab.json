@@ -1,8 +1,14 @@
 {
-    "variants": {
-        "type=bottom": { "model": "blockus:block/quartz_tiles_slab" },
-        "type=top": { "model": "blockus:block/quartz_tiles_slab_top" },
-        "type=double": { "model": "blockus:block/quartz_tiles" }
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/quartz_tiles_slab"
+    },
+    "type=top": {
+      "model": "blockus:block/quartz_tiles_slab_top"
+    },
+    "type=double": {
+      "model": "blockus:block/quartz_tiles"
     }
+  }
 }
 

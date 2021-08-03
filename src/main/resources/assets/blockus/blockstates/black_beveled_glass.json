@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/black_beveled_glass" }
+  "variants": {
+    "": {
+      "model": "blockus:block/black_beveled_glass"
     }
+  }
 }

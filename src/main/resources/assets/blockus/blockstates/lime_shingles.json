@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/lime_shingles" }
+  "variants": {
+    "": {
+      "model": "blockus:block/lime_shingles"
     }
+  }
 }

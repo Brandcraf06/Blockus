@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "BBB",
-	"BWB",
-	"BBB"
+    "BWB",
+    "BBB"
   ],
   "key": {
     "W": {
       "tag": "minecraft:sand"
     },
-	"B": {
+    "B": {
       "item": "minecraft:redstone"
     }
   },

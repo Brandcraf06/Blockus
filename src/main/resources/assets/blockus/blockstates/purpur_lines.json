@@ -1,7 +1,16 @@
 {
-    "variants": {
-        "axis=y":  { "model": "blockus:block/purpur_lines" },
-        "axis=z":   { "model": "blockus:block/purpur_lines", "x": 90 },
-        "axis=x":   { "model": "blockus:block/purpur_lines", "x": 90, "y": 90 }
+  "variants": {
+    "axis=y": {
+      "model": "blockus:block/purpur_lines"
+    },
+    "axis=z": {
+      "model": "blockus:block/purpur_lines",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "blockus:block/purpur_lines",
+      "x": 90,
+      "y": 90
     }
+  }
 }

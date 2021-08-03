@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "CEC",
-	"EEE",
-	"CEC"
+    "EEE",
+    "CEC"
   ],
   "key": {
     "E": {
       "item": "minecraft:ender_pearl"
     },
-	"C": {
+    "C": {
       "item": "minecraft:chorus_fruit"
     }
   },

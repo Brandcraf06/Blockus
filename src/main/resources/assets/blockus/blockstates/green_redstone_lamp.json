@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "lit=false": { "model": "blockus:block/green_redstone_lamp" },
-        "lit=true": { "model": "blockus:block/green_redstone_lamp_on" }
+  "variants": {
+    "lit=false": {
+      "model": "blockus:block/green_redstone_lamp"
+    },
+    "lit=true": {
+      "model": "blockus:block/green_redstone_lamp_on"
     }
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/magenta_asphalt"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/magenta_asphalt"
+  }
 }

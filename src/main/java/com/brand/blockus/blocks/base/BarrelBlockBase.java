@@ -4,7 +4,10 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.*;
+import net.minecraft.block.BarrelBlock;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
@@ -54,7 +57,7 @@ public class BarrelBlockBase extends BarrelBlock {
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof WoodenBarrelBlockEntity) {
-            ((WoodenBarrelBlockEntity)blockEntity).tick();
+            ((WoodenBarrelBlockEntity) blockEntity).tick();
         }
     }
 
@@ -68,7 +71,7 @@ public class BarrelBlockBase extends BarrelBlock {
         if (itemStack.hasCustomName()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelBlockEntity) {
-                ((WoodenBarrelBlockEntity)blockEntity).setCustomName(itemStack.getName());
+                ((WoodenBarrelBlockEntity) blockEntity).setCustomName(itemStack.getName());
             }
         }
     }

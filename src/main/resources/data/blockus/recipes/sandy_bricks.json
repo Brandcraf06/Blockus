@@ -3,14 +3,14 @@
   "group": "sandy_bricks",
   "pattern": [
     " # ",
-	"#B#",
-	" # "
+    "#B#",
+    " # "
   ],
   "key": {
     "#": {
       "item": "minecraft:sand"
     },
-	"B": {
+    "B": {
       "item": "minecraft:bricks"
     }
   },

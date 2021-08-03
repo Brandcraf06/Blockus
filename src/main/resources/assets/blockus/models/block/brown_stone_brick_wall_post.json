@@ -1,6 +1,6 @@
 {
-    "parent": "minecraft:block/template_wall_post",
-    "textures": {
-        "wall": "blockus:block/brown_stone_bricks"
-    }
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "blockus:block/brown_stone_bricks"
+  }
 }

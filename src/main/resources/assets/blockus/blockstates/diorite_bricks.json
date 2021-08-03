@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/diorite_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/diorite_bricks"
     }
+  }
 }

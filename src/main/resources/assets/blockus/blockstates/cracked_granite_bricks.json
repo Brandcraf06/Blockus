@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/cracked_granite_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/cracked_granite_bricks"
     }
+  }
 }

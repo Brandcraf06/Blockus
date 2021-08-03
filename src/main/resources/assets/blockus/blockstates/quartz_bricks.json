@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/quartz_tiles" }
+  "variants": {
+    "": {
+      "model": "blockus:block/quartz_tiles"
     }
+  }
 }

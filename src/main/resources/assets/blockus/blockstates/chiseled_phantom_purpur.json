@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/chiseled_phantom_purpur" }
+  "variants": {
+    "": {
+      "model": "blockus:block/chiseled_phantom_purpur"
     }
+  }
 }

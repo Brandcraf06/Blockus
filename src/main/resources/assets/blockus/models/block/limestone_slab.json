@@ -1,8 +1,8 @@
 {
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "blockus:block/limestone",
-        "top": "blockus:block/limestone",
-        "side": "blockus:block/limestone"
-    }
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "blockus:block/limestone",
+    "top": "blockus:block/limestone",
+    "side": "blockus:block/limestone"
+  }
 }

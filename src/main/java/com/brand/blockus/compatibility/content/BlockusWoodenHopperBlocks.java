@@ -21,8 +21,8 @@ public final class BlockusWoodenHopperBlocks {
 
     private static final Identifier BLOCK_ENTITY_TYPE_ID = new Identifier(Blockus.MOD_ID, "wooden_hopper");
     public static final BlockEntityType<BlockusWoodenHopperBlockEntity> BLOCK_ENTITY_TYPE = BlockEntityType.Builder
-        .create(BlockusWoodenHopperBlockEntity::new, BAMBOO_HOPPER, CHARRED_HOPPER, WHITE_OAK_HOPPER)
-        .build(null);
+            .create(BlockusWoodenHopperBlockEntity::new, BAMBOO_HOPPER, CHARRED_HOPPER, WHITE_OAK_HOPPER)
+            .build(null);
 
     private BlockusWoodenHopperBlocks() {
         return;

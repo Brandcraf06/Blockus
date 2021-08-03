@@ -1,8 +1,8 @@
 {
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:green_terracotta"
-    },
-    "result": "blockus:green_shingles_slab",
-    "count": 2
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:green_terracotta"
+  },
+  "result": "blockus:green_shingles_slab",
+  "count": 2
 }

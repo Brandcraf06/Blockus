@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/rough_basalt" }
+  "variants": {
+    "": {
+      "model": "blockus:block/rough_basalt"
     }
+  }
 }

@@ -1,7 +1,7 @@
 {
-    "parent": "minecraft:block/cube_column_horizontal",
-    "textures": {
-        "end": "blockus:block/tuff_pillar_top",
-        "side": "blockus:block/tuff_pillar"
-    }
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "blockus:block/tuff_pillar_top",
+    "side": "blockus:block/tuff_pillar"
+  }
 }

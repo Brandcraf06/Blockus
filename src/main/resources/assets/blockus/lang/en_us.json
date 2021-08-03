@@ -936,7 +936,7 @@
   "block.blockus.legacy_glowstone": "Glowstone (Legacy)",
   "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core (Legacy)",
   "block.blockus.legacy_planks": "Planks (Legacy)",
-  
+
   "block.blockus.andesite_brick_column": "Andesite Brick Column",
   "block.blockus.diorite_brick_column": "Diorite Brick Column",
   "block.blockus.granite_brick_column": "Granite Brick Column",
@@ -976,7 +976,6 @@
   "block.blockus.purpur_brick_column": "Purpur Brick Column",
   "block.blockus.phantom_purpur_brick_column": "Phantom Purpur Brick Column",
   "block.blockus.rainbow_brick_column": "Rainbow Brick Column",
-
   "block.blockus.bamboo_hopper": "Bamboo Hopper",
   "block.blockus.charred_hopper": "Charred Hopper",
   "block.blockus.white_oak_hopper": "White Oak Hopper"

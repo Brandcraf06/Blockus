@@ -1,8 +1,8 @@
 {
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "blockus:block/red_shingles",
-        "top": "blockus:block/red_shingles",
-        "side": "blockus:block/red_shingles"
-    }
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "blockus:block/red_shingles",
+    "top": "blockus:block/red_shingles",
+    "side": "blockus:block/red_shingles"
+  }
 }

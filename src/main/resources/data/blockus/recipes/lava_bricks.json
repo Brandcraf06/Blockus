@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "SSS",
-	"SLS",
-	"SSS"
+    "SLS",
+    "SSS"
   ],
   "key": {
     "L": {
       "item": "minecraft:lava_bucket"
     },
-	"S": {
+    "S": {
       "item": "minecraft:stone_bricks"
     }
   },

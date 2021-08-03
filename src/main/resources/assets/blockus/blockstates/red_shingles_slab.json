@@ -1,8 +1,14 @@
 {
-    "variants": {
-        "type=bottom": { "model": "blockus:block/red_shingles_slab" },
-        "type=top": { "model": "blockus:block/red_shingles_slab_top" },
-        "type=double": { "model": "blockus:block/red_shingles" }
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/red_shingles_slab"
+    },
+    "type=top": {
+      "model": "blockus:block/red_shingles_slab_top"
+    },
+    "type=double": {
+      "model": "blockus:block/red_shingles"
     }
+  }
 }
 

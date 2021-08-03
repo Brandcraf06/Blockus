@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/polished_basalt_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/polished_basalt_bricks"
     }
+  }
 }

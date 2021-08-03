@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/chiseled_polished_basalt" }
+  "variants": {
+    "": {
+      "model": "blockus:block/chiseled_polished_basalt"
     }
+  }
 }

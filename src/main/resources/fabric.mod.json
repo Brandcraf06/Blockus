@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "blockus",
   "version": "${version}",
-
   "name": "Blockus",
   "description": "A mod that mainly adds blocks!",
   "authors": [
@@ -11,27 +10,25 @@
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/blockus",
     "sources": "https://github.com/Brandcraf06/Blockus",
-	"issues": "https://github.com/Brandcraf06/Blockus/issues"
+    "issues": "https://github.com/Brandcraf06/Blockus/issues"
   },
-
   "license": "GPLv3",
   "icon": "assets/blockus/icon.png",
   "accessWidener": "blockus.aw",
-
   "environment": "*",
   "entrypoints": {
     "main": [
       "com.brand.blockus.Blockus"
     ],
-	"client": [
-	  "com.brand.blockus.BlockusClient"
+    "client": [
+      "com.brand.blockus.BlockusClient"
     ]
   },
-   "depends": {
+  "depends": {
     "fabricloader": ">=0.8.8",
     "fabric": "*",
     "libcd": "*",
-	"minecraft": "1.16.x"
+    "minecraft": "1.16.x"
   },
   "suggests": {
     "columns": "*",

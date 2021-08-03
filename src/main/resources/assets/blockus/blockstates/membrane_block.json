@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/membrane_block" }
+  "variants": {
+    "": {
+      "model": "blockus:block/membrane_block"
     }
+  }
 }

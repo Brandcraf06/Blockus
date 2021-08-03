@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/gold_decorated_soul_sandstone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/gold_decorated_soul_sandstone"
     }
+  }
 }

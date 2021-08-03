@@ -1,6 +1,6 @@
 {
-    "parent": "blockus:block/template_small_hedge_inventory",
-    "textures": {
-        "hedge": "block/warped_wart_block"
-    }
+  "parent": "blockus:block/template_small_hedge_inventory",
+  "textures": {
+    "hedge": "block/warped_wart_block"
+  }
 }

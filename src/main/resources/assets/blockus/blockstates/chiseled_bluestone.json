@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/chiseled_bluestone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/chiseled_bluestone"
     }
+  }
 }

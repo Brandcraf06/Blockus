@@ -1,6 +1,6 @@
 {
-    "parent": "block/template_wall_side",
-    "textures": {
-        "wall": "blockus:block/small_soul_sandstone_bricks"
-    }
+  "parent": "block/template_wall_side",
+  "textures": {
+    "wall": "blockus:block/small_soul_sandstone_bricks"
+  }
 }

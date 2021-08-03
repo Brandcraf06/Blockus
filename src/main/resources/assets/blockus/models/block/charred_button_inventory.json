@@ -1,6 +1,6 @@
 {
-    "parent": "block/button_inventory",
-    "textures": {
-        "texture": "blockus:block/charred_planks"
-    }
+  "parent": "block/button_inventory",
+  "textures": {
+    "texture": "blockus:block/charred_planks"
+  }
 }

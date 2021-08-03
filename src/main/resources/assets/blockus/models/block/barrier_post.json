@@ -1,19 +1,47 @@
 {
-    "textures": {
-        "particle": "#barrier",
-		"barrier": "blockus:block/barrier_post"
-    },
-    "elements": [
-        {   "from": [ 6, 0, 6 ],
-            "to": [ 10, 16, 10 ],
-            "faces": {
-                "down":  { "texture": "#barrier", "tintindex": 0, "cullface": "down" },
-                "up":    { "texture": "#barrier", "tintindex": 0 },
-                "north": { "texture": "#barrier", "tintindex": 0 },
-                "south": { "texture": "#barrier", "tintindex": 0 },
-                "west":  { "texture": "#barrier", "tintindex": 0 },
-                "east":  { "texture": "#barrier", "tintindex": 0 }
-            }
+  "textures": {
+    "particle": "#barrier",
+    "barrier": "blockus:block/barrier_post"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        16,
+        10
+      ],
+      "faces": {
+        "down": {
+          "texture": "#barrier",
+          "tintindex": 0,
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#barrier",
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#barrier",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#barrier",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#barrier",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#barrier",
+          "tintindex": 0
         }
-    ]
+      }
+    }
+  ]
 }

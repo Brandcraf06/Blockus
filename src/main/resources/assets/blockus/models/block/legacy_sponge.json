@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/legacy_sponge"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/legacy_sponge"
+  }
 }

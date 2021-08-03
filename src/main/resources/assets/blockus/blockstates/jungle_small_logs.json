@@ -1,7 +1,16 @@
 {
-    "variants": {
-        "axis=y":  { "model": "blockus:block/jungle_small_logs" },
-        "axis=z":   { "model": "blockus:block/jungle_small_logs", "x": 90 },
-        "axis=x":   { "model": "blockus:block/jungle_small_logs", "x": 90, "y": 90 }
+  "variants": {
+    "axis=y": {
+      "model": "blockus:block/jungle_small_logs"
+    },
+    "axis=z": {
+      "model": "blockus:block/jungle_small_logs",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "blockus:block/jungle_small_logs",
+      "x": 90,
+      "y": 90
     }
+  }
 }

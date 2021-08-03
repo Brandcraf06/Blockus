@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/burned_paper_block" }
+  "variants": {
+    "": {
+      "model": "blockus:block/burned_paper_block"
     }
+  }
 }

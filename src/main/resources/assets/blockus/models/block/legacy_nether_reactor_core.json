@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/legacy_nether_reactor_core"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/legacy_nether_reactor_core"
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_inventory",
-    "textures": {
-        "wall": "blockus:block/small_red_sandstone_bricks"
-    }
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "blockus:block/small_red_sandstone_bricks"
+  }
 }

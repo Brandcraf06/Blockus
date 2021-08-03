@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/potted_white_oak_sapling" }
+  "variants": {
+    "": {
+      "model": "blockus:block/potted_white_oak_sapling"
     }
+  }
 }

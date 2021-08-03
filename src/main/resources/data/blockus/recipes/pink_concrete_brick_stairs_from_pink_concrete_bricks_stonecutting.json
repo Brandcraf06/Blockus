@@ -1,8 +1,8 @@
 {
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "blockus:pink_concrete_bricks"
-    },
-    "result": "blockus:pink_concrete_brick_stairs",
-    "count": 1
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:pink_concrete_bricks"
+  },
+  "result": "blockus:pink_concrete_brick_stairs",
+  "count": 1
 }

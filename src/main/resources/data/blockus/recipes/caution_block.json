@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " Y ",
-	"BSB",
-	" Y "
+    "BSB",
+    " Y "
   ],
   "key": {
     "S": {
       "item": "minecraft:stone"
     },
-	"B": {
+    "B": {
       "item": "minecraft:black_dye"
-	},
-	"Y": {
+    },
+    "Y": {
       "item": "minecraft:yellow_dye"
     }
   },

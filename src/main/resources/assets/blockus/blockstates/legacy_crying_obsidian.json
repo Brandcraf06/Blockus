@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/legacy_crying_obsidian" }
+  "variants": {
+    "": {
+      "model": "blockus:block/legacy_crying_obsidian"
     }
+  }
 }

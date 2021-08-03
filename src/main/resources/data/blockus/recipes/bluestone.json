@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " A ",
-	"ABA",
-	" A "
+    "ABA",
+    " A "
   ],
   "key": {
     "A": {
       "item": "minecraft:stone"
     },
-	"B": {
+    "B": {
       "item": "minecraft:blue_dye"
     }
   },

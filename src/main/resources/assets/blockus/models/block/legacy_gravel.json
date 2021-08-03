@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/legacy_gravel"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/legacy_gravel"
+  }
 }

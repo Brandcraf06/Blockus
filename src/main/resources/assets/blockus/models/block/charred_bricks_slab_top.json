@@ -1,8 +1,8 @@
 {
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "blockus:block/charred_bricks",
-        "top": "blockus:block/charred_bricks",
-        "side": "blockus:block/charred_bricks"
-    }
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "blockus:block/charred_bricks",
+    "top": "blockus:block/charred_bricks",
+    "side": "blockus:block/charred_bricks"
+  }
 }

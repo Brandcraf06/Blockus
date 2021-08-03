@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/soul_sandstone_bottom"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/soul_sandstone_bottom"
+  }
 }

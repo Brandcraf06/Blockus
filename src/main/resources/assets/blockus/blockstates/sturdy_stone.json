@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/sturdy_stone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/sturdy_stone"
     }
+  }
 }

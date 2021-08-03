@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/chiseled_limestone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/chiseled_limestone"
     }
+  }
 }

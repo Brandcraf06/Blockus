@@ -1,7 +1,7 @@
 {
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "blockus:block/birch_small_logs_top",
-        "side": "blockus:block/birch_small_logs"
-    }
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "blockus:block/birch_small_logs_top",
+    "side": "blockus:block/birch_small_logs"
+  }
 }
