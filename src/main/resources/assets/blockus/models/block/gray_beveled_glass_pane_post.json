@@ -1,7 +1,7 @@
 {
-    "parent": "block/template_glass_pane_post",
-    "textures": {
-        "edge": "blockus:block/beveled_glass_pane_top",
-        "pane": "blockus:block/gray_beveled_glass"
-    }
+  "parent": "block/template_glass_pane_post",
+  "textures": {
+    "edge": "blockus:block/beveled_glass_pane_top",
+    "pane": "blockus:block/gray_beveled_glass"
+  }
 }

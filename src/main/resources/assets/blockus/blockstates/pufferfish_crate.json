@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/pufferfish_crate" }
+  "variants": {
+    "": {
+      "model": "blockus:block/pufferfish_crate"
     }
+  }
 }

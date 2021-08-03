@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/tropical_fish_crate" }
+  "variants": {
+    "": {
+      "model": "blockus:block/tropical_fish_crate"
     }
+  }
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/soaked_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/soaked_bricks"
     }
+  }
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/polished_tuff" }
+  "variants": {
+    "": {
+      "model": "blockus:block/polished_tuff"
     }
+  }
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/charred_planks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/charred_planks"
     }
+  }
 }

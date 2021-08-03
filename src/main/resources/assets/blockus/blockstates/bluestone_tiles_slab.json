@@ -1,8 +1,14 @@
 {
-    "variants": {
-        "type=bottom": { "model": "blockus:block/bluestone_tiles_slab" },
-        "type=top": { "model": "blockus:block/bluestone_tiles_slab_top" },
-        "type=double": { "model": "blockus:block/bluestone_tiles" }
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/bluestone_tiles_slab"
+    },
+    "type=top": {
+      "model": "blockus:block/bluestone_tiles_slab_top"
+    },
+    "type=double": {
+      "model": "blockus:block/bluestone_tiles"
     }
+  }
 }
 

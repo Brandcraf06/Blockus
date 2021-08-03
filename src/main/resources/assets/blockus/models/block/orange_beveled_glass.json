@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/orange_beveled_glass"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/orange_beveled_glass"
+  }
 }

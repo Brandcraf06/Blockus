@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/red_futurneo_block" }
+  "variants": {
+    "": {
+      "model": "blockus:block/red_futurneo_block"
     }
+  }
 }

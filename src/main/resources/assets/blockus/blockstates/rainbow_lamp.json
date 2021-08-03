@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "lit=false": { "model": "blockus:block/rainbow_lamp" },
-        "lit=true": { "model": "blockus:block/rainbow_lamp_on" }
+  "variants": {
+    "lit=false": {
+      "model": "blockus:block/rainbow_lamp"
+    },
+    "lit=true": {
+      "model": "blockus:block/rainbow_lamp_on"
     }
+  }
 }

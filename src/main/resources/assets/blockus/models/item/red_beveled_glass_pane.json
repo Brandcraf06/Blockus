@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "blockus:block/red_beveled_glass"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "blockus:block/red_beveled_glass"
+  }
 }

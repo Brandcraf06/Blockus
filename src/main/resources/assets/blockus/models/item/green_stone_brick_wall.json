@@ -1,6 +1,6 @@
 {
-    "parent": "minecraft:block/wall_inventory",
-    "textures": {
-        "wall": "blockus:block/green_stone_bricks"
-    }
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "blockus:block/green_stone_bricks"
+  }
 }

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "group": "multi colored tiles",
   "ingredients": [
-	{
+    {
       "item": "minecraft:magenta_concrete"
     },
     {

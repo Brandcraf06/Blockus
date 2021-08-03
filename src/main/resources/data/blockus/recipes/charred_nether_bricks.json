@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "NNN",
-	"NFN",
-	"NNN"
+    "NFN",
+    "NNN"
   ],
   "key": {
     "F": {
       "item": "minecraft:fire_charge"
     },
-	"N": {
+    "N": {
       "item": "minecraft:nether_bricks"
     }
   },

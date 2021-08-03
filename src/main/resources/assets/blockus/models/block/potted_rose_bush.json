@@ -2,7 +2,7 @@
   "parent": "blockus:block/large_flower_pot_double_cross",
   "textures": {
     "plant_top": "block/rose_bush_top",
-	"plant_bottom": "block/rose_bush_bottom",
-	"soil": "block/dirt"
+    "plant_bottom": "block/rose_bush_bottom",
+    "soil": "block/dirt"
   }
 }

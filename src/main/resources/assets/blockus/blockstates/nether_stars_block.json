@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/nether_stars_block" }
+  "variants": {
+    "": {
+      "model": "blockus:block/nether_stars_block"
     }
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "blockus:block/template_small_hedge_side_tall",
-    "textures": {
-        "hedge": "block/oak_leaves"
-    }
+  "parent": "blockus:block/template_small_hedge_side_tall",
+  "textures": {
+    "hedge": "block/oak_leaves"
+  }
 }

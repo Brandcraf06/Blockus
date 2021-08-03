@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_inventory",
-    "textures": {
-        "wall": "blockus:block/charred_nether_bricks"
-    }
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "blockus:block/charred_nether_bricks"
+  }
 }

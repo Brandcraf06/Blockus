@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/mossy_deepslate_bricks"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/mossy_deepslate_bricks"
+  }
 }

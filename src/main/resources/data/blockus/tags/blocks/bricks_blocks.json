@@ -8,14 +8,14 @@
     "blockus:soaked_bricks",
     "blockus:soaked_bricks_stairs",
     "blockus:soaked_bricks_slab",
-	"blockus:zigzagged_soaked_bricks",
+    "blockus:zigzagged_soaked_bricks",
     "blockus:sandy_bricks",
     "blockus:sandy_bricks_stairs",
     "blockus:sandy_bricks_slab",
-	"blockus:zigzagged_sandy_bricks",
+    "blockus:zigzagged_sandy_bricks",
     "blockus:charred_bricks",
     "blockus:charred_bricks_stairs",
     "blockus:charred_bricks_slab",
-	"blockus:zigzagged_charred_bricks"
+    "blockus:zigzagged_charred_bricks"
   ]
 }

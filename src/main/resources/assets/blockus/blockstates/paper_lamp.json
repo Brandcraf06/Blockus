@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/paper_lamp" }
+  "variants": {
+    "": {
+      "model": "blockus:block/paper_lamp"
     }
+  }
 }

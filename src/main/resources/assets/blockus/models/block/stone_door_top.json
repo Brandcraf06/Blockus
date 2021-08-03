@@ -1,7 +1,7 @@
 {
-    "parent": "block/door_top",
-    "textures": {
-        "bottom": "blockus:block/stone_door_bottom",
-        "top": "blockus:block/stone_door_top"
-    }
+  "parent": "block/door_top",
+  "textures": {
+    "bottom": "blockus:block/stone_door_bottom",
+    "top": "blockus:block/stone_door_top"
+  }
 }

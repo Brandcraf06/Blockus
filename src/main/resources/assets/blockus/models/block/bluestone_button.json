@@ -1,6 +1,6 @@
 {
-    "parent": "block/button",
-    "textures": {
-        "texture": "blockus:block/bluestone"
-    }
+  "parent": "block/button",
+  "textures": {
+    "texture": "blockus:block/bluestone"
+  }
 }

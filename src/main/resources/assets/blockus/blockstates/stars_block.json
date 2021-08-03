@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/stars_block" }
+  "variants": {
+    "": {
+      "model": "blockus:block/stars_block"
     }
+  }
 }

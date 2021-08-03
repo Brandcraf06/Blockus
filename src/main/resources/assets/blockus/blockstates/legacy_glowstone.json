@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/legacy_glowstone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/legacy_glowstone"
     }
+  }
 }

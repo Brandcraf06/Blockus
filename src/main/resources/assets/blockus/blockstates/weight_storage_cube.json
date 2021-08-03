@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/weight_storage_cube" }
+  "variants": {
+    "": {
+      "model": "blockus:block/weight_storage_cube"
     }
+  }
 }

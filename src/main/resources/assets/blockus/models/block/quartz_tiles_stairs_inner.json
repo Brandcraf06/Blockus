@@ -1,8 +1,8 @@
 {
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "blockus:block/quartz_tiles",
-        "top": "blockus:block/quartz_tiles",
-        "side": "blockus:block/quartz_tiles"
-    }
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "blockus:block/quartz_tiles",
+    "top": "blockus:block/quartz_tiles",
+    "side": "blockus:block/quartz_tiles"
+  }
 }

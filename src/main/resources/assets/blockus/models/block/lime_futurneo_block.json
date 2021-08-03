@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/lime_futurneo_block"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/lime_futurneo_block"
+  }
 }

@@ -25,7 +25,7 @@ import net.minecraft.world.World;
 
 public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     private DefaultedList<ItemStack> inventory;
-    private ViewerCountManager stateManager;
+    private final ViewerCountManager stateManager;
 
     public WoodenBarrelBlockEntity(BlockPos pos, BlockState state) {
         super(BlockusBlocks.WOODEN_BARREL, pos, state);

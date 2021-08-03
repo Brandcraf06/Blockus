@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/thatch" }
+  "variants": {
+    "": {
+      "model": "blockus:block/thatch"
     }
+  }
 }

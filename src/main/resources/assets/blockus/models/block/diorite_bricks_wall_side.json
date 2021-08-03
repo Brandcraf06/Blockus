@@ -1,6 +1,6 @@
 {
-    "parent": "block/template_wall_side",
-    "textures": {
-        "wall": "blockus:block/diorite_bricks"
-    }
+  "parent": "block/template_wall_side",
+  "textures": {
+    "wall": "blockus:block/diorite_bricks"
+  }
 }

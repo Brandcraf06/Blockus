@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/lime_stone_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/lime_stone_bricks"
     }
+  }
 }

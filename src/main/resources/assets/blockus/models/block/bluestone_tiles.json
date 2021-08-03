@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/bluestone_tiles"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/bluestone_tiles"
+  }
 }

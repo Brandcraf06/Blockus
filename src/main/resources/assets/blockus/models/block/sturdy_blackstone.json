@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/sturdy_blackstone"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/sturdy_blackstone"
+  }
 }

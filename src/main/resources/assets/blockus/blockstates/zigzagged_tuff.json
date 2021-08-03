@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/zigzagged_tuff" }
+  "variants": {
+    "": {
+      "model": "blockus:block/zigzagged_tuff"
     }
+  }
 }

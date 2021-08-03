@@ -1,6 +1,6 @@
 {
-    "parent": "blockus:block/multi_cube_tiles",
-    "textures": {
-        "all": "blockus:block/rainbow_colored_tiles"
-    }
+  "parent": "blockus:block/multi_cube_tiles",
+  "textures": {
+    "all": "blockus:block/rainbow_colored_tiles"
+  }
 }

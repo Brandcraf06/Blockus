@@ -1,8 +1,19 @@
 {
-    "variants": {
-        "facing=north": { "model": "blockus:block/bread_box" },
-        "facing=south": { "model": "blockus:block/bread_box", "y": 180 },
-        "facing=west":  { "model": "blockus:block/bread_box", "y": 270 },
-        "facing=east":  { "model": "blockus:block/bread_box", "y": 90 }
+  "variants": {
+    "facing=north": {
+      "model": "blockus:block/bread_box"
+    },
+    "facing=south": {
+      "model": "blockus:block/bread_box",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "blockus:block/bread_box",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "blockus:block/bread_box",
+      "y": 90
     }
+  }
 }

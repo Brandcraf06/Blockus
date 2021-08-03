@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-public class CookieBlock extends Block { 
+public class CookieBlock extends Block {
     public static final IntProperty BITES;
     protected static final VoxelShape[] BITES_TO_SHAPE;
 

@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "SSS",
-	"SWS",
-	"SSS"
+    "SWS",
+    "SSS"
   ],
   "key": {
     "W": {
       "item": "minecraft:water_bucket"
     },
-	"S": {
+    "S": {
       "item": "minecraft:stone_bricks"
     }
   },

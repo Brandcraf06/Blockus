@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/rough_sandstone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/rough_sandstone"
     }
+  }
 }

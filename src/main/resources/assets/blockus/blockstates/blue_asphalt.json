@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/blue_asphalt" }
+  "variants": {
+    "": {
+      "model": "blockus:block/blue_asphalt"
     }
+  }
 }

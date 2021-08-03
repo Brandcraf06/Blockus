@@ -1,7 +1,7 @@
 {
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "blockus:block/lantern_top",
-        "side": "blockus:block/soul_lantern_block"
-    }
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "blockus:block/lantern_top",
+    "side": "blockus:block/soul_lantern_block"
+  }
 }

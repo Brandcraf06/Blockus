@@ -1,8 +1,8 @@
 {
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "top": "blockus:block/charred_barrel_top_open",
-        "side": "blockus:block/charred_barrel_side",
-        "bottom": "blockus:block/charred_barrel_bottom"
-    }
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "blockus:block/charred_barrel_top_open",
+    "side": "blockus:block/charred_barrel_side",
+    "bottom": "blockus:block/charred_barrel_bottom"
+  }
 }

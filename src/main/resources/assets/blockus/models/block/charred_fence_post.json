@@ -1,6 +1,6 @@
 {
-    "parent": "block/fence_post",
-    "textures": {
-        "texture": "blockus:block/charred_planks"
-    }
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "blockus:block/charred_planks"
+  }
 }

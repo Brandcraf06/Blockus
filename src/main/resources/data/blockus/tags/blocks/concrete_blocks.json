@@ -17,8 +17,7 @@
     "blockus:green_concrete_bricks",
     "blockus:red_concrete_bricks",
     "blockus:black_concrete_bricks",
-	
-	"blockus:white_concrete_brick_stairs",
+    "blockus:white_concrete_brick_stairs",
     "blockus:orange_concrete_brick_stairs",
     "blockus:magenta_concrete_brick_stairs",
     "blockus:light_blue_concrete_brick_stairs",
@@ -34,8 +33,7 @@
     "blockus:green_concrete_brick_stairs",
     "blockus:red_concrete_brick_stairs",
     "blockus:black_concrete_brick_stairs",
-	
-	"blockus:white_concrete_brick_slab",
+    "blockus:white_concrete_brick_slab",
     "blockus:orange_concrete_brick_slab",
     "blockus:magenta_concrete_brick_slab",
     "blockus:light_blue_concrete_brick_slab",
@@ -51,7 +49,6 @@
     "blockus:green_concrete_brick_slab",
     "blockus:red_concrete_brick_slab",
     "blockus:black_concrete_brick_slab",
-	
     "blockus:chiseled_white_concrete",
     "blockus:chiseled_orange_concrete",
     "blockus:chiseled_magenta_concrete",

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/chiseled_marble" }
+  "variants": {
+    "": {
+      "model": "blockus:block/chiseled_marble"
     }
+  }
 }

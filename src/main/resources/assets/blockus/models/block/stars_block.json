@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/stars_block"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/stars_block"
+  }
 }

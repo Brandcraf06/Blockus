@@ -1,7 +1,7 @@
 {
-    "parent": "minecraft:block/cube_column",
-    "textures": {
-        "end": "blockus:block/gray_glazed_terracotta_pillar_top",
-        "side": "blockus:block/gray_glazed_terracotta_pillar"
-    }
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "blockus:block/gray_glazed_terracotta_pillar_top",
+    "side": "blockus:block/gray_glazed_terracotta_pillar"
+  }
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/glowing_obsidian" }
+  "variants": {
+    "": {
+      "model": "blockus:block/glowing_obsidian"
     }
+  }
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/legacy_gravel" }
+  "variants": {
+    "": {
+      "model": "blockus:block/legacy_gravel"
     }
+  }
 }

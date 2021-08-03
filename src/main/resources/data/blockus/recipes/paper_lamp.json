@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "PPP",
-	"PTP",
-	"PPP"
+    "PTP",
+    "PPP"
   ],
   "key": {
     "P": {
       "item": "minecraft:paper"
     },
-	"T": {
+    "T": {
       "item": "minecraft:torch"
     }
   },

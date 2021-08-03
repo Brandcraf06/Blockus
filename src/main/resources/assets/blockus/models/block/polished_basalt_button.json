@@ -1,6 +1,6 @@
 {
-    "parent": "block/button",
-    "textures": {
-        "texture": "block/polished_basalt_top"
-    }
+  "parent": "block/button",
+  "textures": {
+    "texture": "block/polished_basalt_top"
+  }
 }

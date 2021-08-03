@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/sturdy_deepslate" }
+  "variants": {
+    "": {
+      "model": "blockus:block/sturdy_deepslate"
     }
+  }
 }

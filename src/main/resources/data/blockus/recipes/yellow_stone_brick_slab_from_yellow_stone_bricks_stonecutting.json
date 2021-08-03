@@ -1,8 +1,8 @@
 {
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "blockus:yellow_stone_bricks"
-    },
-    "result": "blockus:yellow_stone_brick_slab",
-    "count": 2
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:yellow_stone_bricks"
+  },
+  "result": "blockus:yellow_stone_brick_slab",
+  "count": 2
 }
