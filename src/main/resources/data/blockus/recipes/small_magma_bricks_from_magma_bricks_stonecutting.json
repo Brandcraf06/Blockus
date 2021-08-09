@@ -3,6 +3,6 @@
   "ingredient": {
     "item": "blockus:magma_bricks"
   },
-  "result": "blockus:magma_brick_stairs",
+  "result": "blockus:small_magma_bricks",
   "count": 1
 }
