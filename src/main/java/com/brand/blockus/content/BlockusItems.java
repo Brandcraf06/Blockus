@@ -185,6 +185,12 @@ public class BlockusItems {
     public static final Item MAGMA_BRICKS_STAIRS = register(BlockusBlocks.MAGMA_BRICKS_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item MAGMA_BRICKS_SLAB = register(BlockusBlocks.MAGMA_BRICKS_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item MAGMA_BRICKS_WALL = register(BlockusBlocks.MAGMA_BRICKS_WALL, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item SMALL_MAGMA_BRICKS = register(BlockusBlocks.SMALL_MAGMA_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item SMALL_MAGMA_BRICK_STAIRS = register(BlockusBlocks.SMALL_MAGMA_BRICK_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item SMALL_MAGMA_BRICK_SLAB = register(BlockusBlocks.SMALL_MAGMA_BRICK_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item SMALL_MAGMA_BRICK_WALL = register(BlockusBlocks.SMALL_MAGMA_BRICK_WALL, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item CHISELED_MAGMA_BRICKS = register(BlockusBlocks.CHISELED_MAGMA_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+
 
     // Blaze Bricks
     public static final Item BLAZE_BRICKS = register(BlockusBlocks.BLAZE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
