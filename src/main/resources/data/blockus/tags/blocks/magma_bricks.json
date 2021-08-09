@@ -3,7 +3,11 @@
   "values": [
     "blockus:magma_bricks",
     "blockus:magma_bricks_stairs",
-    "blockus:magma_bricks_slab"
+    "blockus:magma_bricks_slab",
+    "blockus:small_magma_bricks",
+    "blockus:small_magma_brick_stairs",
+    "blockus:small_magma_brick_slab",
+    "blockus:chiseled_magma_bricks"
   ],
   "libcd": {
     "entries": [

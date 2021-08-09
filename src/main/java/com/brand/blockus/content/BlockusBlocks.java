@@ -214,6 +214,11 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block MAGMA_BRICKS_STAIRS = registerStairs(MAGMA_BRICKS);
     public static final Block MAGMA_BRICKS_SLAB = registerSlab(MAGMA_BRICKS);
     public static final Block MAGMA_BRICKS_WALL = registerWall(MAGMA_BRICKS);
+    public static final Block SMALL_MAGMA_BRICKS = registerBlockCopy("small_magma_bricks", MAGMA_BRICKS);
+    public static final Block SMALL_MAGMA_BRICK_STAIRS = registerStairs("small_magma_brick", MAGMA_BRICKS);
+    public static final Block SMALL_MAGMA_BRICK_SLAB = registerSlab("small_magma_brick", MAGMA_BRICKS);
+    public static final Block SMALL_MAGMA_BRICK_WALL = registerWall("small_magma_brick", MAGMA_BRICKS);
+    public static final Block CHISELED_MAGMA_BRICKS = registerBlockCopy("chiseled_magma_bricks", MAGMA_BRICKS);
 
     // Blaze Bricks
     public static final Block BLAZE_BRICKS = registerLightBlock("blaze_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, 15, MapColor.DARK_RED);
