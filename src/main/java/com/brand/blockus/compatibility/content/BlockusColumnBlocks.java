@@ -29,6 +29,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("andesite_brick_column", BlockusBlocks.ANDESITE_BRICKS);
         registerColumnBlockAndItem("diorite_brick_column", BlockusBlocks.DIORITE_BRICKS);
         registerColumnBlockAndItem("granite_brick_column", BlockusBlocks.GRANITE_BRICKS);
+        registerColumnBlockAndItem("dripstone_brick_column", BlockusBlocks.DRIPSTONE_BRICKS);
         registerColumnBlockAndItem("tuff_brick_column", BlockusBlocks.TUFF_BRICKS);
         registerColumnBlockAndItem("mossy_deepslate_brick_column", BlockusBlocks.MOSSY_DEEPSLATE_BRICKS);
         registerColumnBlockAndItem("crimson_warty_blackstone_brick_column", BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS);
