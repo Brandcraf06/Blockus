@@ -32,7 +32,6 @@
     "java": ">=16"
   },
   "suggests": {
-    "columns": "*",
-    "woodenhoppers": "*"
+    "columns": "*"
   }
 }
