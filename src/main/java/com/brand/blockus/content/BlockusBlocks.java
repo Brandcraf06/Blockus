@@ -59,6 +59,18 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_GRANITE_PILLAR = registerPillar(Blocks.POLISHED_GRANITE);
     public static final Block GRANITE_CIRCLE_PAVEMENT = registerCirclePavement("granite", Blocks.POLISHED_GRANITE);
 
+    // Dripstone
+    public static final Block POLISHED_DRIPSTONE = registerBlockCopy("polished_dripstone", Blocks.DRIPSTONE_BLOCK);
+    public static final Block POLISHED_DRIPSTONE_STAIRS = registerStairs(POLISHED_DRIPSTONE);
+    public static final Block POLISHED_DRIPSTONE_SLAB = registerSlab(POLISHED_DRIPSTONE);
+    public static final Block DRIPSTONE_BRICKS = registerBlockCopy("dripstone_bricks", POLISHED_DRIPSTONE);
+    public static final Block DRIPSTONE_BRICK_STAIRS = registerStairs("dripstone_brick", DRIPSTONE_BRICKS);
+    public static final Block DRIPSTONE_BRICK_SLAB = registerSlab("dripstone_brick", DRIPSTONE_BRICKS);
+    public static final Block DRIPSTONE_BRICK_WALL = registerWall("dripstone_brick", DRIPSTONE_BRICKS);
+    public static final Block CRACKED_DRIPSTONE_BRICKS = registerBlockCopy("cracked_dripstone_bricks", DRIPSTONE_BRICKS);
+    public static final Block CHISELED_DRIPSTONE = registerBlockCopy("chiseled_dripstone", POLISHED_DRIPSTONE);
+    public static final Block DRIPSTONE_PILLAR = registerPillar("dripstone", POLISHED_DRIPSTONE);
+
     // Tuff
     public static final Block POLISHED_TUFF = registerBlockCopy("polished_tuff", Blocks.TUFF);
     public static final Block POLISHED_TUFF_STAIRS = registerStairs(POLISHED_TUFF);

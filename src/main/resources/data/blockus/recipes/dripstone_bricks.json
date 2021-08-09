@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RR",
+        "RR"
+    ],
+    "key": {
+        "R": {
+            "item": "blockus:polished_dripstone"
+        }
+    },
+    "result": {
+        "item": "blockus:dripstone_bricks",
+        "count": 4
+    }
+}
