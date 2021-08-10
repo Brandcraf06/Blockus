@@ -25,7 +25,8 @@
           "libcd:mod_loaded": "columns"
         },
         "values": [
-          "blockus:obsidian_brick_column"
+          "blockus:obsidian_brick_column",
+          "blockus:small_obsidian_brick_column"
         ]
       }
     ]
