@@ -52,6 +52,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("charred_nether_brick_column", BlockusBlocks.CHARRED_NETHER_BRICKS);
         registerColumnBlockAndItem("teal_nether_brick_column", BlockusBlocks.TEAL_NETHER_BRICKS);
         registerColumnBlockAndItem("obsidian_brick_column", BlockusBlocks.OBSIDIAN_BRICKS);
+        registerColumnBlockAndItem("small_obsidian_brick_column", BlockusBlocks.SMALL_OBSIDIAN_BRICKS);
         registerColumnBlockAndItem("quartz_tile_column", BlockusBlocks.QUARTZ_TILES);
         registerColumnBlockAndItem("large_brick_column", BlockusBlocks.LARGE_BRICKS);
         registerColumnBlockAndItem("soaked_brick_column", BlockusBlocks.SOAKED_BRICKS);
