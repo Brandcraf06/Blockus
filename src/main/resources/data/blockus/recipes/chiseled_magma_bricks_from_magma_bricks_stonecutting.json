@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:magma_bricks"
+  },
+  "result": "blockus:chiseled_magma_bricks",
+  "count": 1
+}

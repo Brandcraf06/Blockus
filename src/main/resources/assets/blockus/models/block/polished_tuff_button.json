@@ -1,6 +1,6 @@
 {
-    "parent": "block/button",
-    "textures": {
-        "texture": "blockus:block/polished_tuff"
-    }
+  "parent": "block/button",
+  "textures": {
+    "texture": "blockus:block/polished_tuff"
+  }
 }

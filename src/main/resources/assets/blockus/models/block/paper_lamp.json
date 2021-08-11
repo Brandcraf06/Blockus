@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"lamp": "blockus:block/paper_lamp",
-		"particle": "blockus:block/paper_lamp"
+		"particle": "blockus:block/paper_lamp",
+		"lamp": "blockus:block/paper_lamp"
 	},
 	"elements": [
 		{
@@ -35,6 +35,7 @@
 		{
 			"name": "model",
 			"origin": [8, 8, 8],
+			"color": 0,
 			"children": [0, 1]
 		}
 	]

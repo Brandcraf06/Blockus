@@ -1,8 +1,14 @@
 {
-    "variants": {
-        "type=bottom": { "model": "blockus:block/magenta_shingles_slab" },
-        "type=top": { "model": "blockus:block/magenta_shingles_slab_top" },
-        "type=double": { "model": "blockus:block/magenta_shingles" }
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/magenta_shingles_slab"
+    },
+    "type=top": {
+      "model": "blockus:block/magenta_shingles_slab_top"
+    },
+    "type=double": {
+      "model": "blockus:block/magenta_shingles"
     }
+  }
 }
 

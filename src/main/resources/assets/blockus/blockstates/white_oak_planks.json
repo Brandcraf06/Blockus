@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/white_oak_planks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/white_oak_planks"
     }
+  }
 }

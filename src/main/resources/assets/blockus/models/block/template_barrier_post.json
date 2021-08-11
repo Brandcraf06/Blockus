@@ -1,19 +1,21 @@
 {
-    "textures": {
-        "particle": "#barrier"
-    },
-    "elements": [
-        {   "from": [ 6, 0, 6 ],
-            "to": [ 10, 16, 10 ],
-            "faces": {
-                "down":  { "texture": "#barrier", "tintindex": 0, "cullface": "down" },
-                "up":    { "texture": "#barrier", "tintindex": 0 },
-                "north": { "texture": "#barrier", "tintindex": 0 },
-                "south": { "texture": "#barrier", "tintindex": 0 },
-                "west":  { "texture": "#barrier", "tintindex": 0 },
-                "east":  { "texture": "#barrier", "tintindex": 0 }
-            },
-            "__comment": "barrier post"
-        }
-    ]
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "#barrier"
+	},
+	"elements": [
+		{
+			"name": "barrier post",
+			"from": [6, 0, 6],
+			"to": [10, 16, 10],
+			"faces": {
+				"north": {"uv": [6, 0, 10, 16], "texture": "#barrier", "tintindex": 0},
+				"east": {"uv": [6, 0, 10, 16], "texture": "#barrier", "tintindex": 0},
+				"south": {"uv": [6, 0, 10, 16], "texture": "#barrier", "tintindex": 0},
+				"west": {"uv": [6, 0, 10, 16], "texture": "#barrier", "tintindex": 0},
+				"up": {"uv": [6, 0, 10, 4], "texture": "#barrier", "tintindex": 0},
+				"down": {"uv": [6, 0, 10, 4], "texture": "#barrier", "cullface": "down", "tintindex": 0}
+			}
+		}
+	]
 }

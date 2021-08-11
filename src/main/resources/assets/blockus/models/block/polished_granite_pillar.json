@@ -1,7 +1,7 @@
 {
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "blockus:block/polished_granite_pillar_top",
-        "side": "blockus:block/polished_granite_pillar"
-    }
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "blockus:block/polished_granite_pillar_top",
+    "side": "blockus:block/polished_granite_pillar"
+  }
 }

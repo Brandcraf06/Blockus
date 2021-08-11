@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_inventory",
-    "textures": {
-        "wall": "blockus:block/soul_sandstone"
-    }
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "blockus:block/soul_sandstone"
+  }
 }

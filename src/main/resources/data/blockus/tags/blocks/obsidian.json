@@ -4,12 +4,12 @@
     "blockus:obsidian_bricks",
     "blockus:obsidian_bricks_stairs",
     "blockus:obsidian_bricks_slab",
-	"blockus:obsidian_bricks_wall",
+    "blockus:obsidian_bricks_wall",
     "blockus:cracked_obsidian_bricks",
-	"blockus:small_obsidian_bricks",
+    "blockus:small_obsidian_bricks",
     "blockus:small_obsidian_bricks_stairs",
     "blockus:small_obsidian_bricks_slab",
-	"blockus:small_obsidian_bricks_wall",
+    "blockus:small_obsidian_bricks_wall",
     "blockus:obsidian_pillar",
     "blockus:obsidian_circle_pavement",
     "blockus:obsidian_reinforced_door",
@@ -17,7 +17,7 @@
     "blockus:glowing_obsidian",
     "blockus:legacy_crying_obsidian",
     "blockus:legacy_glowing_obsidian"
-   ],
+  ],
   "libcd": {
     "entries": [
       {
@@ -25,7 +25,8 @@
           "libcd:mod_loaded": "columns"
         },
         "values": [
-          "blockus:obsidian_brick_column"
+          "blockus:obsidian_brick_column",
+          "blockus:small_obsidian_brick_column"
         ]
       }
     ]

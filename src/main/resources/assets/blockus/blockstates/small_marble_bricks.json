@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/small_marble_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/small_marble_bricks"
     }
+  }
 }

@@ -1,8 +1,8 @@
 {
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "blockus:block/lime_shingles",
-        "top": "blockus:block/lime_shingles",
-        "side": "blockus:block/lime_shingles"
-    }
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "blockus:block/lime_shingles",
+    "top": "blockus:block/lime_shingles",
+    "side": "blockus:block/lime_shingles"
+  }
 }

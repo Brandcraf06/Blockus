@@ -3,13 +3,13 @@
   "group": "gold_decorated_polished_blackstone",
   "pattern": [
     "##",
-	"SS"
+    "SS"
   ],
   "key": {
     "S": {
       "item": "minecraft:polished_blackstone"
     },
-	"#": {
+    "#": {
       "item": "minecraft:gold_ingot"
     }
   },

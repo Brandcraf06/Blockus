@@ -3,13 +3,13 @@
   "pattern": [
     " # ",
     "#S#",
-	" # "
+    " # "
   ],
   "key": {
     "#": {
       "item": "minecraft:obsidian"
     },
-	"S": {
+    "S": {
       "item": "minecraft:shroomlight"
     }
   },

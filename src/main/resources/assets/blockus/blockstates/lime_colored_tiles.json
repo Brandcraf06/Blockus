@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/lime_colored_tiles" }
+  "variants": {
+    "": {
+      "model": "blockus:block/lime_colored_tiles"
     }
+  }
 }

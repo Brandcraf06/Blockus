@@ -1,8 +1,14 @@
 {
-    "variants": {
-        "type=bottom": { "model": "blockus:block/blue_asphalt_slab" },
-        "type=top": { "model": "blockus:block/blue_asphalt_slab_top" },
-        "type=double": { "model": "blockus:block/blue_asphalt" }
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/blue_asphalt_slab"
+    },
+    "type=top": {
+      "model": "blockus:block/blue_asphalt_slab_top"
+    },
+    "type=double": {
+      "model": "blockus:block/blue_asphalt"
     }
+  }
 }
 

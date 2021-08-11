@@ -1,6 +1,9 @@
 {
   "block.blockus.chiseled_soul_sandstone": "Chiselled Soul Sandstone",
   "block.blockus.gray_stone_bricks": "Grey Stone Bricks",
+  "block.blockus.gray_stone_brick_stairs": "Grey Stone Brick Stairs",
+  "block.blockus.gray_stone_brick_slab": "Grey Stone Brick Slab",
+  "block.blockus.gray_stone_brick_wall": "Grey Stone Brick Wall",
   "block.blockus.black_gray_colored_tiles": "Colored Tiles (Black & Grey)",
   "block.blockus.gray_light_gray_colored_tiles": "Colored Tiles (Grey & Light Grey)",
   "block.blockus.gray_colored_tiles": "Grey Colored Tiles",
@@ -49,6 +52,10 @@
   "block.blockus.gray_shingles_slab": "Grey Shingles Slab",
   "block.blockus.gray_concrete_bricks": "Grey Concrete Bricks",
   "block.blockus.light_gray_concrete_bricks": "Light Grey Concrete Bricks",
+  "block.blockus.gray_concrete_brick_stairs": "Grey Concrete Brick Stairs",
+  "block.blockus.light_gray_concrete_brick_stairs": "Light Grey Concrete Brick Stairs",
+  "block.blockus.gray_concrete_brick_slab": "Grey Concrete Brick Slab",
+  "block.blockus.light_gray_concrete_brick_slab": "Light Grey Concrete Brick Slab",
   "block.blockus.gray_concrete_pillar": "Grey Concrete Pillar",
   "block.blockus.light_gray_concrete_pillar": "Light Grey Concrete Pillar",
   "block.blockus.chiseled_white_concrete": "Chiselled White Concrete",
@@ -70,6 +77,8 @@
   "block.blockus.chiseled_polished_basalt": "Chiselled Polished Basalt",
   "block.blockus.chiseled_dark_prismarine": "Chiselled Dark Prismarine",
   "block.blockus.chiseled_prismarine": "Chiselled Prismarine",
+  "block.blockus.chiseled_dripstone": "Chiselled Dripstone",
   "block.blockus.chiseled_tuff": "Chiselled Tuff",
-  "block.blockus.cookie_block": "Block of Biscuit"
+  "block.blockus.cookie_block": "Block of Biscuit",
+  "block.blockus.chiseled_magma_bricks": "Chiselled Magma Bricks"
 }

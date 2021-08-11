@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/cyan_stone_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/cyan_stone_bricks"
     }
+  }
 }

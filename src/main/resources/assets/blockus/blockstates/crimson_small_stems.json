@@ -1,7 +1,16 @@
 {
-    "variants": {
-        "axis=y":  { "model": "blockus:block/crimson_small_stems" },
-        "axis=z":   { "model": "blockus:block/crimson_small_stems", "x": 90 },
-        "axis=x":   { "model": "blockus:block/crimson_small_stems", "x": 90, "y": 90 }
+  "variants": {
+    "axis=y": {
+      "model": "blockus:block/crimson_small_stems"
+    },
+    "axis=z": {
+      "model": "blockus:block/crimson_small_stems",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "blockus:block/crimson_small_stems",
+      "x": 90,
+      "y": 90
     }
+  }
 }

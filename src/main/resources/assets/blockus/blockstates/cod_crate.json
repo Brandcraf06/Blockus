@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/cod_crate" }
+  "variants": {
+    "": {
+      "model": "blockus:block/cod_crate"
     }
+  }
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/rainbow_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/rainbow_bricks"
     }
+  }
 }

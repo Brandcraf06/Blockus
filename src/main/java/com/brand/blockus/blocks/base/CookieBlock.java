@@ -1,7 +1,10 @@
 package com.brand.blockus.blocks.base;
 
 import com.brand.blockus.utils.Utils;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -35,11 +38,11 @@ public class CookieBlock extends Block {
         if (world.isClient) {
             ItemStack itemStack = player.getStackInHand(hand);
             if (this.tryEat(world, pos, state, player).isAccepted()) {
-                return ActionResult.field_5812;
+                return ActionResult.SUCCESS;
             }
 
             if (itemStack.isEmpty()) {
-                return ActionResult.field_21466;
+                return ActionResult.CONSUME;
             }
         }
 
@@ -48,7 +51,7 @@ public class CookieBlock extends Block {
 
     private ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!player.canConsume(false)) {
-            return ActionResult.field_5811;
+            return ActionResult.PASS;
         } else {
             player.getHungerManager().add(2, 0.1F);
             int i = state.get(BITES);
@@ -58,7 +61,7 @@ public class CookieBlock extends Block {
                 world.removeBlock(pos, false);
             }
 
-            return ActionResult.field_5812;
+            return ActionResult.SUCCESS;
         }
     }
 

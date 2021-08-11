@@ -1,7 +1,7 @@
 {
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "blockus:block/teal_nether_pillar_top",
-        "side": "blockus:block/teal_nether_pillar"
-    }
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "blockus:block/teal_nether_pillar_top",
+    "side": "blockus:block/teal_nether_pillar"
+  }
 }

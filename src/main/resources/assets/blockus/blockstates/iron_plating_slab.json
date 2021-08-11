@@ -1,8 +1,14 @@
 {
-    "variants": {
-        "type=bottom": { "model": "blockus:block/iron_plating_slab" },
-        "type=top": { "model": "blockus:block/iron_plating_slab_top" },
-        "type=double": { "model": "blockus:block/iron_plating" }
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/iron_plating_slab"
+    },
+    "type=top": {
+      "model": "blockus:block/iron_plating_slab_top"
+    },
+    "type=double": {
+      "model": "blockus:block/iron_plating"
     }
+  }
 }
 

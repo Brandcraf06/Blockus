@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "concrete_brick_slab",
+  "pattern": [
+    "   ",
+    "   ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "blockus:lime_concrete_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:lime_concrete_brick_slab",
+    "count": 6
+  }
+}

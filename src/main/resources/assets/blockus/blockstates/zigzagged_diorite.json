@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/zigzagged_diorite" }
+  "variants": {
+    "": {
+      "model": "blockus:block/zigzagged_diorite"
     }
+  }
 }

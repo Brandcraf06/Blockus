@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/rainbow_lamp_on" }
+  "variants": {
+    "": {
+      "model": "blockus:block/rainbow_lamp_on"
     }
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "block/flower_pot_cross",
-    "textures": {
-        "plant": "blockus:block/white_oak_sapling"
-    }
+  "parent": "block/flower_pot_cross",
+  "textures": {
+    "plant": "blockus:block/white_oak_sapling"
+  }
 }

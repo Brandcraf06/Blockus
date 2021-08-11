@@ -1,8 +1,8 @@
 {
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "blockus:block/magenta_asphalt",
-        "top": "blockus:block/magenta_asphalt",
-        "side": "blockus:block/magenta_asphalt"
-    }
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "blockus:block/magenta_asphalt",
+    "top": "blockus:block/magenta_asphalt",
+    "side": "blockus:block/magenta_asphalt"
+  }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "blockus:block/lime_concrete_bricks",
+    "top": "blockus:block/lime_concrete_bricks",
+    "side": "blockus:block/lime_concrete_bricks"
+  }
+}

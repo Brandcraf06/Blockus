@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/zigzagged_charred_bricks"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/zigzagged_charred_bricks"
+  }
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/tuff_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/tuff_bricks"
     }
+  }
 }

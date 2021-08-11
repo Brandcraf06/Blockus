@@ -1,8 +1,8 @@
 {
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "blockus:block/charred_planks",
-        "top": "blockus:block/charred_planks",
-        "side": "blockus:block/charred_planks"
-    }
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "blockus:block/charred_planks",
+    "top": "blockus:block/charred_planks",
+    "side": "blockus:block/charred_planks"
+  }
 }

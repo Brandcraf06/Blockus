@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/legacy_gold_block" }
+  "variants": {
+    "": {
+      "model": "blockus:block/legacy_gold_block"
     }
+  }
 }

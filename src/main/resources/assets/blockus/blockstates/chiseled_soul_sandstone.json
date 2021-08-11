@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/chiseled_soul_sandstone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/chiseled_soul_sandstone"
     }
+  }
 }

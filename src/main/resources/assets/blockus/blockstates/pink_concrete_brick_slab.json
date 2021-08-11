@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/pink_concrete_brick_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/pink_concrete_bricks"
+    },
+    "type=top": {
+      "model": "blockus:block/pink_concrete_brick_slab_top"
+    }
+  }
+}

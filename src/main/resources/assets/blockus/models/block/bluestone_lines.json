@@ -1,7 +1,7 @@
 {
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "blockus:block/bluestone_lines",
-        "side": "blockus:block/bluestone_lines"
-    }
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "blockus:block/bluestone_lines",
+    "side": "blockus:block/bluestone_lines"
+  }
 }

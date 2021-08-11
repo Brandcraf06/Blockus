@@ -1,7 +1,7 @@
 {
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "blockus:block/warped_small_stems_top",
-        "side": "blockus:block/warped_small_stems"
-    }
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "blockus:block/warped_small_stems_top",
+    "side": "blockus:block/warped_small_stems"
+  }
 }

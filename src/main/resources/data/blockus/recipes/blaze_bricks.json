@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "NB",
-	"BN"
+    "BN"
   ],
   "key": {
     "B": {
       "item": "minecraft:blaze_powder"
     },
-	"N": {
+    "N": {
       "item": "minecraft:nether_brick"
     }
   },

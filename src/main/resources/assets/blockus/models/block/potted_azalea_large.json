@@ -2,6 +2,6 @@
   "parent": "blockus:block/template_potted_azalea_large",
   "textures": {
     "side": "block/azalea_side",
-	"top": "block/azalea_top"
+    "top": "block/azalea_top"
   }
 }

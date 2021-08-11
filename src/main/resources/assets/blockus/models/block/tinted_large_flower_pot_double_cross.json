@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"particle": "blockus:block/large_flower_pot",
 		"pot": "blockus:block/large_flower_pot"
@@ -63,8 +62,8 @@
 			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#plant_bottom", "tintindex": 0 },
-				"south": {"uv": [0, 0, 16, 16], "texture": "#plant_bottom", "tintindex": 0 }
+				"north": {"uv": [0, 0, 16, 16], "texture": "#plant_bottom", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#plant_bottom", "tintindex": 0}
 			}
 		},
 		{
@@ -73,8 +72,8 @@
 			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
-				"east": {"uv": [0, 0, 16, 16], "texture": "#plant_bottom", "tintindex": 0 },
-				"west": {"uv": [0, 0, 16, 16], "texture": "#plant_bottom", "tintindex": 0 }
+				"east": {"uv": [0, 0, 16, 16], "texture": "#plant_bottom", "tintindex": 0},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#plant_bottom", "tintindex": 0}
 			}
 		},
 		{
@@ -83,8 +82,8 @@
 			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#plant_top", "tintindex": 0 },
-				"south": {"uv": [0, 0, 16, 16], "texture": "#plant_top", "tintindex": 0 }
+				"north": {"uv": [0, 0, 16, 16], "texture": "#plant_top", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#plant_top", "tintindex": 0}
 			}
 		},
 		{
@@ -93,8 +92,8 @@
 			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
-				"east": {"uv": [0, 0, 16, 16], "texture": "#plant_top", "tintindex": 0 },
-				"west": {"uv": [0, 0, 16, 16], "texture": "#plant_top", "tintindex": 0 }
+				"east": {"uv": [0, 0, 16, 16], "texture": "#plant_top", "tintindex": 0},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#plant_top", "tintindex": 0}
 			}
 		}
 	]

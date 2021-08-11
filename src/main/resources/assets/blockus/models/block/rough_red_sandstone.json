@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "block/red_sandstone_bottom"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "block/red_sandstone_bottom"
+  }
 }

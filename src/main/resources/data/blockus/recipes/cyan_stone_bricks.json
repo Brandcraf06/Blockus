@@ -8,7 +8,7 @@
   ],
   "key": {
     "#": {
-      "tag": "blockus:stained_stone_bricks"
+      "item": "minecraft:stone_bricks"
     },
     "$": {
       "item": "minecraft:cyan_dye"

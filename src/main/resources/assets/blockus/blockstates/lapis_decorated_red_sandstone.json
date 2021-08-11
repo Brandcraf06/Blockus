@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/lapis_decorated_red_sandstone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/lapis_decorated_red_sandstone"
     }
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "block/pressure_plate_up",
-    "textures": {
-        "texture": "block/polished_granite"
-    }
+  "parent": "block/pressure_plate_up",
+  "textures": {
+    "texture": "block/polished_granite"
+  }
 }

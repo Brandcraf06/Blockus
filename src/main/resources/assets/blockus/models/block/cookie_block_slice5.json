@@ -1,19 +1,41 @@
 {
-    "textures": {
-        "particle": "blockus:block/cookie_block",
-        "all": "blockus:block/cookie_block"
-    },
-    "elements": [
-        {   "from": [ 8, 0, 0 ],
-            "to": [ 16, 16, 16 ],
-            "faces": {
-                "down":  { "texture": "#all", "cullface": "down" },
-                "up":    { "texture": "#all" },
-                "north": { "texture": "#all" },
-                "south": { "texture": "#all" },
-                "west":  { "texture": "#all" },
-                "east":  { "texture": "#all" }
-            }
+  "textures": {
+    "particle": "blockus:block/cookie_block",
+    "all": "blockus:block/cookie_block"
+  },
+  "elements": [
+    {
+      "from": [
+        8,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#all",
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#all"
+        },
+        "north": {
+          "texture": "#all"
+        },
+        "south": {
+          "texture": "#all"
+        },
+        "west": {
+          "texture": "#all"
+        },
+        "east": {
+          "texture": "#all"
         }
-    ]
+      }
+    }
+  ]
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/sandy_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/sandy_bricks"
     }
+  }
 }

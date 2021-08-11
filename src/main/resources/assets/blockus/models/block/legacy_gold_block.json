@@ -1,12 +1,12 @@
 {
-    "parent": "block/cube",
-    "textures": {
-        "particle": "blockus:block/legacy_gold_block",
-        "down": "blockus:block/legacy_gold_block_bottom",
-        "up": "blockus:block/legacy_gold_block_top",
-        "north": "blockus:block/legacy_gold_block",
-        "east": "blockus:block/legacy_gold_block",
-        "south": "blockus:block/legacy_gold_block",
-        "west": "blockus:block/legacy_gold_block"
-    }
+  "parent": "block/cube",
+  "textures": {
+    "particle": "blockus:block/legacy_gold_block",
+    "down": "blockus:block/legacy_gold_block_bottom",
+    "up": "blockus:block/legacy_gold_block_top",
+    "north": "blockus:block/legacy_gold_block",
+    "east": "blockus:block/legacy_gold_block",
+    "south": "blockus:block/legacy_gold_block",
+    "west": "blockus:block/legacy_gold_block"
+  }
 }

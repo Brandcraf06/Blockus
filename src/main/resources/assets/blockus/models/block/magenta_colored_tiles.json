@@ -1,7 +1,7 @@
 {
-    "parent": "blockus:block/cube_tiles",
-    "textures": {
-        "tile_1": "blockus:block/magenta_tile",
-		"tile_2": "blockus:block/magenta_tile"
-    }
+  "parent": "blockus:block/cube_tiles",
+  "textures": {
+    "tile_1": "blockus:block/magenta_tile",
+    "tile_2": "blockus:block/magenta_tile"
+  }
 }

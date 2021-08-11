@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/honeycomb_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/honeycomb_bricks"
     }
+  }
 }

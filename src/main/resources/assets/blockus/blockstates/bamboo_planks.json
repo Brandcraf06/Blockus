@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/bamboo_planks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/bamboo_planks"
     }
+  }
 }

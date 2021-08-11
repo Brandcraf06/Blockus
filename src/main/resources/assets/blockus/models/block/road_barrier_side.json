@@ -1,6 +1,6 @@
 {
-    "parent": "blockus:block/template_barrier_side",
-    "textures": {
-        "barrier": "blockus:block/road_barrier"
-    }
+  "parent": "blockus:block/template_barrier_side",
+  "textures": {
+    "barrier": "blockus:block/road_barrier"
+  }
 }

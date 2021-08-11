@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/purpur_squares" }
+  "variants": {
+    "": {
+      "model": "blockus:block/purpur_squares"
     }
+  }
 }

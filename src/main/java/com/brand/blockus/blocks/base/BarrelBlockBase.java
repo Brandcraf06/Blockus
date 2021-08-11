@@ -40,7 +40,7 @@ public class BarrelBlockBase extends BarrelBlock {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) {
-            return ActionResult.field_5812;
+            return ActionResult.SUCCESS;
         } else {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelBlockEntity) {
@@ -49,7 +49,7 @@ public class BarrelBlockBase extends BarrelBlock {
                 PiglinBrain.onGuardedBlockInteracted(player, true);
             }
 
-            return ActionResult.field_21466;
+            return ActionResult.CONSUME;
         }
     }
 

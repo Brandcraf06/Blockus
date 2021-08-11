@@ -1,31 +1,78 @@
 {
-    "textures": {
-	    "particle": "blockus:block/water_bricks",
-        "wall": "blockus:block/water_bricks",
-        "overlay": "blockus:block/water_bricks_overlay"
-    },
-    "elements": [
-        {   "from": [ 5, 0, 0 ],
-            "to": [ 11, 16, 8 ],
-            "faces": {
-                "down":  { "texture": "#wall", "cullface": "down" },
-                "up":    { "texture": "#wall" },
-                "north": { "texture": "#wall", "cullface": "north" },
-                "west":  { "texture": "#wall" },
-                "east":  { "texture": "#wall" }
-            },
-            "__comment": "wall"
+  "textures": {
+    "particle": "blockus:block/water_bricks",
+    "wall": "blockus:block/water_bricks",
+    "overlay": "blockus:block/water_bricks_overlay"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        11,
+        16,
+        8
+      ],
+      "faces": {
+        "down": {
+          "texture": "#wall",
+          "cullface": "down"
         },
-		{   "from": [ 5, 0, 0 ],
-            "to": [ 11, 16, 8 ],
-            "faces": {
-                "down":  { "texture": "#overlay", "tintindex": 0, "cullface": "down" },
-                "up":    { "texture": "#overlay", "tintindex": 0 },
-                "north": { "texture": "#overlay", "tintindex": 0, "cullface": "north" },
-                "west":  { "texture": "#overlay", "tintindex": 0 },
-                "east":  { "texture": "#overlay", "tintindex": 0 }
-            },
-            "__comment": "wall overlay"
+        "up": {
+          "texture": "#wall"
+        },
+        "north": {
+          "texture": "#wall",
+          "cullface": "north"
+        },
+        "west": {
+          "texture": "#wall"
+        },
+        "east": {
+          "texture": "#wall"
         }
-    ]
+      },
+      "__comment": "wall"
+    },
+    {
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        11,
+        16,
+        8
+      ],
+      "faces": {
+        "down": {
+          "texture": "#overlay",
+          "tintindex": 0,
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#overlay",
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#overlay",
+          "tintindex": 0,
+          "cullface": "north"
+        },
+        "west": {
+          "texture": "#overlay",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#overlay",
+          "tintindex": 0
+        }
+      },
+      "__comment": "wall overlay"
+    }
+  ]
 }

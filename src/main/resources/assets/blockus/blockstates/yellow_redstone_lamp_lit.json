@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/yellow_redstone_lamp_on" }
+  "variants": {
+    "": {
+      "model": "blockus:block/yellow_redstone_lamp_on"
     }
+  }
 }

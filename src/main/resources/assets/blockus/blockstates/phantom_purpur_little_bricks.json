@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/phantom_purpur_little_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/phantom_purpur_little_bricks"
     }
+  }
 }

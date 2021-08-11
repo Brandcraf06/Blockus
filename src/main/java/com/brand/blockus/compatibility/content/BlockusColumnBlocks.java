@@ -29,6 +29,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("andesite_brick_column", BlockusBlocks.ANDESITE_BRICKS);
         registerColumnBlockAndItem("diorite_brick_column", BlockusBlocks.DIORITE_BRICKS);
         registerColumnBlockAndItem("granite_brick_column", BlockusBlocks.GRANITE_BRICKS);
+        registerColumnBlockAndItem("dripstone_brick_column", BlockusBlocks.DRIPSTONE_BRICKS);
         registerColumnBlockAndItem("tuff_brick_column", BlockusBlocks.TUFF_BRICKS);
         registerColumnBlockAndItem("mossy_deepslate_brick_column", BlockusBlocks.MOSSY_DEEPSLATE_BRICKS);
         registerColumnBlockAndItem("crimson_warty_blackstone_brick_column", BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS);
@@ -51,6 +52,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("charred_nether_brick_column", BlockusBlocks.CHARRED_NETHER_BRICKS);
         registerColumnBlockAndItem("teal_nether_brick_column", BlockusBlocks.TEAL_NETHER_BRICKS);
         registerColumnBlockAndItem("obsidian_brick_column", BlockusBlocks.OBSIDIAN_BRICKS);
+        registerColumnBlockAndItem("small_obsidian_brick_column", BlockusBlocks.SMALL_OBSIDIAN_BRICKS);
         registerColumnBlockAndItem("quartz_tile_column", BlockusBlocks.QUARTZ_TILES);
         registerColumnBlockAndItem("large_brick_column", BlockusBlocks.LARGE_BRICKS);
         registerColumnBlockAndItem("soaked_brick_column", BlockusBlocks.SOAKED_BRICKS);

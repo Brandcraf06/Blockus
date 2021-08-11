@@ -1,6 +1,6 @@
 {
-    "parent": "block/template_wall_post",
-    "textures": {
-        "wall": "blockus:block/magma_bricks"
-    }
+  "parent": "block/template_wall_post",
+  "textures": {
+    "wall": "blockus:block/magma_bricks"
+  }
 }

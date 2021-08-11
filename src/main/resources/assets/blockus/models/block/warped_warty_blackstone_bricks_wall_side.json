@@ -1,6 +1,6 @@
 {
-    "parent": "block/template_wall_side",
-    "textures": {
-        "wall": "blockus:block/warped_warty_blackstone_bricks"
-    }
+  "parent": "block/template_wall_side",
+  "textures": {
+    "wall": "blockus:block/warped_warty_blackstone_bricks"
+  }
 }

@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "BBB",
-	"BWB",
-	"BBB"
+    "BWB",
+    "BBB"
   ],
   "key": {
     "W": {
       "item": "minecraft:water_bucket"
     },
-	"B": {
+    "B": {
       "item": "blockus:zigzagged_bricks"
     }
   },

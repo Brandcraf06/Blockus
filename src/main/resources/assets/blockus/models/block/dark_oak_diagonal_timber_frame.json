@@ -1,13 +1,13 @@
 {
-    "parent": "block/cube",
-    "textures": {
-		"particle": "blockus:block/dark_oak_diagonal_timber_frame_right",
-		"north": "blockus:block/dark_oak_diagonal_timber_frame_right",
-		"south": "blockus:block/dark_oak_diagonal_timber_frame_right",
-		"east": "blockus:block/dark_oak_diagonal_timber_frame_left",
-		"west": "blockus:block/dark_oak_diagonal_timber_frame_left",
-		"up": "blockus:block/dark_oak_diagonal_timber_frame_left",
-		"down": "blockus:block/dark_oak_diagonal_timber_frame_left"
+  "parent": "block/cube",
+  "textures": {
+    "particle": "blockus:block/dark_oak_diagonal_timber_frame_right",
+    "north": "blockus:block/dark_oak_diagonal_timber_frame_right",
+    "south": "blockus:block/dark_oak_diagonal_timber_frame_right",
+    "east": "blockus:block/dark_oak_diagonal_timber_frame_left",
+    "west": "blockus:block/dark_oak_diagonal_timber_frame_left",
+    "up": "blockus:block/dark_oak_diagonal_timber_frame_left",
+    "down": "blockus:block/dark_oak_diagonal_timber_frame_left"
   }
 }
 

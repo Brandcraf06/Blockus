@@ -1,6 +1,6 @@
 {
-    "parent": "block/pressure_plate_down",
-    "textures": {
-        "texture": "blockus:block/polished_end_stone"
-    }
+  "parent": "block/pressure_plate_down",
+  "textures": {
+    "texture": "blockus:block/polished_end_stone"
+  }
 }

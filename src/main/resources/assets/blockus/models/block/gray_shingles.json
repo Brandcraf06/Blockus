@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "blockus:block/gray_shingles"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blockus:block/gray_shingles"
+  }
 }

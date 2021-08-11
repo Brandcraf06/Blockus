@@ -1,8 +1,19 @@
 {
-    "variants": {
-        "facing=south": { "model": "blockus:block/pink_patterned_wool" },
-        "facing=west": { "model": "blockus:block/pink_patterned_wool", "y": 90 },
-        "facing=north": { "model": "blockus:block/pink_patterned_wool", "y": 180 },
-        "facing=east": { "model": "blockus:block/pink_patterned_wool", "y": 270 }
+  "variants": {
+    "facing=south": {
+      "model": "blockus:block/pink_patterned_wool"
+    },
+    "facing=west": {
+      "model": "blockus:block/pink_patterned_wool",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "blockus:block/pink_patterned_wool",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "blockus:block/pink_patterned_wool",
+      "y": 270
     }
+  }
 }

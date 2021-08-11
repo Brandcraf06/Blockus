@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/lava_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/lava_bricks"
     }
+  }
 }

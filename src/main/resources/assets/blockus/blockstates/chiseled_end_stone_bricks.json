@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/chiseled_end_stone_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/chiseled_end_stone_bricks"
     }
+  }
 }

@@ -47,7 +47,7 @@ public class LargeFlowerPotBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
         Item item = itemStack.getItem();
-        BlockState blockState = (item instanceof BlockItem ? CONTENT_TO_POTTED.getOrDefault(((BlockItem)item).getBlock(), Blocks.AIR) : Blocks.AIR).getDefaultState();
+        BlockState blockState = (item instanceof BlockItem ? CONTENT_TO_POTTED.getOrDefault(((BlockItem) item).getBlock(), Blocks.AIR) : Blocks.AIR).getDefaultState();
         boolean bl = blockState.isOf(Blocks.AIR);
         boolean bl2 = this.isEmpty();
         if (bl != bl2) {
@@ -71,7 +71,7 @@ public class LargeFlowerPotBlock extends Block {
             world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
             return ActionResult.success(world.isClient);
         } else {
-            return ActionResult.field_21466;
+            return ActionResult.CONSUME;
         }
     }
 

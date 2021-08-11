@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ddd",
+    " d ",
+    "ddd"
+  ],
+  "key": {
+    "d": {
+      "item": "blockus:dripstone_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:dripstone_brick_column",
+    "count": 6
+  }
+}

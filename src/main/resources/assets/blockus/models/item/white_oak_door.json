@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "blockus:item/white_oak_door"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "blockus:item/white_oak_door"
+  }
 }

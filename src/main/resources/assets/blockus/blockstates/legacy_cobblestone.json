@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/legacy_cobblestone" }
+  "variants": {
+    "": {
+      "model": "blockus:block/legacy_cobblestone"
     }
+  }
 }

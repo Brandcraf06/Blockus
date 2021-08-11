@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "blockus:block/smooth_nether_bricks" }
+  "variants": {
+    "": {
+      "model": "blockus:block/smooth_nether_bricks"
     }
+  }
 }

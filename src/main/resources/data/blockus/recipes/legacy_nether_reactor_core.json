@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "IDI",
-	"IDI",
-	"IDI"
+    "IDI",
+    "IDI"
   ],
   "key": {
     "D": {
       "item": "minecraft:diamond"
     },
-	"I": {
+    "I": {
       "item": "minecraft:iron_ingot"
     }
   },

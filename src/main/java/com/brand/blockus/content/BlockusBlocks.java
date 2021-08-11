@@ -8,7 +8,6 @@ import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
 import com.mojang.datafixers.types.Type;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -60,6 +59,18 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_GRANITE_PILLAR = registerPillar(Blocks.POLISHED_GRANITE);
     public static final Block GRANITE_CIRCLE_PAVEMENT = registerCirclePavement("granite", Blocks.POLISHED_GRANITE);
 
+    // Dripstone
+    public static final Block POLISHED_DRIPSTONE = registerBlockCopy("polished_dripstone", Blocks.DRIPSTONE_BLOCK);
+    public static final Block POLISHED_DRIPSTONE_STAIRS = registerStairs(POLISHED_DRIPSTONE);
+    public static final Block POLISHED_DRIPSTONE_SLAB = registerSlab(POLISHED_DRIPSTONE);
+    public static final Block DRIPSTONE_BRICKS = registerBlockCopy("dripstone_bricks", POLISHED_DRIPSTONE);
+    public static final Block DRIPSTONE_BRICK_STAIRS = registerStairs("dripstone_brick", DRIPSTONE_BRICKS);
+    public static final Block DRIPSTONE_BRICK_SLAB = registerSlab("dripstone_brick", DRIPSTONE_BRICKS);
+    public static final Block DRIPSTONE_BRICK_WALL = registerWall("dripstone_brick", DRIPSTONE_BRICKS);
+    public static final Block CRACKED_DRIPSTONE_BRICKS = registerBlockCopy("cracked_dripstone_bricks", DRIPSTONE_BRICKS);
+    public static final Block CHISELED_DRIPSTONE = registerBlockCopy("chiseled_dripstone", POLISHED_DRIPSTONE);
+    public static final Block DRIPSTONE_PILLAR = registerPillar("dripstone", POLISHED_DRIPSTONE);
+
     // Tuff
     public static final Block POLISHED_TUFF = registerBlockCopy("polished_tuff", Blocks.TUFF);
     public static final Block POLISHED_TUFF_STAIRS = registerStairs(POLISHED_TUFF);
@@ -97,7 +108,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_SLAB = registerSlab(WARPED_WARTY_BLACKSTONE_BRICKS);
     public static final Block WARPED_WARTY_BLACKSTONE_BRICKS_WALL = registerWall(WARPED_WARTY_BLACKSTONE_BRICKS);
     public static final Block GOLD_DECORATED_POLISHED_BLACKSTONE = registerBlockCopy("gold_decorated_polished_blackstone", Blocks.POLISHED_BLACKSTONE);
-	public static final Block STURDY_BLACKSTONE = registerSturdy("sturdy_blackstone", Blocks.BLACKSTONE);
+    public static final Block STURDY_BLACKSTONE = registerSturdy("sturdy_blackstone", Blocks.BLACKSTONE);
     public static final Block BLACKSTONE_DOOR = registerDoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MapColor.BLACK);
     public static final Block BLACKSTONE_TRAPDOOR = registerTrapdoor2("blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MapColor.BLACK);
 
@@ -215,6 +226,11 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block MAGMA_BRICKS_STAIRS = registerStairs(MAGMA_BRICKS);
     public static final Block MAGMA_BRICKS_SLAB = registerSlab(MAGMA_BRICKS);
     public static final Block MAGMA_BRICKS_WALL = registerWall(MAGMA_BRICKS);
+    public static final Block SMALL_MAGMA_BRICKS = registerBlockCopy("small_magma_bricks", MAGMA_BRICKS);
+    public static final Block SMALL_MAGMA_BRICK_STAIRS = registerStairs("small_magma_brick", MAGMA_BRICKS);
+    public static final Block SMALL_MAGMA_BRICK_SLAB = registerSlab("small_magma_brick", MAGMA_BRICKS);
+    public static final Block SMALL_MAGMA_BRICK_WALL = registerWall("small_magma_brick", MAGMA_BRICKS);
+    public static final Block CHISELED_MAGMA_BRICKS = registerBlockCopy("chiseled_magma_bricks", MAGMA_BRICKS);
 
     // Blaze Bricks
     public static final Block BLAZE_BRICKS = registerLightBlock("blaze_bricks", 2.0f, 6.0f, Material.STONE, BlockSoundGroup.STONE, 15, MapColor.DARK_RED);
@@ -411,8 +427,8 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Phantom Purpur Blocks
     public static final Block PHANTOM_PURPUR_BLOCK = registerBlockCopy("phantom_purpur_block", Blocks.PURPUR_BLOCK);
-    public static final Block PHANTOM_PURPUR_STAIRS = registerStairs("phantom_purpur", PHANTOM_PURPUR_BLOCK );
-    public static final Block PHANTOM_PURPUR_SLAB = registerSlab("phantom_purpur", PHANTOM_PURPUR_BLOCK );
+    public static final Block PHANTOM_PURPUR_STAIRS = registerStairs("phantom_purpur", PHANTOM_PURPUR_BLOCK);
+    public static final Block PHANTOM_PURPUR_SLAB = registerSlab("phantom_purpur", PHANTOM_PURPUR_BLOCK);
     public static final Block PHANTOM_PURPUR_PILLAR = registerPillar("phantom_purpur", Blocks.PURPUR_PILLAR);
     public static final Block PHANTOM_PURPUR_BRICKS = registerBlockCopy("phantom_purpur_bricks", PHANTOM_PURPUR_BLOCK);
     public static final Block PHANTOM_PURPUR_BRICKS_STAIRS = registerStairs(PHANTOM_PURPUR_BRICKS);
@@ -587,6 +603,54 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RED_STONE_BRICKS = registerColoredStoneBricks("red", MapColor.RED);
     public static final Block BLACK_STONE_BRICKS = registerColoredStoneBricks("black", MapColor.BLACK);
 
+    public static final Block WHITE_STONE_BRICK_STAIRS = registerStairs("white_stone_brick", WHITE_STONE_BRICKS);
+    public static final Block ORANGE_STONE_BRICK_STAIRS = registerStairs("orange_stone_brick", ORANGE_STONE_BRICKS);
+    public static final Block MAGENTA_STONE_BRICK_STAIRS = registerStairs("magenta_stone_brick", MAGENTA_STONE_BRICKS);
+    public static final Block LIGHT_BLUE_STONE_BRICK_STAIRS = registerStairs("light_blue_stone_brick", LIGHT_BLUE_STONE_BRICKS);
+    public static final Block YELLOW_STONE_BRICK_STAIRS = registerStairs("yellow_stone_brick", YELLOW_STONE_BRICKS);
+    public static final Block LIME_STONE_BRICK_STAIRS = registerStairs("lime_stone_brick", LIME_STONE_BRICKS);
+    public static final Block PINK_STONE_BRICK_STAIRS = registerStairs("pink_stone_brick", PINK_STONE_BRICKS);
+    public static final Block GRAY_STONE_BRICK_STAIRS = registerStairs("gray_stone_brick", GRAY_STONE_BRICKS);
+    public static final Block CYAN_STONE_BRICK_STAIRS = registerStairs("cyan_stone_brick", CYAN_STONE_BRICKS);
+    public static final Block PURPLE_STONE_BRICK_STAIRS = registerStairs("purple_stone_brick", PURPLE_STONE_BRICKS);
+    public static final Block BLUE_STONE_BRICK_STAIRS = registerStairs("blue_stone_brick", BLUE_STONE_BRICKS);
+    public static final Block BROWN_STONE_BRICK_STAIRS = registerStairs("brown_stone_brick", BROWN_STONE_BRICKS);
+    public static final Block GREEN_STONE_BRICK_STAIRS = registerStairs("green_stone_brick", GREEN_STONE_BRICKS);
+    public static final Block RED_STONE_BRICK_STAIRS = registerStairs("red_stone_brick", RED_STONE_BRICKS);
+    public static final Block BLACK_STONE_BRICK_STAIRS = registerStairs("black_stone_brick", BLACK_STONE_BRICKS);
+
+    public static final Block WHITE_STONE_BRICK_SLAB = registerSlab("white_stone_brick", WHITE_STONE_BRICKS);
+    public static final Block ORANGE_STONE_BRICK_SLAB = registerSlab("orange_stone_brick", ORANGE_STONE_BRICKS);
+    public static final Block MAGENTA_STONE_BRICK_SLAB = registerSlab("magenta_stone_brick", MAGENTA_STONE_BRICKS);
+    public static final Block LIGHT_BLUE_STONE_BRICK_SLAB = registerSlab("light_blue_stone_brick", LIGHT_BLUE_STONE_BRICKS);
+    public static final Block YELLOW_STONE_BRICK_SLAB = registerSlab("yellow_stone_brick", YELLOW_STONE_BRICKS);
+    public static final Block LIME_STONE_BRICK_SLAB = registerSlab("lime_stone_brick", LIME_STONE_BRICKS);
+    public static final Block PINK_STONE_BRICK_SLAB = registerSlab("pink_stone_brick", PINK_STONE_BRICKS);
+    public static final Block GRAY_STONE_BRICK_SLAB = registerSlab("gray_stone_brick", GRAY_STONE_BRICKS);
+    public static final Block CYAN_STONE_BRICK_SLAB = registerSlab("cyan_stone_brick", CYAN_STONE_BRICKS);
+    public static final Block PURPLE_STONE_BRICK_SLAB = registerSlab("purple_stone_brick", PURPLE_STONE_BRICKS);
+    public static final Block BLUE_STONE_BRICK_SLAB = registerSlab("blue_stone_brick", BLUE_STONE_BRICKS);
+    public static final Block BROWN_STONE_BRICK_SLAB = registerSlab("brown_stone_brick", BROWN_STONE_BRICKS);
+    public static final Block GREEN_STONE_BRICK_SLAB = registerSlab("green_stone_brick", GREEN_STONE_BRICKS);
+    public static final Block RED_STONE_BRICK_SLAB = registerSlab("red_stone_brick", RED_STONE_BRICKS);
+    public static final Block BLACK_STONE_BRICK_SLAB = registerSlab("black_stone_brick", BLACK_STONE_BRICKS);
+
+    public static final Block WHITE_STONE_BRICK_WALL = registerWall("white_stone_brick", WHITE_STONE_BRICKS);
+    public static final Block ORANGE_STONE_BRICK_WALL = registerWall("orange_stone_brick", ORANGE_STONE_BRICKS);
+    public static final Block MAGENTA_STONE_BRICK_WALL = registerWall("magenta_stone_brick", MAGENTA_STONE_BRICKS);
+    public static final Block LIGHT_BLUE_STONE_BRICK_WALL = registerWall("light_blue_stone_brick", LIGHT_BLUE_STONE_BRICKS);
+    public static final Block YELLOW_STONE_BRICK_WALL = registerWall("yellow_stone_brick", YELLOW_STONE_BRICKS);
+    public static final Block LIME_STONE_BRICK_WALL = registerWall("lime_stone_brick", LIME_STONE_BRICKS);
+    public static final Block PINK_STONE_BRICK_WALL = registerWall("pink_stone_brick", PINK_STONE_BRICKS);
+    public static final Block GRAY_STONE_BRICK_WALL = registerWall("gray_stone_brick", GRAY_STONE_BRICKS);
+    public static final Block CYAN_STONE_BRICK_WALL = registerWall("cyan_stone_brick", CYAN_STONE_BRICKS);
+    public static final Block PURPLE_STONE_BRICK_WALL = registerWall("purple_stone_brick", PURPLE_STONE_BRICKS);
+    public static final Block BLUE_STONE_BRICK_WALL = registerWall("blue_stone_brick", BLUE_STONE_BRICKS);
+    public static final Block BROWN_STONE_BRICK_WALL = registerWall("brown_stone_brick", BROWN_STONE_BRICKS);
+    public static final Block GREEN_STONE_BRICK_WALL = registerWall("green_stone_brick", GREEN_STONE_BRICKS);
+    public static final Block RED_STONE_BRICK_WALL = registerWall("red_stone_brick", RED_STONE_BRICKS);
+    public static final Block BLACK_STONE_BRICK_WALL = registerWall("black_stone_brick", BLACK_STONE_BRICKS);
+
     // Concrete
     public static final Block WHITE_CONCRETE_BRICKS = registerBlockCopy("white_concrete_bricks", Blocks.WHITE_CONCRETE);
     public static final Block ORANGE_CONCRETE_BRICKS = registerBlockCopy("orange_concrete_bricks", Blocks.ORANGE_CONCRETE);
@@ -604,6 +668,40 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GREEN_CONCRETE_BRICKS = registerBlockCopy("green_concrete_bricks", Blocks.GREEN_CONCRETE);
     public static final Block RED_CONCRETE_BRICKS = registerBlockCopy("red_concrete_bricks", Blocks.RED_CONCRETE);
     public static final Block BLACK_CONCRETE_BRICKS = registerBlockCopy("black_concrete_bricks", Blocks.BLACK_CONCRETE);
+
+    public static final Block WHITE_CONCRETE_BRICK_STAIRS = registerStairs("white_concrete_brick", WHITE_CONCRETE_BRICKS);
+    public static final Block ORANGE_CONCRETE_BRICK_STAIRS = registerStairs("orange_concrete_brick", ORANGE_CONCRETE_BRICKS);
+    public static final Block MAGENTA_CONCRETE_BRICK_STAIRS = registerStairs("magenta_concrete_brick", MAGENTA_CONCRETE_BRICKS);
+    public static final Block LIGHT_BLUE_CONCRETE_BRICK_STAIRS = registerStairs("light_blue_concrete_brick", LIGHT_BLUE_CONCRETE_BRICKS);
+    public static final Block YELLOW_CONCRETE_BRICK_STAIRS = registerStairs("yellow_concrete_brick", YELLOW_CONCRETE_BRICKS);
+    public static final Block LIME_CONCRETE_BRICK_STAIRS = registerStairs("lime_concrete_brick", LIME_CONCRETE_BRICKS);
+    public static final Block PINK_CONCRETE_BRICK_STAIRS = registerStairs("pink_concrete_brick", PINK_CONCRETE_BRICKS);
+    public static final Block GRAY_CONCRETE_BRICK_STAIRS = registerStairs("gray_concrete_brick", GRAY_CONCRETE_BRICKS);
+    public static final Block LIGHT_GRAY_CONCRETE_BRICK_STAIRS = registerStairs("light_gray_concrete_brick", LIGHT_GRAY_CONCRETE_BRICKS);
+    public static final Block CYAN_CONCRETE_BRICK_STAIRS = registerStairs("cyan_concrete_brick", CYAN_CONCRETE_BRICKS);
+    public static final Block PURPLE_CONCRETE_BRICK_STAIRS = registerStairs("purple_concrete_brick", PURPLE_CONCRETE_BRICKS);
+    public static final Block BLUE_CONCRETE_BRICK_STAIRS = registerStairs("blue_concrete_brick", BLUE_CONCRETE_BRICKS);
+    public static final Block BROWN_CONCRETE_BRICK_STAIRS = registerStairs("brown_concrete_brick", BROWN_CONCRETE_BRICKS);
+    public static final Block GREEN_CONCRETE_BRICK_STAIRS = registerStairs("green_concrete_brick", GREEN_CONCRETE_BRICKS);
+    public static final Block RED_CONCRETE_BRICK_STAIRS = registerStairs("red_concrete_brick", RED_CONCRETE_BRICKS);
+    public static final Block BLACK_CONCRETE_BRICK_STAIRS = registerStairs("black_concrete_brick", BLACK_CONCRETE_BRICKS);
+
+    public static final Block WHITE_CONCRETE_BRICK_SLAB = registerSlab("white_concrete_brick", WHITE_CONCRETE_BRICKS);
+    public static final Block ORANGE_CONCRETE_BRICK_SLAB = registerSlab("orange_concrete_brick", ORANGE_CONCRETE_BRICKS);
+    public static final Block MAGENTA_CONCRETE_BRICK_SLAB = registerSlab("magenta_concrete_brick", MAGENTA_CONCRETE_BRICKS);
+    public static final Block LIGHT_BLUE_CONCRETE_BRICK_SLAB = registerSlab("light_blue_concrete_brick", LIGHT_BLUE_CONCRETE_BRICKS);
+    public static final Block YELLOW_CONCRETE_BRICK_SLAB = registerSlab("yellow_concrete_brick", YELLOW_CONCRETE_BRICKS);
+    public static final Block LIME_CONCRETE_BRICK_SLAB = registerSlab("lime_concrete_brick", LIME_CONCRETE_BRICKS);
+    public static final Block PINK_CONCRETE_BRICK_SLAB = registerSlab("pink_concrete_brick", PINK_CONCRETE_BRICKS);
+    public static final Block GRAY_CONCRETE_BRICK_SLAB = registerSlab("gray_concrete_brick", GRAY_CONCRETE_BRICKS);
+    public static final Block LIGHT_GRAY_CONCRETE_BRICK_SLAB = registerSlab("light_gray_concrete_brick", LIGHT_GRAY_CONCRETE_BRICKS);
+    public static final Block CYAN_CONCRETE_BRICK_SLAB = registerSlab("cyan_concrete_brick", CYAN_CONCRETE_BRICKS);
+    public static final Block PURPLE_CONCRETE_BRICK_SLAB = registerSlab("purple_concrete_brick", PURPLE_CONCRETE_BRICKS);
+    public static final Block BLUE_CONCRETE_BRICK_SLAB = registerSlab("blue_concrete_brick", BLUE_CONCRETE_BRICKS);
+    public static final Block BROWN_CONCRETE_BRICK_SLAB = registerSlab("brown_concrete_brick", BROWN_CONCRETE_BRICKS);
+    public static final Block GREEN_CONCRETE_BRICK_SLAB = registerSlab("green_concrete_brick", GREEN_CONCRETE_BRICKS);
+    public static final Block RED_CONCRETE_BRICK_SLAB = registerSlab("red_concrete_brick", RED_CONCRETE_BRICKS);
+    public static final Block BLACK_CONCRETE_BRICK_SLAB = registerSlab("black_concrete_brick", BLACK_CONCRETE_BRICKS);
 
     public static final Block CHISELED_WHITE_CONCRETE = registerBlockCopy("chiseled_white_concrete", Blocks.WHITE_CONCRETE);
     public static final Block CHISELED_ORANGE_CONCRETE = registerBlockCopy("chiseled_orange_concrete", Blocks.ORANGE_CONCRETE);

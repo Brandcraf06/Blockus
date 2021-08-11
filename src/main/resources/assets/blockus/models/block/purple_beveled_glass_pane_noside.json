@@ -1,6 +1,6 @@
 {
-    "parent": "block/template_glass_pane_noside",
-    "textures": {
-        "pane": "blockus:block/purple_beveled_glass"
-    }
+  "parent": "block/template_glass_pane_noside",
+  "textures": {
+    "pane": "blockus:block/purple_beveled_glass"
+  }
 }

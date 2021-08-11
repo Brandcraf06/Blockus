@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "blockus:block/paper_wall"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "blockus:block/paper_wall"
+  }
 }
