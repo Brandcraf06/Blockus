@@ -4,13 +4,9 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.Heightmap;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.decorator.*;
 import net.minecraft.world.gen.feature.*;
@@ -18,6 +14,7 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+
 
 public class BlockusConfiguredFeatures {
 
@@ -41,7 +38,7 @@ public class BlockusConfiguredFeatures {
         WHITE_OAK = Feature.TREE.configure(WHITE_OAK_CONFIG).decorate(Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.05F, 1)));
         WHITE_OAK_RARE = Feature.TREE.configure(WHITE_OAK_CONFIG).decorate(Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.0085F, 1)));
     }
-
+        /*
     public static void registerConfiguredFeature() {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "limestone"), LIMESTONE);
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "marble"), MARBLE);
@@ -50,7 +47,7 @@ public class BlockusConfiguredFeatures {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "white_oak_rare"), WHITE_OAK_RARE);
     }
 
-    /*   public static void registerBiomeModifications() {
+       public static void registerBiomeModifications() {
         BiomeModifications.create(new Identifier(Blockus.MOD_ID, "world_features"))
                 .add(ModificationPhase.ADDITIONS,
                         BiomeSelectors.foundInOverworld(),
