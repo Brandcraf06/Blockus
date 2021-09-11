@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "neon_blocks",
+    "pattern": [
+        "RTR",
+        "TST",
+        "RTR"
+    ],
+    "key": {
+        "R": {
+            "item": "minecraft:amethyst_shard"
+        },
+        "S": {
+            "item": "minecraft:glow_ink_sac"
+        },
+        "T": {
+            "item": "minecraft:light_gray_dye"
+        }
+    },
+    "result": {
+        "item": "blockus:light_gray_neon",
+        "count": 8
+    }
+}

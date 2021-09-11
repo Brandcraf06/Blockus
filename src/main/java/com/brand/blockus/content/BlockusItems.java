@@ -751,6 +751,24 @@ public class BlockusItems {
     public static final Item RAINBOW_LAMP = register(BlockusBlocks.RAINBOW_LAMP, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item RAINBOW_LAMP_LIT = register(BlockusBlocks.RAINBOW_LAMP_LIT, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
+    // Neon Blocks
+    public static final Item WHITE_NEON = register(BlockusBlocks.WHITE_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item ORANGE_NEON = register(BlockusBlocks.ORANGE_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item MAGENTA_NEON = register(BlockusBlocks.MAGENTA_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item LIGHT_BLUE_NEON = register(BlockusBlocks.LIGHT_BLUE_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item YELLOW_NEON = register(BlockusBlocks.YELLOW_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item LIME_NEON = register(BlockusBlocks.LIME_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item PINK_NEON = register(BlockusBlocks.PINK_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GRAY_NEON = register(BlockusBlocks.GRAY_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item LIGHT_GRAY_NEON = register(BlockusBlocks.LIGHT_GRAY_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item CYAN_NEON = register(BlockusBlocks.CYAN_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item PURPLE_NEON = register(BlockusBlocks.PURPLE_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item BLUE_NEON = register(BlockusBlocks.BLUE_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item BROWN_NEON = register(BlockusBlocks.BROWN_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item GREEN_NEON = register(BlockusBlocks.GREEN_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item RED_NEON = register(BlockusBlocks.RED_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item BLACK_NEON = register(BlockusBlocks.BLACK_NEON, Blockus.BLOCKUS_BUILDING_BLOCKS);
+
     // Futurneo Blocks
     public static final Item WHITE_FUTURNEO_BLOCK = register(BlockusBlocks.WHITE_FUTURNEO_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item ORANGE_FUTURNEO_BLOCK = register(BlockusBlocks.ORANGE_FUTURNEO_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);

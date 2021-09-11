@@ -772,6 +772,24 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RAINBOW_LAMP = registerRedstoneLamp("rainbow_lamp");
     public static final Block RAINBOW_LAMP_LIT = registerLitRedstoneLamp("rainbow_lamp");
 
+    // Neon Blocks
+    public static final Block WHITE_NEON = registerNeonBlock("white", DyeColor.WHITE);
+    public static final Block ORANGE_NEON = registerNeonBlock("orange", DyeColor.ORANGE);
+    public static final Block MAGENTA_NEON = registerNeonBlock("magenta", DyeColor.MAGENTA);
+    public static final Block LIGHT_BLUE_NEON = registerNeonBlock("light_blue", DyeColor.LIGHT_BLUE);
+    public static final Block YELLOW_NEON = registerNeonBlock("yellow", DyeColor.YELLOW);
+    public static final Block LIME_NEON = registerNeonBlock("lime", DyeColor.LIME);
+    public static final Block PINK_NEON = registerNeonBlock("pink", DyeColor.PINK);
+    public static final Block LIGHT_GRAY_NEON = registerNeonBlock("light_gray", DyeColor.LIGHT_GRAY);
+    public static final Block GRAY_NEON = registerNeonBlock("gray", DyeColor.GRAY);
+    public static final Block CYAN_NEON = registerNeonBlock("cyan", DyeColor.CYAN);
+    public static final Block PURPLE_NEON = registerNeonBlock("purple", DyeColor.PURPLE);
+    public static final Block BLUE_NEON = registerNeonBlock("blue", DyeColor.BLUE);
+    public static final Block BROWN_NEON = registerNeonBlock("brown", DyeColor.BROWN);
+    public static final Block GREEN_NEON = registerNeonBlock("green", DyeColor.GREEN);
+    public static final Block RED_NEON = registerNeonBlock("red", DyeColor.RED);
+    public static final Block BLACK_NEON = registerNeonBlock("black", DyeColor.BLACK);
+
     // Futurneo Blocks
     public static final Block WHITE_FUTURNEO_BLOCK = registerFuturneoBlock("white", MapColor.BLACK);
     public static final Block ORANGE_FUTURNEO_BLOCK = registerFuturneoBlock("orange", MapColor.BLACK);
@@ -792,22 +810,22 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLACK_FUTURNEO_BLOCK = registerFuturneoBlock("black", MapColor.BLACK);
 
     // Asphalt
-    public static final Block ASPHALT = register("asphalt", DyeColor.BLACK);
-    public static final Block WHITE_ASPHALT = register("white_asphalt", DyeColor.WHITE);
-    public static final Block ORANGE_ASPHALT = register("orange_asphalt", DyeColor.ORANGE);
-    public static final Block MAGENTA_ASPHALT = register("magenta_asphalt", DyeColor.MAGENTA);
-    public static final Block LIGHT_BLUE_ASPHALT = register("light_blue_asphalt", DyeColor.LIGHT_BLUE);
-    public static final Block YELLOW_ASPHALT = register("yellow_asphalt", DyeColor.YELLOW);
-    public static final Block LIME_ASPHALT = register("lime_asphalt", DyeColor.LIME);
-    public static final Block PINK_ASPHALT = register("pink_asphalt", DyeColor.PINK);
-    public static final Block LIGHT_GRAY_ASPHALT = register("light_gray_asphalt", DyeColor.LIGHT_GRAY);
-    public static final Block GRAY_ASPHALT = register("gray_asphalt", DyeColor.GRAY);
-    public static final Block CYAN_ASPHALT = register("cyan_asphalt", DyeColor.CYAN);
-    public static final Block PURPLE_ASPHALT = register("purple_asphalt", DyeColor.PURPLE);
-    public static final Block BLUE_ASPHALT = register("blue_asphalt", DyeColor.BLUE);
-    public static final Block BROWN_ASPHALT = register("brown_asphalt", DyeColor.BROWN);
-    public static final Block GREEN_ASPHALT = register("green_asphalt", DyeColor.GREEN);
-    public static final Block RED_ASPHALT = register("red_asphalt", DyeColor.RED);
+    public static final Block ASPHALT = registerAsphaltBlock("asphalt", DyeColor.BLACK);
+    public static final Block WHITE_ASPHALT = registerAsphaltBlock("white_asphalt", DyeColor.WHITE);
+    public static final Block ORANGE_ASPHALT = registerAsphaltBlock("orange_asphalt", DyeColor.ORANGE);
+    public static final Block MAGENTA_ASPHALT = registerAsphaltBlock("magenta_asphalt", DyeColor.MAGENTA);
+    public static final Block LIGHT_BLUE_ASPHALT = registerAsphaltBlock("light_blue_asphalt", DyeColor.LIGHT_BLUE);
+    public static final Block YELLOW_ASPHALT = registerAsphaltBlock("yellow_asphalt", DyeColor.YELLOW);
+    public static final Block LIME_ASPHALT = registerAsphaltBlock("lime_asphalt", DyeColor.LIME);
+    public static final Block PINK_ASPHALT = registerAsphaltBlock("pink_asphalt", DyeColor.PINK);
+    public static final Block LIGHT_GRAY_ASPHALT = registerAsphaltBlock("light_gray_asphalt", DyeColor.LIGHT_GRAY);
+    public static final Block GRAY_ASPHALT = registerAsphaltBlock("gray_asphalt", DyeColor.GRAY);
+    public static final Block CYAN_ASPHALT = registerAsphaltBlock("cyan_asphalt", DyeColor.CYAN);
+    public static final Block PURPLE_ASPHALT = registerAsphaltBlock("purple_asphalt", DyeColor.PURPLE);
+    public static final Block BLUE_ASPHALT = registerAsphaltBlock("blue_asphalt", DyeColor.BLUE);
+    public static final Block BROWN_ASPHALT = registerAsphaltBlock("brown_asphalt", DyeColor.BROWN);
+    public static final Block GREEN_ASPHALT = registerAsphaltBlock("green_asphalt", DyeColor.GREEN);
+    public static final Block RED_ASPHALT = registerAsphaltBlock("red_asphalt", DyeColor.RED);
     public static final Block ASPHALT_STAIRS = registerAsphaltStairs(ASPHALT);
     public static final Block WHITE_ASPHALT_STAIRS = registerAsphaltStairs(WHITE_ASPHALT);
     public static final Block ORANGE_ASPHALT_STAIRS = registerAsphaltStairs(ORANGE_ASPHALT);
