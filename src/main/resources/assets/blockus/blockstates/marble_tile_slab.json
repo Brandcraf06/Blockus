@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "blockus:block/marble_tile_slab"
+        },
+        "type=double": {
+            "model": "blockus:block/marble_tiles"
+        },
+        "type=top": {
+            "model": "blockus:block/marble_tile_slab_top"
+        }
+    }
+}
