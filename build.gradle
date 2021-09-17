@@ -3,6 +3,13 @@ plugins {
 	id 'maven-publish'
 }
 
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+archivesBaseName = project.archives_base_name
+version = "${mod_version}+${minecraft_version}"
+group = project.maven_group
+
 repositories {
 	maven {
 		name = "Cotton"
@@ -14,13 +21,6 @@ repositories {
 	}
 }
 
-archivesBaseName = project.archives_base_name
-version = "${mod_version}+${minecraft_version}"
-group = project.maven_group
-
-// This field defines the Java version your mod target.
-// The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too.
-def targetJavaVersion = 8
 
 dependencies {
 	//to change the versions see the gradle.properties file
@@ -49,24 +49,19 @@ minecraft {
 	accessWidener = file("src/main/resources/blockus.aw")
 }
 
-java {
-	sourceCompatibility = JavaVersion.toVersion(targetJavaVersion)
-	targetCompatibility = JavaVersion.toVersion(targetJavaVersion)
-}
-
-tasks.withType(JavaCompile).configureEach {
-	it.options.encoding = "UTF-8"
-
-	if (JavaVersion.current().isJava9Compatible()) {
-		it.options.release.set(targetJavaVersion)
-	}
-}
-
 processResources {
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
 		expand "version": project.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = "UTF-8"
+	def targetVersion = 8
+	if (JavaVersion.current().isJava9Compatible()) {
+		it.options.release = targetVersion
 	}
 }
 
