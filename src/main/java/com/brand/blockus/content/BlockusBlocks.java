@@ -107,8 +107,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_LIMESTONE_BRICKS_SLAB = registerSlab(SMALL_LIMESTONE_BRICKS);
     public static final Block SMALL_LIMESTONE_BRICKS_WALL = registerWall(SMALL_LIMESTONE_BRICKS);
     public static final Block LIMESTONE_TILES = registerBlockCopy("limestone_tiles", LIMESTONE);
-    public static final Block LIMESTONE_TILE_STAIRS = registerStairs("limestone_tile",LIMESTONE_TILES);
-    public static final Block LIMESTONE_TILE_SLAB = registerSlab("limestone_tile",LIMESTONE_TILES);
+    public static final Block LIMESTONE_TILE_STAIRS = registerStairs("limestone_tile", LIMESTONE_TILES);
+    public static final Block LIMESTONE_TILE_SLAB = registerSlab("limestone_tile", LIMESTONE_TILES);
     public static final Block LIMESTONE_TILE_WALL = registerWall("limestone_tile", LIMESTONE_TILES);
     public static final Block LIMESTONE_PILLAR = registerPillar(LIMESTONE);
     public static final Block CHISELED_LIMESTONE = registerBlockCopy("chiseled_limestone", LIMESTONE);
@@ -131,8 +131,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SMALL_MARBLE_BRICKS_SLAB = registerSlab(SMALL_MARBLE_BRICKS);
     public static final Block SMALL_MARBLE_BRICKS_WALL = registerWall(SMALL_MARBLE_BRICKS);
     public static final Block MARBLE_TILES = registerBlockCopy("marble_tiles", MARBLE);
-    public static final Block MARBLE_TILE_STAIRS = registerStairs("marble_tile",MARBLE_TILES);
-    public static final Block MARBLE_TILE_SLAB = registerSlab("marble_tile",MARBLE_TILES);
+    public static final Block MARBLE_TILE_STAIRS = registerStairs("marble_tile", MARBLE_TILES);
+    public static final Block MARBLE_TILE_SLAB = registerSlab("marble_tile", MARBLE_TILES);
     public static final Block MARBLE_TILE_WALL = registerWall("marble_tile", MARBLE_TILES);
     public static final Block MARBLE_PILLAR = registerPillar(MARBLE);
     public static final Block CHISELED_MARBLE = registerBlockCopy("chiseled_marble", MARBLE);
@@ -222,6 +222,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_NETHERRACK = registerBlockCopy("polished_netherrack", Blocks.NETHERRACK);
     public static final Block POLISHED_NETHERRACK_STAIRS = registerStairs(POLISHED_NETHERRACK);
     public static final Block POLISHED_NETHERRACK_SLAB = registerSlab(POLISHED_NETHERRACK);
+    public static final Block NETHERRACK_BRICKS = registerBlockCopy("netherrack_bricks", POLISHED_NETHERRACK);
+    public static final Block NETHERRACK_BRICK_STAIRS = registerStairs("netherrack_brick", NETHERRACK_BRICKS);
+    public static final Block NETHERRACK_BRICK_SLAB = registerSlab("netherrack_brick", NETHERRACK_BRICKS);
+    public static final Block NETHERRACK_BRICK_WALL = registerWall("netherrack_brick", NETHERRACK_BRICKS);
     public static final Block NETHERRACK_CIRCLE_PAVEMENT = registerCirclePavement("netherrack", POLISHED_NETHERRACK);
 
     // Nether Bricks

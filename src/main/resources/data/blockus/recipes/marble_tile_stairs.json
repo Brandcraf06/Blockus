@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "X  ",
+        "XX ",
+        "XXX"
+    ],
+    "key": {
+        "X": {
+            "item": "blockus:marble_tiles"
+        }
+    },
+    "result": {
+        "item": "blockus:marble_tile_stairs",
+        "count": 4
+    }
+}
