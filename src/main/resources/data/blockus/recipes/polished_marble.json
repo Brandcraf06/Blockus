@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "blockus:marble"
+    }
+  },
+  "result": {
+    "item": "blockus:polished_marble",
+    "count": 4
+  }
+}
