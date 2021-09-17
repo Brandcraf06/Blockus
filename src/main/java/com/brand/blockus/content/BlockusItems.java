@@ -241,7 +241,6 @@ public class BlockusItems {
     public static final Item SMALL_MAGMA_BRICK_WALL = register(BlockusBlocks.SMALL_MAGMA_BRICK_WALL, Blockus.BLOCKUS_DECORATIONS);
     public static final Item CHISELED_MAGMA_BRICKS = register(BlockusBlocks.CHISELED_MAGMA_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
-
     // Blaze Bricks
     public static final Item BLAZE_BRICKS = register(BlockusBlocks.BLAZE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item BLAZE_BRICKS_STAIRS = register(BlockusBlocks.BLAZE_BRICKS_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -254,6 +253,10 @@ public class BlockusItems {
     public static final Item POLISHED_NETHERRACK = register(BlockusBlocks.POLISHED_NETHERRACK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_NETHERRACK_STAIRS = register(BlockusBlocks.POLISHED_NETHERRACK_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item POLISHED_NETHERRACK_SLAB = register(BlockusBlocks.POLISHED_NETHERRACK_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item NETHERRACK_BRICKS = register(BlockusBlocks.NETHERRACK_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item NETHERRACK_BRICK_STAIRS = register(BlockusBlocks.NETHERRACK_BRICK_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item NETHERRACK_BRICK_SLAB = register(BlockusBlocks.NETHERRACK_BRICK_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item NETHERRACK_BRICK_WALL = register(BlockusBlocks.NETHERRACK_BRICK_WALL, Blockus.BLOCKUS_DECORATIONS);
     public static final Item NETHERRACK_CIRCLE_PAVEMENT = register(BlockusBlocks.NETHERRACK_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Nether Bricks
