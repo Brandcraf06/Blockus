@@ -973,8 +973,10 @@
   "block.blockus.polished_basalt_brick_column": "Polished Basalt Brick Column",
   "block.blockus.limestone_column": "Limestone Column",
   "block.blockus.limestone_brick_column": "Limestone Brick Column",
+  "block.blockus.small_limestone_brick_column": "Small Limestone Brick Column",
   "block.blockus.marble_column": "Marble Column",
   "block.blockus.marble_brick_column": "Marble Brick Column",
+  "block.blockus.small_marble_brick_column": "Small Marble Brick Column",
   "block.blockus.bluestone_column": "Bluestone Column",
   "block.blockus.bluestone_brick_column": "Bluestone Brick Column",
   "block.blockus.bluestone_tile_column": "Bluestone Tile Column",
@@ -985,6 +987,7 @@
   "block.blockus.snow_brick_column": "Snow Brick Column",
   "block.blockus.ice_brick_column": "Ice Brick Column",
   "block.blockus.magma_brick_column": "Magma Brick Column",
+  "block.blockus.small_magma_brick_column": "Small Magma Brick Column",
   "block.blockus.blaze_brick_column": "Blaze Brick Column",
   "block.blockus.netherrack_brick_column": "Netherrack Brick Column",
   "block.blockus.charred_nether_brick_column": "Charred Nether Brick Column",
@@ -1005,9 +1008,8 @@
   "block.blockus.small_soul_sandstone_brick_column": "Small Soul Sandstone Brick Column",
   "block.blockus.honeycomb_brick_column": "Honeycomb Brick Column",
   "block.blockus.purpur_brick_column": "Purpur Brick Column",
+  "block.blockus.small_purpur_brick_column": "Small Purpur Brick Column",
   "block.blockus.phantom_purpur_brick_column": "Phantom Purpur Brick Column",
-  "block.blockus.rainbow_brick_column": "Rainbow Brick Column",
-  "block.blockus.bamboo_hopper": "Bamboo Hopper",
-  "block.blockus.charred_hopper": "Charred Hopper",
-  "block.blockus.white_oak_hopper": "White Oak Hopper"
+  "block.blockus.small_phantom_purpur_brick_column": "Small Phantom Purpur Brick Column",
+  "block.blockus.rainbow_brick_column": "Rainbow Brick Column"
 }

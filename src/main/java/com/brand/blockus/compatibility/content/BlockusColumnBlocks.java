@@ -34,8 +34,10 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("polished_basalt_brick_column", BlockusBlocks.POLISHED_BASALT_BRICKS);
         registerColumnBlockAndItem("limestone_column", BlockusBlocks.LIMESTONE);
         registerColumnBlockAndItem("limestone_brick_column", BlockusBlocks.LIMESTONE_BRICKS);
+        registerColumnBlockAndItem("small_limestone_brick_column", BlockusBlocks.SMALL_LIMESTONE_BRICKS);
         registerColumnBlockAndItem("marble_column", BlockusBlocks.MARBLE);
         registerColumnBlockAndItem("marble_brick_column", BlockusBlocks.MARBLE_BRICKS);
+        registerColumnBlockAndItem("small_marble_brick_column", BlockusBlocks.SMALL_MARBLE_BRICKS);
         registerColumnBlockAndItem("bluestone_column", BlockusBlocks.BLUESTONE);
         registerColumnBlockAndItem("bluestone_tile_column", BlockusBlocks.BLUESTONE_TILES);
         registerColumnBlockAndItem("bluestone_brick_column", BlockusBlocks.BLUESTONE_BRICKS);
@@ -46,6 +48,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("snow_brick_column", BlockusBlocks.SNOW_BRICKS);
         registerColumnBlockAndItem("ice_brick_column", BlockusBlocks.ICE_BRICKS);
         registerColumnBlockAndItem("magma_brick_column", BlockusBlocks.MAGMA_BRICKS);
+        registerColumnBlockAndItem("small_magma_brick_column", BlockusBlocks.SMALL_MAGMA_BRICKS);
         registerColumnBlockAndItem("blaze_brick_column", BlockusBlocks.BLAZE_BRICKS);
         registerColumnBlockAndItem("netherrack_brick_column", BlockusBlocks.NETHERRACK_BRICKS);
         registerColumnBlockAndItem("charred_nether_brick_column", BlockusBlocks.CHARRED_NETHER_BRICKS);
@@ -66,7 +69,9 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("small_soul_sandstone_brick_column", BlockusBlocks.SMALL_SOUL_SANDSTONE_BRICKS);
         registerColumnBlockAndItem("honeycomb_brick_column", BlockusBlocks.HONEYCOMB_BRICKS);
         registerColumnBlockAndItem("purpur_brick_column", BlockusBlocks.PURPUR_BRICKS);
+        registerColumnBlockAndItem("small_purpur_brick_column", BlockusBlocks.SMALL_PURPUR_BRICKS);
         registerColumnBlockAndItem("phantom_purpur_brick_column", BlockusBlocks.PHANTOM_PURPUR_BRICKS);
+        registerColumnBlockAndItem("small_phantom_purpur_brick_column", BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS);
         registerColumnBlockAndItem("rainbow_brick_column", BlockusBlocks.RAINBOW_BRICKS);
     }
 }
