@@ -3,9 +3,11 @@ package com.brand.blockus.content;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
+import com.terraformersmc.terraform.boat.api.TerraformBoatType;
+import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -472,7 +474,7 @@ public class BlockusItems {
     public static final Item BAMBOO_DOOR = register(BlockusBlocks.BAMBOO_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item BAMBOO_TRAPDOOR = register(BlockusBlocks.BAMBOO_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item BAMBOO_SIGN = register_sign(BlockusBlocks.BAMBOO_SIGN,  BlockusBlocks.BAMBOO_WALL_SIGN);
-    public static final Item BAMBOO_BOAT = register_boat("bamboo_boat", BoatEntity.Type.OAK);
+    public static final Item BAMBOO_BOAT = register_boat("bamboo_boat", "bamboo");
 
 
 
@@ -485,7 +487,7 @@ public class BlockusItems {
     public static final Item CHARRED_DOOR = register(BlockusBlocks.CHARRED_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item CHARRED_TRAPDOOR = register(BlockusBlocks.CHARRED_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item CHARRED_SIGN = register_sign(BlockusBlocks.CHARRED_SIGN,  BlockusBlocks.CHARRED_WALL_SIGN);
-    public static final Item CHARRED_BOAT = register_boat("charred_boat", BoatEntity.Type.OAK);
+    public static final Item CHARRED_BOAT = register_boat("charred_boat", "charred");
 
 
     // White Oak Wood
@@ -503,7 +505,7 @@ public class BlockusItems {
     public static final Item WHITE_OAK_DOOR = register(BlockusBlocks.WHITE_OAK_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item WHITE_OAK_TRAPDOOR = register(BlockusBlocks.WHITE_OAK_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item WHITE_OAK_SIGN = register_sign(BlockusBlocks.WHITE_OAK_SIGN,  BlockusBlocks.WHITE_OAK_WALL_SIGN);
-    public static final Item WHITE_OAK_BOAT = register_boat("white_oak_boat", BoatEntity.Type.OAK);
+    public static final Item WHITE_OAK_BOAT = register_boat("white_oak_boat", "white_oak");
 
 
     // Small Logs
@@ -1175,8 +1177,18 @@ public class BlockusItems {
         return Registry.register(Registry.ITEM, Registry.BLOCK.getId(standingBlock), new SignItem(new Item.Settings().maxCount(16).group(Blockus.BLOCKUS_DECORATIONS), standingBlock, wallBlock));
     }
 
-    public static Item register_boat(String id, BoatEntity.Type type) {
-        return Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, id), new BoatItem(type, new Item.Settings().maxCount(1).group(ItemGroup.TRANSPORTATION)));
+    public static Item register_boat(String path, String boatPath) {
+        Identifier id = new Identifier(Blockus.MOD_ID, path);
+        Identifier boatId = new Identifier(Blockus.MOD_ID, boatPath);
+
+        Item item = TerraformBoatItemHelper.registerBoatItem(id, () -> {
+            return TerraformBoatTypeRegistry.INSTANCE.get(boatId);
+        });
+
+        TerraformBoatType boatType = new TerraformBoatType.Builder().item(item).build();
+        Registry.register(TerraformBoatTypeRegistry.INSTANCE, boatId, boatType);
+
+        return item;
     }
 
     public static Item register_other(Block block, Item item) {

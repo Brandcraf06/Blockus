@@ -1,6 +1,7 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -9,6 +10,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.util.Identifier;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -131,6 +133,10 @@ public class BlockusClient implements ClientModInitializer {
 
                 BlockusBlocks.TINTED_BEVELED_GLASS
         );
+
+        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "bamboo"));
+        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "charred"));
+        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "white_oak"));
 
 
     }
