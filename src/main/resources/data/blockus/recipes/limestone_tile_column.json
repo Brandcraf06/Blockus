@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "mmm",
+    " m ",
+    "mmm"
+  ],
+  "key": {
+    "m": {
+      "item": "blockus:limestone_tiles"
+    }
+  },
+  "result": {
+    "item": "blockus:limestone_tile_column",
+    "count": 6
+  }
+}
