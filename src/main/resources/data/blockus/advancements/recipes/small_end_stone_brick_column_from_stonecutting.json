@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "blockus:small_end_stone_brick_column_from_stonecutting"
+    ]
+  },
+  "criteria": {
+    "has_small_end_stone_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:small_end_stone_bricks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "blockus:small_end_stone_brick_column_from_stonecutting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_small_end_stone_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}
