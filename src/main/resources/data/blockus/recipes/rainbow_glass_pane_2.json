@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_pane"
+    },
+    "$": {
+      "item": "blockus:rainbow_block"
+    }
+  },
+  "result": {
+    "item": "blockus:rainbow_glass_pane",
+    "count": 8
+  }
+}

@@ -88,6 +88,9 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.WATER_BRICKS_WALL,
                 BlockusBlocks.CHISELED_WATER_BRICKS,
 
+                BlockusBlocks.RAINBOW_GLASS,
+                BlockusBlocks.RAINBOW_GLASS_PANE,
+
                 BlockusBlocks.BEVELED_GLASS,
                 BlockusBlocks.WHITE_BEVELED_GLASS,
                 BlockusBlocks.ORANGE_BEVELED_GLASS,
@@ -105,6 +108,7 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.GREEN_BEVELED_GLASS,
                 BlockusBlocks.RED_BEVELED_GLASS,
                 BlockusBlocks.BLACK_BEVELED_GLASS,
+                BlockusBlocks.RAINBOW_BEVELED_GLASS,
 
                 BlockusBlocks.BEVELED_GLASS_PANE,
                 BlockusBlocks.WHITE_BEVELED_GLASS_PANE,
@@ -123,6 +127,7 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.GREEN_BEVELED_GLASS_PANE,
                 BlockusBlocks.RED_BEVELED_GLASS_PANE,
                 BlockusBlocks.BLACK_BEVELED_GLASS_PANE,
+                BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE,
 
                 BlockusBlocks.TINTED_BEVELED_GLASS
         );

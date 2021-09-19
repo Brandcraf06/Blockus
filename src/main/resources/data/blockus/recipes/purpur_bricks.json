@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "##",
-    "##"
+    "SS",
+    "SS"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:purpur_block"
+    "S": {
+      "item": "blockus:smooth_purpur"
     }
   },
   "result": {

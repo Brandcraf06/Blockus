@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "phantom purpur",
+  "ingredients": [
+    {
+      "item": "minecraft:purpur_pillar"
+    },
+    {
+      "tag": "blockus:soul_soils"
+    }
+  ],
+  "result": {
+    "item": "blockus:phantom_purpur_pillar"
+  }
+}
