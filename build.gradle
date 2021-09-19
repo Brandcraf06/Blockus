@@ -16,6 +16,10 @@ repositories {
 		url = "https://server.bbkr.space/artifactory/libs-release"
 	}
 	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com"
+	}
+	maven {
 		name = "Curse"
 		url = "https://www.cursemaven.com"
 	}
@@ -33,6 +37,10 @@ dependencies {
 	// LibCD
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
 	include "io.github.cottonmc:LibCD:${project.libcd_version}"
+
+	// Terraform Wood API v1
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_v1_version}"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_v1_version}"
 
 	// Columns
 	modImplementation "curse.maven:columns-385230:3107117"
