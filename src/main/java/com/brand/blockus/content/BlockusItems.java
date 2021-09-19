@@ -4,9 +4,10 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.vehicle.BoatEntity;
+import net.minecraft.item.*;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
@@ -470,6 +471,10 @@ public class BlockusItems {
     public static final Item BAMBOO_FENCE_GATE = register(BlockusBlocks.BAMBOO_FENCE_GATE, Blockus.BLOCKUS_REDSTONE);
     public static final Item BAMBOO_DOOR = register(BlockusBlocks.BAMBOO_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item BAMBOO_TRAPDOOR = register(BlockusBlocks.BAMBOO_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
+    public static final Item BAMBOO_SIGN = register_sign(BlockusBlocks.BAMBOO_SIGN,  BlockusBlocks.BAMBOO_WALL_SIGN);
+    public static final Item BAMBOO_BOAT = register_boat("bamboo_boat", BoatEntity.Type.OAK);
+
+
 
     // Charred Wood
     public static final Item CHARRED_PLANKS = register(BlockusBlocks.CHARRED_PLANKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -479,6 +484,9 @@ public class BlockusItems {
     public static final Item CHARRED_FENCE_GATE = register(BlockusBlocks.CHARRED_FENCE_GATE, Blockus.BLOCKUS_REDSTONE);
     public static final Item CHARRED_DOOR = register(BlockusBlocks.CHARRED_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item CHARRED_TRAPDOOR = register(BlockusBlocks.CHARRED_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
+    public static final Item CHARRED_SIGN = register_sign(BlockusBlocks.CHARRED_SIGN,  BlockusBlocks.CHARRED_WALL_SIGN);
+    public static final Item CHARRED_BOAT = register_boat("charred_boat", BoatEntity.Type.OAK);
+
 
     // White Oak Wood
     public static final Item WHITE_OAK_SAPLING = register(BlockusBlocks.WHITE_OAK_SAPLING, Blockus.BLOCKUS_DECORATIONS);
@@ -494,6 +502,9 @@ public class BlockusItems {
     public static final Item WHITE_OAK_FENCE_GATE = register(BlockusBlocks.WHITE_OAK_FENCE_GATE, Blockus.BLOCKUS_REDSTONE);
     public static final Item WHITE_OAK_DOOR = register(BlockusBlocks.WHITE_OAK_DOOR, Blockus.BLOCKUS_REDSTONE);
     public static final Item WHITE_OAK_TRAPDOOR = register(BlockusBlocks.WHITE_OAK_TRAPDOOR, Blockus.BLOCKUS_REDSTONE);
+    public static final Item WHITE_OAK_SIGN = register_sign(BlockusBlocks.WHITE_OAK_SIGN,  BlockusBlocks.WHITE_OAK_WALL_SIGN);
+    public static final Item WHITE_OAK_BOAT = register_boat("white_oak_boat", BoatEntity.Type.OAK);
+
 
     // Small Logs
     public static final Item OAK_SMALL_LOGS = register(BlockusBlocks.OAK_SMALL_LOGS, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -1158,6 +1169,14 @@ public class BlockusItems {
 
     public static Item register_asphalt(Block block, ItemGroup group) {
         return Registry.register(Registry.ITEM, Registry.BLOCK.getId(block), new SpeedBlockItem(block, new Item.Settings().maxCount(64).group(group)));
+    }
+
+    public static Item register_sign(Block standingBlock, Block wallBlock) {
+        return Registry.register(Registry.ITEM, Registry.BLOCK.getId(standingBlock), new SignItem(new Item.Settings().maxCount(16).group(Blockus.BLOCKUS_DECORATIONS), standingBlock, wallBlock));
+    }
+
+    public static Item register_boat(String id, BoatEntity.Type type) {
+        return Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, id), new BoatItem(type, new Item.Settings().maxCount(1).group(ItemGroup.TRANSPORTATION)));
     }
 
     public static Item register_other(Block block, Item item) {
