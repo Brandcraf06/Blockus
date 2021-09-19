@@ -1,0 +1,27 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "blockus:block/small_limestone_brick_column_center"
+      }
+    },
+    {
+      "when": {
+        "down": true
+      },
+      "apply": {
+        "model": "blockus:block/small_limestone_brick_column_end"
+      }
+    },
+    {
+      "when": {
+        "up": true
+      },
+      "apply": {
+        "model": "blockus:block/small_limestone_brick_column_end",
+        "x": 180,
+        "uvlock": true
+      }
+    }
+  ]
+}
