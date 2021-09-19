@@ -376,6 +376,42 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block HONEYCOMB_BRICKS_SLAB = registerSlab(HONEYCOMB_BRICKS);
     public static final Block HONEYCOMB_BRICKS_WALL = registerWall(HONEYCOMB_BRICKS);
 
+    // Purpur Blocks
+    public static final Block POLISHED_PURPUR = registerBlockCopy("smooth_purpur", Blocks.PURPUR_BLOCK);
+    public static final Block POLISHED_PURPUR_STAIRS = registerStairs(POLISHED_PURPUR);
+    public static final Block POLISHED_PURPUR_SLAB = registerSlab(POLISHED_PURPUR);
+    public static final Block PURPUR_BRICKS = registerBlockCopy("purpur_bricks", Blocks.PURPUR_BLOCK);
+    public static final Block PURPUR_BRICKS_STAIRS = registerStairs(PURPUR_BRICKS);
+    public static final Block PURPUR_BRICKS_SLAB = registerSlab(PURPUR_BRICKS);
+    public static final Block PURPUR_BRICKS_WALL = registerWall(PURPUR_BRICKS);
+    public static final Block SMALL_PURPUR_BRICKS = registerBlockCopy("purpur_little_bricks", Blocks.PURPUR_BLOCK);
+    public static final Block SMALL_PURPUR_BRICKS_STAIRS = registerStairs(SMALL_PURPUR_BRICKS);
+    public static final Block SMALL_PURPUR_BRICKS_SLAB = registerSlab(SMALL_PURPUR_BRICKS);
+    public static final Block SMALL_PURPUR_BRICKS_WALL = registerWall("small_purpur_bricks", SMALL_PURPUR_BRICKS);
+    public static final Block CHISELED_PURPUR = registerBlockCopy("chiseled_purpur", Blocks.PURPUR_BLOCK);
+    public static final Block PURPUR_SQUARES = registerBlockCopy("purpur_squares", Blocks.PURPUR_BLOCK);
+    public static final Block PURPUR_LINES = registerPillar2("purpur_lines", Blocks.PURPUR_BLOCK);
+
+    // Phantom Purpur Blocks
+    public static final Block PHANTOM_PURPUR_BLOCK = registerBlockCopy("phantom_purpur_block", Blocks.PURPUR_BLOCK);
+    public static final Block PHANTOM_PURPUR_STAIRS = registerStairs("phantom_purpur", PHANTOM_PURPUR_BLOCK);
+    public static final Block PHANTOM_PURPUR_SLAB = registerSlab("phantom_purpur", PHANTOM_PURPUR_BLOCK);
+    public static final Block PHANTOM_PURPUR_PILLAR = registerPillar("phantom_purpur", Blocks.PURPUR_PILLAR);
+    public static final Block POLISHED_PHANTOM_PURPUR = registerBlockCopy("smooth_phantom_purpur", PHANTOM_PURPUR_BLOCK);
+    public static final Block POLISHED_PHANTOM_PURPUR_STAIRS = registerStairs(POLISHED_PHANTOM_PURPUR);
+    public static final Block POLISHED_PHANTOM_PURPUR_SLAB = registerSlab(POLISHED_PHANTOM_PURPUR);
+    public static final Block PHANTOM_PURPUR_BRICKS = registerBlockCopy("phantom_purpur_bricks", PHANTOM_PURPUR_BLOCK);
+    public static final Block PHANTOM_PURPUR_BRICKS_STAIRS = registerStairs(PHANTOM_PURPUR_BRICKS);
+    public static final Block PHANTOM_PURPUR_BRICKS_SLAB = registerSlab(PHANTOM_PURPUR_BRICKS);
+    public static final Block PHANTOM_PURPUR_BRICKS_WALL = registerWall(PHANTOM_PURPUR_BRICKS);
+    public static final Block SMALL_PHANTOM_PURPUR_BRICKS = registerBlockCopy("phantom_purpur_little_bricks", PHANTOM_PURPUR_BLOCK);
+    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_STAIRS = registerStairs(SMALL_PHANTOM_PURPUR_BRICKS);
+    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_SLAB = registerSlab(SMALL_PHANTOM_PURPUR_BRICKS);
+    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_WALL = registerWall("small_phantom_purpur_bricks", SMALL_PHANTOM_PURPUR_BRICKS);
+    public static final Block CHISELED_PHANTOM_PURPUR = registerBlockCopy("chiseled_phantom_purpur", PHANTOM_PURPUR_BLOCK);
+    public static final Block PHANTOM_PURPUR_SQUARES = registerBlockCopy("phantom_purpur_squares", PHANTOM_PURPUR_BLOCK);
+    public static final Block PHANTOM_PURPUR_LINES = registerPillar2("phantom_purpur_lines", PHANTOM_PURPUR_BLOCK);
+
     // End Stone
     public static final Block CHISELED_END_STONE_BRICKS = registerBlockCopy("chiseled_end_stone_bricks", Blocks.END_STONE_BRICKS);
     public static final Block ZIGZAGGED_END_STONE_BRICKS = registerBlockCopy("zigzagged_end_stone_bricks", Blocks.END_STONE_BRICKS);
@@ -390,42 +426,6 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block END_STONE_PILLAR = registerPillar("end_stone", Blocks.END_STONE_BRICKS);
     public static final Block PURPUR_DECORATED_END_STONE = registerBlockCopy("purpur_decorated_end_stone", Blocks.END_STONE_BRICKS);
     public static final Block PHANTOM_PURPUR_DECORATED_END_STONE = registerBlockCopy("phantom_purpur_decorated_end_stone", Blocks.END_STONE_BRICKS);
-
-    // Purpur Blocks
-    public static final Block PURPUR_BRICKS = registerBlockCopy("purpur_bricks", Blocks.PURPUR_BLOCK);
-    public static final Block PURPUR_BRICKS_STAIRS = registerStairs(PURPUR_BRICKS);
-    public static final Block PURPUR_BRICKS_SLAB = registerSlab(PURPUR_BRICKS);
-    public static final Block PURPUR_BRICKS_WALL = registerWall(PURPUR_BRICKS);
-    public static final Block POLISHED_PURPUR = registerBlockCopy("smooth_purpur", Blocks.PURPUR_BLOCK);
-    public static final Block POLISHED_PURPUR_STAIRS = registerStairs(POLISHED_PURPUR);
-    public static final Block POLISHED_PURPUR_SLAB = registerSlab(POLISHED_PURPUR);
-    public static final Block PURPUR_SQUARES = registerBlockCopy("purpur_squares", Blocks.PURPUR_BLOCK);
-    public static final Block SMALL_PURPUR_BRICKS = registerBlockCopy("purpur_little_bricks", Blocks.PURPUR_BLOCK);
-    public static final Block SMALL_PURPUR_BRICKS_STAIRS = registerStairs(SMALL_PURPUR_BRICKS);
-    public static final Block SMALL_PURPUR_BRICKS_SLAB = registerSlab(SMALL_PURPUR_BRICKS);
-    public static final Block SMALL_PURPUR_BRICKS_WALL = registerWall("small_purpur_bricks", SMALL_PURPUR_BRICKS);
-    public static final Block CHISELED_PURPUR = registerBlockCopy("chiseled_purpur", Blocks.PURPUR_BLOCK);
-    public static final Block PURPUR_LINES = registerPillar2("purpur_lines", Blocks.PURPUR_BLOCK);
-
-    // Phantom Purpur Blocks
-    public static final Block PHANTOM_PURPUR_BLOCK = registerBlockCopy("phantom_purpur_block", Blocks.PURPUR_BLOCK);
-    public static final Block PHANTOM_PURPUR_STAIRS = registerStairs("phantom_purpur", PHANTOM_PURPUR_BLOCK);
-    public static final Block PHANTOM_PURPUR_SLAB = registerSlab("phantom_purpur", PHANTOM_PURPUR_BLOCK);
-    public static final Block PHANTOM_PURPUR_PILLAR = registerPillar("phantom_purpur", Blocks.PURPUR_PILLAR);
-    public static final Block PHANTOM_PURPUR_BRICKS = registerBlockCopy("phantom_purpur_bricks", PHANTOM_PURPUR_BLOCK);
-    public static final Block PHANTOM_PURPUR_BRICKS_STAIRS = registerStairs(PHANTOM_PURPUR_BRICKS);
-    public static final Block PHANTOM_PURPUR_BRICKS_SLAB = registerSlab(PHANTOM_PURPUR_BRICKS);
-    public static final Block PHANTOM_PURPUR_BRICKS_WALL = registerWall(PHANTOM_PURPUR_BRICKS);
-    public static final Block POLISHED_PHANTOM_PURPUR = registerBlockCopy("smooth_phantom_purpur", PHANTOM_PURPUR_BLOCK);
-    public static final Block POLISHED_PHANTOM_PURPUR_STAIRS = registerStairs(POLISHED_PHANTOM_PURPUR);
-    public static final Block POLISHED_PHANTOM_PURPUR_SLAB = registerSlab(POLISHED_PHANTOM_PURPUR);
-    public static final Block PHANTOM_PURPUR_SQUARES = registerBlockCopy("phantom_purpur_squares", PHANTOM_PURPUR_BLOCK);
-    public static final Block SMALL_PHANTOM_PURPUR_BRICKS = registerBlockCopy("phantom_purpur_little_bricks", PHANTOM_PURPUR_BLOCK);
-    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_STAIRS = registerStairs(SMALL_PHANTOM_PURPUR_BRICKS);
-    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_SLAB = registerSlab(SMALL_PHANTOM_PURPUR_BRICKS);
-    public static final Block SMALL_PHANTOM_PURPUR_BRICKS_WALL = registerWall("small_phantom_purpur_bricks", SMALL_PHANTOM_PURPUR_BRICKS);
-    public static final Block CHISELED_PHANTOM_PURPUR = registerBlockCopy("chiseled_phantom_purpur", PHANTOM_PURPUR_BLOCK);
-    public static final Block PHANTOM_PURPUR_LINES = registerPillar2("phantom_purpur_lines", PHANTOM_PURPUR_BLOCK);
 
     // Bamboo Wood
     public static final Block BAMBOO_PLANKS = register("bamboo_planks", new Block(FabricBlockSettings.of(Material.WOOD, MapColor.PALE_YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
@@ -765,6 +765,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GREEN_FUTURNEO_BLOCK = registerFuturneoBlock("green", MapColor.BLACK);
     public static final Block RED_FUTURNEO_BLOCK = registerFuturneoBlock("red", MapColor.BLACK);
     public static final Block BLACK_FUTURNEO_BLOCK = registerFuturneoBlock("black", MapColor.BLACK);
+    public static final Block RAINBOW_FUTURNEO_BLOCK = registerFuturneoBlock("rainbow", MapColor.BLACK);
 
     // Asphalt
     public static final Block ASPHALT = register("asphalt", DyeColor.BLACK);
@@ -869,7 +870,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RED_SHINGLES_SLAB = registerSlab(RED_SHINGLES);
     public static final Block BLACK_SHINGLES_SLAB = registerSlab(BLACK_SHINGLES);
 
-    // Beveled Glass
+    // Glass - Beveled Glass
+    public static final Block RAINBOW_GLASS = registerStainedGlass("rainbow_glass", DyeColor.YELLOW, Blocks.GLASS);
+    public static final Block RAINBOW_GLASS_PANE = registerStainedGlassPane("rainbow_glass_pane", DyeColor.YELLOW, Blocks.GLASS_PANE);
     public static final Block BEVELED_GLASS = registerGlass("beveled_glass", Blocks.GLASS);
     public static final Block WHITE_BEVELED_GLASS = registerStainedGlass("white_beveled_glass", DyeColor.WHITE, Blocks.WHITE_STAINED_GLASS);
     public static final Block ORANGE_BEVELED_GLASS = registerStainedGlass("orange_beveled_glass", DyeColor.ORANGE, Blocks.ORANGE_STAINED_GLASS);
@@ -887,23 +890,25 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GREEN_BEVELED_GLASS = registerStainedGlass("green_beveled_glass", DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS);
     public static final Block RED_BEVELED_GLASS = registerStainedGlass("red_beveled_glass", DyeColor.RED, Blocks.RED_STAINED_GLASS);
     public static final Block BLACK_BEVELED_GLASS = registerStainedGlass("black_beveled_glass", DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS);
+    public static final Block RAINBOW_BEVELED_GLASS = registerStainedGlass("rainbow_beveled_glass", DyeColor.YELLOW, RAINBOW_GLASS);
     public static final Block BEVELED_GLASS_PANE = registerPane("beveled_glass_pane", Blocks.GLASS);
-    public static final Block WHITE_BEVELED_GLASS_PANE = registerStainedGlassPane("white_beveled_glass_pane", DyeColor.WHITE, Blocks.WHITE_STAINED_GLASS);
-    public static final Block ORANGE_BEVELED_GLASS_PANE = registerStainedGlassPane("orange_beveled_glass_pane", DyeColor.ORANGE, Blocks.ORANGE_STAINED_GLASS);
-    public static final Block MAGENTA_BEVELED_GLASS_PANE = registerStainedGlassPane("magenta_beveled_glass_pane", DyeColor.MAGENTA, Blocks.MAGENTA_STAINED_GLASS);
-    public static final Block LIGHT_BLUE_BEVELED_GLASS_PANE = registerStainedGlassPane("light_blue_beveled_glass_pane", DyeColor.LIGHT_BLUE, Blocks.LIGHT_BLUE_STAINED_GLASS);
-    public static final Block YELLOW_BEVELED_GLASS_PANE = registerStainedGlassPane("yellow_beveled_glass_pane", DyeColor.YELLOW, Blocks.YELLOW_STAINED_GLASS);
-    public static final Block LIME_BEVELED_GLASS_PANE = registerStainedGlassPane("lime_beveled_glass_pane", DyeColor.LIME, Blocks.LIME_STAINED_GLASS);
-    public static final Block PINK_BEVELED_GLASS_PANE = registerStainedGlassPane("pink_beveled_glass_pane", DyeColor.PINK, Blocks.PINK_STAINED_GLASS);
-    public static final Block LIGHT_GRAY_BEVELED_GLASS_PANE = registerStainedGlassPane("light_gray_beveled_glass_pane", DyeColor.LIGHT_GRAY, Blocks.LIGHT_GRAY_STAINED_GLASS);
-    public static final Block GRAY_BEVELED_GLASS_PANE = registerStainedGlassPane("gray_beveled_glass_pane", DyeColor.GRAY, Blocks.GRAY_STAINED_GLASS);
-    public static final Block CYAN_BEVELED_GLASS_PANE = registerStainedGlassPane("cyan_beveled_glass_pane", DyeColor.CYAN, Blocks.CYAN_STAINED_GLASS);
-    public static final Block PURPLE_BEVELED_GLASS_PANE = registerStainedGlassPane("purple_beveled_glass_pane", DyeColor.PURPLE, Blocks.PURPLE_STAINED_GLASS);
-    public static final Block BLUE_BEVELED_GLASS_PANE = registerStainedGlassPane("blue_beveled_glass_pane", DyeColor.BLUE, Blocks.BLUE_STAINED_GLASS);
-    public static final Block BROWN_BEVELED_GLASS_PANE = registerStainedGlassPane("brown_beveled_glass_pane", DyeColor.BROWN, Blocks.BROWN_STAINED_GLASS);
-    public static final Block GREEN_BEVELED_GLASS_PANE = registerStainedGlassPane("green_beveled_glass_pane", DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS);
-    public static final Block RED_BEVELED_GLASS_PANE = registerStainedGlassPane("red_beveled_glass_pane", DyeColor.RED, Blocks.RED_STAINED_GLASS);
-    public static final Block BLACK_BEVELED_GLASS_PANE = registerStainedGlassPane("black_beveled_glass_pane", DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS);
+    public static final Block WHITE_BEVELED_GLASS_PANE = registerStainedGlassPane("white_beveled_glass_pane", DyeColor.WHITE, Blocks.WHITE_STAINED_GLASS_PANE);
+    public static final Block ORANGE_BEVELED_GLASS_PANE = registerStainedGlassPane("orange_beveled_glass_pane", DyeColor.ORANGE, Blocks.ORANGE_STAINED_GLASS_PANE);
+    public static final Block MAGENTA_BEVELED_GLASS_PANE = registerStainedGlassPane("magenta_beveled_glass_pane", DyeColor.MAGENTA, Blocks.MAGENTA_STAINED_GLASS_PANE);
+    public static final Block LIGHT_BLUE_BEVELED_GLASS_PANE = registerStainedGlassPane("light_blue_beveled_glass_pane", DyeColor.LIGHT_BLUE, Blocks.LIGHT_BLUE_STAINED_GLASS_PANE);
+    public static final Block YELLOW_BEVELED_GLASS_PANE = registerStainedGlassPane("yellow_beveled_glass_pane", DyeColor.YELLOW, Blocks.YELLOW_STAINED_GLASS_PANE);
+    public static final Block LIME_BEVELED_GLASS_PANE = registerStainedGlassPane("lime_beveled_glass_pane", DyeColor.LIME, Blocks.LIME_STAINED_GLASS_PANE);
+    public static final Block PINK_BEVELED_GLASS_PANE = registerStainedGlassPane("pink_beveled_glass_pane", DyeColor.PINK, Blocks.PINK_STAINED_GLASS_PANE);
+    public static final Block LIGHT_GRAY_BEVELED_GLASS_PANE = registerStainedGlassPane("light_gray_beveled_glass_pane", DyeColor.LIGHT_GRAY, Blocks.LIGHT_GRAY_STAINED_GLASS_PANE);
+    public static final Block GRAY_BEVELED_GLASS_PANE = registerStainedGlassPane("gray_beveled_glass_pane", DyeColor.GRAY, Blocks.GRAY_STAINED_GLASS_PANE);
+    public static final Block CYAN_BEVELED_GLASS_PANE = registerStainedGlassPane("cyan_beveled_glass_pane", DyeColor.CYAN, Blocks.CYAN_STAINED_GLASS_PANE);
+    public static final Block PURPLE_BEVELED_GLASS_PANE = registerStainedGlassPane("purple_beveled_glass_pane", DyeColor.PURPLE, Blocks.PURPLE_STAINED_GLASS_PANE);
+    public static final Block BLUE_BEVELED_GLASS_PANE = registerStainedGlassPane("blue_beveled_glass_pane", DyeColor.BLUE, Blocks.BLUE_STAINED_GLASS_PANE);
+    public static final Block BROWN_BEVELED_GLASS_PANE = registerStainedGlassPane("brown_beveled_glass_pane", DyeColor.BROWN, Blocks.BROWN_STAINED_GLASS_PANE);
+    public static final Block GREEN_BEVELED_GLASS_PANE = registerStainedGlassPane("green_beveled_glass_pane", DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS_PANE);
+    public static final Block RED_BEVELED_GLASS_PANE = registerStainedGlassPane("red_beveled_glass_pane", DyeColor.RED, Blocks.RED_STAINED_GLASS_PANE);
+    public static final Block BLACK_BEVELED_GLASS_PANE = registerStainedGlassPane("black_beveled_glass_pane", DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS_PANE);
+    public static final Block RAINBOW_BEVELED_GLASS_PANE = registerStainedGlassPane("rainbow_beveled_glass_pane", DyeColor.YELLOW, RAINBOW_GLASS_PANE);
 
     // Patterned Wools
     public static final Block WHITE_PATTERNED_WOOL = registerPatternedWool("white", Blocks.WHITE_WOOL);

@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_glass_pane_post",
+  "textures": {
+    "edge": "blockus:block/rainbow_glass_pane_top",
+    "pane": "blockus:block/rainbow_glass"
+  }
+}

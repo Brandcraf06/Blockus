@@ -1,16 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
-  "key": {
-    "#": {
-      "item": "blockus:phantom_purpur_block"
+  "type": "minecraft:crafting_shapeless",
+  "group": "phantom purpur",
+  "ingredients": [
+    {
+      "item": "blockus:purpur_bricks"
+    },
+    {
+      "tag": "blockus:soul_soils"
     }
-  },
+  ],
   "result": {
-    "item": "blockus:phantom_purpur_bricks",
-    "count": 4
+    "item": "blockus:phantom_purpur_bricks"
   }
 }
