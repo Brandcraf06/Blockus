@@ -1,0 +1,6 @@
+{
+  "parent": "columns:block/column_inventory",
+  "textures": {
+    "all": "blockus:block/small_end_stone_bricks"
+  }
+}
