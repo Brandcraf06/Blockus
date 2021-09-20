@@ -111,6 +111,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LIMESTONE_TILE_SLAB = registerSlab("limestone_tile", LIMESTONE_TILES);
     public static final Block LIMESTONE_TILE_WALL = registerWall("limestone_tile", LIMESTONE_TILES);
     public static final Block LIMESTONE_PILLAR = registerPillar(LIMESTONE);
+    public static final Block LIMESTONE_SQUARES = registerBlockCopy("limestone_squares", LIMESTONE);
     public static final Block CHISELED_LIMESTONE = registerBlockCopy("chiseled_limestone", LIMESTONE);
     public static final Block LIMESTONE_CIRCLE_PAVEMENT = registerCirclePavement("limestone", LIMESTONE);
 
@@ -135,6 +136,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block MARBLE_TILE_SLAB = registerSlab("marble_tile", MARBLE_TILES);
     public static final Block MARBLE_TILE_WALL = registerWall("marble_tile", MARBLE_TILES);
     public static final Block MARBLE_PILLAR = registerPillar(MARBLE);
+    public static final Block MARBLE_SQUARES = registerBlockCopy("marble_squares", MARBLE);
     public static final Block CHISELED_MARBLE = registerBlockCopy("chiseled_marble", MARBLE);
     public static final Block CHISELED_MARBLE_PILLAR = registerPillar(CHISELED_MARBLE);
     public static final Block MARBLE_CIRCLE_PAVEMENT = registerCirclePavement("marble", MARBLE);
