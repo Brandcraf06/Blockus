@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "blockus:smooth_phantom_purpur"
+    },
+    "result": "blockus:small_phantom_purpur_bricks_wall",
+    "count": 1
+}

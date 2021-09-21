@@ -25,7 +25,8 @@
           "libcd:mod_loaded": "columns"
         },
         "values": [
-          "blockus:phantom_purpur_brick_column"
+          "blockus:phantom_purpur_brick_column",
+          "blockus:small_phantom_purpur_brick_column"
         ]
       }
     ]

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "blockus:phantom_purpur_block"
+    }
+  },
+  "result": {
+    "item": "blockus:smooth_phantom_purpur",
+    "count": 4
+  }
+}

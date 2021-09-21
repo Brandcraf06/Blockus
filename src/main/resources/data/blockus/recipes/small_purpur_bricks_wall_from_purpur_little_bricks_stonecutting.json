@@ -1,8 +1,8 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:purpur_little_bricks"
-  },
-  "result": "blockus:small_purpur_bricks_wall",
-  "count": 1
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "blockus:purpur_little_bricks"
+    },
+    "result": "blockus:small_purpur_bricks_wall",
+    "count": 1
 }

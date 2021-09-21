@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    " s ",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "blockus:phantom_purpur_little_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:small_phantom_purpur_brick_column",
+    "count": 6
+  }
+}

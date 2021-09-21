@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.9-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -14,6 +14,10 @@ repositories {
 	maven {
 		name = "Cotton"
 		url = "https://server.bbkr.space/artifactory/libs-release"
+	}
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com"
 	}
 	maven {
 		name = "Curse"
@@ -34,13 +38,16 @@ dependencies {
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
 	include "io.github.cottonmc:LibCD:${project.libcd_version}"
 
+	// Terraform Wood API v1
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_v1_version}"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_v1_version}"
+
 	// Columns
 	modImplementation "curse.maven:columns-385230:3107117"
 }
 
 loom {
 	accessWidenerPath = file("src/main/resources/blockus.aw")
-	customMinecraftManifest = "https://gist.githubusercontent.com/modmuss50/6e00baf80dcbaa42f3a2fc846b290128/raw/f035ef8f75164f56ec6352809a34841d326bae1c/1_18_experimental-snapshot-1.json"
 }
 
 processResources {

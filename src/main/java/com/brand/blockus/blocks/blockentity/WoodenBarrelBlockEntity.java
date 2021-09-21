@@ -3,8 +3,8 @@ package com.brand.blockus.blocks.blockentity;
 import com.brand.blockus.content.BlockusBlocks;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.ChestStateManager;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
+import net.minecraft.block.entity.ViewerCountManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -20,34 +20,35 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 
 public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     private DefaultedList<ItemStack> inventory;
-    private final ChestStateManager stateManager;
+    private ViewerCountManager stateManager;
 
     public WoodenBarrelBlockEntity(BlockPos pos, BlockState state) {
         super(BlockusBlocks.WOODEN_BARREL, pos, state);
         this.inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
-        this.stateManager = new ChestStateManager() {
-            protected void onChestOpened(World world, BlockPos pos, BlockState state) {
+        this.stateManager = new ViewerCountManager() {
+            protected void onContainerOpen(World world, BlockPos pos, BlockState state) {
                 WoodenBarrelBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
                 WoodenBarrelBlockEntity.this.setOpen(state, true);
             }
 
-            protected void onChestClosed(World world, BlockPos pos, BlockState state) {
+            protected void onContainerClose(World world, BlockPos pos, BlockState state) {
                 WoodenBarrelBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_CLOSE);
                 WoodenBarrelBlockEntity.this.setOpen(state, false);
             }
 
-            protected void onInteracted(World world, BlockPos pos, BlockState state, int oldViewerCount, int newViewerCount) {
+            protected void onViewerCountUpdate(World world, BlockPos pos, BlockState state, int oldViewerCount, int newViewerCount) {
             }
 
             protected boolean isPlayerViewing(PlayerEntity player) {
                 if (player.currentScreenHandler instanceof GenericContainerScreenHandler) {
-                    Inventory inventory = ((GenericContainerScreenHandler) player.currentScreenHandler).getInventory();
-                    return inventory == WoodenBarrelBlockEntity.this;
+                    Inventory $$1 = ((GenericContainerScreenHandler)player.currentScreenHandler).getInventory();
+                    return $$1 == WoodenBarrelBlockEntity.this;
                 } else {
                     return false;
                 }
@@ -55,13 +56,12 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
         };
     }
 
-    public NbtCompound writeNbt(NbtCompound nbt) {
+    protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         if (!this.serializeLootTable(nbt)) {
             Inventories.writeNbt(nbt, this.inventory);
         }
 
-        return nbt;
     }
 
     public void readNbt(NbtCompound nbt) {
@@ -70,6 +70,7 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
         if (!this.deserializeLootTable(nbt)) {
             Inventories.readNbt(nbt, this.inventory);
         }
+
     }
 
     public int size() {
@@ -85,7 +86,7 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     }
 
     protected Text getContainerName() {
-        return new TranslatableText("container.barrel", new Object[0]);
+        return new TranslatableText("container.barrel");
     }
 
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
@@ -93,32 +94,36 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     }
 
     public void onOpen(PlayerEntity player) {
-        if (!player.isSpectator()) {
-            this.stateManager.openChest(player, this.getWorld(), this.getPos(), this.getCachedState());
+        if (!this.removed && !player.isSpectator()) {
+            this.stateManager.openContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
         }
 
     }
 
     public void onClose(PlayerEntity player) {
-        if (!player.isSpectator()) {
-            this.stateManager.closeChest(player, this.getWorld(), this.getPos(), this.getCachedState());
+        if (!this.removed && !player.isSpectator()) {
+            this.stateManager.closeContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
         }
 
     }
 
     public void tick() {
-        this.stateManager.updateViewerCount(this.getWorld(), this.getPos(), this.getCachedState());
+        if (!this.removed) {
+            this.stateManager.updateViewerCount(this.getWorld(), this.getPos(), this.getCachedState());
+        }
+
     }
 
-    private void setOpen(BlockState state, boolean open) {
-        this.world.setBlockState(this.getPos(), state.with(BarrelBlock.OPEN, open), 3);
+    void setOpen(BlockState state, boolean open) {
+        this.world.setBlockState(this.getPos(), (BlockState)state.with(BarrelBlock.OPEN, open), 3);
     }
 
-    private void playSound(BlockState state, SoundEvent soundEvent) {
-        Vec3i vec3i = state.get(BarrelBlock.FACING).getVector();
-        double d = this.pos.getX() + 0.5D + vec3i.getX() / 2.0D;
-        double e = this.pos.getY() + 0.5D + vec3i.getY() / 2.0D;
-        double f = this.pos.getZ() + 0.5D + vec3i.getZ() / 2.0D;
-        this.world.playSound(null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+    void playSound(BlockState state, SoundEvent soundEvent) {
+        Vec3i $$2 = ((Direction)state.get(BarrelBlock.FACING)).getVector();
+        double $$3 = (double)this.pos.getX() + 0.5D + (double)$$2.getX() / 2.0D;
+        double $$4 = (double)this.pos.getY() + 0.5D + (double)$$2.getY() / 2.0D;
+        double $$5 = (double)this.pos.getZ() + 0.5D + (double)$$2.getZ() / 2.0D;
+        this.world.playSound((PlayerEntity)null, $$3, $$4, $$5, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
     }
 }
+

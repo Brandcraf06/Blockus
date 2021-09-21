@@ -175,6 +175,10 @@ public class BlocksRegistration {
         return register(id, new Block(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).luminance(luminance).requiresTool()));
     }
 
+    public static Block registerNeonBlock(String id, DyeColor color) {
+        return register(id + "_neon", new Block(FabricBlockSettings.of(Material.GLASS, color).luminance(3).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlocksRegistration::always).allowsSpawning(BlocksRegistration::never)));
+    }
+
     public static Block registerLampBlock(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MapColor color) {
         return register(id, new Block(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).luminance(luminance)));
     }
@@ -227,7 +231,7 @@ public class BlocksRegistration {
     }
 
     // Asphalt
-    public static Block register(String id, DyeColor color) {
+    public static Block registerAsphaltBlock(String id, DyeColor color) {
         return register(id, new AsphaltBlock(FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool()));
     }
 
@@ -272,6 +276,9 @@ public class BlocksRegistration {
 
     }
 
+    private static boolean always(BlockState state, BlockView world, BlockPos pos) {
+        return true;
+    }
 
     public static Boolean always(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
         return true;

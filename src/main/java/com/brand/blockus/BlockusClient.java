@@ -1,6 +1,8 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
+import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -9,6 +11,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.TexturedRenderLayers;
+import net.minecraft.client.util.SpriteIdentifier;
+import net.minecraft.util.Identifier;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -88,6 +93,9 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.WATER_BRICKS_WALL,
                 BlockusBlocks.CHISELED_WATER_BRICKS,
 
+                BlockusBlocks.RAINBOW_GLASS,
+                BlockusBlocks.RAINBOW_GLASS_PANE,
+
                 BlockusBlocks.BEVELED_GLASS,
                 BlockusBlocks.WHITE_BEVELED_GLASS,
                 BlockusBlocks.ORANGE_BEVELED_GLASS,
@@ -105,6 +113,7 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.GREEN_BEVELED_GLASS,
                 BlockusBlocks.RED_BEVELED_GLASS,
                 BlockusBlocks.BLACK_BEVELED_GLASS,
+                BlockusBlocks.RAINBOW_BEVELED_GLASS,
 
                 BlockusBlocks.BEVELED_GLASS_PANE,
                 BlockusBlocks.WHITE_BEVELED_GLASS_PANE,
@@ -123,9 +132,18 @@ public class BlockusClient implements ClientModInitializer {
                 BlockusBlocks.GREEN_BEVELED_GLASS_PANE,
                 BlockusBlocks.RED_BEVELED_GLASS_PANE,
                 BlockusBlocks.BLACK_BEVELED_GLASS_PANE,
+                BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE,
 
                 BlockusBlocks.TINTED_BEVELED_GLASS
         );
+
+        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "bamboo"));
+        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "charred"));
+        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "white_oak"));
+
+        registerSignSprite("bamboo");
+        registerSignSprite("charred");
+        registerSignSprite("white_oak");
 
 
     }
@@ -140,6 +158,11 @@ public class BlockusClient implements ClientModInitializer {
             ItemColorProvider provider = ColorProviderRegistry.ITEM.get(templateBlock);
             return provider == null ? -1 : provider.getColor(item, layer);
         }, block.asItem());
+    }
+
+    private void registerSignSprite(String path) {
+        Identifier id = new Identifier(Blockus.MOD_ID, "entity/signs/" + path);
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
     }
 
 }
