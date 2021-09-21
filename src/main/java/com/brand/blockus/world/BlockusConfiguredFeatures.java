@@ -84,7 +84,7 @@ public class BlockusConfiguredFeatures {
         static {
             HEIGHTMAP_OCEAN_FLOOR = Decorator.HEIGHTMAP.configure(new HeightmapDecoratorConfig(Heightmap.Type.OCEAN_FLOOR));
             HEIGHTMAP_OCEAN_FLOOR_NO_WATER = HEIGHTMAP_OCEAN_FLOOR.decorate(Decorator.WATER_DEPTH_THRESHOLD.configure(new WaterDepthThresholdDecoratorConfig(0)));
-            SQUARE_HEIGHTMAP_OCEAN_FLOOR_NO_WATER = (ConfiguredDecorator)HEIGHTMAP_OCEAN_FLOOR_NO_WATER.spreadHorizontally();
+            SQUARE_HEIGHTMAP_OCEAN_FLOOR_NO_WATER = HEIGHTMAP_OCEAN_FLOOR_NO_WATER.spreadHorizontally();
 
         }
     }
