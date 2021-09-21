@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:bamboo_planks"
+    }
+  },
+  "result": {
+    "item": "blockus:bamboo_boat"
+  }
+}

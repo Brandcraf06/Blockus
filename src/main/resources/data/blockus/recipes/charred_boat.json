@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:charred_planks"
+    }
+  },
+  "result": {
+    "item": "blockus:charred_boat"
+  }
+}
