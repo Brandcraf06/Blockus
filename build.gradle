@@ -43,7 +43,7 @@ dependencies {
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_v1_version}"
 
 	// Columns
-	modImplementation "curse.maven:columns-385230:3107117"
+	modImplementation "curse.maven:columns-385230:3467926"
 }
 
 loom {
