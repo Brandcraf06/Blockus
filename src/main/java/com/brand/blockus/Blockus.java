@@ -34,7 +34,6 @@ public class Blockus implements ModInitializer {
 
         Instance.init();
         BlockusConfiguredFeatures.registerConfiguredFeature();
-        BlockusConfiguredFeatures.registerBiomeModifications();
     }
 }
 
