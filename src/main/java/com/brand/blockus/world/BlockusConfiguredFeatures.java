@@ -6,6 +6,8 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.minecraft.block.Blocks;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
+import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -30,22 +32,23 @@ public class BlockusConfiguredFeatures {
     public static final ConfiguredFeature<?, ?> LIMESTONE_LOWER;
     public static final ConfiguredFeature<?, ?> MARBLE;
     public static final ConfiguredFeature<?, ?> BLUESTONE;
+    public static final ConfiguredFeature<?, ?> WHITE_OAK_CHECKED;
     public static final ConfiguredFeature<?, ?> WHITE_OAK;
     public static final ConfiguredFeature<?, ?> WHITE_OAK_RARE;
+
+    private static TreeFeatureConfig.Builder method_38746() {
+        return new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG.getDefaultState()), new StraightTrunkPlacer(7, 2, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES.getDefaultState()), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines();
+    }
 
     static {
         LIMESTONE_UPPER = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 64)).uniformRange(YOffset.fixed(64), YOffset.fixed(128)).spreadHorizontally().applyChance(6);
         LIMESTONE_LOWER = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 64)).uniformRange(YOffset.fixed(0), YOffset.fixed(60)).spreadHorizontally().repeat(2);
         MARBLE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 64)).uniformRange(YOffset.fixed(0), YOffset.fixed(75)).spreadHorizontally().repeat(2);
         BLUESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.BLUESTONE.getDefaultState(), 64)).uniformRange(YOffset.getBottom(), YOffset.fixed(0)).spreadHorizontally().repeat(2);
-        WHITE_OAK_CONFIG = (new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG.getDefaultState()),
-                new StraightTrunkPlacer(7, 2, 0),
-                BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES.getDefaultState()),
-                BlockStateProvider.of(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState()),
-                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5),
-                new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
+        WHITE_OAK_CONFIG = new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG.getDefaultState()), new StraightTrunkPlacer(7, 2, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES.getDefaultState()), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build();
         WHITE_OAK = Feature.TREE.configure(WHITE_OAK_CONFIG).decorate(Decorators.SQUARE_HEIGHTMAP_OCEAN_FLOOR_NO_WATER).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.05F, 1)));
         WHITE_OAK_RARE = Feature.TREE.configure(WHITE_OAK_CONFIG).decorate(Decorators.SQUARE_HEIGHTMAP_OCEAN_FLOOR_NO_WATER).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.0085F, 1)));
+        WHITE_OAK_CHECKED = WHITE_OAK.method_38670(BlockusBlocks.WHITE_OAK_SAPLING);
 
     }
 
@@ -56,6 +59,7 @@ public class BlockusConfiguredFeatures {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "bluestone"), BLUESTONE);
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "white_oak"), WHITE_OAK);
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "white_oak_rare"), WHITE_OAK_RARE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "white_oak_checked"), WHITE_OAK_CHECKED);
     }
 
        public static void registerBiomeModifications() {
