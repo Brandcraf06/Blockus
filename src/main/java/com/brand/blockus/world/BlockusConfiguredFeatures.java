@@ -4,7 +4,6 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -52,7 +51,6 @@ public class BlockusConfiguredFeatures {
     }
 
     public static void registerConfiguredFeature() {
-
         RegistryKey<ConfiguredFeature<?, ?>> ORE_LIMESTONE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "limestone"));
         RegistryKey<ConfiguredFeature<?, ?>> ORE_MARBLE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "marble"));
         RegistryKey<ConfiguredFeature<?, ?>> ORE_BLUESTONE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "bluestone"));
@@ -70,7 +68,6 @@ public class BlockusConfiguredFeatures {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_BLUESTONE);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, TREE_WHITE_OAK);
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, TREE_WHITE_OAK_RARE);
-
     }
 
     public static final class Decorators {
