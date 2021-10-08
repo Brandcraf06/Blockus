@@ -3,13 +3,13 @@
   "group": "phantom purpur",
   "ingredients": [
     {
-      "item": "blockus:smooth_purpur"
+      "item": "blockus:polished_purpur"
     },
     {
       "tag": "blockus:soul_soils"
     }
   ],
   "result": {
-    "item": "blockus:smooth_phantom_purpur"
+    "item": "blockus:polished_phantom_purpur"
   }
 }

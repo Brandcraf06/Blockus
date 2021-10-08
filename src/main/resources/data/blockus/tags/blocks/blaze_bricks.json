@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "blockus:blaze_bricks",
-    "blockus:blaze_bricks_stairs",
-    "blockus:blaze_bricks_slab",
+    "blockus:blaze_brick_stairs",
+    "blockus:blaze_brick_slab",
     "blockus:blaze_pillar"
   ]
 }

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:smooth_bluestone"
-  },
-  "result": "blockus:bluestone_bricks_slab",
-  "count": 2
-}

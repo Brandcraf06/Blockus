@@ -1,6 +1,0 @@
-{
-  "parent": "block/wall_inventory",
-  "textures": {
-    "wall": "blockus:block/purpur_little_bricks"
-  }
-}

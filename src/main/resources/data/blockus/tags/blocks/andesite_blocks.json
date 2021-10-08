@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "blockus:andesite_bricks",
-    "blockus:andesite_bricks_stairs",
-    "blockus:andesite_bricks_slab",
+    "blockus:andesite_brick_stairs",
+    "blockus:andesite_brick_slab",
     "blockus:zigzagged_andesite",
     "blockus:chiseled_andesite_bricks",
     "blockus:cracked_andesite_bricks",

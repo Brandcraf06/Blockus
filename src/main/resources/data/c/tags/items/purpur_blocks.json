@@ -2,17 +2,17 @@
   "replace": false,
   "values": [
     "blockus:purpur_bricks",
-    "blockus:smooth_purpur",
+    "blockus:polished_purpur",
     "blockus:purpur_squares",
-    "blockus:purpur_little_bricks",
+    "blockus:small_purpur_bricks",
     "blockus:chiseled_purpur",
     "blockus:purpur_lines",
     "blockus:phantom_purpur_block",
     "blockus:phantom_purpur_pillar",
     "blockus:phantom_purpur_bricks",
-    "blockus:smooth_phantom_purpur",
+    "blockus:polished_phantom_purpur",
     "blockus:phantom_purpur_squares",
-    "blockus:phantom_purpur_little_bricks",
+    "blockus:small_phantom_purpur_bricks",
     "blockus:chiseled_phantom_purpur",
     "blockus:phantom_purpur_lines"
   ]

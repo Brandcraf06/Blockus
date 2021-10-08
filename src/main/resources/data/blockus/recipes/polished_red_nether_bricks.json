@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:red_nether_bricks"
+    }
+  ],
+  "result": {
+    "item": "blockus:polished_red_nether_bricks"
+  }
+}

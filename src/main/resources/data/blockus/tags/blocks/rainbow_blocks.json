@@ -3,7 +3,7 @@
   "values": [
     "blockus:rainbow_block",
     "blockus:rainbow_bricks",
-    "blockus:rainbow_bricks_stairs",
-    "blockus:rainbow_bricks_slab"
+    "blockus:rainbow_brick_stairs",
+    "blockus:rainbow_brick_slab"
   ]
 }

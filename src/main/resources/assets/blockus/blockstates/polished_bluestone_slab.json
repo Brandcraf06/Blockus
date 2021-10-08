@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "blockus:block/polished_bluestone_slab"
+        },
+        "type=double": {
+            "model": "blockus:block/polished_bluestone"
+        },
+        "type=top": {
+            "model": "blockus:block/polished_bluestone_slab_top"
+        }
+    }
+}

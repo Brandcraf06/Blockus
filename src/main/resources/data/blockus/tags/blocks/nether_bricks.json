@@ -1,23 +1,23 @@
 {
   "replace": false,
   "values": [
-    "blockus:smooth_nether_bricks",
-    "blockus:smooth_red_nether_bricks",
+    "blockus:polished_nether_bricks",
+    "blockus:polished_red_nether_bricks",
     "blockus:zigzagged_nether_bricks",
     "blockus:zigzagged_red_nether_bricks",
-    "blockus:nether_pillar",
-    "blockus:red_nether_pillar",
+    "blockus:nether_brick_pillar",
+    "blockus:red_nether_brick_pillar",
     "blockus:charred_nether_bricks",
-    "blockus:charred_nether_bricks_stairs",
-    "blockus:charred_nether_bricks_slab",
-    "blockus:smooth_charred_nether_bricks",
+    "blockus:charred_nether_brick_stairs",
+    "blockus:charred_nether_brick_slab",
+    "blockus:polished_charred_nether_bricks",
     "blockus:zigzagged_charred_nether_bricks",
-    "blockus:charred_nether_pillar",
+    "blockus:charred_nether_brick_pillar",
     "blockus:teal_nether_bricks",
     "blockus:teal_nether_brick_stairs",
     "blockus:teal_nether_brick_slab",
-    "blockus:smooth_teal_nether_bricks",
+    "blockus:polished_teal_nether_bricks",
     "blockus:zigzagged_teal_nether_bricks",
-    "blockus:teal_nether_pillar"
+    "blockus:teal_nether_brick_pillar"
   ]
 }

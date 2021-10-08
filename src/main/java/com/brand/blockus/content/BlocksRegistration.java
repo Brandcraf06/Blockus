@@ -48,7 +48,8 @@ public class BlocksRegistration {
     }
 
     // Pillar
-    public static Block registerPillar(String id, Block base) {
+    public static Block registerPillar(String baseid, Block base) {
+        String id = baseid.replace("bricks", "brick");
         return register(id + "_pillar", new PillarBlock(FabricBlockSettings.copy(base)));
     }
 
@@ -61,7 +62,8 @@ public class BlocksRegistration {
     }
 
     // Slab
-    public static Block registerSlab(String id, Block base) {
+    public static Block registerSlab(String baseid, Block base) {
+        String id = baseid.replace("bricks", "brick").replace("tiles", "tile");
         return register(id + "_slab", new SlabBlock(FabricBlockSettings.copy(base)));
     }
 
@@ -71,7 +73,8 @@ public class BlocksRegistration {
 
 
     // Stairs
-    public static Block registerStairs(String id, Block base) {
+    public static Block registerStairs(String baseid, Block base) {
+        String id = baseid.replace("bricks", "brick").replace("tiles", "tile");
         return register(id + "_stairs", new StairsBase(base.getDefaultState(), FabricBlockSettings.copy(base)));
     }
 
@@ -80,7 +83,8 @@ public class BlocksRegistration {
     }
 
     // Wall
-    public static Block registerWall(String id, Block base) {
+    public static Block registerWall(String baseid, Block base) {
+        String id = baseid.replace("bricks", "brick").replace("tiles", "tile");
         return register(id + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
     }
 

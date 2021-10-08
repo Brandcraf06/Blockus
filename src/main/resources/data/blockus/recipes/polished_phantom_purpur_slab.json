@@ -5,11 +5,11 @@
   ],
   "key": {
     "#": {
-      "item": "blockus:smooth_phantom_purpur"
+      "item": "blockus:polished_phantom_purpur"
     }
   },
   "result": {
-    "item": "blockus:smooth_phantom_purpur_slab",
+    "item": "blockus:polished_phantom_purpur_slab",
     "count": 6
   }
 }

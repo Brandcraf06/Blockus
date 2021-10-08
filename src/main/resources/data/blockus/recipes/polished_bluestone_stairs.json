@@ -1,17 +1,17 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "blockus:smooth_bluestone"
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "X  ",
+        "XX ",
+        "XXX"
+    ],
+    "key": {
+        "X": {
+            "item": "blockus:polished_bluestone"
+        }
+    },
+    "result": {
+        "item": "blockus:polished_bluestone_stairs",
+        "count": 4
     }
-  },
-  "result": {
-    "item": "blockus:smooth_bluestone_stairs",
-    "count": 4
-  }
 }

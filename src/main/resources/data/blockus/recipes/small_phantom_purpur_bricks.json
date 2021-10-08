@@ -3,13 +3,13 @@
   "group": "phantom purpur",
   "ingredients": [
     {
-      "item": "blockus:purpur_little_bricks"
+      "item": "blockus:small_purpur_bricks"
     },
     {
       "tag": "blockus:soul_soils"
     }
   ],
   "result": {
-    "item": "blockus:phantom_purpur_little_bricks"
+    "item": "blockus:small_phantom_purpur_bricks"
   }
 }

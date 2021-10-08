@@ -1,6 +1,6 @@
 {
   "parent": "columns:block/column_inventory",
   "textures": {
-    "all": "blockus:block/bluestone_little_bricks"
+    "all": "blockus:block/small_bluestone_bricks"
   }
 }

@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "blockus:smooth_purpur"
+      "item": "blockus:polished_purpur"
     }
   },
   "result": {
-    "item": "blockus:smooth_purpur_stairs",
+    "item": "blockus:polished_purpur_stairs",
     "count": 4
   }
 }

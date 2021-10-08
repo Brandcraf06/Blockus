@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "blockus:smooth_phantom_purpur"
-    },
-    "result": "blockus:phantom_purpur_bricks_stairs",
-    "count": 1
-}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:charred_nether_bricks"
+    }
+  ],
+  "result": {
+    "item": "blockus:polished_charred_nether_bricks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:red_nether_bricks"
+    },
+    "result": "blockus:polished_red_nether_bricks",
+    "count": 1
+}
