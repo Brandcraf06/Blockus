@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "blockus:granite_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:granite_brick_stairs",
+    "count": 4
+  }
+}

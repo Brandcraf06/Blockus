@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:large_bricks"
-  },
-  "result": "blockus:large_bricks_stairs",
-  "count": 1
-}

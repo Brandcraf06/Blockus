@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/bluestone_brick_slab"
+    },
+    "type=top": {
+      "model": "blockus:block/bluestone_brick_slab_top"
+    },
+    "type=double": {
+      "model": "blockus:block/bluestone_bricks"
+    }
+  }
+}
+

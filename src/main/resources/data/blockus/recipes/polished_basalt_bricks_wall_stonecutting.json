@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:polished_basalt_bricks"
-  },
-  "result": "blockus:polished_basalt_bricks_wall",
-  "count": 1
-}
