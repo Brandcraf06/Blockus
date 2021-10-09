@@ -40,34 +40,38 @@ public class BlockusConfiguredFeatures {
         LIMESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 33)).uniformRange(YOffset.fixed(32), YOffset.fixed(128)).spreadHorizontally().repeat(10);
         MARBLE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 33)).uniformRange(YOffset.fixed(0), YOffset.fixed(75)).spreadHorizontally().repeat(10);
         BLUESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.BLUESTONE.getDefaultState(), 33)).uniformRange(YOffset.getBottom(), YOffset.fixed(25)).spreadHorizontally().repeat(10);
-        WHITE_OAK_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(BlockusBlocks.WHITE_OAK_LOG.getDefaultState()),
-                new StraightTrunkPlacer(7, 2, 0),
-                new SimpleBlockStateProvider(BlockusBlocks.WHITE_OAK_LEAVES.getDefaultState()),
-                new SimpleBlockStateProvider(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState()),
-                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5),
-                new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
+        WHITE_OAK_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(BlockusBlocks.WHITE_OAK_LOG.getDefaultState()), new StraightTrunkPlacer(7, 2, 0), new SimpleBlockStateProvider(BlockusBlocks.WHITE_OAK_LEAVES.getDefaultState()), new SimpleBlockStateProvider(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState()), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5), new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
         WHITE_OAK = Feature.TREE.configure(WHITE_OAK_CONFIG).decorate(Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.05F, 1)));
         WHITE_OAK_RARE = Feature.TREE.configure(WHITE_OAK_CONFIG).decorate(Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.0085F, 1)));
     }
 
     public static void registerConfiguredFeature() {
-        RegistryKey<ConfiguredFeature<?, ?>> ORE_LIMESTONE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "limestone"));
-        RegistryKey<ConfiguredFeature<?, ?>> ORE_MARBLE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "marble"));
-        RegistryKey<ConfiguredFeature<?, ?>> ORE_BLUESTONE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "bluestone"));
-        RegistryKey<ConfiguredFeature<?, ?>> TREE_WHITE_OAK = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "white_oak"));
-        RegistryKey<ConfiguredFeature<?, ?>> TREE_WHITE_OAK_RARE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "white_oak_rare"));
 
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ORE_LIMESTONE.getValue(), LIMESTONE);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ORE_MARBLE.getValue(), MARBLE);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ORE_BLUESTONE.getValue(), BLUESTONE);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, TREE_WHITE_OAK.getValue(), WHITE_OAK);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, TREE_WHITE_OAK_RARE.getValue(), WHITE_OAK_RARE);
+        RegistryKey<ConfiguredFeature<?, ?>> oreLimestone = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(Blockus.MOD_ID, "limestone_upper"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreLimestone.getValue(), LIMESTONE);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreLimestone);
 
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_LIMESTONE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_MARBLE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_BLUESTONE);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, TREE_WHITE_OAK);
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, TREE_WHITE_OAK_RARE);
+        RegistryKey<ConfiguredFeature<?, ?>> oreMarble = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(Blockus.MOD_ID, "marble"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreMarble.getValue(), MARBLE);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreMarble);
+
+        RegistryKey<ConfiguredFeature<?, ?>> oreBluestone = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(Blockus.MOD_ID, "bluestone"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreBluestone.getValue(), BLUESTONE);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreBluestone);
+
+        RegistryKey<ConfiguredFeature<?, ?>> treeWhiteOak = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(Blockus.MOD_ID, "white_oak"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, treeWhiteOak.getValue(), WHITE_OAK);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOak);
+
+        RegistryKey<ConfiguredFeature<?, ?>> treeWhiteOakRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+                new Identifier(Blockus.MOD_ID, "white_oak_rare"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, treeWhiteOakRare.getValue(), WHITE_OAK_RARE);
+        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOakRare);
+
     }
 
     public static final class Decorators {
