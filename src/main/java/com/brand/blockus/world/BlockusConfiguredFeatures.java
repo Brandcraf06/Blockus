@@ -44,7 +44,7 @@ public class BlockusConfiguredFeatures {
         WHITE_OAK_CONFIG = new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG.getDefaultState()), new StraightTrunkPlacer(7, 2, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES.getDefaultState()), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build();
         WHITE_OAK = Feature.TREE.configure(WHITE_OAK_CONFIG).decorate(Decorators.SQUARE_HEIGHTMAP_OCEAN_FLOOR_NO_WATER).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.05F, 1)));
         WHITE_OAK_RARE = Feature.TREE.configure(WHITE_OAK_CONFIG).decorate(Decorators.SQUARE_HEIGHTMAP_OCEAN_FLOOR_NO_WATER).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.0085F, 1)));
-        WHITE_OAK_CHECKED = WHITE_OAK.method_38670(BlockusBlocks.WHITE_OAK_SAPLING);
+        WHITE_OAK_CHECKED = WHITE_OAK.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING);
 
     }
 
