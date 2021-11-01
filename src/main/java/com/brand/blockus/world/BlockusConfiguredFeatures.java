@@ -41,7 +41,7 @@ public class BlockusConfiguredFeatures {
     static {
         LIMESTONE_UPPER = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 64)).uniformRange(YOffset.fixed(64), YOffset.fixed(128)).spreadHorizontally().applyChance(6);
         LIMESTONE_LOWER = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 64)).uniformRange(YOffset.fixed(0), YOffset.fixed(60)).spreadHorizontally().repeat(2);
-        MARBLE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 32)).uniformRange(YOffset.fixed(0), YOffset.fixed(75)).spreadHorizontally().repeat(2);
+        MARBLE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 64)).uniformRange(YOffset.fixed(0), YOffset.fixed(75)).spreadHorizontally().repeat(2);
         BLUESTONE = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, BlockusBlocks.BLUESTONE.getDefaultState(), 64)).uniformRange(YOffset.getBottom(), YOffset.fixed(0)).spreadHorizontally().repeat(2);
         WHITE_OAK = Feature.TREE.configure(buildWhiteOakTree().build());
         WHITE_OAK_CHECKED = WHITE_OAK.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING);
