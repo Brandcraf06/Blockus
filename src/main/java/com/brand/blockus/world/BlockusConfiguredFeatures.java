@@ -77,7 +77,7 @@ public class BlockusConfiguredFeatures {
 
         RegistryKey<ConfiguredFeature<?, ?>> treeWhiteOakRare = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "white_oak_rare"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, treeWhiteOakRare.getValue(), WHITE_OAK_CHECKED.decorate(Decorators.SQUARE_HEIGHTMAP_OCEAN_FLOOR_NO_WATER).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.01F, 1))));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, treeWhiteOakRare.getValue(), WHITE_OAK_CHECKED.decorate(Decorators.SQUARE_HEIGHTMAP_OCEAN_FLOOR_NO_WATER).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.0085F, 1))));
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOakRare);
 
         RegistryKey<ConfiguredFeature<?, ?>> treeWhiteOakChecked = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
