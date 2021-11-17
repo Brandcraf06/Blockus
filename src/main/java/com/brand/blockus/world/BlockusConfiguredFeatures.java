@@ -54,7 +54,6 @@ public class BlockusConfiguredFeatures {
         Registry.register(BuiltinRegistries.PLACED_FEATURE, oreBluestone.getValue(), BlockusOreConfiguredFeatures.ORE_BLUESTONE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreBluestone);
 
-/*
         RegistryKey<PlacedFeature> treeWhiteOak = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "white_oak_tree"));
         Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOak.getValue(), BlockusVegetationPlacedFeatures.WHITE_OAK_TREE);
@@ -64,7 +63,6 @@ public class BlockusConfiguredFeatures {
                 new Identifier(Blockus.MOD_ID, "white_oak_tree_rare"));
         Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakRare.getValue(), BlockusVegetationPlacedFeatures.WHITE_OAK_TREE_RARE);
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOakRare);
-*/
 
         RegistryKey<PlacedFeature> treeWhiteOakChecked = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "white_oak_checked"));

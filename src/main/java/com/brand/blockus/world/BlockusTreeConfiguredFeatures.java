@@ -21,6 +21,6 @@ public class BlockusTreeConfiguredFeatures {
     }
 
     static {
-        WHITE_OAK = ConfiguredFeatures.register("white_oak", Feature.TREE.configure(builder(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK_LEAVES, 7, 2, 0, 2).decorators(ImmutableList.of(LeavesVineTreeDecorator.INSTANCE)).build()));
+        WHITE_OAK = ConfiguredFeatures.register("white_oak", Feature.TREE.configure(builder(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK_LEAVES, 7, 2, 0, 2).ignoreVines().build()));
     }
 }
