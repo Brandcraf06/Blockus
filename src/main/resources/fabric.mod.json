@@ -30,7 +30,7 @@
     "libcd": "*",
     "terraform-wood-api-v1": ">=2.0.1",
     "minecraft": "1.18.x",
-    "java": ">=16"
+    "java": ">=17"
   },
   "suggests": {
     "columns": "*"
