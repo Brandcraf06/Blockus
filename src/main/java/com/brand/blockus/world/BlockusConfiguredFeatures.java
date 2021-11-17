@@ -7,6 +7,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.decorator.*;
@@ -52,19 +54,17 @@ public class BlockusConfiguredFeatures {
         Registry.register(BuiltinRegistries.PLACED_FEATURE, oreBluestone.getValue(), BlockusOreConfiguredFeatures.ORE_BLUESTONE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreBluestone);
 
-      /*
-
+/*
         RegistryKey<PlacedFeature> treeWhiteOak = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-                new Identifier(Blockus.MOD_ID, "white_oak"));
+                new Identifier(Blockus.MOD_ID, "white_oak_tree"));
         Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOak.getValue(), BlockusVegetationPlacedFeatures.WHITE_OAK_TREE);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOak);
 
         RegistryKey<PlacedFeature> treeWhiteOakRare = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-                new Identifier(Blockus.MOD_ID, "white_oak_rare"));
+                new Identifier(Blockus.MOD_ID, "white_oak_tree_rare"));
         Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakRare.getValue(), BlockusVegetationPlacedFeatures.WHITE_OAK_TREE_RARE);
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOakRare);
-
-     */
+*/
 
         RegistryKey<PlacedFeature> treeWhiteOakChecked = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "white_oak_checked"));
