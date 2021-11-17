@@ -1,10 +1,9 @@
 package com.brand.blockus.world;
 
 import com.brand.blockus.content.BlockusBlocks;
-import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.feature.*;
 
-public class BlockusOreConfiguredFeatures {
+public class BlockusOreFeatures {
 
     public static final ConfiguredFeature<?, ?> ORE_LIMESTONE;
     public static final ConfiguredFeature<?, ?> ORE_MARBLE;
