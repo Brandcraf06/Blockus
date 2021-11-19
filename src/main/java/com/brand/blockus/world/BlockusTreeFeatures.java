@@ -29,8 +29,8 @@ public class BlockusTreeFeatures {
     static {
         WHITE_OAK = ConfiguredFeatures.register("white_oak", Feature.TREE.configure(builder(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK_LEAVES, 7, 2, 0, 2).ignoreVines().build()));
         WHITE_OAK_CHECKED = BlockusTreeFeatures.WHITE_OAK.withWouldSurviveFilter(BlockusBlocks.WHITE_OAK_SAPLING);
-        WHITE_OAK_TREE = BlockusTreeFeatures.WHITE_OAK.withPlacement(new PlacementModifier[]{RarityFilterPlacementModifier.of(20), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))});
-        WHITE_OAK_TREE_RARE = BlockusTreeFeatures.WHITE_OAK.withPlacement(new PlacementModifier[]{RarityFilterPlacementModifier.of(118), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))});
+        WHITE_OAK_TREE = BlockusTreeFeatures.WHITE_OAK.withPlacement(new PlacementModifier[]{RarityFilterPlacementModifier.of(48), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))});
+        WHITE_OAK_TREE_RARE = BlockusTreeFeatures.WHITE_OAK.withPlacement(new PlacementModifier[]{RarityFilterPlacementModifier.of(256), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))});
 
     }
 }
