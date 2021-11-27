@@ -12,8 +12,6 @@ import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.decorator.*;
-import net.minecraft.world.gen.feature.OreConfiguredFeatures;
-import net.minecraft.world.gen.feature.OrePlacedFeatures;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import java.util.List;
 
@@ -35,7 +33,7 @@ public class BlockusConfiguredFeatures {
         // marble
         RegistryKey<PlacedFeature> oreMarble = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "ore_marble"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreMarble.getValue(), BlockusOreFeatures.ORE_MARBLE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(75)))));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreMarble.getValue(), BlockusOreFeatures.ORE_MARBLE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreMarble);
 
         // bluestone
