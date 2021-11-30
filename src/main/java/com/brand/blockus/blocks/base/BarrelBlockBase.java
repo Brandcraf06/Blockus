@@ -7,6 +7,7 @@ import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
+import net.minecraft.block.entity.BarrelBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
@@ -43,7 +44,7 @@ public class BarrelBlockBase extends BarrelBlock {
         } else {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelBlockEntity) {
-                player.openHandledScreen((WoodenBarrelBlockEntity) blockEntity);
+                player.openHandledScreen((WoodenBarrelBlockEntity)blockEntity);
                 player.incrementStat(Stats.OPEN_BARREL);
                 PiglinBrain.onGuardedBlockInteracted(player, true);
             }

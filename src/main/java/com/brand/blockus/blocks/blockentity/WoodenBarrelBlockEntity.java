@@ -47,8 +47,8 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 
             protected boolean isPlayerViewing(PlayerEntity player) {
                 if (player.currentScreenHandler instanceof GenericContainerScreenHandler) {
-                    Inventory $$1 = ((GenericContainerScreenHandler)player.currentScreenHandler).getInventory();
-                    return $$1 == WoodenBarrelBlockEntity.this;
+                    Inventory inventory = ((GenericContainerScreenHandler)player.currentScreenHandler).getInventory();
+                    return inventory == WoodenBarrelBlockEntity.this;
                 } else {
                     return false;
                 }
@@ -119,11 +119,10 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     }
 
     void playSound(BlockState state, SoundEvent soundEvent) {
-        Vec3i $$2 = ((Direction)state.get(BarrelBlock.FACING)).getVector();
-        double $$3 = (double)this.pos.getX() + 0.5D + (double)$$2.getX() / 2.0D;
-        double $$4 = (double)this.pos.getY() + 0.5D + (double)$$2.getY() / 2.0D;
-        double $$5 = (double)this.pos.getZ() + 0.5D + (double)$$2.getZ() / 2.0D;
-        this.world.playSound((PlayerEntity)null, $$3, $$4, $$5, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+        Vec3i vec3i = ((Direction)state.get(BarrelBlock.FACING)).getVector();
+        double d = (double)this.pos.getX() + 0.5D + (double)vec3i.getX() / 2.0D;
+        double e = (double)this.pos.getY() + 0.5D + (double)vec3i.getY() / 2.0D;
+        double f = (double)this.pos.getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
+        this.world.playSound((PlayerEntity)null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
     }
 }
-
