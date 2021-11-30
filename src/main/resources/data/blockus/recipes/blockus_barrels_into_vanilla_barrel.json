@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "blockus:blockus_barrels"
+    }
+  ],
+  "result": {
+    "item": "minecraft:barrel"
+  }
+}
