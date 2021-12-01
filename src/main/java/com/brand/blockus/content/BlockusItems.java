@@ -8,6 +8,7 @@ import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -590,6 +591,8 @@ public class BlockusItems {
     public static final Item BREAD_BOX = register(BlockusBlocks.BREAD_BOX, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Rainbow
+    public static final Item RAINBOW_ROSE = register(BlockusBlocks.RAINBOW_ROSE, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item RAINBOW_PETAL = register("rainbow_petal", new Item(new Item.Settings().maxCount(64).group(ItemGroup.MATERIALS)));
     public static final Item RAINBOW_BLOCK = register(BlockusBlocks.RAINBOW_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item RAINBOW_BRICKS = register(BlockusBlocks.RAINBOW_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item RAINBOW_BRICK_STAIRS = register(BlockusBlocks.RAINBOW_BRICK_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
@@ -1142,7 +1145,6 @@ public class BlockusItems {
     public static final Item CAUTION_BLOCK = register(BlockusBlocks.CAUTION_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item STARS_BLOCK = register(BlockusBlocks.STARS_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
-
     // Legacy
     public static final Item LEGACY_FIRST_GRASS_BLOCK = register(BlockusBlocks.LEGACY_FIRST_GRASS_BLOCK, Blockus.BLOCKUS_LEGACY);
     public static final Item LEGACY_GRASS_BLOCK = register(BlockusBlocks.LEGACY_GRASS_BLOCK, Blockus.BLOCKUS_LEGACY);
@@ -1168,6 +1170,10 @@ public class BlockusItems {
 
     public static Item register(Block block, ItemGroup group) {
         return Registry.register(Registry.ITEM, Registry.BLOCK.getId(block), new BlockItem(block, new Item.Settings().maxCount(64).group(group)));
+    }
+
+    public static Item register(String id, Item item) {
+        return Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, id), item);
     }
 
     public static Item register_asphalt(Block block, ItemGroup group) {

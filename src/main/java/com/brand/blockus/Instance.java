@@ -240,10 +240,12 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_SMALL_HEDGE, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_LEAVES, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_SAPLING, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusItems.RAINBOW_PETAL, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.SWEET_BERRIES_CRATE, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.FLOWERING_AZALEA_SMALL_HEDGE, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.MOSS_SMALL_HEDGE, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusItems.RAINBOW_ROSE, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.THATCH_SLAB, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.THATCH, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.THATCH_STAIRS, 0.75f);
@@ -279,6 +281,8 @@ public class Instance {
     public static void addPathBlocks() {
         ShovelItem.PATH_STATES = new HashMap<>(ShovelItem.PATH_STATES);
         ShovelItem.PATH_STATES.put(Blocks.DIRT_PATH, BlockusBlocks.PATH.getDefaultState());
+        ShovelItem.PATH_STATES.put(BlockusBlocks.PATH, Blocks.DIRT.getDefaultState());
+
     }
 
     private static class SellSaplingFactory implements TradeOffers.Factory {

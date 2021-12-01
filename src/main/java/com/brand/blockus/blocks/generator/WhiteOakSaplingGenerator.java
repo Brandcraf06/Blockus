@@ -1,6 +1,6 @@
 package com.brand.blockus.blocks.generator;
 
-import com.brand.blockus.world.BlockusTreeFeatures;
+import com.brand.blockus.world.BlockusVegetationFeatures;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
@@ -10,6 +10,6 @@ public class WhiteOakSaplingGenerator extends SaplingGenerator {
 
 
     protected ConfiguredFeature<?, ?> getTreeFeature(Random random, boolean bees) {
-        return BlockusTreeFeatures.WHITE_OAK;
+        return BlockusVegetationFeatures.WHITE_OAK;
     }
 }

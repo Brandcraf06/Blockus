@@ -1,5 +1,7 @@
 {
+  "replace": false,
   "values": [
-    "blockus:potted_white_oak_sapling"
+    "blockus:potted_white_oak_sapling",
+	"blockus:potted_rainbow_rose"
   ]
 }

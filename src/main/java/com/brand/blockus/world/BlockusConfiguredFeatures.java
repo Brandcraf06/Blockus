@@ -13,6 +13,8 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.decorator.*;
 import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.feature.PlacedFeatures;
+
 import java.util.List;
 
 public class BlockusConfiguredFeatures {
@@ -45,17 +47,29 @@ public class BlockusConfiguredFeatures {
         // white oak
         RegistryKey<PlacedFeature> treeWhiteOak = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "white_oak_tree"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOak.getValue(), BlockusTreeFeatures.WHITE_OAK_TREE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOak.getValue(), BlockusVegetationFeatures.WHITE_OAK_TREE);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOak);
 
         RegistryKey<PlacedFeature> treeWhiteOakRare = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "white_oak_tree_rare"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakRare.getValue(), BlockusTreeFeatures.WHITE_OAK_TREE_RARE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakRare.getValue(), BlockusVegetationFeatures.WHITE_OAK_TREE_RARE);
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOakRare);
 
         RegistryKey<PlacedFeature> treeWhiteOakChecked = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "white_oak_checked"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakChecked.getValue(), BlockusTreeFeatures.WHITE_OAK_CHECKED);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakChecked.getValue(), BlockusVegetationFeatures.WHITE_OAK_CHECKED);
+
+        // rainbow rose
+        RegistryKey<PlacedFeature> rainbowRose = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                new Identifier(Blockus.MOD_ID, "rainbow_rose"));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, rainbowRose.getValue(), BlockusVegetationFeatures.RAINBOW_ROSE.withPlacement(CountPlacementModifier.of(3), RarityFilterPlacementModifier.of(2), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, rainbowRose);
+
+        RegistryKey<PlacedFeature> rainbowRoseMeadow = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
+                new Identifier(Blockus.MOD_ID, "rainbow_rose_meadow"));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, rainbowRoseMeadow.getValue(), BlockusVegetationFeatures.RAINBOW_ROSE.withPlacement(SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MEADOW), GenerationStep.Feature.VEGETAL_DECORATION, rainbowRoseMeadow);
+
     }
 
     private static List<PlacementModifier> modifiers(PlacementModifier first, PlacementModifier second) {

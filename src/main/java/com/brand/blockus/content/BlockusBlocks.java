@@ -13,6 +13,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
@@ -609,6 +610,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BREAD_BOX = register("bread_box", new OrientableBlockBase(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.5f)));
 
     // Rainbow
+    public static final Block RAINBOW_ROSE = register("rainbow_rose", new FlowerBlock(StatusEffects.GLOWING, 8,AbstractBlock.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+    public static final Block POTTED_RAINBOW_ROSE = registerPottedPlant(RAINBOW_ROSE, "rainbow_rose");
     public static final Block RAINBOW_BLOCK = register("rainbow_block", new PillarBlock(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(5.0f, 6.0f).requiresTool()));
     public static final Block RAINBOW_BRICKS = register("rainbow_bricks", new Block(FabricBlockSettings.of(Material.STONE, MapColor.OFF_WHITE).strength(1.5f, 6.0f).requiresTool()));
     public static final Block RAINBOW_BRICK_STAIRS = registerStairs(RAINBOW_BRICKS);
@@ -1158,6 +1161,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block COMPANION_CUBE = registerFallingBlock("companion_cube", 0.1f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MapColor.IRON_GRAY);
     public static final Block CAUTION_BLOCK = register("caution_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.ORANGE).strength(1.5f, 1200.0f).requiresTool()));
     public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.BLACK).strength(5.0f, 6.0f)));
+
+
 
     // Legacy
     public static final Block LEGACY_FIRST_GRASS_BLOCK = registerBlockCopy("legacy_first_grass_block", Blocks.GRASS_BLOCK);

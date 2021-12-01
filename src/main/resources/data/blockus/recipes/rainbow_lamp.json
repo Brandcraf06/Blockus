@@ -2,19 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "group": "rainbow_lamp",
   "pattern": [
-    "GSG",
-    "SRS",
-    "GSG"
+    " D ",
+    "DLD",
+    " D "
   ],
   "key": {
-    "G": {
-      "item": "minecraft:glowstone_dust"
+    "L": {
+      "item": "minecraft:redstone_lamp"
     },
-    "S": {
-      "item": "minecraft:redstone"
-    },
-    "R": {
-      "item": "blockus:rainbow_block"
+    "D": {
+      "item": "blockus:rainbow_petal"
     }
   },
   "result": {
