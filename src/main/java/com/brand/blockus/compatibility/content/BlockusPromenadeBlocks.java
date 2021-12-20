@@ -15,11 +15,13 @@ public class BlockusPromenadeBlocks {
     private static Block POTTED_AUTUMN_OAK;
     private static Block POTTED_AUTUMN_BIRCH;
     private static Block POTTED_PINK_CHERRY_OAK;
+    private static Block POTTED_WHITE_CHERRY_OAK;
 
     public static void init() {
         POTTED_AUTUMN_OAK = BlocksRegistration.registerPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant(), "autumn_oak");
         POTTED_AUTUMN_BIRCH = BlocksRegistration.registerPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant(), "autumn_birch");
         POTTED_PINK_CHERRY_OAK = BlocksRegistration.registerPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant(), "pink_cherry_oak");
+        POTTED_WHITE_CHERRY_OAK = BlocksRegistration.registerPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant(), "white_cherry_oak");
     }
 
     @Environment(EnvType.CLIENT)
@@ -27,11 +29,13 @@ public class BlockusPromenadeBlocks {
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xE86D30, POTTED_AUTUMN_OAK);
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xFFBA42, POTTED_AUTUMN_BIRCH);
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xF09AC3, POTTED_PINK_CHERRY_OAK);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xF0E2E9, POTTED_WHITE_CHERRY_OAK);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
                 POTTED_AUTUMN_OAK,
                 POTTED_AUTUMN_BIRCH,
-                POTTED_PINK_CHERRY_OAK
+                POTTED_PINK_CHERRY_OAK,
+                POTTED_WHITE_CHERRY_OAK
         );
     }
 }
