@@ -1,6 +1,7 @@
 package com.brand.blockus;
 
 import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
+import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
@@ -30,6 +31,10 @@ public class Blockus implements ModInitializer {
 
         if (FabricLoader.getInstance().isModLoaded("columns")) {
             BlockusColumnBlocks.init();
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("promenade")) {
+            BlockusPromenadeBlocks.init();
         }
 
         Instance.init();
