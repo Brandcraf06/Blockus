@@ -1,0 +1,9 @@
+{
+  "parent": "blockus:block/tinted_large_tree_pot",
+  "textures": {
+    "log_top": "promenade:block/palm_log/top",
+    "log": "promenade:block/palm_log/side",
+    "leaves": "promenade:block/palm_leaves",
+    "soil": "block/sand"
+  }
+}
