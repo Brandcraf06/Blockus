@@ -27,6 +27,7 @@
           "libcd:mod_loaded": "promenade"
         },
         "values": [
+          "blockus:potted_autumn_birch",
           "blockus:potted_autumn_oak"
         ]
       }
