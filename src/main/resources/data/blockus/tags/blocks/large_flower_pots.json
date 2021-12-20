@@ -19,5 +19,21 @@
     "blockus:potted_huge_warped_fungus",
     "blockus:potted_cactus_large",
     "blockus:potted_bamboo_large"
-  ]
+  ],
+  "libcd": {
+    "entries": [
+      {
+        "when": {
+          "libcd:mod_loaded": "promenade"
+        },
+        "values": [
+          "blockus:potted_autumn_birch",
+          "blockus:potted_autumn_oak",
+          "blockus:potted_palm",
+          "blockus:potted_pink_cherry_oak",
+          "blockus:potted_white_cherry_oak"
+        ]
+      }
+    ]
+  }
 }

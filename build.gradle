@@ -44,6 +44,11 @@ dependencies {
 
 	// Columns
 	modImplementation "curse.maven:columns-385230:3107117"
+
+	// Promenade
+	modImplementation "curse.maven:promenade-399648:3553043"
+	modImplementation "curse.maven:dawnapi-399309:3543407"
+	modImplementation "com.terraformersmc.terraform-api:terraform-shapes-api-v1:2.1.0"
 }
 
 loom {

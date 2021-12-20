@@ -1089,5 +1089,11 @@
   "block.blockus.small_end_stone_brick_column": "Small End Stone Brick Column",
   "block.blockus.phantom_purpur_brick_column": "Phantom Purpur Brick Column",
   "block.blockus.small_phantom_purpur_brick_column": "Small Phantom Purpur Brick Column",
-  "block.blockus.rainbow_brick_column": "Rainbow Brick Column"
+  "block.blockus.rainbow_brick_column": "Rainbow Brick Column",
+
+  "block.blockus.potted_autumn_oak": "Potted Autumn Oak",
+  "block.blockus.potted_autumn_birch": "Potted Autumn Birch",
+  "block.blockus.potted_pink_cherry_oak": "Potted Pink Cherry Oak",
+  "block.blockus.potted_white_cherry_oak": "Potted White Cherry Oak",
+  "block.blockus.potted_palm": "Potted Palm"
 }
