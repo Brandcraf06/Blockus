@@ -1,0 +1,15 @@
+{
+  "values": [],
+  "libcd": {
+    "entries": [
+      {
+        "when": {
+          "libcd:mod_loaded": "promenade"
+        },
+        "values": [
+          "blockus:dark_amaranth_small_stems"
+        ]
+      }
+    ]
+  }
+}

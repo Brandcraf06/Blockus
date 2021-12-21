@@ -1,6 +1,7 @@
 package com.brand.blockus.compatibility.content;
 
 import com.brand.blockus.content.BlocksRegistration;
+import com.hugman.promenade.init.AmaranthBundle;
 import com.hugman.promenade.init.AutumnBundle;
 import com.hugman.promenade.init.CherryBundle;
 import com.hugman.promenade.init.PalmBundle;
@@ -13,13 +14,18 @@ import net.minecraft.block.Block;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.item.Item;
 
 public class BlockusPromenadeBlocks {
-    private static Block POTTED_AUTUMN_OAK;
-    private static Block POTTED_AUTUMN_BIRCH;
-    private static Block POTTED_PINK_CHERRY_OAK;
-    private static Block POTTED_WHITE_CHERRY_OAK;
-    private static Block POTTED_PALM;
+    public static Block POTTED_AUTUMN_OAK;
+    public static Block POTTED_AUTUMN_BIRCH;
+    public static Block POTTED_PINK_CHERRY_OAK;
+    public static Block POTTED_WHITE_CHERRY_OAK;
+    public static Block POTTED_PALM;
+    public static Block POTTED_DARK_AMARANTH;
+    public static Block CHERRY_OAK_SMALL_LOGS;
+    public static Block PALM_SMALL_LOGS;
+    public static Block DARK_AMARANTH_SMALL_STEMS;
 
     public static void init() {
         POTTED_AUTUMN_OAK = BlocksRegistration.registerPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant(), "autumn_oak");
@@ -27,6 +33,10 @@ public class BlockusPromenadeBlocks {
         POTTED_PINK_CHERRY_OAK = BlocksRegistration.registerPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant(), "pink_cherry_oak");
         POTTED_WHITE_CHERRY_OAK = BlocksRegistration.registerPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant(), "white_cherry_oak");
         POTTED_PALM = BlocksRegistration.registerPottedDoublePlant(PalmBundle.PALM_WOOD.getSapling(), "palm");
+        POTTED_DARK_AMARANTH = BlocksRegistration.registerPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_WOOD.getFungus(), "huge_dark_amaranth_fungus");
+        CHERRY_OAK_SMALL_LOGS = BlocksRegistration.registerPillar2("cherry_oak_small_logs", CherryBundle.CHERRY_OAK_WOOD.getLog());
+        PALM_SMALL_LOGS = BlocksRegistration.registerPillar2("palm_small_logs", PalmBundle.PALM_WOOD.getLog());
+        DARK_AMARANTH_SMALL_STEMS = BlocksRegistration.registerPillar2("dark_amaranth_small_stems", AmaranthBundle.DARK_AMARANTH_WOOD.getLog());
     }
 
     @Environment(EnvType.CLIENT)

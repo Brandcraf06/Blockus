@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "small logs",
+  "ingredients": [
+    {
+      "item": "promenade:palm_log"
+    },
+    {
+      "item": "promenade:palm_log"
+    },
+    {
+      "item": "promenade:palm_log"
+    }
+  ],
+  "result": {
+    "item": "blockus:palm_small_logs",
+    "count": 3
+  }
+}

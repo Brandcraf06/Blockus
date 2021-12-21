@@ -1,5 +1,7 @@
 package com.brand.blockus;
 
+import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
+import com.brand.blockus.compatibility.content.BlockusPromenadeItems;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -119,6 +121,8 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ACACIA_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.DARK_OAK_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.CHERRY_OAK_SMALL_LOGS, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_LOGS, 5, 5);
 
 
 // Fuel
@@ -219,6 +223,8 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusItems.ACACIA_SMALL_LOGS, 300);
         FuelRegistry.INSTANCE.add(BlockusItems.DARK_OAK_SMALL_LOGS, 300);
         FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusPromenadeItems.CHERRY_OAK_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusPromenadeItems.PALM_SMALL_LOGS, 300);
 
         // barrels
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_BARREL, 300);
