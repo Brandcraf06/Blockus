@@ -1,8 +1,8 @@
 {
   "parent": "blockus:block/tinted_large_tree_pot",
   "textures": {
-    "log_top": "block/spruce_log_top",
-    "log": "block/spruce_log",
+    "log_top": "blockus:block/spruce_small_logs_top",
+    "log": "blockus:block/spruce_small_logs",
     "leaves": "block/spruce_leaves",
     "soil": "block/dirt"
   }

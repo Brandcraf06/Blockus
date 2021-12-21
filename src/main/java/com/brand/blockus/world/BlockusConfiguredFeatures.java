@@ -62,13 +62,8 @@ public class BlockusConfiguredFeatures {
         // rainbow rose
         RegistryKey<PlacedFeature> rainbowRose = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(Blockus.MOD_ID, "rainbow_rose"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, rainbowRose.getValue(), BlockusVegetationFeatures.RAINBOW_ROSE.withPlacement(CountPlacementModifier.of(3), RarityFilterPlacementModifier.of(2), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, rainbowRose);
-
-        RegistryKey<PlacedFeature> rainbowRoseMeadow = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-                new Identifier(Blockus.MOD_ID, "rainbow_rose_meadow"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, rainbowRoseMeadow.getValue(), BlockusVegetationFeatures.RAINBOW_ROSE.withPlacement(SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MEADOW), GenerationStep.Feature.VEGETAL_DECORATION, rainbowRoseMeadow);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, rainbowRose.getValue(), BlockusVegetationFeatures.RAINBOW_ROSE.withPlacement(SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.MEADOW), GenerationStep.Feature.VEGETAL_DECORATION, rainbowRose);
 
     }
 

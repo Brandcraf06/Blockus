@@ -34,6 +34,9 @@ dependencies {
 	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+	// Cloth Config
+	modImplementation "curse.maven:cloth-config-319057:3559638"
+
 	// LibCD
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
 	include "io.github.cottonmc:LibCD:${project.libcd_version}"

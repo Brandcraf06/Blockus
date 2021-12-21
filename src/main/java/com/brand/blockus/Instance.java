@@ -261,15 +261,9 @@ public class Instance {
 
 // Instance
 
-        addTradeOffers();
         addStrippables();
         addPathBlocks();
-    }
-
-    public static void addTradeOffers() {
-        TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
-            factories.add(new SellSaplingFactory(BlockusItems.WHITE_OAK_SAPLING));
-        });
+        addTradeOffers();
     }
 
     public static void addStrippables() {
@@ -285,15 +279,30 @@ public class Instance {
 
     }
 
-    private static class SellSaplingFactory implements TradeOffers.Factory {
-        private final ItemStack sapling;
+    public static void addTradeOffers() {
+        TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
+            factories.add(new SellItemFactory(BlockusItems.WHITE_OAK_SAPLING,5, 1, 8));
+            factories.add(new SellItemFactory(BlockusItems.RAINBOW_PETAL, 1, 3, 12));
+            factories.add(new SellItemFactory(BlockusItems.RAINBOW_ROSE, 1, 1, 12));
+        });
+    }
 
-        public SellSaplingFactory(ItemConvertible sapling) {
-            this.sapling = new ItemStack(sapling);
+
+    static class SellItemFactory implements TradeOffers.Factory {
+        private final ItemStack sell;
+        private final int price;
+        private final int count;
+        private final int maxUses;
+
+        public SellItemFactory(ItemConvertible stack, int price, int count, int maxUses) {
+            this.sell = new ItemStack(stack);
+            this.price = price;
+            this.count = count;
+            this.maxUses = maxUses;
         }
 
         public TradeOffer create(Entity entity, Random random) {
-            return new TradeOffer(new ItemStack(Items.EMERALD, 5), this.sapling, 8, 1, 0.05f);
+            return new TradeOffer(new ItemStack(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses,  1, 0.05f);
         }
     }
 }

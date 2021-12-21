@@ -1,8 +1,7 @@
 {
   "parent": "blockus:block/large_tree_pot",
   "textures": {
-    "log_top": "block/warped_stem_top",
-    "log": "block/warped_stem",
+    "log": "blockus:block/warped_small_stems",
     "leaves": "block/warped_wart_block",
     "soil": "block/warped_nylium"
   }
