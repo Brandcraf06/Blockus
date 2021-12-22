@@ -22,10 +22,15 @@ import net.minecraft.util.registry.Registry;
 
 public class BlockusPromenadeItems {
 
-    public static final Item CHERRY_OAK_SMALL_LOGS = register(BlockusPromenadeBlocks.CHERRY_OAK_SMALL_LOGS, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item PALM_SMALL_LOGS = register(BlockusPromenadeBlocks.PALM_SMALL_LOGS, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item DARK_AMARANTH_SMALL_STEMS = register(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static Item CHERRY_OAK_SMALL_LOGS;
+    public static Item PALM_SMALL_LOGS;
+    public static Item DARK_AMARANTH_SMALL_STEMS;
 
+    public static void init() {
+        CHERRY_OAK_SMALL_LOGS = register(BlockusPromenadeBlocks.CHERRY_OAK_SMALL_LOGS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+        PALM_SMALL_LOGS = register(BlockusPromenadeBlocks.PALM_SMALL_LOGS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+        DARK_AMARANTH_SMALL_STEMS = register(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    }
     public static Item register(Block block, ItemGroup group) {
         return Registry.register(Registry.ITEM, Registry.BLOCK.getId(block), new BlockItem(block, new Item.Settings().maxCount(64).group(group)));
     }

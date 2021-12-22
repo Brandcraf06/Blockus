@@ -36,7 +36,7 @@ public class Blockus implements ModInitializer {
 
         if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.init();
-            new BlockusPromenadeItems();
+            BlockusPromenadeItems.init();
         }
 
         Instance.init();

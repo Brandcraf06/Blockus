@@ -11,18 +11,10 @@ version = "${mod_version}+${minecraft_version}"
 group = project.maven_group
 
 repositories {
-	maven {
-		name = "Cotton"
-		url = "https://server.bbkr.space/artifactory/libs-release"
-	}
-	maven {
-		name = "TerraformersMC"
-		url = "https://maven.terraformersmc.com"
-	}
-	maven {
-		name = "Curse"
-		url = "https://www.cursemaven.com"
-	}
+	maven { url 'https://server.bbkr.space/artifactory/libs-release' }
+	maven { url 'https://maven.terraformersmc.com/' }
+	maven { url "https://maven.shedaniel.me/" }
+	maven { url 'https://www.cursemaven.com' }
 }
 
 dependencies {
@@ -34,16 +26,17 @@ dependencies {
 	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// Cloth Config
-	modImplementation "curse.maven:cloth-config-319057:3559638"
-
 	// LibCD
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
 	include "io.github.cottonmc:LibCD:${project.libcd_version}"
 
-	// Terraform Wood API v1
-	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_v1_version}"
-	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_v1_version}"
+	// Cloth
+	modImplementation "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
+
+	// Terraform API
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
+	modImplementation "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_shapes_api_version}"
 
 	// Columns
 	modImplementation "curse.maven:columns-385230:3107117"
@@ -51,7 +44,6 @@ dependencies {
 	// Promenade
 	modImplementation "curse.maven:promenade-399648:3553043"
 	modImplementation "curse.maven:dawnapi-399309:3543407"
-	modImplementation "com.terraformersmc.terraform-api:terraform-shapes-api-v1:2.1.0"
 }
 
 loom {
