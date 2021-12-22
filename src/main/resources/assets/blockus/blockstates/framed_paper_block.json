@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "blockus:block/framed_paper_block"
+    }
+  }
+}

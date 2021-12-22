@@ -1,17 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
+    "SSS",
     "PPP",
-    "PPP",
-    "PPP"
+    "SSS"
   ],
   "key": {
     "P": {
       "item": "minecraft:paper"
+    },
+    "S": {
+      "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "blockus:paper_block",
-    "count": 1
+    "item": "blockus:framed_paper_block",
+    "count": 4
   }
 }

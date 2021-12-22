@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "##",
-    "##",
-    "##"
+    "PP",
+    "PP",
+    "PP"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:paper"
+    "P": {
+      "item": "blockus:paper_wall"
     }
   },
   "result": {

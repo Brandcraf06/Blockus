@@ -39,8 +39,8 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, 30, 60);
 
         // paper
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.FRAMED_PAPER_BLOCK, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_WALL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_DOOR, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_BLOCK, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BURNED_PAPER_BLOCK, 5, 60);
 
@@ -134,11 +134,12 @@ public class Instance {
 
         // paper
         FuelRegistry.INSTANCE.add(Items.PAPER, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_TRAPDOOR, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_DOOR, 67);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_WALL, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_LAMP, 400);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_BLOCK, 500);
+        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_DOOR, 100);
+        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_TRAPDOOR, 150);
+        FuelRegistry.INSTANCE.add(BlockusItems.FRAMED_PAPER_BLOCK, 300);
+        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_WALL, 150);
+        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_LAMP, 300);
+        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_BLOCK, 400);
 
         // timber frames
         FuelRegistry.INSTANCE.add(BlockusItems.ACACIA_CROSS_TIMBER_FRAME, 300);
