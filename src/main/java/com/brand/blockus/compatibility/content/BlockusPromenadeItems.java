@@ -11,6 +11,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
@@ -25,11 +26,15 @@ public class BlockusPromenadeItems {
     public static Item CHERRY_OAK_SMALL_LOGS;
     public static Item PALM_SMALL_LOGS;
     public static Item DARK_AMARANTH_SMALL_STEMS;
+    public static Item DARK_AMARANTH_SMALL_HEDGE;
 
     public static void init() {
         CHERRY_OAK_SMALL_LOGS = register(BlockusPromenadeBlocks.CHERRY_OAK_SMALL_LOGS, Blockus.BLOCKUS_BUILDING_BLOCKS);
         PALM_SMALL_LOGS = register(BlockusPromenadeBlocks.PALM_SMALL_LOGS, Blockus.BLOCKUS_BUILDING_BLOCKS);
         DARK_AMARANTH_SMALL_STEMS = register(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+
+        DARK_AMARANTH_SMALL_HEDGE = register(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
+        CompostingChanceRegistry.INSTANCE.add(DARK_AMARANTH_SMALL_HEDGE, 0.85f);
     }
     public static Item register(Block block, ItemGroup group) {
         return Registry.register(Registry.ITEM, Registry.BLOCK.getId(block), new BlockItem(block, new Item.Settings().maxCount(64).group(group)));
