@@ -26,6 +26,7 @@ public class BlockusPromenadeBlocks {
     public static Block CHERRY_OAK_SMALL_LOGS;
     public static Block PALM_SMALL_LOGS;
     public static Block DARK_AMARANTH_SMALL_STEMS;
+    public static Block DARK_AMARANTH_SMALL_HEDGE;
 
     public static void init() {
         POTTED_AUTUMN_OAK = BlocksRegistration.registerPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant(), "autumn_oak");
@@ -37,6 +38,7 @@ public class BlockusPromenadeBlocks {
         CHERRY_OAK_SMALL_LOGS = BlocksRegistration.registerPillar2("cherry_oak_small_logs", CherryBundle.CHERRY_OAK_WOOD.getLog());
         PALM_SMALL_LOGS = BlocksRegistration.registerPillar2("palm_small_logs", PalmBundle.PALM_WOOD.getLog());
         DARK_AMARANTH_SMALL_STEMS = BlocksRegistration.registerPillar2("dark_amaranth_small_stems", AmaranthBundle.DARK_AMARANTH_WOOD.getLog());
+        DARK_AMARANTH_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("dark_amaranth_small_hedge", AmaranthBundle.DARK_AMARANTH_WART_BLOCK);
     }
 
     @Environment(EnvType.CLIENT)

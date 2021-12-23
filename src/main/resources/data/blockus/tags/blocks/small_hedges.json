@@ -13,5 +13,17 @@
     "blockus:azalea_small_hedge",
     "blockus:azalea_small_hedge_flowers",
     "blockus:moss_small_hedge"
-  ]
+  ],
+  "libcd": {
+    "entries": [
+      {
+        "when": {
+          "libcd:mod_loaded": "promenade"
+        },
+        "values": [
+          "blockus:dark_amaranth_small_hedge"
+        ]
+      }
+    ]
+  }
 }
