@@ -1,0 +1,6 @@
+{
+  "parent": "promenade:block/pile",
+  "textures": {
+    "pile": "blockus:block/white_oak_leaves"
+  }
+}
