@@ -1,6 +1,8 @@
 package com.brand.blockus.world;
 
 import com.brand.blockus.content.BlockusBlocks;
+import net.minecraft.block.Blocks;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.dynamic.Range;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -23,6 +25,7 @@ public class BlockusVegetationFeatures {
     public static final PlacedFeature WHITE_OAK_TREE;
     public static final PlacedFeature WHITE_OAK_TREE_RARE;
     public static final ConfiguredFeature<?, ?> RAINBOW_ROSE;
+    public static final ConfiguredFeature<?, ?> RAINBOW_ROSE_BONEMEAL;
 
 
     private static TreeFeatureConfig.Builder builder() {
@@ -34,6 +37,7 @@ public class BlockusVegetationFeatures {
         WHITE_OAK_CHECKED = BlockusVegetationFeatures.WHITE_OAK.withWouldSurviveFilter(BlockusBlocks.WHITE_OAK_SAPLING);
         WHITE_OAK_TREE = BlockusVegetationFeatures.WHITE_OAK.withPlacement(RarityFilterPlacementModifier.of(48), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)));
         WHITE_OAK_TREE_RARE = BlockusVegetationFeatures.WHITE_OAK.withPlacement(RarityFilterPlacementModifier.of(240), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)));
-        RAINBOW_ROSE = ConfiguredFeatures.register("rainbow_rose", Feature.FLOWER.configure(new RandomPatchFeatureConfig(12, 6, 2, () -> Feature.SIMPLE_BLOCK.configure(new SimpleBlockFeatureConfig(new DualNoiseBlockStateProvider(new Range(1, 3), new DoublePerlinNoiseSampler.NoiseParameters(-10, 1.0D), 1.0F, 2345L, new DoublePerlinNoiseSampler.NoiseParameters(-3, 1.0D), 1.0F, List.of(BlockusBlocks.RAINBOW_ROSE.getDefaultState())))).withInAirFilter())));
+        RAINBOW_ROSE = ConfiguredFeatures.register("rainbow_rose", Feature.FLOWER.configure(new RandomPatchFeatureConfig(12, 7, 2, () -> Feature.SIMPLE_BLOCK.configure(new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE))).withInAirFilter())));
+        RAINBOW_ROSE_BONEMEAL = ConfiguredFeatures.register("rainbow_rose_bonemeal", Feature.FLOWER.configure(new RandomPatchFeatureConfig(6, 5, 2, () -> Feature.SIMPLE_BLOCK.configure(new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE))).withBlockPredicateFilter(BlockPredicate.matchingBlocks(List.of(Blocks.AIR, Blocks.GRASS, Blocks.TALL_GRASS, Blocks.FERN, Blocks.LARGE_FERN), BlockPos.ORIGIN)))));
     }
 }
