@@ -1,8 +1,8 @@
 package com.brand.blockus;
 
 import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
-import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
-import com.brand.blockus.compatibility.content.BlockusPromenadeItems;
+import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeBlocks;
+import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeItems;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.world.BlockusConfiguredFeatures;

@@ -20,13 +20,12 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 
 public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     private DefaultedList<ItemStack> inventory;
-    private ViewerCountManager stateManager;
+    private final ViewerCountManager stateManager;
 
     public WoodenBarrelBlockEntity(BlockPos pos, BlockState state) {
         super(BlockusBlocks.WOODEN_BARREL, pos, state);
@@ -115,14 +114,14 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
     }
 
     void setOpen(BlockState state, boolean open) {
-        this.world.setBlockState(this.getPos(), (BlockState)state.with(BarrelBlock.OPEN, open), 3);
+        this.world.setBlockState(this.getPos(), state.with(BarrelBlock.OPEN, open), 3);
     }
 
     void playSound(BlockState state, SoundEvent soundEvent) {
-        Vec3i vec3i = ((Direction)state.get(BarrelBlock.FACING)).getVector();
+        Vec3i vec3i = state.get(BarrelBlock.FACING).getVector();
         double d = (double)this.pos.getX() + 0.5D + (double)vec3i.getX() / 2.0D;
         double e = (double)this.pos.getY() + 0.5D + (double)vec3i.getY() / 2.0D;
         double f = (double)this.pos.getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
-        this.world.playSound((PlayerEntity)null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+        this.world.playSound(null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
     }
 }

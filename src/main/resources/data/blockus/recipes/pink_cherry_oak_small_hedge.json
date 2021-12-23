@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "promenade:dark_amaranth_wart_block"
+      "item": "promenade:pink_cherry_oak_leaves"
     }
   },
   "result": {
-    "item": "blockus:dark_amaranth_small_hedge",
+    "item": "blockus:pink_cherry_oak_small_hedge",
     "count": 6
   }
 }
