@@ -1,14 +1,19 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "group": "rainbow_lamp",
-  "ingredients": [
-    {
-      "item": "minecraft:redstone_lamp"
-    },
-    {
-      "item": "blockus:rainbow_petal"
-    }
+  "pattern": [
+    " R ",
+    "RGR",
+    " R "
   ],
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "G": {
+      "item": "blockus:rainbow_glowstone"
+    }
+  },
   "result": {
     "item": "blockus:rainbow_lamp"
   }

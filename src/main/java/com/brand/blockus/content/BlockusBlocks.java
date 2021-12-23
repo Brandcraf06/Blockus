@@ -617,6 +617,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RAINBOW_BRICK_STAIRS = registerStairs(RAINBOW_BRICKS);
     public static final Block RAINBOW_BRICK_SLAB = registerSlab(RAINBOW_BRICKS);
     public static final Block RAINBOW_BRICK_WALL = registerWall(RAINBOW_BRICKS);
+    public static final Block RAINBOW_GLOWSTONE = registerBlockCopy("rainbow_glowstone", Blocks.GLOWSTONE);
 
     // Colored Stone Bricks
     public static final Block WHITE_STONE_BRICKS = registerColoredStoneBricks("white", MapColor.WHITE);

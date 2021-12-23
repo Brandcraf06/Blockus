@@ -600,6 +600,7 @@ public class BlockusItems {
     public static final Item RAINBOW_BRICK_STAIRS = register(BlockusBlocks.RAINBOW_BRICK_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item RAINBOW_BRICK_SLAB = register(BlockusBlocks.RAINBOW_BRICK_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item RAINBOW_BRICK_WALL = register(BlockusBlocks.RAINBOW_BRICK_WALL, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item RAINBOW_GLOWSTONE = register(BlockusBlocks.RAINBOW_GLOWSTONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Colored Stone Bricks
     public static final Item WHITE_STONE_BRICKS = register(BlockusBlocks.WHITE_STONE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);

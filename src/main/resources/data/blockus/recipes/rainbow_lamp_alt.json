@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "rainbow_lamp",
+  "ingredients": [
+    {
+      "item": "minecraft:redstone_lamp"
+    },
+    {
+      "item": "blockus:rainbow_petal"
+    }
+  ],
+  "result": {
+    "item": "blockus:rainbow_lamp"
+  }
+}
