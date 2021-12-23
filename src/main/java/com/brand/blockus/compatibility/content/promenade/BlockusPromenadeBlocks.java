@@ -1,6 +1,7 @@
 package com.brand.blockus.compatibility.content.promenade;
 
 import com.brand.blockus.content.BlocksRegistration;
+import com.hugman.dawn.api.object.block.PlantPileBlock;
 import com.hugman.promenade.init.AmaranthBundle;
 import com.hugman.promenade.init.AutumnBundle;
 import com.hugman.promenade.init.CherryBundle;
@@ -9,10 +10,14 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.Material;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.sound.BlockSoundGroup;
 
 public class BlockusPromenadeBlocks {
     public static Block POTTED_AUTUMN_OAK;
@@ -30,6 +35,7 @@ public class BlockusPromenadeBlocks {
     public static Block WHITE_CHERRY_OAK_SMALL_HEDGE;
     public static Block PALM_SMALL_HEDGE;
     public static Block DARK_AMARANTH_SMALL_HEDGE;
+    public static Block WHITE_OAK_LEAF_PILE;
 
     public static void init() {
 
@@ -53,6 +59,14 @@ public class BlockusPromenadeBlocks {
         WHITE_CHERRY_OAK_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("white_cherry_oak_small_hedge", CherryBundle.WHITE_CHERRY_OAK_LEAVES);
         PALM_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("palm_small_hedge", PalmBundle.PALM_WOOD.getLeaves());
         DARK_AMARANTH_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("dark_amaranth_small_hedge", AmaranthBundle.DARK_AMARANTH_WART_BLOCK);
+
+        // Leaf Piles
+        WHITE_OAK_LEAF_PILE = BlockusPromenadeBlocks.registerLeafPile("white_oak_leaf_pile");
+        FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAF_PILE, 30, 60);
+    }
+
+    private static Block registerLeafPile(String id) {
+        return BlocksRegistration.register(id, new PlantPileBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.1f).ticksRandomly().sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
     }
 
     @Environment(EnvType.CLIENT)
@@ -73,6 +87,8 @@ public class BlockusPromenadeBlocks {
             }
         }, POTTED_PALM, PALM_SMALL_HEDGE);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getDefaultColor(), PALM_SMALL_HEDGE);
+		ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xEBB359, WHITE_OAK_LEAF_PILE);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xEBB359, WHITE_OAK_LEAF_PILE);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
                 POTTED_AUTUMN_OAK,
@@ -84,7 +100,8 @@ public class BlockusPromenadeBlocks {
                 AUTUMN_BIRCH_SMALL_HEDGE,
                 PINK_CHERRY_OAK_SMALL_HEDGE,
                 WHITE_CHERRY_OAK_SMALL_HEDGE,
-                PALM_SMALL_HEDGE
+                PALM_SMALL_HEDGE,
+                WHITE_OAK_LEAF_PILE
         );
     }
 }

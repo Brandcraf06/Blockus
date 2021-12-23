@@ -21,6 +21,7 @@ public class BlockusPromenadeItems {
     public static Item WHITE_CHERRY_OAK_SMALL_HEDGE;
     public static Item PALM_SMALL_HEDGE;
     public static Item DARK_AMARANTH_SMALL_HEDGE;
+    public static Item WHITE_OAK_LEAF_PILE;
 
     public static void init() {
 
@@ -58,6 +59,10 @@ public class BlockusPromenadeItems {
 
         DARK_AMARANTH_SMALL_HEDGE = register(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_HEDGE, Blockus.BLOCKUS_DECORATIONS);
         CompostingChanceRegistry.INSTANCE.add(DARK_AMARANTH_SMALL_HEDGE, 0.85f);
+
+        // Leaf Piles
+        WHITE_OAK_LEAF_PILE = register(BlockusPromenadeBlocks.WHITE_OAK_LEAF_PILE, Blockus.BLOCKUS_DECORATIONS);
+        CompostingChanceRegistry.INSTANCE.add(WHITE_OAK_LEAF_PILE, 0.85f);
     }
 
     public static Item register(Block block, ItemGroup group) {
