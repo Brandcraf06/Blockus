@@ -213,9 +213,9 @@ public class BlockusItems {
 
     // Lava Blackstone Bricks
     public static final Item LAVA_POLISHED_BLACKSTONE_BRICKS = register(BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item LAVA_POLISHED_BLACKSTONE_WALL = register(BlockusBlocks.LAVA_POLISHED_BLACKSTONE_WALL, Blockus.BLOCKUS_DECORATIONS);
     public static final Item LAVA_POLISHED_BLACKSTONE_STAIRS = register(BlockusBlocks.LAVA_POLISHED_BLACKSTONE_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item LAVA_POLISHED_BLACKSTONE_SLAB = register(BlockusBlocks.LAVA_POLISHED_BLACKSTONE_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item LAVA_POLISHED_BLACKSTONE_WALL = register(BlockusBlocks.LAVA_POLISHED_BLACKSTONE_WALL, Blockus.BLOCKUS_DECORATIONS);
     public static final Item CHISELED_LAVA_POLISHED_BLACKSTONE = register(BlockusBlocks.CHISELED_LAVA_POLISHED_BLACKSTONE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Water Bricks

@@ -216,9 +216,9 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Lava Blackstone Bricks
     public static final Block LAVA_POLISHED_BLACKSTONE_BRICKS = registerLightBlock("lava_polished_blackstone_bricks", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, 15, MapColor.BLACK);
-    public static final Block LAVA_POLISHED_BLACKSTONE_WALL = registerWall("lava_polished_blackstone", LAVA_POLISHED_BLACKSTONE_BRICKS);
     public static final Block LAVA_POLISHED_BLACKSTONE_STAIRS = registerStairs("lava_polished_blackstone", LAVA_POLISHED_BLACKSTONE_BRICKS);
     public static final Block LAVA_POLISHED_BLACKSTONE_SLAB = registerSlab("lava_polished_blackstone", LAVA_POLISHED_BLACKSTONE_BRICKS);
+    public static final Block LAVA_POLISHED_BLACKSTONE_WALL = registerWall("lava_polished_blackstone", LAVA_POLISHED_BLACKSTONE_BRICKS);
     public static final Block CHISELED_LAVA_POLISHED_BLACKSTONE = registerLightBlock("chiseled_lava_polished_blackstone", 1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, 15, MapColor.BLACK);
 
     // Water Bricks

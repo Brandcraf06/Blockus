@@ -1,13 +1,18 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " D ",
+    "DGD",
+    " D "
+  ],
+  "key": {
+    "G": {
       "item": "minecraft:glowstone"
     },
-    {
+    "D": {
       "item": "blockus:rainbow_petal"
     }
-  ],
+  },
   "result": {
     "item": "blockus:rainbow_glowstone"
   }
