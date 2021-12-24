@@ -83,7 +83,6 @@ public class BlockusPromenadeBlocks {
 
         // Crates
         BLUEBERRIES_CRATE = BlocksRegistration.registerCrates("blueberries");
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.SWEET_BERRIES_CRATE, 0.50f);
     }
 
     private static Block registerLeafPile(String id) {
