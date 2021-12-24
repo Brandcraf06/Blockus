@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blockus:blueberries_crate"
+    }
+  ],
+  "result": {
+    "item": "promenade:blueberries",
+    "count": 9
+  }
+}

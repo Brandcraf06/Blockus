@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    "FFF",
+    "FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "promenade:blueberries"
+    }
+  },
+  "result": {
+    "item": "blockus:blueberries_crate",
+    "count": 1
+  }
+}

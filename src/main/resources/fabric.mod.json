@@ -33,6 +33,8 @@
     "java": ">=17"
   },
   "suggests": {
-    "columns": "*"
+    "columns": "*",
+    "promenade": "*",
+    "farmingforblockheads": "*"
   }
 }

@@ -1,6 +1,7 @@
 package com.brand.blockus.compatibility.content.promenade;
 
 import com.brand.blockus.content.BlocksRegistration;
+import com.brand.blockus.content.BlockusItems;
 import com.hugman.dawn.api.object.block.PlantPileBlock;
 import com.hugman.promenade.init.AmaranthBundle;
 import com.hugman.promenade.init.AutumnBundle;
@@ -11,6 +12,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -36,6 +38,7 @@ public class BlockusPromenadeBlocks {
     public static Block PALM_SMALL_HEDGE;
     public static Block DARK_AMARANTH_SMALL_HEDGE;
     public static Block WHITE_OAK_LEAF_PILE;
+    public static Block BLUEBERRIES_CRATE;
 
     public static void init() {
 
@@ -49,20 +52,38 @@ public class BlockusPromenadeBlocks {
 
         // Small Logs
         CHERRY_OAK_SMALL_LOGS = BlocksRegistration.registerPillar2("cherry_oak_small_logs", CherryBundle.CHERRY_OAK_WOOD.getLog());
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.CHERRY_OAK_SMALL_LOGS, 5, 5);
+
         PALM_SMALL_LOGS = BlocksRegistration.registerPillar2("palm_small_logs", PalmBundle.PALM_WOOD.getLog());
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_LOGS, 5, 5);
+
         DARK_AMARANTH_SMALL_STEMS = BlocksRegistration.registerPillar2("dark_amaranth_small_stems", AmaranthBundle.DARK_AMARANTH_WOOD.getLog());
 
         // Small Hedges
         AUTUMN_OAK_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("autumn_oak_small_hedge", AutumnBundle.AUTUMN_OAK_LEAVES);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.AUTUMN_OAK_SMALL_HEDGE, 30, 60);
+
         AUTUMN_BIRCH_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("autumn_birch_small_hedge", AutumnBundle.AUTUMN_BIRCH_LEAVES);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.AUTUMN_BIRCH_SMALL_HEDGE, 30, 60);
+
         PINK_CHERRY_OAK_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("pink_cherry_oak_small_hedge", CherryBundle.PINK_CHERRY_OAK_LEAVES);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PINK_CHERRY_OAK_SMALL_HEDGE, 30, 60);
+
         WHITE_CHERRY_OAK_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("white_cherry_oak_small_hedge", CherryBundle.WHITE_CHERRY_OAK_LEAVES);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.WHITE_CHERRY_OAK_SMALL_HEDGE, 30, 60);
+
         PALM_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("palm_small_hedge", PalmBundle.PALM_WOOD.getLeaves());
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_HEDGE, 30, 60);
+
         DARK_AMARANTH_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("dark_amaranth_small_hedge", AmaranthBundle.DARK_AMARANTH_WART_BLOCK);
 
         // Leaf Piles
         WHITE_OAK_LEAF_PILE = BlockusPromenadeBlocks.registerLeafPile("white_oak_leaf_pile");
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAF_PILE, 30, 60);
+
+        // Crates
+        BLUEBERRIES_CRATE = BlocksRegistration.registerCrates("blueberries");
+        CompostingChanceRegistry.INSTANCE.add(BlockusItems.SWEET_BERRIES_CRATE, 0.50f);
     }
 
     private static Block registerLeafPile(String id) {
