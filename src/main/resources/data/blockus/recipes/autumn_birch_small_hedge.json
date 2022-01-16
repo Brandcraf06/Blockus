@@ -13,5 +13,13 @@
   "result": {
     "item": "blockus:autumn_birch_small_hedge",
     "count": 6
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "promenade"
+      ]
+    }
+  ]
 }

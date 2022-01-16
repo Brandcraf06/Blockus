@@ -21,20 +21,18 @@
     "blockus:chiseled_soul_sandstone",
     "blockus:gold_decorated_soul_sandstone",
     "blockus:lapis_decorated_soul_sandstone",
-    "blockus:soul_sandstone_pillar"
-  ],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "columns"
-        },
-        "values": [
-          "blockus:soul_sandstone_column",
-          "blockus:soul_sandstone_brick_column",
-          "blockus:small_soul_sandstone_brick_column"
-        ]
-      }
-    ]
-  }
+    "blockus:soul_sandstone_pillar",
+    {
+      "id": "blockus:soul_sandstone_column",
+      "required": false
+    },
+    {
+      "id": "blockus:soul_sandstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_soul_sandstone_brick_column",
+      "required": false
+    }
+  ]
 }

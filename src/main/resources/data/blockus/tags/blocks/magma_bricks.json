@@ -7,18 +7,10 @@
     "blockus:small_magma_bricks",
     "blockus:small_magma_brick_stairs",
     "blockus:small_magma_brick_slab",
-    "blockus:chiseled_magma_bricks"
-  ],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "columns"
-        },
-        "values": [
-          "blockus:magma_brick_column"
-        ]
-      }
-    ]
-  }
+    "blockus:chiseled_magma_bricks",
+    {
+      "id": "blockus:magma_brick_column",
+      "required": false
+    }
+  ]
 }

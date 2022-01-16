@@ -12,23 +12,30 @@
     "blockus:warped_small_hedge",
     "blockus:azalea_small_hedge",
     "blockus:azalea_small_hedge_flowers",
-    "blockus:moss_small_hedge"
-  ],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "promenade"
-        },
-        "values": [
-	      "blockus:autumn_oak_small_hedge",
-	      "blockus:autumn_birch_small_hedge",
-		  "blockus:pink_cherry_oak_small_hedge",
-		  "blockus:white_cherry_oak_small_hedge",
-		  "blockus:palm_small_hedge",
-          "blockus:dark_amaranth_small_hedge"
-        ]
-      }
-    ]
-  }
+    "blockus:moss_small_hedge",
+    {
+      "id": "blockus:autumn_oak_small_hedge",
+      "required": false
+    },
+    {
+      "id": "blockus:autumn_birch_small_hedge",
+      "required": false
+    },
+    {
+      "id": "blockus:pink_cherry_oak_small_hedge",
+      "required": false
+    },
+    {
+      "id": "blockus:white_cherry_oak_small_hedge",
+      "required": false
+    },
+    {
+      "id": "blockus:palm_small_hedge",
+      "required": false
+    },
+    {
+      "id": "blockus:dark_amaranth_small_hedge",
+      "required": false
+    }
+  ]
 }

@@ -1,67 +1,216 @@
 {
-  "values": [],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "columns"
-        },
-        "values": [
-          "blockus:andesite_brick_column",
-          "blockus:blaze_brick_column",
-          "blockus:bluestone_brick_column",
-          "blockus:bluestone_column",
-          "blockus:bluestone_tile_column",
-          "blockus:charred_brick_column",
-          "blockus:charred_nether_brick_column",
-          "blockus:crimson_warty_blackstone_brick_column",
-          "blockus:diorite_brick_column",
-          "blockus:dripstone_brick_column",
-          "blockus:small_end_stone_brick_column",		  
-          "blockus:granite_brick_column",
-          "blockus:honeycomb_brick_column",
-          "blockus:ice_brick_column",
-          "blockus:large_brick_column",
-          "blockus:lava_brick_column",
-          "blockus:lava_polished_blackstone_brick_column",
-          "blockus:limestone_tile_column",
-          "blockus:small_limestone_brick_column",
-          "blockus:limestone_brick_column",
-          "blockus:limestone_column",
-          "blockus:small_magma_brick_column",
-          "blockus:magma_brick_column",
-          "blockus:marble_tile_column",
-          "blockus:small_marble_brick_column",
-          "blockus:marble_brick_column",
-          "blockus:marble_column",
-          "blockus:netherrack_brick_column",
-          "blockus:obsidian_brick_column",
-          "blockus:small_obsidian_brick_column",
-          "blockus:quartz_tile_column",
-          "blockus:small_phantom_purpur_brick_column",
-          "blockus:phantom_purpur_brick_column",
-          "blockus:polished_basalt_brick_column",
-          "blockus:purpur_brick_column",
-          "blockus:small_purpur_brick_column",
-          "blockus:rainbow_brick_column",
-          "blockus:red_sandstone_brick_column",
-          "blockus:sandstone_brick_column",
-          "blockus:sandy_brick_column",
-          "blockus:small_bluestone_brick_column",
-          "blockus:small_red_sandstone_brick_column",
-          "blockus:small_sandstone_brick_column",
-          "blockus:small_soul_sandstone_brick_column",
-          "blockus:snow_brick_column",
-          "blockus:soaked_brick_column",
-          "blockus:soul_sandstone_brick_column",
-          "blockus:soul_sandstone_column",
-          "blockus:teal_nether_brick_column",
-          "blockus:tuff_brick_column",
-          "blockus:warped_warty_blackstone_brick_column",
-          "blockus:water_brick_column",
-          "blockus:mossy_deepslate_brick_column"
-        ]
-      }
-    ]
-  }
+  "values": [
+    {
+      "id": "blockus:andesite_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:blaze_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:bluestone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:bluestone_column",
+      "required": false
+    },
+    {
+      "id": "blockus:bluestone_tile_column",
+      "required": false
+    },
+    {
+      "id": "blockus:charred_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:charred_nether_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:crimson_warty_blackstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:diorite_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:dripstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_end_stone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:granite_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:honeycomb_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:ice_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:large_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:lava_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:lava_polished_blackstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:limestone_tile_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_limestone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:limestone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:limestone_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_magma_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:magma_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:marble_tile_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_marble_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:marble_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:marble_column",
+      "required": false
+    },
+    {
+      "id": "blockus:netherrack_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:obsidian_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_obsidian_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:quartz_tile_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_phantom_purpur_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:phantom_purpur_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:polished_basalt_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:purpur_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_purpur_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:rainbow_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:red_sandstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:sandstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:sandy_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_bluestone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_red_sandstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_sandstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_soul_sandstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:snow_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:soaked_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:soul_sandstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:soul_sandstone_column",
+      "required": false
+    },
+    {
+      "id": "blockus:teal_nether_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:tuff_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:warped_warty_blackstone_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:water_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:mossy_deepslate_brick_column",
+      "required": false
+    }
+  ]
 }

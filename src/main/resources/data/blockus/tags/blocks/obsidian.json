@@ -16,19 +16,14 @@
     "blockus:obsidian_reinforced_trapdoor",
     "blockus:glowing_obsidian",
     "blockus:legacy_crying_obsidian",
-    "blockus:legacy_glowing_obsidian"
-  ],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "columns"
-        },
-        "values": [
-          "blockus:obsidian_brick_column",
-          "blockus:small_obsidian_brick_column"
-        ]
-      }
-    ]
-  }
+    "blockus:legacy_glowing_obsidian",
+    {
+      "id": "blockus:obsidian_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_obsidian_brick_column",
+      "required": false
+    }
+  ]
 }

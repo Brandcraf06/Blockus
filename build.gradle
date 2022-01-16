@@ -26,10 +26,6 @@ dependencies {
 	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// LibCD
-	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
-	include "io.github.cottonmc:LibCD:${project.libcd_version}"
-
 	// Cloth
 	modImplementation "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
 

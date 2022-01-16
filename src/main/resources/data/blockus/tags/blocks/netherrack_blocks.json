@@ -7,18 +7,10 @@
     "blockus:netherrack_bricks",
     "blockus:netherrack_brick_stairs",
     "blockus:netherrack_brick_slab",
-    "blockus:netherrack_circle_pavement"
-  ],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "columns"
-        },
-        "values": [
-          "blockus:netherrack_brick_column"
-        ]
-      }
-    ]
-  }
+    "blockus:netherrack_circle_pavement",
+    {
+      "id": "blockus:netherrack_brick_column",
+      "required": false
+    }
+  ]
 }
