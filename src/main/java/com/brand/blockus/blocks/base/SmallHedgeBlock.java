@@ -1,6 +1,6 @@
 package com.brand.blockus.blocks.base;
 
-import com.brand.blockus.utils.Utils;
+import com.brand.blockus.tag.BlockusBlockTags;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import net.minecraft.block.*;
@@ -136,7 +136,7 @@ public class SmallHedgeBlock extends Block implements Waterloggable {
     private boolean shouldConnectTo(BlockState state, boolean faceFullSquare, Direction side) {
         Block block = state.getBlock();
         boolean bl = block instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
-        return state.isIn(Utils.SMALL_HEDGES) || !cannotConnect(state) && faceFullSquare || block instanceof PaneBlock || bl;
+        return state.isIn(BlockusBlockTags.SMALL_HEDGES) || !cannotConnect(state) && faceFullSquare || block instanceof PaneBlock || bl;
     }
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {

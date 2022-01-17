@@ -3,6 +3,7 @@ package com.brand.blockus.data.provider;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
+import com.brand.blockus.tag.BlockusItemTags;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -14,18 +15,8 @@ import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 
 public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    private static final Tag.Identified<Item> BARRELS = TagFactory.ITEM.create(new Identifier(Blockus.MOD_ID, "barrels"));
-    private static final Tag.Identified<Item> WHITE_OAK_LOGS = TagFactory.ITEM.create(new Identifier(Blockus.MOD_ID, "white_oak_logs"));
-    private static final Tag.Identified<Item> BARRIERS = TagFactory.ITEM.create(new Identifier(Blockus.MOD_ID, "barriers"));
-    private static final Tag.Identified<Item> PATTERNED_WOOL = TagFactory.ITEM.create(new Identifier(Blockus.MOD_ID, "patterned_wool"));
-
     public BlockusItemTagProvider(FabricDataGenerator dataGenerator) {
         super(dataGenerator);
-    }
-
-    private FabricTagBuilder<Item> getOrCreateTagBuilder(String path) {
-        Identifier id = new Identifier(Blockus.MOD_ID, path);
-        return this.getOrCreateTagBuilder(id);
     }
 
     private FabricTagBuilder<Item> getOrCreateTagBuilder(Identifier id) {
@@ -35,7 +26,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void generateTags() {
-        this.getOrCreateTagBuilder(BARRELS)
+        this.getOrCreateTagBuilder(BlockusItemTags.BARRELS)
             .add(BlockusBlocks.OAK_BARREL.asItem())
             .add(Items.BARREL)
             .add(BlockusBlocks.BIRCH_BARREL.asItem())
@@ -48,11 +39,11 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.CHARRED_BARREL.asItem())
             .add(BlockusBlocks.WHITE_OAK_BARREL.asItem());
 
-        this.getOrCreateTagBuilder(BARRIERS)
+        this.getOrCreateTagBuilder(BlockusItemTags.BARRIERS)
             .add(BlockusItems.CAUTION_BARRIER_BLOCK)
             .add(BlockusItems.ROAD_BARRIER_BLOCK);
 
-        this.getOrCreateTagBuilder("blockus_barrels")
+        this.getOrCreateTagBuilder(BlockusItemTags.BLOCKUS_BARRELS)
             .add(BlockusBlocks.OAK_BARREL.asItem())
             .add(BlockusBlocks.BIRCH_BARREL.asItem())
             .add(BlockusBlocks.JUNGLE_BARREL.asItem())
@@ -64,7 +55,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.CHARRED_BARREL.asItem())
             .add(BlockusBlocks.WHITE_OAK_BARREL.asItem());
 
-        this.getOrCreateTagBuilder(PATTERNED_WOOL)
+        this.getOrCreateTagBuilder(BlockusItemTags.PATTERNED_WOOL)
             .add(BlockusItems.WHITE_PATTERNED_WOOL)
             .add(BlockusItems.ORANGE_PATTERNED_WOOL)
             .add(BlockusItems.MAGENTA_PATTERNED_WOOL)
@@ -82,7 +73,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusItems.RED_PATTERNED_WOOL)
             .add(BlockusItems.BLACK_PATTERNED_WOOL);
 
-        this.getOrCreateTagBuilder("small_hedges")
+        this.getOrCreateTagBuilder(BlockusItemTags.SMALL_HEDGES)
             .add(BlockusItems.OAK_SMALL_HEDGE)
             .add(BlockusItems.SPRUCE_SMALL_HEDGE)
             .add(BlockusItems.BIRCH_SMALL_HEDGE)
@@ -102,11 +93,11 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .addOptional(new Identifier(Blockus.MOD_ID, "palm_small_hedge"))
             .addOptional(new Identifier(Blockus.MOD_ID, "dark_amaranth_small_hedge"));
 
-        this.getOrCreateTagBuilder("soul_soils")
+        this.getOrCreateTagBuilder(BlockusItemTags.SOUL_SOILS)
             .add(Items.SOUL_SAND)
             .add(Items.SOUL_SOIL);
 
-        this.getOrCreateTagBuilder("stained_stone_bricks")
+        this.getOrCreateTagBuilder(BlockusItemTags.STAINED_STONE_BRICKS)
             .add(BlockusItems.WHITE_STONE_BRICKS)
             .add(BlockusItems.ORANGE_STONE_BRICKS)
             .add(BlockusItems.MAGENTA_STONE_BRICKS)
@@ -124,11 +115,11 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusItems.RED_STONE_BRICKS)
             .add(BlockusItems.BLACK_STONE_BRICKS);
 
-        this.getOrCreateTagBuilder("warped_nether_grass")
+        this.getOrCreateTagBuilder(BlockusItemTags.WARPED_NETHER_GRASS)
             .add(Items.NETHER_SPROUTS)
             .add(Items.WARPED_ROOTS);
 
-        this.getOrCreateTagBuilder(WHITE_OAK_LOGS)
+        this.getOrCreateTagBuilder(BlockusItemTags.WHITE_OAK_LOGS)
             .add(BlockusItems.WHITE_OAK_LOG)
             .add(BlockusItems.WHITE_OAK_WOOD)
             .add(BlockusItems.STRIPPED_WHITE_OAK_LOG)
@@ -173,7 +164,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusItems.RED_SANDSTONE_PILLAR);
 
         this.getOrCreateTagBuilder(new Identifier("c", "wooden_barrels"))
-            .addTag(BARRELS);
+            .addTag(BlockusItemTags.BARRELS);
 
         this.getOrCreateTagBuilder(new Identifier("c", "yellow_sandstones"))
             .add(BlockusItems.SANDSTONE_BRICKS)
@@ -281,7 +272,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusItems.WHITE_OAK_LEAVES);
 
         this.getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
-            .addTag(WHITE_OAK_LOGS);
+            .addTag(BlockusItemTags.WHITE_OAK_LOGS);
 
         this.getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
             .add(BlockusItems.CHARRED_PLANKS)
@@ -409,7 +400,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusItems.GREEN_STONE_BRICK_WALL)
             .add(BlockusItems.RED_STONE_BRICK_WALL)
             .add(BlockusItems.BLACK_STONE_BRICK_WALL)
-            .addTag(BARRIERS);
+            .addTag(BlockusItemTags.BARRIERS);
 
         this.getOrCreateTagBuilder(ItemTags.WARPED_STEMS)
             .add(BlockusItems.WARPED_SMALL_STEMS);
@@ -450,7 +441,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusItems.WHITE_OAK_TRAPDOOR);
 
         this.getOrCreateTagBuilder(ItemTags.WOOL)
-            .addTag(PATTERNED_WOOL);
+            .addTag(BlockusItemTags.PATTERNED_WOOL);
 
         this.getOrCreateTagBuilder(new Identifier("promenade", "cherry_oak_logs"))
             .addOptional(new Identifier(Blockus.MOD_ID, "cherry_oak_small_logs"));
