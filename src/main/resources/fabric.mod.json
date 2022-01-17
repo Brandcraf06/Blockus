@@ -22,6 +22,9 @@
     ],
     "client": [
       "com.brand.blockus.BlockusClient"
+    ],
+    "fabric-datagen": [
+      "com.brand.blockus.data.BlockusDatagen"
     ]
   },
   "depends": {
