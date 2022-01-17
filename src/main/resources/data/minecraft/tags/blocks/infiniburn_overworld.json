@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#blockus:netherrack_blocks",
-    "#blockus:magma_bricks",
-    "blockus:charcoal_block"
-  ]
-}

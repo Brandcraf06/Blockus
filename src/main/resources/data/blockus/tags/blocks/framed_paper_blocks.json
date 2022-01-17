@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "blockus:framed_paper_block",
-    "blockus:paper_wall",
-    "blockus:paper_door",
-    "blockus:paper_trapdoor"
-  ]
-}
