@@ -1,15 +1,8 @@
 {
-  "values": [],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "promenade"
-        },
-        "values": [
-          "blockus:palm_small_logs"
-        ]
-      }
-    ]
-  }
+  "values": [
+    {
+      "id": "blockus:palm_small_logs",
+      "required": false
+    }
+  ]
 }

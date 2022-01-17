@@ -4,5 +4,13 @@
     "item": "blockus:phantom_purpur_bricks"
   },
   "result": "blockus:phantom_purpur_brick_column",
-  "count": 1
+  "count": 1,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "columns"
+      ]
+    }
+  ]
 }

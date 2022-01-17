@@ -16,19 +16,14 @@
     "blockus:small_phantom_purpur_brick_stairs",
     "blockus:small_phantom_purpur_brick_slab",
     "blockus:chiseled_phantom_purpur",
-    "blockus:phantom_purpur_lines"
-  ],
-  "libcd": {
-    "entries": [
-      {
-        "when": {
-          "libcd:mod_loaded": "columns"
-        },
-        "values": [
-          "blockus:phantom_purpur_brick_column",
-          "blockus:small_phantom_purpur_brick_column"
-        ]
-      }
-    ]
-  }
+    "blockus:phantom_purpur_lines",
+    {
+      "id": "blockus:phantom_purpur_brick_column",
+      "required": false
+    },
+    {
+      "id": "blockus:small_phantom_purpur_brick_column",
+      "required": false
+    }
+  ]
 }
