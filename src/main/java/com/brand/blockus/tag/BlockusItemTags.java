@@ -11,6 +11,7 @@ public final class BlockusItemTags {
     public static final Tag.Identified<Item> BARRELS = create("barrels");
     public static final Tag.Identified<Item> BARRIERS = create("barriers");
     public static final Tag.Identified<Item> BLOCKUS_BARRELS = create("blockus_barrels");
+    public static final Tag.Identified<Item> NATURAL_ICE = create("natural_ice");
     public static final Tag.Identified<Item> PATTERNED_WOOL = create("patterned_wool");
     public static final Tag.Identified<Item> SMALL_HEDGES = create("small_hedges");
     public static final Tag.Identified<Item> SOUL_SOILS = create("soul_soils");

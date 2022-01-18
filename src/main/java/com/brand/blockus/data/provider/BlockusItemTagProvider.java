@@ -4,7 +4,6 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.tag.BlockusBlockTags;
 import com.brand.blockus.tag.BlockusItemTags;
-
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.TagFactory;
@@ -146,7 +145,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
 
-        this.getOrCreateTagBuilder(new Identifier("minecraft", "ice"))
+        this.getOrCreateTagBuilder(BlockusItemTags.NATURAL_ICE)
             .add(Items.ICE)
             .add(Items.PACKED_ICE)
             .add(Items.BLUE_ICE);
