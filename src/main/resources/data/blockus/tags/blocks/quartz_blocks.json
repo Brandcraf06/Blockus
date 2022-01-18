@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "blockus:quartz_tiles",
-    "blockus:quartz_tile_stairs",
-    "blockus:quartz_tile_slab",
-    "blockus:quartz_circle_pavement"
-  ]
-}

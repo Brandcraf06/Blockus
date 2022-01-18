@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "blockus:lava_bricks",
-    "blockus:lava_brick_stairs",
-    "blockus:lava_brick_slab",
-    "blockus:chiseled_lava_bricks"
-  ]
-}
