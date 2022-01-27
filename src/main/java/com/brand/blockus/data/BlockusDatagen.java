@@ -2,7 +2,6 @@ package com.brand.blockus.data;
 
 import com.brand.blockus.data.provider.BlockusBlockTagProvider;
 import com.brand.blockus.data.provider.BlockusItemTagProvider;
-
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

@@ -43,7 +43,7 @@ public class BarrelBlockBase extends BarrelBlock {
         } else {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof WoodenBarrelBlockEntity) {
-                player.openHandledScreen((WoodenBarrelBlockEntity)blockEntity);
+                player.openHandledScreen((WoodenBarrelBlockEntity) blockEntity);
                 player.incrementStat(Stats.OPEN_BARREL);
                 PiglinBrain.onGuardedBlockInteracted(player, true);
             }

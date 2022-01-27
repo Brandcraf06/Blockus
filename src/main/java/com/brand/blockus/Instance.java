@@ -281,7 +281,7 @@ public class Instance {
 
     public static void addTradeOffers() {
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
-            factories.add(new SellItemFactory(BlockusItems.WHITE_OAK_SAPLING,5, 1, 8));
+            factories.add(new SellItemFactory(BlockusItems.WHITE_OAK_SAPLING, 5, 1, 8));
             factories.add(new SellItemFactory(BlockusItems.RAINBOW_PETAL, 1, 3, 12));
             factories.add(new SellItemFactory(BlockusItems.RAINBOW_ROSE, 1, 1, 12));
         });
@@ -302,7 +302,7 @@ public class Instance {
         }
 
         public TradeOffer create(Entity entity, Random random) {
-            return new TradeOffer(new ItemStack(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses,  1, 0.05f);
+            return new TradeOffer(new ItemStack(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, 1, 0.05f);
         }
     }
 }

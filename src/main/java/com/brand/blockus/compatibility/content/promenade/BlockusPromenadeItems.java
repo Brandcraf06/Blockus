@@ -1,10 +1,7 @@
 package com.brand.blockus.compatibility.content.promenade;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.content.BlocksRegistration;
-import com.brand.blockus.content.BlockusItems;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;

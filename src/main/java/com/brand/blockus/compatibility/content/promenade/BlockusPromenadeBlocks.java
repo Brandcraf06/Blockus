@@ -1,7 +1,6 @@
 package com.brand.blockus.compatibility.content.promenade;
 
 import com.brand.blockus.content.BlocksRegistration;
-import com.brand.blockus.content.BlockusItems;
 import com.hugman.dawn.api.object.block.PlantPileBlock;
 import com.hugman.promenade.init.AmaranthBundle;
 import com.hugman.promenade.init.AutumnBundle;
@@ -12,7 +11,6 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -107,21 +105,21 @@ public class BlockusPromenadeBlocks {
             }
         }, POTTED_PALM, PALM_SMALL_HEDGE);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getDefaultColor(), PALM_SMALL_HEDGE);
-		ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xEBB359, WHITE_OAK_LEAF_PILE);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xEBB359, WHITE_OAK_LEAF_PILE);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xEBB359, WHITE_OAK_LEAF_PILE);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
-                POTTED_AUTUMN_OAK,
-                POTTED_AUTUMN_BIRCH,
-                POTTED_PINK_CHERRY_OAK,
-                POTTED_WHITE_CHERRY_OAK,
-                POTTED_PALM,
-                AUTUMN_OAK_SMALL_HEDGE,
-                AUTUMN_BIRCH_SMALL_HEDGE,
-                PINK_CHERRY_OAK_SMALL_HEDGE,
-                WHITE_CHERRY_OAK_SMALL_HEDGE,
-                PALM_SMALL_HEDGE,
-                WHITE_OAK_LEAF_PILE
+            POTTED_AUTUMN_OAK,
+            POTTED_AUTUMN_BIRCH,
+            POTTED_PINK_CHERRY_OAK,
+            POTTED_WHITE_CHERRY_OAK,
+            POTTED_PALM,
+            AUTUMN_OAK_SMALL_HEDGE,
+            AUTUMN_BIRCH_SMALL_HEDGE,
+            PINK_CHERRY_OAK_SMALL_HEDGE,
+            WHITE_CHERRY_OAK_SMALL_HEDGE,
+            PALM_SMALL_HEDGE,
+            WHITE_OAK_LEAF_PILE
         );
     }
 }

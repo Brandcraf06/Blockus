@@ -1,7 +1,6 @@
 package com.brand.blockus.tag;
 
 import com.brand.blockus.Blockus;
-
 import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.block.Block;
 import net.minecraft.tag.Tag;
