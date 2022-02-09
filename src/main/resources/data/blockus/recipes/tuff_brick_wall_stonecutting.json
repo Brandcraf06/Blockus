@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:tuff_bricks"
-  },
-  "result": "blockus:tuff_brick_wall",
-  "count": 1
-}

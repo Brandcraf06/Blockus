@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:glowstone"
-  },
-  "result": "blockus:legacy_glowstone",
-  "count": 1
-}

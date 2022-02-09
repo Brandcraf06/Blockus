@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:warped_warty_blackstone_bricks"
-  },
-  "result": "blockus:warped_warty_blackstone_brick_stairs",
-  "count": 1
-}

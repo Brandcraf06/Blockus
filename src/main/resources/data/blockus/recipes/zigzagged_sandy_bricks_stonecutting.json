@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:sandy_bricks"
-  },
-  "result": "blockus:zigzagged_sandy_bricks",
-  "count": 1
-}

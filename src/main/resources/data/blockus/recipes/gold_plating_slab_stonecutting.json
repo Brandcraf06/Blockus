@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:gold_plating"
-  },
-  "result": "blockus:gold_plating_slab",
-  "count": 2
-}

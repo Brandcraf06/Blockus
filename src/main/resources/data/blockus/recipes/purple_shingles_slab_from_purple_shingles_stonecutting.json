@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:purple_shingles"
-  },
-  "result": "blockus:purple_shingles_slab",
-  "count": 2
-}

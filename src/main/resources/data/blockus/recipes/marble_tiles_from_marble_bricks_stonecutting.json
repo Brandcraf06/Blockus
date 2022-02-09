@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "blockus:marble_bricks"
-    },
-    "result": "blockus:marble_tiles",
-    "count": 1
-}

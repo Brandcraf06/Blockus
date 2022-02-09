@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:iron_plating"
-  },
-  "result": "blockus:iron_plating_stairs",
-  "count": 1
-}

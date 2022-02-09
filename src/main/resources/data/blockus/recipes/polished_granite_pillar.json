@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:granite_bricks"
-  },
-  "result": "blockus:polished_granite_pillar",
-  "count": 1
-}

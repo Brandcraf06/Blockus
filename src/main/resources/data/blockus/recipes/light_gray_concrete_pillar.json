@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:light_gray_concrete"
-  },
-  "result": "blockus:light_gray_concrete_pillar",
-  "count": 1
-}

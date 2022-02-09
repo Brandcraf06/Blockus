@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:black_concrete_bricks"
-  },
-  "result": "blockus:chiseled_black_concrete",
-  "count": 1
-}

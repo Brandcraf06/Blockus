@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:lapis_block"
-  },
-  "result": "blockus:legacy_lapis_block",
-  "count": 1
-}

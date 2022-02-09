@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "blockus:polished_bluestone"
-    },
-    "result": "blockus:bluestone_lines",
-    "count": 1
-}

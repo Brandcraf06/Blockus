@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:polished_end_stone"
-  },
-  "result": "blockus:zigzagged_end_stone_bricks",
-  "count": 1
-}

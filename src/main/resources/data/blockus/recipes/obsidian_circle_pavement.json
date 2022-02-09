@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:obsidian_bricks"
-  },
-  "result": "blockus:obsidian_circle_pavement",
-  "count": 1
-}

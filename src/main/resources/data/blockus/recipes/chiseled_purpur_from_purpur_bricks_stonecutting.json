@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:purpur_bricks"
-  },
-  "result": "blockus:chiseled_purpur",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:light_gray_concrete_bricks"
-  },
-  "result": "blockus:chiseled_light_gray_concrete",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:light_blue_terracotta"
-  },
-  "result": "blockus:light_blue_shingles",
-  "count": 1
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:ice_bricks"
-  },
-  "result": "blockus:ice_pillar",
-  "count": 1
-}

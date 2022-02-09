@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:grass_block"
-  },
-  "result": "blockus:legacy_grass_block",
-  "count": 1
-}

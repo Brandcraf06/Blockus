@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:blaze_bricks"
-  },
-  "result": "blockus:blaze_pillar",
-  "count": 1
-}

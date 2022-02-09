@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:rainbow_bricks"
-  },
-  "result": "blockus:rainbow_brick_stairs",
-  "count": 1
-}

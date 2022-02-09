@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:polished_tuff"
-  },
-  "result": "blockus:zigzagged_tuff",
-  "count": 1
-}

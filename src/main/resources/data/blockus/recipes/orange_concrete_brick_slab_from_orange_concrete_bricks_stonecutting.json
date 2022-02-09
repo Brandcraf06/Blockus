@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:orange_concrete_bricks"
-  },
-  "result": "blockus:orange_concrete_brick_slab",
-  "count": 2
-}

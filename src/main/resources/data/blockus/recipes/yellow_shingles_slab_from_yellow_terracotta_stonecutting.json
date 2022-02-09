@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:yellow_terracotta"
-  },
-  "result": "blockus:yellow_shingles_slab",
-  "count": 2
-}

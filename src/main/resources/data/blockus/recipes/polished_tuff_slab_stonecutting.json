@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:tuff"
-  },
-  "result": "blockus:polished_tuff_slab",
-  "count": 2
-}

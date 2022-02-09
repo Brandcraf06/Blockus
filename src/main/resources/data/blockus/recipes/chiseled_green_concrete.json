@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:green_concrete"
-  },
-  "result": "blockus:chiseled_green_concrete",
-  "count": 1
-}

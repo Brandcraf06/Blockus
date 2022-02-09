@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:soaked_bricks"
-  },
-  "result": "blockus:zigzagged_soaked_bricks",
-  "count": 1
-}

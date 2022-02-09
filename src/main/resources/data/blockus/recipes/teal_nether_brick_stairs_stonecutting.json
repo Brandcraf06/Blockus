@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "blockus:teal_nether_bricks"
-  },
-  "result": "blockus:teal_nether_brick_stairs",
-  "count": 1
-}

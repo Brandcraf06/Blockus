@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:polished_diorite"
-  },
-  "result": "blockus:polished_diorite_pillar",
-  "count": 1
-}
