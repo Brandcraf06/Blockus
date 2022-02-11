@@ -18,14 +18,11 @@ import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SurfaceWaterDepthFilterPlacementModifier;
 
-import java.util.List;
-
 public class BlockusVegetationFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> WHITE_OAK;
     public static final RegistryEntry<PlacedFeature> WHITE_OAK_CHECKED;
     public static final RegistryEntry<PlacedFeature> WHITE_OAK_RARE;
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> RAINBOW_ROSE;
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> RAINBOW_ROSE_BONEMEAL;
 
 
@@ -37,7 +34,6 @@ public class BlockusVegetationFeatures {
         WHITE_OAK = ConfiguredFeatures.register("white_oak", Feature.TREE, builder().ignoreVines().build());
         WHITE_OAK_CHECKED = PlacedFeatures.register("white_oak_checked", BlockusVegetationFeatures.WHITE_OAK, new PlacementModifier[]{RarityFilterPlacementModifier.of(48), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))});
         WHITE_OAK_RARE = PlacedFeatures.register("white_oak_rare", BlockusVegetationFeatures.WHITE_OAK, new PlacementModifier[]{RarityFilterPlacementModifier.of(240), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))});
-        RAINBOW_ROSE = ConfiguredFeatures.register("rainbow_rose", Feature.FLOWER, new RandomPatchFeatureConfig(12, 7, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
         RAINBOW_ROSE_BONEMEAL = ConfiguredFeatures.register("rainbow_rose_bonemeal", Feature.FLOWER, new RandomPatchFeatureConfig(6, 5, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
     }
 }
