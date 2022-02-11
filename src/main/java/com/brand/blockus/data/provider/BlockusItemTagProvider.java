@@ -6,14 +6,14 @@ import com.brand.blockus.tag.BlockusBlockTags;
 import com.brand.blockus.tag.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.ItemTags;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
     public BlockusItemTagProvider(FabricDataGenerator dataGenerator, FabricTagProvider.BlockTagProvider blockTags) {
@@ -21,13 +21,13 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     private FabricTagBuilder<Item> getOrCreateTagBuilder(Identifier id) {
-        Tag.Identified<Item> tag = TagFactory.ITEM.create(id);
+        TagKey<Item> tag = TagKey.intern(Registry.ITEM_KEY, id);
         return this.getOrCreateTagBuilder(tag);
     }
 
     private void copy(Identifier id) {
-        Tag.Identified<Block> blockTag = TagFactory.BLOCK.create(id);
-        Tag.Identified<Item> itemTag = TagFactory.ITEM.create(id);
+        TagKey<Block> blockTag = TagKey.intern(Registry.BLOCK_KEY, id);
+        TagKey<Item> itemTag = TagKey.intern(Registry.ITEM_KEY, id);
 
         this.copy(blockTag, itemTag);
     }

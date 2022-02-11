@@ -5,12 +5,12 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.tag.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.tag.BlockTags;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     public BlockusBlockTagProvider(FabricDataGenerator dataGenerator) {
@@ -18,7 +18,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
     }
 
     private FabricTagBuilder<Block> getOrCreateTagBuilder(Identifier id) {
-        Tag.Identified<Block> tag = TagFactory.BLOCK.create(id);
+        TagKey<Block> tag = TagKey.intern(Registry.BLOCK_KEY, id);
         return this.getOrCreateTagBuilder(tag);
     }
 
