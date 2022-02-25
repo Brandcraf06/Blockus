@@ -19,33 +19,17 @@ import net.minecraft.world.BlockView;
 public class BlocksRegistration {
 
     // General
-    public static Block registerBlockCopy(String id, Block base) {
-        return register(id, new Block(FabricBlockSettings.copy(base)));
+
+    public static FallingBlock registerFallingBlock(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
+        return new FallingBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound));
     }
 
-    public static Block registerBlockCopy(String id, Block base, MapColor color) {
-        return register(id, new Block(FabricBlockSettings.copyOf(base).mapColor(color)));
+
+    public static PaneBlockBase registerWoodenPane() {
+        return new PaneBlockBase(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD));
     }
 
-    public static Block registerFallingBlock(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return register(id, new FallingBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound)));
-    }
 
-    public static Block registerCirclePavement(String id, Block base) {
-        return register(id + "_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerPane(String id, Block base) {
-        return register(id, new PaneBlockBase(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerWoodenPane(String id) {
-        return register(id, new PaneBlockBase(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD)));
-    }
-
-    public static Block registerSturdy(String id, Block base) {
-        return register(id, new SturdyStoneBlock(FabricBlockSettings.copy(base)));
-    }
 
     // Pillar
     public static Block registerPillar(String baseid, Block base) {
@@ -57,9 +41,6 @@ public class BlocksRegistration {
         return registerPillar(Registry.BLOCK.getId(base).getPath(), base);
     }
 
-    public static Block registerPillar2(String id, Block base) {
-        return register(id, new PillarBlock(FabricBlockSettings.copy(base)));
-    }
 
     // Slab
     public static Block registerSlab(String baseid, Block base) {
@@ -92,34 +73,23 @@ public class BlocksRegistration {
         return registerWall(Registry.BLOCK.getId(base).getPath(), base);
     }
 
-
-    public static Block registerBarrier(String id, float hardness, float resistance) {
-        return register(id + "_barrier", new Barrier(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).requiresTool()));
+    public static Barrier registerBarrier(float hardness, float resistance) {
+        return new Barrier(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).requiresTool());
     }
 
     public static Block registerSmallHedge(String id, Block base) {
         return register(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
-    // Fence
-    public static Block registerFence(String id, Block base) {
-        return register(id + "_fence", new FenceBlock(FabricBlockSettings.copy(base)));
-    }
-
     // Fence Gate
-    public static Block registerFenceGate(String id, Block base) {
-        return register(id + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copy(base)));
-    }
 
     // Pressure Plate
-    public static Block registerPressurePlate(String id, PressurePlateBlock.ActivationRule type, Block base) {
-        return register(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base).noCollision()));
+
+    public static PressurePlateBase registerPressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
+        return new PressurePlateBase(type, FabricBlockSettings.copy(base).noCollision());
     }
 
     // Button
-    public static Block registerWoodenButton(String id, Block base) {
-        return register(id + "_button", new WoodenButtonBase(FabricBlockSettings.copy(base).noCollision()));
-    }
 
     public static Block registerStoneButton(String id, Block base) {
         return register(id + "_button", new StoneButtonBase(FabricBlockSettings.copy(base).noCollision()));
@@ -130,113 +100,84 @@ public class BlocksRegistration {
     }
 
     // Plants
-    public static Block registerPottedPlant(Block content, String id) {
-        return register("potted_" + id, new FlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).breakInstantly().nonOpaque()));
+
+    public static FlowerPotBlock registerPottedPlant(Block content) {
+        return new FlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).breakInstantly().nonOpaque());
     }
 
-    public static Block registerLargeFlowerPot(Block content, String id) {
-        return register(id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque()));
+    public static LargeFlowerPotBlock registerLargeFlowerPot(Block content) {
+        return new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque());
     }
 
-    public static Block registerPottedDoublePlant(Block content, String id) {
-        return register("potted_" + id, new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque()));
+    public static LargeFlowerPotBlock registerPottedDoublePlant(Block content) {
+        return new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.DECORATION).strength(0.5F, 1.0F).nonOpaque());
     }
 
     // Door & Trapdoor
-    public static Block registerDoor(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return register(id + "_door", new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque()));
+
+    public static DoorBase registerDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
+        return new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque());
     }
 
-    public static Block registerDoor2(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return register(id + "_door", new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool()));
+    public static DoorBase registerStoneDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
+        return new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool());
     }
 
-    public static Block registerTrapdoor(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return register(id + "_trapdoor", new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque()));
+    public static TrapdoorBase registerTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
+        return new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque());
     }
 
-    public static Block registerTrapdoor2(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return register(id + "_trapdoor", new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool()));
+    public static TrapdoorBase registerStoneTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
+        return new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool());
     }
-
-    public static Block registerGate(String id, Block base) {
-        return register(id + "_gate", new DoorBase(FabricBlockSettings.copy(base)));
-    }
-
-    // Timber Frames
-
-    public static Block registerTimberFrame(String id, Block base) {
-        return register(id + "_timber_frame", new Block(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerOrientableTimberFrame(String id, Block base) {
-        return register(id + "_timber_frame", new OrientableBlockBase(FabricBlockSettings.copy(base)));
-    }
-
 
     // Light
-    public static Block registerLightBlock(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MapColor color) {
-        return register(id, new Block(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).luminance(luminance).requiresTool()));
+
+    public static Block registerLightBlock(float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MapColor color) {
+        return new Block(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).luminance(luminance).requiresTool());
     }
 
-    public static Block registerNeonBlock(String id, DyeColor color) {
-        return register(id + "_neon", new Block(FabricBlockSettings.of(Material.GLASS, color).luminance(3).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlocksRegistration::always).allowsSpawning(BlocksRegistration::never)));
+    public static Block registerNeonBlock(DyeColor color) {
+        return new Block(FabricBlockSettings.of(Material.GLASS, color).luminance(3).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlocksRegistration::always).allowsSpawning(BlocksRegistration::never));
     }
 
-    public static Block registerLampBlock(String id, float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MapColor color) {
-        return register(id, new Block(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).luminance(luminance)));
+    public static Block registerLampBlock(float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MapColor color) {
+        return new Block(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).luminance(luminance));
     }
 
-    public static Block registerLanternBlock(String id, Block base) {
-        return register(id, new Block(FabricBlockSettings.copy(base)));
+    public static RedstoneLampBlock registerRedstoneLamp() {
+        return new RedstoneLampBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).allowsSpawning(BlocksRegistration::always));
     }
 
-    public static Block registerRedstoneLamp(String id) {
-        return register(id, new RedstoneLampBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).allowsSpawning(BlocksRegistration::always)));
+    public static Block registerLitRedstoneLamp() {
+        return new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).luminance(15).allowsSpawning(BlocksRegistration::always));
     }
 
-    public static Block registerLitRedstoneLamp(String id) {
-        return register(id + "_lit", new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).luminance(15).allowsSpawning(BlocksRegistration::always)));
-    }
-
-    public static Block registerFuturneoBlock(String id, MapColor color) {
-        return register(id + "_futurneo_block", new Block(FabricBlockSettings.of(Material.REDSTONE_LAMP, color).luminance(15).strength(0.5f, 0.5f).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlocksRegistration::always)));
+    public static Block registerFuturneoBlock(MapColor color) {
+        return new Block(FabricBlockSettings.of(Material.REDSTONE_LAMP, color).luminance(15).strength(0.5f, 0.5f).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlocksRegistration::always));
     }
 
     // Colors
 
-    public static Block registerColoredTiles(String id, Block base) {
-        return register(id + "_colored_tiles", new Block(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerColoredTiles2(String id, Block base) {
-        return register(id + "_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerPatternedWool(String id, Block base) {
-        return register(id + "_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerColoredStoneBricks(String id, MapColor color) {
-        return register(id + "_stone_bricks", new Block(FabricBlockSettings.of(Material.STONE, color).strength(1.5F, 6.0F).requiresTool()));
+    public static Block registerColoredStoneBricks(MapColor color) {
+        return new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).mapColor(color));
     }
 
     // Glass
-    public static Block registerGlass(String id, Block base) {
-        return register(id, new GlassBlock(FabricBlockSettings.copy(base).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
+
+
+    public static StainedGlassBlock registerStainedGlass(DyeColor color, Block base) {
+        return new StainedGlassBlock(color, FabricBlockSettings.copy(base).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never));
     }
 
-    public static Block registerStainedGlass(String id, DyeColor color, Block base) {
-        return register(id, new StainedGlassBlock(color, FabricBlockSettings.copy(base).allowsSpawning(BlocksRegistration::never).solidBlock(BlocksRegistration::never).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
-    }
-
-    public static Block registerStainedGlassPane(String id, DyeColor color, Block base) {
-        return register(id, new StainedGlassPaneBlock(color, FabricBlockSettings.copy(base)));
+    public static StainedGlassPaneBlock registerStainedGlassPane(DyeColor color, Block base) {
+        return new StainedGlassPaneBlock(color, FabricBlockSettings.copy(base));
     }
 
     // Asphalt
-    public static Block registerAsphaltBlock(String id, DyeColor color) {
-        return register(id, new AsphaltBlock(FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool()));
+
+    public static AsphaltBlock registerAsphaltBlock(DyeColor color) {
+        return new AsphaltBlock(FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool());
     }
 
     public static Block registerAsphaltSlab(String id, Block base) {
@@ -257,20 +198,17 @@ public class BlocksRegistration {
 
     // Other
 
-    public static Block registerCrates(String id) {
-        return register(id + "_crate", new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).sounds(BlockSoundGroup.WOOD)));
+    public static Block registerCrates() {
+        return new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).sounds(BlockSoundGroup.WOOD));
     }
 
-    public static Block registerLightCrates(String id) {
-        return register(id + "_crate", new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance(14).sounds(BlockSoundGroup.WOOD)));
+    public static Block registerLightCrates() {
+        return new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance(14).sounds(BlockSoundGroup.WOOD));
     }
 
-    public static Block registerChain(String id, Block base) {
-        return register(id + "_chain", new ChainBlock(FabricBlockSettings.copy(base)));
-    }
 
-    public static Block registerShingles(String id, Block base) {
-        return register(id, new Block(FabricBlockSettings.copyOf(base).sounds(BlockSoundGroup.NETHER_BRICKS)));
+    public static Block registerShingles(Block base) {
+        return new Block(FabricBlockSettings.copy(base).sounds(BlockSoundGroup.NETHER_BRICKS));
     }
 
     // Register
@@ -280,7 +218,7 @@ public class BlocksRegistration {
 
     }
 
-    private static boolean always(BlockState state, BlockView world, BlockPos pos) {
+    public static boolean always(BlockState state, BlockView world, BlockPos pos) {
         return true;
     }
 

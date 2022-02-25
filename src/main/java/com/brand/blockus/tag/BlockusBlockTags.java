@@ -68,6 +68,6 @@ public class BlockusBlockTags {
     }
 
     private static TagKey<Block> register(String id) {
-        return TagKey.intern(Registry.BLOCK_KEY, new Identifier(Blockus.MOD_ID, id));
+        return TagKey.of(Registry.BLOCK_KEY, new Identifier(Blockus.MOD_ID, id));
     }
 }
