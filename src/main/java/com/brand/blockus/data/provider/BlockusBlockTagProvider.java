@@ -18,7 +18,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
     }
 
     private FabricTagBuilder<Block> getOrCreateTagBuilder(Identifier id) {
-        TagKey<Block> tag = TagKey.intern(Registry.BLOCK_KEY, id);
+        TagKey<Block> tag = TagKey.of(Registry.BLOCK_KEY, id);
         return this.getOrCreateTagBuilder(tag);
     }
 

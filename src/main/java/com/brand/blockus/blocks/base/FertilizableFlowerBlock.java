@@ -1,6 +1,6 @@
 package com.brand.blockus.blocks.base;
 
-import com.brand.blockus.world.BlockusVegetationFeatures;
+import com.brand.blockus.world.BlockusConfiguredFeatures;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.server.world.ServerWorld;
@@ -25,6 +25,6 @@ public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable
     }
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        BlockusVegetationFeatures.RAINBOW_ROSE_BONEMEAL.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
+        BlockusConfiguredFeatures.RAINBOW_ROSE_BONEMEAL.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
     }
 }

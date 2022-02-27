@@ -21,13 +21,13 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     private FabricTagBuilder<Item> getOrCreateTagBuilder(Identifier id) {
-        TagKey<Item> tag = TagKey.intern(Registry.ITEM_KEY, id);
+        TagKey<Item> tag = TagKey.of(Registry.ITEM_KEY, id);
         return this.getOrCreateTagBuilder(tag);
     }
 
     private void copy(Identifier id) {
-        TagKey<Block> blockTag = TagKey.intern(Registry.BLOCK_KEY, id);
-        TagKey<Item> itemTag = TagKey.intern(Registry.ITEM_KEY, id);
+        TagKey<Block> blockTag = TagKey.of(Registry.BLOCK_KEY, id);
+        TagKey<Item> itemTag = TagKey.of(Registry.ITEM_KEY, id);
 
         this.copy(blockTag, itemTag);
     }

@@ -2,13 +2,13 @@ package com.brand.blockus.data.provider;
 
 import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipesProvider;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 
 import java.util.function.Consumer;
 
-public class BlockusRecipesProvider extends FabricRecipesProvider {
+public class BlockusRecipesProvider extends FabricRecipeProvider {
     public BlockusRecipesProvider(FabricDataGenerator dataGenerator) {
         super(dataGenerator);
     }
