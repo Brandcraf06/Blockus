@@ -1,10 +1,17 @@
 package com.brand.blockus.data.provider;
 
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.data.family.BlockusBlockFamilies;
+import com.brand.blockus.tag.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipesProvider;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.family.BlockFamily;
+import net.minecraft.data.server.recipe.*;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.tag.ItemTags;
 
 import java.util.function.Consumer;
 
@@ -15,6 +22,10 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
 
     @Override
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
+
+        BlockusBlockFamilies.getFamilies().filter(BlockFamily::shouldGenerateRecipes).forEach((family) -> {
+            generateFamily(exporter, family);
+        });
 
         // Stone
         offerStonecuttingRecipe(exporter, BlockusBlocks.STONE_BRICK_PILLAR, Blocks.STONE);
@@ -27,6 +38,8 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.STONE_CIRCLE_PAVEMENT, Blocks.STONE_BRICKS);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMOOTH_STONE_STAIRS, Blocks.SMOOTH_STONE);
+        offerStairsRecipe(exporter, BlockusBlocks.SMOOTH_STONE_STAIRS, Blocks.SMOOTH_STONE);
+        offerSturdyRecipe(exporter, BlockusBlocks.STURDY_STONE, Blocks.STONE, Blocks.COBBLESTONE);
 
         // Andesite
         offerStonecuttingRecipe(exporter, BlockusBlocks.ANDESITE_BRICKS, Blocks.ANDESITE);
@@ -178,6 +191,8 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.TUFF_CIRCLE_PAVEMENT, BlockusBlocks.TUFF_BRICKS);
 
         // Deepslate
+        ShapelessRecipeJsonFactory.create(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS).input(Blocks.DEEPSLATE_BRICKS).input(Blocks.VINE).group("mossy_deepslate_bricks").criterion("has_vine", conditionsFromItem(Blocks.VINE)).offerTo(exporter, convertBetween(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, Blocks.VINE));
+        ShapelessRecipeJsonFactory.create(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS).input(Blocks.DEEPSLATE_BRICKS).input(Blocks.MOSS_BLOCK).group("mossy_deepslate_bricks").criterion("has_moss_block", conditionsFromItem(Blocks.MOSS_BLOCK)).offerTo(exporter, convertBetween(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, Blocks.MOSS_BLOCK));
         offerStonecuttingRecipe(exporter, BlockusBlocks.MOSSY_DEEPSLATE_BRICK_STAIRS, BlockusBlocks.MOSSY_DEEPSLATE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MOSSY_DEEPSLATE_BRICK_SLAB, BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MOSSY_DEEPSLATE_BRICK_WALL, BlockusBlocks.MOSSY_DEEPSLATE_BRICKS);
@@ -194,6 +209,9 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.DEEPSLATE_CIRCLE_PAVEMENT, Blocks.POLISHED_DEEPSLATE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.DEEPSLATE_CIRCLE_PAVEMENT, Blocks.DEEPSLATE_BRICKS);
 
+        offerSturdyRecipe(exporter, BlockusBlocks.STURDY_DEEPSLATE, Blocks.DEEPSLATE, Blocks.COBBLED_DEEPSLATE);
+
+
         // Blackstone
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_BLACKSTONE_PILLAR, Blocks.BLACKSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_BLACKSTONE_PILLAR, Blocks.POLISHED_BLACKSTONE);
@@ -207,17 +225,24 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_BLACKSTONE_CIRCLE_PAVEMENT, Blocks.POLISHED_BLACKSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_BLACKSTONE_CIRCLE_PAVEMENT, Blocks.POLISHED_BLACKSTONE_BRICKS);
 
+        ShapelessRecipeJsonFactory.create(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS).input(Blocks.POLISHED_BLACKSTONE_BRICKS).input(Blocks.CRIMSON_ROOTS).criterion("has_roots", conditionsFromItem(Blocks.CRIMSON_ROOTS)).offerTo(exporter);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICK_STAIRS, BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICK_SLAB, BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICK_WALL, BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS);
 
+        ShapelessRecipeJsonFactory.create(BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS).input(Blocks.POLISHED_BLACKSTONE_BRICKS).input(BlockusItemTags.WARPED_NETHER_GRASS).criterion("has_roots", conditionsFromTag(BlockusItemTags.WARPED_NETHER_GRASS)).offerTo(exporter);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICK_STAIRS, BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICK_SLAB, BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICK_WALL, BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS);
 
+        offerSturdyRecipe(exporter, BlockusBlocks.STURDY_BLACKSTONE, Blocks.POLISHED_BLACKSTONE, Blocks.BLACKSTONE);
+        offerDecoratedRecipe(exporter, BlockusBlocks.GOLD_DECORATED_POLISHED_BLACKSTONE, Items.GOLD_INGOT, Blocks.POLISHED_BLACKSTONE);
+
+
         // Basalt
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_BASALT_STAIRS, BlockusBlocks.ROUGH_BASALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_BASALT_SLAB, BlockusBlocks.ROUGH_BASALT, 2);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.ROUGH_BASALT, 2).input('#', Blocks.BASALT).pattern("#").pattern("#").criterion("has_basalt", conditionsFromItem(Blocks.BASALT)).offerTo(exporter);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_BASALT_BRICKS, Blocks.BASALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_BASALT_BRICKS, Blocks.POLISHED_BASALT);
@@ -301,6 +326,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIMESTONE_TILE_WALL, BlockusBlocks.POLISHED_LIMESTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIMESTONE_TILE_WALL, BlockusBlocks.LIMESTONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIMESTONE_TILE_WALL, BlockusBlocks.LIMESTONE_TILES);
+        offerCutCopperRecipe(exporter, BlockusBlocks.LIMESTONE_TILES, BlockusBlocks.LIMESTONE_BRICKS);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LIMESTONE, BlockusBlocks.LIMESTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LIMESTONE, BlockusBlocks.POLISHED_LIMESTONE);
@@ -372,6 +398,8 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.MARBLE_TILE_WALL, BlockusBlocks.POLISHED_MARBLE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MARBLE_TILE_WALL, BlockusBlocks.MARBLE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MARBLE_TILE_WALL, BlockusBlocks.MARBLE_TILES);
+        offerCutCopperRecipe(exporter, BlockusBlocks.MARBLE_TILES, BlockusBlocks.MARBLE_BRICKS);
+
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_MARBLE, BlockusBlocks.MARBLE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_MARBLE, BlockusBlocks.POLISHED_MARBLE);
@@ -448,6 +476,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUESTONE_TILE_WALL, BlockusBlocks.POLISHED_BLUESTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUESTONE_TILE_WALL, BlockusBlocks.BLUESTONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUESTONE_TILE_WALL, BlockusBlocks.BLUESTONE_TILES);
+        offerCutCopperRecipe(exporter, BlockusBlocks.BLUESTONE_TILES, BlockusBlocks.BLUESTONE_BRICKS);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_BLUESTONE, BlockusBlocks.BLUESTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_BLUESTONE, BlockusBlocks.POLISHED_BLUESTONE);
@@ -474,28 +503,35 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.LAVA_BRICK_SLAB, BlockusBlocks.LAVA_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LAVA_BRICK_WALL, BlockusBlocks.LAVA_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LAVA_BRICKS, BlockusBlocks.LAVA_BRICKS);
+        createEnclosedRecipe(BlockusBlocks.LAVA_BRICKS, Ingredient.ofItems(Blocks.STONE_BRICKS), Items.LAVA_BUCKET).criterion(hasItem(Items.LAVA_BUCKET), conditionsFromItem(Items.LAVA_BUCKET)).criterion(hasItem(Blocks.STONE_BRICKS), conditionsFromItem(Blocks.STONE_BRICKS)).offerTo(exporter);
 
         // Lava Blackstone Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.LAVA_POLISHED_BLACKSTONE_STAIRS, BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LAVA_POLISHED_BLACKSTONE_SLAB, BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LAVA_POLISHED_BLACKSTONE_WALL, BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LAVA_POLISHED_BLACKSTONE, BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS);
+        createEnclosedRecipe(BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS, Ingredient.ofItems(Blocks.POLISHED_BLACKSTONE_BRICKS), Items.LAVA_BUCKET).criterion(hasItem(Items.LAVA_BUCKET), conditionsFromItem(Items.LAVA_BUCKET)).criterion(hasItem(Blocks.POLISHED_BLACKSTONE_BRICKS), conditionsFromItem(Blocks.POLISHED_BLACKSTONE_BRICKS)).offerTo(exporter);
 
         // Water Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.WATER_BRICK_STAIRS, BlockusBlocks.WATER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WATER_BRICK_SLAB, BlockusBlocks.WATER_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WATER_BRICK_WALL, BlockusBlocks.WATER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_WATER_BRICKS, BlockusBlocks.WATER_BRICKS);
+        createEnclosedRecipe(BlockusBlocks.WATER_BRICKS, Ingredient.ofItems(Blocks.STONE_BRICKS), Items.WATER_BUCKET).criterion(hasItem(Items.WATER_BUCKET), conditionsFromItem(Items.WATER_BUCKET)).criterion(hasItem(Blocks.STONE_BRICKS), conditionsFromItem(Blocks.STONE_BRICKS)).offerTo(exporter);
 
         // Snow Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.SNOW_BRICK_STAIRS, BlockusBlocks.SNOW_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SNOW_BRICK_SLAB, BlockusBlocks.SNOW_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SNOW_BRICK_WALL, BlockusBlocks.SNOW_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SNOW_PILLAR, BlockusBlocks.SNOW_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.SNOW_BRICKS, Blocks.SNOW_BLOCK);
+
 
         // Ice Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.ICE_BRICK_WALL, BlockusBlocks.ICE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ICE_PILLAR, BlockusBlocks.ICE_BRICKS);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.ICE_BRICKS, 4).input('#',  BlockusItemTags.NATURAL_ICE).pattern("##").pattern("##").criterion("has_ice", conditionsFromTag(BlockusItemTags.NATURAL_ICE)).offerTo(exporter);
+
 
         // Magma Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGMA_BRICK_STAIRS, Blocks.MAGMA_BLOCK);
@@ -504,6 +540,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGMA_BRICK_SLAB, BlockusBlocks.MAGMA_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGMA_BRICK_WALL, Blocks.MAGMA_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGMA_BRICK_WALL, BlockusBlocks.MAGMA_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.MAGMA_BRICKS, Blocks.MAGMA_BLOCK);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_MAGMA_BRICKS, Blocks.MAGMA_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_MAGMA_BRICKS, BlockusBlocks.MAGMA_BRICKS);
@@ -525,6 +562,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLAZE_BRICK_SLAB, BlockusBlocks.BLAZE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLAZE_BRICK_WALL, BlockusBlocks.BLAZE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLAZE_PILLAR, BlockusBlocks.BLAZE_BRICKS);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.BLAZE_BRICKS).input('#',  Items.BLAZE_POWDER).input('X',  Items.NETHER_BRICK).pattern("#X").pattern("X#").criterion("has_blaze_rod", conditionsFromItem(Items.BLAZE_ROD)).offerTo(exporter);
 
         // Netherrack
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_NETHERRACK, Blocks.NETHERRACK);
@@ -532,6 +570,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_NETHERRACK_STAIRS, BlockusBlocks.POLISHED_NETHERRACK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_NETHERRACK_SLAB, Blocks.NETHERRACK,2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_NETHERRACK_SLAB, BlockusBlocks.POLISHED_NETHERRACK, 2);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_NETHERRACK, Blocks.NETHERRACK);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.NETHERRACK_BRICKS, Blocks.NETHERRACK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.NETHERRACK_BRICKS, BlockusBlocks.POLISHED_NETHERRACK);
@@ -551,7 +590,9 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
 
         // Nether Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_NETHER_BRICKS, Blocks.NETHER_BRICKS);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_NETHER_BRICKS, Blocks.NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_RED_NETHER_BRICKS, Blocks.RED_NETHER_BRICKS);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_RED_NETHER_BRICKS, Blocks.RED_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ZIGZAGGED_NETHER_BRICKS, Blocks.NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ZIGZAGGED_RED_NETHER_BRICKS, Blocks.RED_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.NETHER_BRICK_PILLAR, Blocks.NETHER_BRICKS);
@@ -564,6 +605,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_CHARRED_NETHER_BRICKS, BlockusBlocks.CHARRED_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ZIGZAGGED_CHARRED_NETHER_BRICKS, BlockusBlocks.CHARRED_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHARRED_NETHER_BRICK_PILLAR, BlockusBlocks.CHARRED_NETHER_BRICKS);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_CHARRED_NETHER_BRICKS, BlockusBlocks.CHARRED_NETHER_BRICKS);
 
         // Teal Nether Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.TEAL_NETHER_BRICK_STAIRS, BlockusBlocks.TEAL_NETHER_BRICKS);
@@ -572,6 +614,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_TEAL_NETHER_BRICKS, BlockusBlocks.TEAL_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ZIGZAGGED_TEAL_NETHER_BRICKS, BlockusBlocks.TEAL_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.TEAL_NETHER_BRICK_PILLAR, BlockusBlocks.TEAL_NETHER_BRICKS);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_TEAL_NETHER_BRICKS, BlockusBlocks.TEAL_NETHER_BRICKS);
 
         // Obsidian
         offerStonecuttingRecipe(exporter, BlockusBlocks.OBSIDIAN_BRICKS, Blocks.OBSIDIAN);
@@ -581,6 +624,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.OBSIDIAN_BRICK_SLAB, BlockusBlocks.OBSIDIAN_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.OBSIDIAN_BRICK_WALL, Blocks.OBSIDIAN);
         offerStonecuttingRecipe(exporter, BlockusBlocks.OBSIDIAN_BRICK_WALL, BlockusBlocks.OBSIDIAN_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.OBSIDIAN_BRICKS, Blocks.OBSIDIAN);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_OBSIDIAN_BRICKS, Blocks.OBSIDIAN);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_OBSIDIAN_BRICKS, BlockusBlocks.OBSIDIAN_BRICKS);
@@ -612,6 +656,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.QUARTZ_TILE_WALL, Blocks.QUARTZ_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.QUARTZ_TILE_WALL, Blocks.QUARTZ_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.QUARTZ_TILE_WALL, BlockusBlocks.QUARTZ_TILES);
+        offerCutCopperRecipe(exporter, BlockusBlocks.QUARTZ_TILES, Blocks.QUARTZ_BRICKS);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.QUARTZ_CIRCLE_PAVEMENT, Blocks.QUARTZ_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.QUARTZ_CIRCLE_PAVEMENT, Blocks.QUARTZ_BRICKS);
@@ -631,6 +676,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.LARGE_BRICK_SLAB, BlockusBlocks.LARGE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LARGE_BRICK_WALL, Blocks.BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LARGE_BRICK_WALL, BlockusBlocks.LARGE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.LARGE_BRICKS, Blocks.BRICKS);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.ZIGZAGGED_BRICKS, Blocks.BRICKS);
 
@@ -639,22 +685,26 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOAKED_BRICK_SLAB, BlockusBlocks.SOAKED_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOAKED_BRICK_WALL, BlockusBlocks.SOAKED_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ZIGZAGGED_SOAKED_BRICKS, BlockusBlocks.SOAKED_BRICKS);
+        createEnclosedRecipe(BlockusBlocks.SOAKED_BRICKS, Ingredient.ofItems(Blocks.BRICKS), Items.WATER_BUCKET).criterion(hasItem(Items.WATER_BUCKET), conditionsFromItem(Items.WATER_BUCKET)).criterion(hasItem(Blocks.BRICKS), conditionsFromItem(Blocks.BRICKS)).offerTo(exporter);
 
         // Sandy Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.SANDY_BRICK_STAIRS, BlockusBlocks.SANDY_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SANDY_BRICK_SLAB, BlockusBlocks.SANDY_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SANDY_BRICK_WALL, BlockusBlocks.SANDY_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ZIGZAGGED_SANDY_BRICKS, BlockusBlocks.SANDY_BRICKS);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.SANDY_BRICKS, 2).input('S', Blocks.SAND).input('#', Blocks.BRICKS).pattern(" S ").pattern("S#S").pattern(" S ").criterion("has_sand", conditionsFromItem(Blocks.SAND)).criterion("has_bricks", conditionsFromItem(Blocks.BRICKS)).offerTo(exporter);
 
         // Charred Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHARRED_BRICK_STAIRS, BlockusBlocks.CHARRED_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHARRED_BRICK_SLAB, BlockusBlocks.CHARRED_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHARRED_BRICK_WALL, BlockusBlocks.CHARRED_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ZIGZAGGED_CHARRED_BRICKS, BlockusBlocks.CHARRED_BRICKS);
+        CookingRecipeJsonFactory.createSmelting(Ingredient.ofItems(Blocks.BRICKS), BlockusBlocks.CHARRED_BRICKS.asItem(), 0.1F, 200).criterion("has_bricks", conditionsFromItem(Blocks.BRICKS)).offerTo(exporter);
 
         // Sandstone
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_SANDSTONE_STAIRS, BlockusBlocks.ROUGH_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_SANDSTONE_SLAB, BlockusBlocks.ROUGH_SANDSTONE, 2);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.ROUGH_SANDSTONE, 2).input('#', Blocks.SANDSTONE_SLAB).pattern("#").pattern("#").criterion("has_sandstone", conditionsFromItem(Blocks.SANDSTONE)).offerTo(exporter);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.SANDSTONE_BRICKS, Blocks.SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SANDSTONE_BRICK_STAIRS, Blocks.SANDSTONE);
@@ -679,9 +729,13 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.SANDSTONE_PILLAR, Blocks.SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SANDSTONE_PILLAR, BlockusBlocks.SANDSTONE_BRICKS);
 
+        offerDecoratedRecipe(exporter, BlockusBlocks.GOLD_DECORATED_SANDSTONE, Items.GOLD_INGOT, Blocks.CUT_SANDSTONE);
+        offerDecoratedRecipe(exporter, BlockusBlocks.LAPIS_DECORATED_SANDSTONE, Items.LAPIS_LAZULI, Blocks.CUT_SANDSTONE);
+
         // Red Sandstone
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_RED_SANDSTONE_STAIRS, BlockusBlocks.ROUGH_RED_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_RED_SANDSTONE_SLAB, BlockusBlocks.ROUGH_RED_SANDSTONE, 2);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.ROUGH_RED_SANDSTONE, 2).input('#', Blocks.RED_SANDSTONE_SLAB).pattern("#").pattern("#").criterion("has_red_sandstone", conditionsFromItem(Blocks.RED_SANDSTONE)).offerTo(exporter);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SANDSTONE_BRICKS, Blocks.RED_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SANDSTONE_BRICK_STAIRS, Blocks.RED_SANDSTONE);
@@ -706,13 +760,19 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SANDSTONE_PILLAR, Blocks.RED_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SANDSTONE_PILLAR, BlockusBlocks.RED_SANDSTONE_BRICKS);
 
+        offerDecoratedRecipe(exporter, BlockusBlocks.GOLD_DECORATED_RED_SANDSTONE, Items.GOLD_INGOT, Blocks.CUT_RED_SANDSTONE);
+        offerDecoratedRecipe(exporter, BlockusBlocks.LAPIS_DECORATED_RED_SANDSTONE, Items.LAPIS_LAZULI, Blocks.CUT_RED_SANDSTONE);
+
         // Soul Sandstone
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOUL_SANDSTONE_STAIRS, BlockusBlocks.SOUL_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOUL_SANDSTONE_SLAB, BlockusBlocks.SOUL_SANDSTONE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOUL_SANDSTONE_WALL, BlockusBlocks.SOUL_SANDSTONE, 2);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.SOUL_SANDSTONE).input('#',  BlockusItemTags.SOUL_SOILS).pattern("##").pattern("##").criterion("has_soul_sand", conditionsFromTag(BlockusItemTags.SOUL_SOILS)).offerTo(exporter);
+
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_SOUL_SANDSTONE_STAIRS, BlockusBlocks.ROUGH_SOUL_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_SOUL_SANDSTONE_SLAB, BlockusBlocks.ROUGH_SOUL_SANDSTONE, 2);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.ROUGH_SOUL_SANDSTONE, 2).input('#', BlockusBlocks.SOUL_SANDSTONE_SLAB).pattern("#").pattern("#").criterion("has_soul_sandstone", conditionsFromItem(BlockusBlocks.SOUL_SANDSTONE)).offerTo(exporter);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOUL_SANDSTONE_BRICKS, BlockusBlocks.SOUL_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOUL_SANDSTONE_BRICK_STAIRS, BlockusBlocks.SOUL_SANDSTONE);
@@ -740,11 +800,16 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, BlockusBlocks.SOUL_SANDSTONE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, BlockusBlocks.CUT_SOUL_SANDSTONE, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE);
+        offerCutCopperRecipe(exporter, BlockusBlocks.CHISELED_SOUL_SANDSTONE, BlockusBlocks.CUT_SOUL_SANDSTONE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOUL_SANDSTONE_PILLAR, BlockusBlocks.SOUL_SANDSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SOUL_SANDSTONE_PILLAR, BlockusBlocks.SOUL_SANDSTONE_BRICKS);
+
+        offerDecoratedRecipe(exporter, BlockusBlocks.GOLD_DECORATED_SOUL_SANDSTONE, Items.GOLD_INGOT, BlockusBlocks.CUT_SOUL_SANDSTONE);
+        offerDecoratedRecipe(exporter, BlockusBlocks.LAPIS_DECORATED_SOUL_SANDSTONE, Items.LAPIS_LAZULI, BlockusBlocks.CUT_SOUL_SANDSTONE);
 
         // Honeycomb Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.HONEYCOMB_BRICKS, Blocks.HONEYCOMB_BLOCK);
@@ -754,6 +819,8 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.HONEYCOMB_BRICK_SLAB, BlockusBlocks.HONEYCOMB_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.HONEYCOMB_BRICK_WALL, Blocks.HONEYCOMB_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.HONEYCOMB_BRICK_WALL, BlockusBlocks.HONEYCOMB_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.HONEYCOMB_BRICKS, Blocks.HONEYCOMB_BLOCK);
+
 
         // Purpur Blocks
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_PURPUR, Blocks.PURPUR_BLOCK);
@@ -804,15 +871,19 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPUR_LINES, BlockusBlocks.POLISHED_PURPUR);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPUR_LINES, BlockusBlocks.PURPUR_BRICKS);
 
+
+
         // Phantom Purpur Blocks
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_STAIRS, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_SLAB, BlockusBlocks.PHANTOM_PURPUR_BLOCK, 2);
+        offerPhantomPurpurRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_BLOCK, Blocks.PURPUR_BLOCK);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_PHANTOM_PURPUR, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_PHANTOM_PURPUR_STAIRS, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_PHANTOM_PURPUR_STAIRS, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_PHANTOM_PURPUR_SLAB, BlockusBlocks.PHANTOM_PURPUR_BLOCK, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_PHANTOM_PURPUR_SLAB, BlockusBlocks.POLISHED_PHANTOM_PURPUR, 2);
+        offerPhantomPurpurRecipe(exporter, BlockusBlocks.POLISHED_PHANTOM_PURPUR, BlockusBlocks.POLISHED_PURPUR);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_BRICKS, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_BRICKS, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
@@ -825,6 +896,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_BRICK_WALL, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_BRICK_WALL, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_BRICK_WALL, BlockusBlocks.PHANTOM_PURPUR_BRICKS);
+        offerPhantomPurpurRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_BRICKS, BlockusBlocks.PURPUR_BRICKS);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
@@ -841,21 +913,27 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICK_WALL, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICK_WALL, BlockusBlocks.PHANTOM_PURPUR_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICK_WALL, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS);
+        offerPhantomPurpurRecipe(exporter, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS, BlockusBlocks.PHANTOM_PURPUR_BRICKS);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_PHANTOM_PURPUR, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_PHANTOM_PURPUR, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_PHANTOM_PURPUR, BlockusBlocks.PHANTOM_PURPUR_BRICKS);
+        offerPhantomPurpurRecipe(exporter, BlockusBlocks.CHISELED_PHANTOM_PURPUR, BlockusBlocks.CHISELED_PURPUR);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_PILLAR, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_PILLAR, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
+        offerPhantomPurpurRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_PILLAR, Blocks.PURPUR_PILLAR);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.PHANTOM_PURPUR_PILLAR).input('#', BlockusBlocks.PHANTOM_PURPUR_SLAB).pattern("#").pattern("#").criterion("has_phantom_purpur_block", conditionsFromItem(BlockusBlocks.PHANTOM_PURPUR_BLOCK)).offerTo(exporter);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_SQUARES, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_SQUARES, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_SQUARES, BlockusBlocks.PHANTOM_PURPUR_BRICKS);
+        offerPhantomPurpurRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_SQUARES, BlockusBlocks.PURPUR_SQUARES);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_LINES, BlockusBlocks.PHANTOM_PURPUR_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_LINES, BlockusBlocks.POLISHED_PHANTOM_PURPUR);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_LINES, BlockusBlocks.PHANTOM_PURPUR_BRICKS);
+        offerPhantomPurpurRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_LINES, BlockusBlocks.PURPUR_LINES);
 
         // End Stone
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_END_STONE, Blocks.END_STONE);
@@ -863,6 +941,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_END_STONE_STAIRS, BlockusBlocks.POLISHED_END_STONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_END_STONE_SLAB, Blocks.END_STONE,2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_END_STONE_SLAB, BlockusBlocks.POLISHED_END_STONE, 2);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_END_STONE, Blocks.END_STONE);
 
         offerStonecuttingRecipe(exporter, Blocks.END_STONE_BRICKS, BlockusBlocks.POLISHED_END_STONE);
         offerStonecuttingRecipe(exporter, Blocks.END_STONE_BRICK_STAIRS, BlockusBlocks.POLISHED_END_STONE);
@@ -897,6 +976,9 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.END_STONE_PILLAR, BlockusBlocks.POLISHED_END_STONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.END_STONE_PILLAR, Blocks.END_STONE_BRICKS);
 
+        offerDecoratedRecipe(exporter, BlockusBlocks.PURPUR_DECORATED_END_STONE, Items.POPPED_CHORUS_FRUIT, Blocks.END_STONE_BRICKS);
+        offerDecoratedRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_DECORATED_END_STONE, Items.POPPED_CHORUS_FRUIT, Blocks.END_STONE_BRICKS);
+
         // Rainbow
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICKS, BlockusBlocks.RAINBOW_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICK_STAIRS, BlockusBlocks.RAINBOW_BLOCK);
@@ -905,128 +987,163 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICK_SLAB, BlockusBlocks.RAINBOW_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICK_WALL, BlockusBlocks.RAINBOW_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICK_WALL, BlockusBlocks.RAINBOW_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.RAINBOW_BRICKS, BlockusBlocks.RAINBOW_BLOCK);
 
         // Colored Stone Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_STONE_BRICK_STAIRS, BlockusBlocks.WHITE_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_STONE_BRICK_SLAB, BlockusBlocks.WHITE_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_STONE_BRICK_WALL, BlockusBlocks.WHITE_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.WHITE_DYE, BlockusBlocks.WHITE_STONE_BRICKS, BlockusBlocks.WHITE_STONE_BRICK_STAIRS, BlockusBlocks.WHITE_STONE_BRICK_SLAB, BlockusBlocks.WHITE_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_STONE_BRICK_STAIRS, BlockusBlocks.ORANGE_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_STONE_BRICK_SLAB, BlockusBlocks.ORANGE_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_STONE_BRICK_WALL, BlockusBlocks.ORANGE_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.ORANGE_DYE, BlockusBlocks.ORANGE_STONE_BRICKS, BlockusBlocks.ORANGE_STONE_BRICK_STAIRS, BlockusBlocks.ORANGE_STONE_BRICK_SLAB, BlockusBlocks.ORANGE_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_STONE_BRICK_STAIRS, BlockusBlocks.MAGENTA_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_STONE_BRICK_SLAB, BlockusBlocks.MAGENTA_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_STONE_BRICK_WALL, BlockusBlocks.MAGENTA_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.MAGENTA_DYE, BlockusBlocks.MAGENTA_STONE_BRICKS, BlockusBlocks.MAGENTA_STONE_BRICK_STAIRS, BlockusBlocks.MAGENTA_STONE_BRICK_SLAB, BlockusBlocks.MAGENTA_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_STONE_BRICK_STAIRS, BlockusBlocks.LIGHT_BLUE_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_STONE_BRICK_SLAB, BlockusBlocks.LIGHT_BLUE_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_STONE_BRICK_WALL, BlockusBlocks.LIGHT_BLUE_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.LIGHT_BLUE_DYE, BlockusBlocks.LIGHT_BLUE_STONE_BRICKS, BlockusBlocks.LIGHT_BLUE_STONE_BRICK_STAIRS, BlockusBlocks.LIGHT_BLUE_STONE_BRICK_SLAB, BlockusBlocks.LIGHT_BLUE_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_STONE_BRICK_STAIRS, BlockusBlocks.YELLOW_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_STONE_BRICK_SLAB, BlockusBlocks.YELLOW_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_STONE_BRICK_WALL, BlockusBlocks.YELLOW_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.YELLOW_DYE, BlockusBlocks.YELLOW_STONE_BRICKS, BlockusBlocks.YELLOW_STONE_BRICK_STAIRS, BlockusBlocks.YELLOW_STONE_BRICK_SLAB, BlockusBlocks.YELLOW_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_STONE_BRICK_STAIRS, BlockusBlocks.LIME_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_STONE_BRICK_SLAB, BlockusBlocks.LIME_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_STONE_BRICK_WALL, BlockusBlocks.LIME_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.LIME_DYE, BlockusBlocks.LIME_STONE_BRICKS, BlockusBlocks.LIME_STONE_BRICK_STAIRS, BlockusBlocks.LIME_STONE_BRICK_SLAB, BlockusBlocks.LIME_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_STONE_BRICK_STAIRS, BlockusBlocks.PINK_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_STONE_BRICK_SLAB, BlockusBlocks.PINK_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_STONE_BRICK_WALL, BlockusBlocks.PINK_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.PINK_DYE, BlockusBlocks.PINK_STONE_BRICKS, BlockusBlocks.PINK_STONE_BRICK_STAIRS, BlockusBlocks.PINK_STONE_BRICK_SLAB, BlockusBlocks.PINK_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_STONE_BRICK_STAIRS, BlockusBlocks.GRAY_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_STONE_BRICK_SLAB, BlockusBlocks.GRAY_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_STONE_BRICK_WALL, BlockusBlocks.GRAY_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.GRAY_DYE, BlockusBlocks.GRAY_STONE_BRICKS, BlockusBlocks.GRAY_STONE_BRICK_STAIRS, BlockusBlocks.GRAY_STONE_BRICK_SLAB, BlockusBlocks.GRAY_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_STONE_BRICK_STAIRS, BlockusBlocks.CYAN_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_STONE_BRICK_SLAB, BlockusBlocks.CYAN_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_STONE_BRICK_WALL, BlockusBlocks.CYAN_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.CYAN_DYE, BlockusBlocks.CYAN_STONE_BRICKS, BlockusBlocks.CYAN_STONE_BRICK_STAIRS, BlockusBlocks.CYAN_STONE_BRICK_SLAB, BlockusBlocks.CYAN_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_STONE_BRICK_STAIRS, BlockusBlocks.PURPLE_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_STONE_BRICK_SLAB, BlockusBlocks.PURPLE_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_STONE_BRICK_WALL, BlockusBlocks.PURPLE_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.PURPLE_DYE, BlockusBlocks.PURPLE_STONE_BRICKS, BlockusBlocks.PURPLE_STONE_BRICK_STAIRS, BlockusBlocks.PURPLE_STONE_BRICK_SLAB, BlockusBlocks.PURPLE_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_STONE_BRICK_STAIRS, BlockusBlocks.BLUE_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_STONE_BRICK_SLAB, BlockusBlocks.BLUE_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_STONE_BRICK_WALL, BlockusBlocks.BLUE_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.BLUE_DYE, BlockusBlocks.BLUE_STONE_BRICKS, BlockusBlocks.BLUE_STONE_BRICK_STAIRS, BlockusBlocks.BLUE_STONE_BRICK_SLAB, BlockusBlocks.BLUE_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_STONE_BRICK_STAIRS, BlockusBlocks.BROWN_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_STONE_BRICK_SLAB, BlockusBlocks.BROWN_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_STONE_BRICK_WALL, BlockusBlocks.BROWN_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.BROWN_DYE, BlockusBlocks.BROWN_STONE_BRICKS, BlockusBlocks.BROWN_STONE_BRICK_STAIRS, BlockusBlocks.BROWN_STONE_BRICK_SLAB, BlockusBlocks.BROWN_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_STONE_BRICK_STAIRS, BlockusBlocks.GREEN_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_STONE_BRICK_SLAB, BlockusBlocks.GREEN_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_STONE_BRICK_WALL, BlockusBlocks.GREEN_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.GREEN_DYE, BlockusBlocks.GREEN_STONE_BRICKS, BlockusBlocks.GREEN_STONE_BRICK_STAIRS, BlockusBlocks.GREEN_STONE_BRICK_SLAB, BlockusBlocks.GREEN_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_STONE_BRICK_STAIRS, BlockusBlocks.RED_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_STONE_BRICK_SLAB, BlockusBlocks.RED_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_STONE_BRICK_WALL, BlockusBlocks.RED_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.RED_DYE, BlockusBlocks.RED_STONE_BRICKS, BlockusBlocks.RED_STONE_BRICK_STAIRS, BlockusBlocks.RED_STONE_BRICK_SLAB, BlockusBlocks.RED_STONE_BRICK_WALL);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_STONE_BRICK_STAIRS, BlockusBlocks.BLACK_STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_STONE_BRICK_SLAB, BlockusBlocks.BLACK_STONE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_STONE_BRICK_WALL, BlockusBlocks.BLACK_STONE_BRICKS);
+        offerStainedStoneBricksRecipe(exporter, Items.BLACK_DYE, BlockusBlocks.BLACK_STONE_BRICKS, BlockusBlocks.BLACK_STONE_BRICK_STAIRS, BlockusBlocks.BLACK_STONE_BRICK_SLAB, BlockusBlocks.BLACK_STONE_BRICK_WALL);
+
 
         // Concrete
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICKS, Blocks.WHITE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICK_STAIRS, Blocks.WHITE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICK_STAIRS, BlockusBlocks.WHITE_CONCRETE_BRICKS);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICK_SLAB, Blocks.WHITE_CONCRETE, 2);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICK_SLAB, BlockusBlocks.WHITE_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICK_SLAB, Blocks.WHITE_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICK_SLAB, BlockusBlocks.WHITE_CONCRETE_BRICKS);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICK_WALL, Blocks.WHITE_CONCRETE, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICK_WALL, BlockusBlocks.WHITE_CONCRETE_BRICKS, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_WHITE_CONCRETE, Blocks.WHITE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_WHITE_CONCRETE, BlockusBlocks.WHITE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_PILLAR, Blocks.WHITE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_PILLAR, BlockusBlocks.WHITE_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.WHITE_CONCRETE_BRICKS, Blocks.WHITE_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_BRICKS, Blocks.ORANGE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_BRICK_STAIRS, Blocks.ORANGE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_BRICK_STAIRS, BlockusBlocks.ORANGE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_BRICK_SLAB, Blocks.ORANGE_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_BRICK_SLAB, BlockusBlocks.ORANGE_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_BRICK_WALL, Blocks.ORANGE_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_BRICK_WALL, BlockusBlocks.ORANGE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_ORANGE_CONCRETE, Blocks.ORANGE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_ORANGE_CONCRETE, BlockusBlocks.ORANGE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_PILLAR, Blocks.ORANGE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_PILLAR, BlockusBlocks.ORANGE_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.ORANGE_CONCRETE_BRICKS, Blocks.ORANGE_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_BRICKS, Blocks.MAGENTA_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_BRICK_STAIRS, Blocks.MAGENTA_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_BRICK_STAIRS, BlockusBlocks.MAGENTA_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_BRICK_SLAB, Blocks.MAGENTA_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_BRICK_SLAB, BlockusBlocks.MAGENTA_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_BRICK_WALL, Blocks.MAGENTA_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_BRICK_WALL, BlockusBlocks.MAGENTA_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_MAGENTA_CONCRETE, Blocks.MAGENTA_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_MAGENTA_CONCRETE, BlockusBlocks.MAGENTA_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_PILLAR, Blocks.MAGENTA_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_PILLAR, BlockusBlocks.MAGENTA_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.MAGENTA_CONCRETE_BRICKS, Blocks.MAGENTA_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS, Blocks.LIGHT_BLUE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICK_STAIRS, Blocks.LIGHT_BLUE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICK_STAIRS, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICK_SLAB, Blocks.LIGHT_BLUE_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICK_SLAB, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICK_WALL, Blocks.LIGHT_BLUE_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICK_WALL, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LIGHT_BLUE_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LIGHT_BLUE_CONCRETE, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_PILLAR, Blocks.LIGHT_BLUE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_PILLAR, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS, Blocks.LIGHT_BLUE_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_BRICKS, Blocks.YELLOW_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_BRICK_STAIRS, Blocks.YELLOW_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_BRICK_STAIRS, BlockusBlocks.YELLOW_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_BRICK_SLAB, Blocks.YELLOW_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_BRICK_SLAB, BlockusBlocks.YELLOW_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_BRICK_WALL, Blocks.YELLOW_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_BRICK_WALL, BlockusBlocks.YELLOW_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_YELLOW_CONCRETE, Blocks.YELLOW_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_YELLOW_CONCRETE, BlockusBlocks.YELLOW_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_PILLAR, Blocks.YELLOW_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_PILLAR, BlockusBlocks.YELLOW_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.YELLOW_CONCRETE_BRICKS, Blocks.YELLOW_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_BRICKS, Blocks.LIME_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_BRICK_STAIRS, Blocks.LIME_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_BRICK_STAIRS, BlockusBlocks.LIME_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_BRICK_SLAB, Blocks.LIME_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_BRICK_SLAB, BlockusBlocks.LIME_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_BRICK_WALL, Blocks.LIME_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_BRICK_WALL, BlockusBlocks.LIME_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LIME_CONCRETE, Blocks.LIME_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LIME_CONCRETE, BlockusBlocks.LIME_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_PILLAR, Blocks.LIME_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_CONCRETE_PILLAR, BlockusBlocks.LIME_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.LIME_CONCRETE_BRICKS, Blocks.LIME_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_CONCRETE_BRICKS, Blocks.PINK_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_CONCRETE_BRICK_STAIRS, Blocks.PINK_CONCRETE);
@@ -1037,145 +1154,193 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_PINK_CONCRETE, BlockusBlocks.PINK_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_CONCRETE_PILLAR, Blocks.PINK_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_CONCRETE_PILLAR, BlockusBlocks.PINK_CONCRETE_BRICKS);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_CONCRETE_BRICK_WALL, Blocks.PINK_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_CONCRETE_BRICK_WALL, BlockusBlocks.PINK_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.PINK_CONCRETE_BRICKS, Blocks.PINK_CONCRETE);
+
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_BRICKS, Blocks.GRAY_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_BRICK_STAIRS, Blocks.GRAY_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_BRICK_STAIRS, BlockusBlocks.GRAY_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_BRICK_SLAB, Blocks.GRAY_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_BRICK_SLAB, BlockusBlocks.GRAY_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_BRICK_WALL, Blocks.GRAY_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_BRICK_WALL, BlockusBlocks.GRAY_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_GRAY_CONCRETE, Blocks.GRAY_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_GRAY_CONCRETE, BlockusBlocks.GRAY_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_PILLAR, Blocks.GRAY_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_PILLAR, BlockusBlocks.GRAY_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.GRAY_CONCRETE_BRICKS, Blocks.GRAY_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS, Blocks.LIGHT_GRAY_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICK_STAIRS, Blocks.LIGHT_GRAY_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICK_STAIRS, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICK_SLAB, Blocks.LIGHT_GRAY_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICK_SLAB, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICK_WALL, Blocks.LIGHT_GRAY_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICK_WALL, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LIGHT_GRAY_CONCRETE, Blocks.LIGHT_GRAY_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_LIGHT_GRAY_CONCRETE, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_PILLAR, Blocks.LIGHT_GRAY_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_PILLAR, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS, Blocks.LIGHT_GRAY_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_BRICKS, Blocks.CYAN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_BRICK_STAIRS, Blocks.CYAN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_BRICK_STAIRS, BlockusBlocks.CYAN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_BRICK_SLAB, Blocks.CYAN_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_BRICK_SLAB, BlockusBlocks.CYAN_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_BRICK_WALL, Blocks.CYAN_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_BRICK_WALL, BlockusBlocks.CYAN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_CYAN_CONCRETE, Blocks.CYAN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_CYAN_CONCRETE, BlockusBlocks.CYAN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_PILLAR, Blocks.CYAN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_PILLAR, BlockusBlocks.CYAN_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.CYAN_CONCRETE_BRICKS, Blocks.CYAN_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_BRICKS, Blocks.PURPLE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_BRICK_STAIRS, Blocks.PURPLE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_BRICK_STAIRS, BlockusBlocks.PURPLE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_BRICK_SLAB, Blocks.PURPLE_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_BRICK_SLAB, BlockusBlocks.PURPLE_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_BRICK_WALL, Blocks.PURPLE_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_BRICK_WALL, BlockusBlocks.PURPLE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_PURPLE_CONCRETE, Blocks.PURPLE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_PURPLE_CONCRETE, BlockusBlocks.PURPLE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_PILLAR, Blocks.PURPLE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_PILLAR, BlockusBlocks.PURPLE_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.PURPLE_CONCRETE_BRICKS, Blocks.PURPLE_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_BRICKS, Blocks.BLUE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_BRICK_STAIRS, Blocks.BLUE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_BRICK_STAIRS, BlockusBlocks.BLUE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_BRICK_SLAB, Blocks.BLUE_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_BRICK_SLAB, BlockusBlocks.BLUE_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_BRICK_WALL, Blocks.BLUE_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_BRICK_WALL, BlockusBlocks.BLUE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_BLUE_CONCRETE, Blocks.BLUE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_BLUE_CONCRETE, BlockusBlocks.BLUE_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_PILLAR, Blocks.BLUE_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_PILLAR, BlockusBlocks.BLUE_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.BLUE_CONCRETE_BRICKS, Blocks.BLUE_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_BRICKS, Blocks.BROWN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_BRICK_STAIRS, Blocks.BROWN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_BRICK_STAIRS, BlockusBlocks.BROWN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_BRICK_SLAB, Blocks.BROWN_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_BRICK_SLAB, BlockusBlocks.BROWN_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_BRICK_WALL, Blocks.BROWN_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_BRICK_WALL, BlockusBlocks.BROWN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_BROWN_CONCRETE, Blocks.BROWN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_BROWN_CONCRETE, BlockusBlocks.BROWN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_PILLAR, Blocks.BROWN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_PILLAR, BlockusBlocks.BROWN_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.BROWN_CONCRETE_BRICKS, Blocks.BROWN_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_BRICKS, Blocks.GREEN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_BRICK_STAIRS, Blocks.GREEN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_BRICK_STAIRS, BlockusBlocks.GREEN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_BRICK_SLAB, Blocks.GREEN_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_BRICK_SLAB, BlockusBlocks.GREEN_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_BRICK_WALL, Blocks.GREEN_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_BRICK_WALL, BlockusBlocks.GREEN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_GREEN_CONCRETE, Blocks.GREEN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_GREEN_CONCRETE, BlockusBlocks.GREEN_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_PILLAR, Blocks.GREEN_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_PILLAR, BlockusBlocks.GREEN_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.GREEN_CONCRETE_BRICKS, Blocks.GREEN_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_BRICKS, Blocks.RED_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_BRICK_STAIRS, Blocks.RED_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_BRICK_STAIRS, BlockusBlocks.RED_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_BRICK_SLAB, Blocks.RED_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_BRICK_SLAB, BlockusBlocks.RED_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_BRICK_WALL, Blocks.RED_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_BRICK_WALL, BlockusBlocks.RED_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_RED_CONCRETE, Blocks.RED_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_RED_CONCRETE, BlockusBlocks.RED_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_PILLAR, Blocks.RED_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_CONCRETE_PILLAR, BlockusBlocks.RED_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.RED_CONCRETE_BRICKS, Blocks.RED_CONCRETE);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICKS, Blocks.BLACK_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICK_STAIRS, Blocks.BLACK_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICK_STAIRS, BlockusBlocks.BLACK_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICK_SLAB, Blocks.BLACK_CONCRETE, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICK_SLAB, BlockusBlocks.BLACK_CONCRETE_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICK_WALL, Blocks.BLACK_CONCRETE);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICK_WALL, BlockusBlocks.BLACK_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_BLACK_CONCRETE, Blocks.BLACK_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_BLACK_CONCRETE, BlockusBlocks.BLACK_CONCRETE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_PILLAR, Blocks.BLACK_CONCRETE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_PILLAR, BlockusBlocks.BLACK_CONCRETE_BRICKS);
+        offerCutCopperRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICKS, Blocks.BLACK_CONCRETE);
 
         // Asphalt
         offerStonecuttingRecipe(exporter, BlockusBlocks.ASPHALT_STAIRS, BlockusBlocks.ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ASPHALT_SLAB, BlockusBlocks.ASPHALT, 2);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.ASPHALT, 8).input('X', Blocks.GRAVEL).input('#', ItemTags.COALS).pattern("XXX").pattern("X#X").pattern("XXX").group("asphalt").criterion(hasItem(Blocks.GRAVEL), conditionsFromItem(Blocks.GRAVEL)).offerTo(exporter);
+
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_ASPHALT_STAIRS, BlockusBlocks.WHITE_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_ASPHALT_SLAB, BlockusBlocks.WHITE_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.WHITE_DYE, BlockusBlocks.WHITE_ASPHALT, BlockusBlocks.WHITE_ASPHALT_STAIRS, BlockusBlocks.WHITE_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_ASPHALT_STAIRS, BlockusBlocks.ORANGE_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_ASPHALT_SLAB, BlockusBlocks.ORANGE_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.ORANGE_DYE, BlockusBlocks.ORANGE_ASPHALT, BlockusBlocks.ORANGE_ASPHALT_STAIRS, BlockusBlocks.ORANGE_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_ASPHALT_STAIRS, BlockusBlocks.MAGENTA_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_ASPHALT_SLAB, BlockusBlocks.MAGENTA_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.MAGENTA_DYE, BlockusBlocks.MAGENTA_ASPHALT, BlockusBlocks.MAGENTA_ASPHALT_STAIRS, BlockusBlocks.MAGENTA_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_ASPHALT_STAIRS, BlockusBlocks.LIGHT_BLUE_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_ASPHALT_SLAB, BlockusBlocks.LIGHT_BLUE_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.LIGHT_BLUE_DYE, BlockusBlocks.LIGHT_BLUE_ASPHALT, BlockusBlocks.LIGHT_BLUE_ASPHALT_STAIRS, BlockusBlocks.LIGHT_BLUE_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_ASPHALT_STAIRS, BlockusBlocks.YELLOW_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_ASPHALT_SLAB, BlockusBlocks.YELLOW_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.YELLOW_DYE, BlockusBlocks.YELLOW_ASPHALT, BlockusBlocks.YELLOW_ASPHALT_STAIRS, BlockusBlocks.YELLOW_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_ASPHALT_STAIRS, BlockusBlocks.LIME_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_ASPHALT_SLAB, BlockusBlocks.LIME_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.LIME_DYE, BlockusBlocks.LIME_ASPHALT, BlockusBlocks.LIME_ASPHALT_STAIRS, BlockusBlocks.LIME_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_ASPHALT_STAIRS, BlockusBlocks.PINK_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_ASPHALT_SLAB, BlockusBlocks.PINK_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.PINK_DYE, BlockusBlocks.PINK_ASPHALT, BlockusBlocks.PINK_ASPHALT_STAIRS, BlockusBlocks.PINK_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_ASPHALT_STAIRS, BlockusBlocks.LIGHT_GRAY_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_ASPHALT_SLAB, BlockusBlocks.LIGHT_GRAY_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.LIGHT_GRAY_DYE, BlockusBlocks.LIGHT_GRAY_ASPHALT, BlockusBlocks.LIGHT_GRAY_ASPHALT_STAIRS, BlockusBlocks.LIGHT_GRAY_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_ASPHALT_STAIRS, BlockusBlocks.GRAY_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_ASPHALT_SLAB, BlockusBlocks.GRAY_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.GRAY_DYE, BlockusBlocks.GRAY_ASPHALT, BlockusBlocks.GRAY_ASPHALT_STAIRS, BlockusBlocks.GRAY_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_ASPHALT_STAIRS, BlockusBlocks.CYAN_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_ASPHALT_SLAB, BlockusBlocks.CYAN_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.CYAN_DYE, BlockusBlocks.CYAN_ASPHALT, BlockusBlocks.CYAN_ASPHALT_STAIRS, BlockusBlocks.CYAN_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_ASPHALT_STAIRS, BlockusBlocks.PURPLE_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_ASPHALT_SLAB, BlockusBlocks.PURPLE_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.PURPLE_DYE, BlockusBlocks.PURPLE_ASPHALT, BlockusBlocks.PURPLE_ASPHALT_STAIRS, BlockusBlocks.PURPLE_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_ASPHALT_STAIRS, BlockusBlocks.BLUE_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_ASPHALT_SLAB, BlockusBlocks.BLUE_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.BLUE_DYE, BlockusBlocks.BLUE_ASPHALT, BlockusBlocks.BLUE_ASPHALT_STAIRS, BlockusBlocks.BLUE_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_ASPHALT_STAIRS, BlockusBlocks.BROWN_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_ASPHALT_SLAB, BlockusBlocks.BROWN_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.BROWN_DYE, BlockusBlocks.BROWN_ASPHALT, BlockusBlocks.BROWN_ASPHALT_STAIRS, BlockusBlocks.BROWN_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_ASPHALT_STAIRS, BlockusBlocks.GREEN_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_ASPHALT_SLAB, BlockusBlocks.GREEN_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.GREEN_DYE, BlockusBlocks.GREEN_ASPHALT, BlockusBlocks.GREEN_ASPHALT_STAIRS, BlockusBlocks.GREEN_ASPHALT_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_ASPHALT_STAIRS, BlockusBlocks.RED_ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_ASPHALT_SLAB, BlockusBlocks.RED_ASPHALT, 2);
+        offerAsphaltRecipe(exporter, Items.RED_DYE, BlockusBlocks.RED_ASPHALT, BlockusBlocks.RED_ASPHALT_STAIRS, BlockusBlocks.RED_ASPHALT_SLAB);
 
         // Shingles
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_SHINGLES, Blocks.WHITE_TERRACOTTA);
@@ -1183,96 +1348,128 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_SHINGLES_STAIRS, BlockusBlocks.WHITE_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_SHINGLES_SLAB, Blocks.WHITE_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_SHINGLES_SLAB, BlockusBlocks.WHITE_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.WHITE_SHINGLES, Blocks.WHITE_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.WHITE_DYE, BlockusBlocks.WHITE_SHINGLES, BlockusBlocks.WHITE_SHINGLES_STAIRS, BlockusBlocks.WHITE_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_SHINGLES, Blocks.ORANGE_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_SHINGLES_STAIRS, Blocks.ORANGE_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_SHINGLES_STAIRS, BlockusBlocks.ORANGE_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_SHINGLES_SLAB, Blocks.ORANGE_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ORANGE_SHINGLES_SLAB, BlockusBlocks.ORANGE_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.ORANGE_SHINGLES, Blocks.ORANGE_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.ORANGE_DYE, BlockusBlocks.ORANGE_SHINGLES, BlockusBlocks.ORANGE_SHINGLES_STAIRS, BlockusBlocks.ORANGE_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_SHINGLES, Blocks.MAGENTA_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_SHINGLES_STAIRS, Blocks.MAGENTA_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_SHINGLES_STAIRS, BlockusBlocks.MAGENTA_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_SHINGLES_SLAB, Blocks.MAGENTA_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MAGENTA_SHINGLES_SLAB, BlockusBlocks.MAGENTA_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.MAGENTA_SHINGLES, Blocks.MAGENTA_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.MAGENTA_DYE, BlockusBlocks.MAGENTA_SHINGLES, BlockusBlocks.MAGENTA_SHINGLES_STAIRS, BlockusBlocks.MAGENTA_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_SHINGLES, Blocks.LIGHT_BLUE_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_SHINGLES_STAIRS, Blocks.LIGHT_BLUE_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_SHINGLES_STAIRS, BlockusBlocks.LIGHT_BLUE_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_SHINGLES_SLAB, Blocks.LIGHT_BLUE_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_BLUE_SHINGLES_SLAB, BlockusBlocks.LIGHT_BLUE_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.LIGHT_BLUE_SHINGLES, Blocks.LIGHT_BLUE_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.LIGHT_BLUE_DYE, BlockusBlocks.LIGHT_BLUE_SHINGLES, BlockusBlocks.LIGHT_BLUE_SHINGLES_STAIRS, BlockusBlocks.LIGHT_BLUE_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_SHINGLES, Blocks.YELLOW_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_SHINGLES_STAIRS, Blocks.YELLOW_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_SHINGLES_STAIRS, BlockusBlocks.YELLOW_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_SHINGLES_SLAB, Blocks.YELLOW_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.YELLOW_SHINGLES_SLAB, BlockusBlocks.YELLOW_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.YELLOW_SHINGLES, Blocks.YELLOW_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.YELLOW_DYE, BlockusBlocks.YELLOW_SHINGLES, BlockusBlocks.YELLOW_SHINGLES_STAIRS, BlockusBlocks.YELLOW_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_SHINGLES, Blocks.LIME_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_SHINGLES_STAIRS, Blocks.LIME_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_SHINGLES_STAIRS, BlockusBlocks.LIME_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_SHINGLES_SLAB, Blocks.LIME_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIME_SHINGLES_SLAB, BlockusBlocks.LIME_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.LIME_SHINGLES, Blocks.LIME_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.LIME_DYE, BlockusBlocks.LIME_SHINGLES, BlockusBlocks.LIME_SHINGLES_STAIRS, BlockusBlocks.LIME_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_SHINGLES, Blocks.PINK_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_SHINGLES_STAIRS, Blocks.PINK_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_SHINGLES_STAIRS, BlockusBlocks.PINK_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_SHINGLES_SLAB, Blocks.PINK_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PINK_SHINGLES_SLAB, BlockusBlocks.PINK_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.PINK_SHINGLES, Blocks.PINK_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.PINK_DYE, BlockusBlocks.PINK_SHINGLES, BlockusBlocks.PINK_SHINGLES_STAIRS, BlockusBlocks.PINK_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_SHINGLES, Blocks.LIGHT_GRAY_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_SHINGLES_STAIRS, Blocks.LIGHT_GRAY_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_SHINGLES_STAIRS, BlockusBlocks.LIGHT_GRAY_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_SHINGLES_SLAB, Blocks.LIGHT_GRAY_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIGHT_GRAY_SHINGLES_SLAB, BlockusBlocks.LIGHT_GRAY_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.LIGHT_GRAY_SHINGLES, Blocks.LIGHT_GRAY_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.LIGHT_GRAY_DYE, BlockusBlocks.LIGHT_GRAY_SHINGLES, BlockusBlocks.LIGHT_GRAY_SHINGLES_STAIRS, BlockusBlocks.LIGHT_GRAY_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_SHINGLES, Blocks.GRAY_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_SHINGLES_STAIRS, Blocks.GRAY_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_SHINGLES_STAIRS, BlockusBlocks.GRAY_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_SHINGLES_SLAB, Blocks.GRAY_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GRAY_SHINGLES_SLAB, BlockusBlocks.GRAY_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.GRAY_SHINGLES, Blocks.GRAY_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.GRAY_DYE, BlockusBlocks.GRAY_SHINGLES, BlockusBlocks.GRAY_SHINGLES_STAIRS, BlockusBlocks.GRAY_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_SHINGLES, Blocks.CYAN_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_SHINGLES_STAIRS, Blocks.CYAN_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_SHINGLES_STAIRS, BlockusBlocks.CYAN_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_SHINGLES_SLAB, Blocks.CYAN_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CYAN_SHINGLES_SLAB, BlockusBlocks.CYAN_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.CYAN_SHINGLES, Blocks.CYAN_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.CYAN_DYE, BlockusBlocks.CYAN_SHINGLES, BlockusBlocks.CYAN_SHINGLES_STAIRS, BlockusBlocks.CYAN_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_SHINGLES, Blocks.PURPLE_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_SHINGLES_STAIRS, Blocks.PURPLE_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_SHINGLES_STAIRS, BlockusBlocks.PURPLE_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_SHINGLES_SLAB, Blocks.PURPLE_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.PURPLE_SHINGLES_SLAB, BlockusBlocks.PURPLE_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.PURPLE_SHINGLES, Blocks.PURPLE_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.PURPLE_DYE, BlockusBlocks.PURPLE_SHINGLES, BlockusBlocks.PURPLE_SHINGLES_STAIRS, BlockusBlocks.PURPLE_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_SHINGLES, Blocks.BLUE_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_SHINGLES_STAIRS, Blocks.BLUE_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_SHINGLES_STAIRS, BlockusBlocks.BLUE_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_SHINGLES_SLAB, Blocks.BLUE_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLUE_SHINGLES_SLAB, BlockusBlocks.BLUE_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.BLUE_SHINGLES, Blocks.BLUE_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.BLUE_DYE, BlockusBlocks.BLUE_SHINGLES, BlockusBlocks.BLUE_SHINGLES_STAIRS, BlockusBlocks.BLUE_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_SHINGLES, Blocks.BROWN_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_SHINGLES_STAIRS, Blocks.BROWN_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_SHINGLES_STAIRS, BlockusBlocks.BROWN_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_SHINGLES_SLAB, Blocks.BROWN_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BROWN_SHINGLES_SLAB, BlockusBlocks.BROWN_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.BROWN_SHINGLES, Blocks.BROWN_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.BROWN_DYE, BlockusBlocks.BROWN_SHINGLES, BlockusBlocks.BROWN_SHINGLES_STAIRS, BlockusBlocks.BROWN_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_SHINGLES, Blocks.GREEN_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_SHINGLES_STAIRS, Blocks.GREEN_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_SHINGLES_STAIRS, BlockusBlocks.GREEN_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_SHINGLES_SLAB, Blocks.GREEN_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.GREEN_SHINGLES_SLAB, BlockusBlocks.GREEN_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.GREEN_SHINGLES, Blocks.GREEN_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.GREEN_DYE, BlockusBlocks.GREEN_SHINGLES, BlockusBlocks.GREEN_SHINGLES_STAIRS, BlockusBlocks.GREEN_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SHINGLES, Blocks.RED_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SHINGLES_STAIRS, Blocks.RED_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SHINGLES_STAIRS, BlockusBlocks.RED_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SHINGLES_SLAB, Blocks.RED_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_SHINGLES_SLAB, BlockusBlocks.RED_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.RED_SHINGLES, Blocks.RED_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.RED_DYE, BlockusBlocks.RED_SHINGLES, BlockusBlocks.RED_SHINGLES_STAIRS, BlockusBlocks.RED_SHINGLES_SLAB);
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_SHINGLES, Blocks.BLACK_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_SHINGLES_STAIRS, Blocks.BLACK_TERRACOTTA);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_SHINGLES_STAIRS, BlockusBlocks.BLACK_SHINGLES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_SHINGLES_SLAB, Blocks.BLACK_TERRACOTTA, 2);
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_SHINGLES_SLAB, BlockusBlocks.BLACK_SHINGLES, 2);
+        offerCutCopperRecipe(exporter, BlockusBlocks.BLACK_SHINGLES, Blocks.BLACK_TERRACOTTA);
+        offerShinglesRecipe(exporter, Items.BLACK_DYE, BlockusBlocks.BLACK_SHINGLES, BlockusBlocks.BLACK_SHINGLES_STAIRS, BlockusBlocks.BLACK_SHINGLES_SLAB);
 
         // Colored Tiles
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_COLORED_TILES, Blocks.WHITE_CONCRETE);
@@ -1341,5 +1538,47 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_CRYING_OBSIDIAN, Blocks.CRYING_OBSIDIAN);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_GLOWSTONE, Blocks.GLOWSTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_GLOWING_OBSIDIAN, BlockusBlocks.GLOWING_OBSIDIAN);
+    }
+
+    public static void offerSturdyRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input1, ItemConvertible input2) {
+        ShapedRecipeJsonFactory.create(output, 2).input('#', input1).input('X', input2).pattern("X#X").pattern("# #").pattern("X#X").criterion(hasItem(input1), conditionsFromItem(input1)).criterion(hasItem(input2), conditionsFromItem(input2)).offerTo(exporter);
+        ShapedRecipeJsonFactory.create(output, 2).input('#', input1).input('X', input2).pattern("#X#").pattern("X X").pattern("#X#").criterion(hasItem(input1), conditionsFromItem(input1)).criterion(hasItem(input2), conditionsFromItem(input2)).offerTo(exporter, getRecipeName(output) + "_alt");
+
+    }
+
+    public static void offerDecoratedRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible decoration, ItemConvertible input) {
+        ShapedRecipeJsonFactory.create(output, 4).input('#', decoration).input('X', input).pattern("##").pattern("XX").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+    }
+
+    public static void offerPhantomPurpurRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
+        ShapelessRecipeJsonFactory.create(output).input(input).input(BlockusItemTags.SOUL_SOILS).criterion("has_purpur", conditionsFromItem(input)).offerTo(exporter, convertBetween(output, Blocks.SOUL_SAND));;
+
+    }
+
+    public static CraftingRecipeJsonFactory createEnclosedRecipe(ItemConvertible output, Ingredient input, ItemConvertible center) {
+        return ShapedRecipeJsonFactory.create(output, 8).input('X', input).input('#', center).pattern("XXX").pattern("X#X").pattern("XXX");
+    }
+
+    public static void offerStainedStoneBricksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab, ItemConvertible output_wall) {
+        createEnclosedRecipe(output, Ingredient.ofItems(Blocks.STONE_BRICKS), center).group("stained_stone_bricks").criterion(hasItem(Blocks.STONE_BRICKS), conditionsFromItem(Blocks.STONE_BRICKS)).offerTo(exporter);
+        createEnclosedRecipe(output_stairs, Ingredient.ofItems(Blocks.STONE_BRICK_STAIRS), center).group("stained_stone_brick_stairs").criterion(hasItem(Blocks.STONE_BRICKS), conditionsFromItem(Blocks.STONE_BRICKS)).offerTo(exporter, convertBetween(output_stairs, Blocks.STONE_BRICK_STAIRS));;
+        createEnclosedRecipe(output_slab, Ingredient.ofItems(Blocks.STONE_BRICK_SLAB), center).group("stained_stone_brick_slab").criterion(hasItem(Blocks.STONE_BRICKS), conditionsFromItem(Blocks.STONE_BRICKS)).offerTo(exporter, convertBetween(output_slab, Blocks.STONE_BRICK_SLAB));;
+        createEnclosedRecipe(output_wall, Ingredient.ofItems(Blocks.STONE_BRICK_WALL), center).group("stained_stone_brick_wall").criterion(hasItem(Blocks.STONE_BRICKS), conditionsFromItem(Blocks.STONE_BRICKS)).offerTo(exporter, convertBetween(output_wall, Blocks.STONE_BRICK_WALL));;
+    }
+
+    public static void offerAsphaltRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab) {
+        createEnclosedRecipe(output, Ingredient.ofItems(BlockusBlocks.ASPHALT), center).group("asphalt").criterion(hasItem(BlockusBlocks.ASPHALT), conditionsFromItem(BlockusBlocks.ASPHALT)).offerTo(exporter);
+        createEnclosedRecipe(output_stairs, Ingredient.ofItems(BlockusBlocks.ASPHALT_STAIRS), center).group("asphalt_stairs").criterion(hasItem(BlockusBlocks.ASPHALT), conditionsFromItem(BlockusBlocks.ASPHALT)).offerTo(exporter, convertBetween(output_stairs, BlockusBlocks.ASPHALT_STAIRS));;
+        createEnclosedRecipe(output_slab, Ingredient.ofItems(BlockusBlocks.ASPHALT_SLAB), center).group("asphalt_slab").criterion(hasItem(BlockusBlocks.ASPHALT), conditionsFromItem(BlockusBlocks.ASPHALT)).offerTo(exporter, convertBetween(output_slab, BlockusBlocks.ASPHALT_SLAB));;
+    }
+
+    public static void offerShinglesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab) {
+        createEnclosedRecipe(output, Ingredient.ofItems(BlockusBlocks.SHINGLES), center).group("shingles").criterion(hasItem(BlockusBlocks.SHINGLES), conditionsFromItem(BlockusBlocks.SHINGLES)).offerTo(exporter);
+        createEnclosedRecipe(output_stairs, Ingredient.ofItems(BlockusBlocks.SHINGLES_STAIRS), center).group("shingles_stairs").criterion(hasItem(BlockusBlocks.SHINGLES), conditionsFromItem(BlockusBlocks.SHINGLES)).offerTo(exporter, convertBetween(output_stairs, BlockusBlocks.SHINGLES_STAIRS));;
+        createEnclosedRecipe(output_slab, Ingredient.ofItems(BlockusBlocks.SHINGLES_SLAB), center).group("shingles_slab").criterion(hasItem(BlockusBlocks.SHINGLES), conditionsFromItem(BlockusBlocks.SHINGLES)).offerTo(exporter, convertBetween(output_slab, BlockusBlocks.SHINGLES_SLAB));;
+    }
+
+    public static void offerStairsRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
+        createStairsRecipe(output, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 }
