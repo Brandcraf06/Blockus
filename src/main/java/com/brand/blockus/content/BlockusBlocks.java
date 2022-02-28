@@ -1047,7 +1047,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LIME_WHITE_COLORED_TILES = register("lime_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIME_CONCRETE)));
     public static final Block PINK_WHITE_COLORED_TILES = register("pink_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.PINK_CONCRETE)));
     public static final Block GRAY_WHITE_COLORED_TILES = register("gray_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.GRAY_CONCRETE)));
-    public static final Block LIGHT_WHITE_GRAY_COLORED_TILES = register("light_gray_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE)));
+    public static final Block LIGHT_GRAY_WHITE_COLORED_TILES = register("light_gray_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE)));
     public static final Block CYAN_WHITE_COLORED_TILES = register("cyan_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.CYAN_CONCRETE)));
     public static final Block PURPLE_WHITE_COLORED_TILES = register("purple_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.PURPLE_CONCRETE)));
     public static final Block BLUE_WHITE_COLORED_TILES = register("blue_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.BLUE_CONCRETE)));

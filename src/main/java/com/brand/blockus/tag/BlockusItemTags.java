@@ -19,6 +19,9 @@ public final class BlockusItemTags {
     public static final TagKey<Item> STAINED_STONE_BRICKS = register("stained_stone_bricks");
     public static final TagKey<Item> WARPED_NETHER_GRASS = register("warped_nether_grass");
     public static final TagKey<Item> WHITE_OAK_LOGS = register("white_oak_logs");
+	public static final TagKey<Item> PLANKS_THAT_BURN = create("planks_that_burn");
+
+
 
     private BlockusItemTags() {
         return;

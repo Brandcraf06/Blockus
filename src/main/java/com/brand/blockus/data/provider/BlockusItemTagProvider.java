@@ -7,6 +7,7 @@ import com.brand.blockus.tag.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tag.BlockTags;
@@ -77,6 +78,16 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
 
         this.copy(BlockusBlockTags.WHITE_OAK_LOGS, BlockusItemTags.WHITE_OAK_LOGS);
+
+        this.getOrCreateTagBuilder(BlockusItemTags.PLANKS_THAT_BURN)
+            .add(Items.OAK_PLANKS)
+            .add(Items.SPRUCE_PLANKS)
+            .add(Items.BIRCH_PLANKS)
+            .add(Items.JUNGLE_PLANKS)
+            .add(Items.ACACIA_PLANKS)
+            .add(Items.DARK_OAK_PLANKS)
+            .add(BlockusItems.BAMBOO_PLANKS)
+            .add(BlockusItems.WHITE_OAK_PLANKS);
 
         this.copy(new Identifier("c", "planks_that_burn"));
 

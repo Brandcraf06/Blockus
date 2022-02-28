@@ -1032,7 +1032,7 @@ public class BlockusItems {
     public static final Item LIME_WHITE_COLORED_TILES = register(BlockusBlocks.LIME_WHITE_COLORED_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item PINK_WHITE_COLORED_TILES = register(BlockusBlocks.PINK_WHITE_COLORED_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item GRAY_WHITE_COLORED_TILES = register(BlockusBlocks.GRAY_WHITE_COLORED_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item LIGHT_WHITE_GRAY_COLORED_TILES = register(BlockusBlocks.LIGHT_WHITE_GRAY_COLORED_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item LIGHT_WHITE_GRAY_COLORED_TILES = register(BlockusBlocks.LIGHT_GRAY_WHITE_COLORED_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item CYAN_WHITE_COLORED_TILES = register(BlockusBlocks.CYAN_WHITE_COLORED_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item PURPLE_WHITE_COLORED_TILES = register(BlockusBlocks.PURPLE_WHITE_COLORED_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item BLUE_WHITE_COLORED_TILES = register(BlockusBlocks.BLUE_WHITE_COLORED_TILES, Blockus.BLOCKUS_BUILDING_BLOCKS);

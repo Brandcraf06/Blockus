@@ -219,7 +219,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.LIME_WHITE_COLORED_TILES)
             .add(BlockusBlocks.PINK_WHITE_COLORED_TILES)
             .add(BlockusBlocks.GRAY_WHITE_COLORED_TILES)
-            .add(BlockusBlocks.LIGHT_WHITE_GRAY_COLORED_TILES)
+            .add(BlockusBlocks.LIGHT_GRAY_WHITE_COLORED_TILES)
             .add(BlockusBlocks.CYAN_WHITE_COLORED_TILES)
             .add(BlockusBlocks.PURPLE_WHITE_COLORED_TILES)
             .add(BlockusBlocks.BLUE_WHITE_COLORED_TILES)
