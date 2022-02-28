@@ -14,12 +14,13 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.sound.BlockSoundGroup;
 
-public class BlockusPromenadeBlocks {
+public class BlockusPromenadeBlocks extends BlocksRegistration {
     public static Block POTTED_AUTUMN_OAK;
     public static Block POTTED_AUTUMN_BIRCH;
     public static Block POTTED_PINK_CHERRY_OAK;
@@ -41,50 +42,47 @@ public class BlockusPromenadeBlocks {
     public static void init() {
 
         // Large Flower Pots
-        POTTED_AUTUMN_OAK = BlocksRegistration.registerPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant(), "autumn_oak");
-        POTTED_AUTUMN_BIRCH = BlocksRegistration.registerPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant(), "autumn_birch");
-        POTTED_PINK_CHERRY_OAK = BlocksRegistration.registerPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant(), "pink_cherry_oak");
-        POTTED_WHITE_CHERRY_OAK = BlocksRegistration.registerPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant(), "white_cherry_oak");
-        POTTED_PALM = BlocksRegistration.registerPottedDoublePlant(PalmBundle.PALM_WOOD.getSapling(), "palm");
-        POTTED_DARK_AMARANTH = BlocksRegistration.registerPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_WOOD.getFungus(), "huge_dark_amaranth_fungus");
+        POTTED_AUTUMN_OAK = register("potted_autumn_oak_", createPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant()));
+        POTTED_AUTUMN_BIRCH = register( "potted_autumn_birch", createPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant()));
+        POTTED_PINK_CHERRY_OAK = register( "potted_pink_cherry_oak", createPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant()));
+        POTTED_WHITE_CHERRY_OAK = register( "potted_white_cherry_oak", createPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant()));
+        POTTED_PALM = register("potted_palm", createPottedDoublePlant(PalmBundle.PALM_WOOD.getSapling()));
+        POTTED_DARK_AMARANTH = register("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_WOOD.getFungus()));
 
         // Small Logs
-        CHERRY_OAK_SMALL_LOGS = BlocksRegistration.registerPillar2("cherry_oak_small_logs", CherryBundle.CHERRY_OAK_WOOD.getLog());
+        CHERRY_OAK_SMALL_LOGS = register("cherry_oak_small_logs", new PillarBlock(FabricBlockSettings.copy(CherryBundle.CHERRY_OAK_WOOD.getLog())));
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.CHERRY_OAK_SMALL_LOGS, 5, 5);
 
-        PALM_SMALL_LOGS = BlocksRegistration.registerPillar2("palm_small_logs", PalmBundle.PALM_WOOD.getLog());
+        PALM_SMALL_LOGS = register("palm_small_logs", new PillarBlock(FabricBlockSettings.copy(PalmBundle.PALM_WOOD.getLog())));
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_LOGS, 5, 5);
 
-        DARK_AMARANTH_SMALL_STEMS = BlocksRegistration.registerPillar2("dark_amaranth_small_stems", AmaranthBundle.DARK_AMARANTH_WOOD.getLog());
+        DARK_AMARANTH_SMALL_STEMS = register("dark_amaranth_small_stems", new PillarBlock(FabricBlockSettings.copy(AmaranthBundle.DARK_AMARANTH_WOOD.getLog())));
 
         // Small Hedges
-        AUTUMN_OAK_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("autumn_oak_small_hedge", AutumnBundle.AUTUMN_OAK_LEAVES);
+        AUTUMN_OAK_SMALL_HEDGE = registerSmallHedge("autumn_oak_small_hedge", AutumnBundle.AUTUMN_OAK_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.AUTUMN_OAK_SMALL_HEDGE, 30, 60);
 
-        AUTUMN_BIRCH_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("autumn_birch_small_hedge", AutumnBundle.AUTUMN_BIRCH_LEAVES);
+        AUTUMN_BIRCH_SMALL_HEDGE = registerSmallHedge("autumn_birch_small_hedge", AutumnBundle.AUTUMN_BIRCH_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.AUTUMN_BIRCH_SMALL_HEDGE, 30, 60);
 
-        PINK_CHERRY_OAK_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("pink_cherry_oak_small_hedge", CherryBundle.PINK_CHERRY_OAK_LEAVES);
+        PINK_CHERRY_OAK_SMALL_HEDGE = registerSmallHedge("pink_cherry_oak_small_hedge", CherryBundle.PINK_CHERRY_OAK_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PINK_CHERRY_OAK_SMALL_HEDGE, 30, 60);
 
-        WHITE_CHERRY_OAK_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("white_cherry_oak_small_hedge", CherryBundle.WHITE_CHERRY_OAK_LEAVES);
+        WHITE_CHERRY_OAK_SMALL_HEDGE = registerSmallHedge("white_cherry_oak_small_hedge", CherryBundle.WHITE_CHERRY_OAK_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.WHITE_CHERRY_OAK_SMALL_HEDGE, 30, 60);
 
-        PALM_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("palm_small_hedge", PalmBundle.PALM_WOOD.getLeaves());
+        PALM_SMALL_HEDGE = registerSmallHedge("palm_small_hedge", PalmBundle.PALM_WOOD.getLeaves());
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_HEDGE, 30, 60);
 
-        DARK_AMARANTH_SMALL_HEDGE = BlocksRegistration.registerSmallHedge("dark_amaranth_small_hedge", AmaranthBundle.DARK_AMARANTH_WART_BLOCK);
+        DARK_AMARANTH_SMALL_HEDGE = registerSmallHedge("dark_amaranth_small_hedge", AmaranthBundle.DARK_AMARANTH_WART_BLOCK);
 
         // Leaf Piles
-        WHITE_OAK_LEAF_PILE = BlockusPromenadeBlocks.registerLeafPile("white_oak_leaf_pile");
+        WHITE_OAK_LEAF_PILE = register("white_oak_leaf_pile", new PlantPileBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.1f).ticksRandomly().sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAF_PILE, 30, 60);
 
         // Crates
-        BLUEBERRIES_CRATE = BlocksRegistration.registerCrates("blueberries");
-    }
+        BLUEBERRIES_CRATE = register("blueberries_crate", createLightCrates());
 
-    private static Block registerLeafPile(String id) {
-        return BlocksRegistration.register(id, new PlantPileBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.1f).ticksRandomly().sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
     }
 
     @Environment(EnvType.CLIENT)
