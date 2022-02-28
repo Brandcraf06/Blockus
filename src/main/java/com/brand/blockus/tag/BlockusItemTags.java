@@ -17,6 +17,8 @@ public final class BlockusItemTags {
     public static final Tag.Identified<Item> STAINED_STONE_BRICKS = create("stained_stone_bricks");
     public static final Tag.Identified<Item> WARPED_NETHER_GRASS = create("warped_nether_grass");
     public static final Tag.Identified<Item> WHITE_OAK_LOGS = create("white_oak_logs");
+    public static final Tag.Identified<Item> PLANKS_THAT_BURN = create("planks_that_burn");
+
 
     private BlockusItemTags() {
         return;
