@@ -618,7 +618,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RAINBOW_BRICK_WALL = registerWall(RAINBOW_BRICKS);
     public static final Block RAINBOW_GLOWSTONE = register("rainbow_glowstone", new Block(FabricBlockSettings.copy(Blocks.GLOWSTONE)));
 
-    // Colored Stone Bricks
+    // Stained Stone Bricks
     public static final Block WHITE_STONE_BRICKS = register("white_stone_bricks", createStainedStoneBricks(MapColor.WHITE));
     public static final Block ORANGE_STONE_BRICKS = register("orange_stone_bricks", createStainedStoneBricks(MapColor.ORANGE));
     public static final Block MAGENTA_STONE_BRICKS = register("magenta_stone_bricks", createStainedStoneBricks(MapColor.MAGENTA));
@@ -734,6 +734,23 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GREEN_CONCRETE_BRICK_SLAB = registerSlab(GREEN_CONCRETE_BRICKS);
     public static final Block RED_CONCRETE_BRICK_SLAB = registerSlab(RED_CONCRETE_BRICKS);
     public static final Block BLACK_CONCRETE_BRICK_SLAB = registerSlab(BLACK_CONCRETE_BRICKS);
+
+    public static final Block WHITE_CONCRETE_BRICK_WALL = registerWall(WHITE_CONCRETE_BRICKS);
+    public static final Block ORANGE_CONCRETE_BRICK_WALL = registerWall(ORANGE_CONCRETE_BRICKS);
+    public static final Block MAGENTA_CONCRETE_BRICK_WALL = registerWall(MAGENTA_CONCRETE_BRICKS);
+    public static final Block LIGHT_BLUE_CONCRETE_BRICK_WALL = registerWall(LIGHT_BLUE_CONCRETE_BRICKS);
+    public static final Block YELLOW_CONCRETE_BRICK_WALL = registerWall(YELLOW_CONCRETE_BRICKS);
+    public static final Block LIME_CONCRETE_BRICK_WALL = registerWall(LIME_CONCRETE_BRICKS);
+    public static final Block PINK_CONCRETE_BRICK_WALL = registerWall(PINK_CONCRETE_BRICKS);
+    public static final Block GRAY_CONCRETE_BRICK_WALL = registerWall(GRAY_CONCRETE_BRICKS);
+    public static final Block LIGHT_GRAY_CONCRETE_BRICK_WALL = registerWall(LIGHT_GRAY_CONCRETE_BRICKS);
+    public static final Block CYAN_CONCRETE_BRICK_WALL = registerWall(CYAN_CONCRETE_BRICKS);
+    public static final Block PURPLE_CONCRETE_BRICK_WALL = registerWall(PURPLE_CONCRETE_BRICKS);
+    public static final Block BLUE_CONCRETE_BRICK_WALL = registerWall(BLUE_CONCRETE_BRICKS);
+    public static final Block BROWN_CONCRETE_BRICK_WALL = registerWall(BROWN_CONCRETE_BRICKS);
+    public static final Block GREEN_CONCRETE_BRICK_WALL = registerWall(GREEN_CONCRETE_BRICKS);
+    public static final Block RED_CONCRETE_BRICK_WALL = registerWall(RED_CONCRETE_BRICKS);
+    public static final Block BLACK_CONCRETE_BRICK_WALL = registerWall(BLACK_CONCRETE_BRICKS);
 
     public static final Block CHISELED_WHITE_CONCRETE = register("chiseled_white_concrete", new Block(FabricBlockSettings.copy(Blocks.WHITE_CONCRETE)));
     public static final Block CHISELED_ORANGE_CONCRETE = register("chiseled_orange_concrete", new Block(FabricBlockSettings.copy(Blocks.ORANGE_CONCRETE)));
