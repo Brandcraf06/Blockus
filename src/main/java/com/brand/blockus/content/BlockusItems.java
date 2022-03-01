@@ -861,6 +861,8 @@ public class BlockusItems {
     public static final Item BROWN_ASPHALT = register_asphalt(BlockusBlocks.BROWN_ASPHALT, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item GREEN_ASPHALT = register_asphalt(BlockusBlocks.GREEN_ASPHALT, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item RED_ASPHALT = register_asphalt(BlockusBlocks.RED_ASPHALT, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item RAINBOW_ASPHALT = register_asphalt(BlockusBlocks.RAINBOW_ASPHALT, Blockus.BLOCKUS_BUILDING_BLOCKS);
+
     public static final Item ASPHALT_STAIRS = register_asphalt(BlockusBlocks.ASPHALT_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item WHITE_ASPHALT_STAIRS = register_asphalt(BlockusBlocks.WHITE_ASPHALT_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item ORANGE_ASPHALT_STAIRS = register_asphalt(BlockusBlocks.ORANGE_ASPHALT_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
