@@ -51,6 +51,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.BROWN_ASPHALT)
             .add(BlockusBlocks.GREEN_ASPHALT)
             .add(BlockusBlocks.RED_ASPHALT)
+            .add(BlockusBlocks.RAINBOW_ASPHALT)
             .add(BlockusBlocks.ASPHALT_STAIRS)
             .add(BlockusBlocks.WHITE_ASPHALT_STAIRS)
             .add(BlockusBlocks.ORANGE_ASPHALT_STAIRS)

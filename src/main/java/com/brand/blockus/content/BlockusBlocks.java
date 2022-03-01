@@ -908,6 +908,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BROWN_ASPHALT_SLAB = registerAsphaltSlab(BROWN_ASPHALT);
     public static final Block GREEN_ASPHALT_SLAB = registerAsphaltSlab(GREEN_ASPHALT);
     public static final Block RED_ASPHALT_SLAB = registerAsphaltSlab(RED_ASPHALT);
+    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt", createAsphalt(DyeColor.BLUE));
+
 
     // Shingles
     public static final Block SHINGLES = register("shingles", createShingles(Blocks.TERRACOTTA));
