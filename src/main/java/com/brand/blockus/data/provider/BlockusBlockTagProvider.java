@@ -99,8 +99,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.WHITE_OAK_BARREL);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BARRIERS)
-            .add(BlockusBlocks.CAUTION_BARRIER_BLOCK)
-            .add(BlockusBlocks.ROAD_BARRIER_BLOCK);
+            .add(BlockusBlocks.CAUTION_BARRIER)
+            .add(BlockusBlocks.ROAD_BARRIER);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BASALT_BLOCKS)
             .add(BlockusBlocks.ROUGH_BASALT)

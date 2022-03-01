@@ -1144,8 +1144,8 @@ public class BlockusItems {
     public static final Item SOUL_O_LANTERN = register(BlockusBlocks.SOUL_O_LANTERN, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
     // Barriers
-    public static final Item CAUTION_BARRIER_BLOCK = register(BlockusBlocks.CAUTION_BARRIER_BLOCK, Blockus.BLOCKUS_DECORATIONS);
-    public static final Item ROAD_BARRIER_BLOCK = register(BlockusBlocks.ROAD_BARRIER_BLOCK, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item CAUTION_BARRIER_BLOCK = register(BlockusBlocks.CAUTION_BARRIER, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item ROAD_BARRIER_BLOCK = register(BlockusBlocks.ROAD_BARRIER, Blockus.BLOCKUS_DECORATIONS);
 
     // Netherite Blocks
     public static final Item NETHERITE_STAIRS = register_other(BlockusBlocks.NETHERITE_STAIRS, new BlockItem(BlockusBlocks.NETHERITE_STAIRS, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS).fireproof()));

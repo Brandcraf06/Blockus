@@ -1,5 +1,6 @@
 package com.brand.blockus.data;
 
+import com.brand.blockus.data.provider.BlockusBlockLootTableProvider;
 import com.brand.blockus.data.provider.BlockusBlockTagProvider;
 import com.brand.blockus.data.provider.BlockusItemTagProvider;
 import com.brand.blockus.data.provider.BlockusRecipesProvider;
@@ -15,5 +16,8 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         dataGenerator.addProvider(blockTags);
 
         dataGenerator.addProvider(new BlockusItemTagProvider(dataGenerator, blockTags));
+
+        dataGenerator.addProvider(BlockusBlockLootTableProvider::new);
+
     }
 }
