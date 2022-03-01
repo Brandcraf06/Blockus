@@ -42,12 +42,12 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
     public static void init() {
 
         // Large Flower Pots
-        POTTED_AUTUMN_OAK = register("autumn_oak", createPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant()));
-        POTTED_AUTUMN_BIRCH = register( "autumn_birch", createPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant()));
-        POTTED_PINK_CHERRY_OAK = register( "pink_cherry_oak", createPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant()));
-        POTTED_WHITE_CHERRY_OAK = register( "white_cherry_oak", createPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant()));
-        POTTED_PALM = register("palm", createPottedDoublePlant(PalmBundle.PALM_WOOD.getSapling()));
-        POTTED_DARK_AMARANTH = register("huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_WOOD.getFungus()));
+        POTTED_AUTUMN_OAK = register("potted_autumn_oak", createPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant()));
+        POTTED_AUTUMN_BIRCH = register( "potted_autumn_birch", createPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant()));
+        POTTED_PINK_CHERRY_OAK = register( "potted_pink_cherry_oak", createPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant()));
+        POTTED_WHITE_CHERRY_OAK = register( "potted_white_cherry_oak", createPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant()));
+        POTTED_PALM = register("potted_palm", createPottedDoublePlant(PalmBundle.PALM_WOOD.getSapling()));
+        POTTED_DARK_AMARANTH = register("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_WOOD.getFungus()));
 
         // Small Logs
         CHERRY_OAK_SMALL_LOGS = register("cherry_oak_small_logs", new PillarBlock(FabricBlockSettings.copy(CherryBundle.CHERRY_OAK_WOOD.getLog())));
@@ -81,12 +81,8 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAF_PILE, 30, 60);
 
         // Crates
-        BLUEBERRIES_CRATE = register("blueberries", createLightCrates());
+        BLUEBERRIES_CRATE = register("blueberries_crate", createLightCrates());
 
-    }
-
-    private static Block registerLeafPile(String id) {
-        return BlocksRegistration.register(id, new PlantPileBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.1f).ticksRandomly().sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
     }
 
     @Environment(EnvType.CLIENT)

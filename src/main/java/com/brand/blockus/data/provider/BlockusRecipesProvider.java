@@ -1032,6 +1032,8 @@ public class BlockusRecipesProvider extends FabricRecipeProvider {
         offerTimberFrameRecipe(exporter, BlockusBlocks.DARK_OAK_TIMBER_FRAME, Blocks.DARK_OAK_PLANKS, BlockusBlocks.DARK_OAK_DIAGONAL_TIMBER_FRAME, BlockusBlocks.DARK_OAK_CROSS_TIMBER_FRAME);
         offerTimberFrameRecipe(exporter, BlockusBlocks.WARPED_TIMBER_FRAME, Blocks.WARPED_PLANKS, BlockusBlocks.WARPED_DIAGONAL_TIMBER_FRAME, BlockusBlocks.WARPED_CROSS_TIMBER_FRAME);
         offerTimberFrameRecipe(exporter, BlockusBlocks.CRIMSON_TIMBER_FRAME, Blocks.CRIMSON_PLANKS, BlockusBlocks.CRIMSON_DIAGONAL_TIMBER_FRAME, BlockusBlocks.CRIMSON_CROSS_TIMBER_FRAME);
+        offerTimberFrameRecipe(exporter, BlockusBlocks.BAMBOO_TIMBER_FRAME, BlockusBlocks.BAMBOO_PLANKS, BlockusBlocks.BAMBOO_DIAGONAL_TIMBER_FRAME, BlockusBlocks.BAMBOO_CROSS_TIMBER_FRAME);
+        offerTimberFrameRecipe(exporter, BlockusBlocks.CHARRED_TIMBER_FRAME, BlockusBlocks.CHARRED_PLANKS, BlockusBlocks.CHARRED_DIAGONAL_TIMBER_FRAME, BlockusBlocks.CHARRED_CROSS_TIMBER_FRAME);
         offerTimberFrameRecipe(exporter, BlockusBlocks.WHITE_OAK_TIMBER_FRAME, BlockusBlocks.WHITE_OAK_PLANKS, BlockusBlocks.WHITE_OAK_DIAGONAL_TIMBER_FRAME, BlockusBlocks.WHITE_OAK_CROSS_TIMBER_FRAME);
 
         // Small Hedges
@@ -1048,7 +1050,33 @@ public class BlockusRecipesProvider extends FabricRecipeProvider {
         offerSmallHedgesRecipe(exporter, BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
         offerSmallHedgesRecipe(exporter, BlockusBlocks.MOSS_SMALL_HEDGE, Blocks.MOSS_BLOCK);
 
+        // Large Flower Pots
+        ShapedRecipeJsonFactory.create(BlockusBlocks.LARGE_FLOWER_POT).input('#', Items.BRICK).pattern("# #").pattern("###").pattern("###").criterion("has_flower_pot", conditionsFromItem(Items.FLOWER_POT)).offerTo(exporter);
+
+        // Food Blocks
+        offerReversibleCompactingRecipes(exporter, Items.SWEET_BERRIES, BlockusItems.SWEET_BERRIES_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.GLOW_BERRIES, BlockusItems.GLOW_BERRIES_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.SALMON, BlockusItems.SALMON_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.PUFFERFISH, BlockusItems.PUFFERFISH_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.TROPICAL_FISH, BlockusItems.TROPICAL_FISH_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.COD, BlockusItems.COD_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.COOKIE, BlockusItems.COOKIE_BLOCK);
+        offerReversibleCompactingRecipes(exporter, Items.CHORUS_FRUIT, BlockusItems.CHORUS_BLOCK);
+        offerReversibleCompactingRecipes(exporter, Items.POTATO, BlockusItems.POTATO_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.APPLE, BlockusItems.APPLE_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.GOLDEN_APPLE, BlockusItems.GOLDEN_APPLE_CRATE);
+        createEnclosedRecipe(BlockusBlocks.GOLDEN_APPLE_CRATE, Ingredient.ofItems(Blocks.GOLD_BLOCK), BlockusBlocks.APPLE_CRATE).criterion(hasItem(Items.GOLDEN_APPLE), conditionsFromItem(Items.GOLDEN_APPLE)).offerTo(exporter, convertBetween(BlockusBlocks.GOLDEN_APPLE_CRATE, BlockusBlocks.APPLE_CRATE));
+        offerReversibleCompactingRecipes(exporter, Items.BEETROOT, BlockusItems.BEETROOT_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.CARROT, BlockusItems.CARROT_CRATE);
+        offerReversibleCompactingRecipes(exporter, Items.GOLDEN_CARROT, BlockusItems.GOLDEN_CARROT_CRATE);
+        createEnclosedRecipe(BlockusBlocks.GOLDEN_CARROT_CRATE, Ingredient.ofItems(Items.GOLD_INGOT), BlockusBlocks.CARROT_CRATE).criterion(hasItem(Items.GOLDEN_CARROT), conditionsFromItem(Items.GOLDEN_CARROT)).offerTo(exporter, convertBetween(BlockusBlocks.GOLDEN_CARROT_CRATE, BlockusBlocks.CARROT_CRATE));
+        offerReversibleCompactingRecipes(exporter, Items.BREAD, BlockusItems.BREAD_BOX);
+
+
         // Rainbow
+        offerShapelessRecipe(exporter, BlockusItems.RAINBOW_PETAL, BlockusBlocks.RAINBOW_ROSE, "rainbow_petal", 2);
+        offerShapelessRecipe(exporter, BlockusItems.RAINBOW_PETAL, BlockusBlocks.RAINBOW_BLOCK, "rainbow_petal", 4);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.RAINBOW_BLOCK).input('#', BlockusItems.RAINBOW_PETAL).pattern("##").pattern("##").criterion(hasItem(BlockusItems.RAINBOW_PETAL), conditionsFromItem(BlockusItems.RAINBOW_PETAL)).offerTo(exporter);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICKS, BlockusBlocks.RAINBOW_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICK_STAIRS, BlockusBlocks.RAINBOW_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICK_STAIRS, BlockusBlocks.RAINBOW_BRICKS);
@@ -1057,6 +1085,7 @@ public class BlockusRecipesProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICK_WALL, BlockusBlocks.RAINBOW_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.RAINBOW_BRICK_WALL, BlockusBlocks.RAINBOW_BRICKS);
         offerCutCopperRecipe(exporter, BlockusBlocks.RAINBOW_BRICKS, BlockusBlocks.RAINBOW_BLOCK);
+        ShapedRecipeJsonFactory.create(BlockusBlocks.RAINBOW_GLOWSTONE, 4).input('S', BlockusItems.RAINBOW_PETAL).input('#', Blocks.GLOWSTONE).pattern(" S ").pattern("S#S").pattern(" S ").criterion(hasItem(BlockusItems.RAINBOW_PETAL), conditionsFromItem(BlockusItems.RAINBOW_PETAL)).offerTo(exporter);
 
         // Colored Stone Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.WHITE_STONE_BRICK_STAIRS, BlockusBlocks.WHITE_STONE_BRICKS);
@@ -1345,7 +1374,43 @@ public class BlockusRecipesProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_PILLAR, BlockusBlocks.BLACK_CONCRETE_BRICKS);
         offerCutCopperRecipe(exporter, BlockusBlocks.BLACK_CONCRETE_BRICKS, Blocks.BLACK_CONCRETE);
 
-        // Asphalt
+        // Redstone Lamps
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.WHITE_REDSTONE_LAMP, Items.WHITE_DYE, BlockusBlocks.WHITE_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.ORANGE_REDSTONE_LAMP, Items.ORANGE_DYE, BlockusBlocks.ORANGE_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.MAGENTA_REDSTONE_LAMP, Items.MAGENTA_DYE, BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP, Items.LIGHT_BLUE_DYE, BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.YELLOW_REDSTONE_LAMP, Items.YELLOW_DYE, BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.LIME_REDSTONE_LAMP, Items.LIME_DYE, BlockusBlocks.LIME_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.PINK_REDSTONE_LAMP, Items.PINK_DYE, BlockusBlocks.PINK_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP, Items.LIGHT_GRAY_DYE, BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.GRAY_REDSTONE_LAMP, Items.GRAY_DYE, BlockusBlocks.GRAY_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.CYAN_REDSTONE_LAMP, Items.CYAN_DYE, BlockusBlocks.CYAN_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.PURPLE_REDSTONE_LAMP, Items.PURPLE_DYE, BlockusBlocks.PURPLE_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.BLUE_REDSTONE_LAMP, Items.BLUE_DYE, BlockusBlocks.BLUE_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.BROWN_REDSTONE_LAMP, Items.BROWN_DYE, BlockusBlocks.BROWN_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.GREEN_REDSTONE_LAMP, Items.GREEN_DYE, BlockusBlocks.GREEN_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.RED_REDSTONE_LAMP, Items.RED_DYE, BlockusBlocks.RED_REDSTONE_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, BlockusBlocks.RAINBOW_LAMP, BlockusItems.RAINBOW_PETAL, BlockusBlocks.RAINBOW_LAMP_LIT);
+
+        // Neon Blocks
+        offerNeonRecipe(exporter, BlockusBlocks.WHITE_NEON, Items.WHITE_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.ORANGE_NEON, Items.ORANGE_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.MAGENTA_NEON, Items.MAGENTA_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.LIGHT_BLUE_NEON, Items.LIGHT_BLUE_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.YELLOW_NEON, Items.YELLOW_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.LIME_NEON, Items.LIME_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.PINK_NEON, Items.PINK_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.LIGHT_GRAY_NEON, Items.LIGHT_GRAY_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.GRAY_NEON, Items.GRAY_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.CYAN_NEON, Items.CYAN_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.PURPLE_NEON, Items.PURPLE_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.BLUE_NEON, Items.BLUE_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.BROWN_NEON, Items.BROWN_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.GREEN_NEON, Items.GREEN_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.RED_NEON, Items.RED_DYE);
+        offerNeonRecipe(exporter, BlockusBlocks.BLACK_NEON, Items.BLACK_DYE);
+
+            // Asphalt
         offerStonecuttingRecipe(exporter, BlockusBlocks.ASPHALT_STAIRS, BlockusBlocks.ASPHALT);
         offerStonecuttingRecipe(exporter, BlockusBlocks.ASPHALT_SLAB, BlockusBlocks.ASPHALT, 2);
         ShapedRecipeJsonFactory.create(BlockusBlocks.ASPHALT, 8).input('X', Blocks.GRAVEL).input('#', ItemTags.COALS).pattern("XXX").pattern("X#X").pattern("XXX").group("asphalt").criterion(hasItem(Blocks.GRAVEL), conditionsFromItem(Blocks.GRAVEL)).offerTo(exporter);
@@ -1702,7 +1767,6 @@ public class BlockusRecipesProvider extends FabricRecipeProvider {
         ShapedRecipeJsonFactory.create(output_cross).input('#', output_diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(output_diagonal), conditionsFromItem(output_diagonal)).offerTo(exporter);
     }
 
-
     public static CraftingRecipeJsonFactory createEnclosedRecipe(ItemConvertible output, Ingredient input, ItemConvertible center) {
         return ShapedRecipeJsonFactory.create(output, 8).input('X', input).input('#', center).pattern("XXX").pattern("X#X").pattern("XXX");
     }
@@ -1729,5 +1793,15 @@ public class BlockusRecipesProvider extends FabricRecipeProvider {
     public static void offerStairsRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
         createStairsRecipe(output, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
 
+    }
+
+    public static void offerStainedRedstoneLampRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible dye, ItemConvertible output_lit) {
+        ShapedRecipeJsonFactory.create(output).input('S', dye).input('#', Blocks.REDSTONE_LAMP).pattern(" S ").pattern("S#S").pattern(" S ").group("redstone_lamps").criterion(hasItem(Blocks.REDSTONE_LAMP), conditionsFromItem(Blocks.REDSTONE_LAMP)).offerTo(exporter);
+        ShapelessRecipeJsonFactory.create(output_lit).input(output).group("lit_redstone_lamps").criterion(hasItem(output), conditionsFromItem(output)).offerTo(exporter);
+        ShapedRecipeJsonFactory.create(output_lit).input('S', dye).input('#', BlockusBlocks.REDSTONE_LAMP_LIT).pattern(" S ").pattern("S#S").pattern(" S ").group("lit_redstone_lamps").criterion(hasItem(Blocks.REDSTONE_LAMP), conditionsFromItem(Blocks.REDSTONE_LAMP)).offerTo(exporter, getRecipeName(output) + "_alt");
+    }
+
+    public static void offerNeonRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible dye) {
+        ShapedRecipeJsonFactory.create(output).input('A', dye).input('B', Items.GLOW_INK_SAC).input('C', Items.AMETHYST_SHARD).pattern("CAC").pattern("ABA").pattern("CAC").group("neon_blocks").criterion(hasItem(Items.GLOW_INK_SAC), conditionsFromItem(Items.GLOW_INK_SAC)).offerTo(exporter);
     }
 }
