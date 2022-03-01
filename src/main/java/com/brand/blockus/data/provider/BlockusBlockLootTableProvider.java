@@ -2,12 +2,12 @@ package com.brand.blockus.data.provider;
 
 import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTablesProvider;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.data.server.BlockLootTableGenerator;
 import net.minecraft.item.Items;
 import net.minecraft.loot.entry.ItemEntry;
 
-public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider {
+public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider {
     public BlockusBlockLootTableProvider(FabricDataGenerator dataGenerator) {
         super(dataGenerator);
     }
