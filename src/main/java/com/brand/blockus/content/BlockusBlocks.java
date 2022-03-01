@@ -1159,8 +1159,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlockBase(FabricBlockSettings.copyOf(Blocks.JACK_O_LANTERN).luminance(10)));
 
     // Barriers
-    public static final Block CAUTION_BARRIER_BLOCK = register("caution_barrier", createBarrier(1.5f, 1200.0f));
-    public static final Block ROAD_BARRIER_BLOCK = register("road_barrier", createBarrier(2f, 6.0f));
+    public static final Block CAUTION_BARRIER = register("caution_barrier", createBarrier(1.5f, 1200.0f));
+    public static final Block ROAD_BARRIER = register("road_barrier", createBarrier(2f, 6.0f));
 
     // Netherite Blocks
     public static final Block NETHERITE_STAIRS = createStairs("netherite", Blocks.NETHERITE_BLOCK);
