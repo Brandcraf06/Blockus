@@ -259,7 +259,7 @@ public class BlockusBlockFamilies {
         POLISHED_PHANTOM_PURPUR = register(BlockusBlocks.POLISHED_PHANTOM_PURPUR).stairs(BlockusBlocks.POLISHED_PHANTOM_PURPUR_STAIRS).slab(BlockusBlocks.POLISHED_PHANTOM_PURPUR_SLAB).build();
         PHANTOM_PURPUR_BRICK = register(BlockusBlocks.PHANTOM_PURPUR_BRICKS).wall(BlockusBlocks.PHANTOM_PURPUR_BRICK_WALL).stairs(BlockusBlocks.PHANTOM_PURPUR_BRICK_STAIRS).slab(BlockusBlocks.PHANTOM_PURPUR_BRICK_SLAB).build();
         SMALL_PHANTOM_PURPUR_BRICK = register(BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS).wall(BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICK_WALL).stairs(BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICK_STAIRS).slab(BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICK_SLAB).build();
-        POLISHED_END_STONE = register(BlockusBlocks.POLISHED_END_STONE).stairs(BlockusBlocks.POLISHED_END_STONE_STAIRS).slab(BlockusBlocks.POLISHED_END_STONE_SLAB).build();
+        POLISHED_END_STONE = register(BlockusBlocks.POLISHED_END_STONE).stairs(BlockusBlocks.POLISHED_END_STONE_STAIRS).slab(BlockusBlocks.POLISHED_END_STONE_SLAB).pressurePlate(BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_END_STONE_BUTTON).build();
         SMALL_END_STONE_BRICK = register(BlockusBlocks.SMALL_END_STONE_BRICKS).wall(BlockusBlocks.SMALL_END_STONE_BRICK_WALL).stairs(BlockusBlocks.SMALL_END_STONE_BRICK_STAIRS).slab(BlockusBlocks.SMALL_END_STONE_BRICK_SLAB).build();
 
         // Rainbow Bricks

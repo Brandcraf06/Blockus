@@ -42,7 +42,7 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
     public static void init() {
 
         // Large Flower Pots
-        POTTED_AUTUMN_OAK = register("potted_autumn_oak_", createPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant()));
+        POTTED_AUTUMN_OAK = register("potted_autumn_oak", createPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant()));
         POTTED_AUTUMN_BIRCH = register( "potted_autumn_birch", createPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant()));
         POTTED_PINK_CHERRY_OAK = register( "potted_pink_cherry_oak", createPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant()));
         POTTED_WHITE_CHERRY_OAK = register( "potted_white_cherry_oak", createPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant()));
