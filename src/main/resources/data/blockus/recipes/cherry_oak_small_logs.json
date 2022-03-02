@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "small logs",
+  "ingredients": [
+    {
+      "item": "promenade:cherry_oak_log"
+    },
+    {
+      "item": "promenade:cherry_oak_log"
+    },
+    {
+      "item": "promenade:cherry_oak_log"
+    }
+  ],
+  "result": {
+    "item": "blockus:cherry_oak_small_logs",
+    "count": 3
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "promenade"
+      ]
+    }
+  ]
+}

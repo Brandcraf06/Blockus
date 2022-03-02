@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:small_end_stone_bricks"
+  },
+  "result": "blockus:small_end_stone_brick_column",
+  "count": 1,
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "columns"
+      ]
+    }
+  ]
+}
