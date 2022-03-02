@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "lll",
+    " l ",
+    "lll"
+  ],
+  "key": {
+    "l": {
+      "item": "blockus:lava_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:lava_brick_column",
+    "count": 6
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "columns"
+      ]
+    }
+  ]
+}

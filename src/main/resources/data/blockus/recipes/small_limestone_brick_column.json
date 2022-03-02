@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    " s ",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "blockus:small_limestone_bricks"
+    }
+  },
+  "result": {
+    "item": "blockus:small_limestone_brick_column",
+    "count": 6
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "columns"
+      ]
+    }
+  ]
+}
