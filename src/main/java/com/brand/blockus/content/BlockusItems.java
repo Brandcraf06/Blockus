@@ -95,6 +95,17 @@ public class BlockusItems {
     public static final Item DEEPSLATE_CIRCLE_PAVEMENT = register(BlockusBlocks.DEEPSLATE_CIRCLE_PAVEMENT, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item STURDY_DEEPSLATE = register(BlockusBlocks.STURDY_DEEPSLATE, Blockus.BLOCKUS_BUILDING_BLOCKS);
 
+    // Amethyst
+    public static final Item POLISHED_AMETHYST = register(BlockusBlocks.POLISHED_AMETHYST, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item POLISHED_AMETHYST_STAIRS = register(BlockusBlocks.POLISHED_AMETHYST_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item POLISHED_AMETHYST_SLAB = register(BlockusBlocks.POLISHED_AMETHYST_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item AMETHYST_BRICKS = register(BlockusBlocks.AMETHYST_BRICKS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item AMETHYST_BRICK_STAIRS = register(BlockusBlocks.AMETHYST_BRICK_STAIRS, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item AMETHYST_BRICK_SLAB = register(BlockusBlocks.AMETHYST_BRICK_SLAB, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item AMETHYST_BRICK_WALL = register(BlockusBlocks.AMETHYST_BRICK_WALL, Blockus.BLOCKUS_DECORATIONS);
+    public static final Item CHISELED_AMETHYST = register(BlockusBlocks.CHISELED_AMETHYST, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item AMETHYST_PILLAR = register(BlockusBlocks.AMETHYST_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
+
     // Blackstone
     public static final Item POLISHED_BLACKSTONE_PILLAR = register(BlockusBlocks.POLISHED_BLACKSTONE_PILLAR, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item ZIGZAGGED_POLISHED_BLACKSTONE = register(BlockusBlocks.ZIGZAGGED_POLISHED_BLACKSTONE, Blockus.BLOCKUS_BUILDING_BLOCKS);

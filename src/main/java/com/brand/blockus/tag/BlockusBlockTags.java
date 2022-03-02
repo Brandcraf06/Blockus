@@ -7,6 +7,7 @@ import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 
 public class BlockusBlockTags {
+    public static final Tag.Identified<Block> AMETHYST_BLOCKS = create("amethyst_blocks");
     public static final Tag.Identified<Block> ANDESITE_BLOCKS = create("andesite_blocks");
     public static final Tag.Identified<Block> ASPHALT = create("asphalt");
     public static final Tag.Identified<Block> BARRELS = create("barrels");

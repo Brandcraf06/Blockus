@@ -2,6 +2,10 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
+import com.brand.blockus.blocks.base.amethyst.AmethystPillarBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.blocks.base.redstone.*;
 import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
 import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
@@ -98,6 +102,17 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ZIGZAGGED_DEEPSLATE = register("zigzagged_deepslate", new Block(FabricBlockSettings.copy(Blocks.DEEPSLATE_BRICKS)));
     public static final Block DEEPSLATE_CIRCLE_PAVEMENT = register("deepslate_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.DEEPSLATE_BRICKS)));
     public static final Block STURDY_DEEPSLATE = register("sturdy_deepslate", new SturdyStoneBlock(FabricBlockSettings.copy(Blocks.COBBLED_DEEPSLATE)));
+
+    // Amethyst
+    public static final Block POLISHED_AMETHYST = register("polished_amethyst", new AmethystBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK)));
+    public static final Block POLISHED_AMETHYST_STAIRS = register("polished_amethyst_stairs", new AmethystStairsBlock(POLISHED_AMETHYST.getDefaultState(), FabricBlockSettings.copy(POLISHED_AMETHYST)));
+    public static final Block POLISHED_AMETHYST_SLAB = register("polished_amethyst_slab", new AmethystSlabBlock(FabricBlockSettings.copy(POLISHED_AMETHYST)));
+    public static final Block AMETHYST_BRICKS = register("amethyst_bricks", new AmethystBlock(FabricBlockSettings.copy(POLISHED_AMETHYST)));
+    public static final Block AMETHYST_BRICK_STAIRS = register("amethyst_brick_stairs", new AmethystStairsBlock(AMETHYST_BRICKS.getDefaultState(), FabricBlockSettings.copy(AMETHYST_BRICKS)));
+    public static final Block AMETHYST_BRICK_SLAB = register("amethyst_brick_slab", new AmethystSlabBlock(FabricBlockSettings.copy(AMETHYST_BRICKS)));
+    public static final Block AMETHYST_BRICK_WALL = register("amethyst_brick_wall", new AmethystWallBlock(FabricBlockSettings.copy(AMETHYST_BRICKS)));
+    public static final Block CHISELED_AMETHYST = register("chiseled_amethyst", new AmethystBlock(FabricBlockSettings.copy(AMETHYST_BRICKS)));
+    public static final Block AMETHYST_PILLAR = register("amethyst_pillar", new AmethystPillarBlock(FabricBlockSettings.copy(AMETHYST_BRICKS)));
 
     // Blackstone
     public static final Block POLISHED_BLACKSTONE_PILLAR = registerPillar(Blocks.POLISHED_BLACKSTONE);

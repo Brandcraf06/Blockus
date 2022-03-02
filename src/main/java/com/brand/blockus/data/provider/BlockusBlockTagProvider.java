@@ -24,6 +24,16 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
     @Override
     protected void generateTags() {
+        this.getOrCreateTagBuilder(BlockusBlockTags.AMETHYST_BLOCKS)
+            .add(BlockusBlocks.POLISHED_AMETHYST)
+            .add(BlockusBlocks.POLISHED_AMETHYST_STAIRS)
+            .add(BlockusBlocks.POLISHED_AMETHYST_SLAB)
+            .add(BlockusBlocks.AMETHYST_BRICKS)
+            .add(BlockusBlocks.AMETHYST_BRICK_STAIRS)
+            .add(BlockusBlocks.AMETHYST_BRICK_SLAB)
+            .add(BlockusBlocks.CHISELED_AMETHYST)
+            .add(BlockusBlocks.AMETHYST_PILLAR);
+
         this.getOrCreateTagBuilder(BlockusBlockTags.ANDESITE_BLOCKS)
             .add(BlockusBlocks.ANDESITE_BRICKS)
             .add(BlockusBlocks.ANDESITE_BRICK_STAIRS)
@@ -1059,6 +1069,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.IRON_GATE)
             .add(BlockusBlocks.LANTERN_BLOCK)
             .add(BlockusBlocks.SOUL_LANTERN_BLOCK)
+            .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.STAINED_STONE_BRICKS)
             .addTag(BlockusBlockTags.MARBLE)
@@ -1386,6 +1397,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.GREEN_CONCRETE_BRICK_WALL)
             .add(BlockusBlocks.RED_CONCRETE_BRICK_WALL)
             .add(BlockusBlocks.BLACK_CONCRETE_BRICK_WALL)
+            .add(BlockusBlocks.AMETHYST_BRICK_WALL)
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.getOrCreateTagBuilder(BlockTags.WARPED_STEMS)

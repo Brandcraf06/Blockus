@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "blockus:block/polished_amethyst_slab"
+        },
+        "type=double": {
+            "model": "blockus:block/polished_amethyst"
+        },
+        "type=top": {
+            "model": "blockus:block/polished_amethyst_slab_top"
+        }
+    }
+}
