@@ -14,6 +14,19 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
 
     @Override
     protected void generateBlockLootTables() {
+
+        // Amethyst
+        this.addDrop(BlockusBlocks.POLISHED_AMETHYST);
+        this.addDrop(BlockusBlocks.POLISHED_AMETHYST_STAIRS);
+        this.addDrop(BlockusBlocks.POLISHED_AMETHYST_SLAB, BlockLootTableGenerator::slabDrops);
+        this.addDrop(BlockusBlocks.AMETHYST_BRICKS);
+        this.addDrop(BlockusBlocks.AMETHYST_BRICK_STAIRS);
+        this.addDrop(BlockusBlocks.AMETHYST_BRICK_SLAB, BlockLootTableGenerator::slabDrops);
+        this.addDrop(BlockusBlocks.AMETHYST_BRICK_WALL);
+        this.addDrop(BlockusBlocks.CHISELED_AMETHYST);
+        this.addDrop(BlockusBlocks.AMETHYST_PILLAR);
+
+        // Other
         this.addDrop(BlockusBlocks.ACACIA_CROSS_TIMBER_FRAME);
         this.addDrop(BlockusBlocks.ACACIA_DIAGONAL_TIMBER_FRAME);
         this.addDrop(BlockusBlocks.ACACIA_SMALL_LOGS);

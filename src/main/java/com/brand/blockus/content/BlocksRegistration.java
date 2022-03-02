@@ -2,6 +2,10 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
+import com.brand.blockus.blocks.base.amethyst.AmethystPillarBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;

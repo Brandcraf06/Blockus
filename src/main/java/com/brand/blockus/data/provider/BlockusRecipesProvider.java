@@ -195,6 +195,36 @@ public class BlockusRecipesProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.TUFF_CIRCLE_PAVEMENT, BlockusBlocks.POLISHED_TUFF);
         offerStonecuttingRecipe(exporter, BlockusBlocks.TUFF_CIRCLE_PAVEMENT, BlockusBlocks.TUFF_BRICKS);
 
+
+        // Amethyst
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST_STAIRS, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST_STAIRS, BlockusBlocks.POLISHED_AMETHYST);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST_SLAB, Blocks.AMETHYST_BLOCK, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST_SLAB, BlockusBlocks.POLISHED_AMETHYST, 2);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST, Blocks.AMETHYST_BLOCK);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS, BlockusBlocks.POLISHED_AMETHYST);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_STAIRS, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_STAIRS, BlockusBlocks.POLISHED_AMETHYST);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_STAIRS, BlockusBlocks.AMETHYST_BRICKS);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_SLAB, Blocks.AMETHYST_BLOCK, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_SLAB, BlockusBlocks.POLISHED_AMETHYST, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_SLAB, BlockusBlocks.AMETHYST_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_WALL, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_WALL, BlockusBlocks.POLISHED_AMETHYST);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_WALL, BlockusBlocks.AMETHYST_BRICKS);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_AMETHYST, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_AMETHYST, BlockusBlocks.POLISHED_AMETHYST);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_AMETHYST, BlockusBlocks.AMETHYST_BRICKS);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_PILLAR, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_PILLAR, BlockusBlocks.POLISHED_AMETHYST);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_PILLAR, BlockusBlocks.AMETHYST_BRICKS);
+
+
         // Deepslate
         ShapelessRecipeJsonBuilder.create(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS).input(Blocks.DEEPSLATE_BRICKS).input(Blocks.VINE).group("mossy_deepslate_bricks").criterion("has_vine", conditionsFromItem(Blocks.VINE)).offerTo(exporter, convertBetween(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, Blocks.VINE));
         ShapelessRecipeJsonBuilder.create(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS).input(Blocks.DEEPSLATE_BRICKS).input(Blocks.MOSS_BLOCK).group("mossy_deepslate_bricks").criterion("has_moss_block", conditionsFromItem(Blocks.MOSS_BLOCK)).offerTo(exporter, convertBetween(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, Blocks.MOSS_BLOCK));

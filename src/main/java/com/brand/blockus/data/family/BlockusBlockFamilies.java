@@ -30,6 +30,8 @@ public class BlockusBlockFamilies {
     public static final BlockFamily TUFF_BRICK;
     public static final BlockFamily POLISHED_DEEPSLATE;
     public static final BlockFamily MOSSY_DEEPSLATE_BRICK;
+    public static final BlockFamily POLISHED_AMETHYST;
+    public static final BlockFamily AMETHYST_BRICK;
     public static final BlockFamily BLACKSTONE;
     public static final BlockFamily CRIMSON_WARTY_BLACKSTONE_BRICK;
     public static final BlockFamily WARPED_WARTY_BLACKSTONE_BRICK;
@@ -184,6 +186,8 @@ public class BlockusBlockFamilies {
         TUFF_BRICK = register(BlockusBlocks.TUFF_BRICKS).wall(BlockusBlocks.TUFF_BRICK_WALL).stairs(BlockusBlocks.TUFF_BRICK_STAIRS).slab(BlockusBlocks.TUFF_BRICK_SLAB).cracked(BlockusBlocks.CRACKED_TUFF_BRICKS).build();
         POLISHED_DEEPSLATE = register(Blocks.POLISHED_DEEPSLATE).pressurePlate(BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON).build();
         MOSSY_DEEPSLATE_BRICK = register(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS).wall(BlockusBlocks.MOSSY_DEEPSLATE_BRICK_WALL).stairs(BlockusBlocks.MOSSY_DEEPSLATE_BRICK_STAIRS).slab(BlockusBlocks.MOSSY_DEEPSLATE_BRICK_SLAB).build();
+        POLISHED_AMETHYST = register(BlockusBlocks.POLISHED_AMETHYST).stairs(BlockusBlocks.POLISHED_AMETHYST_STAIRS).slab(BlockusBlocks.POLISHED_AMETHYST_SLAB).polished(BlockusBlocks.AMETHYST_BRICKS).build();
+        AMETHYST_BRICK = register(BlockusBlocks.AMETHYST_BRICKS).wall(BlockusBlocks.AMETHYST_BRICK_WALL).stairs(BlockusBlocks.AMETHYST_BRICK_STAIRS).slab(BlockusBlocks.AMETHYST_BRICK_SLAB).build();
         BLACKSTONE = register(Blocks.BLACKSTONE).door(BlockusBlocks.BLACKSTONE_DOOR).trapdoor(BlockusBlocks.BLACKSTONE_TRAPDOOR).build();
         CRIMSON_WARTY_BLACKSTONE_BRICK = register(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS).wall(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICK_WALL).stairs(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICK_STAIRS).slab(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICK_SLAB).build();
         WARPED_WARTY_BLACKSTONE_BRICK = register(BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS).wall(BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICK_WALL).stairs(BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICK_STAIRS).slab(BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICK_SLAB).build();
