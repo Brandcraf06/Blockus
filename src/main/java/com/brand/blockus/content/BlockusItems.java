@@ -1128,7 +1128,7 @@ public class BlockusItems {
 
     // Paper
     public static final Item PAPER_BLOCK = register(BlockusBlocks.PAPER_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    public static final Item BURNED_PAPER_BLOCK = register(BlockusBlocks.BURNED_PAPER_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    public static final Item BURNED_PAPER_BLOCK = register(BlockusBlocks.BURNT_PAPER_BLOCK, Blockus.BLOCKUS_BUILDING_BLOCKS);
     public static final Item FRAMED_PAPER_BLOCK = register(BlockusBlocks.FRAMED_PAPER_BLOCK, Blockus.BLOCKUS_DECORATIONS);
     public static final Item PAPER_WALL = register(BlockusBlocks.PAPER_WALL, Blockus.BLOCKUS_DECORATIONS);
     public static final Item PAPER_DOOR = register(BlockusBlocks.PAPER_DOOR, Blockus.BLOCKUS_REDSTONE);
