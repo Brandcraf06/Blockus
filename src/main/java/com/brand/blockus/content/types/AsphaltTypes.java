@@ -38,31 +38,27 @@ public enum AsphaltTypes {
     public final AsphaltBlock block;
     public final AsphaltSlab slab;
     public final AsphaltStairs stairs;
-    public final BlockItem item;
-    public final BlockItem item_slab;
-    public final BlockItem item_stairs;
+    public final SpeedBlockItem item;
+    public final SpeedBlockItem item_slab;
+    public final SpeedBlockItem item_stairs;
 
     private AsphaltTypes(String type, DyeColor color) {
-        Identifier id = new Identifier(Blockus.MOD_ID, type);
-        Identifier id_slab = new Identifier(Blockus.MOD_ID, type + "_slab");
-        Identifier id_stairs = new Identifier(Blockus.MOD_ID, type + "_stairs");
+        type = color.getName() + "_asphalt";
+        String type2 = type.replace("black_asphalt", "asphalt");
+        Identifier id = Blockus.id(type2);
+        Identifier id_slab = Blockus.id(type2 + "_slab");
+        Identifier id_stairs = Blockus.id(type2 + "_stairs");
 
         Block.Settings blockSettings = FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool();
-        this.block = new AsphaltBlock(blockSettings);
-        this.slab = new AsphaltSlab(blockSettings);
-        this.stairs = new AsphaltStairs(block.getDefaultState(), blockSettings);
-
         Item.Settings itemSettings = new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS);
-        this.item = new SpeedBlockItem(this.block, itemSettings);
-        this.item_slab = new SpeedBlockItem(this.slab, itemSettings);
-        this.item_stairs = new SpeedBlockItem(this.stairs, itemSettings);
 
-        Registry.register(Registry.BLOCK, id, this.block);
-        Registry.register(Registry.BLOCK, id_slab, this.slab);
-        Registry.register(Registry.BLOCK, id_stairs, this.stairs);
-        Registry.register(Registry.ITEM, id, this.item);
-        Registry.register(Registry.ITEM, id_slab, this.item_slab);
-        Registry.register(Registry.ITEM, id_stairs, this.item_stairs);
+        this.block = Registry.register(Registry.BLOCK, id, new AsphaltBlock(blockSettings));
+        this.slab =  Registry.register(Registry.BLOCK, id_slab, new AsphaltSlab(blockSettings));
+        this.stairs =  Registry.register(Registry.BLOCK, id_stairs, new AsphaltStairs(block.getDefaultState(), blockSettings));
+
+        this.item =  Registry.register(Registry.ITEM, id, new SpeedBlockItem(this.block, itemSettings));
+        this.item_slab =  Registry.register(Registry.ITEM, id_slab, new SpeedBlockItem(this.slab, itemSettings));
+        this.item_stairs =  Registry.register(Registry.ITEM, id_stairs, new SpeedBlockItem(this.stairs, itemSettings));
 
     }
 

@@ -9,8 +9,8 @@ import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.blocks.base.redstone.*;
 import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
 import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
-import com.brand.blockus.content.types.BlockTypes;
-import com.brand.blockus.content.types.LightBlockTypes;
+import com.brand.blockus.content.types.BSSTypes;
+import com.brand.blockus.content.types.BSSWTypes;
 import com.mojang.datafixers.types.Type;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
@@ -37,37 +37,37 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block STURDY_STONE = register("sturdy_stone", new SturdyStoneBlock(FabricBlockSettings.copy(Blocks.COBBLESTONE)));
 
     // Andesite
-    public static final Block ZIGZAGGED_ANDESITE = register("zigzagged_andesite", new Block(FabricBlockSettings.copy(BlockTypes.ANDESITE_BRICKS.block)));
-    public static final Block CHISELED_ANDESITE_BRICKS = register("chiseled_andesite_bricks", new Block(FabricBlockSettings.copy(BlockTypes.ANDESITE_BRICKS.block)));
-    public static final Block CRACKED_ANDESITE_BRICKS = register("cracked_andesite_bricks", new Block(FabricBlockSettings.copy(BlockTypes.ANDESITE_BRICKS.block)));
+    public static final Block ZIGZAGGED_ANDESITE = register("zigzagged_andesite", new Block(FabricBlockSettings.copy(BSSWTypes.ANDESITE_BRICKS.block)));
+    public static final Block CHISELED_ANDESITE_BRICKS = register("chiseled_andesite_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.ANDESITE_BRICKS.block)));
+    public static final Block CRACKED_ANDESITE_BRICKS = register("cracked_andesite_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.ANDESITE_BRICKS.block)));
     public static final Block POLISHED_ANDESITE_PILLAR = registerPillar(Blocks.POLISHED_ANDESITE);
-    public static final Block ANDESITE_CIRCLE_PAVEMENT = register("andesite_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.ANDESITE_BRICKS.block)));
+    public static final Block ANDESITE_CIRCLE_PAVEMENT = register("andesite_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.ANDESITE_BRICKS.block)));
 
     // Diorite
-    public static final Block ZIGZAGGED_DIORITE = register("zigzagged_diorite", new Block(FabricBlockSettings.copy(BlockTypes.DIORITE_BRICKS.block)));
-    public static final Block CHISELED_DIORITE_BRICKS = register("chiseled_diorite_bricks", new Block(FabricBlockSettings.copy(BlockTypes.DIORITE_BRICKS.block)));
-    public static final Block CRACKED_DIORITE_BRICKS = register("cracked_diorite_bricks", new Block(FabricBlockSettings.copy(BlockTypes.DIORITE_BRICKS.block)));
+    public static final Block ZIGZAGGED_DIORITE = register("zigzagged_diorite", new Block(FabricBlockSettings.copy(BSSWTypes.DIORITE_BRICKS.block)));
+    public static final Block CHISELED_DIORITE_BRICKS = register("chiseled_diorite_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.DIORITE_BRICKS.block)));
+    public static final Block CRACKED_DIORITE_BRICKS = register("cracked_diorite_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.DIORITE_BRICKS.block)));
     public static final Block POLISHED_DIORITE_PILLAR = registerPillar(Blocks.POLISHED_DIORITE);
-    public static final Block DIORITE_CIRCLE_PAVEMENT = register("diorite_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.DIORITE_BRICKS.block)));
+    public static final Block DIORITE_CIRCLE_PAVEMENT = register("diorite_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.DIORITE_BRICKS.block)));
 
     // Granite
-    public static final Block ZIGZAGGED_GRANITE = register("zigzagged_granite", new Block(FabricBlockSettings.copy(BlockTypes.GRANITE_BRICKS.block)));
-    public static final Block CHISELED_GRANITE_BRICKS = register("chiseled_granite_bricks", new Block(FabricBlockSettings.copy(BlockTypes.GRANITE_BRICKS.block)));
-    public static final Block CRACKED_GRANITE_BRICKS = register("cracked_granite_bricks", new Block(FabricBlockSettings.copy(BlockTypes.GRANITE_BRICKS.block)));
+    public static final Block ZIGZAGGED_GRANITE = register("zigzagged_granite", new Block(FabricBlockSettings.copy(BSSWTypes.GRANITE_BRICKS.block)));
+    public static final Block CHISELED_GRANITE_BRICKS = register("chiseled_granite_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.GRANITE_BRICKS.block)));
+    public static final Block CRACKED_GRANITE_BRICKS = register("cracked_granite_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.GRANITE_BRICKS.block)));
     public static final Block POLISHED_GRANITE_PILLAR = registerPillar(Blocks.POLISHED_GRANITE);
-    public static final Block GRANITE_CIRCLE_PAVEMENT = register("granite_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.GRANITE_BRICKS.block)));
+    public static final Block GRANITE_CIRCLE_PAVEMENT = register("granite_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.GRANITE_BRICKS.block)));
 
     // Dripstone
-    public static final Block CRACKED_DRIPSTONE_BRICKS = register("cracked_dripstone_bricks", new Block(FabricBlockSettings.copy(BlockTypes.DRIPSTONE_BRICKS.block)));
-    public static final Block CHISELED_DRIPSTONE = register("chiseled_dripstone", new Block(FabricBlockSettings.copy(BlockTypes.DRIPSTONE_BRICKS.block)));
-    public static final Block DRIPSTONE_PILLAR = createPillar("dripstone", BlockTypes.DRIPSTONE_BRICKS.block);
+    public static final Block CRACKED_DRIPSTONE_BRICKS = register("cracked_dripstone_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.DRIPSTONE_BRICKS.block)));
+    public static final Block CHISELED_DRIPSTONE = register("chiseled_dripstone", new Block(FabricBlockSettings.copy(BSSWTypes.DRIPSTONE_BRICKS.block)));
+    public static final Block DRIPSTONE_PILLAR = createPillar("dripstone", BSSWTypes.DRIPSTONE_BRICKS.block);
 
     // Tuff
-    public static final Block CRACKED_TUFF_BRICKS = register("cracked_tuff_bricks", new Block(FabricBlockSettings.copy(BlockTypes.TUFF_BRICKS.block)));
-    public static final Block CHISELED_TUFF = register("chiseled_tuff", new Block(FabricBlockSettings.copy(BlockTypes.TUFF_BRICKS.block)));
-    public static final Block TUFF_PILLAR = createPillar("tuff", BlockTypes.POLISHED_TUFF.block);
-    public static final Block ZIGZAGGED_TUFF = register("zigzagged_tuff", new Block(FabricBlockSettings.copy(BlockTypes.TUFF_BRICKS.block)));
-    public static final Block TUFF_CIRCLE_PAVEMENT = register("tuff_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.TUFF_BRICKS.block)));
+    public static final Block CRACKED_TUFF_BRICKS = register("cracked_tuff_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.TUFF_BRICKS.block)));
+    public static final Block CHISELED_TUFF = register("chiseled_tuff", new Block(FabricBlockSettings.copy(BSSWTypes.TUFF_BRICKS.block)));
+    public static final Block TUFF_PILLAR = createPillar("tuff", BSSTypes.POLISHED_TUFF.block);
+    public static final Block ZIGZAGGED_TUFF = register("zigzagged_tuff", new Block(FabricBlockSettings.copy(BSSWTypes.TUFF_BRICKS.block)));
+    public static final Block TUFF_CIRCLE_PAVEMENT = register("tuff_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.TUFF_BRICKS.block)));
 
     // Deepslate
     public static final Block DEEPSLATE_PILLAR = createPillar("deepslate", Blocks.POLISHED_DEEPSLATE);
@@ -96,40 +96,40 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLACKSTONE_TRAPDOOR = register("blackstone_trapdoor", createStoneTrapdoor(1.5f, 6.0f, Material.STONE, BlockSoundGroup.STONE, MapColor.BLACK));
 
     // Basalt
-    public static final Block CRACKED_POLISHED_BASALT_BRICKS = register("cracked_polished_basalt_bricks", new Block(FabricBlockSettings.copy(BlockTypes.POLISHED_BASALT_BRICKS.block)));
-    public static final Block POLISHED_BASALT_PILLAR = createPillar("polished_basalt", BlockTypes.POLISHED_BASALT_BRICKS.block);
-    public static final Block ZIGZAGGED_POLISHED_BASALT = register("zigzagged_polished_basalt", new Block(FabricBlockSettings.copy(BlockTypes.POLISHED_BASALT_BRICKS.block)));
-    public static final Block CHISELED_POLISHED_BASALT = register("chiseled_polished_basalt", new Block(FabricBlockSettings.copy(BlockTypes.POLISHED_BASALT_BRICKS.block)));
-    public static final Block POLISHED_BASALT_CIRCLE_PAVEMENT = register("polished_basalt_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.POLISHED_BASALT_BRICKS.block)));
+    public static final Block CRACKED_POLISHED_BASALT_BRICKS = register("cracked_polished_basalt_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.POLISHED_BASALT_BRICKS.block)));
+    public static final Block POLISHED_BASALT_PILLAR = createPillar("polished_basalt", BSSWTypes.POLISHED_BASALT_BRICKS.block);
+    public static final Block ZIGZAGGED_POLISHED_BASALT = register("zigzagged_polished_basalt", new Block(FabricBlockSettings.copy(BSSWTypes.POLISHED_BASALT_BRICKS.block)));
+    public static final Block CHISELED_POLISHED_BASALT = register("chiseled_polished_basalt", new Block(FabricBlockSettings.copy(BSSWTypes.POLISHED_BASALT_BRICKS.block)));
+    public static final Block POLISHED_BASALT_CIRCLE_PAVEMENT = register("polished_basalt_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.POLISHED_BASALT_BRICKS.block)));
 
     // Limestone
-    public static final Block LIMESTONE_PILLAR = registerPillar(BlockTypes.LIMESTONE.block);
-    public static final Block LIMESTONE_SQUARES = register("limestone_squares", new Block(FabricBlockSettings.copy(BlockTypes.LIMESTONE_BRICKS.block)));
-    public static final Block CHISELED_LIMESTONE = register("chiseled_limestone", new Block(FabricBlockSettings.copy(BlockTypes.LIMESTONE_BRICKS.block)));
-    public static final Block LIMESTONE_CIRCLE_PAVEMENT = register("limestone_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.LIMESTONE_BRICKS.block)));
+    public static final Block LIMESTONE_PILLAR = registerPillar(BSSWTypes.LIMESTONE.block);
+    public static final Block LIMESTONE_SQUARES = register("limestone_squares", new Block(FabricBlockSettings.copy(BSSWTypes.LIMESTONE_BRICKS.block)));
+    public static final Block CHISELED_LIMESTONE = register("chiseled_limestone", new Block(FabricBlockSettings.copy(BSSWTypes.LIMESTONE_BRICKS.block)));
+    public static final Block LIMESTONE_CIRCLE_PAVEMENT = register("limestone_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.LIMESTONE_BRICKS.block)));
 
     // Marble
-    public static final Block MARBLE_PILLAR = registerPillar(BlockTypes.MARBLE.block);
-    public static final Block MARBLE_SQUARES = register("marble_squares", new Block(FabricBlockSettings.copy(BlockTypes.MARBLE_BRICKS.block)));
-    public static final Block CHISELED_MARBLE = register("chiseled_marble", new Block(FabricBlockSettings.copy(BlockTypes.MARBLE_BRICKS.block)));
+    public static final Block MARBLE_PILLAR = registerPillar(BSSWTypes.MARBLE.block);
+    public static final Block MARBLE_SQUARES = register("marble_squares", new Block(FabricBlockSettings.copy(BSSWTypes.MARBLE_BRICKS.block)));
+    public static final Block CHISELED_MARBLE = register("chiseled_marble", new Block(FabricBlockSettings.copy(BSSWTypes.MARBLE_BRICKS.block)));
     public static final Block CHISELED_MARBLE_PILLAR = registerPillar(CHISELED_MARBLE);
-    public static final Block MARBLE_CIRCLE_PAVEMENT = register("marble_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.MARBLE_BRICKS.block)));
+    public static final Block MARBLE_CIRCLE_PAVEMENT = register("marble_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.MARBLE_BRICKS.block)));
 
     // Bluestone
-    public static final Block BLUESTONE_PILLAR = registerPillar(BlockTypes.BLUESTONE.block);
-    public static final Block BLUESTONE_SQUARES = register("bluestone_squares", new Block(FabricBlockSettings.copy(BlockTypes.BLUESTONE_BRICKS.block)));
-    public static final Block CHISELED_BLUESTONE = register("chiseled_bluestone", new Block(FabricBlockSettings.copy(BlockTypes.BLUESTONE_BRICKS.block)));
-    public static final Block BLUESTONE_CIRCLE_PAVEMENT = register("bluestone_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.BLUESTONE_BRICKS.block)));
-    public static final Block BLUESTONE_LINES = register("bluestone_lines", new PillarBlock(FabricBlockSettings.copy(BlockTypes.BLUESTONE_BRICKS.block)));
+    public static final Block BLUESTONE_PILLAR = registerPillar(BSSWTypes.BLUESTONE.block);
+    public static final Block BLUESTONE_SQUARES = register("bluestone_squares", new Block(FabricBlockSettings.copy(BSSWTypes.BLUESTONE_BRICKS.block)));
+    public static final Block CHISELED_BLUESTONE = register("chiseled_bluestone", new Block(FabricBlockSettings.copy(BSSWTypes.BLUESTONE_BRICKS.block)));
+    public static final Block BLUESTONE_CIRCLE_PAVEMENT = register("bluestone_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.BLUESTONE_BRICKS.block)));
+    public static final Block BLUESTONE_LINES = register("bluestone_lines", new PillarBlock(FabricBlockSettings.copy(BSSWTypes.BLUESTONE_BRICKS.block)));
 
     // Lava	Bricks
-    public static final Block CHISELED_LAVA_BRICKS = register("chiseled_lava_bricks", new Block(FabricBlockSettings.copy(LightBlockTypes.LAVA_BRICKS.block)));
+    public static final Block CHISELED_LAVA_BRICKS = register("chiseled_lava_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.LAVA_BRICKS.block)));
 
     // Lava Blackstone Bricks
-    public static final Block CHISELED_LAVA_POLISHED_BLACKSTONE = register("chiseled_lava_polished_blackstone", new Block(FabricBlockSettings.copy(LightBlockTypes.LAVA_POLISHED_BLACKSTONE_BRICKS.block)));
+    public static final Block CHISELED_LAVA_POLISHED_BLACKSTONE = register("chiseled_lava_polished_blackstone", new Block(FabricBlockSettings.copy(BSSWTypes.LAVA_POLISHED_BLACKSTONE_BRICKS.block)));
 
     // Water Bricks
-    public static final Block CHISELED_WATER_BRICKS = register("chiseled_water_bricks", new Block(FabricBlockSettings.copy(BlockTypes.WATER_BRICKS.block)));
+    public static final Block CHISELED_WATER_BRICKS = register("chiseled_water_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.WATER_BRICKS.block)));
 
     // Snow Bricks
     public static final Block SNOW_BRICKS = register("snow_bricks", new Block(FabricBlockSettings.of(Material.STONE).strength(1.0f, 3.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
@@ -144,14 +144,14 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ICE_PILLAR = createPillar("ice", ICE_BRICKS);
 
     // Magma Bricks
-    public static final Block CHISELED_MAGMA_BRICKS = register("chiseled_magma_bricks", new Block(FabricBlockSettings.copy(LightBlockTypes.MAGMA_BRICKS.block)));
+    public static final Block CHISELED_MAGMA_BRICKS = register("chiseled_magma_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.MAGMA_BRICKS.block)));
 
     // Blaze Bricks
-    public static final Block BLAZE_PILLAR = createPillar("blaze", LightBlockTypes.BLAZE_BRICKS.block);
+    public static final Block BLAZE_PILLAR = createPillar("blaze", BSSWTypes.BLAZE_BRICKS.block);
     public static final Block BLAZE_LANTERN = register("blaze_lantern", createLampBlock(0.3F, 0.3F, Material.GLASS, BlockSoundGroup.GLASS, 15, MapColor.ORANGE));
 
     // Netherrack
-    public static final Block NETHERRACK_CIRCLE_PAVEMENT = register("netherrack_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.POLISHED_NETHERRACK.block)));
+    public static final Block NETHERRACK_CIRCLE_PAVEMENT = register("netherrack_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSTypes.POLISHED_NETHERRACK.block)));
 
     // Nether Bricks
     public static final Block POLISHED_NETHER_BRICKS = register("polished_nether_bricks", new Block(FabricBlockSettings.copy(Blocks.NETHER_BRICKS)));
@@ -162,25 +162,25 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RED_NETHER_BRICK_PILLAR = registerPillar(Blocks.RED_NETHER_BRICKS);
 
     // Charred Nether Bricks
-    public static final Block POLISHED_CHARRED_NETHER_BRICKS = register("polished_charred_nether_bricks", new Block(FabricBlockSettings.copy(BlockTypes.CHARRED_NETHER_BRICKS.block)));
-    public static final Block ZIGZAGGED_CHARRED_NETHER_BRICKS = register("zigzagged_charred_nether_bricks", new Block(FabricBlockSettings.copy(BlockTypes.CHARRED_NETHER_BRICKS.block)));
-    public static final Block CHARRED_NETHER_BRICK_PILLAR = registerPillar(BlockTypes.CHARRED_NETHER_BRICKS.block);
+    public static final Block POLISHED_CHARRED_NETHER_BRICKS = register("polished_charred_nether_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.CHARRED_NETHER_BRICKS.block)));
+    public static final Block ZIGZAGGED_CHARRED_NETHER_BRICKS = register("zigzagged_charred_nether_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.CHARRED_NETHER_BRICKS.block)));
+    public static final Block CHARRED_NETHER_BRICK_PILLAR = registerPillar(BSSWTypes.CHARRED_NETHER_BRICKS.block);
 
     // Teal Nether Bricks
-    public static final Block POLISHED_TEAL_NETHER_BRICKS = register("polished_teal_nether_bricks", new Block(FabricBlockSettings.copy(BlockTypes.TEAL_NETHER_BRICKS.block)));
-    public static final Block ZIGZAGGED_TEAL_NETHER_BRICKS = register("zigzagged_teal_nether_bricks", new Block(FabricBlockSettings.copy(BlockTypes.TEAL_NETHER_BRICKS.block)));
-    public static final Block TEAL_NETHER_BRICK_PILLAR = registerPillar(BlockTypes.TEAL_NETHER_BRICKS.block);
+    public static final Block POLISHED_TEAL_NETHER_BRICKS = register("polished_teal_nether_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.TEAL_NETHER_BRICKS.block)));
+    public static final Block ZIGZAGGED_TEAL_NETHER_BRICKS = register("zigzagged_teal_nether_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.TEAL_NETHER_BRICKS.block)));
+    public static final Block TEAL_NETHER_BRICK_PILLAR = registerPillar(BSSWTypes.TEAL_NETHER_BRICKS.block);
 
     // Obsidian
-    public static final Block CRACKED_OBSIDIAN_BRICKS = register("cracked_obsidian_bricks", new Block(FabricBlockSettings.copy(BlockTypes.OBSIDIAN_BRICKS.block)));
-    public static final Block OBSIDIAN_PILLAR = createPillar("obsidian", BlockTypes.OBSIDIAN_BRICKS.block);
-    public static final Block OBSIDIAN_CIRCLE_PAVEMENT = register("obsidian_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.OBSIDIAN_BRICKS.block)));
+    public static final Block CRACKED_OBSIDIAN_BRICKS = register("cracked_obsidian_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.OBSIDIAN_BRICKS.block)));
+    public static final Block OBSIDIAN_PILLAR = createPillar("obsidian", BSSWTypes.OBSIDIAN_BRICKS.block);
+    public static final Block OBSIDIAN_CIRCLE_PAVEMENT = register("obsidian_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.OBSIDIAN_BRICKS.block)));
     public static final Block OBSIDIAN_REINFORCED_DOOR = register("obsidian_reinforced_door", createStoneDoor(50.0F, 1200.0F, Material.METAL, BlockSoundGroup.STONE, MapColor.BLACK));
     public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = register("obsidian_reinforced_trapdoor", createStoneTrapdoor(50.0F, 1200.0F, Material.METAL, BlockSoundGroup.STONE, MapColor.BLACK));
     public static final Block GLOWING_OBSIDIAN = register("glowing_obsidian", createLightBlock(50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 15, MapColor.BLACK));
 
     // Quartz Blocks
-    public static final Block QUARTZ_CIRCLE_PAVEMENT = register("quartz_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockTypes.QUARTZ_TILES.block)));
+    public static final Block QUARTZ_CIRCLE_PAVEMENT = register("quartz_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BSSWTypes.QUARTZ_TILES.block)));
 
     // Prismarine
     public static final Block CHISELED_PRISMARINE = register("chiseled_prismarine", new Block(FabricBlockSettings.copy(Blocks.PRISMARINE_BRICKS)));
@@ -193,13 +193,13 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ZIGZAGGED_BRICKS = register("zigzagged_bricks", new Block(FabricBlockSettings.copy(Blocks.BRICKS)));
 
     // Soaked Bricks
-    public static final Block ZIGZAGGED_SOAKED_BRICKS = register("zigzagged_soaked_bricks", new Block(FabricBlockSettings.copy(BlockTypes.SOAKED_BRICKS.block)));
+    public static final Block ZIGZAGGED_SOAKED_BRICKS = register("zigzagged_soaked_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.SOAKED_BRICKS.block)));
 
     // Sandy Bricks
-    public static final Block ZIGZAGGED_SANDY_BRICKS = register("zigzagged_sandy_bricks", new Block(FabricBlockSettings.copy(BlockTypes.SANDY_BRICKS.block)));
+    public static final Block ZIGZAGGED_SANDY_BRICKS = register("zigzagged_sandy_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.SANDY_BRICKS.block)));
 
     // Charred Bricks
-    public static final Block ZIGZAGGED_CHARRED_BRICKS = register("zigzagged_charred_bricks", new Block(FabricBlockSettings.copy(BlockTypes.CHARRED_BRICKS.block)));
+    public static final Block ZIGZAGGED_CHARRED_BRICKS = register("zigzagged_charred_bricks", new Block(FabricBlockSettings.copy(BSSWTypes.CHARRED_BRICKS.block)));
 
     // Sandstone
     public static final Block SANDSTONE_PILLAR = createPillar("sandstone", Blocks.SANDSTONE);
@@ -212,25 +212,25 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LAPIS_DECORATED_RED_SANDSTONE = register("lapis_decorated_red_sandstone", new Block(FabricBlockSettings.copy(Blocks.RED_SANDSTONE)));
 
     // Soul Sandstone
-    public static final Block CUT_SOUL_SANDSTONE = register("cut_soul_sandstone", new Block(FabricBlockSettings.copy(BlockTypes.SOUL_SANDSTONE.block)));
+    public static final Block CUT_SOUL_SANDSTONE = register("cut_soul_sandstone", new Block(FabricBlockSettings.copy(BSSWTypes.SOUL_SANDSTONE.block)));
     public static final Block CUT_SOUL_SANDSTONE_SLAB = registerSlab(CUT_SOUL_SANDSTONE);
-    public static final Block CHISELED_SOUL_SANDSTONE = register("chiseled_soul_sandstone", new Block(FabricBlockSettings.copy(BlockTypes.SOUL_SANDSTONE.block)));
-    public static final Block SOUL_SANDSTONE_PILLAR = createPillar("soul_sandstone", BlockTypes.SOUL_SANDSTONE.block);
-    public static final Block GOLD_DECORATED_SOUL_SANDSTONE = register("gold_decorated_soul_sandstone", new Block(FabricBlockSettings.copy(BlockTypes.SOUL_SANDSTONE.block)));
-    public static final Block LAPIS_DECORATED_SOUL_SANDSTONE = register("lapis_decorated_soul_sandstone", new Block(FabricBlockSettings.copy(BlockTypes.SOUL_SANDSTONE.block)));
+    public static final Block CHISELED_SOUL_SANDSTONE = register("chiseled_soul_sandstone", new Block(FabricBlockSettings.copy(BSSWTypes.SOUL_SANDSTONE.block)));
+    public static final Block SOUL_SANDSTONE_PILLAR = createPillar("soul_sandstone", BSSWTypes.SOUL_SANDSTONE.block);
+    public static final Block GOLD_DECORATED_SOUL_SANDSTONE = register("gold_decorated_soul_sandstone", new Block(FabricBlockSettings.copy(BSSWTypes.SOUL_SANDSTONE.block)));
+    public static final Block LAPIS_DECORATED_SOUL_SANDSTONE = register("lapis_decorated_soul_sandstone", new Block(FabricBlockSettings.copy(BSSWTypes.SOUL_SANDSTONE.block)));
 
     // Honeycomb Bricks
 
     // Purpur Blocks
-    public static final Block CHISELED_PURPUR = register("chiseled_purpur", new Block(FabricBlockSettings.copy(BlockTypes.PURPUR_BRICKS.block)));
-    public static final Block PURPUR_SQUARES = register("purpur_squares", new Block(FabricBlockSettings.copy(BlockTypes.PURPUR_BRICKS.block)));
-    public static final Block PURPUR_LINES = register("purpur_lines", new PillarBlock(FabricBlockSettings.copy(BlockTypes.PURPUR_BRICKS.block)));
+    public static final Block CHISELED_PURPUR = register("chiseled_purpur", new Block(FabricBlockSettings.copy(BSSWTypes.PURPUR_BRICKS.block)));
+    public static final Block PURPUR_SQUARES = register("purpur_squares", new Block(FabricBlockSettings.copy(BSSWTypes.PURPUR_BRICKS.block)));
+    public static final Block PURPUR_LINES = register("purpur_lines", new PillarBlock(FabricBlockSettings.copy(BSSWTypes.PURPUR_BRICKS.block)));
 
     // Phantom Purpur Blocks
     public static final Block PHANTOM_PURPUR_PILLAR = createPillar("phantom_purpur", Blocks.PURPUR_PILLAR);
-    public static final Block CHISELED_PHANTOM_PURPUR = register("chiseled_phantom_purpur", new Block(FabricBlockSettings.copy(BlockTypes.PHANTOM_PURPUR_BRICKS.block)));
-    public static final Block PHANTOM_PURPUR_SQUARES = register("phantom_purpur_squares", new Block(FabricBlockSettings.copy(BlockTypes.PHANTOM_PURPUR_BRICKS.block)));
-    public static final Block PHANTOM_PURPUR_LINES = register("phantom_purpur_lines", new PillarBlock(FabricBlockSettings.copy(BlockTypes.PHANTOM_PURPUR_BRICKS.block)));
+    public static final Block CHISELED_PHANTOM_PURPUR = register("chiseled_phantom_purpur", new Block(FabricBlockSettings.copy(BSSWTypes.PHANTOM_PURPUR_BRICKS.block)));
+    public static final Block PHANTOM_PURPUR_SQUARES = register("phantom_purpur_squares", new Block(FabricBlockSettings.copy(BSSWTypes.PHANTOM_PURPUR_BRICKS.block)));
+    public static final Block PHANTOM_PURPUR_LINES = register("phantom_purpur_lines", new PillarBlock(FabricBlockSettings.copy(BSSWTypes.PHANTOM_PURPUR_BRICKS.block)));
 
     // End Stone
     public static final Block CHISELED_END_STONE_BRICKS = register("chiseled_end_stone_bricks", new Block(FabricBlockSettings.copy(Blocks.END_STONE_BRICKS)));
@@ -635,33 +635,33 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_ANDESITE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_ANDESITE);
     public static final Block POLISHED_DIORITE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_DIORITE);
     public static final Block POLISHED_GRANITE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_GRANITE);
-    public static final Block LIMESTONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockTypes.LIMESTONE.block);
-    public static final Block MARBLE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockTypes.MARBLE.block);
-    public static final Block BLUESTONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockTypes.BLUESTONE.block);
-    public static final Block POLISHED_NETHERRACK_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockTypes.POLISHED_NETHERRACK.block);
-    public static final Block POLISHED_END_STONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockTypes.POLISHED_END_STONE.block);
+    public static final Block LIMESTONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BSSWTypes.LIMESTONE.block);
+    public static final Block MARBLE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BSSWTypes.MARBLE.block);
+    public static final Block BLUESTONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BSSWTypes.BLUESTONE.block);
+    public static final Block POLISHED_NETHERRACK_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BSSTypes.POLISHED_NETHERRACK.block);
+    public static final Block POLISHED_END_STONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BSSTypes.POLISHED_END_STONE.block);
     public static final Block BAMBOO_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, BAMBOO_PLANKS);
     public static final Block CHARRED_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, CHARRED_PLANKS);
     public static final Block WHITE_OAK_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, WHITE_OAK_PLANKS);
     public static final Block POLISHED_BASALT_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_BASALT);
     public static final Block POLISHED_DEEPSLATE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_DEEPSLATE);
-    public static final Block POLISHED_TUFF_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockTypes.POLISHED_TUFF.block);
+    public static final Block POLISHED_TUFF_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BSSTypes.POLISHED_TUFF.block);
 
     // Buttons
     public static final Block POLISHED_ANDESITE_BUTTON = registerStoneButton(Blocks.POLISHED_ANDESITE);
     public static final Block POLISHED_DIORITE_BUTTON = registerStoneButton(Blocks.POLISHED_DIORITE);
     public static final Block POLISHED_GRANITE_BUTTON = registerStoneButton(Blocks.POLISHED_GRANITE);
-    public static final Block LIMESTONE_BUTTON = registerStoneButton(BlockTypes.LIMESTONE.block);
-    public static final Block MARBLE_BUTTON = registerStoneButton(BlockTypes.MARBLE.block);
-    public static final Block BLUESTONE_BUTTON = registerStoneButton(BlockTypes.BLUESTONE.block);
-    public static final Block POLISHED_NETHERRACK_BUTTON = registerStoneButton(BlockTypes.POLISHED_NETHERRACK.block);
-    public static final Block POLISHED_END_STONE_BUTTON = registerStoneButton(BlockTypes.POLISHED_END_STONE.block);
+    public static final Block LIMESTONE_BUTTON = registerStoneButton(BSSWTypes.LIMESTONE.block);
+    public static final Block MARBLE_BUTTON = registerStoneButton(BSSWTypes.MARBLE.block);
+    public static final Block BLUESTONE_BUTTON = registerStoneButton(BSSWTypes.BLUESTONE.block);
+    public static final Block POLISHED_NETHERRACK_BUTTON = registerStoneButton(BSSTypes.POLISHED_NETHERRACK.block);
+    public static final Block POLISHED_END_STONE_BUTTON = registerStoneButton(BSSTypes.POLISHED_END_STONE.block);
     public static final Block BAMBOO_BUTTON = register("bamboo_button", new WoodenButtonBase(FabricBlockSettings.copy(Blocks.OAK_PLANKS).noCollision()));
     public static final Block CHARRED_BUTTON = register("charred_button", new WoodenButtonBase(FabricBlockSettings.copy(CHARRED_PLANKS).noCollision()));
     public static final Block WHITE_OAK_BUTTON = register("white_oak_button", new WoodenButtonBase(FabricBlockSettings.copy(WHITE_OAK_PLANKS).noCollision()));
     public static final Block POLISHED_BASALT_BUTTON = registerStoneButton(Blocks.POLISHED_BASALT);
     public static final Block POLISHED_DEEPSLATE_BUTTON = registerStoneButton(Blocks.POLISHED_DEEPSLATE);
-    public static final Block POLISHED_TUFF_BUTTON = registerStoneButton(BlockTypes.POLISHED_TUFF.block);
+    public static final Block POLISHED_TUFF_BUTTON = registerStoneButton(BSSTypes.POLISHED_TUFF.block);
 
     // Thatch
 

@@ -16,21 +16,17 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
     @Override
     protected void generateBlockLootTables() {
 
-        for (BlockTypes blockType : BlockTypes.values()) {
-            this.addDrop(blockType.block);
-            this.addDrop(blockType.stairs);
-            this.addDrop(blockType.slab, BlockLootTableGenerator::slabDrops);
+        for (BSSWTypes bsswType : BSSWTypes.values()) {
+            this.addDrop(bsswType.block);
+            this.addDrop(bsswType.stairs);
+            this.addDrop(bsswType.slab, BlockLootTableGenerator::slabDrops);
+            this.addDrop(bsswType.wall);
         }
 
-        for (WallTypes wallType : WallTypes.values()) {
-            this.addDrop(wallType.wall);
-        }
-
-        for (LightBlockTypes lightblockType : LightBlockTypes.values()) {
-            this.addDrop(lightblockType.block);
-            this.addDrop(lightblockType.stairs);
-            this.addDrop(lightblockType.slab, BlockLootTableGenerator::slabDrops);
-            this.addDrop(lightblockType.wall);
+        for (BSSTypes bssType : BSSTypes.values()) {
+            this.addDrop(bssType.block);
+            this.addDrop(bssType.stairs);
+            this.addDrop(bssType.slab, BlockLootTableGenerator::slabDrops);
         }
 
         for (AsphaltTypes asphaltType : AsphaltTypes.values()) {
@@ -39,11 +35,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
             this.addDrop(asphaltType.slab, BlockLootTableGenerator::slabDrops);
         }
 
-        for (ShinglesTypes shinglesType : ShinglesTypes.values()) {
-            this.addDrop(shinglesType.block);
-            this.addDrop(shinglesType.stairs);
-            this.addDrop(shinglesType.slab, BlockLootTableGenerator::slabDrops);
-        }
 
         // Amethyst
         this.addDrop(BlockusBlocks.POLISHED_AMETHYST);

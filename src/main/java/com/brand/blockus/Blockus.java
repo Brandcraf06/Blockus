@@ -20,7 +20,7 @@ public class Blockus implements ModInitializer {
 
     public static final String MOD_ID = "blockus";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(LightBlockTypes.BLAZE_BRICKS.block));
+    public static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_building_blocks"), () -> new ItemStack(BSSWTypes.BLAZE_BRICKS.block));
     public static final ItemGroup BLOCKUS_DECORATIONS = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_decorations"), () -> new ItemStack(BlockusBlocks.OAK_SMALL_HEDGE));
     public static final ItemGroup BLOCKUS_REDSTONE = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_redstone"), () -> new ItemStack(BlockusBlocks.REDSTONE_SAND));
     public static final ItemGroup BLOCKUS_LEGACY = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "blockus_legacy"), () -> new ItemStack(BlockusBlocks.LEGACY_BRICKS));
@@ -28,10 +28,8 @@ public class Blockus implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        BlockTypes.initialize();
-        WallTypes.initialize();
-        LightBlockTypes.initialize();
-        ShinglesTypes.initialize();
+        BSSTypes.initialize();
+        BSSWTypes.initialize();
         AsphaltTypes.initialize();
 
 
@@ -50,6 +48,10 @@ public class Blockus implements ModInitializer {
         Instance.init();
 
         BlockusConfiguredFeatures.registerConfiguredFeature();
+    }
+
+    public static Identifier id(String name) {
+        return new Identifier(MOD_ID, name);
     }
 }
 
