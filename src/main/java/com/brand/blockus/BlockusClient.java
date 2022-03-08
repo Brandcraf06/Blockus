@@ -2,6 +2,8 @@ package com.brand.blockus;
 
 import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.types.BlockTypes;
+import com.brand.blockus.content.types.WallTypes;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
@@ -28,10 +30,10 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
         registerBlockColor(BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
         registerBlockColor(BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
-        registerBlockColor(BlockusBlocks.WATER_BRICKS, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICK_STAIRS, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICK_SLAB, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICK_WALL, Blocks.WATER);
+        registerBlockColor(BlockTypes.WATER_BRICKS.block, Blocks.WATER);
+        registerBlockColor(BlockTypes.WATER_BRICKS.stairs, Blocks.WATER);
+        registerBlockColor(BlockTypes.WATER_BRICKS.slab, Blocks.WATER);
+        registerBlockColor(WallTypes.WATER_BRICKS.wall, Blocks.WATER);
         registerBlockColor(BlockusBlocks.CHISELED_WATER_BRICKS, Blocks.WATER);
         registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN, Blocks.POTTED_FERN);
         registerBlockColor(BlockusBlocks.POTTED_OAK, Blocks.OAK_LEAVES);
@@ -91,10 +93,10 @@ public class BlockusClient implements ClientModInitializer {
 
         );
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
-            BlockusBlocks.WATER_BRICKS,
-            BlockusBlocks.WATER_BRICK_SLAB,
-            BlockusBlocks.WATER_BRICK_STAIRS,
-            BlockusBlocks.WATER_BRICK_WALL,
+            BlockTypes.WATER_BRICKS.block,
+            BlockTypes.WATER_BRICKS.stairs,
+            BlockTypes.WATER_BRICKS.slab,
+            WallTypes.WATER_BRICKS.wall,
             BlockusBlocks.CHISELED_WATER_BRICKS,
 
             BlockusBlocks.RAINBOW_GLASS,

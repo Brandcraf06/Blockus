@@ -2,6 +2,7 @@ package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
+import com.brand.blockus.content.types.BlockTypes;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
@@ -43,9 +44,9 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BURNT_PAPER_BLOCK, 5, 60);
 
         // thatch
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH, 60, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH_SLAB, 60, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH_STAIRS, 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockTypes.THATCH.block, 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockTypes.THATCH.slab, 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockTypes.THATCH.stairs, 60, 20);
 
         // timber frames
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ACACIA_CROSS_TIMBER_FRAME, 5, 20);
@@ -246,9 +247,9 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.FLOWERING_AZALEA_SMALL_HEDGE, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.MOSS_SMALL_HEDGE, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.RAINBOW_ROSE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.THATCH_SLAB, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.THATCH, 0.75f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.THATCH_STAIRS, 0.75f);
+        CompostingChanceRegistry.INSTANCE.add(BlockTypes.THATCH.slab, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(BlockTypes.THATCH.block, 0.75f);
+        CompostingChanceRegistry.INSTANCE.add(BlockTypes.THATCH.stairs, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.WARPED_SMALL_HEDGE, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.CRIMSON_SMALL_HEDGE, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.APPLE_CRATE, 0.95f);
