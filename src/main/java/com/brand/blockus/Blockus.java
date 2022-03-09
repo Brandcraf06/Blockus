@@ -12,9 +12,14 @@ import com.brand.blockus.world.BlockusConfiguredFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,6 +59,16 @@ public class Blockus implements ModInitializer {
 
     public static Identifier id(String name) {
         return new Identifier(MOD_ID, name);
+    }
+
+    public static Block block(String name, Block block) {
+        block = Registry.register(Registry.BLOCK, Blockus.id(name), block);
+        item(name, new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+        return block;
+    }
+
+    public static Item item(String name, Item item) {
+        return Registry.register(Registry.ITEM, Blockus.id(name), item);
     }
 }
 

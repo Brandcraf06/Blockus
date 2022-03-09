@@ -13,77 +13,69 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public enum BSSTypes {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-    POLISHED_DRIPSTONE("polished_dripstone", Blocks.DRIPSTONE_BLOCK),
-    POLISHED_TUFF("polished_tuff", Blocks.TUFF),
-    ROUGH_BASALT("rough_basalt", Blocks.BASALT),
+public class BSSTypes {
 
-    POLISHED_LIMESTONE("polished_limestone", BSSWTypes.LIMESTONE.block),
-    POLISHED_MARBLE("polished_marble", BSSWTypes.MARBLE.block),
-    POLISHED_BLUESTONE("polished_bluestone", BSSWTypes.BLUESTONE.block),
-    POLISHED_NETHERRACK("polished_netherrack", Blocks.NETHERRACK),
+    public static final BSSTypes POLISHED_DRIPSTONE = new BSSTypes("polished_dripstone", Blocks.DRIPSTONE_BLOCK);
+    public static final BSSTypes POLISHED_TUFF = new BSSTypes("polished_tuff", Blocks.TUFF);
+    public static final BSSTypes ROUGH_BASALT = new BSSTypes("rough_basalt", Blocks.BASALT);
 
-    ROUGH_SANDSTONE("rough_sandstone", Blocks.SANDSTONE),
-    ROUGH_RED_SANDSTONE("rough_red_sandstone", Blocks.SANDSTONE),
-    ROUGH_SOUL_SANDSTONE("rough_soul_sandstone", BSSWTypes.SOUL_SANDSTONE.block),
-    SMOOTH_SOUL_SANDSTONE("smooth_soul_sandstone", BSSWTypes.SOUL_SANDSTONE.block),
+    public static final BSSTypes POLISHED_LIMESTONE = new BSSTypes("polished_limestone", BSSWTypes.LIMESTONE.block);
+    public static final BSSTypes POLISHED_MARBLE = new BSSTypes("polished_marble", BSSWTypes.MARBLE.block);
+    public static final BSSTypes POLISHED_BLUESTONE = new BSSTypes("polished_bluestone", BSSWTypes.BLUESTONE.block);
+    public static final BSSTypes POLISHED_NETHERRACK = new BSSTypes("polished_netherrack", Blocks.NETHERRACK);
+
+    public static final BSSTypes ROUGH_SANDSTONE = new BSSTypes("rough_sandstone", Blocks.SANDSTONE);
+    public static final BSSTypes ROUGH_RED_SANDSTONE = new BSSTypes("rough_red_sandstone", Blocks.SANDSTONE);
+    public static final BSSTypes ROUGH_SOUL_SANDSTONE = new BSSTypes("rough_soul_sandstone", BSSWTypes.SOUL_SANDSTONE.block);
+    public static final BSSTypes SMOOTH_SOUL_SANDSTONE = new BSSTypes("smooth_soul_sandstone", BSSWTypes.SOUL_SANDSTONE.block);
 
 
-    POLISHED_PURPUR("polished_purpur", Blocks.PURPUR_BLOCK),
-    PHANTOM_PURPUR_BLOCK("phantom_purpur_block", Blocks.PURPUR_BLOCK),
-    POLISHED_PHANTOM_PURPUR("polished_phantom_purpur", Blocks.PURPUR_BLOCK),
+    public static final BSSTypes POLISHED_PURPUR = new BSSTypes("polished_purpur", Blocks.PURPUR_BLOCK);
+    public static final BSSTypes PHANTOM_PURPUR_BLOCK = new BSSTypes("phantom_purpur_block", Blocks.PURPUR_BLOCK);
+    public static final BSSTypes POLISHED_PHANTOM_PURPUR = new BSSTypes("polished_phantom_purpur", Blocks.PURPUR_BLOCK);
 
-    POLISHED_END_STONE("polished_end_stone", Blocks.END_STONE),
+    public static final BSSTypes POLISHED_END_STONE = new BSSTypes("polished_end_stone", Blocks.END_STONE);
 
-    SHINGLES("shingles", Blocks.TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    WHITE_SHINGLES("white_shingles", Blocks.WHITE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    ORANGE_SHINGLES("orange_shingles", Blocks.ORANGE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    MAGENTA_SHINGLES("magenta_shingles", Blocks.MAGENTA_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    LIGHT_BLUE_SHINGLES("light_blue_shingles", Blocks.LIGHT_BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    YELLOW_SHINGLES("yellow_shingles", Blocks.YELLOW_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    LIME_SHINGLES("lime_shingles", Blocks.LIME_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    PINK_SHINGLES("pink_shingles", Blocks.PINK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    LIGHT_GRAY_SHINGLES("light_gray_shingles", Blocks.LIGHT_GRAY_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    GRAY_SHINGLES("gray_shingles", Blocks.GRAY_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    CYAN_SHINGLES("cyan_shingles", Blocks.CYAN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    PURPLE_SHINGLES("purple_shingles", Blocks.PURPLE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    BLUE_SHINGLES("blue_shingles", Blocks.BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    BROWN_SHINGLES("brown_shingles", Blocks.BROWN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    GREEN_SHINGLES("green_shingles", Blocks.GREEN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    RED_SHINGLES("red_shingles", Blocks.RED_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
-    BLACK_SHINGLES("black_shingles", Blocks.BLACK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS),
+    public static final BSSTypes SHINGLES = new BSSTypes("shingles", Blocks.TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes WHITE_SHINGLES = new BSSTypes("white_shingles", Blocks.WHITE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes ORANGE_SHINGLES = new BSSTypes("orange_shingles", Blocks.ORANGE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes MAGENTA_SHINGLES = new BSSTypes("magenta_shingles", Blocks.MAGENTA_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes LIGHT_BLUE_SHINGLES = new BSSTypes("light_blue_shingles", Blocks.LIGHT_BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes YELLOW_SHINGLES = new BSSTypes("yellow_shingles", Blocks.YELLOW_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes LIME_SHINGLES = new BSSTypes("lime_shingles", Blocks.LIME_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes PINK_SHINGLES = new BSSTypes("pink_shingles", Blocks.PINK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes LIGHT_GRAY_SHINGLES = new BSSTypes("light_gray_shingles", Blocks.LIGHT_GRAY_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes GRAY_SHINGLES = new BSSTypes("gray_shingles", Blocks.GRAY_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes CYAN_SHINGLES = new BSSTypes("cyan_shingles", Blocks.CYAN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes PURPLE_SHINGLES = new BSSTypes("purple_shingles", Blocks.PURPLE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes BLUE_SHINGLES = new BSSTypes("blue_shingles", Blocks.BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes BROWN_SHINGLES = new BSSTypes("brown_shingles", Blocks.BROWN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes GREEN_SHINGLES = new BSSTypes("green_shingles", Blocks.GREEN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes RED_SHINGLES = new BSSTypes("red_shingles", Blocks.RED_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes BLACK_SHINGLES = new BSSTypes("black_shingles", Blocks.BLACK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
 
-    THATCH("thatch", Blocks.HAY_BLOCK),
-    IRON_PLATING("iron_plating", Blocks.IRON_BLOCK, MapColor.STONE_GRAY),
-    GOLD_PLATING("gold_plating", Blocks.GOLD_BLOCK);
+    public static final BSSTypes THATCH = new BSSTypes("thatch", Blocks.HAY_BLOCK);
+    public static final BSSTypes IRON_PLATING = new BSSTypes("iron_plating", Blocks.IRON_BLOCK, MapColor.STONE_GRAY);
+    public static final BSSTypes GOLD_PLATING = new BSSTypes("gold_plating", Blocks.GOLD_BLOCK);
+
 
     public final Block block;
-    public final SlabBlock slab;
-    public final StairsBase stairs;
-    public final BlockItem item;
-    public final BlockItem item_slab;
-    public final BlockItem item_stairs;
+    public final Block slab;
+    public final Block stairs;
     public final Block base;
 
     private BSSTypes(String type, Block base, Block.Settings blockSettings) {
         String replace = type.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "");
 
-        Identifier id = Blockus.id(type);
-        Identifier id_slab = Blockus.id(replace + "_slab");
-        Identifier id_stairs = Blockus.id(replace + "_stairs");
-
-        Item.Settings itemSettings = new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS);
-
         this.base = base;
 
-        this.block = Registry.register(Registry.BLOCK, id, new Block(FabricBlockSettings.copyOf(blockSettings)));
-        this.slab = Registry.register(Registry.BLOCK, id_slab, new SlabBlock(FabricBlockSettings.copyOf(blockSettings)));
-        this.stairs = Registry.register(Registry.BLOCK, id_stairs, new StairsBase(this.block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
-
-        this.item = Registry.register(Registry.ITEM, id, new BlockItem(this.block, itemSettings));
-        this.item_slab = Registry.register(Registry.ITEM, id_slab, new BlockItem(this.slab, itemSettings));
-        this.item_stairs = Registry.register(Registry.ITEM, id_stairs, new BlockItem(this.stairs, itemSettings));
+        this.block = Blockus.block(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
+        this.slab = Blockus.block(replace + "_slab", new SlabBlock(FabricBlockSettings.copyOf(blockSettings)));
+        this.stairs = Blockus.block(replace + "_stairs", new StairsBase(this.block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
 
     }
 

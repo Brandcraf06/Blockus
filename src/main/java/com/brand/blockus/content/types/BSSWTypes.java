@@ -160,8 +160,6 @@ public enum BSSWTypes {
 
     }
 
-
-
     public static BSSWTypes initialize() {
         return null;
     }
