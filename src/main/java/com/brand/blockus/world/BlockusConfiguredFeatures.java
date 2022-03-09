@@ -4,7 +4,6 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.block.Block;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -46,11 +45,11 @@ public class BlockusConfiguredFeatures {
 
         // limestone
         ConfiguredFeature<?, ?> ORE_LIMESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 64));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID,  "ore_limestone"), ORE_LIMESTONE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "ore_limestone"), ORE_LIMESTONE);
         RegistryEntry<ConfiguredFeature<?, ?>> oreLimestoneFeature = BuiltinRegistries.CONFIGURED_FEATURE.getOrCreateEntry(BuiltinRegistries.CONFIGURED_FEATURE.getKey(ORE_LIMESTONE).orElseThrow());
 
         RegistryKey<PlacedFeature> oreLimestoneUpper = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "ore_limestone_upper"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreLimestoneUpper.getValue(),  new PlacedFeature(oreLimestoneFeature, modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128)))));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreLimestoneUpper.getValue(), new PlacedFeature(oreLimestoneFeature, modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreLimestoneUpper);
 
         RegistryKey<PlacedFeature> oreLimestoneLower = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "ore_limestone_lower"));
@@ -59,7 +58,7 @@ public class BlockusConfiguredFeatures {
 
         // marble
         ConfiguredFeature<?, ?> ORE_MARBLE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 64));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID,  "ore_marble"), ORE_MARBLE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "ore_marble"), ORE_MARBLE);
         RegistryEntry<ConfiguredFeature<?, ?>> oreMarbleFeature = BuiltinRegistries.CONFIGURED_FEATURE.getOrCreateEntry(BuiltinRegistries.CONFIGURED_FEATURE.getKey(ORE_MARBLE).orElseThrow());
 
         RegistryKey<PlacedFeature> oreMarble = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "ore_marble"));
@@ -68,7 +67,7 @@ public class BlockusConfiguredFeatures {
 
         // bluestone
         ConfiguredFeature<?, ?> ORE_BLUESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 64));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID,  "ore_bluestone"), ORE_BLUESTONE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "ore_bluestone"), ORE_BLUESTONE);
         RegistryEntry<ConfiguredFeature<?, ?>> oreBluestoneFeature = BuiltinRegistries.CONFIGURED_FEATURE.getOrCreateEntry(BuiltinRegistries.CONFIGURED_FEATURE.getKey(ORE_BLUESTONE).orElseThrow());
 
         RegistryKey<PlacedFeature> oreBluestone = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "ore_bluestone"));
@@ -77,7 +76,7 @@ public class BlockusConfiguredFeatures {
 
         // white oak
         ConfiguredFeature<?, ?> WHITE_OAK = new ConfiguredFeature<>(Feature.TREE, white_oak().build());
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID,  "white_oak"), WHITE_OAK);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "white_oak"), WHITE_OAK);
         RegistryEntry<ConfiguredFeature<?, ?>> treeWhiteOakFeature = BuiltinRegistries.CONFIGURED_FEATURE.getOrCreateEntry(BuiltinRegistries.CONFIGURED_FEATURE.getKey(WHITE_OAK).orElseThrow());
 
         RegistryKey<PlacedFeature> treeWhiteOak = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(Blockus.MOD_ID, "white_oak_checked"));
@@ -90,7 +89,7 @@ public class BlockusConfiguredFeatures {
 
         // rainbow rose
         ConfiguredFeature<?, ?> RAINBOW_ROSE = new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(12, 7, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID,  "rainbow_rose"), RAINBOW_ROSE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "rainbow_rose"), RAINBOW_ROSE);
         RegistryEntry<ConfiguredFeature<?, ?>> rainbowRoseFeature = BuiltinRegistries.CONFIGURED_FEATURE.getOrCreateEntry(BuiltinRegistries.CONFIGURED_FEATURE.getKey(RAINBOW_ROSE).orElseThrow());
 
         RegistryKey<PlacedFeature> rainbowRose = RegistryKey.of(Registry.PLACED_FEATURE_KEY,

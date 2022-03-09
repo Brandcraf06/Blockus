@@ -8,7 +8,6 @@ import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
@@ -81,24 +80,24 @@ public class Barrier extends Block implements Waterloggable {
         Builder<BlockState, VoxelShape> builder = ImmutableMap.builder();
         Iterator var21 = UP.getValues().iterator();
 
-        while(var21.hasNext()) {
-            Boolean boolean_ = (Boolean)var21.next();
+        while (var21.hasNext()) {
+            Boolean boolean_ = (Boolean) var21.next();
             Iterator var23 = EAST_SHAPE.getValues().iterator();
 
-            while(var23.hasNext()) {
-                WallShape wallShape = (WallShape)var23.next();
+            while (var23.hasNext()) {
+                WallShape wallShape = (WallShape) var23.next();
                 Iterator var25 = NORTH_SHAPE.getValues().iterator();
 
-                while(var25.hasNext()) {
-                    WallShape wallShape2 = (WallShape)var25.next();
+                while (var25.hasNext()) {
+                    WallShape wallShape2 = (WallShape) var25.next();
                     Iterator var27 = WEST_SHAPE.getValues().iterator();
 
-                    while(var27.hasNext()) {
-                        WallShape wallShape3 = (WallShape)var27.next();
+                    while (var27.hasNext()) {
+                        WallShape wallShape3 = (WallShape) var27.next();
                         Iterator var29 = SOUTH_SHAPE.getValues().iterator();
 
-                        while(var29.hasNext()) {
-                            WallShape wallShape4 = (WallShape)var29.next();
+                        while (var29.hasNext()) {
+                            WallShape wallShape4 = (WallShape) var29.next();
                             VoxelShape voxelShape10 = VoxelShapes.empty();
                             voxelShape10 = getVoxelShape(voxelShape10, wallShape, voxelShape5, voxelShape9);
                             voxelShape10 = getVoxelShape(voxelShape10, wallShape3, voxelShape4, voxelShape8);
@@ -249,7 +248,7 @@ public class Barrier extends Block implements Waterloggable {
     }
 
     public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
-        return !(Boolean)state.get(WATERLOGGED);
+        return !(Boolean) state.get(WATERLOGGED);
     }
 
     protected void appendProperties(net.minecraft.state.StateManager.Builder<Block, BlockState> builder) {
@@ -257,7 +256,7 @@ public class Barrier extends Block implements Waterloggable {
     }
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {
-        switch(rotation) {
+        switch (rotation) {
             case CLOCKWISE_180:
                 return state.with(NORTH_SHAPE, state.get(SOUTH_SHAPE)).with(EAST_SHAPE, state.get(WEST_SHAPE)).with(SOUTH_SHAPE, state.get(NORTH_SHAPE)).with(WEST_SHAPE, state.get(EAST_SHAPE));
             case COUNTERCLOCKWISE_90:
@@ -270,7 +269,7 @@ public class Barrier extends Block implements Waterloggable {
     }
 
     public BlockState mirror(BlockState state, BlockMirror mirror) {
-        switch(mirror) {
+        switch (mirror) {
             case LEFT_RIGHT:
                 return state.with(NORTH_SHAPE, state.get(SOUTH_SHAPE)).with(SOUTH_SHAPE, state.get(NORTH_SHAPE));
             case FRONT_BACK:

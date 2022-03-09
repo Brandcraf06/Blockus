@@ -43,9 +43,9 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
 
         // Large Flower Pots
         POTTED_AUTUMN_OAK = register("potted_autumn_oak", createPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant()));
-        POTTED_AUTUMN_BIRCH = register( "potted_autumn_birch", createPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant()));
-        POTTED_PINK_CHERRY_OAK = register( "potted_pink_cherry_oak", createPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant()));
-        POTTED_WHITE_CHERRY_OAK = register( "potted_white_cherry_oak", createPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant()));
+        POTTED_AUTUMN_BIRCH = register("potted_autumn_birch", createPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant()));
+        POTTED_PINK_CHERRY_OAK = register("potted_pink_cherry_oak", createPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant()));
+        POTTED_WHITE_CHERRY_OAK = register("potted_white_cherry_oak", createPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant()));
         POTTED_PALM = register("potted_palm", createPottedDoublePlant(PalmBundle.PALM_WOOD.getSapling()));
         POTTED_DARK_AMARANTH = register("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_WOOD.getFungus()));
 
