@@ -1207,7 +1207,7 @@ public class BlockusItems {
     }
 
     public static Item register(String id, Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, id), item);
+        return Registry.register(Registry.ITEM, Blockus.id(id), item);
     }
 
     public static Item register_asphalt(Block block, ItemGroup group) {
@@ -1219,8 +1219,8 @@ public class BlockusItems {
     }
 
     public static Item register_boat(String path, String boatPath) {
-        Identifier id = new Identifier(Blockus.MOD_ID, path);
-        Identifier boatId = new Identifier(Blockus.MOD_ID, boatPath);
+        Identifier id = Blockus.id(path);
+        Identifier boatId = Blockus.id(boatPath);
 
         Item item = TerraformBoatItemHelper.registerBoatItem(id, () -> {
             return TerraformBoatTypeRegistry.INSTANCE.get(boatId);

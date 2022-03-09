@@ -16,7 +16,7 @@ public final class BlockusColumnBlocks {
     }
 
     private static void registerColumnBlockAndItem(String path, Block base) {
-        Identifier id = new Identifier(Blockus.MOD_ID, path);
+        Identifier id = Blockus.id(path);
 
         Block block = new ColumnBlock(FabricBlockSettings.copy(base));
         Registry.register(Registry.BLOCK, id, block);
