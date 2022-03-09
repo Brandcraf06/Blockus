@@ -8,7 +8,7 @@ import net.minecraft.util.registry.Registry;
 
 public class BlockusBlockTags {
 
-    public static final TagKey<Block> AMETHYST_BLOCKS = create("amethyst_blocks");
+    public static final TagKey<Block> AMETHYST_BLOCKS = register("amethyst_blocks");
     public static final TagKey<Block> ANDESITE_BLOCKS = register("andesite_blocks");
     public static final TagKey<Block> ASPHALT = register("asphalt");
     public static final TagKey<Block> BARRELS = register("barrels");
