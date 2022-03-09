@@ -1,7 +1,6 @@
 package com.brand.blockus.content.types;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.StairsBase;
 import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
@@ -9,8 +8,6 @@ import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;

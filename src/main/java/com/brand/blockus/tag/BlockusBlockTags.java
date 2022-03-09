@@ -4,7 +4,6 @@ import com.brand.blockus.Blockus;
 import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.block.Block;
 import net.minecraft.tag.Tag;
-import net.minecraft.util.Identifier;
 
 public class BlockusBlockTags {
     public static final Tag.Identified<Block> AMETHYST_BLOCKS = create("amethyst_blocks");
@@ -69,6 +68,6 @@ public class BlockusBlockTags {
     }
 
     private static Tag.Identified<Block> create(String path) {
-        return TagFactory.BLOCK.create(new Identifier(Blockus.MOD_ID, path));
+        return TagFactory.BLOCK.create(Blockus.id(path));
     }
 }

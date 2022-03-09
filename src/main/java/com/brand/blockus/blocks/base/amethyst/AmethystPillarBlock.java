@@ -1,6 +1,5 @@
 package com.brand.blockus.blocks.base.amethyst;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.player.PlayerEntity;

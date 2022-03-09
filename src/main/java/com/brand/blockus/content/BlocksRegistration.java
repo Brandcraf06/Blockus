@@ -2,20 +2,18 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
-import com.brand.blockus.blocks.base.amethyst.AmethystPillarBlock;
-import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
-import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
-import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
-import com.brand.blockus.blocks.base.redstone.*;
+import com.brand.blockus.blocks.base.redstone.DoorBase;
+import com.brand.blockus.blocks.base.redstone.PressurePlateBase;
+import com.brand.blockus.blocks.base.redstone.StoneButtonBase;
+import com.brand.blockus.blocks.base.redstone.TrapdoorBase;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
@@ -216,7 +214,7 @@ public class BlocksRegistration {
     // Register
 
     public static Block register(String id, Block block) {
-        return Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, id), block);
+        return Registry.register(Registry.BLOCK, Blockus.id(id), block);
 
     }
 

@@ -1,7 +1,9 @@
 package com.brand.blockus.data.provider;
 
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.content.types.AsphaltTypes;
+import com.brand.blockus.content.types.BSSTypes;
+import com.brand.blockus.content.types.BSSWTypes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTablesProvider;
 import net.minecraft.data.server.BlockLootTableGenerator;

@@ -2,7 +2,6 @@ package com.brand.blockus;
 
 import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.BSSTypes;
 import com.brand.blockus.content.types.BSSWTypes;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
@@ -143,9 +142,9 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.TINTED_BEVELED_GLASS
         );
 
-        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "bamboo"));
-        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "charred"));
-        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "white_oak"));
+        TerraformBoatClientHelper.registerModelLayer(Blockus.id("bamboo"));
+        TerraformBoatClientHelper.registerModelLayer(Blockus.id( "charred"));
+        TerraformBoatClientHelper.registerModelLayer(Blockus.id( "white_oak"));
 
         registerSignSprite("bamboo");
         registerSignSprite("charred");
@@ -169,7 +168,7 @@ public class BlockusClient implements ClientModInitializer {
     }
 
     private void registerSignSprite(String path) {
-        Identifier id = new Identifier(Blockus.MOD_ID, "entity/signs/" + path);
+        Identifier id = Blockus.id( "entity/signs/" + path);
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
     }
 

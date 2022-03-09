@@ -2,7 +2,9 @@ package com.brand.blockus.data.provider;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.content.types.AsphaltTypes;
+import com.brand.blockus.content.types.BSSTypes;
+import com.brand.blockus.content.types.BSSWTypes;
 import com.brand.blockus.tag.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
