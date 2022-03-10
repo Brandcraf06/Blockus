@@ -1,5 +1,6 @@
 package com.brand.blockus;
 
+import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
 import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeBlocks;
 import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeItems;
@@ -64,6 +65,18 @@ public class Blockus implements ModInitializer {
     public static Block block(String name, Block block) {
         block = Registry.register(Registry.BLOCK, Blockus.id(name), block);
         item(name, new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+        return block;
+    }
+
+    public static Block decoration(String name, Block block) {
+        block = Registry.register(Registry.BLOCK, Blockus.id(name), block);
+        item(name, new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_DECORATIONS)));
+        return block;
+    }
+
+    public static Block asphalt(String name, Block block) {
+        block = Registry.register(Registry.BLOCK, Blockus.id(name), block);
+        item(name, new SpeedBlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
         return block;
     }
 

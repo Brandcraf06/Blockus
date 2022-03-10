@@ -59,22 +59,22 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockusBlockTags.SOUL_SOILS, BlockusItemTags.SOUL_SOILS);
 
         this.getOrCreateTagBuilder(BlockusItemTags.STAINED_STONE_BRICKS)
-            .add(BSSWTypes.WHITE_STONE_BRICKS.item)
-            .add(BSSWTypes.ORANGE_STONE_BRICKS.item)
-            .add(BSSWTypes.MAGENTA_STONE_BRICKS.item)
-            .add(BSSWTypes.LIGHT_BLUE_STONE_BRICKS.item)
-            .add(BSSWTypes.YELLOW_STONE_BRICKS.item)
-            .add(BSSWTypes.LIME_STONE_BRICKS.item)
-            .add(BSSWTypes.PINK_STONE_BRICKS.item)
-            .add(BSSWTypes.GRAY_STONE_BRICKS.item)
+            .add(BSSWTypes.WHITE_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.ORANGE_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.MAGENTA_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.LIGHT_BLUE_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.YELLOW_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.LIME_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.PINK_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.GRAY_STONE_BRICKS.block.asItem())
             .add(Items.STONE_BRICKS)
-            .add(BSSWTypes.CYAN_STONE_BRICKS.item)
-            .add(BSSWTypes.PURPLE_STONE_BRICKS.item)
-            .add(BSSWTypes.BLUE_STONE_BRICKS.item)
-            .add(BSSWTypes.BROWN_STONE_BRICKS.item)
-            .add(BSSWTypes.GREEN_STONE_BRICKS.item)
-            .add(BSSWTypes.RED_STONE_BRICKS.item)
-            .add(BSSWTypes.BLACK_STONE_BRICKS.item);
+            .add(BSSWTypes.CYAN_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.PURPLE_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.BLUE_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.BROWN_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.GREEN_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.RED_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.BLACK_STONE_BRICKS.block.asItem());
 
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
 
@@ -93,28 +93,28 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(new Identifier("c", "planks_that_burn"));
 
         this.getOrCreateTagBuilder(new Identifier("c", "purpur_blocks"))
-            .add(BSSWTypes.PURPUR_BRICKS.item)
+            .add(BSSWTypes.PURPUR_BRICKS.block.asItem())
             .add(BSSTypes.POLISHED_PURPUR.block.asItem())
             .add(BlockusItems.PURPUR_SQUARES)
-            .add(BSSWTypes.SMALL_PURPUR_BRICKS.item)
+            .add(BSSWTypes.SMALL_PURPUR_BRICKS.block.asItem())
             .add(BlockusItems.CHISELED_PURPUR)
             .add(BlockusItems.PURPUR_LINES)
             .add(BSSTypes.PHANTOM_PURPUR_BLOCK.block.asItem())
             .add(BlockusItems.PHANTOM_PURPUR_PILLAR)
-            .add(BSSWTypes.PHANTOM_PURPUR_BRICKS.item)
+            .add(BSSWTypes.PHANTOM_PURPUR_BRICKS.block.asItem())
             .add(BSSTypes.POLISHED_PHANTOM_PURPUR.block.asItem())
             .add(BlockusItems.PHANTOM_PURPUR_SQUARES)
-            .add(BSSWTypes.SMALL_PHANTOM_PURPUR_BRICKS.item)
+            .add(BSSWTypes.SMALL_PHANTOM_PURPUR_BRICKS.block.asItem())
             .add(BlockusItems.CHISELED_PHANTOM_PURPUR)
             .add(BlockusItems.PHANTOM_PURPUR_LINES);
 
         this.getOrCreateTagBuilder(new Identifier("c", "quartz_blocks"))
-            .add(BSSWTypes.QUARTZ_TILES.item)
+            .add(BSSWTypes.QUARTZ_TILES.block.asItem())
             .add(BlockusItems.QUARTZ_CIRCLE_PAVEMENT);
 
         this.getOrCreateTagBuilder(new Identifier("c", "red_sandstones"))
-            .add(BSSWTypes.RED_SANDSTONE_BRICKS.item)
-            .add(BSSWTypes.SMALL_RED_SANDSTONE_BRICKS.item)
+            .add(BSSWTypes.RED_SANDSTONE_BRICKS.block.asItem())
+            .add(BSSWTypes.SMALL_RED_SANDSTONE_BRICKS.block.asItem())
             .add(BSSTypes.ROUGH_RED_SANDSTONE.block.asItem())
             .add(BlockusItems.GOLD_DECORATED_RED_SANDSTONE)
             .add(BlockusItems.RED_SANDSTONE_PILLAR);
@@ -122,8 +122,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(new Identifier("c", "wooden_barrels"));
 
         this.getOrCreateTagBuilder(new Identifier("c", "yellow_sandstones"))
-            .add(BSSWTypes.SANDSTONE_BRICKS.item)
-            .add(BSSWTypes.SMALL_SANDSTONE_BRICKS.item)
+            .add(BSSWTypes.SANDSTONE_BRICKS.block.asItem())
+            .add(BSSWTypes.SMALL_SANDSTONE_BRICKS.block.asItem())
             .add(BSSTypes.ROUGH_SANDSTONE.block.asItem())
             .add(BlockusItems.GOLD_DECORATED_SANDSTONE)
             .add(BlockusItems.LAPIS_DECORATED_SANDSTONE)

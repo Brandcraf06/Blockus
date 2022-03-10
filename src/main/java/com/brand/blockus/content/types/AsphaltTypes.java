@@ -1,6 +1,7 @@
 package com.brand.blockus.content.types;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.base.StairsBase;
 import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
@@ -8,6 +9,7 @@ import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.item.Item;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
@@ -32,30 +34,20 @@ public enum AsphaltTypes {
     GREEN_ASPHALT(DyeColor.GREEN),
     RED_ASPHALT(DyeColor.RED);
 
-    public final AsphaltBlock block;
-    public final AsphaltSlab slab;
-    public final AsphaltStairs stairs;
-    public final SpeedBlockItem item;
-    public final SpeedBlockItem item_slab;
-    public final SpeedBlockItem item_stairs;
+    public final Block block;
+    public final Block slab;
+    public final Block stairs;
 
     private AsphaltTypes(DyeColor color) {
         String type = color.getName() + "_asphalt";
         String type2 = type.replace("black_asphalt", "asphalt");
-        Identifier id = Blockus.id(type2);
-        Identifier id_slab = Blockus.id(type2 + "_slab");
-        Identifier id_stairs = Blockus.id(type2 + "_stairs");
 
         Block.Settings blockSettings = FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool();
-        Item.Settings itemSettings = new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS);
 
-        this.block = Registry.register(Registry.BLOCK, id, new AsphaltBlock(blockSettings));
-        this.slab =  Registry.register(Registry.BLOCK, id_slab, new AsphaltSlab(blockSettings));
-        this.stairs =  Registry.register(Registry.BLOCK, id_stairs, new AsphaltStairs(block.getDefaultState(), blockSettings));
+        this.block = Blockus.asphalt(type2, new AsphaltBlock(FabricBlockSettings.copyOf(blockSettings)));
+        this.slab =  Blockus.asphalt(type2 + "_slab", new AsphaltSlab(FabricBlockSettings.copyOf(blockSettings)));
+        this.stairs =  Blockus.asphalt(type2 + "_stairs", new AsphaltStairs(block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
 
-        this.item =  Registry.register(Registry.ITEM, id, new SpeedBlockItem(this.block, itemSettings));
-        this.item_slab =  Registry.register(Registry.ITEM, id_slab, new SpeedBlockItem(this.slab, itemSettings));
-        this.item_stairs =  Registry.register(Registry.ITEM, id_stairs, new SpeedBlockItem(this.stairs, itemSettings));
 
     }
 

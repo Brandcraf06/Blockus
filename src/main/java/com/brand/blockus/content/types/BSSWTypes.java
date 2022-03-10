@@ -111,37 +111,20 @@ public enum BSSWTypes {
     BLACK_CONCRETE_BRICKS("black_concrete_bricks", Blocks.BLACK_CONCRETE);
 
     public final Block block;
-    public final SlabBlock slab;
-    public final StairsBase stairs;
-    public final WallBlock wall;
-    public final BlockItem item;
-    public final BlockItem item_slab;
-    public final BlockItem item_stairs;
-    public final BlockItem item_wall;
+    public final Block slab;
+    public final Block stairs;
+    public final Block wall;
     public final Block base;
 
     private BSSWTypes(String type, Block base, Block.Settings blockSettings) {
         String replace = type.replace("lava_polished_blackstone_bricks", "lava_polished_blackstone").replace("bricks", "brick").replace("tiles", "tile").replace("_block", "");
 
-        Identifier id = Blockus.id(type);
-        Identifier id_slab = Blockus.id(replace + "_slab");
-        Identifier id_stairs = Blockus.id(replace + "_stairs");
-        Identifier id_wall = Blockus.id(replace + "_wall");
-
-        Item.Settings itemSettings = new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS);
-
         this.base = base;
 
-        this.block = Registry.register(Registry.BLOCK, id, new Block(FabricBlockSettings.copyOf(blockSettings)));
-        this.slab = Registry.register(Registry.BLOCK, id_slab, new SlabBlock(FabricBlockSettings.copyOf(blockSettings)));
-        this.stairs = Registry.register(Registry.BLOCK, id_stairs, new StairsBase(block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
-        this.wall = Registry.register(Registry.BLOCK, id_wall, new WallBlock(FabricBlockSettings.copyOf(blockSettings)));
-
-        this.item = Registry.register(Registry.ITEM, id, new BlockItem(this.block, itemSettings));
-        this.item_slab = Registry.register(Registry.ITEM, id_slab, new BlockItem(this.slab, itemSettings));
-        this.item_stairs = Registry.register(Registry.ITEM, id_stairs, new BlockItem(this.stairs, itemSettings));
-        this.item_wall = Registry.register(Registry.ITEM, id_wall, new BlockItem(this.wall, new Item.Settings().group(Blockus.BLOCKUS_DECORATIONS)));
-
+        this.block = Blockus.block(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
+        this.slab = Blockus.block(replace + "_slab", new SlabBlock(FabricBlockSettings.copyOf(blockSettings)));
+        this.stairs = Blockus.block(replace + "_stairs", new StairsBase(this.block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
+        this.wall = Blockus.decoration(replace + "_wall", new WallBlock(FabricBlockSettings.copyOf(blockSettings)));
 
     }
 
