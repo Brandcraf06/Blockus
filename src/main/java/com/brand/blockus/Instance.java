@@ -124,102 +124,102 @@ public class Instance {
 // Fuel
         // general
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
-        FuelRegistry.INSTANCE.add(BlockusItems.LEGACY_COAL_BLOCK, 16000);
-        FuelRegistry.INSTANCE.add(BlockusItems.CHARCOAL_BLOCK, 16000);
-        FuelRegistry.INSTANCE.add(BlockusItems.WOODEN_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WOODEN_FRAME, 300);
 
         // paper
         FuelRegistry.INSTANCE.add(Items.PAPER, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_DOOR, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_TRAPDOOR, 150);
-        FuelRegistry.INSTANCE.add(BlockusItems.FRAMED_PAPER_BLOCK, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_WALL, 150);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_LAMP, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.PAPER_BLOCK, 400);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_DOOR, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_TRAPDOOR, 150);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.FRAMED_PAPER_BLOCK, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_WALL, 150);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_LAMP, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_BLOCK, 400);
 
         // timber frames
-        FuelRegistry.INSTANCE.add(BlockusItems.ACACIA_CROSS_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.ACACIA_DIAGONAL_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.ACACIA_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_CROSS_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_DIAGONAL_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BIRCH_CROSS_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BIRCH_DIAGONAL_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BIRCH_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.DARK_OAK_CROSS_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.DARK_OAK_DIAGONAL_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.DARK_OAK_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.JUNGLE_CROSS_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.JUNGLE_DIAGONAL_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.JUNGLE_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.OAK_CROSS_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.OAK_DIAGONAL_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.OAK_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.SPRUCE_CROSS_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.SPRUCE_DIAGONAL_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.SPRUCE_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_CROSS_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_DIAGONAL_TIMBER_FRAME, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_CROSS_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_DIAGONAL_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_CROSS_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_DIAGONAL_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_CROSS_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_DIAGONAL_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_CROSS_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_DIAGONAL_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_CROSS_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_DIAGONAL_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_CROSS_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_DIAGONAL_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_CROSS_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_DIAGONAL_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_CROSS_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_DIAGONAL_TIMBER_FRAME, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_TIMBER_FRAME, 300);
 
 
         // patterned wools
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.ORANGE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.MAGENTA_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.LIGHT_BLUE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.YELLOW_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.LIME_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.PINK_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.GRAY_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.LIGHT_GRAY_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.CYAN_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.PURPLE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.BLUE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.BROWN_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.GREEN_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.RED_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusItems.BLACK_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.ORANGE_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.MAGENTA_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.YELLOW_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.LIME_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PINK_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.GRAY_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.CYAN_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PURPLE_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BLUE_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BROWN_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.GREEN_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.RED_PATTERNED_WOOL, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BLACK_PATTERNED_WOOL, 100);
 
         // bamboo
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_SLAB, 150);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_STAIRS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_FENCE, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_FENCE_GATE, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_DOOR, 200);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_TRAPDOOR, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_PRESSURE_PLATE, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_BUTTON, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_SLAB, 150);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_STAIRS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_FENCE, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_FENCE_GATE, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_DOOR, 200);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_TRAPDOOR, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_PRESSURE_PLATE, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_BUTTON, 100);
         FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_BOAT, 1200);
         FuelRegistry.INSTANCE.add(BlockusItems.BAMBOO_SIGN, 200);
 
         // white oak
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_LOG, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.STRIPPED_WHITE_OAK_LOG, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_WOOD, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.STRIPPED_WHITE_OAK_LOG, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_SLAB, 150);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_STAIRS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_FENCE, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_FENCE_GATE, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_DOOR, 200);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_TRAPDOOR, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_PRESSURE_PLATE, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_BUTTON, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LOG, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_WOOD, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SLAB, 150);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_STAIRS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_FENCE, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_FENCE_GATE, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_DOOR, 200);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_TRAPDOOR, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_PRESSURE_PLATE, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_BUTTON, 100);
         FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_BOAT, 1200);
         FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_SIGN, 200);
 
         // small logs
-        FuelRegistry.INSTANCE.add(BlockusItems.OAK_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.BIRCH_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.SPRUCE_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.JUNGLE_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.ACACIA_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.DARK_OAK_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_LOGS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 300);
 
         // barrels
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_BARREL, 300);
@@ -231,33 +231,33 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_BARREL, 300);
 
 // Composting
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.OAK_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.ACACIA_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.BIRCH_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.DARK_OAK_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.JUNGLE_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.SPRUCE_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.AZALEA_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_LEAVES, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.WHITE_OAK_SAPLING, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BIRCH_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.AZALEA_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.RAINBOW_PETAL, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.SWEET_BERRIES_CRATE, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.FLOWERING_AZALEA_SMALL_HEDGE, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.MOSS_SMALL_HEDGE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.RAINBOW_ROSE, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SWEET_BERRIES_CRATE, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.MOSS_SMALL_HEDGE, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.RAINBOW_ROSE, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(BSSTypes.THATCH.slab, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(BSSTypes.THATCH.block, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(BSSTypes.THATCH.stairs, 0.75f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.WARPED_SMALL_HEDGE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.CRIMSON_SMALL_HEDGE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.APPLE_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.BEETROOT_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.CARROT_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.POTATO_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.BREAD_BOX, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.COOKIE_BLOCK, 1.0f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WARPED_SMALL_HEDGE, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.CRIMSON_SMALL_HEDGE, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.APPLE_CRATE, 0.95f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BEETROOT_CRATE, 0.95f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.CARROT_CRATE, 0.95f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.POTATO_CRATE, 0.95f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.BREAD_BOX, 1.0f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.COOKIE_BLOCK, 1.0f);
 
 
 // Instance
@@ -282,9 +282,9 @@ public class Instance {
 
     public static void addTradeOffers() {
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
-            factories.add(new SellItemFactory(BlockusItems.WHITE_OAK_SAPLING, 5, 1, 8));
+            factories.add(new SellItemFactory(BlockusBlocks.WHITE_OAK_SAPLING, 5, 1, 8));
             factories.add(new SellItemFactory(BlockusItems.RAINBOW_PETAL, 1, 3, 12));
-            factories.add(new SellItemFactory(BlockusItems.RAINBOW_ROSE, 1, 1, 12));
+            factories.add(new SellItemFactory(BlockusBlocks.RAINBOW_ROSE, 1, 1, 12));
         });
     }
 

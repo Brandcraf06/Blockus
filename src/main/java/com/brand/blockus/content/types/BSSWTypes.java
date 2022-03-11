@@ -4,10 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.StairsBase;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.item.ItemGroup;
 
 public enum BSSWTypes {
 
@@ -121,10 +118,11 @@ public enum BSSWTypes {
 
         this.base = base;
 
-        this.block = Blockus.block(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
-        this.slab = Blockus.block(replace + "_slab", new SlabBlock(FabricBlockSettings.copyOf(blockSettings)));
-        this.stairs = Blockus.block(replace + "_stairs", new StairsBase(this.block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
-        this.wall = Blockus.decoration(replace + "_wall", new WallBlock(FabricBlockSettings.copyOf(blockSettings)));
+        ItemGroup group = Blockus.BLOCKUS_BUILDING_BLOCKS;
+        this.block = Blockus.block(type, new Block(FabricBlockSettings.copyOf(blockSettings)), group);
+        this.slab = Blockus.block(replace + "_slab", new SlabBlock(FabricBlockSettings.copyOf(blockSettings)), group);
+        this.stairs = Blockus.block(replace + "_stairs", new StairsBase(this.block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)), group);
+        this.wall = Blockus.block(replace + "_wall", new WallBlock(FabricBlockSettings.copyOf(blockSettings)), Blockus.BLOCKUS_DECORATIONS);
 
     }
 

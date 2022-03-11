@@ -1,7 +1,7 @@
 package com.brand.blockus.data.provider;
 
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.BlockusItems;
+import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.BSSTypes;
 import com.brand.blockus.content.types.BSSWTypes;
 import com.brand.blockus.tag.BlockusBlockTags;
@@ -67,6 +67,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BSSWTypes.LIME_STONE_BRICKS.block.asItem())
             .add(BSSWTypes.PINK_STONE_BRICKS.block.asItem())
             .add(BSSWTypes.GRAY_STONE_BRICKS.block.asItem())
+            .add(BSSWTypes.GRAY_STONE_BRICKS.block.asItem())
             .add(Items.STONE_BRICKS)
             .add(BSSWTypes.CYAN_STONE_BRICKS.block.asItem())
             .add(BSSWTypes.PURPLE_STONE_BRICKS.block.asItem())
@@ -87,37 +88,37 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(Items.JUNGLE_PLANKS)
             .add(Items.ACACIA_PLANKS)
             .add(Items.DARK_OAK_PLANKS)
-            .add(BlockusItems.BAMBOO_PLANKS)
-            .add(BlockusItems.WHITE_OAK_PLANKS);
+            .add(BlockusBlocks.BAMBOO_PLANKS.asItem())
+            .add(BlockusBlocks.WHITE_OAK_PLANKS.asItem());
 
         this.copy(new Identifier("c", "planks_that_burn"));
 
         this.getOrCreateTagBuilder(new Identifier("c", "purpur_blocks"))
             .add(BSSWTypes.PURPUR_BRICKS.block.asItem())
             .add(BSSTypes.POLISHED_PURPUR.block.asItem())
-            .add(BlockusItems.PURPUR_SQUARES)
+            .add(BlockusBlocks.PURPUR_SQUARES.asItem())
             .add(BSSWTypes.SMALL_PURPUR_BRICKS.block.asItem())
-            .add(BlockusItems.CHISELED_PURPUR)
-            .add(BlockusItems.PURPUR_LINES)
+            .add(BlockusBlocks.CHISELED_PURPUR.asItem())
+            .add(BlockusBlocks.PURPUR_LINES.asItem())
             .add(BSSTypes.PHANTOM_PURPUR_BLOCK.block.asItem())
-            .add(BlockusItems.PHANTOM_PURPUR_PILLAR)
+            .add(BlockusBlocks.PHANTOM_PURPUR_PILLAR.asItem())
             .add(BSSWTypes.PHANTOM_PURPUR_BRICKS.block.asItem())
             .add(BSSTypes.POLISHED_PHANTOM_PURPUR.block.asItem())
-            .add(BlockusItems.PHANTOM_PURPUR_SQUARES)
+            .add(BlockusBlocks.PHANTOM_PURPUR_SQUARES.asItem())
             .add(BSSWTypes.SMALL_PHANTOM_PURPUR_BRICKS.block.asItem())
-            .add(BlockusItems.CHISELED_PHANTOM_PURPUR)
-            .add(BlockusItems.PHANTOM_PURPUR_LINES);
+            .add(BlockusBlocks.CHISELED_PHANTOM_PURPUR.asItem())
+            .add(BlockusBlocks.PHANTOM_PURPUR_LINES.asItem());
 
         this.getOrCreateTagBuilder(new Identifier("c", "quartz_blocks"))
             .add(BSSWTypes.QUARTZ_TILES.block.asItem())
-            .add(BlockusItems.QUARTZ_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.QUARTZ_CIRCLE_PAVEMENT.asItem());
 
         this.getOrCreateTagBuilder(new Identifier("c", "red_sandstones"))
             .add(BSSWTypes.RED_SANDSTONE_BRICKS.block.asItem())
             .add(BSSWTypes.SMALL_RED_SANDSTONE_BRICKS.block.asItem())
             .add(BSSTypes.ROUGH_RED_SANDSTONE.block.asItem())
-            .add(BlockusItems.GOLD_DECORATED_RED_SANDSTONE)
-            .add(BlockusItems.RED_SANDSTONE_PILLAR);
+            .add(BlockusBlocks.GOLD_DECORATED_RED_SANDSTONE.asItem())
+            .add(BlockusBlocks.RED_SANDSTONE_PILLAR.asItem());
 
         this.copy(new Identifier("c", "wooden_barrels"));
 
@@ -125,9 +126,9 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BSSWTypes.SANDSTONE_BRICKS.block.asItem())
             .add(BSSWTypes.SMALL_SANDSTONE_BRICKS.block.asItem())
             .add(BSSTypes.ROUGH_SANDSTONE.block.asItem())
-            .add(BlockusItems.GOLD_DECORATED_SANDSTONE)
-            .add(BlockusItems.LAPIS_DECORATED_SANDSTONE)
-            .add(BlockusItems.SANDSTONE_PILLAR);
+            .add(BlockusBlocks.GOLD_DECORATED_SANDSTONE.asItem())
+            .add(BlockusBlocks.LAPIS_DECORATED_SANDSTONE.asItem())
+            .add(BlockusBlocks.SANDSTONE_PILLAR.asItem());
 
         this.copy(new Identifier("columns", "columns"));
 
@@ -136,24 +137,24 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.BIRCH_LOGS, ItemTags.BIRCH_LOGS);
 
         this.getOrCreateTagBuilder(ItemTags.BUTTONS)
-            .add(BlockusItems.POLISHED_ANDESITE_BUTTON)
-            .add(BlockusItems.POLISHED_DIORITE_BUTTON)
-            .add(BlockusItems.POLISHED_GRANITE_BUTTON)
-            .add(BlockusItems.LIMESTONE_BUTTON)
-            .add(BlockusItems.MARBLE_BUTTON)
-            .add(BlockusItems.BLUESTONE_BUTTON)
-            .add(BlockusItems.POLISHED_NETHERRACK_BUTTON)
-            .add(BlockusItems.POLISHED_END_STONE_BUTTON);
+            .add(BlockusBlocks.POLISHED_ANDESITE_BUTTON.asItem())
+            .add(BlockusBlocks.POLISHED_DIORITE_BUTTON.asItem())
+            .add(BlockusBlocks.POLISHED_GRANITE_BUTTON.asItem())
+            .add(BlockusBlocks.LIMESTONE_BUTTON.asItem())
+            .add(BlockusBlocks.MARBLE_BUTTON.asItem())
+            .add(BlockusBlocks.BLUESTONE_BUTTON.asItem())
+            .add(BlockusBlocks.POLISHED_NETHERRACK_BUTTON.asItem())
+            .add(BlockusBlocks.POLISHED_END_STONE_BUTTON.asItem());
 
         this.copy(BlockTags.CRIMSON_STEMS, ItemTags.CRIMSON_STEMS);
 
         this.copy(BlockTags.DARK_OAK_LOGS, ItemTags.DARK_OAK_LOGS);
 
         this.getOrCreateTagBuilder(ItemTags.DOORS)
-            .add(BlockusItems.PAPER_DOOR)
-            .add(BlockusItems.OBSIDIAN_REINFORCED_DOOR)
-            .add(BlockusItems.STONE_DOOR)
-            .add(BlockusItems.BLACKSTONE_DOOR);
+            .add(BlockusBlocks.PAPER_DOOR.asItem())
+            .add(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR.asItem())
+            .add(BlockusBlocks.STONE_DOOR.asItem())
+            .add(BlockusBlocks.BLACKSTONE_DOOR.asItem());
 
         this.copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
 
@@ -173,20 +174,20 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
 
         this.getOrCreateTagBuilder(ItemTags.PIGLIN_LOVED)
-            .add(BlockusItems.LEGACY_GOLD_BLOCK)
-            .add(BlockusItems.EXPLOSION_PROOF_LEGACY_GOLD_BLOCK)
-            .add(BlockusItems.GOLDEN_CHAIN)
-            .add(BlockusItems.GOLDEN_BARS)
-            .add(BlockusItems.GOLDEN_GATE)
-            .add(BlockusItems.GOLD_DECORATED_SANDSTONE)
-            .add(BlockusItems.GOLD_DECORATED_RED_SANDSTONE)
-            .add(BlockusItems.GOLD_DECORATED_SOUL_SANDSTONE)
-            .add(BlockusItems.GOLD_DECORATED_POLISHED_BLACKSTONE)
+            .add(BlockusBlocks.LEGACY_GOLD_BLOCK.asItem())
+            .add(BlockusBlocks.EXPLOSION_PROOF_LEGACY_GOLD_BLOCK.asItem())
+            .add(BlockusBlocks.GOLDEN_CHAIN.asItem())
+            .add(BlockusBlocks.GOLDEN_BARS.asItem())
+            .add(BlockusBlocks.GOLDEN_GATE.asItem())
+            .add(BlockusBlocks.GOLD_DECORATED_SANDSTONE.asItem())
+            .add(BlockusBlocks.GOLD_DECORATED_RED_SANDSTONE.asItem())
+            .add(BlockusBlocks.GOLD_DECORATED_SOUL_SANDSTONE.asItem())
+            .add(BlockusBlocks.GOLD_DECORATED_POLISHED_BLACKSTONE.asItem())
             .add(BSSTypes.GOLD_PLATING.block.asItem())
             .add(BSSTypes.GOLD_PLATING.stairs.asItem())
             .add(BSSTypes.GOLD_PLATING.slab.asItem())
-            .add(BlockusItems.GOLDEN_APPLE_CRATE)
-            .add(BlockusItems.GOLDEN_CARROT_CRATE);
+            .add(BlockusBlocks.GOLDEN_APPLE_CRATE.asItem())
+            .add(BlockusBlocks.GOLDEN_CARROT_CRATE.asItem());
 
         this.copy(BlockTags.PIGLIN_REPELLENTS, ItemTags.PIGLIN_REPELLENTS);
 
@@ -199,10 +200,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.SPRUCE_LOGS, ItemTags.SPRUCE_LOGS);
 
         this.getOrCreateTagBuilder(ItemTags.TRAPDOORS)
-            .add(BlockusItems.PAPER_TRAPDOOR)
-            .add(BlockusItems.OBSIDIAN_REINFORCED_TRAPDOOR)
-            .add(BlockusItems.STONE_TRAPDOOR)
-            .add(BlockusItems.BLACKSTONE_TRAPDOOR);
+            .add(BlockusBlocks.PAPER_TRAPDOOR.asItem())
+            .add(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR.asItem())
+            .add(BlockusBlocks.STONE_TRAPDOOR.asItem())
+            .add(BlockusBlocks.BLACKSTONE_TRAPDOOR.asItem());
 
         this.copy(BlockTags.WALLS, ItemTags.WALLS);
 
@@ -211,9 +212,9 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
 
         this.getOrCreateTagBuilder(ItemTags.WOODEN_DOORS)
-            .add(BlockusItems.BAMBOO_DOOR)
-            .add(BlockusItems.CHARRED_DOOR)
-            .add(BlockusItems.WHITE_OAK_DOOR);
+            .add(BlockusBlocks.BAMBOO_DOOR.asItem())
+            .add(BlockusBlocks.CHARRED_DOOR.asItem())
+            .add(BlockusBlocks.WHITE_OAK_DOOR.asItem());
 
         this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
 
@@ -224,9 +225,9 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
 
         this.getOrCreateTagBuilder(ItemTags.WOODEN_TRAPDOORS)
-            .add(BlockusItems.BAMBOO_TRAPDOOR)
-            .add(BlockusItems.CHARRED_TRAPDOOR)
-            .add(BlockusItems.WHITE_OAK_TRAPDOOR);
+            .add(BlockusBlocks.BAMBOO_TRAPDOOR.asItem())
+            .add(BlockusBlocks.CHARRED_TRAPDOOR.asItem())
+            .add(BlockusBlocks.WHITE_OAK_TRAPDOOR.asItem());
 
         this.copy(BlockTags.WOOL, ItemTags.WOOL);
 

@@ -7,15 +7,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.SlabBlock;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class BSSTypes {
 
@@ -73,9 +66,10 @@ public class BSSTypes {
 
         this.base = base;
 
-        this.block = Blockus.block(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
-        this.slab = Blockus.block(replace + "_slab", new SlabBlock(FabricBlockSettings.copyOf(blockSettings)));
-        this.stairs = Blockus.block(replace + "_stairs", new StairsBase(this.block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
+        ItemGroup group = Blockus.BLOCKUS_BUILDING_BLOCKS;
+        this.block = Blockus.block(type, new Block(FabricBlockSettings.copyOf(blockSettings)), group);
+        this.slab = Blockus.block(replace + "_slab", new SlabBlock(FabricBlockSettings.copyOf(blockSettings)), group);
+        this.stairs = Blockus.block(replace + "_stairs", new StairsBase(this.block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)), group);
 
     }
 

@@ -3,7 +3,6 @@ package com.brand.blockus;
 import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
 import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeBlocks;
-import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeItems;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.AsphaltTypes;
@@ -14,7 +13,6 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -50,7 +48,6 @@ public class Blockus implements ModInitializer {
 
         if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.init();
-            BlockusPromenadeItems.init();
         }
 
         Instance.init();
@@ -62,15 +59,9 @@ public class Blockus implements ModInitializer {
         return new Identifier(MOD_ID, name);
     }
 
-    public static Block block(String name, Block block) {
+    public static Block block(String name, Block block, ItemGroup group) {
         block = Registry.register(Registry.BLOCK, Blockus.id(name), block);
-        item(name, new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-        return block;
-    }
-
-    public static Block decoration(String name, Block block) {
-        block = Registry.register(Registry.BLOCK, Blockus.id(name), block);
-        item(name, new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_DECORATIONS)));
+        item(name, new BlockItem(block, new Item.Settings().group(group)));
         return block;
     }
 

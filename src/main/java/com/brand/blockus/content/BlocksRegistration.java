@@ -2,18 +2,23 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
-import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
-import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
-import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
 import com.brand.blockus.blocks.base.redstone.DoorBase;
 import com.brand.blockus.blocks.base.redstone.PressurePlateBase;
 import com.brand.blockus.blocks.base.redstone.StoneButtonBase;
 import com.brand.blockus.blocks.base.redstone.TrapdoorBase;
+import com.terraformersmc.terraform.boat.api.TerraformBoatType;
+import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SignItem;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
@@ -30,6 +35,15 @@ public class BlocksRegistration {
 
     public static Block registerPillar(Block base) {
         return createPillar(Registry.BLOCK.getId(base).getPath(), base);
+    }
+
+    public static Block createGTPillar(String baseid, Block base) {
+        String id = baseid.replace("bricks", "brick");
+        return registerDecoration(id + "_pillar", new PillarBlock(FabricBlockSettings.copy(base)));
+    }
+
+    public static Block registerGTPillar(Block base) {
+        return createGTPillar(Registry.BLOCK.getId(base).getPath(), base);
     }
 
 
@@ -57,7 +71,7 @@ public class BlocksRegistration {
     // Wall
     public static Block createWall(String baseid, Block base) {
         String id = baseid.replace("bricks", "brick").replace("tiles", "tile");
-        return register(id + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
+        return registerDecoration(id + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerWall(Block base) {
@@ -69,7 +83,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerSmallHedge(String id, Block base) {
-        return register(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
+        return registerDecoration(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
 
@@ -78,7 +92,7 @@ public class BlocksRegistration {
 
     public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base) {
         String id = baseid.replace("_planks", "");
-        return register(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base).noCollision()));
+        return registerRedstone(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base).noCollision()));
     }
 
     public static Block registerPressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
@@ -88,7 +102,7 @@ public class BlocksRegistration {
     // Button
 
     public static Block createStoneButton(String id, Block base) {
-        return register(id + "_button", new StoneButtonBase(FabricBlockSettings.copy(base).noCollision()));
+        return registerRedstone(id + "_button", new StoneButtonBase(FabricBlockSettings.copy(base).noCollision()));
     }
 
     public static Block registerStoneButton(Block base) {
@@ -165,26 +179,6 @@ public class BlocksRegistration {
 
     // Asphalt
 
-    public static AsphaltBlock createAsphalt(DyeColor color) {
-        return new AsphaltBlock(FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool());
-    }
-
-    public static Block createAsphaltSlab(String id, Block base) {
-        return register(id + "_slab", new AsphaltSlab(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerAsphaltSlab(Block base) {
-        return createAsphaltSlab(Registry.BLOCK.getId(base).getPath(), base);
-    }
-
-    public static Block createAsphaltStairs(String id, Block base) {
-        return register(id + "_stairs", new AsphaltStairs(base.getDefaultState(), FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerAsphaltStairs(Block base) {
-        return createAsphaltStairs(Registry.BLOCK.getId(base).getPath(), base);
-    }
-
     // Other
 
     public static FallingBlock createFallingBlock(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
@@ -213,10 +207,46 @@ public class BlocksRegistration {
 
     // Register
 
-    public static Block register(String id, Block block) {
-        return Registry.register(Registry.BLOCK, Blockus.id(id), block);
 
+    public static Block register(String id, Block block) {
+        Registry.register(Registry.BLOCK, Blockus.id(id), block);
+        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+
+        return block;
     }
+
+    public static Block registerDecoration(String id, Block block) {
+        Registry.register(Registry.BLOCK, Blockus.id(id), block);
+        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
+
+        return block;
+    }
+
+    public static Block registerRedstone(String id, Block block) {
+        Registry.register(Registry.BLOCK, Blockus.id(id), block);
+        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));
+
+        return block;
+    }
+
+    public static Block registerLegacy(String id, Block block) {
+        Registry.register(Registry.BLOCK, Blockus.id(id), block);
+        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_LEGACY)));
+
+        return block;
+    }
+
+    public static Block registerNoItem(String id, Block block) {
+        return Registry.register(Registry.BLOCK, Blockus.id(id), block);
+    }
+
+    public static Block registerFireproof(String id, Block block) {
+        Registry.register(Registry.BLOCK, Blockus.id(id), block);
+        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS).fireproof()));
+
+        return block;
+    }
+
 
     public static boolean always(BlockState state, BlockView world, BlockPos pos) {
         return true;

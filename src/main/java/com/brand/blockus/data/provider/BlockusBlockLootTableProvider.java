@@ -25,11 +25,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
             this.addDrop(bsswType.wall);
         }
 
-        for (BSSTypes bssType : BSSTypes.values()) {
-            this.addDrop(bssType.block);
-            this.addDrop(bssType.stairs);
-            this.addDrop(bssType.slab, BlockLootTableGenerator::slabDrops);
-        }
 
         for (AsphaltTypes asphaltType : AsphaltTypes.values()) {
             this.addDrop(asphaltType.block);
