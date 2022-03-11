@@ -35,6 +35,11 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
             RecipesProvider.offerWallRecipe(exporter, bsswType.wall, bsswType.block);
         }
 
+        for (BSSTypes bssType : BSSTypes.values()) {
+            BlockusRecipesProvider.offerStairsRecipe(exporter, bssType.stairs, bssType.block);
+            RecipesProvider.offerSlabRecipe(exporter, bssType.slab, bssType.block);
+        }
+
         for (AsphaltTypes asphaltType : AsphaltTypes.values()) {
             BlockusRecipesProvider.offerStairsRecipe(exporter, asphaltType.stairs, asphaltType.block);
             RecipesProvider.offerSlabRecipe(exporter, asphaltType.slab, asphaltType.block);
