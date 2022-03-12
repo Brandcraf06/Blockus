@@ -9,6 +9,7 @@ import com.brand.blockus.content.types.AsphaltTypes;
 import com.brand.blockus.content.types.BSSTypes;
 import com.brand.blockus.content.types.BSSWTypes;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
+import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.loader.api.FabricLoader;
@@ -34,13 +35,12 @@ public class Blockus implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        BSSTypes.initialize();
-        BSSWTypes.initialize();
-        AsphaltTypes.initialize();
+        Reflection.initialize(BSSTypes.class);
+        Reflection.initialize(BSSWTypes.class);
+        Reflection.initialize(AsphaltTypes.class);
 
-
-        new BlockusBlocks();
-        new BlockusItems();
+        Reflection.initialize(BlockusBlocks.class);
+        Reflection.initialize(BlockusItems.class);
 
         if (FabricLoader.getInstance().isModLoaded("columns")) {
             BlockusColumnBlocks.init();
@@ -57,22 +57,6 @@ public class Blockus implements ModInitializer {
 
     public static Identifier id(String name) {
         return new Identifier(MOD_ID, name);
-    }
-
-    public static Block block(String name, Block block, ItemGroup group) {
-        block = Registry.register(Registry.BLOCK, Blockus.id(name), block);
-        item(name, new BlockItem(block, new Item.Settings().group(group)));
-        return block;
-    }
-
-    public static Block asphalt(String name, Block block) {
-        block = Registry.register(Registry.BLOCK, Blockus.id(name), block);
-        item(name, new SpeedBlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-        return block;
-    }
-
-    public static Item item(String name, Item item) {
-        return Registry.register(Registry.ITEM, Blockus.id(name), item);
     }
 }
 

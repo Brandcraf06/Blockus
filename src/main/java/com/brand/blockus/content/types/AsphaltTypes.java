@@ -1,38 +1,35 @@
 package com.brand.blockus.content.types;
 
-import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.StairsBase;
 import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
-import com.brand.blockus.blocks.blockitems.SpeedBlockItem;
+import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.item.Item;
 import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
-public enum AsphaltTypes {
+import java.util.ArrayList;
 
-    ASPHALT(DyeColor.BLACK),
-    WHITE_ASPHALT(DyeColor.WHITE),
-    ORANGE_ASPHALT(DyeColor.ORANGE),
-    MAGENTA_ASPHALT(DyeColor.MAGENTA),
-    LIGHT_BLUE_ASPHALT(DyeColor.LIGHT_BLUE),
-    YELLOW_ASPHALT(DyeColor.YELLOW),
-    LIME_ASPHALT(DyeColor.LIME),
-    PINK_ASPHALT(DyeColor.PINK),
-    LIGHT_GRAY_ASPHALT(DyeColor.LIGHT_GRAY),
-    GRAY_ASPHALT(DyeColor.GRAY),
-    CYAN_ASPHALT(DyeColor.CYAN),
-    PURPLE_ASPHALT(DyeColor.PURPLE),
-    BLUE_ASPHALT(DyeColor.BLUE),
-    BROWN_ASPHALT(DyeColor.BROWN),
-    GREEN_ASPHALT(DyeColor.GREEN),
-    RED_ASPHALT(DyeColor.RED);
+public class AsphaltTypes {
+    private static final ArrayList<AsphaltTypes> LIST = new ArrayList<>();
+
+    public static final AsphaltTypes ASPHALT = new AsphaltTypes(DyeColor.BLACK);
+    public static final AsphaltTypes WHITE_ASPHALT = new AsphaltTypes(DyeColor.WHITE);
+    public static final AsphaltTypes ORANGE_ASPHALT = new AsphaltTypes(DyeColor.ORANGE);
+    public static final AsphaltTypes MAGENTA_ASPHALT = new AsphaltTypes(DyeColor.MAGENTA);
+    public static final AsphaltTypes LIGHT_BLUE_ASPHALT = new AsphaltTypes(DyeColor.LIGHT_BLUE);
+    public static final AsphaltTypes YELLOW_ASPHALT = new AsphaltTypes(DyeColor.YELLOW);
+    public static final AsphaltTypes LIME_ASPHALT = new AsphaltTypes(DyeColor.LIME);
+    public static final AsphaltTypes PINK_ASPHALT = new AsphaltTypes(DyeColor.PINK);
+    public static final AsphaltTypes LIGHT_GRAY_ASPHALT = new AsphaltTypes(DyeColor.LIGHT_GRAY);
+    public static final AsphaltTypes GRAY_ASPHALT = new AsphaltTypes(DyeColor.GRAY);
+    public static final AsphaltTypes CYAN_ASPHALT = new AsphaltTypes(DyeColor.CYAN);
+    public static final AsphaltTypes PURPLE_ASPHALT = new AsphaltTypes(DyeColor.PURPLE);
+    public static final AsphaltTypes BLUE_ASPHALT = new AsphaltTypes(DyeColor.BLUE);
+    public static final AsphaltTypes BROWN_ASPHALT = new AsphaltTypes(DyeColor.BROWN);
+    public static final AsphaltTypes GREEN_ASPHALT = new AsphaltTypes(DyeColor.GREEN);
+    public static final AsphaltTypes RED_ASPHALT = new AsphaltTypes(DyeColor.RED);
 
     public final Block block;
     public final Block slab;
@@ -44,14 +41,14 @@ public enum AsphaltTypes {
 
         Block.Settings blockSettings = FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool();
 
-        this.block = Blockus.asphalt(type2, new AsphaltBlock(FabricBlockSettings.copyOf(blockSettings)));
-        this.slab =  Blockus.asphalt(type2 + "_slab", new AsphaltSlab(FabricBlockSettings.copyOf(blockSettings)));
-        this.stairs =  Blockus.asphalt(type2 + "_stairs", new AsphaltStairs(block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
+        this.block = BlocksRegistration.registerAsphalt(type2, new AsphaltBlock(FabricBlockSettings.copyOf(blockSettings)));
+        this.slab = BlocksRegistration.registerAsphalt(type2 + "_slab", new AsphaltSlab(FabricBlockSettings.copyOf(blockSettings)));
+        this.stairs = BlocksRegistration.registerAsphalt(type2 + "_stairs", new AsphaltStairs(block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)));
 
-
+        LIST.add(this);
     }
 
-    public static AsphaltTypes initialize() {
-        return null;
+    public static ArrayList<AsphaltTypes> values() {
+        return LIST;
     }
 }

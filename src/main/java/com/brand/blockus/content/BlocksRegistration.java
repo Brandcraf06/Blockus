@@ -1,24 +1,23 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.*;
+import com.brand.blockus.blocks.base.Barrier;
+import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
+import com.brand.blockus.blocks.base.PaneBlockBase;
+import com.brand.blockus.blocks.base.SmallHedgeBlock;
+import com.brand.blockus.blocks.base.StairsBase;
 import com.brand.blockus.blocks.base.redstone.DoorBase;
 import com.brand.blockus.blocks.base.redstone.PressurePlateBase;
 import com.brand.blockus.blocks.base.redstone.StoneButtonBase;
 import com.brand.blockus.blocks.base.redstone.TrapdoorBase;
-import com.terraformersmc.terraform.boat.api.TerraformBoatType;
-import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
-import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SignItem;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
@@ -47,10 +46,13 @@ public class BlocksRegistration {
     }
 
 
+    public static String replaceId(String id) {
+        return id.replace("lava_polished_blackstone_bricks", "lava_polished_blackstone").replace("bricks", "brick").replace("tiles", "tile").replace("_block", "");
+    }
+
     // Slab
     public static Block createSlab(String baseid, Block base) {
-        String id = baseid.replace("bricks", "brick").replace("tiles", "tile");
-        return register(id + "_slab", new SlabBlock(FabricBlockSettings.copy(base)));
+        return register(replaceId(baseid) + "_slab", new SlabBlock(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerSlab(Block base) {
@@ -60,8 +62,7 @@ public class BlocksRegistration {
 
     // Stairs
     public static Block createStairs(String baseid, Block base) {
-        String id = baseid.replace("bricks", "brick").replace("tiles", "tile");
-        return register(id + "_stairs", new StairsBase(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        return register(replaceId(baseid) + "_stairs", new StairsBase(base.getDefaultState(), FabricBlockSettings.copy(base)));
     }
 
     public static Block registerStairs(Block base) {
@@ -70,8 +71,7 @@ public class BlocksRegistration {
 
     // Wall
     public static Block createWall(String baseid, Block base) {
-        String id = baseid.replace("bricks", "brick").replace("tiles", "tile");
-        return registerDecoration(id + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
+        return registerDecoration(replaceId(baseid) + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerWall(Block base) {
@@ -206,34 +206,42 @@ public class BlocksRegistration {
     }
 
     // Register
-
-
-    public static Block register(String id, Block block) {
+    public static Block register(String id, Block block, ItemGroup itemGroup) {
         Registry.register(Registry.BLOCK, Blockus.id(id), block);
-        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().group(itemGroup)));
 
         return block;
+    }
+
+    public static Block register(String id, Block block, BlockItem item) {
+        Registry.register(Registry.BLOCK, Blockus.id(id), block);
+        Registry.register(Registry.ITEM, Blockus.id(id), item);
+
+        return block;
+    }
+
+    public static Block register(String id, Block block) {
+        return register(id, block, ItemGroup.BUILDING_BLOCKS);
     }
 
     public static Block registerDecoration(String id, Block block) {
-        Registry.register(Registry.BLOCK, Blockus.id(id), block);
-        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
-
-        return block;
+        return register(id, block, Blockus.BLOCKUS_DECORATIONS);
     }
 
     public static Block registerRedstone(String id, Block block) {
-        Registry.register(Registry.BLOCK, Blockus.id(id), block);
-        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_REDSTONE)));
-
-        return block;
+        return register(id, block, Blockus.BLOCKUS_REDSTONE);
     }
 
     public static Block registerLegacy(String id, Block block) {
-        Registry.register(Registry.BLOCK, Blockus.id(id), block);
-        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_LEGACY)));
+        return register(id, block, Blockus.BLOCKUS_LEGACY);
+    }
 
-        return block;
+    public static Block registerAsphalt(String id, Block block) {
+        return register(id, block, Blockus.BLOCKUS_BUILDING_BLOCKS);
+    }
+
+    public static Block registerGlint(String id, Block block) {
+        return register(id, block, Blockus.BLOCKUS_BUILDING_BLOCKS);
     }
 
     public static Block registerNoItem(String id, Block block) {
@@ -241,10 +249,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerFireproof(String id, Block block) {
-        Registry.register(Registry.BLOCK, Blockus.id(id), block);
-        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_BUILDING_BLOCKS).fireproof()));
-
-        return block;
+        return register(id, block, new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS).fireproof()));
     }
 
 

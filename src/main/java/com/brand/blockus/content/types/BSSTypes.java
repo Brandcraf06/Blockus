@@ -1,16 +1,18 @@
 package com.brand.blockus.content.types;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.StairsBase;
+import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.SlabBlock;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 
+import java.util.ArrayList;
+
 public class BSSTypes {
+    private static final ArrayList<BSSTypes> LIST = new ArrayList<>();
 
     public static final BSSTypes POLISHED_DRIPSTONE = new BSSTypes("polished_dripstone", Blocks.DRIPSTONE_BLOCK);
     public static final BSSTypes POLISHED_TUFF = new BSSTypes("polished_tuff", Blocks.TUFF);
@@ -55,22 +57,21 @@ public class BSSTypes {
     public static final BSSTypes IRON_PLATING = new BSSTypes("iron_plating", Blocks.IRON_BLOCK, MapColor.STONE_GRAY);
     public static final BSSTypes GOLD_PLATING = new BSSTypes("gold_plating", Blocks.GOLD_BLOCK);
 
-
     public final Block block;
     public final Block slab;
     public final Block stairs;
     public final Block base;
 
     private BSSTypes(String type, Block base, Block.Settings blockSettings) {
-        String replace = type.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "");
 
         this.base = base;
 
         ItemGroup group = Blockus.BLOCKUS_BUILDING_BLOCKS;
-        this.block = Blockus.block(type, new Block(FabricBlockSettings.copyOf(blockSettings)), group);
-        this.slab = Blockus.block(replace + "_slab", new SlabBlock(FabricBlockSettings.copyOf(blockSettings)), group);
-        this.stairs = Blockus.block(replace + "_stairs", new StairsBase(this.block.getDefaultState(), FabricBlockSettings.copyOf(blockSettings)), group);
+        this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)), group);
+        this.slab = BlocksRegistration.registerSlab(this.block);
+        this.stairs = BlocksRegistration.registerStairs(this.block);
 
+        LIST.add(this);
     }
 
     private BSSTypes(String type, Block base) {
@@ -87,7 +88,7 @@ public class BSSTypes {
         this(type, base, FabricBlockSettings.copyOf(base).sounds(sounds));
     }
 
-    public static BSSTypes initialize() {
-        return null;
+    public static ArrayList<BSSTypes> values() {
+        return LIST;
     }
 }

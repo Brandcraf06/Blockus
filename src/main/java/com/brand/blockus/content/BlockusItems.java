@@ -33,9 +33,7 @@ public class BlockusItems {
         Identifier id = Blockus.id(path);
         Identifier boatId = Blockus.id(boatPath);
 
-        Item item = TerraformBoatItemHelper.registerBoatItem(id, () -> {
-            return TerraformBoatTypeRegistry.INSTANCE.get(boatId);
-        });
+        Item item = TerraformBoatItemHelper.registerBoatItem(id, () -> TerraformBoatTypeRegistry.INSTANCE.get(boatId));
 
         TerraformBoatType boatType = new TerraformBoatType.Builder().item(item).build();
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, boatId, boatType);
