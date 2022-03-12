@@ -2,6 +2,7 @@ package com.brand.blockus.world;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.types.BSSWTypes;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.util.Identifier;
@@ -44,7 +45,7 @@ public class BlockusConfiguredFeatures {
     public static void registerConfiguredFeature() {
 
         // limestone
-        ConfiguredFeature<?, ?> ORE_LIMESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.getDefaultState(), 64));
+        ConfiguredFeature<?, ?> ORE_LIMESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BSSWTypes.LIMESTONE.block.getDefaultState(), 64));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "ore_limestone"), ORE_LIMESTONE);
         RegistryEntry<ConfiguredFeature<?, ?>> oreLimestoneFeature = BuiltinRegistries.CONFIGURED_FEATURE.getOrCreateEntry(BuiltinRegistries.CONFIGURED_FEATURE.getKey(ORE_LIMESTONE).orElseThrow());
 
@@ -57,7 +58,7 @@ public class BlockusConfiguredFeatures {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreLimestoneLower);
 
         // marble
-        ConfiguredFeature<?, ?> ORE_MARBLE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 64));
+        ConfiguredFeature<?, ?> ORE_MARBLE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BSSWTypes.MARBLE.block.getDefaultState(), 64));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "ore_marble"), ORE_MARBLE);
         RegistryEntry<ConfiguredFeature<?, ?>> oreMarbleFeature = BuiltinRegistries.CONFIGURED_FEATURE.getOrCreateEntry(BuiltinRegistries.CONFIGURED_FEATURE.getKey(ORE_MARBLE).orElseThrow());
 
@@ -66,7 +67,7 @@ public class BlockusConfiguredFeatures {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreMarble);
 
         // bluestone
-        ConfiguredFeature<?, ?> ORE_BLUESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.getDefaultState(), 64));
+        ConfiguredFeature<?, ?> ORE_BLUESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BSSWTypes.BLUESTONE.block.getDefaultState(), 64));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Blockus.MOD_ID, "ore_bluestone"), ORE_BLUESTONE);
         RegistryEntry<ConfiguredFeature<?, ?>> oreBluestoneFeature = BuiltinRegistries.CONFIGURED_FEATURE.getOrCreateEntry(BuiltinRegistries.CONFIGURED_FEATURE.getKey(ORE_BLUESTONE).orElseThrow());
 

@@ -2,6 +2,8 @@ package com.brand.blockus;
 
 import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.types.BSSWTypes;
+import com.brand.blockus.content.types.WoodTypesNB;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
@@ -28,10 +30,10 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
         registerBlockColor(BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
         registerBlockColor(BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
-        registerBlockColor(BlockusBlocks.WATER_BRICKS, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICK_STAIRS, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICK_SLAB, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICK_WALL, Blocks.WATER);
+        registerBlockColor(BSSWTypes.WATER_BRICKS.block, Blocks.WATER);
+        registerBlockColor(BSSWTypes.WATER_BRICKS.stairs, Blocks.WATER);
+        registerBlockColor(BSSWTypes.WATER_BRICKS.slab, Blocks.WATER);
+        registerBlockColor(BSSWTypes.WATER_BRICKS.wall, Blocks.WATER);
         registerBlockColor(BlockusBlocks.CHISELED_WATER_BRICKS, Blocks.WATER);
         registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN, Blocks.POTTED_FERN);
         registerBlockColor(BlockusBlocks.POTTED_OAK, Blocks.OAK_LEAVES);
@@ -62,8 +64,8 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_WHITE_OAK_SAPLING,
             BlockusBlocks.OBSIDIAN_REINFORCED_DOOR,
             BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR,
-            BlockusBlocks.CHARRED_DOOR,
-            BlockusBlocks.CHARRED_TRAPDOOR,
+            WoodTypesNB.CHARRED.door,
+            WoodTypesNB.CHARRED.trapdoor,
             BlockusBlocks.WOODEN_FRAME,
             BlockusBlocks.IRON_GATE,
             BlockusBlocks.GOLDEN_GATE,
@@ -91,10 +93,10 @@ public class BlockusClient implements ClientModInitializer {
 
         );
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
-            BlockusBlocks.WATER_BRICKS,
-            BlockusBlocks.WATER_BRICK_SLAB,
-            BlockusBlocks.WATER_BRICK_STAIRS,
-            BlockusBlocks.WATER_BRICK_WALL,
+            BSSWTypes.WATER_BRICKS.block,
+            BSSWTypes.WATER_BRICKS.stairs,
+            BSSWTypes.WATER_BRICKS.slab,
+            BSSWTypes.WATER_BRICKS.wall,
             BlockusBlocks.CHISELED_WATER_BRICKS,
 
             BlockusBlocks.RAINBOW_GLASS,
@@ -141,9 +143,9 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.TINTED_BEVELED_GLASS
         );
 
-        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "bamboo"));
-        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "charred"));
-        TerraformBoatClientHelper.registerModelLayer(new Identifier(Blockus.MOD_ID, "white_oak"));
+        TerraformBoatClientHelper.registerModelLayer(Blockus.id("bamboo"));
+        TerraformBoatClientHelper.registerModelLayer(Blockus.id( "charred"));
+        TerraformBoatClientHelper.registerModelLayer(Blockus.id( "white_oak"));
 
         registerSignSprite("bamboo");
         registerSignSprite("charred");
@@ -167,7 +169,7 @@ public class BlockusClient implements ClientModInitializer {
     }
 
     private void registerSignSprite(String path) {
-        Identifier id = new Identifier(Blockus.MOD_ID, "entity/signs/" + path);
+        Identifier id = Blockus.id( "entity/signs/" + path);
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
     }
 

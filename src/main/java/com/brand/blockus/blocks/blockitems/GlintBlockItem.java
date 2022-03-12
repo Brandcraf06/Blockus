@@ -4,9 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 
-public class NetherStarBlockItem extends BlockItem {
+public class GlintBlockItem extends BlockItem {
 
-    public NetherStarBlockItem(Block block, Settings settings) {
+    public GlintBlockItem(Block block, Settings settings) {
         super(block, settings);
     }
 
