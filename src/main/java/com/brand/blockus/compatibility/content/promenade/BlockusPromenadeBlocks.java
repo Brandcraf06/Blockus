@@ -81,7 +81,7 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAF_PILE, 30, 60);
 
         // Crates
-        BLUEBERRIES_CRATE = register("blueberries_crate", createLightCrates());
+        BLUEBERRIES_CRATE = register("blueberries_crate", createCrates());
 
     }
 

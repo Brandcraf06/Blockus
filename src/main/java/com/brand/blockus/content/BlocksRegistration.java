@@ -10,6 +10,7 @@ import com.brand.blockus.blocks.base.redstone.DoorBase;
 import com.brand.blockus.blocks.base.redstone.PressurePlateBase;
 import com.brand.blockus.blocks.base.redstone.StoneButtonBase;
 import com.brand.blockus.blocks.base.redstone.TrapdoorBase;
+import com.brand.blockus.blocks.blockitems.GlintBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
@@ -206,18 +207,15 @@ public class BlocksRegistration {
     }
 
     // Register
-    public static Block register(String id, Block block, ItemGroup itemGroup) {
-        Registry.register(Registry.BLOCK, Blockus.id(id), block);
-        Registry.register(Registry.ITEM, Blockus.id(id), new BlockItem(block, new Item.Settings().group(itemGroup)));
-
-        return block;
-    }
-
     public static Block register(String id, Block block, BlockItem item) {
         Registry.register(Registry.BLOCK, Blockus.id(id), block);
         Registry.register(Registry.ITEM, Blockus.id(id), item);
 
         return block;
+    }
+
+    public static Block register(String id, Block block, ItemGroup itemGroup) {
+        return register(id, block, new BlockItem(block, new Item.Settings().group(itemGroup)));
     }
 
     public static Block register(String id, Block block) {
@@ -241,7 +239,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerGlint(String id, Block block) {
-        return register(id, block, Blockus.BLOCKUS_BUILDING_BLOCKS);
+        return register(id, block, new GlintBlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
     }
 
     public static Block registerNoItem(String id, Block block) {
