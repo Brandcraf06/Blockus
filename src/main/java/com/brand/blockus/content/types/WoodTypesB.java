@@ -19,9 +19,6 @@ public class WoodTypesB {
 
     private static final ArrayList<WoodTypesB> LIST = new ArrayList<>();
 
-    public static final WoodTypesB BAMBOO = new WoodTypesB("bamboo", Blocks.OAK_PLANKS, MapColor.PALE_YELLOW);
-    public static final WoodTypesB WHITE_OAK = new WoodTypesB("white_oak", Blocks.SPRUCE_PLANKS, MapColor.OFF_WHITE);
-
     public final Block planks;
     public final Block stairs;
     public final Block slab;

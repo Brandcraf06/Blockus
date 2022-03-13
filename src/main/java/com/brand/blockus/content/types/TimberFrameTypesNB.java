@@ -3,6 +3,7 @@ package com.brand.blockus.content.types;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.content.BlocksRegistration;
+import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -13,10 +14,6 @@ import java.util.ArrayList;
 public class TimberFrameTypesNB {
 
     private static final ArrayList<TimberFrameTypesNB> LIST = new ArrayList<>();
-
-    public static final TimberFrameTypesNB WARPED_TIMBER_FRAME = new TimberFrameTypesNB("warped", Blocks.WARPED_PLANKS);
-    public static final TimberFrameTypesNB CRIMSON_TIMBER_FRAME = new TimberFrameTypesNB("crimson", Blocks.CRIMSON_PLANKS);
-    public static final TimberFrameTypesNB CHARRED_TIMBER_FRAME = new TimberFrameTypesNB("charred", WoodTypesNB.CHARRED.planks);
 
     public final Block block;
     public final Block diagonal;

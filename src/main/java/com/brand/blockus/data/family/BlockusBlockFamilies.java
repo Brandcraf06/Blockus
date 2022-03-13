@@ -1,10 +1,6 @@
 package com.brand.blockus.data.family;
 
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.BSSTypes;
-import com.brand.blockus.content.types.BSSWTypes;
-import com.brand.blockus.content.types.WoodTypesB;
-import com.brand.blockus.content.types.WoodTypesNB;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -54,51 +50,51 @@ public class BlockusBlockFamilies {
 
     static {
         // Woods
-        WHITE_OAK = register(WoodTypesB.WHITE_OAK.planks).button(WoodTypesB.WHITE_OAK.button).fence(WoodTypesB.WHITE_OAK.fence).fenceGate(WoodTypesB.WHITE_OAK.fence_gate).pressurePlate(WoodTypesB.WHITE_OAK.pressure_plate).sign(WoodTypesB.WHITE_OAK.standing_sign, WoodTypesB.WHITE_OAK.wall_sign).slab(WoodTypesB.WHITE_OAK.slab).stairs(WoodTypesB.WHITE_OAK.stairs).door(WoodTypesB.WHITE_OAK.door).trapdoor(WoodTypesB.WHITE_OAK.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
-        CHARRED = register(WoodTypesNB.CHARRED.planks).button(WoodTypesNB.CHARRED.button).fence(WoodTypesNB.CHARRED.fence).fenceGate(WoodTypesNB.CHARRED.fence_gate).pressurePlate(WoodTypesNB.CHARRED.pressure_plate).sign(WoodTypesNB.CHARRED.standing_sign, WoodTypesNB.CHARRED.wall_sign).slab(WoodTypesNB.CHARRED.slab).stairs(WoodTypesNB.CHARRED.stairs).door(WoodTypesNB.CHARRED.door).trapdoor(WoodTypesNB.CHARRED.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
-        BAMBOO = register(WoodTypesB.BAMBOO.planks).button(WoodTypesB.BAMBOO.button).fence(WoodTypesB.BAMBOO.fence).fenceGate(WoodTypesB.BAMBOO.fence_gate).pressurePlate(WoodTypesB.BAMBOO.pressure_plate).sign(WoodTypesB.BAMBOO.standing_sign, WoodTypesB.BAMBOO.wall_sign).slab(WoodTypesB.BAMBOO.slab).stairs(WoodTypesB.BAMBOO.stairs).door(WoodTypesB.BAMBOO.door).trapdoor(WoodTypesB.BAMBOO.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
+        WHITE_OAK = register(BlockusBlocks.WHITE_OAK.planks).button(BlockusBlocks.WHITE_OAK.button).fence(BlockusBlocks.WHITE_OAK.fence).fenceGate(BlockusBlocks.WHITE_OAK.fence_gate).pressurePlate(BlockusBlocks.WHITE_OAK.pressure_plate).sign(BlockusBlocks.WHITE_OAK.standing_sign, BlockusBlocks.WHITE_OAK.wall_sign).slab(BlockusBlocks.WHITE_OAK.slab).stairs(BlockusBlocks.WHITE_OAK.stairs).door(BlockusBlocks.WHITE_OAK.door).trapdoor(BlockusBlocks.WHITE_OAK.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
+        CHARRED = register(BlockusBlocks.CHARRED.planks).button(BlockusBlocks.CHARRED.button).fence(BlockusBlocks.CHARRED.fence).fenceGate(BlockusBlocks.CHARRED.fence_gate).pressurePlate(BlockusBlocks.CHARRED.pressure_plate).sign(BlockusBlocks.CHARRED.standing_sign, BlockusBlocks.CHARRED.wall_sign).slab(BlockusBlocks.CHARRED.slab).stairs(BlockusBlocks.CHARRED.stairs).door(BlockusBlocks.CHARRED.door).trapdoor(BlockusBlocks.CHARRED.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
+        BAMBOO = register(BlockusBlocks.BAMBOO.planks).button(BlockusBlocks.BAMBOO.button).fence(BlockusBlocks.BAMBOO.fence).fenceGate(BlockusBlocks.BAMBOO.fence_gate).pressurePlate(BlockusBlocks.BAMBOO.pressure_plate).sign(BlockusBlocks.BAMBOO.standing_sign, BlockusBlocks.BAMBOO.wall_sign).slab(BlockusBlocks.BAMBOO.slab).stairs(BlockusBlocks.BAMBOO.stairs).door(BlockusBlocks.BAMBOO.door).trapdoor(BlockusBlocks.BAMBOO.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
 
         // Stone, Andesite, Diorite, Granite, Dripstone, Tuff, Deepslate, Blackstone & Basalt
         STONE = register(Blocks.STONE).door(BlockusBlocks.STONE_DOOR).trapdoor(BlockusBlocks.STONE_TRAPDOOR).build();
-        POLISHED_ANDESITE = register(Blocks.POLISHED_ANDESITE).pressurePlate(BlockusBlocks.POLISHED_ANDESITE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_ANDESITE_BUTTON).polished(BSSWTypes.ANDESITE_BRICKS.block).build();
-        ANDESITE_BRICK = register(BSSWTypes.ANDESITE_BRICKS.block).cracked(BlockusBlocks.CRACKED_ANDESITE_BRICKS).build();
-        POLISHED_DIORITE = register(Blocks.POLISHED_DIORITE).pressurePlate(BlockusBlocks.POLISHED_DIORITE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_DIORITE_BUTTON).polished(BSSWTypes.DIORITE_BRICKS.block).build();
-        DIORITE_BRICK = register(BSSWTypes.DIORITE_BRICKS.block).cracked(BlockusBlocks.CRACKED_DIORITE_BRICKS).build();
-        POLISHED_GRANITE = register(Blocks.POLISHED_GRANITE).pressurePlate(BlockusBlocks.POLISHED_GRANITE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_GRANITE_BUTTON).polished(BSSWTypes.GRANITE_BRICKS.block).build();
-        GRANITE_BRICK = register(BSSWTypes.GRANITE_BRICKS.block).cracked(BlockusBlocks.CRACKED_GRANITE_BRICKS).build();
-        POLISHED_DRIPSTONE = register(BSSTypes.POLISHED_DRIPSTONE.block).polished(BSSWTypes.DRIPSTONE_BRICKS.block).build();
-        DRIPSTONE_BRICK = register(BSSWTypes.DRIPSTONE_BRICKS.block).cracked(BlockusBlocks.CRACKED_DRIPSTONE_BRICKS).build();
-        POLISHED_TUFF = register(BSSTypes.POLISHED_TUFF.block).pressurePlate(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_TUFF_BUTTON).polished(BSSWTypes.TUFF_BRICKS.block).build();
-        TUFF_BRICK = register(BSSWTypes.TUFF_BRICKS.block).cracked(BlockusBlocks.CRACKED_TUFF_BRICKS).build();
+        POLISHED_ANDESITE = register(Blocks.POLISHED_ANDESITE).pressurePlate(BlockusBlocks.POLISHED_ANDESITE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_ANDESITE_BUTTON).polished(BlockusBlocks.ANDESITE_BRICKS.block).build();
+        ANDESITE_BRICK = register(BlockusBlocks.ANDESITE_BRICKS.block).cracked(BlockusBlocks.CRACKED_ANDESITE_BRICKS).build();
+        POLISHED_DIORITE = register(Blocks.POLISHED_DIORITE).pressurePlate(BlockusBlocks.POLISHED_DIORITE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_DIORITE_BUTTON).polished(BlockusBlocks.DIORITE_BRICKS.block).build();
+        DIORITE_BRICK = register(BlockusBlocks.DIORITE_BRICKS.block).cracked(BlockusBlocks.CRACKED_DIORITE_BRICKS).build();
+        POLISHED_GRANITE = register(Blocks.POLISHED_GRANITE).pressurePlate(BlockusBlocks.POLISHED_GRANITE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_GRANITE_BUTTON).polished(BlockusBlocks.GRANITE_BRICKS.block).build();
+        GRANITE_BRICK = register(BlockusBlocks.GRANITE_BRICKS.block).cracked(BlockusBlocks.CRACKED_GRANITE_BRICKS).build();
+        POLISHED_DRIPSTONE = register(BlockusBlocks.POLISHED_DRIPSTONE.block).polished(BlockusBlocks.DRIPSTONE_BRICKS.block).build();
+        DRIPSTONE_BRICK = register(BlockusBlocks.DRIPSTONE_BRICKS.block).cracked(BlockusBlocks.CRACKED_DRIPSTONE_BRICKS).build();
+        POLISHED_TUFF = register(BlockusBlocks.POLISHED_TUFF.block).pressurePlate(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_TUFF_BUTTON).polished(BlockusBlocks.TUFF_BRICKS.block).build();
+        TUFF_BRICK = register(BlockusBlocks.TUFF_BRICKS.block).cracked(BlockusBlocks.CRACKED_TUFF_BRICKS).build();
         POLISHED_DEEPSLATE = register(Blocks.POLISHED_DEEPSLATE).pressurePlate(BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON).build();
         POLISHED_AMETHYST = register(BlockusBlocks.POLISHED_AMETHYST).stairs(BlockusBlocks.POLISHED_AMETHYST_STAIRS).slab(BlockusBlocks.POLISHED_AMETHYST_SLAB).polished(BlockusBlocks.AMETHYST_BRICKS).build();
         AMETHYST_BRICK = register(BlockusBlocks.AMETHYST_BRICKS).wall(BlockusBlocks.AMETHYST_BRICK_WALL).stairs(BlockusBlocks.AMETHYST_BRICK_STAIRS).slab(BlockusBlocks.AMETHYST_BRICK_SLAB).build();
         BLACKSTONE = register(Blocks.BLACKSTONE).door(BlockusBlocks.BLACKSTONE_DOOR).trapdoor(BlockusBlocks.BLACKSTONE_TRAPDOOR).build();
-        POLISHED_BASALT = register(Blocks.POLISHED_BASALT).pressurePlate(BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_BASALT_BUTTON).polished(BSSWTypes.POLISHED_BASALT_BRICKS.block).build();
-        POLISHED_BASALT_BRICK = register(BSSWTypes.POLISHED_BASALT_BRICKS.block).cracked(BlockusBlocks.CRACKED_POLISHED_BASALT_BRICKS).build();
+        POLISHED_BASALT = register(Blocks.POLISHED_BASALT).pressurePlate(BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_BASALT_BUTTON).polished(BlockusBlocks.POLISHED_BASALT_BRICKS.block).build();
+        POLISHED_BASALT_BRICK = register(BlockusBlocks.POLISHED_BASALT_BRICKS.block).cracked(BlockusBlocks.CRACKED_POLISHED_BASALT_BRICKS).build();
 
         // Limestone, Marble & Bluestone
-        LIMESTONE = register(BSSWTypes.LIMESTONE.block).pressurePlate(BlockusBlocks.LIMESTONE_PRESSURE_PLATE).button(BlockusBlocks.LIMESTONE_BUTTON).polished(BSSTypes.POLISHED_LIMESTONE.block).build();
-        MARBLE = register(BSSWTypes.MARBLE.block).pressurePlate(BlockusBlocks.MARBLE_PRESSURE_PLATE).button(BlockusBlocks.MARBLE_BUTTON).polished(BSSTypes.POLISHED_MARBLE.block).build();
-        BLUESTONE = register(BSSWTypes.BLUESTONE.block).pressurePlate(BlockusBlocks.BLUESTONE_PRESSURE_PLATE).button(BlockusBlocks.BLUESTONE_BUTTON).polished(BSSTypes.POLISHED_BLUESTONE.block).build();
+        LIMESTONE = register(BlockusBlocks.LIMESTONE.block).pressurePlate(BlockusBlocks.LIMESTONE_PRESSURE_PLATE).button(BlockusBlocks.LIMESTONE_BUTTON).polished(BlockusBlocks.POLISHED_LIMESTONE.block).build();
+        MARBLE = register(BlockusBlocks.MARBLE.block).pressurePlate(BlockusBlocks.MARBLE_PRESSURE_PLATE).button(BlockusBlocks.MARBLE_BUTTON).polished(BlockusBlocks.POLISHED_MARBLE.block).build();
+        BLUESTONE = register(BlockusBlocks.BLUESTONE.block).pressurePlate(BlockusBlocks.BLUESTONE_PRESSURE_PLATE).button(BlockusBlocks.BLUESTONE_BUTTON).polished(BlockusBlocks.POLISHED_BLUESTONE.block).build();
 
         // Snow & Ice Bricks
         SNOW_BRICK = register(BlockusBlocks.SNOW_BRICKS).wall(BlockusBlocks.SNOW_BRICK_WALL).stairs(BlockusBlocks.SNOW_BRICK_STAIRS).slab(BlockusBlocks.SNOW_BRICK_SLAB).build();
         ICE_BRICK = register(BlockusBlocks.ICE_BRICKS).wall(BlockusBlocks.ICE_BRICK_WALL).build();
 
         // Netherrack
-        POLISHED_NETHERRACK = register(BSSTypes.POLISHED_NETHERRACK.block).pressurePlate(BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_NETHERRACK_BUTTON).build();
+        POLISHED_NETHERRACK = register(BlockusBlocks.POLISHED_NETHERRACK.block).pressurePlate(BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_NETHERRACK_BUTTON).build();
 
         // Obsidian
         OBSIDIAN = register(Blocks.OBSIDIAN).door(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR).trapdoor(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR).build();
-        OBSIDIAN_BRICK = register(BSSWTypes.OBSIDIAN_BRICKS.block).cracked(BlockusBlocks.CRACKED_OBSIDIAN_BRICKS).build();
+        OBSIDIAN_BRICK = register(BlockusBlocks.OBSIDIAN_BRICKS.block).cracked(BlockusBlocks.CRACKED_OBSIDIAN_BRICKS).build();
 
         // Sandstone
         CUT_SOUL_SANDSTONE = register(BlockusBlocks.CUT_SOUL_SANDSTONE).slab(BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB).build();
 
         // Purpur & End Stone
-        PHANTOM_PURPUR_BLOCK = register(BSSTypes.PHANTOM_PURPUR_BLOCK.block).polished(BSSTypes.POLISHED_PHANTOM_PURPUR.block).build();
-        POLISHED_END_STONE = register(BSSTypes.POLISHED_END_STONE.block).pressurePlate(BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_END_STONE_BUTTON).build();
+        PHANTOM_PURPUR_BLOCK = register(BlockusBlocks.PHANTOM_PURPUR_BLOCK.block).polished(BlockusBlocks.POLISHED_PHANTOM_PURPUR.block).build();
+        POLISHED_END_STONE = register(BlockusBlocks.POLISHED_END_STONE.block).pressurePlate(BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_END_STONE_BUTTON).build();
 
         // Other
         PAPER_WALL = register(BlockusBlocks.PAPER_WALL).door(BlockusBlocks.PAPER_DOOR).trapdoor(BlockusBlocks.PAPER_TRAPDOOR).build();
