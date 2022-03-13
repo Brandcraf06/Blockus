@@ -19,8 +19,6 @@ public class WoodTypesNB {
 
     private static final ArrayList<WoodTypesNB> LIST = new ArrayList<>();
 
-    public static final WoodTypesNB CHARRED = new WoodTypesNB("charred", Blocks.BIRCH_PLANKS, MapColor.TERRACOTTA_GRAY);
-
     public final Block planks;
     public final Block stairs;
     public final Block slab;

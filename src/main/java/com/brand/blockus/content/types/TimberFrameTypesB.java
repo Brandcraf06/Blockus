@@ -3,6 +3,7 @@ package com.brand.blockus.content.types;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.content.BlocksRegistration;
+import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -13,15 +14,6 @@ import java.util.ArrayList;
 public class TimberFrameTypesB {
 
     private static final ArrayList<TimberFrameTypesB> LIST = new ArrayList<>();
-
-    public static final TimberFrameTypesB OAK_TIMBER_FRAME = new TimberFrameTypesB("oak", Blocks.OAK_PLANKS);
-    public static final TimberFrameTypesB BIRCH_TIMBER_FRAME = new TimberFrameTypesB("birch", Blocks.BIRCH_PLANKS);
-    public static final TimberFrameTypesB SPRUCE_TIMBER_FRAME = new TimberFrameTypesB("spruce", Blocks.SPRUCE_PLANKS);
-    public static final TimberFrameTypesB JUNGLE_TIMBER_FRAME = new TimberFrameTypesB("jungle", Blocks.JUNGLE_PLANKS);
-    public static final TimberFrameTypesB ACACIA_TIMBER_FRAME = new TimberFrameTypesB("acacia", Blocks.ACACIA_PLANKS);
-    public static final TimberFrameTypesB DARK_OAK_TIMBER_FRAME = new TimberFrameTypesB("dark_oak", Blocks.DARK_OAK_PLANKS);
-    public static final TimberFrameTypesB BAMBOO_TIMBER_FRAME = new TimberFrameTypesB("bamboo", WoodTypesB.BAMBOO.planks);
-    public static final TimberFrameTypesB WHITE_OAK_TIMBER_FRAME = new TimberFrameTypesB("white_oak", WoodTypesB.WHITE_OAK.planks);
 
     public final Block block;
     public final Block diagonal;

@@ -14,28 +14,11 @@ import java.util.ArrayList;
 public class AsphaltTypes {
     private static final ArrayList<AsphaltTypes> LIST = new ArrayList<>();
 
-    public static final AsphaltTypes ASPHALT = new AsphaltTypes(DyeColor.BLACK);
-    public static final AsphaltTypes WHITE_ASPHALT = new AsphaltTypes(DyeColor.WHITE);
-    public static final AsphaltTypes ORANGE_ASPHALT = new AsphaltTypes(DyeColor.ORANGE);
-    public static final AsphaltTypes MAGENTA_ASPHALT = new AsphaltTypes(DyeColor.MAGENTA);
-    public static final AsphaltTypes LIGHT_BLUE_ASPHALT = new AsphaltTypes(DyeColor.LIGHT_BLUE);
-    public static final AsphaltTypes YELLOW_ASPHALT = new AsphaltTypes(DyeColor.YELLOW);
-    public static final AsphaltTypes LIME_ASPHALT = new AsphaltTypes(DyeColor.LIME);
-    public static final AsphaltTypes PINK_ASPHALT = new AsphaltTypes(DyeColor.PINK);
-    public static final AsphaltTypes LIGHT_GRAY_ASPHALT = new AsphaltTypes(DyeColor.LIGHT_GRAY);
-    public static final AsphaltTypes GRAY_ASPHALT = new AsphaltTypes(DyeColor.GRAY);
-    public static final AsphaltTypes CYAN_ASPHALT = new AsphaltTypes(DyeColor.CYAN);
-    public static final AsphaltTypes PURPLE_ASPHALT = new AsphaltTypes(DyeColor.PURPLE);
-    public static final AsphaltTypes BLUE_ASPHALT = new AsphaltTypes(DyeColor.BLUE);
-    public static final AsphaltTypes BROWN_ASPHALT = new AsphaltTypes(DyeColor.BROWN);
-    public static final AsphaltTypes GREEN_ASPHALT = new AsphaltTypes(DyeColor.GREEN);
-    public static final AsphaltTypes RED_ASPHALT = new AsphaltTypes(DyeColor.RED);
-
     public final Block block;
     public final Block slab;
     public final Block stairs;
 
-    private AsphaltTypes(DyeColor color) {
+    public AsphaltTypes(DyeColor color) {
         String type = color.getName() + "_asphalt";
         String type2 = type.replace("black_asphalt", "asphalt");
 
