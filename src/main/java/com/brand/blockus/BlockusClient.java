@@ -64,8 +64,6 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_WHITE_OAK_SAPLING,
             BlockusBlocks.OBSIDIAN_REINFORCED_DOOR,
             BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR,
-            BlockusBlocks.CHARRED.door,
-            BlockusBlocks.CHARRED.trapdoor,
             BlockusBlocks.WOODEN_FRAME,
             BlockusBlocks.IRON_GATE,
             BlockusBlocks.GOLDEN_GATE,
