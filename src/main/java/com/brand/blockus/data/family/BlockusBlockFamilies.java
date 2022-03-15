@@ -37,6 +37,7 @@ public class BlockusBlockFamilies {
     public static final BlockFamily LIMESTONE;
     public static final BlockFamily MARBLE;
     public static final BlockFamily BLUESTONE;
+    public static final BlockFamily VIRIDITE;
     public static final BlockFamily SNOW_BRICK;
     public static final BlockFamily ICE_BRICK;
     public static final BlockFamily POLISHED_NETHERRACK;
@@ -77,6 +78,7 @@ public class BlockusBlockFamilies {
         LIMESTONE = register(BlockusBlocks.LIMESTONE.block).pressurePlate(BlockusBlocks.LIMESTONE_PRESSURE_PLATE).button(BlockusBlocks.LIMESTONE_BUTTON).polished(BlockusBlocks.POLISHED_LIMESTONE.block).build();
         MARBLE = register(BlockusBlocks.MARBLE.block).pressurePlate(BlockusBlocks.MARBLE_PRESSURE_PLATE).button(BlockusBlocks.MARBLE_BUTTON).polished(BlockusBlocks.POLISHED_MARBLE.block).build();
         BLUESTONE = register(BlockusBlocks.BLUESTONE.block).pressurePlate(BlockusBlocks.BLUESTONE_PRESSURE_PLATE).button(BlockusBlocks.BLUESTONE_BUTTON).polished(BlockusBlocks.POLISHED_BLUESTONE.block).build();
+        VIRIDITE = register(BlockusBlocks.VIRIDITE.block).pressurePlate(BlockusBlocks.VIRIDITE_PRESSURE_PLATE).button(BlockusBlocks.VIRIDITE_BUTTON).polished(BlockusBlocks.POLISHED_VIRIDITE.block).build();
 
         // Snow & Ice Bricks
         SNOW_BRICK = register(BlockusBlocks.SNOW_BRICKS).wall(BlockusBlocks.SNOW_BRICK_WALL).stairs(BlockusBlocks.SNOW_BRICK_STAIRS).slab(BlockusBlocks.SNOW_BRICK_SLAB).build();

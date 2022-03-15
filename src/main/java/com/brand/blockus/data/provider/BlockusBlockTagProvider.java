@@ -498,6 +498,28 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHISELED_LIMESTONE)
             .add(BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
 
+        this.getOrCreateTagBuilder(BlockusBlockTags.VIRIDITE)
+            .add(BlockusBlocks.VIRIDITE.block)
+            .add(BlockusBlocks.VIRIDITE.stairs)
+            .add(BlockusBlocks.VIRIDITE.slab)
+            .add(BlockusBlocks.POLISHED_VIRIDITE.block)
+            .add(BlockusBlocks.POLISHED_VIRIDITE.stairs)
+            .add(BlockusBlocks.POLISHED_VIRIDITE.slab)
+            .add(BlockusBlocks.VIRIDITE_BRICKS.block)
+            .add(BlockusBlocks.VIRIDITE_BRICKS.stairs)
+            .add(BlockusBlocks.VIRIDITE_BRICKS.slab)
+            .add(BlockusBlocks.VIRIDITE_TILES.block)
+            .add(BlockusBlocks.VIRIDITE_TILES.stairs)
+            .add(BlockusBlocks.VIRIDITE_TILES.slab)
+            .add(BlockusBlocks.VIRIDITE_PILLAR)
+            .add(BlockusBlocks.VIRIDITE_SQUARES)
+            .add(BlockusBlocks.SMALL_VIRIDITE_BRICKS.block)
+            .add(BlockusBlocks.SMALL_VIRIDITE_BRICKS.stairs)
+            .add(BlockusBlocks.SMALL_VIRIDITE_BRICKS.slab)
+            .add(BlockusBlocks.CHISELED_VIRIDITE)
+            .add(BlockusBlocks.VIRIDITE_CIRCULAR_PAVING)
+            .add(BlockusBlocks.VIRIDITE_LINES);
+
         this.getOrCreateTagBuilder(BlockusBlockTags.MAGMA_BRICKS)
             .add(BlockusBlocks.MAGMA_BRICKS.block)
             .add(BlockusBlocks.MAGMA_BRICKS.stairs)
@@ -883,6 +905,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_BASALT_BUTTON)
             .add(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON)
             .add(BlockusBlocks.POLISHED_TUFF_BUTTON)
+            .add(BlockusBlocks.VIRIDITE_BUTTON)
             .add(Blocks.POLISHED_BLACKSTONE_BUTTON);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.THATCH)
@@ -1075,6 +1098,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.MARBLE)
             .addTag(BlockusBlockTags.LIMESTONE)
             .addTag(BlockusBlockTags.BLUESTONE)
+            .addTag(BlockusBlockTags.VIRIDITE)
             .addTag(BlockusBlockTags.PURPUR_BLOCKS)
             .addTag(BlockusBlockTags.QUARTZ_BLOCKS)
             .addTag(BlockusBlockTags.SANDSTONE)
@@ -1128,7 +1152,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.BASE_STONE_OVERWORLD)
             .add(BlockusBlocks.LIMESTONE.block)
             .add(BlockusBlocks.MARBLE.block)
-            .add(BlockusBlocks.BLUESTONE.block);
+            .add(BlockusBlocks.BLUESTONE.block)
+            .add(BlockusBlocks.VIRIDITE.block);
 
         this.getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
             .add(BlockusBlocks.LEGACY_GOLD_BLOCK)
@@ -1151,7 +1176,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.BLUESTONE_BUTTON)
             .add(BlockusBlocks.POLISHED_NETHERRACK_BUTTON)
             .add(BlockusBlocks.POLISHED_END_STONE_BUTTON)
-            .add(BlockusBlocks.POLISHED_BASALT_BUTTON);
+            .add(BlockusBlocks.POLISHED_BASALT_BUTTON)
+            .add(BlockusBlocks.VIRIDITE_BUTTON);
+
 
         this.getOrCreateTagBuilder(BlockTags.CRIMSON_STEMS)
             .add(BlockusBlocks.CRIMSON_SMALL_STEMS);
@@ -1299,7 +1326,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE)
             .add(BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE)
             .add(BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE)
-            .add(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE);
+            .add(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE)
+            .add(BlockusBlocks.VIRIDITE_PRESSURE_PLATE);
+
 
         this.getOrCreateTagBuilder(BlockTags.TRAPDOORS)
             .add(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR)
@@ -1398,6 +1427,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.RED_CONCRETE_BRICKS.wall)
             .add(BlockusBlocks.BLACK_CONCRETE_BRICKS.wall)
             .add(BlockusBlocks.AMETHYST_BRICK_WALL)
+            .add(BlockusBlocks.VIRIDITE.wall)
+            .add(BlockusBlocks.VIRIDITE_BRICKS.wall)
+            .add(BlockusBlocks.SMALL_VIRIDITE_BRICKS.wall)
+            .add(BlockusBlocks.VIRIDITE_TILES.wall)
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.getOrCreateTagBuilder(BlockTags.WARPED_STEMS)

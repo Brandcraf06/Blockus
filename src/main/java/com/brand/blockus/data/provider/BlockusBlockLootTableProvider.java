@@ -82,6 +82,15 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
             this.addDrop(asphaltType.slab, BlockLootTableGenerator::slabDrops);
         }
 
+        // Viridite
+        this.addDrop(BlockusBlocks.CHISELED_VIRIDITE);
+        this.addDrop(BlockusBlocks.VIRIDITE_BUTTON);
+        this.addDrop(BlockusBlocks.VIRIDITE_CIRCULAR_PAVING);
+        this.addDrop(BlockusBlocks.VIRIDITE_PILLAR);
+        this.addDrop(BlockusBlocks.VIRIDITE_PRESSURE_PLATE);
+        this.addDrop(BlockusBlocks.VIRIDITE_SQUARES);
+        this.addDrop(BlockusBlocks.VIRIDITE_LINES);
+
         // Amethyst
         this.addDrop(BlockusBlocks.POLISHED_AMETHYST);
         this.addDrop(BlockusBlocks.POLISHED_AMETHYST_STAIRS);

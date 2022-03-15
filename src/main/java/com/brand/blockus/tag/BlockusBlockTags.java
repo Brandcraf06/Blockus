@@ -59,6 +59,7 @@ public class BlockusBlockTags {
     public static final Tag.Identified<Block> THATCH = create("thatch");
     public static final Tag.Identified<Block> TIMBER_FRAMES = create("timber_frames");
     public static final Tag.Identified<Block> TUFF_BLOCKS = create("tuff_blocks");
+    public static final Tag.Identified<Block> VIRIDITE = create("viridite");
     public static final Tag.Identified<Block> WARPED_NETHER_GRASS = create("warped_nether_grass");
     public static final Tag.Identified<Block> WATER_BRICKS = create("water_bricks");
     public static final Tag.Identified<Block> WHITE_OAK_LOGS = create("white_oak_logs");
