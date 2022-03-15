@@ -2,7 +2,6 @@ package com.brand.blockus.data.provider;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
 import com.brand.blockus.tag.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -41,11 +40,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.ANDESITE_BRICKS.block)
             .add(BlockusBlocks.ANDESITE_BRICKS.stairs)
             .add(BlockusBlocks.ANDESITE_BRICKS.slab)
-            .add(BlockusBlocks.ZIGZAGGED_ANDESITE)
+            .add(BlockusBlocks.HERRINGBONE_ANDESITE_BRICKS)
             .add(BlockusBlocks.CHISELED_ANDESITE_BRICKS)
             .add(BlockusBlocks.CRACKED_ANDESITE_BRICKS)
             .add(BlockusBlocks.POLISHED_ANDESITE_PILLAR)
-            .add(BlockusBlocks.ANDESITE_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.ANDESITE_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.ASPHALT)
             .add(BlockusBlocks.ASPHALT.block)
@@ -125,8 +124,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHISELED_POLISHED_BASALT)
             .add(BlockusBlocks.CRACKED_POLISHED_BASALT_BRICKS)
             .add(BlockusBlocks.POLISHED_BASALT_PILLAR)
-            .add(BlockusBlocks.ZIGZAGGED_POLISHED_BASALT)
-            .add(BlockusBlocks.POLISHED_BASALT_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.HERRINGBONE_POLISHED_BASALT_BRICKS)
+            .add(BlockusBlocks.POLISHED_BASALT_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BEVELED_GLASS)
             .add(BlockusBlocks.BEVELED_GLASS)
@@ -150,8 +149,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BLACKSTONE_BLOCKS)
             .add(BlockusBlocks.POLISHED_BLACKSTONE_PILLAR)
-            .add(BlockusBlocks.ZIGZAGGED_POLISHED_BLACKSTONE)
-            .add(BlockusBlocks.POLISHED_BLACKSTONE_CIRCLE_PAVEMENT)
+            .add(BlockusBlocks.HERRINGBONE_POLISHED_BLACKSTONE_BRICKS)
+            .add(BlockusBlocks.POLISHED_BLACKSTONE_CIRCULAR_PAVING)
             .add(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS.block)
             .add(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS.stairs)
             .add(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS.slab)
@@ -188,26 +187,26 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_BLUESTONE_BRICKS.stairs)
             .add(BlockusBlocks.SMALL_BLUESTONE_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_BLUESTONE)
-            .add(BlockusBlocks.BLUESTONE_CIRCLE_PAVEMENT)
+            .add(BlockusBlocks.BLUESTONE_CIRCULAR_PAVING)
             .add(BlockusBlocks.BLUESTONE_LINES);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BRICKS_BLOCKS)
             .add(BlockusBlocks.LARGE_BRICKS.block)
             .add(BlockusBlocks.LARGE_BRICKS.stairs)
             .add(BlockusBlocks.LARGE_BRICKS.slab)
-            .add(BlockusBlocks.ZIGZAGGED_BRICKS)
+            .add(BlockusBlocks.HERRINGBONE_BRICKS)
             .add(BlockusBlocks.SOAKED_BRICKS.block)
             .add(BlockusBlocks.SOAKED_BRICKS.stairs)
             .add(BlockusBlocks.SOAKED_BRICKS.slab)
-            .add(BlockusBlocks.ZIGZAGGED_SOAKED_BRICKS)
+            .add(BlockusBlocks.HERRINGBONE_SOAKED_BRICKS)
             .add(BlockusBlocks.SANDY_BRICKS.block)
             .add(BlockusBlocks.SANDY_BRICKS.stairs)
             .add(BlockusBlocks.SANDY_BRICKS.slab)
-            .add(BlockusBlocks.ZIGZAGGED_SANDY_BRICKS)
+            .add(BlockusBlocks.HERRINGBONE_SANDY_BRICKS)
             .add(BlockusBlocks.CHARRED_BRICKS.block)
             .add(BlockusBlocks.CHARRED_BRICKS.stairs)
             .add(BlockusBlocks.CHARRED_BRICKS.slab)
-            .add(BlockusBlocks.ZIGZAGGED_CHARRED_BRICKS);
+            .add(BlockusBlocks.HERRINGBONE_CHARRED_BRICKS);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES)
             .add(BlockusBlocks.WHITE_COLORED_TILES)
@@ -343,20 +342,20 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS.block)
             .add(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS.stairs)
             .add(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS.slab)
-            .add(BlockusBlocks.ZIGZAGGED_DEEPSLATE)
+            .add(BlockusBlocks.HERRINGBONE_DEEPSLATE_BRICKS)
             .add(BlockusBlocks.DEEPSLATE_PILLAR)
-            .add(BlockusBlocks.DEEPSLATE_CIRCLE_PAVEMENT)
+            .add(BlockusBlocks.DEEPSLATE_CIRCULAR_PAVING)
             .add(BlockusBlocks.STURDY_DEEPSLATE);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.DIORITE_BLOCKS)
             .add(BlockusBlocks.DIORITE_BRICKS.block)
             .add(BlockusBlocks.DIORITE_BRICKS.stairs)
             .add(BlockusBlocks.DIORITE_BRICKS.slab)
-            .add(BlockusBlocks.ZIGZAGGED_DIORITE)
+            .add(BlockusBlocks.HERRINGBONE_DIORITE_BRICKS)
             .add(BlockusBlocks.CHISELED_DIORITE_BRICKS)
             .add(BlockusBlocks.CRACKED_DIORITE_BRICKS)
             .add(BlockusBlocks.POLISHED_DIORITE_PILLAR)
-            .add(BlockusBlocks.DIORITE_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.DIORITE_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.DRIPSTONE_BLOCKS)
             .add(BlockusBlocks.POLISHED_DRIPSTONE.block)
@@ -371,7 +370,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.END_STONE_BLOCKS)
             .add(BlockusBlocks.CHISELED_END_STONE_BRICKS)
-            .add(BlockusBlocks.ZIGZAGGED_END_STONE_BRICKS)
+            .add(BlockusBlocks.HERRINGBONE_END_STONE_BRICKS)
             .add(BlockusBlocks.POLISHED_END_STONE.block)
             .add(BlockusBlocks.POLISHED_END_STONE.stairs)
             .add(BlockusBlocks.POLISHED_END_STONE.slab)
@@ -427,11 +426,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.GRANITE_BRICKS.block)
             .add(BlockusBlocks.GRANITE_BRICKS.stairs)
             .add(BlockusBlocks.GRANITE_BRICKS.slab)
-            .add(BlockusBlocks.ZIGZAGGED_GRANITE)
+            .add(BlockusBlocks.HERRINGBONE_GRANITE_BRICKS)
             .add(BlockusBlocks.CHISELED_GRANITE_BRICKS)
             .add(BlockusBlocks.CRACKED_GRANITE_BRICKS)
             .add(BlockusBlocks.POLISHED_GRANITE_PILLAR)
-            .add(BlockusBlocks.GRANITE_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.GRANITE_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.HONEYCOMB_BLOCKS)
             .add(BlockusBlocks.HONEYCOMB_BRICKS.block)
@@ -499,7 +498,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_LIMESTONE_BRICKS.stairs)
             .add(BlockusBlocks.SMALL_LIMESTONE_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_LIMESTONE)
-            .add(BlockusBlocks.LIMESTONE_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.MAGMA_BRICKS)
             .add(BlockusBlocks.MAGMA_BRICKS.block)
@@ -531,7 +530,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_MARBLE_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_MARBLE_PILLAR)
             .add(BlockusBlocks.CHISELED_MARBLE)
-            .add(BlockusBlocks.MARBLE_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.MARBLE_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.NEON)
             .add(BlockusBlocks.WHITE_NEON)
@@ -554,21 +553,21 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockusBlockTags.NETHER_BRICKS)
             .add(BlockusBlocks.POLISHED_NETHER_BRICKS)
             .add(BlockusBlocks.POLISHED_RED_NETHER_BRICKS)
-            .add(BlockusBlocks.ZIGZAGGED_NETHER_BRICKS)
-            .add(BlockusBlocks.ZIGZAGGED_RED_NETHER_BRICKS)
+            .add(BlockusBlocks.HERRINGBONE_NETHER_BRICKS)
+            .add(BlockusBlocks.HERRINGBONE_RED_NETHER_BRICKS)
             .add(BlockusBlocks.NETHER_BRICK_PILLAR)
             .add(BlockusBlocks.RED_NETHER_BRICK_PILLAR)
             .add(BlockusBlocks.CHARRED_NETHER_BRICKS.block)
             .add(BlockusBlocks.CHARRED_NETHER_BRICKS.stairs)
             .add(BlockusBlocks.CHARRED_NETHER_BRICKS.slab)
             .add(BlockusBlocks.POLISHED_CHARRED_NETHER_BRICKS)
-            .add(BlockusBlocks.ZIGZAGGED_CHARRED_NETHER_BRICKS)
+            .add(BlockusBlocks.HERRINGBONE_CHARRED_NETHER_BRICKS)
             .add(BlockusBlocks.CHARRED_NETHER_BRICK_PILLAR)
             .add(BlockusBlocks.TEAL_NETHER_BRICKS.block)
             .add(BlockusBlocks.TEAL_NETHER_BRICKS.stairs)
             .add(BlockusBlocks.TEAL_NETHER_BRICKS.slab)
             .add(BlockusBlocks.POLISHED_TEAL_NETHER_BRICKS)
-            .add(BlockusBlocks.ZIGZAGGED_TEAL_NETHER_BRICKS)
+            .add(BlockusBlocks.HERRINGBONE_TEAL_NETHER_BRICKS)
             .add(BlockusBlocks.TEAL_NETHER_BRICK_PILLAR);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.NETHERRACK_BLOCKS)
@@ -578,7 +577,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.NETHERRACK_BRICKS.block)
             .add(BlockusBlocks.NETHERRACK_BRICKS.stairs)
             .add(BlockusBlocks.NETHERRACK_BRICKS.slab)
-            .add(BlockusBlocks.NETHERRACK_CIRCLE_PAVEMENT)
+            .add(BlockusBlocks.NETHERRACK_CIRCULAR_PAVING)
             .addOptional(new Identifier(Blockus.MOD_ID, "netherrack_brick_column"));
 
         this.getOrCreateTagBuilder(BlockusBlockTags.OBSIDIAN)
@@ -592,7 +591,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_OBSIDIAN_BRICKS.slab)
             .add(BlockusBlocks.SMALL_OBSIDIAN_BRICKS.wall)
             .add(BlockusBlocks.OBSIDIAN_PILLAR)
-            .add(BlockusBlocks.OBSIDIAN_CIRCLE_PAVEMENT)
+            .add(BlockusBlocks.OBSIDIAN_CIRCULAR_PAVING)
             .add(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR)
             .add(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR)
             .add(BlockusBlocks.GLOWING_OBSIDIAN)
@@ -648,7 +647,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.GOLD_PLATING.slab);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PRISMARINE_BLOCKS)
-            .add(BlockusBlocks.PRISMARINE_CIRCLE_PAVEMENT)
+            .add(BlockusBlocks.PRISMARINE_CIRCULAR_PAVING)
             .add(BlockusBlocks.CHISELED_DARK_PRISMARINE)
             .add(BlockusBlocks.DARK_PRISMARINE_PILLAR)
             .add(BlockusBlocks.CHISELED_PRISMARINE)
@@ -673,7 +672,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.QUARTZ_TILES.block)
             .add(BlockusBlocks.QUARTZ_TILES.stairs)
             .add(BlockusBlocks.QUARTZ_TILES.slab)
-            .add(BlockusBlocks.QUARTZ_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.QUARTZ_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.RAINBOW_BLOCKS)
             .add(BlockusBlocks.RAINBOW_BLOCK)
@@ -867,8 +866,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.STONE_BLOCKS)
             .add(BlockusBlocks.STONE_BRICK_PILLAR)
-            .add(BlockusBlocks.ZIGZAGGED_STONE_BRICKS)
-            .add(BlockusBlocks.STONE_CIRCLE_PAVEMENT)
+            .add(BlockusBlocks.HERRINGBONE_STONE_BRICKS)
+            .add(BlockusBlocks.STONE_CIRCULAR_PAVING)
             .add(BlockusBlocks.SMOOTH_STONE_STAIRS)
             .add(BlockusBlocks.STONE_DOOR)
             .add(BlockusBlocks.STONE_TRAPDOOR)
@@ -937,9 +936,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.TUFF_BRICKS.slab)
             .add(BlockusBlocks.CRACKED_TUFF_BRICKS)
             .add(BlockusBlocks.CHISELED_TUFF)
-            .add(BlockusBlocks.ZIGZAGGED_TUFF)
+            .add(BlockusBlocks.HERRINGBONE_TUFF_BRICKS)
             .add(BlockusBlocks.TUFF_PILLAR)
-            .add(BlockusBlocks.TUFF_CIRCLE_PAVEMENT);
+            .add(BlockusBlocks.TUFF_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.WARPED_NETHER_GRASS)
             .add(Blocks.NETHER_SPROUTS)

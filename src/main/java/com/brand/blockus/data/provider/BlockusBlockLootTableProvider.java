@@ -96,7 +96,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
 
         // Other
         this.addDrop(BlockusBlocks.ACACIA_SMALL_LOGS);
-        this.addDrop(BlockusBlocks.ANDESITE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.ANDESITE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.APPLE_CRATE);
         this.addDrop(BlockusBlocks.BEETROOT_CRATE);
         this.addDrop(BlockusBlocks.BIRCH_SMALL_LOGS);
@@ -121,7 +121,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.BLUE_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.BLUE_WHITE_COLORED_TILES);
         this.addDrop(BlockusBlocks.BLUESTONE_BUTTON);
-        this.addDrop(BlockusBlocks.BLUESTONE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.BLUESTONE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.BLUESTONE_LINES);
         this.addDrop(BlockusBlocks.BLUESTONE_PILLAR);
         this.addDrop(BlockusBlocks.BLUESTONE_PRESSURE_PLATE);
@@ -184,9 +184,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.CYAN_WHITE_COLORED_TILES);
         this.addDrop(BlockusBlocks.DARK_OAK_SMALL_LOGS);
         this.addDrop(BlockusBlocks.DARK_PRISMARINE_PILLAR);
-        this.addDrop(BlockusBlocks.DEEPSLATE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.DEEPSLATE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.DEEPSLATE_PILLAR);
-        this.addDrop(BlockusBlocks.DIORITE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.DIORITE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.DRIPSTONE_PILLAR);
         this.addDrop(BlockusBlocks.END_STONE_PILLAR);
         this.addDrop(BlockusBlocks.ENDER_BLOCK);
@@ -201,7 +201,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.GOLDEN_BARS);
         this.addDrop(BlockusBlocks.GOLDEN_CARROT_CRATE);
         this.addDrop(BlockusBlocks.GOLDEN_CHAIN);
-        this.addDrop(BlockusBlocks.GRANITE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.GRANITE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.GRAY_COLORED_TILES);
         this.addDrop(BlockusBlocks.GRAY_FUTURNEO_BLOCK);
@@ -273,7 +273,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.LIME_WHITE_COLORED_TILES);
         this.addDrop(BlockusBlocks.LIME_YELLOW_COLORED_TILES);
         this.addDrop(BlockusBlocks.LIMESTONE_BUTTON);
-        this.addDrop(BlockusBlocks.LIMESTONE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.LIMESTONE_PILLAR);
         this.addDrop(BlockusBlocks.LIMESTONE_PRESSURE_PLATE);
         this.addDrop(BlockusBlocks.LIMESTONE_SQUARES);
@@ -288,7 +288,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.MAGENTA_WHITE_COLORED_TILES);
         this.addDrop(BlockusBlocks.MARBLE_BUTTON);
-        this.addDrop(BlockusBlocks.MARBLE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.MARBLE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.MARBLE_PILLAR);
         this.addDrop(BlockusBlocks.MARBLE_PRESSURE_PLATE);
         this.addDrop(BlockusBlocks.MARBLE_SQUARES);
@@ -296,9 +296,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.MOSS_SMALL_HEDGE);
         this.addDrop(BlockusBlocks.NETHER_BRICK_PILLAR);
         this.addDrop(BlockusBlocks.NETHERITE_STAIRS);
-        this.addDrop(BlockusBlocks.NETHERRACK_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.NETHERRACK_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.OAK_SMALL_LOGS);
-        this.addDrop(BlockusBlocks.OBSIDIAN_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.OBSIDIAN_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.OBSIDIAN_PILLAR);
         this.addDrop(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR);
         this.addDrop(BlockusBlocks.ORANGE_COLORED_TILES);
@@ -331,10 +331,10 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.POLISHED_ANDESITE_PILLAR);
         this.addDrop(BlockusBlocks.POLISHED_ANDESITE_PRESSURE_PLATE);
         this.addDrop(BlockusBlocks.POLISHED_BASALT_BUTTON);
-        this.addDrop(BlockusBlocks.POLISHED_BASALT_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.POLISHED_BASALT_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.POLISHED_BASALT_PILLAR);
         this.addDrop(BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE);
-        this.addDrop(BlockusBlocks.POLISHED_BLACKSTONE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.POLISHED_BLACKSTONE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.POLISHED_BLACKSTONE_PILLAR);
         this.addDrop(BlockusBlocks.POLISHED_CHARRED_NETHER_BRICKS);
         this.addDrop(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON);
@@ -355,7 +355,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.POLISHED_TUFF_BUTTON);
         this.addDrop(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE);
         this.addDrop(BlockusBlocks.POTATO_CRATE);
-        this.addDrop(BlockusBlocks.PRISMARINE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.PRISMARINE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.PRISMARINE_PILLAR);
         this.addDrop(BlockusBlocks.PUFFERFISH_CRATE);
         this.addDrop(BlockusBlocks.PURPLE_BLUE_COLORED_TILES);
@@ -371,7 +371,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.PURPUR_DECORATED_END_STONE);
         this.addDrop(BlockusBlocks.PURPUR_LINES);
         this.addDrop(BlockusBlocks.PURPUR_SQUARES);
-        this.addDrop(BlockusBlocks.QUARTZ_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.QUARTZ_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.RAINBOW_ASPHALT);
         this.addDrop(BlockusBlocks.RAINBOW_BEVELED_GLASS);
         this.addDrop(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
@@ -410,7 +410,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.SPRUCE_SMALL_LOGS);
         this.addDrop(BlockusBlocks.STARS_BLOCK);
         this.addDrop(BlockusBlocks.STONE_BRICK_PILLAR);
-        this.addDrop(BlockusBlocks.STONE_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.STONE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.STONE_TRAPDOOR);
         this.addDrop(BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
         this.addDrop(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
@@ -421,7 +421,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.SWEET_BERRIES_CRATE);
         this.addDrop(BlockusBlocks.TEAL_NETHER_BRICK_PILLAR);
         this.addDrop(BlockusBlocks.TROPICAL_FISH_CRATE);
-        this.addDrop(BlockusBlocks.TUFF_CIRCLE_PAVEMENT);
+        this.addDrop(BlockusBlocks.TUFF_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.TUFF_PILLAR);
         this.addDrop(BlockusBlocks.WARPED_SMALL_HEDGE);
         this.addDrop(BlockusBlocks.WARPED_SMALL_STEMS);
@@ -446,23 +446,23 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.YELLOW_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.YELLOW_WHITE_COLORED_TILES);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_ANDESITE);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_CHARRED_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_CHARRED_NETHER_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_DEEPSLATE);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_DIORITE);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_END_STONE_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_GRANITE);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_NETHER_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_POLISHED_BASALT);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_POLISHED_BLACKSTONE);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_RED_NETHER_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_SANDY_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_SOAKED_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_STONE_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_TEAL_NETHER_BRICKS);
-        this.addDrop(BlockusBlocks.ZIGZAGGED_TUFF);
+        this.addDrop(BlockusBlocks.HERRINGBONE_ANDESITE_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_CHARRED_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_CHARRED_NETHER_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_DEEPSLATE_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_DIORITE_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_END_STONE_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_GRANITE_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_NETHER_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_POLISHED_BASALT_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_POLISHED_BLACKSTONE_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_RED_NETHER_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_SANDY_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_SOAKED_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_STONE_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_TEAL_NETHER_BRICKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_TUFF_BRICKS);
         this.addDrop(BlockusBlocks.RAINBOW_ROSE);
         this.addDrop(BlockusBlocks.TINTED_BEVELED_GLASS);
 
