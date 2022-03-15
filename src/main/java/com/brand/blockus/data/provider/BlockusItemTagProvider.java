@@ -108,7 +108,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.getOrCreateTagBuilder(new Identifier("c", "quartz_blocks"))
             .add(BlockusBlocks.QUARTZ_TILES.block.asItem())
-            .add(BlockusBlocks.QUARTZ_CIRCLE_PAVEMENT.asItem());
+            .add(BlockusBlocks.QUARTZ_CIRCULAR_PAVING.asItem());
 
         this.getOrCreateTagBuilder(new Identifier("c", "red_sandstones"))
             .add(BlockusBlocks.RED_SANDSTONE_BRICKS.block.asItem())
