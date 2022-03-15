@@ -1,9 +1,13 @@
 package com.brand.blockus.world;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -11,61 +15,92 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
+import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.decorator.*;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.List;
 
 public class BlockusConfiguredFeatures {
 
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> WHITE_OAK;
+    public static final ConfiguredFeature<?, ?> RAINBOW_ROSE_BONEMEAL;
+
+
+    public static TreeFeatureConfig.Builder white_oak() {
+        return new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG), new StraightTrunkPlacer(7, 2, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines();
+    }
+
+    static {
+        WHITE_OAK = ConfiguredFeatures.register("white_oak", Feature.TREE.configure(white_oak().ignoreVines().build()));
+        RAINBOW_ROSE_BONEMEAL = ConfiguredFeatures.register("rainbow_rose_bonemeal", Feature.FLOWER.configure(new RandomPatchFeatureConfig(6, 5, 2, () -> Feature.SIMPLE_BLOCK.configure(new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE))).withBlockPredicateFilter(BlockPredicate.matchingBlocks(List.of(Blocks.AIR, Blocks.GRASS, Blocks.TALL_GRASS, Blocks.FERN, Blocks.LARGE_FERN), BlockPos.ORIGIN)))));
+    }
+
     public static void registerConfiguredFeature() {
 
         // limestone
-        RegistryKey<PlacedFeature> oreLimestoneUpper = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-            new Identifier(Blockus.MOD_ID, "ore_limestone_upper"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreLimestoneUpper.getValue(), BlockusOreFeatures.ORE_LIMESTONE.withPlacement(modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128)))));
+
+        ConfiguredFeature<?, ?> ORE_LIMESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.LIMESTONE.block.getDefaultState(), 64));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("ore_limestone"), ORE_LIMESTONE);
+
+        RegistryKey<PlacedFeature> oreLimestoneUpper = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_limestone_upper"));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreLimestoneUpper.getValue(), ORE_LIMESTONE.withPlacement(modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreLimestoneUpper);
 
-        RegistryKey<PlacedFeature> oreLimestoneLower = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-            new Identifier(Blockus.MOD_ID, "ore_limestone_lower"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreLimestoneLower.getValue(), BlockusOreFeatures.ORE_LIMESTONE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(60)))));
+        RegistryKey<PlacedFeature> oreLimestoneLower = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_limestone_lower"));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreLimestoneLower.getValue(), ORE_LIMESTONE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(60)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreLimestoneLower);
 
         // marble
-        RegistryKey<PlacedFeature> oreMarble = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-            new Identifier(Blockus.MOD_ID, "ore_marble"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreMarble.getValue(), BlockusOreFeatures.ORE_MARBLE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64)))));
+        ConfiguredFeature<?, ?> ORE_MARBLE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.MARBLE.block.getDefaultState(), 64));
+
+        RegistryKey<PlacedFeature> oreMarble = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_marble"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreMarble.getValue(), ORE_MARBLE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreMarble.getValue(), ORE_MARBLE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreMarble);
 
         // bluestone
-        RegistryKey<PlacedFeature> oreBluestone = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-            new Identifier(Blockus.MOD_ID, "ore_bluestone"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreBluestone.getValue(), BlockusOreFeatures.ORE_BLUESTONE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0)))));
+        ConfiguredFeature<?, ?> ORE_BLUESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.BLUESTONE.block.getDefaultState(), 64));
+
+        RegistryKey<PlacedFeature> oreBluestone = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_bluestone"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreBluestone.getValue(), ORE_BLUESTONE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreBluestone.getValue(), ORE_BLUESTONE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreBluestone);
 
+        // viridite
+        ConfiguredFeature<?, ?> ORE_VIRIDITE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.ACACIA_TIMBER_FRAME.block.getDefaultState(), 33));
+
+        RegistryKey<PlacedFeature> oreViridite = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_viridite"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreViridite.getValue(), ORE_VIRIDITE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreViridite.getValue(), ORE_VIRIDITE.withPlacement(modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16)))));
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreViridite);
+
         // white oak
-        RegistryKey<PlacedFeature> treeWhiteOak = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-            new Identifier(Blockus.MOD_ID, "white_oak_tree"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOak.getValue(), BlockusVegetationFeatures.WHITE_OAK_TREE);
+        ConfiguredFeature<?, ?> WHITE_OAK = new ConfiguredFeature<>(Feature.TREE, white_oak().build());
+
+        RegistryKey<PlacedFeature> treeWhiteOak = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak_tree"));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOak.getValue(), WHITE_OAK.withPlacement(RarityFilterPlacementModifier.of(48), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))));
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOak);
 
-        RegistryKey<PlacedFeature> treeWhiteOakRare = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-            new Identifier(Blockus.MOD_ID, "white_oak_tree_rare"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakRare.getValue(), BlockusVegetationFeatures.WHITE_OAK_TREE_RARE);
+        RegistryKey<PlacedFeature> treeWhiteOakRare = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak_tree_rare"));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakRare.getValue(), WHITE_OAK.withPlacement(RarityFilterPlacementModifier.of(240), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))));
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOakRare);
 
-        RegistryKey<PlacedFeature> treeWhiteOakChecked = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-            new Identifier(Blockus.MOD_ID, "white_oak_checked"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakChecked.getValue(), BlockusVegetationFeatures.WHITE_OAK_CHECKED);
+        RegistryKey<PlacedFeature> treeWhiteOakChecked = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak_checked"));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOakChecked.getValue(), WHITE_OAK.withWouldSurviveFilter(BlockusBlocks.WHITE_OAK_SAPLING));
 
         // rainbow rose
-        RegistryKey<PlacedFeature> rainbowRose = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-            new Identifier(Blockus.MOD_ID, "rainbow_rose"));
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, rainbowRose.getValue(), BlockusVegetationFeatures.RAINBOW_ROSE.withPlacement(SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
+        ConfiguredFeature<?, ?> RAINBOW_ROSE = new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(12, 7, 2, () -> Feature.SIMPLE_BLOCK.configure(new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE))).withInAirFilter()));
+
+        RegistryKey<PlacedFeature> rainbowRose = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("rainbow_rose"));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, rainbowRose.getValue(), RAINBOW_ROSE.withPlacement(SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()));
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.MEADOW), GenerationStep.Feature.VEGETAL_DECORATION, rainbowRose);
 
-    }
+       }
 
     private static List<PlacementModifier> modifiers(PlacementModifier first, PlacementModifier second) {
         return List.of(first, SquarePlacementModifier.of(), second, BiomePlacementModifier.of());
