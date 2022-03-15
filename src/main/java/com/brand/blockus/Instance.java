@@ -92,6 +92,16 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_LEAVES, 30, 60);
 
+        // herringbone planks
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_OAK_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, 5, 20);
+
         // small logs		
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.OAK_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BIRCH_SMALL_LOGS, 5, 5);
@@ -162,6 +172,16 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_WOOD, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG, 300);
+
+        // herringbone planks
+        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, 300);
 
         // small logs
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_LOGS, 300);

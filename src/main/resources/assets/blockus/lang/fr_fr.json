@@ -1069,5 +1069,17 @@
   "block.blockus.viridite_circular_paving": "Pavé circulaire en viridite",
   "block.blockus.viridite_lines": "Lignes en viridite",
   "block.blockus.viridite_pressure_plate": "Plaque de pression en viridite",
-  "block.blockus.viridite_button": "Bouton en viridite"
+  "block.blockus.viridite_button": "Bouton en viridite",
+
+  "block.blockus.herringbone_oak_planks": "Planches de chêne à chevron",
+  "block.blockus.herringbone_spruce_planks": "Planches d'épicéa à chevron",
+  "block.blockus.herringbone_birch_planks": "Planches de bouleau à chevron",
+  "block.blockus.herringbone_jungle_planks": "Planches de jungle à chevron",
+  "block.blockus.herringbone_acacia_planks": "Planches d'acacia à chevron",
+  "block.blockus.herringbone_dark_oak_planks": "Planches de chêne noir à chevron",
+  "block.blockus.herringbone_white_oak_planks": "Planches de chêne blanc à chevron",
+  "block.blockus.herringbone_bamboo_planks": "Planches de bambou à chevron",
+  "block.blockus.herringbone_charred_planks": "Planches carbonnisées à chevron",
+  "block.blockus.herringbone_crimson_planks": "Planches carmin à chevron",
+  "block.blockus.herringbone_warped_planks": "Planches biscornues à chevron"
 }

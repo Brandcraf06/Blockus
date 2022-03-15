@@ -338,6 +338,19 @@ public class BlockusBlocks extends BlocksRegistration {
     // Charred
     public static final WoodTypesNB CHARRED = new WoodTypesNB("charred", Blocks.BIRCH_PLANKS, MapColor.TERRACOTTA_GRAY);
 
+    // Herringbone Planks
+    public static final Block HERRINGBONE_OAK_PLANKS = register("herringbone_oak_planks", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block HERRINGBONE_SPRUCE_PLANKS = register("herringbone_spruce_planks", new Block(FabricBlockSettings.copy(Blocks.SPRUCE_PLANKS)));
+    public static final Block HERRINGBONE_BIRCH_PLANKS = register("herringbone_birch_planks", new Block(FabricBlockSettings.copy(Blocks.BIRCH_PLANKS)));
+    public static final Block HERRINGBONE_JUNGLE_PLANKS = register("herringbone_jungle_planks", new Block(FabricBlockSettings.copy(Blocks.JUNGLE_PLANKS)));
+    public static final Block HERRINGBONE_ACACIA_PLANKS = register("herringbone_acacia_planks", new Block(FabricBlockSettings.copy(Blocks.ACACIA_PLANKS)));
+    public static final Block HERRINGBONE_DARK_OAK_PLANKS = register("herringbone_dark_oak_planks", new Block(FabricBlockSettings.copy(Blocks.DARK_OAK_PLANKS)));
+    public static final Block HERRINGBONE_BAMBOO_PLANKS = register("herringbone_bamboo_planks", new Block(FabricBlockSettings.copy(BAMBOO.planks)));
+    public static final Block HERRINGBONE_WHITE_OAK_PLANKS = register("herringbone_white_oak_planks", new Block(FabricBlockSettings.copy(WHITE_OAK.planks)));
+    public static final Block HERRINGBONE_WARPED_PLANKS = register("herringbone_warped_planks", new Block(FabricBlockSettings.copy(Blocks.WARPED_PLANKS)));
+    public static final Block HERRINGBONE_CRIMSON_PLANKS = register("herringbone_crimson_planks", new Block(FabricBlockSettings.copy(Blocks.CRIMSON_PLANKS)));
+    public static final Block HERRINGBONE_CHARRED_PLANKS = register("herringbone_charred_planks", new Block(FabricBlockSettings.copy(CHARRED.planks)));
+
     // Small Logs
     public static final Block OAK_SMALL_LOGS = register("oak_small_logs", new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
     public static final Block SPRUCE_SMALL_LOGS = register("spruce_small_logs", new PillarBlock(FabricBlockSettings.copy(Blocks.SPRUCE_LOG)));

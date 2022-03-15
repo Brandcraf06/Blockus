@@ -1173,7 +1173,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerBoatRecipe(exporter, BlockusBlocks.WHITE_OAK.boat, BlockusBlocks.WHITE_OAK.planks);
         offerBoatRecipe(exporter, BlockusBlocks.BAMBOO.boat, BlockusBlocks.BAMBOO.planks);
         offerBoatRecipe(exporter, BlockusBlocks.CHARRED.boat, BlockusBlocks.CHARRED.planks);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.fromTag(BlockusItemTags.PLANKS_THAT_BURN), BlockusBlocks.CHARRED.planks, 0.1F, 200).criterion("has_bricks", conditionsFromItem(Blocks.BRICKS)).offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.fromTag(BlockusItemTags.PLANKS_THAT_BURN), BlockusBlocks.CHARRED.planks, 0.1F, 200).criterion("has_planks", conditionsFromTag(BlockusItemTags.PLANKS_THAT_BURN)).offerTo(exporter);
 
         offerSmallLogsRecipe(exporter, BlockusBlocks.OAK_SMALL_LOGS, Blocks.OAK_LOG);
         offerSmallLogsRecipe(exporter, BlockusBlocks.SPRUCE_SMALL_LOGS, Blocks.SPRUCE_LOG);
@@ -1184,6 +1184,20 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSmallLogsRecipe(exporter, BlockusBlocks.WARPED_SMALL_STEMS, Blocks.WARPED_STEM);
         offerSmallLogsRecipe(exporter, BlockusBlocks.CRIMSON_SMALL_STEMS, Blocks.CRIMSON_STEM);
         offerSmallLogsRecipe(exporter, BlockusBlocks.WHITE_OAK_SMALL_LOGS, BlockusBlocks.WHITE_OAK_LOG);
+
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_OAK_PLANKS, Blocks.OAK_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_BIRCH_PLANKS, Blocks.BIRCH_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS, Blocks.SPRUCE_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS, Blocks.JUNGLE_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, Blocks.ACACIA_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, Blocks.DARK_OAK_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, BlockusBlocks.WHITE_OAK.planks);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, BlockusBlocks.BAMBOO.planks);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS, Blocks.CRIMSON_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_WARPED_PLANKS, Blocks.WARPED_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_CHARRED_PLANKS, BlockusBlocks.CHARRED.planks);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.fromTag(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN), BlockusBlocks.HERRINGBONE_CHARRED_PLANKS, 0.1F, 200).criterion("has_herringbone_planks", conditionsFromTag(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN)).offerTo(exporter, getRecipeName(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS) + "_from_smelting");
+
 
         // Small Hedges
         offerSmallHedgesRecipe(exporter, BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);
@@ -1766,8 +1780,14 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(output).input('#',  input).pattern("###").pattern("###").group("small_hedge").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 
+
+    public static void offerHerringBoneRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
+        ShapedRecipeJsonBuilder.create(output, 5).input('#',  input).pattern("#  ").pattern("###").pattern("  #").group("herringbone_planks").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+    }
+	
     public static CraftingRecipeJsonBuilder createEnclosedRecipe(ItemConvertible output, Ingredient input, ItemConvertible center) {
         return ShapedRecipeJsonBuilder.create(output, 8).input('X', input).input('#', center).pattern("XXX").pattern("X#X").pattern("XXX");
+
     }
 
     public static void offerStainedStoneBricksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab, ItemConvertible output_wall) {

@@ -90,6 +90,16 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.BAMBOO.planks.asItem())
             .add(BlockusBlocks.WHITE_OAK.planks.asItem());
 
+        this.getOrCreateTagBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN)
+            .add(BlockusBlocks.HERRINGBONE_OAK_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS.asItem());
+
         this.copy(new Identifier("c", "planks_that_burn"));
 
         this.getOrCreateTagBuilder(new Identifier("c", "purpur_blocks"))
