@@ -102,6 +102,19 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
         this.addDrop(BlockusBlocks.CHISELED_AMETHYST);
         this.addDrop(BlockusBlocks.AMETHYST_PILLAR);
 
+        // Herringbone Planks
+        this.addDrop(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
+
         // Other
         this.addDrop(BlockusBlocks.ACACIA_SMALL_LOGS);
         this.addDrop(BlockusBlocks.ANDESITE_CIRCULAR_PAVING);

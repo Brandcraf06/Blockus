@@ -38,7 +38,7 @@ public class WoodTypesB {
 
         this.base = base;
 
-        Block.Settings blockSettings = FabricBlockSettings.of(Material.STONE, mapcolor).strength(1.5f, 6.0f).requiresTool();
+        Block.Settings blockSettings = FabricBlockSettings.of(Material.WOOD, mapcolor).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
         ItemGroup group = Blockus.BLOCKUS_REDSTONE;
 
         this.planks =  BlocksRegistration.register(type+ "_planks", new Block(blockSettings), Blockus.BLOCKUS_BUILDING_BLOCKS);

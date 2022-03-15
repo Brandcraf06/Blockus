@@ -986,7 +986,15 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.ACACIA_PLANKS)
             .add(Blocks.DARK_OAK_PLANKS)
             .add(BlockusBlocks.BAMBOO.planks)
-            .add(BlockusBlocks.WHITE_OAK.planks);
+            .add(BlockusBlocks.WHITE_OAK.planks)
+            .add(BlockusBlocks.HERRINGBONE_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
 
         this.getOrCreateTagBuilder(new Identifier("c", "wooden_barrels"))
             .addTag(BlockusBlockTags.BARRELS);
@@ -1273,7 +1281,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHARRED.button)
             .add(BlockusBlocks.CHARRED.door)
             .add(BlockusBlocks.WARPED_SMALL_STEMS)
-            .add(BlockusBlocks.CRIMSON_SMALL_STEMS);
+            .add(BlockusBlocks.CRIMSON_SMALL_STEMS)
+            .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
 
         this.getOrCreateTagBuilder(BlockTags.OAK_LOGS)
             .add(BlockusBlocks.OAK_SMALL_LOGS);
@@ -1285,7 +1296,19 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.PLANKS)
             .add(BlockusBlocks.BAMBOO.planks)
             .add(BlockusBlocks.CHARRED.planks)
-            .add(BlockusBlocks.WHITE_OAK.planks);
+            .add(BlockusBlocks.WHITE_OAK.planks)
+            .add(BlockusBlocks.HERRINGBONE_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
+
 
         this.getOrCreateTagBuilder(BlockTags.SAPLINGS)
             .add(BlockusBlocks.WHITE_OAK_SAPLING);
