@@ -5,6 +5,7 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.BSSWTypes;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -29,6 +30,7 @@ import java.util.List;
 public class BlockusConfiguredFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> WHITE_OAK_TREE;
+    public static final RegistryEntry<PlacedFeature> WHITE_OAK_CHECKED;
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> RAINBOW_ROSE_BONEMEAL;
 
     public static TreeFeatureConfig.Builder white_oak() {
@@ -38,6 +40,7 @@ public class BlockusConfiguredFeatures {
     static {
 
         WHITE_OAK_TREE = ConfiguredFeatures.register("white_oak", Feature.TREE, white_oak().build());
+        WHITE_OAK_CHECKED = PlacedFeatures.register("oak_checked", BlockusConfiguredFeatures.WHITE_OAK_TREE, new PlacementModifier[]{PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)});
         RAINBOW_ROSE_BONEMEAL = ConfiguredFeatures.register("rainbow_rose_bonemeal", Feature.FLOWER, new RandomPatchFeatureConfig(6, 5, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
 
     }
