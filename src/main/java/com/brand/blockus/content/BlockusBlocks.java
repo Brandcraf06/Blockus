@@ -147,6 +147,18 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLUESTONE_CIRCULAR_PAVING = register("bluestone_circle_pavement", new OrientableBlockBase(FabricBlockSettings.copy(BlockusBlocks.BLUESTONE_BRICKS.block)));
     public static final Block BLUESTONE_LINES = register("bluestone_lines", new PillarBlock(FabricBlockSettings.copy(BlockusBlocks.BLUESTONE_BRICKS.block)));
 
+    // Viridite
+    public static final BSSWTypes VIRIDITE = new BSSWTypes("viridite", Blocks.DEEPSLATE, MapColor.DARK_GREEN);
+    public static final BSSTypes POLISHED_VIRIDITE = new BSSTypes("polished_viridite", BlockusBlocks.VIRIDITE.block);
+    public static final BSSWTypes VIRIDITE_BRICKS = new BSSWTypes("viridite_bricks", VIRIDITE.block);
+    public static final BSSWTypes SMALL_VIRIDITE_BRICKS = new BSSWTypes("small_viridite_bricks", VIRIDITE_BRICKS.block);
+    public static final BSSWTypes VIRIDITE_TILES = new BSSWTypes("viridite_tiles", VIRIDITE_BRICKS.block);
+    public static final Block VIRIDITE_PILLAR = registerPillar(BlockusBlocks.VIRIDITE.block);
+    public static final Block CHISELED_VIRIDITE = register("chiseled_viridite", new Block(FabricBlockSettings.copy(BlockusBlocks.VIRIDITE_BRICKS.block)));
+    public static final Block VIRIDITE_SQUARES = register("viridite_squares", new Block(FabricBlockSettings.copy(BlockusBlocks.VIRIDITE_BRICKS.block)));
+    public static final Block VIRIDITE_CIRCULAR_PAVING = register("viridite_circular_paving", new OrientableBlockBase(FabricBlockSettings.copy(BlockusBlocks.VIRIDITE_BRICKS.block)));
+    public static final Block VIRIDITE_LINES = register("viridite_lines", new PillarBlock(FabricBlockSettings.copy(BlockusBlocks.VIRIDITE_BRICKS.block)));
+
     // Lava	Bricks
     public static final BSSWTypes LAVA_BRICKS = new BSSWTypes("lava_bricks", Blocks.STONE_BRICKS, 15);
     public static final Block CHISELED_LAVA_BRICKS = register("chiseled_lava_bricks", new Block(FabricBlockSettings.copy(BlockusBlocks.LAVA_BRICKS.block)));
@@ -685,6 +697,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LIMESTONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.LIMESTONE.block);
     public static final Block MARBLE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.MARBLE.block);
     public static final Block BLUESTONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.BLUESTONE.block);
+    public static final Block VIRIDITE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.VIRIDITE.block);
     public static final Block POLISHED_NETHERRACK_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.POLISHED_NETHERRACK.block);
     public static final Block POLISHED_END_STONE_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, BlockusBlocks.POLISHED_END_STONE.block);
     public static final Block POLISHED_BASALT_PRESSURE_PLATE = registerPressurePlate(PressurePlateBlock.ActivationRule.MOBS, Blocks.POLISHED_BASALT);
@@ -698,6 +711,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LIMESTONE_BUTTON = registerStoneButton(BlockusBlocks.LIMESTONE.block);
     public static final Block MARBLE_BUTTON = registerStoneButton(BlockusBlocks.MARBLE.block);
     public static final Block BLUESTONE_BUTTON = registerStoneButton(BlockusBlocks.BLUESTONE.block);
+    public static final Block VIRIDITE_BUTTON = registerStoneButton(BlockusBlocks.VIRIDITE.block);
     public static final Block POLISHED_NETHERRACK_BUTTON = registerStoneButton(BlockusBlocks.POLISHED_NETHERRACK.block);
     public static final Block POLISHED_END_STONE_BUTTON = registerStoneButton(BlockusBlocks.POLISHED_END_STONE.block);
     public static final Block POLISHED_BASALT_BUTTON = registerStoneButton(Blocks.POLISHED_BASALT);
