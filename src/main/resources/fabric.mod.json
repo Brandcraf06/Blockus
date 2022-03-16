@@ -34,7 +34,7 @@
   "depends": {
     "fabricloader": ">=0.13.2",
     "fabric": ">=0.46.0",
-    "terraform-wood-api-v1": ">=2.0.1",
+    "terraform-wood-api-v1": ">=3.0.0",
     "minecraft": "1.18.x",
     "java": ">=17"
   },

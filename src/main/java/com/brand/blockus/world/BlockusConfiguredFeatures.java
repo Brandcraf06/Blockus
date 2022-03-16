@@ -40,7 +40,7 @@ public class BlockusConfiguredFeatures {
     static {
 
         WHITE_OAK_TREE = ConfiguredFeatures.register("white_oak", Feature.TREE, white_oak().build());
-        WHITE_OAK_CHECKED = PlacedFeatures.register("oak_checked", BlockusConfiguredFeatures.WHITE_OAK_TREE, new PlacementModifier[]{PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)});
+        WHITE_OAK_CHECKED = PlacedFeatures.register("white_oak_checked", BlockusConfiguredFeatures.WHITE_OAK_TREE, new PlacementModifier[]{PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)});
         RAINBOW_ROSE_BONEMEAL = ConfiguredFeatures.register("rainbow_rose_bonemeal", Feature.FLOWER, new RandomPatchFeatureConfig(6, 5, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
 
     }
@@ -87,7 +87,7 @@ public class BlockusConfiguredFeatures {
         ConfiguredFeature<?, ?> WHITE_OAK = new ConfiguredFeature<>(Feature.TREE, white_oak().build());
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("white_oak"), WHITE_OAK);
 
-        RegistryKey<PlacedFeature> treeWhiteOak = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak_checked"));
+        RegistryKey<PlacedFeature> treeWhiteOak = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak_tree"));
         Registry.register(BuiltinRegistries.PLACED_FEATURE, treeWhiteOak.getValue(), new PlacedFeature(RegistryEntry.of(WHITE_OAK), List.of(new PlacementModifier[]{RarityFilterPlacementModifier.of(48), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))})));
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, treeWhiteOak);
 
