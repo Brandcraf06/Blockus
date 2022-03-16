@@ -29,9 +29,9 @@ import java.util.List;
 
 public class BlockusConfiguredFeatures {
 
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> WHITE_OAK_TREE;
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> WHITE_OAK_TREE;
     public static final RegistryEntry<PlacedFeature> WHITE_OAK_CHECKED;
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> RAINBOW_ROSE_BONEMEAL;
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> RAINBOW_ROSE_BONEMEAL;
 
     public static TreeFeatureConfig.Builder white_oak() {
         return new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG), new StraightTrunkPlacer(7, 2, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines();
@@ -39,11 +39,12 @@ public class BlockusConfiguredFeatures {
 
     static {
 
-        WHITE_OAK_TREE = ConfiguredFeatures.register("white_oak", Feature.TREE, white_oak().build());
-        WHITE_OAK_CHECKED = PlacedFeatures.register("white_oak_checked", BlockusConfiguredFeatures.WHITE_OAK_TREE, new PlacementModifier[]{PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)});
-        RAINBOW_ROSE_BONEMEAL = ConfiguredFeatures.register("rainbow_rose_bonemeal", Feature.FLOWER, new RandomPatchFeatureConfig(6, 5, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
+        WHITE_OAK_TREE = BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("white_oak_tree"), new ConfiguredFeature<>(Feature.TREE, white_oak().build()));
+        WHITE_OAK_CHECKED = BuiltinRegistries.add(BuiltinRegistries.PLACED_FEATURE, Blockus.id("white_oak_checked"), new PlacedFeature(BlockusConfiguredFeatures.WHITE_OAK_TREE, List.of(new PlacementModifier[]{PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)})));
+        RAINBOW_ROSE_BONEMEAL = BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("rainbow_rose_bonemeal"), new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(6, 5, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE))))));
 
     }
+
 
     public static void registerConfiguredFeature() {
 

@@ -11,7 +11,7 @@ import java.util.Random;
 public class WhiteOakSaplingGenerator extends SaplingGenerator {
 
 
-    protected RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> getTreeFeature(Random random, boolean bees) {
+    protected RegistryEntry<? extends ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
         return BlockusConfiguredFeatures.WHITE_OAK_TREE;
     }
 }
