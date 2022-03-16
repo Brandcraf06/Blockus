@@ -80,7 +80,7 @@ public class BlockusConfiguredFeatures {
 
         RegistryKey<PlacedFeature> oreViridite = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_viridite"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreViridite.getValue(), ORE_VIRIDITE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreViridite.getValue(), ORE_VIRIDITE.withPlacement(modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16)))));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreViridite.getValue(), ORE_VIRIDITE.withPlacement(modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreViridite);
 
         // white oak
