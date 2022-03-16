@@ -27,7 +27,7 @@ import java.util.List;
 
 public class BlockusConfiguredFeatures {
 
-    public static final ConfiguredFeature<TreeFeatureConfig, ?> WHITE_OAK;
+    public static final ConfiguredFeature<TreeFeatureConfig, ?> WHITE_OAK_TREE;
     public static final ConfiguredFeature<?, ?> RAINBOW_ROSE_BONEMEAL;
 
 
@@ -36,9 +36,13 @@ public class BlockusConfiguredFeatures {
     }
 
     static {
-        WHITE_OAK = ConfiguredFeatures.register("white_oak", Feature.TREE.configure(white_oak().ignoreVines().build()));
-        RAINBOW_ROSE_BONEMEAL = ConfiguredFeatures.register("rainbow_rose_bonemeal", Feature.FLOWER.configure(new RandomPatchFeatureConfig(6, 5, 2, () -> Feature.SIMPLE_BLOCK.configure(new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE))).withBlockPredicateFilter(BlockPredicate.matchingBlocks(List.of(Blocks.AIR, Blocks.GRASS, Blocks.TALL_GRASS, Blocks.FERN, Blocks.LARGE_FERN), BlockPos.ORIGIN)))));
+        WHITE_OAK_TREE = BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("white_oak_tree"), new ConfiguredFeature<>(Feature.TREE, white_oak().build()));
+        RAINBOW_ROSE_BONEMEAL = BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("rainbow_rose_bonemeal"), new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(6, 5, 2, () -> Feature.SIMPLE_BLOCK.configure(new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE))).withBlockPredicateFilter(BlockPredicate.matchingBlocks(List.of(Blocks.AIR, Blocks.GRASS, Blocks.TALL_GRASS, Blocks.FERN, Blocks.LARGE_FERN), BlockPos.ORIGIN)))));
+
     }
+
+
+
 
     public static void registerConfiguredFeature() {
 

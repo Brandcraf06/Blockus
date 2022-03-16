@@ -10,6 +10,6 @@ public class WhiteOakSaplingGenerator extends SaplingGenerator {
 
 
     protected ConfiguredFeature<?, ?> getTreeFeature(Random random, boolean bees) {
-        return BlockusConfiguredFeatures.WHITE_OAK;
+        return BlockusConfiguredFeatures.WHITE_OAK_TREE;
     }
 }
