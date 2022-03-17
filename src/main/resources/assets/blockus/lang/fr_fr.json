@@ -280,6 +280,7 @@
   "block.blockus.quartz_tiles": "Carrelage en quartz",
   "block.blockus.quartz_tile_slab": "Dalle de carrelage en quartz",
   "block.blockus.quartz_tile_stairs": "Escalier de carrelage en quartz",
+  "block.blockus.quartz_tile_wall": "Muret de carrelage en quartz",
   "block.blockus.wooden_frame": "Armature en bois",
   "block.blockus.membrane_block": "Bloc de membrane",
   "block.blockus.blaze_lantern": "Lanterne de Blaze",
@@ -1081,5 +1082,14 @@
   "block.blockus.herringbone_bamboo_planks": "Planches de bambou à chevron",
   "block.blockus.herringbone_charred_planks": "Planches carbonnisées à chevron",
   "block.blockus.herringbone_crimson_planks": "Planches carmin à chevron",
-  "block.blockus.herringbone_warped_planks": "Planches biscornues à chevron"
+  "block.blockus.herringbone_warped_planks": "Planches biscornues à chevron",
+
+  "block.blockus.stone_tiles": "Roche carrelée",
+  "block.blockus.stone_tile_slab": "Dalle de roche carrelée",
+  "block.blockus.stone_tile_stairs": "Escalier en roche carrelée",
+  "block.blockus.stone_tile_wall": "Muret de roche carrelée",
+  "block.blockus.polished_blackstone_tiles": "Pierre noire carrelée",
+  "block.blockus.polished_blackstone_tile_slab": "Dalle de pierre noire carrelée",
+  "block.blockus.polished_blackstone_tile_stairs": "Escalier en pierre noire carrelée",
+  "block.blockus.polished_blackstone_tile_wall": "Muret en pierre noire carrelée"
 }
