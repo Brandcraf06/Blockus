@@ -1,5 +1,8 @@
 package com.brand.blockus.compatibility.content;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.BSSWTypes;
@@ -12,6 +15,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public final class BlockusColumnBlocks {
+    public static final Set<BlockusColumnType> COLUMN_TYPES = new HashSet<>();
+
     private BlockusColumnBlocks() {
         return;
     }
@@ -24,6 +29,8 @@ public final class BlockusColumnBlocks {
 
         Item item = new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_DECORATIONS));
         Registry.register(Registry.ITEM, id, item);
+
+        COLUMN_TYPES.add(new BlockusColumnType(block, base, id));
     }
 
     public static void init() {
@@ -80,5 +87,17 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("phantom_purpur_brick_column", BlockusBlocks.PHANTOM_PURPUR_BRICKS.block);
         registerColumnBlockAndItem("small_phantom_purpur_brick_column", BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS.block);
         registerColumnBlockAndItem("rainbow_brick_column", BlockusBlocks.RAINBOW_BRICKS.block);
+    }
+
+    public static class BlockusColumnType {
+        public final Block block;
+        public final Block base;
+        public final Identifier id;
+
+        private BlockusColumnType(Block block, Block base, Identifier id) {
+            this.block = block;
+            this.base = base;
+            this.id = id;
+        } 
     }
 }
