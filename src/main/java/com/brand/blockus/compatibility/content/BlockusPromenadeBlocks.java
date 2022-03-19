@@ -1,4 +1,4 @@
-package com.brand.blockus.compatibility.content.promenade;
+package com.brand.blockus.compatibility.content;
 
 import com.brand.blockus.content.BlocksRegistration;
 import com.hugman.dawn.api.object.block.PlantPileBlock;

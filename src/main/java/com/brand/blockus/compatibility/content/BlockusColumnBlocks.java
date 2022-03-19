@@ -34,6 +34,8 @@ public final class BlockusColumnBlocks {
     }
 
     public static void init() {
+        registerColumnBlockAndItem("stone_tile_column", BlockusBlocks.STONE_TILES.block);
+        registerColumnBlockAndItem("polished_blackstone_tile_column", BlockusBlocks.POLISHED_BLACKSTONE_TILES.block);
         registerColumnBlockAndItem("andesite_brick_column", BlockusBlocks.ANDESITE_BRICKS.block);
         registerColumnBlockAndItem("diorite_brick_column", BlockusBlocks.DIORITE_BRICKS.block);
         registerColumnBlockAndItem("granite_brick_column", BlockusBlocks.GRANITE_BRICKS.block);
@@ -55,6 +57,10 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("bluestone_tile_column", BlockusBlocks.BLUESTONE_TILES.block);
         registerColumnBlockAndItem("bluestone_brick_column", BlockusBlocks.BLUESTONE_BRICKS.block);
         registerColumnBlockAndItem("small_bluestone_brick_column", BlockusBlocks.SMALL_BLUESTONE_BRICKS.block);
+        registerColumnBlockAndItem("viridite_column", BlockusBlocks.VIRIDITE.block);
+        registerColumnBlockAndItem("viridite_tile_column", BlockusBlocks.VIRIDITE_TILES.block);
+        registerColumnBlockAndItem("viridite_brick_column", BlockusBlocks.VIRIDITE_BRICKS.block);
+        registerColumnBlockAndItem("small_viridite_brick_column", BlockusBlocks.SMALL_VIRIDITE_BRICKS.block);
         registerColumnBlockAndItem("lava_brick_column", BlockusBlocks.LAVA_BRICKS.block);
         registerColumnBlockAndItem("lava_polished_blackstone_brick_column", BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS.block);
         registerColumnBlockAndItem("water_brick_column", BlockusBlocks.WATER_BRICKS.block);
@@ -81,12 +87,45 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("soul_sandstone_brick_column", BlockusBlocks.SOUL_SANDSTONE_BRICKS.block);
         registerColumnBlockAndItem("small_soul_sandstone_brick_column", BlockusBlocks.SMALL_SOUL_SANDSTONE_BRICKS.block);
         registerColumnBlockAndItem("honeycomb_brick_column", BlockusBlocks.HONEYCOMB_BRICKS.block);
-        registerColumnBlockAndItem("small_end_stone_brick_column", BlockusBlocks.SMALL_PURPUR_BRICKS.block);
+        registerColumnBlockAndItem("small_end_stone_brick_column", BlockusBlocks.SMALL_END_STONE_BRICKS.block);
         registerColumnBlockAndItem("purpur_brick_column", BlockusBlocks.PURPUR_BRICKS.block);
         registerColumnBlockAndItem("small_purpur_brick_column", BlockusBlocks.SMALL_PURPUR_BRICKS.block);
         registerColumnBlockAndItem("phantom_purpur_brick_column", BlockusBlocks.PHANTOM_PURPUR_BRICKS.block);
         registerColumnBlockAndItem("small_phantom_purpur_brick_column", BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS.block);
         registerColumnBlockAndItem("rainbow_brick_column", BlockusBlocks.RAINBOW_BRICKS.block);
+
+        registerColumnBlockAndItem("white_stone_brick_columns", BlockusBlocks.WHITE_STONE_BRICKS.block);
+        registerColumnBlockAndItem("orange_stone_brick_columns", BlockusBlocks.ORANGE_STONE_BRICKS.block);
+        registerColumnBlockAndItem("magenta_stone_brick_columns", BlockusBlocks.MAGENTA_STONE_BRICKS.block);
+        registerColumnBlockAndItem("light_blue_stone_brick_columns", BlockusBlocks.LIGHT_BLUE_STONE_BRICKS.block);
+        registerColumnBlockAndItem("yellow_stone_brick_columns", BlockusBlocks.YELLOW_STONE_BRICKS.block);
+        registerColumnBlockAndItem("lime_stone_brick_columns", BlockusBlocks.LIME_STONE_BRICKS.block);
+        registerColumnBlockAndItem("pink_stone_brick_columns", BlockusBlocks.PINK_STONE_BRICKS.block);
+        registerColumnBlockAndItem("gray_stone_brick_columns", BlockusBlocks.GRAY_STONE_BRICKS.block);
+        registerColumnBlockAndItem("cyan_stone_brick_columns", BlockusBlocks.CYAN_STONE_BRICKS.block);
+        registerColumnBlockAndItem("purple_stone_brick_columns", BlockusBlocks.PURPLE_STONE_BRICKS.block);
+        registerColumnBlockAndItem("blue_stone_brick_columns", BlockusBlocks.BLUE_STONE_BRICKS.block);
+        registerColumnBlockAndItem("brown_stone_brick_columns", BlockusBlocks.BROWN_STONE_BRICKS.block);
+        registerColumnBlockAndItem("green_stone_brick_columns", BlockusBlocks.GREEN_STONE_BRICKS.block);
+        registerColumnBlockAndItem("red_stone_brick_columns", BlockusBlocks.RED_STONE_BRICKS.block);
+        registerColumnBlockAndItem("black_stone_brick_columns", BlockusBlocks.BLACK_STONE_BRICKS.block);
+
+        registerColumnBlockAndItem("white_concrete_brick_columns", BlockusBlocks.WHITE_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("orange_concrete_brick_columns", BlockusBlocks.ORANGE_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("magenta_concrete_brick_columns", BlockusBlocks.MAGENTA_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("light_blue_concrete_brick_columns", BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("yellow_concrete_brick_columns", BlockusBlocks.YELLOW_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("lime_concrete_brick_columns", BlockusBlocks.LIME_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("pink_concrete_brick_columns", BlockusBlocks.PINK_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("gray_concrete_brick_columns", BlockusBlocks.GRAY_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("light_gray_concrete_brick_columns", BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("cyan_concrete_brick_columns", BlockusBlocks.CYAN_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("purple_concrete_brick_columns", BlockusBlocks.PURPLE_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("blue_concrete_brick_columns", BlockusBlocks.BLUE_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("brown_concrete_brick_columns", BlockusBlocks.BROWN_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("green_concrete_brick_columns", BlockusBlocks.GREEN_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("red_concrete_brick_columns", BlockusBlocks.RED_CONCRETE_BRICKS.block);
+        registerColumnBlockAndItem("black_concrete_brick_columns", BlockusBlocks.BLACK_CONCRETE_BRICKS.block);
     }
 
     public static class BlockusColumnType {

@@ -1,4 +1,4 @@
-package com.brand.blockus.data.provider.columns;
+package com.brand.blockus.compatibility.data.provider.columns;
 
 import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.compatibility.content.BlockusColumnBlocks.BlockusColumnType;

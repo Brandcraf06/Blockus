@@ -1,4 +1,4 @@
-package com.brand.blockus.data.provider.columns;
+package com.brand.blockus.compatibility.data.provider.columns;
 
 import io.github.haykam821.columns.Main;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;

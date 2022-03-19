@@ -339,6 +339,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.RED_CONCRETE_BRICKS.pillar)
             .add(BlockusBlocks.BLACK_CONCRETE_BRICKS.pillar);
 
+        this.getOrCreateTagBuilder(BlockTags.CRYSTAL_SOUND_BLOCKS)
+            .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
+
         this.getOrCreateTagBuilder(BlockusBlockTags.DEEPSLATE_BLOCKS)
             .add(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS.block)
             .add(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS.stairs)
