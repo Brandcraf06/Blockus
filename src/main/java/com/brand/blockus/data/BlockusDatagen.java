@@ -27,7 +27,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
 
         dataGenerator.addProvider(BlockusBlockLootTableProvider::new);
 
-        if (FabricLoader.getInstance().isModLoaded("columns")) {
+
         dataGenerator.addProvider(BlockusColumnsBlockLootTableProvider::new);
         dataGenerator.addProvider(BlockusColumnsModelProvider::new);
         dataGenerator.addProvider(BlockusColumnsRecipeProvider::new);
@@ -35,7 +35,6 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         FabricTagProvider.BlockTagProvider columnsBlockTags = new BlockusColumnsBlockTagProvider(dataGenerator);
         dataGenerator.addProvider(columnsBlockTags);
         dataGenerator.addProvider(new BlockusColumnsItemTagProvider(dataGenerator, columnsBlockTags));
-        }
     }
 
     public static ConditionJsonProvider getLoadCondition(String... modIds) {

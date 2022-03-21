@@ -35,7 +35,7 @@ dependencies {
   modCompileOnly "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_shapes_api_version}"
 
 	// Columns
-  modCompileOnly "curse.maven:columns-385230:3697328"
+  modImplementation "curse.maven:columns-385230:3697328"
 
 	// Promenade
   modCompileOnly "curse.maven:promenade-399648:3553043"
@@ -51,7 +51,8 @@ loom {
 
 			name "Data Generation"
 			vmArg "-Dfabric-api.datagen"
-			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+      vmArg "-Dfabric-api.datagen.modid=blockus"
+      vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
 
 			runDir "build/datagen"
 		}
