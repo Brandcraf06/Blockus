@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "blockus:block/limestone_lines",
+    "side": "blockus:block/limestone_lines"
+  }
+}

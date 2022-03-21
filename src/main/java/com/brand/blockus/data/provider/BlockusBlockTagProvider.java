@@ -189,6 +189,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_BLUESTONE_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_BLUESTONE)
             .add(BlockusBlocks.BLUESTONE_CIRCULAR_PAVING)
+            .add(BlockusBlocks.CHISELED_BLUESTONE_PILLAR)
             .add(BlockusBlocks.BLUESTONE_LINES);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BRICKS_BLOCKS)
@@ -499,6 +500,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_LIMESTONE_BRICKS.stairs)
             .add(BlockusBlocks.SMALL_LIMESTONE_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_LIMESTONE)
+            .add(BlockusBlocks.CHISELED_LIMESTONE_PILLAR)
+            .add(BlockusBlocks.LIMESTONE_LINES)
             .add(BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.VIRIDITE)
@@ -520,6 +523,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_VIRIDITE_BRICKS.stairs)
             .add(BlockusBlocks.SMALL_VIRIDITE_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_VIRIDITE)
+            .add(BlockusBlocks.CHISELED_VIRIDITE_PILLAR)
             .add(BlockusBlocks.VIRIDITE_CIRCULAR_PAVING)
             .add(BlockusBlocks.VIRIDITE_LINES);
 
@@ -553,6 +557,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_MARBLE_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_MARBLE_PILLAR)
             .add(BlockusBlocks.CHISELED_MARBLE)
+            .add(BlockusBlocks.MARBLE_LINES)
             .add(BlockusBlocks.MARBLE_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.NEON)

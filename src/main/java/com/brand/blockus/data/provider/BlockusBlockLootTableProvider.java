@@ -84,6 +84,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
 
         // Viridite
         this.addDrop(BlockusBlocks.CHISELED_VIRIDITE);
+        this.addDrop(BlockusBlocks.CHISELED_VIRIDITE_PILLAR);
         this.addDrop(BlockusBlocks.VIRIDITE_BUTTON);
         this.addDrop(BlockusBlocks.VIRIDITE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.VIRIDITE_PILLAR);
@@ -174,6 +175,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
         this.addDrop(BlockusBlocks.CHISELED_MAGMA_BRICKS);
         this.addDrop(BlockusBlocks.CHISELED_MARBLE);
         this.addDrop(BlockusBlocks.CHISELED_MARBLE_PILLAR);
+        this.addDrop(BlockusBlocks.CHISELED_LIMESTONE_PILLAR);
+        this.addDrop(BlockusBlocks.CHISELED_BLUESTONE_PILLAR);
         this.addDrop(BlockusBlocks.CHISELED_PHANTOM_PURPUR);
         this.addDrop(BlockusBlocks.CHISELED_POLISHED_BASALT);
         this.addDrop(BlockusBlocks.CHISELED_PRISMARINE);
@@ -298,6 +301,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
         this.addDrop(BlockusBlocks.LIMESTONE_PILLAR);
         this.addDrop(BlockusBlocks.LIMESTONE_PRESSURE_PLATE);
         this.addDrop(BlockusBlocks.LIMESTONE_SQUARES);
+        this.addDrop(BlockusBlocks.LIMESTONE_LINES);
         this.addDrop(BlockusBlocks.LOVE_BLOCK);
         this.addDrop(BlockusBlocks.MAGENTA_BLACK_COLORED_TILES);
         this.addDrop(BlockusBlocks.MAGENTA_COLORED_TILES);
@@ -313,6 +317,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
         this.addDrop(BlockusBlocks.MARBLE_PILLAR);
         this.addDrop(BlockusBlocks.MARBLE_PRESSURE_PLATE);
         this.addDrop(BlockusBlocks.MARBLE_SQUARES);
+        this.addDrop(BlockusBlocks.MARBLE_LINES);
         this.addDrop(BlockusBlocks.MEMBRANE_BLOCK);
         this.addDrop(BlockusBlocks.MOSS_SMALL_HEDGE);
         this.addDrop(BlockusBlocks.NETHER_BRICK_PILLAR);
