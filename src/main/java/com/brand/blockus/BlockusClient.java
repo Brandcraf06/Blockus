@@ -35,15 +35,15 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.WATER_BRICKS.slab, Blocks.WATER);
         registerBlockColor(BlockusBlocks.WATER_BRICKS.wall, Blocks.WATER);
         registerBlockColor(BlockusBlocks.CHISELED_WATER_BRICKS, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN, Blocks.POTTED_FERN);
-        registerBlockColor(BlockusBlocks.POTTED_OAK, Blocks.OAK_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_SPRUCE, Blocks.SPRUCE_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_BIRCH, Blocks.BIRCH_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_JUNGLE, Blocks.JUNGLE_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_ACACIA, Blocks.ACACIA_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_DARK_OAK, Blocks.DARK_OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN.block, Blocks.POTTED_FERN);
+        registerBlockColor(BlockusBlocks.POTTED_OAK.block, Blocks.OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_SPRUCE.block, Blocks.SPRUCE_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_BIRCH.block, Blocks.BIRCH_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_JUNGLE.block, Blocks.JUNGLE_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_ACACIA.block, Blocks.ACACIA_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_DARK_OAK.block, Blocks.DARK_OAK_LEAVES);
 
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.POTTED_WHITE_OAK);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.POTTED_WHITE_OAK.block);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
@@ -71,21 +71,21 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.GOLDEN_BARS,
             BlockusBlocks.RAINBOW_ROSE,
             BlockusBlocks.POTTED_RAINBOW_ROSE,
-            BlockusBlocks.POTTED_ROSE_BUSH,
-            BlockusBlocks.POTTED_LILAC,
-            BlockusBlocks.POTTED_PEONY,
-            BlockusBlocks.POTTED_LARGE_FERN,
-            BlockusBlocks.POTTED_OAK,
-            BlockusBlocks.POTTED_SPRUCE,
-            BlockusBlocks.POTTED_BIRCH,
-            BlockusBlocks.POTTED_JUNGLE,
-            BlockusBlocks.POTTED_ACACIA,
-            BlockusBlocks.POTTED_DARK_OAK,
-            BlockusBlocks.POTTED_WHITE_OAK,
-            BlockusBlocks.POTTED_CACTUS_LARGE,
-            BlockusBlocks.POTTED_BAMBOO_LARGE,
-            BlockusBlocks.POTTED_AZALEA_LARGE,
-            BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE,
+            BlockusBlocks.POTTED_ROSE_BUSH.block,
+            BlockusBlocks.POTTED_LILAC.block,
+            BlockusBlocks.POTTED_PEONY.block,
+            BlockusBlocks.POTTED_LARGE_FERN.block,
+            BlockusBlocks.POTTED_OAK.block,
+            BlockusBlocks.POTTED_SPRUCE.block,
+            BlockusBlocks.POTTED_BIRCH.block,
+            BlockusBlocks.POTTED_JUNGLE.block,
+            BlockusBlocks.POTTED_ACACIA.block,
+            BlockusBlocks.POTTED_DARK_OAK.block,
+            BlockusBlocks.POTTED_WHITE_OAK.block,
+            BlockusBlocks.POTTED_CACTUS_LARGE.block,
+            BlockusBlocks.POTTED_BAMBOO_LARGE.block,
+            BlockusBlocks.POTTED_AZALEA_LARGE.block,
+            BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block,
             BlockusBlocks.BLACKSTONE_DOOR,
             BlockusBlocks.BLACKSTONE_TRAPDOOR
 

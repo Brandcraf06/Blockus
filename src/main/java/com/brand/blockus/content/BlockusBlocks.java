@@ -398,25 +398,25 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Large Flower Pots
     public static final Block LARGE_FLOWER_POT = register("large_flower_pot", createLargeFlowerPot(Blocks.AIR));
-    public static final Block POTTED_ROSE_BUSH = registerNoItem("potted_rose_bush", createPottedDoublePlant(Blocks.ROSE_BUSH));
-    public static final Block POTTED_LILAC = registerNoItem("potted_lilac", createPottedDoublePlant(Blocks.LILAC));
-    public static final Block POTTED_PEONY = registerNoItem( "potted_peony", createPottedDoublePlant(Blocks.PEONY));
-    public static final Block POTTED_LARGE_FERN = registerNoItem( "potted_large_fern", createPottedDoublePlant(Blocks.LARGE_FERN));
-    public static final Block POTTED_OAK = registerNoItem( "potted_oak", createPottedDoublePlant(Blocks.OAK_SAPLING));
-    public static final Block POTTED_SPRUCE = registerNoItem( "potted_spruce", createPottedDoublePlant(Blocks.SPRUCE_SAPLING));
-    public static final Block POTTED_BIRCH = registerNoItem( "potted_birch", createPottedDoublePlant(Blocks.BIRCH_SAPLING));
-    public static final Block POTTED_JUNGLE = registerNoItem("potted_jungle", createPottedDoublePlant(Blocks.JUNGLE_SAPLING));
-    public static final Block POTTED_ACACIA = registerNoItem( "potted_acacia", createPottedDoublePlant(Blocks.ACACIA_SAPLING));
-    public static final Block POTTED_DARK_OAK = registerNoItem( "potted_dark_oak", createPottedDoublePlant(Blocks.DARK_OAK_SAPLING));
-    public static final Block POTTED_WHITE_OAK = registerNoItem("potted_white_oak", createPottedDoublePlant(WHITE_OAK_SAPLING));
-    public static final Block POTTED_HUGE_RED_MUSHROOM = registerNoItem("potted_huge_red_mushroom", createPottedDoublePlant(Blocks.RED_MUSHROOM));
-    public static final Block POTTED_HUGE_BROWN_MUSHROOM = registerNoItem( "potted_huge_brown_mushroom", createPottedDoublePlant(Blocks.BROWN_MUSHROOM));
-    public static final Block POTTED_HUGE_CRIMSON_FUNGUS = registerNoItem( "potted_huge_crimson_fungus", createPottedDoublePlant(Blocks.CRIMSON_FUNGUS));
-    public static final Block POTTED_HUGE_WARPED_FUNGUS = registerNoItem( "potted_huge_warped_fungus", createPottedDoublePlant(Blocks.WARPED_FUNGUS));
-    public static final Block POTTED_CACTUS_LARGE = registerNoItem( "potted_cactus_large", createPottedDoublePlant(Blocks.CACTUS));
-    public static final Block POTTED_BAMBOO_LARGE = registerNoItem( "potted_bamboo_large", createPottedDoublePlant(Blocks.BAMBOO));
-    public static final Block POTTED_AZALEA_LARGE = registerNoItem( "potted_azalea_large", createPottedDoublePlant(Blocks.AZALEA));
-    public static final Block POTTED_FLOWERING_AZALEA_LARGE = registerNoItem("potted_flowering_azalea_large", createPottedDoublePlant(Blocks.FLOWERING_AZALEA));
+    public static final PottedLargeTypes POTTED_ROSE_BUSH = new PottedLargeTypes("potted_rose_bush",Blocks.ROSE_BUSH);
+    public static final PottedLargeTypes POTTED_LILAC = new PottedLargeTypes("potted_lilac",Blocks.LILAC);
+    public static final PottedLargeTypes POTTED_PEONY = new PottedLargeTypes( "potted_peony",Blocks.PEONY);
+    public static final PottedLargeTypes POTTED_LARGE_FERN = new PottedLargeTypes( "potted_large_fern",Blocks.LARGE_FERN);
+    public static final PottedLargeTypes POTTED_OAK = new PottedLargeTypes( "potted_oak",Blocks.OAK_SAPLING);
+    public static final PottedLargeTypes POTTED_SPRUCE = new PottedLargeTypes( "potted_spruce",Blocks.SPRUCE_SAPLING);
+    public static final PottedLargeTypes POTTED_BIRCH = new PottedLargeTypes( "potted_birch",Blocks.BIRCH_SAPLING);
+    public static final PottedLargeTypes POTTED_JUNGLE = new PottedLargeTypes("potted_jungle",Blocks.JUNGLE_SAPLING);
+    public static final PottedLargeTypes POTTED_ACACIA = new PottedLargeTypes( "potted_acacia",Blocks.ACACIA_SAPLING);
+    public static final PottedLargeTypes POTTED_DARK_OAK = new PottedLargeTypes( "potted_dark_oak",Blocks.DARK_OAK_SAPLING);
+    public static final PottedLargeTypes POTTED_WHITE_OAK = new PottedLargeTypes("potted_white_oak",WHITE_OAK_SAPLING);
+    public static final PottedLargeTypes POTTED_HUGE_RED_MUSHROOM = new PottedLargeTypes("potted_huge_red_mushroom",Blocks.RED_MUSHROOM);
+    public static final PottedLargeTypes POTTED_HUGE_BROWN_MUSHROOM = new PottedLargeTypes( "potted_huge_brown_mushroom",Blocks.BROWN_MUSHROOM);
+    public static final PottedLargeTypes POTTED_HUGE_CRIMSON_FUNGUS = new PottedLargeTypes( "potted_huge_crimson_fungus",Blocks.CRIMSON_FUNGUS);
+    public static final PottedLargeTypes POTTED_HUGE_WARPED_FUNGUS = new PottedLargeTypes( "potted_huge_warped_fungus",Blocks.WARPED_FUNGUS);
+    public static final PottedLargeTypes POTTED_CACTUS_LARGE = new PottedLargeTypes( "potted_cactus_large",Blocks.CACTUS);
+    public static final PottedLargeTypes POTTED_BAMBOO_LARGE = new PottedLargeTypes( "potted_bamboo_large",Blocks.BAMBOO);
+    public static final PottedLargeTypes POTTED_AZALEA_LARGE = new PottedLargeTypes( "potted_azalea_large",Blocks.AZALEA);
+    public static final PottedLargeTypes POTTED_FLOWERING_AZALEA_LARGE = new PottedLargeTypes("potted_flowering_azalea_large",Blocks.FLOWERING_AZALEA);
 
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = register("sweet_berries_crate", createCrates());

@@ -1,12 +1,18 @@
 package com.brand.blockus.data.provider;
 
+import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTablesProvider;
+import net.minecraft.block.Block;
 import net.minecraft.data.server.BlockLootTableGenerator;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 
 public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider {
     public BlockusBlockLootTableProvider(FabricDataGenerator dataGenerator) {
@@ -80,6 +86,10 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
             this.addDrop(asphaltType.block);
             this.addDrop(asphaltType.stairs);
             this.addDrop(asphaltType.slab, BlockLootTableGenerator::slabDrops);
+        }
+
+        for (PottedLargeTypes pottedLargeType : PottedLargeTypes.values()) {
+            this.addPottedLargePlantDrop(pottedLargeType.block);
         }
 
         // Viridite
@@ -503,6 +513,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
         this.addDrop(BlockusBlocks.PAPER_DOOR, BlockLootTableGenerator::addDoorDrop);
         this.addDrop(BlockusBlocks.STONE_DOOR, BlockLootTableGenerator::addDoorDrop);
 
+        this.addPottedPlantDrop(BlockusBlocks.POTTED_WHITE_OAK_SAPLING);
+        this.addPottedPlantDrop(BlockusBlocks.POTTED_RAINBOW_ROSE);
+
         this.addDropWithSilkTouch(BlockusBlocks.BEVELED_GLASS);
         this.addDropWithSilkTouch(BlockusBlocks.BEVELED_GLASS_PANE);
         this.addDropWithSilkTouch(BlockusBlocks.BLACK_BEVELED_GLASS);
@@ -567,6 +580,16 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTablesProvider
         });
         this.addDrop(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, (blockx) -> {
             return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
+        });
+    }
+
+    public static LootTable.Builder pottedLargePlantDrops(ItemConvertible plant) {
+        return LootTable.builder().pool(addSurvivesExplosionCondition(BlockusBlocks.LARGE_FLOWER_POT, LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(BlockusBlocks.LARGE_FLOWER_POT)))).pool(addSurvivesExplosionCondition(plant, LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(plant))));
+    }
+
+     public void addPottedLargePlantDrop(Block block) {
+        this.addDrop(block, (flowerPot) -> {
+            return pottedLargePlantDrops(((LargeFlowerPotBlock)flowerPot).getContent());
         });
     }
 }
