@@ -51,7 +51,7 @@ public class WoodTypesB {
         this.pressure_plate =  BlocksRegistration.registerPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, this.planks);
         this.button =  BlocksRegistration.register(type + "_button", new WoodenButtonBase(FabricBlockSettings.copyOf(planks).noCollision()), group);
         this.standing_sign =  BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD)));
-        this.wall_sign =  BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
+        this.wall_sign =  BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
         this.sign =  BlockusItems.registerSign(standing_sign, wall_sign);
         this.boat =  BlockusItems.registerBoat(type + "_boat", type);
 
