@@ -4,6 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.redstone.WoodenButtonBase;
 import com.brand.blockus.content.BlocksRegistration;
 import com.brand.blockus.content.BlockusItems;
+import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -33,6 +34,7 @@ public class WoodTypesB {
     public final Block wall_sign;
     public final Item sign;
     public final Item boat;
+    public final Item chest_boat;
 
     public WoodTypesB(String type, Block base, MapColor mapcolor) {
 
@@ -53,7 +55,11 @@ public class WoodTypesB {
         this.standing_sign =  BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD)));
         this.wall_sign =  BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
         this.sign =  BlockusItems.registerSign(standing_sign, wall_sign);
-        this.boat =  BlockusItems.registerBoat(type + "_boat", type);
+        TerraformBoatType boatType = BlockusItems.registerBoat(type + "_boat", type + "_chest_boat", type);
+        this.boat = boatType.getItem();
+        this.chest_boat = boatType.getChestItem();
+
+
 
         LIST.add(this);
 

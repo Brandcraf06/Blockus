@@ -1115,6 +1115,10 @@
   "block.blockus.polished_blackstone_tile_slab": "Polished Blackstone Tile Slab",
   "block.blockus.polished_blackstone_tile_stairs": "Polished Blackstone Tile Stairs",
   "block.blockus.polished_blackstone_tile_wall": "Polished Blackstone Tile Wall",
+  
+  "item.blockus.bamboo_chest_boat": "Bamboo Boat with Chest",
+  "item.blockus.charred_chest_boat": "Charred Boat with Chest",
+  "item.blockus.white_oak_chest_boat": "White Oak Boat with Chest",
 
   "block.blockus.stone_tile_column": "Stone Tile Column",
   "block.blockus.polished_blackstone_tile_column": "Polished Blackstone Tile Column",

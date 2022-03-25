@@ -267,7 +267,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.LEGACY_COBBLESTONE);
         this.addDrop(BlockusBlocks.LEGACY_CRYING_OBSIDIAN);
         this.addDrop(BlockusBlocks.LEGACY_DIAMOND_BLOCK);
-        this.addDrop(BlockusBlocks.EXPLOSION_PROOF_LEGACY_GOLD_BLOCK);
+        this.addDrop(BlockusBlocks.LEGACY_EXPLOSION_PROOF_GOLD_BLOCK);
         this.addDrop(BlockusBlocks.LEGACY_FIRST_COBBLESTONE);
         this.addDrop(BlockusBlocks.LEGACY_FIRST_GRASS_BLOCK);
         this.addDrop(BlockusBlocks.LEGACY_GLOWING_OBSIDIAN);

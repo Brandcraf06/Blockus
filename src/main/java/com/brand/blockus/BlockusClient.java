@@ -139,9 +139,9 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.TINTED_BEVELED_GLASS
         );
 
-        TerraformBoatClientHelper.registerModelLayer(Blockus.id("bamboo"));
-        TerraformBoatClientHelper.registerModelLayer(Blockus.id( "charred"));
-        TerraformBoatClientHelper.registerModelLayer(Blockus.id( "white_oak"));
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id("bamboo"));
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "charred"));
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "white_oak"));
 
         registerSignSprite("bamboo");
         registerSignSprite("charred");

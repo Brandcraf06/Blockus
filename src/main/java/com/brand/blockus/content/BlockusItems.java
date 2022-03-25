@@ -20,16 +20,18 @@ public class BlockusItems {
         return Registry.register(Registry.ITEM, Blockus.id(id), item);
     }
 
-    public static Item registerBoat(String path, String boatPath) {
+    public static TerraformBoatType registerBoat(String path, String chestBoatPath, String boatPath) {
         Identifier id = Blockus.id(path);
+        Identifier chestId = Blockus.id(chestBoatPath);
         Identifier boatId = Blockus.id(boatPath);
 
-        Item item = TerraformBoatItemHelper.registerBoatItem(id, () -> TerraformBoatTypeRegistry.INSTANCE.get(boatId));
+        Item item = TerraformBoatItemHelper.registerBoatItem(id, () -> TerraformBoatTypeRegistry.INSTANCE.get(boatId), false);
+        Item chestItem = TerraformBoatItemHelper.registerBoatItem(chestId, () -> TerraformBoatTypeRegistry.INSTANCE.get(boatId), true);
 
-        TerraformBoatType boatType = new TerraformBoatType.Builder().item(item).build();
+        TerraformBoatType boatType = new TerraformBoatType.Builder().item(item).chestItem(chestItem).build();
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, boatId, boatType);
 
-        return item;
+        return boatType;
     }
 
     public static Item registerSign(Block standingBlock, Block wallBlock) {
