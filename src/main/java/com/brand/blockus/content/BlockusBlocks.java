@@ -801,7 +801,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_GRAVEL = registerLegacy("legacy_gravel", new GravelBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL)));
     public static final Block LEGACY_IRON_BLOCK = registerLegacy("legacy_iron_block",  new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)));
     public static final Block LEGACY_GOLD_BLOCK = registerLegacy("legacy_gold_block",  new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)));
-    public static final Block EXPLOSION_PROOF_LEGACY_GOLD_BLOCK = registerLegacy("legacy_explosion_proof_gold_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)));
+    public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = registerLegacy("legacy_explosion_proof_gold_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)));
     public static final Block LEGACY_COAL_BLOCK = registerLegacy("legacy_coal_block",  new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK)));
     public static final Block LEGACY_DIAMOND_BLOCK = registerLegacy("legacy_diamond_block",  new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK)));
     public static final Block LEGACY_LAPIS_BLOCK = registerLegacy("legacy_lapis_block",  new Block(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK)));
@@ -810,7 +810,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone",  new Block(FabricBlockSettings.copy(Blocks.GLOWSTONE)));
     public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f, 17.5f).requiresTool()));
     public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createLightBlock(50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MapColor.BLACK));
-    public static final Block NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
+    public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
 
     // Barrels (creative)
     public static final BarrelBlockBase OAK_BARREL = new BarrelBlockBase("oak_barrel", Blocks.OAK_PLANKS.getDefaultMapColor());
