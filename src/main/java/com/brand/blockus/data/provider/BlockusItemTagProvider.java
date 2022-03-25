@@ -183,7 +183,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.getOrCreateTagBuilder(ItemTags.PIGLIN_LOVED)
             .add(BlockusBlocks.LEGACY_GOLD_BLOCK.asItem())
-            .add(BlockusBlocks.EXPLOSION_PROOF_LEGACY_GOLD_BLOCK.asItem())
+            .add(BlockusBlocks.LEGACY_EXPLOSION_PROOF_GOLD_BLOCK.asItem())
             .add(BlockusBlocks.GOLDEN_CHAIN.asItem())
             .add(BlockusBlocks.GOLDEN_BARS.asItem())
             .add(BlockusBlocks.GOLDEN_GATE.asItem())
