@@ -458,7 +458,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.HERRINGBONE_TEAL_NETHER_BRICKS, BlockusBlocks.TEAL_NETHER_BRICKS.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.TEAL_NETHER_BRICK_PILLAR, BlockusBlocks.TEAL_NETHER_BRICKS.block);
         offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_TEAL_NETHER_BRICKS, BlockusBlocks.TEAL_NETHER_BRICKS.block);
-        ShapedRecipeJsonBuilder.create(BlockusBlocks.TEAL_NETHER_BRICKS.block).input('#',  BlockusItemTags.WARPED_NETHER_GRASS).input('X',  Items.NETHER_BRICK).pattern("#X").pattern("X#").criterion("has_warped_grass", conditionsFromTag(BlockusItemTags.WARPED_NETHER_GRASS)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.TEAL_NETHER_BRICKS.block).input('#',  BlockusItemTags.WARPED_NETHER_GRASS).input('X',  Items.NETHER_BRICK).pattern("#X").pattern("X#").group("teal_nether_bricks").criterion("has_warped_grass", conditionsFromTag(BlockusItemTags.WARPED_NETHER_GRASS)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(BlockusBlocks.TEAL_NETHER_BRICKS.block, 2).input(Blocks.WARPED_WART_BLOCK).input(Items.NETHER_BRICKS).group("teal_nether_bricks").criterion(hasItem(Blocks.WARPED_WART_BLOCK), conditionsFromItem(Blocks.WARPED_WART_BLOCK)).offerTo(exporter, convertBetween(BlockusBlocks.TEAL_NETHER_BRICKS.block, Blocks.WARPED_WART_BLOCK));
 
 
         // Obsidian
