@@ -10,6 +10,7 @@ import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.base.redstone.DoorBase;
 import com.brand.blockus.blocks.base.redstone.FallingRedstoneBlock;
 import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
+import com.brand.blockus.blocks.generator.LegacyOakSaplingGenerator;
 import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
 import com.brand.blockus.content.types.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -790,9 +791,13 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.BLACK).strength(5.0f, 6.0f)));
 
     // Legacy
+    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", new SaplingBlockBase(new LegacyOakSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+    public static final PottedLargeTypes POTTED_LEGACY_TREE = new PottedLargeTypes("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING);
+    public static final Block POTTED_LEGACY_SAPLING = registerNoItem("potted_legacy_sapling", createPottedPlant(LEGACY_SAPLING));
     public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", new Block(FabricBlockSettings.copy(Blocks.GRASS_BLOCK)));
     public static final Block LEGACY_GRASS_BLOCK = registerLegacy("legacy_grass_block", new Block(FabricBlockSettings.copy(Blocks.GRASS_BLOCK)));
     public static final Block LEGACY_LEAVES = registerLegacy("legacy_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.LIME).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
+    public static final Block LEGACY_LOG = registerLegacy("legacy_log", new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
     public static final Block LEGACY_BRICKS = registerLegacy("legacy_bricks", new Block(FabricBlockSettings.copy( Blocks.BRICKS)));
     public static final Block LEGACY_PLANKS = registerLegacy("legacy_planks", new Block(FabricBlockSettings.copy( Blocks.OAK_PLANKS)));
     public static final Block LEGACY_FIRST_COBBLESTONE = registerLegacy("legacy_first_cobblestone", new Block(FabricBlockSettings.copy( Blocks.COBBLESTONE)));
