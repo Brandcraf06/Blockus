@@ -695,6 +695,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         // Wood
         offerPlanksRecipe(exporter, BlockusBlocks.WHITE_OAK.planks, BlockusItemTags.WHITE_OAK_LOGS);
+
         offerBarkBlockRecipe(exporter, BlockusBlocks.WHITE_OAK_WOOD, BlockusBlocks.WHITE_OAK_LOG);
         ShapedRecipeJsonBuilder.create(BlockusBlocks.BAMBOO.planks).input('#', Items.BAMBOO).pattern("##").pattern("##").criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO)).offerTo(exporter);
         offerBoatsRecipe(exporter, BlockusBlocks.WHITE_OAK.boat, BlockusBlocks.WHITE_OAK.chest_boat, BlockusBlocks.WHITE_OAK.planks);
@@ -1059,11 +1060,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(BlockusBlocks.STARS_BLOCK, 3).input('#', Items.ENDER_PEARL).input('X', Items.CHORUS_FRUIT).pattern("X#X").pattern("###").pattern("X#X").criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT)).offerTo(exporter);
 
         // Legacy
-        offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_FIRST_GRASS_BLOCK, Blocks.GRASS_BLOCK);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_GRASS_BLOCK, Blocks.GRASS_BLOCK);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_LEAVES, Blocks.OAK_LEAVES);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_BRICKS, Blocks.BRICKS);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_PLANKS, Blocks.OAK_PLANKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_FIRST_COBBLESTONE, Blocks.COBBLESTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_COBBLESTONE, Blocks.COBBLESTONE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LEGACY_MOSSY_COBBLESTONE, Blocks.MOSSY_COBBLESTONE);
@@ -1087,6 +1084,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerShapelessRecipe(exporter, Items.LAPIS_LAZULI, BlockusBlocks.LEGACY_LAPIS_BLOCK, "lapis_lazuli", 9);
         ShapedRecipeJsonBuilder.create(BlockusBlocks.LEGACY_STONECUTTER).input('#', Blocks.COBBLESTONE).pattern("##").pattern("##").criterion(hasItem(Blocks.STONECUTTER), conditionsFromItem(Blocks.STONECUTTER)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(BlockusBlocks.LEGACY_NETHER_REACTOR_CORE).input('#', Items.DIAMOND).input('X', Items.IRON_INGOT).pattern("X#X").pattern("X#X").pattern("X#X").criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.LEGACY_SAPLING).input('#', Blocks.OAK_SAPLING).pattern("##").pattern("##").criterion(hasItem(Blocks.OAK_SAPLING), conditionsFromItem(Blocks.OAK_SAPLING)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.LEGACY_FIRST_GRASS_BLOCK, 4).input('#', BlockusBlocks.LEGACY_GRASS_BLOCK).pattern("##").pattern("##").criterion(hasItem(BlockusBlocks.LEGACY_GRASS_BLOCK), conditionsFromItem(BlockusBlocks.LEGACY_GRASS_BLOCK)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(BlockusBlocks.LEGACY_PLANKS, 4).input(BlockusBlocks.LEGACY_LOG).group("planks").criterion("has_logs", conditionsFromItem(BlockusBlocks.LEGACY_LOG)).offerTo(exporter);
 
     }
 

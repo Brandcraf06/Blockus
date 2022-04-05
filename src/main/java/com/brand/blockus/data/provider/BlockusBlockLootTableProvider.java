@@ -127,6 +127,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
 
         // Other
+        this.addDrop(BlockusBlocks.LEGACY_LOG);
+        this.addDrop(BlockusBlocks.LEGACY_SAPLING);
         this.addDrop(BlockusBlocks.ACACIA_SMALL_LOGS);
         this.addDrop(BlockusBlocks.ANDESITE_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.APPLE_CRATE);
@@ -275,7 +277,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.LEGACY_GRASS_BLOCK);
         this.addDrop(BlockusBlocks.LEGACY_IRON_BLOCK);
         this.addDrop(BlockusBlocks.LEGACY_LAPIS_BLOCK);
-        this.addDrop(BlockusBlocks.LEGACY_LEAVES);
         this.addDrop(BlockusBlocks.LEGACY_MOSSY_COBBLESTONE);
         this.addDrop(BlockusBlocks.LEGACY_PLANKS);
         this.addDrop(BlockusBlocks.LEGACY_SPONGE);
@@ -515,6 +516,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
 
         this.addPottedPlantDrop(BlockusBlocks.POTTED_WHITE_OAK_SAPLING);
         this.addPottedPlantDrop(BlockusBlocks.POTTED_RAINBOW_ROSE);
+        this.addPottedPlantDrop(BlockusBlocks.POTTED_LEGACY_SAPLING);
 
         this.addDropWithSilkTouch(BlockusBlocks.BEVELED_GLASS);
         this.addDropWithSilkTouch(BlockusBlocks.BEVELED_GLASS_PANE);

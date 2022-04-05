@@ -830,6 +830,7 @@
   "block.blockus.potted_bamboo_large": "Large Potted Bamboo",
   "block.blockus.potted_azalea_large": "Large Potted Azalea",
   "block.blockus.potted_flowering_azalea_large": "Large Potted Flowering Azalea",
+
   "block.blockus.soul_lantern_block": "Soul Lantern Block",
   "block.blockus.golden_chain": "Golden Chain",
   "block.blockus.golden_bars": "Golden Bars",
@@ -1006,6 +1007,8 @@
   "block.blockus.legacy_grass_block": "Grass Block (Legacy)",
   "block.blockus.legacy_first_grass_block": "Grass Block (Legacy)",
   "block.blockus.legacy_leaves": "Leaves (Legacy)",
+  "block.blockus.legacy_log": "Wood (Legacy)",
+  "block.blockus.legacy_sapling": "Sapling (Legacy)",
   "block.blockus.legacy_gravel": "Gravel (Legacy)",
   "block.blockus.legacy_cobblestone": "Cobblestone (Legacy)",
   "block.blockus.legacy_first_cobblestone": "Cobblestone (Legacy)",
@@ -1022,6 +1025,8 @@
   "block.blockus.legacy_glowstone": "Glowstone (Legacy)",
   "block.blockus.legacy_nether_reactor_core": "Nether Reactor Core (Legacy)",
   "block.blockus.legacy_planks": "Planks (Legacy)",
+  "block.blockus.potted_legacy_tree": "Potted Legacy Tree",
+  "block.blockus.potted_legacy_sapling": "Potted Legacy Sapling",
 
   "block.blockus.azalea_small_hedge": "Azalea Small Hedge",
   "block.blockus.azalea_small_hedge_flowers": "Flowering Azalea Small Hedge",

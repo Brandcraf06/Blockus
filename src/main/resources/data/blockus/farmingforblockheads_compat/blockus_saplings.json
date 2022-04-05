@@ -11,6 +11,9 @@
   "customEntries": [
     {
       "output": "blockus:white_oak_sapling"
+    },
+    {
+      "output": "blockus:legacy_sapling"
     }
   ]
 }

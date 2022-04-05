@@ -3,8 +3,10 @@ package com.brand.blockus.world;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.BSSWTypes;
+import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.tag.BiomeTags;
 import net.minecraft.util.Identifier;
@@ -24,6 +26,7 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.List;
@@ -33,16 +36,24 @@ public class BlockusConfiguredFeatures {
     public static final RegistryEntry<ConfiguredFeature<?, ?>> WHITE_OAK_TREE;
     public static final RegistryEntry<PlacedFeature> WHITE_OAK_CHECKED;
     public static final RegistryEntry<ConfiguredFeature<?, ?>> RAINBOW_ROSE_BONEMEAL;
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> LEGACY_OAK_TREE;
 
     public static TreeFeatureConfig.Builder white_oak() {
         return new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG), new StraightTrunkPlacer(7, 2, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines();
     }
+
+    private static TreeFeatureConfig.Builder legacy_oak() {
+        return new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.LEGACY_LOG), new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.of(BlockusBlocks.LEGACY_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3), new TwoLayersFeatureSize(1, 0, 1)).decorators(ImmutableList.of(new AlterGroundTreeDecorator(BlockStateProvider.of(BlockusBlocks.LEGACY_GRASS_BLOCK))));
+    }
+
+
 
     static {
 
         WHITE_OAK_TREE = BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("white_oak_tree"), new ConfiguredFeature<>(Feature.TREE, white_oak().build()));
         WHITE_OAK_CHECKED = BuiltinRegistries.add(BuiltinRegistries.PLACED_FEATURE, Blockus.id("white_oak_checked"), new PlacedFeature(BlockusConfiguredFeatures.WHITE_OAK_TREE, List.of(new PlacementModifier[]{PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)})));
         RAINBOW_ROSE_BONEMEAL = BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("rainbow_rose_bonemeal"), new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(6, 5, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE))))));
+        LEGACY_OAK_TREE = BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_FEATURE, Blockus.id("legacy_oak_tree"), new ConfiguredFeature<>(Feature.TREE, legacy_oak().build()));
 
     }
 

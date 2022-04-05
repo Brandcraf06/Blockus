@@ -43,7 +43,7 @@ public class BlockusClient implements ClientModInitializer {
 
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.POTTED_WHITE_OAK.block);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES, BlockusBlocks.POTTED_LEGACY_TREE.block);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
@@ -58,6 +58,8 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE,
             BlockusBlocks.LEGACY_LEAVES,
             BlockusBlocks.WHITE_OAK_LEAVES,
+            BlockusBlocks.LEGACY_SAPLING,
+            BlockusBlocks.POTTED_LEGACY_SAPLING,
             BlockusBlocks.WHITE_OAK_SAPLING,
             BlockusBlocks.POTTED_WHITE_OAK_SAPLING,
             BlockusBlocks.OBSIDIAN_REINFORCED_DOOR,
@@ -84,6 +86,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_BAMBOO_LARGE.block,
             BlockusBlocks.POTTED_AZALEA_LARGE.block,
             BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block,
+            BlockusBlocks.POTTED_LEGACY_TREE.block,
             BlockusBlocks.BLACKSTONE_DOOR,
             BlockusBlocks.BLACKSTONE_TRAPDOOR
 
