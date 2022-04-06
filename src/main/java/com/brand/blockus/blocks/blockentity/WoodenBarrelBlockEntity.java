@@ -3,6 +3,7 @@ package com.brand.blockus.blocks.blockentity;
 import com.brand.blockus.content.BlockusBlocks;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BarrelBlockEntity;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.block.entity.ViewerCountManager;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,6 +21,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 
@@ -119,9 +121,10 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 
     void playSound(BlockState state, SoundEvent soundEvent) {
         Vec3i vec3i = state.get(BarrelBlock.FACING).getVector();
-        double d = (double) this.pos.getX() + 0.5D + (double) vec3i.getX() / 2.0D;
-        double e = (double) this.pos.getY() + 0.5D + (double) vec3i.getY() / 2.0D;
-        double f = (double) this.pos.getZ() + 0.5D + (double) vec3i.getZ() / 2.0D;
-        this.world.playSound(null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+        double d = (double)this.pos.getX() + 0.5D + (double)vec3i.getX() / 2.0D;
+        double e = (double)this.pos.getY() + 0.5D + (double)vec3i.getY() / 2.0D;
+        double f = (double)this.pos.getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
+        this.world.method_43128(null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
     }
 }
+

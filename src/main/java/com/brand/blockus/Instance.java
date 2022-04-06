@@ -14,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.*;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
+import net.minecraft.world.gen.random.AbstractRandom;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -282,7 +283,7 @@ public class Instance {
             this.maxUses = maxUses;
         }
 
-        public TradeOffer create(Entity entity, Random random) {
+        public TradeOffer create(Entity entity, AbstractRandom random) {
             return new TradeOffer(new ItemStack(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, 1, 0.05f);
         }
     }
