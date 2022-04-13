@@ -9,7 +9,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.random.AbstractRandom;
+import net.minecraft.util.math.random.AbstractRandom;
 
 import java.util.Random;
 

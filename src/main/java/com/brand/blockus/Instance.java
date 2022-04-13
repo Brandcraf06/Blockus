@@ -2,7 +2,6 @@ package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.TimberFrameTypesB;
 import com.brand.blockus.content.types.WoodTypesB;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -14,7 +13,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.*;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
-import net.minecraft.world.gen.random.AbstractRandom;
+import net.minecraft.util.math.random.AbstractRandom;
 
 import java.util.HashMap;
 import java.util.Random;
