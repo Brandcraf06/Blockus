@@ -1,11 +1,7 @@
 package com.brand.blockus.compatibility.content;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.BSSWTypes;
 import io.github.haykam821.columns.block.ColumnBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -13,6 +9,9 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public final class BlockusColumnBlocks {
     public static final Set<BlockusColumnType> COLUMN_TYPES = new HashSet<>();

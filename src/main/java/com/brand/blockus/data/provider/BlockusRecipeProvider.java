@@ -16,6 +16,7 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.tag.ItemTags;
+
 import java.util.function.Consumer;
 
 public class BlockusRecipeProvider extends FabricRecipeProvider {
