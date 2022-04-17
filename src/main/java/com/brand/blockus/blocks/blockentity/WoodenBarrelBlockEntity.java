@@ -124,7 +124,7 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
         double d = (double)this.pos.getX() + 0.5D + (double)vec3i.getX() / 2.0D;
         double e = (double)this.pos.getY() + 0.5D + (double)vec3i.getY() / 2.0D;
         double f = (double)this.pos.getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
-        this.world.method_43128(null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+        this.world.playSound(null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
     }
 }
 
