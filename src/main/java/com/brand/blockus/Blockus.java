@@ -4,7 +4,6 @@ import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.compatibility.content.promenade.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.content.types.*;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
