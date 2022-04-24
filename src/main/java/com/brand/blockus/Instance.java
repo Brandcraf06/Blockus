@@ -111,6 +111,10 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.DARK_OAK_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 5, 5);
 
+        // legacy
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.LEGACY_LOG, 5, 5);
+
+
 // Fuel
         // general
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
@@ -192,6 +196,9 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_LOGS, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 300);
 
+        // legacy
+        FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_LOG, 300);
+
         // barrels
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_BARREL, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_BARREL, 300);
@@ -212,6 +219,7 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SAPLING, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.LEGACY_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusItems.RAINBOW_PETAL, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SWEET_BERRIES_CRATE, 0.50f);
@@ -253,6 +261,7 @@ public class Instance {
 
     public static void addTradeOffers() {
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
+            factories.add(new SellItemFactory(BlockusBlocks.LEGACY_SAPLING, 5, 1, 8));
             factories.add(new SellItemFactory(BlockusBlocks.WHITE_OAK_SAPLING, 5, 1, 8));
             factories.add(new SellItemFactory(BlockusItems.RAINBOW_PETAL, 1, 3, 12));
             factories.add(new SellItemFactory(BlockusBlocks.RAINBOW_ROSE, 1, 1, 12));

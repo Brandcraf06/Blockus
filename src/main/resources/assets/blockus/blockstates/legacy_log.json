@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "blockus:block/legacy_log"
+    },
+    "axis=z": {
+      "model": "blockus:block/legacy_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "blockus:block/legacy_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

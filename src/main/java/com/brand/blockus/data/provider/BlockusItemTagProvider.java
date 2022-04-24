@@ -86,7 +86,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(Items.ACACIA_PLANKS)
             .add(Items.DARK_OAK_PLANKS)
             .add(BlockusBlocks.BAMBOO.planks.asItem())
-            .add(BlockusBlocks.WHITE_OAK.planks.asItem());
+            .add(BlockusBlocks.WHITE_OAK.planks.asItem())
+            .add(BlockusBlocks.LEGACY_PLANKS.asItem());
 
         this.getOrCreateTagBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN)
             .add(BlockusBlocks.HERRINGBONE_OAK_PLANKS.asItem())
@@ -238,6 +239,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.WHITE_OAK.trapdoor.asItem());
 
         this.copy(BlockTags.WOOL, ItemTags.WOOL);
+        this.copy(BlockTags.DIRT, ItemTags.DIRT);
+
+
+
 
         this.copy(new Identifier("promenade", "cherry_oak_logs"));
 

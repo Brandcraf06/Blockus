@@ -998,6 +998,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.DARK_OAK_PLANKS)
             .add(BlockusBlocks.BAMBOO.planks)
             .add(BlockusBlocks.WHITE_OAK.planks)
+            .add(BlockusBlocks.LEGACY_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS)
@@ -1079,6 +1080,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHORUS_BLOCK)
             .add(BlockusBlocks.LEGACY_SPONGE)
             .add(BlockusBlocks.WHITE_OAK_LEAVES)
+            .add(BlockusBlocks.LEGACY_LEAVES)
             .addTag(BlockusBlockTags.THATCH)
             .addTag(BlockusBlockTags.SMALL_HEDGES);
 
@@ -1265,10 +1267,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.JUNGLE_SMALL_LOGS);
 
         this.getOrCreateTagBuilder(BlockTags.LEAVES)
-            .add(BlockusBlocks.WHITE_OAK_LEAVES);
+            .add(BlockusBlocks.WHITE_OAK_LEAVES)
+            .add(BlockusBlocks.LEGACY_LEAVES);
 
         this.getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
-            .addTag(BlockusBlockTags.WHITE_OAK_LOGS);
+            .addTag(BlockusBlockTags.WHITE_OAK_LOGS)
+            .add(BlockusBlocks.LEGACY_LOG);
 
         this.getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .addTag(BlockusBlockTags.OBSIDIAN)
@@ -1308,6 +1312,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.BAMBOO.planks)
             .add(BlockusBlocks.CHARRED.planks)
             .add(BlockusBlocks.WHITE_OAK.planks)
+            .add(BlockusBlocks.LEGACY_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS)
@@ -1511,6 +1516,14 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockTags.WOOL)
             .addTag(BlockusBlockTags.PATTERNED_WOOL);
+
+        this.getOrCreateTagBuilder(BlockTags.ANIMALS_SPAWNABLE_ON)
+            .add(BlockusBlocks.LEGACY_GRASS_BLOCK)
+            .add(BlockusBlocks.LEGACY_FIRST_GRASS_BLOCK);
+
+        this.getOrCreateTagBuilder(BlockTags.DIRT)
+            .add(BlockusBlocks.LEGACY_GRASS_BLOCK)
+            .add(BlockusBlocks.LEGACY_FIRST_GRASS_BLOCK);
 
         this.getOrCreateTagBuilder(new Identifier("promenade", "cherry_oak_logs"))
             .addOptional(new Identifier(Blockus.MOD_ID, "cherry_oak_small_logs"));
