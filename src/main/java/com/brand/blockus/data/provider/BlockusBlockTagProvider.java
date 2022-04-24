@@ -5,6 +5,7 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.tag.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.tag.BlockTags;
@@ -1205,6 +1206,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.IMPERMEABLE)
             .addTag(BlockusBlockTags.BEVELED_GLASS)
             .addTag(BlockusBlockTags.NEON);
+
+        this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)
+            .addTag(BlockusBlockTags.BEVELED_GLASS);
 
         this.getOrCreateTagBuilder(BlockTags.INFINIBURN_OVERWORLD)
             .addTag(BlockusBlockTags.NETHERRACK_BLOCKS)
