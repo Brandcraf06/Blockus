@@ -754,11 +754,11 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerReversibleCompactingRecipes(exporter, Items.POTATO, BlockusBlocks.POTATO_CRATE);
         offerReversibleCompactingRecipes(exporter, Items.APPLE, BlockusBlocks.APPLE_CRATE);
         offerReversibleCompactingRecipes(exporter, Items.GOLDEN_APPLE, BlockusBlocks.GOLDEN_APPLE_CRATE);
-        createEnclosedRecipe(BlockusBlocks.GOLDEN_APPLE_CRATE, Ingredient.ofItems(Blocks.GOLD_BLOCK), BlockusBlocks.APPLE_CRATE).criterion(hasItem(Items.GOLDEN_APPLE), conditionsFromItem(Items.GOLDEN_APPLE)).offerTo(exporter, convertBetween(BlockusBlocks.GOLDEN_APPLE_CRATE, BlockusBlocks.APPLE_CRATE));
+        createEnclosedRecipe2(BlockusBlocks.GOLDEN_APPLE_CRATE, Ingredient.ofItems(Blocks.GOLD_BLOCK), BlockusBlocks.APPLE_CRATE).criterion(hasItem(Items.GOLDEN_APPLE), conditionsFromItem(Items.GOLDEN_APPLE)).offerTo(exporter, convertBetween(BlockusBlocks.GOLDEN_APPLE_CRATE, BlockusBlocks.APPLE_CRATE));
         offerReversibleCompactingRecipes(exporter, Items.BEETROOT, BlockusBlocks.BEETROOT_CRATE);
         offerReversibleCompactingRecipes(exporter, Items.CARROT, BlockusBlocks.CARROT_CRATE);
         offerReversibleCompactingRecipes(exporter, Items.GOLDEN_CARROT, BlockusBlocks.GOLDEN_CARROT_CRATE);
-        createEnclosedRecipe(BlockusBlocks.GOLDEN_CARROT_CRATE, Ingredient.ofItems(Items.GOLD_INGOT), BlockusBlocks.CARROT_CRATE).criterion(hasItem(Items.GOLDEN_CARROT), conditionsFromItem(Items.GOLDEN_CARROT)).offerTo(exporter, convertBetween(BlockusBlocks.GOLDEN_CARROT_CRATE, BlockusBlocks.CARROT_CRATE));
+        createEnclosedRecipe2(BlockusBlocks.GOLDEN_CARROT_CRATE, Ingredient.ofItems(Items.GOLD_INGOT), BlockusBlocks.CARROT_CRATE).criterion(hasItem(Items.GOLDEN_CARROT), conditionsFromItem(Items.GOLDEN_CARROT)).offerTo(exporter, convertBetween(BlockusBlocks.GOLDEN_CARROT_CRATE, BlockusBlocks.CARROT_CRATE));
         offerReversibleCompactingRecipes(exporter, Items.BREAD, BlockusBlocks.BREAD_BOX);
 
 
@@ -1012,7 +1012,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         CookingRecipeJsonFactory.createSmelting(Ingredient.ofItems(BlockusBlocks.PAPER_BLOCK), BlockusBlocks.BURNT_PAPER_BLOCK.asItem(), 0.1F, 200).criterion("has_paper_block", conditionsFromItem(BlockusBlocks.PAPER_BLOCK)).offerTo(exporter);
         ShapedRecipeJsonFactory.create(BlockusBlocks.FRAMED_PAPER_BLOCK, 4).input('X', Items.PAPER).input('#', Items.STICK).pattern("###").pattern("XXX").pattern("###").criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER)).offerTo(exporter);
         offerCutCopperRecipe(exporter, BlockusBlocks.PAPER_WALL, BlockusBlocks.FRAMED_PAPER_BLOCK);
-        createEnclosedRecipe(BlockusBlocks.PAPER_LAMP, Ingredient.ofItems(Items.PAPER), Items.TORCH).criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER)).offerTo(exporter);
+        createEnclosedRecipe2(BlockusBlocks.PAPER_LAMP, Ingredient.ofItems(Items.PAPER), Items.TORCH).criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER)).offerTo(exporter);
         offerShapelessRecipe2(exporter, Items.GUNPOWDER, BlockusBlocks.BURNT_PAPER_BLOCK,  2);
 
         // Plating
@@ -1050,7 +1050,7 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
         offerReversibleCompactingRecipes(exporter, Items.PHANTOM_MEMBRANE, BlockusBlocks.MEMBRANE_BLOCK);
         offerReversibleCompactingRecipes(exporter, Items.NETHER_STAR, BlockusBlocks.NETHER_STAR_BLOCK);
         offerCutCopperRecipe(exporter, BlockusBlocks.WOODEN_FRAME, Items.STICK);
-        createEnclosedRecipe(BlockusBlocks.REDSTONE_SAND, Ingredient.ofItems(Items.REDSTONE), Items.SAND).criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE)).offerTo(exporter);
+        createEnclosedRecipe2(BlockusBlocks.REDSTONE_SAND, Ingredient.ofItems(Items.REDSTONE), Items.SAND).criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE)).offerTo(exporter);
         ShapelessRecipeJsonFactory.create(Items.REDSTONE, 8).input(BlockusBlocks.REDSTONE_SAND).criterion(hasItem(BlockusBlocks.REDSTONE_SAND), conditionsFromItem(BlockusBlocks.REDSTONE_SAND)).offerTo(exporter, convertBetween(Items.REDSTONE, BlockusBlocks.REDSTONE_SAND));
         ShapedRecipeJsonFactory.create(BlockusBlocks.LOVE_BLOCK).input('M', Items.MAGENTA_DYE).input('R', Items.RED_DYE).pattern("RMR").pattern("RRR").pattern("MRM").criterion(hasItem(Items.MAGENTA_DYE), conditionsFromItem(Items.MAGENTA_DYE)).criterion(hasItem(Items.RED_DYE), conditionsFromItem(Items.RED_DYE)).offerTo(exporter);
         ShapelessRecipeJsonFactory.create(BlockusBlocks.WEIGHT_STORAGE_CUBE).input(Blocks.STONE).input(Items.IRON_NUGGET).criterion(hasItem(Blocks.STONE), conditionsFromItem(Blocks.STONE)).offerTo(exporter);
@@ -1134,6 +1134,9 @@ public class BlockusRecipesProvider extends FabricRecipesProvider {
 
     public static CraftingRecipeJsonFactory createEnclosedRecipe(ItemConvertible output, Ingredient input, ItemConvertible center) {
         return ShapedRecipeJsonFactory.create(output, 8).input('X', input).input('#', center).pattern("XXX").pattern("X#X").pattern("XXX");
+
+    public static CraftingRecipeJsonFactory createEnclosedRecipe2(ItemConvertible output, Ingredient input, ItemConvertible center) {
+        return ShapedRecipeJsonBuilder.create(output).input('X', input).input('#', center).pattern("XXX").pattern("X#X").pattern("XXX");
     }
 
     public static void offerStainedStoneBricksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab, ItemConvertible output_wall) {
