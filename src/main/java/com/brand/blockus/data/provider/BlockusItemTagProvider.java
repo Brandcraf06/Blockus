@@ -101,42 +101,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(new Identifier("c", "planks_that_burn"));
 
-        this.getOrCreateTagBuilder(new Identifier("c", "purpur_blocks"))
-            .add(BlockusBlocks.PURPUR_BRICKS.block.asItem())
-            .add(BlockusBlocks.POLISHED_PURPUR.block.asItem())
-            .add(BlockusBlocks.PURPUR_SQUARES.asItem())
-            .add(BlockusBlocks.SMALL_PURPUR_BRICKS.block.asItem())
-            .add(BlockusBlocks.CHISELED_PURPUR.asItem())
-            .add(BlockusBlocks.PURPUR_LINES.asItem())
-            .add(BlockusBlocks.PHANTOM_PURPUR_BLOCK.block.asItem())
-            .add(BlockusBlocks.PHANTOM_PURPUR_PILLAR.asItem())
-            .add(BlockusBlocks.PHANTOM_PURPUR_BRICKS.block.asItem())
-            .add(BlockusBlocks.POLISHED_PHANTOM_PURPUR.block.asItem())
-            .add(BlockusBlocks.PHANTOM_PURPUR_SQUARES.asItem())
-            .add(BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS.block.asItem())
-            .add(BlockusBlocks.CHISELED_PHANTOM_PURPUR.asItem())
-            .add(BlockusBlocks.PHANTOM_PURPUR_LINES.asItem());
-
-        this.getOrCreateTagBuilder(new Identifier("c", "quartz_blocks"))
-            .add(BlockusBlocks.QUARTZ_TILES.block.asItem())
-            .add(BlockusBlocks.QUARTZ_CIRCULAR_PAVING.asItem());
-
-        this.getOrCreateTagBuilder(new Identifier("c", "red_sandstones"))
-            .add(BlockusBlocks.RED_SANDSTONE_BRICKS.block.asItem())
-            .add(BlockusBlocks.SMALL_RED_SANDSTONE_BRICKS.block.asItem())
-            .add(BlockusBlocks.ROUGH_RED_SANDSTONE.block.asItem())
-            .add(BlockusBlocks.GOLD_DECORATED_RED_SANDSTONE.asItem())
-            .add(BlockusBlocks.RED_SANDSTONE_PILLAR.asItem());
-
         this.copy(new Identifier("c", "wooden_barrels"));
-
-        this.getOrCreateTagBuilder(new Identifier("c", "yellow_sandstones"))
-            .add(BlockusBlocks.SANDSTONE_BRICKS.block.asItem())
-            .add(BlockusBlocks.SMALL_SANDSTONE_BRICKS.block.asItem())
-            .add(BlockusBlocks.ROUGH_SANDSTONE.block.asItem())
-            .add(BlockusBlocks.GOLD_DECORATED_SANDSTONE.asItem())
-            .add(BlockusBlocks.LAPIS_DECORATED_SANDSTONE.asItem())
-            .add(BlockusBlocks.SANDSTONE_PILLAR.asItem());
 
         this.copy(new Identifier("columns", "columns"));
 
