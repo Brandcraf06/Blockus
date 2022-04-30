@@ -49,6 +49,16 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.CHARRED_BARREL.asItem())
             .add(BlockusBlocks.WHITE_OAK_BARREL.asItem());
 
+        this.getOrCreateTagBuilder(ItemTags.BOATS)
+            .add(BlockusBlocks.BAMBOO.boat)
+            .add(BlockusBlocks.CHARRED.boat)
+            .add(BlockusBlocks.WHITE_OAK.boat);
+
+        this.getOrCreateTagBuilder(ItemTags.SIGNS)
+            .add(BlockusBlocks.BAMBOO.sign)
+            .add(BlockusBlocks.CHARRED.sign)
+            .add(BlockusBlocks.WHITE_OAK.sign);
+
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
 
         this.copy(BlockusBlockTags.SMALL_HEDGES, BlockusItemTags.SMALL_HEDGES);
@@ -144,6 +154,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
 
         this.copy(BlockTags.NON_FLAMMABLE_WOOD, ItemTags.NON_FLAMMABLE_WOOD);
+
+        this.getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
+            .add(BlockusBlocks.CHARRED.boat)
+            .add(BlockusBlocks.CHARRED.sign);
 
         this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
 

@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.impl.content.registry.FuelRegistryImpl;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.*;
@@ -138,65 +139,10 @@ public class Instance {
             FuelRegistry.INSTANCE.add(timberFrameType.cross, 300);
         }
 
-        // patterned wools
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.ORANGE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.MAGENTA_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.YELLOW_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.LIME_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.PINK_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.GRAY_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.CYAN_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.PURPLE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.BLUE_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.BROWN_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.GREEN_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.RED_PATTERNED_WOOL, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.BLACK_PATTERNED_WOOL, 100);
-
         for (WoodTypesB woodType : WoodTypesB.values()) {
-            FuelRegistry.INSTANCE.add(woodType.planks, 300);
-            FuelRegistry.INSTANCE.add(woodType.stairs, 300);
-            FuelRegistry.INSTANCE.add(woodType.slab, 150);
             FuelRegistry.INSTANCE.add(woodType.fence, 300);
             FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
-            FuelRegistry.INSTANCE.add(woodType.door, 200);
-            FuelRegistry.INSTANCE.add(woodType.trapdoor, 300);
-            FuelRegistry.INSTANCE.add(woodType.pressure_plate, 300);
-            FuelRegistry.INSTANCE.add(woodType.button, 100);
-            FuelRegistry.INSTANCE.add(woodType.boat, 1200);
-            FuelRegistry.INSTANCE.add(woodType.sign, 200);
         }
-
-        // white oak
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LOG, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_WOOD, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG, 300);
-
-        // herringbone planks
-        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, 300);
-
-        // small logs
-        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.SPRUCE_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_SMALL_LOGS, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 300);
-
-        // legacy
-        FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_LOG, 300);
 
         // barrels
         FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_BARREL, 300);
