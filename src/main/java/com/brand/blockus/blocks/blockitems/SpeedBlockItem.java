@@ -8,7 +8,6 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
@@ -25,7 +24,7 @@ public class SpeedBlockItem extends BlockItem {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
         this.getBlock().appendTooltip(stack, world, tooltip, context);
-        tooltip.add((new TranslatableText(Blockus.MOD_ID + ".blockitem.givespeed")).formatted(Formatting.DARK_PURPLE));
+        tooltip.add((Text.translatable(Blockus.MOD_ID + ".blockitem.givespeed")).formatted(Formatting.DARK_PURPLE));
 
     }
 }

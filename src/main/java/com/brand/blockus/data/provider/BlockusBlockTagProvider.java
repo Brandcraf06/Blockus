@@ -1256,6 +1256,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.OAK_LOGS)
             .add(BlockusBlocks.OAK_SMALL_LOGS);
 
+        this.getOrCreateTagBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
+            .add(BlockusBlocks.WHITE_OAK_LOG);
+
         this.getOrCreateTagBuilder(BlockTags.PIGLIN_REPELLENTS)
             .add(BlockusBlocks.SOUL_LANTERN_BLOCK)
             .add(BlockusBlocks.SOUL_O_LANTERN);
