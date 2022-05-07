@@ -9,10 +9,12 @@ import com.brand.blockus.tag.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.recipebook.RecipeBookGroup;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.RecipeProvider;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.tag.ItemTags;
@@ -1197,7 +1199,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
     public static void offerBoatsRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output1, ItemConvertible output2, ItemConvertible input) {
         ShapedRecipeJsonBuilder.create(output1).input('#', input).pattern("# #").pattern("###").group("boat").criterion("in_water", requireEnteringFluid(Blocks.WATER)).offerTo(exporter);
-        ShapelessRecipeJsonBuilder.create(output2).input(Blocks.CHEST).input(output1).criterion("has_boat", conditionsFromTag(ItemTags.BOATS)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(output2).input(Blocks.CHEST).input(output1).group("chest_boat").criterion("has_boat", conditionsFromTag(ItemTags.BOATS)).offerTo(exporter);
 
     }
 
