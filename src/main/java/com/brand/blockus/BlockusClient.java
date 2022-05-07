@@ -12,9 +12,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
+import net.minecraft.client.recipebook.RecipeBookGroup;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 
 public class BlockusClient implements ClientModInitializer {
@@ -170,6 +172,16 @@ public class BlockusClient implements ClientModInitializer {
     private void registerSignSprite(String path) {
         Identifier id = Blockus.id( "entity/signs/" + path);
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
+    }
+
+    public static RecipeBookGroup getRecipeBookGroup(ItemGroup itemGroup) {
+        if (itemGroup == Blockus.BLOCKUS_BUILDING_BLOCKS) {
+            return RecipeBookGroup.CRAFTING_BUILDING_BLOCKS;
+        } else if (itemGroup == Blockus.BLOCKUS_REDSTONE) {
+            return RecipeBookGroup.CRAFTING_REDSTONE;
+        } else {
+            return null;
+        }
     }
 
 }
