@@ -9,9 +9,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.util.math.random.AbstractRandom;
-
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable {
 
@@ -23,11 +21,11 @@ public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable
         return true;
     }
 
-    public boolean canGrow(World world, AbstractRandom random, BlockPos pos, BlockState state) {
+    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
-    public void grow(ServerWorld world, AbstractRandom random, BlockPos pos, BlockState state) {
+    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         BlockusConfiguredFeatures.RAINBOW_ROSE_BONEMEAL.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
     }
 }

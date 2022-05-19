@@ -11,7 +11,7 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.*;
-import net.minecraft.util.math.random.AbstractRandom;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 
@@ -226,7 +226,7 @@ public class Instance {
             this.maxUses = maxUses;
         }
 
-        public TradeOffer create(Entity entity, AbstractRandom random) {
+        public TradeOffer create(Entity entity, Random random) {
             return new TradeOffer(new ItemStack(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, 1, 0.05f);
         }
     }
