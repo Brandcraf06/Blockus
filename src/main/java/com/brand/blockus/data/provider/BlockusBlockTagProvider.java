@@ -33,7 +33,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.AMETHYST_BRICK_STAIRS)
             .add(BlockusBlocks.AMETHYST_BRICK_SLAB)
             .add(BlockusBlocks.CHISELED_AMETHYST)
-            .add(BlockusBlocks.AMETHYST_PILLAR);
+            .add(BlockusBlocks.AMETHYST_PILLAR)
+            .addOptional(new Identifier(Blockus.MOD_ID, "amethyst_brick_column"));
 
         this.getOrCreateTagBuilder(BlockusBlockTags.ANDESITE_BLOCKS)
             .add(BlockusBlocks.ANDESITE_BRICKS.block)
