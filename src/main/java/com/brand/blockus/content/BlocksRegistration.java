@@ -183,20 +183,12 @@ public class BlocksRegistration {
         return new PaneBlockBase(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD));
     }
 
-    public static Block createStainedStoneBricks(MapColor color) {
-        return new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).mapColor(color));
-    }
-
     public static Block createCrates() {
         return new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).sounds(BlockSoundGroup.WOOD));
     }
 
     public static Block createLightCrates() {
         return new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance(14).sounds(BlockSoundGroup.WOOD));
-    }
-
-    public static Block createShingles(Block base) {
-        return new Block(FabricBlockSettings.copy(base).sounds(BlockSoundGroup.NETHER_BRICKS));
     }
 
     // Register
