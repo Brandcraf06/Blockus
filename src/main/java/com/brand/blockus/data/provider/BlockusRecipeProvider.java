@@ -49,15 +49,15 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         }
 
         for (TimberFrameTypesB timberFrameType : TimberFrameTypesB.values()) {
-            ShapedRecipeJsonBuilder.create(timberFrameType.block).input('#',  Items.PAPER).input('X',  timberFrameType.base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(timberFrameType.base), conditionsFromItem(timberFrameType.base)).offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(timberFrameType.diagonal).input('#', timberFrameType.block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(timberFrameType.block), conditionsFromItem(timberFrameType.block)).offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(timberFrameType.cross).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);
+            ShapedRecipeJsonBuilder.create(timberFrameType.block, 2).input('#',  Items.PAPER).input('X',  timberFrameType.base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(timberFrameType.base), conditionsFromItem(timberFrameType.base)).offerTo(exporter);
+            ShapedRecipeJsonBuilder.create(timberFrameType.diagonal, 4).input('#', timberFrameType.block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(timberFrameType.block), conditionsFromItem(timberFrameType.block)).offerTo(exporter);
+            ShapedRecipeJsonBuilder.create(timberFrameType.cross, 4).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);
         }
 
         for (TimberFrameTypesNB timberFrameType : TimberFrameTypesNB.values()) {
-            ShapedRecipeJsonBuilder.create(timberFrameType.block).input('#',  Items.PAPER).input('X',  timberFrameType.base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(timberFrameType.base), conditionsFromItem(timberFrameType.base)).offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(timberFrameType.diagonal).input('#', timberFrameType.block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(timberFrameType.block), conditionsFromItem(timberFrameType.block)).offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(timberFrameType.cross).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);
+            ShapedRecipeJsonBuilder.create(timberFrameType.block, 2).input('#',  Items.PAPER).input('X',  timberFrameType.base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(timberFrameType.base), conditionsFromItem(timberFrameType.base)).offerTo(exporter);
+            ShapedRecipeJsonBuilder.create(timberFrameType.diagonal, 4).input('#', timberFrameType.block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(timberFrameType.block), conditionsFromItem(timberFrameType.block)).offerTo(exporter);
+            ShapedRecipeJsonBuilder.create(timberFrameType.cross, 4).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);
         }
 
         for (AsphaltTypes asphaltType : AsphaltTypes.values()) {
@@ -1032,9 +1032,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(BlockusBlocks.GOLDEN_CHAIN).input('X', Items.GOLD_INGOT).input('#', Items.GOLD_NUGGET).pattern("#").pattern("X").pattern("#").criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT)).offerTo(exporter);
 
         // Lantern Blocks
-        ShapedRecipeJsonBuilder.create(BlockusBlocks.LANTERN_BLOCK, 3).input('X', Blocks.LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(Blocks.LANTERN), conditionsFromItem(Blocks.LANTERN)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(BlockusBlocks.SOUL_LANTERN_BLOCK, 3).input('X', Blocks.SOUL_LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(Blocks.SOUL_LANTERN), conditionsFromItem(Blocks.SOUL_LANTERN)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(BlockusBlocks.SOUL_O_LANTERN, 3).input('X', Blocks.CARVED_PUMPKIN).input('#', Blocks.SOUL_TORCH).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.LANTERN_BLOCK).input('X', Blocks.LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(Blocks.LANTERN), conditionsFromItem(Blocks.LANTERN)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.SOUL_LANTERN_BLOCK).input('X', Blocks.SOUL_LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(Blocks.SOUL_LANTERN), conditionsFromItem(Blocks.SOUL_LANTERN)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.SOUL_O_LANTERN).input('X', Blocks.CARVED_PUMPKIN).input('#', Blocks.SOUL_TORCH).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).offerTo(exporter);
 
         // Barriers
         ShapedRecipeJsonBuilder.create(BlockusBlocks.ROAD_BARRIER, 5).input('#', Items.IRON_INGOT).input('X', Blocks.STONE).pattern("X#X").pattern("X#X").criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT)).offerTo(exporter);
