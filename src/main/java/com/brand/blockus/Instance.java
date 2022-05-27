@@ -98,6 +98,7 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, 5, 20);
 
@@ -108,6 +109,7 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.JUNGLE_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ACACIA_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.DARK_OAK_SMALL_LOGS, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.MANGROVE_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 5, 5);
 
         // legacy

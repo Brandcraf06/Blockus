@@ -111,6 +111,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS.asItem());
 
@@ -159,6 +160,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.OVERWORLD_NATURAL_LOGS, ItemTags.OVERWORLD_NATURAL_LOGS);
 
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
+
+        this.copy(BlockTags.MANGROVE_LOGS, ItemTags.MANGROVE_LOGS);
 
         this.copy(BlockTags.NON_FLAMMABLE_WOOD, ItemTags.NON_FLAMMABLE_WOOD);
 

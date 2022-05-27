@@ -711,6 +711,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSmallLogsRecipe(exporter, BlockusBlocks.JUNGLE_SMALL_LOGS, Blocks.JUNGLE_LOG);
         offerSmallLogsRecipe(exporter, BlockusBlocks.ACACIA_SMALL_LOGS, Blocks.ACACIA_LOG);
         offerSmallLogsRecipe(exporter, BlockusBlocks.DARK_OAK_SMALL_LOGS, Blocks.DARK_OAK_LOG);
+        offerSmallLogsRecipe(exporter, BlockusBlocks.MANGROVE_SMALL_LOGS, Blocks.MANGROVE_LOG);
         offerSmallLogsRecipe(exporter, BlockusBlocks.WARPED_SMALL_STEMS, Blocks.WARPED_STEM);
         offerSmallLogsRecipe(exporter, BlockusBlocks.CRIMSON_SMALL_STEMS, Blocks.CRIMSON_STEM);
         offerSmallLogsRecipe(exporter, BlockusBlocks.WHITE_OAK_SMALL_LOGS, BlockusBlocks.WHITE_OAK_LOG);
@@ -721,6 +722,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS, Blocks.JUNGLE_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, Blocks.ACACIA_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, Blocks.DARK_OAK_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS, Blocks.MANGROVE_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, BlockusBlocks.WHITE_OAK.planks);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, BlockusBlocks.BAMBOO.planks);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS, Blocks.CRIMSON_PLANKS);
@@ -1112,23 +1114,23 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void offerColoredTilesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible color1, ItemConvertible color2) {
-        ShapelessRecipeJsonBuilder.create(output).input(color1).input(color2).group("colored_tiles").criterion(hasItem(color1), conditionsFromItem(color1)).criterion(hasItem(color2), conditionsFromItem(color2)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(output, 2).input(color1).input(color2).group("colored_tiles").criterion(hasItem(color1), conditionsFromItem(color1)).criterion(hasItem(color2), conditionsFromItem(color2)).offerTo(exporter);
 
     }
 
     public static void offerUnicolorColoredTilesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible color) {
-        ShapelessRecipeJsonBuilder.create(output).input(color).input(color).group("colored_tiles").criterion(hasItem(color), conditionsFromItem(color)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(output, 2).input(color).input(color).group("colored_tiles").criterion(hasItem(color), conditionsFromItem(color)).offerTo(exporter);
 		offerStonecuttingRecipe(exporter, output, color);
 
     }
 
     public static void offerSmallLogsRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapelessRecipeJsonBuilder.create(output).input(input).input(input).input(input).group("small_logs").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(output, 3).input(input).input(input).input(input).group("small_logs").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
 
     }
 
     public static void offerSmallHedgesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        ShapedRecipeJsonBuilder.create(output).input('#',  input).pattern("###").pattern("###").group("small_hedge").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(output, 6).input('#',  input).pattern("###").pattern("###").group("small_hedge").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 
 

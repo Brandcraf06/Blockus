@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "blockus:block/mangrove_diagonal_timber_frame_right",
+    "north": "blockus:block/mangrove_diagonal_timber_frame_right",
+    "south": "blockus:block/mangrove_diagonal_timber_frame_right",
+    "east": "blockus:block/mangrove_diagonal_timber_frame_left",
+    "west": "blockus:block/mangrove_diagonal_timber_frame_left",
+    "up": "blockus:block/mangrove_diagonal_timber_frame_left",
+    "down": "blockus:block/mangrove_diagonal_timber_frame_left"
+  }
+}
+

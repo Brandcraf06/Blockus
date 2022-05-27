@@ -353,6 +353,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block HERRINGBONE_JUNGLE_PLANKS = register("herringbone_jungle_planks", new Block(FabricBlockSettings.copy(Blocks.JUNGLE_PLANKS)));
     public static final Block HERRINGBONE_ACACIA_PLANKS = register("herringbone_acacia_planks", new Block(FabricBlockSettings.copy(Blocks.ACACIA_PLANKS)));
     public static final Block HERRINGBONE_DARK_OAK_PLANKS = register("herringbone_dark_oak_planks", new Block(FabricBlockSettings.copy(Blocks.DARK_OAK_PLANKS)));
+    public static final Block HERRINGBONE_MANGROVE_PLANKS = register("herringbone_mangrove_planks", new Block(FabricBlockSettings.copy(Blocks.MANGROVE_PLANKS)));
     public static final Block HERRINGBONE_BAMBOO_PLANKS = register("herringbone_bamboo_planks", new Block(FabricBlockSettings.copy(BAMBOO.planks)));
     public static final Block HERRINGBONE_WHITE_OAK_PLANKS = register("herringbone_white_oak_planks", new Block(FabricBlockSettings.copy(WHITE_OAK.planks)));
     public static final Block HERRINGBONE_WARPED_PLANKS = register("herringbone_warped_planks", new Block(FabricBlockSettings.copy(Blocks.WARPED_PLANKS)));
@@ -366,6 +367,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block JUNGLE_SMALL_LOGS = register("jungle_small_logs", new PillarBlock(FabricBlockSettings.copy(Blocks.JUNGLE_LOG)));
     public static final Block ACACIA_SMALL_LOGS = register("acacia_small_logs", new PillarBlock(FabricBlockSettings.copy(Blocks.ACACIA_LOG)));
     public static final Block DARK_OAK_SMALL_LOGS = register("dark_oak_small_logs", new PillarBlock(FabricBlockSettings.copy(Blocks.DARK_OAK_LOG)));
+    public static final Block MANGROVE_SMALL_LOGS = register("mangrove_small_logs", new PillarBlock(FabricBlockSettings.copy(Blocks.MANGROVE_LOG)));
     public static final Block WARPED_SMALL_STEMS = register("warped_small_stems", new PillarBlock(FabricBlockSettings.copy(Blocks.WARPED_STEM)));
     public static final Block CRIMSON_SMALL_STEMS = register("crimson_small_stems", new PillarBlock(FabricBlockSettings.copy(Blocks.CRIMSON_STEM)));
     public static final Block WHITE_OAK_SMALL_LOGS = register("white_oak_small_logs", new PillarBlock(FabricBlockSettings.copy(WHITE_OAK_LOG)));
@@ -377,6 +379,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final TimberFrameTypesB JUNGLE_TIMBER_FRAME = new TimberFrameTypesB("jungle", Blocks.JUNGLE_PLANKS);
     public static final TimberFrameTypesB ACACIA_TIMBER_FRAME = new TimberFrameTypesB("acacia", Blocks.ACACIA_PLANKS);
     public static final TimberFrameTypesB DARK_OAK_TIMBER_FRAME = new TimberFrameTypesB("dark_oak", Blocks.DARK_OAK_PLANKS);
+    public static final TimberFrameTypesB MANGROVE_TIMBER_FRAME = new TimberFrameTypesB("mangrove", Blocks.MANGROVE_PLANKS);
     public static final TimberFrameTypesB BAMBOO_TIMBER_FRAME = new TimberFrameTypesB("bamboo", BlockusBlocks.BAMBOO.planks);
     public static final TimberFrameTypesB WHITE_OAK_TIMBER_FRAME = new TimberFrameTypesB("white_oak", BlockusBlocks.WHITE_OAK.planks);
     public static final TimberFrameTypesNB WARPED_TIMBER_FRAME = new TimberFrameTypesNB("warped", Blocks.WARPED_PLANKS);

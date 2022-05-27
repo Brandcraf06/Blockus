@@ -948,6 +948,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.DARK_OAK_TIMBER_FRAME.block)
             .add(BlockusBlocks.DARK_OAK_TIMBER_FRAME.diagonal)
             .add(BlockusBlocks.DARK_OAK_TIMBER_FRAME.cross)
+            .add(BlockusBlocks.MANGROVE_TIMBER_FRAME.block)
+            .add(BlockusBlocks.MANGROVE_TIMBER_FRAME.diagonal)
+            .add(BlockusBlocks.MANGROVE_TIMBER_FRAME.cross)
             .add(BlockusBlocks.WARPED_TIMBER_FRAME.block)
             .add(BlockusBlocks.WARPED_TIMBER_FRAME.diagonal)
             .add(BlockusBlocks.WARPED_TIMBER_FRAME.cross)
@@ -1010,6 +1013,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
 
@@ -1227,6 +1231,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.WHITE_OAK_LOGS)
             .add(BlockusBlocks.LEGACY_LOG);
 
+        this.getOrCreateTagBuilder(BlockTags.MANGROVE_LOGS)
+            .add(BlockusBlocks.MANGROVE_SMALL_LOGS);
+
         this.getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .add(BlockusBlocks.NETHERITE_STAIRS)
@@ -1275,6 +1282,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS)
