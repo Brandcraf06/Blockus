@@ -23,6 +23,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 
 public class BlockusBlocks extends BlocksRegistration {
 
@@ -393,6 +394,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block JUNGLE_SMALL_HEDGE = registerSmallHedge("jungle_small_hedge", Blocks.JUNGLE_LEAVES);
     public static final Block ACACIA_SMALL_HEDGE = registerSmallHedge("acacia_small_hedge", Blocks.ACACIA_LEAVES);
     public static final Block DARK_OAK_SMALL_HEDGE = registerSmallHedge("dark_oak_small_hedge", Blocks.DARK_OAK_LEAVES);
+    public static final Block MANGROVE_SMALL_HEDGE = registerSmallHedge("mangrove_small_hedge", Blocks.MANGROVE_LEAVES);
     public static final Block WHITE_OAK_SMALL_HEDGE = registerSmallHedge("white_oak_small_hedge", WHITE_OAK_LEAVES);
     public static final Block AZALEA_SMALL_HEDGE = registerSmallHedge("azalea_small_hedge", Blocks.AZALEA_LEAVES);
     public static final Block FLOWERING_AZALEA_SMALL_HEDGE = registerSmallHedge("azalea_small_hedge_flowers", Blocks.FLOWERING_AZALEA_LEAVES);
@@ -412,6 +414,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final PottedLargeTypes POTTED_JUNGLE = new PottedLargeTypes("potted_jungle",Blocks.JUNGLE_SAPLING);
     public static final PottedLargeTypes POTTED_ACACIA = new PottedLargeTypes( "potted_acacia",Blocks.ACACIA_SAPLING);
     public static final PottedLargeTypes POTTED_DARK_OAK = new PottedLargeTypes( "potted_dark_oak",Blocks.DARK_OAK_SAPLING);
+    public static final PottedLargeTypes POTTED_MANGROVE = new PottedLargeTypes( "potted_mangrove",Blocks.MANGROVE_PROPAGULE);
     public static final PottedLargeTypes POTTED_WHITE_OAK = new PottedLargeTypes("potted_white_oak",WHITE_OAK_SAPLING);
     public static final PottedLargeTypes POTTED_HUGE_RED_MUSHROOM = new PottedLargeTypes("potted_huge_red_mushroom",Blocks.RED_MUSHROOM);
     public static final PottedLargeTypes POTTED_HUGE_BROWN_MUSHROOM = new PottedLargeTypes( "potted_huge_brown_mushroom",Blocks.BROWN_MUSHROOM);

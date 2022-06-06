@@ -582,6 +582,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.SPRUCE_SMALL_HEDGE, (blockx) -> {
             return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
         });
+        this.addDrop(BlockusBlocks.MANGROVE_SMALL_HEDGE, (blockx) -> {
+            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
+        });
         this.addDrop(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, (blockx) -> {
             return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
         });
