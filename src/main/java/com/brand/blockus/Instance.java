@@ -5,9 +5,7 @@ import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.TimberFrameTypesB;
 import com.brand.blockus.content.types.WoodTypesB;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.*;
@@ -191,15 +189,13 @@ public class Instance {
     }
 
     public static void addStrippables() {
-        AxeItem.STRIPPED_BLOCKS = new HashMap<>(AxeItem.STRIPPED_BLOCKS);
-        AxeItem.STRIPPED_BLOCKS.put(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
-        AxeItem.STRIPPED_BLOCKS.put(BlockusBlocks.WHITE_OAK_WOOD, BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
+        StrippableBlockRegistry.register(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
+        StrippableBlockRegistry.register(BlockusBlocks.WHITE_OAK_WOOD, BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
     }
 
     public static void addPathBlocks() {
-        ShovelItem.PATH_STATES = new HashMap<>(ShovelItem.PATH_STATES);
-        ShovelItem.PATH_STATES.put(Blocks.DIRT_PATH, BlockusBlocks.PATH.getDefaultState());
-        ShovelItem.PATH_STATES.put(BlockusBlocks.PATH, Blocks.DIRT.getDefaultState());
+        FlattenableBlockRegistry.register(Blocks.DIRT_PATH, BlockusBlocks.PATH.getDefaultState());
+        FlattenableBlockRegistry.register(BlockusBlocks.PATH, Blocks.DIRT.getDefaultState());
 
     }
 
