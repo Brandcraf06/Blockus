@@ -1,11 +1,11 @@
 package com.brand.blockus.compatibility.content;
 
 import com.brand.blockus.content.BlocksRegistration;
-import com.hugman.dawn.api.object.block.PlantPileBlock;
 import com.hugman.promenade.init.AmaranthBundle;
 import com.hugman.promenade.init.AutumnBundle;
 import com.hugman.promenade.init.CherryBundle;
 import com.hugman.promenade.init.PalmBundle;
+import com.hugman.promenade.object.block.PlantPileBlock;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -77,7 +77,7 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         DARK_AMARANTH_SMALL_HEDGE = registerSmallHedge("dark_amaranth_small_hedge", AmaranthBundle.DARK_AMARANTH_WART_BLOCK);
 
         // Leaf Piles
-        WHITE_OAK_LEAF_PILE = registerDecoration("white_oak_leaf_pile", new PlantPileBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.1f).ticksRandomly().sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
+        WHITE_OAK_LEAF_PILE = registerDecoration("white_oak_leaf_pile", new PlantPileBlock(FabricBlockSettings.of(Material.PLANT).strength(0.1f).sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAF_PILE, 30, 60);
 
         // Crates
