@@ -29,6 +29,7 @@ public class BlockusBlockFamilies {
     public static final BlockFamily POLISHED_TUFF;
     public static final BlockFamily TUFF_BRICK;
     public static final BlockFamily POLISHED_DEEPSLATE;
+    public static final BlockFamily POLISHED_SCULK;
     public static final BlockFamily POLISHED_AMETHYST;
     public static final BlockFamily AMETHYST_BRICK;
     public static final BlockFamily BLACKSTONE;
@@ -55,7 +56,7 @@ public class BlockusBlockFamilies {
         CHARRED = register(BlockusBlocks.CHARRED.planks).button(BlockusBlocks.CHARRED.button).fence(BlockusBlocks.CHARRED.fence).fenceGate(BlockusBlocks.CHARRED.fence_gate).pressurePlate(BlockusBlocks.CHARRED.pressure_plate).sign(BlockusBlocks.CHARRED.standing_sign, BlockusBlocks.CHARRED.wall_sign).slab(BlockusBlocks.CHARRED.slab).stairs(BlockusBlocks.CHARRED.stairs).door(BlockusBlocks.CHARRED.door).trapdoor(BlockusBlocks.CHARRED.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
         BAMBOO = register(BlockusBlocks.BAMBOO.planks).button(BlockusBlocks.BAMBOO.button).fence(BlockusBlocks.BAMBOO.fence).fenceGate(BlockusBlocks.BAMBOO.fence_gate).pressurePlate(BlockusBlocks.BAMBOO.pressure_plate).sign(BlockusBlocks.BAMBOO.standing_sign, BlockusBlocks.BAMBOO.wall_sign).slab(BlockusBlocks.BAMBOO.slab).stairs(BlockusBlocks.BAMBOO.stairs).door(BlockusBlocks.BAMBOO.door).trapdoor(BlockusBlocks.BAMBOO.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
 
-        // Stone, Andesite, Diorite, Granite, Dripstone, Tuff, Deepslate, Blackstone & Basalt
+        // Stone, Andesite, Diorite, Granite, Dripstone, Tuff, Deepslate, Sculk, Amethyst, Blackstone & Basalt
         STONE = register(Blocks.STONE).door(BlockusBlocks.STONE_DOOR).trapdoor(BlockusBlocks.STONE_TRAPDOOR).build();
         POLISHED_ANDESITE = register(Blocks.POLISHED_ANDESITE).pressurePlate(BlockusBlocks.POLISHED_ANDESITE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_ANDESITE_BUTTON).polished(BlockusBlocks.ANDESITE_BRICKS.block).build();
         ANDESITE_BRICK = register(BlockusBlocks.ANDESITE_BRICKS.block).cracked(BlockusBlocks.CRACKED_ANDESITE_BRICKS).build();
@@ -68,6 +69,7 @@ public class BlockusBlockFamilies {
         POLISHED_TUFF = register(BlockusBlocks.POLISHED_TUFF.block).pressurePlate(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_TUFF_BUTTON).polished(BlockusBlocks.TUFF_BRICKS.block).build();
         TUFF_BRICK = register(BlockusBlocks.TUFF_BRICKS.block).cracked(BlockusBlocks.CRACKED_TUFF_BRICKS).build();
         POLISHED_DEEPSLATE = register(Blocks.POLISHED_DEEPSLATE).pressurePlate(BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON).build();
+        POLISHED_SCULK = register(BlockusBlocks.POLISHED_SCULK.block).pressurePlate(BlockusBlocks.POLISHED_SCULK_PRESSURE_PLATE).button(BlockusBlocks.POLISHED_SCULK_BUTTON).polished(BlockusBlocks.SCULK_BRICKS.block).build();
         POLISHED_AMETHYST = register(BlockusBlocks.POLISHED_AMETHYST).stairs(BlockusBlocks.POLISHED_AMETHYST_STAIRS).slab(BlockusBlocks.POLISHED_AMETHYST_SLAB).polished(BlockusBlocks.AMETHYST_BRICKS).build();
         AMETHYST_BRICK = register(BlockusBlocks.AMETHYST_BRICKS).wall(BlockusBlocks.AMETHYST_BRICK_WALL).stairs(BlockusBlocks.AMETHYST_BRICK_STAIRS).slab(BlockusBlocks.AMETHYST_BRICK_SLAB).build();
         BLACKSTONE = register(Blocks.BLACKSTONE).door(BlockusBlocks.BLACKSTONE_DOOR).trapdoor(BlockusBlocks.BLACKSTONE_TRAPDOOR).build();

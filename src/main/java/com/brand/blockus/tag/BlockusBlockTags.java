@@ -50,6 +50,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> RAINBOW_BLOCKS = register("rainbow_blocks");
     public static final TagKey<Block> RED_SANDSTONE = register("red_sandstone");
     public static final TagKey<Block> SANDSTONE = register("sandstone");
+    public static final TagKey<Block> SCULK_BLOCKS = register("sculk_blocks");
     public static final TagKey<Block> SHINGLES = register("shingles");
     public static final TagKey<Block> SMALL_HEDGES = register("small_hedges");
     public static final TagKey<Block> SNOW_BRICKS = register("snow_bricks");

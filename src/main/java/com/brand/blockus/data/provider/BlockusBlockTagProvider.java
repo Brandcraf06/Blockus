@@ -742,6 +742,16 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.LAPIS_DECORATED_SANDSTONE)
             .add(BlockusBlocks.SANDSTONE_PILLAR);
 
+        this.getOrCreateTagBuilder(BlockusBlockTags.SCULK_BLOCKS)
+            .add(BlockusBlocks.POLISHED_SCULK.block)
+            .add(BlockusBlocks.POLISHED_SCULK.stairs)
+            .add(BlockusBlocks.POLISHED_SCULK.slab)
+            .add(BlockusBlocks.SCULK_BRICKS.block)
+            .add(BlockusBlocks.SCULK_BRICKS.stairs)
+            .add(BlockusBlocks.SCULK_BRICKS.slab)
+            .add(BlockusBlocks.CHISELED_SCULK_BRICKS)
+            .add(BlockusBlocks.SCULK_PILLAR);
+
         this.getOrCreateTagBuilder(BlockusBlockTags.SHINGLES)
             .add(BlockusBlocks.SHINGLES.block)
             .add(BlockusBlocks.WHITE_SHINGLES.block)
@@ -923,6 +933,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_BASALT_BUTTON)
             .add(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON)
             .add(BlockusBlocks.POLISHED_TUFF_BUTTON)
+            .add(BlockusBlocks.POLISHED_SCULK_BUTTON)
             .add(BlockusBlocks.VIRIDITE_BUTTON)
             .add(Blocks.POLISHED_BLACKSTONE_BUTTON);
 
@@ -1103,6 +1114,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.RAINBOW_BLOCKS)
             .addTag(BlockusBlockTags.CONCRETE_BLOCKS)
             .addTag(BlockusBlockTags.DEEPSLATE_BLOCKS)
+            .addTag(BlockusBlockTags.SCULK_BLOCKS)
             .addTag(BlockusBlockTags.TUFF_BLOCKS)
             .addTag(BlockusBlockTags.DRIPSTONE_BLOCKS)
             .addTag(BlockusBlockTags.ASPHALT)
@@ -1331,6 +1343,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE)
             .add(BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE)
             .add(BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE)
+            .add(BlockusBlocks.POLISHED_SCULK_PRESSURE_PLATE)
             .add(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE)
             .add(BlockusBlocks.VIRIDITE_PRESSURE_PLATE);
 
@@ -1399,6 +1412,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.QUARTZ_TILES.wall)
             .add(BlockusBlocks.LARGE_BRICKS.wall)
             .add(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS.wall)
+            .add(BlockusBlocks.SCULK_BRICKS.wall)
             .add(BlockusBlocks.DRIPSTONE_BRICKS.wall)
             .add(BlockusBlocks.TUFF_BRICKS.wall)
             .add(BlockusBlocks.SMALL_END_STONE_BRICKS.wall)

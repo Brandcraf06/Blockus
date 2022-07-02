@@ -44,7 +44,7 @@ public class BlocksRegistration {
 
 
     public static String replaceId(String id) {
-        return id.replace("lava_polished_blackstone_bricks", "lava_polished_blackstone").replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
+        return id.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
     }
 
     // Slab

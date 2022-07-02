@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_glazed_terracotta",
-  "textures": {
-    "particle": "blockus:block/obsidian_circle_pavement",
-    "pattern": "blockus:block/obsidian_circle_pavement"
-  }
-}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "blockus:block/andesite_circular_paving"
+    },
+    "facing=west": {
+      "model": "blockus:block/andesite_circular_paving",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "blockus:block/andesite_circular_paving",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "blockus:block/andesite_circular_paving",
+      "y": 270
+    }
+  }
+}

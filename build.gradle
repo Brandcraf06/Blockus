@@ -38,8 +38,8 @@ dependencies {
   modImplementation "curse.maven:columns-385230:3697328"
 
 	// Promenade
-  modCompileOnly "curse.maven:promenade-399648:3553043"
-  modCompileOnly "curse.maven:dawnapi-399309:3543407"
+  modCompileOnly "curse.maven:promenade-399648:3855352"
+  modCompileOnly "curse.maven:dawnapi-399309:3855309"
 }
 
 loom {

@@ -181,6 +181,19 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         offerSturdyRecipe(exporter, BlockusBlocks.STURDY_DEEPSLATE, Blocks.DEEPSLATE, Blocks.COBBLED_DEEPSLATE);
 
+        // Tuff
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_SCULK.block, Blocks.SCULK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_SCULK.stairs, Blocks.SCULK, BlockusBlocks.POLISHED_SCULK.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_SCULK.slab, 2, Blocks.SCULK, BlockusBlocks.POLISHED_SCULK.block);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_SCULK.block, Blocks.SCULK);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.SCULK_BRICKS.block,  Blocks.SCULK, BlockusBlocks.POLISHED_SCULK.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.SCULK_BRICKS.stairs, Blocks.SCULK, BlockusBlocks.POLISHED_SCULK.block, BlockusBlocks.SCULK_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.SCULK_BRICKS.slab, 2, Blocks.SCULK, BlockusBlocks.POLISHED_SCULK.block, BlockusBlocks.SCULK_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.SCULK_BRICKS.wall, Blocks.SCULK, BlockusBlocks.POLISHED_SCULK.block, BlockusBlocks.SCULK_BRICKS.block);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_SCULK_BRICKS, Blocks.SCULK, BlockusBlocks.POLISHED_SCULK.block, BlockusBlocks.SCULK_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.SCULK_PILLAR, Blocks.SCULK, BlockusBlocks.POLISHED_SCULK.block, BlockusBlocks.SCULK_BRICKS.block);
 
         // Blackstone
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_BLACKSTONE_TILES.block,  Blocks.BLACKSTONE, Blocks.POLISHED_BLACKSTONE, Blocks.POLISHED_BLACKSTONE_BRICKS);

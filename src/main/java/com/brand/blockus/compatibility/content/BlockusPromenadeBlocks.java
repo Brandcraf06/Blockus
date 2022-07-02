@@ -47,7 +47,7 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         POTTED_PINK_CHERRY_OAK = registerNoItem( "potted_pink_cherry_oak", createPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant()));
         POTTED_WHITE_CHERRY_OAK = registerNoItem( "potted_white_cherry_oak", createPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant()));
         POTTED_PALM = registerNoItem("potted_palm", createPottedDoublePlant(PalmBundle.PALM_WOOD.getSapling()));
-        POTTED_DARK_AMARANTH = registerNoItem("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_WOOD.getFungus()));
+        POTTED_DARK_AMARANTH = registerNoItem("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_FUNGUS.getPlant()));
 
         // Small Logs
         CHERRY_OAK_SMALL_LOGS = register("cherry_oak_small_logs", new PillarBlock(FabricBlockSettings.copy(CherryBundle.CHERRY_OAK_WOOD.getLog())));

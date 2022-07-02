@@ -113,6 +113,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.CHISELED_AMETHYST);
         this.addDrop(BlockusBlocks.AMETHYST_PILLAR);
 
+        // Sculk
+        this.addDrop(BlockusBlocks.CHISELED_SCULK_BRICKS);
+        this.addDrop(BlockusBlocks.POLISHED_SCULK_BUTTON);
+        this.addDrop(BlockusBlocks.SCULK_PILLAR);
+        this.addDrop(BlockusBlocks.POLISHED_SCULK_PRESSURE_PLATE);
+
         // Herringbone Planks
         this.addDrop(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS);

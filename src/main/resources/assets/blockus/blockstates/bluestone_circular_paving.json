@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "blockus:block/bluestone_circular_paving"
+    },
+    "facing=west": {
+      "model": "blockus:block/bluestone_circular_paving",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "blockus:block/bluestone_circular_paving",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "blockus:block/bluestone_circular_paving",
+      "y": 270
+    }
+  }
+}
