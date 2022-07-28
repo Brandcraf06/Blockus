@@ -9,15 +9,14 @@ import com.brand.blockus.tag.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.recipebook.RecipeBookGroup;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.RecipeProvider;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.tag.ItemTags;
+
 import java.util.function.Consumer;
 
 public class BlockusRecipeProvider extends FabricRecipeProvider {
@@ -219,6 +218,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSturdyRecipe(exporter, BlockusBlocks.STURDY_BLACKSTONE, Blocks.POLISHED_BLACKSTONE, Blocks.BLACKSTONE);
         offerDecoratedRecipe(exporter, BlockusBlocks.GOLD_DECORATED_POLISHED_BLACKSTONE, Items.GOLD_INGOT, Blocks.POLISHED_BLACKSTONE);
 
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.BLACKSTONE_TRAPDOOR, 4).input('#', Blocks.BLACKSTONE_SLAB).pattern("###").pattern("###").criterion(hasItem(Blocks.BLACKSTONE_SLAB), conditionsFromItem(Blocks.BLACKSTONE_SLAB)).offerTo(exporter);
 
         // Basalt
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_BASALT.stairs, BlockusBlocks.ROUGH_BASALT.block);
