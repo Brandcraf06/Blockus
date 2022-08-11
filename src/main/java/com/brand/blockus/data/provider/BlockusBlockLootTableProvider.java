@@ -439,6 +439,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.RED_SANDSTONE_PILLAR);
         this.addDrop(BlockusBlocks.RED_WHITE_COLORED_TILES);
         this.addDrop(BlockusBlocks.REDSTONE_LAMP_LIT);
+        this.addDrop(BlockusBlocks.REDSTONE_LANTERN);
+        this.addDrop(BlockusBlocks.REDSTONE_LANTERN_BLOCK);
         this.addDrop(BlockusBlocks.REDSTONE_SAND);
         this.addDrop(BlockusBlocks.ROAD_BARRIER);
         this.addDrop(BlockusBlocks.ROTTEN_FLESH_BLOCK);
@@ -451,6 +453,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.SNOW_PILLAR);
         this.addDrop(BlockusBlocks.SOUL_LANTERN_BLOCK);
         this.addDrop(BlockusBlocks.SOUL_O_LANTERN);
+        this.addDrop(BlockusBlocks.REDSTONE_O_LANTERN);
         this.addDrop(BlockusBlocks.SOUL_SANDSTONE_PILLAR);
         this.addDrop(BlockusBlocks.SPRUCE_SMALL_LOGS);
         this.addDrop(BlockusBlocks.STARS_BLOCK);

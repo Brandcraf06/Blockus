@@ -1051,7 +1051,10 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         // Lantern Blocks
         ShapedRecipeJsonBuilder.create(BlockusBlocks.LANTERN_BLOCK).input('X', Blocks.LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(Blocks.LANTERN), conditionsFromItem(Blocks.LANTERN)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(BlockusBlocks.SOUL_LANTERN_BLOCK).input('X', Blocks.SOUL_LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(Blocks.SOUL_LANTERN), conditionsFromItem(Blocks.SOUL_LANTERN)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.REDSTONE_LANTERN_BLOCK).input('X', BlockusBlocks.REDSTONE_LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(BlockusBlocks.REDSTONE_LANTERN), conditionsFromItem(BlockusBlocks.REDSTONE_LANTERN)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.REDSTONE_LANTERN).input('#', Items.REDSTONE_TORCH).input('X', Items.IRON_NUGGET).pattern("XXX").pattern("X#X").pattern("XXX").criterion("has_redstone_torch", conditionsFromItem(Items.REDSTONE_TORCH)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(BlockusBlocks.SOUL_O_LANTERN).input('X', Blocks.CARVED_PUMPKIN).input('#', Blocks.SOUL_TORCH).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.REDSTONE_O_LANTERN).input('X', Blocks.CARVED_PUMPKIN).input('#', Blocks.REDSTONE_TORCH).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).criterion(hasItem(Blocks.REDSTONE_TORCH), conditionsFromItem(Blocks.REDSTONE_TORCH)).offerTo(exporter);
 
         // Barriers
         ShapedRecipeJsonBuilder.create(BlockusBlocks.ROAD_BARRIER, 5).input('#', Items.IRON_INGOT).input('X', Blocks.STONE).pattern("X#X").pattern("X#X").criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT)).offerTo(exporter);

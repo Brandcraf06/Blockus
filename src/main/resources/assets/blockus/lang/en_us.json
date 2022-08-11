@@ -536,7 +536,6 @@
   "block.blockus.small_limestone_brick_slab": "Small Limestone Brick Slab",
   "block.blockus.small_limestone_brick_wall": "Small Limestone Brick Wall",
   "block.blockus.chiseled_limestone": "Chiseled Limestone",
-
   "block.blockus.asphalt": "Asphalt",
   "block.blockus.white_asphalt": "White Asphalt",
   "block.blockus.orange_asphalt": "Orange Asphalt",
@@ -832,7 +831,6 @@
   "block.blockus.potted_bamboo_large": "Large Potted Bamboo",
   "block.blockus.potted_azalea_large": "Large Potted Azalea",
   "block.blockus.potted_flowering_azalea_large": "Large Potted Flowering Azalea",
-
   "block.blockus.soul_lantern_block": "Soul Lantern Block",
   "block.blockus.golden_chain": "Golden Chain",
   "block.blockus.golden_bars": "Golden Bars",
@@ -1033,7 +1031,6 @@
   "block.blockus.legacy_planks": "Planks (Legacy)",
   "block.blockus.potted_legacy_tree": "Potted Legacy Tree",
   "block.blockus.potted_legacy_sapling": "Potted Legacy Sapling",
-
   "block.blockus.azalea_small_hedge": "Azalea Small Hedge",
   "block.blockus.azalea_small_hedge_flowers": "Flowering Azalea Small Hedge",
   "block.blockus.moss_small_hedge": "Moss Small Hedge",
@@ -1138,11 +1135,9 @@
   "block.blockus.polished_blackstone_tile_slab": "Polished Blackstone Tile Slab",
   "block.blockus.polished_blackstone_tile_stairs": "Polished Blackstone Tile Stairs",
   "block.blockus.polished_blackstone_tile_wall": "Polished Blackstone Tile Wall",
-  
   "item.blockus.bamboo_chest_boat": "Bamboo Boat with Chest",
   "item.blockus.charred_chest_boat": "Charred Boat with Chest",
   "item.blockus.white_oak_chest_boat": "White Oak Boat with Chest",
-
   "block.blockus.stone_tile_column": "Stone Tile Column",
   "block.blockus.polished_blackstone_tile_column": "Polished Blackstone Tile Column",
   "block.blockus.andesite_brick_column": "Andesite Brick Column",
@@ -1234,7 +1229,6 @@
   "block.blockus.green_concrete_brick_column": "Green Concrete Brick Column",
   "block.blockus.red_concrete_brick_column": "Red Concrete Brick Column",
   "block.blockus.black_concrete_brick_column": "Black Concrete Brick Column",
-
   "block.blockus.potted_autumn_oak": "Potted Autumn Oak",
   "block.blockus.potted_autumn_birch": "Potted Autumn Birch",
   "block.blockus.potted_pink_cherry_oak": "Potted Pink Cherry Oak",
@@ -1251,5 +1245,8 @@
   "block.blockus.palm_small_hedge": "Palm Small Hedge",
   "block.blockus.dark_amaranth_small_hedge": "Dark Amaranth Small Hedge",
   "block.blockus.white_oak_leaf_pile": "White Oak Leaf Pile",
-  "block.blockus.blueberries_crate": "Blueberries Crate"
+  "block.blockus.blueberries_crate": "Blueberries Crate",
+  "block.blockus.redstone_lantern": "Redstone Lantern",
+  "block.blockus.redstone_lantern_block": "Redstone Lantern Block",
+  "block.blockus.redstone_o_lantern": "Redstone o'Lantern"
 }
