@@ -9,6 +9,8 @@ import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.base.redstone.DoorBase;
 import com.brand.blockus.blocks.base.redstone.FallingRedstoneBlock;
+import com.brand.blockus.blocks.base.redstone.RedstoneLantern;
+import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
 import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
 import com.brand.blockus.blocks.generator.LegacyOakSaplingGenerator;
 import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
@@ -761,10 +763,15 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GOLDEN_BARS = registerDecoration("golden_bars", new PaneBlockBase(FabricBlockSettings.copy(Blocks.IRON_BARS)));
     public static final Block GOLDEN_CHAIN = registerDecoration("golden_chain", new ChainBlock(FabricBlockSettings.copy(Blocks.CHAIN)));
 
+
     // Lantern Blocks
     public static final Block LANTERN_BLOCK = registerDecoration("lantern_block", new Block(FabricBlockSettings.copy(Blocks.LANTERN)));
     public static final Block SOUL_LANTERN_BLOCK = registerDecoration("soul_lantern_block", new Block(FabricBlockSettings.copy(Blocks.SOUL_LANTERN)));
+    public static final Block REDSTONE_LANTERN = registerRedstone("redstone_lantern", new RedstoneLantern(FabricBlockSettings.copyOf(Blocks.LANTERN).luminance(7)));
+    public static final Block REDSTONE_LANTERN_BLOCK = registerRedstone("redstone_lantern_block", new RedstoneBlock(FabricBlockSettings.copyOf(REDSTONE_LANTERN).luminance(7)));
     public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlockBase(FabricBlockSettings.copyOf(Blocks.JACK_O_LANTERN).luminance(10)));
+    public static final Block REDSTONE_O_LANTERN = registerRedstone("redstone_o_lantern", new RedstonePumpkinBlock(FabricBlockSettings.copyOf(Blocks.JACK_O_LANTERN).luminance(7)));
+
 
     // Barriers
     public static final Block CAUTION_BARRIER = registerDecoration("caution_barrier", createBarrier(1.5f, 1200.0f));

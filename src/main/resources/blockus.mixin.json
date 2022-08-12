@@ -3,7 +3,8 @@
   "package": "com.brand.blockus.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "ClientRecipeBookMixin"
+    "ClientRecipeBookMixin",
+    "RedstoneWireBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

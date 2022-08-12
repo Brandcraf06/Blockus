@@ -1229,5 +1229,8 @@
   "block.blockus.palm_small_hedge": "Palm Small Hedge",
   "block.blockus.dark_amaranth_small_hedge": "Dark Amaranth Small Hedge",
   "block.blockus.white_oak_leaf_pile": "White Oak Leaf Pile",
-  "block.blockus.blueberries_crate": "Blueberries Crate"
+  "block.blockus.blueberries_crate": "Blueberries Crate",
+  "block.blockus.redstone_lantern": "Redstone Lantern",
+  "block.blockus.redstone_lantern_block": "Redstone Lantern Block",
+  "block.blockus.redstone_o_lantern": "Redstone o'Lantern"
 }
