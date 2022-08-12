@@ -95,9 +95,10 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block,
             BlockusBlocks.POTTED_LEGACY_TREE.block,
             BlockusBlocks.BLACKSTONE_DOOR,
-            BlockusBlocks.BLACKSTONE_TRAPDOOR
+            BlockusBlocks.BLACKSTONE_TRAPDOOR,
+            BlockusBlocks.REDSTONE_LANTERN
+            );
 
-        );
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
             BlockusBlocks.WATER_BRICKS.block,
             BlockusBlocks.WATER_BRICKS.stairs,
