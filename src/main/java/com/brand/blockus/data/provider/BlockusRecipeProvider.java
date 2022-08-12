@@ -205,6 +205,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSturdyRecipe(exporter, BlockusBlocks.STURDY_BLACKSTONE, Blocks.POLISHED_BLACKSTONE, Blocks.BLACKSTONE);
         offerDecoratedRecipe(exporter, BlockusBlocks.GOLD_DECORATED_POLISHED_BLACKSTONE, Items.GOLD_INGOT, Blocks.POLISHED_BLACKSTONE);
 
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.BLACKSTONE_TRAPDOOR, 4).input('#', Blocks.BLACKSTONE_SLAB).pattern("###").pattern("###").criterion(hasItem(Blocks.BLACKSTONE_SLAB), conditionsFromItem(Blocks.BLACKSTONE_SLAB)).offerTo(exporter);
 
         // Basalt
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_BASALT.stairs, BlockusBlocks.ROUGH_BASALT.block);
