@@ -235,6 +235,19 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.HERRINGBONE_POLISHED_BASALT_BRICKS, Blocks.BASALT, Blocks.POLISHED_BASALT, BlockusBlocks.POLISHED_BASALT_BRICKS.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_BASALT_CIRCULAR_PAVING, Blocks.BASALT, Blocks.POLISHED_BASALT, BlockusBlocks.POLISHED_BASALT_BRICKS.block);
 
+        // Wart Blocks
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CRIMSON_WART_BRICKS.block, Blocks.NETHER_WART_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CRIMSON_WART_BRICKS.stairs, Blocks.NETHER_WART_BLOCK, BlockusBlocks.CRIMSON_WART_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CRIMSON_WART_BRICKS.slab, 2, Blocks.NETHER_WART_BLOCK, BlockusBlocks.CRIMSON_WART_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CRIMSON_WART_BRICKS.wall, Blocks.NETHER_WART_BLOCK, BlockusBlocks.CRIMSON_WART_BRICKS.block);
+        offerCutCopperRecipe(exporter, BlockusBlocks.CRIMSON_WART_BRICKS.block, Blocks.NETHER_WART_BLOCK);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.WARPED_WART_BRICKS.block, Blocks.WARPED_WART_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.WARPED_WART_BRICKS.stairs, Blocks.WARPED_WART_BLOCK, BlockusBlocks.WARPED_WART_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.WARPED_WART_BRICKS.slab, 2, Blocks.WARPED_WART_BLOCK, BlockusBlocks.WARPED_WART_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.WARPED_WART_BRICKS.wall, Blocks.WARPED_WART_BLOCK, BlockusBlocks.WARPED_WART_BRICKS.block);
+        offerCutCopperRecipe(exporter, BlockusBlocks.WARPED_WART_BRICKS.block, Blocks.WARPED_WART_BLOCK);
+
         // Limestone
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIMESTONE.stairs, BlockusBlocks.LIMESTONE.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.LIMESTONE.slab, BlockusBlocks.LIMESTONE.block, 2);

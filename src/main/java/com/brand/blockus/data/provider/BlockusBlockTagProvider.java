@@ -1083,6 +1083,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SOUL_LANTERN_BLOCK)
             .add(BlockusBlocks.REDSTONE_LANTERN_BLOCK)
             .add(BlockusBlocks.REDSTONE_LANTERN)
+            .add(BlockusBlocks.CRIMSON_WART_BRICKS.block)
+            .add(BlockusBlocks.CRIMSON_WART_BRICKS.stairs)
+            .add(BlockusBlocks.CRIMSON_WART_BRICKS.slab)
+            .add(BlockusBlocks.WARPED_WART_BRICKS.block)
+            .add(BlockusBlocks.WARPED_WART_BRICKS.stairs)
+            .add(BlockusBlocks.WARPED_WART_BRICKS.slab)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.STAINED_STONE_BRICKS)
@@ -1179,7 +1185,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.DARK_OAK_SMALL_LOGS);
 
         this.getOrCreateTagBuilder(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
-            .add(BlockusBlocks.BLUESTONE.block);
+            .add(BlockusBlocks.BLUESTONE.block)
+            .add(BlockusBlocks.VIRIDITE.block);
 
         this.getOrCreateTagBuilder(BlockTags.DOORS)
             .add(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR)
@@ -1455,6 +1462,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.VIRIDITE_BRICKS.wall)
             .add(BlockusBlocks.SMALL_VIRIDITE_BRICKS.wall)
             .add(BlockusBlocks.VIRIDITE_TILES.wall)
+            .add(BlockusBlocks.CRIMSON_WART_BRICKS.wall)
+            .add(BlockusBlocks.WARPED_WART_BRICKS.wall)
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.getOrCreateTagBuilder(BlockTags.WARPED_STEMS)

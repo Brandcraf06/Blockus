@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 
 import java.util.ArrayList;
 
@@ -43,6 +44,11 @@ public class BSSWTypes {
 
     public BSSWTypes(String type, Block base, int luminance) {
         this(type, base, FabricBlockSettings.copyOf(base).luminance(luminance));
+
+    }
+
+    public BSSWTypes(String type, Block base, BlockSoundGroup sound) {
+        this(type, base, FabricBlockSettings.copyOf(base).sounds(sound));
 
     }
 

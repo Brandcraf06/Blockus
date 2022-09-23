@@ -1136,5 +1136,13 @@
   "item.blockus.white_oak_chest_boat": "Bateau de stockage en chêne blanc",
   "block.blockus.redstone_lantern": "Lanterne de Redstone",
   "block.blockus.redstone_lantern_block": "Bloc de lanterne de Redstone",
-  "block.blockus.redstone_o_lantern": "Citrouille-Redstone"
+  "block.blockus.redstone_o_lantern": "Citrouille-Redstone",
+  "block.blockus.crimson_wart_bricks": "Briques de verrues carmin",
+  "block.blockus.crimson_wart_brick_stairs": "Escalier en briques de verrues carmin",
+  "block.blockus.crimson_wart_brick_slab": "Dalle en briques de verrues carmin",
+  "block.blockus.crimson_wart_brick_wall": "Muret en briques de verrues carmin",
+  "block.blockus.warped_wart_bricks": "Briques de verrues biscornues",
+  "block.blockus.warped_wart_brick_stairs": "Escalier en briques de verrues biscornues",
+  "block.blockus.warped_wart_brick_slab": "Dalle en briques de verrues biscornues",
+  "block.blockus.warped_wart_brick_wall": "Muret en briques de verrues biscornues"
 }

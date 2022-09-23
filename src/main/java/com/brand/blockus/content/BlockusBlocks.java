@@ -123,6 +123,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block HERRINGBONE_POLISHED_BASALT_BRICKS = register("herringbone_polished_basalt_bricks", new Block(FabricBlockSettings.copy(BlockusBlocks.POLISHED_BASALT_BRICKS.block)));
     public static final Block POLISHED_BASALT_CIRCULAR_PAVING = register("polished_basalt_circular_paving", new OrientableBlockBase(FabricBlockSettings.copy(BlockusBlocks.POLISHED_BASALT_BRICKS.block)));
 
+    // Wart Blocks
+    public static final BSSWTypes CRIMSON_WART_BRICKS = new BSSWTypes("crimson_wart_bricks", Blocks.NETHER_WART_BLOCK, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSWTypes WARPED_WART_BRICKS = new BSSWTypes("warped_wart_bricks", Blocks.WARPED_WART_BLOCK, BlockSoundGroup.NETHER_BRICKS);
+
     // Limestone
     public static final BSSWTypes LIMESTONE = new BSSWTypes("limestone", Blocks.STONE, MapColor.OAK_TAN);
     public static final BSSTypes POLISHED_LIMESTONE = new BSSTypes("polished_limestone", BlockusBlocks.LIMESTONE.block);
@@ -776,7 +780,6 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GOLDEN_BARS = registerDecoration("golden_bars", new PaneBlockBase(FabricBlockSettings.copy(Blocks.IRON_BARS)));
     public static final Block GOLDEN_CHAIN = registerDecoration("golden_chain", new ChainBlock(FabricBlockSettings.copy(Blocks.CHAIN)));
 
-
     // Lantern Blocks
     public static final Block LANTERN_BLOCK = registerDecoration("lantern_block", new Block(FabricBlockSettings.copy(Blocks.LANTERN)));
     public static final Block SOUL_LANTERN_BLOCK = registerDecoration("soul_lantern_block", new Block(FabricBlockSettings.copy(Blocks.SOUL_LANTERN)));
@@ -784,7 +787,6 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block REDSTONE_LANTERN_BLOCK = registerRedstone("redstone_lantern_block", new RedstoneBlock(FabricBlockSettings.copyOf(REDSTONE_LANTERN).luminance(7)));
     public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlockBase(FabricBlockSettings.copyOf(Blocks.JACK_O_LANTERN).luminance(10)));
     public static final Block REDSTONE_O_LANTERN = registerRedstone("redstone_o_lantern", new RedstonePumpkinBlock(FabricBlockSettings.copyOf(Blocks.JACK_O_LANTERN).luminance(7)));
-
 
     // Barriers
     public static final Block CAUTION_BARRIER = registerDecoration("caution_barrier", createBarrier(1.5f, 1200.0f));

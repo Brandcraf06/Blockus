@@ -1248,5 +1248,13 @@
   "block.blockus.blueberries_crate": "Blueberries Crate",
   "block.blockus.redstone_lantern": "Redstone Lantern",
   "block.blockus.redstone_lantern_block": "Redstone Lantern Block",
-  "block.blockus.redstone_o_lantern": "Redstone o'Lantern"
+  "block.blockus.redstone_o_lantern": "Redstone o'Lantern",
+  "block.blockus.crimson_wart_bricks": "Crimson Wart Bricks",
+  "block.blockus.crimson_wart_brick_stairs": "Crimson Wart Brick Stairs",
+  "block.blockus.crimson_wart_brick_slab": "Crimson Wart Brick Slab",
+  "block.blockus.crimson_wart_brick_wall": "Crimson Wart Brick Wall",
+  "block.blockus.warped_wart_bricks": "Warped Wart Bricks",
+  "block.blockus.warped_wart_brick_stairs": "Warped Wart Brick Stairs",
+  "block.blockus.warped_wart_brick_slab": "Warped Wart Brick Slab",
+  "block.blockus.warped_wart_brick_wall": "Warped Wart Brick Wall"
 }

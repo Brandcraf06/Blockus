@@ -50,7 +50,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.slab, BlockLootTableGenerator::slabDrops);
             this.addDrop(woodType.fence);
             this.addDrop(woodType.fence_gate);
-            this.addDrop(woodType.door, BlockLootTableGenerator::addDoorDrop);
+            this.addDrop(woodType.door, BlockLootTableGenerator::doorDrops);
             this.addDrop(woodType.trapdoor);
             this.addDrop(woodType.pressure_plate);
             this.addDrop(woodType.button);
@@ -63,7 +63,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.slab, BlockLootTableGenerator::slabDrops);
             this.addDrop(woodType.fence);
             this.addDrop(woodType.fence_gate);
-            this.addDrop(woodType.door, BlockLootTableGenerator::addDoorDrop);
+            this.addDrop(woodType.door, BlockLootTableGenerator::doorDrops);
             this.addDrop(woodType.trapdoor);
             this.addDrop(woodType.pressure_plate);
             this.addDrop(woodType.button);
@@ -518,12 +518,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.NETHERITE_SLAB, BlockLootTableGenerator::slabDrops);
         this.addDrop(BlockusBlocks.SNOW_BRICK_SLAB, BlockLootTableGenerator::slabDrops);
 
-        this.addDrop(BlockusBlocks.BLACKSTONE_DOOR, BlockLootTableGenerator::addDoorDrop);
-        this.addDrop(BlockusBlocks.GOLDEN_GATE, BlockLootTableGenerator::addDoorDrop);
-        this.addDrop(BlockusBlocks.IRON_GATE, BlockLootTableGenerator::addDoorDrop);
-        this.addDrop(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR, BlockLootTableGenerator::addDoorDrop);
-        this.addDrop(BlockusBlocks.PAPER_DOOR, BlockLootTableGenerator::addDoorDrop);
-        this.addDrop(BlockusBlocks.STONE_DOOR, BlockLootTableGenerator::addDoorDrop);
+        this.addDrop(BlockusBlocks.BLACKSTONE_DOOR, BlockLootTableGenerator::doorDrops);
+        this.addDrop(BlockusBlocks.GOLDEN_GATE, BlockLootTableGenerator::doorDrops);
+        this.addDrop(BlockusBlocks.IRON_GATE, BlockLootTableGenerator::doorDrops);
+        this.addDrop(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR, BlockLootTableGenerator::doorDrops);
+        this.addDrop(BlockusBlocks.PAPER_DOOR, BlockLootTableGenerator::doorDrops);
+        this.addDrop(BlockusBlocks.STONE_DOOR, BlockLootTableGenerator::doorDrops);
 
         this.addPottedPlantDrop(BlockusBlocks.POTTED_WHITE_OAK_SAPLING);
         this.addPottedPlantDrop(BlockusBlocks.POTTED_RAINBOW_ROSE);
