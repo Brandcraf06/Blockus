@@ -1,8 +1,7 @@
 {
-  "parent": "block/cube_bottom_top",
+  "parent": "blockus:block/crate_template",
   "textures": {
     "top": "blockus:block/golden_apple_crate",
-    "side": "blockus:block/golden_apple_crate_side",
-    "bottom": "blockus:block/crate_bottom"
+    "side": "blockus:block/golden_apple_crate_side"
   }
 }
