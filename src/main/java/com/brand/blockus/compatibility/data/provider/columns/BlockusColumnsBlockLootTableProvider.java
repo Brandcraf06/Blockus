@@ -17,7 +17,7 @@ public class BlockusColumnsBlockLootTableProvider extends FabricBlockLootTablePr
     }
 
     @Override
-    protected void generateBlockLootTables() {
+    public void generate() {
         for (BlockusColumnType columnType : BlockusColumnBlocks.COLUMN_TYPES) {
             this.addDrop(columnType.block);
         }

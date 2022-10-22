@@ -180,14 +180,4 @@ public class BlockusClient implements ClientModInitializer {
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
     }
 
-    public static RecipeBookGroup getRecipeBookGroup(ItemGroup itemGroup) {
-        if (itemGroup == Blockus.BLOCKUS_BUILDING_BLOCKS) {
-            return RecipeBookGroup.CRAFTING_BUILDING_BLOCKS;
-        } else if (itemGroup == Blockus.BLOCKUS_REDSTONE) {
-            return RecipeBookGroup.CRAFTING_REDSTONE;
-        } else {
-            return null;
-        }
-    }
-
 }

@@ -35,7 +35,7 @@ dependencies {
   modCompileOnly "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_shapes_api_version}"
 
 	// Columns
-  modImplementation "curse.maven:columns-385230:3697328"
+  modCompileOnly "curse.maven:columns-385230:3697328"
 
 	// Promenade
   modCompileOnly "curse.maven:promenade-399648:3855352"

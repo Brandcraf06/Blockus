@@ -4,7 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
 import com.brand.blockus.blocks.base.redstone.DoorBase;
 import com.brand.blockus.blocks.base.redstone.PressurePlateBase;
-import com.brand.blockus.blocks.base.redstone.StoneButtonBase;
+import com.brand.blockus.blocks.base.redstone.ButtonBase;
 import com.brand.blockus.blocks.base.redstone.TrapdoorBase;
 import com.brand.blockus.blocks.blockitems.GlintBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -12,9 +12,11 @@ import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
@@ -35,7 +37,7 @@ public class BlocksRegistration {
 
     public static Block createGTPillar(String baseid, Block base) {
         String id = baseid.replace("bricks", "brick");
-        return registerDecoration(id + "_pillar", new PillarBlock(FabricBlockSettings.copy(base)));
+        return register(id + "_pillar", new PillarBlock(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerGTPillar(Block base) {
@@ -68,7 +70,7 @@ public class BlocksRegistration {
 
     // Wall
     public static Block createWall(String baseid, Block base) {
-        return registerDecoration(replaceId(baseid) + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
+        return register(replaceId(baseid) + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerWall(Block base) {
@@ -80,26 +82,30 @@ public class BlocksRegistration {
     }
 
     public static Block registerSmallHedge(String id, Block base) {
-        return registerDecoration(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
+        return register(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
 
 
 
     // Pressure Plate
 
-    public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base) {
+    public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base, SoundEvent depressSound, SoundEvent pressSound) {
         String id = baseid.replace("_planks", "");
-        return registerRedstone(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base).noCollision()));
+        return register(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base).noCollision(), depressSound, pressSound));
     }
 
-    public static Block registerPressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
-        return createPressurePlate(Registry.BLOCK.getId(base).getPath(), type, base);
+    public static Block registerStonePressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
+        return createPressurePlate(Registry.BLOCK.getId(base).getPath(), type, base, SoundEvents.BLOCK_STONE_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_STONE_PRESSURE_PLATE_CLICK_ON);
+    }
+
+    public static Block registerWoodenPressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
+        return createPressurePlate(Registry.BLOCK.getId(base).getPath(), type, base, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON);
     }
 
     // Button
 
     public static Block createStoneButton(String id, Block base) {
-        return registerRedstone(id + "_button", new StoneButtonBase(FabricBlockSettings.copy(base).noCollision()));
+        return register(id + "_button", new ButtonBase(FabricBlockSettings.copyOf(base).noCollision(), 20, false, SoundEvents.BLOCK_STONE_BUTTON_CLICK_OFF, SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON));
     }
 
     public static Block registerStoneButton(Block base) {
@@ -122,20 +128,21 @@ public class BlocksRegistration {
 
     // Door & Trapdoor
 
-    public static DoorBase createDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque());
+    public static DoorBase createDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, SoundEvent closeSound, SoundEvent openSound) {
+        return new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque(), closeSound, openSound);
     }
 
-    public static DoorBase createStoneDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool());
+
+    public static DoorBase createStoneDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, SoundEvent closeSound, SoundEvent openSound) {
+        return new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool(), closeSound, openSound);
     }
 
-    public static TrapdoorBase createTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque());
+    public static TrapdoorBase createTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, SoundEvent closeSound, SoundEvent openSound) {
+        return new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque(), closeSound, openSound);
     }
 
-    public static TrapdoorBase createStoneTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool());
+    public static TrapdoorBase createStoneTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, SoundEvent closeSound, SoundEvent openSound) {
+        return new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool(), closeSound, openSound);
     }
 
     // Light
@@ -199,29 +206,13 @@ public class BlocksRegistration {
         return block;
     }
 
-    public static Block register(String id, Block block, ItemGroup itemGroup) {
-        return register(id, block, new BlockItem(block, new Item.Settings().group(itemGroup)));
-    }
-
     public static Block register(String id, Block block) {
-        return register(id, block, Blockus.BLOCKUS_BUILDING_BLOCKS);
-    }
-
-    public static Block registerDecoration(String id, Block block) {
-        return register(id, block, Blockus.BLOCKUS_DECORATIONS);
-    }
-
-    public static Block registerRedstone(String id, Block block) {
-        return register(id, block, Blockus.BLOCKUS_REDSTONE);
-    }
-
-    public static Block registerLegacy(String id, Block block) {
-        return register(id, block, Blockus.BLOCKUS_LEGACY);
+        return register(id, block, new BlockItem(block, new Item.Settings()));
     }
 
 
     public static Block registerGlint(String id, Block block) {
-        return register(id, block, new GlintBlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+        return register(id, block, new GlintBlockItem(block, new Item.Settings().rarity(Rarity.UNCOMMON)));
     }
 
     public static Block registerNoItem(String id, Block block) {
@@ -229,7 +220,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerFireproof(String id, Block block) {
-        return register(id, block, new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS).fireproof()));
+        return register(id, block, new BlockItem(block, new Item.Settings().fireproof()));
     }
 
 

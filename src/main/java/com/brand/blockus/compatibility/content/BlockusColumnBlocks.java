@@ -27,7 +27,7 @@ public final class BlockusColumnBlocks {
         Block block = new ColumnBlock(FabricBlockSettings.copy(base));
         Registry.register(Registry.BLOCK, id, block);
 
-        Item item = new BlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_DECORATIONS));
+        Item item = new BlockItem(block, new Item.Settings());
         Registry.register(Registry.ITEM, id, item);
 
         COLUMN_TYPES.add(new BlockusColumnType(block, base, id));

@@ -23,8 +23,7 @@ public class BSSWTypes {
     private BSSWTypes(String type, Block base, Block.Settings blockSettings) {
         this.base = base;
 
-        ItemGroup group = Blockus.BLOCKUS_BUILDING_BLOCKS;
-        this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)), group);
+        this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
         this.slab = BlocksRegistration.registerSlab(this.block);
         this.stairs = BlocksRegistration.registerStairs(this.block);
         this.wall = BlocksRegistration.registerWall(this.block);

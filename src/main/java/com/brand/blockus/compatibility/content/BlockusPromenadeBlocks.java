@@ -77,7 +77,7 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         DARK_AMARANTH_SMALL_HEDGE = registerSmallHedge("dark_amaranth_small_hedge", AmaranthBundle.DARK_AMARANTH_WART_BLOCK);
 
         // Leaf Piles
-        WHITE_OAK_LEAF_PILE = registerDecoration("white_oak_leaf_pile", new PlantPileBlock(FabricBlockSettings.of(Material.PLANT).strength(0.1f).sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
+        WHITE_OAK_LEAF_PILE = register("white_oak_leaf_pile", new PlantPileBlock(FabricBlockSettings.of(Material.PLANT).strength(0.1f).sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAF_PILE, 30, 60);
 
         // Crates

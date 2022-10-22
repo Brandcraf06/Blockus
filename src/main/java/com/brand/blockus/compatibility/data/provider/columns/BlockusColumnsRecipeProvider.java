@@ -17,7 +17,7 @@ public class BlockusColumnsRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(Consumer<RecipeJsonProvider> exporter) {
         Consumer<RecipeJsonProvider> columnsExporter = this.withConditions(exporter, BlockusDatagen.getLoadCondition("columns"));
         for (BlockusColumnType columnType : BlockusColumnBlocks.COLUMN_TYPES) {
             ColumnsRecipeProvider.offerColumnRecipe(columnsExporter, columnType.block, columnType.base);
