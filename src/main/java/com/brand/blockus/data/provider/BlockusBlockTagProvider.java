@@ -1175,6 +1175,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_NETHERRACK_BUTTON)
             .add(BlockusBlocks.POLISHED_END_STONE_BUTTON)
             .add(BlockusBlocks.POLISHED_BASALT_BUTTON)
+            .add(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON)
+            .add(BlockusBlocks.POLISHED_TUFF_BUTTON)
+            .add(BlockusBlocks.POLISHED_SCULK_BUTTON)
             .add(BlockusBlocks.VIRIDITE_BUTTON);
 
 

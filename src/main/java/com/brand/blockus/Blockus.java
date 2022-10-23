@@ -4,7 +4,10 @@ import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.utils.BlockusItemGroups;
+import com.brand.blockus.itemgroups.BlockusBuildingBlocks;
+import com.brand.blockus.itemgroups.BlockusLegacyBlocks;
+import com.brand.blockus.itemgroups.BlockusNatureBlocks;
+import com.brand.blockus.itemgroups.BlockusRedstoneBlocks;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
@@ -23,7 +26,12 @@ public class Blockus implements ModInitializer {
 
         Reflection.initialize(BlockusBlocks.class);
         Reflection.initialize(BlockusItems.class);
-        Reflection.initialize(BlockusItemGroups.class);
+
+        Reflection.initialize(BlockusBuildingBlocks.class);
+        Reflection.initialize(BlockusNatureBlocks.class);
+        Reflection.initialize(BlockusRedstoneBlocks.class);
+        Reflection.initialize(BlockusLegacyBlocks.class);
+
 
         if (FabricLoader.getInstance().isModLoaded("columns")) {
             BlockusColumnBlocks.init();

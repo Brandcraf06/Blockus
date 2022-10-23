@@ -353,7 +353,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WHITE_OAK_LEAVES = register("white_oak_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.ORANGE).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
     public static final WoodTypesB WHITE_OAK = new WoodTypesB("white_oak", Blocks.SPRUCE_PLANKS, MapColor.OFF_WHITE);
 
-    // Bamboo
+    // Bamboo (before 1.20)
     public static final WoodTypesB BAMBOO = new WoodTypesB("bamboo", Blocks.OAK_PLANKS, MapColor.PALE_YELLOW);
 
     // Charred
@@ -840,7 +840,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_GLOWING_OBSIDIAN = register("legacy_glowing_obsidian", createLightBlock(50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MapColor.BLACK));
     public static final Block LEGACY_NETHER_REACTOR_CORE = register("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
 
-    // Barrels (creative)
+    // Barrels (outdated)
     public static final BarrelBlockBase OAK_BARREL = new BarrelBlockBase("oak_barrel", Blocks.OAK_PLANKS.getDefaultMapColor());
     public static final BarrelBlockBase BIRCH_BARREL = new BarrelBlockBase("birch_barrel", Blocks.BIRCH_PLANKS.getDefaultMapColor());
     public static final BarrelBlockBase JUNGLE_BARREL = new BarrelBlockBase("jungle_barrel", Blocks.JUNGLE_PLANKS.getDefaultMapColor());

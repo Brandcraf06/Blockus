@@ -1,7 +1,7 @@
 {
   "itemGroup.blockus.blockus_building_blocks": "Building Blocks §3(Blockus)",
-  "itemGroup.blockus.blockus_decorations": "Decoration Blocks §3(Blockus)",
-  "itemGroup.blockus.blockus_redstone": "Redstone §3(Blockus)",
+  "itemGroup.blockus.blockus_nature": "Nature & Functional Blocks §3(Blockus)",
+  "itemGroup.blockus.blockus_redstone": "Redstone Blocks §3(Blockus)",
   "itemGroup.blockus.blockus_legacy": "Legacy Blocks §3(Blockus)",
   "blockus.blockitem.givespeed": "Gives Speed III effect to player standing on it.",
   "block.blockus.blaze_bricks": "Blaze Bricks",
