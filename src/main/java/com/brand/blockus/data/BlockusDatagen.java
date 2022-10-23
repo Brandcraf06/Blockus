@@ -27,13 +27,13 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         dataGenerator.addProvider(FabricBuiltinRegistriesProvider.forCurrentMod());
 
 
-        dataGenerator.addProvider(BlockusColumnsBlockLootTableProvider::new);
-        dataGenerator.addProvider(BlockusColumnsModelProvider::new);
-        dataGenerator.addProvider(BlockusColumnsRecipeProvider::new);
-
-        FabricTagProvider.BlockTagProvider columnsBlockTags = new BlockusColumnsBlockTagProvider(dataGenerator);
-        dataGenerator.addProvider(columnsBlockTags);
-        dataGenerator.addProvider(new BlockusColumnsItemTagProvider(dataGenerator, columnsBlockTags));
+//        dataGenerator.addProvider(BlockusColumnsBlockLootTableProvider::new);
+//        dataGenerator.addProvider(BlockusColumnsModelProvider::new);
+//        dataGenerator.addProvider(BlockusColumnsRecipeProvider::new);
+//
+//        FabricTagProvider.BlockTagProvider columnsBlockTags = new BlockusColumnsBlockTagProvider(dataGenerator);
+//        dataGenerator.addProvider(columnsBlockTags);
+//        dataGenerator.addProvider(new BlockusColumnsItemTagProvider(dataGenerator, columnsBlockTags));
     }
 
     public static ConditionJsonProvider getLoadCondition(String... modIds) {

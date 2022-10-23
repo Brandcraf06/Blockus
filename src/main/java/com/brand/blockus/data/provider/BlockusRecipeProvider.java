@@ -1271,9 +1271,4 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             generateFamily(exporter, family);
         });
     }
-
-    @Override
-    public String getName() {
-        return null;
-    }
 }
