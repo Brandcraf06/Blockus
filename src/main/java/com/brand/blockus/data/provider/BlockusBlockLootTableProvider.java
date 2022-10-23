@@ -53,7 +53,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.trapdoor);
             this.addDrop(woodType.pressure_plate);
             this.addDrop(woodType.button);
-            this.addDrop(woodType.standing_sign);
+//            this.addDrop(woodType.standing_sign);
         }
 
         for (WoodTypesNB woodType : WoodTypesNB.values()) {
@@ -66,7 +66,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.trapdoor);
             this.addDrop(woodType.pressure_plate);
             this.addDrop(woodType.button);
-            this.addDrop(woodType.standing_sign);
+//            this.addDrop(woodType.standing_sign);
         }
 
         for (TimberFrameTypesB timberFrameType : TimberFrameTypesB.values()) {
@@ -602,9 +602,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         return LootTable.builder().pool(addSurvivesExplosionCondition(BlockusBlocks.LARGE_FLOWER_POT, LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(BlockusBlocks.LARGE_FLOWER_POT)))).pool(addSurvivesExplosionCondition(plant, LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(plant))));
     }
 
-     public void addPottedLargePlantDrop(Block block) {
+    public void addPottedLargePlantDrop(Block block) {
         this.addDrop(block, (flowerPot) -> {
-            return pottedLargePlantDrops(((LargeFlowerPotBlock)flowerPot).getContent());
+            return this.pottedLargePlantDrops(((LargeFlowerPotBlock)flowerPot).getContent());
         });
     }
 }

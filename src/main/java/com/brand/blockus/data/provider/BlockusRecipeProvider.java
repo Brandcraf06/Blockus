@@ -725,9 +725,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         offerBarkBlockRecipe(exporter, BlockusBlocks.WHITE_OAK_WOOD, BlockusBlocks.WHITE_OAK_LOG);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.BAMBOO.planks).input('#', Items.BAMBOO).pattern("##").pattern("##").criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO)).offerTo(exporter);
-        offerBoatsRecipe(exporter, BlockusBlocks.WHITE_OAK.boat, BlockusBlocks.WHITE_OAK.chest_boat, BlockusBlocks.WHITE_OAK.planks);
-        offerBoatsRecipe(exporter, BlockusBlocks.BAMBOO.boat, BlockusBlocks.BAMBOO.chest_boat, BlockusBlocks.BAMBOO.planks);
-        offerBoatsRecipe(exporter, BlockusBlocks.CHARRED.boat, BlockusBlocks.CHARRED.chest_boat, BlockusBlocks.CHARRED.planks);
+//        offerBoatsRecipe(exporter, BlockusBlocks.WHITE_OAK.boat, BlockusBlocks.WHITE_OAK.chest_boat, BlockusBlocks.WHITE_OAK.planks);
+//        offerBoatsRecipe(exporter, BlockusBlocks.BAMBOO.boat, BlockusBlocks.BAMBOO.chest_boat, BlockusBlocks.BAMBOO.planks);
+//        offerBoatsRecipe(exporter, BlockusBlocks.CHARRED.boat, BlockusBlocks.CHARRED.chest_boat, BlockusBlocks.CHARRED.planks);
         CookingRecipeJsonBuilder.createSmelting(Ingredient.fromTag(BlockusItemTags.PLANKS_THAT_BURN), RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.CHARRED.planks, 0.1F, 200).criterion("has_planks", conditionsFromTag(BlockusItemTags.PLANKS_THAT_BURN)).offerTo(exporter);
 
         offerSmallLogsRecipe(exporter, BlockusBlocks.OAK_SMALL_LOGS, Blocks.OAK_LOG);

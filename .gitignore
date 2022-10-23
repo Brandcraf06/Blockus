@@ -3,6 +3,11 @@
 .gradle/
 build/
 out/
+classes/
+
+# eclipse
+
+*.launch
 
 # idea
 
@@ -19,18 +24,10 @@ bin/
 .classpath
 .project
 
+# macos
+
+*.DS_Store
+
 # fabric
 
 run/
-src/main/generated/
-
-.mixin.out/
-crash-reports/
-logs/
-mods/
-resourcepacks/
-saves/
-screenshots/
-options.txt
-usercache.json
-*.launch

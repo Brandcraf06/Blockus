@@ -150,13 +150,13 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.TINTED_BEVELED_GLASS
         );
 
-        TerraformBoatClientHelper.registerModelLayers(Blockus.id("bamboo"));
-        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "charred"));
-        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "white_oak"));
+//        TerraformBoatClientHelper.registerModelLayers(Blockus.id("bamboo"));
+//        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "charred"));
+//        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "white_oak"));
 
-        registerSignSprite("bamboo");
-        registerSignSprite("charred");
-        registerSignSprite("white_oak");
+//        registerSignSprite("bamboo");
+//        registerSignSprite("charred");
+//        registerSignSprite("white_oak");
 
         if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.initClient();
@@ -175,9 +175,9 @@ public class BlockusClient implements ClientModInitializer {
         }, block.asItem());
     }
 
-    private void registerSignSprite(String path) {
-        Identifier id = Blockus.id( "entity/signs/" + path);
-        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
-    }
+//    private void registerSignSprite(String path) {
+//        Identifier id = Blockus.id( "entity/signs/" + path);
+//        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
+//    }
 
 }

@@ -1,9 +1,6 @@
 package com.brand.blockus.data;
 
-import com.brand.blockus.data.provider.BlockusBlockLootTableProvider;
-import com.brand.blockus.data.provider.BlockusBlockTagProvider;
-import com.brand.blockus.data.provider.BlockusItemTagProvider;
-import com.brand.blockus.data.provider.BlockusRecipeProvider;
+import com.brand.blockus.data.provider.*;
 import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsBlockLootTableProvider;
 import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsBlockTagProvider;
 import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsItemTagProvider;
@@ -11,9 +8,11 @@ import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsModel
 import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsRecipeProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBuiltinRegistriesProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.ConditionJsonProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions;
+import net.minecraft.server.QueueingWorldGenerationProgressListener;
 
 public class BlockusDatagen implements DataGeneratorEntrypoint {
     @Override
@@ -25,6 +24,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         dataGenerator.addProvider(new BlockusItemTagProvider(dataGenerator, blockTags));
 
         dataGenerator.addProvider(BlockusBlockLootTableProvider::new);
+        dataGenerator.addProvider(FabricBuiltinRegistriesProvider.forCurrentMod());
 
 
         dataGenerator.addProvider(BlockusColumnsBlockLootTableProvider::new);
