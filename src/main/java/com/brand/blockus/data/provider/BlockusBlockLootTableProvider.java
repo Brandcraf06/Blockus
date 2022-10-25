@@ -53,7 +53,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.trapdoor);
             this.addDrop(woodType.pressure_plate);
             this.addDrop(woodType.button);
-//            this.addDrop(woodType.standing_sign);
+            this.addDrop(woodType.standing_sign);
         }
 
         for (WoodTypesNB woodType : WoodTypesNB.values()) {
@@ -66,7 +66,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.trapdoor);
             this.addDrop(woodType.pressure_plate);
             this.addDrop(woodType.button);
-//            this.addDrop(woodType.standing_sign);
+            this.addDrop(woodType.standing_sign);
         }
 
         for (TimberFrameTypesB timberFrameType : TimberFrameTypesB.values()) {

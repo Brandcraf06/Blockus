@@ -31,11 +31,11 @@ public class WoodTypesB {
     public final Block base;
     public final Block pressure_plate;
     public final Block button;
-//    public final Block standing_sign;
-//    public final Block wall_sign;
-//    public final Item sign;
-//    public final Item boat;
-//    public final Item chest_boat;
+    public final Block standing_sign;
+    public final Block wall_sign;
+    public final Item sign;
+    public final Item boat;
+    public final Item chest_boat;
 
     public WoodTypesB(String type, Block base, MapColor mapcolor) {
 
@@ -52,12 +52,12 @@ public class WoodTypesB {
         this.trapdoor =  BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createTrapdoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE, SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN));
         this.pressure_plate =  BlocksRegistration.registerWoodenPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, this.planks);
         this.button =  BlocksRegistration.register(type + "_button", new ButtonBase(FabricBlockSettings.copyOf(planks).noCollision(), 30, true, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON));
-//        this.standing_sign =  BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD)));
-//        this.wall_sign =  BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
-//        this.sign =  BlockusItems.registerSign(standing_sign, wall_sign);
-//        TerraformBoatType boatType = BlockusItems.registerBoat(type + "_boat", type + "_chest_boat", type);
-//        this.boat = boatType.getItem();
-//        this.chest_boat = boatType.getChestItem();
+        this.standing_sign =  BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD)));
+        this.wall_sign =  BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
+        this.sign =  BlockusItems.registerSign(standing_sign, wall_sign);
+        TerraformBoatType boatType = BlockusItems.registerBoat(type + "_boat", type + "_chest_boat", type);
+        this.boat = boatType.getItem();
+        this.chest_boat = boatType.getChestItem();
 
 
 

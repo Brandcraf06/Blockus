@@ -40,6 +40,17 @@ public class BlockusNatureBlocks {
             entries.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE);
             entries.add(BlockusBlocks.MOSS_SMALL_HEDGE);
 
+            entries.add(BlockusBlocks.WHITE_OAK.sign);
+            entries.add(BlockusBlocks.CHARRED.sign);
+            entries.add(BlockusBlocks.BAMBOO.sign);
+            entries.add(BlockusBlocks.WHITE_OAK.boat);
+            entries.add(BlockusBlocks.CHARRED.boat);
+            entries.add(BlockusBlocks.BAMBOO.boat);
+            entries.add(BlockusBlocks.WHITE_OAK.chest_boat);
+            entries.add(BlockusBlocks.CHARRED.chest_boat);
+            entries.add(BlockusBlocks.BAMBOO.chest_boat);
+
+
             entries.add(BlockusBlocks.SOUL_O_LANTERN);
             entries.add(BlockusBlocks.REDSTONE_O_LANTERN);
 
@@ -50,13 +61,6 @@ public class BlockusNatureBlocks {
             entries.add(BlockusBlocks.RAINBOW_ROSE);
             entries.add(BlockusItems.RAINBOW_PETAL);
             entries.add(BlockusBlocks.LARGE_FLOWER_POT);
-
-            // entries.add(BlockusBlocks.WHITE_OAK_SIGN);
-            // entries.add(BlockusBlocks.CHARRED_SIGN);
-            // entries.add(BlockusBlocks.WHITE_OAK_BOAT);
-            // entries.add(BlockusBlocks.CHARRED_BOAT);
-            // entries.add(BlockusBlocks.WHITE_OAK_CHEST_BOAT);
-            // entries.add(BlockusBlocks.CHARRED_BOAT_CHEST_BOAT);
 
         }
     };
