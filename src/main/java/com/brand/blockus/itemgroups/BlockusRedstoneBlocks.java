@@ -26,39 +26,43 @@ public class BlockusRedstoneBlocks {
             entries.add(BlockusBlocks.REDSTONE_O_LANTERN);
 
             entries.add(BlockusBlocks.WHITE_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.GRAY_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.BROWN_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.RED_REDSTONE_LAMP);
             entries.add(BlockusBlocks.ORANGE_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP);
             entries.add(BlockusBlocks.YELLOW_REDSTONE_LAMP);
             entries.add(BlockusBlocks.LIME_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.PINK_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.GRAY_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.CYAN_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.PURPLE_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.BLUE_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.BROWN_REDSTONE_LAMP);
             entries.add(BlockusBlocks.GREEN_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.RED_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.CYAN_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.BLUE_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.PURPLE_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP);
+            entries.add(BlockusBlocks.PINK_REDSTONE_LAMP);
             entries.add(BlockusBlocks.RAINBOW_LAMP);
 
             entries.add(BlockusBlocks.REDSTONE_LAMP_LIT);
             entries.add(BlockusBlocks.WHITE_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.GRAY_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.BROWN_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.RED_REDSTONE_LAMP_LIT);
             entries.add(BlockusBlocks.ORANGE_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP_LIT);
             entries.add(BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT);
             entries.add(BlockusBlocks.LIME_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.PINK_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.GRAY_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.CYAN_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.PURPLE_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.BLUE_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.BROWN_REDSTONE_LAMP_LIT);
             entries.add(BlockusBlocks.GREEN_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.RED_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.CYAN_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.BLUE_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.PURPLE_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT);
+            entries.add(BlockusBlocks.PINK_REDSTONE_LAMP_LIT);
             entries.add(BlockusBlocks.RAINBOW_LAMP_LIT);
+
+            entries.add(BlockusBlocks.WHITE_OAK.chest_boat);
+            entries.add(BlockusBlocks.CHARRED.chest_boat);
+            entries.add(BlockusBlocks.BAMBOO.chest_boat);
 
             for (WoodTypesB woodType : WoodTypesB.values()) {
                 entries.add(woodType.button);

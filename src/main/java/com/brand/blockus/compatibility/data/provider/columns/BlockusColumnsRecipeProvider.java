@@ -8,12 +8,13 @@ import com.brand.blockus.data.BlockusDatagen;
 
 import io.github.haykam821.columns.data.provider.ColumnsRecipeProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 
 public class BlockusColumnsRecipeProvider extends FabricRecipeProvider {
-    public BlockusColumnsRecipeProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+    public BlockusColumnsRecipeProvider(FabricDataOutput output) {
+        super(output);
     }
 
     @Override

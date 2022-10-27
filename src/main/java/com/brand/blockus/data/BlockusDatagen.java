@@ -17,23 +17,23 @@ import net.minecraft.server.QueueingWorldGenerationProgressListener;
 public class BlockusDatagen implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator dataGenerator) {
-        dataGenerator.addProvider(BlockusRecipeProvider::new);
-        FabricTagProvider.BlockTagProvider blockTags = new BlockusBlockTagProvider(dataGenerator);
-        dataGenerator.addProvider(blockTags);
 
-        dataGenerator.addProvider(new BlockusItemTagProvider(dataGenerator, blockTags));
+        final FabricDataGenerator.Pack pack = dataGenerator.create();
+        pack.addProvider(BlockusRecipeProvider::new);
 
-        dataGenerator.addProvider(BlockusBlockLootTableProvider::new);
-        dataGenerator.addProvider(FabricBuiltinRegistriesProvider.forCurrentMod());
+        BlockusBlockTagProvider blockTags = pack.addProvider(BlockusBlockTagProvider::new);
+        pack.addProvider((FabricDataGenerator.Pack.Factory<BlockusItemTagProvider>) output -> new BlockusItemTagProvider(output, blockTags));
+
+        pack.addProvider(BlockusBlockLootTableProvider::new);
+        pack.addProvider(FabricBuiltinRegistriesProvider.forCurrentMod());
 
 
-//        dataGenerator.addProvider(BlockusColumnsBlockLootTableProvider::new);
-//        dataGenerator.addProvider(BlockusColumnsModelProvider::new);
-//        dataGenerator.addProvider(BlockusColumnsRecipeProvider::new);
-//
-//        FabricTagProvider.BlockTagProvider columnsBlockTags = new BlockusColumnsBlockTagProvider(dataGenerator);
-//        dataGenerator.addProvider(columnsBlockTags);
-//        dataGenerator.addProvider(new BlockusColumnsItemTagProvider(dataGenerator, columnsBlockTags));
+//        pack.addProvider(BlockusColumnsBlockLootTableProvider::new);
+//        pack.addProvider(BlockusColumnsModelProvider::new);
+//        pack.addProvider(BlockusColumnsRecipeProvider::new);
+
+//        BlockusColumnsBlockTagProvider columnsBlockTags = pack.addProvider(BlockusColumnsBlockTagProvider::new);
+//        pack.addProvider((FabricDataGenerator.Pack.Factory<BlockusColumnsItemTagProvider>) output -> new BlockusColumnsItemTagProvider(output, columnsBlockTags));
     }
 
     public static ConditionJsonProvider getLoadCondition(String... modIds) {

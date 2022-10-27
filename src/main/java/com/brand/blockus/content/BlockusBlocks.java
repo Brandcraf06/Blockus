@@ -473,21 +473,21 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Concrete
     public static final ConcreteTypes WHITE_CONCRETE_BRICKS = new ConcreteTypes("white_concrete_bricks", Blocks.WHITE_CONCRETE);
+    public static final ConcreteTypes LIGHT_GRAY_CONCRETE_BRICKS = new ConcreteTypes("light_gray_concrete_bricks", Blocks.LIGHT_GRAY_CONCRETE);
+    public static final ConcreteTypes GRAY_CONCRETE_BRICKS = new ConcreteTypes("gray_concrete_bricks", Blocks.GRAY_CONCRETE);
+    public static final ConcreteTypes BLACK_CONCRETE_BRICKS = new ConcreteTypes("black_concrete_bricks", Blocks.BLACK_CONCRETE);
+    public static final ConcreteTypes BROWN_CONCRETE_BRICKS = new ConcreteTypes("brown_concrete_bricks", Blocks.BROWN_CONCRETE);
+    public static final ConcreteTypes RED_CONCRETE_BRICKS = new ConcreteTypes("red_concrete_bricks", Blocks.RED_CONCRETE);
     public static final ConcreteTypes ORANGE_CONCRETE_BRICKS = new ConcreteTypes("orange_concrete_bricks", Blocks.ORANGE_CONCRETE);
-    public static final ConcreteTypes MAGENTA_CONCRETE_BRICKS = new ConcreteTypes("magenta_concrete_bricks", Blocks.MAGENTA_CONCRETE);
-    public static final ConcreteTypes LIGHT_BLUE_CONCRETE_BRICKS = new ConcreteTypes("light_blue_concrete_bricks", Blocks.LIGHT_BLUE_CONCRETE);
     public static final ConcreteTypes YELLOW_CONCRETE_BRICKS = new ConcreteTypes("yellow_concrete_bricks", Blocks.YELLOW_CONCRETE);
     public static final ConcreteTypes LIME_CONCRETE_BRICKS = new ConcreteTypes("lime_concrete_bricks", Blocks.LIME_CONCRETE);
-    public static final ConcreteTypes PINK_CONCRETE_BRICKS = new ConcreteTypes("pink_concrete_bricks", Blocks.PINK_CONCRETE);
-    public static final ConcreteTypes GRAY_CONCRETE_BRICKS = new ConcreteTypes("gray_concrete_bricks", Blocks.GRAY_CONCRETE);
-    public static final ConcreteTypes LIGHT_GRAY_CONCRETE_BRICKS = new ConcreteTypes("light_gray_concrete_bricks", Blocks.LIGHT_GRAY_CONCRETE);
-    public static final ConcreteTypes CYAN_CONCRETE_BRICKS = new ConcreteTypes("cyan_concrete_bricks", Blocks.CYAN_CONCRETE);
-    public static final ConcreteTypes PURPLE_CONCRETE_BRICKS = new ConcreteTypes("purple_concrete_bricks", Blocks.PURPLE_CONCRETE);
-    public static final ConcreteTypes BLUE_CONCRETE_BRICKS = new ConcreteTypes("blue_concrete_bricks", Blocks.BLUE_CONCRETE);
-    public static final ConcreteTypes BROWN_CONCRETE_BRICKS = new ConcreteTypes("brown_concrete_bricks", Blocks.BROWN_CONCRETE);
     public static final ConcreteTypes GREEN_CONCRETE_BRICKS = new ConcreteTypes("green_concrete_bricks", Blocks.GREEN_CONCRETE);
-    public static final ConcreteTypes RED_CONCRETE_BRICKS = new ConcreteTypes("red_concrete_bricks", Blocks.RED_CONCRETE);
-    public static final ConcreteTypes BLACK_CONCRETE_BRICKS = new ConcreteTypes("black_concrete_bricks", Blocks.BLACK_CONCRETE);
+    public static final ConcreteTypes CYAN_CONCRETE_BRICKS = new ConcreteTypes("cyan_concrete_bricks", Blocks.CYAN_CONCRETE);
+    public static final ConcreteTypes LIGHT_BLUE_CONCRETE_BRICKS = new ConcreteTypes("light_blue_concrete_bricks", Blocks.LIGHT_BLUE_CONCRETE);
+    public static final ConcreteTypes BLUE_CONCRETE_BRICKS = new ConcreteTypes("blue_concrete_bricks", Blocks.BLUE_CONCRETE);
+    public static final ConcreteTypes PURPLE_CONCRETE_BRICKS = new ConcreteTypes("purple_concrete_bricks", Blocks.PURPLE_CONCRETE);
+    public static final ConcreteTypes MAGENTA_CONCRETE_BRICKS = new ConcreteTypes("magenta_concrete_bricks", Blocks.MAGENTA_CONCRETE);
+    public static final ConcreteTypes PINK_CONCRETE_BRICKS = new ConcreteTypes("pink_concrete_bricks", Blocks.PINK_CONCRETE);
 
     // Redstone Lamps
     public static final Block WHITE_REDSTONE_LAMP = register("white_redstone_lamp", createRedstoneLamp());
@@ -565,20 +565,20 @@ public class BlockusBlocks extends BlocksRegistration {
     // Asphalt
     public static final AsphaltTypes ASPHALT = new AsphaltTypes(DyeColor.BLACK);
     public static final AsphaltTypes WHITE_ASPHALT = new AsphaltTypes(DyeColor.WHITE);
-    public static final AsphaltTypes ORANGE_ASPHALT = new AsphaltTypes(DyeColor.ORANGE);
-    public static final AsphaltTypes MAGENTA_ASPHALT = new AsphaltTypes(DyeColor.MAGENTA);
-    public static final AsphaltTypes LIGHT_BLUE_ASPHALT = new AsphaltTypes(DyeColor.LIGHT_BLUE);
-    public static final AsphaltTypes YELLOW_ASPHALT = new AsphaltTypes(DyeColor.YELLOW);
-    public static final AsphaltTypes LIME_ASPHALT = new AsphaltTypes(DyeColor.LIME);
-    public static final AsphaltTypes PINK_ASPHALT = new AsphaltTypes(DyeColor.PINK);
     public static final AsphaltTypes LIGHT_GRAY_ASPHALT = new AsphaltTypes(DyeColor.LIGHT_GRAY);
     public static final AsphaltTypes GRAY_ASPHALT = new AsphaltTypes(DyeColor.GRAY);
-    public static final AsphaltTypes CYAN_ASPHALT = new AsphaltTypes(DyeColor.CYAN);
-    public static final AsphaltTypes PURPLE_ASPHALT = new AsphaltTypes(DyeColor.PURPLE);
-    public static final AsphaltTypes BLUE_ASPHALT = new AsphaltTypes(DyeColor.BLUE);
     public static final AsphaltTypes BROWN_ASPHALT = new AsphaltTypes(DyeColor.BROWN);
-    public static final AsphaltTypes GREEN_ASPHALT = new AsphaltTypes(DyeColor.GREEN);
     public static final AsphaltTypes RED_ASPHALT = new AsphaltTypes(DyeColor.RED);
+    public static final AsphaltTypes ORANGE_ASPHALT = new AsphaltTypes(DyeColor.ORANGE);
+    public static final AsphaltTypes YELLOW_ASPHALT = new AsphaltTypes(DyeColor.YELLOW);
+    public static final AsphaltTypes LIME_ASPHALT = new AsphaltTypes(DyeColor.LIME);
+    public static final AsphaltTypes GREEN_ASPHALT = new AsphaltTypes(DyeColor.GREEN);
+    public static final AsphaltTypes CYAN_ASPHALT = new AsphaltTypes(DyeColor.CYAN);
+    public static final AsphaltTypes LIGHT_BLUE_ASPHALT = new AsphaltTypes(DyeColor.LIGHT_BLUE);
+    public static final AsphaltTypes BLUE_ASPHALT = new AsphaltTypes(DyeColor.BLUE);
+    public static final AsphaltTypes PURPLE_ASPHALT = new AsphaltTypes(DyeColor.PURPLE);
+    public static final AsphaltTypes MAGENTA_ASPHALT = new AsphaltTypes(DyeColor.MAGENTA);
+    public static final AsphaltTypes PINK_ASPHALT = new AsphaltTypes(DyeColor.PINK);
     public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt",new AsphaltBlock(FabricBlockSettings.of(Material.STONE, DyeColor.BLUE).strength(1.5f, 6.0f).requiresTool()));
 
     // Shingles

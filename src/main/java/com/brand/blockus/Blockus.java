@@ -6,7 +6,7 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.itemgroups.BlockusBuildingBlocks;
 import com.brand.blockus.itemgroups.BlockusLegacyBlocks;
-import com.brand.blockus.itemgroups.BlockusNatureBlocks;
+import com.brand.blockus.itemgroups.BlockusNaturalBlocks;
 import com.brand.blockus.itemgroups.BlockusRedstoneBlocks;
 import com.brand.blockus.world.BlockusConfiguredFeatures;
 import com.google.common.reflect.Reflection;
@@ -28,7 +28,7 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(BlockusItems.class);
 
         Reflection.initialize(BlockusBuildingBlocks.class);
-        Reflection.initialize(BlockusNatureBlocks.class);
+        Reflection.initialize(BlockusNaturalBlocks.class);
         Reflection.initialize(BlockusRedstoneBlocks.class);
         Reflection.initialize(BlockusLegacyBlocks.class);
 

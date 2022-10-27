@@ -11,9 +11,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.util.Identifier;
 
-public class BlockusNatureBlocks {
+public class BlockusNaturalBlocks {
 
-    private static final ItemGroup BLOCKUS_NATURE_BLOCKS = new FabricItemGroup(new Identifier(Blockus.MOD_ID, "blockus_nature")) {
+    private static final ItemGroup BLOCKUS_NATURAL_BLOCKS = new FabricItemGroup(new Identifier(Blockus.MOD_ID, "blockus_nature")) {
         @Override
         public ItemStack createIcon() {
             return new ItemStack(BlockusBlocks.OAK_SMALL_HEDGE);
@@ -21,6 +21,12 @@ public class BlockusNatureBlocks {
 
         @Override
         protected void addItems(FeatureSet enabledFeatures, Entries entries) {
+
+            entries.add(BlockusBlocks.PATH);
+            entries.add(BlockusBlocks.LIMESTONE.block);
+            entries.add(BlockusBlocks.MARBLE.block);
+            entries.add(BlockusBlocks.BLUESTONE.block);
+            entries.add(BlockusBlocks.VIRIDITE.block);
 
             entries.add(BlockusBlocks.WHITE_OAK_LOG);
             entries.add(BlockusBlocks.WHITE_OAK_SAPLING);
@@ -40,6 +46,17 @@ public class BlockusNatureBlocks {
             entries.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE);
             entries.add(BlockusBlocks.MOSS_SMALL_HEDGE);
 
+            entries.add(BlockusBlocks.SOUL_O_LANTERN);
+            entries.add(BlockusBlocks.REDSTONE_O_LANTERN);
+
+            entries.add(BlockusBlocks.COOKIE_BLOCK);
+
+            entries.add(BlockusBlocks.RAINBOW_ROSE);
+            entries.add(BlockusItems.RAINBOW_PETAL);
+            entries.add(BlockusBlocks.LARGE_FLOWER_POT);
+
+            entries.add(BlockusBlocks.GOLDEN_CHAIN);
+
             entries.add(BlockusBlocks.WHITE_OAK.sign);
             entries.add(BlockusBlocks.CHARRED.sign);
             entries.add(BlockusBlocks.BAMBOO.sign);
@@ -49,18 +66,6 @@ public class BlockusNatureBlocks {
             entries.add(BlockusBlocks.WHITE_OAK.chest_boat);
             entries.add(BlockusBlocks.CHARRED.chest_boat);
             entries.add(BlockusBlocks.BAMBOO.chest_boat);
-
-
-            entries.add(BlockusBlocks.SOUL_O_LANTERN);
-            entries.add(BlockusBlocks.REDSTONE_O_LANTERN);
-
-            entries.add(BlockusBlocks.PATH);
-
-            entries.add(BlockusBlocks.COOKIE_BLOCK);
-
-            entries.add(BlockusBlocks.RAINBOW_ROSE);
-            entries.add(BlockusItems.RAINBOW_PETAL);
-            entries.add(BlockusBlocks.LARGE_FLOWER_POT);
 
         }
     };

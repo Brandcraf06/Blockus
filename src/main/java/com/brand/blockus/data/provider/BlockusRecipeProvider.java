@@ -6,7 +6,7 @@ import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusBlockFamilies;
 import com.brand.blockus.tag.BlockusItemTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.*;
@@ -21,8 +21,8 @@ import net.minecraft.tag.ItemTags;
 import java.util.function.Consumer;
 
 public class BlockusRecipeProvider extends FabricRecipeProvider {
-    public BlockusRecipeProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+    public BlockusRecipeProvider(FabricDataOutput output) {
+        super(output);
     }
 
     @Override

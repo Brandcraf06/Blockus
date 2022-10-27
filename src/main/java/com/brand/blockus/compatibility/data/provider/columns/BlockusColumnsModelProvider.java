@@ -5,13 +5,14 @@ import com.brand.blockus.compatibility.content.BlockusColumnBlocks.BlockusColumn
 
 import io.github.haykam821.columns.data.provider.ColumnsModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 
 public class BlockusColumnsModelProvider extends FabricModelProvider {
-    public BlockusColumnsModelProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+    public BlockusColumnsModelProvider(FabricDataOutput output) {
+        super(output);
     }
 
     @Override

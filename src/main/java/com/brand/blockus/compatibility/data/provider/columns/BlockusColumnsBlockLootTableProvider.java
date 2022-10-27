@@ -7,13 +7,14 @@ import com.brand.blockus.compatibility.content.BlockusColumnBlocks.BlockusColumn
 import com.brand.blockus.data.BlockusDatagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.loot.LootTable.Builder;
 import net.minecraft.util.Identifier;
 
 public class BlockusColumnsBlockLootTableProvider extends FabricBlockLootTableProvider {
-    public BlockusColumnsBlockLootTableProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+    public BlockusColumnsBlockLootTableProvider(FabricDataOutput output) {
+        super(output);
     }
 
     @Override

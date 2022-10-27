@@ -4,13 +4,13 @@ import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.compatibility.content.BlockusColumnBlocks.BlockusColumnType;
 
 import io.github.haykam821.columns.Main;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 
 public class BlockusColumnsBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-    public BlockusColumnsBlockTagProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+    public BlockusColumnsBlockTagProvider(FabricDataOutput output) {
+        super(output);
     }
 
     @Override

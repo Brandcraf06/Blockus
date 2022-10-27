@@ -3,7 +3,7 @@ package com.brand.blockus.data.provider;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.tag.BlockusBlockTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Block;
@@ -14,8 +14,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-    public BlockusBlockTagProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+    public BlockusBlockTagProvider(FabricDataOutput output) {
+        super(output);
     }
 
     private FabricTagBuilder<Block> getOrCreateTagBuilder(Identifier id) {
