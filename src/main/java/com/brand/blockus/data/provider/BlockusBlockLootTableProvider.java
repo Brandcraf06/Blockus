@@ -3,7 +3,6 @@ package com.brand.blockus.data.provider;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.*;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -25,7 +24,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         for (BSSWTypes bsswType : BSSWTypes.values()) {
             this.addDrop(bsswType.block);
             this.addDrop(bsswType.stairs);
-            this.addDrop(bsswType.slab, this::slabDrops);;
+            this.addDrop(bsswType.slab, this::slabDrops);
             this.addDrop(bsswType.wall);
         }
 

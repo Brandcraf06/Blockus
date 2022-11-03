@@ -1256,5 +1256,13 @@
   "block.blockus.warped_wart_bricks": "Warped Wart Bricks",
   "block.blockus.warped_wart_brick_stairs": "Warped Wart Brick Stairs",
   "block.blockus.warped_wart_brick_slab": "Warped Wart Brick Slab",
-  "block.blockus.warped_wart_brick_wall": "Warped Wart Brick Wall"
+  "block.blockus.warped_wart_brick_wall": "Warped Wart Brick Wall",
+  "block.blockus.nether_tiles": "Nether Tiles",
+  "block.blockus.nether_tile_stairs": "Nether Tile Stairs",
+  "block.blockus.nether_tile_slab": "Nether Tile Slab",
+  "block.blockus.nether_tile_wall": "Nether Tile Wall",
+  "block.blockus.end_tiles": "End Tiles",
+  "block.blockus.end_tile_stairs": "End Tile Stairs",
+  "block.blockus.end_tile_slab": "End Tile Slab",
+  "block.blockus.end_tile_wall": "End Tile Wall"
 }

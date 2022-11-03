@@ -240,6 +240,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block HERRINGBONE_RED_NETHER_BRICKS = register("herringbone_red_nether_bricks", new Block(FabricBlockSettings.copy(Blocks.RED_NETHER_BRICKS)));
     public static final Block NETHER_BRICK_PILLAR = registerPillar(Blocks.NETHER_BRICKS);
     public static final Block RED_NETHER_BRICK_PILLAR = registerPillar(Blocks.RED_NETHER_BRICKS);
+    public static final BSSWTypes NETHER_TILES = new BSSWTypes("nether_tiles", Blocks.NETHER_BRICKS);
 
     // Charred Nether Bricks
     public static final BSSWTypes CHARRED_NETHER_BRICKS = new BSSWTypes("charred_nether_bricks", Blocks.NETHER_BRICKS, MapColor.BLACK);
@@ -342,6 +343,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block END_STONE_PILLAR = createPillar("end_stone", Blocks.END_STONE_BRICKS);
     public static final Block PURPUR_DECORATED_END_STONE = register("purpur_decorated_end_stone", new Block(FabricBlockSettings.copy(Blocks.END_STONE_BRICKS)));
     public static final Block PHANTOM_PURPUR_DECORATED_END_STONE = register("phantom_purpur_decorated_end_stone", new Block(FabricBlockSettings.copy(Blocks.END_STONE_BRICKS)));
+    public static final BSSWTypes END_TILES = new BSSWTypes("end_tiles", Blocks.END_STONE_BRICKS);
 
     // White Oak Wood
     public static final Block WHITE_OAK_SAPLING = register("white_oak_sapling", new SaplingBlockBase(new WhiteOakSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));

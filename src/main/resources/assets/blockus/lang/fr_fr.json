@@ -1144,5 +1144,13 @@
   "block.blockus.warped_wart_bricks": "Briques de verrues biscornues",
   "block.blockus.warped_wart_brick_stairs": "Escalier en briques de verrues biscornues",
   "block.blockus.warped_wart_brick_slab": "Dalle en briques de verrues biscornues",
-  "block.blockus.warped_wart_brick_wall": "Muret en briques de verrues biscornues"
+  "block.blockus.warped_wart_brick_wall": "Muret en briques de verrues biscornues",
+  "block.blockus.nether_tiles": "Carrelage du Nether",
+  "block.blockus.nether_tile_stairs": "Escalier en carrelage du Nether",
+  "block.blockus.nether_tile_slab": "Dalle de carrelage du Nether",
+  "block.blockus.nether_tile_wall": "Muret en carrelage du Nether",
+  "block.blockus.end_tiles": "Carrelage de l'End",
+  "block.blockus.end_tile_stairs": "Escalier en carrelage de l'End",
+  "block.blockus.end_tile_slab": "Dalle de carrelage de l'End",
+  "block.blockus.end_tile_wall": "Muret en carrelage de l'End"
 }

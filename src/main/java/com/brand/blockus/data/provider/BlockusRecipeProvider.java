@@ -467,6 +467,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.RED_NETHER_BRICK_PILLAR, Blocks.RED_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.HERRINGBONE_RED_NETHER_BRICKS, Blocks.RED_NETHER_BRICKS);
 
+        offerStonecuttingRecipe(exporter, BlockusBlocks.NETHER_TILES.stairs, BlockusBlocks.NETHER_TILES.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.NETHER_TILES.slab, 2, BlockusBlocks.NETHER_TILES.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.NETHER_TILES.wall,BlockusBlocks.NETHER_TILES.block);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.NETHER_TILES.block,4).input('#',  Blocks.NETHERRACK).input('X',  Blocks.NETHER_BRICKS).pattern("#X").pattern("X#").criterion(hasItem(Blocks.NETHER_BRICKS),  conditionsFromItem(Blocks.NETHER_BRICKS)).offerTo(exporter);
+
+
         // Charred Nether Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHARRED_NETHER_BRICKS.stairs, BlockusBlocks.CHARRED_NETHER_BRICKS.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHARRED_NETHER_BRICKS.slab, 2, BlockusBlocks.CHARRED_NETHER_BRICKS.block);
@@ -719,6 +725,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         offerDecoratedRecipe(exporter, BlockusBlocks.PURPUR_DECORATED_END_STONE, Items.POPPED_CHORUS_FRUIT, Blocks.END_STONE_BRICKS);
         offerPhantomPurpurRecipe(exporter, BlockusBlocks.PHANTOM_PURPUR_DECORATED_END_STONE, BlockusBlocks.PURPUR_DECORATED_END_STONE);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.END_TILES.stairs, BlockusBlocks.END_TILES.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.END_TILES.slab, 2, BlockusBlocks.END_TILES.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.END_TILES.wall,BlockusBlocks.END_TILES.block);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.END_TILES.block,4).input('#',  Blocks.END_STONE).input('X',  Blocks.PURPUR_BLOCK).pattern("#X").pattern("X#").criterion(hasItem(Blocks.PURPUR_BLOCK),  conditionsFromItem(Blocks.PURPUR_BLOCK)).offerTo(exporter);
+
 
         // Wood
         offerPlanksRecipe(exporter, BlockusBlocks.WHITE_OAK.planks, BlockusItemTags.WHITE_OAK_LOGS);

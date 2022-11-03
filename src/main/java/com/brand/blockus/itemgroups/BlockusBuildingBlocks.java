@@ -425,6 +425,11 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.WARPED_WART_BRICKS.slab);
             entries.add(BlockusBlocks.WARPED_WART_BRICKS.wall);
 
+            entries.add(BlockusBlocks.NETHER_TILES.block);
+            entries.add(BlockusBlocks.NETHER_TILES.stairs);
+            entries.add(BlockusBlocks.NETHER_TILES.slab);
+            entries.add(BlockusBlocks.NETHER_TILES.wall);
+
             entries.add(BlockusBlocks.POLISHED_NETHER_BRICKS);
             entries.add(BlockusBlocks.POLISHED_RED_NETHER_BRICKS);
             entries.add(BlockusBlocks.HERRINGBONE_NETHER_BRICKS);
@@ -530,6 +535,11 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.SMALL_END_STONE_BRICKS.wall);
             entries.add(BlockusBlocks.PURPUR_DECORATED_END_STONE);
             entries.add(BlockusBlocks.PHANTOM_PURPUR_DECORATED_END_STONE);;
+
+            entries.add(BlockusBlocks.END_TILES.block);
+            entries.add(BlockusBlocks.END_TILES.stairs);
+            entries.add(BlockusBlocks.END_TILES.slab);
+            entries.add(BlockusBlocks.END_TILES.wall);
 
             entries.add(BlockusBlocks.PURPUR_BRICKS.block);
             entries.add(BlockusBlocks.PURPUR_BRICKS.stairs);
