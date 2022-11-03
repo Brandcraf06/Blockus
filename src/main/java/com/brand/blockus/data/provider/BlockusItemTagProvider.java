@@ -13,13 +13,16 @@ import net.minecraft.tag.ItemTags;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
 
 public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    public BlockusItemTagProvider(FabricDataOutput output, BlockTagProvider blockTagProvider) {
-        super(output, blockTagProvider);
+    public BlockusItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, BlockTagProvider blockTagProvider) {
+        super(output, registriesFuture, blockTagProvider);
     }
 
-    private FabricTagBuilder<Item> getOrCreateTagBuilder(Identifier id) {
+    private FabricTagBuilder getOrCreateTagBuilder(Identifier id) {
         TagKey<Item> tag = TagKey.of(Registry.ITEM_KEY, id);
         return this.getOrCreateTagBuilder(tag);
     }
@@ -32,7 +35,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     @Override
-    protected void generateTags() {
+    protected void configure(RegistryWrapper.WrapperLookup registries) {
         this.copy(BlockusBlockTags.BARRELS, BlockusItemTags.BARRELS);
 
         this.copy(BlockusBlockTags.BARRIERS, BlockusItemTags.BARRIERS);
@@ -163,9 +166,21 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.MANGROVE_LOGS, ItemTags.MANGROVE_LOGS);
 
-        this.copy(BlockTags.NON_FLAMMABLE_WOOD, ItemTags.NON_FLAMMABLE_WOOD);
-
         this.getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
+            .add(BlockusBlocks.CHARRED.planks.asItem())
+            .add(BlockusBlocks.CHARRED.slab.asItem())
+            .add(BlockusBlocks.CHARRED.pressure_plate.asItem())
+            .add(BlockusBlocks.CHARRED.fence.asItem())
+            .add(BlockusBlocks.CHARRED.trapdoor.asItem())
+            .add(BlockusBlocks.CHARRED.fence_gate.asItem())
+            .add(BlockusBlocks.CHARRED.stairs.asItem())
+            .add(BlockusBlocks.CHARRED.button.asItem())
+            .add(BlockusBlocks.CHARRED.door.asItem())
+            .add(BlockusBlocks.WARPED_SMALL_STEMS.asItem())
+            .add(BlockusBlocks.CRIMSON_SMALL_STEMS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS.asItem())
             .add(BlockusBlocks.CHARRED.boat)
             .add(BlockusBlocks.CHARRED.chest_boat)
             .add(BlockusBlocks.CHARRED.sign);

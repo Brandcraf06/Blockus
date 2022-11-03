@@ -2,7 +2,6 @@ package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.BlockusItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -18,7 +17,7 @@ public class BlockusLegacyBlocks {
         }
 
         @Override
-        protected void addItems(FeatureSet enabledFeatures, Entries entries) {
+        protected void addItems(FeatureSet enabledFeatures, Entries entries, boolean opItems) {
 
             entries.add(BlockusBlocks.LEGACY_SAPLING);
             entries.add(BlockusBlocks.LEGACY_LEAVES);

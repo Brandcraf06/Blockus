@@ -1,6 +1,5 @@
 package com.brand.blockus.blocks.base.redstone;
 
-import net.minecraft.block.Blocks;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.sound.SoundEvent;
 

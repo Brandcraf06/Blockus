@@ -12,11 +12,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
-import net.minecraft.client.recipebook.RecipeBookGroup;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 
 public class BlockusClient implements ClientModInitializer {

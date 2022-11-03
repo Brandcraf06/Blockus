@@ -12,19 +12,23 @@ import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
 
 public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-    public BlockusBlockTagProvider(FabricDataOutput output) {
-        super(output);
+
+    public BlockusBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
     }
 
-    private FabricTagBuilder<Block> getOrCreateTagBuilder(Identifier id) {
+    public FabricTagBuilder getOrCreateTagBuilder(Identifier id) {
         TagKey<Block> tag = TagKey.of(Registry.BLOCK_KEY, id);
         return this.getOrCreateTagBuilder(tag);
     }
 
     @Override
-    protected void generateTags() {
+    protected void configure(RegistryWrapper.WrapperLookup registries) {
         this.getOrCreateTagBuilder(BlockusBlockTags.AMETHYST_BLOCKS)
             .add(BlockusBlocks.POLISHED_AMETHYST)
             .add(BlockusBlocks.POLISHED_AMETHYST_STAIRS)
@@ -1277,22 +1281,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
             .add(BlockusBlocks.ENDER_BLOCK);
-
-        this.getOrCreateTagBuilder(BlockTags.NON_FLAMMABLE_WOOD)
-            .add(BlockusBlocks.CHARRED.planks)
-            .add(BlockusBlocks.CHARRED.slab)
-            .add(BlockusBlocks.CHARRED.pressure_plate)
-            .add(BlockusBlocks.CHARRED.fence)
-            .add(BlockusBlocks.CHARRED.trapdoor)
-            .add(BlockusBlocks.CHARRED.fence_gate)
-            .add(BlockusBlocks.CHARRED.stairs)
-            .add(BlockusBlocks.CHARRED.button)
-            .add(BlockusBlocks.CHARRED.door)
-            .add(BlockusBlocks.WARPED_SMALL_STEMS)
-            .add(BlockusBlocks.CRIMSON_SMALL_STEMS)
-            .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS)
-            .add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS)
-            .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
 
         this.getOrCreateTagBuilder(BlockTags.OAK_LOGS)
             .add(BlockusBlocks.OAK_SMALL_LOGS);

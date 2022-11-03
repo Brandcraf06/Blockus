@@ -3,8 +3,6 @@ package com.brand.blockus.itemgroups;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.content.types.WoodTypesB;
-import com.brand.blockus.content.types.WoodTypesNB;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -20,7 +18,7 @@ public class BlockusNaturalBlocks {
         }
 
         @Override
-        protected void addItems(FeatureSet enabledFeatures, Entries entries) {
+        protected void addItems(FeatureSet enabledFeatures, Entries entries, boolean opItems) {
 
             entries.add(BlockusBlocks.PATH);
             entries.add(BlockusBlocks.LIMESTONE.block);

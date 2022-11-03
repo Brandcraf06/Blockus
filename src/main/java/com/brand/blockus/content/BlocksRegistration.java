@@ -2,9 +2,9 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
+import com.brand.blockus.blocks.base.redstone.ButtonBase;
 import com.brand.blockus.blocks.base.redstone.DoorBase;
 import com.brand.blockus.blocks.base.redstone.PressurePlateBase;
-import com.brand.blockus.blocks.base.redstone.ButtonBase;
 import com.brand.blockus.blocks.base.redstone.TrapdoorBase;
 import com.brand.blockus.blocks.blockitems.GlintBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;

@@ -2,7 +2,8 @@ package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.content.types.WoodTypesB;
+import com.brand.blockus.content.types.WoodTypesNB;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -18,7 +19,7 @@ public class BlockusRedstoneBlocks {
         }
 
         @Override
-        protected void addItems(FeatureSet enabledFeatures, Entries entries) {
+        protected void addItems(FeatureSet enabledFeatures, Entries entries, boolean opItems) {
 
             entries.add(BlockusBlocks.REDSTONE_LANTERN);
             entries.add(BlockusBlocks.REDSTONE_LANTERN_BLOCK);

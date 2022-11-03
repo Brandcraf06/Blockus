@@ -22,9 +22,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
-import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.Nullable;
 
 public class BarrelBlockBase extends BarrelBlock {

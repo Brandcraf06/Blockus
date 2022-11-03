@@ -8,7 +8,7 @@ import com.brand.blockus.itemgroups.BlockusBuildingBlocks;
 import com.brand.blockus.itemgroups.BlockusLegacyBlocks;
 import com.brand.blockus.itemgroups.BlockusNaturalBlocks;
 import com.brand.blockus.itemgroups.BlockusRedstoneBlocks;
-import com.brand.blockus.world.BlockusConfiguredFeatures;
+import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -43,7 +43,7 @@ public class Blockus implements ModInitializer {
 
         Instance.init();
 
-        BlockusConfiguredFeatures.registerConfiguredFeature();
+        BlockusWorldgenFeatures.registerConfiguredFeature();
     }
 
     public static Identifier id(String name) {

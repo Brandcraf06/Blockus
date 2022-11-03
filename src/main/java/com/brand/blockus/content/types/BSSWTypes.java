@@ -1,12 +1,9 @@
 package com.brand.blockus.content.types;
 
-import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 
 import java.util.ArrayList;

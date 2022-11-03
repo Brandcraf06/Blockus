@@ -18,7 +18,7 @@ public class BlockusBuildingBlocks {
         }
 
         @Override
-        protected void addItems(FeatureSet enabledFeatures, Entries entries) {
+        protected void addItems(FeatureSet enabledFeatures, Entries entries, boolean opItems) {
             entries.add(BlockusBlocks.WHITE_OAK_LOG);
             entries.add(BlockusBlocks.WHITE_OAK_WOOD);
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG);

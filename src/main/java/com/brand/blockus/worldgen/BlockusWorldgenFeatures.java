@@ -1,0 +1,117 @@
+package com.brand.blockus.worldgen;
+
+import com.brand.blockus.Blockus;
+import com.brand.blockus.content.BlockusBlocks;
+import com.google.common.collect.ImmutableList;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.BiomeKeys;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.placementmodifier.*;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+
+import java.util.List;
+
+public class BlockusWorldgenFeatures {
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LIMESTONE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Blockus.id("ore_limestone"));
+    public static final RegistryKey<PlacedFeature> PLACED_LIMESTONE_UPPER = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_limestone_upper"));
+    public static final RegistryKey<PlacedFeature> PLACED_LIMESTONE_LOWER = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_limestone_lower"));
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MARBLE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Blockus.id("ore_marble"));
+    public static final RegistryKey<PlacedFeature> PLACED_MARBLE = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_marble"));
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUESTONE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Blockus.id("ore_bluestone"));
+    public static final RegistryKey<PlacedFeature> PLACED_BLUESTONE = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_bluestone"));
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> VIRIDITE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Blockus.id("ore_viridite"));
+    public static final RegistryKey<PlacedFeature> PLACED_VIRIDITE = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_viridite"));
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> WHITE_OAK = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Blockus.id("white_oak"));
+    public static final RegistryKey<PlacedFeature> PLACED_WHITE_OAK = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak"));
+    public static final RegistryKey<PlacedFeature> PLACED_WHITE_OAK_RARE = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak_rare"));
+    public static final RegistryKey<PlacedFeature> WHITE_OAK_CHECKED = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak_checked"));
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LEGACY_OAK = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Blockus.id("legacy_oak"));
+    public static final RegistryKey<PlacedFeature> LEGACY_OAK_CHECKED  = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("legacy_oak_checked"));
+
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> RAINBOW_ROSE = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Blockus.id("rainbow_rose"));
+    public static final RegistryKey<PlacedFeature> PLACED_RAINBOW_ROSE = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("rainbow_rose"));
+
+
+    public static TreeFeatureConfig.Builder white_oak() {
+        return new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG), new StraightTrunkPlacer(7, 2, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 5), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines();
+    }
+
+    public static TreeFeatureConfig.Builder legacy_oak() {
+        return new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.LEGACY_LOG), new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.of(BlockusBlocks.LEGACY_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3), new TwoLayersFeatureSize(1, 0, 1)).decorators(ImmutableList.of(new AlterGroundTreeDecorator(BlockStateProvider.of(BlockusBlocks.LEGACY_GRASS_BLOCK))));
+    }
+
+
+    public static void registerConfiguredFeature() {
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_limestone_upper")));
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_limestone_lower")));
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_marble")));
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_bluestone")));
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.foundInOverworld(),
+            GenerationStep.Feature.UNDERGROUND_ORES,
+            RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_viridite")));
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST),
+            GenerationStep.Feature.VEGETAL_DECORATION,
+            RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak")));
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS),
+            GenerationStep.Feature.VEGETAL_DECORATION,
+            RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("white_oak_rare")));
+
+       BiomeModifications.addFeature(
+           BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.MEADOW),
+           GenerationStep.Feature.VEGETAL_DECORATION,
+           RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("rainbow_rose")));
+
+    }
+
+    private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
+        return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
+    }
+
+    public static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
+        return modifiers(CountPlacementModifier.of(count), heightModifier);
+    }
+
+    public static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {
+        return modifiers(RarityFilterPlacementModifier.of(chance), heightModifier);
+    }
+}

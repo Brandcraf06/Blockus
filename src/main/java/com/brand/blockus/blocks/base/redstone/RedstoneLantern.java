@@ -1,7 +1,6 @@
 package com.brand.blockus.blocks.base.redstone;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.CarvedPumpkinBlock;
 import net.minecraft.block.LanternBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
