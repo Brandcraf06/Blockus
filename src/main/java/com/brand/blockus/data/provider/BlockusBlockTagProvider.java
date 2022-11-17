@@ -8,11 +8,11 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryWrapper;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -23,7 +23,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
     }
 
     public FabricTagBuilder getOrCreateTagBuilder(Identifier id) {
-        TagKey<Block> tag = TagKey.of(Registry.BLOCK_KEY, id);
+        TagKey<Block> tag = TagKey.of(RegistryKeys.BLOCK, id);
         return this.getOrCreateTagBuilder(tag);
     }
 
@@ -1330,10 +1330,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.SPRUCE_LOGS)
             .add(BlockusBlocks.SPRUCE_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
-            .add(BlockusBlocks.BAMBOO.standing_sign)
-            .add(BlockusBlocks.CHARRED.standing_sign)
-            .add(BlockusBlocks.WHITE_OAK.standing_sign);
+//        this.getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
+//            .add(BlockusBlocks.BAMBOO.standing_sign)
+//            .add(BlockusBlocks.CHARRED.standing_sign)
+//            .add(BlockusBlocks.WHITE_OAK.standing_sign);
 
         this.getOrCreateTagBuilder(BlockTags.STONE_ORE_REPLACEABLES)
             .add(BlockusBlocks.LIMESTONE.block)
@@ -1360,10 +1360,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.STONE_TRAPDOOR)
             .add(BlockusBlocks.BLACKSTONE_TRAPDOOR);
 
-        this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
-            .add(BlockusBlocks.BAMBOO.wall_sign)
-            .add(BlockusBlocks.CHARRED.wall_sign)
-            .add(BlockusBlocks.WHITE_OAK.wall_sign);
+//        this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
+//            .add(BlockusBlocks.BAMBOO.wall_sign)
+//            .add(BlockusBlocks.CHARRED.wall_sign)
+//            .add(BlockusBlocks.WHITE_OAK.wall_sign);
 
         this.getOrCreateTagBuilder(BlockTags.WALLS)
             .add(BlockusBlocks.BLAZE_BRICKS.wall)

@@ -2,13 +2,13 @@ package com.brand.blockus.worldgen;
 
 import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricWorldgenProvider;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.structure.rule.TagMatchRuleTest;
-import net.minecraft.tag.BlockTags;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryWrapper;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
@@ -18,12 +18,12 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class BlockusWorldgenProvider extends FabricWorldgenProvider {
+public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
     public BlockusWorldgenProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup registries, Entries entries) {
+    protected void configure(RegistryWrapper.WrapperLookup registries, FabricDynamicRegistryProvider.Entries entries) {
 
         // limestone
         ConfiguredFeature<?, ?> LIMESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.LIMESTONE.block.getDefaultState(), 64));

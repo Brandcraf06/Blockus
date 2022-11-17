@@ -2,9 +2,9 @@ package com.brand.blockus.tag;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.block.Block;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.RegistryKeys;
 
 public class BlockusBlockTags {
 
@@ -72,6 +72,6 @@ public class BlockusBlockTags {
     }
 
     private static TagKey<Block> register(String id) {
-        return TagKey.of(Registry.BLOCK_KEY, new Identifier(Blockus.MOD_ID, id));
+        return TagKey.of(RegistryKeys.BLOCK, new Identifier(Blockus.MOD_ID, id));
     }
 }

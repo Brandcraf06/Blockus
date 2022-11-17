@@ -4,20 +4,18 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resource.featuretoggle.FeatureSet;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class BlockusLegacyBlocks {
 
-    private static final ItemGroup BLOCKUS_NATURE_BLOCKS = new FabricItemGroup(new Identifier(Blockus.MOD_ID, "blockus_legacy")) {
-        @Override
-        public ItemStack createIcon() {
-            return new ItemStack(BlockusBlocks.LEGACY_BRICKS);
-        }
-
-        @Override
-        protected void addItems(FeatureSet enabledFeatures, Entries entries, boolean opItems) {
+    private static final ItemGroup BLOCKUS_LEGACY_BLOCKS = FabricItemGroup.builder(new Identifier(Blockus.MOD_ID, "blockus_legacy"))
+        .displayName(Text.translatable("itemGroup.blockus_legacy"))
+        .icon(() -> new ItemStack(BlockusBlocks.LEGACY_BRICKS))
+        .entries((enabledFeatures, entries, operatorEnabled) -> {
 
             entries.add(BlockusBlocks.LEGACY_SAPLING);
             entries.add(BlockusBlocks.LEGACY_LEAVES);
@@ -42,7 +40,6 @@ public class BlockusLegacyBlocks {
             entries.add(BlockusBlocks.LEGACY_SPONGE);
             entries.add(BlockusBlocks.LEGACY_STONECUTTER);
             entries.add(BlockusBlocks.LEGACY_NETHER_REACTOR_CORE);
-
-        }
-    };
-}
+        })
+        .build();
+};

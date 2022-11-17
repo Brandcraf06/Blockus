@@ -18,7 +18,8 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.world.BlockView;
 
 public class BlocksRegistration {
@@ -32,7 +33,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerPillar(Block base) {
-        return createPillar(Registry.BLOCK.getId(base).getPath(), base);
+        return createPillar(Registries.BLOCK.getId(base).getPath(), base);
     }
 
     public static Block createGTPillar(String baseid, Block base) {
@@ -41,7 +42,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerGTPillar(Block base) {
-        return createGTPillar(Registry.BLOCK.getId(base).getPath(), base);
+        return createGTPillar(Registries.BLOCK.getId(base).getPath(), base);
     }
 
 
@@ -55,7 +56,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerSlab(Block base) {
-        return createSlab(Registry.BLOCK.getId(base).getPath(), base);
+        return createSlab(Registries.BLOCK.getId(base).getPath(), base);
     }
 
 
@@ -65,7 +66,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerStairs(Block base) {
-        return createStairs(Registry.BLOCK.getId(base).getPath(), base);
+        return createStairs(Registries.BLOCK.getId(base).getPath(), base);
     }
 
     // Wall
@@ -74,7 +75,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerWall(Block base) {
-        return createWall(Registry.BLOCK.getId(base).getPath(), base);
+        return createWall(Registries.BLOCK.getId(base).getPath(), base);
     }
 
     public static Barrier createBarrier(float hardness, float resistance) {
@@ -95,11 +96,11 @@ public class BlocksRegistration {
     }
 
     public static Block registerStonePressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
-        return createPressurePlate(Registry.BLOCK.getId(base).getPath(), type, base, SoundEvents.BLOCK_STONE_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_STONE_PRESSURE_PLATE_CLICK_ON);
+        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), type, base, SoundEvents.BLOCK_STONE_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_STONE_PRESSURE_PLATE_CLICK_ON);
     }
 
     public static Block registerWoodenPressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
-        return createPressurePlate(Registry.BLOCK.getId(base).getPath(), type, base, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON);
+        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), type, base, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON);
     }
 
     // Button
@@ -109,7 +110,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerStoneButton(Block base) {
-        return createStoneButton(Registry.BLOCK.getId(base).getPath(), base);
+        return createStoneButton(Registries.BLOCK.getId(base).getPath(), base);
     }
 
     // Plants
@@ -200,8 +201,8 @@ public class BlocksRegistration {
 
     // Register
     public static Block register(String id, Block block, BlockItem item) {
-        Registry.register(Registry.BLOCK, Blockus.id(id), block);
-        Registry.register(Registry.ITEM, Blockus.id(id), item);
+        Registry.register(Registries.BLOCK, Blockus.id(id), block);
+        Registry.register(Registries.ITEM, Blockus.id(id), item);
 
         return block;
     }
@@ -216,7 +217,7 @@ public class BlocksRegistration {
     }
 
     public static Block registerNoItem(String id, Block block) {
-        return Registry.register(Registry.BLOCK, Blockus.id(id), block);
+        return Registry.register(Registries.BLOCK, Blockus.id(id), block);
     }
 
     public static Block registerFireproof(String id, Block block) {

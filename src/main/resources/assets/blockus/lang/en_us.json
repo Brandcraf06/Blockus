@@ -1,8 +1,9 @@
 {
-  "itemGroup.blockus.blockus_building_blocks": "Building Blocks §3(Blockus)",
-  "itemGroup.blockus.blockus_nature": "Nature & Functional Blocks §3(Blockus)",
-  "itemGroup.blockus.blockus_redstone": "Redstone Blocks §3(Blockus)",
-  "itemGroup.blockus.blockus_legacy": "Legacy Blocks §3(Blockus)",
+  "itemGroup.blockus_building_blocks": "Building Blocks §3(Blockus)",
+  "itemGroup.blockus_colored": "Colored Blocks §3(Blockus)",
+  "itemGroup.blockus_natural": "Natural §3(Blockus)",
+  "itemGroup.blockus_functional": "Functional Blocks §3(Blockus)",
+  "itemGroup.blockus_legacy": "Legacy Blocks §3(Blockus)",
   "blockus.blockitem.givespeed": "Gives Speed III effect to player standing on it.",
   "block.blockus.blaze_bricks": "Blaze Bricks",
   "block.blockus.blaze_brick_wall": "Blaze Brick Wall",

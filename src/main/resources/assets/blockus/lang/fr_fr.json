@@ -1,7 +1,9 @@
 {
-  "itemGroup.blockus.blockus_building_blocks": "Blocs de construction §3(Blockus)",
-  "itemGroup.blockus.blockus_decorations": "Blocs décoratifs §3(Blockus)",
-  "itemGroup.blockus.blockus_legacy": "Blocs anciens §3(Blockus)",
+  "itemGroup.blockus_building_blocks": "Blocs de construction §3(Blockus)",
+  "itemGroup.blockus_colored": "Blocs colorés §3(Blockus)",
+  "itemGroup.blockus_natural": "Naturel §3(Blockus)",
+  "itemGroup.blockus_functional": "Blocs fonctionnels §3(Blockus)",
+  "itemGroup.blockus_legacy": "Blocs anciens §3(Blockus)",
   "blockus.blockitem.givespeed": "Donne l'effet Rapidité III au joueur qui se tient dessus.",
   "block.blockus.blaze_bricks": "Briques de Blaze",
   "block.blockus.blaze_brick_wall": "Muret en briques de Blaze",

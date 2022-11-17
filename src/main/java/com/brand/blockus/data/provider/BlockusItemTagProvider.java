@@ -8,12 +8,12 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.tag.ItemTags;
-import net.minecraft.tag.TagKey;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryWrapper;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -23,13 +23,13 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     private FabricTagBuilder getOrCreateTagBuilder(Identifier id) {
-        TagKey<Item> tag = TagKey.of(Registry.ITEM_KEY, id);
+        TagKey<Item> tag = TagKey.of(RegistryKeys.ITEM, id);
         return this.getOrCreateTagBuilder(tag);
     }
 
     private void copy(Identifier id) {
-        TagKey<Block> blockTag = TagKey.of(Registry.BLOCK_KEY, id);
-        TagKey<Item> itemTag = TagKey.of(Registry.ITEM_KEY, id);
+        TagKey<Block> blockTag = TagKey.of(RegistryKeys.BLOCK, id);
+        TagKey<Item> itemTag = TagKey.of(RegistryKeys.ITEM, id);
 
         this.copy(blockTag, itemTag);
     }
@@ -52,20 +52,20 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.CHARRED_BARREL.asItem())
             .add(BlockusBlocks.WHITE_OAK_BARREL.asItem());
 
-        this.getOrCreateTagBuilder(ItemTags.BOATS)
-            .add(BlockusBlocks.BAMBOO.boat)
-            .add(BlockusBlocks.CHARRED.boat)
-            .add(BlockusBlocks.WHITE_OAK.boat);
-
-        this.getOrCreateTagBuilder(ItemTags.CHEST_BOATS)
-            .add(BlockusBlocks.BAMBOO.chest_boat)
-            .add(BlockusBlocks.CHARRED.chest_boat)
-            .add(BlockusBlocks.WHITE_OAK.chest_boat);
-
-        this.getOrCreateTagBuilder(ItemTags.SIGNS)
-            .add(BlockusBlocks.BAMBOO.sign)
-            .add(BlockusBlocks.CHARRED.sign)
-            .add(BlockusBlocks.WHITE_OAK.sign);
+//        this.getOrCreateTagBuilder(ItemTags.BOATS)
+//            .add(BlockusBlocks.BAMBOO.boat)
+//            .add(BlockusBlocks.CHARRED.boat)
+//            .add(BlockusBlocks.WHITE_OAK.boat);
+//
+//        this.getOrCreateTagBuilder(ItemTags.CHEST_BOATS)
+//            .add(BlockusBlocks.BAMBOO.chest_boat)
+//            .add(BlockusBlocks.CHARRED.chest_boat)
+//            .add(BlockusBlocks.WHITE_OAK.chest_boat);
+//
+//        this.getOrCreateTagBuilder(ItemTags.SIGNS)
+//            .add(BlockusBlocks.BAMBOO.sign)
+//            .add(BlockusBlocks.CHARRED.sign)
+//            .add(BlockusBlocks.WHITE_OAK.sign);
 
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
 
@@ -160,8 +160,6 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
 
-        this.copy(BlockTags.OVERWORLD_NATURAL_LOGS, ItemTags.OVERWORLD_NATURAL_LOGS);
-
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
 
         this.copy(BlockTags.MANGROVE_LOGS, ItemTags.MANGROVE_LOGS);
@@ -180,10 +178,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.CRIMSON_SMALL_STEMS.asItem())
             .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS.asItem())
-            .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS.asItem())
-            .add(BlockusBlocks.CHARRED.boat)
-            .add(BlockusBlocks.CHARRED.chest_boat)
-            .add(BlockusBlocks.CHARRED.sign);
+            .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS.asItem());
+//            .add(BlockusBlocks.CHARRED.boat)
+//            .add(BlockusBlocks.CHARRED.chest_boat)
+//            .add(BlockusBlocks.CHARRED.sign);
 
         this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
 

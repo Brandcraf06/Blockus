@@ -8,7 +8,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,10 +25,10 @@ public final class BlockusColumnBlocks {
         Identifier id =  Blockus.id(path);
 
         Block block = new ColumnBlock(FabricBlockSettings.copy(base));
-        Registry.register(Registry.BLOCK, id, block);
+        Registry.register(Registries.BLOCK, id, block);
 
         Item item = new BlockItem(block, new Item.Settings());
-        Registry.register(Registry.ITEM, id, item);
+        Registry.register(Registries.ITEM, id, item);
 
         COLUMN_TYPES.add(new BlockusColumnType(block, base, id));
     }

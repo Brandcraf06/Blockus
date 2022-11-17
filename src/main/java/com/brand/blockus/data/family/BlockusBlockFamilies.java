@@ -5,7 +5,8 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.family.BlockFamily;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 
 import java.util.Map;
 import java.util.stream.Stream;
@@ -52,9 +53,9 @@ public class BlockusBlockFamilies {
 
     static {
         // Woods
-        WHITE_OAK = register(BlockusBlocks.WHITE_OAK.planks).button(BlockusBlocks.WHITE_OAK.button).fence(BlockusBlocks.WHITE_OAK.fence).fenceGate(BlockusBlocks.WHITE_OAK.fence_gate).pressurePlate(BlockusBlocks.WHITE_OAK.pressure_plate).sign(BlockusBlocks.WHITE_OAK.standing_sign, BlockusBlocks.WHITE_OAK.wall_sign).slab(BlockusBlocks.WHITE_OAK.slab).stairs(BlockusBlocks.WHITE_OAK.stairs).door(BlockusBlocks.WHITE_OAK.door).trapdoor(BlockusBlocks.WHITE_OAK.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
-        CHARRED = register(BlockusBlocks.CHARRED.planks).button(BlockusBlocks.CHARRED.button).fence(BlockusBlocks.CHARRED.fence).fenceGate(BlockusBlocks.CHARRED.fence_gate).pressurePlate(BlockusBlocks.CHARRED.pressure_plate).sign(BlockusBlocks.CHARRED.standing_sign, BlockusBlocks.CHARRED.wall_sign).slab(BlockusBlocks.CHARRED.slab).stairs(BlockusBlocks.CHARRED.stairs).door(BlockusBlocks.CHARRED.door).trapdoor(BlockusBlocks.CHARRED.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
-        BAMBOO = register(BlockusBlocks.BAMBOO.planks).button(BlockusBlocks.BAMBOO.button).fence(BlockusBlocks.BAMBOO.fence).fenceGate(BlockusBlocks.BAMBOO.fence_gate).pressurePlate(BlockusBlocks.BAMBOO.pressure_plate).sign(BlockusBlocks.BAMBOO.standing_sign, BlockusBlocks.BAMBOO.wall_sign).slab(BlockusBlocks.BAMBOO.slab).stairs(BlockusBlocks.BAMBOO.stairs).door(BlockusBlocks.BAMBOO.door).trapdoor(BlockusBlocks.BAMBOO.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
+        WHITE_OAK = register(BlockusBlocks.WHITE_OAK.planks).button(BlockusBlocks.WHITE_OAK.button).fence(BlockusBlocks.WHITE_OAK.fence).fenceGate(BlockusBlocks.WHITE_OAK.fence_gate).pressurePlate(BlockusBlocks.WHITE_OAK.pressure_plate).slab(BlockusBlocks.WHITE_OAK.slab).stairs(BlockusBlocks.WHITE_OAK.stairs).door(BlockusBlocks.WHITE_OAK.door).trapdoor(BlockusBlocks.WHITE_OAK.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
+        CHARRED = register(BlockusBlocks.CHARRED.planks).button(BlockusBlocks.CHARRED.button).fence(BlockusBlocks.CHARRED.fence).fenceGate(BlockusBlocks.CHARRED.fence_gate).pressurePlate(BlockusBlocks.CHARRED.pressure_plate).slab(BlockusBlocks.CHARRED.slab).stairs(BlockusBlocks.CHARRED.stairs).door(BlockusBlocks.CHARRED.door).trapdoor(BlockusBlocks.CHARRED.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
+        BAMBOO = register(BlockusBlocks.BAMBOO.planks).button(BlockusBlocks.BAMBOO.button).fence(BlockusBlocks.BAMBOO.fence).fenceGate(BlockusBlocks.BAMBOO.fence_gate).pressurePlate(BlockusBlocks.BAMBOO.pressure_plate).slab(BlockusBlocks.BAMBOO.slab).stairs(BlockusBlocks.BAMBOO.stairs).door(BlockusBlocks.BAMBOO.door).trapdoor(BlockusBlocks.BAMBOO.trapdoor).group("wooden").unlockCriterionName("has_planks").build();
 
         // Stone, Andesite, Diorite, Granite, Dripstone, Tuff, Deepslate, Sculk, Amethyst, Blackstone & Basalt
         STONE = register(Blocks.STONE).door(BlockusBlocks.STONE_DOOR).trapdoor(BlockusBlocks.STONE_TRAPDOOR).build();
@@ -110,7 +111,7 @@ public class BlockusBlockFamilies {
         BlockFamily.Builder builder = new BlockFamily.Builder(baseBlock);
         BlockFamily blockFamily = BASE_BLOCKS_TO_FAMILIES.put(baseBlock, builder.build());
         if (blockFamily != null) {
-            throw new IllegalStateException("Duplicate family definition for " + Registry.BLOCK.getId(baseBlock));
+            throw new IllegalStateException("Duplicate family definition for " + Registries.BLOCK.getId(baseBlock));
         } else {
             return builder;
         }

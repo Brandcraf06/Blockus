@@ -4,10 +4,7 @@ import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.itemgroups.BlockusBuildingBlocks;
-import com.brand.blockus.itemgroups.BlockusLegacyBlocks;
-import com.brand.blockus.itemgroups.BlockusNaturalBlocks;
-import com.brand.blockus.itemgroups.BlockusRedstoneBlocks;
+import com.brand.blockus.itemgroups.*;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
@@ -28,8 +25,9 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(BlockusItems.class);
 
         Reflection.initialize(BlockusBuildingBlocks.class);
-        Reflection.initialize(BlockusNaturalBlocks.class);
-        Reflection.initialize(BlockusRedstoneBlocks.class);
+        Reflection.initialize(BlockusColoredBlocks.class);
+        Reflection.initialize(BlockusNatural.class);
+        Reflection.initialize(BlockusFunctionalBlocks.class);
         Reflection.initialize(BlockusLegacyBlocks.class);
 
 
