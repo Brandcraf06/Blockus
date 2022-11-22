@@ -2,11 +2,13 @@ package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.content.types.TimberFrameTypesB;
+import com.brand.blockus.content.types.TimberFrameTypesNB;
+import com.brand.blockus.content.types.WoodTypesB;
+import com.brand.blockus.content.types.WoodTypesNB;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -76,7 +78,7 @@ public class BlockusBuildingBlocks {
                 entries.add(timberFrameType.cross);
             }
 
-            for (TimberFrameTypesNB timberFrameType: TimberFrameTypesNB.values()) {
+            for (TimberFrameTypesNB timberFrameType : TimberFrameTypesNB.values()) {
                 entries.add(timberFrameType.block);
                 entries.add(timberFrameType.diagonal);
                 entries.add(timberFrameType.cross);
@@ -547,7 +549,7 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.SMALL_END_STONE_BRICKS.wall);
 
             entries.add(BlockusBlocks.PURPUR_DECORATED_END_STONE);
-            entries.add(BlockusBlocks.PHANTOM_PURPUR_DECORATED_END_STONE);;
+            entries.add(BlockusBlocks.PHANTOM_PURPUR_DECORATED_END_STONE);
 
             entries.add(BlockusBlocks.END_TILES.block);
             entries.add(BlockusBlocks.END_TILES.stairs);
@@ -661,4 +663,4 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.STARS_BLOCK);
         })
         .build();
-    };
+}

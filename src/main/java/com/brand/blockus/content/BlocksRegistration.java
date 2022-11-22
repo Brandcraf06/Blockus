@@ -12,18 +12,17 @@ import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.world.BlockView;
 
 public class BlocksRegistration {
-
 
 
     // Pillar
@@ -85,7 +84,6 @@ public class BlocksRegistration {
     public static Block registerSmallHedge(String id, Block base) {
         return register(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
-
 
 
     // Pressure Plate

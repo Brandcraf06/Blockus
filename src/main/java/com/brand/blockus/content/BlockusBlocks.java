@@ -21,12 +21,12 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 
 public class BlockusBlocks extends BlocksRegistration {
 
@@ -419,26 +419,26 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Large Flower Pots
     public static final Block LARGE_FLOWER_POT = register("large_flower_pot", createLargeFlowerPot(Blocks.AIR));
-    public static final PottedLargeTypes POTTED_ROSE_BUSH = new PottedLargeTypes("potted_rose_bush",Blocks.ROSE_BUSH);
-    public static final PottedLargeTypes POTTED_LILAC = new PottedLargeTypes("potted_lilac",Blocks.LILAC);
-    public static final PottedLargeTypes POTTED_PEONY = new PottedLargeTypes( "potted_peony",Blocks.PEONY);
-    public static final PottedLargeTypes POTTED_LARGE_FERN = new PottedLargeTypes( "potted_large_fern",Blocks.LARGE_FERN);
-    public static final PottedLargeTypes POTTED_OAK = new PottedLargeTypes( "potted_oak",Blocks.OAK_SAPLING);
-    public static final PottedLargeTypes POTTED_SPRUCE = new PottedLargeTypes( "potted_spruce",Blocks.SPRUCE_SAPLING);
-    public static final PottedLargeTypes POTTED_BIRCH = new PottedLargeTypes( "potted_birch",Blocks.BIRCH_SAPLING);
-    public static final PottedLargeTypes POTTED_JUNGLE = new PottedLargeTypes("potted_jungle",Blocks.JUNGLE_SAPLING);
-    public static final PottedLargeTypes POTTED_ACACIA = new PottedLargeTypes( "potted_acacia",Blocks.ACACIA_SAPLING);
-    public static final PottedLargeTypes POTTED_DARK_OAK = new PottedLargeTypes( "potted_dark_oak",Blocks.DARK_OAK_SAPLING);
-    public static final PottedLargeTypes POTTED_MANGROVE = new PottedLargeTypes( "potted_mangrove",Blocks.MANGROVE_PROPAGULE);
-    public static final PottedLargeTypes POTTED_WHITE_OAK = new PottedLargeTypes("potted_white_oak",WHITE_OAK_SAPLING);
-    public static final PottedLargeTypes POTTED_HUGE_RED_MUSHROOM = new PottedLargeTypes("potted_huge_red_mushroom",Blocks.RED_MUSHROOM);
-    public static final PottedLargeTypes POTTED_HUGE_BROWN_MUSHROOM = new PottedLargeTypes( "potted_huge_brown_mushroom",Blocks.BROWN_MUSHROOM);
-    public static final PottedLargeTypes POTTED_HUGE_CRIMSON_FUNGUS = new PottedLargeTypes( "potted_huge_crimson_fungus",Blocks.CRIMSON_FUNGUS);
-    public static final PottedLargeTypes POTTED_HUGE_WARPED_FUNGUS = new PottedLargeTypes( "potted_huge_warped_fungus",Blocks.WARPED_FUNGUS);
-    public static final PottedLargeTypes POTTED_CACTUS_LARGE = new PottedLargeTypes( "potted_cactus_large",Blocks.CACTUS);
-    public static final PottedLargeTypes POTTED_BAMBOO_LARGE = new PottedLargeTypes( "potted_bamboo_large",Blocks.BAMBOO);
-    public static final PottedLargeTypes POTTED_AZALEA_LARGE = new PottedLargeTypes( "potted_azalea_large",Blocks.AZALEA);
-    public static final PottedLargeTypes POTTED_FLOWERING_AZALEA_LARGE = new PottedLargeTypes("potted_flowering_azalea_large",Blocks.FLOWERING_AZALEA);
+    public static final PottedLargeTypes POTTED_ROSE_BUSH = new PottedLargeTypes("potted_rose_bush", Blocks.ROSE_BUSH);
+    public static final PottedLargeTypes POTTED_LILAC = new PottedLargeTypes("potted_lilac", Blocks.LILAC);
+    public static final PottedLargeTypes POTTED_PEONY = new PottedLargeTypes("potted_peony", Blocks.PEONY);
+    public static final PottedLargeTypes POTTED_LARGE_FERN = new PottedLargeTypes("potted_large_fern", Blocks.LARGE_FERN);
+    public static final PottedLargeTypes POTTED_OAK = new PottedLargeTypes("potted_oak", Blocks.OAK_SAPLING);
+    public static final PottedLargeTypes POTTED_SPRUCE = new PottedLargeTypes("potted_spruce", Blocks.SPRUCE_SAPLING);
+    public static final PottedLargeTypes POTTED_BIRCH = new PottedLargeTypes("potted_birch", Blocks.BIRCH_SAPLING);
+    public static final PottedLargeTypes POTTED_JUNGLE = new PottedLargeTypes("potted_jungle", Blocks.JUNGLE_SAPLING);
+    public static final PottedLargeTypes POTTED_ACACIA = new PottedLargeTypes("potted_acacia", Blocks.ACACIA_SAPLING);
+    public static final PottedLargeTypes POTTED_DARK_OAK = new PottedLargeTypes("potted_dark_oak", Blocks.DARK_OAK_SAPLING);
+    public static final PottedLargeTypes POTTED_MANGROVE = new PottedLargeTypes("potted_mangrove", Blocks.MANGROVE_PROPAGULE);
+    public static final PottedLargeTypes POTTED_WHITE_OAK = new PottedLargeTypes("potted_white_oak", WHITE_OAK_SAPLING);
+    public static final PottedLargeTypes POTTED_HUGE_RED_MUSHROOM = new PottedLargeTypes("potted_huge_red_mushroom", Blocks.RED_MUSHROOM);
+    public static final PottedLargeTypes POTTED_HUGE_BROWN_MUSHROOM = new PottedLargeTypes("potted_huge_brown_mushroom", Blocks.BROWN_MUSHROOM);
+    public static final PottedLargeTypes POTTED_HUGE_CRIMSON_FUNGUS = new PottedLargeTypes("potted_huge_crimson_fungus", Blocks.CRIMSON_FUNGUS);
+    public static final PottedLargeTypes POTTED_HUGE_WARPED_FUNGUS = new PottedLargeTypes("potted_huge_warped_fungus", Blocks.WARPED_FUNGUS);
+    public static final PottedLargeTypes POTTED_CACTUS_LARGE = new PottedLargeTypes("potted_cactus_large", Blocks.CACTUS);
+    public static final PottedLargeTypes POTTED_BAMBOO_LARGE = new PottedLargeTypes("potted_bamboo_large", Blocks.BAMBOO);
+    public static final PottedLargeTypes POTTED_AZALEA_LARGE = new PottedLargeTypes("potted_azalea_large", Blocks.AZALEA);
+    public static final PottedLargeTypes POTTED_FLOWERING_AZALEA_LARGE = new PottedLargeTypes("potted_flowering_azalea_large", Blocks.FLOWERING_AZALEA);
 
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = register("sweet_berries_crate", createCrates());
@@ -582,7 +582,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final AsphaltTypes PURPLE_ASPHALT = new AsphaltTypes(DyeColor.PURPLE);
     public static final AsphaltTypes MAGENTA_ASPHALT = new AsphaltTypes(DyeColor.MAGENTA);
     public static final AsphaltTypes PINK_ASPHALT = new AsphaltTypes(DyeColor.PINK);
-    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt",new AsphaltBlock(FabricBlockSettings.of(Material.STONE, DyeColor.BLUE).strength(1.5f, 6.0f).requiresTool()));
+    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt", new AsphaltBlock(FabricBlockSettings.of(Material.STONE, DyeColor.BLUE).strength(1.5f, 6.0f).requiresTool()));
 
     // Shingles
     public static final BSSTypes SHINGLES = new BSSTypes("shingles", Blocks.TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
@@ -649,18 +649,18 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ORANGE_PATTERNED_WOOL = register("orange_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.ORANGE_WOOL)));
     public static final Block MAGENTA_PATTERNED_WOOL = register("magenta_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.MAGENTA_WOOL)));
     public static final Block LIGHT_BLUE_PATTERNED_WOOL = register("light_blue_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_WOOL)));
-    public static final Block YELLOW_PATTERNED_WOOL = register("yellow_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.YELLOW_WOOL)));
-    public static final Block LIME_PATTERNED_WOOL = register("lime_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.LIME_WOOL)));
-    public static final Block PINK_PATTERNED_WOOL = register("pink_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.PINK_WOOL)));
-    public static final Block GRAY_PATTERNED_WOOL = register("gray_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.GRAY_WOOL)));
-    public static final Block LIGHT_GRAY_PATTERNED_WOOL = register("light_gray_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_GRAY_WOOL)));
-    public static final Block CYAN_PATTERNED_WOOL = register("cyan_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.CYAN_WOOL)));
-    public static final Block PURPLE_PATTERNED_WOOL = register("purple_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.PURPLE_WOOL)));
-    public static final Block BLUE_PATTERNED_WOOL = register("blue_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BLUE_WOOL)));
-    public static final Block BROWN_PATTERNED_WOOL = register("brown_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BROWN_WOOL)));
-    public static final Block GREEN_PATTERNED_WOOL = register("green_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.GREEN_WOOL)));
-    public static final Block RED_PATTERNED_WOOL = register("red_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.RED_WOOL)));
-    public static final Block BLACK_PATTERNED_WOOL = register("black_patterned_wool",  new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BLACK_WOOL)));
+    public static final Block YELLOW_PATTERNED_WOOL = register("yellow_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.YELLOW_WOOL)));
+    public static final Block LIME_PATTERNED_WOOL = register("lime_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.LIME_WOOL)));
+    public static final Block PINK_PATTERNED_WOOL = register("pink_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.PINK_WOOL)));
+    public static final Block GRAY_PATTERNED_WOOL = register("gray_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.GRAY_WOOL)));
+    public static final Block LIGHT_GRAY_PATTERNED_WOOL = register("light_gray_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_GRAY_WOOL)));
+    public static final Block CYAN_PATTERNED_WOOL = register("cyan_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.CYAN_WOOL)));
+    public static final Block PURPLE_PATTERNED_WOOL = register("purple_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.PURPLE_WOOL)));
+    public static final Block BLUE_PATTERNED_WOOL = register("blue_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BLUE_WOOL)));
+    public static final Block BROWN_PATTERNED_WOOL = register("brown_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BROWN_WOOL)));
+    public static final Block GREEN_PATTERNED_WOOL = register("green_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.GREEN_WOOL)));
+    public static final Block RED_PATTERNED_WOOL = register("red_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.RED_WOOL)));
+    public static final Block BLACK_PATTERNED_WOOL = register("black_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BLACK_WOOL)));
 
     // Colored Tiles
     public static final Block WHITE_COLORED_TILES = register("white_colored_tiles", new Block(FabricBlockSettings.copy(Blocks.WHITE_CONCRETE)));
@@ -824,21 +824,21 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_GRASS_BLOCK = register("legacy_grass_block", new Block(FabricBlockSettings.copy(Blocks.GRASS_BLOCK)));
     public static final Block LEGACY_LEAVES = register("legacy_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.LIME).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
     public static final Block LEGACY_LOG = register("legacy_log", new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
-    public static final Block LEGACY_BRICKS = register("legacy_bricks", new Block(FabricBlockSettings.copy( Blocks.BRICKS)));
-    public static final Block LEGACY_PLANKS = register("legacy_planks", new Block(FabricBlockSettings.copy( Blocks.OAK_PLANKS)));
-    public static final Block LEGACY_FIRST_COBBLESTONE = register("legacy_first_cobblestone", new Block(FabricBlockSettings.copy( Blocks.COBBLESTONE)));
-    public static final Block LEGACY_COBBLESTONE = register("legacy_cobblestone", new Block(FabricBlockSettings.copy( Blocks.COBBLESTONE)));
-    public static final Block LEGACY_MOSSY_COBBLESTONE = register("legacy_mossy_cobblestone", new Block(FabricBlockSettings.copy( Blocks.MOSSY_COBBLESTONE)));
+    public static final Block LEGACY_BRICKS = register("legacy_bricks", new Block(FabricBlockSettings.copy(Blocks.BRICKS)));
+    public static final Block LEGACY_PLANKS = register("legacy_planks", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block LEGACY_FIRST_COBBLESTONE = register("legacy_first_cobblestone", new Block(FabricBlockSettings.copy(Blocks.COBBLESTONE)));
+    public static final Block LEGACY_COBBLESTONE = register("legacy_cobblestone", new Block(FabricBlockSettings.copy(Blocks.COBBLESTONE)));
+    public static final Block LEGACY_MOSSY_COBBLESTONE = register("legacy_mossy_cobblestone", new Block(FabricBlockSettings.copy(Blocks.MOSSY_COBBLESTONE)));
     public static final Block LEGACY_GRAVEL = register("legacy_gravel", new GravelBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL)));
-    public static final Block LEGACY_IRON_BLOCK = register("legacy_iron_block",  new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)));
-    public static final Block LEGACY_GOLD_BLOCK = register("legacy_gold_block",  new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)));
+    public static final Block LEGACY_IRON_BLOCK = register("legacy_iron_block", new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)));
+    public static final Block LEGACY_GOLD_BLOCK = register("legacy_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)));
     public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = register("legacy_explosion_proof_gold_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)));
-    public static final Block LEGACY_COAL_BLOCK = register("legacy_coal_block",  new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK)));
-    public static final Block LEGACY_DIAMOND_BLOCK = register("legacy_diamond_block",  new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK)));
-    public static final Block LEGACY_LAPIS_BLOCK = register("legacy_lapis_block",  new Block(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK)));
+    public static final Block LEGACY_COAL_BLOCK = register("legacy_coal_block", new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK)));
+    public static final Block LEGACY_DIAMOND_BLOCK = register("legacy_diamond_block", new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK)));
+    public static final Block LEGACY_LAPIS_BLOCK = register("legacy_lapis_block", new Block(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK)));
     public static final Block LEGACY_SPONGE = register("legacy_sponge", new SpongeBlockBase(FabricBlockSettings.copyOf(Blocks.SPONGE)));
-    public static final Block LEGACY_CRYING_OBSIDIAN = register("legacy_crying_obsidian",  new Block(FabricBlockSettings.copy(Blocks.CRYING_OBSIDIAN)));
-    public static final Block LEGACY_GLOWSTONE = register("legacy_glowstone",  new Block(FabricBlockSettings.copy(Blocks.GLOWSTONE)));
+    public static final Block LEGACY_CRYING_OBSIDIAN = register("legacy_crying_obsidian", new Block(FabricBlockSettings.copy(Blocks.CRYING_OBSIDIAN)));
+    public static final Block LEGACY_GLOWSTONE = register("legacy_glowstone", new Block(FabricBlockSettings.copy(Blocks.GLOWSTONE)));
     public static final Block LEGACY_STONECUTTER = register("legacy_stonecutter", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f, 17.5f).requiresTool()));
     public static final Block LEGACY_GLOWING_OBSIDIAN = register("legacy_glowing_obsidian", createLightBlock(50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MapColor.BLACK));
     public static final Block LEGACY_NETHER_REACTOR_CORE = register("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));

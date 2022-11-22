@@ -4,9 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
-import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -42,4 +40,4 @@ public class BlockusLegacyBlocks {
             entries.add(BlockusBlocks.LEGACY_NETHER_REACTOR_CORE);
         })
         .build();
-};
+}

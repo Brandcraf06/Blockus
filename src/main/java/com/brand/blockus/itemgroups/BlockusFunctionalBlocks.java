@@ -2,12 +2,9 @@ package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.WoodTypesB;
-import com.brand.blockus.content.types.WoodTypesNB;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -65,4 +62,4 @@ public class BlockusFunctionalBlocks {
 
         })
         .build();
-};
+}

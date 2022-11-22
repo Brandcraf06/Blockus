@@ -2,7 +2,8 @@ package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.content.types.AsphaltTypes;
+import com.brand.blockus.content.types.ConcreteTypes;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -345,4 +346,4 @@ public class BlockusColoredBlocks {
             entries.add(BlockusBlocks.PINK_PATTERNED_WOOL);
         })
         .build();
-    };
+}

@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 
 import java.util.Map;
 import java.util.stream.Stream;

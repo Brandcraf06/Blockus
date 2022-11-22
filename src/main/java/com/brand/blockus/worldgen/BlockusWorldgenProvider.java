@@ -4,11 +4,11 @@ import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.block.Blocks;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.structure.rule.TagMatchRuleTest;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.structure.rule.TagMatchRuleTest;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
@@ -22,6 +22,7 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
     public BlockusWorldgenProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
+
     @Override
     protected void configure(RegistryWrapper.WrapperLookup registries, FabricDynamicRegistryProvider.Entries entries) {
 
@@ -32,7 +33,7 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         PlacedFeature PLACED_LIMESTONE_UPPER = new PlacedFeature(limestone, BlockusWorldgenFeatures.modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128))));
         entries.add(BlockusWorldgenFeatures.PLACED_LIMESTONE_UPPER, PLACED_LIMESTONE_UPPER);
 
-        PlacedFeature PLACED_LIMESTONE_LOWER= new PlacedFeature(limestone, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(60))));
+        PlacedFeature PLACED_LIMESTONE_LOWER = new PlacedFeature(limestone, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(60))));
         entries.add(BlockusWorldgenFeatures.PLACED_LIMESTONE_LOWER, PLACED_LIMESTONE_LOWER);
 
         // marble
@@ -50,11 +51,17 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         entries.add(BlockusWorldgenFeatures.PLACED_BLUESTONE, PLACED_BLUESTONE);
 
         // viridite
-        ConfiguredFeature<?, ?> VIRIDITE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 64));
+        ConfiguredFeature<?, ?> VIRIDITE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 33));
         RegistryEntry<ConfiguredFeature<?, ?>> viridite = entries.add(BlockusWorldgenFeatures.VIRIDITE, VIRIDITE);
 
-        PlacedFeature PLACED_VIRIDITE = new PlacedFeature(viridite, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-4))));
+        PlacedFeature PLACED_VIRIDITE = new PlacedFeature(viridite, BlockusWorldgenFeatures.modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16))));
         entries.add(BlockusWorldgenFeatures.PLACED_VIRIDITE, PLACED_VIRIDITE);
+
+        ConfiguredFeature<?, ?> VIRIDITE_EXTRA = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 42));
+        RegistryEntry<ConfiguredFeature<?, ?>> viriditeExtra = entries.add(BlockusWorldgenFeatures.VIRIDITE_EXTRA, VIRIDITE_EXTRA);
+
+        PlacedFeature PLACED_VIRIDITE_EXTRA = new PlacedFeature(viriditeExtra, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16))));
+        entries.add(BlockusWorldgenFeatures.PLACED_VIRIDITE_EXTRA, PLACED_VIRIDITE_EXTRA);
 
         // white oak
         ConfiguredFeature<?, ?> WHITE_OAK = new ConfiguredFeature<>(Feature.TREE, BlockusWorldgenFeatures.white_oak().build());

@@ -2,9 +2,9 @@ package com.brand.blockus.tag;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.item.Item;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.RegistryKeys;
 
 public final class BlockusItemTags {
 
@@ -19,8 +19,7 @@ public final class BlockusItemTags {
     public static final TagKey<Item> WARPED_NETHER_GRASS = register("warped_nether_grass");
     public static final TagKey<Item> WHITE_OAK_LOGS = register("white_oak_logs");
     public static final TagKey<Item> PLANKS_THAT_BURN = register("planks_that_burn");
-	public static final TagKey<Item> HERRINGBONE_PLANKS_THAT_BURN = register("herringbone_planks_that_burn");
-
+    public static final TagKey<Item> HERRINGBONE_PLANKS_THAT_BURN = register("herringbone_planks_that_burn");
 
 
     private BlockusItemTags() {

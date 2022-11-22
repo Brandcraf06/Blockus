@@ -7,9 +7,9 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +22,7 @@ public final class BlockusColumnBlocks {
     }
 
     private static void registerColumnBlockAndItem(String path, Block base) {
-        Identifier id =  Blockus.id(path);
+        Identifier id = Blockus.id(path);
 
         Block block = new ColumnBlock(FabricBlockSettings.copy(base));
         Registry.register(Registries.BLOCK, id, block);
@@ -138,6 +138,6 @@ public final class BlockusColumnBlocks {
             this.block = block;
             this.base = base;
             this.id = id;
-        } 
+        }
     }
 }

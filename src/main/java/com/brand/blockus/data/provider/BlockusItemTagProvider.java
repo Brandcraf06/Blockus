@@ -8,12 +8,12 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -243,8 +243,6 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.WOOL, ItemTags.WOOL);
         this.copy(BlockTags.DIRT, ItemTags.DIRT);
-
-
 
 
         this.copy(new Identifier("promenade", "cherry_oak_logs"));

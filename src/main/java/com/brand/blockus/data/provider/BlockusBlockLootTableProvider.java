@@ -75,7 +75,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(timberFrameType.cross);
         }
 
-        for (TimberFrameTypesNB timberFrameType: TimberFrameTypesNB.values()) {
+        for (TimberFrameTypesNB timberFrameType : TimberFrameTypesNB.values()) {
             this.addDrop(timberFrameType.block);
             this.addDrop(timberFrameType.diagonal);
             this.addDrop(timberFrameType.cross);
@@ -604,7 +604,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
 
     public void addPottedLargePlantDrop(Block block) {
         this.addDrop(block, (flowerPot) -> {
-            return this.pottedLargePlantDrops(((LargeFlowerPotBlock)flowerPot).getContent());
+            return this.pottedLargePlantDrops(((LargeFlowerPotBlock) flowerPot).getContent());
         });
     }
 }

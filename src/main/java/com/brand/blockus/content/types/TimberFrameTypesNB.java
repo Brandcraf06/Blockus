@@ -20,15 +20,15 @@ public class TimberFrameTypesNB {
 
         this.base = base;
 
-        this.block =  BlocksRegistration.register(type+ "_timber_frame", new Block(FabricBlockSettings.copyOf(base)));
-        this.diagonal =  BlocksRegistration.register(type + "_diagonal_timber_frame", new OrientableBlockBase(FabricBlockSettings.copyOf(base)));
-        this.cross =  BlocksRegistration.register(type + "_cross_timber_frame", new Block(FabricBlockSettings.copyOf(base)));
+        this.block = BlocksRegistration.register(type + "_timber_frame", new Block(FabricBlockSettings.copyOf(base)));
+        this.diagonal = BlocksRegistration.register(type + "_diagonal_timber_frame", new OrientableBlockBase(FabricBlockSettings.copyOf(base)));
+        this.cross = BlocksRegistration.register(type + "_cross_timber_frame", new Block(FabricBlockSettings.copyOf(base)));
 
         LIST.add(this);
 
     }
 
-	public static ArrayList<TimberFrameTypesNB> values() {
+    public static ArrayList<TimberFrameTypesNB> values() {
         return LIST;
     }
 }

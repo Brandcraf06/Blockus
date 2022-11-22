@@ -42,7 +42,7 @@ public class WeightStorageCubeBlock extends FallingBlock {
     public static void change(World world, BlockPos pos, BlockState state) {
         world.setBlockState(pos, BlockusBlocks.COMPANION_CUBE.getDefaultState());
         world.addBlockBreakParticles(pos, state);
-        world.playSound(null, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+        world.playSound(null, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
     }
 
 }

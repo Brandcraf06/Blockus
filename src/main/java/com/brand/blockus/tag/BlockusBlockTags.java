@@ -2,9 +2,9 @@ package com.brand.blockus.tag;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.block.Block;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.RegistryKeys;
 
 public class BlockusBlockTags {
 
@@ -62,7 +62,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> THATCH = register("thatch");
     public static final TagKey<Block> TIMBER_FRAMES = register("timber_frames");
     public static final TagKey<Block> TUFF_BLOCKS = register("tuff_blocks");
-	public static final TagKey<Block> VIRIDITE = register("viridite");
+    public static final TagKey<Block> VIRIDITE = register("viridite");
     public static final TagKey<Block> WARPED_NETHER_GRASS = register("warped_nether_grass");
     public static final TagKey<Block> WATER_BRICKS = register("water_bricks");
     public static final TagKey<Block> WHITE_OAK_LOGS = register("white_oak_logs");

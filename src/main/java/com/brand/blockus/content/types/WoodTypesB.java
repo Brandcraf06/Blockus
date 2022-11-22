@@ -6,7 +6,6 @@ import com.brand.blockus.content.BlocksRegistration;
 import com.brand.blockus.content.BlockusItems;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
@@ -27,11 +26,11 @@ public class WoodTypesB {
     public final Block base;
     public final Block pressure_plate;
     public final Block button;
-//    public final Block standing_sign;
-//    public final Block wall_sign;
-//    public final Item sign;
-//    public final Item boat;
-//    public final Item chest_boat;
+    public final Block standing_sign;
+    public final Block wall_sign;
+    public final Item sign;
+    public final Item boat;
+    public final Item chest_boat;
 
     public WoodTypesB(String type, Block base, MapColor mapcolor) {
 
@@ -39,29 +38,28 @@ public class WoodTypesB {
 
         Block.Settings blockSettings = FabricBlockSettings.of(Material.WOOD, mapcolor).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
 
-        this.planks =  BlocksRegistration.register(type+ "_planks", new Block(blockSettings));
-        this.stairs =  BlocksRegistration.registerStairs(this.planks);
-        this.slab =  BlocksRegistration.registerSlab(this.planks);
-        this.fence =  BlocksRegistration.register(type + "_fence", new FenceBlock(FabricBlockSettings.copyOf(base)));
-        this.fence_gate =  BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), SoundEvents.BLOCK_FENCE_GATE_CLOSE, SoundEvents.BLOCK_FENCE_GATE_OPEN));
-        this.door =  BlocksRegistration.register(type + "_door", BlocksRegistration.createDoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, SoundEvents.BLOCK_WOODEN_DOOR_CLOSE, SoundEvents.BLOCK_WOODEN_DOOR_OPEN));
-        this.trapdoor =  BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createTrapdoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE, SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN));
-        this.pressure_plate =  BlocksRegistration.registerWoodenPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, this.planks);
-        this.button =  BlocksRegistration.register(type + "_button", new ButtonBase(FabricBlockSettings.copyOf(planks).noCollision(), 30, true, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON));
-//        this.standing_sign =  BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD)));
-//        this.wall_sign =  BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
-//        this.sign =  BlockusItems.registerSign(standing_sign, wall_sign);
-//        TerraformBoatType boatType = BlockusItems.registerBoat(type + "_boat", type + "_chest_boat", type);
-//        this.boat = boatType.getItem();
-//        this.chest_boat = boatType.getChestItem();
-
+        this.planks = BlocksRegistration.register(type + "_planks", new Block(blockSettings));
+        this.stairs = BlocksRegistration.registerStairs(this.planks);
+        this.slab = BlocksRegistration.registerSlab(this.planks);
+        this.fence = BlocksRegistration.register(type + "_fence", new FenceBlock(FabricBlockSettings.copyOf(base)));
+        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), SoundEvents.BLOCK_FENCE_GATE_CLOSE, SoundEvents.BLOCK_FENCE_GATE_OPEN));
+        this.door = BlocksRegistration.register(type + "_door", BlocksRegistration.createDoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, SoundEvents.BLOCK_WOODEN_DOOR_CLOSE, SoundEvents.BLOCK_WOODEN_DOOR_OPEN));
+        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createTrapdoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE, SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN));
+        this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, this.planks);
+        this.button = BlocksRegistration.register(type + "_button", new ButtonBase(FabricBlockSettings.copyOf(planks).noCollision(), 30, true, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON));
+        this.standing_sign =  BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD)));
+        this.wall_sign =  BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
+        this.sign =  BlockusItems.registerSign(standing_sign, wall_sign);
+        TerraformBoatType boatType = BlockusItems.registerBoat(type + "_boat", type + "_chest_boat", type);
+        this.boat = boatType.getItem();
+        this.chest_boat = boatType.getChestItem();
 
 
         LIST.add(this);
 
     }
 
-	public static ArrayList<WoodTypesB> values() {
+    public static ArrayList<WoodTypesB> values() {
         return LIST;
     }
 }
