@@ -22,7 +22,6 @@ import net.minecraft.world.BlockView;
 public class BlocksRegistration {
 
 
-
     // Pillar
     public static Block createPillar(String baseid, Block base) {
         String id = baseid.replace("bricks", "brick");
@@ -82,7 +81,6 @@ public class BlocksRegistration {
     public static Block registerSmallHedge(String id, Block base) {
         return registerDecoration(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).allowsSpawning(BlocksRegistration::canSpawnOnLeaves).suffocates(BlocksRegistration::never).blockVision(BlocksRegistration::never)));
     }
-
 
 
     // Pressure Plate

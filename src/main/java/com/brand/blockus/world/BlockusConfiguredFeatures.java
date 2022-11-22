@@ -2,21 +2,16 @@ package com.brand.blockus.world;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.BSSWTypes;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.tag.BiomeTags;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
@@ -45,7 +40,6 @@ public class BlockusConfiguredFeatures {
     private static TreeFeatureConfig.Builder legacy_oak() {
         return new TreeFeatureConfig.Builder(BlockStateProvider.of(BlockusBlocks.LEGACY_LOG), new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.of(BlockusBlocks.LEGACY_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3), new TwoLayersFeatureSize(1, 0, 1)).decorators(ImmutableList.of(new AlterGroundTreeDecorator(BlockStateProvider.of(BlockusBlocks.LEGACY_GRASS_BLOCK))));
     }
-
 
 
     static {
@@ -84,17 +78,24 @@ public class BlockusConfiguredFeatures {
         ConfiguredFeature<?, ?> ORE_BLUESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_OVERWORLD, BlockusBlocks.BLUESTONE.block.getDefaultState(), 64));
 
         RegistryKey<PlacedFeature> oreBluestone = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_bluestone"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,  oreBluestone.getValue(), ORE_BLUESTONE);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreBluestone.getValue(), ORE_BLUESTONE);
         Registry.register(BuiltinRegistries.PLACED_FEATURE, oreBluestone.getValue(), new PlacedFeature(RegistryEntry.of(ORE_BLUESTONE), modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreBluestone);
 
         // viridite
-        ConfiguredFeature<?, ?> ORE_VIRIDITE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockusBlocks.VIRIDITE.block.getDefaultState(), 42));
+        ConfiguredFeature<?, ?> ORE_VIRIDITE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockusBlocks.VIRIDITE.block.getDefaultState(), 33));
 
         RegistryKey<PlacedFeature> oreViridite = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_viridite"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreViridite.getValue(), ORE_VIRIDITE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreViridite.getValue(), new PlacedFeature(RegistryEntry.of(ORE_VIRIDITE), modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-4)))));
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreViridite.getValue(), new PlacedFeature(RegistryEntry.of(ORE_VIRIDITE), modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16)))));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreViridite);
+
+        ConfiguredFeature<?, ?> ORE_VIRIDITE_EXTRA = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockusBlocks.VIRIDITE.block.getDefaultState(), 42));
+
+        RegistryKey<PlacedFeature> oreViriditeExtra = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Blockus.id("ore_viridite_extra"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreViriditeExtra.getValue(), ORE_VIRIDITE_EXTRA);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, oreViriditeExtra.getValue(), new PlacedFeature(RegistryEntry.of(ORE_VIRIDITE_EXTRA), modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16)))));
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.DEEP_DARK), GenerationStep.Feature.UNDERGROUND_ORES, oreViriditeExtra);
 
         // white oak
         ConfiguredFeature<?, ?> WHITE_OAK = new ConfiguredFeature<>(Feature.TREE, white_oak().build());

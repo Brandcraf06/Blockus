@@ -45,12 +45,6 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.POTTED_DARK_OAK.block, Blocks.DARK_OAK_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_MANGROVE.block, Blocks.MANGROVE_LEAVES);
 
-
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.POTTED_WHITE_OAK.block);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xebb359, BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES, BlockusBlocks.POTTED_LEGACY_TREE.block);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x62ff42, BlockusBlocks.LEGACY_LEAVES);
-
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
             BlockusBlocks.OAK_SMALL_HEDGE,
             BlockusBlocks.SPRUCE_SMALL_HEDGE,
@@ -97,7 +91,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.BLACKSTONE_DOOR,
             BlockusBlocks.BLACKSTONE_TRAPDOOR,
             BlockusBlocks.REDSTONE_LANTERN
-            );
+        );
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
             BlockusBlocks.WATER_BRICKS.block,
@@ -151,8 +145,8 @@ public class BlockusClient implements ClientModInitializer {
         );
 
         TerraformBoatClientHelper.registerModelLayers(Blockus.id("bamboo"));
-        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "charred"));
-        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "white_oak"));
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id("charred"));
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id("white_oak"));
 
         registerSignSprite("bamboo");
         registerSignSprite("charred");
@@ -176,7 +170,7 @@ public class BlockusClient implements ClientModInitializer {
     }
 
     private void registerSignSprite(String path) {
-        Identifier id = Blockus.id( "entity/signs/" + path);
+        Identifier id = Blockus.id("entity/signs/" + path);
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
     }
 

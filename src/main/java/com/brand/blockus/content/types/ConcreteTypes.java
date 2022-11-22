@@ -1,10 +1,10 @@
 package com.brand.blockus.content.types;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.StairsBase;
 import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.item.ItemGroup;
 
 import java.util.ArrayList;

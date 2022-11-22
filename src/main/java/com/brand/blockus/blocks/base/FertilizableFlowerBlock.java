@@ -7,9 +7,9 @@ import net.minecraft.block.FlowerBlock;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.util.math.random.Random;
 
 public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable {
 

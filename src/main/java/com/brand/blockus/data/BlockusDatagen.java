@@ -1,14 +1,10 @@
 package com.brand.blockus.data;
 
+import com.brand.blockus.compatibility.data.provider.columns.*;
 import com.brand.blockus.data.provider.BlockusBlockLootTableProvider;
 import com.brand.blockus.data.provider.BlockusBlockTagProvider;
 import com.brand.blockus.data.provider.BlockusItemTagProvider;
 import com.brand.blockus.data.provider.BlockusRecipeProvider;
-import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsBlockLootTableProvider;
-import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsBlockTagProvider;
-import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsItemTagProvider;
-import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsModelProvider;
-import com.brand.blockus.compatibility.data.provider.columns.BlockusColumnsRecipeProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

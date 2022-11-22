@@ -232,8 +232,6 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.DIRT, ItemTags.DIRT);
 
 
-
-
         this.copy(new Identifier("promenade", "cherry_oak_logs"));
 
         this.copy(new Identifier("promenade", "dark_amaranth_stems"));

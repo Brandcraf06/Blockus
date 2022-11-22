@@ -118,9 +118,9 @@ public class WoodenBarrelBlockEntity extends LootableContainerBlockEntity {
 
     void playSound(BlockState state, SoundEvent soundEvent) {
         Vec3i vec3i = state.get(BarrelBlock.FACING).getVector();
-        double d = (double)this.pos.getX() + 0.5D + (double)vec3i.getX() / 2.0D;
-        double e = (double)this.pos.getY() + 0.5D + (double)vec3i.getY() / 2.0D;
-        double f = (double)this.pos.getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
+        double d = (double) this.pos.getX() + 0.5D + (double) vec3i.getX() / 2.0D;
+        double e = (double) this.pos.getY() + 0.5D + (double) vec3i.getY() / 2.0D;
+        double f = (double) this.pos.getZ() + 0.5D + (double) vec3i.getZ() / 2.0D;
         this.world.playSound(null, d, e, f, soundEvent, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
     }
 }

@@ -22,9 +22,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
-import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.Nullable;
 
 public class BarrelBlockBase extends BarrelBlock {
@@ -32,7 +32,7 @@ public class BarrelBlockBase extends BarrelBlock {
     public BarrelBlockBase(String id, MapColor color) {
         super(FabricBlockSettings.of(Material.WOOD, color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
         Registry.register(Registry.BLOCK, new Identifier(Blockus.MOD_ID, id), this);
-        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, id), new BlockItem(this, new Item.Settings().maxCount(64).group(Blockus.BLOCKUS_DECORATIONS)));
+        Registry.register(Registry.ITEM, new Identifier(Blockus.MOD_ID, id), new BlockItem(this, new Item.Settings().maxCount(64)));
     }
 
     @Override

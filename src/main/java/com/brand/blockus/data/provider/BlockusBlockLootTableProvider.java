@@ -76,7 +76,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(timberFrameType.cross);
         }
 
-        for (TimberFrameTypesNB timberFrameType: TimberFrameTypesNB.values()) {
+        for (TimberFrameTypesNB timberFrameType : TimberFrameTypesNB.values()) {
             this.addDrop(timberFrameType.block);
             this.addDrop(timberFrameType.diagonal);
             this.addDrop(timberFrameType.cross);
@@ -603,9 +603,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         return LootTable.builder().pool(addSurvivesExplosionCondition(BlockusBlocks.LARGE_FLOWER_POT, LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(BlockusBlocks.LARGE_FLOWER_POT)))).pool(addSurvivesExplosionCondition(plant, LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(plant))));
     }
 
-     public void addPottedLargePlantDrop(Block block) {
+    public void addPottedLargePlantDrop(Block block) {
         this.addDrop(block, (flowerPot) -> {
-            return pottedLargePlantDrops(((LargeFlowerPotBlock)flowerPot).getContent());
+            return pottedLargePlantDrops(((LargeFlowerPotBlock) flowerPot).getContent());
         });
     }
 }
