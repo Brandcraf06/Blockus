@@ -52,20 +52,20 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.CHARRED_BARREL.asItem())
             .add(BlockusBlocks.WHITE_OAK_BARREL.asItem());
 
-//        this.getOrCreateTagBuilder(ItemTags.BOATS)
-//            .add(BlockusBlocks.BAMBOO.boat)
-//            .add(BlockusBlocks.CHARRED.boat)
-//            .add(BlockusBlocks.WHITE_OAK.boat);
-//
-//        this.getOrCreateTagBuilder(ItemTags.CHEST_BOATS)
-//            .add(BlockusBlocks.BAMBOO.chest_boat)
-//            .add(BlockusBlocks.CHARRED.chest_boat)
-//            .add(BlockusBlocks.WHITE_OAK.chest_boat);
-//
-//        this.getOrCreateTagBuilder(ItemTags.SIGNS)
-//            .add(BlockusBlocks.BAMBOO.sign)
-//            .add(BlockusBlocks.CHARRED.sign)
-//            .add(BlockusBlocks.WHITE_OAK.sign);
+        this.getOrCreateTagBuilder(ItemTags.BOATS)
+            .add(BlockusBlocks.BAMBOO.boat)
+            .add(BlockusBlocks.CHARRED.boat)
+            .add(BlockusBlocks.WHITE_OAK.boat);
+
+        this.getOrCreateTagBuilder(ItemTags.CHEST_BOATS)
+            .add(BlockusBlocks.BAMBOO.chest_boat)
+            .add(BlockusBlocks.CHARRED.chest_boat)
+            .add(BlockusBlocks.WHITE_OAK.chest_boat);
+
+        this.getOrCreateTagBuilder(ItemTags.SIGNS)
+            .add(BlockusBlocks.BAMBOO.sign)
+            .add(BlockusBlocks.CHARRED.sign)
+            .add(BlockusBlocks.WHITE_OAK.sign);
 
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
 
@@ -178,10 +178,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.CRIMSON_SMALL_STEMS.asItem())
             .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS.asItem())
-            .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS.asItem());
-//            .add(BlockusBlocks.CHARRED.boat)
-//            .add(BlockusBlocks.CHARRED.chest_boat)
-//            .add(BlockusBlocks.CHARRED.sign);
+            .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS.asItem())
+            .add(BlockusBlocks.CHARRED.boat)
+            .add(BlockusBlocks.CHARRED.chest_boat)
+            .add(BlockusBlocks.CHARRED.sign);
 
         this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
 

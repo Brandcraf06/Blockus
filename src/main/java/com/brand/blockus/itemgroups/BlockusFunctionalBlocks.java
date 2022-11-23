@@ -50,15 +50,15 @@ public class BlockusFunctionalBlocks {
 
             entries.add(BlockusBlocks.TINTED_BEVELED_GLASS);
 
-//            entries.add(BlockusBlocks.WHITE_OAK.sign);
-//            entries.add(BlockusBlocks.CHARRED.sign);
-//            entries.add(BlockusBlocks.BAMBOO.sign);
-//            entries.add(BlockusBlocks.WHITE_OAK.boat);
-//            entries.add(BlockusBlocks.CHARRED.boat);
-//            entries.add(BlockusBlocks.BAMBOO.boat);
-//            entries.add(BlockusBlocks.WHITE_OAK.chest_boat);
-//            entries.add(BlockusBlocks.CHARRED.chest_boat);
-//            entries.add(BlockusBlocks.BAMBOO.chest_boat);
+            entries.add(BlockusBlocks.WHITE_OAK.sign);
+            entries.add(BlockusBlocks.CHARRED.sign);
+            entries.add(BlockusBlocks.BAMBOO.sign);
+            entries.add(BlockusBlocks.WHITE_OAK.boat);
+            entries.add(BlockusBlocks.CHARRED.boat);
+            entries.add(BlockusBlocks.BAMBOO.boat);
+            entries.add(BlockusBlocks.WHITE_OAK.chest_boat);
+            entries.add(BlockusBlocks.CHARRED.chest_boat);
+            entries.add(BlockusBlocks.BAMBOO.chest_boat);
 
         })
         .build();

@@ -24,33 +24,33 @@ import java.util.List;
 
 public class BlockusWorldgenFeatures {
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> LIMESTONE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE_WORLDGEN, Blockus.id("ore_limestone"));
-    public static final RegistryKey<PlacedFeature> PLACED_LIMESTONE_UPPER = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_limestone_upper"));
-    public static final RegistryKey<PlacedFeature> PLACED_LIMESTONE_LOWER = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_limestone_lower"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LIMESTONE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Blockus.id("ore_limestone"));
+    public static final RegistryKey<PlacedFeature> PLACED_LIMESTONE_UPPER = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_limestone_upper"));
+    public static final RegistryKey<PlacedFeature> PLACED_LIMESTONE_LOWER = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_limestone_lower"));
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> MARBLE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE_WORLDGEN, Blockus.id("ore_marble"));
-    public static final RegistryKey<PlacedFeature> PLACED_MARBLE = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_marble"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MARBLE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Blockus.id("ore_marble"));
+    public static final RegistryKey<PlacedFeature> PLACED_MARBLE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_marble"));
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUESTONE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE_WORLDGEN, Blockus.id("ore_bluestone"));
-    public static final RegistryKey<PlacedFeature> PLACED_BLUESTONE = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_bluestone"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUESTONE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Blockus.id("ore_bluestone"));
+    public static final RegistryKey<PlacedFeature> PLACED_BLUESTONE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_bluestone"));
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> VIRIDITE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE_WORLDGEN, Blockus.id("ore_viridite"));
-    public static final RegistryKey<PlacedFeature> PLACED_VIRIDITE = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_viridite"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> VIRIDITE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Blockus.id("ore_viridite"));
+    public static final RegistryKey<PlacedFeature> PLACED_VIRIDITE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_viridite"));
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> VIRIDITE_EXTRA = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE_WORLDGEN, Blockus.id("ore_viridite_extra"));
-    public static final RegistryKey<PlacedFeature> PLACED_VIRIDITE_EXTRA = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_viridite_extra"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> VIRIDITE_EXTRA = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Blockus.id("ore_viridite_extra"));
+    public static final RegistryKey<PlacedFeature> PLACED_VIRIDITE_EXTRA = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_viridite_extra"));
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> WHITE_OAK = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE_WORLDGEN, Blockus.id("white_oak"));
-    public static final RegistryKey<PlacedFeature> PLACED_WHITE_OAK = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("white_oak"));
-    public static final RegistryKey<PlacedFeature> PLACED_WHITE_OAK_RARE = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("white_oak_rare"));
-    public static final RegistryKey<PlacedFeature> WHITE_OAK_CHECKED = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("white_oak_checked"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> WHITE_OAK = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Blockus.id("white_oak"));
+    public static final RegistryKey<PlacedFeature> PLACED_WHITE_OAK = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak"));
+    public static final RegistryKey<PlacedFeature> PLACED_WHITE_OAK_RARE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak_rare"));
+    public static final RegistryKey<PlacedFeature> WHITE_OAK_CHECKED = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak_checked"));
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> LEGACY_OAK = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE_WORLDGEN, Blockus.id("legacy_oak"));
-    public static final RegistryKey<PlacedFeature> LEGACY_OAK_CHECKED = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("legacy_oak_checked"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LEGACY_OAK = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Blockus.id("legacy_oak"));
+    public static final RegistryKey<PlacedFeature> LEGACY_OAK_CHECKED = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("legacy_oak_checked"));
 
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> RAINBOW_ROSE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE_WORLDGEN, Blockus.id("rainbow_rose"));
-    public static final RegistryKey<PlacedFeature> PLACED_RAINBOW_ROSE = RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("rainbow_rose"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> RAINBOW_ROSE = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Blockus.id("rainbow_rose"));
+    public static final RegistryKey<PlacedFeature> PLACED_RAINBOW_ROSE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("rainbow_rose"));
 
 
     public static TreeFeatureConfig.Builder white_oak() {
@@ -67,47 +67,47 @@ public class BlockusWorldgenFeatures {
         BiomeModifications.addFeature(
             BiomeSelectors.foundInOverworld(),
             GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_limestone_upper")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_limestone_upper")));
 
         BiomeModifications.addFeature(
             BiomeSelectors.foundInOverworld(),
             GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_limestone_lower")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_limestone_lower")));
 
         BiomeModifications.addFeature(
             BiomeSelectors.foundInOverworld(),
             GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_marble")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_marble")));
 
         BiomeModifications.addFeature(
             BiomeSelectors.foundInOverworld(),
             GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_bluestone")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_bluestone")));
 
         BiomeModifications.addFeature(
             BiomeSelectors.foundInOverworld(),
             GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_viridite")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_viridite")));
 
         BiomeModifications.addFeature(
             BiomeSelectors.includeByKey(BiomeKeys.DEEP_DARK),
             GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("ore_viridite_extra")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_viridite_extra")));
 
         BiomeModifications.addFeature(
             BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST),
             GenerationStep.Feature.VEGETAL_DECORATION,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("white_oak")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak")));
 
         BiomeModifications.addFeature(
             BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS),
             GenerationStep.Feature.VEGETAL_DECORATION,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("white_oak_rare")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak_rare")));
 
         BiomeModifications.addFeature(
             BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.MEADOW),
             GenerationStep.Feature.VEGETAL_DECORATION,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE_WORLDGEN, Blockus.id("rainbow_rose")));
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("rainbow_rose")));
 
     }
 

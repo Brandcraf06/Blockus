@@ -2,6 +2,8 @@ package com.brand.blockus;
 
 import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
+import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -11,6 +13,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.TexturedRenderLayers;
+import net.minecraft.client.util.SpriteIdentifier;
+import net.minecraft.util.Identifier;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -137,13 +142,13 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.TINTED_BEVELED_GLASS
         );
 
-//        TerraformBoatClientHelper.registerModelLayers(Blockus.id("bamboo"), false);
-//        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "charred"), false);
-//        TerraformBoatClientHelper.registerModelLayers(Blockus.id( "white_oak"), false);
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id("bamboo"), false);
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id("charred"), false);
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id("white_oak"), false);
 
-//        registerSignSprite("bamboo");
-//        registerSignSprite("charred");
-//        registerSignSprite("white_oak");
+        registerSignSprite("bamboo");
+        registerSignSprite("charred");
+        registerSignSprite("white_oak");
 
         if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.initClient();
@@ -162,9 +167,9 @@ public class BlockusClient implements ClientModInitializer {
         }, block.asItem());
     }
 
-//    private void registerSignSprite(String path) {
-//        Identifier id = Blockus.id( "entity/signs/" + path);
-//        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
-//    }
+    private void registerSignSprite(String path) {
+        Identifier id = Blockus.id("entity/signs/" + path);
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
+    }
 
 }

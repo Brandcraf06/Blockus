@@ -1330,10 +1330,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.SPRUCE_LOGS)
             .add(BlockusBlocks.SPRUCE_SMALL_LOGS);
 
-//        this.getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
-//            .add(BlockusBlocks.BAMBOO.standing_sign)
-//            .add(BlockusBlocks.CHARRED.standing_sign)
-//            .add(BlockusBlocks.WHITE_OAK.standing_sign);
+        this.getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
+            .add(BlockusBlocks.BAMBOO.standing_sign)
+            .add(BlockusBlocks.CHARRED.standing_sign)
+            .add(BlockusBlocks.WHITE_OAK.standing_sign);
 
         this.getOrCreateTagBuilder(BlockTags.STONE_ORE_REPLACEABLES)
             .add(BlockusBlocks.LIMESTONE.block)
@@ -1360,10 +1360,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.STONE_TRAPDOOR)
             .add(BlockusBlocks.BLACKSTONE_TRAPDOOR);
 
-//        this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
-//            .add(BlockusBlocks.BAMBOO.wall_sign)
-//            .add(BlockusBlocks.CHARRED.wall_sign)
-//            .add(BlockusBlocks.WHITE_OAK.wall_sign);
+        this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
+            .add(BlockusBlocks.BAMBOO.wall_sign)
+            .add(BlockusBlocks.CHARRED.wall_sign)
+            .add(BlockusBlocks.WHITE_OAK.wall_sign);
 
         this.getOrCreateTagBuilder(BlockTags.WALLS)
             .add(BlockusBlocks.BLAZE_BRICKS.wall)
