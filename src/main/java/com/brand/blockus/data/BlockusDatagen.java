@@ -30,7 +30,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
 //        pack.addProvider(BlockusColumnsRecipeProvider::new);
 
 //        BlockusColumnsBlockTagProvider columnsBlockTags = pack.addProvider(BlockusColumnsBlockTagProvider::new);
-//        pack.addProvider((FabricDataGenerator.Pack.Factory<BlockusColumnsItemTagProvider>) output -> new BlockusColumnsItemTagProvider(output, columnsBlockTags));
+//        pack.addProvider((output, registries) -> new BlockusColumnsItemTagProvider(output, registries, columnsBlockTags));
     }
 
     public static ConditionJsonProvider getLoadCondition(String... modIds) {
