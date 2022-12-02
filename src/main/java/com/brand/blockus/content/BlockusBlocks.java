@@ -64,6 +64,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block HERRINGBONE_GRANITE_BRICKS = register("herringbone_granite_bricks", new Block(FabricBlockSettings.copy(BlockusBlocks.GRANITE_BRICKS.block)));
     public static final Block GRANITE_CIRCULAR_PAVING = register("granite_circular_paving", new OrientableBlockBase(FabricBlockSettings.copy(BlockusBlocks.GRANITE_BRICKS.block)));
 
+    // Mud
+    public static final Block MUD_BRICK_PILLAR = registerPillar(Blocks.MUD_BRICKS);
+
     // Dripstone
     public static final BSSTypes POLISHED_DRIPSTONE = new BSSTypes("polished_dripstone", Blocks.DRIPSTONE_BLOCK);
     public static final BSSWTypes DRIPSTONE_BRICKS = new BSSWTypes("dripstone_bricks", BlockusBlocks.POLISHED_DRIPSTONE.block);

@@ -91,6 +91,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addPottedLargePlantDrop(pottedLargeType.block);
         }
 
+        this.addDrop(BlockusBlocks.MUD_BRICK_PILLAR);
+
         // Viridite
         this.addDrop(BlockusBlocks.CHISELED_VIRIDITE);
         this.addDrop(BlockusBlocks.CHISELED_VIRIDITE_PILLAR);

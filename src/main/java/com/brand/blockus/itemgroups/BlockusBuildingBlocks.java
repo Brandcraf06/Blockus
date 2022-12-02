@@ -84,6 +84,8 @@ public class BlockusBuildingBlocks {
                 entries.add(timberFrameType.cross);
             }
 
+            entries.add(BlockusBlocks.MUD_BRICK_PILLAR);
+
             entries.add(BlockusBlocks.THATCH.block);
             entries.add(BlockusBlocks.THATCH.stairs);
             entries.add(BlockusBlocks.THATCH.slab);
