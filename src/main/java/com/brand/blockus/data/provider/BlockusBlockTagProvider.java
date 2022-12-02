@@ -1095,6 +1095,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.END_TILES.block)
             .add(BlockusBlocks.END_TILES.stairs)
             .add(BlockusBlocks.END_TILES.slab)
+            .add(BlockusBlocks.MUD_BRICK_PILLAR)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.STAINED_STONE_BRICKS)

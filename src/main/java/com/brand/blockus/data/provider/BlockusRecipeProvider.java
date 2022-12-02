@@ -70,6 +70,10 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             generateFamily(exporter, family);
         });
 
+        offerStonecuttingRecipe(exporter, BlockusBlocks.MUD_BRICK_PILLAR, Blocks.MUD_BRICKS);
+        ShapedRecipeJsonBuilder.create(BlockusBlocks.MUD_BRICK_PILLAR, 2).input('#', Blocks.MUD_BRICKS).pattern("#").pattern("#").criterion(hasItem(Blocks.MUD_BRICKS), conditionsFromItem(Blocks.MUD_BRICKS)).offerTo(exporter);
+
+
 
         // Stone
         offerStonecuttingRecipe(exporter, BlockusBlocks.STONE_TILES.block, Blocks.STONE, Blocks.STONE_BRICKS);

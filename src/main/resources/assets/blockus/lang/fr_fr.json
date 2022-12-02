@@ -1151,5 +1151,6 @@
   "block.blockus.end_tiles": "Carrelage de l'End",
   "block.blockus.end_tile_stairs": "Escalier en carrelage de l'End",
   "block.blockus.end_tile_slab": "Dalle de carrelage de l'End",
-  "block.blockus.end_tile_wall": "Muret en carrelage de l'End"
+  "block.blockus.end_tile_wall": "Muret en carrelage de l'End",
+  "block.blockus.mud_brick_pillar": "Pilier en briques de terre crue"
 }
