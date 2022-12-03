@@ -1264,5 +1264,6 @@
   "block.blockus.end_tile_stairs": "End Tile Stairs",
   "block.blockus.end_tile_slab": "End Tile Slab",
   "block.blockus.end_tile_wall": "End Tile Wall",
-  "block.blockus.mud_brick_pillar": "Mud Brick Pillar"
+  "block.blockus.mud_brick_pillar": "Mud Brick Pillar",
+  "block.blockus.chiseled_mud_bricks": "Chiseled Mud Bricks"
 }
