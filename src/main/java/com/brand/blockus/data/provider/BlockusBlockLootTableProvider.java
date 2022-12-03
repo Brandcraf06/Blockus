@@ -515,7 +515,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
 
         this.addDrop(BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, this::slabDrops);
         this.addDrop(BlockusBlocks.NETHERITE_SLAB, this::slabDrops);
-        this.addDrop(BlockusBlocks.SNOW_BRICK_SLAB, this::slabDrops);
 
         this.addDrop(BlockusBlocks.BLACKSTONE_DOOR, this::doorDrops);
         this.addDrop(BlockusBlocks.GOLDEN_GATE, this::doorDrops);

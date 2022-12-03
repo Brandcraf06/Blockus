@@ -85,6 +85,7 @@ public class BlockusBuildingBlocks {
             }
 
             entries.add(BlockusBlocks.MUD_BRICK_PILLAR);
+            entries.add(BlockusBlocks.CHISELED_MUD_BRICKS);
 
             entries.add(BlockusBlocks.THATCH.block);
             entries.add(BlockusBlocks.THATCH.stairs);
@@ -99,10 +100,10 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.PAPER_TRAPDOOR);
             entries.add(BlockusBlocks.PAPER_LAMP);
 
-            entries.add(BlockusBlocks.SNOW_BRICKS);
-            entries.add(BlockusBlocks.SNOW_BRICK_STAIRS);
-            entries.add(BlockusBlocks.SNOW_BRICK_SLAB);
-            entries.add(BlockusBlocks.SNOW_BRICK_WALL);
+            entries.add(BlockusBlocks.SNOW_BRICKS.block);
+            entries.add(BlockusBlocks.SNOW_BRICKS.stairs);
+            entries.add(BlockusBlocks.SNOW_BRICKS.slab);
+            entries.add(BlockusBlocks.SNOW_BRICKS.wall);
             entries.add(BlockusBlocks.SNOW_PILLAR);
 
             entries.add(BlockusBlocks.ICE_BRICKS);
