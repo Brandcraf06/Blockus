@@ -33,7 +33,7 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         PlacedFeature PLACED_LIMESTONE_UPPER = new PlacedFeature(limestone, BlockusWorldgenFeatures.modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128))));
         entries.add(BlockusWorldgenFeatures.PLACED_LIMESTONE_UPPER, PLACED_LIMESTONE_UPPER);
 
-        PlacedFeature PLACED_LIMESTONE_LOWER = new PlacedFeature(limestone, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(60))));
+        PlacedFeature PLACED_LIMESTONE_LOWER = new PlacedFeature(limestone, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
         entries.add(BlockusWorldgenFeatures.PLACED_LIMESTONE_LOWER, PLACED_LIMESTONE_LOWER);
 
         // marble
