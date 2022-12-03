@@ -92,6 +92,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addPottedLargePlantDrop(pottedLargeType.block);
         }
 
+        this.addDrop(BlockusBlocks.CHISELED_MUD_BRICKS);
         this.addDrop(BlockusBlocks.MUD_BRICK_PILLAR);
 
         // Viridite
@@ -449,9 +450,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.SALMON_CRATE);
         this.addDrop(BlockusBlocks.SANDSTONE_PILLAR);
         this.addDrop(BlockusBlocks.SMOOTH_STONE_STAIRS);
-        this.addDrop(BlockusBlocks.SNOW_BRICK_STAIRS);
-        this.addDrop(BlockusBlocks.SNOW_BRICK_WALL);
-        this.addDrop(BlockusBlocks.SNOW_BRICKS);
         this.addDrop(BlockusBlocks.SNOW_PILLAR);
         this.addDrop(BlockusBlocks.SOUL_LANTERN_BLOCK);
         this.addDrop(BlockusBlocks.SOUL_O_LANTERN);
@@ -518,8 +516,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
 
         this.addDrop(BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, BlockLootTableGenerator::slabDrops);
         this.addDrop(BlockusBlocks.NETHERITE_SLAB, BlockLootTableGenerator::slabDrops);
-        this.addDrop(BlockusBlocks.SNOW_BRICK_SLAB, BlockLootTableGenerator::slabDrops);
-
         this.addDrop(BlockusBlocks.BLACKSTONE_DOOR, BlockLootTableGenerator::doorDrops);
         this.addDrop(BlockusBlocks.GOLDEN_GATE, BlockLootTableGenerator::doorDrops);
         this.addDrop(BlockusBlocks.IRON_GATE, BlockLootTableGenerator::doorDrops);

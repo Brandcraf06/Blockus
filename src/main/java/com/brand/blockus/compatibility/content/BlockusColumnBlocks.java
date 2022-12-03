@@ -64,7 +64,7 @@ public final class BlockusColumnBlocks {
         registerColumnBlockAndItem("lava_brick_column", BlockusBlocks.LAVA_BRICKS.block);
         registerColumnBlockAndItem("lava_polished_blackstone_brick_column", BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS.block);
         registerColumnBlockAndItem("water_brick_column", BlockusBlocks.WATER_BRICKS.block);
-        registerColumnBlockAndItem("snow_brick_column", BlockusBlocks.SNOW_BRICKS);
+        registerColumnBlockAndItem("snow_brick_column", BlockusBlocks.SNOW_BRICKS.block);
         registerColumnBlockAndItem("ice_brick_column", BlockusBlocks.ICE_BRICKS);
         registerColumnBlockAndItem("magma_brick_column", BlockusBlocks.MAGMA_BRICKS.block);
         registerColumnBlockAndItem("small_magma_brick_column", BlockusBlocks.SMALL_MAGMA_BRICKS.block);

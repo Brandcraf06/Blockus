@@ -63,7 +63,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GRANITE_CIRCULAR_PAVING = register("granite_circular_paving", new OrientableBlockBase(FabricBlockSettings.copy(BlockusBlocks.GRANITE_BRICKS.block)));
 
     // Mud
+    public static final Block CHISELED_MUD_BRICKS = register("chiseled_mud_bricks", new Block(FabricBlockSettings.copy(Blocks.MUD_BRICKS)));
+
     public static final Block MUD_BRICK_PILLAR = registerPillar(Blocks.MUD_BRICKS);
+
 
     // Dripstone
     public static final BSSTypes POLISHED_DRIPSTONE = new BSSTypes("polished_dripstone", Blocks.DRIPSTONE_BLOCK);
@@ -195,11 +198,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block CHISELED_WATER_BRICKS = register("chiseled_water_bricks", new Block(FabricBlockSettings.copy(BlockusBlocks.WATER_BRICKS.block)));
 
     // Snow Bricks
-    public static final Block SNOW_BRICKS = register("snow_bricks", new Block(FabricBlockSettings.of(Material.STONE).strength(1.0f, 3.0f).sounds(BlockSoundGroup.STONE).requiresTool()));
-    public static final Block SNOW_BRICK_STAIRS = registerStairs(SNOW_BRICKS);
-    public static final Block SNOW_BRICK_SLAB = registerSlab(SNOW_BRICKS);
-    public static final Block SNOW_BRICK_WALL = registerWall(SNOW_BRICKS);
-    public static final Block SNOW_PILLAR = createPillar("snow", SNOW_BRICKS);
+    public static final BSSWTypes SNOW_BRICKS = new BSSWTypes("snow_bricks", Blocks.STONE_BRICKS, 1.0f, 3.0f, MapColor.WHITE);
+    public static final Block SNOW_PILLAR = createPillar("snow", SNOW_BRICKS.block);
 
     // Ice Bricks
     public static final Block ICE_BRICKS = register("ice_bricks", new Block(FabricBlockSettings.of(Material.DENSE_ICE).slipperiness(0.98F).strength(0.5F).sounds(BlockSoundGroup.GLASS)));

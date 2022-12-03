@@ -5,6 +5,7 @@ import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
+import net.minecraft.block.Material;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 
@@ -48,6 +49,11 @@ public class BSSWTypes {
 
     public BSSWTypes(String type, Block base, BlockSoundGroup sound) {
         this(type, base, FabricBlockSettings.copyOf(base).sounds(sound));
+
+    }
+
+    public BSSWTypes(String type, Block base, float hardness, float resistance, MapColor mapcolor) {
+        this(type, base, FabricBlockSettings.copyOf(base).strength(hardness, resistance).mapColor(mapcolor));
 
     }
 

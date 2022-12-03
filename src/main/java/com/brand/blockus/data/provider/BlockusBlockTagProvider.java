@@ -827,9 +827,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addOptional(new Identifier(Blockus.MOD_ID, "dark_amaranth_small_hedge"));
 
         this.getOrCreateTagBuilder(BlockusBlockTags.SNOW_BRICKS)
-            .add(BlockusBlocks.SNOW_BRICKS)
-            .add(BlockusBlocks.SNOW_BRICK_STAIRS)
-            .add(BlockusBlocks.SNOW_BRICK_SLAB)
+            .add(BlockusBlocks.SNOW_BRICKS.block)
+            .add(BlockusBlocks.SNOW_BRICKS.stairs)
+            .add(BlockusBlocks.SNOW_BRICKS.slab)
             .add(BlockusBlocks.SNOW_PILLAR);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.SOUL_SANDSTONE)
@@ -1095,6 +1095,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.END_TILES.block)
             .add(BlockusBlocks.END_TILES.stairs)
             .add(BlockusBlocks.END_TILES.slab)
+            .add(BlockusBlocks.CHISELED_MUD_BRICKS)
             .add(BlockusBlocks.MUD_BRICK_PILLAR)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
@@ -1401,7 +1402,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.LAVA_POLISHED_BLACKSTONE_BRICKS.wall)
             .add(BlockusBlocks.CRIMSON_WARTY_BLACKSTONE_BRICKS.wall)
             .add(BlockusBlocks.WARPED_WARTY_BLACKSTONE_BRICKS.wall)
-            .add(BlockusBlocks.SNOW_BRICK_WALL)
+            .add(BlockusBlocks.SNOW_BRICKS.wall)
             .add(BlockusBlocks.ICE_BRICK_WALL)
             .add(BlockusBlocks.POLISHED_BASALT_BRICKS.wall)
             .add(BlockusBlocks.BLUESTONE_BRICKS.wall)
