@@ -143,6 +143,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.DARK_OAK_LOGS, ItemTags.DARK_OAK_LOGS);
 
+        this.copy(BlockTags.FENCE_GATES, ItemTags.FENCE_GATES);
+
         this.getOrCreateTagBuilder(ItemTags.DOORS)
             .add(BlockusBlocks.PAPER_DOOR.asItem())
             .add(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR.asItem())
