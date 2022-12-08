@@ -84,8 +84,8 @@ public class BlockusBuildingBlocks {
                 entries.add(timberFrameType.cross);
             }
 
-            entries.add(BlockusBlocks.MUD_BRICK_PILLAR);
             entries.add(BlockusBlocks.CHISELED_MUD_BRICKS);
+            entries.add(BlockusBlocks.MUD_BRICK_PILLAR);
 
             entries.add(BlockusBlocks.THATCH.block);
             entries.add(BlockusBlocks.THATCH.stairs);
@@ -469,10 +469,10 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.NETHER_TILES.wall);
 
             entries.add(BlockusBlocks.POLISHED_NETHER_BRICKS);
-            entries.add(BlockusBlocks.POLISHED_RED_NETHER_BRICKS);
             entries.add(BlockusBlocks.HERRINGBONE_NETHER_BRICKS);
-            entries.add(BlockusBlocks.HERRINGBONE_RED_NETHER_BRICKS);
             entries.add(BlockusBlocks.NETHER_BRICK_PILLAR);
+            entries.add(BlockusBlocks.POLISHED_RED_NETHER_BRICKS);
+            entries.add(BlockusBlocks.HERRINGBONE_RED_NETHER_BRICKS);
             entries.add(BlockusBlocks.RED_NETHER_BRICK_PILLAR);
             entries.add(BlockusBlocks.CHARRED_NETHER_BRICKS.block);
             entries.add(BlockusBlocks.CHARRED_NETHER_BRICKS.stairs);
