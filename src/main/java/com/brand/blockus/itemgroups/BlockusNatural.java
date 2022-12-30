@@ -1,9 +1,11 @@
 package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -25,6 +27,9 @@ public class BlockusNatural {
             entries.add(BlockusBlocks.WHITE_OAK_LOG);
             entries.add(BlockusBlocks.WHITE_OAK_SAPLING);
             entries.add(BlockusBlocks.WHITE_OAK_LEAVES);
+            if (FabricLoader.getInstance().isModLoaded("promenade")) {
+                entries.add(BlockusPromenadeBlocks.WHITE_OAK_LEAF_PILE);
+            }
 
             entries.add(BlockusBlocks.OAK_SMALL_HEDGE);
             entries.add(BlockusBlocks.SPRUCE_SMALL_HEDGE);
@@ -39,6 +44,16 @@ public class BlockusNatural {
             entries.add(BlockusBlocks.AZALEA_SMALL_HEDGE);
             entries.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE);
             entries.add(BlockusBlocks.MOSS_SMALL_HEDGE);
+            if (FabricLoader.getInstance().isModLoaded("promenade")) {
+                entries.add(BlockusPromenadeBlocks.SAP_MAPLE_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.VERMILION_MAPLE_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.FULVOUS_MAPLE_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.MIKADO_MAPLE_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.PINK_CHERRY_OAK_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.WHITE_CHERRY_OAK_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.PALM_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_HEDGE);
+            }
 
             entries.add(BlockusBlocks.SOUL_O_LANTERN);
 

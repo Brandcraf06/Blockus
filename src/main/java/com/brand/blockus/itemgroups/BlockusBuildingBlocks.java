@@ -1,12 +1,14 @@
 package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.TimberFrameTypesB;
 import com.brand.blockus.content.types.TimberFrameTypesNB;
 import com.brand.blockus.content.types.WoodTypesB;
 import com.brand.blockus.content.types.WoodTypesNB;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -58,6 +60,11 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS);
             entries.add(BlockusBlocks.CRIMSON_SMALL_STEMS);
             entries.add(BlockusBlocks.WARPED_SMALL_STEMS);
+            if (FabricLoader.getInstance().isModLoaded("promenade")) {
+                entries.add(BlockusPromenadeBlocks.MAPLE_SMALL_LOGS);
+                entries.add(BlockusPromenadeBlocks.PALM_SMALL_LOGS);
+                entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS);
+            }
 
             entries.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS);
@@ -652,6 +659,9 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.GOLDEN_APPLE_CRATE);
             entries.add(BlockusBlocks.GOLDEN_CARROT_CRATE);
             entries.add(BlockusBlocks.GLOW_BERRIES_CRATE);
+            if (FabricLoader.getInstance().isModLoaded("promenade")) {
+                entries.add(BlockusPromenadeBlocks.BLUEBERRIES_CRATE);
+            }
 
             entries.add(BlockusBlocks.RAINBOW_BLOCK);
             entries.add(BlockusBlocks.RAINBOW_BRICKS.block);

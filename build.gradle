@@ -35,11 +35,11 @@ dependencies {
   modCompileOnly "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_shapes_api_version}"
 
 	// Columns
-  modCompileOnly "curse.maven:columns-385230:3697328"
+  modCompileOnly "curse.maven:columns-385230:${project.columns_version}"
 
 	// Promenade
-  modCompileOnly "curse.maven:promenade-399648:3855352"
-  modCompileOnly "curse.maven:dawnapi-399309:3855309"
+  modCompileOnly "curse.maven:promenade-399648:${project.promenade_version}"
+  modCompileOnly "curse.maven:dawnapi-399309:${project.dawn_version}"
 }
 
 loom {

@@ -3,7 +3,7 @@
   "textures": {
     "log_top": "blockus:block/promenade/palm_small_logs_top",
     "log": "blockus:block/promenade/palm_small_logs",
-    "leaves": "promenade:block/palm_leaves",
+    "leaves": "promenade:block/palm/leaves",
     "soil": "block/sand"
   }
 }

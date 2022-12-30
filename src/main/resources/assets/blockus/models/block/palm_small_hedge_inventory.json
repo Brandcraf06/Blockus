@@ -1,6 +1,6 @@
 {
   "parent": "blockus:block/template_small_hedge_inventory",
   "textures": {
-    "hedge": "promenade:block/palm_leaves"
+    "hedge": "promenade:block/palm/leaves"
   }
 }

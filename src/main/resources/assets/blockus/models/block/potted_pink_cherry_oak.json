@@ -3,7 +3,7 @@
   "textures": {
     "log_top": "blockus:block/promenade/cherry_oak_small_logs_top",
     "log": "blockus:block/promenade/cherry_oak_small_logs",
-    "leaves": "promenade:block/cherry_oak_leaves",
+    "leaves": "promenade:block/cherry_oak/leaves/pink",
     "soil": "block/dirt"
   }
 }

@@ -823,8 +823,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.AZALEA_SMALL_HEDGE)
             .add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE)
             .add(BlockusBlocks.MOSS_SMALL_HEDGE)
-            .addOptional(new Identifier(Blockus.MOD_ID, "autumn_oak_small_hedge"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "autumn_birch_small_hedge"))
+            .addOptional(new Identifier(Blockus.MOD_ID, "sap_maple_small_hedge"))
+            .addOptional(new Identifier(Blockus.MOD_ID, "vermilion_maple_small_hedge"))
+            .addOptional(new Identifier(Blockus.MOD_ID, "fulvous_maple_small_hedge"))
+            .addOptional(new Identifier(Blockus.MOD_ID, "mikado_maple_small_hedge"))
             .addOptional(new Identifier(Blockus.MOD_ID, "pink_cherry_oak_small_hedge"))
             .addOptional(new Identifier(Blockus.MOD_ID, "white_cherry_oak_small_hedge"))
             .addOptional(new Identifier(Blockus.MOD_ID, "palm_small_hedge"))
@@ -1529,5 +1531,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(new Identifier("promenade", "palm_logs"))
             .addOptional(new Identifier(Blockus.MOD_ID, "palm_small_logs"));
+
+        this.getOrCreateTagBuilder(new Identifier("promenade", "maple_logs"))
+            .addOptional(new Identifier(Blockus.MOD_ID, "maple_small_logs"));
     }
 }

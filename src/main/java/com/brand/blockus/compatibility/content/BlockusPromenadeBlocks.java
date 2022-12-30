@@ -1,11 +1,13 @@
 package com.brand.blockus.compatibility.content;
 
+import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlocksRegistration;
-import com.hugman.promenade.init.AmaranthBundle;
-import com.hugman.promenade.init.AutumnBundle;
-import com.hugman.promenade.init.CherryBundle;
-import com.hugman.promenade.init.PalmBundle;
-import com.hugman.promenade.object.block.PlantPileBlock;
+import fr.hugman.dawn.Registrar;
+import fr.hugman.promenade.PromenadeFactory;
+import fr.hugman.promenade.registry.content.AmaranthContent;
+import fr.hugman.promenade.registry.content.CherryContent;
+import fr.hugman.promenade.registry.content.MapleContent;
+import fr.hugman.promenade.registry.content.PalmContent;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -13,72 +15,90 @@ import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.Material;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
+import net.minecraft.client.color.world.GrassColors;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.item.ItemConvertible;
 
 public class BlockusPromenadeBlocks extends BlocksRegistration {
-    public static Block POTTED_AUTUMN_OAK;
-    public static Block POTTED_AUTUMN_BIRCH;
+    public static Block POTTED_SAP_MAPLE;
+    public static Block POTTED_VERMILION_MAPLE;
+    public static Block POTTED_FULVOUS_MAPLE;
+    public static Block POTTED_MIKADO_MAPLE;
     public static Block POTTED_PINK_CHERRY_OAK;
     public static Block POTTED_WHITE_CHERRY_OAK;
     public static Block POTTED_PALM;
     public static Block POTTED_DARK_AMARANTH;
+    public static Block MAPLE_SMALL_LOGS;
     public static Block CHERRY_OAK_SMALL_LOGS;
     public static Block PALM_SMALL_LOGS;
     public static Block DARK_AMARANTH_SMALL_STEMS;
-    public static Block AUTUMN_OAK_SMALL_HEDGE;
-    public static Block AUTUMN_BIRCH_SMALL_HEDGE;
+    public static Block SAP_MAPLE_SMALL_HEDGE;
+    public static Block VERMILION_MAPLE_SMALL_HEDGE;
+    public static Block FULVOUS_MAPLE_SMALL_HEDGE;
+    public static Block MIKADO_MAPLE_SMALL_HEDGE;
     public static Block PINK_CHERRY_OAK_SMALL_HEDGE;
     public static Block WHITE_CHERRY_OAK_SMALL_HEDGE;
     public static Block PALM_SMALL_HEDGE;
     public static Block DARK_AMARANTH_SMALL_HEDGE;
-    public static Block WHITE_OAK_LEAF_PILE;
+    public static Block WHITE_OAK_LEAF_PILE = PromenadeFactory.leafPile();
     public static Block BLUEBERRIES_CRATE;
 
     public static void init() {
 
         // Large Flower Pots
-        POTTED_AUTUMN_OAK = registerNoItem("potted_autumn_oak", createPottedDoublePlant(AutumnBundle.AUTUMN_OAK_SAPLING.getPlant()));
-        POTTED_AUTUMN_BIRCH = registerNoItem("potted_autumn_birch", createPottedDoublePlant(AutumnBundle.AUTUMN_BIRCH_SAPLING.getPlant()));
-        POTTED_PINK_CHERRY_OAK = registerNoItem("potted_pink_cherry_oak", createPottedDoublePlant(CherryBundle.PINK_CHERRY_OAK_SAPLING.getPlant()));
-        POTTED_WHITE_CHERRY_OAK = registerNoItem("potted_white_cherry_oak", createPottedDoublePlant(CherryBundle.WHITE_CHERRY_OAK_SAPLING.getPlant()));
-        POTTED_PALM = registerNoItem("potted_palm", createPottedDoublePlant(PalmBundle.PALM_WOOD.getSapling()));
-        POTTED_DARK_AMARANTH = registerNoItem("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthBundle.DARK_AMARANTH_FUNGUS.getPlant()));
+
+        POTTED_SAP_MAPLE = registerNoItem("potted_sap_maple", createPottedDoublePlant(MapleContent.SAP_MAPLE_SAPLING));
+        POTTED_VERMILION_MAPLE = registerNoItem("potted_vermilion_maple", createPottedDoublePlant(MapleContent.VERMILION_MAPLE_SAPLING));
+        POTTED_FULVOUS_MAPLE = registerNoItem("potted_fulvous_maple", createPottedDoublePlant(MapleContent.FULVOUS_MAPLE_SAPLING));
+        POTTED_MIKADO_MAPLE = registerNoItem("potted_mikado_maple", createPottedDoublePlant(MapleContent.MIKADO_MAPLE_SAPLING));
+
+        POTTED_PINK_CHERRY_OAK = registerNoItem("potted_pink_cherry_oak", createPottedDoublePlant(CherryContent.PINK_CHERRY_OAK_SAPLING));
+        POTTED_WHITE_CHERRY_OAK = registerNoItem("potted_white_cherry_oak", createPottedDoublePlant(CherryContent.WHITE_CHERRY_OAK_SAPLING));
+        POTTED_PALM = registerNoItem("potted_palm", createPottedDoublePlant(PalmContent.PALM_SAPLING));
+
+        POTTED_DARK_AMARANTH = registerNoItem("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthContent.DARK_AMARANTH_FUNGUS));
 
         // Small Logs
-        CHERRY_OAK_SMALL_LOGS = register("cherry_oak_small_logs", new PillarBlock(FabricBlockSettings.copy(CherryBundle.CHERRY_OAK_WOOD.getLog())));
+        MAPLE_SMALL_LOGS = register("maple_small_logs", new PillarBlock(FabricBlockSettings.copy(MapleContent.MAPLE_LOG)));
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.MAPLE_SMALL_LOGS, 5, 5);
+
+        CHERRY_OAK_SMALL_LOGS = register("cherry_oak_small_logs", new PillarBlock(FabricBlockSettings.copy(CherryContent.CHERRY_OAK_LOG)));
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.CHERRY_OAK_SMALL_LOGS, 5, 5);
 
-        PALM_SMALL_LOGS = register("palm_small_logs", new PillarBlock(FabricBlockSettings.copy(PalmBundle.PALM_WOOD.getLog())));
+        PALM_SMALL_LOGS = register("palm_small_logs", new PillarBlock(FabricBlockSettings.copy(PalmContent.PALM_LOG)));
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_LOGS, 5, 5);
 
-        DARK_AMARANTH_SMALL_STEMS = register("dark_amaranth_small_stems", new PillarBlock(FabricBlockSettings.copy(AmaranthBundle.DARK_AMARANTH_WOOD.getLog())));
+        DARK_AMARANTH_SMALL_STEMS = register("dark_amaranth_small_stems", new PillarBlock(FabricBlockSettings.copy(AmaranthContent.DARK_AMARANTH_STEM)));
 
         // Small Hedges
-        AUTUMN_OAK_SMALL_HEDGE = registerSmallHedge("autumn_oak_small_hedge", AutumnBundle.AUTUMN_OAK_LEAVES);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.AUTUMN_OAK_SMALL_HEDGE, 30, 60);
+        SAP_MAPLE_SMALL_HEDGE = registerSmallHedge("sap_maple_small_hedge", MapleContent.SAP_MAPLE_LEAVES);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.SAP_MAPLE_SMALL_HEDGE, 30, 60);
 
-        AUTUMN_BIRCH_SMALL_HEDGE = registerSmallHedge("autumn_birch_small_hedge", AutumnBundle.AUTUMN_BIRCH_LEAVES);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.AUTUMN_BIRCH_SMALL_HEDGE, 30, 60);
+        VERMILION_MAPLE_SMALL_HEDGE = registerSmallHedge("vermilion_maple_small_hedge", MapleContent.VERMILION_MAPLE_LEAVES);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.VERMILION_MAPLE_SMALL_HEDGE, 30, 60);
 
-        PINK_CHERRY_OAK_SMALL_HEDGE = registerSmallHedge("pink_cherry_oak_small_hedge", CherryBundle.PINK_CHERRY_OAK_LEAVES);
+        FULVOUS_MAPLE_SMALL_HEDGE = registerSmallHedge("fulvous_maple_small_hedge", MapleContent.FULVOUS_MAPLE_LEAVES);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.FULVOUS_MAPLE_SMALL_HEDGE, 30, 60);
+
+        MIKADO_MAPLE_SMALL_HEDGE = registerSmallHedge("mikado_maple_small_hedge", MapleContent.MIKADO_MAPLE_LEAVES);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.MIKADO_MAPLE_SMALL_HEDGE, 30, 60);
+
+        PINK_CHERRY_OAK_SMALL_HEDGE = registerSmallHedge("pink_cherry_oak_small_hedge", CherryContent.PINK_CHERRY_OAK_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PINK_CHERRY_OAK_SMALL_HEDGE, 30, 60);
 
-        WHITE_CHERRY_OAK_SMALL_HEDGE = registerSmallHedge("white_cherry_oak_small_hedge", CherryBundle.WHITE_CHERRY_OAK_LEAVES);
+        WHITE_CHERRY_OAK_SMALL_HEDGE = registerSmallHedge("white_cherry_oak_small_hedge", CherryContent.WHITE_CHERRY_OAK_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.WHITE_CHERRY_OAK_SMALL_HEDGE, 30, 60);
 
-        PALM_SMALL_HEDGE = registerSmallHedge("palm_small_hedge", PalmBundle.PALM_WOOD.getLeaves());
+        PALM_SMALL_HEDGE = registerSmallHedge("palm_small_hedge", PalmContent.PALM_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_HEDGE, 30, 60);
 
-        DARK_AMARANTH_SMALL_HEDGE = registerSmallHedge("dark_amaranth_small_hedge", AmaranthBundle.DARK_AMARANTH_WART_BLOCK);
+        DARK_AMARANTH_SMALL_HEDGE = registerSmallHedge("dark_amaranth_small_hedge", AmaranthContent.DARK_AMARANTH_WART_BLOCK);
 
         // Leaf Piles
-        WHITE_OAK_LEAF_PILE = register("white_oak_leaf_pile", new PlantPileBlock(FabricBlockSettings.of(Material.PLANT).strength(0.1f).sounds(BlockSoundGroup.GRASS).noCollision().nonOpaque()));
-        FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAF_PILE, 30, 60);
+        Registrar.add(Blockus.id("white_oak_leaf_pile"), WHITE_OAK_LEAF_PILE);
 
         // Crates
         BLUEBERRIES_CRATE = register("blueberries_crate", createCrates());
@@ -87,37 +107,40 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
 
     @Environment(EnvType.CLIENT)
     public static void initClient() {
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xE86D30, POTTED_AUTUMN_OAK, AUTUMN_OAK_SMALL_HEDGE);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xE86D30, AUTUMN_OAK_SMALL_HEDGE);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xFFBA42, POTTED_AUTUMN_BIRCH, AUTUMN_BIRCH_SMALL_HEDGE);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xFFBA42, AUTUMN_BIRCH_SMALL_HEDGE);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xF09AC3, POTTED_PINK_CHERRY_OAK, PINK_CHERRY_OAK_SMALL_HEDGE);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xF09AC3, PINK_CHERRY_OAK_SMALL_HEDGE);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xF0E2E9, POTTED_WHITE_CHERRY_OAK, WHITE_CHERRY_OAK_SMALL_HEDGE);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xF0E2E9, WHITE_CHERRY_OAK_SMALL_HEDGE);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
-            if (world == null || pos == null) {
-                return FoliageColors.getDefaultColor();
-            } else {
-                return BiomeColors.getFoliageColor(world, pos);
-            }
-        }, POTTED_PALM, PALM_SMALL_HEDGE);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getDefaultColor(), PALM_SMALL_HEDGE);
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 0xEBB359, WHITE_OAK_LEAF_PILE);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xEBB359, WHITE_OAK_LEAF_PILE);
+        registerBlockColors();
+        registerItemColors();
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
-            POTTED_AUTUMN_OAK,
-            POTTED_AUTUMN_BIRCH,
+            POTTED_SAP_MAPLE,
+            POTTED_VERMILION_MAPLE,
+            POTTED_FULVOUS_MAPLE,
+            POTTED_MIKADO_MAPLE,
             POTTED_PINK_CHERRY_OAK,
             POTTED_WHITE_CHERRY_OAK,
             POTTED_PALM,
-            AUTUMN_OAK_SMALL_HEDGE,
-            AUTUMN_BIRCH_SMALL_HEDGE,
+            SAP_MAPLE_SMALL_HEDGE,
+            VERMILION_MAPLE_SMALL_HEDGE,
+            FULVOUS_MAPLE_SMALL_HEDGE,
+            MIKADO_MAPLE_SMALL_HEDGE,
             PINK_CHERRY_OAK_SMALL_HEDGE,
             WHITE_CHERRY_OAK_SMALL_HEDGE,
             PALM_SMALL_HEDGE,
             WHITE_OAK_LEAF_PILE
         );
+    }
+
+    private static void registerBlockColors() {
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
+            return pos != null && world != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.getDefaultColor();
+        }, new Block[]{PALM_SMALL_HEDGE, POTTED_PALM, SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE});
+    }
+
+    private static void registerItemColors() {
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return GrassColors.getColor(1.0D, 0.0D);
+        }, new ItemConvertible[]{PALM_SMALL_HEDGE, POTTED_PALM});
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 10931465;
+        }, new ItemConvertible[]{SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE});
     }
 }
