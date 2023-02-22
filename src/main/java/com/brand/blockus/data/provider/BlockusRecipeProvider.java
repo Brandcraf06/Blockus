@@ -69,6 +69,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
             BlockusRecipeProvider.offerStairsRecipe(exporter, patternWoolTypes.stairs, patternWoolTypes.block);
             RecipeProvider.offerSlabRecipe(exporter, patternWoolTypes.slab, patternWoolTypes.block);
+            RecipeProvider.offerCarpetRecipe(exporter, patternWoolTypes.carpet, patternWoolTypes.block);
         }
 
         BlockusBlockFamilies.getFamilies().filter(BlockFamily::shouldGenerateRecipes).forEach((family) -> {
@@ -1289,7 +1290,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
     public static void offerPatternWoolRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible wool, ItemConvertible output_carpet, ItemConvertible carpet) {
         offerPolishedStoneRecipe(exporter, output, wool);
-        offerPolishedStoneRecipe(exporter, output_carpet, carpet);
+        createCondensingRecipe(output_carpet, Ingredient.ofItems(carpet)).group("patterned_carpet").criterion(hasItem(carpet), conditionsFromItem(carpet)).offerTo(exporter, convertBetween(output_carpet, carpet));
+
     }
 
 
