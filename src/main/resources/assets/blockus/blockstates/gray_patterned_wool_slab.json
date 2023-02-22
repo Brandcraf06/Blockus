@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "blockus:block/gray_patterned_wool_slab"
+        },
+        "type=double": {
+            "model": "blockus:block/gray_patterned_wool"
+        },
+        "type=top": {
+            "model": "blockus:block/gray_patterned_wool_slab_top"
+        }
+    }
+}

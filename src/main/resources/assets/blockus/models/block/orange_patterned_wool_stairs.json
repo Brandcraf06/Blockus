@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/stairs",
+    "textures": {
+        "bottom": "blockus:block/orange_patterned_wool",
+        "top": "blockus:block/orange_patterned_wool",
+        "side": "blockus:block/orange_patterned_wool"
+    }
+}

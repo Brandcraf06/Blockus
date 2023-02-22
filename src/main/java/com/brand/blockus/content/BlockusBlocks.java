@@ -648,22 +648,23 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block TINTED_BEVELED_GLASS = register("tinted_beveled_glass", new TintedGlassBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS).allowsSpawning(BlockusBlocks::never).solidBlock(BlockusBlocks::never).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
 
     // Patterned Wools
-    public static final Block WHITE_PATTERNED_WOOL = register("white_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.WHITE_WOOL)));
-    public static final Block ORANGE_PATTERNED_WOOL = register("orange_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.ORANGE_WOOL)));
-    public static final Block MAGENTA_PATTERNED_WOOL = register("magenta_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.MAGENTA_WOOL)));
-    public static final Block LIGHT_BLUE_PATTERNED_WOOL = register("light_blue_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_WOOL)));
-    public static final Block YELLOW_PATTERNED_WOOL = register("yellow_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.YELLOW_WOOL)));
-    public static final Block LIME_PATTERNED_WOOL = register("lime_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.LIME_WOOL)));
-    public static final Block PINK_PATTERNED_WOOL = register("pink_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.PINK_WOOL)));
-    public static final Block GRAY_PATTERNED_WOOL = register("gray_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.GRAY_WOOL)));
-    public static final Block LIGHT_GRAY_PATTERNED_WOOL = register("light_gray_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_GRAY_WOOL)));
-    public static final Block CYAN_PATTERNED_WOOL = register("cyan_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.CYAN_WOOL)));
-    public static final Block PURPLE_PATTERNED_WOOL = register("purple_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.PURPLE_WOOL)));
-    public static final Block BLUE_PATTERNED_WOOL = register("blue_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BLUE_WOOL)));
-    public static final Block BROWN_PATTERNED_WOOL = register("brown_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BROWN_WOOL)));
-    public static final Block GREEN_PATTERNED_WOOL = register("green_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.GREEN_WOOL)));
-    public static final Block RED_PATTERNED_WOOL = register("red_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.RED_WOOL)));
-    public static final Block BLACK_PATTERNED_WOOL = register("black_patterned_wool", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.BLACK_WOOL)));
+    public static final PatternWoolTypes WHITE_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.WHITE, MapColor.WHITE);
+    public static final PatternWoolTypes ORANGE_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.ORANGE, MapColor.ORANGE);
+    public static final PatternWoolTypes MAGENTA_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.MAGENTA, MapColor.MAGENTA);
+    public static final PatternWoolTypes LIGHT_BLUE_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.LIGHT_BLUE, MapColor.LIGHT_BLUE);
+    public static final PatternWoolTypes YELLOW_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.YELLOW, MapColor.YELLOW);
+    public static final PatternWoolTypes LIME_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.LIME, MapColor.LIME);
+    public static final PatternWoolTypes PINK_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.PINK, MapColor.PINK);
+    public static final PatternWoolTypes GRAY_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.GRAY, MapColor.GRAY);
+    public static final PatternWoolTypes LIGHT_GRAY_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.LIGHT_GRAY, MapColor.LIGHT_GRAY);
+    public static final PatternWoolTypes CYAN_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.CYAN, MapColor.CYAN);
+    public static final PatternWoolTypes PURPLE_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.PURPLE, MapColor.PURPLE);
+    public static final PatternWoolTypes BLUE_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.BLUE, MapColor.BLUE);
+    public static final PatternWoolTypes BROWN_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.BROWN, MapColor.BROWN);
+    public static final PatternWoolTypes GREEN_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.GREEN, MapColor.GREEN);
+    public static final PatternWoolTypes RED_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.RED, MapColor.RED);
+    public static final PatternWoolTypes BLACK_PATTERNED_WOOL = new PatternWoolTypes(DyeColor.BLACK, MapColor.BLACK);
+
 
     // Colored Tiles
     public static final Block WHITE_COLORED_TILES = register("white_colored_tiles", new Block(FabricBlockSettings.copy(Blocks.WHITE_CONCRETE)));

@@ -4,6 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.AsphaltTypes;
 import com.brand.blockus.content.types.ConcreteTypes;
+import com.brand.blockus.content.types.PatternWoolTypes;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -23,14 +24,19 @@ public class BlockusColoredBlocks {
             entries.add(BlockusBlocks.RAINBOW_BRICKS.slab);
             entries.add(BlockusBlocks.RAINBOW_BRICKS.wall);
             entries.add(BlockusBlocks.RAINBOW_GLOWSTONE);
-
-
             entries.add(BlockusBlocks.RAINBOW_ASPHALT);
 
             for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
                 entries.add(asphaltTypes.block);
                 entries.add(asphaltTypes.stairs);
                 entries.add(asphaltTypes.slab);
+            }
+
+            for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
+                entries.add(patternWoolTypes.block);
+                entries.add(patternWoolTypes.stairs);
+                entries.add(patternWoolTypes.slab);
+                entries.add(patternWoolTypes.carpet);
             }
 
             entries.add(BlockusBlocks.SHINGLES.block);
@@ -327,23 +333,6 @@ public class BlockusColoredBlocks {
             entries.add(BlockusBlocks.BLUE_CYAN_COLORED_TILES);
             entries.add(BlockusBlocks.RED_BLUE_COLORED_TILES);
             entries.add(BlockusBlocks.RAINBOW_COLORED_TILES);
-
-            entries.add(BlockusBlocks.WHITE_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.GRAY_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.BLACK_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.BROWN_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.RED_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.ORANGE_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.YELLOW_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.LIME_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.GREEN_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.CYAN_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.BLUE_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.PURPLE_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.MAGENTA_PATTERNED_WOOL);
-            entries.add(BlockusBlocks.PINK_PATTERNED_WOOL);
         })
         .build();
 }

@@ -1,19 +1,7 @@
 {
-  "variants": {
-    "facing=south": {
-      "model": "blockus:block/purple_patterned_wool"
-    },
-    "facing=west": {
-      "model": "blockus:block/purple_patterned_wool",
-      "y": 90
-    },
-    "facing=north": {
-      "model": "blockus:block/purple_patterned_wool",
-      "y": 180
-    },
-    "facing=east": {
-      "model": "blockus:block/purple_patterned_wool",
-      "y": 270
+    "variants": {
+        "": {
+            "model": "blockus:block/purple_patterned_wool"
+        }
     }
-  }
 }

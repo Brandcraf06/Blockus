@@ -91,6 +91,14 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addPottedLargePlantDrop(pottedLargeType.block);
         }
 
+        for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
+            this.addDrop(patternWoolTypes.block);
+            this.addDrop(patternWoolTypes.stairs);
+            this.addDrop(patternWoolTypes.slab, this::slabDrops);
+            this.addDrop(patternWoolTypes.carpet);
+
+        }
+
         this.addDrop(BlockusBlocks.CHISELED_MUD_BRICKS);
         this.addDrop(BlockusBlocks.MUD_BRICK_PILLAR);
 
@@ -149,7 +157,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.BLACK_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.BLACK_GRAY_COLORED_TILES);
         this.addDrop(BlockusBlocks.BLACK_NEON);
-        this.addDrop(BlockusBlocks.BLACK_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.BLACK_RED_COLORED_TILES);
         this.addDrop(BlockusBlocks.BLACK_WHITE_COLORED_TILES);
         this.addDrop(BlockusBlocks.BLACKSTONE_TRAPDOOR);
@@ -159,7 +166,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.BLUE_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.BLUE_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.BLUE_NEON);
-        this.addDrop(BlockusBlocks.BLUE_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.BLUE_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.BLUE_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.BLUE_WHITE_COLORED_TILES);
@@ -174,7 +180,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.BROWN_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.BROWN_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.BROWN_NEON);
-        this.addDrop(BlockusBlocks.BROWN_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.BROWN_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.BROWN_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.BROWN_WHITE_COLORED_TILES);
@@ -223,7 +228,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.CYAN_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.CYAN_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.CYAN_NEON);
-        this.addDrop(BlockusBlocks.CYAN_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.CYAN_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.CYAN_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.CYAN_WHITE_COLORED_TILES);
@@ -253,7 +257,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.GRAY_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.GRAY_LIGHT_GRAY_COLORED_TILES);
         this.addDrop(BlockusBlocks.GRAY_NEON);
-        this.addDrop(BlockusBlocks.GRAY_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.GRAY_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.GRAY_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.GRAY_WHITE_COLORED_TILES);
@@ -263,7 +266,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.GREEN_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.GREEN_NEON);
         this.addDrop(BlockusBlocks.GREEN_ORANGE_COLORED_TILES);
-        this.addDrop(BlockusBlocks.GREEN_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.GREEN_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.GREEN_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.GREEN_WHITE_COLORED_TILES);
@@ -294,7 +296,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.LIGHT_BLUE_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.LIGHT_BLUE_NEON);
-        this.addDrop(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.LIGHT_BLUE_WHITE_COLORED_TILES);
@@ -303,7 +304,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.LIGHT_GRAY_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.LIGHT_GRAY_NEON);
-        this.addDrop(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.LIGHT_GRAY_WHITE_COLORED_TILES);
@@ -311,7 +311,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.LIME_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.LIME_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.LIME_NEON);
-        this.addDrop(BlockusBlocks.LIME_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.LIME_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.LIME_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.LIME_WHITE_COLORED_TILES);
@@ -328,7 +327,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.MAGENTA_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.MAGENTA_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.MAGENTA_NEON);
-        this.addDrop(BlockusBlocks.MAGENTA_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.MAGENTA_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.MAGENTA_WHITE_COLORED_TILES);
@@ -352,7 +350,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.ORANGE_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.ORANGE_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.ORANGE_NEON);
-        this.addDrop(BlockusBlocks.ORANGE_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.ORANGE_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.ORANGE_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.ORANGE_WHITE_COLORED_TILES);
@@ -370,7 +367,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.PINK_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.PINK_MAGENTA_COLORED_TILES);
         this.addDrop(BlockusBlocks.PINK_NEON);
-        this.addDrop(BlockusBlocks.PINK_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.PINK_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.PINK_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.PINK_WHITE_COLORED_TILES);
@@ -411,7 +407,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.PURPLE_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.PURPLE_NEON);
         this.addDrop(BlockusBlocks.PURPLE_ORANGE_COLORED_TILES);
-        this.addDrop(BlockusBlocks.PURPLE_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.PURPLE_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.PURPLE_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.PURPLE_WHITE_COLORED_TILES);
@@ -435,7 +430,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.RED_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.RED_NEON);
         this.addDrop(BlockusBlocks.RED_NETHER_BRICK_PILLAR);
-        this.addDrop(BlockusBlocks.RED_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.RED_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.RED_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.RED_SANDSTONE_PILLAR);
@@ -481,7 +475,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.WHITE_OAK_SAPLING);
         this.addDrop(BlockusBlocks.WHITE_OAK_SMALL_LOGS);
         this.addDrop(BlockusBlocks.WHITE_OAK_WOOD);
-        this.addDrop(BlockusBlocks.WHITE_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.WHITE_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.WHITE_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.WOODEN_FRAME);
@@ -489,7 +482,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.YELLOW_FUTURNEO_BLOCK);
         this.addDrop(BlockusBlocks.YELLOW_GLAZED_TERRACOTTA_PILLAR);
         this.addDrop(BlockusBlocks.YELLOW_NEON);
-        this.addDrop(BlockusBlocks.YELLOW_PATTERNED_WOOL);
         this.addDrop(BlockusBlocks.YELLOW_REDSTONE_LAMP);
         this.addDrop(BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT);
         this.addDrop(BlockusBlocks.YELLOW_WHITE_COLORED_TILES);
