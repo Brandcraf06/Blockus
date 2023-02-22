@@ -1,7 +1,6 @@
 {
-  "parent": "block/template_glazed_terracotta",
-  "textures": {
-    "particle": "blockus:block/red_patterned_wool",
-    "pattern": "blockus:block/red_patterned_wool"
-  }
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "blockus:block/red_patterned_wool"
+    }
 }

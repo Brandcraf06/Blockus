@@ -1,4 +1,4 @@
-package com.brand.blockus.tag;
+package com.brand.blockus.tags;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.block.Block;
@@ -42,6 +42,8 @@ public class BlockusBlockTags {
     public static final TagKey<Block> NETHERRACK_BLOCKS = register("netherrack_blocks");
     public static final TagKey<Block> OBSIDIAN = register("obsidian");
     public static final TagKey<Block> PATTERNED_WOOL = register("patterned_wool");
+    public static final TagKey<Block> PATTERNED_CARPETS = register("patterned_carpets");
+    public static final TagKey<Block> ALL_PATTERNED_WOOLS = register("all_patterned_wools");
     public static final TagKey<Block> PHANTOM_PURPUR_BLOCKS = register("phantom_purpur_blocks");
     public static final TagKey<Block> PLATINGS = register("platings");
     public static final TagKey<Block> PRISMARINE_BLOCKS = register("prismarine_blocks");

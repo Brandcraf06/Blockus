@@ -4,8 +4,8 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusBlockFamilies;
-import com.brand.blockus.tag.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import com.brand.blockus.tags.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.family.BlockFamily;
@@ -66,9 +66,15 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             offerStonecuttingRecipe(exporter, asphaltType.slab, asphaltType.block, 2);
         }
 
+        for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
+            BlockusRecipeProvider.offerStairsRecipe(exporter, patternWoolTypes.stairs, patternWoolTypes.block);
+            RecipeProvider.offerSlabRecipe(exporter, patternWoolTypes.slab, patternWoolTypes.block);
+        }
+
         BlockusBlockFamilies.getFamilies().filter(BlockFamily::shouldGenerateRecipes).forEach((family) -> {
             generateFamily(exporter, family);
         });
+
 
         offerStonecuttingRecipe(exporter, BlockusBlocks.MUD_BRICK_PILLAR, Blocks.MUD_BRICKS);
         ShapedRecipeJsonBuilder.create(BlockusBlocks.MUD_BRICK_PILLAR, 2).input('#', Blocks.MUD_BRICKS).pattern("#").pattern("#").criterion(hasItem(Blocks.MUD_BRICKS), conditionsFromItem(Blocks.MUD_BRICKS)).offerTo(exporter);
@@ -1021,22 +1027,22 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(BlockusBlocks.RAINBOW_GLASS_PANE, 16).input('#', BlockusBlocks.RAINBOW_GLASS).pattern("###").pattern("###").criterion(hasItem(BlockusBlocks.RAINBOW_GLASS), conditionsFromItem(BlockusBlocks.RAINBOW_GLASS)).offerTo(exporter);
 
         // Patterned Wools
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.WHITE_PATTERNED_WOOL, Blocks.WHITE_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.ORANGE_PATTERNED_WOOL, Blocks.ORANGE_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.MAGENTA_PATTERNED_WOOL, Blocks.MAGENTA_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL, Blocks.LIGHT_BLUE_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.YELLOW_PATTERNED_WOOL, Blocks.YELLOW_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.LIME_PATTERNED_WOOL, Blocks.LIME_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.PINK_PATTERNED_WOOL, Blocks.PINK_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL, Blocks.LIGHT_GRAY_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.GRAY_PATTERNED_WOOL, Blocks.GRAY_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.CYAN_PATTERNED_WOOL, Blocks.CYAN_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.PURPLE_PATTERNED_WOOL, Blocks.PURPLE_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.BLUE_PATTERNED_WOOL, Blocks.BLUE_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.BROWN_PATTERNED_WOOL, Blocks.BROWN_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.GREEN_PATTERNED_WOOL, Blocks.GREEN_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.RED_PATTERNED_WOOL, Blocks.RED_WOOL);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.BLACK_PATTERNED_WOOL, Blocks.BLACK_WOOL);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.WHITE_PATTERNED_WOOL.block, Blocks.WHITE_WOOL, BlockusBlocks.WHITE_PATTERNED_WOOL.carpet, Blocks.WHITE_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.ORANGE_PATTERNED_WOOL.block, Blocks.ORANGE_WOOL, BlockusBlocks.ORANGE_PATTERNED_WOOL.carpet, Blocks.ORANGE_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.MAGENTA_PATTERNED_WOOL.block, Blocks.MAGENTA_WOOL, BlockusBlocks.MAGENTA_PATTERNED_WOOL.carpet, Blocks.MAGENTA_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL.block, Blocks.LIGHT_BLUE_WOOL, BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL.carpet, Blocks.LIGHT_BLUE_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.YELLOW_PATTERNED_WOOL.block, Blocks.YELLOW_WOOL, BlockusBlocks.YELLOW_PATTERNED_WOOL.carpet, Blocks.YELLOW_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.LIME_PATTERNED_WOOL.block, Blocks.LIME_WOOL, BlockusBlocks.LIME_PATTERNED_WOOL.carpet, Blocks.LIME_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.PINK_PATTERNED_WOOL.block, Blocks.PINK_WOOL, BlockusBlocks.PINK_PATTERNED_WOOL.carpet, Blocks.PINK_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL.block, Blocks.LIGHT_GRAY_WOOL, BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL.carpet, Blocks.LIGHT_GRAY_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.GRAY_PATTERNED_WOOL.block, Blocks.GRAY_WOOL, BlockusBlocks.GRAY_PATTERNED_WOOL.carpet, Blocks.GRAY_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.CYAN_PATTERNED_WOOL.block, Blocks.CYAN_WOOL, BlockusBlocks.CYAN_PATTERNED_WOOL.carpet, Blocks.CYAN_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.PURPLE_PATTERNED_WOOL.block, Blocks.PURPLE_WOOL, BlockusBlocks.PURPLE_PATTERNED_WOOL.carpet, Blocks.PURPLE_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.BLUE_PATTERNED_WOOL.block, Blocks.BLUE_WOOL, BlockusBlocks.BLUE_PATTERNED_WOOL.carpet, Blocks.BLUE_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.BROWN_PATTERNED_WOOL.block, Blocks.BROWN_WOOL, BlockusBlocks.BROWN_PATTERNED_WOOL.carpet, Blocks.BROWN_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.GREEN_PATTERNED_WOOL.block, Blocks.GREEN_WOOL, BlockusBlocks.GREEN_PATTERNED_WOOL.carpet, Blocks.GREEN_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.RED_PATTERNED_WOOL.block, Blocks.RED_WOOL, BlockusBlocks.RED_PATTERNED_WOOL.carpet, Blocks.RED_CARPET);
+        offerPatternWoolRecipe(exporter, BlockusBlocks.BLACK_PATTERNED_WOOL.block, Blocks.BLACK_WOOL, BlockusBlocks.BLACK_PATTERNED_WOOL.carpet, Blocks.BLACK_CARPET);
 
         // Colored Tiles
         offerUnicolorColoredTilesRecipe(exporter, BlockusBlocks.WHITE_COLORED_TILES, Blocks.WHITE_CONCRETE);
@@ -1280,6 +1286,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         createEnclosedRecipe(output_stairs, Ingredient.ofItems(BlockusBlocks.ASPHALT.stairs), center).group("asphalt_stairs").criterion(hasItem(BlockusBlocks.ASPHALT.block), conditionsFromItem(BlockusBlocks.ASPHALT.block)).offerTo(exporter, convertBetween(output_stairs, BlockusBlocks.ASPHALT.stairs));
         createEnclosedRecipe(output_slab, Ingredient.ofItems(BlockusBlocks.ASPHALT.slab), center).group("asphalt_slab").criterion(hasItem(BlockusBlocks.ASPHALT.block), conditionsFromItem(BlockusBlocks.ASPHALT.block)).offerTo(exporter, convertBetween(output_slab, BlockusBlocks.ASPHALT.slab));
     }
+
+    public static void offerPatternWoolRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible wool, ItemConvertible output_carpet, ItemConvertible carpet) {
+        offerPolishedStoneRecipe(exporter, output, wool);
+        offerPolishedStoneRecipe(exporter, output_carpet, carpet);
+    }
+
 
     public static void offerShinglesRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab, ItemConvertible terracotta) {
         createEnclosedRecipe(output, Ingredient.ofItems(BlockusBlocks.SHINGLES.block), center).group("shingles").criterion(hasItem(BlockusBlocks.SHINGLES.block), conditionsFromItem(BlockusBlocks.SHINGLES.block)).offerTo(exporter, convertBetween(output_stairs, BlockusBlocks.SHINGLES.block));

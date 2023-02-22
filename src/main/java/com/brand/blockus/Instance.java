@@ -2,6 +2,7 @@ package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
+import com.brand.blockus.content.types.PatternWoolTypes;
 import com.brand.blockus.content.types.TimberFrameTypesB;
 import com.brand.blockus.content.types.WoodTypesB;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -56,25 +57,16 @@ public class Instance {
         }
 
         // patterned wools
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ORANGE_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.MAGENTA_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.YELLOW_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.LIME_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PINK_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.GRAY_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.CYAN_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PURPLE_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BLUE_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BROWN_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.GREEN_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.RED_PATTERNED_WOOL, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BLACK_PATTERNED_WOOL, 30, 60);
+
+        for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
+            FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.block, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.stairs, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.slab, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.carpet, 60, 20);
+
+        }
 
         // bamboo
-
         for (WoodTypesB woodType : WoodTypesB.values()) {
             FlammableBlockRegistry.getDefaultInstance().add(woodType.planks, 5, 20);
             FlammableBlockRegistry.getDefaultInstance().add(woodType.stairs, 5, 20);
@@ -116,6 +108,12 @@ public class Instance {
 
 
 // Fuel
+
+        for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
+            FuelRegistry.INSTANCE.add(patternWoolTypes.stairs, 100);
+            FuelRegistry.INSTANCE.add(patternWoolTypes.slab, 50);
+        }
+
         // general
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
         FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);

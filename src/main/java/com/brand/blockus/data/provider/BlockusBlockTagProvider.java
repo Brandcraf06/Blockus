@@ -2,7 +2,7 @@ package com.brand.blockus.data.provider;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.tag.BlockusBlockTags;
+import com.brand.blockus.tags.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
@@ -635,22 +635,76 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addOptional(new Identifier(Blockus.MOD_ID, "small_obsidian_brick_column"));
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_WOOL)
-            .add(BlockusBlocks.WHITE_PATTERNED_WOOL)
-            .add(BlockusBlocks.ORANGE_PATTERNED_WOOL)
-            .add(BlockusBlocks.MAGENTA_PATTERNED_WOOL)
-            .add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL)
-            .add(BlockusBlocks.YELLOW_PATTERNED_WOOL)
-            .add(BlockusBlocks.LIME_PATTERNED_WOOL)
-            .add(BlockusBlocks.PINK_PATTERNED_WOOL)
-            .add(BlockusBlocks.GRAY_PATTERNED_WOOL)
-            .add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL)
-            .add(BlockusBlocks.CYAN_PATTERNED_WOOL)
-            .add(BlockusBlocks.PURPLE_PATTERNED_WOOL)
-            .add(BlockusBlocks.BLUE_PATTERNED_WOOL)
-            .add(BlockusBlocks.BROWN_PATTERNED_WOOL)
-            .add(BlockusBlocks.GREEN_PATTERNED_WOOL)
-            .add(BlockusBlocks.RED_PATTERNED_WOOL)
-            .add(BlockusBlocks.BLACK_PATTERNED_WOOL);
+            .add(BlockusBlocks.WHITE_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.ORANGE_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.MAGENTA_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.YELLOW_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.LIME_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.PINK_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.GRAY_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.CYAN_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.PURPLE_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.BLUE_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.BROWN_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.GREEN_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.RED_PATTERNED_WOOL.block)
+            .add(BlockusBlocks.BLACK_PATTERNED_WOOL.block);
+
+        this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_CARPETS)
+            .add(BlockusBlocks.WHITE_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.ORANGE_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.MAGENTA_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.YELLOW_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.LIME_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.PINK_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.GRAY_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.CYAN_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.PURPLE_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.BLUE_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.BROWN_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.GREEN_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.RED_PATTERNED_WOOL.carpet)
+            .add(BlockusBlocks.BLACK_PATTERNED_WOOL.carpet);
+
+        this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
+            .addTag(BlockusBlockTags.PATTERNED_WOOL)
+            .addTag(BlockusBlockTags.PATTERNED_CARPETS)
+            .add(BlockusBlocks.WHITE_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.ORANGE_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.MAGENTA_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.YELLOW_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.LIME_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.PINK_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.GRAY_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.CYAN_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.PURPLE_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.BLUE_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.BROWN_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.GREEN_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.RED_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.BLACK_PATTERNED_WOOL.stairs)
+            .add(BlockusBlocks.WHITE_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.ORANGE_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.MAGENTA_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.YELLOW_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.LIME_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.PINK_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.GRAY_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.CYAN_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.PURPLE_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.BLUE_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.BROWN_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.GREEN_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.RED_PATTERNED_WOOL.slab)
+            .add(BlockusBlocks.BLACK_PATTERNED_WOOL.slab);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS)
             .add(BlockusBlocks.PHANTOM_PURPUR_BLOCK.block)
@@ -1518,6 +1572,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockTags.WOOL)
             .addTag(BlockusBlockTags.PATTERNED_WOOL);
+
+        this.getOrCreateTagBuilder(BlockTags.WOOL_CARPETS)
+            .addTag(BlockusBlockTags.PATTERNED_CARPETS);
+
+        this.getOrCreateTagBuilder(BlockTags.DAMPENS_VIBRATIONS)
+            .addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS);
 
         this.getOrCreateTagBuilder(BlockTags.ANIMALS_SPAWNABLE_ON)
             .add(BlockusBlocks.LEGACY_GRASS_BLOCK)

@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.0-SNAPSHOT'
+	id 'fabric-loom' version '1.1-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -38,7 +38,7 @@ dependencies {
   modImplementation "curse.maven:columns-385230:3697328"
 
 	// Promenade
-  modCompileOnly "curse.maven:promenade-399648:3855352"
+  modCompileOnly "curse.maven:promenade-399648:3922988"
   modCompileOnly "curse.maven:dawnapi-399309:3855309"
 }
 
