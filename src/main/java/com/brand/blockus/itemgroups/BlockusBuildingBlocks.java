@@ -61,6 +61,7 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.CRIMSON_SMALL_STEMS);
             entries.add(BlockusBlocks.WARPED_SMALL_STEMS);
             if (FabricLoader.getInstance().isModLoaded("promenade")) {
+                entries.add(BlockusPromenadeBlocks.SAKURA_SMALL_LOGS);
                 entries.add(BlockusPromenadeBlocks.MAPLE_SMALL_LOGS);
                 entries.add(BlockusPromenadeBlocks.PALM_SMALL_LOGS);
                 entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS);

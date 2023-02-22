@@ -1,9 +1,0 @@
-{
-  "parent": "blockus:block/tinted_large_tree_pot",
-  "textures": {
-    "log_top": "blockus:block/promenade/cherry_oak_small_logs_top",
-    "log": "blockus:block/promenade/cherry_oak_small_logs",
-    "leaves": "promenade:block/cherry_oak/leaves/white",
-    "soil": "block/dirt"
-  }
-}

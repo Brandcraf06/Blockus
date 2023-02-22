@@ -5,7 +5,7 @@ import com.brand.blockus.content.BlocksRegistration;
 import fr.hugman.dawn.Registrar;
 import fr.hugman.promenade.PromenadeFactory;
 import fr.hugman.promenade.registry.content.AmaranthContent;
-import fr.hugman.promenade.registry.content.CherryContent;
+import fr.hugman.promenade.registry.content.SakuraContent;
 import fr.hugman.promenade.registry.content.MapleContent;
 import fr.hugman.promenade.registry.content.PalmContent;
 import net.fabricmc.api.EnvType;
@@ -27,20 +27,20 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
     public static Block POTTED_VERMILION_MAPLE;
     public static Block POTTED_FULVOUS_MAPLE;
     public static Block POTTED_MIKADO_MAPLE;
-    public static Block POTTED_PINK_CHERRY_OAK;
-    public static Block POTTED_WHITE_CHERRY_OAK;
+    public static Block POTTED_BLUSH_SAKURA;
+    public static Block POTTED_COTTON_SAKURA;
     public static Block POTTED_PALM;
     public static Block POTTED_DARK_AMARANTH;
     public static Block MAPLE_SMALL_LOGS;
-    public static Block CHERRY_OAK_SMALL_LOGS;
+    public static Block SAKURA_SMALL_LOGS;
     public static Block PALM_SMALL_LOGS;
     public static Block DARK_AMARANTH_SMALL_STEMS;
     public static Block SAP_MAPLE_SMALL_HEDGE;
     public static Block VERMILION_MAPLE_SMALL_HEDGE;
     public static Block FULVOUS_MAPLE_SMALL_HEDGE;
     public static Block MIKADO_MAPLE_SMALL_HEDGE;
-    public static Block PINK_CHERRY_OAK_SMALL_HEDGE;
-    public static Block WHITE_CHERRY_OAK_SMALL_HEDGE;
+    public static Block BLUSH_SAKURA_SMALL_HEDGE;
+    public static Block COTTON_SAKURA_SMALL_HEDGE;
     public static Block PALM_SMALL_HEDGE;
     public static Block DARK_AMARANTH_SMALL_HEDGE;
     public static Block WHITE_OAK_LEAF_PILE = PromenadeFactory.leafPile();
@@ -55,8 +55,8 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         POTTED_FULVOUS_MAPLE = registerNoItem("potted_fulvous_maple", createPottedDoublePlant(MapleContent.FULVOUS_MAPLE_SAPLING));
         POTTED_MIKADO_MAPLE = registerNoItem("potted_mikado_maple", createPottedDoublePlant(MapleContent.MIKADO_MAPLE_SAPLING));
 
-        POTTED_PINK_CHERRY_OAK = registerNoItem("potted_pink_cherry_oak", createPottedDoublePlant(CherryContent.PINK_CHERRY_OAK_SAPLING));
-        POTTED_WHITE_CHERRY_OAK = registerNoItem("potted_white_cherry_oak", createPottedDoublePlant(CherryContent.WHITE_CHERRY_OAK_SAPLING));
+        POTTED_BLUSH_SAKURA = registerNoItem("potted_blush_sakura", createPottedDoublePlant(SakuraContent.BLUSH_SAKURA_SAPLING));
+        POTTED_COTTON_SAKURA = registerNoItem("potted_cotton_sakura", createPottedDoublePlant(SakuraContent.COTTON_SAKURA_SAPLING));
         POTTED_PALM = registerNoItem("potted_palm", createPottedDoublePlant(PalmContent.PALM_SAPLING));
 
         POTTED_DARK_AMARANTH = registerNoItem("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthContent.DARK_AMARANTH_FUNGUS));
@@ -65,8 +65,8 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         MAPLE_SMALL_LOGS = register("maple_small_logs", new PillarBlock(FabricBlockSettings.copy(MapleContent.MAPLE_LOG)));
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.MAPLE_SMALL_LOGS, 5, 5);
 
-        CHERRY_OAK_SMALL_LOGS = register("cherry_oak_small_logs", new PillarBlock(FabricBlockSettings.copy(CherryContent.CHERRY_OAK_LOG)));
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.CHERRY_OAK_SMALL_LOGS, 5, 5);
+        SAKURA_SMALL_LOGS = register("sakura_small_logs", new PillarBlock(FabricBlockSettings.copy(SakuraContent.SAKURA_LOG)));
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.SAKURA_SMALL_LOGS, 5, 5);
 
         PALM_SMALL_LOGS = register("palm_small_logs", new PillarBlock(FabricBlockSettings.copy(PalmContent.PALM_LOG)));
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_LOGS, 5, 5);
@@ -86,11 +86,11 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         MIKADO_MAPLE_SMALL_HEDGE = registerSmallHedge("mikado_maple_small_hedge", MapleContent.MIKADO_MAPLE_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.MIKADO_MAPLE_SMALL_HEDGE, 30, 60);
 
-        PINK_CHERRY_OAK_SMALL_HEDGE = registerSmallHedge("pink_cherry_oak_small_hedge", CherryContent.PINK_CHERRY_OAK_LEAVES);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PINK_CHERRY_OAK_SMALL_HEDGE, 30, 60);
+        BLUSH_SAKURA_SMALL_HEDGE = registerSmallHedge("blush_sakura_small_hedge", SakuraContent.BLUSH_SAKURA_BLOSSOMS);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.BLUSH_SAKURA_SMALL_HEDGE, 30, 60);
 
-        WHITE_CHERRY_OAK_SMALL_HEDGE = registerSmallHedge("white_cherry_oak_small_hedge", CherryContent.WHITE_CHERRY_OAK_LEAVES);
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.WHITE_CHERRY_OAK_SMALL_HEDGE, 30, 60);
+        COTTON_SAKURA_SMALL_HEDGE = registerSmallHedge("cotton_sakura_small_hedge", SakuraContent.COTTON_SAKURA_BLOSSOMS);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.COTTON_SAKURA_SMALL_HEDGE, 30, 60);
 
         PALM_SMALL_HEDGE = registerSmallHedge("palm_small_hedge", PalmContent.PALM_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_HEDGE, 30, 60);
@@ -115,15 +115,15 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
             POTTED_VERMILION_MAPLE,
             POTTED_FULVOUS_MAPLE,
             POTTED_MIKADO_MAPLE,
-            POTTED_PINK_CHERRY_OAK,
-            POTTED_WHITE_CHERRY_OAK,
+            POTTED_BLUSH_SAKURA,
+            POTTED_COTTON_SAKURA,
             POTTED_PALM,
             SAP_MAPLE_SMALL_HEDGE,
             VERMILION_MAPLE_SMALL_HEDGE,
             FULVOUS_MAPLE_SMALL_HEDGE,
             MIKADO_MAPLE_SMALL_HEDGE,
-            PINK_CHERRY_OAK_SMALL_HEDGE,
-            WHITE_CHERRY_OAK_SMALL_HEDGE,
+            BLUSH_SAKURA_SMALL_HEDGE,
+            COTTON_SAKURA_SMALL_HEDGE,
             PALM_SMALL_HEDGE,
             WHITE_OAK_LEAF_PILE
         );

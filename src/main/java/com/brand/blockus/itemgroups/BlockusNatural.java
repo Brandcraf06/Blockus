@@ -49,8 +49,8 @@ public class BlockusNatural {
                 entries.add(BlockusPromenadeBlocks.VERMILION_MAPLE_SMALL_HEDGE);
                 entries.add(BlockusPromenadeBlocks.FULVOUS_MAPLE_SMALL_HEDGE);
                 entries.add(BlockusPromenadeBlocks.MIKADO_MAPLE_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.PINK_CHERRY_OAK_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.WHITE_CHERRY_OAK_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.BLUSH_SAKURA_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.COTTON_SAKURA_SMALL_HEDGE);
                 entries.add(BlockusPromenadeBlocks.PALM_SMALL_HEDGE);
                 entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_HEDGE);
             }

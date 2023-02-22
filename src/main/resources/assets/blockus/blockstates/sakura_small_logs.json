@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "blockus:block/sakura_small_logs"
+    },
+    "axis=z": {
+      "model": "blockus:block/sakura_small_logs",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "blockus:block/sakura_small_logs",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

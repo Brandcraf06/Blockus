@@ -6,7 +6,21 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blockus:white_cherry_oak_small_hedge"
+          "name": "blockus:large_flower_pot"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "promenade:blush_sakura_sapling"
         }
       ],
       "conditions": [

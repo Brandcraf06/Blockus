@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "promenade:pink_cherry_oak_leaves"
+      "item": "promenade:blush_sakura_blossoms"
     }
   },
   "result": {
-    "item": "blockus:pink_cherry_oak_small_hedge",
+    "item": "blockus:blush_sakura_small_hedge",
     "count": 6
   },
   "fabric:load_conditions": [

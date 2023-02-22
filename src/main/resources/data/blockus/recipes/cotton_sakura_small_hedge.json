@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "promenade:white_cherry_oak_leaves"
+      "item": "promenade:cotton_sakura_blossoms"
     }
   },
   "result": {
-    "item": "blockus:white_cherry_oak_small_hedge",
+    "item": "blockus:cotton_sakura_small_hedge",
     "count": 6
   },
   "fabric:load_conditions": [
