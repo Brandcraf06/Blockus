@@ -1287,6 +1287,7 @@
   "block.blockus.brown_patterned_wool_stairs": "Brown Patterned Wool Stairs",
   "block.blockus.green_patterned_wool_stairs": "Green Patterned Wool Stairs",
   "block.blockus.red_patterned_wool_stairs": "Red Patterned Wool Stairs",
+  "block.blockus.black_patterned_wool_stairs": "Black Patterned Wool Stairs",
   "block.blockus.white_patterned_wool_slab": "White Patterned Wool Slab",
   "block.blockus.orange_patterned_wool_slab": "Orange Patterned Wool Slab",
   "block.blockus.magenta_patterned_wool_slab": "Magenta Patterned Wool Slab",
@@ -1302,6 +1303,7 @@
   "block.blockus.brown_patterned_wool_slab": "Brown Patterned Wool Slab",
   "block.blockus.green_patterned_wool_slab": "Green Patterned Wool Slab",
   "block.blockus.red_patterned_wool_slab": "Red Patterned Wool Slab",
+  "block.blockus.black_patterned_wool_slab": "Black Patterned Wool Slab",
   "block.blockus.white_patterned_carpet": "White Patterned Carpet",
   "block.blockus.orange_patterned_carpet": "Orange Patterned Carpet",
   "block.blockus.magenta_patterned_carpet": "Magenta Patterned Carpet",
@@ -1316,6 +1318,7 @@
   "block.blockus.blue_patterned_carpet": "Blue Patterned Carpet",
   "block.blockus.brown_patterned_carpet": "Brown Patterned Carpet",
   "block.blockus.green_patterned_carpet": "Green Patterned Carpet",
-  "block.blockus.red_patterned_carpet": "Red Patterned Carpet"
+  "block.blockus.red_patterned_carpet": "Red Patterned Carpet",
+  "block.blockus.black_patterned_carpet": "Black Patterned Carpet"
  
 }
