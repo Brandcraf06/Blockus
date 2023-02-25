@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:block/stairs",
+    "parent": "minecraft:block/inner_stairs",
     "textures": {
         "bottom": "blockus:block/polished_amethyst",
         "top": "blockus:block/polished_amethyst",
