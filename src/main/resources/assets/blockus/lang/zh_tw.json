@@ -1,4 +1,5 @@
 {
+    "effect.blockus.asphalt_sprint": "瀝青疾跑",
  "itemGroup.blockus.blockus_building_blocks": "建築方塊 §3(Blockus)",
  "itemGroup.blockus.blockus_decorations": "裝飾性方塊 §3(Blockus)",
  "itemGroup.blockus.blockus_redstone": "紅石 §3(Blockus)",
@@ -535,8 +536,6 @@
  "block.blockus.small_limestone_brick_slab": "小型石灰紅磚半磚",
  "block.blockus.small_limestone_brick_wall": "小型石灰磚牆",
  "block.blockus.chiseled_limestone": "浮雕石灰岩",
-
-
  "block.blockus.asphalt": "瀝青",
  "block.blockus.white_asphalt": "白色瀝青",
  "block.blockus.orange_asphalt": "橙色瀝青",
@@ -832,8 +831,6 @@
  "block.blockus.potted_bamboo_large": "大型竹盆栽",
  "block.blockus.potted_azalea_large": "大型杜鵑盆栽",
  "block.blockus.potted_flowering_azalea_large": "大型杜鵑叢盆栽",
-
-
  "block.blockus.soul_lantern_block": "靈魂燈塊",
  "block.blockus.golden_chain": "金鎖鏈",
  "block.blockus.golden_bars": "金欄杆",
@@ -1034,8 +1031,6 @@
  "block.blockus.legacy_planks": "木材（舊版）",
  "block.blockus.potted_legacy_tree": "舊版樹盆栽",
  "block.blockus.potted_legacy_sapling": "舊版樹苗盆栽",
-
-
  "block.blockus.azalea_small_hedge": "杜鵑樹籬",
  "block.blockus.azalea_small_hedge_flowers": "杜鵑叢樹籬",
  "block.blockus.moss_small_hedge": "苔蘚樹籬",
@@ -1140,12 +1135,9 @@
  "block.blockus.polished_blackstone_tile_slab": "拋光黑石瓦半磚",
  "block.blockus.polished_blackstone_tile_stairs": "拋光黑石瓦階梯",
  "block.blockus.polished_blackstone_tile_wall": "拋光黑石瓦牆",
- 
  "item.blockus.bamboo_chest_boat": "竹儲物箱船",
  "item.blockus.charred_chest_boat": "燒焦的儲物箱船",
  "item.blockus.white_oak_chest_boat": "白色儲物箱橡木船",
-
-
  "block.blockus.stone_tile_column": "石瓦楹",
  "block.blockus.polished_blackstone_tile_column": "拋光黑石瓦楹",
  "block.blockus.andesite_brick_column": "安山岩磚楹",
@@ -1237,8 +1229,6 @@
  "block.blockus.green_concrete_brick_column": "綠色混凝土磚楹",
  "block.blockus.red_concrete_brick_column": "紅色混凝土磚楹",
  "block.blockus.black_concrete_brick_column": "黑色混凝土磚楹",
-
-
  "block.blockus.potted_autumn_oak": "秋橡木盆栽",
  "block.blockus.potted_autumn_birch": "秋樺木盆栽",
  "block.blockus.potted_pink_cherry_oak": "粉色櫻桃橡木盆栽",
@@ -1274,6 +1264,55 @@
  "block.blockus.end_tiles": "終界瓦",
  "block.blockus.end_tile_stairs": "終界瓦階梯",
  "block.blockus.end_tile_slab": "終界瓦半磚",
- "block.blockus.end_tile_wall": "終界瓦牆"
+ "block.blockus.end_tile_wall": "終界瓦牆",
+ "block.blockus.mud_brick_pillar": "泥磚柱",
+ "block.blockus.chiseled_mud_bricks": "浮雕泥砖",
+ "block.blockus.white_patterned_wool_stairs": "白色花紋羊毛階梯",
+ "block.blockus.orange_patterned_wool_stairs": "橙色花紋羊毛階梯",
+ "block.blockus.magenta_patterned_wool_stairs": "洋紅色花紋羊毛階梯",
+ "block.blockus.light_blue_patterned_wool_stairs": "淺藍色花紋羊毛階梯",
+ "block.blockus.yellow_patterned_wool_stairs": "黃色花紋羊毛階梯",
+ "block.blockus.lime_patterned_wool_stairs": "淺綠色花紋羊毛階梯",
+ "block.blockus.pink_patterned_wool_stairs": "粉色花紋羊毛階梯",
+ "block.blockus.gray_patterned_wool_stairs": "灰色花紋羊毛階梯",
+ "block.blockus.light_gray_patterned_wool_stairs": "淺灰色花紋羊毛階梯",
+ "block.blockus.cyan_patterned_wool_stairs": "青色花紋羊毛階梯",
+ "block.blockus.purple_patterned_wool_stairs": "紫色花紋羊毛階梯",
+ "block.blockus.blue_patterned_wool_stairs": "藍色花紋羊毛階梯",
+ "block.blockus.brown_patterned_wool_stairs": "棕色花紋羊毛階梯",
+ "block.blockus.green_patterned_wool_stairs": "綠色花紋羊毛階梯",
+ "block.blockus.red_patterned_wool_stairs": "紅色花紋羊毛階梯",
+ "block.blockus.black_patterned_wool_stairs": "黑色花紋羊毛階梯",
+ "block.blockus.white_patterned_wool_slab": "白色花紋羊毛半磚",
+ "block.blockus.orange_patterned_wool_slab": "橙色花紋羊毛半磚",
+ "block.blockus.magenta_patterned_wool_slab": "洋紅色花紋羊毛半磚",
+ "block.blockus.light_blue_patterned_wool_slab": "淺藍色花紋羊毛半磚",
+ "block.blockus.yellow_patterned_wool_slab": "黃色花紋羊毛半磚",
+ "block.blockus.lime_patterned_wool_slab": "淺綠色花紋羊毛半磚",
+ "block.blockus.pink_patterned_wool_slab": "粉色花紋羊毛半磚",
+ "block.blockus.gray_patterned_wool_slab": "灰色花紋羊毛半磚",
+ "block.blockus.light_gray_patterned_wool_slab": "淺灰色花紋羊毛半磚",
+ "block.blockus.cyan_patterned_wool_slab": "青色花紋羊毛半磚",
+ "block.blockus.purple_patterned_wool_slab": "紫色花紋羊毛半磚",
+ "block.blockus.blue_patterned_wool_slab": "藍色花紋羊毛半磚",
+ "block.blockus.brown_patterned_wool_slab": "棕色花紋羊毛半磚",
+ "block.blockus.green_patterned_wool_slab": "綠色花紋羊毛半磚",
+ "block.blockus.red_patterned_wool_slab": "紅色花紋羊毛半磚",
+ "block.blockus.black_patterned_wool_slab": "黑色花紋羊毛半磚",
+ "block.blockus.white_patterned_carpet": "白色花紋羊毛地毯",
+ "block.blockus.orange_patterned_carpet": "橙色花紋羊毛地毯",
+ "block.blockus.magenta_patterned_carpet": "洋紅色花紋羊毛地毯",
+ "block.blockus.light_blue_patterned_carpet": "淺藍色花紋羊毛地毯",
+ "block.blockus.yellow_patterned_carpet": "黃色花紋羊毛地毯",
+ "block.blockus.lime_patterned_carpet": "淺綠色花紋羊毛地毯",
+ "block.blockus.pink_patterned_carpet": "粉色花紋羊毛地毯",
+ "block.blockus.gray_patterned_carpet": "灰色花紋羊毛地毯",
+ "block.blockus.light_gray_patterned_carpet": "淺灰色花紋羊毛地毯",
+ "block.blockus.cyan_patterned_carpet": "青色花紋羊毛地毯",
+ "block.blockus.purple_patterned_carpet": "紫色花紋羊毛地毯",
+ "block.blockus.blue_patterned_carpet": "藍色花紋羊毛地毯",
+ "block.blockus.brown_patterned_carpet": "棕色花紋羊毛地毯",
+ "block.blockus.green_patterned_carpet": "綠色花紋羊毛地毯",
+ "block.blockus.red_patterned_carpet": "紅色花紋羊毛地毯",
+ "block.blockus.black_patterned_carpet": "黑色花紋羊毛地毯"
 }
-
