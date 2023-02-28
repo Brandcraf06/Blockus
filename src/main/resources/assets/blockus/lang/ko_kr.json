@@ -999,7 +999,6 @@
   "block.blockus.legacy_glowstone": "발광석 (유산)",
   "block.blockus.legacy_nether_reactor_core": "네더 반응 코어 (유산)",
   "block.blockus.legacy_planks": "판자 (유산)",
-
   "block.blockus.azalea_small_hedge": "진달래나무 소형 울타리",
   "block.blockus.azalea_small_hedge_flowers": "꽃이 핀 진달래나무 소형 울타리",
   "block.blockus.moss_small_hedge": "이끼 소형 울타리",
@@ -1037,7 +1036,6 @@
   "block.blockus.sturdy_deepslate": "견고한 심층암",
   "block.blockus.polished_deepslate_pressure_plate": "윤나는 심층암 압력판",
   "block.blockus.polished_deepslate_button": "윤나는 심층암 버튼",
-
   "block.blockus.andesite_brick_column": "안산암 벽돌 대들보",
   "block.blockus.diorite_brick_column": "섬록암 벽돌 대들보",
   "block.blockus.granite_brick_column": "화강암 벽돌 대들보",
@@ -1091,7 +1089,6 @@
   "block.blockus.phantom_purpur_brick_column": "유령 퍼퍼 벽돌 대들보",
   "block.blockus.small_phantom_purpur_brick_column": "소형 유령 퍼퍼 벽돌 대들보",
   "block.blockus.rainbow_brick_column": "무지개 벽돌 대들보",
-
   "block.blockus.potted_autumn_oak": "화분에 심은 가을 참나무",
   "block.blockus.potted_autumn_birch": "화분에 심은 가을 자작나무",
   "block.blockus.potted_pink_cherry_oak": "화분에 심은 분홍버찌 참나무",

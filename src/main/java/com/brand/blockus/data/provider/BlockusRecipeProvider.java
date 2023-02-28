@@ -48,13 +48,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             offerPolishedStoneRecipe(exporter, concreteType.block, concreteType.base);
         }
 
-        for (TimberFrameTypesB timberFrameType : TimberFrameTypesB.values()) {
+        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.block, 2).input('#', Items.PAPER).input('X', timberFrameType.base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(timberFrameType.base), conditionsFromItem(timberFrameType.base)).offerTo(exporter);
             ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.diagonal, 4).input('#', timberFrameType.block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(timberFrameType.block), conditionsFromItem(timberFrameType.block)).offerTo(exporter);
             ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.cross, 4).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);
         }
 
-        for (TimberFrameTypesNB timberFrameType : TimberFrameTypesNB.values()) {
+        for (TimberFrameTypesFP timberFrameType : TimberFrameTypesFP.values()) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.block, 2).input('#', Items.PAPER).input('X', timberFrameType.base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(timberFrameType.base), conditionsFromItem(timberFrameType.base)).offerTo(exporter);
             ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.diagonal, 4).input('#', timberFrameType.block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(timberFrameType.block), conditionsFromItem(timberFrameType.block)).offerTo(exporter);
             ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.cross, 4).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);

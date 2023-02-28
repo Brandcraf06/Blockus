@@ -3,8 +3,8 @@ package com.brand.blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.PatternWoolTypes;
-import com.brand.blockus.content.types.TimberFrameTypesB;
-import com.brand.blockus.content.types.WoodTypesB;
+import com.brand.blockus.content.types.TimberFrameTypesF;
+import com.brand.blockus.content.types.WoodTypesF;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.block.Blocks;
@@ -50,7 +50,7 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH.stairs, 60, 20);
 
         // timber frames
-        for (TimberFrameTypesB timberFrameType : TimberFrameTypesB.values()) {
+        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
             FlammableBlockRegistry.getDefaultInstance().add(timberFrameType.block, 5, 20);
             FlammableBlockRegistry.getDefaultInstance().add(timberFrameType.diagonal, 5, 20);
             FlammableBlockRegistry.getDefaultInstance().add(timberFrameType.cross, 5, 20);
@@ -67,7 +67,7 @@ public class Instance {
         }
 
         // bamboo
-        for (WoodTypesB woodType : WoodTypesB.values()) {
+        for (WoodTypesF woodType : WoodTypesF.values()) {
             FlammableBlockRegistry.getDefaultInstance().add(woodType.planks, 5, 20);
             FlammableBlockRegistry.getDefaultInstance().add(woodType.stairs, 5, 20);
             FlammableBlockRegistry.getDefaultInstance().add(woodType.slab, 5, 20);
@@ -131,13 +131,13 @@ public class Instance {
 
         // timber frames
 
-        for (TimberFrameTypesB timberFrameType : TimberFrameTypesB.values()) {
+        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
             FuelRegistry.INSTANCE.add(timberFrameType.block, 300);
             FuelRegistry.INSTANCE.add(timberFrameType.diagonal, 300);
             FuelRegistry.INSTANCE.add(timberFrameType.cross, 300);
         }
 
-        for (WoodTypesB woodType : WoodTypesB.values()) {
+        for (WoodTypesF woodType : WoodTypesF.values()) {
             FuelRegistry.INSTANCE.add(woodType.fence, 300);
             FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
         }

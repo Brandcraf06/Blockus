@@ -20,7 +20,7 @@ public class HorizontalAxisBlockBase extends Block {
     }
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(HORIZONTAL_AXIS, ctx.getPlayerFacing().getAxis());
+        return this.getDefaultState().with(HORIZONTAL_AXIS, ctx.getHorizontalPlayerFacing().getAxis());
     }
 
     static {

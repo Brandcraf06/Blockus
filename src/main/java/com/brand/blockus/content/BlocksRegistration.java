@@ -1,11 +1,9 @@
 package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.*;
-import com.brand.blockus.blocks.base.redstone.ButtonBase;
-import com.brand.blockus.blocks.base.redstone.DoorBase;
-import com.brand.blockus.blocks.base.redstone.PressurePlateBase;
-import com.brand.blockus.blocks.base.redstone.TrapdoorBase;
+import com.brand.blockus.blocks.base.Barrier;
+import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
+import com.brand.blockus.blocks.base.SmallHedgeBlock;
 import com.brand.blockus.blocks.blockitems.GlintBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -15,8 +13,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
@@ -61,7 +57,7 @@ public class BlocksRegistration {
 
     // Stairs
     public static Block createStairs(String baseid, Block base) {
-        return register(replaceId(baseid) + "_stairs", new StairsBase(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        return register(replaceId(baseid) + "_stairs", new StairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
     }
 
     public static Block registerStairs(Block base) {
@@ -88,23 +84,23 @@ public class BlocksRegistration {
 
     // Pressure Plate
 
-    public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base, SoundEvent depressSound, SoundEvent pressSound) {
+    public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base, BlockSetType blockSetType) {
         String id = baseid.replace("_planks", "");
-        return register(id + "_pressure_plate", new PressurePlateBase(type, FabricBlockSettings.copy(base).noCollision(), depressSound, pressSound));
+        return register(id + "_pressure_plate", new PressurePlateBlock(type, FabricBlockSettings.copy(base).noCollision(), blockSetType));
     }
 
     public static Block registerStonePressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
-        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), type, base, SoundEvents.BLOCK_STONE_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_STONE_PRESSURE_PLATE_CLICK_ON);
+        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), type, base, BlockSetType.STONE);
     }
 
     public static Block registerWoodenPressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
-        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), type, base, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON);
+        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), type, base, BlockSetType.OAK);
     }
 
     // Button
 
     public static Block createStoneButton(String id, Block base) {
-        return register(id + "_button", new ButtonBase(FabricBlockSettings.copyOf(base).noCollision(), 20, false, SoundEvents.BLOCK_STONE_BUTTON_CLICK_OFF, SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON));
+        return register(id + "_button", new ButtonBlock(FabricBlockSettings.copyOf(base).noCollision(), BlockSetType.STONE, 20, false));
     }
 
     public static Block registerStoneButton(Block base) {
@@ -127,21 +123,21 @@ public class BlocksRegistration {
 
     // Door & Trapdoor
 
-    public static DoorBase createDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, SoundEvent closeSound, SoundEvent openSound) {
-        return new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque(), closeSound, openSound);
+    public static DoorBlock createDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
+        return new DoorBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque(), blockSetType);
     }
 
 
-    public static DoorBase createStoneDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, SoundEvent closeSound, SoundEvent openSound) {
-        return new DoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool(), closeSound, openSound);
+    public static DoorBlock createStoneDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
+        return new DoorBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool(), blockSetType);
     }
 
-    public static TrapdoorBase createTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, SoundEvent closeSound, SoundEvent openSound) {
-        return new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque(), closeSound, openSound);
+    public static TrapdoorBlock createTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
+        return new TrapdoorBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque(), blockSetType);
     }
 
-    public static TrapdoorBase createStoneTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, SoundEvent closeSound, SoundEvent openSound) {
-        return new TrapdoorBase(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool(), closeSound, openSound);
+    public static TrapdoorBlock createStoneTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
+        return new TrapdoorBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool(), blockSetType);
     }
 
     // Light
@@ -185,8 +181,8 @@ public class BlocksRegistration {
         return new FallingBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound));
     }
 
-    public static PaneBlockBase createWoodenPane() {
-        return new PaneBlockBase(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD));
+    public static PaneBlock createWoodenPane() {
+        return new PaneBlock(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD));
     }
 
     public static Block createCrates() {

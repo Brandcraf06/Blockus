@@ -13,7 +13,7 @@ public class BlockusLegacyBlocks {
     private static final ItemGroup BLOCKUS_LEGACY_BLOCKS = FabricItemGroup.builder(new Identifier(Blockus.MOD_ID, "blockus_legacy"))
         .displayName(Text.translatable("itemGroup.blockus_legacy"))
         .icon(() -> new ItemStack(BlockusBlocks.LEGACY_BRICKS))
-        .entries((enabledFeatures, entries, operatorEnabled) -> {
+        .entries((enabledFeatures, entries) -> {
 
             entries.add(BlockusBlocks.LEGACY_SAPLING);
             entries.add(BlockusBlocks.LEGACY_LEAVES);

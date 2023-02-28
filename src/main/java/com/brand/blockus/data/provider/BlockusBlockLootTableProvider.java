@@ -43,7 +43,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(concreteType.pillar);
         }
 
-        for (WoodTypesB woodType : WoodTypesB.values()) {
+        for (WoodTypesF woodType : WoodTypesF.values()) {
             this.addDrop(woodType.planks);
             this.addDrop(woodType.stairs);
             this.addDrop(woodType.slab, this::slabDrops);
@@ -56,7 +56,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.standing_sign);
         }
 
-        for (WoodTypesNB woodType : WoodTypesNB.values()) {
+        for (WoodTypesFP woodType : WoodTypesFP.values()) {
             this.addDrop(woodType.planks);
             this.addDrop(woodType.stairs);
             this.addDrop(woodType.slab, this::slabDrops);
@@ -69,13 +69,13 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.standing_sign);
         }
 
-        for (TimberFrameTypesB timberFrameType : TimberFrameTypesB.values()) {
+        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
             this.addDrop(timberFrameType.block);
             this.addDrop(timberFrameType.diagonal);
             this.addDrop(timberFrameType.cross);
         }
 
-        for (TimberFrameTypesNB timberFrameType : TimberFrameTypesNB.values()) {
+        for (TimberFrameTypesFP timberFrameType : TimberFrameTypesFP.values()) {
             this.addDrop(timberFrameType.block);
             this.addDrop(timberFrameType.diagonal);
             this.addDrop(timberFrameType.cross);

@@ -13,7 +13,7 @@ public class BlockusFunctionalBlocks {
     private static final ItemGroup BLOCKUS_FUNCTIONAL_BLOCKS = FabricItemGroup.builder(new Identifier(Blockus.MOD_ID, "blockus_functional"))
         .displayName(Text.translatable("itemGroup.blockus_functional"))
         .icon(() -> new ItemStack(BlockusBlocks.REDSTONE_LANTERN))
-        .entries((enabledFeatures, entries, operatorEnabled) -> {
+        .entries((enabledFeatures, entries) -> {
             entries.add(BlockusBlocks.REDSTONE_LANTERN);
 
             entries.add(BlockusBlocks.LANTERN_BLOCK);

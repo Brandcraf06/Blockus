@@ -16,7 +16,7 @@ public class BlockusColoredBlocks {
     private static final ItemGroup BLOCKUS_COLORED_BLOCKS = FabricItemGroup.builder(new Identifier(Blockus.MOD_ID, "blockus_colored"))
         .displayName(Text.translatable("itemGroup.blockus_colored"))
         .icon(() -> new ItemStack(BlockusBlocks.LIME_ASPHALT.block))
-        .entries((enabledFeatures, entries, operatorEnabled) -> {
+        .entries((enabledFeatures, entries) -> {
 
             entries.add(BlockusBlocks.RAINBOW_BLOCK);
             entries.add(BlockusBlocks.RAINBOW_BRICKS.block);
@@ -174,6 +174,8 @@ public class BlockusColoredBlocks {
                 entries.add(concreteTypes.stairs);
                 entries.add(concreteTypes.slab);
                 entries.add(concreteTypes.wall);
+                entries.add(concreteTypes.chiseled);
+                entries.add(concreteTypes.pillar);
             }
 
             entries.add(BlockusBlocks.WHITE_NEON);

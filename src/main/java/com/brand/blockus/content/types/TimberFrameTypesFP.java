@@ -7,16 +7,16 @@ import net.minecraft.block.Block;
 
 import java.util.ArrayList;
 
-public class TimberFrameTypesB {
+public class TimberFrameTypesFP {
 
-    private static final ArrayList<TimberFrameTypesB> LIST = new ArrayList<>();
+    private static final ArrayList<TimberFrameTypesFP> LIST = new ArrayList<>();
 
     public final Block block;
     public final Block diagonal;
     public final Block cross;
     public final Block base;
 
-    public TimberFrameTypesB(String type, Block base) {
+    public TimberFrameTypesFP(String type, Block base) {
 
         this.base = base;
 
@@ -28,7 +28,7 @@ public class TimberFrameTypesB {
 
     }
 
-    public static ArrayList<TimberFrameTypesB> values() {
+    public static ArrayList<TimberFrameTypesFP> values() {
         return LIST;
     }
 }

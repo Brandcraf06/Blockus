@@ -16,7 +16,7 @@ public class BlockusNatural {
     private static final ItemGroup BLOCKUS_NATURAL = FabricItemGroup.builder(new Identifier(Blockus.MOD_ID, "blockus_natural"))
         .displayName(Text.translatable("itemGroup.blockus_natural"))
         .icon(() -> new ItemStack(BlockusBlocks.WHITE_OAK_SAPLING))
-        .entries((enabledFeatures, entries, operatorEnabled) -> {
+        .entries((enabledFeatures, entries) -> {
 
             entries.add(BlockusBlocks.PATH);
             entries.add(BlockusBlocks.LIMESTONE.block);

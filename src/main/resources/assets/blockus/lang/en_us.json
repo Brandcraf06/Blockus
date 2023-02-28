@@ -335,7 +335,6 @@
   "block.blockus.polished_bluestone": "Polished Bluestone",
   "block.blockus.polished_bluestone_slab": "Polished Bluestone Slab",
   "block.blockus.polished_bluestone_stairs": "Polished Bluestone Stairs",
-  "block.blockus.black_patterned_wool": "Black Patterned Wool",
   "block.blockus.stone_door": "Stone Door",
   "block.blockus.stone_trapdoor": "Stone Trapdoor",
   "block.blockus.oak_barrel": "Oak Barrel",
@@ -1273,6 +1272,7 @@
   "block.blockus.brown_patterned_wool": "Brown Patterned Wool",
   "block.blockus.green_patterned_wool": "Green Patterned Wool",
   "block.blockus.red_patterned_wool": "Red Patterned Wool",
+  "block.blockus.black_patterned_wool": "Black Patterned Wool",
   "block.blockus.white_patterned_wool_stairs": "White Patterned Wool Stairs",
   "block.blockus.orange_patterned_wool_stairs": "Orange Patterned Wool Stairs",
   "block.blockus.magenta_patterned_wool_stairs": "Magenta Patterned Wool Stairs",
@@ -1321,5 +1321,4 @@
   "block.blockus.green_patterned_carpet": "Green Patterned Carpet",
   "block.blockus.red_patterned_carpet": "Red Patterned Carpet",
   "block.blockus.black_patterned_carpet": "Black Patterned Carpet"
- 
 }

@@ -3,10 +3,10 @@ package com.brand.blockus.itemgroups;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.TimberFrameTypesB;
-import com.brand.blockus.content.types.TimberFrameTypesNB;
-import com.brand.blockus.content.types.WoodTypesB;
-import com.brand.blockus.content.types.WoodTypesNB;
+import com.brand.blockus.content.types.TimberFrameTypesF;
+import com.brand.blockus.content.types.TimberFrameTypesFP;
+import com.brand.blockus.content.types.WoodTypesF;
+import com.brand.blockus.content.types.WoodTypesFP;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
@@ -19,14 +19,14 @@ public class BlockusBuildingBlocks {
     private static final ItemGroup BLOCKUS_BUILDING_BLOCKS = FabricItemGroup.builder(new Identifier(Blockus.MOD_ID, "blockus_building_blocks"))
         .displayName(Text.translatable("itemGroup.blockus_building_blocks"))
         .icon(() -> new ItemStack(BlockusBlocks.BLAZE_BRICKS.block))
-        .entries((enabledFeatures, entries, operatorEnabled) -> {
+        .entries((enabledFeatures, entries) -> {
 
             entries.add(BlockusBlocks.WHITE_OAK_LOG);
             entries.add(BlockusBlocks.WHITE_OAK_WOOD);
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
 
-            for (WoodTypesB woodType : WoodTypesB.values()) {
+            for (WoodTypesF woodType : WoodTypesF.values()) {
                 entries.add(woodType.planks);
                 entries.add(woodType.stairs);
                 entries.add(woodType.slab);
@@ -38,7 +38,7 @@ public class BlockusBuildingBlocks {
                 entries.add(woodType.button);
             }
 
-            for (WoodTypesNB woodType : WoodTypesNB.values()) {
+            for (WoodTypesFP woodType : WoodTypesFP.values()) {
                 entries.add(woodType.planks);
                 entries.add(woodType.stairs);
                 entries.add(woodType.slab);
@@ -80,13 +80,13 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
 
-            for (TimberFrameTypesB timberFrameType : TimberFrameTypesB.values()) {
+            for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
                 entries.add(timberFrameType.block);
                 entries.add(timberFrameType.diagonal);
                 entries.add(timberFrameType.cross);
             }
 
-            for (TimberFrameTypesNB timberFrameType : TimberFrameTypesNB.values()) {
+            for (TimberFrameTypesFP timberFrameType : TimberFrameTypesFP.values()) {
                 entries.add(timberFrameType.block);
                 entries.add(timberFrameType.diagonal);
                 entries.add(timberFrameType.cross);

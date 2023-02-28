@@ -1,7 +1,6 @@
 package com.brand.blockus.content.types;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.redstone.ButtonBase;
 import com.brand.blockus.content.BlocksRegistration;
 import com.brand.blockus.content.BlockusItems;
 import com.terraformersmc.terraform.boat.api.TerraformBoatType;
@@ -11,14 +10,13 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 
-public class WoodTypesNB {
+public class WoodTypesF {
 
-    private static final ArrayList<WoodTypesNB> LIST = new ArrayList<>();
+    private static final ArrayList<WoodTypesF> LIST = new ArrayList<>();
 
     public final Block planks;
     public final Block stairs;
@@ -36,8 +34,7 @@ public class WoodTypesNB {
     public final Item boat;
     public final Item chest_boat;
 
-
-    public WoodTypesNB(String type, Block base, MapColor mapcolor) {
+    public WoodTypesF(String type, Block base, MapColor mapcolor) {
 
         this.base = base;
 
@@ -47,11 +44,11 @@ public class WoodTypesNB {
         this.stairs = BlocksRegistration.registerStairs(this.planks);
         this.slab = BlocksRegistration.registerSlab(this.planks);
         this.fence = BlocksRegistration.register(type + "_fence", new FenceBlock(FabricBlockSettings.copyOf(base)));
-        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), SoundEvents.BLOCK_FENCE_GATE_CLOSE, SoundEvents.BLOCK_FENCE_GATE_OPEN));
-        this.door = BlocksRegistration.register(type + "_door", BlocksRegistration.createDoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, SoundEvents.BLOCK_WOODEN_DOOR_CLOSE, SoundEvents.BLOCK_WOODEN_DOOR_OPEN));
-        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createTrapdoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE, SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN));
+        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), WoodType.OAK));
+        this.door = BlocksRegistration.register(type + "_door", BlocksRegistration.createDoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, BlockSetType.OAK));
+        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createTrapdoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, BlockSetType.OAK));
         this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, this.planks);
-        this.button = BlocksRegistration.register(type + "_button", new ButtonBase(FabricBlockSettings.copyOf(planks).noCollision(), 30, true, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON));
+        this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), BlockSetType.OAK, 30, true));
         this.standing_sign = BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD)));
         this.wall_sign = BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
         this.sign = BlockusItems.registerSign(standing_sign, wall_sign);
@@ -59,11 +56,12 @@ public class WoodTypesNB {
         this.boat = boatType.getItem();
         this.chest_boat = boatType.getChestItem();
 
+
         LIST.add(this);
 
     }
 
-    public static ArrayList<WoodTypesNB> values() {
+    public static ArrayList<WoodTypesF> values() {
         return LIST;
     }
 }
