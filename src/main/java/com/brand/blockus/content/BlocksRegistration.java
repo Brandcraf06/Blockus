@@ -4,7 +4,8 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.Barrier;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.base.SmallHedgeBlock;
-import com.brand.blockus.blocks.blockitems.GlintBlockItem;
+import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
+import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
@@ -201,17 +202,20 @@ public class BlocksRegistration {
         return block;
     }
 
+    public static Block registerNoItem(String id, Block block) {
+        return Registry.register(Registries.BLOCK, Blockus.id(id), block);
+    }
+
     public static Block register(String id, Block block) {
         return register(id, block, new BlockItem(block, new Item.Settings()));
     }
 
-
-    public static Block registerGlint(String id, Block block) {
-        return register(id, block, new GlintBlockItem(block, new Item.Settings().rarity(Rarity.UNCOMMON)));
+    public static Block registerNetherStarBlock(String id, Block block) {
+        return register(id, block, new NetherStarBlockItem(block, new Item.Settings().rarity(Rarity.UNCOMMON)));
     }
 
-    public static Block registerNoItem(String id, Block block) {
-        return Registry.register(Registries.BLOCK, Blockus.id(id), block);
+    public static Block registerLegacy(String id, Block block) {
+        return register(id, block, new LegacyBlockItem(block, new Item.Settings()));
     }
 
     public static Block registerFireproof(String id, Block block) {

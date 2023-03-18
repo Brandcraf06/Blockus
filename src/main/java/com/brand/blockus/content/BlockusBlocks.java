@@ -809,7 +809,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ENDER_BLOCK = register("ender_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.TERRACOTTA_GREEN).strength(5.0f, 6.0f)));
     public static final Block ROTTEN_FLESH_BLOCK = register("rotten_flesh_block", new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, MapColor.TERRACOTTA_RED).strength(0.5f).sounds(BlockSoundGroup.SLIME)));
     public static final Block MEMBRANE_BLOCK = register("membrane_block", new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC, MapColor.TERRACOTTA_WHITE).strength(0.5f).sounds(BlockSoundGroup.SLIME)));
-    public static final Block NETHER_STAR_BLOCK = registerGlint("nether_stars_block", new NetherStarBlock(FabricBlockSettings.of(Material.STONE, MapColor.OFF_WHITE).strength(5.0f, 6.0f).requiresTool()));
+    public static final Block NETHER_STAR_BLOCK = registerNetherStarBlock("nether_stars_block", new NetherStarBlock(FabricBlockSettings.of(Material.STONE, MapColor.OFF_WHITE).strength(5.0f, 6.0f).requiresTool()));
     public static final Block WOODEN_FRAME = register("wooden_frame", createWoodenPane());
     public static final Block REDSTONE_SAND = register("redstone_sand", new FallingRedstoneBlock(FabricBlockSettings.copyOf(Blocks.SAND).mapColor(MapColor.BRIGHT_RED)));
     public static final Block LOVE_BLOCK = register("love_block", new LoveBlock(FabricBlockSettings.of(Material.STONE, MapColor.PINK).strength(2, 6.0f).requiresTool()));
@@ -819,31 +819,31 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.of(Material.STONE, MapColor.BLACK).strength(5.0f, 6.0f)));
 
     // Legacy
-    public static final Block LEGACY_SAPLING = register("legacy_sapling", new SaplingBlock(new LegacyOakSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", new SaplingBlock(new LegacyOakSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
     public static final PottedLargeTypes POTTED_LEGACY_TREE = new PottedLargeTypes("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING);
     public static final Block POTTED_LEGACY_SAPLING = registerNoItem("potted_legacy_sapling", createPottedPlant(LEGACY_SAPLING));
-    public static final Block LEGACY_FIRST_GRASS_BLOCK = register("legacy_first_grass_block", new Block(FabricBlockSettings.copy(Blocks.GRASS_BLOCK)));
-    public static final Block LEGACY_GRASS_BLOCK = register("legacy_grass_block", new Block(FabricBlockSettings.copy(Blocks.GRASS_BLOCK)));
-    public static final Block LEGACY_LEAVES = register("legacy_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.LIME).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
-    public static final Block LEGACY_LOG = register("legacy_log", new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
-    public static final Block LEGACY_BRICKS = register("legacy_bricks", new Block(FabricBlockSettings.copy(Blocks.BRICKS)));
-    public static final Block LEGACY_PLANKS = register("legacy_planks", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
-    public static final Block LEGACY_FIRST_COBBLESTONE = register("legacy_first_cobblestone", new Block(FabricBlockSettings.copy(Blocks.COBBLESTONE)));
-    public static final Block LEGACY_COBBLESTONE = register("legacy_cobblestone", new Block(FabricBlockSettings.copy(Blocks.COBBLESTONE)));
-    public static final Block LEGACY_MOSSY_COBBLESTONE = register("legacy_mossy_cobblestone", new Block(FabricBlockSettings.copy(Blocks.MOSSY_COBBLESTONE)));
-    public static final Block LEGACY_GRAVEL = register("legacy_gravel", new GravelBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL)));
-    public static final Block LEGACY_IRON_BLOCK = register("legacy_iron_block", new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)));
-    public static final Block LEGACY_GOLD_BLOCK = register("legacy_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)));
-    public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = register("legacy_explosion_proof_gold_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)));
-    public static final Block LEGACY_COAL_BLOCK = register("legacy_coal_block", new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK)));
-    public static final Block LEGACY_DIAMOND_BLOCK = register("legacy_diamond_block", new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK)));
-    public static final Block LEGACY_LAPIS_BLOCK = register("legacy_lapis_block", new Block(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK)));
-    public static final Block LEGACY_SPONGE = register("legacy_sponge", new SpongeBlock(FabricBlockSettings.copyOf(Blocks.SPONGE)));
-    public static final Block LEGACY_CRYING_OBSIDIAN = register("legacy_crying_obsidian", new Block(FabricBlockSettings.copy(Blocks.CRYING_OBSIDIAN)));
-    public static final Block LEGACY_GLOWSTONE = register("legacy_glowstone", new Block(FabricBlockSettings.copy(Blocks.GLOWSTONE)));
-    public static final Block LEGACY_STONECUTTER = register("legacy_stonecutter", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f, 17.5f).requiresTool()));
-    public static final Block LEGACY_GLOWING_OBSIDIAN = register("legacy_glowing_obsidian", createLightBlock(50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MapColor.BLACK));
-    public static final Block LEGACY_NETHER_REACTOR_CORE = register("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
+    public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", new Block(FabricBlockSettings.copy(Blocks.GRASS_BLOCK)));
+    public static final Block LEGACY_GRASS_BLOCK = registerLegacy("legacy_grass_block", new Block(FabricBlockSettings.copy(Blocks.GRASS_BLOCK)));
+    public static final Block LEGACY_LEAVES = registerLegacy("legacy_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.LIME).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
+    public static final Block LEGACY_LOG = registerLegacy("legacy_log", new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)));
+    public static final Block LEGACY_BRICKS = registerLegacy("legacy_bricks", new Block(FabricBlockSettings.copy(Blocks.BRICKS)));
+    public static final Block LEGACY_PLANKS = registerLegacy("legacy_planks", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
+    public static final Block LEGACY_FIRST_COBBLESTONE = registerLegacy("legacy_first_cobblestone", new Block(FabricBlockSettings.copy(Blocks.COBBLESTONE)));
+    public static final Block LEGACY_COBBLESTONE = registerLegacy("legacy_cobblestone", new Block(FabricBlockSettings.copy(Blocks.COBBLESTONE)));
+    public static final Block LEGACY_MOSSY_COBBLESTONE = registerLegacy("legacy_mossy_cobblestone", new Block(FabricBlockSettings.copy(Blocks.MOSSY_COBBLESTONE)));
+    public static final Block LEGACY_GRAVEL = registerLegacy("legacy_gravel", new GravelBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL)));
+    public static final Block LEGACY_IRON_BLOCK = registerLegacy("legacy_iron_block", new Block(FabricBlockSettings.copy(Blocks.IRON_BLOCK)));
+    public static final Block LEGACY_GOLD_BLOCK = registerLegacy("legacy_gold_block", new Block(FabricBlockSettings.copy(Blocks.GOLD_BLOCK)));
+    public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = registerLegacy("legacy_explosion_proof_gold_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)));
+    public static final Block LEGACY_COAL_BLOCK = registerLegacy("legacy_coal_block", new Block(FabricBlockSettings.copy(Blocks.COAL_BLOCK)));
+    public static final Block LEGACY_DIAMOND_BLOCK = registerLegacy("legacy_diamond_block", new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK)));
+    public static final Block LEGACY_LAPIS_BLOCK = registerLegacy("legacy_lapis_block", new Block(FabricBlockSettings.copy(Blocks.LAPIS_BLOCK)));
+    public static final Block LEGACY_SPONGE = registerLegacy("legacy_sponge", new SpongeBlock(FabricBlockSettings.copyOf(Blocks.SPONGE)));
+    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", new Block(FabricBlockSettings.copy(Blocks.CRYING_OBSIDIAN)));
+    public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone", new Block(FabricBlockSettings.copy(Blocks.GLOWSTONE)));
+    public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f, 17.5f).requiresTool()));
+    public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createLightBlock(50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MapColor.BLACK));
+    public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
 
     // Barrels (outdated)
     public static final BarrelBlockBase OAK_BARREL = new BarrelBlockBase("oak_barrel", Blocks.OAK_PLANKS.getDefaultMapColor());
