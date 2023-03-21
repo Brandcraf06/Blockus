@@ -1,9 +1,9 @@
 {
   "effect.blockus.asphalt_sprint": "沥青疾跑",
-  "itemGroup.blockus.blockus_building_blocks": "建筑方块 §3（Blockus）",
-  "itemGroup.blockus.blockus_decorations": "装饰性方块 §3（Blockus）",
-  "itemGroup.blockus.blockus_redstone": "红石 §3（Blockus）",
-  "itemGroup.blockus.blockus_legacy": "原版方块 §3（Blockus）",
+  "itemGroup.blockus.blockus_building_blocks": "建筑方块§3（Blockus）",
+  "itemGroup.blockus.blockus_decorations": "装饰性方块§3（Blockus）",
+  "itemGroup.blockus.blockus_redstone": "红石§3（Blockus）",
+  "itemGroup.blockus.blockus_legacy": "原版方块§3（Blockus）",
   "blockus.blockitem.givespeed": "站在上面时给予速度III效果。",
   "block.blockus.blaze_bricks": "烈焰砖",
   "block.blockus.blaze_brick_wall": "烈焰砖墙",
