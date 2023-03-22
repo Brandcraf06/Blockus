@@ -6,7 +6,8 @@ import com.brand.blockus.blocks.base.redstone.DoorBase;
 import com.brand.blockus.blocks.base.redstone.PressurePlateBase;
 import com.brand.blockus.blocks.base.redstone.StoneButtonBase;
 import com.brand.blockus.blocks.base.redstone.TrapdoorBase;
-import com.brand.blockus.blocks.blockitems.GlintBlockItem;
+import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
+import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
@@ -15,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
@@ -197,8 +199,13 @@ public class BlocksRegistration {
         return block;
     }
 
+    public static Block registerNoItem(String id, Block block) {
+        return Registry.register(Registry.BLOCK, Blockus.id(id), block);
+    }
+
     public static Block register(String id, Block block, ItemGroup itemGroup) {
         return register(id, block, new BlockItem(block, new Item.Settings().group(itemGroup)));
+
     }
 
     public static Block register(String id, Block block) {
@@ -213,17 +220,13 @@ public class BlocksRegistration {
         return register(id, block, Blockus.BLOCKUS_REDSTONE);
     }
 
+
+    public static Block registerNetherStarBlock(String id, Block block) {
+        return register(id, block, new NetherStarBlockItem(block, new Item.Settings().rarity(Rarity.UNCOMMON).group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
+    }
+
     public static Block registerLegacy(String id, Block block) {
-        return register(id, block, Blockus.BLOCKUS_LEGACY);
-    }
-
-
-    public static Block registerGlint(String id, Block block) {
-        return register(id, block, new GlintBlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_BUILDING_BLOCKS)));
-    }
-
-    public static Block registerNoItem(String id, Block block) {
-        return Registry.register(Registry.BLOCK, Blockus.id(id), block);
+        return register(id, block, new LegacyBlockItem(block, new Item.Settings().group(Blockus.BLOCKUS_LEGACY)));
     }
 
     public static Block registerFireproof(String id, Block block) {

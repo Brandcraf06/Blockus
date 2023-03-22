@@ -4,8 +4,8 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusBlockFamilies;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import com.brand.blockus.tags.BlockusItemTags;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.family.BlockFamily;
@@ -1268,8 +1268,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void offerPressurePlateButtonRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible pressureplate, ItemConvertible button, ItemConvertible input) {
-        createDoorRecipe(pressureplate, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-        createTrapdoorRecipe(button, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        createPressurePlateRecipe(pressureplate, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(button).input(input).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 
     public static void offerStainedStoneBricksRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab, ItemConvertible output_wall) {
