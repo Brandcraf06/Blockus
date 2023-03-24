@@ -1011,7 +1011,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerShinglesRecipe(exporter, Items.BLACK_DYE, BlockusBlocks.BLACK_SHINGLES.block, BlockusBlocks.BLACK_SHINGLES.stairs, BlockusBlocks.BLACK_SHINGLES.slab, Blocks.BLACK_TERRACOTTA);
 
         // Glass - Beveled Glass
-
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.TINTED_BEVELED_GLASS, Blocks.TINTED_GLASS);
         offerPolishedStoneRecipe(exporter, BlockusBlocks.BEVELED_GLASS, Blocks.GLASS);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.BEVELED_GLASS_PANE, 16).input('#', BlockusBlocks.BEVELED_GLASS).pattern("###").pattern("###").group("beveled_glass_pane").criterion("has_beveled_glass", conditionsFromItem(BlockusBlocks.BEVELED_GLASS_PANE)).offerTo(exporter);
 
