@@ -583,7 +583,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final AsphaltTypes BROWN_ASPHALT = new AsphaltTypes(DyeColor.BROWN);
     public static final AsphaltTypes GREEN_ASPHALT = new AsphaltTypes(DyeColor.GREEN);
     public static final AsphaltTypes RED_ASPHALT = new AsphaltTypes(DyeColor.RED);
-    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt", new RainbowAsphalt(FabricBlockSettings.of(Material.STONE, DyeColor.BLUE).strength(1.5f, 6.0f).requiresTool()));
+    public static final Block RAINBOW_ASPHALT = AsphaltTypes.register("rainbow_asphalt", new RainbowAsphalt(FabricBlockSettings.of(Material.STONE, DyeColor.BLUE).strength(1.5f, 6.0f).requiresTool()));
 
 
     // Shingles
