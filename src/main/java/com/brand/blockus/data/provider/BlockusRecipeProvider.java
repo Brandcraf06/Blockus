@@ -858,6 +858,18 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         // Large Flower Pots
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.LARGE_FLOWER_POT).input('#', Items.BRICK).pattern("# #").pattern("###").pattern("###").criterion("has_flower_pot", conditionsFromItem(Items.FLOWER_POT)).offerTo(exporter);
 
+        // Chocolate
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.CHOCOLATE_BLOCK.block, 2).input('#', Items.COCOA_BEANS).pattern("##").pattern("##").criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS)).offerTo(exporter);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BLOCK.stairs, BlockusBlocks.CHOCOLATE_BLOCK.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BLOCK.slab, 2, BlockusBlocks.CHOCOLATE_BLOCK.block);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.block,  BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.stairs,  BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.slab, 2,  BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.wall,  BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_SQUARES, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+
         // Food Blocks
         offerReversibleCompactingRecipes(exporter, RecipeCategory.FOOD, Items.SWEET_BERRIES, RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.SWEET_BERRIES_CRATE);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.FOOD, Items.GLOW_BERRIES, RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.GLOW_BERRIES_CRATE);

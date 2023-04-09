@@ -643,6 +643,15 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.CHISELED_AMETHYST);
             entries.add(BlockusBlocks.AMETHYST_PILLAR);
 
+            entries.add(BlockusBlocks.CHOCOLATE_BLOCK.block);
+            entries.add(BlockusBlocks.CHOCOLATE_BLOCK.stairs);
+            entries.add(BlockusBlocks.CHOCOLATE_BLOCK.slab);
+            entries.add(BlockusBlocks.CHOCOLATE_BRICKS.block);
+            entries.add(BlockusBlocks.CHOCOLATE_BRICKS.stairs);
+            entries.add(BlockusBlocks.CHOCOLATE_BRICKS.slab);
+            entries.add(BlockusBlocks.CHOCOLATE_BRICKS.wall);
+            entries.add(BlockusBlocks.CHOCOLATE_SQUARES);
+
             entries.add(BlockusBlocks.ROTTEN_FLESH_BLOCK);
             entries.add(BlockusBlocks.CHORUS_BLOCK);
             entries.add(BlockusBlocks.SUGAR_BLOCK);
