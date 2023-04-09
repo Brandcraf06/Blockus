@@ -212,6 +212,16 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHARRED_BRICKS.slab)
             .add(BlockusBlocks.HERRINGBONE_CHARRED_BRICKS);
 
+        this.getOrCreateTagBuilder(BlockusBlockTags.CHOCOLATE_BLOCKS)
+            .add(BlockusBlocks.CHOCOLATE_BLOCK.block)
+            .add(BlockusBlocks.CHOCOLATE_BLOCK.stairs)
+            .add(BlockusBlocks.CHOCOLATE_BLOCK.slab)
+            .add(BlockusBlocks.CHOCOLATE_BRICKS.block)
+            .add(BlockusBlocks.CHOCOLATE_BRICKS.stairs)
+            .add(BlockusBlocks.CHOCOLATE_BRICKS.slab)
+            .add(BlockusBlocks.CHOCOLATE_SQUARES);
+
+
         this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES)
             .add(BlockusBlocks.WHITE_COLORED_TILES)
             .add(BlockusBlocks.ORANGE_COLORED_TILES)
@@ -1188,6 +1198,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.SCULK_BLOCKS)
             .addTag(BlockusBlockTags.TUFF_BLOCKS)
             .addTag(BlockusBlockTags.DRIPSTONE_BLOCKS)
+            .addTag(BlockusBlockTags.CHOCOLATE_BLOCKS)
             .addTag(BlockusBlockTags.ASPHALT)
             .addTag(BlockusBlockTags.SHINGLES)
             .addTag(BlockusBlockTags.COLORED_TILES)
@@ -1528,6 +1539,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.WARPED_WART_BRICKS.wall)
             .add(BlockusBlocks.NETHER_TILES.wall)
             .add(BlockusBlocks.END_TILES.wall)
+            .add(BlockusBlocks.CHOCOLATE_BRICKS.wall)
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.getOrCreateTagBuilder(BlockTags.WARPED_STEMS)

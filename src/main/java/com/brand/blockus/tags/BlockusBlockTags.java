@@ -19,6 +19,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> BLAZE_BRICKS = register("blaze_bricks");
     public static final TagKey<Block> BLUESTONE = register("bluestone");
     public static final TagKey<Block> BRICKS_BLOCKS = register("bricks_blocks");
+    public static final TagKey<Block> CHOCOLATE_BLOCKS = register("chocolate_blocks");
     public static final TagKey<Block> COLORED_TILES = register("colored_tiles");
     public static final TagKey<Block> CONCRETE_BLOCKS = register("concrete_blocks");
     public static final TagKey<Block> DEEPSLATE_BLOCKS = register("deepslate_blocks");
