@@ -1204,5 +1204,15 @@
   "block.blockus.blue_patterned_carpet": "Tapis bleu à motifs",
   "block.blockus.brown_patterned_carpet": "Tapis marron à motifs",
   "block.blockus.green_patterned_carpet": "Tapis vert à motifs",
-  "block.blockus.red_patterned_carpet": "Tapis rouge à motifs"
+  "block.blockus.red_patterned_carpet": "Tapis rouge à motifs",
+  "block.blockus.chocolate_block": "Bloc de chocolat",
+  "block.blockus.chocolate_slab": "Dalle en chocolat",
+  "block.blockus.chocolate_stairs": "Escalier en chocolat",
+  "block.blockus.chocolate_bricks": "Briques de chocolat",
+  "block.blockus.chocolate_brick_slab": "Dalle en briques de chocolat",
+  "block.blockus.chocolate_brick_stairs": "Escalier en briques de chocolat",
+  "block.blockus.chocolate_brick_wall": "Muret en briques de chocolat",
+  "block.blockus.chocolate_squares": "Carrés de chocolat",
+  "block.blockus.chocolate_tablet": "Tablette de chocolat"
+
 }

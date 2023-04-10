@@ -5,6 +5,8 @@ import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.ActionResult;
@@ -16,6 +18,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.event.GameEvent;
 
 public class CookieBlock extends Block {
     public static final IntProperty BITES;
@@ -51,19 +54,18 @@ public class CookieBlock extends Block {
         } else {
             player.getHungerManager().add(2, 0.1F);
             int i = state.get(BITES);
+            world.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.PLAYERS);
+            world.emitGameEvent(player, GameEvent.EAT, pos);
             if (i < 8) {
                 world.setBlockState(pos, state.with(BITES, i + 1), 3);
             } else {
                 world.removeBlock(pos, false);
+                world.emitGameEvent(player, GameEvent.BLOCK_DESTROY, pos);
             }
 
             return ActionResult.SUCCESS;
         }
     }
-
-//    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
-//        return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
-//    }
 
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         return world.getBlockState(pos.down()).getMaterial().isSolid();

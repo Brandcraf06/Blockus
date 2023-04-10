@@ -557,6 +557,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDropWithSilkTouch(BlockusBlocks.YELLOW_BEVELED_GLASS);
         this.addDropWithSilkTouch(BlockusBlocks.YELLOW_BEVELED_GLASS_PANE);
 
+        this.addDrop(BlockusBlocks.CHOCOLATE_TABLET);
+
         this.addDrop(BlockusBlocks.ACACIA_SMALL_HEDGE, (blockx) -> {
             return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
         });
