@@ -223,7 +223,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHOCOLATE_BRICKS.block)
             .add(BlockusBlocks.CHOCOLATE_BRICKS.stairs)
             .add(BlockusBlocks.CHOCOLATE_BRICKS.slab)
-            .add(BlockusBlocks.CHOCOLATE_SQUARES);
+            .add(BlockusBlocks.CHOCOLATE_SQUARES)
+            .add(BlockusBlocks.CHOCOLATE_TABLET);
+
 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES)

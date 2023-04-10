@@ -15,11 +15,8 @@ public class BSSTypes {
     public final Block block;
     public final Block slab;
     public final Block stairs;
-    public final Block base;
 
-    private BSSTypes(String type, Block base, Block.Settings blockSettings) {
-
-        this.base = base;
+    private BSSTypes(String type, Block.Settings blockSettings) {
 
         this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
         this.slab = BlocksRegistration.registerSlab(this.block);
@@ -29,21 +26,20 @@ public class BSSTypes {
     }
 
     public BSSTypes(String type, Block base) {
-        this(type, base, FabricBlockSettings.copyOf(base));
-
+        this(type, FabricBlockSettings.copyOf(base));
     }
 
     public BSSTypes(String type, Block base, MapColor mapcolor) {
-        this(type, base, FabricBlockSettings.copyOf(base).mapColor(mapcolor));
+        this(type, FabricBlockSettings.copyOf(base).mapColor(mapcolor));
 
     }
 
     public BSSTypes(String type, Block base, BlockSoundGroup sounds) {
-        this(type, base, FabricBlockSettings.copyOf(base).sounds(sounds));
+        this(type, FabricBlockSettings.copyOf(base).sounds(sounds));
     }
 
-    public BSSTypes(String type, Block base, float hardness, float resistance, MapColor mapcolor) {
-        this(type, base, FabricBlockSettings.copyOf(base).mapColor(mapcolor).strength(hardness, resistance));
+    public BSSTypes(String type, float hardness, float resistance, MapColor mapcolor) {
+        this(type, FabricBlockSettings.of(Material.STONE, mapcolor).strength(hardness, resistance).sounds(BlockSoundGroup.STONE));
 
     }
 

@@ -1321,5 +1321,14 @@
   "block.blockus.brown_patterned_carpet": "Brown Patterned Carpet",
   "block.blockus.green_patterned_carpet": "Green Patterned Carpet",
   "block.blockus.red_patterned_carpet": "Red Patterned Carpet",
-  "block.blockus.black_patterned_carpet": "Black Patterned Carpet"
+  "block.blockus.black_patterned_carpet": "Black Patterned Carpet",
+  "block.blockus.chocolate_block": "Chocolate Block",
+  "block.blockus.chocolate_slab": "Chocolate Slab",
+  "block.blockus.chocolate_stairs": "Chocolate Stairs",
+  "block.blockus.chocolate_bricks": "Chocolate Bricks",
+  "block.blockus.chocolate_brick_slab": "Chocolate Brick Slab",
+  "block.blockus.chocolate_brick_stairs": "Chocolate Brick Stairs",
+  "block.blockus.chocolate_brick_wall": "Chocolate Brick Wall",
+  "block.blockus.chocolate_squares": "Chocolate Squares",
+  "block.blockus.chocolate_tablet": "Chocolate Tablet"
 }

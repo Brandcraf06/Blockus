@@ -15,10 +15,8 @@ public class BSSWTypes {
     public final Block slab;
     public final Block stairs;
     public final Block wall;
-    public final Block base;
 
-    private BSSWTypes(String type, Block base, Block.Settings blockSettings) {
-        this.base = base;
+    private BSSWTypes(String type, Block.Settings blockSettings) {
 
         this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
         this.slab = BlocksRegistration.registerSlab(this.block);
@@ -29,27 +27,27 @@ public class BSSWTypes {
     }
 
     public BSSWTypes(String type, Block base, MapColor mapcolor) {
-        this(type, base, FabricBlockSettings.copyOf(base).mapColor(mapcolor));
+        this(type, FabricBlockSettings.copyOf(base).mapColor(mapcolor));
 
     }
 
     public BSSWTypes(String type, Block base) {
-        this(type, base, FabricBlockSettings.copyOf(base));
+        this(type, FabricBlockSettings.copyOf(base));
 
     }
 
     public BSSWTypes(String type, Block base, int luminance) {
-        this(type, base, FabricBlockSettings.copyOf(base).luminance(luminance));
+        this(type, FabricBlockSettings.copyOf(base).luminance(luminance));
 
     }
 
     public BSSWTypes(String type, Block base, BlockSoundGroup sound) {
-        this(type, base, FabricBlockSettings.copyOf(base).sounds(sound));
+        this(type, FabricBlockSettings.copyOf(base).sounds(sound));
 
     }
 
     public BSSWTypes(String type, Block base, float hardness, float resistance, MapColor mapcolor) {
-        this(type, base, FabricBlockSettings.copyOf(base).strength(hardness, resistance).mapColor(mapcolor));
+        this(type, FabricBlockSettings.copyOf(base).strength(hardness, resistance).mapColor(mapcolor));
 
     }
 

@@ -79,7 +79,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.MUD_BRICK_PILLAR, Blocks.MUD_BRICKS);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.MUD_BRICK_PILLAR, 2).input('#', Blocks.MUD_BRICKS).pattern("#").pattern("#").criterion(hasItem(Blocks.MUD_BRICKS), conditionsFromItem(Blocks.MUD_BRICKS)).offerTo(exporter);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_MUD_BRICKS, Blocks.MUD_BRICKS);
-        
+
         // Stone
         offerStonecuttingRecipe(exporter, BlockusBlocks.STONE_TILES.block, Blocks.STONE, Blocks.STONE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.STONE_TILES.stairs, Blocks.STONE, Blocks.STONE_BRICKS, BlockusBlocks.STONE_TILES.block);
@@ -261,7 +261,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerDecoratedRecipe(exporter, BlockusBlocks.GOLD_DECORATED_POLISHED_BLACKSTONE, Items.GOLD_INGOT, Blocks.POLISHED_BLACKSTONE);
 
         offerStoneDoorTrapdoorRecipe(exporter, BlockusBlocks.BLACKSTONE_DOOR, BlockusBlocks.BLACKSTONE_TRAPDOOR, Blocks.BLACKSTONE, Blocks.BLACKSTONE_SLAB);
-		
+
 
         // Basalt
         offerStonecuttingRecipe(exporter, BlockusBlocks.ROUGH_BASALT.stairs, BlockusBlocks.ROUGH_BASALT.block);
@@ -338,7 +338,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.MARBLE.stairs, BlockusBlocks.MARBLE.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MARBLE.slab, 2, BlockusBlocks.MARBLE.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.MARBLE.wall, BlockusBlocks.MARBLE.block);
-		
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.MARBLE.block).input('#', BlockusBlocks.LIMESTONE.block).input('X', Items.BONE_MEAL).pattern("#X").pattern("X#").group("marble").criterion(hasItem(BlockusBlocks.LIMESTONE.block), conditionsFromItem(BlockusBlocks.LIMESTONE.block)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.MARBLE.block).input(Blocks.CALCITE).input(BlockusBlocks.LIMESTONE.block).group("marble").criterion(hasItem(Blocks.CALCITE), conditionsFromItem(Blocks.CALCITE)).offerTo(exporter, convertBetween(BlockusBlocks.MARBLE.block, Blocks.CALCITE));
         offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_MARBLE.block, BlockusBlocks.MARBLE.block);
@@ -863,12 +863,17 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BLOCK.stairs, BlockusBlocks.CHOCOLATE_BLOCK.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BLOCK.slab, 2, BlockusBlocks.CHOCOLATE_BLOCK.block);
 
-        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.block,  BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.stairs,  BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.slab, 2,  BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.wall,  BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.block, BlockusBlocks.CHOCOLATE_BLOCK.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.block, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.stairs, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.slab, 2, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_BRICKS.wall, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
 
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.CHOCOLATE_SQUARES, BlockusBlocks.CHOCOLATE_BRICKS.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_SQUARES, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, BlockusBlocks.CHOCOLATE_TABLET, 3).input('#', BlockusBlocks.CHOCOLATE_SQUARES).pattern("##").criterion(hasItem(BlockusBlocks.CHOCOLATE_SQUARES), conditionsFromItem(BlockusBlocks.CHOCOLATE_SQUARES)).offerTo(exporter);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHOCOLATE_TABLET, 2, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_BRICKS.block, BlockusBlocks.CHOCOLATE_SQUARES);
 
         // Food Blocks
         offerReversibleCompactingRecipes(exporter, RecipeCategory.FOOD, Items.SWEET_BERRIES, RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.SWEET_BERRIES_CRATE);
@@ -1190,7 +1195,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.PHANTOM_MEMBRANE, RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.MEMBRANE_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.NETHER_STAR, RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.NETHER_STAR_BLOCK);
         offerPolishedStoneRecipe(exporter, BlockusBlocks.WOODEN_FRAME, Items.STICK);
-		
+
         createEnclosedRecipe2(BlockusBlocks.REDSTONE_SAND, Ingredient.ofItems(Items.REDSTONE), Items.SAND).criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Items.REDSTONE, 8).input(BlockusBlocks.REDSTONE_SAND).criterion(hasItem(BlockusBlocks.REDSTONE_SAND), conditionsFromItem(BlockusBlocks.REDSTONE_SAND)).offerTo(exporter, convertBetween(Items.REDSTONE, BlockusBlocks.REDSTONE_SAND));
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.LOVE_BLOCK).input('M', Items.MAGENTA_DYE).input('R', Items.RED_DYE).pattern("RMR").pattern("RRR").pattern("MRM").criterion(hasItem(Items.MAGENTA_DYE), conditionsFromItem(Items.MAGENTA_DYE)).criterion(hasItem(Items.RED_DYE), conditionsFromItem(Items.RED_DYE)).offerTo(exporter);
@@ -1300,17 +1305,17 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void offerStoneDoorTrapdoorRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible door, ItemConvertible trapdoor, ItemConvertible input, ItemConvertible slab) {
-        createDoorRecipe(door, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        createDoorRecipe(door, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, trapdoor, 4).input('#', slab).pattern("###").pattern("###").criterion(hasItem(slab), conditionsFromItem(slab)).offerTo(exporter);
     }
 
     public static void offerDoorTrapdoorRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible door, ItemConvertible trapdoor, ItemConvertible input) {
-        createDoorRecipe(door, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-        createTrapdoorRecipe(trapdoor, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        createDoorRecipe(door, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        createTrapdoorRecipe(trapdoor, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 
     public static void offerPressurePlateButtonRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible pressureplate, ItemConvertible button, ItemConvertible input) {
-        createPressurePlateRecipe(RecipeCategory.REDSTONE, pressureplate, Ingredient.ofItems(new ItemConvertible[]{input})).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        createPressurePlateRecipe(RecipeCategory.REDSTONE, pressureplate, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, button).input(input).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 

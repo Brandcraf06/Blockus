@@ -651,6 +651,7 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.CHOCOLATE_BRICKS.slab);
             entries.add(BlockusBlocks.CHOCOLATE_BRICKS.wall);
             entries.add(BlockusBlocks.CHOCOLATE_SQUARES);
+            entries.add(BlockusBlocks.CHOCOLATE_TABLET);
 
             entries.add(BlockusBlocks.ROTTEN_FLESH_BLOCK);
             entries.add(BlockusBlocks.CHORUS_BLOCK);

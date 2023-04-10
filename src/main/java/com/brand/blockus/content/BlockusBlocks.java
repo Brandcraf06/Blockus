@@ -442,9 +442,10 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final PottedLargeTypes POTTED_FLOWERING_AZALEA_LARGE = new PottedLargeTypes("potted_flowering_azalea_large", Blocks.FLOWERING_AZALEA);
 
     // Chocolate
-    public static final BSSTypes CHOCOLATE_BLOCK = new BSSTypes("chocolate_block", Blocks.STONE, 1.0F, 1.0F, MapColor.BROWN);
+    public static final BSSTypes CHOCOLATE_BLOCK = new BSSTypes("chocolate_block", 1.0F, 1.0F, MapColor.BROWN);
     public static final BSSWTypes CHOCOLATE_BRICKS = new BSSWTypes("chocolate_bricks", BlockusBlocks.CHOCOLATE_BLOCK.block);
     public static final Block CHOCOLATE_SQUARES = register("chocolate_squares", new Block(FabricBlockSettings.copy(BlockusBlocks.CHOCOLATE_BRICKS.block)));
+    public static final Block CHOCOLATE_TABLET = register("chocolate_tablet", new ChocolateTabletBlock(FabricBlockSettings.copyOf(BlockusBlocks.CHOCOLATE_BLOCK.block).strength(0.2F, 1.0F)));
 
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = register("sweet_berries_crate", createCrates());
