@@ -19,12 +19,12 @@ public class PatternWoolTypes {
     public PatternWoolTypes(DyeColor dyecolor, MapColor color) {
         String type = dyecolor.getName() + "_patterned_wool";
 
-        Block.Settings blockSettings = FabricBlockSettings.of(Material.WOOL, color).strength(0.8F).sounds(BlockSoundGroup.WOOL);
+        Block.Settings blockSettings = FabricBlockSettings.of(Material.GENERIC, color).strength(0.8F).sounds(BlockSoundGroup.WOOL);
 
         this.block = BlocksRegistration.register(type, new Block(blockSettings));
         this.slab = BlocksRegistration.registerSlab(this.block);
         this.stairs = BlocksRegistration.registerStairs(this.block);
-        this.carpet = BlocksRegistration.register(type.replace("wool", "carpet"), new DyedCarpetBlock(dyecolor, FabricBlockSettings.of(Material.CARPET, color).strength(0.1F).sounds(BlockSoundGroup.WOOL)));
+        this.carpet = BlocksRegistration.register(type.replace("wool", "carpet"), new DyedCarpetBlock(dyecolor, FabricBlockSettings.of(Material.ALLOWS_MOVEMENT_LIGHT_PASSES_THROUGH_NOT_SOLID, color).strength(0.1F).sounds(BlockSoundGroup.WOOL)));
 
 
         LIST.add(this);

@@ -50,6 +50,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_ANDESITE_PILLAR)
             .add(BlockusBlocks.ANDESITE_CIRCULAR_PAVING);
 
+        this.getOrCreateTagBuilder(BlockTags.VIBRATION_RESONATORS)
+            .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
+
         this.getOrCreateTagBuilder(BlockusBlockTags.ASPHALT)
             .add(BlockusBlocks.ASPHALT.block)
             .add(BlockusBlocks.WHITE_ASPHALT.block)
