@@ -1315,5 +1315,14 @@
   "block.blockus.brown_patterned_carpet": "棕色花纹羊毛地毯",
   "block.blockus.green_patterned_carpet": "绿色花纹羊毛地毯",
   "block.blockus.red_patterned_carpet": "红色花纹羊毛地毯",
-  "block.blockus.black_patterned_carpet": "黑色花纹羊毛地毯"
+  "block.blockus.black_patterned_carpet": "黑色花纹羊毛地毯",
+  "block.blockus.chocolate_block": "巧克力块",
+  "block.blockus.chocolate_slab": "巧克力台阶",
+  "block.blockus.chocolate_stairs": "巧克力楼梯",
+  "block.blockus.chocolate_bricks": "巧克力砖",
+  "block.blockus.chocolate_brick_slab": "巧克力砖台阶",
+  "block.blockus.chocolate_brick_stairs": "巧克力砖楼梯",
+  "block.blockus.chocolate_brick_wall": "巧克力砖墙",
+  "block.blockus.chocolate_squares": "方纹巧克力",
+  "block.blockus.chocolate_tablet": "巧克力板"
 }
