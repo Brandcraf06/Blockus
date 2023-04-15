@@ -1048,6 +1048,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.BAMBOO_TIMBER_FRAME.block)
             .add(BlockusBlocks.BAMBOO_TIMBER_FRAME.diagonal)
             .add(BlockusBlocks.BAMBOO_TIMBER_FRAME.cross)
+            .add(BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME.block)
+            .add(BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME.diagonal)
+            .add(BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME.cross)
             .add(BlockusBlocks.CHARRED_TIMBER_FRAME.block)
             .add(BlockusBlocks.CHARRED_TIMBER_FRAME.diagonal)
             .add(BlockusBlocks.CHARRED_TIMBER_FRAME.cross)
@@ -1092,7 +1095,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.JUNGLE_PLANKS)
             .add(Blocks.ACACIA_PLANKS)
             .add(Blocks.DARK_OAK_PLANKS)
-            .add(BlockusBlocks.BAMBOO.planks)
+            .add(Blocks.MANGROVE_PLANKS)
+            .add(Blocks.CHERRY_PLANKS)
+            .add(Blocks.BAMBOO_PLANKS)
+            .add(BlockusBlocks.RAW_BAMBOO.planks)
             .add(BlockusBlocks.WHITE_OAK.planks)
             .add(BlockusBlocks.LEGACY_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_OAK_PLANKS)
@@ -1103,7 +1109,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
-            .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
+            .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
 
         this.getOrCreateTagBuilder(new Identifier("c", "wooden_barrels"))
             .addTag(BlockusBlockTags.BARRELS);
@@ -1287,7 +1294,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.NETHER_STAR_BLOCK);
 
         this.getOrCreateTagBuilder(BlockTags.FENCE_GATES)
-            .add(BlockusBlocks.BAMBOO.fence_gate)
+            .add(BlockusBlocks.RAW_BAMBOO.fence_gate)
             .add(BlockusBlocks.CHARRED.fence_gate)
             .add(BlockusBlocks.WHITE_OAK.fence_gate);
 
@@ -1367,7 +1374,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SOUL_O_LANTERN);
 
         this.getOrCreateTagBuilder(BlockTags.PLANKS)
-            .add(BlockusBlocks.BAMBOO.planks)
+            .add(BlockusBlocks.RAW_BAMBOO.planks)
             .add(BlockusBlocks.CHARRED.planks)
             .add(BlockusBlocks.WHITE_OAK.planks)
             .add(BlockusBlocks.LEGACY_PLANKS)
@@ -1378,8 +1385,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS)
-            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
@@ -1405,9 +1413,24 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SPRUCE_SMALL_LOGS);
 
         this.getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
-            .add(BlockusBlocks.BAMBOO.standing_sign)
+            .add(BlockusBlocks.RAW_BAMBOO.standing_sign)
             .add(BlockusBlocks.CHARRED.standing_sign)
             .add(BlockusBlocks.WHITE_OAK.standing_sign);
+
+        this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
+            .add(BlockusBlocks.RAW_BAMBOO.wall_sign)
+            .add(BlockusBlocks.CHARRED.wall_sign)
+            .add(BlockusBlocks.WHITE_OAK.wall_sign);
+
+        this.getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS)
+            .add(BlockusBlocks.RAW_BAMBOO.ceiling_hanging_sign)
+            .add(BlockusBlocks.CHARRED.ceiling_hanging_sign)
+            .add(BlockusBlocks.WHITE_OAK.ceiling_hanging_sign);
+
+        this.getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS)
+            .add(BlockusBlocks.RAW_BAMBOO.wall_hanging_sign)
+            .add(BlockusBlocks.CHARRED.wall_hanging_sign)
+            .add(BlockusBlocks.WHITE_OAK.wall_hanging_sign);
 
         this.getOrCreateTagBuilder(BlockTags.STONE_ORE_REPLACEABLES)
             .add(BlockusBlocks.LIMESTONE.block)
@@ -1433,11 +1456,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR)
             .add(BlockusBlocks.STONE_TRAPDOOR)
             .add(BlockusBlocks.BLACKSTONE_TRAPDOOR);
-
-        this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
-            .add(BlockusBlocks.BAMBOO.wall_sign)
-            .add(BlockusBlocks.CHARRED.wall_sign)
-            .add(BlockusBlocks.WHITE_OAK.wall_sign);
 
         this.getOrCreateTagBuilder(BlockTags.WALLS)
             .add(BlockusBlocks.BLAZE_BRICKS.wall)
@@ -1544,38 +1562,38 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.WARPED_SMALL_STEMS);
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS)
-            .add(BlockusBlocks.BAMBOO.button)
+            .add(BlockusBlocks.RAW_BAMBOO.button)
             .add(BlockusBlocks.CHARRED.button)
             .add(BlockusBlocks.WHITE_OAK.button);
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
-            .add(BlockusBlocks.BAMBOO.door)
+            .add(BlockusBlocks.RAW_BAMBOO.door)
             .add(BlockusBlocks.CHARRED.door)
             .add(BlockusBlocks.WHITE_OAK.door)
             .add(BlockusBlocks.PAPER_DOOR);
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
-            .add(BlockusBlocks.BAMBOO.fence)
+            .add(BlockusBlocks.RAW_BAMBOO.fence)
             .add(BlockusBlocks.CHARRED.fence)
             .add(BlockusBlocks.WHITE_OAK.fence);
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
-            .add(BlockusBlocks.BAMBOO.pressure_plate)
+            .add(BlockusBlocks.RAW_BAMBOO.pressure_plate)
             .add(BlockusBlocks.CHARRED.pressure_plate)
             .add(BlockusBlocks.WHITE_OAK.pressure_plate);
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
-            .add(BlockusBlocks.BAMBOO.slab)
+            .add(BlockusBlocks.RAW_BAMBOO.slab)
             .add(BlockusBlocks.CHARRED.slab)
             .add(BlockusBlocks.WHITE_OAK.slab);
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
-            .add(BlockusBlocks.BAMBOO.stairs)
+            .add(BlockusBlocks.RAW_BAMBOO.stairs)
             .add(BlockusBlocks.CHARRED.stairs)
             .add(BlockusBlocks.WHITE_OAK.stairs);
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
-            .add(BlockusBlocks.BAMBOO.trapdoor)
+            .add(BlockusBlocks.RAW_BAMBOO.trapdoor)
             .add(BlockusBlocks.CHARRED.trapdoor)
             .add(BlockusBlocks.WHITE_OAK.trapdoor)
             .add(BlockusBlocks.PAPER_TRAPDOOR);

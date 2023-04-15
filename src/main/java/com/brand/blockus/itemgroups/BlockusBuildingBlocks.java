@@ -74,8 +74,9 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);

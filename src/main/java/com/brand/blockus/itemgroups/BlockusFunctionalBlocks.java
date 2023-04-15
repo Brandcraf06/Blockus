@@ -2,6 +2,7 @@ package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.BlockusEntities;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -52,13 +53,16 @@ public class BlockusFunctionalBlocks {
 
             entries.add(BlockusBlocks.WHITE_OAK.sign);
             entries.add(BlockusBlocks.CHARRED.sign);
-            entries.add(BlockusBlocks.BAMBOO.sign);
-            entries.add(BlockusBlocks.WHITE_OAK.boat);
-            entries.add(BlockusBlocks.CHARRED.boat);
-            entries.add(BlockusBlocks.BAMBOO.boat);
-            entries.add(BlockusBlocks.WHITE_OAK.chest_boat);
-            entries.add(BlockusBlocks.CHARRED.chest_boat);
-            entries.add(BlockusBlocks.BAMBOO.chest_boat);
+            entries.add(BlockusBlocks.RAW_BAMBOO.sign);
+            entries.add(BlockusBlocks.WHITE_OAK.hanging_sign);
+            entries.add(BlockusBlocks.CHARRED.hanging_sign);
+            entries.add(BlockusBlocks.RAW_BAMBOO.hanging_sign);
+            entries.add(BlockusEntities.WHITE_OAK_BOAT.getItem());
+            entries.add(BlockusEntities.CHARRED_BOAT.getItem());
+            entries.add(BlockusEntities.RAW_BAMBOO_RAFT.getItem());
+            entries.add(BlockusEntities.WHITE_OAK_BOAT.getChestItem());
+            entries.add(BlockusEntities.CHARRED_BOAT.getChestItem());
+            entries.add(BlockusEntities.RAW_BAMBOO_RAFT.getChestItem());
 
         })
         .build();

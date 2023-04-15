@@ -1,6 +1,7 @@
 package com.brand.blockus.data.provider;
 
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.BlockusEntities;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusBlockFamilies;
@@ -806,13 +807,18 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerPressurePlateButtonRecipe(exporter, BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE, BlockusBlocks.POLISHED_END_STONE_BUTTON, BlockusBlocks.POLISHED_END_STONE.block);
 
         // Wood
+        offerHangingSignRecipe(exporter, BlockusBlocks.WHITE_OAK.hanging_sign, BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
+        offerHangingSignRecipe(exporter, BlockusBlocks.RAW_BAMBOO.hanging_sign, Blocks.BAMBOO_BLOCK);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, BlockusBlocks.CHARRED.hanging_sign, 2).group("hanging_sign").input('#', BlockusBlocks.CHARRED.planks).input('X', Items.CHAIN).pattern("X X").pattern("###").pattern("###").criterion("has_charred_planks", conditionsFromItem(BlockusBlocks.CHARRED.planks)).offerTo(exporter);
+
         offerPlanksRecipe(exporter, BlockusBlocks.WHITE_OAK.planks, BlockusItemTags.WHITE_OAK_LOGS, 4);
 
         offerBarkBlockRecipe(exporter, BlockusBlocks.WHITE_OAK_WOOD, BlockusBlocks.WHITE_OAK_LOG);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.BAMBOO.planks).input('#', Items.BAMBOO).pattern("##").pattern("##").criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO)).offerTo(exporter);
-        offerBoatsRecipe(exporter, BlockusBlocks.WHITE_OAK.boat, BlockusBlocks.WHITE_OAK.chest_boat, BlockusBlocks.WHITE_OAK.planks);
-        offerBoatsRecipe(exporter, BlockusBlocks.BAMBOO.boat, BlockusBlocks.BAMBOO.chest_boat, BlockusBlocks.BAMBOO.planks);
-        offerBoatsRecipe(exporter, BlockusBlocks.CHARRED.boat, BlockusBlocks.CHARRED.chest_boat, BlockusBlocks.CHARRED.planks);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.RAW_BAMBOO.planks, 2).input(Blocks.BAMBOO_BLOCK).group("planks").criterion("has_log", conditionsFromItem(Blocks.BAMBOO_BLOCK)).offerTo(exporter);
+        offerBoatsRecipe(exporter, BlockusEntities.WHITE_OAK_BOAT.getItem(), BlockusEntities.WHITE_OAK_BOAT.getChestItem(), BlockusBlocks.WHITE_OAK.planks);
+        offerBoatsRecipe(exporter, BlockusEntities.RAW_BAMBOO_RAFT.getItem(), BlockusEntities.RAW_BAMBOO_RAFT.getChestItem(), BlockusBlocks.RAW_BAMBOO.planks);
+        offerBoatsRecipe(exporter, BlockusEntities.CHARRED_BOAT.getItem(), BlockusEntities.CHARRED_BOAT.getChestItem(), BlockusBlocks.CHARRED.planks);
         CookingRecipeJsonBuilder.createSmelting(Ingredient.fromTag(BlockusItemTags.PLANKS_THAT_BURN), RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.CHARRED.planks, 0.1F, 200).criterion("has_planks", conditionsFromTag(BlockusItemTags.PLANKS_THAT_BURN)).offerTo(exporter);
 
         offerSmallLogsRecipe(exporter, BlockusBlocks.OAK_SMALL_LOGS, Blocks.OAK_LOG);
@@ -834,7 +840,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, Blocks.DARK_OAK_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS, Blocks.MANGROVE_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, BlockusBlocks.WHITE_OAK.planks);
-        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, BlockusBlocks.BAMBOO.planks);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, Blocks.BAMBOO_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS, BlockusBlocks.RAW_BAMBOO.planks);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS, Blocks.CRIMSON_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_WARPED_PLANKS, Blocks.WARPED_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_CHARRED_PLANKS, BlockusBlocks.CHARRED.planks);

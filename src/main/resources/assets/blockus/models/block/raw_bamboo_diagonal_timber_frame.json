@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "blockus:block/raw_bamboo_diagonal_timber_frame_right",
+    "north": "blockus:block/raw_bamboo_diagonal_timber_frame_right",
+    "south": "blockus:block/raw_bamboo_diagonal_timber_frame_right",
+    "east": "blockus:block/raw_bamboo_diagonal_timber_frame_left",
+    "west": "blockus:block/raw_bamboo_diagonal_timber_frame_left",
+    "up": "blockus:block/raw_bamboo_diagonal_timber_frame_left",
+    "down": "blockus:block/raw_bamboo_diagonal_timber_frame_left"
+  }
+}
+

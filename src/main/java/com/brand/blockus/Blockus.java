@@ -3,6 +3,7 @@ package com.brand.blockus;
 import com.brand.blockus.compatibility.content.BlockusColumnBlocks;
 import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.BlockusEntities;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.itemgroups.*;
 import com.brand.blockus.utils.AsphaltStatusEffect;
@@ -33,6 +34,7 @@ public class Blockus implements ModInitializer {
 
         Reflection.initialize(BlockusBlocks.class);
         Reflection.initialize(BlockusItems.class);
+        Reflection.initialize(BlockusEntities.class);
 
         Reflection.initialize(BlockusBuildingBlocks.class);
         Reflection.initialize(BlockusColoredBlocks.class);

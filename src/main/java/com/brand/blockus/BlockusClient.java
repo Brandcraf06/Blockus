@@ -52,6 +52,8 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.DARK_OAK_SMALL_HEDGE,
             BlockusBlocks.MANGROVE_SMALL_HEDGE,
             BlockusBlocks.WHITE_OAK_SMALL_HEDGE,
+            BlockusBlocks.RAW_BAMBOO.door,
+            BlockusBlocks.RAW_BAMBOO.trapdoor,
             BlockusBlocks.AZALEA_SMALL_HEDGE,
             BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE,
             BlockusBlocks.LEGACY_LEAVES,
@@ -142,13 +144,16 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.TINTED_BEVELED_GLASS
         );
 
-        TerraformBoatClientHelper.registerModelLayers(Blockus.id("bamboo"), false);
+        TerraformBoatClientHelper.registerModelLayers(Blockus.id("raw_bamboo"), true);
         TerraformBoatClientHelper.registerModelLayers(Blockus.id("charred"), false);
         TerraformBoatClientHelper.registerModelLayers(Blockus.id("white_oak"), false);
 
-        registerSignSprite("bamboo");
+        registerSignSprite("raw_bamboo");
         registerSignSprite("charred");
         registerSignSprite("white_oak");
+        registerSignSprite("hanging/raw_bamboo");
+        registerSignSprite("hanging/charred");
+        registerSignSprite("hanging/white_oak");
 
         if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.initClient();

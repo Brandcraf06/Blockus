@@ -356,13 +356,13 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WHITE_OAK_WOOD = register("white_oak_wood", new PillarBlock(FabricBlockSettings.copy(WHITE_OAK_LOG)));
     public static final Block STRIPPED_WHITE_OAK_WOOD = register("stripped_white_oak_wood", new PillarBlock(FabricBlockSettings.copy(WHITE_OAK_LOG)));
     public static final Block WHITE_OAK_LEAVES = register("white_oak_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.ORANGE).pistonBehavior(PistonBehavior.DESTROY).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
-    public static final WoodTypesF WHITE_OAK = new WoodTypesF("white_oak", Blocks.SPRUCE_PLANKS, MapColor.OFF_WHITE);
+    public static final WoodTypesF WHITE_OAK = new WoodTypesF("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, BlockSoundGroup.WOOD);
 
-    // Bamboo (before 1.20)
-    public static final WoodTypesF BAMBOO = new WoodTypesF("bamboo", Blocks.OAK_PLANKS, MapColor.PALE_YELLOW);
+    // Raw Bamboo
+    public static final WoodTypesF RAW_BAMBOO = new WoodTypesF("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD);
 
     // Charred
-    public static final WoodTypesFP CHARRED = new WoodTypesFP("charred", Blocks.BIRCH_PLANKS, MapColor.TERRACOTTA_GRAY);
+    public static final WoodTypesFP CHARRED = new WoodTypesFP("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY);
 
     // Herringbone Planks
     public static final Block HERRINGBONE_OAK_PLANKS = register("herringbone_oak_planks", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
@@ -372,7 +372,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block HERRINGBONE_ACACIA_PLANKS = register("herringbone_acacia_planks", new Block(FabricBlockSettings.copy(Blocks.ACACIA_PLANKS)));
     public static final Block HERRINGBONE_DARK_OAK_PLANKS = register("herringbone_dark_oak_planks", new Block(FabricBlockSettings.copy(Blocks.DARK_OAK_PLANKS)));
     public static final Block HERRINGBONE_MANGROVE_PLANKS = register("herringbone_mangrove_planks", new Block(FabricBlockSettings.copy(Blocks.MANGROVE_PLANKS)));
-    public static final Block HERRINGBONE_BAMBOO_PLANKS = register("herringbone_bamboo_planks", new Block(FabricBlockSettings.copy(BAMBOO.planks)));
+    public static final Block HERRINGBONE_BAMBOO_PLANKS = register("herringbone_bamboo_planks", new Block(FabricBlockSettings.copy(Blocks.BAMBOO_PLANKS)));
+    public static final Block HERRINGBONE_RAW_BAMBOO_PLANKS = register("herringbone_raw_bamboo_planks", new Block(FabricBlockSettings.copy(RAW_BAMBOO.planks)));
     public static final Block HERRINGBONE_WHITE_OAK_PLANKS = register("herringbone_white_oak_planks", new Block(FabricBlockSettings.copy(WHITE_OAK.planks)));
     public static final Block HERRINGBONE_WARPED_PLANKS = register("herringbone_warped_planks", new Block(FabricBlockSettings.copy(Blocks.WARPED_PLANKS)));
     public static final Block HERRINGBONE_CRIMSON_PLANKS = register("herringbone_crimson_planks", new Block(FabricBlockSettings.copy(Blocks.CRIMSON_PLANKS)));
@@ -398,7 +399,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final TimberFrameTypesF ACACIA_TIMBER_FRAME = new TimberFrameTypesF("acacia", Blocks.ACACIA_PLANKS);
     public static final TimberFrameTypesF DARK_OAK_TIMBER_FRAME = new TimberFrameTypesF("dark_oak", Blocks.DARK_OAK_PLANKS);
     public static final TimberFrameTypesF MANGROVE_TIMBER_FRAME = new TimberFrameTypesF("mangrove", Blocks.MANGROVE_PLANKS);
-    public static final TimberFrameTypesF BAMBOO_TIMBER_FRAME = new TimberFrameTypesF("bamboo", BlockusBlocks.BAMBOO.planks);
+    public static final TimberFrameTypesF BAMBOO_TIMBER_FRAME = new TimberFrameTypesF("bamboo", Blocks.BAMBOO_PLANKS);
+    public static final TimberFrameTypesF RAW_BAMBOO_TIMBER_FRAME = new TimberFrameTypesF("raw_bamboo", BlockusBlocks.RAW_BAMBOO.planks);
     public static final TimberFrameTypesF WHITE_OAK_TIMBER_FRAME = new TimberFrameTypesF("white_oak", BlockusBlocks.WHITE_OAK.planks);
     public static final TimberFrameTypesFP WARPED_TIMBER_FRAME = new TimberFrameTypesFP("warped", Blocks.WARPED_PLANKS);
     public static final TimberFrameTypesFP CRIMSON_TIMBER_FRAME = new TimberFrameTypesFP("crimson", Blocks.CRIMSON_PLANKS);
@@ -861,7 +863,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final BarrelBlockBase CRIMSON_BARREL = new BarrelBlockBase("crimson_barrel", Blocks.CRIMSON_PLANKS.getDefaultMapColor());
     public static final BarrelBlockBase WARPED_BARREL = new BarrelBlockBase("warped_barrel", Blocks.WARPED_PLANKS.getDefaultMapColor());
     public static final BarrelBlockBase WHITE_OAK_BARREL = new BarrelBlockBase("white_oak_barrel", BlockusBlocks.WHITE_OAK.planks.getDefaultMapColor());
-    public static final BarrelBlockBase BAMBOO_BARREL = new BarrelBlockBase("bamboo_barrel", BlockusBlocks.BAMBOO.planks.getDefaultMapColor());
+    public static final BarrelBlockBase BAMBOO_BARREL = new BarrelBlockBase("bamboo_barrel", Blocks.BAMBOO_PLANKS.getDefaultMapColor());
     public static final BarrelBlockBase CHARRED_BARREL = new BarrelBlockBase("charred_barrel", BlockusBlocks.CHARRED.planks.getDefaultMapColor());
 
     public static final BlockEntityType<WoodenBarrelBlockEntity> WOODEN_BARREL = registerBe("wooden_barrel", FabricBlockEntityTypeBuilder.create(WoodenBarrelBlockEntity::new, OAK_BARREL, BIRCH_BARREL, JUNGLE_BARREL, ACACIA_BARREL, DARK_OAK_BARREL, CRIMSON_BARREL, WARPED_BARREL, WHITE_OAK_BARREL, BAMBOO_BARREL, CHARRED_BARREL));

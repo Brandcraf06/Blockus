@@ -1,6 +1,7 @@
 package com.brand.blockus.data.provider;
 
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.BlockusEntities;
 import com.brand.blockus.tags.BlockusBlockTags;
 import com.brand.blockus.tags.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -53,19 +54,24 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.WHITE_OAK_BARREL.asItem());
 
         this.getOrCreateTagBuilder(ItemTags.BOATS)
-            .add(BlockusBlocks.BAMBOO.boat)
-            .add(BlockusBlocks.CHARRED.boat)
-            .add(BlockusBlocks.WHITE_OAK.boat);
+            .add(BlockusEntities.RAW_BAMBOO_RAFT.getItem())
+            .add(BlockusEntities.CHARRED_BOAT.getItem())
+            .add(BlockusEntities.WHITE_OAK_BOAT.getItem());
 
         this.getOrCreateTagBuilder(ItemTags.CHEST_BOATS)
-            .add(BlockusBlocks.BAMBOO.chest_boat)
-            .add(BlockusBlocks.CHARRED.chest_boat)
-            .add(BlockusBlocks.WHITE_OAK.chest_boat);
+            .add(BlockusEntities.RAW_BAMBOO_RAFT.getChestItem())
+            .add(BlockusEntities.CHARRED_BOAT.getChestItem())
+            .add(BlockusEntities.WHITE_OAK_BOAT.getChestItem());
 
         this.getOrCreateTagBuilder(ItemTags.SIGNS)
-            .add(BlockusBlocks.BAMBOO.sign)
+            .add(BlockusBlocks.RAW_BAMBOO.sign)
             .add(BlockusBlocks.CHARRED.sign)
             .add(BlockusBlocks.WHITE_OAK.sign);
+
+        this.getOrCreateTagBuilder(ItemTags.HANGING_SIGNS)
+            .add(BlockusBlocks.RAW_BAMBOO.hanging_sign)
+            .add(BlockusBlocks.CHARRED.hanging_sign)
+            .add(BlockusBlocks.WHITE_OAK.hanging_sign);
 
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
         this.copy(BlockusBlockTags.PATTERNED_CARPETS, BlockusItemTags.PATTERNED_CARPETS);
@@ -105,7 +111,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(Items.JUNGLE_PLANKS)
             .add(Items.ACACIA_PLANKS)
             .add(Items.DARK_OAK_PLANKS)
-            .add(BlockusBlocks.BAMBOO.planks.asItem())
+            .add(Items.MANGROVE_PLANKS)
+            .add(Items.CHERRY_PLANKS)
+            .add(Items.BAMBOO_PLANKS)
+            .add(BlockusBlocks.RAW_BAMBOO.planks.asItem())
             .add(BlockusBlocks.WHITE_OAK.planks.asItem())
             .add(BlockusBlocks.LEGACY_PLANKS.asItem());
 
@@ -117,8 +126,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS.asItem())
-            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS.asItem())
-            .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS.asItem());
+            .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS.asItem());
+
 
         this.copy(new Identifier("c", "planks_that_burn"));
 
@@ -183,9 +194,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS.asItem())
-            .add(BlockusBlocks.CHARRED.boat)
-            .add(BlockusBlocks.CHARRED.chest_boat)
-            .add(BlockusBlocks.CHARRED.sign);
+            .add(BlockusEntities.CHARRED_BOAT.getItem())
+            .add(BlockusEntities.CHARRED_BOAT.getChestItem())
+            .add(BlockusBlocks.CHARRED.sign)
+            .add(BlockusBlocks.CHARRED.hanging_sign);
 
         this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
 
@@ -228,7 +240,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
 
         this.getOrCreateTagBuilder(ItemTags.WOODEN_DOORS)
-            .add(BlockusBlocks.BAMBOO.door.asItem())
+            .add(BlockusBlocks.RAW_BAMBOO.door.asItem())
             .add(BlockusBlocks.CHARRED.door.asItem())
             .add(BlockusBlocks.WHITE_OAK.door.asItem());
 
@@ -241,7 +253,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
 
         this.getOrCreateTagBuilder(ItemTags.WOODEN_TRAPDOORS)
-            .add(BlockusBlocks.BAMBOO.trapdoor.asItem())
+            .add(BlockusBlocks.RAW_BAMBOO.trapdoor.asItem())
             .add(BlockusBlocks.CHARRED.trapdoor.asItem())
             .add(BlockusBlocks.WHITE_OAK.trapdoor.asItem());
 

@@ -4,7 +4,9 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlocksRegistration;
 import com.brand.blockus.content.BlockusItems;
 import com.terraformersmc.terraform.boat.api.TerraformBoatType;
+import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -31,14 +33,15 @@ public class WoodTypesF {
     public final Block standing_sign;
     public final Block wall_sign;
     public final Item sign;
-    public final Item boat;
-    public final Item chest_boat;
+    public final Block ceiling_hanging_sign;
+    public final Block wall_hanging_sign;
+    public final Item hanging_sign;
 
-    public WoodTypesF(String type, Block base, MapColor mapcolor) {
+    public WoodTypesF(String type, Block base, MapColor mapcolor, BlockSoundGroup sound) {
 
         this.base = base;
 
-        Block.Settings blockSettings = FabricBlockSettings.of(Material.WOOD, mapcolor).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
+        Block.Settings blockSettings = FabricBlockSettings.of(Material.WOOD, mapcolor).strength(2.0F, 3.0F).sounds(sound);
 
         this.planks = BlocksRegistration.register(type + "_planks", new Block(blockSettings));
         this.stairs = BlocksRegistration.registerStairs(this.planks);
@@ -49,13 +52,20 @@ public class WoodTypesF {
         this.trapdoor = BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createTrapdoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, BlockSetType.OAK));
         this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, this.planks);
         this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), BlockSetType.OAK, 30, true));
-        this.standing_sign = BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD)));
-        this.wall_sign = BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(new Identifier(Blockus.MOD_ID, "entity/signs/" + type), FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD).dropsLike(standing_sign)));
-        this.sign = BlockusItems.registerSign(standing_sign, wall_sign);
-        TerraformBoatType boatType = BlockusItems.registerBoat(type + "_boat", type + "_chest_boat", type);
-        this.boat = boatType.getItem();
-        this.chest_boat = boatType.getChestItem();
 
+        // sign
+        Block.Settings signSettings = FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(sound).burnable();
+
+        Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);
+        this.standing_sign = BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(signPath, signSettings));
+        this.wall_sign = BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(signPath, signSettings.dropsLike(standing_sign)));
+        this.sign = BlockusItems.registerSign(standing_sign, wall_sign);
+
+        Identifier hangingSignPath = new Identifier(Blockus.MOD_ID, "entity/signs/hanging/" + type);
+        Identifier hangingSignGuiPath = new Identifier(Blockus.MOD_ID, "textures/gui/hanging_signs/" + type);
+        this.ceiling_hanging_sign = BlocksRegistration.registerNoItem(type + "_hanging_sign", new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, signSettings));
+        this.wall_hanging_sign = BlocksRegistration.registerNoItem(type + "_wall_hanging_sign", new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, signSettings.dropsLike(ceiling_hanging_sign)));
+        this.hanging_sign = BlockusItems.registerHangingSign(ceiling_hanging_sign, wall_hanging_sign);
 
         LIST.add(this);
 

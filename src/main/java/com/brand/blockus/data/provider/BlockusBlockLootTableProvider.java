@@ -54,6 +54,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.pressure_plate);
             this.addDrop(woodType.button);
             this.addDrop(woodType.standing_sign);
+            this.addDrop(woodType.ceiling_hanging_sign);
         }
 
         for (WoodTypesFP woodType : WoodTypesFP.values()) {
@@ -67,6 +68,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodType.pressure_plate);
             this.addDrop(woodType.button);
             this.addDrop(woodType.standing_sign);
+            this.addDrop(woodType.ceiling_hanging_sign);
         }
 
         for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {

@@ -5,6 +5,7 @@ import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.block.Block;
+import net.minecraft.item.HangingSignItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SignItem;
 import net.minecraft.registry.Registries;
@@ -23,22 +24,11 @@ public class BlockusItems {
         return Registry.register(Registries.ITEM, Blockus.id(id), item);
     }
 
-    public static TerraformBoatType registerBoat(String path, String chestBoatPath, String boatPath) {
-        Identifier id = Blockus.id(path);
-        Identifier chestId = Blockus.id(chestBoatPath);
-        RegistryKey<TerraformBoatType> boatId = createKey(Blockus.id(boatPath));
-
-        Item item = TerraformBoatItemHelper.registerBoatItem(id, boatId, false);
-        Item chestItem = TerraformBoatItemHelper.registerBoatItem(chestId, boatId, true);
-
-        TerraformBoatType boatType = new TerraformBoatType.Builder().item(item).chestItem(chestItem).build();
-        Registry.register(TerraformBoatTypeRegistry.INSTANCE, boatId, boatType);
-
-        return boatType;
-
-    }
-
     public static Item registerSign(Block standingBlock, Block wallBlock) {
         return Registry.register(Registries.ITEM, Registries.BLOCK.getId(standingBlock), new SignItem(new Item.Settings().maxCount(16), standingBlock, wallBlock));
+    }
+
+    public static Item registerHangingSign(Block hangingSign, Block wallHangingSign) {
+        return Registry.register(Registries.ITEM, Registries.BLOCK.getId(hangingSign), new HangingSignItem(hangingSign, wallHangingSign, new Item.Settings().maxCount(16)));
     }
 }
