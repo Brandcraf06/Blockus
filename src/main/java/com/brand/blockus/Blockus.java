@@ -36,16 +36,16 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(BlockusItems.class);
         Reflection.initialize(BlockusEntities.class);
 
-        Reflection.initialize(BlockusBuildingBlocks.class);
-        Reflection.initialize(BlockusColoredBlocks.class);
-        Reflection.initialize(BlockusNatural.class);
-        Reflection.initialize(BlockusFunctionalBlocks.class);
-        Reflection.initialize(BlockusLegacyBlocks.class);
+        BlockusBuildingBlocks.init();
+        BlockusColoredBlocks.init();
+        BlockusNatural.init();
+        BlockusFunctionalBlocks.init();
+        BlockusLegacyBlocks.init();
 
 
-       if (FabricLoader.getInstance().isModLoaded("columns")) {
+        if (FabricLoader.getInstance().isModLoaded("columns")) {
             BlockusColumnBlocks.init();
-       }
+        }
 
         if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.init();

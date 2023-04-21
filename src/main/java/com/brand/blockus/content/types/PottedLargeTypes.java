@@ -12,7 +12,7 @@ public class PottedLargeTypes {
 
     public PottedLargeTypes(String type, Block plant) {
 
-        this.block = BlocksRegistration.registerNoItem(type, BlocksRegistration.createPottedDoublePlant(plant));
+        this.block = BlocksRegistration.registerNoItem(type, BlocksRegistration.createLargeFlowerPot(plant));
 
         LIST.add(this);
     }

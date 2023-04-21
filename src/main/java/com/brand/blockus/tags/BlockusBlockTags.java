@@ -61,7 +61,6 @@ public class BlockusBlockTags {
     public static final TagKey<Block> SOUL_SOILS = register("soul_soils");
     public static final TagKey<Block> STAINED_STONE_BRICKS = register("stained_stone_bricks");
     public static final TagKey<Block> STONE_BLOCKS = register("stone_blocks");
-    public static final TagKey<Block> STONE_BUTTONS = register("stone_buttons");
     public static final TagKey<Block> THATCH = register("thatch");
     public static final TagKey<Block> TIMBER_FRAMES = register("timber_frames");
     public static final TagKey<Block> TUFF_BLOCKS = register("tuff_blocks");

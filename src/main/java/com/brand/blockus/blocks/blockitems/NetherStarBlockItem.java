@@ -3,7 +3,6 @@ package com.brand.blockus.blocks.blockitems;
 import com.brand.blockus.Blockus;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
@@ -12,7 +11,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
-import java.time.Duration;
 import java.util.List;
 
 public class NetherStarBlockItem extends BlockItem {

@@ -3,13 +3,13 @@ package com.brand.blockus.content.types;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlocksRegistration;
 import com.brand.blockus.content.BlockusItems;
-import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
@@ -41,20 +41,21 @@ public class WoodTypesFP {
 
         this.base = base;
 
-        Block.Settings blockSettings = FabricBlockSettings.of(Material.WOOD, mapcolor).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
+        Block.Settings blockSettings = FabricBlockSettings.of(Material.BLOCKS_LIGHT, mapcolor).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
+        Block.Settings blockSettings2 = FabricBlockSettings.of(Material.BLOCKS_LIGHT, mapcolor).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY);
 
         this.planks = BlocksRegistration.register(type + "_planks", new Block(blockSettings));
         this.stairs = BlocksRegistration.registerStairs(this.planks);
         this.slab = BlocksRegistration.registerSlab(this.planks);
         this.fence = BlocksRegistration.register(type + "_fence", new FenceBlock(FabricBlockSettings.copyOf(base)));
         this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), WoodType.OAK));
-        this.door = BlocksRegistration.register(type + "_door", BlocksRegistration.createDoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, BlockSetType.OAK));
-        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createTrapdoor(0.1f, 0.8f, Material.WOOD, BlockSoundGroup.WOOD, mapcolor, BlockSetType.OAK));
+        this.door = BlocksRegistration.register(type + "_door", new DoorBlock(blockSettings2, BlockSetType.OAK));
+        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", new TrapdoorBlock(blockSettings2, BlockSetType.OAK));
         this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, this.planks);
         this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), BlockSetType.OAK, 30, true));
 
         // sign
-        FabricBlockSettings signSettings = FabricBlockSettings.of(Material.WOOD).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD);
+        FabricBlockSettings signSettings = FabricBlockSettings.of(Material.BLOCKS_LIGHT).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD);
 
         Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);
         this.standing_sign = BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(signPath, signSettings));

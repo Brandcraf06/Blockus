@@ -230,7 +230,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHOCOLATE_TABLET);
 
 
-
         this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES)
             .add(BlockusBlocks.WHITE_COLORED_TILES)
             .add(BlockusBlocks.ORANGE_COLORED_TILES)
@@ -996,7 +995,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.STONE_TRAPDOOR)
             .add(BlockusBlocks.STURDY_STONE);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.STONE_BUTTONS)
+        this.getOrCreateTagBuilder(BlockTags.STONE_BUTTONS)
             .add(BlockusBlocks.POLISHED_ANDESITE_BUTTON)
             .add(BlockusBlocks.POLISHED_DIORITE_BUTTON)
             .add(BlockusBlocks.POLISHED_GRANITE_BUTTON)
@@ -1009,8 +1008,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON)
             .add(BlockusBlocks.POLISHED_TUFF_BUTTON)
             .add(BlockusBlocks.POLISHED_SCULK_BUTTON)
-            .add(BlockusBlocks.VIRIDITE_BUTTON)
-            .add(Blocks.POLISHED_BLACKSTONE_BUTTON);
+            .add(BlockusBlocks.VIRIDITE_BUTTON);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.THATCH)
             .add(BlockusBlocks.THATCH.block)
@@ -1223,7 +1221,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
             .addTag(BlockusBlockTags.PLATINGS)
             .addTag(BlockusBlockTags.LARGE_FLOWER_POTS)
-            .addTag(BlockusBlockTags.STONE_BUTTONS)
             .addTag(BlockTags.STONE_PRESSURE_PLATES);
 
         this.getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)

@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 public class BarrelBlockBase extends BarrelBlock {
 
     public BarrelBlockBase(String id, MapColor color) {
-        super(FabricBlockSettings.of(Material.WOOD, color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD));
+        super(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable());
         Registry.register(Registries.BLOCK, new Identifier(Blockus.MOD_ID, id), this);
         Registry.register(Registries.ITEM, new Identifier(Blockus.MOD_ID, id), new BlockItem(this, new Item.Settings().maxCount(64)));
     }

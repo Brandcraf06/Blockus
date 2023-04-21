@@ -68,6 +68,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.CHARRED.sign)
             .add(BlockusBlocks.WHITE_OAK.sign);
 
+        this.copy(BlockTags.STONE_BUTTONS, ItemTags.STONE_BUTTONS);
+
         this.getOrCreateTagBuilder(ItemTags.HANGING_SIGNS)
             .add(BlockusBlocks.RAW_BAMBOO.hanging_sign)
             .add(BlockusBlocks.CHARRED.hanging_sign)

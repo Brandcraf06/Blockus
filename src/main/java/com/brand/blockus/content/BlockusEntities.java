@@ -4,11 +4,7 @@ import com.brand.blockus.Blockus;
 import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
-import net.minecraft.block.Block;
-import net.minecraft.item.HangingSignItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.SignItem;
-import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
@@ -36,7 +32,7 @@ public class BlockusEntities {
     }
 
     public static TerraformBoatType registerRaft(String raftPath) {
-        Identifier raftId = Blockus.id(raftPath+ "_raft");
+        Identifier raftId = Blockus.id(raftPath + "_raft");
         Identifier chestRaftId = Blockus.id(raftPath + "_chest_raft");
         RegistryKey<TerraformBoatType> raftKey = createKey(Blockus.id(raftPath));
 

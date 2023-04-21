@@ -8,6 +8,7 @@ import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
@@ -22,29 +23,26 @@ import net.minecraft.world.BlockView;
 
 public class BlocksRegistration {
 
+    public static String replaceId(String id) {
+        return id.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
+    }
+
+    // Copy
+    public static Block createCopy(Block base) {
+        return new Block(FabricBlockSettings.copy(base));
+    }
+
+    public static Block createPillarCopy(Block base) {
+        return new PillarBlock(FabricBlockSettings.copy(base));
+    }
 
     // Pillar
     public static Block createPillar(String baseid, Block base) {
-        String id = baseid.replace("bricks", "brick");
-        return register(id + "_pillar", new PillarBlock(FabricBlockSettings.copy(base)));
+        return register(replaceId(baseid) + "_pillar", new PillarBlock(FabricBlockSettings.copy(base)));
     }
 
     public static Block registerPillar(Block base) {
         return createPillar(Registries.BLOCK.getId(base).getPath(), base);
-    }
-
-    public static Block createGTPillar(String baseid, Block base) {
-        String id = baseid.replace("bricks", "brick");
-        return register(id + "_pillar", new PillarBlock(FabricBlockSettings.copy(base)));
-    }
-
-    public static Block registerGTPillar(Block base) {
-        return createGTPillar(Registries.BLOCK.getId(base).getPath(), base);
-    }
-
-
-    public static String replaceId(String id) {
-        return id.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
     }
 
     // Slab
@@ -75,8 +73,9 @@ public class BlocksRegistration {
         return createWall(Registries.BLOCK.getId(base).getPath(), base);
     }
 
-    public static Barrier createBarrier(float hardness, float resistance) {
-        return new Barrier(FabricBlockSettings.of(Material.STONE).strength(hardness, resistance).requiresTool());
+
+    public static Barrier createBarrier(float hardness, float resistance, MapColor mapcolor) {
+        return new Barrier(FabricBlockSettings.of(Material.BLOCKS_LIGHT, mapcolor).strength(hardness, resistance).instrument(Instrument.BASEDRUM).requiresTool());
     }
 
     public static Block registerSmallHedge(String id, Block base) {
@@ -87,8 +86,7 @@ public class BlocksRegistration {
     // Pressure Plate
 
     public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base, BlockSetType blockSetType) {
-        String id = baseid.replace("_planks", "");
-        return register(id + "_pressure_plate", new PressurePlateBlock(type, FabricBlockSettings.copy(base).noCollision().pistonBehavior(PistonBehavior.DESTROY), blockSetType));
+        return register(replaceId(baseid) + "_pressure_plate", new PressurePlateBlock(type, FabricBlockSettings.copy(base).noCollision().pistonBehavior(PistonBehavior.DESTROY), blockSetType));
     }
 
     public static Block registerStonePressurePlate(PressurePlateBlock.ActivationRule type, Block base) {
@@ -112,48 +110,43 @@ public class BlocksRegistration {
     // Plants
 
     public static FlowerPotBlock createPottedPlant(Block content) {
-        return new FlowerPotBlock(content, FabricBlockSettings.of(Material.ALLOWS_MOVEMENT_LIGHT_PASSES_THROUGH_NOT_SOLID).breakInstantly().pistonBehavior(PistonBehavior.DESTROY).nonOpaque());
+        return new FlowerPotBlock(content, FabricBlockSettings.of(Material.LIGHT_PASSES_THROUGH).instrument(Instrument.BASEDRUM).breakInstantly().pistonBehavior(PistonBehavior.DESTROY).nonOpaque());
     }
 
     public static LargeFlowerPotBlock createLargeFlowerPot(Block content) {
-        return new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.ALLOWS_MOVEMENT_LIGHT_PASSES_THROUGH_NOT_SOLID).strength(0.5F, 1.0F).pistonBehavior(PistonBehavior.BLOCK).nonOpaque());
-    }
-
-    public static LargeFlowerPotBlock createPottedDoublePlant(Block content) {
-        return new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.ALLOWS_MOVEMENT_LIGHT_PASSES_THROUGH_NOT_SOLID).strength(0.5F, 1.0F).pistonBehavior(PistonBehavior.BLOCK).nonOpaque());
+        return new LargeFlowerPotBlock(content, FabricBlockSettings.of(Material.LIGHT_PASSES_THROUGH).instrument(Instrument.BASEDRUM).strength(0.5F, 1.0F).pistonBehavior(PistonBehavior.BLOCK).nonOpaque());
     }
 
     // Door & Trapdoor
 
-    public static DoorBlock createDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new DoorBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY), blockSetType);
+    public static DoorBlock createWoodenDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
+        return new DoorBlock(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).instrument(Instrument.BASS).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).burnable(), blockSetType);
     }
 
-
-    public static DoorBlock createStoneDoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new DoorBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool().pistonBehavior(PistonBehavior.DESTROY), blockSetType);
+    public static DoorBlock createStoneDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
+        return new DoorBlock(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).instrument(Instrument.BASEDRUM).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).requiresTool(), blockSetType);
     }
 
-    public static TrapdoorBlock createTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new TrapdoorBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY), blockSetType);
+    public static TrapdoorBlock createWoodenTrapdoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
+        return new TrapdoorBlock(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).instrument(Instrument.BASS).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).burnable(), blockSetType);
     }
 
-    public static TrapdoorBlock createStoneTrapdoor(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new TrapdoorBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).nonOpaque().requiresTool().pistonBehavior(PistonBehavior.DESTROY), blockSetType);
+    public static TrapdoorBlock createStoneTrapdoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
+        return new TrapdoorBlock(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).instrument(Instrument.BASEDRUM).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).requiresTool(), blockSetType);
     }
 
     // Light
 
-    public static Block createLightBlock(float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MapColor color) {
-        return new Block(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).luminance(luminance).requiresTool());
+    public static Block createLightBlock(float hardness, float resistance, BlockSoundGroup sound, int luminance, MapColor color) {
+        return new Block(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).strength(hardness, resistance).sounds(sound).luminance(luminance).instrument(Instrument.BASEDRUM).requiresTool());
     }
 
-    public static Block createLampBlock(float hardness, float resistance, Material material, BlockSoundGroup sound, int luminance, MapColor color) {
-        return new Block(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound).luminance(luminance));
+    public static Block createLampBlock(float hardness, float resistance, BlockSoundGroup sound, int luminance, MapColor color) {
+        return new Block(FabricBlockSettings.of(Material.LIGHT_PASSES_THROUGH, color).strength(hardness, resistance).sounds(sound).luminance(luminance));
     }
 
     public static Block createNeonBlock(DyeColor color) {
-        return new Block(FabricBlockSettings.of(Material.GLASS, color).luminance(3).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlocksRegistration::always).allowsSpawning(BlocksRegistration::never));
+        return new Block(FabricBlockSettings.of(Material.LIGHT_PASSES_THROUGH, color).luminance(3).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlocksRegistration::always).allowsSpawning(BlocksRegistration::never));
     }
 
     public static RedstoneLampBlock createRedstoneLamp() {
@@ -165,7 +158,7 @@ public class BlocksRegistration {
     }
 
     public static Block createFuturneoBlock(MapColor color) {
-        return new Block(FabricBlockSettings.of(Material.GENERIC, color).luminance(15).strength(0.5f, 0.5f).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlocksRegistration::always));
+        return new Block(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).luminance(15).strength(0.5f, 0.5f).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlocksRegistration::always));
     }
 
 
@@ -179,20 +172,20 @@ public class BlocksRegistration {
     }
 
     // Other
-    public static FallingBlock createFallingBlock(float hardness, float resistance, Material material, BlockSoundGroup sound, MapColor color) {
-        return new FallingBlock(FabricBlockSettings.of(material, color).strength(hardness, resistance).sounds(sound));
+    public static FallingBlock createFallingBlock(float hardness, float resistance, BlockSoundGroup sound, MapColor color) {
+        return new FallingBlock(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).strength(hardness, resistance).sounds(sound));
     }
 
     public static PaneBlock createWoodenPane() {
-        return new PaneBlock(FabricBlockSettings.of(Material.WOOD).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD));
+        return new PaneBlock(FabricBlockSettings.of(Material.BLOCKS_LIGHT, MapColor.OAK_TAN).instrument(Instrument.BASS).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).burnable());
     }
 
     public static Block createCrates() {
-        return new Block(FabricBlockSettings.of(Material.GENERIC, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).sounds(BlockSoundGroup.WOOD));
+        return new Block(FabricBlockSettings.of(Material.BLOCKS_LIGHT, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).instrument(Instrument.BASS).sounds(BlockSoundGroup.WOOD));
     }
 
     public static Block createLightCrates() {
-        return new Block(FabricBlockSettings.of(Material.GENERIC, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance(14).sounds(BlockSoundGroup.WOOD));
+        return new Block(FabricBlockSettings.of(Material.BLOCKS_LIGHT, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance(14).instrument(Instrument.BASS).sounds(BlockSoundGroup.WOOD));
     }
 
     // Register

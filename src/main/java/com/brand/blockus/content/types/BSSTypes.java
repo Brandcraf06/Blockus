@@ -39,7 +39,7 @@ public class BSSTypes {
     }
 
     public BSSTypes(String type, float hardness, float resistance, MapColor mapcolor) {
-        this(type, FabricBlockSettings.of(Material.STONE, mapcolor).strength(hardness, resistance).sounds(BlockSoundGroup.STONE));
+        this(type, FabricBlockSettings.of(Material.BLOCKS_LIGHT, mapcolor).strength(hardness, resistance).sounds(BlockSoundGroup.STONE));
 
     }
 

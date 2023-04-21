@@ -8,6 +8,7 @@ import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.Item;
 import net.minecraft.util.DyeColor;
 
@@ -24,7 +25,7 @@ public class AsphaltTypes {
         String type = color.getName() + "_asphalt";
         String type2 = type.replace("black_asphalt", "asphalt");
 
-        Block.Settings blockSettings = FabricBlockSettings.of(Material.STONE, color).strength(1.5f, 6.0f).requiresTool();
+        Block.Settings blockSettings = FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).instrument(Instrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool();
 
         this.block = register(type2, new AsphaltBlock(blockSettings));
         this.slab = register(type2 + "_slab", new AsphaltSlab(FabricBlockSettings.copyOf(block)));

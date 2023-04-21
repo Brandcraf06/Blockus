@@ -50,16 +50,16 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
 
         // Large Flower Pots
 
-        POTTED_SAP_MAPLE = registerNoItem("potted_sap_maple", createPottedDoublePlant(MapleContent.SAP_MAPLE_SAPLING));
-        POTTED_VERMILION_MAPLE = registerNoItem("potted_vermilion_maple", createPottedDoublePlant(MapleContent.VERMILION_MAPLE_SAPLING));
-        POTTED_FULVOUS_MAPLE = registerNoItem("potted_fulvous_maple", createPottedDoublePlant(MapleContent.FULVOUS_MAPLE_SAPLING));
-        POTTED_MIKADO_MAPLE = registerNoItem("potted_mikado_maple", createPottedDoublePlant(MapleContent.MIKADO_MAPLE_SAPLING));
+        POTTED_SAP_MAPLE = registerNoItem("potted_sap_maple", createLargeFlowerPot(MapleContent.SAP_MAPLE_SAPLING));
+        POTTED_VERMILION_MAPLE = registerNoItem("potted_vermilion_maple", createLargeFlowerPot(MapleContent.VERMILION_MAPLE_SAPLING));
+        POTTED_FULVOUS_MAPLE = registerNoItem("potted_fulvous_maple", createLargeFlowerPot(MapleContent.FULVOUS_MAPLE_SAPLING));
+        POTTED_MIKADO_MAPLE = registerNoItem("potted_mikado_maple", createLargeFlowerPot(MapleContent.MIKADO_MAPLE_SAPLING));
 
-        POTTED_BLUSH_SAKURA = registerNoItem("potted_blush_sakura", createPottedDoublePlant(SakuraContent.BLUSH_SAKURA_SAPLING));
-        POTTED_COTTON_SAKURA = registerNoItem("potted_cotton_sakura", createPottedDoublePlant(SakuraContent.COTTON_SAKURA_SAPLING));
-        POTTED_PALM = registerNoItem("potted_palm", createPottedDoublePlant(PalmContent.PALM_SAPLING));
+        POTTED_BLUSH_SAKURA = registerNoItem("potted_blush_sakura", createLargeFlowerPot(SakuraContent.BLUSH_SAKURA_SAPLING));
+        POTTED_COTTON_SAKURA = registerNoItem("potted_cotton_sakura", createLargeFlowerPot(SakuraContent.COTTON_SAKURA_SAPLING));
+        POTTED_PALM = registerNoItem("potted_palm", createLargeFlowerPot(PalmContent.PALM_SAPLING));
 
-        POTTED_DARK_AMARANTH = registerNoItem("potted_huge_dark_amaranth_fungus", createPottedDoublePlant(AmaranthContent.DARK_AMARANTH_FUNGUS));
+        POTTED_DARK_AMARANTH = registerNoItem("potted_huge_dark_amaranth_fungus", createLargeFlowerPot(AmaranthContent.DARK_AMARANTH_FUNGUS));
 
         // Small Logs
         MAPLE_SMALL_LOGS = register("maple_small_logs", new PillarBlock(FabricBlockSettings.copy(MapleContent.MAPLE_LOG)));
@@ -132,15 +132,15 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
     private static void registerBlockColors() {
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
             return pos != null && world != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.getDefaultColor();
-        }, new Block[]{PALM_SMALL_HEDGE, POTTED_PALM, SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE});
+        }, PALM_SMALL_HEDGE, POTTED_PALM, SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE);
     }
 
     private static void registerItemColors() {
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
             return GrassColors.getColor(1.0D, 0.0D);
-        }, new ItemConvertible[]{PALM_SMALL_HEDGE, POTTED_PALM});
+        }, PALM_SMALL_HEDGE, POTTED_PALM);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
             return 10931465;
-        }, new ItemConvertible[]{SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE});
+        }, SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE);
     }
 }
