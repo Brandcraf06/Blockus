@@ -23,7 +23,7 @@ public class ColoredTilesTypes {
 
         String type = color1 + "_" + color2 + "_colored_tiles";
 
-        this.block = BlocksRegistration.register(type, new ColoredTilesBlock(tile1, tile2, FabricBlockSettings.copyOf(tile1)));
+        this.block = BlocksRegistration.register(type, new ColoredTilesBlock(tile1, tile2, FabricBlockSettings.copyOf(tile2)));
         this.tile1 = tile1;
         this.tile2 = tile2;
         this.color1 = color1;

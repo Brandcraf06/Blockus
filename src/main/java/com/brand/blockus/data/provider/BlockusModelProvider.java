@@ -1,10 +1,9 @@
 package com.brand.blockus.data.provider;
 
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.content.types.ColoredTilesTypes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;

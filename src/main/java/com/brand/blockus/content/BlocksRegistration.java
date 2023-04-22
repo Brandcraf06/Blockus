@@ -2,7 +2,6 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.Barrier;
-import com.brand.blockus.blocks.base.ColoredTilesBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.base.SmallHedgeBlock;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;

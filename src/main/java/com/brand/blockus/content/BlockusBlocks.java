@@ -673,7 +673,6 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final PatternWoolTypes RED_PATTERNED_WOOL = new PatternWoolTypes(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED);
     public static final PatternWoolTypes BLACK_PATTERNED_WOOL = new PatternWoolTypes(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK);
 
-
     // Colored Tiles
     public static final Block WHITE_COLORED_TILES = register("white_colored_tiles", createCopy(Blocks.WHITE_CONCRETE));
     public static final Block ORANGE_COLORED_TILES = register("orange_colored_tiles", createCopy(Blocks.ORANGE_CONCRETE));
@@ -693,6 +692,40 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLACK_COLORED_TILES = register("black_colored_tiles", createCopy(Blocks.BLACK_CONCRETE));
 
     // Colored Tiles (With white)
+    public static final ColoredTilesTypes WHITE_LIGHT_GRAY_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.LIGHT_GRAY_CONCRETE);
+    public static final ColoredTilesTypes WHITE_GRAY_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.GRAY_CONCRETE);
+    public static final ColoredTilesTypes WHITE_BLACK_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.BLACK_CONCRETE);
+    public static final ColoredTilesTypes WHITE_BROWN_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.BROWN_CONCRETE);
+    public static final ColoredTilesTypes WHITE_RED_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.RED_CONCRETE);
+    public static final ColoredTilesTypes WHITE_ORANGE_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.ORANGE_CONCRETE);
+    public static final ColoredTilesTypes WHITE_YELLOW_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.YELLOW_CONCRETE);
+    public static final ColoredTilesTypes WHITE_LIME_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.LIME_CONCRETE);
+    public static final ColoredTilesTypes WHITE_GREEN_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.GREEN_CONCRETE);
+    public static final ColoredTilesTypes WHITE_CYAN_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.CYAN_CONCRETE);
+    public static final ColoredTilesTypes WHITE_LIGHT_BLUE_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE);
+    public static final ColoredTilesTypes WHITE_BLUE_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.BLUE_CONCRETE);
+    public static final ColoredTilesTypes WHITE_PURPLE_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.PURPLE_CONCRETE);
+    public static final ColoredTilesTypes WHITE_MAGENTA_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.MAGENTA_CONCRETE);
+    public static final ColoredTilesTypes WHITE_PINK_COLORED_TILES = new ColoredTilesTypes(Blocks.WHITE_CONCRETE, Blocks.PINK_CONCRETE);
+
+    // Colored Tiles (With black)
+    public static final ColoredTilesTypes BLACK_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes BLACK_LIGHT_GRAY_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.LIGHT_GRAY_CONCRETE);
+    public static final ColoredTilesTypes BLACK_GRAY_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.GRAY_CONCRETE);
+    public static final ColoredTilesTypes BLACK_BROWN_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.BROWN_CONCRETE);
+    public static final ColoredTilesTypes BLACK_RED_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.RED_CONCRETE);
+    public static final ColoredTilesTypes BLACK_ORANGE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.ORANGE_CONCRETE);
+    public static final ColoredTilesTypes BLACK_YELLOW_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.YELLOW_CONCRETE);
+    public static final ColoredTilesTypes BLACK_LIME_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.LIME_CONCRETE);
+    public static final ColoredTilesTypes BLACK_GREEN_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.GREEN_CONCRETE);
+    public static final ColoredTilesTypes BLACK_CYAN_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.CYAN_CONCRETE);
+    public static final ColoredTilesTypes BLACK_LIGHT_BLUE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE);
+    public static final ColoredTilesTypes BLACK_BLUE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.BLUE_CONCRETE);
+    public static final ColoredTilesTypes BLACK_PURPLE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.PURPLE_CONCRETE);
+    public static final ColoredTilesTypes BLACK_MAGENTA_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.MAGENTA_CONCRETE);
+    public static final ColoredTilesTypes BLACK_PINK_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.PINK_CONCRETE);
+
+    // Other colored Tiles
     public static final ColoredTilesTypes ORANGE_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.ORANGE_CONCRETE, Blocks.WHITE_CONCRETE);
     public static final ColoredTilesTypes MAGENTA_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.MAGENTA_CONCRETE, Blocks.WHITE_CONCRETE);
     public static final ColoredTilesTypes LIGHT_BLUE_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.LIGHT_BLUE_CONCRETE, Blocks.WHITE_CONCRETE);
@@ -707,14 +740,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final ColoredTilesTypes BROWN_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.BROWN_CONCRETE, Blocks.WHITE_CONCRETE);
     public static final ColoredTilesTypes GREEN_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.GREEN_CONCRETE, Blocks.WHITE_CONCRETE);
     public static final ColoredTilesTypes RED_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.RED_CONCRETE, Blocks.WHITE_CONCRETE);
-    public static final ColoredTilesTypes BLACK_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.WHITE_CONCRETE);
-
-    
-    // Other colored Tiles
     public static final ColoredTilesTypes GRAY_LIGHT_GRAY_COLORED_TILES = new ColoredTilesTypes(Blocks.GRAY_CONCRETE, Blocks.LIGHT_GRAY_CONCRETE);
-    public static final ColoredTilesTypes BLACK_GRAY_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.GRAY_CONCRETE);
-    public static final ColoredTilesTypes BLACK_RED_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.RED_CONCRETE);
-    public static final ColoredTilesTypes BLACK_BLUE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.BLUE_CONCRETE);
     public static final ColoredTilesTypes MAGENTA_BLACK_COLORED_TILES = new ColoredTilesTypes(Blocks.MAGENTA_CONCRETE, Blocks.BLACK_CONCRETE);
     public static final ColoredTilesTypes PINK_MAGENTA_COLORED_TILES = new ColoredTilesTypes(Blocks.PINK_CONCRETE, Blocks.MAGENTA_CONCRETE);
     public static final ColoredTilesTypes PURPLE_ORANGE_COLORED_TILES = new ColoredTilesTypes(Blocks.PURPLE_CONCRETE, Blocks.ORANGE_CONCRETE);
