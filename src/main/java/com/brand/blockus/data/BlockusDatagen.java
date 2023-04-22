@@ -1,9 +1,6 @@
 package com.brand.blockus.data;
 
-import com.brand.blockus.data.provider.BlockusBlockLootTableProvider;
-import com.brand.blockus.data.provider.BlockusBlockTagProvider;
-import com.brand.blockus.data.provider.BlockusItemTagProvider;
-import com.brand.blockus.data.provider.BlockusRecipeProvider;
+import com.brand.blockus.data.provider.*;
 import com.brand.blockus.worldgen.BlockusWorldgenProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -23,7 +20,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
 
         pack.addProvider(BlockusBlockLootTableProvider::new);
         pack.addProvider(BlockusWorldgenProvider::new);
-
+        pack.addProvider(BlockusModelProvider::new);
 
 //        pack.addProvider(BlockusColumnsBlockLootTableProvider::new);
 //        pack.addProvider(BlockusColumnsModelProvider::new);

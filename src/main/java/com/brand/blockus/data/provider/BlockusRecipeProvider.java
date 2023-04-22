@@ -61,11 +61,11 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.cross, 4).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);
         }
 
-        for (AsphaltTypes asphaltType : AsphaltTypes.values()) {
-            BlockusRecipeProvider.offerStairsRecipe(exporter, asphaltType.stairs, asphaltType.block);
-            RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, asphaltType.slab, asphaltType.block);
-            offerStonecuttingRecipe(exporter, asphaltType.stairs, asphaltType.block);
-            offerStonecuttingRecipe(exporter, asphaltType.slab, 2, asphaltType.block);
+        for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
+            BlockusRecipeProvider.offerStairsRecipe(exporter, asphaltTypes.stairs, asphaltTypes.block);
+            RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, asphaltTypes.slab, asphaltTypes.block);
+            offerStonecuttingRecipe(exporter, asphaltTypes.stairs, asphaltTypes.block);
+            offerStonecuttingRecipe(exporter, asphaltTypes.slab, 2, asphaltTypes.block);
         }
 
         for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
@@ -74,6 +74,10 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, patternWoolTypes.slab, patternWoolTypes.block);
             RecipeProvider.offerCarpetRecipe(exporter, patternWoolTypes.carpet, patternWoolTypes.block);
 
+        }
+
+        for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
+            offerColoredTilesRecipe(exporter, coloredTilesTypes.block, coloredTilesTypes.tile1, coloredTilesTypes.tile2);
         }
 
         generateFamilies(exporter, FeatureSet.of(FeatureFlags.VANILLA));
@@ -1078,39 +1082,6 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerUnicolorColoredTilesRecipe(exporter, BlockusBlocks.GREEN_COLORED_TILES, Blocks.GREEN_CONCRETE);
         offerUnicolorColoredTilesRecipe(exporter, BlockusBlocks.RED_COLORED_TILES, Blocks.RED_CONCRETE);
         offerUnicolorColoredTilesRecipe(exporter, BlockusBlocks.BLACK_COLORED_TILES, Blocks.BLACK_CONCRETE);
-
-        // Colored Tiles (With white)
-        offerColoredTilesRecipe(exporter, BlockusBlocks.ORANGE_WHITE_COLORED_TILES, Blocks.ORANGE_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.MAGENTA_WHITE_COLORED_TILES, Blocks.MAGENTA_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.LIGHT_BLUE_WHITE_COLORED_TILES, Blocks.LIGHT_BLUE_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.YELLOW_WHITE_COLORED_TILES, Blocks.YELLOW_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.LIME_WHITE_COLORED_TILES, Blocks.LIME_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.PINK_WHITE_COLORED_TILES, Blocks.PINK_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.GRAY_WHITE_COLORED_TILES, Blocks.GRAY_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.LIGHT_GRAY_WHITE_COLORED_TILES, Blocks.LIGHT_GRAY_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.CYAN_WHITE_COLORED_TILES, Blocks.CYAN_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.PURPLE_WHITE_COLORED_TILES, Blocks.PURPLE_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.BLUE_WHITE_COLORED_TILES, Blocks.BLUE_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.BROWN_WHITE_COLORED_TILES, Blocks.BROWN_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.GREEN_WHITE_COLORED_TILES, Blocks.GREEN_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.RED_WHITE_COLORED_TILES, Blocks.RED_CONCRETE, Blocks.WHITE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.BLACK_WHITE_COLORED_TILES, Blocks.BLACK_CONCRETE, Blocks.WHITE_CONCRETE);
-
-        // Other colored Tiles
-        offerColoredTilesRecipe(exporter, BlockusBlocks.GRAY_LIGHT_GRAY_COLORED_TILES, Blocks.GRAY_CONCRETE, Blocks.LIGHT_GRAY_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.BLACK_GRAY_COLORED_TILES, Blocks.BLACK_CONCRETE, Blocks.GRAY_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.BLACK_RED_COLORED_TILES, Blocks.BLACK_CONCRETE, Blocks.RED_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.BLACK_BLUE_COLORED_TILES, Blocks.BLACK_CONCRETE, Blocks.BLUE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.MAGENTA_BLACK_COLORED_TILES, Blocks.MAGENTA_CONCRETE, Blocks.BLACK_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.PINK_MAGENTA_COLORED_TILES, Blocks.PINK_CONCRETE, Blocks.MAGENTA_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.PURPLE_ORANGE_COLORED_TILES, Blocks.PURPLE_CONCRETE, Blocks.ORANGE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.PURPLE_BLUE_COLORED_TILES, Blocks.PURPLE_CONCRETE, Blocks.BLUE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.GREEN_ORANGE_COLORED_TILES, Blocks.GREEN_CONCRETE, Blocks.ORANGE_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.GREEN_BROWN_COLORED_TILES, Blocks.GREEN_CONCRETE, Blocks.BROWN_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.LIME_YELLOW_COLORED_TILES, Blocks.LIME_CONCRETE, Blocks.YELLOW_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.LIGHT_BLUE_YELLOW_COLORED_TILES, Blocks.LIGHT_BLUE_CONCRETE, Blocks.YELLOW_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.BLUE_CYAN_COLORED_TILES, Blocks.BLUE_CONCRETE, Blocks.CYAN_CONCRETE);
-        offerColoredTilesRecipe(exporter, BlockusBlocks.RED_BLUE_COLORED_TILES, Blocks.RED_CONCRETE, Blocks.BLUE_CONCRETE);
         offerUnicolorColoredTilesRecipe(exporter, BlockusBlocks.RAINBOW_COLORED_TILES, BlockusBlocks.RAINBOW_BLOCK);
 
         // Glazed Terracotta Pillars

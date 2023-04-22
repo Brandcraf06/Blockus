@@ -2,6 +2,7 @@ package com.brand.blockus.content;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.Barrier;
+import com.brand.blockus.blocks.base.ColoredTilesBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.base.SmallHedgeBlock;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
@@ -84,7 +85,6 @@ public class BlocksRegistration {
 
 
     // Pressure Plate
-
     public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base, BlockSetType blockSetType) {
         return register(replaceId(baseid) + "_pressure_plate", new PressurePlateBlock(type, FabricBlockSettings.copy(base).noCollision().pistonBehavior(PistonBehavior.DESTROY), blockSetType));
     }
@@ -98,7 +98,6 @@ public class BlocksRegistration {
     }
 
     // Button
-
     public static Block createStoneButton(String id, Block base) {
         return register(id + "_button", new ButtonBlock(FabricBlockSettings.copyOf(base).noCollision().pistonBehavior(PistonBehavior.DESTROY), BlockSetType.STONE, 20, false));
     }
@@ -108,7 +107,6 @@ public class BlocksRegistration {
     }
 
     // Plants
-
     public static FlowerPotBlock createPottedPlant(Block content) {
         return new FlowerPotBlock(content, FabricBlockSettings.of(Material.LIGHT_PASSES_THROUGH).instrument(Instrument.BASEDRUM).breakInstantly().pistonBehavior(PistonBehavior.DESTROY).nonOpaque());
     }
@@ -118,7 +116,6 @@ public class BlocksRegistration {
     }
 
     // Door & Trapdoor
-
     public static DoorBlock createWoodenDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
         return new DoorBlock(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).instrument(Instrument.BASS).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).burnable(), blockSetType);
     }
@@ -136,7 +133,6 @@ public class BlocksRegistration {
     }
 
     // Light
-
     public static Block createLightBlock(float hardness, float resistance, BlockSoundGroup sound, int luminance, MapColor color) {
         return new Block(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).strength(hardness, resistance).sounds(sound).luminance(luminance).instrument(Instrument.BASEDRUM).requiresTool());
     }

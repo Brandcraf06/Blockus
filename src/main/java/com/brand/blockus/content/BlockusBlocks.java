@@ -693,37 +693,38 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block BLACK_COLORED_TILES = register("black_colored_tiles", createCopy(Blocks.BLACK_CONCRETE));
 
     // Colored Tiles (With white)
-    public static final Block ORANGE_WHITE_COLORED_TILES = register("orange_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.ORANGE_CONCRETE)));
-    public static final Block MAGENTA_WHITE_COLORED_TILES = register("magenta_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.MAGENTA_CONCRETE)));
-    public static final Block LIGHT_BLUE_WHITE_COLORED_TILES = register("light_blue_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_CONCRETE)));
-    public static final Block YELLOW_WHITE_COLORED_TILES = register("yellow_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.YELLOW_CONCRETE)));
-    public static final Block LIME_WHITE_COLORED_TILES = register("lime_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIME_CONCRETE)));
-    public static final Block PINK_WHITE_COLORED_TILES = register("pink_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.PINK_CONCRETE)));
-    public static final Block GRAY_WHITE_COLORED_TILES = register("gray_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.GRAY_CONCRETE)));
-    public static final Block LIGHT_GRAY_WHITE_COLORED_TILES = register("light_gray_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE)));
-    public static final Block CYAN_WHITE_COLORED_TILES = register("cyan_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.CYAN_CONCRETE)));
-    public static final Block PURPLE_WHITE_COLORED_TILES = register("purple_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.PURPLE_CONCRETE)));
-    public static final Block BLUE_WHITE_COLORED_TILES = register("blue_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.BLUE_CONCRETE)));
-    public static final Block BROWN_WHITE_COLORED_TILES = register("brown_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.BROWN_CONCRETE)));
-    public static final Block GREEN_WHITE_COLORED_TILES = register("green_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.GREEN_CONCRETE)));
-    public static final Block RED_WHITE_COLORED_TILES = register("red_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.RED_CONCRETE)));
-    public static final Block BLACK_WHITE_COLORED_TILES = register("black_white_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.BLACK_CONCRETE)));
+    public static final ColoredTilesTypes ORANGE_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.ORANGE_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes MAGENTA_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.MAGENTA_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes LIGHT_BLUE_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.LIGHT_BLUE_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes YELLOW_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.YELLOW_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes LIME_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.LIME_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes PINK_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.PINK_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes GRAY_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.GRAY_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes LIGHT_GRAY_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.LIGHT_GRAY_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes CYAN_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.CYAN_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes PURPLE_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.PURPLE_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes BLUE_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLUE_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes BROWN_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.BROWN_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes GREEN_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.GREEN_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes RED_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.RED_CONCRETE, Blocks.WHITE_CONCRETE);
+    public static final ColoredTilesTypes BLACK_WHITE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.WHITE_CONCRETE);
 
+    
     // Other colored Tiles
-    public static final Block GRAY_LIGHT_GRAY_COLORED_TILES = register("gray_light_gray_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.GRAY_CONCRETE)));
-    public static final Block BLACK_GRAY_COLORED_TILES = register("black_gray_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.BLACK_CONCRETE)));
-    public static final Block BLACK_RED_COLORED_TILES = register("black_red_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.BLACK_CONCRETE)));
-    public static final Block BLACK_BLUE_COLORED_TILES = register("black_blue_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.BLACK_CONCRETE)));
-    public static final Block MAGENTA_BLACK_COLORED_TILES = register("magenta_black_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.MAGENTA_CONCRETE)));
-    public static final Block PINK_MAGENTA_COLORED_TILES = register("pink_magenta_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.PINK_CONCRETE)));
-    public static final Block PURPLE_ORANGE_COLORED_TILES = register("purple_orange_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.PURPLE_CONCRETE)));
-    public static final Block PURPLE_BLUE_COLORED_TILES = register("purple_blue_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.PURPLE_CONCRETE)));
-    public static final Block GREEN_ORANGE_COLORED_TILES = register("green_orange_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.GREEN_CONCRETE)));
-    public static final Block GREEN_BROWN_COLORED_TILES = register("green_brown_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.GREEN_CONCRETE)));
-    public static final Block LIME_YELLOW_COLORED_TILES = register("lime_yellow_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIME_CONCRETE)));
-    public static final Block LIGHT_BLUE_YELLOW_COLORED_TILES = register("light_blue_yellow_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_CONCRETE)));
-    public static final Block BLUE_CYAN_COLORED_TILES = register("blue_cyan_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.BLUE_CONCRETE)));
-    public static final Block RED_BLUE_COLORED_TILES = register("red_blue_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.RED_CONCRETE)));
+    public static final ColoredTilesTypes GRAY_LIGHT_GRAY_COLORED_TILES = new ColoredTilesTypes(Blocks.GRAY_CONCRETE, Blocks.LIGHT_GRAY_CONCRETE);
+    public static final ColoredTilesTypes BLACK_GRAY_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.GRAY_CONCRETE);
+    public static final ColoredTilesTypes BLACK_RED_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.RED_CONCRETE);
+    public static final ColoredTilesTypes BLACK_BLUE_COLORED_TILES = new ColoredTilesTypes(Blocks.BLACK_CONCRETE, Blocks.BLUE_CONCRETE);
+    public static final ColoredTilesTypes MAGENTA_BLACK_COLORED_TILES = new ColoredTilesTypes(Blocks.MAGENTA_CONCRETE, Blocks.BLACK_CONCRETE);
+    public static final ColoredTilesTypes PINK_MAGENTA_COLORED_TILES = new ColoredTilesTypes(Blocks.PINK_CONCRETE, Blocks.MAGENTA_CONCRETE);
+    public static final ColoredTilesTypes PURPLE_ORANGE_COLORED_TILES = new ColoredTilesTypes(Blocks.PURPLE_CONCRETE, Blocks.ORANGE_CONCRETE);
+    public static final ColoredTilesTypes PURPLE_BLUE_COLORED_TILES = new ColoredTilesTypes(Blocks.PURPLE_CONCRETE, Blocks.BLUE_CONCRETE);
+    public static final ColoredTilesTypes GREEN_ORANGE_COLORED_TILES = new ColoredTilesTypes(Blocks.GREEN_CONCRETE, Blocks.ORANGE_CONCRETE);
+    public static final ColoredTilesTypes GREEN_BROWN_COLORED_TILES = new ColoredTilesTypes(Blocks.GREEN_CONCRETE, Blocks.BROWN_CONCRETE);
+    public static final ColoredTilesTypes LIME_YELLOW_COLORED_TILES = new ColoredTilesTypes(Blocks.LIME_CONCRETE, Blocks.YELLOW_CONCRETE);
+    public static final ColoredTilesTypes LIGHT_BLUE_YELLOW_COLORED_TILES = new ColoredTilesTypes(Blocks.LIGHT_BLUE_CONCRETE, Blocks.YELLOW_CONCRETE);
+    public static final ColoredTilesTypes BLUE_CYAN_COLORED_TILES = new ColoredTilesTypes(Blocks.BLUE_CONCRETE, Blocks.CYAN_CONCRETE);
+    public static final ColoredTilesTypes RED_BLUE_COLORED_TILES = new ColoredTilesTypes(Blocks.RED_CONCRETE, Blocks.BLUE_CONCRETE);
     public static final Block RAINBOW_COLORED_TILES = register("rainbow_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_CONCRETE)));
 
     // Glazed Terracotta Pillars

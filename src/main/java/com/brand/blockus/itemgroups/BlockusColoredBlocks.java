@@ -3,6 +3,7 @@ package com.brand.blockus.itemgroups;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.AsphaltTypes;
+import com.brand.blockus.content.types.ColoredTilesTypes;
 import com.brand.blockus.content.types.ConcreteTypes;
 import com.brand.blockus.content.types.PatternWoolTypes;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -312,35 +313,10 @@ public class BlockusColoredBlocks {
                 entries.add(BlockusBlocks.MAGENTA_COLORED_TILES);
                 entries.add(BlockusBlocks.PINK_COLORED_TILES);
 
-                entries.add(BlockusBlocks.ORANGE_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.MAGENTA_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.LIGHT_BLUE_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.YELLOW_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.LIME_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.PINK_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.GRAY_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.LIGHT_GRAY_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.CYAN_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.PURPLE_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.BLUE_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.BROWN_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.GREEN_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.RED_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.BLACK_WHITE_COLORED_TILES);
-                entries.add(BlockusBlocks.GRAY_LIGHT_GRAY_COLORED_TILES);
-                entries.add(BlockusBlocks.BLACK_GRAY_COLORED_TILES);
-                entries.add(BlockusBlocks.BLACK_RED_COLORED_TILES);
-                entries.add(BlockusBlocks.BLACK_BLUE_COLORED_TILES);
-                entries.add(BlockusBlocks.MAGENTA_BLACK_COLORED_TILES);
-                entries.add(BlockusBlocks.PINK_MAGENTA_COLORED_TILES);
-                entries.add(BlockusBlocks.PURPLE_ORANGE_COLORED_TILES);
-                entries.add(BlockusBlocks.PURPLE_BLUE_COLORED_TILES);
-                entries.add(BlockusBlocks.GREEN_ORANGE_COLORED_TILES);
-                entries.add(BlockusBlocks.GREEN_BROWN_COLORED_TILES);
-                entries.add(BlockusBlocks.LIME_YELLOW_COLORED_TILES);
-                entries.add(BlockusBlocks.LIGHT_BLUE_YELLOW_COLORED_TILES);
-                entries.add(BlockusBlocks.BLUE_CYAN_COLORED_TILES);
-                entries.add(BlockusBlocks.RED_BLUE_COLORED_TILES);
+                for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
+                    entries.add(coloredTilesTypes.block);
+                }
+
                 entries.add(BlockusBlocks.RAINBOW_COLORED_TILES);
             })
             .build()
