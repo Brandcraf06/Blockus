@@ -1,7 +1,6 @@
 {
-  "parent": "blockus:block/cube_tiles",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "tile_1": "blockus:block/gray_tile",
-    "tile_2": "blockus:block/gray_tile"
+    "all": "blockus:block/gray_tiles"
   }
 }

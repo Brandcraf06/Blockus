@@ -5,7 +5,8 @@ import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusEntities;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.itemgroups.*;
+import com.brand.blockus.itemgroups.BlockusItemGroups;
+import com.brand.blockus.itemgroups.content.*;
 import com.brand.blockus.utils.AsphaltStatusEffect;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.google.common.reflect.Reflection;
@@ -36,11 +37,12 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(BlockusItems.class);
         Reflection.initialize(BlockusEntities.class);
 
-        BlockusBuildingBlocks.init();
-        BlockusColoredBlocks.init();
-        BlockusNatural.init();
-        BlockusFunctionalBlocks.init();
-        BlockusLegacyBlocks.init();
+        BlockusItemGroups.init();
+        BuildingBlocksGroup.init();
+        ColoredGroups.init();
+        NaturalGroup.init();
+        FunctionalBlocksGroup.init();
+        LegacyGroup.init();
 
 
         if (FabricLoader.getInstance().isModLoaded("columns")) {
@@ -63,5 +65,6 @@ public class Blockus implements ModInitializer {
     }
 
     public static Text STEPPED_ON_TEXT = Text.translatable(Util.createTranslationKey("blockitem", Blockus.id("when_stepped_on"))).formatted(Formatting.GRAY);
+
 }
 

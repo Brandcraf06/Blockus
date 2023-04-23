@@ -16,8 +16,8 @@ import java.util.Optional;
 public class BlockusModelProvider extends FabricModelProvider {
     public static final Model CUBE_TILES;
     public static final Model CUBE_TILES_2;
-    public static final TextureKey TILE_1;
-    public static final TextureKey TILE_2;
+    public static final TextureKey TILE_1 = TextureKey.of("tile_1");
+    public static final TextureKey TILE_2 = TextureKey.of("tile_2");
 
     public BlockusModelProvider(FabricDataOutput output) {
         super(output);
@@ -51,7 +51,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public static Identifier getId(Block block) {
         Identifier identifier = Registries.BLOCK.getId(block);
-        return new Identifier("blockus", "block/" + identifier.getPath().replace("_concrete", "_tile"));
+        return new Identifier("blockus", "block/" + identifier.getPath().replace("_concrete", "_tiles"));
     }
 
     private static Model createModel(String parent, String variant, TextureKey... requiredTextures) {
@@ -59,8 +59,6 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     static {
-        TILE_1 = TextureKey.of("tile_1");
-        TILE_2 = TextureKey.of("tile_2");
         CUBE_TILES = createModel("cube_tiles", "", TILE_1, TILE_2);
         CUBE_TILES_2 = createModel("cube_tiles_2", "_2", TILE_1, TILE_2);
     }
