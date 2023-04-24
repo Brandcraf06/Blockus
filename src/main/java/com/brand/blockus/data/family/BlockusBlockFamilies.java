@@ -12,8 +12,6 @@ import java.util.stream.Stream;
 
 public class BlockusBlockFamilies {
     private static final Map<Block, BlockFamily> BASE_BLOCKS_TO_FAMILIES = Maps.newHashMap();
-    private static final String WOODEN_GROUP = "wooden";
-    private static final String WOODEN_UNLOCK_CRITERION_NAME = "has_planks";
     public static final BlockFamily WHITE_OAK;
     public static final BlockFamily CHARRED;
     public static final BlockFamily RAW_BAMBOO;

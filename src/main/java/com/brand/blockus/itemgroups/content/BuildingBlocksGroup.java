@@ -50,6 +50,7 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.ACACIA_SMALL_LOGS);
             entries.add(BlockusBlocks.DARK_OAK_SMALL_LOGS);
             entries.add(BlockusBlocks.MANGROVE_SMALL_LOGS);
+            entries.add(BlockusBlocks.CHERRY_SMALL_LOGS);
             entries.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS);
             entries.add(BlockusBlocks.CRIMSON_SMALL_STEMS);
             entries.add(BlockusBlocks.WARPED_SMALL_STEMS);
@@ -67,6 +68,7 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);

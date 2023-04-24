@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "blockus:block/birch_cross_timber_frame"
-  }
-}

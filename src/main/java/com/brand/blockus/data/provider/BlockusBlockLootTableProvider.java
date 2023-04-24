@@ -143,8 +143,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS);
-        this.addDrop(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
@@ -187,6 +188,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.CAUTION_BLOCK);
         this.addDrop(BlockusBlocks.CHARCOAL_BLOCK);
         this.addDrop(BlockusBlocks.CHARRED_NETHER_BRICK_PILLAR);
+        this.addDrop(BlockusBlocks.CHERRY_SMALL_LOGS);
         this.addDrop(BlockusBlocks.CHISELED_ANDESITE_BRICKS);
         this.addDrop(BlockusBlocks.CHISELED_BLUESTONE);
         this.addDrop(BlockusBlocks.CHISELED_DARK_PRISMARINE);
@@ -561,6 +563,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
         });
         this.addDrop(BlockusBlocks.MANGROVE_SMALL_HEDGE, (blockx) -> {
+            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
+        });
+        this.addDrop(BlockusBlocks.CHERRY_SMALL_HEDGE, (blockx) -> {
             return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
         });
         this.addDrop(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, (blockx) -> {

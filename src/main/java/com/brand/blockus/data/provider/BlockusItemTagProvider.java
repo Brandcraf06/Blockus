@@ -154,6 +154,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.POLISHED_END_STONE_BUTTON.asItem())
             .add(BlockusBlocks.VIRIDITE_BUTTON.asItem());
 
+        this.copy(BlockTags.CHERRY_LOGS, ItemTags.CHERRY_LOGS);
+
         this.copy(BlockTags.CRIMSON_STEMS, ItemTags.CRIMSON_STEMS);
 
         this.copy(BlockTags.DARK_OAK_LOGS, ItemTags.DARK_OAK_LOGS);

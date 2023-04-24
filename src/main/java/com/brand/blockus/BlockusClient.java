@@ -28,7 +28,7 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
         registerBlockColor(BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
         registerBlockColor(BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
-        registerBlockColor(BlockusBlocks.MANGROVE_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
+        registerBlockColor(BlockusBlocks.MANGROVE_SMALL_HEDGE, Blocks.MANGROVE_LEAVES);
         registerBlockColor(BlockusBlocks.WATER_BRICKS.block, Blocks.WATER);
         registerBlockColor(BlockusBlocks.WATER_BRICKS.stairs, Blocks.WATER);
         registerBlockColor(BlockusBlocks.WATER_BRICKS.slab, Blocks.WATER);
@@ -51,6 +51,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.ACACIA_SMALL_HEDGE,
             BlockusBlocks.DARK_OAK_SMALL_HEDGE,
             BlockusBlocks.MANGROVE_SMALL_HEDGE,
+            BlockusBlocks.CHERRY_SMALL_HEDGE,
             BlockusBlocks.WHITE_OAK_SMALL_HEDGE,
             BlockusBlocks.RAW_BAMBOO.door,
             BlockusBlocks.RAW_BAMBOO.trapdoor,
@@ -82,6 +83,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_ACACIA.block,
             BlockusBlocks.POTTED_DARK_OAK.block,
             BlockusBlocks.POTTED_MANGROVE.block,
+            BlockusBlocks.POTTED_CHERRY_BLOSSOM.block,
             BlockusBlocks.POTTED_WHITE_OAK.block,
             BlockusBlocks.POTTED_CACTUS_LARGE.block,
             BlockusBlocks.POTTED_BAMBOO_LARGE.block,

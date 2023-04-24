@@ -31,6 +31,7 @@ public class NaturalGroup {
             entries.add(BlockusBlocks.ACACIA_SMALL_HEDGE);
             entries.add(BlockusBlocks.DARK_OAK_SMALL_HEDGE);
             entries.add(BlockusBlocks.MANGROVE_SMALL_HEDGE);
+            entries.add(BlockusBlocks.CHERRY_SMALL_HEDGE);
             entries.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
             entries.add(BlockusBlocks.CRIMSON_SMALL_HEDGE);
             entries.add(BlockusBlocks.WARPED_SMALL_HEDGE);

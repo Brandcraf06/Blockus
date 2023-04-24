@@ -3,6 +3,7 @@ package com.brand.blockus.data.provider;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.ColoredTilesTypes;
+import com.brand.blockus.content.types.TimberFrameTypesF;
 import com.brand.blockus.tags.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -455,6 +456,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POTTED_ACACIA.block)
             .add(BlockusBlocks.POTTED_DARK_OAK.block)
             .add(BlockusBlocks.POTTED_MANGROVE.block)
+            .add(BlockusBlocks.POTTED_CHERRY_BLOSSOM.block)
             .add(BlockusBlocks.POTTED_WHITE_OAK.block)
             .add(BlockusBlocks.POTTED_HUGE_RED_MUSHROOM.block)
             .add(BlockusBlocks.POTTED_HUGE_BROWN_MUSHROOM.block)
@@ -861,6 +863,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.ACACIA_SMALL_HEDGE)
             .add(BlockusBlocks.DARK_OAK_SMALL_HEDGE)
             .add(BlockusBlocks.MANGROVE_SMALL_HEDGE)
+            .add(BlockusBlocks.CHERRY_SMALL_HEDGE)
             .add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE)
             .add(BlockusBlocks.CRIMSON_SMALL_HEDGE)
             .add(BlockusBlocks.WARPED_SMALL_HEDGE)
@@ -991,46 +994,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.THATCH.stairs)
             .add(BlockusBlocks.THATCH.slab);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.TIMBER_FRAMES)
-            .add(BlockusBlocks.OAK_TIMBER_FRAME.block)
-            .add(BlockusBlocks.OAK_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.OAK_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.BIRCH_TIMBER_FRAME.block)
-            .add(BlockusBlocks.BIRCH_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.BIRCH_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.SPRUCE_TIMBER_FRAME.block)
-            .add(BlockusBlocks.SPRUCE_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.SPRUCE_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.JUNGLE_TIMBER_FRAME.block)
-            .add(BlockusBlocks.JUNGLE_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.JUNGLE_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.ACACIA_TIMBER_FRAME.block)
-            .add(BlockusBlocks.ACACIA_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.ACACIA_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.DARK_OAK_TIMBER_FRAME.block)
-            .add(BlockusBlocks.DARK_OAK_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.DARK_OAK_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.MANGROVE_TIMBER_FRAME.block)
-            .add(BlockusBlocks.MANGROVE_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.MANGROVE_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.WARPED_TIMBER_FRAME.block)
-            .add(BlockusBlocks.WARPED_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.WARPED_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.CRIMSON_TIMBER_FRAME.block)
-            .add(BlockusBlocks.CRIMSON_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.CRIMSON_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.BAMBOO_TIMBER_FRAME.block)
-            .add(BlockusBlocks.BAMBOO_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.BAMBOO_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME.block)
-            .add(BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.CHARRED_TIMBER_FRAME.block)
-            .add(BlockusBlocks.CHARRED_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.CHARRED_TIMBER_FRAME.cross)
-            .add(BlockusBlocks.WHITE_OAK_TIMBER_FRAME.block)
-            .add(BlockusBlocks.WHITE_OAK_TIMBER_FRAME.diagonal)
-            .add(BlockusBlocks.WHITE_OAK_TIMBER_FRAME.cross);
+        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
+            this.getOrCreateTagBuilder(BlockusBlockTags.TIMBER_FRAMES)
+                .add(timberFrameType.block)
+                .add(timberFrameType.diagonal)
+                .add(timberFrameType.cross);
+        }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
             .add(BlockusBlocks.POLISHED_TUFF.block)
@@ -1082,8 +1051,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS)
-            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS)
+            .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
 
         this.getOrCreateTagBuilder(new Identifier("c", "wooden_barrels"))
@@ -1244,6 +1214,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_SCULK_BUTTON)
             .add(BlockusBlocks.VIRIDITE_BUTTON);
 
+        this.getOrCreateTagBuilder(BlockTags.CHERRY_LOGS)
+            .add(BlockusBlocks.CHERRY_SMALL_LOGS);
 
         this.getOrCreateTagBuilder(BlockTags.CRIMSON_STEMS)
             .add(BlockusBlocks.CRIMSON_SMALL_STEMS);

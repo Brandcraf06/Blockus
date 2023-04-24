@@ -833,6 +833,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSmallLogsRecipe(exporter, BlockusBlocks.ACACIA_SMALL_LOGS, Blocks.ACACIA_LOG);
         offerSmallLogsRecipe(exporter, BlockusBlocks.DARK_OAK_SMALL_LOGS, Blocks.DARK_OAK_LOG);
         offerSmallLogsRecipe(exporter, BlockusBlocks.MANGROVE_SMALL_LOGS, Blocks.MANGROVE_LOG);
+        offerSmallLogsRecipe(exporter, BlockusBlocks.CHERRY_SMALL_LOGS, Blocks.CHERRY_LOG);
         offerSmallLogsRecipe(exporter, BlockusBlocks.WARPED_SMALL_STEMS, Blocks.WARPED_STEM);
         offerSmallLogsRecipe(exporter, BlockusBlocks.CRIMSON_SMALL_STEMS, Blocks.CRIMSON_STEM);
         offerSmallLogsRecipe(exporter, BlockusBlocks.WHITE_OAK_SMALL_LOGS, BlockusBlocks.WHITE_OAK_LOG);
@@ -844,6 +845,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, Blocks.ACACIA_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, Blocks.DARK_OAK_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS, Blocks.MANGROVE_PLANKS);
+        offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_CHERRY_PLANKS, Blocks.CHERRY_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, BlockusBlocks.WHITE_OAK.planks);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, Blocks.BAMBOO_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS, BlockusBlocks.RAW_BAMBOO.planks);
@@ -860,6 +862,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSmallHedgesRecipe(exporter, BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
         offerSmallHedgesRecipe(exporter, BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
         offerSmallHedgesRecipe(exporter, BlockusBlocks.MANGROVE_SMALL_HEDGE, Blocks.MANGROVE_LEAVES);
+        offerSmallHedgesRecipe(exporter, BlockusBlocks.CHERRY_SMALL_HEDGE, Blocks.CHERRY_LEAVES);
         offerSmallHedgesRecipe(exporter, BlockusBlocks.WARPED_SMALL_HEDGE, Blocks.WARPED_WART_BLOCK);
         offerSmallHedgesRecipe(exporter, BlockusBlocks.CRIMSON_SMALL_HEDGE, Blocks.NETHER_WART_BLOCK);
         offerSmallHedgesRecipe(exporter, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "blockus:block/charred_cross_timber_frame"
-  }
-}

@@ -1,6 +1,8 @@
 package com.brand.blockus.data.provider;
 
 import com.brand.blockus.content.types.ColoredTilesTypes;
+import com.brand.blockus.content.types.TimberFrameTypesF;
+import com.brand.blockus.content.types.TimberFrameTypesFP;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
@@ -25,6 +27,18 @@ public class BlockusModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator modelGenerator) {
 
+        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
+            modelGenerator.registerSimpleCubeAll(timberFrameType.block);
+            modelGenerator.registerSimpleCubeAll(timberFrameType.cross);
+            this.registerDiagonalTimberFrame(modelGenerator, timberFrameType.diagonal);
+        }
+
+        for (TimberFrameTypesFP timberFrameType : TimberFrameTypesFP.values()) {
+            modelGenerator.registerSimpleCubeAll(timberFrameType.block);
+            modelGenerator.registerSimpleCubeAll(timberFrameType.cross);
+            this.registerDiagonalTimberFrame(modelGenerator, timberFrameType.diagonal);
+        }
+
         for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
             registerColoredTiles(modelGenerator, coloredTilesTypes.block, coloredTilesTypes.tile1, coloredTilesTypes.tile2);
         }
@@ -34,17 +48,33 @@ public class BlockusModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator modelGenerator) {
     }
 
+    private void registerDiagonalTimberFrame(BlockStateModelGenerator modelGenerator, Block block) {
+        Identifier identifier = ModelIds.getBlockModelId(block);
+        Identifier identifier2 = TextureMap.getSubId(block, "_right");
+        Identifier identifier3 = TextureMap.getSubId(block, "_left");
+        TextureMap textureMap = (new TextureMap()).put(TextureKey.PARTICLE, identifier2).put(TextureKey.NORTH, identifier2).put(TextureKey.SOUTH, identifier2).put(TextureKey.EAST, identifier2).put(TextureKey.WEST, identifier3).put(TextureKey.DOWN, identifier3).put(TextureKey.UP, identifier3);
+        Models.CUBE.upload(block, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_FACING)
+            .register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.MODEL, identifier))
+            .register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+            .register(Direction.WEST, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+            .register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R90))));
+    }
+
+
     public static void registerColoredTiles(BlockStateModelGenerator modelGenerator, Block block, Block tile1, Block tile2) {
         TextureMap textures = getTextures(tile1, tile2);
-        TextureMap textures2 = getTextures(tile1, tile2);
         CUBE_TILES.upload(block, textures, modelGenerator.modelCollector);
-        CUBE_TILES_2.upload(block, textures2, modelGenerator.modelCollector);
-        modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_AXIS).register(Direction.Axis.X, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block))).register(Direction.Axis.Z, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_2")))));
+        CUBE_TILES_2.upload(block, textures, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_AXIS)
+            .register(Direction.Axis.X, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
+            .register(Direction.Axis.Z, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_2")))));
     }
 
     private static TextureMap getTextures(Block tile1, Block tile2) {
         return (new TextureMap()).put(TILE_1, getId(tile1)).put(TILE_2, getId(tile2));
     }
+
 
     public static Identifier getId(Block block) {
         Identifier identifier = Registries.BLOCK.getId(block);

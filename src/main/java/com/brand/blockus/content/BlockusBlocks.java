@@ -372,6 +372,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block HERRINGBONE_JUNGLE_PLANKS = register("herringbone_jungle_planks", createCopy(Blocks.JUNGLE_PLANKS));
     public static final Block HERRINGBONE_ACACIA_PLANKS = register("herringbone_acacia_planks", createCopy(Blocks.ACACIA_PLANKS));
     public static final Block HERRINGBONE_DARK_OAK_PLANKS = register("herringbone_dark_oak_planks", createCopy(Blocks.DARK_OAK_PLANKS));
+    public static final Block HERRINGBONE_CHERRY_PLANKS = register("herringbone_cherry_planks", createCopy(Blocks.MANGROVE_PLANKS));
     public static final Block HERRINGBONE_MANGROVE_PLANKS = register("herringbone_mangrove_planks", createCopy(Blocks.MANGROVE_PLANKS));
     public static final Block HERRINGBONE_BAMBOO_PLANKS = register("herringbone_bamboo_planks", createCopy(Blocks.BAMBOO_PLANKS));
     public static final Block HERRINGBONE_RAW_BAMBOO_PLANKS = register("herringbone_raw_bamboo_planks", createCopy(RAW_BAMBOO.planks));
@@ -388,6 +389,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ACACIA_SMALL_LOGS = register("acacia_small_logs", createPillarCopy(Blocks.ACACIA_LOG));
     public static final Block DARK_OAK_SMALL_LOGS = register("dark_oak_small_logs", createPillarCopy(Blocks.DARK_OAK_LOG));
     public static final Block MANGROVE_SMALL_LOGS = register("mangrove_small_logs", createPillarCopy(Blocks.MANGROVE_LOG));
+    public static final Block CHERRY_SMALL_LOGS = register("cherry_small_logs", createPillarCopy(Blocks.CHERRY_LOG));
     public static final Block WARPED_SMALL_STEMS = register("warped_small_stems", createPillarCopy(Blocks.WARPED_STEM));
     public static final Block CRIMSON_SMALL_STEMS = register("crimson_small_stems", createPillarCopy(Blocks.CRIMSON_STEM));
     public static final Block WHITE_OAK_SMALL_LOGS = register("white_oak_small_logs", createPillarCopy(WHITE_OAK_LOG));
@@ -401,6 +403,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final TimberFrameTypesF DARK_OAK_TIMBER_FRAME = new TimberFrameTypesF("dark_oak", Blocks.DARK_OAK_PLANKS);
     public static final TimberFrameTypesF MANGROVE_TIMBER_FRAME = new TimberFrameTypesF("mangrove", Blocks.MANGROVE_PLANKS);
     public static final TimberFrameTypesF BAMBOO_TIMBER_FRAME = new TimberFrameTypesF("bamboo", Blocks.BAMBOO_PLANKS);
+    public static final TimberFrameTypesF CHERRY_TIMBER_FRAME = new TimberFrameTypesF("cherry", Blocks.CHERRY_PLANKS);
     public static final TimberFrameTypesF RAW_BAMBOO_TIMBER_FRAME = new TimberFrameTypesF("raw_bamboo", BlockusBlocks.RAW_BAMBOO.planks);
     public static final TimberFrameTypesF WHITE_OAK_TIMBER_FRAME = new TimberFrameTypesF("white_oak", BlockusBlocks.WHITE_OAK.planks);
     public static final TimberFrameTypesFP WARPED_TIMBER_FRAME = new TimberFrameTypesFP("warped", Blocks.WARPED_PLANKS);
@@ -415,6 +418,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ACACIA_SMALL_HEDGE = registerSmallHedge("acacia_small_hedge", Blocks.ACACIA_LEAVES);
     public static final Block DARK_OAK_SMALL_HEDGE = registerSmallHedge("dark_oak_small_hedge", Blocks.DARK_OAK_LEAVES);
     public static final Block MANGROVE_SMALL_HEDGE = registerSmallHedge("mangrove_small_hedge", Blocks.MANGROVE_LEAVES);
+    public static final Block CHERRY_SMALL_HEDGE = registerSmallHedge("cherry_small_hedge", Blocks.CHERRY_LEAVES);
     public static final Block WHITE_OAK_SMALL_HEDGE = registerSmallHedge("white_oak_small_hedge", WHITE_OAK_LEAVES);
     public static final Block AZALEA_SMALL_HEDGE = registerSmallHedge("azalea_small_hedge", Blocks.AZALEA_LEAVES);
     public static final Block FLOWERING_AZALEA_SMALL_HEDGE = registerSmallHedge("azalea_small_hedge_flowers", Blocks.FLOWERING_AZALEA_LEAVES);
@@ -435,6 +439,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final PottedLargeTypes POTTED_ACACIA = new PottedLargeTypes("potted_acacia", Blocks.ACACIA_SAPLING);
     public static final PottedLargeTypes POTTED_DARK_OAK = new PottedLargeTypes("potted_dark_oak", Blocks.DARK_OAK_SAPLING);
     public static final PottedLargeTypes POTTED_MANGROVE = new PottedLargeTypes("potted_mangrove", Blocks.MANGROVE_PROPAGULE);
+    public static final PottedLargeTypes POTTED_CHERRY_BLOSSOM = new PottedLargeTypes("potted_cherry_blossom", Blocks.CHERRY_SAPLING);
     public static final PottedLargeTypes POTTED_WHITE_OAK = new PottedLargeTypes("potted_white_oak", WHITE_OAK_SAPLING);
     public static final PottedLargeTypes POTTED_HUGE_RED_MUSHROOM = new PottedLargeTypes("potted_huge_red_mushroom", Blocks.RED_MUSHROOM);
     public static final PottedLargeTypes POTTED_HUGE_BROWN_MUSHROOM = new PottedLargeTypes("potted_huge_brown_mushroom", Blocks.BROWN_MUSHROOM);
