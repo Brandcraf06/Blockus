@@ -2,6 +2,7 @@ package com.brand.blockus.itemgroups;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.types.ColoredTilesTypes;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -36,7 +37,7 @@ public class BlockusItemGroups {
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_COLORED_TILES, FabricItemGroup.builder()
             .displayName(Text.translatable("itemGroup.blockus_colored_tiles").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(BlockusBlocks.RED_BLUE_COLORED_TILES.block))
+            .icon(() -> new ItemStack(ColoredTilesTypes.RED_BLUE_COLORED_TILES.block))
             .build()
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_NATURAL, FabricItemGroup.builder()
