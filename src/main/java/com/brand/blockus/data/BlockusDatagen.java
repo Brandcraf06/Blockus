@@ -21,13 +21,6 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(BlockusBlockLootTableProvider::new);
         pack.addProvider(BlockusWorldgenProvider::new);
         pack.addProvider(BlockusModelProvider::new);
-
-//        pack.addProvider(BlockusColumnsBlockLootTableProvider::new);
-//        pack.addProvider(BlockusColumnsModelProvider::new);
-//        pack.addProvider(BlockusColumnsRecipeProvider::new);
-
-//        BlockusColumnsBlockTagProvider columnsBlockTags = pack.addProvider(BlockusColumnsBlockTagProvider::new);
-//        pack.addProvider((output, registries) -> new BlockusColumnsItemTagProvider(output, registries, columnsBlockTags));
     }
 
     public static ConditionJsonProvider getLoadCondition(String... modIds) {

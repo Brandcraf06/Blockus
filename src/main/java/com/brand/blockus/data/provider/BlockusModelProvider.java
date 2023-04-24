@@ -10,7 +10,6 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 public class BlockusModelProvider extends FabricModelProvider {
@@ -23,17 +22,15 @@ public class BlockusModelProvider extends FabricModelProvider {
         super(output);
     }
 
+    @Override
     public void generateBlockStateModels(BlockStateModelGenerator modelGenerator) {
-        ArrayList<ColoredTilesTypes> var2 = ColoredTilesTypes.values();
-        int var3 = var2.size();
 
-        for(int var4 = 0; var4 < var3; ++var4) {
-            ColoredTilesTypes coloredTilesTypes = var2.get(var4);
+        for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
             registerColoredTiles(modelGenerator, coloredTilesTypes.block, coloredTilesTypes.tile1, coloredTilesTypes.tile2);
         }
-
     }
 
+    @Override
     public void generateItemModels(ItemModelGenerator modelGenerator) {
     }
 

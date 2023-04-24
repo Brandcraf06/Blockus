@@ -34,9 +34,6 @@ dependencies {
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
   modCompileOnly "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_version}"
 
-	// Columns
-  modCompileOnly "curse.maven:columns-385230:${project.columns_version}"
-
 	// Promenade
   modCompileOnly "curse.maven:promenade-399648:${project.promenade_version}"
   modCompileOnly "curse.maven:dawnapi-399309:${project.dawn_version}"
