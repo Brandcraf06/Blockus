@@ -4,7 +4,6 @@ import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
 import java.util.ArrayList;
@@ -29,8 +28,8 @@ public class BSSTypes {
         this(type, FabricBlockSettings.copyOf(base));
     }
 
-    public BSSTypes(String type, Block base, MapColor mapcolor) {
-        this(type, FabricBlockSettings.copyOf(base).mapColor(mapcolor));
+    public BSSTypes(String type, Block base, MapColor color) {
+        this(type, FabricBlockSettings.copyOf(base).mapColor(color));
 
     }
 
@@ -38,8 +37,8 @@ public class BSSTypes {
         this(type, FabricBlockSettings.copyOf(base).sounds(sounds));
     }
 
-    public BSSTypes(String type, float hardness, float resistance, MapColor mapcolor) {
-        this(type, FabricBlockSettings.of(Material.BLOCKS_LIGHT, mapcolor).strength(hardness, resistance).sounds(BlockSoundGroup.STONE));
+    public BSSTypes(String type, float hardness, float resistance, MapColor color) {
+        this(type, FabricBlockSettings.of().mapColor(color).strength(hardness, resistance).sounds(BlockSoundGroup.STONE));
 
     }
 

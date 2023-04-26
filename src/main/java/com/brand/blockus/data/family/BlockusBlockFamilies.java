@@ -11,13 +11,13 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class BlockusBlockFamilies {
-    private static final Map<Block, BlockFamily> BASE_BLOCKS_TO_FAMILIES = Maps.newHashMap();
     public static final BlockFamily WHITE_OAK;
     public static final BlockFamily CHARRED;
     public static final BlockFamily RAW_BAMBOO;
     public static final BlockFamily POLISHED_AMETHYST;
     public static final BlockFamily AMETHYST_BRICK;
     public static final BlockFamily NETHERITE_BLOCK;
+    private static final Map<Block, BlockFamily> BASE_BLOCKS_TO_FAMILIES = Maps.newHashMap();
 
     static {
         // Woods

@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
@@ -31,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 public class BarrelBlockBase extends BarrelBlock {
 
     public BarrelBlockBase(String id, MapColor color) {
-        super(FabricBlockSettings.of(Material.BLOCKS_LIGHT, color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable());
+        super(FabricBlockSettings.of().mapColor(color).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable());
         Registry.register(Registries.BLOCK, new Identifier(Blockus.MOD_ID, id), this);
         Registry.register(Registries.ITEM, new Identifier(Blockus.MOD_ID, id), new BlockItem(this, new Item.Settings().maxCount(64)));
     }

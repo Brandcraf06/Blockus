@@ -36,24 +36,24 @@ public class WoodTypesF {
     public final Block wall_hanging_sign;
     public final Item hanging_sign;
 
-    public WoodTypesF(String type, Block base, MapColor mapcolor, BlockSoundGroup sound) {
+    public WoodTypesF(String type, Block base, MapColor color, BlockSoundGroup sound) {
 
         this.base = base;
 
-        Block.Settings blockSettings = FabricBlockSettings.of(Material.BLOCKS_LIGHT, mapcolor).strength(2.0F, 3.0F).sounds(sound).burnable();
+        Block.Settings blockSettings = FabricBlockSettings.of().mapColor(color).strength(2.0F, 3.0F).sounds(sound).burnable();
 
         this.planks = BlocksRegistration.register(type + "_planks", new Block(blockSettings));
         this.stairs = BlocksRegistration.registerStairs(this.planks);
         this.slab = BlocksRegistration.registerSlab(this.planks);
         this.fence = BlocksRegistration.register(type + "_fence", new FenceBlock(FabricBlockSettings.copyOf(base)));
         this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), WoodType.OAK));
-        this.door = BlocksRegistration.register(type + "_door", BlocksRegistration.createWoodenDoor(0.1f, 0.8f, BlockSoundGroup.WOOD, mapcolor, BlockSetType.OAK));
-        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createWoodenTrapdoor(0.1f, 0.8f, BlockSoundGroup.WOOD, mapcolor, BlockSetType.OAK));
-        this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, this.planks);
+        this.door = BlocksRegistration.register(type + "_door", BlocksRegistration.createWoodenDoor(0.1f, 0.8f, BlockSoundGroup.WOOD, color, BlockSetType.OAK));
+        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", BlocksRegistration.createWoodenTrapdoor(0.1f, 0.8f, BlockSoundGroup.WOOD, color, BlockSetType.OAK));
+        this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(this.planks);
         this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), BlockSetType.OAK, 30, true));
 
         // sign
-        Block.Settings signSettings = FabricBlockSettings.of(Material.BLOCKS_LIGHT).noCollision().strength(1.0F).sounds(sound).burnable();
+        Block.Settings signSettings = FabricBlockSettings.of().mapColor(color).noCollision().strength(1.0F).sounds(sound).burnable();
 
         Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);
         this.standing_sign = BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(signPath, signSettings));
