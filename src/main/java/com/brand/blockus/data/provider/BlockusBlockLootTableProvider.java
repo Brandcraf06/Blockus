@@ -1,17 +1,31 @@
 package com.brand.blockus.data.provider;
 
+import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.CandleBlock;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.condition.TableBonusLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.ApplyBonusLootFunction;
+import net.minecraft.loot.function.LimitCountLootFunction;
+import net.minecraft.loot.function.LootFunction;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.operator.BoundedIntUnaryOperator;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+
+import java.util.List;
 
 public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider {
     public BlockusBlockLootTableProvider(FabricDataOutput output) {
@@ -483,6 +497,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.HERRINGBONE_TUFF_BRICKS);
         this.addDrop(BlockusBlocks.RAINBOW_ROSE);
         this.addDrop(BlockusBlocks.TINTED_BEVELED_GLASS);
+        this.addDrop(BlockusBlocks.CHOCOLATE_TABLET);
 
         this.addDrop(BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, this::slabDrops);
         this.addDrop(BlockusBlocks.NETHERITE_SLAB, this::slabDrops);
@@ -493,6 +508,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR, this::doorDrops);
         this.addDrop(BlockusBlocks.PAPER_DOOR, this::doorDrops);
         this.addDrop(BlockusBlocks.STONE_DOOR, this::doorDrops);
+
 
         this.addPottedPlantDrops(BlockusBlocks.POTTED_WHITE_OAK_SAPLING);
         this.addPottedPlantDrops(BlockusBlocks.POTTED_RAINBOW_ROSE);
@@ -536,41 +552,64 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDropWithSilkTouch(BlockusBlocks.YELLOW_BEVELED_GLASS);
         this.addDropWithSilkTouch(BlockusBlocks.YELLOW_BEVELED_GLASS_PANE);
 
-        this.addDrop(BlockusBlocks.CHOCOLATE_TABLET);
+        this.addDrop(BlockusBlocks.ACACIA_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.AZALEA_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.BIRCH_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.DARK_OAK_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.JUNGLE_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.OAK_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.SPRUCE_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.MANGROVE_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.CHERRY_SMALL_HEDGE, this::stickDrops);
+        this.addDrop(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, this::stickDrops);
 
-        this.addDrop(BlockusBlocks.ACACIA_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.AZALEA_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.BIRCH_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.DARK_OAK_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.JUNGLE_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.OAK_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.SPRUCE_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.MANGROVE_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.CHERRY_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
-        this.addDrop(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, (blockx) -> {
-            return dropsWithSilkTouchOrShears(blockx, addSurvivesExplosionCondition(blockx, ItemEntry.builder(Items.STICK)));
-        });
+        this.addDrop(BlockusBlocks.LEGACY_LEAVES, (block) -> this.leavesDrops(block, BlockusBlocks.LEGACY_SAPLING, SAPLING_DROP_CHANCE));
+        this.addDrop(BlockusBlocks.LEGACY_GLOWSTONE, this::glowstoneDrops);
+        this.addDrop(BlockusBlocks.LEGACY_GRAVEL, (block) -> dropsWithSilkTouch(block, this.addSurvivesExplosionCondition(block, ItemEntry.builder(Items.FLINT).conditionally(TableBonusLootCondition.builder(Enchantments.FORTUNE, 0.1F, 0.14285715F, 0.25F, 1.0F)).alternatively(ItemEntry.builder(block)))));
+        this.addDrop(BlockusBlocks.LEGACY_STONECUTTER, (block) -> LootTable.builder().pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(3.0F)).with(ItemEntry.builder(Items.DIAMOND)))).pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(6.0F)).with(ItemEntry.builder(Items.IRON_INGOT)))));
+
+        this.addDrop(BlockusBlocks.WHITE_OAK_LEAVES, (block) -> this.oakLeavesDrops(block, BlockusBlocks.WHITE_OAK_LEAVES, SAPLING_DROP_CHANCE));
+        this.addDrop(BlockusBlocks.BLAZE_LANTERN, (block) -> this.drops(block, Items.BLAZE_POWDER, ConstantLootNumberProvider.create(9.0F)));
+        this.addDrop(BlockusBlocks.BURNT_PAPER_BLOCK, (block) -> this.drops(block, Items.GUNPOWDER, ConstantLootNumberProvider.create(2.0F)));
+        this.addDrop(BlockusBlocks.NETHER_STAR_BLOCK, (block) -> dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(Items.NETHER_STAR).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(8.0F, 9.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE, 2)).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(8, 9))))));
+        this.addDrop(BlockusBlocks.RAINBOW_GLOWSTONE, (block) -> glowstoneDrops(block).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(WITHOUT_SILK_TOUCH).with((this.applyExplosionDecay(block, ItemEntry.builder(BlockusItems.RAINBOW_PETAL).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE))).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(1, 4)))))));
+
+        this.addDrop(BlockusBlocks.COOKIE_BLOCK, (block) -> LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(this.applyExplosionDecay(block,
+            ItemEntry.builder(Items.COOKIE).apply(setCookieCount(block, 9.0F, 0))
+                .apply(setCookieCount(block, 8.0F, 1))
+                .apply(setCookieCount(block, 7.0F, 2))
+                .apply(setCookieCount(block, 6.0F, 3))
+                .apply(setCookieCount(block, 5.0F, 4))
+                .apply(setCookieCount(block, 4.0F, 5))
+                .apply(setCookieCount(block, 3.0F, 6))
+                .apply(setCookieCount(block, 2.0F, 7))
+                .apply(setCookieCount(block, 1.0F, 8))))));
+
+        // Barrels (outdated)
+        this.addDrop(BlockusBlocks.OAK_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.BIRCH_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.JUNGLE_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.ACACIA_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.DARK_OAK_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.CRIMSON_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.WARPED_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.WHITE_OAK_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.BAMBOO_BARREL, this::nameableContainerDrops);
+        this.addDrop(BlockusBlocks.CHARRED_BARREL, this::nameableContainerDrops);
+    }
+
+
+    private LootFunction.Builder setCookieCount(Block block, float count, int bites) {
+        return SetCountLootFunction.builder(ConstantLootNumberProvider.create(count)).conditionally(BlockStatePropertyLootCondition.builder(block).properties(net.minecraft.predicate.StatePredicate.Builder.create().exactMatch(CookieBlock.BITES, bites)));
+    }
+
+    private LootTable.Builder glowstoneDrops(Block block) {
+        return dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(Items.GLOWSTONE_DUST).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 4.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE)).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(1, 4)))));
+    }
+
+    public LootTable.Builder stickDrops(Block block) {
+        return dropsWithSilkTouchOrShears(block, addSurvivesExplosionCondition(block, ItemEntry.builder(Items.STICK)));
     }
 
     public LootTable.Builder pottedLargePlantDrops(ItemConvertible plant) {
@@ -578,8 +617,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
     }
 
     public void addPottedLargePlantDrop(Block block) {
-        this.addDrop(block, (flowerPot) -> {
-            return this.pottedLargePlantDrops(((LargeFlowerPotBlock) flowerPot).getContent());
-        });
+        this.addDrop(block, (flowerPot) -> this.pottedLargePlantDrops(((LargeFlowerPotBlock) flowerPot).getContent()));
     }
 }
