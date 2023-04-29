@@ -1,4 +1,4 @@
-package com.brand.blockus.data.provider;
+package com.brand.blockus.data.generators;
 
 import com.brand.blockus.content.types.ColoredTilesTypes;
 import com.brand.blockus.content.types.TimberFrameTypesF;
@@ -14,13 +14,13 @@ import net.minecraft.util.math.Direction;
 
 import java.util.Optional;
 
-public class BlockusModelProvider extends FabricModelProvider {
+public class BlockusModelGenerator extends FabricModelProvider {
     public static final Model CUBE_TILES;
     public static final Model CUBE_TILES_2;
     public static final TextureKey TILE_1 = TextureKey.of("tile_1");
     public static final TextureKey TILE_2 = TextureKey.of("tile_2");
 
-    public BlockusModelProvider(FabricDataOutput output) {
+    public BlockusModelGenerator(FabricDataOutput output) {
         super(output);
     }
 

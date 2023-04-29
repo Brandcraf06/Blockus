@@ -25,7 +25,6 @@ public class TimberFrameTypesF {
         this.cross = BlocksRegistration.register(type + "_cross_timber_frame", new Block(FabricBlockSettings.copyOf(base)));
 
         LIST.add(this);
-
     }
 
     public static ArrayList<TimberFrameTypesF> values() {

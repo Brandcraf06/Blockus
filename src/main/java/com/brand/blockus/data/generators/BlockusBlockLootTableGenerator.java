@@ -1,4 +1,4 @@
-package com.brand.blockus.data.provider;
+package com.brand.blockus.data.generators;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
@@ -8,7 +8,6 @@ import com.brand.blockus.content.types.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
-import net.minecraft.block.CandleBlock;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -25,64 +24,36 @@ import net.minecraft.loot.operator.BoundedIntUnaryOperator;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
-import java.util.List;
-
-public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider {
-    public BlockusBlockLootTableProvider(FabricDataOutput output) {
+public class BlockusBlockLootTableGenerator extends FabricBlockLootTableProvider {
+    public BlockusBlockLootTableGenerator(FabricDataOutput output) {
         super(output);
     }
 
     @Override
     public void generate() {
 
+        for (BSSTypes bssType : BSSTypes.values()) {
+            this.addBlockStairsandSlabDrops(bssType.block, bssType.stairs, bssType.slab);
+        }
+
         for (BSSWTypes bsswType : BSSWTypes.values()) {
-            this.addDrop(bsswType.block);
-            this.addDrop(bsswType.stairs);
-            this.addDrop(bsswType.slab, this::slabDrops);
+            this.addBlockStairsandSlabDrops(bsswType.block, bsswType.stairs, bsswType.slab);
             this.addDrop(bsswType.wall);
         }
 
-        for (BSSTypes bssType : BSSTypes.values()) {
-            this.addDrop(bssType.block);
-            this.addDrop(bssType.stairs);
-            this.addDrop(bssType.slab, this::slabDrops);
-        }
-
         for (ConcreteTypes concreteType : ConcreteTypes.values()) {
-            this.addDrop(concreteType.block);
-            this.addDrop(concreteType.stairs);
-            this.addDrop(concreteType.slab, this::slabDrops);
+            this.addBlockStairsandSlabDrops(concreteType.block, concreteType.stairs, concreteType.slab);
             this.addDrop(concreteType.wall);
             this.addDrop(concreteType.chiseled);
             this.addDrop(concreteType.pillar);
         }
 
         for (WoodTypesF woodType : WoodTypesF.values()) {
-            this.addDrop(woodType.planks);
-            this.addDrop(woodType.stairs);
-            this.addDrop(woodType.slab, this::slabDrops);
-            this.addDrop(woodType.fence);
-            this.addDrop(woodType.fence_gate);
-            this.addDrop(woodType.door, this::doorDrops);
-            this.addDrop(woodType.trapdoor);
-            this.addDrop(woodType.pressure_plate);
-            this.addDrop(woodType.button);
-            this.addDrop(woodType.standing_sign);
-            this.addDrop(woodType.ceiling_hanging_sign);
+            this.addWoodSetDrop(woodType.planks, woodType.stairs, woodType.slab, woodType.fence, woodType.fence_gate, woodType.door, woodType.trapdoor, woodType.pressure_plate, woodType.button, woodType.standing_sign, woodType.ceiling_hanging_sign);
         }
 
         for (WoodTypesFP woodType : WoodTypesFP.values()) {
-            this.addDrop(woodType.planks);
-            this.addDrop(woodType.stairs);
-            this.addDrop(woodType.slab, this::slabDrops);
-            this.addDrop(woodType.fence);
-            this.addDrop(woodType.fence_gate);
-            this.addDrop(woodType.door, this::doorDrops);
-            this.addDrop(woodType.trapdoor);
-            this.addDrop(woodType.pressure_plate);
-            this.addDrop(woodType.button);
-            this.addDrop(woodType.standing_sign);
-            this.addDrop(woodType.ceiling_hanging_sign);
+            this.addWoodSetDrop(woodType.planks, woodType.stairs, woodType.slab, woodType.fence, woodType.fence_gate, woodType.door, woodType.trapdoor, woodType.pressure_plate, woodType.button, woodType.standing_sign, woodType.ceiling_hanging_sign);
         }
 
         for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
@@ -98,9 +69,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
         for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
-            this.addDrop(asphaltTypes.block);
-            this.addDrop(asphaltTypes.stairs);
-            this.addDrop(asphaltTypes.slab, this::slabDrops);
+            this.addBlockStairsandSlabDrops(asphaltTypes.block, asphaltTypes.stairs, asphaltTypes.slab);
         }
 
         for (PottedLargeTypes pottedLargeType : PottedLargeTypes.values()) {
@@ -108,11 +77,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
         for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
-            this.addDrop(patternWoolTypes.block);
-            this.addDrop(patternWoolTypes.stairs);
-            this.addDrop(patternWoolTypes.slab, this::slabDrops);
+            this.addBlockStairsandSlabDrops(patternWoolTypes.block, patternWoolTypes.stairs, patternWoolTypes.slab);
             this.addDrop(patternWoolTypes.carpet);
-
         }
 
         for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
@@ -133,13 +99,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.VIRIDITE_LINES);
 
         // Amethyst
-        this.addDrop(BlockusBlocks.POLISHED_AMETHYST);
-        this.addDrop(BlockusBlocks.POLISHED_AMETHYST_STAIRS);
-        this.addDrop(BlockusBlocks.POLISHED_AMETHYST_SLAB, this::slabDrops);
-        this.addDrop(BlockusBlocks.AMETHYST_BRICKS);
-        this.addDrop(BlockusBlocks.AMETHYST_BRICK_STAIRS);
-        this.addDrop(BlockusBlocks.AMETHYST_BRICK_SLAB, this::slabDrops);
-        this.addDrop(BlockusBlocks.AMETHYST_BRICK_WALL);
         this.addDrop(BlockusBlocks.CHISELED_AMETHYST);
         this.addDrop(BlockusBlocks.AMETHYST_PILLAR);
 
@@ -599,12 +558,29 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.CHARRED_BARREL, this::nameableContainerDrops);
     }
 
+    public void addBlockStairsandSlabDrops(Block block, Block stairs, Block slab) {
+        this.addDrop(block);
+        this.addDrop(stairs);
+        this.addDrop(slab, this::slabDrops);
+    }
 
-    private LootFunction.Builder setCookieCount(Block block, float count, int bites) {
+    public void addWoodSetDrop(Block planks, Block stairs, Block slab, Block fence, Block fence_gate, Block door, Block trapdoor, Block pressure_plate, Block button, Block standing_sign, Block ceiling_hanging_sign) {
+        this.addBlockStairsandSlabDrops(planks, stairs, slab);
+        this.addDrop(fence);
+        this.addDrop(fence_gate);
+        this.addDrop(door, this::doorDrops);
+        this.addDrop(trapdoor);
+        this.addDrop(pressure_plate);
+        this.addDrop(button);
+        this.addDrop(standing_sign);
+        this.addDrop(ceiling_hanging_sign);
+    }
+
+    public LootFunction.Builder setCookieCount(Block block, float count, int bites) {
         return SetCountLootFunction.builder(ConstantLootNumberProvider.create(count)).conditionally(BlockStatePropertyLootCondition.builder(block).properties(net.minecraft.predicate.StatePredicate.Builder.create().exactMatch(CookieBlock.BITES, bites)));
     }
 
-    private LootTable.Builder glowstoneDrops(Block block) {
+    public LootTable.Builder glowstoneDrops(Block block) {
         return dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(Items.GLOWSTONE_DUST).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 4.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE)).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(1, 4)))));
     }
 

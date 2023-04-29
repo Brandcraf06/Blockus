@@ -33,6 +33,7 @@ public class ConcreteTypes {
         LIST.add(this);
     }
 
+
     public static ArrayList<ConcreteTypes> values() {
         return LIST;
     }

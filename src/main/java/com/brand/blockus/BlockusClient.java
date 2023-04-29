@@ -1,7 +1,7 @@
 package com.brand.blockus;
 
-import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;

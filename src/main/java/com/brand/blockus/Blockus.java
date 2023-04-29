@@ -1,12 +1,12 @@
 package com.brand.blockus;
 
-import com.brand.blockus.compatibility.content.BlockusPromenadeBlocks;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusEntities;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.ColoredTilesTypes;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.itemgroups.content.*;
+import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import com.brand.blockus.utils.AsphaltStatusEffect;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.google.common.reflect.Reflection;

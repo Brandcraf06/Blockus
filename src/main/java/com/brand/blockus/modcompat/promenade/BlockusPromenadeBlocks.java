@@ -1,4 +1,4 @@
-package com.brand.blockus.compatibility.content;
+package com.brand.blockus.modcompat.promenade;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlocksRegistration;
