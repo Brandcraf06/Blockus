@@ -61,19 +61,6 @@ public class BlockusBlockTagGenerator extends FabricTagProvider.BlockTagProvider
                 .add(asphaltType.slab);
         }
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.BARRELS)
-            .add(BlockusBlocks.OAK_BARREL)
-            .add(Blocks.BARREL)
-            .add(BlockusBlocks.BIRCH_BARREL)
-            .add(BlockusBlocks.JUNGLE_BARREL)
-            .add(BlockusBlocks.ACACIA_BARREL)
-            .add(BlockusBlocks.DARK_OAK_BARREL)
-            .add(BlockusBlocks.CRIMSON_BARREL)
-            .add(BlockusBlocks.WARPED_BARREL)
-            .add(BlockusBlocks.BAMBOO_BARREL)
-            .add(BlockusBlocks.CHARRED_BARREL)
-            .add(BlockusBlocks.WHITE_OAK_BARREL);
-
         this.getOrCreateTagBuilder(BlockusBlockTags.BARRIERS)
             .add(BlockusBlocks.CAUTION_BARRIER)
             .add(BlockusBlocks.ROAD_BARRIER);
@@ -938,16 +925,12 @@ public class BlockusBlockTagGenerator extends FabricTagProvider.BlockTagProvider
             .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS)
             .add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
 
-        this.getOrCreateTagBuilder(new Identifier("c", "wooden_barrels"))
-            .addTag(BlockusBlockTags.BARRELS);
-
         this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
             .add(BlockusBlocks.WOODEN_FRAME)
             .add(BlockusBlocks.LEGACY_PLANKS)
             .add(BlockusBlocks.SOUL_O_LANTERN)
             .add(BlockusBlocks.REDSTONE_O_LANTERN)
             .addTag(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
-            .addTag(BlockusBlockTags.BARRELS)
             .addTag(BlockusBlockTags.TIMBER_FRAMES)
             .addTag(BlockusBlockTags.FOOD_CRATES);
 
@@ -1146,8 +1129,7 @@ public class BlockusBlockTagGenerator extends FabricTagProvider.BlockTagProvider
             .add(BlockusBlocks.GOLD_PLATING.stairs)
             .add(BlockusBlocks.GOLD_PLATING.slab)
             .add(BlockusBlocks.GOLDEN_APPLE_CRATE)
-            .add(BlockusBlocks.GOLDEN_CARROT_CRATE)
-            .addTag(BlockusBlockTags.BARRELS);
+            .add(BlockusBlocks.GOLDEN_CARROT_CRATE);
 
         this.getOrCreateTagBuilder(BlockTags.ICE)
             .addTag(BlockusBlockTags.ICE_BRICKS)

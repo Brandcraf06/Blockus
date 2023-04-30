@@ -10,7 +10,6 @@ public final class BlockusItemTags {
 
     public static final TagKey<Item> BARRELS = register("barrels");
     public static final TagKey<Item> BARRIERS = register("barriers");
-    public static final TagKey<Item> BLOCKUS_BARRELS = register("blockus_barrels");
     public static final TagKey<Item> NATURAL_ICE = register("natural_ice");
     public static final TagKey<Item> PATTERNED_WOOL = register("patterned_wool");
     public static final TagKey<Item> PATTERNED_CARPETS = register("patterned_carpets");

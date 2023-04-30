@@ -142,15 +142,6 @@ public class Instance {
             FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
         }
 
-        // barrels
-        FuelRegistry.INSTANCE.add(BlockusBlocks.OAK_BARREL, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.BIRCH_BARREL, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.JUNGLE_BARREL, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.ACACIA_BARREL, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.DARK_OAK_BARREL, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_BARREL, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.BAMBOO_BARREL, 300);
-
 // Composting
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.ACACIA_SMALL_HEDGE, 0.30f);

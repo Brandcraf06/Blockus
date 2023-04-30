@@ -1,29 +1,21 @@
 package com.brand.blockus.content;
 
-import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
 import com.brand.blockus.blocks.base.amethyst.AmethystPillarBlock;
 import com.brand.blockus.blocks.base.asphalt.RainbowAsphalt;
 import com.brand.blockus.blocks.base.redstone.FallingRedstoneBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneLantern;
 import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
-import com.brand.blockus.blocks.blockentity.WoodenBarrelBlockEntity;
 import com.brand.blockus.blocks.generator.LegacyOakSaplingGenerator;
 import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
 import com.brand.blockus.content.types.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
 
 public class BlockusBlocks extends BlocksRegistration {
 
@@ -816,24 +808,5 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block RED_COLORED_TILES = register("red_colored_tiles", createCopy(Blocks.RED_CONCRETE));
     public static final Block BLACK_COLORED_TILES = register("black_colored_tiles", createCopy(Blocks.BLACK_CONCRETE));
     public static final Block RAINBOW_COLORED_TILES = register("rainbow_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_CONCRETE)));
-
-    // Barrels (outdated)
-    public static final BarrelBlockBase OAK_BARREL = new BarrelBlockBase("oak_barrel", Blocks.OAK_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase BIRCH_BARREL = new BarrelBlockBase("birch_barrel", Blocks.BIRCH_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase JUNGLE_BARREL = new BarrelBlockBase("jungle_barrel", Blocks.JUNGLE_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase ACACIA_BARREL = new BarrelBlockBase("acacia_barrel", Blocks.ACACIA_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase DARK_OAK_BARREL = new BarrelBlockBase("dark_oak_barrel", Blocks.DARK_OAK_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase CRIMSON_BARREL = new BarrelBlockBase("crimson_barrel", Blocks.CRIMSON_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase WARPED_BARREL = new BarrelBlockBase("warped_barrel", Blocks.WARPED_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase WHITE_OAK_BARREL = new BarrelBlockBase("white_oak_barrel", BlockusBlocks.WHITE_OAK.planks.getDefaultMapColor());
-    public static final BarrelBlockBase BAMBOO_BARREL = new BarrelBlockBase("bamboo_barrel", Blocks.BAMBOO_PLANKS.getDefaultMapColor());
-    public static final BarrelBlockBase CHARRED_BARREL = new BarrelBlockBase("charred_barrel", BlockusBlocks.CHARRED.planks.getDefaultMapColor());
-
-    private static <T extends BlockEntity> BlockEntityType<T> registerBe(String name, FabricBlockEntityTypeBuilder<T> builder) {
-        return Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Blockus.MOD_ID, name), builder.build());
-    }
-
-    public static final BlockEntityType<WoodenBarrelBlockEntity> WOODEN_BARREL = registerBe("wooden_barrel", FabricBlockEntityTypeBuilder.create(WoodenBarrelBlockEntity::new, OAK_BARREL, BIRCH_BARREL, JUNGLE_BARREL, ACACIA_BARREL, DARK_OAK_BARREL, CRIMSON_BARREL, WARPED_BARREL, WHITE_OAK_BARREL, BAMBOO_BARREL, CHARRED_BARREL));
-
 
 }

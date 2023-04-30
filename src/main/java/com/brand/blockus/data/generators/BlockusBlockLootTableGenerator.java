@@ -544,18 +544,6 @@ public class BlockusBlockLootTableGenerator extends FabricBlockLootTableProvider
                 .apply(setCookieCount(block, 3.0F, 6))
                 .apply(setCookieCount(block, 2.0F, 7))
                 .apply(setCookieCount(block, 1.0F, 8))))));
-
-        // Barrels (outdated)
-        this.addDrop(BlockusBlocks.OAK_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.BIRCH_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.JUNGLE_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.ACACIA_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.DARK_OAK_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.CRIMSON_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.WARPED_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.WHITE_OAK_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.BAMBOO_BARREL, this::nameableContainerDrops);
-        this.addDrop(BlockusBlocks.CHARRED_BARREL, this::nameableContainerDrops);
     }
 
     public void addBlockStairsandSlabDrops(Block block, Block stairs, Block slab) {

@@ -11,7 +11,6 @@ public class BlockusBlockTags {
     public static final TagKey<Block> AMETHYST_BLOCKS = register("amethyst_blocks");
     public static final TagKey<Block> ANDESITE_BLOCKS = register("andesite_blocks");
     public static final TagKey<Block> ASPHALT = register("asphalt");
-    public static final TagKey<Block> BARRELS = register("barrels");
     public static final TagKey<Block> BARRIERS = register("barriers");
     public static final TagKey<Block> BASALT_BLOCKS = register("basalt_blocks");
     public static final TagKey<Block> BEVELED_GLASS = register("beveled_glass");

@@ -37,21 +37,8 @@ public class BlockusItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup registries) {
-        this.copy(BlockusBlockTags.BARRELS, BlockusItemTags.BARRELS);
 
         this.copy(BlockusBlockTags.BARRIERS, BlockusItemTags.BARRIERS);
-
-        this.getOrCreateTagBuilder(BlockusItemTags.BLOCKUS_BARRELS)
-            .add(BlockusBlocks.OAK_BARREL.asItem())
-            .add(BlockusBlocks.BIRCH_BARREL.asItem())
-            .add(BlockusBlocks.JUNGLE_BARREL.asItem())
-            .add(BlockusBlocks.ACACIA_BARREL.asItem())
-            .add(BlockusBlocks.DARK_OAK_BARREL.asItem())
-            .add(BlockusBlocks.CRIMSON_BARREL.asItem())
-            .add(BlockusBlocks.WARPED_BARREL.asItem())
-            .add(BlockusBlocks.BAMBOO_BARREL.asItem())
-            .add(BlockusBlocks.CHARRED_BARREL.asItem())
-            .add(BlockusBlocks.WHITE_OAK_BARREL.asItem());
 
         this.getOrCreateTagBuilder(ItemTags.BOATS)
             .add(BlockusEntities.RAW_BAMBOO_RAFT.getItem())
