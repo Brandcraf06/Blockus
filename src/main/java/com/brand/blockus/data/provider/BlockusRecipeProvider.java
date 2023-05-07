@@ -49,15 +49,11 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         }
 
         for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.block, 2).input('#', Items.PAPER).input('X', timberFrameType.base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(timberFrameType.base), conditionsFromItem(timberFrameType.base)).offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.diagonal, 4).input('#', timberFrameType.block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(timberFrameType.block), conditionsFromItem(timberFrameType.block)).offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.cross, 4).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);
+            createTimberFramesRecipes(exporter, timberFrameType.base, timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross);
         }
 
         for (TimberFrameTypesFP timberFrameType : TimberFrameTypesFP.values()) {
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.block, 2).input('#', Items.PAPER).input('X', timberFrameType.base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(timberFrameType.base), conditionsFromItem(timberFrameType.base)).offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.diagonal, 4).input('#', timberFrameType.block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(timberFrameType.block), conditionsFromItem(timberFrameType.block)).offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, timberFrameType.cross, 4).input('#', timberFrameType.diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(timberFrameType.diagonal), conditionsFromItem(timberFrameType.diagonal)).offerTo(exporter);
+            createTimberFramesRecipes(exporter, timberFrameType.base, timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross);
         }
 
         for (AsphaltTypes asphaltType : AsphaltTypes.values()) {
@@ -188,20 +184,20 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerPressurePlateButtonRecipe(exporter, BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE, BlockusBlocks.POLISHED_TUFF_BUTTON, BlockusBlocks.POLISHED_TUFF.block);
 
         // Amethyst
-        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST, Blocks.AMETHYST_BLOCK);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST_STAIRS, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST_SLAB, 2, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST.block, Blocks.AMETHYST_BLOCK);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST.stairs, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST.slab, 2, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST.block);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.POLISHED_AMETHYST.block, Blocks.AMETHYST_BLOCK);
 
-        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_STAIRS, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST, BlockusBlocks.AMETHYST_BRICKS);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_SLAB, 2, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST, BlockusBlocks.AMETHYST_BRICKS);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICK_WALL, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST, BlockusBlocks.AMETHYST_BRICKS);
-        offerPolishedStoneRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS, BlockusBlocks.POLISHED_AMETHYST);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS.block, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS.stairs, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST.block, BlockusBlocks.AMETHYST_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS.slab, 2, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST.block, BlockusBlocks.AMETHYST_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS.wall, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST.block, BlockusBlocks.AMETHYST_BRICKS.block);
+        offerPolishedStoneRecipe(exporter, BlockusBlocks.AMETHYST_BRICKS.block, BlockusBlocks.POLISHED_AMETHYST.block);
 
-        offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_AMETHYST, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST, BlockusBlocks.AMETHYST_BRICKS);
-        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_PILLAR, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST, BlockusBlocks.AMETHYST_BRICKS);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_AMETHYST, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST.block, BlockusBlocks.AMETHYST_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.AMETHYST_PILLAR, Blocks.AMETHYST_BLOCK, BlockusBlocks.POLISHED_AMETHYST.block, BlockusBlocks.AMETHYST_BRICKS.block);
 
         // Deepslate
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.MOSSY_DEEPSLATE_BRICKS.block).input(Blocks.DEEPSLATE_BRICKS).input(Blocks.VINE).group("mossy_deepslate_bricks").criterion("has_vine", conditionsFromItem(Blocks.VINE)).offerTo(exporter, convertBetween(BlockusBlocks.MOSSY_DEEPSLATE_BRICKS.block, Blocks.VINE));
@@ -1235,15 +1231,6 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
     }
 
-    protected static void offerCutCopperRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
-        createCutCopperRecipe(RecipeCategory.BUILDING_BLOCKS, output, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-    }
-
-    public static ShapedRecipeJsonBuilder createCutCopperRecipe(RecipeCategory category, ItemConvertible output, Ingredient input) {
-        return ShapedRecipeJsonBuilder.create(category, output, 4).input('#', input).pattern("##").pattern("##");
-    }
-
-
     protected static void offerPolishedStoneRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
         createCondensingRecipe(RecipeCategory.BUILDING_BLOCKS, output, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
@@ -1327,6 +1314,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, output_stairs, output);
         offerStonecuttingRecipe(exporter, output_slab, 2, output);
         offerStonecuttingRecipe(exporter, output_wall, output);
+    }
+
+    public static void createTimberFramesRecipes(Consumer<RecipeJsonProvider> exporter, ItemConvertible base, ItemConvertible block, ItemConvertible diagonal, ItemConvertible cross) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, block, 2).input('#', Items.PAPER).input('X', base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(base), conditionsFromItem(base)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, diagonal, 4).input('#', block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(block), conditionsFromItem(block)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, cross, 4).input('#', diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(diagonal), conditionsFromItem(diagonal)).offerTo(exporter);
     }
 
     public static void offerAsphaltRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab) {

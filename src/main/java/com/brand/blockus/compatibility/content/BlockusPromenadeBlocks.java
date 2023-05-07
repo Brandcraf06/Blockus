@@ -132,15 +132,15 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
     private static void registerBlockColors() {
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
             return pos != null && world != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.getDefaultColor();
-        }, new Block[]{PALM_SMALL_HEDGE, POTTED_PALM, SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE});
+        }, PALM_SMALL_HEDGE, POTTED_PALM, SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE);
     }
 
     private static void registerItemColors() {
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
             return GrassColors.getColor(1.0D, 0.0D);
-        }, new ItemConvertible[]{PALM_SMALL_HEDGE, POTTED_PALM});
+        }, PALM_SMALL_HEDGE, POTTED_PALM);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
             return 10931465;
-        }, new ItemConvertible[]{SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE});
+        }, SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE);
     }
 }

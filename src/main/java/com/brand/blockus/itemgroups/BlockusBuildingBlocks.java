@@ -633,13 +633,13 @@ public class BlockusBuildingBlocks {
             entries.add(BlockusBlocks.QUARTZ_TILES.wall);
             entries.add(BlockusBlocks.QUARTZ_CIRCULAR_PAVING);
 
-            entries.add(BlockusBlocks.POLISHED_AMETHYST);
-            entries.add(BlockusBlocks.POLISHED_AMETHYST_STAIRS);
-            entries.add(BlockusBlocks.POLISHED_AMETHYST_SLAB);
-            entries.add(BlockusBlocks.AMETHYST_BRICKS);
-            entries.add(BlockusBlocks.AMETHYST_BRICK_STAIRS);
-            entries.add(BlockusBlocks.AMETHYST_BRICK_SLAB);
-            entries.add(BlockusBlocks.AMETHYST_BRICK_WALL);
+            entries.add(BlockusBlocks.POLISHED_AMETHYST.block);
+            entries.add(BlockusBlocks.POLISHED_AMETHYST.stairs);
+            entries.add(BlockusBlocks.POLISHED_AMETHYST.slab);
+            entries.add(BlockusBlocks.AMETHYST_BRICKS.block);
+            entries.add(BlockusBlocks.AMETHYST_BRICKS.stairs);
+            entries.add(BlockusBlocks.AMETHYST_BRICKS.slab);
+            entries.add(BlockusBlocks.AMETHYST_BRICKS.wall);
             entries.add(BlockusBlocks.CHISELED_AMETHYST);
             entries.add(BlockusBlocks.AMETHYST_PILLAR);
 

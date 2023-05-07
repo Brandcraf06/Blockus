@@ -1,7 +1,11 @@
 package com.brand.blockus.content.types;
 
+import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AmethystBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
 import net.minecraft.sound.BlockSoundGroup;
@@ -17,11 +21,20 @@ public class BSSWTypes {
     public final Block wall;
 
     private BSSWTypes(String type, Block.Settings blockSettings) {
+        String replace = BlocksRegistration.replaceId(type);
 
-        this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
-        this.slab = BlocksRegistration.registerSlab(this.block);
-        this.stairs = BlocksRegistration.registerStairs(this.block);
-        this.wall = BlocksRegistration.registerWall(this.block);
+        if (!type.contains("amethyst")) {
+            this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
+            this.slab = BlocksRegistration.registerSlab(this.block);
+            this.stairs = BlocksRegistration.registerStairs(this.block);
+            this.wall = BlocksRegistration.registerWall(this.block);
+        } else {
+            this.block = BlocksRegistration.register(type, new AmethystBlock(FabricBlockSettings.copyOf(blockSettings)));
+            this.stairs = BlocksRegistration.register(replace + "_stairs", new AmethystStairsBlock(this.block.getDefaultState(), FabricBlockSettings.copy(this.block)));
+            this.slab = BlocksRegistration.register(replace + "_slab", new AmethystSlabBlock(FabricBlockSettings.copy(this.block)));
+            this.wall = BlocksRegistration.register(replace + "_wall", new AmethystWallBlock(FabricBlockSettings.copy(this.block)));
+
+        }
 
         LIST.add(this);
     }

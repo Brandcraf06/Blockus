@@ -41,9 +41,9 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(BlockusLegacyBlocks.class);
 
 
-       if (FabricLoader.getInstance().isModLoaded("columns")) {
+        if (FabricLoader.getInstance().isModLoaded("columns")) {
             BlockusColumnBlocks.init();
-       }
+        }
 
         if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.init();

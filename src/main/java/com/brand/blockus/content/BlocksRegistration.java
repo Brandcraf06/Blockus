@@ -4,8 +4,8 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.Barrier;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.base.SmallHedgeBlock;
+import com.brand.blockus.blocks.blockitems.GlintBlockItem;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
-import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
@@ -21,6 +21,9 @@ import net.minecraft.world.BlockView;
 
 public class BlocksRegistration {
 
+    public static String replaceId(String id) {
+        return id.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
+    }
 
     // Pillar
     public static Block createPillar(String baseid, Block base) {
@@ -39,11 +42,6 @@ public class BlocksRegistration {
 
     public static Block registerGTPillar(Block base) {
         return createGTPillar(Registries.BLOCK.getId(base).getPath(), base);
-    }
-
-
-    public static String replaceId(String id) {
-        return id.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
     }
 
     // Slab
@@ -210,8 +208,8 @@ public class BlocksRegistration {
         return register(id, block, new BlockItem(block, new Item.Settings()));
     }
 
-    public static Block registerNetherStarBlock(String id, Block block) {
-        return register(id, block, new NetherStarBlockItem(block, new Item.Settings().rarity(Rarity.UNCOMMON)));
+    public static Block registerGlint(String id, Block block) {
+        return register(id, block, new GlintBlockItem(block, new Item.Settings().rarity(Rarity.UNCOMMON)));
     }
 
     public static Block registerLegacy(String id, Block block) {
