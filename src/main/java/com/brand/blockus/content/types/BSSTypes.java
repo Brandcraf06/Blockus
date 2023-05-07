@@ -19,6 +19,7 @@ public class BSSTypes {
     public final Block stairs;
 
     private BSSTypes(String type, Block.Settings blockSettings) {
+        String replace = BlocksRegistration.replaceId(type);
 
         if (!type.contains("amethyst")) {
             this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
@@ -26,8 +27,8 @@ public class BSSTypes {
             this.stairs = BlocksRegistration.registerStairs(this.block);
         } else {
             this.block = BlocksRegistration.register(type, new AmethystBlock(FabricBlockSettings.copyOf(blockSettings)));
-            this.stairs = BlocksRegistration.register(type + "_stairs", new AmethystStairsBlock(this.block.getDefaultState(), FabricBlockSettings.copy(this.block)));
-            this.slab = BlocksRegistration.register(type + "_slab", new AmethystSlabBlock(FabricBlockSettings.copy(this.block)));
+            this.stairs = BlocksRegistration.register(replace + "_stairs", new AmethystStairsBlock(this.block.getDefaultState(), FabricBlockSettings.copy(this.block)));
+            this.slab = BlocksRegistration.register(replace + "_slab", new AmethystSlabBlock(FabricBlockSettings.copy(this.block)));
         }
 
         LIST.add(this);

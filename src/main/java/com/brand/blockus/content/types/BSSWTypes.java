@@ -21,6 +21,7 @@ public class BSSWTypes {
     public final Block wall;
 
     private BSSWTypes(String type, Block.Settings blockSettings) {
+        String replace = BlocksRegistration.replaceId(type);
 
         if (!type.contains("amethyst")) {
             this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
@@ -29,9 +30,9 @@ public class BSSWTypes {
             this.wall = BlocksRegistration.registerWall(this.block);
         } else {
             this.block = BlocksRegistration.register(type, new AmethystBlock(FabricBlockSettings.copyOf(blockSettings)));
-            this.stairs = BlocksRegistration.register(type + "_stairs", new AmethystStairsBlock(this.block.getDefaultState(), FabricBlockSettings.copy(this.block)));
-            this.slab = BlocksRegistration.register(type + "_slab", new AmethystSlabBlock(FabricBlockSettings.copy(this.block)));
-            this.wall = BlocksRegistration.register(type + "_wall", new AmethystWallBlock(FabricBlockSettings.copy(this.block)));
+            this.stairs = BlocksRegistration.register(replace + "_stairs", new AmethystStairsBlock(this.block.getDefaultState(), FabricBlockSettings.copy(this.block)));
+            this.slab = BlocksRegistration.register(replace + "_slab", new AmethystSlabBlock(FabricBlockSettings.copy(this.block)));
+            this.wall = BlocksRegistration.register(replace + "_wall", new AmethystWallBlock(FabricBlockSettings.copy(this.block)));
 
         }
 
