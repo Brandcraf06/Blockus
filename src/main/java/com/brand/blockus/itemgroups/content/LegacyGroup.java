@@ -24,8 +24,8 @@ public class LegacyGroup {
             entries.add(BlockusBlocks.LEGACY_GLOWSTONE);
             entries.add(BlockusBlocks.LEGACY_IRON_BLOCK);
             entries.add(BlockusBlocks.LEGACY_GOLD_BLOCK);
-            entries.add(BlockusBlocks.LEGACY_COAL_BLOCK);
             entries.add(BlockusBlocks.LEGACY_EXPLOSION_PROOF_GOLD_BLOCK);
+            entries.add(BlockusBlocks.LEGACY_COAL_BLOCK);
             entries.add(BlockusBlocks.LEGACY_DIAMOND_BLOCK);
             entries.add(BlockusBlocks.LEGACY_LAPIS_BLOCK);
             entries.add(BlockusBlocks.LEGACY_SPONGE);

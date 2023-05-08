@@ -1,4 +1,4 @@
-package com.brand.blockus.data.generators;
+package com.brand.blockus.data.providers;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusEntities;
@@ -18,8 +18,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-public class BlockusItemTagGenerator extends FabricTagProvider.ItemTagProvider {
-    public BlockusItemTagGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, BlockTagProvider blockTagProvider) {
+public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
+    public BlockusItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, BlockTagProvider blockTagProvider) {
         super(output, registriesFuture, blockTagProvider);
     }
 

@@ -1,4 +1,4 @@
-package com.brand.blockus.data.generators;
+package com.brand.blockus.data.providers;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
@@ -17,9 +17,9 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-public class BlockusBlockTagGenerator extends FabricTagProvider.BlockTagProvider {
+public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
-    public BlockusBlockTagGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public BlockusBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 

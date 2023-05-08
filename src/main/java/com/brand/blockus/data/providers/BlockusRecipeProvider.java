@@ -1,4 +1,4 @@
-package com.brand.blockus.data.generators;
+package com.brand.blockus.data.providers;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusEntities;
@@ -20,8 +20,8 @@ import net.minecraft.resource.featuretoggle.FeatureSet;
 
 import java.util.function.Consumer;
 
-public class BlockusRecipeGenerator extends FabricRecipeProvider {
-    public BlockusRecipeGenerator(FabricDataOutput output) {
+public class BlockusRecipeProvider extends FabricRecipeProvider {
+    public BlockusRecipeProvider(FabricDataOutput output) {
         super(output);
     }
 
@@ -29,13 +29,13 @@ public class BlockusRecipeGenerator extends FabricRecipeProvider {
     public void generate(Consumer<RecipeJsonProvider> exporter) {
 
         for (BSSWTypes bsswType : BSSWTypes.values()) {
-            BlockusRecipeGenerator.offerStairsRecipe(exporter, bsswType.stairs, bsswType.block);
+            BlockusRecipeProvider.offerStairsRecipe(exporter, bsswType.stairs, bsswType.block);
             RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, bsswType.slab, bsswType.block);
             RecipeProvider.offerWallRecipe(exporter, RecipeCategory.DECORATIONS, bsswType.wall, bsswType.block);
         }
 
         for (BSSTypes bssType : BSSTypes.values()) {
-            BlockusRecipeGenerator.offerStairsRecipe(exporter, bssType.stairs, bssType.block);
+            BlockusRecipeProvider.offerStairsRecipe(exporter, bssType.stairs, bssType.block);
             RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, bssType.slab, bssType.block);
         }
 
@@ -59,7 +59,7 @@ public class BlockusRecipeGenerator extends FabricRecipeProvider {
         }
 
         for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
-            BlockusRecipeGenerator.offerStairsRecipe(exporter, asphaltTypes.stairs, asphaltTypes.block);
+            BlockusRecipeProvider.offerStairsRecipe(exporter, asphaltTypes.stairs, asphaltTypes.block);
             RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, asphaltTypes.slab, asphaltTypes.block);
             offerStonecuttingRecipe(exporter, asphaltTypes.stairs, asphaltTypes.block);
             offerStonecuttingRecipe(exporter, asphaltTypes.slab, 2, asphaltTypes.block);
@@ -67,7 +67,7 @@ public class BlockusRecipeGenerator extends FabricRecipeProvider {
 
         for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
             offerPatternWoolRecipe(exporter, patternWoolTypes.block, patternWoolTypes.basewool, patternWoolTypes.carpet, patternWoolTypes.basecarpet);
-            BlockusRecipeGenerator.offerStairsRecipe(exporter, patternWoolTypes.stairs, patternWoolTypes.block);
+            BlockusRecipeProvider.offerStairsRecipe(exporter, patternWoolTypes.stairs, patternWoolTypes.block);
             RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, patternWoolTypes.slab, patternWoolTypes.block);
             RecipeProvider.offerCarpetRecipe(exporter, patternWoolTypes.carpet, patternWoolTypes.block);
 
@@ -1188,7 +1188,7 @@ public class BlockusRecipeGenerator extends FabricRecipeProvider {
         offerShapelessRecipe(exporter, Items.COAL, BlockusBlocks.LEGACY_COAL_BLOCK, "coal", 9);
         offerShapelessRecipe(exporter, Items.DIAMOND, BlockusBlocks.LEGACY_DIAMOND_BLOCK, "diamond", 9);
         offerShapelessRecipe(exporter, Items.LAPIS_LAZULI, BlockusBlocks.LEGACY_LAPIS_BLOCK, "lapis_lazuli", 9);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.LEGACY_STONECUTTER).input('#', Blocks.COBBLESTONE).pattern("##").pattern("##").criterion(hasItem(Blocks.STONECUTTER), conditionsFromItem(Blocks.STONECUTTER)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.LEGACY_STONECUTTER).input('#', Blocks.COBBLESTONE).input('S', Blocks.STONECUTTER).pattern(" # ").pattern("#S#").pattern(" # ").criterion(hasItem(Blocks.STONECUTTER), conditionsFromItem(Blocks.STONECUTTER)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.LEGACY_NETHER_REACTOR_CORE).input('#', Items.DIAMOND).input('X', Items.IRON_INGOT).pattern("X#X").pattern("X#X").pattern("X#X").criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.LEGACY_SAPLING).input('#', Blocks.OAK_SAPLING).pattern("##").pattern("##").criterion(hasItem(Blocks.OAK_SAPLING), conditionsFromItem(Blocks.OAK_SAPLING)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.LEGACY_FIRST_GRASS_BLOCK, 4).input('#', BlockusBlocks.LEGACY_GRASS_BLOCK).pattern("##").pattern("##").criterion(hasItem(BlockusBlocks.LEGACY_GRASS_BLOCK), conditionsFromItem(BlockusBlocks.LEGACY_GRASS_BLOCK)).offerTo(exporter);

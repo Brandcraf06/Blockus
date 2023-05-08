@@ -1,8 +1,8 @@
-package com.brand.blockus.modcompat.promenade.data.generators;
+package com.brand.blockus.modcompat.promenade.data.providers;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.data.BlockusDatagen;
-import com.brand.blockus.data.generators.BlockusBlockLootTableGenerator;
+import com.brand.blockus.data.providers.BlockusBlockLootTableProvider;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.loot.LootTable.Builder;
@@ -10,8 +10,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.BiConsumer;
 
-public class BlockusPromenadeBlockLootTableGenerator extends BlockusBlockLootTableGenerator {
-    public BlockusPromenadeBlockLootTableGenerator(FabricDataOutput output) {
+public class BlockusPromenadeBlockLootTableProvider extends BlockusBlockLootTableProvider {
+    public BlockusPromenadeBlockLootTableProvider(FabricDataOutput output) {
         super(output);
     }
 

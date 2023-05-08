@@ -1,4 +1,4 @@
-package com.brand.blockus.data.generators;
+package com.brand.blockus.data.providers;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
@@ -24,8 +24,8 @@ import net.minecraft.loot.operator.BoundedIntUnaryOperator;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
-public class BlockusBlockLootTableGenerator extends FabricBlockLootTableProvider {
-    public BlockusBlockLootTableGenerator(FabricDataOutput output) {
+public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider {
+    public BlockusBlockLootTableProvider(FabricDataOutput output) {
         super(output);
     }
 
@@ -526,7 +526,7 @@ public class BlockusBlockLootTableGenerator extends FabricBlockLootTableProvider
         this.addDrop(BlockusBlocks.LEGACY_LEAVES, (block) -> this.leavesDrops(block, BlockusBlocks.LEGACY_SAPLING, SAPLING_DROP_CHANCE));
         this.addDrop(BlockusBlocks.LEGACY_GLOWSTONE, this::glowstoneDrops);
         this.addDrop(BlockusBlocks.LEGACY_GRAVEL, (block) -> dropsWithSilkTouch(block, this.addSurvivesExplosionCondition(block, ItemEntry.builder(Items.FLINT).conditionally(TableBonusLootCondition.builder(Enchantments.FORTUNE, 0.1F, 0.14285715F, 0.25F, 1.0F)).alternatively(ItemEntry.builder(block)))));
-        this.addDrop(BlockusBlocks.LEGACY_STONECUTTER, (block) -> LootTable.builder().pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(3.0F)).with(ItemEntry.builder(Items.DIAMOND)))).pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(6.0F)).with(ItemEntry.builder(Items.IRON_INGOT)))));
+        this.addDrop(BlockusBlocks.LEGACY_NETHER_REACTOR_CORE, (block) -> LootTable.builder().pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(3.0F)).with(ItemEntry.builder(Items.DIAMOND)))).pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(6.0F)).with(ItemEntry.builder(Items.IRON_INGOT)))));
 
         this.addDrop(BlockusBlocks.WHITE_OAK_LEAVES, (block) -> this.oakLeavesDrops(block, BlockusBlocks.WHITE_OAK_LEAVES, SAPLING_DROP_CHANCE));
         this.addDrop(BlockusBlocks.BLAZE_LANTERN, (block) -> this.drops(block, Items.BLAZE_POWDER, ConstantLootNumberProvider.create(9.0F)));
