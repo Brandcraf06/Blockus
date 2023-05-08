@@ -1,10 +1,12 @@
 package com.brand.blockus.blocks.base;
 
 import com.brand.blockus.utils.Properties;
+import com.hugman.dawn.api.util.FoodUtil;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.entity.player.HungerManager;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -54,7 +56,7 @@ public class CookieBlock extends Block {
         } else {
             player.getHungerManager().add(2, 0.1F);
             int i = state.get(BITES);
-            world.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.PLAYERS);
+            world.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.PLAYERS, 1.0F, 1.0F);
             world.emitGameEvent(player, GameEvent.EAT, pos);
             if (i < 8) {
                 world.setBlockState(pos, state.with(BITES, i + 1), 3);
