@@ -839,7 +839,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_SPONGE = registerLegacy("legacy_sponge", new SpongeBlock(FabricBlockSettings.copyOf(Blocks.SPONGE)));
     public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", new Block(FabricBlockSettings.copy(Blocks.CRYING_OBSIDIAN)));
     public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone", new Block(FabricBlockSettings.copy(Blocks.GLOWSTONE)));
-    public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", new Block(FabricBlockSettings.of(Material.STONE).strength(1.5f, 17.5f).requiresTool()));
+    public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", new LegacyStonecutterBlock(FabricBlockSettings.of(Material.STONE).strength(1.5f, 17.5f).requiresTool()));
     public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createLightBlock(50.0F, 1200.0F, Material.STONE, BlockSoundGroup.STONE, 12, MapColor.BLACK));
     public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", new Block(FabricBlockSettings.of(Material.STONE, MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
 

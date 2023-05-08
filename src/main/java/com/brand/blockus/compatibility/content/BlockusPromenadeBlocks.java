@@ -20,7 +20,6 @@ import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.color.world.GrassColors;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.item.ItemConvertible;
 
 public class BlockusPromenadeBlocks extends BlocksRegistration {
     public static Block POTTED_SAP_MAPLE;
