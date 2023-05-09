@@ -1,8 +1,7 @@
 package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.TimberFrameTypesF;
-import com.brand.blockus.content.types.TimberFrameTypesFP;
+import com.brand.blockus.content.types.TimberFrameTypes;
 import com.brand.blockus.content.types.WoodTypesF;
 import com.brand.blockus.content.types.WoodTypesFP;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
@@ -76,13 +75,7 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
 
-            for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
-                entries.add(timberFrameType.block);
-                entries.add(timberFrameType.diagonal);
-                entries.add(timberFrameType.cross);
-            }
-
-            for (TimberFrameTypesFP timberFrameType : TimberFrameTypesFP.values()) {
+            for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
                 entries.add(timberFrameType.block);
                 entries.add(timberFrameType.diagonal);
                 entries.add(timberFrameType.cross);

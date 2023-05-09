@@ -3,7 +3,7 @@ package com.brand.blockus.data.providers;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.*;
-import com.brand.blockus.tags.BlockusBlockTags;
+import com.brand.blockus.utils.tags.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
@@ -38,8 +38,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.AMETHYST_BRICKS.stairs)
             .add(BlockusBlocks.AMETHYST_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_AMETHYST)
-            .add(BlockusBlocks.AMETHYST_PILLAR)
-            .addOptional(new Identifier(Blockus.MOD_ID, "amethyst_brick_column"));
+            .add(BlockusBlocks.AMETHYST_PILLAR);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.ANDESITE_BLOCKS)
             .add(BlockusBlocks.ANDESITE_BRICKS.block)
@@ -405,8 +404,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_MAGMA_BRICKS.block)
             .add(BlockusBlocks.SMALL_MAGMA_BRICKS.stairs)
             .add(BlockusBlocks.SMALL_MAGMA_BRICKS.slab)
-            .add(BlockusBlocks.CHISELED_MAGMA_BRICKS)
-            .addOptional(new Identifier(Blockus.MOD_ID, "magma_brick_column"));
+            .add(BlockusBlocks.CHISELED_MAGMA_BRICKS);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.MARBLE)
             .add(BlockusBlocks.MARBLE.block)
@@ -476,8 +474,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.NETHERRACK_BRICKS.block)
             .add(BlockusBlocks.NETHERRACK_BRICKS.stairs)
             .add(BlockusBlocks.NETHERRACK_BRICKS.slab)
-            .add(BlockusBlocks.NETHERRACK_CIRCULAR_PAVING)
-            .addOptional(new Identifier(Blockus.MOD_ID, "netherrack_brick_column"));
+            .add(BlockusBlocks.NETHERRACK_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.OBSIDIAN)
             .add(BlockusBlocks.OBSIDIAN_BRICKS.block)
@@ -495,9 +492,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR)
             .add(BlockusBlocks.GLOWING_OBSIDIAN)
             .add(BlockusBlocks.LEGACY_CRYING_OBSIDIAN)
-            .add(BlockusBlocks.LEGACY_GLOWING_OBSIDIAN)
-            .addOptional(new Identifier(Blockus.MOD_ID, "obsidian_brick_column"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "small_obsidian_brick_column"));
+            .add(BlockusBlocks.LEGACY_GLOWING_OBSIDIAN);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_WOOL)
             .add(BlockusBlocks.WHITE_PATTERNED_WOOL.block)
@@ -587,9 +582,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS.stairs)
             .add(BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS.slab)
             .add(BlockusBlocks.CHISELED_PHANTOM_PURPUR)
-            .add(BlockusBlocks.PHANTOM_PURPUR_LINES)
-            .addOptional(new Identifier(Blockus.MOD_ID, "phantom_purpur_brick_column"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "small_phantom_purpur_brick_column"));
+            .add(BlockusBlocks.PHANTOM_PURPUR_LINES);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PLATINGS)
             .add(BlockusBlocks.IRON_PLATING.block)
@@ -775,10 +768,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHISELED_SOUL_SANDSTONE)
             .add(BlockusBlocks.GOLD_DECORATED_SOUL_SANDSTONE)
             .add(BlockusBlocks.LAPIS_DECORATED_SOUL_SANDSTONE)
-            .add(BlockusBlocks.SOUL_SANDSTONE_PILLAR)
-            .addOptional(new Identifier(Blockus.MOD_ID, "soul_sandstone_column"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "soul_sandstone_brick_column"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "small_soul_sandstone_brick_column"));
+            .add(BlockusBlocks.SOUL_SANDSTONE_PILLAR);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.SOUL_SOILS)
             .add(Blocks.SOUL_SAND)
@@ -863,7 +853,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.THATCH.stairs)
             .add(BlockusBlocks.THATCH.slab);
 
-        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
+
+        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
             this.getOrCreateTagBuilder(BlockusBlockTags.TIMBER_FRAMES)
                 .add(timberFrameType.block)
                 .add(timberFrameType.diagonal)

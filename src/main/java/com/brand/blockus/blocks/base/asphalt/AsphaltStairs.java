@@ -21,11 +21,11 @@ public class AsphaltStairs extends StairsBlock {
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        AsphaltBlock.applySprintEffect(world, pos, state, entity);
+        AsphaltBlock.applySprintEffect(entity);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, BlockView world, List<Text> tooltip, TooltipContext context) {
-        AsphaltBlock.addTooltipInfo(stack, world, tooltip, context);
+        AsphaltBlock.addTooltipInfo(tooltip);
     }
 }

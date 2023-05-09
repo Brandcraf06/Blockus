@@ -1,6 +1,7 @@
 package com.brand.blockus.blocks.base.asphalt;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.utils.effect.BlockusEffects;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
@@ -23,25 +24,25 @@ public class AsphaltBlock extends Block {
         super(settings);
     }
 
-    public static void addTooltipInfo(ItemStack stack, BlockView world, List<Text> tooltip, TooltipContext context) {
+    public static void addTooltipInfo(List<Text> tooltip) {
         tooltip.add(ScreenTexts.EMPTY);
         tooltip.add(Blockus.STEPPED_ON_TEXT);
-        tooltip.add(ScreenTexts.space().append(Blockus.ASPHALT_SPRINT.getName()).formatted(Formatting.BLUE));
+        tooltip.add(ScreenTexts.space().append(BlockusEffects.ASPHALT_SPRINT.getName()).formatted(Formatting.BLUE));
     }
 
-    public static void applySprintEffect(World world, BlockPos pos, BlockState state, Entity entity) {
+    public static void applySprintEffect(Entity entity) {
         if (entity instanceof LivingEntity) {
-            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(Blockus.ASPHALT_SPRINT, 5, 0, true, false, true));
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(BlockusEffects.ASPHALT_SPRINT, 5, 0, true, false, true));
         }
     }
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        applySprintEffect(world, pos, state, entity);
+        applySprintEffect(entity);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, BlockView world, List<Text> tooltip, TooltipContext context) {
-        addTooltipInfo(stack, world, tooltip, context);
+        addTooltipInfo(tooltip);
     }
 }

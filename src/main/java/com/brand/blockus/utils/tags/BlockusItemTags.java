@@ -1,4 +1,4 @@
-package com.brand.blockus.tags;
+package com.brand.blockus.utils.tags;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.item.Item;
@@ -8,7 +8,6 @@ import net.minecraft.util.Identifier;
 
 public final class BlockusItemTags {
 
-    public static final TagKey<Item> BARRELS = register("barrels");
     public static final TagKey<Item> BARRIERS = register("barriers");
     public static final TagKey<Item> NATURAL_ICE = register("natural_ice");
     public static final TagKey<Item> PATTERNED_WOOL = register("patterned_wool");

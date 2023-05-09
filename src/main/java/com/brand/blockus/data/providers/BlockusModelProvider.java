@@ -1,8 +1,7 @@
 package com.brand.blockus.data.providers;
 
 import com.brand.blockus.content.types.ColoredTilesTypes;
-import com.brand.blockus.content.types.TimberFrameTypesF;
-import com.brand.blockus.content.types.TimberFrameTypesFP;
+import com.brand.blockus.content.types.TimberFrameTypes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
@@ -27,13 +26,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator modelGenerator) {
 
-        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
-            modelGenerator.registerSimpleCubeAll(timberFrameType.block);
-            modelGenerator.registerSimpleCubeAll(timberFrameType.cross);
-            this.registerDiagonalTimberFrame(modelGenerator, timberFrameType.diagonal);
-        }
-
-        for (TimberFrameTypesFP timberFrameType : TimberFrameTypesFP.values()) {
+        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
             modelGenerator.registerSimpleCubeAll(timberFrameType.block);
             modelGenerator.registerSimpleCubeAll(timberFrameType.cross);
             this.registerDiagonalTimberFrame(modelGenerator, timberFrameType.diagonal);

@@ -5,7 +5,7 @@ import com.brand.blockus.content.BlockusEntities;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusBlockFamilies;
-import com.brand.blockus.tags.BlockusItemTags;
+import com.brand.blockus.utils.tags.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
@@ -49,13 +49,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             offerPolishedStoneRecipe(exporter, concreteType.block, concreteType.base);
         }
 
-        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
+        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
             createTimberFramesRecipes(exporter, timberFrameType.base, timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross);
-        }
-
-        for (TimberFrameTypesFP timberFrameType : TimberFrameTypesFP.values()) {
-            createTimberFramesRecipes(exporter, timberFrameType.base, timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross);
-
         }
 
         for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {

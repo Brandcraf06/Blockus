@@ -375,20 +375,20 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WHITE_OAK_SMALL_LOGS = register("white_oak_small_logs", createPillarCopy(WHITE_OAK_LOG));
 
     // Timber Frames
-    public static final TimberFrameTypesF OAK_TIMBER_FRAME = new TimberFrameTypesF("oak", Blocks.OAK_PLANKS);
-    public static final TimberFrameTypesF BIRCH_TIMBER_FRAME = new TimberFrameTypesF("birch", Blocks.BIRCH_PLANKS);
-    public static final TimberFrameTypesF SPRUCE_TIMBER_FRAME = new TimberFrameTypesF("spruce", Blocks.SPRUCE_PLANKS);
-    public static final TimberFrameTypesF JUNGLE_TIMBER_FRAME = new TimberFrameTypesF("jungle", Blocks.JUNGLE_PLANKS);
-    public static final TimberFrameTypesF ACACIA_TIMBER_FRAME = new TimberFrameTypesF("acacia", Blocks.ACACIA_PLANKS);
-    public static final TimberFrameTypesF DARK_OAK_TIMBER_FRAME = new TimberFrameTypesF("dark_oak", Blocks.DARK_OAK_PLANKS);
-    public static final TimberFrameTypesF MANGROVE_TIMBER_FRAME = new TimberFrameTypesF("mangrove", Blocks.MANGROVE_PLANKS);
-    public static final TimberFrameTypesF BAMBOO_TIMBER_FRAME = new TimberFrameTypesF("bamboo", Blocks.BAMBOO_PLANKS);
-    public static final TimberFrameTypesF CHERRY_TIMBER_FRAME = new TimberFrameTypesF("cherry", Blocks.CHERRY_PLANKS);
-    public static final TimberFrameTypesF RAW_BAMBOO_TIMBER_FRAME = new TimberFrameTypesF("raw_bamboo", BlockusBlocks.RAW_BAMBOO.planks);
-    public static final TimberFrameTypesF WHITE_OAK_TIMBER_FRAME = new TimberFrameTypesF("white_oak", BlockusBlocks.WHITE_OAK.planks);
-    public static final TimberFrameTypesFP WARPED_TIMBER_FRAME = new TimberFrameTypesFP("warped", Blocks.WARPED_PLANKS);
-    public static final TimberFrameTypesFP CRIMSON_TIMBER_FRAME = new TimberFrameTypesFP("crimson", Blocks.CRIMSON_PLANKS);
-    public static final TimberFrameTypesFP CHARRED_TIMBER_FRAME = new TimberFrameTypesFP("charred", BlockusBlocks.CHARRED.planks);
+    public static final TimberFrameTypes OAK_TIMBER_FRAME = new TimberFrameTypes("oak", Blocks.OAK_PLANKS);
+    public static final TimberFrameTypes BIRCH_TIMBER_FRAME = new TimberFrameTypes("birch", Blocks.BIRCH_PLANKS);
+    public static final TimberFrameTypes SPRUCE_TIMBER_FRAME = new TimberFrameTypes("spruce", Blocks.SPRUCE_PLANKS);
+    public static final TimberFrameTypes JUNGLE_TIMBER_FRAME = new TimberFrameTypes("jungle", Blocks.JUNGLE_PLANKS);
+    public static final TimberFrameTypes ACACIA_TIMBER_FRAME = new TimberFrameTypes("acacia", Blocks.ACACIA_PLANKS);
+    public static final TimberFrameTypes DARK_OAK_TIMBER_FRAME = new TimberFrameTypes("dark_oak", Blocks.DARK_OAK_PLANKS);
+    public static final TimberFrameTypes MANGROVE_TIMBER_FRAME = new TimberFrameTypes("mangrove", Blocks.MANGROVE_PLANKS);
+    public static final TimberFrameTypes BAMBOO_TIMBER_FRAME = new TimberFrameTypes("bamboo", Blocks.BAMBOO_PLANKS);
+    public static final TimberFrameTypes CHERRY_TIMBER_FRAME = new TimberFrameTypes("cherry", Blocks.CHERRY_PLANKS);
+    public static final TimberFrameTypes RAW_BAMBOO_TIMBER_FRAME = new TimberFrameTypes("raw_bamboo", BlockusBlocks.RAW_BAMBOO.planks);
+    public static final TimberFrameTypes WHITE_OAK_TIMBER_FRAME = new TimberFrameTypes("white_oak", BlockusBlocks.WHITE_OAK.planks);
+    public static final TimberFrameTypes WARPED_TIMBER_FRAME = new TimberFrameTypes("warped", Blocks.WARPED_PLANKS, true);
+    public static final TimberFrameTypes CRIMSON_TIMBER_FRAME = new TimberFrameTypes("crimson", Blocks.CRIMSON_PLANKS, true);
+    public static final TimberFrameTypes CHARRED_TIMBER_FRAME = new TimberFrameTypes("charred", BlockusBlocks.CHARRED.planks, true);
 
     // Small Hedges
     public static final Block OAK_SMALL_HEDGE = registerSmallHedge("oak_small_hedge", Blocks.OAK_LEAVES);

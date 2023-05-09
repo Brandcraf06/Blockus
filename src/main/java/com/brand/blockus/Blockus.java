@@ -7,16 +7,11 @@ import com.brand.blockus.content.types.ColoredTilesTypes;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.itemgroups.content.*;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
-import com.brand.blockus.utils.AsphaltStatusEffect;
+import com.brand.blockus.utils.effect.BlockusEffects;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -28,7 +23,10 @@ public class Blockus implements ModInitializer {
 
     public static final String MOD_ID = "blockus";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static final StatusEffect ASPHALT_SPRINT = new AsphaltStatusEffect().addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "ab0e24b0-f62d-4cf8-8d35-62989caa5b5f", 0.40D, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+
+    public static Identifier id(String name) {
+        return new Identifier(MOD_ID, name);
+    }
 
     @Override
     public void onInitialize() {
@@ -37,6 +35,7 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(BlockusItems.class);
         Reflection.initialize(BlockusEntities.class);
         Reflection.initialize(ColoredTilesTypes.class);
+        Reflection.initialize(BlockusEffects.class);
 
         BlockusItemGroups.init();
         BuildingBlocksGroup.init();
@@ -52,12 +51,6 @@ public class Blockus implements ModInitializer {
         Instance.init();
         BlockusWorldgenFeatures.registerConfiguredFeature();
 
-        Registry.register(Registries.STATUS_EFFECT, Blockus.id("asphalt_sprint"), ASPHALT_SPRINT);
-
-    }
-
-    public static Identifier id(String name) {
-        return new Identifier(MOD_ID, name);
     }
 
     public static Text STEPPED_ON_TEXT = Text.translatable(Util.createTranslationKey("blockitem", Blockus.id("when_stepped_on"))).formatted(Formatting.GRAY);

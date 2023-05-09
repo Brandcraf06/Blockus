@@ -3,10 +3,11 @@ package com.brand.blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.PatternWoolTypes;
-import com.brand.blockus.content.types.TimberFrameTypesF;
+import com.brand.blockus.content.types.TimberFrameTypes;
 import com.brand.blockus.content.types.WoodTypesF;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemConvertible;
@@ -21,10 +22,14 @@ public class Instance {
     public static void init() {
 
 
-// Flammable
+// Burning
 
         // general		
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WOODEN_FRAME, 30, 60);
+        FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.WOODEN_FRAME, 300);
 
         // small hedges
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.OAK_SMALL_HEDGE, 30, 60);
@@ -43,6 +48,13 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_WALL, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_BLOCK, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BURNT_PAPER_BLOCK, 5, 60);
+        FuelRegistry.INSTANCE.add(Items.PAPER, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_DOOR, 100);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_TRAPDOOR, 150);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.FRAMED_PAPER_BLOCK, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_WALL, 150);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_LAMP, 300);
+        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_BLOCK, 400);
 
         // thatch
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH.block, 60, 20);
@@ -50,20 +62,23 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH.stairs, 60, 20);
 
         // timber frames
-        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
-            FlammableBlockRegistry.getDefaultInstance().add(timberFrameType.block, 5, 20);
-            FlammableBlockRegistry.getDefaultInstance().add(timberFrameType.diagonal, 5, 20);
-            FlammableBlockRegistry.getDefaultInstance().add(timberFrameType.cross, 5, 20);
+        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+            for (Block block : new Block[]{timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross}) {
+                if (!block.asItem().isFireproof()) {
+                    FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
+                    FuelRegistry.INSTANCE.add(block, 300);
+                }
+            }
         }
 
         // patterned wools
-
         for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
             FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.block, 30, 60);
             FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.stairs, 30, 60);
             FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.slab, 30, 60);
             FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.carpet, 60, 20);
-
+            FuelRegistry.INSTANCE.add(patternWoolTypes.stairs, 100);
+            FuelRegistry.INSTANCE.add(patternWoolTypes.slab, 50);
         }
 
         // bamboo
@@ -73,6 +88,8 @@ public class Instance {
             FlammableBlockRegistry.getDefaultInstance().add(woodType.slab, 5, 20);
             FlammableBlockRegistry.getDefaultInstance().add(woodType.fence, 5, 20);
             FlammableBlockRegistry.getDefaultInstance().add(woodType.fence_gate, 5, 20);
+            FuelRegistry.INSTANCE.add(woodType.fence, 300);
+            FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
         }
 
         // white oak
@@ -105,42 +122,6 @@ public class Instance {
 
         // legacy
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.LEGACY_LOG, 5, 5);
-
-
-// Fuel
-
-        for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
-            FuelRegistry.INSTANCE.add(patternWoolTypes.stairs, 100);
-            FuelRegistry.INSTANCE.add(patternWoolTypes.slab, 50);
-        }
-
-        // general
-        FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WOODEN_FRAME, 300);
-
-        // paper
-        FuelRegistry.INSTANCE.add(Items.PAPER, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_DOOR, 100);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_TRAPDOOR, 150);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.FRAMED_PAPER_BLOCK, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_WALL, 150);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_LAMP, 300);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_BLOCK, 400);
-
-        // timber frames
-
-        for (TimberFrameTypesF timberFrameType : TimberFrameTypesF.values()) {
-            FuelRegistry.INSTANCE.add(timberFrameType.block, 300);
-            FuelRegistry.INSTANCE.add(timberFrameType.diagonal, 300);
-            FuelRegistry.INSTANCE.add(timberFrameType.cross, 300);
-        }
-
-        for (WoodTypesF woodType : WoodTypesF.values()) {
-            FuelRegistry.INSTANCE.add(woodType.fence, 300);
-            FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
-        }
 
 // Composting
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.OAK_SMALL_HEDGE, 0.30f);

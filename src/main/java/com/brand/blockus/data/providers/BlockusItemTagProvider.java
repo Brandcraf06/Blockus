@@ -2,8 +2,8 @@ package com.brand.blockus.data.providers;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusEntities;
-import com.brand.blockus.tags.BlockusBlockTags;
-import com.brand.blockus.tags.BlockusItemTags;
+import com.brand.blockus.utils.tags.BlockusBlockTags;
+import com.brand.blockus.utils.tags.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;

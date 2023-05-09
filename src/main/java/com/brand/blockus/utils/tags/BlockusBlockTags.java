@@ -1,4 +1,4 @@
-package com.brand.blockus.tags;
+package com.brand.blockus.utils.tags;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.block.Block;
