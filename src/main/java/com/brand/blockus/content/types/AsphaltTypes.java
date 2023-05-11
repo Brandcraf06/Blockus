@@ -22,7 +22,7 @@ public class AsphaltTypes {
         String type = color.getName() + "_asphalt";
         String type2 = type.replace("black_asphalt", "asphalt");
 
-        Block.Settings blockSettings = FabricBlockSettings.of().mapColor(color).instrument(Instrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool();
+        Block.Settings blockSettings = FabricBlockSettings.create().mapColor(color).instrument(Instrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool();
 
         this.block = BlocksRegistration.register(type2, new AsphaltBlock(blockSettings));
         this.slab = BlocksRegistration.register(type2 + "_slab", new AsphaltSlab(FabricBlockSettings.copyOf(block)));

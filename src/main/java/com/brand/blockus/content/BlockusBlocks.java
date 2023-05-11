@@ -184,7 +184,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block SNOW_PILLAR = createPillar("snow", SNOW_BRICKS.block);
 
     // Ice Bricks
-    public static final Block ICE_BRICKS = register("ice_bricks", new Block(FabricBlockSettings.of().mapColor(MapColor.PALE_PURPLE).slipperiness(0.98F).strength(0.5F).sounds(BlockSoundGroup.GLASS)));
+    public static final Block ICE_BRICKS = register("ice_bricks", new Block(FabricBlockSettings.create().mapColor(MapColor.PALE_PURPLE).slipperiness(0.98F).strength(0.5F).sounds(BlockSoundGroup.GLASS)));
     public static final Block ICE_BRICK_WALL = registerWall(ICE_BRICKS);
     public static final Block ICE_PILLAR = createPillar("ice", ICE_BRICKS);
 
@@ -291,9 +291,9 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LAPIS_DECORATED_SOUL_SANDSTONE = register("lapis_decorated_soul_sandstone", createCopy(BlockusBlocks.SOUL_SANDSTONE.block));
 
     // Rainbow
-    public static final Block RAINBOW_ROSE = register("rainbow_rose", new FertilizableFlowerBlock(StatusEffects.GLOWING, 8, FabricBlockSettings.of().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ)));
+    public static final Block RAINBOW_ROSE = register("rainbow_rose", new FertilizableFlowerBlock(StatusEffects.GLOWING, 8, FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ)));
     public static final Block POTTED_RAINBOW_ROSE = registerNoItem("potted_rainbow_rose", createPottedPlant(RAINBOW_ROSE));
-    public static final Block RAINBOW_BLOCK = register("rainbow_block", new PillarBlock(FabricBlockSettings.of().mapColor(MapColor.LIGHT_BLUE).strength(5.0f, 6.0f).requiresTool()));
+    public static final Block RAINBOW_BLOCK = register("rainbow_block", new PillarBlock(FabricBlockSettings.create().mapColor(MapColor.LIGHT_BLUE).strength(5.0f, 6.0f).requiresTool()));
     public static final BSSWTypes RAINBOW_BRICKS = new BSSWTypes("rainbow_bricks", Blocks.BRICKS);
     public static final Block RAINBOW_GLOWSTONE = register("rainbow_glowstone", createCopy(Blocks.GLOWSTONE));
 
@@ -443,8 +443,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block PUFFERFISH_CRATE = register("pufferfish_crate", createCrates());
     public static final Block TROPICAL_FISH_CRATE = register("tropical_fish_crate", createCrates());
     public static final Block COD_CRATE = register("cod_crate", createCrates());
-    public static final Block COOKIE_BLOCK = register("cookie_block", new CookieBlock(FabricBlockSettings.of().mapColor(MapColor.ORANGE).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
-    public static final Block CHORUS_BLOCK = register("chorus_block", new PillarBlock(FabricBlockSettings.of().mapColor(MapColor.PURPLE).strength(0.5f).sounds(BlockSoundGroup.GRASS)));
+    public static final Block COOKIE_BLOCK = register("cookie_block", new CookieBlock(FabricBlockSettings.create().mapColor(MapColor.ORANGE).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
+    public static final Block CHORUS_BLOCK = register("chorus_block", new PillarBlock(FabricBlockSettings.create().mapColor(MapColor.PURPLE).strength(0.5f).sounds(BlockSoundGroup.GRASS)));
     public static final Block POTATO_CRATE = register("potato_crate", createCrates());
     public static final Block APPLE_CRATE = register("apple_crate", createCrates());
     public static final Block GOLDEN_APPLE_CRATE = register("golden_apple_crate", createCrates());
@@ -578,7 +578,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final AsphaltTypes PURPLE_ASPHALT = new AsphaltTypes(DyeColor.PURPLE);
     public static final AsphaltTypes MAGENTA_ASPHALT = new AsphaltTypes(DyeColor.MAGENTA);
     public static final AsphaltTypes PINK_ASPHALT = new AsphaltTypes(DyeColor.PINK);
-    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt", new RainbowAsphalt(FabricBlockSettings.of().mapColor(DyeColor.BLUE).instrument(Instrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool()));
+    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt", new RainbowAsphalt(FabricBlockSettings.create().mapColor(DyeColor.BLUE).instrument(Instrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool()));
 
     // Shingles
     public static final BSSTypes SHINGLES = new BSSTypes("shingles", Blocks.TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
@@ -710,13 +710,13 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final BSSTypes THATCH = new BSSTypes("thatch", Blocks.HAY_BLOCK);
 
     // Paper
-    public static final Block PAPER_BLOCK = register("paper_block", new Block(FabricBlockSettings.of().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
-    public static final Block BURNT_PAPER_BLOCK = register("burnt_paper_block", new Block(FabricBlockSettings.of().mapColor(MapColor.STONE_GRAY).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
-    public static final Block FRAMED_PAPER_BLOCK = register("framed_paper_block", new Block(FabricBlockSettings.of().mapColor(MapColor.OFF_WHITE).instrument(Instrument.BASS).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block PAPER_BLOCK = register("paper_block", new Block(FabricBlockSettings.create().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
+    public static final Block BURNT_PAPER_BLOCK = register("burnt_paper_block", new Block(FabricBlockSettings.create().mapColor(MapColor.STONE_GRAY).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
+    public static final Block FRAMED_PAPER_BLOCK = register("framed_paper_block", new Block(FabricBlockSettings.create().mapColor(MapColor.OFF_WHITE).instrument(Instrument.BASS).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).burnable()));
     public static final Block PAPER_WALL = register("paper_wall", createWoodenPane());
     public static final Block PAPER_DOOR = register("paper_door", createWoodenDoor(0.1f, 0.8f, BlockSoundGroup.WOOD, MapColor.OFF_WHITE, BlockSetType.OAK));
     public static final Block PAPER_TRAPDOOR = register("paper_trapdoor", createWoodenTrapdoor(0.1f, 0.8f, BlockSoundGroup.WOOD, MapColor.OFF_WHITE, BlockSetType.OAK));
-    public static final Block PAPER_LAMP = register("paper_lamp", new PaperLampBlock(FabricBlockSettings.of().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS).luminance(15).instrument(Instrument.BASS)));
+    public static final Block PAPER_LAMP = register("paper_lamp", new PaperLampBlock(FabricBlockSettings.create().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS).luminance(15).instrument(Instrument.BASS)));
 
     // Plating
     public static final BSSTypes IRON_PLATING = new BSSTypes("iron_plating", Blocks.IRON_BLOCK, MapColor.STONE_GRAY);
@@ -748,17 +748,17 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block PATH = register("path", new DirtPathBlock(FabricBlockSettings.copyOf(Blocks.DIRT_PATH)));
     public static final Block CHARCOAL_BLOCK = register("charcoal_block", createCopy(Blocks.COAL_BLOCK));
     public static final Block SUGAR_BLOCK = register("sugar_block", createFallingBlock(0.5f, 0.5f, BlockSoundGroup.SAND, MapColor.OFF_WHITE));
-    public static final Block ENDER_BLOCK = register("ender_block", new Block(FabricBlockSettings.of().mapColor(MapColor.TERRACOTTA_GREEN).strength(5.0f, 6.0f)));
-    public static final Block ROTTEN_FLESH_BLOCK = register("rotten_flesh_block", new Block(FabricBlockSettings.of().mapColor(MapColor.TERRACOTTA_RED).strength(0.5f).sounds(BlockSoundGroup.SLIME)));
-    public static final Block MEMBRANE_BLOCK = register("membrane_block", new Block(FabricBlockSettings.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(0.5f).sounds(BlockSoundGroup.SLIME)));
-    public static final Block NETHER_STAR_BLOCK = registerGlint("nether_stars_block", new NetherStarBlock(FabricBlockSettings.of().mapColor(MapColor.OFF_WHITE).strength(5.0f, 6.0f).requiresTool()));
+    public static final Block ENDER_BLOCK = register("ender_block", new Block(FabricBlockSettings.create().mapColor(MapColor.TERRACOTTA_GREEN).strength(5.0f, 6.0f)));
+    public static final Block ROTTEN_FLESH_BLOCK = register("rotten_flesh_block", new Block(FabricBlockSettings.create().mapColor(MapColor.TERRACOTTA_RED).strength(0.5f).sounds(BlockSoundGroup.SLIME)));
+    public static final Block MEMBRANE_BLOCK = register("membrane_block", new Block(FabricBlockSettings.create().mapColor(MapColor.TERRACOTTA_WHITE).strength(0.5f).sounds(BlockSoundGroup.SLIME)));
+    public static final Block NETHER_STAR_BLOCK = registerGlint("nether_stars_block", new NetherStarBlock(FabricBlockSettings.create().mapColor(MapColor.OFF_WHITE).strength(5.0f, 6.0f).requiresTool()));
     public static final Block WOODEN_FRAME = register("wooden_frame", createWoodenPane());
     public static final Block REDSTONE_SAND = register("redstone_sand", new FallingRedstoneBlock(FabricBlockSettings.copyOf(Blocks.SAND).mapColor(MapColor.BRIGHT_RED)));
-    public static final Block LOVE_BLOCK = register("love_block", new LoveBlock(FabricBlockSettings.of().mapColor(MapColor.PINK).strength(2, 6.0f).requiresTool()));
-    public static final Block WEIGHT_STORAGE_CUBE = register("weight_storage_cube", new WeightStorageCubeBlock(FabricBlockSettings.of().mapColor(MapColor.IRON_GRAY).strength(0.1f, 6.0f)));
+    public static final Block LOVE_BLOCK = register("love_block", new LoveBlock(FabricBlockSettings.create().mapColor(MapColor.PINK).strength(2, 6.0f).requiresTool()));
+    public static final Block WEIGHT_STORAGE_CUBE = register("weight_storage_cube", new WeightStorageCubeBlock(FabricBlockSettings.create().mapColor(MapColor.IRON_GRAY).strength(0.1f, 6.0f)));
     public static final Block COMPANION_CUBE = register("companion_cube", createFallingBlock(0.1f, 6.0f, BlockSoundGroup.STONE, MapColor.IRON_GRAY));
-    public static final Block CAUTION_BLOCK = register("caution_block", new Block(FabricBlockSettings.of().mapColor(MapColor.ORANGE).strength(1.5f, 1200.0f).requiresTool()));
-    public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.of().mapColor(MapColor.BLACK).strength(5.0f, 6.0f)));
+    public static final Block CAUTION_BLOCK = register("caution_block", new Block(FabricBlockSettings.create().mapColor(MapColor.ORANGE).strength(1.5f, 1200.0f).requiresTool()));
+    public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.create().mapColor(MapColor.BLACK).strength(5.0f, 6.0f)));
 
     // Legacy
     public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", new SaplingBlock(new LegacyOakSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
@@ -785,7 +785,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone", createCopy(Blocks.GLOWSTONE));
     public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", new LegacyStonecutterBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).strength(1.5f, 17.5f)));
     public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createLightBlock(50.0F, 1200.0F, BlockSoundGroup.STONE, 12, MapColor.BLACK));
-    public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", new Block(FabricBlockSettings.of().mapColor(MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
+    public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", new Block(FabricBlockSettings.create().mapColor(MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
 
     // Colored Tiles
     /**

@@ -41,8 +41,8 @@ public class WoodTypesFP {
 
         this.base = base;
 
-        FabricBlockSettings blockSettings = FabricBlockSettings.of().mapColor(color).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
-        Block.Settings blockSettings2 = blockSettings.nonOpaque().pistonBehavior(PistonBehavior.DESTROY);
+        FabricBlockSettings blockSettings = FabricBlockSettings.create().mapColor(color).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
+        FabricBlockSettings blockSettings2 = blockSettings.nonOpaque().pistonBehavior(PistonBehavior.DESTROY);
 
         this.planks = BlocksRegistration.register(type + "_planks", new Block(blockSettings));
         this.stairs = BlocksRegistration.registerStairs(this.planks);
@@ -55,7 +55,7 @@ public class WoodTypesFP {
         this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), BlockSetType.OAK, 30, true));
 
         // sign
-        FabricBlockSettings signSettings = FabricBlockSettings.of().mapColor(color).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD);
+        FabricBlockSettings signSettings = FabricBlockSettings.create().mapColor(color).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD);
 
         Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);
         this.standing_sign = BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(signPath, signSettings));
