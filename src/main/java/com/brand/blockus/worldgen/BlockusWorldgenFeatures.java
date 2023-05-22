@@ -5,6 +5,7 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -100,7 +101,7 @@ public class BlockusWorldgenFeatures {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS),
+            BiomeSelectors.tag(ConventionalBiomeTags.PLAINS),
             GenerationStep.Feature.VEGETAL_DECORATION,
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak_rare")));
 
