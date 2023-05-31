@@ -17,9 +17,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BlockusBlocks extends BlocksRegistration {
 
     // Stone
@@ -37,14 +34,6 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block CRACKED_ANDESITE_BRICKS = register("cracked_andesite_bricks", createCopy(BlockusBlocks.ANDESITE_BRICKS.block));
     public static final Block CHISELED_ANDESITE_BRICKS = register("chiseled_andesite_bricks", createCopy(BlockusBlocks.ANDESITE_BRICKS.block));
     public static final Block POLISHED_ANDESITE_PILLAR = registerPillar(Blocks.POLISHED_ANDESITE);
-
-    public static List<Block> getLastThreeBlocks() {
-        List<Block> lastThreeBlocks = new ArrayList<>();
-        lastThreeBlocks.add(CRACKED_ANDESITE_BRICKS);
-        lastThreeBlocks.add(CHISELED_ANDESITE_BRICKS);
-        lastThreeBlocks.add(POLISHED_ANDESITE_PILLAR);
-        return lastThreeBlocks;
-    }
 
     public static final Block HERRINGBONE_ANDESITE_BRICKS = register("herringbone_andesite_bricks", createCopy(BlockusBlocks.ANDESITE_BRICKS.block));
     public static final Block ANDESITE_CIRCULAR_PAVING = register("andesite_circular_paving", new OrientableBlockBase(FabricBlockSettings.copy(BlockusBlocks.ANDESITE_BRICKS.block)));

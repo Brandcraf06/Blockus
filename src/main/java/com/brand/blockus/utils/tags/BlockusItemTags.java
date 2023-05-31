@@ -23,7 +23,6 @@ public final class BlockusItemTags {
 
 
     private BlockusItemTags() {
-        return;
     }
 
     private static TagKey<Item> register(String id) {

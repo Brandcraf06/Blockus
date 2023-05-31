@@ -69,7 +69,6 @@ public class BlockusBlockTags {
     public static final TagKey<Block> WHITE_OAK_LOGS = register("white_oak_logs");
 
     private BlockusBlockTags() {
-        return;
     }
 
     private static TagKey<Block> register(String id) {

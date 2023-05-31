@@ -84,15 +84,15 @@ public class Instance {
         // wood
         for (WoodTypes woodType : WoodTypes.values()) {
             if (woodType.isBurnable()) {
-                    FlammableBlockRegistry.getDefaultInstance().add(woodType.planks, 5, 20);
-                    FlammableBlockRegistry.getDefaultInstance().add(woodType.stairs, 5, 20);
-                    FlammableBlockRegistry.getDefaultInstance().add(woodType.slab, 5, 20);
-                    FlammableBlockRegistry.getDefaultInstance().add(woodType.fence, 5, 20);
-                    FlammableBlockRegistry.getDefaultInstance().add(woodType.fence_gate, 5, 20);
-                    FuelRegistry.INSTANCE.add(woodType.fence, 300);
-                    FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
-                }
+                FlammableBlockRegistry.getDefaultInstance().add(woodType.planks, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodType.stairs, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodType.slab, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodType.fence, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodType.fence_gate, 5, 20);
+                FuelRegistry.INSTANCE.add(woodType.fence, 300);
+                FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
             }
+        }
 
         // white oak
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_LOG, 5, 5);
