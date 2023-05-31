@@ -1,5 +1,5 @@
 {
-  "parent": "blockus:block/tinted_large_flower_pot_double_cross",
+  "parent": "blockus:block/large_flower_pot_double_cross",
   "textures": {
     "plant_top": "block/large_fern_top",
     "plant_bottom": "block/large_fern_bottom",

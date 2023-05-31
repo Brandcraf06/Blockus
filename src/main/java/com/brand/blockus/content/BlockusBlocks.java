@@ -17,6 +17,9 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BlockusBlocks extends BlocksRegistration {
 
     // Stone
@@ -34,6 +37,15 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block CRACKED_ANDESITE_BRICKS = register("cracked_andesite_bricks", createCopy(BlockusBlocks.ANDESITE_BRICKS.block));
     public static final Block CHISELED_ANDESITE_BRICKS = register("chiseled_andesite_bricks", createCopy(BlockusBlocks.ANDESITE_BRICKS.block));
     public static final Block POLISHED_ANDESITE_PILLAR = registerPillar(Blocks.POLISHED_ANDESITE);
+
+    public static List<Block> getLastThreeBlocks() {
+        List<Block> lastThreeBlocks = new ArrayList<>();
+        lastThreeBlocks.add(CRACKED_ANDESITE_BRICKS);
+        lastThreeBlocks.add(CHISELED_ANDESITE_BRICKS);
+        lastThreeBlocks.add(POLISHED_ANDESITE_PILLAR);
+        return lastThreeBlocks;
+    }
+
     public static final Block HERRINGBONE_ANDESITE_BRICKS = register("herringbone_andesite_bricks", createCopy(BlockusBlocks.ANDESITE_BRICKS.block));
     public static final Block ANDESITE_CIRCULAR_PAVING = register("andesite_circular_paving", new OrientableBlockBase(FabricBlockSettings.copy(BlockusBlocks.ANDESITE_BRICKS.block)));
 
@@ -337,13 +349,28 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block WHITE_OAK_WOOD = register("white_oak_wood", createPillarCopy(WHITE_OAK_LOG));
     public static final Block STRIPPED_WHITE_OAK_WOOD = register("stripped_white_oak_wood", createPillarCopy(WHITE_OAK_LOG));
     public static final Block WHITE_OAK_LEAVES = register("white_oak_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.ORANGE).pistonBehavior(PistonBehavior.DESTROY).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
-    public static final WoodTypesF WHITE_OAK = new WoodTypesF("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, BlockSoundGroup.WOOD);
+    public static final WoodTypes WHITE_OAK = new WoodTypes("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, BlockSoundGroup.WOOD);
 
     // Raw Bamboo
-    public static final WoodTypesF RAW_BAMBOO = new WoodTypesF("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD);
+    public static final WoodTypes RAW_BAMBOO = new WoodTypes("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD);
 
     // Charred
-    public static final WoodTypesFP CHARRED = new WoodTypesFP("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY);
+    public static final WoodTypes CHARRED = new WoodTypes("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, BlockSoundGroup.WOOD, false);
+
+    // Mosaics
+    public static final BSSTypes OAK_MOSAIC = new BSSTypes("oak_mosaic", Blocks.OAK_PLANKS);
+    public static final BSSTypes SPRUCE_MOSAIC = new BSSTypes("spruce_mosaic", Blocks.SPRUCE_PLANKS);
+    public static final BSSTypes BIRCH_MOSAIC = new BSSTypes("birch_mosaic", Blocks.BIRCH_PLANKS);
+    public static final BSSTypes JUNGLE_MOSAIC = new BSSTypes("jungle_mosaic", Blocks.JUNGLE_PLANKS);
+    public static final BSSTypes ACACIA_MOSAIC = new BSSTypes("acacia_mosaic", Blocks.ACACIA_PLANKS);
+    public static final BSSTypes DARK_OAK_MOSAIC = new BSSTypes("dark_oak_mosaic", Blocks.DARK_OAK_PLANKS);
+    public static final BSSTypes CHERRY_MOSAIC = new BSSTypes("cherry_mosaic", Blocks.MANGROVE_PLANKS);
+    public static final BSSTypes MANGROVE_MOSAIC = new BSSTypes("mangrove_mosaic", Blocks.MANGROVE_PLANKS);
+    public static final BSSTypes RAW_BAMBOO_MOSAIC = new BSSTypes("raw_bamboo_mosaic", RAW_BAMBOO.planks);
+    public static final BSSTypes WHITE_OAK_MOSAIC = new BSSTypes("white_oak_mosaic", WHITE_OAK.planks);
+    public static final BSSTypes WARPED_MOSAIC = new BSSTypes("warped_mosaic", Blocks.WARPED_PLANKS);
+    public static final BSSTypes CRIMSON_MOSAIC = new BSSTypes("crimson_mosaic", Blocks.CRIMSON_PLANKS);
+    public static final BSSTypes CHARRED_MOSAIC = new BSSTypes("charred_mosaic", CHARRED.planks);
 
     // Herringbone Planks
     public static final Block HERRINGBONE_OAK_PLANKS = register("herringbone_oak_planks", createCopy(Blocks.OAK_PLANKS));
@@ -429,6 +456,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final PottedLargeTypes POTTED_BAMBOO_LARGE = new PottedLargeTypes("potted_bamboo_large", Blocks.BAMBOO);
     public static final PottedLargeTypes POTTED_AZALEA_LARGE = new PottedLargeTypes("potted_azalea_large", Blocks.AZALEA);
     public static final PottedLargeTypes POTTED_FLOWERING_AZALEA_LARGE = new PottedLargeTypes("potted_flowering_azalea_large", Blocks.FLOWERING_AZALEA);
+    public static final PottedLargeTypes POTTED_PITCHER_PLANT = new PottedLargeTypes("potted_pitcher_plant", Blocks.PITCHER_PLANT);
 
     // Chocolate
     public static final BSSTypes CHOCOLATE_BLOCK = new BSSTypes("chocolate_block", 1.0F, 1.0F, MapColor.BROWN);

@@ -48,11 +48,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(concreteType.pillar);
         }
 
-        for (WoodTypesF woodType : WoodTypesF.values()) {
-            this.addWoodSetDrop(woodType.planks, woodType.stairs, woodType.slab, woodType.fence, woodType.fence_gate, woodType.door, woodType.trapdoor, woodType.pressure_plate, woodType.button, woodType.standing_sign, woodType.ceiling_hanging_sign);
-        }
-
-        for (WoodTypesFP woodType : WoodTypesFP.values()) {
+        for (WoodTypes woodType : WoodTypes.values()) {
             this.addWoodSetDrop(woodType.planks, woodType.stairs, woodType.slab, woodType.fence, woodType.fence_gate, woodType.door, woodType.trapdoor, woodType.pressure_plate, woodType.button, woodType.standing_sign, woodType.ceiling_hanging_sign);
         }
 

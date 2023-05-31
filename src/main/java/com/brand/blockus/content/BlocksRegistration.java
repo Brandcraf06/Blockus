@@ -116,20 +116,24 @@ public class BlocksRegistration {
     }
 
     // Door & Trapdoor
+    public static FabricBlockSettings createDoorTrapdoorBlockSettings(float hardness, float resistance, BlockSoundGroup sound, MapColor color, Instrument instrument) {
+        return FabricBlockSettings.create().mapColor(color).instrument(instrument).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY);
+    }
+
     public static DoorBlock createWoodenDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new DoorBlock(FabricBlockSettings.create().mapColor(color).instrument(Instrument.BASS).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).burnable(), blockSetType);
+        return new DoorBlock(createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASS).burnable(), blockSetType);
     }
 
     public static DoorBlock createStoneDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new DoorBlock(FabricBlockSettings.create().mapColor(color).instrument(Instrument.BASEDRUM).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).requiresTool(), blockSetType);
+        return new DoorBlock(createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASEDRUM).requiresTool(), blockSetType);
     }
 
     public static TrapdoorBlock createWoodenTrapdoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new TrapdoorBlock(FabricBlockSettings.create().mapColor(color).instrument(Instrument.BASS).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).burnable(), blockSetType);
+        return new TrapdoorBlock(createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASS).burnable(), blockSetType);
     }
 
     public static TrapdoorBlock createStoneTrapdoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new TrapdoorBlock(FabricBlockSettings.create().mapColor(color).instrument(Instrument.BASEDRUM).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).requiresTool(), blockSetType);
+        return new TrapdoorBlock(createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASEDRUM).requiresTool(), blockSetType);
     }
 
     // Light

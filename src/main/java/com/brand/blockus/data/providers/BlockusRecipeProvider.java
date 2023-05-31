@@ -830,6 +830,21 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSmallLogsRecipe(exporter, BlockusBlocks.CRIMSON_SMALL_STEMS, Blocks.CRIMSON_STEM);
         offerSmallLogsRecipe(exporter, BlockusBlocks.WHITE_OAK_SMALL_LOGS, BlockusBlocks.WHITE_OAK_LOG);
 
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.OAK_MOSAIC.block, Blocks.OAK_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.BIRCH_MOSAIC.block, Blocks.BIRCH_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.SPRUCE_MOSAIC.block, Blocks.SPRUCE_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.JUNGLE_MOSAIC.block, Blocks.JUNGLE_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.ACACIA_MOSAIC.block, Blocks.ACACIA_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.DARK_OAK_MOSAIC.block, Blocks.DARK_OAK_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.MANGROVE_MOSAIC.block, Blocks.MANGROVE_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.CHERRY_MOSAIC.block, Blocks.CHERRY_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.WHITE_OAK_MOSAIC.block, BlockusBlocks.WHITE_OAK.slab);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.RAW_BAMBOO_MOSAIC.block, BlockusBlocks.RAW_BAMBOO.slab);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.CRIMSON_MOSAIC.block, Blocks.CRIMSON_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.WARPED_MOSAIC.block, Blocks.WARPED_SLAB);
+        offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.CHARRED_MOSAIC.block, BlockusBlocks.CHARRED.slab);
+
+
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_OAK_PLANKS, Blocks.OAK_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_BIRCH_PLANKS, Blocks.BIRCH_PLANKS);
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS, Blocks.SPRUCE_PLANKS);

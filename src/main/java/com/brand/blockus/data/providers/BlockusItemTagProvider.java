@@ -224,6 +224,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.STONE_TRAPDOOR.asItem())
             .add(BlockusBlocks.BLACKSTONE_TRAPDOOR.asItem());
 
+        this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
+
+        this.copy(BlockTags.SLABS, ItemTags.SLABS);
+
         this.copy(BlockTags.WALLS, ItemTags.WALLS);
 
         this.copy(BlockTags.WARPED_STEMS, ItemTags.WARPED_STEMS);

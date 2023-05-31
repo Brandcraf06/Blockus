@@ -25,7 +25,7 @@ import net.minecraft.world.event.GameEvent;
 import java.util.Map;
 
 public class LargeFlowerPotBlock extends Block {
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 10.0D, 15.0D);
     private static final Map<Block, Block> CONTENT_TO_POTTED = Maps.newHashMap();
     public static final float field_31095 = 3.0F;
     private final Block content;

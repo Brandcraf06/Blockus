@@ -2,8 +2,7 @@ package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.TimberFrameTypes;
-import com.brand.blockus.content.types.WoodTypesF;
-import com.brand.blockus.content.types.WoodTypesFP;
+import com.brand.blockus.content.types.WoodTypes;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -18,7 +17,7 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
 
-            for (WoodTypesF woodType : WoodTypesF.values()) {
+            for (WoodTypes woodType : WoodTypes.values()) {
                 entries.add(woodType.planks);
                 entries.add(woodType.stairs);
                 entries.add(woodType.slab);
@@ -30,17 +29,45 @@ public class BuildingBlocksGroup {
                 entries.add(woodType.button);
             }
 
-            for (WoodTypesFP woodType : WoodTypesFP.values()) {
-                entries.add(woodType.planks);
-                entries.add(woodType.stairs);
-                entries.add(woodType.slab);
-                entries.add(woodType.fence);
-                entries.add(woodType.fence_gate);
-                entries.add(woodType.door);
-                entries.add(woodType.trapdoor);
-                entries.add(woodType.pressure_plate);
-                entries.add(woodType.button);
-            }
+            entries.add(BlockusBlocks.OAK_MOSAIC.block);
+            entries.add(BlockusBlocks.OAK_MOSAIC.stairs);
+            entries.add(BlockusBlocks.OAK_MOSAIC.slab);
+            entries.add(BlockusBlocks.BIRCH_MOSAIC.block);
+            entries.add(BlockusBlocks.BIRCH_MOSAIC.stairs);
+            entries.add(BlockusBlocks.BIRCH_MOSAIC.slab);
+            entries.add(BlockusBlocks.SPRUCE_MOSAIC.block);
+            entries.add(BlockusBlocks.SPRUCE_MOSAIC.stairs);
+            entries.add(BlockusBlocks.SPRUCE_MOSAIC.slab);
+            entries.add(BlockusBlocks.JUNGLE_MOSAIC.block);
+            entries.add(BlockusBlocks.JUNGLE_MOSAIC.stairs);
+            entries.add(BlockusBlocks.JUNGLE_MOSAIC.slab);
+            entries.add(BlockusBlocks.ACACIA_MOSAIC.block);
+            entries.add(BlockusBlocks.ACACIA_MOSAIC.stairs);
+            entries.add(BlockusBlocks.ACACIA_MOSAIC.slab);
+            entries.add(BlockusBlocks.DARK_OAK_MOSAIC.block);
+            entries.add(BlockusBlocks.DARK_OAK_MOSAIC.stairs);
+            entries.add(BlockusBlocks.DARK_OAK_MOSAIC.slab);
+            entries.add(BlockusBlocks.MANGROVE_MOSAIC.block);
+            entries.add(BlockusBlocks.MANGROVE_MOSAIC.stairs);
+            entries.add(BlockusBlocks.MANGROVE_MOSAIC.slab);
+            entries.add(BlockusBlocks.WHITE_OAK_MOSAIC.block);
+            entries.add(BlockusBlocks.WHITE_OAK_MOSAIC.stairs);
+            entries.add(BlockusBlocks.WHITE_OAK_MOSAIC.slab);
+            entries.add(BlockusBlocks.CHERRY_MOSAIC.block);
+            entries.add(BlockusBlocks.CHERRY_MOSAIC.stairs);
+            entries.add(BlockusBlocks.CHERRY_MOSAIC.slab);
+            entries.add(BlockusBlocks.WARPED_MOSAIC.block);
+            entries.add(BlockusBlocks.WARPED_MOSAIC.stairs);
+            entries.add(BlockusBlocks.WARPED_MOSAIC.slab);
+            entries.add(BlockusBlocks.CRIMSON_MOSAIC.block);
+            entries.add(BlockusBlocks.CRIMSON_MOSAIC.stairs);
+            entries.add(BlockusBlocks.CRIMSON_MOSAIC.slab);
+            entries.add(BlockusBlocks.RAW_BAMBOO_MOSAIC.block);
+            entries.add(BlockusBlocks.RAW_BAMBOO_MOSAIC.stairs);
+            entries.add(BlockusBlocks.RAW_BAMBOO_MOSAIC.slab);
+            entries.add(BlockusBlocks.CHARRED_MOSAIC.block);
+            entries.add(BlockusBlocks.CHARRED_MOSAIC.stairs);
+            entries.add(BlockusBlocks.CHARRED_MOSAIC.slab);
 
             entries.add(BlockusBlocks.OAK_SMALL_LOGS);
             entries.add(BlockusBlocks.BIRCH_SMALL_LOGS);

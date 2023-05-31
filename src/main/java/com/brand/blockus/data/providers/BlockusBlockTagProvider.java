@@ -332,6 +332,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POTTED_HUGE_WARPED_FUNGUS.block)
             .add(BlockusBlocks.POTTED_CACTUS_LARGE.block)
             .add(BlockusBlocks.POTTED_BAMBOO_LARGE.block)
+            .add(BlockusBlocks.POTTED_PITCHER_PLANT.block)
             .addOptional(new Identifier(Blockus.MOD_ID, "potted_autumn_birch"))
             .addOptional(new Identifier(Blockus.MOD_ID, "potted_autumn_oak"))
             .addOptional(new Identifier(Blockus.MOD_ID, "potted_palm"))
@@ -923,7 +924,46 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.REDSTONE_O_LANTERN)
             .addTag(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
             .addTag(BlockusBlockTags.TIMBER_FRAMES)
-            .addTag(BlockusBlockTags.FOOD_CRATES);
+            .addTag(BlockusBlockTags.FOOD_CRATES)
+            .add(BlockusBlocks.OAK_MOSAIC.block)
+            .add(BlockusBlocks.BIRCH_MOSAIC.block)
+            .add(BlockusBlocks.SPRUCE_MOSAIC.block)
+            .add(BlockusBlocks.JUNGLE_MOSAIC.block)
+            .add(BlockusBlocks.ACACIA_MOSAIC.block)
+            .add(BlockusBlocks.DARK_OAK_MOSAIC.block)
+            .add(BlockusBlocks.MANGROVE_MOSAIC.block)
+            .add(BlockusBlocks.CHERRY_MOSAIC.block)
+            .add(BlockusBlocks.WHITE_OAK_MOSAIC.block)
+            .add(BlockusBlocks.RAW_BAMBOO_MOSAIC.block)
+            .add(BlockusBlocks.CRIMSON_MOSAIC.block)
+            .add(BlockusBlocks.WARPED_MOSAIC.block)
+            .add(BlockusBlocks.CHARRED_MOSAIC.block)
+            .add(BlockusBlocks.OAK_MOSAIC.stairs)
+            .add(BlockusBlocks.BIRCH_MOSAIC.stairs)
+            .add(BlockusBlocks.SPRUCE_MOSAIC.stairs)
+            .add(BlockusBlocks.JUNGLE_MOSAIC.stairs)
+            .add(BlockusBlocks.ACACIA_MOSAIC.stairs)
+            .add(BlockusBlocks.DARK_OAK_MOSAIC.stairs)
+            .add(BlockusBlocks.MANGROVE_MOSAIC.stairs)
+            .add(BlockusBlocks.CHERRY_MOSAIC.stairs)
+            .add(BlockusBlocks.WHITE_OAK_MOSAIC.stairs)
+            .add(BlockusBlocks.RAW_BAMBOO_MOSAIC.stairs)
+            .add(BlockusBlocks.CRIMSON_MOSAIC.stairs)
+            .add(BlockusBlocks.WARPED_MOSAIC.stairs)
+            .add(BlockusBlocks.CHARRED_MOSAIC.stairs)
+            .add(BlockusBlocks.OAK_MOSAIC.slab)
+            .add(BlockusBlocks.BIRCH_MOSAIC.slab)
+            .add(BlockusBlocks.SPRUCE_MOSAIC.slab)
+            .add(BlockusBlocks.JUNGLE_MOSAIC.slab)
+            .add(BlockusBlocks.ACACIA_MOSAIC.slab)
+            .add(BlockusBlocks.DARK_OAK_MOSAIC.slab)
+            .add(BlockusBlocks.MANGROVE_MOSAIC.slab)
+            .add(BlockusBlocks.CHERRY_MOSAIC.slab)
+            .add(BlockusBlocks.WHITE_OAK_MOSAIC.slab)
+            .add(BlockusBlocks.RAW_BAMBOO_MOSAIC.slab)
+            .add(BlockusBlocks.CRIMSON_MOSAIC.slab)
+            .add(BlockusBlocks.WARPED_MOSAIC.slab)
+            .add(BlockusBlocks.CHARRED_MOSAIC.slab);
 
         this.getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
             .add(BlockusBlocks.ROTTEN_FLESH_BLOCK)
@@ -1257,7 +1297,15 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.STONE_TRAPDOOR)
             .add(BlockusBlocks.BLACKSTONE_TRAPDOOR);
 
+
+        for (BSSTypes bssTypes : BSSTypes.values()) {
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bssTypes.stairs);
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bssTypes.slab);
+        }
+
         for (BSSWTypes bsswTypes : BSSWTypes.values()) {
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bsswTypes.stairs);
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bsswTypes.slab);
             this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswTypes.wall);
         }
 

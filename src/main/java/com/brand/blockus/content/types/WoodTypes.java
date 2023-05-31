@@ -9,16 +9,16 @@ import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 
-public class WoodTypesFP {
+public class WoodTypes {
 
-    private static final ArrayList<WoodTypesFP> LIST = new ArrayList<>();
+    private static final ArrayList<WoodTypes> LIST = new ArrayList<>();
 
     public final Block planks;
     public final Block stairs;
@@ -36,13 +36,26 @@ public class WoodTypesFP {
     public final Block ceiling_hanging_sign;
     public final Block wall_hanging_sign;
     public final Item hanging_sign;
+    public boolean burnable;
 
-    public WoodTypesFP(String type, Block base, MapColor color) {
+    public WoodTypes(String type, Block base, MapColor color, BlockSoundGroup sound) {
+        this(type, base, color, sound, true);
+    }
+
+    public WoodTypes(String type, Block base, MapColor color, BlockSoundGroup sound, boolean burnable) {
 
         this.base = base;
+        this.burnable = burnable;
 
-        FabricBlockSettings blockSettings = FabricBlockSettings.create().mapColor(color).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD);
-        FabricBlockSettings blockSettings2 = blockSettings.nonOpaque().pistonBehavior(PistonBehavior.DESTROY);
+        FabricBlockSettings blockSettings = FabricBlockSettings.create().mapColor(color).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(sound).burnable();
+        FabricBlockSettings blockSettings2 = BlocksRegistration.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, Instrument.BASS).burnable();
+        FabricBlockSettings signSettings = FabricBlockSettings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
+
+        if (burnable) {
+            blockSettings = blockSettings.burnable();
+            blockSettings2 = blockSettings2.burnable();
+            signSettings = signSettings.burnable();
+        }
 
         this.planks = BlocksRegistration.register(type + "_planks", new Block(blockSettings));
         this.stairs = BlocksRegistration.registerStairs(this.planks);
@@ -55,8 +68,6 @@ public class WoodTypesFP {
         this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), BlockSetType.OAK, 30, true));
 
         // sign
-        FabricBlockSettings signSettings = FabricBlockSettings.create().mapColor(color).noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD);
-
         Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);
         this.standing_sign = BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(signPath, signSettings));
         this.wall_sign = BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(signPath, signSettings.dropsLike(standing_sign)));
@@ -72,7 +83,11 @@ public class WoodTypesFP {
 
     }
 
-    public static ArrayList<WoodTypesFP> values() {
+    public static ArrayList<WoodTypes> values() {
         return LIST;
+    }
+
+    public boolean isBurnable() {
+        return this.burnable;
     }
 }
