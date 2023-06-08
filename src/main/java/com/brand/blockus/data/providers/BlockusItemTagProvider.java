@@ -7,6 +7,7 @@ import com.brand.blockus.utils.tags.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKeys;
@@ -115,10 +116,23 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS.asItem())
+            .add(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS.asItem())
             .add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS.asItem());
 
+        this.getOrCreateTagBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
+            .add(BlockusBlocks.OAK_MOSAIC.block.asItem())
+            .add(BlockusBlocks.BIRCH_MOSAIC.block.asItem())
+            .add(BlockusBlocks.SPRUCE_MOSAIC.block.asItem())
+            .add(BlockusBlocks.JUNGLE_MOSAIC.block.asItem())
+            .add(BlockusBlocks.ACACIA_MOSAIC.block.asItem())
+            .add(BlockusBlocks.DARK_OAK_MOSAIC.block.asItem())
+            .add(BlockusBlocks.MANGROVE_MOSAIC.block.asItem())
+            .add(BlockusBlocks.CHERRY_MOSAIC.block.asItem())
+            .add(Blocks.BAMBOO_MOSAIC.asItem())
+            .add(BlockusBlocks.RAW_BAMBOO_MOSAIC.block.asItem())
+            .add(BlockusBlocks.WHITE_OAK_MOSAIC.block.asItem());
 
         this.copy(new Identifier("c", "planks_that_burn"));
 

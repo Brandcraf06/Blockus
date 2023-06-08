@@ -843,6 +843,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.CRIMSON_MOSAIC.block, Blocks.CRIMSON_SLAB);
         offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.WARPED_MOSAIC.block, Blocks.WARPED_SLAB);
         offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BlockusBlocks.CHARRED_MOSAIC.block, BlockusBlocks.CHARRED.slab);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.fromTag(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN), RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.CHARRED_MOSAIC.block, 0.1F, 200).criterion("has_mosaic", conditionsFromTag(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)).offerTo(exporter, getRecipeName(BlockusBlocks.CHARRED_MOSAIC.block) + "_from_smelting");
 
 
         offerHerringBoneRecipe(exporter, BlockusBlocks.HERRINGBONE_OAK_PLANKS, Blocks.OAK_PLANKS);

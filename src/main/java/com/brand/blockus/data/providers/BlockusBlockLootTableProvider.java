@@ -518,7 +518,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.LEGACY_GRAVEL, (block) -> dropsWithSilkTouch(block, this.addSurvivesExplosionCondition(block, ItemEntry.builder(Items.FLINT).conditionally(TableBonusLootCondition.builder(Enchantments.FORTUNE, 0.1F, 0.14285715F, 0.25F, 1.0F)).alternatively(ItemEntry.builder(block)))));
         this.addDrop(BlockusBlocks.LEGACY_NETHER_REACTOR_CORE, (block) -> LootTable.builder().pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(3.0F)).with(ItemEntry.builder(Items.DIAMOND)))).pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(6.0F)).with(ItemEntry.builder(Items.IRON_INGOT)))));
 
-        this.addDrop(BlockusBlocks.WHITE_OAK_LEAVES, (block) -> this.oakLeavesDrops(block, BlockusBlocks.WHITE_OAK_LEAVES, SAPLING_DROP_CHANCE));
+        this.addDrop(BlockusBlocks.WHITE_OAK_LEAVES, (block) -> this.oakLeavesDrops(block, BlockusBlocks.WHITE_OAK_SAPLING, SAPLING_DROP_CHANCE));
         this.addDrop(BlockusBlocks.BLAZE_LANTERN, (block) -> this.drops(block, Items.BLAZE_POWDER, ConstantLootNumberProvider.create(9.0F)));
         this.addDrop(BlockusBlocks.BURNT_PAPER_BLOCK, (block) -> this.drops(block, Items.GUNPOWDER, ConstantLootNumberProvider.create(2.0F)));
         this.addDrop(BlockusBlocks.NETHER_STAR_BLOCK, (block) -> dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(Items.NETHER_STAR).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(8.0F, 9.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE, 2)).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(8, 9))))));
