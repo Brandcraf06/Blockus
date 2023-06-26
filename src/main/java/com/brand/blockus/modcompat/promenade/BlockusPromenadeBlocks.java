@@ -6,8 +6,8 @@ import fr.hugman.dawn.Registrar;
 import fr.hugman.promenade.PromenadeFactory;
 import fr.hugman.promenade.registry.content.AmaranthContent;
 import fr.hugman.promenade.registry.content.MapleContent;
-import fr.hugman.promenade.registry.content.PalmContent;
 import fr.hugman.promenade.registry.content.SakuraContent;
+import fr.hugman.promenade.registry.content.TropicalContent;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -56,7 +56,7 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
 
         POTTED_BLUSH_SAKURA = registerNoItem("potted_blush_sakura", createLargeFlowerPot(SakuraContent.BLUSH_SAKURA_SAPLING));
         POTTED_COTTON_SAKURA = registerNoItem("potted_cotton_sakura", createLargeFlowerPot(SakuraContent.COTTON_SAKURA_SAPLING));
-        POTTED_PALM = registerNoItem("potted_palm", createLargeFlowerPot(PalmContent.PALM_SAPLING));
+        POTTED_PALM = registerNoItem("potted_palm", createLargeFlowerPot(TropicalContent.PALM_SAPLING));
 
         POTTED_DARK_AMARANTH = registerNoItem("potted_huge_dark_amaranth_fungus", createLargeFlowerPot(AmaranthContent.DARK_AMARANTH_FUNGUS));
 
@@ -67,7 +67,7 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         SAKURA_SMALL_LOGS = register("sakura_small_logs", new PillarBlock(FabricBlockSettings.copy(SakuraContent.SAKURA_LOG)));
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.SAKURA_SMALL_LOGS, 5, 5);
 
-        PALM_SMALL_LOGS = register("palm_small_logs", new PillarBlock(FabricBlockSettings.copy(PalmContent.PALM_LOG)));
+        PALM_SMALL_LOGS = register("palm_small_logs", new PillarBlock(FabricBlockSettings.copy(TropicalContent.PALM_LOG)));
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_LOGS, 5, 5);
 
         DARK_AMARANTH_SMALL_STEMS = register("dark_amaranth_small_stems", new PillarBlock(FabricBlockSettings.copy(AmaranthContent.DARK_AMARANTH_STEM)));
@@ -91,7 +91,7 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         COTTON_SAKURA_SMALL_HEDGE = registerSmallHedge("cotton_sakura_small_hedge", SakuraContent.COTTON_SAKURA_BLOSSOMS);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.COTTON_SAKURA_SMALL_HEDGE, 30, 60);
 
-        PALM_SMALL_HEDGE = registerSmallHedge("palm_small_hedge", PalmContent.PALM_LEAVES);
+        PALM_SMALL_HEDGE = registerSmallHedge("palm_small_hedge", TropicalContent.PALM_LEAVES);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusPromenadeBlocks.PALM_SMALL_HEDGE, 30, 60);
 
         DARK_AMARANTH_SMALL_HEDGE = registerSmallHedge("dark_amaranth_small_hedge", AmaranthContent.DARK_AMARANTH_WART_BLOCK);

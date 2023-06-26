@@ -38,11 +38,7 @@ public class WoodTypes {
     public final Item hanging_sign;
     public boolean burnable;
 
-    public WoodTypes(String type, Block base, MapColor color, BlockSoundGroup sound) {
-        this(type, base, color, sound, true);
-    }
-
-    public WoodTypes(String type, Block base, MapColor color, BlockSoundGroup sound, boolean burnable) {
+    public WoodTypes(String type, Block base, MapColor color, BlockSoundGroup sound, WoodType woodtype, BlockSetType blocksettype, boolean burnable) {
 
         this.base = base;
         this.burnable = burnable;
@@ -61,11 +57,11 @@ public class WoodTypes {
         this.stairs = BlocksRegistration.registerStairs(this.planks);
         this.slab = BlocksRegistration.registerSlab(this.planks);
         this.fence = BlocksRegistration.register(type + "_fence", new FenceBlock(FabricBlockSettings.copyOf(base)));
-        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), WoodType.OAK));
-        this.door = BlocksRegistration.register(type + "_door", new DoorBlock(blockSettings2, BlockSetType.OAK));
-        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", new TrapdoorBlock(blockSettings2, BlockSetType.OAK));
+        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), woodtype));
+        this.door = BlocksRegistration.register(type + "_door", new DoorBlock(blockSettings2, blocksettype));
+        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", new TrapdoorBlock(blockSettings2, blocksettype));
         this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(this.planks);
-        this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), BlockSetType.OAK, 30, true));
+        this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), blocksettype, 30, true));
 
         // sign
         Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);
@@ -81,6 +77,18 @@ public class WoodTypes {
 
         LIST.add(this);
 
+    }
+
+    public WoodTypes(String type, Block base, MapColor color, BlockSoundGroup sound, WoodType woodtype, BlockSetType blocksettype) {
+        this(type, base, color, sound, woodtype, blocksettype, true);
+    }
+
+    public WoodTypes(String type, Block base, MapColor color, BlockSoundGroup sound) {
+        this(type, base, color, sound, WoodType.OAK, BlockSetType.OAK, true);
+    }
+
+    public WoodTypes(String type, Block base, MapColor color, BlockSoundGroup sound, boolean burnable) {
+        this(type, base, color, sound, WoodType.OAK, BlockSetType.OAK, burnable);
     }
 
     public static ArrayList<WoodTypes> values() {

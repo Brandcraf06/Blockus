@@ -341,7 +341,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final WoodTypes WHITE_OAK = new WoodTypes("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, BlockSoundGroup.WOOD);
 
     // Raw Bamboo
-    public static final WoodTypes RAW_BAMBOO = new WoodTypes("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD);
+    public static final WoodTypes RAW_BAMBOO = new WoodTypes("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD, WoodType.BAMBOO, BlockSetType.BAMBOO);
 
     // Charred
     public static final WoodTypes CHARRED = new WoodTypes("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, BlockSoundGroup.WOOD, false);
