@@ -1,6 +1,7 @@
 package com.brand.blockus.data;
 
 import com.brand.blockus.data.providers.*;
+import com.brand.blockus.modcompat.promenade.data.providers.BlockusPromenadeBlockLootTableProvider;
 import com.brand.blockus.worldgen.BlockusWorldgenProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -21,8 +22,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(BlockusBlockLootTableProvider::new);
         pack.addProvider(BlockusWorldgenProvider::new);
         pack.addProvider(BlockusModelProvider::new);
-
-//        pack.addProvider(BlockusPromenadeBlockLootTableGenerator::new);
+        pack.addProvider(BlockusPromenadeBlockLootTableProvider::new);
     }
 
     public static ConditionJsonProvider getLoadCondition(String... modIds) {

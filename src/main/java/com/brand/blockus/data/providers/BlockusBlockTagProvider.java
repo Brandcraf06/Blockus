@@ -60,6 +60,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
                 .add(asphaltType.slab);
         }
 
+        this.getOrCreateTagBuilder(BlockusBlockTags.ASPHALT)
+                .add(BlockusBlocks.RAINBOW_ASPHALT);
+
         this.getOrCreateTagBuilder(BlockusBlockTags.BARRIERS)
             .add(BlockusBlocks.CAUTION_BARRIER)
             .add(BlockusBlocks.ROAD_BARRIER);

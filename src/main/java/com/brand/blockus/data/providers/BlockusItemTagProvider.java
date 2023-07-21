@@ -136,10 +136,6 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(new Identifier("c", "planks_that_burn"));
 
-        this.copy(new Identifier("c", "wooden_barrels"));
-
-        this.copy(new Identifier("columns", "columns"));
-
         this.copy(BlockTags.ACACIA_LOGS, ItemTags.ACACIA_LOGS);
 
         this.copy(BlockTags.BIRCH_LOGS, ItemTags.BIRCH_LOGS);
