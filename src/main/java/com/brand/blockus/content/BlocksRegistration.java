@@ -86,7 +86,7 @@ public class BlocksRegistration {
 
     // Pressure Plate
     public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base, BlockSetType blockSetType) {
-        return register(replaceId(baseid) + "_pressure_plate", new PressurePlateBlock(type, FabricBlockSettings.copy(base).noCollision().pistonBehavior(PistonBehavior.DESTROY), blockSetType));
+        return register(replaceId(baseid) + "_pressure_plate", new PressurePlateBlock(type, FabricBlockSettings.copy(base).solid().noCollision().pistonBehavior(PistonBehavior.DESTROY), blockSetType));
     }
 
     public static Block registerStonePressurePlate(Block base) {
