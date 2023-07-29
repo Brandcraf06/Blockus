@@ -67,10 +67,10 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         ConfiguredFeature<?, ?> WHITE_OAK = new ConfiguredFeature<>(Feature.TREE, BlockusWorldgenFeatures.white_oak().build());
         RegistryEntry<ConfiguredFeature<?, ?>> whiteOak = entries.add(BlockusWorldgenFeatures.WHITE_OAK, WHITE_OAK);
 
-        PlacedFeature PLACED_WHITE_OAK = new PlacedFeature(whiteOak, List.of(new PlacementModifier[]{RarityFilterPlacementModifier.of(48), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))}));
+        PlacedFeature PLACED_WHITE_OAK = new PlacedFeature(whiteOak, List.of(new PlacementModifier[]{RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))}));
         entries.add(BlockusWorldgenFeatures.PLACED_WHITE_OAK, PLACED_WHITE_OAK);
 
-        PlacedFeature PLACED_WHITE_OAK_RARE = new PlacedFeature(whiteOak, List.of(new PlacementModifier[]{RarityFilterPlacementModifier.of(240), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))}));
+        PlacedFeature PLACED_WHITE_OAK_RARE = new PlacedFeature(whiteOak, List.of(new PlacementModifier[]{RarityFilterPlacementModifier.of(192), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))}));
         entries.add(BlockusWorldgenFeatures.PLACED_WHITE_OAK_RARE, PLACED_WHITE_OAK_RARE);
 
         PlacedFeature WHITE_OAK_CHECKED = new PlacedFeature(whiteOak, List.of(new PlacementModifier[]{PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)}));
