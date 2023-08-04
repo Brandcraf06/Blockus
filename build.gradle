@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.3-SNAPSHOT'
 	id 'maven-publish'
+  id "me.modmuss50.mod-publish-plugin" version "0.2.1"
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -86,6 +87,45 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}" }
 	}
+}
+
+publishMods {
+  file = remapJar.archiveFile
+  changelog = file("changelog.md").text
+  type = STABLE
+  modLoaders.add("fabric")
+
+  modrinth {
+    accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+    projectId = "zFiY2Go0"
+    minecraftVersions.add("${minecraft_version}")
+    minecraftVersions.add("1.20")
+    requires {
+      slug = "fabric-api"
+    }
+  }
+
+  curseforge {
+    accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+    projectId = "312289"
+    displayName = "(${project.minecraft_version}) Blockus $project.version"
+    minecraftVersions.add("${minecraft_version}")
+    minecraftVersions.add("1.20")
+    requires {
+      slug = "fabric-api"
+    }
+  }
+}
+
+task checkVersion {
+  doFirst {
+    def xml = new URL("https://maven.fabricmc.net/net/fabricmc/fabric-language-kotlin/maven-metadata.xml").text
+    def metadata = new XmlSlurper().parseText(xml)
+    def versions = metadata.versioning.versions.version*.text()
+    if (versions.contains(version)) {
+      throw new RuntimeException("${version} has already been released!")
+    }
+  }
 }
 
   
