@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab_top",
-    "textures": {
-        "top": "blockus:block/polished_bluestone",
-        "bottom": "blockus:block/polished_bluestone",
-        "side": "blockus:block/polished_bluestone"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/outer_stairs",
-    "textures": {
-        "bottom": "blockus:block/warped_wart_bricks",
-        "top": "blockus:block/warped_wart_bricks",
-        "side": "blockus:block/warped_wart_bricks"
-    }
-}

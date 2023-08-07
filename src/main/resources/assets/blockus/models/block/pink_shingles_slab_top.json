@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "blockus:block/pink_shingles",
-    "top": "blockus:block/pink_shingles",
-    "side": "blockus:block/pink_shingles"
-  }
-}

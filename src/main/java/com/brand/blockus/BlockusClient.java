@@ -29,11 +29,6 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
         registerBlockColor(BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
         registerBlockColor(BlockusBlocks.MANGROVE_SMALL_HEDGE, Blocks.MANGROVE_LEAVES);
-        registerBlockColor(BlockusBlocks.WATER_BRICKS.block, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICKS.stairs, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICKS.slab, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.WATER_BRICKS.wall, Blocks.WATER);
-        registerBlockColor(BlockusBlocks.CHISELED_WATER_BRICKS, Blocks.WATER);
         registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN.block, Blocks.POTTED_FERN);
         registerBlockColor(BlockusBlocks.POTTED_OAK.block, Blocks.OAK_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_SPRUCE.block, Blocks.SPRUCE_LEAVES);
@@ -97,11 +92,6 @@ public class BlockusClient implements ClientModInitializer {
         );
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
-            BlockusBlocks.WATER_BRICKS.block,
-            BlockusBlocks.WATER_BRICKS.stairs,
-            BlockusBlocks.WATER_BRICKS.slab,
-            BlockusBlocks.WATER_BRICKS.wall,
-            BlockusBlocks.CHISELED_WATER_BRICKS,
 
             BlockusBlocks.RAINBOW_GLASS,
             BlockusBlocks.RAINBOW_GLASS_PANE,

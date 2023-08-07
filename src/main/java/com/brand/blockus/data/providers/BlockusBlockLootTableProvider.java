@@ -108,6 +108,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
+        this.addDrop(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS);
         this.addDrop(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
@@ -447,6 +448,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.RAINBOW_ROSE);
         this.addDrop(BlockusBlocks.TINTED_BEVELED_GLASS);
         this.addDrop(BlockusBlocks.CHOCOLATE_TABLET);
+        this.addDrop(BlockusBlocks.CHOCOLATE_SQUARES);
 
         this.addDrop(BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, this::slabDrops);
         this.addDrop(BlockusBlocks.NETHERITE_SLAB, this::slabDrops);

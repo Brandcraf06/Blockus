@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/outer_stairs",
-    "textures": {
-        "bottom": "blockus:block/white_patterned_wool",
-        "top": "blockus:block/white_patterned_wool",
-        "side": "blockus:block/white_patterned_wool"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab_top",
-    "textures": {
-        "top": "blockus:block/crimson_wart_bricks",
-        "bottom": "blockus:block/crimson_wart_bricks",
-        "side": "blockus:block/crimson_wart_bricks"
-    }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "blockus:block/magma_bricks",
-    "top": "blockus:block/magma_bricks",
-    "side": "blockus:block/magma_bricks"
-  }
-}

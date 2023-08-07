@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab",
-    "textures": {
-        "top": "blockus:block/red_patterned_wool",
-        "bottom": "blockus:block/red_patterned_wool",
-        "side": "blockus:block/red_patterned_wool"
-    }
-}

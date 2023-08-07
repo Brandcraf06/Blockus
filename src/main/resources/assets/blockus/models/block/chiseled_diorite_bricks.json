@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "blockus:block/chiseled_diorite_bricks"
-  }
-}

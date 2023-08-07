@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "blockus:block/legacy_explosion_proof_gold_block"
-  }
-}

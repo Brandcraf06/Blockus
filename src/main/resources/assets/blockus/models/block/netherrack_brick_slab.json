@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab",
-    "textures": {
-        "top": "blockus:block/netherrack_bricks",
-        "bottom": "blockus:block/netherrack_bricks",
-        "side": "blockus:block/netherrack_bricks"
-    }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "blockus:block/red_sandstone_bricks",
-    "top": "blockus:block/red_sandstone_bricks",
-    "side": "blockus:block/red_sandstone_bricks"
-  }
-}

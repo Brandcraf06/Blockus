@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab",
-    "textures": {
-        "top": "blockus:block/limestone_tiles",
-        "bottom": "blockus:block/limestone_tiles",
-        "side": "blockus:block/limestone_tiles"
-    }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "block/template_orientable_trapdoor_top",
-  "textures": {
-    "texture": "blockus:block/obsidian_reinforced_trapdoor"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "blockus:block/light_gray_concrete_pillar_top",
-    "side": "blockus:block/light_gray_concrete_pillar"
-  }
-}

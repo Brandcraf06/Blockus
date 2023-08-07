@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "top": "blockus:block/yellow_concrete_bricks",
-    "bottom": "blockus:block/yellow_concrete_bricks",
-    "side": "blockus:block/yellow_concrete_bricks"
-  }
-}

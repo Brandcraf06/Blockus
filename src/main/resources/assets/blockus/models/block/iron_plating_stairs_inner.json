@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "blockus:block/iron_plating",
-    "top": "blockus:block/iron_plating",
-    "side": "blockus:block/iron_plating"
-  }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/outer_stairs",
-    "textures": {
-        "bottom": "blockus:block/warped_mosaic",
-        "top": "blockus:block/warped_mosaic",
-        "side": "blockus:block/warped_mosaic"
-    }
-}

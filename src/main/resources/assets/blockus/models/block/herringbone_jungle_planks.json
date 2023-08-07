@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:block/cube_all",
-    "textures": {
-        "all": "blockus:block/herringbone_jungle_planks"
-    }
-}

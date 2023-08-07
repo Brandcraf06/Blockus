@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "top": "blockus:block/pink_stone_bricks",
-    "bottom": "blockus:block/pink_stone_bricks",
-    "side": "blockus:block/pink_stone_bricks"
-  }
-}

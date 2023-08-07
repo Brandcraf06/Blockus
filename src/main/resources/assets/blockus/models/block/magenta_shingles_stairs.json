@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "blockus:block/magenta_shingles",
-    "top": "blockus:block/magenta_shingles",
-    "side": "blockus:block/magenta_shingles"
-  }
-}

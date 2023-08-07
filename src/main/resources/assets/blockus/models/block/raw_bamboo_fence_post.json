@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/custom_fence_post",
-  "textures": {
-    "particle": "blockus:block/raw_bamboo_fence_particle",
-    "texture": "blockus:block/raw_bamboo_fence"
-  }
-}

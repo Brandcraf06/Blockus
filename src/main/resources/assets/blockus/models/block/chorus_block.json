@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_bottom_top",
-  "textures": {
-    "top": "blockus:block/chorus_block",
-    "side": "blockus:block/chorus_block_side",
-    "bottom": "blockus:block/chorus_block"
-  }
-}

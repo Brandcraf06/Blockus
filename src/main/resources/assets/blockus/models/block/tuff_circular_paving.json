@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_glazed_terracotta",
-  "textures": {
-    "particle": "blockus:block/tuff_circular_paving",
-    "pattern": "blockus:block/tuff_circular_paving"
-  }
-}

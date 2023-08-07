@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "blockus:block/lava_polished_blackstone_bricks",
-    "top": "blockus:block/lava_polished_blackstone_bricks",
-    "side": "blockus:block/lava_polished_blackstone_bricks"
-  }
-}

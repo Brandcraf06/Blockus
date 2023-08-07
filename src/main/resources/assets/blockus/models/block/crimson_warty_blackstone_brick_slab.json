@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "blockus:block/crimson_warty_blackstone_bricks",
-    "top": "blockus:block/crimson_warty_blackstone_bricks",
-    "side": "blockus:block/crimson_warty_blackstone_bricks"
-  }
-}

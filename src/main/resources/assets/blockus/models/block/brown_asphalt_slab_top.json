@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "blockus:block/brown_asphalt",
-    "top": "blockus:block/brown_asphalt",
-    "side": "blockus:block/brown_asphalt"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "blockus:block/lantern_top",
-    "side": "blockus:block/redstone_lantern_block"
-  }
-}

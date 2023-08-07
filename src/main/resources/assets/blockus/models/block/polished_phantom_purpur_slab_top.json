@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab_top",
-    "textures": {
-        "top": "blockus:block/polished_phantom_purpur",
-        "bottom": "blockus:block/polished_phantom_purpur",
-        "side": "blockus:block/polished_phantom_purpur"
-    }
-}

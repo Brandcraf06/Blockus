@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "blockus:block/blue_glazed_terracotta_pillar_top",
-    "side": "blockus:block/blue_glazed_terracotta_pillar"
-  }
-}

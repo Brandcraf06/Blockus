@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/inner_stairs",
-    "textures": {
-        "bottom": "blockus:block/crimson_wart_bricks",
-        "top": "blockus:block/crimson_wart_bricks",
-        "side": "blockus:block/crimson_wart_bricks"
-    }
-}

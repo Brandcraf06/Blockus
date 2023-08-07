@@ -4,7 +4,7 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusEntities;
 import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
-import com.brand.blockus.data.family.BlockusBlockFamilies;
+import com.brand.blockus.data.family.BlockusWoodFamilies;
 import com.brand.blockus.utils.tags.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -1117,7 +1117,6 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerPolishedStoneRecipe(exporter, BlockusBlocks.THATCH.block, Items.WHEAT);
 
         // Paper
-
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.PAPER, RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.PAPER_BLOCK);
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(BlockusBlocks.PAPER_BLOCK), RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.BURNT_PAPER_BLOCK.asItem(), 0.1F, 200).criterion("has_paper_block", conditionsFromItem(BlockusBlocks.PAPER_BLOCK)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.FRAMED_PAPER_BLOCK, 4).input('X', Items.PAPER).input('#', Items.STICK).pattern("###").pattern("XXX").pattern("###").criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER)).offerTo(exporter);
@@ -1155,6 +1154,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.CAUTION_BARRIER).input(BlockusBlocks.CAUTION_BLOCK).input(BlockusBlocks.ROAD_BARRIER).criterion(hasItem(BlockusBlocks.CAUTION_BLOCK), conditionsFromItem(BlockusBlocks.CAUTION_BLOCK)).criterion(hasItem(BlockusBlocks.ROAD_BARRIER), conditionsFromItem(BlockusBlocks.ROAD_BARRIER)).offerTo(exporter);
 
         // Netherite Blocks
+        BlockusRecipeProvider.offerStairsRecipe(exporter, BlockusBlocks.NETHERITE_STAIRS, Blocks.NETHERITE_BLOCK);
+        RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.NETHERITE_SLAB, Blocks.NETHERITE_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.NETHERITE_STAIRS, Blocks.NETHERITE_BLOCK);
         offerStonecuttingRecipe(exporter, BlockusBlocks.NETHERITE_SLAB, 2, Blocks.NETHERITE_BLOCK);
 
@@ -1373,7 +1374,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void generateFamilies(Consumer<RecipeJsonProvider> exporter, FeatureSet enabledFeatures) {
-        BlockusBlockFamilies.getFamilies().filter((family) -> {
+        BlockusWoodFamilies.getFamilies().filter((family) -> {
             return family.shouldGenerateRecipes(enabledFeatures);
         }).forEach((family) -> {
             generateFamily(exporter, family);

@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "blockus:block/marble_lines",
-    "side": "blockus:block/marble_lines"
-  }
-}

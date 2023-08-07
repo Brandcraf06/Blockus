@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "blockus:block/honeycomb_bricks",
-    "top": "blockus:block/honeycomb_bricks",
-    "side": "blockus:block/honeycomb_bricks"
-  }
-}

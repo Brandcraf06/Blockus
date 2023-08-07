@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "blockus:item/white_oak_hanging_sign"
-  }
-}

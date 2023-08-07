@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_bottom_top",
-  "textures": {
-    "top": "blockus:block/cod_crate",
-    "side": "blockus:block/fish_crate_side",
-    "bottom": "blockus:block/fish_crate_bottom"
-  }
-}

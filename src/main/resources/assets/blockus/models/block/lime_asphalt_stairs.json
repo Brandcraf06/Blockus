@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "blockus:block/lime_asphalt",
-    "top": "blockus:block/lime_asphalt",
-    "side": "blockus:block/lime_asphalt"
-  }
-}

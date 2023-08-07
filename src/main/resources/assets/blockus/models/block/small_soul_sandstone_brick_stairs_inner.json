@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "blockus:block/small_soul_sandstone_bricks",
-    "top": "blockus:block/small_soul_sandstone_bricks",
-    "side": "blockus:block/small_soul_sandstone_bricks"
-  }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/stairs",
-    "textures": {
-        "bottom": "blockus:block/viridite_bricks",
-        "top": "blockus:block/viridite_bricks",
-        "side": "blockus:block/viridite_bricks"
-    }
-}

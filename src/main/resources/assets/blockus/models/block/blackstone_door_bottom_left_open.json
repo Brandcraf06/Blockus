@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left_open",
-  "textures": {
-    "top": "blockus:block/blackstone_door_top",
-    "bottom": "blockus:block/blackstone_door_bottom"
-  }
-}

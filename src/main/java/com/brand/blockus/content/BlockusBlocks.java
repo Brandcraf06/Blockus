@@ -56,9 +56,7 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Mud
     public static final Block CHISELED_MUD_BRICKS = register("chiseled_mud_bricks", createCopy(Blocks.MUD_BRICKS));
-
     public static final Block MUD_BRICK_PILLAR = registerPillar(Blocks.MUD_BRICKS);
-
 
     // Dripstone
     public static final BSSTypes POLISHED_DRIPSTONE = new BSSTypes("polished_dripstone", Blocks.DRIPSTONE_BLOCK);

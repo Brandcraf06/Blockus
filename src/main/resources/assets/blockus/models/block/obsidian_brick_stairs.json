@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "blockus:block/obsidian_bricks",
-    "top": "blockus:block/obsidian_bricks",
-    "side": "blockus:block/obsidian_bricks"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "blockus:block/mossy_deepslate_bricks",
-    "top": "blockus:block/mossy_deepslate_bricks",
-    "side": "blockus:block/mossy_deepslate_bricks"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "blockus:block/viridite_pillar_top",
-    "side": "blockus:block/chiseled_viridite_pillar"
-  }
-}

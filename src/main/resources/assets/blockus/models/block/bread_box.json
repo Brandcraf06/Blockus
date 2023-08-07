@@ -1,9 +1,0 @@
-{
-  "parent": "block/orientable_with_bottom",
-  "textures": {
-    "top": "blockus:block/bread_box_top",
-    "front": "blockus:block/bread_box",
-    "side": "blockus:block/bread_box_side",
-    "bottom": "blockus:block/bread_box_side"
-  }
-}
