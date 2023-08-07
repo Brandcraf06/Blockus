@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "small_hedge",
+  "key": {
+    "#": {
+      "item": "minecraft:jungle_leaves"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "blockus:jungle_small_hedge"
+  },
+  "show_notification": true
+}

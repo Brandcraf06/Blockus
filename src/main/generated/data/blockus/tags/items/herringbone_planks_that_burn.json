@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:herringbone_oak_planks",
+    "blockus:herringbone_birch_planks",
+    "blockus:herringbone_spruce_planks",
+    "blockus:herringbone_jungle_planks",
+    "blockus:herringbone_acacia_planks",
+    "blockus:herringbone_dark_oak_planks",
+    "blockus:herringbone_mangrove_planks",
+    "blockus:herringbone_white_oak_planks",
+    "blockus:herringbone_bamboo_planks"
+  ]
+}

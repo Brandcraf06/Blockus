@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "small_hedge",
+  "key": {
+    "#": {
+      "item": "minecraft:warped_wart_block"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "blockus:warped_small_hedge"
+  },
+  "show_notification": true
+}

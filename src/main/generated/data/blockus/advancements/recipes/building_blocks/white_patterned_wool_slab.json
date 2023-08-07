@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:white_patterned_wool_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_patterned_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:white_patterned_wool"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_patterned_wool",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:white_patterned_wool_slab"
+    ]
+  }
+}

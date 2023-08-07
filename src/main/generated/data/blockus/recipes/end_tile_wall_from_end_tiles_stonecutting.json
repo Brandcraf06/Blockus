@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:end_tiles"
+  },
+  "result": "blockus:end_tile_wall"
+}

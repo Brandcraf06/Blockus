@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:bamboo_planks",
+    "blockus:charred_planks",
+    "blockus:white_oak_planks",
+    "blockus:legacy_planks",
+    "blockus:herringbone_oak_planks",
+    "blockus:herringbone_birch_planks",
+    "blockus:herringbone_spruce_planks",
+    "blockus:herringbone_jungle_planks",
+    "blockus:herringbone_acacia_planks",
+    "blockus:herringbone_dark_oak_planks",
+    "blockus:herringbone_mangrove_planks",
+    "blockus:herringbone_white_oak_planks",
+    "blockus:herringbone_bamboo_planks",
+    "blockus:herringbone_crimson_planks",
+    "blockus:herringbone_warped_planks",
+    "blockus:herringbone_charred_planks"
+  ]
+}

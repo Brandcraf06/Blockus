@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:lime_concrete_bricks"
+  },
+  "result": "blockus:chiseled_lime_concrete"
+}

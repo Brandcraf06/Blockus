@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:green_dye"
+    },
+    "S": {
+      "item": "minecraft:deepslate"
+    }
+  },
+  "pattern": [
+    " S ",
+    "S#S",
+    " S "
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:viridite"
+  },
+  "show_notification": true
+}

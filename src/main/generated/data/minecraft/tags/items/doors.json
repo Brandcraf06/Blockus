@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:paper_door",
+    "blockus:obsidian_reinforced_door",
+    "blockus:stone_door",
+    "blockus:blackstone_door"
+  ]
+}

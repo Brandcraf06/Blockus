@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "lit_redstone_lamps",
+  "key": {
+    "#": {
+      "item": "blockus:redstone_lamp_lit"
+    },
+    "S": {
+      "item": "minecraft:orange_dye"
+    }
+  },
+  "pattern": [
+    " S ",
+    "S#S",
+    " S "
+  ],
+  "result": {
+    "item": "blockus:orange_redstone_lamp_lit"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "blockus:white_oak_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:white_oak_planks"
+  }
+}

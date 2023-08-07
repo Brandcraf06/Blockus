@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:white_asphalt_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_asphalt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:white_asphalt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_asphalt",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:white_asphalt_slab"
+    ]
+  }
+}

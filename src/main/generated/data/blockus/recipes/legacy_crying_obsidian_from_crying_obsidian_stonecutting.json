@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:crying_obsidian"
+  },
+  "result": "blockus:legacy_crying_obsidian"
+}

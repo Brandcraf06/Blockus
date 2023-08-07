@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:stone_tiles",
+    "blockus:stone_tile_stairs",
+    "blockus:stone_tile_slab",
+    "blockus:stone_brick_pillar",
+    "blockus:herringbone_stone_bricks",
+    "blockus:stone_circular_paving",
+    "blockus:smooth_stone_stairs",
+    "blockus:stone_door",
+    "blockus:stone_trapdoor",
+    "blockus:sturdy_stone"
+  ]
+}

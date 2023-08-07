@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:soul_sandstone"
+  },
+  "result": "blockus:small_soul_sandstone_brick_wall"
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "shingles_slab",
+  "key": {
+    "#": {
+      "item": "minecraft:red_dye"
+    },
+    "X": {
+      "item": "blockus:shingles_slab"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:red_shingles_slab"
+  },
+  "show_notification": true
+}

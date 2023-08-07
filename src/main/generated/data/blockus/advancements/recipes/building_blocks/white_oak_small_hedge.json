@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:white_oak_small_hedge"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_oak_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:white_oak_leaves"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_oak_leaves",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:white_oak_small_hedge"
+    ]
+  }
+}

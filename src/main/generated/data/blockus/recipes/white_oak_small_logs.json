@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "small_logs",
+  "ingredients": [
+    {
+      "item": "blockus:white_oak_log"
+    },
+    {
+      "item": "blockus:white_oak_log"
+    },
+    {
+      "item": "blockus:white_oak_log"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "blockus:white_oak_small_logs"
+  }
+}

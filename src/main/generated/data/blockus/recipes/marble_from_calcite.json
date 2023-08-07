@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "marble",
+  "ingredients": [
+    {
+      "item": "minecraft:calcite"
+    },
+    {
+      "item": "blockus:limestone"
+    }
+  ],
+  "result": {
+    "item": "blockus:marble"
+  }
+}

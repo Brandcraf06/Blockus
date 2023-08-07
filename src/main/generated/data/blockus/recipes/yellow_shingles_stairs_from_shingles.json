@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "shingles",
+  "key": {
+    "#": {
+      "item": "minecraft:yellow_dye"
+    },
+    "X": {
+      "item": "blockus:shingles"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:yellow_shingles"
+  },
+  "show_notification": true
+}

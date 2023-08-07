@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:netherrack"
+    },
+    "X": {
+      "item": "minecraft:nether_bricks"
+    }
+  },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:nether_tiles"
+  },
+  "show_notification": true
+}

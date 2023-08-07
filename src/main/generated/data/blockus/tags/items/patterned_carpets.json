@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:white_patterned_carpet",
+    "blockus:orange_patterned_carpet",
+    "blockus:magenta_patterned_carpet",
+    "blockus:light_blue_patterned_carpet",
+    "blockus:yellow_patterned_carpet",
+    "blockus:lime_patterned_carpet",
+    "blockus:pink_patterned_carpet",
+    "blockus:gray_patterned_carpet",
+    "blockus:light_gray_patterned_carpet",
+    "blockus:cyan_patterned_carpet",
+    "blockus:purple_patterned_carpet",
+    "blockus:blue_patterned_carpet",
+    "blockus:brown_patterned_carpet",
+    "blockus:green_patterned_carpet",
+    "blockus:red_patterned_carpet",
+    "blockus:black_patterned_carpet"
+  ]
+}

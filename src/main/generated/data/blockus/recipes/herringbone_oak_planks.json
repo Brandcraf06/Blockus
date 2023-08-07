@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "herringbone_planks",
+  "key": {
+    "#": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "###",
+    "  #"
+  ],
+  "result": {
+    "count": 5,
+    "item": "blockus:herringbone_oak_planks"
+  },
+  "show_notification": true
+}

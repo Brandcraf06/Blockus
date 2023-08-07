@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "teal_nether_bricks",
+  "key": {
+    "#": {
+      "tag": "blockus:warped_nether_grass"
+    },
+    "X": {
+      "item": "minecraft:nether_brick"
+    }
+  },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "item": "blockus:teal_nether_bricks"
+  },
+  "show_notification": true
+}

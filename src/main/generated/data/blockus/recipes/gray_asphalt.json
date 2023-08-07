@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "asphalt",
+  "key": {
+    "#": {
+      "item": "minecraft:gray_dye"
+    },
+    "X": {
+      "item": "blockus:asphalt"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:gray_asphalt"
+  },
+  "show_notification": true
+}

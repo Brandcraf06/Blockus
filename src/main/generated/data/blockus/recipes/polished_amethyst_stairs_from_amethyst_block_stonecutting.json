@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:amethyst_block"
+  },
+  "result": "blockus:polished_amethyst_stairs"
+}

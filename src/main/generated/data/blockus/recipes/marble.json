@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "marble",
+  "key": {
+    "#": {
+      "item": "blockus:limestone"
+    },
+    "X": {
+      "item": "minecraft:bone_meal"
+    }
+  },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "item": "blockus:marble"
+  },
+  "show_notification": true
+}

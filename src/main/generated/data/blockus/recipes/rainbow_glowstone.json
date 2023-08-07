@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:glowstone"
+    },
+    "S": {
+      "item": "blockus:rainbow_petal"
+    }
+  },
+  "pattern": [
+    " S ",
+    "S#S",
+    " S "
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:rainbow_glowstone"
+  },
+  "show_notification": true
+}

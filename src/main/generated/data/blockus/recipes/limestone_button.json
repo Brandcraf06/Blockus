@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "blockus:limestone"
+    }
+  ],
+  "result": {
+    "item": "blockus:limestone_button"
+  }
+}

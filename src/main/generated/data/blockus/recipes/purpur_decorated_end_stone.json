@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:popped_chorus_fruit"
+    },
+    "X": {
+      "item": "minecraft:end_stone_bricks"
+    }
+  },
+  "pattern": [
+    "##",
+    "XX"
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:purpur_decorated_end_stone"
+  },
+  "show_notification": true
+}

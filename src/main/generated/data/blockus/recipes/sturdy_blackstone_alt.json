@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:polished_blackstone"
+    },
+    "X": {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "pattern": [
+    "#X#",
+    "X X",
+    "#X#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "blockus:sturdy_blackstone"
+  },
+  "show_notification": true
+}

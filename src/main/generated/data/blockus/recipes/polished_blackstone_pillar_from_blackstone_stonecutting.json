@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:blackstone"
+  },
+  "result": "blockus:polished_blackstone_pillar"
+}

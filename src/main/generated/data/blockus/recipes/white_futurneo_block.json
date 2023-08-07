@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "futurneo_blocks",
+  "key": {
+    "A": {
+      "item": "minecraft:black_dye"
+    },
+    "B": {
+      "item": "minecraft:white_stained_glass"
+    },
+    "C": {
+      "item": "minecraft:torch"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "count": 6,
+    "item": "blockus:white_futurneo_block"
+  },
+  "show_notification": true
+}

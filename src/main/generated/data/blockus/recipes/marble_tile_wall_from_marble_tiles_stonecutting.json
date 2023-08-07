@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:marble_tiles"
+  },
+  "result": "blockus:marble_tile_wall"
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "asphalt",
+  "key": {
+    "#": {
+      "tag": "minecraft:coals"
+    },
+    "X": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:asphalt"
+  },
+  "show_notification": true
+}

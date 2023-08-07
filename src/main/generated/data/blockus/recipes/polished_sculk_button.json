@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "blockus:polished_sculk"
+    }
+  ],
+  "result": {
+    "item": "blockus:polished_sculk_button"
+  }
+}

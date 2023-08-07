@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "beveled_glass_pane_2",
+  "key": {
+    "#": {
+      "item": "minecraft:purple_dye"
+    },
+    "X": {
+      "item": "blockus:beveled_glass_pane"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:purple_beveled_glass_pane"
+  },
+  "show_notification": true
+}

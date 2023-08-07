@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_stone_bricks",
+  "key": {
+    "#": {
+      "item": "minecraft:lime_dye"
+    },
+    "X": {
+      "item": "minecraft:stone_bricks"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:lime_stone_bricks"
+  },
+  "show_notification": true
+}

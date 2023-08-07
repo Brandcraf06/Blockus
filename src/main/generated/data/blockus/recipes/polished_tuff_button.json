@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "blockus:polished_tuff"
+    }
+  ],
+  "result": {
+    "item": "blockus:polished_tuff_button"
+  }
+}

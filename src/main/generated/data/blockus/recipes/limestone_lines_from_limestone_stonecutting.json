@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:limestone"
+  },
+  "result": "blockus:limestone_lines"
+}

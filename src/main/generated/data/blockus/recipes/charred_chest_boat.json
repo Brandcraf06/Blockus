@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "chest_boat",
+  "ingredients": [
+    {
+      "item": "minecraft:chest"
+    },
+    {
+      "item": "blockus:charred_boat"
+    }
+  ],
+  "result": {
+    "item": "blockus:charred_chest_boat"
+  }
+}

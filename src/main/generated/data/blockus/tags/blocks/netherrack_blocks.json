@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:polished_netherrack",
+    "blockus:polished_netherrack_stairs",
+    "blockus:polished_netherrack_slab",
+    "blockus:netherrack_bricks",
+    "blockus:netherrack_brick_stairs",
+    "blockus:netherrack_brick_slab",
+    "blockus:netherrack_circular_paving",
+    {
+      "id": "blockus:netherrack_brick_column",
+      "required": false
+    }
+  ]
+}

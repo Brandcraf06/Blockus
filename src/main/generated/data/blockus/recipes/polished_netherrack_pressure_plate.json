@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "blockus:polished_netherrack"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "blockus:polished_netherrack_pressure_plate"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:bamboo_chest_boat",
+    "blockus:charred_chest_boat",
+    "blockus:white_oak_chest_boat"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "X#X",
+    "X#X"
+  ],
+  "result": {
+    "item": "blockus:legacy_nether_reactor_core"
+  },
+  "show_notification": true
+}

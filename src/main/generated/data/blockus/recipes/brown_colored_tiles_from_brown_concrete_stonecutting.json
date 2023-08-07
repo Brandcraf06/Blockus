@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:brown_concrete"
+  },
+  "result": "blockus:brown_colored_tiles"
+}

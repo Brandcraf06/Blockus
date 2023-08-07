@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "blockus:polished_sculk"
+  },
+  "result": "blockus:polished_sculk_slab"
+}

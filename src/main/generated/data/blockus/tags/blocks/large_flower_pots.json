@@ -1,0 +1,48 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:large_flower_pot",
+    "blockus:potted_rose_bush",
+    "blockus:potted_lilac",
+    "blockus:potted_peony",
+    "blockus:potted_large_fern",
+    "blockus:potted_oak",
+    "blockus:potted_spruce",
+    "blockus:potted_birch",
+    "blockus:potted_jungle",
+    "blockus:potted_acacia",
+    "blockus:potted_dark_oak",
+    "blockus:potted_mangrove",
+    "blockus:potted_white_oak",
+    "blockus:potted_huge_red_mushroom",
+    "blockus:potted_huge_brown_mushroom",
+    "blockus:potted_huge_crimson_fungus",
+    "blockus:potted_huge_warped_fungus",
+    "blockus:potted_cactus_large",
+    "blockus:potted_bamboo_large",
+    {
+      "id": "blockus:potted_autumn_birch",
+      "required": false
+    },
+    {
+      "id": "blockus:potted_autumn_oak",
+      "required": false
+    },
+    {
+      "id": "blockus:potted_palm",
+      "required": false
+    },
+    {
+      "id": "blockus:potted_pink_cherry_oak",
+      "required": false
+    },
+    {
+      "id": "blockus:potted_white_cherry_oak",
+      "required": false
+    },
+    {
+      "id": "blockus:potted_huge_dark_amaranth_fungus",
+      "required": false
+    }
+  ]
+}

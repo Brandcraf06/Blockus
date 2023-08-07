@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:rainbow_block",
+    "blockus:rainbow_bricks",
+    "blockus:rainbow_brick_stairs",
+    "blockus:rainbow_brick_slab"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "teal_nether_bricks",
+  "ingredients": [
+    {
+      "item": "minecraft:warped_wart_block"
+    },
+    {
+      "item": "minecraft:nether_bricks"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "blockus:teal_nether_bricks"
+  }
+}

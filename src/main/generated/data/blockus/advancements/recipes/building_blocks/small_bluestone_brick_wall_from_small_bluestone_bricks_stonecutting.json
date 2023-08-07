@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_small_bluestone_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:small_bluestone_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:small_bluestone_brick_wall_from_small_bluestone_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_small_bluestone_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:small_bluestone_brick_wall_from_small_bluestone_bricks_stonecutting"
+    ]
+  }
+}

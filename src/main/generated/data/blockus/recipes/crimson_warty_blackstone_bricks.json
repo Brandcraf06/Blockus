@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:polished_blackstone_bricks"
+    },
+    {
+      "item": "minecraft:crimson_roots"
+    }
+  ],
+  "result": {
+    "item": "blockus:crimson_warty_blackstone_bricks"
+  }
+}

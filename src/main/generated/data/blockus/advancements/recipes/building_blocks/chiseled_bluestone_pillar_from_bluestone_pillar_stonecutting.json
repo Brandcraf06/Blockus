@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bluestone_pillar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:bluestone_pillar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:chiseled_bluestone_pillar_from_bluestone_pillar_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_bluestone_pillar",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:chiseled_bluestone_pillar_from_bluestone_pillar_stonecutting"
+    ]
+  }
+}

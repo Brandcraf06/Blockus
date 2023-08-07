@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:chocolate_block",
+    "blockus:chocolate_stairs",
+    "blockus:chocolate_slab",
+    "blockus:chocolate_bricks",
+    "blockus:chocolate_brick_stairs",
+    "blockus:chocolate_brick_slab",
+    "blockus:chocolate_squares",
+    "blockus:chocolate_tablet"
+  ]
+}

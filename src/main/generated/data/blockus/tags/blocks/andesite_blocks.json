@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:andesite_bricks",
+    "blockus:andesite_brick_stairs",
+    "blockus:andesite_brick_slab",
+    "blockus:herringbone_andesite_bricks",
+    "blockus:chiseled_andesite_bricks",
+    "blockus:cracked_andesite_bricks",
+    "blockus:polished_andesite_pillar",
+    "blockus:andesite_circular_paving"
+  ]
+}

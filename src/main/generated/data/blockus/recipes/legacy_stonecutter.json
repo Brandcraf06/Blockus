@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:cobblestone"
+    },
+    "S": {
+      "item": "minecraft:stonecutter"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#S#",
+    " # "
+  ],
+  "result": {
+    "item": "blockus:legacy_stonecutter"
+  },
+  "show_notification": true
+}

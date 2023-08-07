@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "blockus:chocolate_bricks"
+  },
+  "result": "blockus:chocolate_brick_slab"
+}
