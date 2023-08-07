@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/template_small_hedge_inventory",
+  "textures": {
+    "hedge": "minecraft:block/nether_wart_block"
+  }
+}

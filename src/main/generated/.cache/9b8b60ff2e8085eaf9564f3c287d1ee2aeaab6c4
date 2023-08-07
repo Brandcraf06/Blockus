@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-07T15:00:49.3825941	Blockus/Block Loot Tables
+// 1.20.1	2023-08-07T23:00:00.7584227	Blockus/Block Loot Tables
 e6416f8df8ab298f806cb196b1fc7ff6db4e8043 data\blockus\loot_tables\blocks\end_tile_wall.json
 d0031b4e899ed887ca5d7cf82078d4d4166b8725 data\blockus\loot_tables\blocks\carrot_crate.json
 ec62b56a7fde6cf36ef0fe61460500e03e06cb42 data\blockus\loot_tables\blocks\marble_slab.json
@@ -258,8 +258,8 @@ b0b0dcad8813c5526fd2d1eea35ef1b46d370fc9 data\blockus\loot_tables\blocks\deepsla
 24069faad353e0199f3d78b53c1380bb739de264 data\blockus\loot_tables\blocks\gray_concrete_bricks.json
 82ce2ef7920226a6c1f045da21a8762cb8ce0d3f data\blockus\loot_tables\blocks\tuff_pillar.json
 82dad12ca0c2b110bcc46e31fce5c66664d2396a data\blockus\loot_tables\blocks\cyan_asphalt_slab.json
-e0a10b205b8c63cb13d5555f87520443705af7e2 data\blockus\loot_tables\blocks\cyan_beveled_glass_pane.json
 7be741692b31f44ea047b15785bb37aa57535468 data\blockus\loot_tables\blocks\nether_tile_stairs.json
+e0a10b205b8c63cb13d5555f87520443705af7e2 data\blockus\loot_tables\blocks\cyan_beveled_glass_pane.json
 ac090a2842464515afb1564494c71c11f5722357 data\blockus\loot_tables\blocks\red_redstone_lamp_lit.json
 a95caeb223ece46a755b29fbe55656e66fab6ceb data\blockus\loot_tables\blocks\large_flower_pot.json
 7676d0a720862e7f876edc3e8032b3efde196cc7 data\blockus\loot_tables\blocks\charred_brick_stairs.json

@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/template_small_hedge_side",
+  "textures": {
+    "hedge": "minecraft:block/azalea_leaves"
+  }
+}

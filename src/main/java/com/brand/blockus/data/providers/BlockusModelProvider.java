@@ -3,6 +3,8 @@ package com.brand.blockus.data.providers;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusWoodFamilies;
+import com.brand.blockus.data.models.BlockusModels;
+import com.brand.blockus.data.models.BlockusTextureKey;
 import com.google.common.collect.Maps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -17,15 +19,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
 import java.util.Map;
-import java.util.Optional;
 
 public class BlockusModelProvider extends FabricModelProvider {
-    public static final Model CUBE_TILES;
-    public static final Model CUBE_TILES_2;
-    public static final Model CUBE_ALL_OVERLAY;
-    public static final TextureKey TILE_1 = TextureKey.of("tile_1");
-    public static final TextureKey TILE_2 = TextureKey.of("tile_2");
-    public static final TextureKey OVERLAY = TextureKey.of("overlay");
     public final Map<Model, Identifier> knownModels = Maps.newHashMap();
     public Identifier baseModelId;
 
@@ -335,6 +330,22 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CRIMSON_SMALL_STEMS);
         this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.WARPED_SMALL_STEMS);
 
+        // Small Hedges
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.BIRCH_SMALL_HEDGE, Blocks.BIRCH_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.MANGROVE_SMALL_HEDGE, Blocks.MANGROVE_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.CHERRY_SMALL_HEDGE, Blocks.CHERRY_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.WARPED_SMALL_HEDGE, Blocks.WARPED_WART_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.CRIMSON_SMALL_HEDGE, Blocks.NETHER_WART_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.AZALEA_SMALL_HEDGE, Blocks.AZALEA_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.MOSS_SMALL_HEDGE, Blocks.MOSS_BLOCK);
+
         // Food Blocks
         this.registerFishCrate(modelGenerator, BlockusBlocks.COD_CRATE);
         this.registerFishCrate(modelGenerator, BlockusBlocks.PUFFERFISH_CRATE);
@@ -528,6 +539,16 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerPressurePlate(modelGenerator, pressurePlateBlock, textureSource);
     }
 
+    public final void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block wallBlock, Block textureSource) {
+        TextureMap textureMap = TextureMap.of(BlockusTextureKey.HEDGE, TextureMap.getId(textureSource));
+        Identifier identifier = BlockusModels.TEMPLATE_SMALL_HEDGE_END.upload(wallBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier2 = BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE.upload(wallBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier3 = BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE_TALL.upload(wallBlock, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createWallBlockState(wallBlock, identifier, identifier2, identifier3));
+        Identifier identifier4 = BlockusModels.TEMPLATE_SMALL_HEDGE_INVENTORY.upload(wallBlock, textureMap, modelGenerator.modelCollector);
+        modelGenerator.registerParentedItemModel(wallBlock, identifier4);
+    }
+
     public final void registerCarpet(BlockStateModelGenerator modelGenerator, Block wool, Block carpet) {
         Identifier identifier = TexturedModel.CARPET.get(wool).upload(carpet, modelGenerator.modelCollector);
         modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(carpet, identifier));
@@ -574,12 +595,6 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public void createCubeBottomTop(BlockStateModelGenerator modelGenerator, Block block, TextureMap textureMap) {
         Identifier identifier = Models.CUBE_BOTTOM_TOP.upload(block, textureMap, modelGenerator.modelCollector);
-        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, identifier));
-    }
-
-    public void registerWaterBricks(BlockStateModelGenerator modelGenerator, Block block) {
-        TextureMap textureMap = allOverlay(block);
-        Identifier identifier = CUBE_ALL_OVERLAY.upload(block, textureMap, modelGenerator.modelCollector);
         modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, identifier));
     }
 
@@ -672,8 +687,8 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public static void registerColoredTiles(BlockStateModelGenerator modelGenerator, Block block, Block tile1, Block tile2) {
         TextureMap textures = tilesTextures(tile1, tile2);
-        CUBE_TILES.upload(block, textures, modelGenerator.modelCollector);
-        CUBE_TILES_2.upload(block, textures, modelGenerator.modelCollector);
+        BlockusModels.CUBE_TILES.upload(block, textures, modelGenerator.modelCollector);
+        BlockusModels.CUBE_TILES_2.upload(block, textures, modelGenerator.modelCollector);
         modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_AXIS)
             .register(Direction.Axis.X, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
             .register(Direction.Axis.Z, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_2")))));
@@ -685,7 +700,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     private static TextureMap tilesTextures(Block tile1, Block tile2) {
-        return (new TextureMap()).put(TILE_1, getTilesId(tile1)).put(TILE_2, getTilesId(tile2));
+        return (new TextureMap()).put(BlockusTextureKey.TILE_1, getTilesId(tile1)).put(BlockusTextureKey.TILE_2, getTilesId(tile2));
     }
 
     public static TextureMap sideTopBottom(Identifier block, Identifier top, Identifier bottom) {
@@ -696,10 +711,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         return (new TextureMap()).put(TextureKey.FRONT, TextureMap.getId(block)).put(TextureKey.TOP, TextureMap.getSubId(block, "_top")).put(TextureKey.SIDE, TextureMap.getSubId(block, "_side")).put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_side"));
     }
 
-    public static TextureMap allOverlay(Block block) {
-        return (new TextureMap()).put(TextureKey.ALL, TextureMap.getId(block)).put(OVERLAY, TextureMap.getSubId(block, "_overlay"));
-    }
-
     public static Identifier getTilesId(Block block) {
         return getBlockId(Registries.BLOCK.getId(block).getPath().replace("_concrete", "_tiles"));
     }
@@ -708,21 +719,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, Models.CUBE_ALL.upload(block, textureMap, modelGenerator.modelCollector)));
     }
 
-    public static Model createModel(String parent, TextureKey... requiredTextures) {
-        return new Model(Optional.of(getBlockId(parent)), Optional.empty(), requiredTextures);
-    }
-
-    public static Model createModel(String parent, String variant, TextureKey... requiredTextures) {
-        return new Model(Optional.of(getBlockId(parent)), Optional.of(variant), requiredTextures);
-    }
-
     public static Identifier getBlockId(String id) {
         return new Identifier("blockus", "block/" + id);
-    }
-
-    static {
-        CUBE_TILES = createModel("cube_tiles", "", TILE_1, TILE_2);
-        CUBE_TILES_2 = createModel("cube_tiles_2", "_2", TILE_1, TILE_2);
-        CUBE_ALL_OVERLAY = createModel("cube_all_overlay", TextureKey.ALL, OVERLAY);
     }
 }
