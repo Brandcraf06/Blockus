@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:white_shingles_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_shingles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:white_shingles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_shingles",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:white_shingles_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

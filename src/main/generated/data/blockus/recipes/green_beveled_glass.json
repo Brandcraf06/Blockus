@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "beveled_glass",
+  "key": {
+    "S": {
+      "item": "minecraft:green_stained_glass"
+    }
+  },
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:green_beveled_glass"
+  },
+  "show_notification": true
+}

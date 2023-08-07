@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "asphalt_slab",
+  "key": {
+    "#": {
+      "item": "minecraft:blue_dye"
+    },
+    "X": {
+      "item": "blockus:asphalt_slab"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:blue_asphalt_slab"
+  },
+  "show_notification": true
+}

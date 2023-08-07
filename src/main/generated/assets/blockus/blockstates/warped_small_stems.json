@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "blockus:block/warped_small_stems_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "blockus:block/warped_small_stems"
+    },
+    "axis=z": {
+      "model": "blockus:block/warped_small_stems_horizontal",
+      "x": 90
+    }
+  }
+}

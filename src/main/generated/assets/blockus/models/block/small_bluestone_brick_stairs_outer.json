@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "blockus:block/small_bluestone_bricks",
+    "side": "blockus:block/small_bluestone_bricks",
+    "top": "blockus:block/small_bluestone_bricks"
+  }
+}

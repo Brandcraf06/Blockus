@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/chocolate_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/chocolate_block"
+    },
+    "type=top": {
+      "model": "blockus:block/chocolate_slab_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/purple_asphalt_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/purple_asphalt"
+    },
+    "type=top": {
+      "model": "blockus:block/purple_asphalt_slab_top"
+    }
+  }
+}

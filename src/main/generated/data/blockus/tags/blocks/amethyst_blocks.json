@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:polished_amethyst",
+    "blockus:polished_amethyst_stairs",
+    "blockus:polished_amethyst_slab",
+    "blockus:amethyst_bricks",
+    "blockus:amethyst_brick_stairs",
+    "blockus:amethyst_brick_slab",
+    "blockus:chiseled_amethyst",
+    "blockus:amethyst_pillar"
+  ]
+}

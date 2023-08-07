@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:raw_bamboo_fence_gate",
+    "blockus:charred_fence_gate",
+    "blockus:white_oak_fence_gate"
+  ]
+}

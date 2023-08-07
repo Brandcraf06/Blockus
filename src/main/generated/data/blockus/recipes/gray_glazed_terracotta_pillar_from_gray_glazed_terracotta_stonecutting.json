@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:gray_glazed_terracotta"
+  },
+  "result": "blockus:gray_glazed_terracotta_pillar"
+}

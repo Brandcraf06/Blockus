@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:raw_bamboo_pressure_plate",
+    "blockus:charred_pressure_plate",
+    "blockus:white_oak_pressure_plate"
+  ]
+}

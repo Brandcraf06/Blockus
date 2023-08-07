@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soaked_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:soaked_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:soaked_brick_stairs_from_soaked_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_soaked_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:soaked_brick_stairs_from_soaked_bricks_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

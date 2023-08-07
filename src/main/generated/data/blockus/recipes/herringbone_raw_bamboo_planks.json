@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "herringbone_planks",
+  "key": {
+    "#": {
+      "item": "blockus:raw_bamboo_planks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "###",
+    "  #"
+  ],
+  "result": {
+    "count": 5,
+    "item": "blockus:herringbone_raw_bamboo_planks"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/lime_shingles_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/lime_shingles"
+    },
+    "type=top": {
+      "model": "blockus:block/lime_shingles_slab_top"
+    }
+  }
+}

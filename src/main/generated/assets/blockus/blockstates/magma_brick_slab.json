@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/magma_brick_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/magma_bricks"
+    },
+    "type=top": {
+      "model": "blockus:block/magma_brick_slab_top"
+    }
+  }
+}

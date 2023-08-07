@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "blockus:redstone_sand"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "minecraft:redstone"
+  }
+}

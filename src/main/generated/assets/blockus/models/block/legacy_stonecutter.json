@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "blockus:block/legacy_stonecutter_bottom",
+    "east": "blockus:block/legacy_stonecutter_side",
+    "north": "blockus:block/legacy_stonecutter_front",
+    "particle": "blockus:block/legacy_stonecutter_front",
+    "south": "blockus:block/legacy_stonecutter_front",
+    "up": "blockus:block/legacy_stonecutter_top",
+    "west": "blockus:block/legacy_stonecutter_side"
+  }
+}

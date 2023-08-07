@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:obsidian_bricks",
+    "blockus:obsidian_brick_stairs",
+    "blockus:obsidian_brick_slab",
+    "blockus:obsidian_brick_wall",
+    "blockus:cracked_obsidian_bricks",
+    "blockus:small_obsidian_bricks",
+    "blockus:small_obsidian_brick_stairs",
+    "blockus:small_obsidian_brick_slab",
+    "blockus:small_obsidian_brick_wall",
+    "blockus:obsidian_pillar",
+    "blockus:obsidian_circular_paving",
+    "blockus:obsidian_reinforced_door",
+    "blockus:obsidian_reinforced_trapdoor",
+    "blockus:glowing_obsidian",
+    "blockus:legacy_crying_obsidian",
+    "blockus:legacy_glowing_obsidian"
+  ]
+}

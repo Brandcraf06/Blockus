@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "blockus:block/viridite_tiles",
+    "side": "blockus:block/viridite_tiles",
+    "top": "blockus:block/viridite_tiles"
+  }
+}

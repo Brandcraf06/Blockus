@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "lit_redstone_lamps",
+  "ingredients": [
+    {
+      "item": "blockus:gray_redstone_lamp"
+    },
+    {
+      "item": "minecraft:redstone_torch"
+    }
+  ],
+  "result": {
+    "item": "blockus:gray_redstone_lamp_lit"
+  }
+}

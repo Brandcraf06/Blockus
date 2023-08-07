@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/lava_brick_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/lava_bricks"
+    },
+    "type=top": {
+      "model": "blockus:block/lava_brick_slab_top"
+    }
+  }
+}

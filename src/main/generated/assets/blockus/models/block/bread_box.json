@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "blockus:block/bread_box_side",
+    "front": "blockus:block/bread_box",
+    "side": "blockus:block/bread_box_side",
+    "top": "blockus:block/bread_box_top"
+  }
+}

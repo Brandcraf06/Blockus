@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_purpur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:purpur_squares"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:phantom_purpur_squares_from_soul_sand"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_purpur",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:phantom_purpur_squares_from_soul_sand"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:teal_nether_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_warped_grass": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "blockus:warped_nether_grass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_warped_grass",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:teal_nether_bricks"
+    ]
+  },
+  "sends_telemetry_event": false
+}

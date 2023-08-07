@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "blockus:block/light_gray_asphalt",
+    "side": "blockus:block/light_gray_asphalt",
+    "top": "blockus:block/light_gray_asphalt"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/custom_fence_side_north",
+  "textures": {
+    "texture": "blockus:block/raw_bamboo_fence"
+  }
+}

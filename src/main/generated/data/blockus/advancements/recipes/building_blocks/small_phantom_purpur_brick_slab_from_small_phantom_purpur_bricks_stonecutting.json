@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_small_phantom_purpur_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:small_phantom_purpur_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:small_phantom_purpur_brick_slab_from_small_phantom_purpur_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_small_phantom_purpur_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:small_phantom_purpur_brick_slab_from_small_phantom_purpur_bricks_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

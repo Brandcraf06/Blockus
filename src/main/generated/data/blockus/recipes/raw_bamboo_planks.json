@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "minecraft:bamboo_block"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "blockus:raw_bamboo_planks"
+  }
+}

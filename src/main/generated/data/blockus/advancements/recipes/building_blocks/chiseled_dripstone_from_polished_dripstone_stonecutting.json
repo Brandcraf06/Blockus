@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_dripstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:polished_dripstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:chiseled_dripstone_from_polished_dripstone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_dripstone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:chiseled_dripstone_from_polished_dripstone_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

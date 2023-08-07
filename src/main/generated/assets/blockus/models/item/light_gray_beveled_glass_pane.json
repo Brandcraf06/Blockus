@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "blockus:block/light_gray_beveled_glass"
+  }
+}

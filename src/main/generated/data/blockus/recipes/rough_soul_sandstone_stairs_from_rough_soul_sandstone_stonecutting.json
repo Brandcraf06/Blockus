@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:rough_soul_sandstone"
+  },
+  "result": "blockus:rough_soul_sandstone_stairs"
+}

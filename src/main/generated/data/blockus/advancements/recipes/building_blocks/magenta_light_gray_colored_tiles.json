@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_light_gray_concrete": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:light_gray_concrete"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magenta_concrete": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:magenta_concrete"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:magenta_light_gray_colored_tiles"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_magenta_concrete",
+      "has_light_gray_concrete",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:magenta_light_gray_colored_tiles"
+    ]
+  },
+  "sends_telemetry_event": false
+}

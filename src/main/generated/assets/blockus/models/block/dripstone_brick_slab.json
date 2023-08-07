@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "blockus:block/dripstone_bricks",
+    "side": "blockus:block/dripstone_bricks",
+    "top": "blockus:block/dripstone_bricks"
+  }
+}

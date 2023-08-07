@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "blockus:block/quartz_circular_paving",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "blockus:block/quartz_circular_paving",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "blockus:block/quartz_circular_paving"
+    },
+    "facing=west": {
+      "model": "blockus:block/quartz_circular_paving",
+      "y": 90
+    }
+  }
+}

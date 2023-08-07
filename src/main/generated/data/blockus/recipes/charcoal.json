@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "blockus:charcoal_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:charcoal"
+  }
+}

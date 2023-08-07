@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "blockus:polished_viridite"
+  },
+  "result": "blockus:small_viridite_brick_slab"
+}

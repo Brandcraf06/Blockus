@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_stone_brick_slab",
+  "key": {
+    "#": {
+      "item": "minecraft:gray_dye"
+    },
+    "X": {
+      "item": "minecraft:stone_brick_slab"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:gray_stone_brick_slab"
+  },
+  "show_notification": true
+}

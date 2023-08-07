@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "blockus:block/red_asphalt",
+    "side": "blockus:block/red_asphalt",
+    "top": "blockus:block/red_asphalt"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "small_hedge",
+  "key": {
+    "#": {
+      "item": "minecraft:birch_leaves"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "blockus:birch_small_hedge"
+  },
+  "show_notification": true
+}

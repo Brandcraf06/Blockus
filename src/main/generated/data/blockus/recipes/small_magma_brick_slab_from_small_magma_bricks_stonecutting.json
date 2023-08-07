@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "blockus:small_magma_bricks"
+  },
+  "result": "blockus:small_magma_brick_slab"
+}

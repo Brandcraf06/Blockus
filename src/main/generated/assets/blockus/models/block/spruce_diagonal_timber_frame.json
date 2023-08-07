@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "blockus:block/spruce_diagonal_timber_frame_left",
+    "east": "blockus:block/spruce_diagonal_timber_frame_right",
+    "north": "blockus:block/spruce_diagonal_timber_frame_right",
+    "particle": "blockus:block/spruce_diagonal_timber_frame_right",
+    "south": "blockus:block/spruce_diagonal_timber_frame_right",
+    "up": "blockus:block/spruce_diagonal_timber_frame_left",
+    "west": "blockus:block/spruce_diagonal_timber_frame_left"
+  }
+}

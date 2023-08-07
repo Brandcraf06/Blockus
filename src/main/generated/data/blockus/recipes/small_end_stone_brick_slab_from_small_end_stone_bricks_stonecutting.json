@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "blockus:small_end_stone_bricks"
+  },
+  "result": "blockus:small_end_stone_brick_slab"
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/bluestone_tile_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/bluestone_tiles"
+    },
+    "type=top": {
+      "model": "blockus:block/bluestone_tile_slab_top"
+    }
+  }
+}

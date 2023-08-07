@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "colored_tiles",
+  "ingredients": [
+    {
+      "item": "minecraft:white_concrete"
+    },
+    {
+      "item": "minecraft:light_blue_concrete"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "blockus:white_light_blue_colored_tiles"
+  }
+}

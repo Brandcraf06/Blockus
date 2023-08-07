@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "blockus:block/legacy_diamond_block_bottom",
+    "side": "blockus:block/legacy_diamond_block",
+    "top": "blockus:block/legacy_diamond_block_top"
+  }
+}

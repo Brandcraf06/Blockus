@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cross_timber_frame",
+  "key": {
+    "#": {
+      "item": "blockus:charred_diagonal_timber_frame"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:charred_cross_timber_frame"
+  },
+  "show_notification": true
+}

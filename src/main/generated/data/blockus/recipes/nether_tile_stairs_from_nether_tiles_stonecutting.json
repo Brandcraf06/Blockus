@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:nether_tiles"
+  },
+  "result": "blockus:nether_tile_stairs"
+}

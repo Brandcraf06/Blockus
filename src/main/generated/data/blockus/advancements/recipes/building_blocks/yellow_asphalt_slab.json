@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:yellow_asphalt_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yellow_asphalt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:yellow_asphalt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yellow_asphalt",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:yellow_asphalt_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

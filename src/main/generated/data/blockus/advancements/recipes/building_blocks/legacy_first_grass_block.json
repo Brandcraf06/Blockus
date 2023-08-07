@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_legacy_grass_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:legacy_grass_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:legacy_first_grass_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_legacy_grass_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:legacy_first_grass_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

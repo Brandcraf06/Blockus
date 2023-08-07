@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "blockus:block/cyan_redstone_lamp"
+    },
+    "lit=true": {
+      "model": "blockus:block/cyan_redstone_lamp_on"
+    }
+  }
+}

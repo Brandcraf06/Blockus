@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_acacia_diagonal_timber_frame": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:acacia_diagonal_timber_frame"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:acacia_cross_timber_frame"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_acacia_diagonal_timber_frame",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:acacia_cross_timber_frame"
+    ]
+  },
+  "sends_telemetry_event": false
+}

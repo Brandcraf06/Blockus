@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:warped_warty_blackstone_brick_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_warped_warty_blackstone_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:warped_warty_blackstone_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_warped_warty_blackstone_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:warped_warty_blackstone_brick_stairs"
+    ]
+  },
+  "sends_telemetry_event": false
+}

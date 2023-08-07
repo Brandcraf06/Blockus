@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/light_gray_asphalt_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/light_gray_asphalt"
+    },
+    "type=top": {
+      "model": "blockus:block/light_gray_asphalt_slab_top"
+    }
+  }
+}

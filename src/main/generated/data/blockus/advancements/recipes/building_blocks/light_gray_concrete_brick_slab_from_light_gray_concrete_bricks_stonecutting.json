@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_light_gray_concrete_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:light_gray_concrete_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:light_gray_concrete_brick_slab_from_light_gray_concrete_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_light_gray_concrete_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:light_gray_concrete_brick_slab_from_light_gray_concrete_bricks_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

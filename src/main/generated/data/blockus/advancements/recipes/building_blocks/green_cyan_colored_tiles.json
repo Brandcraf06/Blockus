@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cyan_concrete": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:cyan_concrete"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_green_concrete": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:green_concrete"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:green_cyan_colored_tiles"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_green_concrete",
+      "has_cyan_concrete",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:green_cyan_colored_tiles"
+    ]
+  },
+  "sends_telemetry_event": false
+}

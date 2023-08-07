@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/rough_basalt_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/rough_basalt"
+    },
+    "type=top": {
+      "model": "blockus:block/rough_basalt_slab_top"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "blockus:block/warped_warty_blackstone_bricks",
+    "side": "blockus:block/warped_warty_blackstone_bricks",
+    "top": "blockus:block/warped_warty_blackstone_bricks"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:oak_mosaic",
+    "blockus:birch_mosaic",
+    "blockus:spruce_mosaic",
+    "blockus:jungle_mosaic",
+    "blockus:acacia_mosaic",
+    "blockus:dark_oak_mosaic",
+    "blockus:mangrove_mosaic",
+    "blockus:cherry_mosaic",
+    "minecraft:bamboo_mosaic",
+    "blockus:raw_bamboo_mosaic",
+    "blockus:white_oak_mosaic"
+  ]
+}

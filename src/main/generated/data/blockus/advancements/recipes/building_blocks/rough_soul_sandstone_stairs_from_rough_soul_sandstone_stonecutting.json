@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rough_soul_sandstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:rough_soul_sandstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:rough_soul_sandstone_stairs_from_rough_soul_sandstone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rough_soul_sandstone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:rough_soul_sandstone_stairs_from_rough_soul_sandstone_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

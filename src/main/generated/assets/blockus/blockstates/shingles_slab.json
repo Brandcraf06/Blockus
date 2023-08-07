@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/shingles_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/shingles"
+    },
+    "type=top": {
+      "model": "blockus:block/shingles_slab_top"
+    }
+  }
+}

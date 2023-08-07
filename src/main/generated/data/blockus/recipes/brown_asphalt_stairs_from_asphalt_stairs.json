@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "asphalt_stairs",
+  "key": {
+    "#": {
+      "item": "minecraft:brown_dye"
+    },
+    "X": {
+      "item": "blockus:asphalt_stairs"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:brown_asphalt_stairs"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rainbow_petal",
+  "ingredients": [
+    {
+      "item": "blockus:rainbow_rose"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "blockus:rainbow_petal"
+  }
+}

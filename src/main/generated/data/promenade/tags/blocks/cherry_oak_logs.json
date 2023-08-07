@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "blockus:cherry_oak_small_logs",
+      "required": false
+    }
+  ]
+}

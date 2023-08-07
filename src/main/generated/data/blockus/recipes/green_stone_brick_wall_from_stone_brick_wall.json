@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_stone_brick_wall",
+  "key": {
+    "#": {
+      "item": "minecraft:green_dye"
+    },
+    "X": {
+      "item": "minecraft:stone_brick_wall"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:green_stone_brick_wall"
+  },
+  "show_notification": true
+}

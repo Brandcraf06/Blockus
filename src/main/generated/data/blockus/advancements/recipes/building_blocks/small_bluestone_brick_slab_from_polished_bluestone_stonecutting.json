@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_bluestone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:polished_bluestone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:small_bluestone_brick_slab_from_polished_bluestone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_bluestone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:small_bluestone_brick_slab_from_polished_bluestone_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/viridite_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/viridite"
+    },
+    "type=top": {
+      "model": "blockus:block/viridite_slab_top"
+    }
+  }
+}

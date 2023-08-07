@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "blockus:granite_bricks"
+  },
+  "result": "blockus:cracked_granite_bricks"
+}

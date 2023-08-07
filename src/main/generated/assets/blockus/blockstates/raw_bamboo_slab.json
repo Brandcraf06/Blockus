@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/raw_bamboo_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/raw_bamboo_planks"
+    },
+    "type=top": {
+      "model": "blockus:block/raw_bamboo_slab_top"
+    }
+  }
+}

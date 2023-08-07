@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "boat",
+  "key": {
+    "#": {
+      "item": "blockus:raw_bamboo_planks"
+    }
+  },
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "result": {
+    "item": "blockus:raw_bamboo_raft"
+  },
+  "show_notification": true
+}

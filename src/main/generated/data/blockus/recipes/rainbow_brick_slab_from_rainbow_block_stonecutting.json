@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "blockus:rainbow_block"
+  },
+  "result": "blockus:rainbow_brick_slab"
+}

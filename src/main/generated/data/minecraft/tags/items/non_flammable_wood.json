@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:charred_planks",
+    "blockus:charred_slab",
+    "blockus:charred_pressure_plate",
+    "blockus:charred_fence",
+    "blockus:charred_trapdoor",
+    "blockus:charred_fence_gate",
+    "blockus:charred_stairs",
+    "blockus:charred_button",
+    "blockus:charred_door",
+    "blockus:warped_small_stems",
+    "blockus:crimson_small_stems",
+    "blockus:herringbone_crimson_planks",
+    "blockus:herringbone_warped_planks",
+    "blockus:herringbone_charred_planks",
+    "blockus:charred_boat",
+    "blockus:charred_chest_boat",
+    "blockus:charred_sign",
+    "blockus:charred_hanging_sign"
+  ]
+}

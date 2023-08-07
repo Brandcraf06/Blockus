@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "blockus:block/spruce_mosaic",
+    "side": "blockus:block/spruce_mosaic",
+    "top": "blockus:block/spruce_mosaic"
+  }
+}

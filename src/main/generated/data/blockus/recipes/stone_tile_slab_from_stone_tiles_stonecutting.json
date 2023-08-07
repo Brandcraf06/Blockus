@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "blockus:stone_tiles"
+  },
+  "result": "blockus:stone_tile_slab"
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "blockus:block/lime_redstone_lamp_lit"
+    }
+  }
+}

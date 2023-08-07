@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "blockus:block/bamboo_diagonal_timber_frame_left",
+    "east": "blockus:block/bamboo_diagonal_timber_frame_right",
+    "north": "blockus:block/bamboo_diagonal_timber_frame_right",
+    "particle": "blockus:block/bamboo_diagonal_timber_frame_right",
+    "south": "blockus:block/bamboo_diagonal_timber_frame_right",
+    "up": "blockus:block/bamboo_diagonal_timber_frame_left",
+    "west": "blockus:block/bamboo_diagonal_timber_frame_left"
+  }
+}

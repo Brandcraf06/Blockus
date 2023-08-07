@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:paper_trapdoor",
+    "blockus:obsidian_reinforced_trapdoor",
+    "blockus:stone_trapdoor",
+    "blockus:blackstone_trapdoor"
+  ]
+}

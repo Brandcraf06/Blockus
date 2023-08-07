@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "shingles_stairs",
+  "key": {
+    "#": {
+      "item": "minecraft:blue_dye"
+    },
+    "X": {
+      "item": "blockus:shingles_stairs"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:blue_shingles_stairs"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_small_viridite_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:small_viridite_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:small_viridite_brick_stairs_from_small_viridite_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_small_viridite_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:small_viridite_brick_stairs_from_small_viridite_bricks_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

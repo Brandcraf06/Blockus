@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:raw_bamboo_door",
+    "blockus:charred_door",
+    "blockus:white_oak_door"
+  ]
+}

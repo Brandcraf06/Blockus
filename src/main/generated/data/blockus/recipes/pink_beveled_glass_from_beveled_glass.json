@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "beveled_glass_2",
+  "key": {
+    "#": {
+      "item": "minecraft:pink_dye"
+    },
+    "X": {
+      "item": "blockus:beveled_glass"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "item": "blockus:pink_beveled_glass"
+  },
+  "show_notification": true
+}

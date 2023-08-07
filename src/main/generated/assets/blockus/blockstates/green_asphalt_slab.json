@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/green_asphalt_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/green_asphalt"
+    },
+    "type=top": {
+      "model": "blockus:block/green_asphalt_slab_top"
+    }
+  }
+}

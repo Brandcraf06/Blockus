@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "blockus:block/oak_diagonal_timber_frame",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "blockus:block/oak_diagonal_timber_frame"
+    },
+    "facing=south": {
+      "model": "blockus:block/oak_diagonal_timber_frame",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "blockus:block/oak_diagonal_timber_frame",
+      "y": 270
+    }
+  }
+}

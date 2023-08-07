@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:snow_bricks",
+    "blockus:snow_brick_stairs",
+    "blockus:snow_brick_slab",
+    "blockus:snow_pillar"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "blockus:block/cherry_small_logs_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "blockus:block/cherry_small_logs"
+    },
+    "axis=z": {
+      "model": "blockus:block/cherry_small_logs_horizontal",
+      "x": 90
+    }
+  }
+}

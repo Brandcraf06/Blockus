@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:viridite_tile_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_viridite_tiles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:viridite_tiles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_viridite_tiles",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:viridite_tile_wall"
+    ]
+  },
+  "sends_telemetry_event": false
+}

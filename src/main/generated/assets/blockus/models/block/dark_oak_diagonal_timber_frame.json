@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "blockus:block/dark_oak_diagonal_timber_frame_left",
+    "east": "blockus:block/dark_oak_diagonal_timber_frame_right",
+    "north": "blockus:block/dark_oak_diagonal_timber_frame_right",
+    "particle": "blockus:block/dark_oak_diagonal_timber_frame_right",
+    "south": "blockus:block/dark_oak_diagonal_timber_frame_right",
+    "up": "blockus:block/dark_oak_diagonal_timber_frame_left",
+    "west": "blockus:block/dark_oak_diagonal_timber_frame_left"
+  }
+}

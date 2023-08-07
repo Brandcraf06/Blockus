@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:shroomlight"
+    },
+    "S": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    " S ",
+    "S#S",
+    " S "
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:glowing_obsidian"
+  },
+  "show_notification": true
+}

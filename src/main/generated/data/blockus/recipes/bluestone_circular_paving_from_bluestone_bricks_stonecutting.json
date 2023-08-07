@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:bluestone_bricks"
+  },
+  "result": "blockus:bluestone_circular_paving"
+}

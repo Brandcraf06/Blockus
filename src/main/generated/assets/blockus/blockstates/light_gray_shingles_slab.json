@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/light_gray_shingles_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/light_gray_shingles"
+    },
+    "type=top": {
+      "model": "blockus:block/light_gray_shingles_slab_top"
+    }
+  }
+}

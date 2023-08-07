@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brown_asphalt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:brown_asphalt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:brown_asphalt_stairs_from_brown_asphalt_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_brown_asphalt",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:brown_asphalt_stairs_from_brown_asphalt_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

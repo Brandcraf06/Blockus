@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:white_asphalt_stairs_from_white_asphalt_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_asphalt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:white_asphalt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_asphalt",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:white_asphalt_stairs_from_white_asphalt_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/polished_basalt_brick_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/polished_basalt_bricks"
+    },
+    "type=top": {
+      "model": "blockus:block/polished_basalt_brick_slab_top"
+    }
+  }
+}

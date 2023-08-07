@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/honeycomb_brick_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/honeycomb_bricks"
+    },
+    "type=top": {
+      "model": "blockus:block/honeycomb_brick_slab_top"
+    }
+  }
+}
