@@ -1,7 +1,0 @@
-{
-  "parent": "blockus:block/crate_template",
-  "textures": {
-    "top": "blockus:block/beetroot_crate",
-    "side": "blockus:block/beetroot_crate_side"
-  }
-}

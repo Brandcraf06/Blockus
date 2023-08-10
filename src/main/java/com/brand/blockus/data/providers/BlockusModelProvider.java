@@ -5,7 +5,6 @@ import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusWoodFamilies;
 import com.brand.blockus.data.models.BlockusModels;
 import com.brand.blockus.data.models.BlockusTextureKey;
-import com.google.common.collect.Maps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
@@ -18,11 +17,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
-import java.util.Map;
-
 public class BlockusModelProvider extends FabricModelProvider {
-    public final Map<Model, Identifier> knownModels = Maps.newHashMap();
-    public Identifier baseModelId;
 
     public BlockusModelProvider(FabricDataOutput output) {
         super(output);
@@ -36,7 +31,13 @@ public class BlockusModelProvider extends FabricModelProvider {
         });
 
         for (BSSTypes bssType : BSSTypes.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, bssType.block, bssType.stairs, bssType.slab);
+            if (bssType.type.contains("rough") && bssType.type.contains("sandstone")) {
+                this.registerBlockStairsSlabWithBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
+            } else if (bssType.type.contains("smooth") && bssType.type.contains("sandstone") || bssType.type.contains("rough_basalt")) {
+                this.registerBlockStairsSlabWithTop(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
+            } else {
+                this.registerBlockStairsAndSlab(modelGenerator, bssType.block, bssType.stairs, bssType.slab);
+            }
         }
 
         for (BSSWTypes bsswType : BSSWTypes.values()) {
@@ -267,6 +268,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Rainbow
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_BLOCK);
+        this.registerAxisRotatedBlockTopBottom(modelGenerator, BlockusBlocks.RAINBOW_ASPHALT);
         modelGenerator.registerFlowerPotPlant(BlockusBlocks.RAINBOW_ROSE, BlockusBlocks.POTTED_RAINBOW_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         // Purpur Blocks
@@ -351,8 +353,17 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerFishCrate(modelGenerator, BlockusBlocks.PUFFERFISH_CRATE);
         this.registerFishCrate(modelGenerator, BlockusBlocks.SALMON_CRATE);
         this.registerFishCrate(modelGenerator, BlockusBlocks.TROPICAL_FISH_CRATE);
+        this.registerCrate(modelGenerator, BlockusBlocks.SWEET_BERRIES_CRATE);
+        this.registerCrate(modelGenerator, BlockusBlocks.GLOW_BERRIES_CRATE);
+        this.registerCrate(modelGenerator, BlockusBlocks.POTATO_CRATE);
+        this.registerCrate(modelGenerator, BlockusBlocks.APPLE_CRATE);
+        this.registerCrate(modelGenerator, BlockusBlocks.GOLDEN_APPLE_CRATE);
+        this.registerCrate(modelGenerator, BlockusBlocks.BEETROOT_CRATE);
+        this.registerCrate(modelGenerator, BlockusBlocks.CARROT_CRATE);
+        this.registerCrate(modelGenerator, BlockusBlocks.GOLDEN_CARROT_CRATE);
         this.registerBreadBox(modelGenerator, BlockusBlocks.BREAD_BOX);
         this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHORUS_BLOCK);
+        this.registerDirectionalCarpet(modelGenerator, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_TABLET);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHOCOLATE_SQUARES);
 
         // Redstone Lamps
@@ -373,6 +384,24 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerRedstoneLamp(modelGenerator, BlockusBlocks.RED_REDSTONE_LAMP, BlockusBlocks.RED_REDSTONE_LAMP_LIT);
         this.registerRedstoneLamp(modelGenerator, BlockusBlocks.WHITE_REDSTONE_LAMP, BlockusBlocks.WHITE_REDSTONE_LAMP_LIT);
         this.registerRedstoneLamp(modelGenerator, BlockusBlocks.YELLOW_REDSTONE_LAMP, BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT);
+
+        // Neon Blocks
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.BLACK_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.BLUE_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.BROWN_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.CYAN_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.GRAY_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.GREEN_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIGHT_BLUE_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIGHT_GRAY_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIME_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.MAGENTA_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.ORANGE_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.PINK_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.PURPLE_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.RED_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.WHITE_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.YELLOW_NEON);
 
         // Futurneo Blocks
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
@@ -442,10 +471,10 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerDoor(BlockusBlocks.PAPER_DOOR);
 
         // Lantern Blocks
-        this.registerLanternBlock(modelGenerator, BlockusBlocks.LANTERN_BLOCK);
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
         modelGenerator.registerLantern(BlockusBlocks.REDSTONE_LANTERN);
-        this.registerLanternBlock(modelGenerator, BlockusBlocks.REDSTONE_LANTERN_BLOCK);
-        this.registerLanternBlock(modelGenerator, BlockusBlocks.SOUL_LANTERN_BLOCK);
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.REDSTONE_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.SOUL_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
         this.registerPumpkins(modelGenerator, BlockusBlocks.SOUL_O_LANTERN);
         this.registerPumpkins(modelGenerator, BlockusBlocks.REDSTONE_O_LANTERN);
 
@@ -494,6 +523,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         registerColoredTilesSimple(modelGenerator, BlockusBlocks.YELLOW_COLORED_TILES);
 
         // Other
+        this.registerStairs(modelGenerator, BlockusBlocks.NETHERITE_STAIRS, Blocks.NETHERITE_BLOCK);
+        this.registerSlab(modelGenerator, BlockusBlocks.NETHERITE_SLAB, Blocks.NETHERITE_BLOCK);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.NETHER_STAR_BLOCK);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_GLOWSTONE);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CAUTION_BLOCK);
@@ -554,12 +585,45 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(carpet, identifier));
     }
 
+    public final void registerDirectionalCarpet(BlockStateModelGenerator modelGenerator, Block block, Block carpet) {
+        TexturedModel.CARPET.get(block).upload(carpet, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(carpet, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(carpet))).coordinate(createUpDefaultRotationStates()));
+    }
+
+    public final void registerBlockStairsSlabWithBottom(BlockStateModelGenerator modelGenerator, Block block, Block stairs, Block slab, Block base) {
+        Identifier textureID = TextureMap.getSubId(base, "_bottom");
+        TextureMap blockTextureMap = TextureMap.of(TextureKey.ALL, textureID);
+        TextureMap textureMap = sideTopBottom(textureID);
+        this.createBlock(modelGenerator, block, blockTextureMap);
+        this.createStairs(modelGenerator, stairs, textureMap);
+        this.createSlab(modelGenerator, slab, textureMap, getBlockId(Registries.BLOCK.getId(block).getPath()));
+    }
+
+    public final void registerBlockStairsSlabWithTop(BlockStateModelGenerator modelGenerator, Block block, Block stairs, Block slab, Block base) {
+        Identifier textureID = TextureMap.getSubId(base, "_top");
+        TextureMap blockTextureMap = TextureMap.of(TextureKey.ALL, textureID);
+        TextureMap textureMap = sideTopBottom(textureID);
+        this.createBlock(modelGenerator, block, blockTextureMap);
+        this.createStairs(modelGenerator, stairs, textureMap);
+        this.createSlab(modelGenerator, slab, textureMap, getBlockId(Registries.BLOCK.getId(block).getPath()));
+    }
+
+    public final void registerStairs(BlockStateModelGenerator modelGenerator, Block block, Block textureSource) {
+        TextureMap textureMap = sideTopBottom(TextureMap.getId(textureSource));
+        this.createStairs(modelGenerator, block, textureMap);
+    }
+
+    public final void registerSlab(BlockStateModelGenerator modelGenerator, Block block, Block textureSource) {
+        TextureMap textureMap = sideTopBottom(TextureMap.getId(textureSource));
+        this.createSlab(modelGenerator, block, textureMap, TextureMap.getId(textureSource));
+    }
+
     public final void registerButton(BlockStateModelGenerator modelGenerator, Block buttonBlock, Identifier textureSource) {
         TextureMap textureMap = TextureMap.texture(textureSource);
         Identifier identifier = Models.BUTTON.upload(buttonBlock, textureMap, modelGenerator.modelCollector);
         Identifier identifier2 = Models.BUTTON_PRESSED.upload(buttonBlock, textureMap, modelGenerator.modelCollector);
-        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createButtonBlockState(buttonBlock, identifier, identifier2));
         Identifier identifier3 = Models.BUTTON_INVENTORY.upload(buttonBlock, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createButtonBlockState(buttonBlock, identifier, identifier2));
         modelGenerator.registerParentedItemModel(buttonBlock, identifier3);
     }
 
@@ -579,23 +643,13 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerLitRedstoneLamp(BlockStateModelGenerator modelGenerator, Block block, Block lit) {
         TextureMap textureMap = TextureMap.of(TextureKey.ALL, TextureMap.getSubId(block, "_on"));
-        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(lit, Models.CUBE_ALL.upload(lit, textureMap, modelGenerator.modelCollector)));
-    }
-
-    public void createCubeColumn(BlockStateModelGenerator modelGenerator, Block block, TextureMap textureMap) {
-        Identifier identifier = Models.CUBE_COLUMN.upload(block, textureMap, modelGenerator.modelCollector);
-        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, identifier));
+        this.createBlock(modelGenerator, lit, textureMap);
     }
 
     public void createAxisRotatedCubeColumn(BlockStateModelGenerator modelGenerator, Block block, TextureMap textureMap) {
         Identifier identifier = Models.CUBE_COLUMN.upload(block, textureMap, modelGenerator.modelCollector);
         Identifier identifier2 = Models.CUBE_COLUMN_HORIZONTAL.upload(block, textureMap, modelGenerator.modelCollector);
         modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createAxisRotatedBlockState(block, identifier, identifier2));
-    }
-
-    public void createCubeBottomTop(BlockStateModelGenerator modelGenerator, Block block, TextureMap textureMap) {
-        Identifier identifier = Models.CUBE_BOTTOM_TOP.upload(block, textureMap, modelGenerator.modelCollector);
-        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, identifier));
     }
 
     public final void registerAxisRotatedCubeColumn(BlockStateModelGenerator modelGenerator, Block block) {
@@ -610,22 +664,28 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerCubeColumn(BlockStateModelGenerator modelGenerator, Block block, Block end) {
         TextureMap textureMap = TextureMap.sideEnd(TextureMap.getId(block), TextureMap.getSubId(end, "_top"));
-        this.createCubeColumn(modelGenerator, block, textureMap);
+        this.createBlock(modelGenerator, block, Models.CUBE_COLUMN, textureMap);
     }
 
     public final void registerCubeColumnNoSuffix(BlockStateModelGenerator modelGenerator, Block block, Block end) {
         TextureMap textureMap = TextureMap.sideEnd(TextureMap.getId(block), TextureMap.getId(end));
-        this.createCubeColumn(modelGenerator, block, textureMap);
+        this.createBlock(modelGenerator, block, Models.CUBE_COLUMN, textureMap);
     }
 
     public final void registerCubeBottomTop(BlockStateModelGenerator modelGenerator, Block block) {
         TextureMap textureMap = sideTopBottom(TextureMap.getId(block), TextureMap.getSubId(block, "_top"), TextureMap.getSubId(block, "_bottom"));
-        this.createCubeBottomTop(modelGenerator, block, textureMap);
+        this.createBlock(modelGenerator, block, Models.CUBE_BOTTOM_TOP, textureMap);
     }
 
     public final void registerCubeBottomTop(BlockStateModelGenerator modelGenerator, Block block, Block bottom) {
         TextureMap textureMap = sideTopBottom(TextureMap.getId(block), TextureMap.getSubId(block, "_top"), TextureMap.getId(bottom));
-        this.createCubeBottomTop(modelGenerator, block, textureMap);
+        this.createBlock(modelGenerator, block, Models.CUBE_BOTTOM_TOP, textureMap);
+    }
+
+    public final void registerAxisRotatedBlockTopBottom(BlockStateModelGenerator modelGenerator, Block block) {
+        TextureMap textureMap = sideTopBottom(TextureMap.getId(block), TextureMap.getSubId(block, "_top"), TextureMap.getSubId(block, "_bottom"));
+        Identifier identifier = Models.CUBE_BOTTOM_TOP.upload(block, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).coordinate(createUpDefaultRotationStates()));
     }
 
     public final void registerPumpkins(BlockStateModelGenerator modelGenerator, Block block) {
@@ -638,14 +698,19 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBlock(modelGenerator, BlockusBlocks.STURDY_STONE, TextureMap.of(TextureKey.ALL, identifier));
     }
 
-    public final void registerLanternBlock(BlockStateModelGenerator modelGenerator, Block block) {
-        TextureMap textureMap = TextureMap.sideEnd(TextureMap.getId(block), TextureMap.getSubId(BlockusBlocks.LANTERN_BLOCK, "_top"));
-        this.createCubeColumn(modelGenerator, block, textureMap);
+    public final void registerNeonBlock(BlockStateModelGenerator modelGenerator, Block block) {
+        TextureMap textureMap = TextureMap.of(TextureKey.ALL, TextureMap.getId(block));
+        this.createBlock(modelGenerator, block, BlockusModels.NEON_BLOCK_TEMPLATE, textureMap);
     }
 
     public final void registerFishCrate(BlockStateModelGenerator modelGenerator, Block block) {
         TextureMap textureMap = sideTopBottom(getBlockId("fish_crate_side"), TextureMap.getId(block), getBlockId("fish_crate_bottom"));
-        this.createCubeBottomTop(modelGenerator, block, textureMap);
+        this.createBlock(modelGenerator, block, Models.CUBE_BOTTOM_TOP, textureMap);
+    }
+
+    public final void registerCrate(BlockStateModelGenerator modelGenerator, Block block) {
+        TextureMap textureMap = sideTop(TextureMap.getSubId(block, "_side"), TextureMap.getId(block));
+        this.createBlock(modelGenerator, block, BlockusModels.CRATE_TEMPLATE, textureMap);
     }
 
     public final void registerBreadBox(BlockStateModelGenerator modelGenerator, Block block) {
@@ -656,7 +721,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public void registerLegacyStonecutter(BlockStateModelGenerator modelGenerator, Block block) {
         TextureMap textureMap = (new TextureMap()).put(TextureKey.PARTICLE, TextureMap.getSubId(block, "_front")).put(TextureKey.DOWN, TextureMap.getSubId(block, "_bottom")).put(TextureKey.UP, TextureMap.getSubId(block, "_top")).put(TextureKey.NORTH, TextureMap.getSubId(block, "_front")).put(TextureKey.SOUTH, TextureMap.getSubId(block, "_front")).put(TextureKey.EAST, TextureMap.getSubId(block, "_side")).put(TextureKey.WEST, TextureMap.getSubId(block, "_side"));
-        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, Models.CUBE.upload(block, textureMap, modelGenerator.modelCollector)));
+        this.createBlock(modelGenerator, block, Models.CUBE, textureMap);
     }
 
     private void registerDiagonalTimberFrame(BlockStateModelGenerator modelGenerator, Block block) {
@@ -703,20 +768,57 @@ public class BlockusModelProvider extends FabricModelProvider {
         return (new TextureMap()).put(BlockusTextureKey.TILE_1, getTilesId(tile1)).put(BlockusTextureKey.TILE_2, getTilesId(tile2));
     }
 
+    public static TextureMap sideTop(Identifier block, Identifier top) {
+        return (new TextureMap()).put(TextureKey.SIDE, block).put(TextureKey.TOP, top);
+    }
+
     public static TextureMap sideTopBottom(Identifier block, Identifier top, Identifier bottom) {
         return (new TextureMap()).put(TextureKey.SIDE, block).put(TextureKey.TOP, top).put(TextureKey.BOTTOM, bottom);
+    }
+
+    public static TextureMap sideTopBottom(Identifier block) {
+        return (new TextureMap()).put(TextureKey.SIDE, block).put(TextureKey.TOP, block).put(TextureKey.BOTTOM, block);
     }
 
     public static TextureMap frontTopSideBottom(Block block) {
         return (new TextureMap()).put(TextureKey.FRONT, TextureMap.getId(block)).put(TextureKey.TOP, TextureMap.getSubId(block, "_top")).put(TextureKey.SIDE, TextureMap.getSubId(block, "_side")).put(TextureKey.BOTTOM, TextureMap.getSubId(block, "_side"));
     }
 
-    public static Identifier getTilesId(Block block) {
-        return getBlockId(Registries.BLOCK.getId(block).getPath().replace("_concrete", "_tiles"));
+    public final void createBlock(BlockStateModelGenerator modelGenerator, Block block, Model model, TextureMap textureMap) {
+        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, model.upload(block, textureMap, modelGenerator.modelCollector)));
     }
 
     public final void createBlock(BlockStateModelGenerator modelGenerator, Block block, TextureMap textureMap) {
         modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, Models.CUBE_ALL.upload(block, textureMap, modelGenerator.modelCollector)));
+    }
+
+    public final void createStairs(BlockStateModelGenerator modelGenerator, Block block, TextureMap textureMap) {
+        Identifier identifier = Models.INNER_STAIRS.upload(block, textureMap, modelGenerator.modelCollector);
+        Identifier identifier2 = Models.STAIRS.upload(block, textureMap, modelGenerator.modelCollector);
+        Identifier identifier3 = Models.OUTER_STAIRS.upload(block, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createStairsBlockState(block, identifier, identifier2, identifier3));
+        modelGenerator.registerParentedItemModel(block, identifier2);
+    }
+
+    public final void createSlab(BlockStateModelGenerator modelGenerator, Block block, TextureMap textureMap, Identifier doubleSlab) {
+        Identifier identifier = Models.SLAB.upload(block, textureMap, modelGenerator.modelCollector);
+        Identifier identifier2 = Models.SLAB_TOP.upload(block, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSlabBlockState(block, identifier, identifier2, doubleSlab));
+        modelGenerator.registerParentedItemModel(block, identifier);
+    }
+
+    public static BlockStateVariantMap createUpDefaultRotationStates() {
+        return BlockStateVariantMap.create(Properties.FACING)
+            .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R180))
+            .register(Direction.UP, BlockStateVariant.create())
+            .register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+            .register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270))
+            .register(Direction.WEST, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+            .register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R270));
+    }
+
+    public static Identifier getTilesId(Block block) {
+        return getBlockId(Registries.BLOCK.getId(block).getPath().replace("_concrete", "_tiles"));
     }
 
     public static Identifier getBlockId(String id) {

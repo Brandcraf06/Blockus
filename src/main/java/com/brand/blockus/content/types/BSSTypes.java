@@ -12,14 +12,17 @@ import net.minecraft.sound.BlockSoundGroup;
 import java.util.ArrayList;
 
 public class BSSTypes {
-    private static final ArrayList<BSSTypes> LIST = new ArrayList<>();
+    public static final ArrayList<BSSTypes> LIST = new ArrayList<>();
 
     public final Block block;
     public final Block slab;
     public final Block stairs;
+    public final String type;
+    public Block base;
 
-    private BSSTypes(String type, Block.Settings blockSettings) {
+    public BSSTypes(String type, Block.Settings blockSettings) {
         String replace = BlocksRegistration.replaceId(type);
+        this.type = type;
 
         if (!type.contains("amethyst")) {
             this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
@@ -37,6 +40,7 @@ public class BSSTypes {
 
     public BSSTypes(String type, Block base) {
         this(type, FabricBlockSettings.copyOf(base));
+        this.base = base;
     }
 
     public BSSTypes(String type, Block base, MapColor color) {

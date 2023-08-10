@@ -14,6 +14,8 @@ public class BlockusModels {
     public static final Model TEMPLATE_SMALL_HEDGE_SIDE;
     public static final Model TEMPLATE_SMALL_HEDGE_SIDE_TALL;
     public static final Model TEMPLATE_SMALL_HEDGE_INVENTORY;
+    public static final Model CRATE_TEMPLATE;
+    public static final Model NEON_BLOCK_TEMPLATE;
 
     public static Identifier getBlockId(String id) {
         return new Identifier("blockus", "block/" + id);
@@ -27,6 +29,7 @@ public class BlockusModels {
         return new Model(Optional.of(getBlockId(parent)), Optional.of(variant), requiredTextures);
     }
 
+
     static {
         CUBE_TILES = createModel("cube_tiles", "", BlockusTextureKey.TILE_1, BlockusTextureKey.TILE_2);
         CUBE_TILES_2 = createModel("cube_tiles_2", "_2", BlockusTextureKey.TILE_1, BlockusTextureKey.TILE_2);
@@ -34,5 +37,7 @@ public class BlockusModels {
         TEMPLATE_SMALL_HEDGE_SIDE = createModel("template_small_hedge_side", "_side", BlockusTextureKey.HEDGE);
         TEMPLATE_SMALL_HEDGE_SIDE_TALL = createModel("template_small_hedge_side_tall", "_side_tall", BlockusTextureKey.HEDGE);
         TEMPLATE_SMALL_HEDGE_INVENTORY = createModel("template_small_hedge_inventory", "_inventory", BlockusTextureKey.HEDGE);
+        CRATE_TEMPLATE = createModel("crate_template", TextureKey.TOP, TextureKey.SIDE);
+        NEON_BLOCK_TEMPLATE = createModel("neon_block_template", TextureKey.ALL);
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/neon_block_template",
+  "textures": {
+    "all": "blockus:block/black_neon"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-07T23:00:00.7564224	Blockus/Tags for minecraft:item
+// 1.20.1	2023-08-10T03:56:32.1087422	Blockus/Tags for minecraft:item
 009ad866cba0b068eda84dcf98d835b5c61f3ef2 data\minecraft\tags\items\wooden_stairs.json
 bbaf2307acf91bd5b67580959bd3107765e84379 data\minecraft\tags\items\dirt.json
 d6d1bb415b3cc2f2a6e41b7b338ab30270184f44 data\minecraft\tags\items\signs.json
@@ -22,8 +22,8 @@ a7d09a3ff3702477cfdc5a0fe2018d03bdaeef04 data\blockus\tags\items\wooden_mosaic_t
 4e6b8ce53d0bfb5930cc0f99501e08e34b11903a data\minecraft\tags\items\piglin_repellents.json
 aa1ec68585260a5560247704f6ea242c7441c933 data\minecraft\tags\items\wooden_slabs.json
 ed49c93732d342b67338735bc4dfc7ca703ebbc9 data\minecraft\tags\items\leaves.json
-30497f67d658fb0f621acb16ff40037696a6d37b data\minecraft\tags\items\wooden_trapdoors.json
 f6d6e192ba8219b5b89bca7cd9704fc8658fc814 data\promenade\tags\items\cherry_oak_logs.json
+30497f67d658fb0f621acb16ff40037696a6d37b data\minecraft\tags\items\wooden_trapdoors.json
 a3105e9f7f4802dc1bcfa457db22a54f212df8bb data\blockus\tags\items\patterned_carpets.json
 a680f414527e4593b93b7ea68790dac9f739bddc data\blockus\tags\items\all_patterned_wools.json
 28dddcd9a9ec8e5fcecbd648c95aec0c9b57627e data\blockus\tags\items\planks_that_burn.json
