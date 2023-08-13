@@ -363,7 +363,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerCrate(modelGenerator, BlockusBlocks.GOLDEN_CARROT_CRATE);
         this.registerBreadBox(modelGenerator, BlockusBlocks.BREAD_BOX);
         this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHORUS_BLOCK);
-        this.registerDirectionalCarpet(modelGenerator, BlockusBlocks.CHOCOLATE_BLOCK.block, BlockusBlocks.CHOCOLATE_TABLET);
+        this.registerDirectionalCarpet(modelGenerator, BlockusBlocks.CHOCOLATE_SQUARES, BlockusBlocks.CHOCOLATE_TABLET);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHOCOLATE_SQUARES);
 
         // Redstone Lamps
