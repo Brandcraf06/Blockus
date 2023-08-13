@@ -3,6 +3,10 @@
   "values": [
     "#blockus:obsidian",
     "blockus:netherite_stairs",
-    "blockus:netherite_slab"
+    "blockus:netherite_slab",
+    "blockus:netherite_bricks",
+    "blockus:netherite_brick_stairs",
+    "blockus:netherite_brick_slab",
+    "blockus:netherite_brick_wall"
   ]
 }

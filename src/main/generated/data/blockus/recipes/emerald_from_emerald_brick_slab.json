@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "emerald",
+  "ingredients": [
+    {
+      "item": "blockus:emerald_brick_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:emerald"
+  }
+}

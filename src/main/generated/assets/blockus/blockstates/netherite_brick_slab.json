@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/netherite_brick_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/netherite_bricks"
+    },
+    "type=top": {
+      "model": "blockus:block/netherite_brick_slab_top"
+    }
+  }
+}

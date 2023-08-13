@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "netherite_ingot",
+  "ingredients": [
+    {
+      "item": "blockus:netherite_brick_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:netherite_ingot"
+  }
+}

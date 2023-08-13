@@ -1,6 +1,14 @@
 {
   "replace": false,
   "values": [
-    "blockus:ender_block"
+    "blockus:ender_block",
+    "blockus:iron_bricks",
+    "blockus:iron_brick_stairs",
+    "blockus:iron_brick_slab",
+    "blockus:iron_brick_wall",
+    "blockus:lapis_bricks",
+    "blockus:lapis_brick_stairs",
+    "blockus:lapis_brick_slab",
+    "blockus:lapis_brick_wall"
   ]
 }

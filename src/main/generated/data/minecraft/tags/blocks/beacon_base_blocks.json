@@ -7,6 +7,21 @@
     "blockus:legacy_diamond_block",
     "blockus:netherite_slab",
     "blockus:netherite_stairs",
-    "blockus:nether_stars_block"
+    "blockus:nether_stars_block",
+    "blockus:iron_bricks",
+    "blockus:iron_brick_stairs",
+    "blockus:iron_brick_slab",
+    "blockus:gold_bricks",
+    "blockus:gold_brick_stairs",
+    "blockus:gold_brick_slab",
+    "blockus:emerald_bricks",
+    "blockus:emerald_brick_stairs",
+    "blockus:emerald_brick_slab",
+    "blockus:diamond_bricks",
+    "blockus:diamond_brick_stairs",
+    "blockus:diamond_brick_slab",
+    "blockus:netherite_bricks",
+    "blockus:netherite_brick_stairs",
+    "blockus:netherite_brick_slab"
   ]
 }

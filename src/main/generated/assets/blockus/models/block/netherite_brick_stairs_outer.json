@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "blockus:block/netherite_bricks",
+    "side": "blockus:block/netherite_bricks",
+    "top": "blockus:block/netherite_bricks"
+  }
+}

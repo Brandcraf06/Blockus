@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "redstone",
+  "ingredients": [
+    {
+      "item": "blockus:redstone_brick_stairs"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:redstone"
+  }
+}

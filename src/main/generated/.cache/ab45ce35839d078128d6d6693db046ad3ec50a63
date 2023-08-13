@@ -1,5 +1,5 @@
-// 1.20.1	2023-08-13T07:15:50.9413218	Blockus/Tags for minecraft:block
-d84f1566256fc4067095b7f0249987fc79492b6c data\minecraft\tags\blocks\needs_stone_tool.json
+// 1.20.1	2023-08-13T09:05:38.4401371	Blockus/Tags for minecraft:block
+9b000aa2547daa29a91a17d5af93edf037915507 data\minecraft\tags\blocks\needs_stone_tool.json
 e753098d3c18e38dcdddce76bef4d1abb0ea5fb2 data\minecraft\tags\blocks\crimson_stems.json
 c885acea0272904c7072c61b33eb223ff080dd81 data\blockus\tags\blocks\neon.json
 abb0ac7580cf94d78d05eb7336942f1ef7ba4529 data\promenade\tags\blocks\leaf_piles.json
@@ -10,7 +10,7 @@ f43e8677104a2c29a7d7981e9efb1746ffbdbc89 data\blockus\tags\blocks\framed_paper_b
 a96005c3fe0cf59e522f8225af4463f1b2fff966 data\blockus\tags\blocks\obsidian.json
 bd2bb3e1c8014a41bb09ac0ce322f769ee8bfb97 data\promenade\tags\blocks\palm_logs.json
 b337658cd7b7a8dda49f35b855d5328bb24bc396 data\minecraft\tags\blocks\dampens_vibrations.json
-d40bce51cba15d94b499c5f4813c8c569b1c5570 data\minecraft\tags\blocks\mineable\pickaxe.json
+f6ca3e122764d149e2bbd881eca98eee8a35dccd data\minecraft\tags\blocks\mineable\pickaxe.json
 d6966c832fdaa4d7f6fe4dfac501f9fe640eb4f0 data\minecraft\tags\blocks\mineable\hoe.json
 3ea25984a27fde0e0f16c56586ed73e5e439a05f data\minecraft\tags\blocks\ceiling_hanging_signs.json
 b7d9f576935bab22909a54d702cbf85f368f0908 data\blockus\tags\blocks\white_oak_logs.json
@@ -60,7 +60,7 @@ a7f4c29546863c942099a7a2ebb13aa394a13909 data\blockus\tags\blocks\food_crates.js
 4ba5603ee88342a8ebbb5b43064229edd051eb1d data\minecraft\tags\blocks\dark_oak_logs.json
 fef61a78e10626c1871607b048ae55cbaddaf559 data\promenade\tags\blocks\maple_logs.json
 58275c254546df254cf7340ae018ecb30949b82f data\minecraft\tags\blocks\vibration_resonators.json
-e1b180d333fc11bbc8cdc85abd983d76d045e1f4 data\minecraft\tags\blocks\slabs.json
+b4679f236189827f1e6a64885124d4ee29f729e3 data\minecraft\tags\blocks\slabs.json
 a680f414527e4593b93b7ea68790dac9f739bddc data\blockus\tags\blocks\all_patterned_wools.json
 c2cf2254b2e5b17700525fd4f31de4e971832418 data\blockus\tags\blocks\stone_blocks.json
 c7cd423c1f1448f613111b479080fdbee6283212 data\minecraft\tags\blocks\wooden_buttons.json
@@ -73,14 +73,14 @@ bbaf2307acf91bd5b67580959bd3107765e84379 data\minecraft\tags\blocks\animals_spaw
 248c47dd5ff1cd2a2097cb2a1948fdfe95c2a11d data\minecraft\tags\blocks\soul_speed_blocks.json
 76ce44f3886383c44b676ce0e4a1fbe381afd331 data\blockus\tags\blocks\lava_bricks.json
 eaece9d75fb3819b2613d68735efaab995765216 data\blockus\tags\blocks\colored_tiles.json
-f5149fabe54f9135eb3e3f9112e876c02380a475 data\minecraft\tags\blocks\needs_diamond_tool.json
+bfeeb267cca2b179d344ceebf95f36e4b1c8ee9d data\minecraft\tags\blocks\needs_diamond_tool.json
 6136c9eaf23ede081703917b98631e667390cbfe data\blockus\tags\blocks\granite_blocks.json
 741a3a5c8766ba344ac13c3ee1fff0ba579f6400 data\blockus\tags\blocks\asphalt.json
 d092788809722add671796ffb47880e6d6966d88 data\minecraft\tags\blocks\jungle_logs.json
-5c010f648c1eba530b74d75fb560c240b66060c8 data\minecraft\tags\blocks\guarded_by_piglins.json
+630e47d3eb55466f9f2b826cccf0ff9b2e290ec9 data\minecraft\tags\blocks\guarded_by_piglins.json
 a3105e9f7f4802dc1bcfa457db22a54f212df8bb data\blockus\tags\blocks\patterned_carpets.json
 86854eb4a871aaab4567e5785c2b7dfd90caa597 data\minecraft\tags\blocks\ice.json
-36037699789eff25da429fe64964fa9c404961ea data\blockus\tags\blocks\amethyst_blocks.json
+d0a1b968e1d790c12c0fdc43d46732ac24c006bc data\blockus\tags\blocks\amethyst_blocks.json
 5352ceb5ac785810a47cc85910f35605e963b341 data\minecraft\tags\blocks\acacia_logs.json
 07d3a20283c29adb48ec1cdb37c880257165111e data\minecraft\tags\blocks\flowers.json
 24a5b33035531b95a420236e2bbcf8355e18fa89 data\minecraft\tags\blocks\oak_logs.json
@@ -104,19 +104,19 @@ e54a33521c1a85123bac735b7e339c0ad7fe047e data\minecraft\tags\blocks\flower_pots.
 48467702a780a199af5dc0bbc01380df9f739a01 data\minecraft\tags\blocks\infiniburn_overworld.json
 56a10f04d475f788d012d5813b8fbf669232c4ad data\promenade\tags\blocks\dark_amaranth_stems.json
 ed4e44f7fe8f95d3f3e740facaf755093ba47d6c data\minecraft\tags\blocks\dragon_immune.json
-b9805bf5edf83636548ec1cbcdc26bd2491e5406 data\minecraft\tags\blocks\stairs.json
+d23348eaf69a0fbcbe3720b0cf8bedc2d9432fd8 data\minecraft\tags\blocks\stairs.json
 a90b41d10a239d73363ad5ae1ac9b4ccc71af861 data\blockus\tags\blocks\small_hedges.json
 5980f573107459b5d2faa6cd8f3163ecb819f29f data\blockus\tags\blocks\prismarine_blocks.json
 07b83a3034dbd20af399d990716f91b592d61430 data\blockus\tags\blocks\shingles.json
 fffeb0488e24d2dded9f10b1da17ff9d5f474173 data\blockus\tags\blocks\basalt_blocks.json
-c2851dbd9216882c53ffe0b3b1fb1b8800dc5db3 data\minecraft\tags\blocks\beacon_base_blocks.json
+3f04384c872b32787e8d3c85f2717608ad3fd154 data\minecraft\tags\blocks\beacon_base_blocks.json
 ae0a1f53919601b8bf70b275607ac9d9586a105f data\blockus\tags\blocks\water_bricks.json
 3fd60d5b7846b3ed324e331c0ad2681f5f75e964 data\minecraft\tags\blocks\small_flowers.json
 deac1b61c4c224bb97ae40056c251ff5b0944f43 data\minecraft\tags\blocks\impermeable.json
 4a609428c5a16f4bf1671ed6ff0ba2eac5d0a2e7 data\blockus\tags\blocks\thatch.json
-af7becca7c5353cf1d17f036e1818718003cee97 data\minecraft\tags\blocks\needs_iron_tool.json
+5edbd1dac841ea8e1bde6b6c611793bc90d5b16f data\minecraft\tags\blocks\needs_iron_tool.json
 f3bfb2381190670979674d95c1217b6097112862 data\minecraft\tags\blocks\mineable\shovel.json
-6a935b28fd783d08c6c0838ff375978cc3ef39fc data\minecraft\tags\blocks\walls.json
+77c3a7d60b379d76398efdc5f6e3a0a3a7adb125 data\minecraft\tags\blocks\walls.json
 42c5373cb8fcd2ab6746c4d24c5165b2d0ebd602 data\blockus\tags\blocks\dripstone_blocks.json
 2ef382d5d5acd25c93ea3183769713d24f815264 data\minecraft\tags\blocks\warped_stems.json
 5875182da439200e37ecb0466781226016c1ab58 data\blockus\tags\blocks\warped_nether_grass.json

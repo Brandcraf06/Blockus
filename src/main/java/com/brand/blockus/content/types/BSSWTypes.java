@@ -1,40 +1,38 @@
 package com.brand.blockus.content.types;
 
-import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
-import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
-import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AmethystBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
+import net.minecraft.block.RedstoneBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import java.util.ArrayList;
 
 public class BSSWTypes {
-    private static final ArrayList<BSSWTypes> LIST = new ArrayList<>();
+    public static final ArrayList<BSSWTypes> LIST = new ArrayList<>();
 
     public final Block block;
     public final Block slab;
     public final Block stairs;
     public final Block wall;
 
-    private BSSWTypes(String type, Block.Settings blockSettings) {
-        String replace = BlocksRegistration.replaceId(type);
+    public BSSWTypes(String type, Block.Settings blockSettings) {
+        Block blockInstance;
 
-        if (!type.contains("amethyst")) {
-            this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(blockSettings)));
-            this.slab = BlocksRegistration.registerSlab(this.block);
-            this.stairs = BlocksRegistration.registerStairs(this.block);
-            this.wall = BlocksRegistration.registerWall(this.block);
+        if (BlocksRegistration.isAmethyst(type)) {
+            blockInstance = new AmethystBlock(FabricBlockSettings.copyOf(blockSettings));
+        } else if (BlocksRegistration.isRedstone(type)) {
+            blockInstance = new RedstoneBlock(FabricBlockSettings.copyOf(blockSettings));
         } else {
-            this.block = BlocksRegistration.register(type, new AmethystBlock(FabricBlockSettings.copyOf(blockSettings)));
-            this.stairs = BlocksRegistration.register(replace + "_stairs", new AmethystStairsBlock(this.block.getDefaultState(), FabricBlockSettings.copy(this.block)));
-            this.slab = BlocksRegistration.register(replace + "_slab", new AmethystSlabBlock(FabricBlockSettings.copy(this.block)));
-            this.wall = BlocksRegistration.register(replace + "_wall", new AmethystWallBlock(FabricBlockSettings.copy(this.block)));
-
+            blockInstance = new Block(FabricBlockSettings.copyOf(blockSettings));
         }
+
+        this.block = BlocksRegistration.register(type, blockInstance);
+        this.slab = BlocksRegistration.registerSlab(this.block);
+        this.stairs = BlocksRegistration.registerStairs(this.block);
+        this.wall = BlocksRegistration.registerWall(this.block);
 
         LIST.add(this);
     }

@@ -13,6 +13,10 @@
     "blockus:gold_plating",
     "blockus:gold_plating_stairs",
     "blockus:gold_plating_slab",
+    "blockus:gold_bricks",
+    "blockus:gold_brick_stairs",
+    "blockus:gold_brick_slab",
+    "blockus:gold_brick_wall",
     "blockus:golden_apple_crate",
     "blockus:golden_carrot_crate"
   ]

@@ -4,6 +4,12 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.Barrier;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.base.SmallHedgeBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
+import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
+import com.brand.blockus.blocks.base.redstone.RedstoneSlabBlock;
+import com.brand.blockus.blocks.base.redstone.RedstoneStairsBlock;
+import com.brand.blockus.blocks.base.redstone.RedstoneWallBlock;
 import com.brand.blockus.blocks.blockitems.GlintBlockItem;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -27,8 +33,15 @@ public class BlocksRegistration {
         return id.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
     }
 
-    // Copy
+    public static boolean isAmethyst(String baseid) {
+        return baseid.contains("amethyst");
+    }
 
+    public static boolean isRedstone(String baseid) {
+        return baseid.contains("redstone");
+    }
+
+    // Copy
     public static Block createCopy(Block base) {
         return new Block(FabricBlockSettings.copy(base));
     }
@@ -48,17 +61,30 @@ public class BlocksRegistration {
 
     // Slab
     public static Block createSlab(String baseid, Block base) {
-        return register(replaceId(baseid) + "_slab", new SlabBlock(FabricBlockSettings.copy(base)));
+        String slabId = replaceId(baseid) + "_slab";
+        if (isAmethyst(baseid)) {
+            return register(slabId, new AmethystSlabBlock(FabricBlockSettings.copy(base)));
+        } else if (isRedstone(baseid)) {
+            return register(slabId, new RedstoneSlabBlock(FabricBlockSettings.copy(base)));
+        } else {
+            return register(slabId, new SlabBlock(FabricBlockSettings.copy(base)));
+        }
     }
 
     public static Block registerSlab(Block base) {
         return createSlab(Registries.BLOCK.getId(base).getPath(), base);
     }
 
-
     // Stairs
     public static Block createStairs(String baseid, Block base) {
-        return register(replaceId(baseid) + "_stairs", new StairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        String slabId = replaceId(baseid) + "_stairs";
+        if (isAmethyst(baseid)) {
+            return register(slabId, new AmethystStairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        } else if (isRedstone(baseid)) {
+            return register(slabId, new RedstoneStairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        } else {
+            return register(slabId, new StairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        }
     }
 
     public static Block registerStairs(Block base) {
@@ -67,13 +93,19 @@ public class BlocksRegistration {
 
     // Wall
     public static Block createWall(String baseid, Block base) {
-        return register(replaceId(baseid) + "_wall", new WallBlock(FabricBlockSettings.copy(base)));
+        String slabId = replaceId(baseid) + "_wall";
+        if (isAmethyst(baseid)) {
+            return register(slabId, new AmethystWallBlock(FabricBlockSettings.copy(base)));
+        } else if (isRedstone(baseid)) {
+            return register(slabId, new RedstoneWallBlock(FabricBlockSettings.copy(base)));
+        } else {
+            return register(slabId, new WallBlock(FabricBlockSettings.copy(base)));
+        }
     }
 
     public static Block registerWall(Block base) {
         return createWall(Registries.BLOCK.getId(base).getPath(), base);
     }
-
 
     public static Barrier createBarrier(float hardness, float resistance, MapColor color) {
         return new Barrier(FabricBlockSettings.create().mapColor(color).strength(hardness, resistance).instrument(Instrument.BASEDRUM).requiresTool());

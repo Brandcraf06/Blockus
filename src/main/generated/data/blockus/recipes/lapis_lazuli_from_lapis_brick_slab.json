@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "lapis_lazuli",
+  "ingredients": [
+    {
+      "item": "blockus:lapis_brick_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:lapis_lazuli"
+  }
+}

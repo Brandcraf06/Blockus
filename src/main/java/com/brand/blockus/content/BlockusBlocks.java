@@ -451,6 +451,15 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block CHOCOLATE_SQUARES = register("chocolate_squares", createCopy(BlockusBlocks.CHOCOLATE_BRICKS.block));
     public static final Block CHOCOLATE_TABLET = register("chocolate_tablet", new ChocolateTabletBlock(FabricBlockSettings.copyOf(BlockusBlocks.CHOCOLATE_BLOCK.block).strength(0.2F, 1.0F)));
 
+    // Ore Bricks
+    public static final BSSWTypes IRON_BRICKS = new BSSWTypes("iron_bricks", Blocks.IRON_BLOCK);
+    public static final BSSWTypes GOLD_BRICKS = new BSSWTypes("gold_bricks", Blocks.GOLD_BLOCK);
+    public static final BSSWTypes LAPIS_BRICKS = new BSSWTypes("lapis_bricks", Blocks.LAPIS_BLOCK);
+    public static final BSSWTypes REDSTONE_BRICKS = new BSSWTypes("redstone_bricks", Blocks.REDSTONE_BLOCK);
+    public static final BSSWTypes EMERALD_BRICKS = new BSSWTypes("emerald_bricks", Blocks.EMERALD_BLOCK);
+    public static final BSSWTypes DIAMOND_BRICKS = new BSSWTypes("diamond_bricks", Blocks.DIAMOND_BLOCK);
+    public static final BSSWTypes NETHERITE_BRICKS = new BSSWTypes("netherite_bricks", Blocks.NETHERITE_BLOCK);
+
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = register("sweet_berries_crate", createCrates());
     public static final Block GLOW_BERRIES_CRATE = register("glow_berries_crate", createLightCrate());

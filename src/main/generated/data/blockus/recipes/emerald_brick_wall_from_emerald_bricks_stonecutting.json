@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "blockus:emerald_bricks"
+  },
+  "result": "blockus:emerald_brick_wall"
+}

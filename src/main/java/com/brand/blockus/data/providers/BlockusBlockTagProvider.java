@@ -37,6 +37,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.AMETHYST_BRICKS.block)
             .add(BlockusBlocks.AMETHYST_BRICKS.stairs)
             .add(BlockusBlocks.AMETHYST_BRICKS.slab)
+            .add(BlockusBlocks.AMETHYST_BRICKS.wall)
             .add(BlockusBlocks.CHISELED_AMETHYST)
             .add(BlockusBlocks.AMETHYST_PILLAR);
 
@@ -1022,6 +1023,27 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.END_TILES.slab)
             .add(BlockusBlocks.CHISELED_MUD_BRICKS)
             .add(BlockusBlocks.MUD_BRICK_PILLAR)
+            .add(BlockusBlocks.IRON_BRICKS.block)
+            .add(BlockusBlocks.IRON_BRICKS.stairs)
+            .add(BlockusBlocks.IRON_BRICKS.slab)
+            .add(BlockusBlocks.GOLD_BRICKS.block)
+            .add(BlockusBlocks.GOLD_BRICKS.stairs)
+            .add(BlockusBlocks.GOLD_BRICKS.slab)
+            .add(BlockusBlocks.LAPIS_BRICKS.block)
+            .add(BlockusBlocks.LAPIS_BRICKS.stairs)
+            .add(BlockusBlocks.LAPIS_BRICKS.slab)
+            .add(BlockusBlocks.REDSTONE_BRICKS.block)
+            .add(BlockusBlocks.REDSTONE_BRICKS.stairs)
+            .add(BlockusBlocks.REDSTONE_BRICKS.slab)
+            .add(BlockusBlocks.EMERALD_BRICKS.block)
+            .add(BlockusBlocks.EMERALD_BRICKS.stairs)
+            .add(BlockusBlocks.EMERALD_BRICKS.slab)
+            .add(BlockusBlocks.DIAMOND_BRICKS.block)
+            .add(BlockusBlocks.DIAMOND_BRICKS.stairs)
+            .add(BlockusBlocks.DIAMOND_BRICKS.slab)
+            .add(BlockusBlocks.NETHERITE_BRICKS.block)
+            .add(BlockusBlocks.NETHERITE_BRICKS.stairs)
+            .add(BlockusBlocks.NETHERITE_BRICKS.slab)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.STAINED_STONE_BRICKS)
@@ -1093,7 +1115,22 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.LEGACY_DIAMOND_BLOCK)
             .add(BlockusBlocks.NETHERITE_SLAB)
             .add(BlockusBlocks.NETHERITE_STAIRS)
-            .add(BlockusBlocks.NETHER_STAR_BLOCK);
+            .add(BlockusBlocks.NETHER_STAR_BLOCK)
+            .add(BlockusBlocks.IRON_BRICKS.block)
+            .add(BlockusBlocks.IRON_BRICKS.stairs)
+            .add(BlockusBlocks.IRON_BRICKS.slab)
+            .add(BlockusBlocks.GOLD_BRICKS.block)
+            .add(BlockusBlocks.GOLD_BRICKS.stairs)
+            .add(BlockusBlocks.GOLD_BRICKS.slab)
+            .add(BlockusBlocks.EMERALD_BRICKS.block)
+            .add(BlockusBlocks.EMERALD_BRICKS.stairs)
+            .add(BlockusBlocks.EMERALD_BRICKS.slab)
+            .add(BlockusBlocks.DIAMOND_BRICKS.block)
+            .add(BlockusBlocks.DIAMOND_BRICKS.stairs)
+            .add(BlockusBlocks.DIAMOND_BRICKS.slab)
+            .add(BlockusBlocks.NETHERITE_BRICKS.block)
+            .add(BlockusBlocks.NETHERITE_BRICKS.stairs)
+            .add(BlockusBlocks.NETHERITE_BRICKS.slab);
 
         this.getOrCreateTagBuilder(BlockTags.BIRCH_LOGS)
             .add(BlockusBlocks.BIRCH_SMALL_LOGS);
@@ -1162,6 +1199,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.GOLD_PLATING.block)
             .add(BlockusBlocks.GOLD_PLATING.stairs)
             .add(BlockusBlocks.GOLD_PLATING.slab)
+            .add(BlockusBlocks.GOLD_BRICKS.block)
+            .add(BlockusBlocks.GOLD_BRICKS.stairs)
+            .add(BlockusBlocks.GOLD_BRICKS.slab)
+            .add(BlockusBlocks.GOLD_BRICKS.wall)
             .add(BlockusBlocks.GOLDEN_APPLE_CRATE)
             .add(BlockusBlocks.GOLDEN_CARROT_CRATE);
 
@@ -1198,13 +1239,37 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .add(BlockusBlocks.NETHERITE_STAIRS)
-            .add(BlockusBlocks.NETHERITE_SLAB);
+            .add(BlockusBlocks.NETHERITE_SLAB)
+            .add(BlockusBlocks.NETHERITE_BRICKS.block)
+            .add(BlockusBlocks.NETHERITE_BRICKS.stairs)
+            .add(BlockusBlocks.NETHERITE_BRICKS.slab)
+            .add(BlockusBlocks.NETHERITE_BRICKS.wall);
 
         this.getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+            .add(BlockusBlocks.GOLD_BRICKS.block)
+            .add(BlockusBlocks.GOLD_BRICKS.stairs)
+            .add(BlockusBlocks.GOLD_BRICKS.slab)
+            .add(BlockusBlocks.GOLD_BRICKS.wall)
+            .add(BlockusBlocks.DIAMOND_BRICKS.block)
+            .add(BlockusBlocks.DIAMOND_BRICKS.stairs)
+            .add(BlockusBlocks.DIAMOND_BRICKS.slab)
+            .add(BlockusBlocks.DIAMOND_BRICKS.wall)
+            .add(BlockusBlocks.EMERALD_BRICKS.block)
+            .add(BlockusBlocks.EMERALD_BRICKS.stairs)
+            .add(BlockusBlocks.EMERALD_BRICKS.slab)
+            .add(BlockusBlocks.EMERALD_BRICKS.wall)
             .add(BlockusBlocks.NETHER_STAR_BLOCK);
 
         this.getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-            .add(BlockusBlocks.ENDER_BLOCK);
+            .add(BlockusBlocks.ENDER_BLOCK)
+            .add(BlockusBlocks.IRON_BRICKS.block)
+            .add(BlockusBlocks.IRON_BRICKS.stairs)
+            .add(BlockusBlocks.IRON_BRICKS.slab)
+            .add(BlockusBlocks.IRON_BRICKS.wall)
+            .add(BlockusBlocks.LAPIS_BRICKS.block)
+            .add(BlockusBlocks.LAPIS_BRICKS.stairs)
+            .add(BlockusBlocks.LAPIS_BRICKS.slab)
+            .add(BlockusBlocks.LAPIS_BRICKS.wall);
 
         this.getOrCreateTagBuilder(BlockTags.OAK_LOGS)
             .add(BlockusBlocks.OAK_SMALL_LOGS);

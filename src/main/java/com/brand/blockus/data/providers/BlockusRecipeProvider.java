@@ -557,7 +557,6 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.TEAL_NETHER_BRICKS.block).input('#', BlockusItemTags.WARPED_NETHER_GRASS).input('X', Items.NETHER_BRICK).pattern("#X").pattern("X#").group("teal_nether_bricks").criterion("has_warped_grass", conditionsFromTag(BlockusItemTags.WARPED_NETHER_GRASS)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.TEAL_NETHER_BRICKS.block, 2).input(Blocks.WARPED_WART_BLOCK).input(Items.NETHER_BRICKS).group("teal_nether_bricks").criterion(hasItem(Blocks.WARPED_WART_BLOCK), conditionsFromItem(Blocks.WARPED_WART_BLOCK)).offerTo(exporter, convertBetween(BlockusBlocks.TEAL_NETHER_BRICKS.block, Blocks.WARPED_WART_BLOCK));
 
-
         // Obsidian
         offerStonecuttingRecipe(exporter, BlockusBlocks.OBSIDIAN_BRICKS.block, Blocks.OBSIDIAN);
         offerStonecuttingRecipe(exporter, BlockusBlocks.OBSIDIAN_BRICKS.stairs, Blocks.OBSIDIAN, BlockusBlocks.OBSIDIAN_BRICKS.block);
@@ -579,9 +578,16 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         offerDoorTrapdoorRecipe(exporter, BlockusBlocks.OBSIDIAN_REINFORCED_DOOR, BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR, Blocks.OBSIDIAN);
 
+        // Ore Bricks
+        offerOreBricksRecipe(exporter, BlockusBlocks.IRON_BRICKS, Blocks.IRON_BLOCK, Items.IRON_INGOT);
+        offerOreBricksRecipe(exporter, BlockusBlocks.GOLD_BRICKS, Blocks.GOLD_BLOCK, Items.GOLD_INGOT);
+        offerOreBricksRecipe(exporter, BlockusBlocks.LAPIS_BRICKS, Blocks.LAPIS_BLOCK, Items.LAPIS_LAZULI);
+        offerOreBricksRecipe(exporter, BlockusBlocks.REDSTONE_BRICKS, Blocks.REDSTONE_BLOCK, Items.REDSTONE);
+        offerOreBricksRecipe(exporter, BlockusBlocks.EMERALD_BRICKS, Blocks.EMERALD_BLOCK, Items.EMERALD);
+        offerOreBricksRecipe(exporter, BlockusBlocks.DIAMOND_BRICKS, Blocks.DIAMOND_BLOCK, Items.DIAMOND);
+        offerOreBricksRecipe(exporter, BlockusBlocks.NETHERITE_BRICKS, Blocks.NETHERITE_BLOCK, Items.NETHERITE_INGOT);
 
         // Quartz Blocks
-
         offerStonecuttingRecipe(exporter, BlockusBlocks.QUARTZ_TILES.block, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.QUARTZ_TILES.stairs, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_BRICKS, BlockusBlocks.QUARTZ_TILES.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.QUARTZ_TILES.slab, 2, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_BRICKS, BlockusBlocks.QUARTZ_TILES.block);
@@ -1293,6 +1299,19 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, output_wall, output);
     }
 
+    public static void offerOreBricksRecipe(Consumer<RecipeJsonProvider> exporter, BSSWTypes ore_bricks, ItemConvertible ore_block, ItemConvertible ore) {
+        offerStonecuttingRecipe(exporter, ore_bricks.block, ore_block);
+        offerStonecuttingRecipe(exporter, ore_bricks.stairs, ore_bricks.block, ore_block);
+        offerStonecuttingRecipe(exporter, ore_bricks.slab, 2, ore_bricks.block, ore_block);
+        offerStonecuttingRecipe(exporter, ore_bricks.wall, ore_bricks.block, ore_block);
+        offerPolishedStoneRecipe(exporter, ore_bricks.block, ore_block);
+        offerShapelessRecipe(exporter, ore, ore_bricks.block, ore.toString(), 9);
+        offerShapelessRecipe(exporter, ore, ore_bricks.stairs, ore.toString(), 9);
+        offerShapelessRecipe(exporter, ore, ore_bricks.slab, ore.toString(), 4);
+        offerShapelessRecipe(exporter, ore, ore_bricks.wall, ore.toString(), 9);
+
+    }
+
     public static void createTimberFramesRecipes(Consumer<RecipeJsonProvider> exporter, ItemConvertible base, ItemConvertible block, ItemConvertible diagonal, ItemConvertible cross) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, block, 2).input('#', Items.PAPER).input('X', base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(base), conditionsFromItem(base)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, diagonal, 4).input('#', block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(block), conditionsFromItem(block)).offerTo(exporter);
@@ -1324,7 +1343,6 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
     public static void offerStairsRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input) {
         createStairsRecipe(output, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
-
     }
 
     public static void offerStainedBeveledGlassRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible output_pane, ItemConvertible input, ItemConvertible dye) {

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "iron_ingot",
+  "ingredients": [
+    {
+      "item": "blockus:iron_brick_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:iron_ingot"
+  }
+}

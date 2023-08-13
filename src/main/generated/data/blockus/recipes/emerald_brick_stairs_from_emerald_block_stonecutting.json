@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:emerald_block"
+  },
+  "result": "blockus:emerald_brick_stairs"
+}

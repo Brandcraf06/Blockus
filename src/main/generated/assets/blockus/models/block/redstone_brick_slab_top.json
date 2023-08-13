@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "blockus:block/redstone_bricks",
+    "side": "blockus:block/redstone_bricks",
+    "top": "blockus:block/redstone_bricks"
+  }
+}

@@ -636,6 +636,35 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.GOLDEN_CHAIN);
             entries.add(BlockusBlocks.GOLDEN_GATE);
 
+            entries.add(BlockusBlocks.IRON_BRICKS.block);
+            entries.add(BlockusBlocks.IRON_BRICKS.stairs);
+            entries.add(BlockusBlocks.IRON_BRICKS.slab);
+            entries.add(BlockusBlocks.IRON_BRICKS.wall);
+            entries.add(BlockusBlocks.GOLD_BRICKS.block);
+            entries.add(BlockusBlocks.GOLD_BRICKS.stairs);
+            entries.add(BlockusBlocks.GOLD_BRICKS.slab);
+            entries.add(BlockusBlocks.GOLD_BRICKS.wall);
+            entries.add(BlockusBlocks.REDSTONE_BRICKS.block);
+            entries.add(BlockusBlocks.REDSTONE_BRICKS.stairs);
+            entries.add(BlockusBlocks.REDSTONE_BRICKS.slab);
+            entries.add(BlockusBlocks.REDSTONE_BRICKS.wall);
+            entries.add(BlockusBlocks.EMERALD_BRICKS.block);
+            entries.add(BlockusBlocks.EMERALD_BRICKS.stairs);
+            entries.add(BlockusBlocks.EMERALD_BRICKS.slab);
+            entries.add(BlockusBlocks.EMERALD_BRICKS.wall);
+            entries.add(BlockusBlocks.LAPIS_BRICKS.block);
+            entries.add(BlockusBlocks.LAPIS_BRICKS.stairs);
+            entries.add(BlockusBlocks.LAPIS_BRICKS.slab);
+            entries.add(BlockusBlocks.LAPIS_BRICKS.wall);
+            entries.add(BlockusBlocks.DIAMOND_BRICKS.block);
+            entries.add(BlockusBlocks.DIAMOND_BRICKS.stairs);
+            entries.add(BlockusBlocks.DIAMOND_BRICKS.slab);
+            entries.add(BlockusBlocks.DIAMOND_BRICKS.wall);
+            entries.add(BlockusBlocks.NETHERITE_BRICKS.block);
+            entries.add(BlockusBlocks.NETHERITE_BRICKS.stairs);
+            entries.add(BlockusBlocks.NETHERITE_BRICKS.slab);
+            entries.add(BlockusBlocks.NETHERITE_BRICKS.wall);
+
             entries.add(BlockusBlocks.NETHERITE_STAIRS);
             entries.add(BlockusBlocks.NETHERITE_SLAB);
 

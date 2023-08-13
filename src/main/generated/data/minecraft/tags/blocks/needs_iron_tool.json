@@ -1,6 +1,18 @@
 {
   "replace": false,
   "values": [
+    "blockus:gold_bricks",
+    "blockus:gold_brick_stairs",
+    "blockus:gold_brick_slab",
+    "blockus:gold_brick_wall",
+    "blockus:diamond_bricks",
+    "blockus:diamond_brick_stairs",
+    "blockus:diamond_brick_slab",
+    "blockus:diamond_brick_wall",
+    "blockus:emerald_bricks",
+    "blockus:emerald_brick_stairs",
+    "blockus:emerald_brick_slab",
+    "blockus:emerald_brick_wall",
     "blockus:nether_stars_block"
   ]
 }

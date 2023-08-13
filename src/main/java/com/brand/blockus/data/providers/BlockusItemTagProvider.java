@@ -215,6 +215,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusBlocks.GOLD_PLATING.block.asItem())
             .add(BlockusBlocks.GOLD_PLATING.stairs.asItem())
             .add(BlockusBlocks.GOLD_PLATING.slab.asItem())
+            .add(BlockusBlocks.GOLD_BRICKS.block.asItem())
+            .add(BlockusBlocks.GOLD_BRICKS.stairs.asItem())
+            .add(BlockusBlocks.GOLD_BRICKS.slab.asItem())
+            .add(BlockusBlocks.GOLD_BRICKS.wall.asItem())
             .add(BlockusBlocks.GOLDEN_APPLE_CRATE.asItem())
             .add(BlockusBlocks.GOLDEN_CARROT_CRATE.asItem());
 

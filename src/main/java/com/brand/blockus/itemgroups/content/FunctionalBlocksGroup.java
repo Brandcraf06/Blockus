@@ -17,6 +17,10 @@ public class FunctionalBlocksGroup {
 
             entries.add(BlockusBlocks.REDSTONE_O_LANTERN);
             entries.add(BlockusBlocks.REDSTONE_SAND);
+            entries.add(BlockusBlocks.REDSTONE_BRICKS.block);
+            entries.add(BlockusBlocks.REDSTONE_BRICKS.stairs);
+            entries.add(BlockusBlocks.REDSTONE_BRICKS.slab);
+            entries.add(BlockusBlocks.REDSTONE_BRICKS.wall);
 
             entries.add(BlockusBlocks.GOLDEN_CHAIN);
 
