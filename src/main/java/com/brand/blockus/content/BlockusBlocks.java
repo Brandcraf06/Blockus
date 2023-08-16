@@ -767,8 +767,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ROAD_BARRIER = register("road_barrier", createBarrier(2f, 6.0f, MapColor.STONE_GRAY));
 
     // Netherite Blocks
-    public static final Block NETHERITE_STAIRS = registerFireproof("netherite_stairs", new StairsBlock(Blocks.NETHERITE_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
-    public static final Block NETHERITE_SLAB = registerFireproof("netherite_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+    public static final Block NETHERITE_STAIRS = registerStairs(Blocks.NETHERITE_BLOCK);
+    public static final Block NETHERITE_SLAB = registerSlab(Blocks.NETHERITE_BLOCK);
 
     // Other
     public static final Block PATH = register("path", new DirtPathBlock(FabricBlockSettings.copyOf(Blocks.DIRT_PATH)));

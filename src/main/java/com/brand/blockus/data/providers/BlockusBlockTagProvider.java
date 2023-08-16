@@ -605,7 +605,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.PRISMARINE_PILLAR)
             .add(BlockusBlocks.PRISMARINE_TILES.block)
             .add(BlockusBlocks.PRISMARINE_TILES.stairs)
-            .add(BlockusBlocks.PRISMARINE_TILES.slab);;
+            .add(BlockusBlocks.PRISMARINE_TILES.slab);
 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PURPUR_BLOCKS)

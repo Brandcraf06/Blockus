@@ -41,6 +41,10 @@ public class BlocksRegistration {
         return baseid.contains("redstone");
     }
 
+    public static boolean isNetherite(String baseid) {
+        return baseid.contains("netherite");
+    }
+
     // Copy
     public static Block createCopy(Block base) {
         return new Block(FabricBlockSettings.copy(base));
@@ -234,7 +238,11 @@ public class BlocksRegistration {
     }
 
     public static Block register(String id, Block block) {
-        return register(id, block, new BlockItem(block, new Item.Settings()));
+        Item.Settings itemSettings = new Item.Settings();
+        if (isNetherite(id)) {
+            itemSettings = itemSettings.fireproof();
+        }
+        return register(id, block, new BlockItem(block, itemSettings));
     }
 
     public static Block registerGlint(String id, Block block) {
@@ -243,10 +251,6 @@ public class BlocksRegistration {
 
     public static Block registerLegacy(String id, Block block) {
         return register(id, block, new LegacyBlockItem(block, new Item.Settings()));
-    }
-
-    public static Block registerFireproof(String id, Block block) {
-        return register(id, block, new BlockItem(block, new Item.Settings().fireproof()));
     }
 
 
