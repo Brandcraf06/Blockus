@@ -602,7 +602,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.CHISELED_DARK_PRISMARINE)
             .add(BlockusBlocks.DARK_PRISMARINE_PILLAR)
             .add(BlockusBlocks.CHISELED_PRISMARINE)
-            .add(BlockusBlocks.PRISMARINE_PILLAR);
+            .add(BlockusBlocks.PRISMARINE_PILLAR)
+            .add(BlockusBlocks.PRISMARINE_TILES.block)
+            .add(BlockusBlocks.PRISMARINE_TILES.stairs)
+            .add(BlockusBlocks.PRISMARINE_TILES.slab);;
+
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PURPUR_BLOCKS)
             .add(BlockusBlocks.PURPUR_BRICKS.block)
@@ -1088,7 +1092,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
             .addTag(BlockusBlockTags.PLATINGS)
             .addTag(BlockusBlockTags.LARGE_FLOWER_POTS)
-            .addTag(BlockTags.STONE_PRESSURE_PLATES);
+            .addTag(BlockTags.STONE_PRESSURE_PLATES)
+            .add(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE);
 
         this.getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
             .add(BlockusBlocks.PATH)
@@ -1359,6 +1364,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE)
             .add(BlockusBlocks.VIRIDITE_PRESSURE_PLATE);
 
+        this.getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
+            .add(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE);
 
         this.getOrCreateTagBuilder(BlockTags.TRAPDOORS)
             .add(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR)

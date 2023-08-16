@@ -441,6 +441,10 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.DARK_PRISMARINE_PILLAR);
             entries.add(BlockusBlocks.CHISELED_PRISMARINE);
             entries.add(BlockusBlocks.PRISMARINE_PILLAR);
+            entries.add(BlockusBlocks.PRISMARINE_TILES.block);
+            entries.add(BlockusBlocks.PRISMARINE_TILES.stairs);
+            entries.add(BlockusBlocks.PRISMARINE_TILES.slab);
+            entries.add(BlockusBlocks.PRISMARINE_TILES.wall);
 
             entries.add(BlockusBlocks.OBSIDIAN_BRICKS.block);
             entries.add(BlockusBlocks.OBSIDIAN_BRICKS.stairs);

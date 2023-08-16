@@ -243,6 +243,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block PRISMARINE_CIRCULAR_PAVING = register("prismarine_circular_paving", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.PRISMARINE_BRICKS)));
     public static final Block CHISELED_DARK_PRISMARINE = register("chiseled_dark_prismarine", new OrientableBlockBase(FabricBlockSettings.copy(Blocks.DARK_PRISMARINE)));
     public static final Block DARK_PRISMARINE_PILLAR = createPillar("dark_prismarine", Blocks.DARK_PRISMARINE);
+    public static final BSSWTypes PRISMARINE_TILES = new BSSWTypes("prismarine_tiles", Blocks.DARK_PRISMARINE);
 
     // Bricks
     public static final BSSWTypes LARGE_BRICKS = new BSSWTypes("large_bricks", Blocks.BRICKS);
@@ -714,6 +715,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_DEEPSLATE_PRESSURE_PLATE = registerStonePressurePlate(Blocks.POLISHED_DEEPSLATE);
     public static final Block POLISHED_TUFF_PRESSURE_PLATE = registerStonePressurePlate(BlockusBlocks.POLISHED_TUFF.block);
     public static final Block POLISHED_SCULK_PRESSURE_PLATE = registerStonePressurePlate(BlockusBlocks.POLISHED_SCULK.block);
+    public static final Block OBSIDIAN_PRESSURE_PLATE = register("obsidian_pressure_plate", new ObsidianPressurePlateBlock(FabricBlockSettings.copy(Blocks.OBSIDIAN).solid().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
 
     // Buttons
     public static final Block POLISHED_ANDESITE_BUTTON = registerStoneButton(Blocks.POLISHED_ANDESITE);

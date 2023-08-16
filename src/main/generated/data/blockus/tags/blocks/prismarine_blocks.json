@@ -5,6 +5,9 @@
     "blockus:chiseled_dark_prismarine",
     "blockus:dark_prismarine_pillar",
     "blockus:chiseled_prismarine",
-    "blockus:prismarine_pillar"
+    "blockus:prismarine_pillar",
+    "blockus:prismarine_tiles",
+    "blockus:prismarine_tile_stairs",
+    "blockus:prismarine_tile_slab"
   ]
 }

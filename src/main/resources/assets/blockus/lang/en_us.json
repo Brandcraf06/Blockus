@@ -246,6 +246,10 @@
   "block.blockus.chiseled_dark_prismarine": "Chiseled Dark Prismarine",
   "block.blockus.prismarine_pillar": "Prismarine Pillar",
   "block.blockus.chiseled_prismarine": "Chiseled Prismarine",
+  "block.blockus.prismarine_tiles": "Prismarine Tiles",
+  "block.blockus.prismarine_tile_stairs": "Prismarine Tile Stairs",
+  "block.blockus.prismarine_tile_slab": "Prismarine Tile Slab",
+  "block.blockus.prismarine_tile_wall": "Prismarine Tile Wall",
   "block.blockus.blackstone_door": "Blackstone Door",
   "block.blockus.blackstone_trapdoor": "Blackstone Trapdoor",
 
@@ -1299,5 +1303,6 @@
   "block.blockus.netherite_bricks": "Netherite Bricks",
   "block.blockus.netherite_brick_wall": "Netherite Brick Wall",
   "block.blockus.netherite_brick_stairs": "Netherite Brick Stairs",
-  "block.blockus.netherite_brick_slab": "Netherite Brick Slab"
+  "block.blockus.netherite_brick_slab": "Netherite Brick Slab",
+  "block.blockus.obsidian_pressure_plate": "Obsidian Pressure Plate"
 }

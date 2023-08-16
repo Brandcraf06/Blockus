@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-13T09:05:38.3811227	Blockus/Block Loot Tables
+// 1.20.1	2023-08-16T13:02:15.926504	Blockus/Block Loot Tables
 e6416f8df8ab298f806cb196b1fc7ff6db4e8043 data\blockus\loot_tables\blocks\end_tile_wall.json
 d0031b4e899ed887ca5d7cf82078d4d4166b8725 data\blockus\loot_tables\blocks\carrot_crate.json
 ec62b56a7fde6cf36ef0fe61460500e03e06cb42 data\blockus\loot_tables\blocks\marble_slab.json
@@ -47,6 +47,7 @@ c3185338083a385557bcfe9d96c5c33d02789ee5 data\blockus\loot_tables\blocks\bluesto
 d299c85405c3da3402a081b752c4697624ae8e62 data\blockus\loot_tables\blocks\pink_shingles.json
 fb58a04bbb738306ac525534e67e24736da61dbf data\blockus\loot_tables\blocks\smooth_soul_sandstone_slab.json
 f9f545c550440ca15dce14c74e66143ba5d73795 data\blockus\loot_tables\blocks\rainbow_beveled_glass.json
+1a0dca940d27a7b462cd2d8589f274fa5b58f163 data\blockus\loot_tables\blocks\prismarine_tiles.json
 83c37c77496661e0ab2a30d5c776d12618864282 data\blockus\loot_tables\blocks\bluestone_lines.json
 b47b6e3042fde35131a7c39e2a5258406fc26676 data\blockus\loot_tables\blocks\blue_orange_colored_tiles.json
 d24fd2da4e06eca4919abcda483954d9734c4997 data\blockus\loot_tables\blocks\lapis_brick_slab.json
@@ -572,6 +573,7 @@ f899287f81876b01e6b00e54c51c2adb065afb74 data\blockus\loot_tables\blocks\lime_as
 999abea6791f6bc242abf2b2931632cd62bcb4fb data\blockus\loot_tables\blocks\soul_o_lantern.json
 5125588cb5b93d52b02608e565e17e32ac455475 data\blockus\loot_tables\blocks\chiseled_water_bricks.json
 9d30ce2d9b83f412f1c22c62f5cafc996ab38187 data\blockus\loot_tables\blocks\black_orange_colored_tiles.json
+d10b4685222d381c4b173dfb91a4d70e93ecad25 data\blockus\loot_tables\blocks\prismarine_tile_slab.json
 6aa1b9a2640dc0e232ecb35eff377d42eef997d5 data\blockus\loot_tables\blocks\green_asphalt.json
 f6758cba15a974fdf89f80f29a86f148f9e352fe data\blockus\loot_tables\blocks\nether_stars_block.json
 c13b594b7b535cae3b2f0470d59417261eb6bf07 data\blockus\loot_tables\blocks\paper_lamp.json
@@ -767,6 +769,7 @@ e09312d1d185ab8d13fb271139743405d919f93b data\blockus\loot_tables\blocks\magenta
 88336ec1c40968b80aa9a328330c2d18fd74dd47 data\blockus\loot_tables\blocks\cherry_mosaic_slab.json
 bceaddef4d749e764ac432ad9538a88b98c2a755 data\blockus\loot_tables\blocks\stone_trapdoor.json
 b9e6bc30d0038068dcd3bd0a372f122bbca8764b data\blockus\loot_tables\blocks\light_gray_neon.json
+e97ca8c492c6618fc2c96d4e1c39ce9abcd93477 data\blockus\loot_tables\blocks\prismarine_tile_wall.json
 68807b82599a49e5917e5b7f1cd879e644b69318 data\blockus\loot_tables\blocks\small_limestone_brick_wall.json
 b245aa1f9972864e911399e1896e925ff684dccf data\blockus\loot_tables\blocks\blaze_pillar.json
 b8731fc40ecc88afed2f04eea2838635be61ea02 data\blockus\loot_tables\blocks\blue_concrete_bricks.json
@@ -861,6 +864,7 @@ ba4eb080cfa67bc068904e96e24e31f00029ca4c data\blockus\loot_tables\blocks\gray_br
 4e6ce3df37cab4885913564179f44e6eaf3cf066 data\blockus\loot_tables\blocks\blue_gray_colored_tiles.json
 37917e1cda4b8aa0776f0f5dbde9c6d770ee739e data\blockus\loot_tables\blocks\beetroot_crate.json
 be8c98e87f73681f3f649b5f770997e4033d2774 data\blockus\loot_tables\blocks\herringbone_bricks.json
+1f6a64f4c9d1f0374f34eb69a6701643c3e2e6bc data\blockus\loot_tables\blocks\prismarine_tile_stairs.json
 fe6ea0a8612d0064e9b59140262c921541134de4 data\blockus\loot_tables\blocks\red_shingles_slab.json
 163a620f35fe0000b0de5668a8d005e0a5c23ebd data\blockus\loot_tables\blocks\dark_oak_diagonal_timber_frame.json
 ccde21705e472ce9f70c8b6878358517babf8e2e data\blockus\loot_tables\blocks\polished_bluestone.json
@@ -1110,6 +1114,7 @@ d9b54ba15845c8f93304c2295b3ec0ccc4576156 data\blockus\loot_tables\blocks\tuff_br
 a21e1f8ec0c85f4b3a8c0fdf5baaadfe1cef2c8a data\blockus\loot_tables\blocks\sculk_brick_slab.json
 a9c06e366ff973c89bf987ff49bc7fc8df9b1ec1 data\blockus\loot_tables\blocks\polished_amethyst.json
 1ec935aeb719adc294dec12e78f2793977394344 data\blockus\loot_tables\blocks\polished_tuff_stairs.json
+55e2fadb80ebf1be5aa61d9ae6e61d6d831e8046 data\blockus\loot_tables\blocks\obsidian_pressure_plate.json
 7a45fe278045307921d259b1b427f1fdac75721b data\blockus\loot_tables\blocks\blue_patterned_wool.json
 7f1d493929a56f034dc602a86538f950739dddbc data\blockus\loot_tables\blocks\viridite_brick_wall.json
 b6d2015fd80ea519852c9688383ebf60d118693e data\blockus\loot_tables\blocks\rough_red_sandstone.json

@@ -22,6 +22,8 @@ public class FunctionalBlocksGroup {
             entries.add(BlockusBlocks.REDSTONE_BRICKS.slab);
             entries.add(BlockusBlocks.REDSTONE_BRICKS.wall);
 
+            entries.add(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE);
+
             entries.add(BlockusBlocks.GOLDEN_CHAIN);
 
             entries.add(BlockusBlocks.BLAZE_LANTERN);
@@ -61,7 +63,6 @@ public class FunctionalBlocksGroup {
             entries.add(BlockusEntities.WHITE_OAK_BOAT.getChestItem());
             entries.add(BlockusEntities.CHARRED_BOAT.getChestItem());
             entries.add(BlockusEntities.RAW_BAMBOO_RAFT.getChestItem());
-
         });
     }
 }

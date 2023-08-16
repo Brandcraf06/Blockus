@@ -297,6 +297,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BlockusBlocks.OAK_SMALL_LOGS);
         this.addDrop(BlockusBlocks.OBSIDIAN_CIRCULAR_PAVING);
         this.addDrop(BlockusBlocks.OBSIDIAN_PILLAR);
+        this.addDrop(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE);
         this.addDrop(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR);
         this.addDrop(BlockusBlocks.ORANGE_COLORED_TILES);
         this.addDrop(BlockusBlocks.ORANGE_FUTURNEO_BLOCK);

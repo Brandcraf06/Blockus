@@ -205,6 +205,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerPillar(modelGenerator, BlockusBlocks.OBSIDIAN_PILLAR);
         modelGenerator.registerTrapdoor(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR);
         modelGenerator.registerDoor(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR);
+        this.registerPressurePlate(modelGenerator, BlockusBlocks.OBSIDIAN_PRESSURE_PLATE, TextureMap.getId(Blocks.OBSIDIAN));
+
 
         // Netherrack
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.NETHERRACK_CIRCULAR_PAVING);

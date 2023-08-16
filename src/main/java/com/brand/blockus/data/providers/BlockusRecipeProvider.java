@@ -577,6 +577,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.GLOWING_OBSIDIAN, 4).input('S', Blocks.OBSIDIAN).input('#', Blocks.SHROOMLIGHT).pattern(" S ").pattern("S#S").pattern(" S ").criterion(hasItem(Blocks.SHROOMLIGHT), conditionsFromItem(Blocks.SHROOMLIGHT)).offerTo(exporter);
 
         offerDoorTrapdoorRecipe(exporter, BlockusBlocks.OBSIDIAN_REINFORCED_DOOR, BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR, Blocks.OBSIDIAN);
+        offerPressurePlateRecipe(exporter, BlockusBlocks.OBSIDIAN_PRESSURE_PLATE, Blocks.OBSIDIAN);
 
         // Ore Bricks
         offerOreBricksRecipe(exporter, BlockusBlocks.IRON_BRICKS, Blocks.IRON_BLOCK, Items.IRON_INGOT);
@@ -602,6 +603,11 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, BlockusBlocks.PRISMARINE_CIRCULAR_PAVING, Blocks.PRISMARINE_BRICKS);
         offerStonecuttingRecipe(exporter, BlockusBlocks.CHISELED_DARK_PRISMARINE, Blocks.DARK_PRISMARINE);
         offerStonecuttingRecipe(exporter, BlockusBlocks.DARK_PRISMARINE_PILLAR, Blocks.DARK_PRISMARINE);
+
+        offerStonecuttingRecipe(exporter, BlockusBlocks.PRISMARINE_TILES.stairs, BlockusBlocks.PRISMARINE_TILES.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.PRISMARINE_TILES.slab, 2, BlockusBlocks.PRISMARINE_TILES.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.PRISMARINE_TILES.wall, BlockusBlocks.PRISMARINE_TILES.block);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.PRISMARINE_TILES.block, 4).input('#', Blocks.DARK_PRISMARINE).input('X', Items.PRISMARINE_SHARD).pattern("#X").pattern("X#").criterion(hasItem(Blocks.DARK_PRISMARINE), conditionsFromItem(Blocks.DARK_PRISMARINE)).offerTo(exporter);
 
         // Bricks
         offerStonecuttingRecipe(exporter, BlockusBlocks.LARGE_BRICKS.block, Blocks.BRICKS);

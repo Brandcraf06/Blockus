@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/prismarine_tile_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/prismarine_tiles"
+    },
+    "type=top": {
+      "model": "blockus:block/prismarine_tile_slab_top"
+    }
+  }
+}
