@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-16T13:02:15.9635122	Blockus/Promenade Block Loot Table
+// 1.20.1	2023-09-09T13:05:21.7132865	Blockus/Promenade Block Loot Table
 fa283bc4b7c6a6c7d0df71c8286b00d680d968ea data\blockus\loot_tables\blocks\potted_blush_sakura.json
 bfd95f719f3826b1d1cfafe7ffcc47578b3afb49 data\blockus\loot_tables\blocks\dark_amaranth_small_stems.json
 6f73521148bd65292b67a08c581e375e04614ba3 data\blockus\loot_tables\blocks\maple_small_logs.json
@@ -15,8 +15,8 @@ b58a6dd8e2c405727dedff1ddaed1c2749233fc7 data\blockus\loot_tables\blocks\sap_map
 adaddb96d3e112b05e230ac0848cf968cf7f1589 data\blockus\loot_tables\blocks\potted_palm.json
 6ac59b708c59eb63961429178406e2a5c11c88ad data\blockus\loot_tables\blocks\palm_small_hedge.json
 e07c4b7ca617c0d4f5291c439c58f683bbdcecc7 data\blockus\loot_tables\blocks\white_oak_leaf_pile.json
-645a4dcda43efd736d4b467f1d9140bcd1ab6b8f data\blockus\loot_tables\blocks\potted_sap_maple.json
 1533a5e17d02c67dd6125f891434092d6829c595 data\blockus\loot_tables\blocks\potted_cotton_sakura.json
+645a4dcda43efd736d4b467f1d9140bcd1ab6b8f data\blockus\loot_tables\blocks\potted_sap_maple.json
 3f41e79b16d94d00afc3693ea0b5da50fef14c06 data\blockus\loot_tables\blocks\potted_huge_dark_amaranth_fungus.json
 b1e26c7221ef2b66476df857cfda4e05a487a6b3 data\blockus\loot_tables\blocks\blueberries_crate.json
 64e7f58780c98e53dc2b58be3e39b4002081b8d1 data\blockus\loot_tables\blocks\potted_mikado_maple.json
