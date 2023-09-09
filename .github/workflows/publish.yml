@@ -1,5 +1,5 @@
 name: Publish
-on: [pull_request, workflow_dispatch] # Manual trigger
+on: [workflow_dispatch] # Manual trigger
 
 permissions:
   contents: write
