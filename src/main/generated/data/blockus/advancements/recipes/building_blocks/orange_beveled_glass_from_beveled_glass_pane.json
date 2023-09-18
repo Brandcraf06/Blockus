@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_beveled_glass_pane",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_beveled_glass_pane"
     ]
   ],
   "rewards": {

@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_polished_blackstone",
-      "has_blackstone",
-      "has_the_recipe"
+      "has_blackstone"
     ]
   ],
   "rewards": {

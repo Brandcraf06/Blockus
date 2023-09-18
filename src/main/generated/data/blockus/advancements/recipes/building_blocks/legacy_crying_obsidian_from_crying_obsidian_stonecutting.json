@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_crying_obsidian",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_crying_obsidian"
     ]
   ],
   "rewards": {

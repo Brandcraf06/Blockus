@@ -2,6 +2,7 @@ package com.brand.blockus.utils.screen;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.google.common.collect.Lists;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -9,12 +10,10 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.StonecuttingRecipe;
-import net.minecraft.screen.Property;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerContext;
-import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -23,16 +22,16 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class LegacyStonecutterScreenHandler extends ScreenHandler {
-    public static final int field_30842 = 0;
-    public static final int field_30843 = 1;
-    private static final int field_30844 = 2;
-    private static final int field_30845 = 29;
-    private static final int field_30846 = 29;
-    private static final int field_30847 = 38;
+    public static final int INPUT_ID = 0;
+    public static final int OUTPUT_ID = 1;
+    private static final int INVENTORY_START = 2;
+    private static final int INVENTORY_END = 29;
+    private static final int OUTPUT_START = 29;
+    private static final int OUTPUT_END = 38;
     private final ScreenHandlerContext context;
     private final Property selectedRecipe;
     private final World world;
-    private List<StonecuttingRecipe> availableRecipes;
+    private List<RecipeEntry<StonecuttingRecipe>> availableRecipes;
     private ItemStack inputStack;
     long lastTakeTime;
     final Slot inputSlot;
@@ -45,7 +44,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
         this(syncId, playerInventory, ScreenHandlerContext.EMPTY);
     }
 
-    public LegacyStonecutterScreenHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
+    public LegacyStonecutterScreenHandler(int syncId, PlayerInventory playerInventory, final ScreenHandlerContext context) {
         super(ScreenHandlerType.STONECUTTER, syncId);
         this.selectedRecipe = Property.create();
         this.availableRecipes = Lists.newArrayList();
@@ -93,13 +92,13 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
         });
 
         int i;
-        for (i = 0; i < 3; ++i) {
-            for (int j = 0; j < 9; ++j) {
+        for(i = 0; i < 3; ++i) {
+            for(int j = 0; j < 9; ++j) {
                 this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
-        for (i = 0; i < 9; ++i) {
+        for(i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
 
@@ -110,7 +109,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
         return this.selectedRecipe.get();
     }
 
-    public List<StonecuttingRecipe> getAvailableRecipes() {
+    public List<RecipeEntry<StonecuttingRecipe>> getAvailableRecipes() {
         return this.availableRecipes;
     }
 
@@ -160,10 +159,10 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
 
     void populateResult() {
         if (!this.availableRecipes.isEmpty() && this.isInBounds(this.selectedRecipe.get())) {
-            StonecuttingRecipe stonecuttingRecipe = this.availableRecipes.get(this.selectedRecipe.get());
-            ItemStack itemStack = stonecuttingRecipe.craft(this.input, this.world.getRegistryManager());
+            RecipeEntry<StonecuttingRecipe> recipeEntry = this.availableRecipes.get(this.selectedRecipe.get());
+            ItemStack itemStack = recipeEntry.value().craft(this.input, this.world.getRegistryManager());
             if (itemStack.isItemEnabled(this.world.getEnabledFeatures())) {
-                this.output.setLastRecipe(stonecuttingRecipe);
+                this.output.setLastRecipe(recipeEntry);
                 this.outputSlot.setStackNoCallbacks(itemStack);
             } else {
                 this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);

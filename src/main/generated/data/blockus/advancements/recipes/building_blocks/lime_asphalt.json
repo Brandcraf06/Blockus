@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_asphalt",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_asphalt"
     ]
   ],
   "rewards": {

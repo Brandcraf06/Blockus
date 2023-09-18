@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_stone_tiles",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_stone_tiles"
     ]
   ],
   "rewards": {

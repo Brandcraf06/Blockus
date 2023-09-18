@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_jungle_planks",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_jungle_planks"
     ]
   ],
   "rewards": {

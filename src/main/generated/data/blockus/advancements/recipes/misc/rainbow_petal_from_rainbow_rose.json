@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_rainbow_rose",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rainbow_rose"
     ]
   ],
   "rewards": {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_soul_sandstone_bricks",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_soul_sandstone_bricks"
     ]
   ],
   "rewards": {

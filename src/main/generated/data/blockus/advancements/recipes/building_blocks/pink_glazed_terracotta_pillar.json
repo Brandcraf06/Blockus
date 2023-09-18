@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_pink_glazed_terracotta",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pink_glazed_terracotta"
     ]
   ],
   "rewards": {

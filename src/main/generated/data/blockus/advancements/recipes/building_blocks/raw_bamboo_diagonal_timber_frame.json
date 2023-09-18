@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_raw_bamboo_timber_frame",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_raw_bamboo_timber_frame"
     ]
   ],
   "rewards": {

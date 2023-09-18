@@ -20,8 +20,8 @@
   },
   "requirements": [
     [
-      "has_herringbone_planks",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_herringbone_planks"
     ]
   ],
   "rewards": {

@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_fire_charge",
-      "has_nether_bricks",
-      "has_the_recipe"
+      "has_nether_bricks"
     ]
   ],
   "rewards": {

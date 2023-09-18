@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_light_gray_shingles",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_light_gray_shingles"
     ]
   ],
   "rewards": {

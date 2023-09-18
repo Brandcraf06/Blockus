@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_salmon_crate",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_salmon_crate"
     ]
   ],
   "rewards": {

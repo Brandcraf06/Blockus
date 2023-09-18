@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_glow_ink_sac",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_glow_ink_sac"
     ]
   ],
   "rewards": {

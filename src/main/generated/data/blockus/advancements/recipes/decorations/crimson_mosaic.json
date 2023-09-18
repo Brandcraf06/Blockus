@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_crimson_slab",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_crimson_slab"
     ]
   ],
   "rewards": {

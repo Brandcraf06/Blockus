@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_weight_storage_cube",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_weight_storage_cube"
     ]
   ],
   "rewards": {

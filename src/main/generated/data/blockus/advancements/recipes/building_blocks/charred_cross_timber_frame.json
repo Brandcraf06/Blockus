@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_charred_diagonal_timber_frame",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_charred_diagonal_timber_frame"
     ]
   ],
   "rewards": {

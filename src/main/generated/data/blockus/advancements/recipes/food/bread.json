@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_bread_box",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bread_box"
     ]
   ],
   "rewards": {

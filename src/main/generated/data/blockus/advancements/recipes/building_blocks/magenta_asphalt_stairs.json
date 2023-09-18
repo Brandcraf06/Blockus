@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_magenta_asphalt",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_magenta_asphalt"
     ]
   ],
   "rewards": {

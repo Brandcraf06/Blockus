@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_rough_basalt",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rough_basalt"
     ]
   ],
   "rewards": {

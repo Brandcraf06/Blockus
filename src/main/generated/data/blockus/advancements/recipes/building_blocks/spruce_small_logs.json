@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_spruce_log",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_spruce_log"
     ]
   ],
   "rewards": {

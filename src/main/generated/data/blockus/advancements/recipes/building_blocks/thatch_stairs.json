@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_thatch",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_thatch"
     ]
   ],
   "rewards": {

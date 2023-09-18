@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_azalea_leaves",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_azalea_leaves"
     ]
   ],
   "rewards": {

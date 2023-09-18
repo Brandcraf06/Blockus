@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_caution_block",
-      "has_road_barrier",
-      "has_the_recipe"
+      "has_road_barrier"
     ]
   ],
   "rewards": {

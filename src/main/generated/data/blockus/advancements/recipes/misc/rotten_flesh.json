@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_rotten_flesh_block",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rotten_flesh_block"
     ]
   ],
   "rewards": {

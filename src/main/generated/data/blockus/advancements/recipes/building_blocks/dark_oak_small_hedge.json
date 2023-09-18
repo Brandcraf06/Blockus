@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_dark_oak_leaves",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_dark_oak_leaves"
     ]
   ],
   "rewards": {

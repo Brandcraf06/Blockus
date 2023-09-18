@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_pink_concrete",
-      "has_orange_concrete",
-      "has_the_recipe"
+      "has_orange_concrete"
     ]
   ],
   "rewards": {
