@@ -6,6 +6,7 @@ import com.brand.blockus.content.types.*;
 import com.brand.blockus.utils.tags.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -537,7 +538,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
             .addTag(BlockusBlockTags.PATTERNED_WOOL)
-            .addTag(BlockusBlockTags.PATTERNED_CARPETS)
             .add(BlockusBlocks.WHITE_PATTERNED_WOOL.stairs)
             .add(BlockusBlocks.ORANGE_PATTERNED_WOOL.stairs)
             .add(BlockusBlocks.MAGENTA_PATTERNED_WOOL.stairs)
@@ -1432,6 +1432,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockTags.WOOL_CARPETS)
             .addTag(BlockusBlockTags.PATTERNED_CARPETS);
+
+        this.getOrCreateTagBuilder(FabricMineableTags.SHEARS_MINEABLE)
+            .addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS);
 
         this.getOrCreateTagBuilder(BlockTags.DAMPENS_VIBRATIONS)
             .addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS);

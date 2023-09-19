@@ -1,4 +1,4 @@
-// 1.20.2 Release Candidate 2	2023-09-18T18:42:22.7075656	Blockus/Tags for minecraft:block
+// 1.20.2 Release Candidate 2	2023-09-19T13:44:01.3653463	Blockus/Tags for minecraft:block
 9b000aa2547daa29a91a17d5af93edf037915507 data\minecraft\tags\blocks\needs_stone_tool.json
 e753098d3c18e38dcdddce76bef4d1abb0ea5fb2 data\minecraft\tags\blocks\crimson_stems.json
 c885acea0272904c7072c61b33eb223ff080dd81 data\blockus\tags\blocks\neon.json
@@ -61,7 +61,7 @@ a7f4c29546863c942099a7a2ebb13aa394a13909 data\blockus\tags\blocks\food_crates.js
 fef61a78e10626c1871607b048ae55cbaddaf559 data\promenade\tags\blocks\maple_logs.json
 58275c254546df254cf7340ae018ecb30949b82f data\minecraft\tags\blocks\vibration_resonators.json
 a41429b04de76552611b8e491717f0b12b1f4a73 data\minecraft\tags\blocks\slabs.json
-a680f414527e4593b93b7ea68790dac9f739bddc data\blockus\tags\blocks\all_patterned_wools.json
+155d92fd29ee13e490d384606e466a75fa40d3bd data\blockus\tags\blocks\all_patterned_wools.json
 c2cf2254b2e5b17700525fd4f31de4e971832418 data\blockus\tags\blocks\stone_blocks.json
 c7cd423c1f1448f613111b479080fdbee6283212 data\minecraft\tags\blocks\wooden_buttons.json
 3924a19734b00048982ae3abb5b5e78b30283a50 data\blockus\tags\blocks\magma_bricks.json
@@ -71,11 +71,12 @@ bbaf2307acf91bd5b67580959bd3107765e84379 data\minecraft\tags\blocks\animals_spaw
 6eccbb83290e338201c47e98a75f2fae7669ee42 data\blockus\tags\blocks\quartz_blocks.json
 2de5b9cc7e6656211c8147fa6b57598983bac957 data\blockus\tags\blocks\netherrack_blocks.json
 248c47dd5ff1cd2a2097cb2a1948fdfe95c2a11d data\minecraft\tags\blocks\soul_speed_blocks.json
+b337658cd7b7a8dda49f35b855d5328bb24bc396 data\fabric\tags\blocks\mineable\shears.json
 76ce44f3886383c44b676ce0e4a1fbe381afd331 data\blockus\tags\blocks\lava_bricks.json
 eaece9d75fb3819b2613d68735efaab995765216 data\blockus\tags\blocks\colored_tiles.json
 bfeeb267cca2b179d344ceebf95f36e4b1c8ee9d data\minecraft\tags\blocks\needs_diamond_tool.json
-6136c9eaf23ede081703917b98631e667390cbfe data\blockus\tags\blocks\granite_blocks.json
 741a3a5c8766ba344ac13c3ee1fff0ba579f6400 data\blockus\tags\blocks\asphalt.json
+6136c9eaf23ede081703917b98631e667390cbfe data\blockus\tags\blocks\granite_blocks.json
 d092788809722add671796ffb47880e6d6966d88 data\minecraft\tags\blocks\jungle_logs.json
 630e47d3eb55466f9f2b826cccf0ff9b2e290ec9 data\minecraft\tags\blocks\guarded_by_piglins.json
 a3105e9f7f4802dc1bcfa457db22a54f212df8bb data\blockus\tags\blocks\patterned_carpets.json
