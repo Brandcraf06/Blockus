@@ -1,7 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.3-SNAPSHOT'
 	id 'maven-publish'
-  id "me.modmuss50.mod-publish-plugin" version "0.2.1"
+  id "me.modmuss50.mod-publish-plugin" version "0.3.5"
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -99,7 +99,6 @@ publishMods {
     accessToken = providers.environmentVariable("MODRINTH_TOKEN")
     projectId = "zFiY2Go0"
     minecraftVersions.add("${minecraft_version}")
-    minecraftVersions.add("1.20")
     requires {
       slug = "fabric-api"
     }
@@ -110,7 +109,6 @@ publishMods {
     projectId = "312289"
     displayName = "(${project.minecraft_version}) Blockus $project.version"
     minecraftVersions.add("${minecraft_version}")
-    minecraftVersions.add("1.20")
     requires {
       slug = "fabric-api"
     }

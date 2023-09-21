@@ -1,4 +1,4 @@
-// 1.20.2 Release Candidate 2	2023-09-19T13:44:01.3653463	Blockus/Tags for minecraft:block
+// 1.20.2	2023-09-21T18:21:34.2318513	Blockus/Tags for minecraft:block
 9b000aa2547daa29a91a17d5af93edf037915507 data\minecraft\tags\blocks\needs_stone_tool.json
 e753098d3c18e38dcdddce76bef4d1abb0ea5fb2 data\minecraft\tags\blocks\crimson_stems.json
 c885acea0272904c7072c61b33eb223ff080dd81 data\blockus\tags\blocks\neon.json
@@ -75,8 +75,8 @@ b337658cd7b7a8dda49f35b855d5328bb24bc396 data\fabric\tags\blocks\mineable\shears
 76ce44f3886383c44b676ce0e4a1fbe381afd331 data\blockus\tags\blocks\lava_bricks.json
 eaece9d75fb3819b2613d68735efaab995765216 data\blockus\tags\blocks\colored_tiles.json
 bfeeb267cca2b179d344ceebf95f36e4b1c8ee9d data\minecraft\tags\blocks\needs_diamond_tool.json
-741a3a5c8766ba344ac13c3ee1fff0ba579f6400 data\blockus\tags\blocks\asphalt.json
 6136c9eaf23ede081703917b98631e667390cbfe data\blockus\tags\blocks\granite_blocks.json
+741a3a5c8766ba344ac13c3ee1fff0ba579f6400 data\blockus\tags\blocks\asphalt.json
 d092788809722add671796ffb47880e6d6966d88 data\minecraft\tags\blocks\jungle_logs.json
 630e47d3eb55466f9f2b826cccf0ff9b2e290ec9 data\minecraft\tags\blocks\guarded_by_piglins.json
 a3105e9f7f4802dc1bcfa457db22a54f212df8bb data\blockus\tags\blocks\patterned_carpets.json
@@ -99,8 +99,8 @@ bbaf2307acf91bd5b67580959bd3107765e84379 data\minecraft\tags\blocks\dirt.json
 bc8e2782be9f86630ae56753c9309be8d7c0bb1b data\minecraft\tags\blocks\stone_ore_replaceables.json
 aa1ec68585260a5560247704f6ea242c7441c933 data\minecraft\tags\blocks\wooden_slabs.json
 4e6b8ce53d0bfb5930cc0f99501e08e34b11903a data\minecraft\tags\blocks\piglin_repellents.json
-98cd58849cbd16789829c7438fc3d6eca79f8c71 data\blockus\tags\blocks\soul_soils.json
 e54a33521c1a85123bac735b7e339c0ad7fe047e data\minecraft\tags\blocks\flower_pots.json
+98cd58849cbd16789829c7438fc3d6eca79f8c71 data\blockus\tags\blocks\soul_soils.json
 35034037c0578a431e09a1dd2f4bb50220106cc9 data\minecraft\tags\blocks\wooden_doors.json
 7ebcfe45168e527ea29a6e23ed8cb5d524a1e16f data\minecraft\tags\blocks\trapdoors.json
 48467702a780a199af5dc0bbc01380df9f739a01 data\minecraft\tags\blocks\infiniburn_overworld.json
@@ -110,8 +110,8 @@ ed4e44f7fe8f95d3f3e740facaf755093ba47d6c data\minecraft\tags\blocks\dragon_immun
 a90b41d10a239d73363ad5ae1ac9b4ccc71af861 data\blockus\tags\blocks\small_hedges.json
 728ad97ef543c951e3cdb3bd894d419cb3e5ee65 data\blockus\tags\blocks\prismarine_blocks.json
 07b83a3034dbd20af399d990716f91b592d61430 data\blockus\tags\blocks\shingles.json
-fffeb0488e24d2dded9f10b1da17ff9d5f474173 data\blockus\tags\blocks\basalt_blocks.json
 3f04384c872b32787e8d3c85f2717608ad3fd154 data\minecraft\tags\blocks\beacon_base_blocks.json
+fffeb0488e24d2dded9f10b1da17ff9d5f474173 data\blockus\tags\blocks\basalt_blocks.json
 ae0a1f53919601b8bf70b275607ac9d9586a105f data\blockus\tags\blocks\water_bricks.json
 3fd60d5b7846b3ed324e331c0ad2681f5f75e964 data\minecraft\tags\blocks\small_flowers.json
 deac1b61c4c224bb97ae40056c251ff5b0944f43 data\minecraft\tags\blocks\impermeable.json
