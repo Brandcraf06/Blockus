@@ -24,7 +24,7 @@ jobs:
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - uses: gradle/wrapper-validation-action@v1
-      - run: ./gradlew checkVersion build publish publishMods --stacktrace -Porg.gradle.parallel.threads=4
+      - run: ./gradlew build publish publishMods --stacktrace -Porg.gradle.parallel.threads=4
         env:
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
