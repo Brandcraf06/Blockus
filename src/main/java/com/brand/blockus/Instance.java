@@ -2,7 +2,7 @@ package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.content.types.PatternWoolTypes;
+import com.brand.blockus.content.types.WoolTypes;
 import com.brand.blockus.content.types.TimberFrameTypes;
 import com.brand.blockus.content.types.WoodTypes;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -72,13 +72,13 @@ public class Instance {
         }
 
         // patterned wools
-        for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
-            FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.block, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.stairs, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.slab, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(patternWoolTypes.carpet, 60, 20);
-            FuelRegistry.INSTANCE.add(patternWoolTypes.stairs, 100);
-            FuelRegistry.INSTANCE.add(patternWoolTypes.slab, 50);
+        for (WoolTypes woolTypes : WoolTypes.values()) {
+            FlammableBlockRegistry.getDefaultInstance().add(woolTypes.block, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolTypes.stairs, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolTypes.slab, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolTypes.carpet, 60, 20);
+            FuelRegistry.INSTANCE.add(woolTypes.stairs, 100);
+            FuelRegistry.INSTANCE.add(woolTypes.slab, 50);
         }
 
         // wood

@@ -60,9 +60,9 @@ public class BlockusModelProvider extends FabricModelProvider {
             this.registerBlockStairsAndSlab(modelGenerator, asphaltTypes.block, asphaltTypes.stairs, asphaltTypes.slab);
         }
 
-        for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, patternWoolTypes.block, patternWoolTypes.stairs, patternWoolTypes.slab);
-            this.registerCarpet(modelGenerator, patternWoolTypes.block, patternWoolTypes.carpet);
+        for (WoolTypes woolTypes : WoolTypes.values()) {
+            this.registerBlockStairsAndSlab(modelGenerator, woolTypes.block, woolTypes.stairs, woolTypes.slab);
+            this.registerCarpet(modelGenerator, woolTypes.block, woolTypes.carpet);
         }
 
         for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {

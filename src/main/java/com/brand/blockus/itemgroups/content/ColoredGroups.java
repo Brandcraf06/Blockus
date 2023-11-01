@@ -4,7 +4,7 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.AsphaltTypes;
 import com.brand.blockus.content.types.ColoredTilesTypes;
 import com.brand.blockus.content.types.ConcreteTypes;
-import com.brand.blockus.content.types.PatternWoolTypes;
+import com.brand.blockus.content.types.WoolTypes;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
@@ -19,11 +19,11 @@ public class ColoredGroups {
             }
             entries.add(BlockusBlocks.RAINBOW_ASPHALT);
 
-            for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
-                entries.add(patternWoolTypes.block);
-                entries.add(patternWoolTypes.stairs);
-                entries.add(patternWoolTypes.slab);
-                entries.add(patternWoolTypes.carpet);
+            for (WoolTypes woolTypes : WoolTypes.values()) {
+                entries.add(woolTypes.block);
+                entries.add(woolTypes.stairs);
+                entries.add(woolTypes.slab);
+                entries.add(woolTypes.carpet);
             }
 
             entries.add(BlockusBlocks.SHINGLES.block);

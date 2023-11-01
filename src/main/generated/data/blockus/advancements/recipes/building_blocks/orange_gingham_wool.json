@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orange_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:orange_wool"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:orange_gingham_wool"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_orange_wool"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:orange_gingham_wool"
+    ]
+  },
+  "sends_telemetry_event": false
+}

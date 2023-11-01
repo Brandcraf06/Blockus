@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "gingham_wool",
+  "key": {
+    "#": {
+      "item": "minecraft:purple_wool"
+    }
+  },
+  "pattern": [
+    " # ",
+    "# #",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "item": "blockus:purple_gingham_wool"
+  },
+  "show_notification": true
+}

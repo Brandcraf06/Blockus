@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "blockus:block/yellow_gingham_wool",
+    "side": "blockus:block/yellow_gingham_wool",
+    "top": "blockus:block/yellow_gingham_wool"
+  }
+}

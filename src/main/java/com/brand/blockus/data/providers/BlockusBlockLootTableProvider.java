@@ -66,9 +66,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addPottedLargePlantDrop(pottedLargeType.block);
         }
 
-        for (PatternWoolTypes patternWoolTypes : PatternWoolTypes.values()) {
-            this.addBlockStairsandSlabDrops(patternWoolTypes.block, patternWoolTypes.stairs, patternWoolTypes.slab);
-            this.addDrop(patternWoolTypes.carpet);
+        for (WoolTypes woolTypes : WoolTypes.values()) {
+            this.addBlockStairsandSlabDrops(woolTypes.block, woolTypes.stairs, woolTypes.slab);
+            this.addDrop(woolTypes.carpet);
         }
 
         for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {

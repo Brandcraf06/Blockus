@@ -666,22 +666,40 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block TINTED_BEVELED_GLASS = register("tinted_beveled_glass", new TintedGlassBlock(FabricBlockSettings.copy(Blocks.TINTED_GLASS).allowsSpawning(BlockusBlocks::never).solidBlock(BlockusBlocks::never).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
 
     // Patterned Wools
-    public static final PatternWoolTypes WHITE_PATTERNED_WOOL = new PatternWoolTypes(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET, DyeColor.WHITE);
-    public static final PatternWoolTypes ORANGE_PATTERNED_WOOL = new PatternWoolTypes(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET, DyeColor.ORANGE);
-    public static final PatternWoolTypes MAGENTA_PATTERNED_WOOL = new PatternWoolTypes(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA);
-    public static final PatternWoolTypes LIGHT_BLUE_PATTERNED_WOOL = new PatternWoolTypes(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE);
-    public static final PatternWoolTypes YELLOW_PATTERNED_WOOL = new PatternWoolTypes(Blocks.YELLOW_WOOL, Blocks.YELLOW_CARPET, DyeColor.YELLOW);
-    public static final PatternWoolTypes LIME_PATTERNED_WOOL = new PatternWoolTypes(Blocks.LIME_WOOL, Blocks.LIME_CARPET, DyeColor.LIME);
-    public static final PatternWoolTypes PINK_PATTERNED_WOOL = new PatternWoolTypes(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK);
-    public static final PatternWoolTypes GRAY_PATTERNED_WOOL = new PatternWoolTypes(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY);
-    public static final PatternWoolTypes LIGHT_GRAY_PATTERNED_WOOL = new PatternWoolTypes(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY);
-    public static final PatternWoolTypes CYAN_PATTERNED_WOOL = new PatternWoolTypes(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN);
-    public static final PatternWoolTypes PURPLE_PATTERNED_WOOL = new PatternWoolTypes(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE);
-    public static final PatternWoolTypes BLUE_PATTERNED_WOOL = new PatternWoolTypes(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE);
-    public static final PatternWoolTypes BROWN_PATTERNED_WOOL = new PatternWoolTypes(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN);
-    public static final PatternWoolTypes GREEN_PATTERNED_WOOL = new PatternWoolTypes(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET, DyeColor.GREEN);
-    public static final PatternWoolTypes RED_PATTERNED_WOOL = new PatternWoolTypes(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED);
-    public static final PatternWoolTypes BLACK_PATTERNED_WOOL = new PatternWoolTypes(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK);
+    public static final WoolTypes WHITE_PATTERNED_WOOL = new WoolTypes(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET, DyeColor.WHITE);
+    public static final WoolTypes ORANGE_PATTERNED_WOOL = new WoolTypes(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET, DyeColor.ORANGE);
+    public static final WoolTypes MAGENTA_PATTERNED_WOOL = new WoolTypes(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA);
+    public static final WoolTypes LIGHT_BLUE_PATTERNED_WOOL = new WoolTypes(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE);
+    public static final WoolTypes YELLOW_PATTERNED_WOOL = new WoolTypes(Blocks.YELLOW_WOOL, Blocks.YELLOW_CARPET, DyeColor.YELLOW);
+    public static final WoolTypes LIME_PATTERNED_WOOL = new WoolTypes(Blocks.LIME_WOOL, Blocks.LIME_CARPET, DyeColor.LIME);
+    public static final WoolTypes PINK_PATTERNED_WOOL = new WoolTypes(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK);
+    public static final WoolTypes GRAY_PATTERNED_WOOL = new WoolTypes(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY);
+    public static final WoolTypes LIGHT_GRAY_PATTERNED_WOOL = new WoolTypes(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY);
+    public static final WoolTypes CYAN_PATTERNED_WOOL = new WoolTypes(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN);
+    public static final WoolTypes PURPLE_PATTERNED_WOOL = new WoolTypes(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE);
+    public static final WoolTypes BLUE_PATTERNED_WOOL = new WoolTypes(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE);
+    public static final WoolTypes BROWN_PATTERNED_WOOL = new WoolTypes(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN);
+    public static final WoolTypes GREEN_PATTERNED_WOOL = new WoolTypes(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET, DyeColor.GREEN);
+    public static final WoolTypes RED_PATTERNED_WOOL = new WoolTypes(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED);
+    public static final WoolTypes BLACK_PATTERNED_WOOL = new WoolTypes(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK);
+
+    // Gingham Wools
+    public static final WoolTypes WHITE_GINGHAM_WOOL = new WoolTypes(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET, DyeColor.WHITE, WoolTypes.GINGHAM);
+    public static final WoolTypes ORANGE_GINGHAM_WOOL = new WoolTypes(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET, DyeColor.ORANGE, WoolTypes.GINGHAM);
+    public static final WoolTypes MAGENTA_GINGHAM_WOOL = new WoolTypes(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA, WoolTypes.GINGHAM);
+    public static final WoolTypes LIGHT_BLUE_GINGHAM_WOOL = new WoolTypes(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE, WoolTypes.GINGHAM);
+    public static final WoolTypes YELLOW_GINGHAM_WOOL = new WoolTypes(Blocks.YELLOW_WOOL, Blocks.YELLOW_CARPET, DyeColor.YELLOW, WoolTypes.GINGHAM);
+    public static final WoolTypes LIME_GINGHAM_WOOL = new WoolTypes(Blocks.LIME_WOOL, Blocks.LIME_CARPET, DyeColor.LIME, WoolTypes.GINGHAM);
+    public static final WoolTypes PINK_GINGHAM_WOOL = new WoolTypes(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK, WoolTypes.GINGHAM);
+    public static final WoolTypes GRAY_GINGHAM_WOOL = new WoolTypes(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY, WoolTypes.GINGHAM);
+    public static final WoolTypes LIGHT_GRAY_GINGHAM_WOOL = new WoolTypes(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY, WoolTypes.GINGHAM);
+    public static final WoolTypes CYAN_GINGHAM_WOOL = new WoolTypes(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN, WoolTypes.GINGHAM);
+    public static final WoolTypes PURPLE_GINGHAM_WOOL = new WoolTypes(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE, WoolTypes.GINGHAM);
+    public static final WoolTypes BLUE_GINGHAM_WOOL = new WoolTypes(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE, WoolTypes.GINGHAM);
+    public static final WoolTypes BROWN_GINGHAM_WOOL = new WoolTypes(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN, WoolTypes.GINGHAM);
+    public static final WoolTypes GREEN_GINGHAM_WOOL = new WoolTypes(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET, DyeColor.GREEN, WoolTypes.GINGHAM);
+    public static final WoolTypes RED_GINGHAM_WOOL = new WoolTypes(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED, WoolTypes.GINGHAM);
+    public static final WoolTypes BLACK_GINGHAM_WOOL = new WoolTypes(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK, WoolTypes.GINGHAM);
 
     // Glazed Terracotta Pillars
     public static final Block WHITE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.WHITE_GLAZED_TERRACOTTA);

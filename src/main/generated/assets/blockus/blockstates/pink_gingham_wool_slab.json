@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/pink_gingham_wool_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/pink_gingham_wool"
+    },
+    "type=top": {
+      "model": "blockus:block/pink_gingham_wool_slab_top"
+    }
+  }
+}
