@@ -1,3 +1,4 @@
+/*
 package com.brand.blockus.modcompat.promenade;
 
 import com.brand.blockus.Blockus;
@@ -143,3 +144,4 @@ public class BlockusPromenadeBlocks extends BlocksRegistration {
         }, SAP_MAPLE_SMALL_HEDGE, POTTED_SAP_MAPLE);
     }
 }
+*/

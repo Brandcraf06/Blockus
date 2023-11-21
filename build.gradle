@@ -38,8 +38,8 @@ dependencies {
   modImplementation "com.terraformersmc:biolith:${biolith_version}"
 
   // Promenade
-  modImplementation "curse.maven:promenade-399648:${project.promenade_version}"
-  modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"
+/*  modImplementation "curse.maven:promenade-399648:${project.promenade_version}"
+  modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"*/
 }
 
 loom {

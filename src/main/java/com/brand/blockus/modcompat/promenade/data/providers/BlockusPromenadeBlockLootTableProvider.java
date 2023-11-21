@@ -1,3 +1,4 @@
+/*
 package com.brand.blockus.modcompat.promenade.data.providers;
 
 import com.brand.blockus.content.BlockusBlocks;
@@ -54,3 +55,4 @@ public class BlockusPromenadeBlockLootTableProvider extends BlockusBlockLootTabl
 }
 
 
+*/

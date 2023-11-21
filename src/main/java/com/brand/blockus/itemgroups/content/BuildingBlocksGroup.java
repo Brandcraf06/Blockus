@@ -4,9 +4,7 @@ import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.TimberFrameTypes;
 import com.brand.blockus.content.types.WoodTypes;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
-import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.loader.api.FabricLoader;
 
 public class BuildingBlocksGroup {
 
@@ -80,12 +78,12 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS);
             entries.add(BlockusBlocks.CRIMSON_SMALL_STEMS);
             entries.add(BlockusBlocks.WARPED_SMALL_STEMS);
-            if (FabricLoader.getInstance().isModLoaded("promenade")) {
+   /*         if (FabricLoader.getInstance().isModLoaded("promenade")) {
                 entries.add(BlockusPromenadeBlocks.SAKURA_SMALL_LOGS);
                 entries.add(BlockusPromenadeBlocks.MAPLE_SMALL_LOGS);
                 entries.add(BlockusPromenadeBlocks.PALM_SMALL_LOGS);
                 entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS);
-            }
+            }*/
 
             entries.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS);
@@ -719,9 +717,9 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.GOLDEN_APPLE_CRATE);
             entries.add(BlockusBlocks.GOLDEN_CARROT_CRATE);
             entries.add(BlockusBlocks.GLOW_BERRIES_CRATE);
-            if (FabricLoader.getInstance().isModLoaded("promenade")) {
+           /* if (FabricLoader.getInstance().isModLoaded("promenade")) {
                 entries.add(BlockusPromenadeBlocks.BLUEBERRIES_CRATE);
-            }
+            }*/
 
             entries.add(BlockusBlocks.RAINBOW_BLOCK);
             entries.add(BlockusBlocks.RAINBOW_BRICKS.block);

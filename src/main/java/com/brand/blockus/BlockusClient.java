@@ -1,13 +1,11 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
@@ -148,9 +146,9 @@ public class BlockusClient implements ClientModInitializer {
         registerSignSprite("hanging/charred");
         registerSignSprite("hanging/white_oak");
 
-        if (FabricLoader.getInstance().isModLoaded("promenade")) {
+        /*if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.initClient();
-        }
+        }*/
     }
 
     public void registerBlockColor(Block block, Block templateBlock) {

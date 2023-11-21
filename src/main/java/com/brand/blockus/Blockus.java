@@ -6,12 +6,10 @@ import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.ColoredTilesTypes;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.itemgroups.content.*;
-import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import com.brand.blockus.utils.effect.BlockusEffects;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -44,9 +42,9 @@ public class Blockus implements ModInitializer {
         FunctionalBlocksGroup.init();
         LegacyGroup.init();
 
-        if (FabricLoader.getInstance().isModLoaded("promenade")) {
+       /* if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.init();
-        }
+        }*/
 
         Instance.init();
         BlockusWorldgenFeatures.registerConfiguredFeature();
