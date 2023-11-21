@@ -63,7 +63,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             if (woolTypes.typeSuffix.equals(WoolTypes.PATTERNED)) {
                 offerPatternedWoolRecipe(exporter, woolTypes.block, woolTypes.basewool, woolTypes.carpet, woolTypes.basecarpet);
             } else if (woolTypes.typeSuffix.equals(WoolTypes.GINGHAM)) {
-                offerGinghamWoolRecipe(exporter, woolTypes.block, woolTypes.basewool, woolTypes.carpet, woolTypes.basecarpet);
+                offerGinghamWoolRecipe(exporter, woolTypes.block, woolTypes.basewool);
             }
             BlockusRecipeProvider.offerStairsRecipe(exporter, woolTypes.stairs, woolTypes.block);
             RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, woolTypes.slab, woolTypes.block);
@@ -1338,7 +1338,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         createCondensingRecipe(RecipeCategory.BUILDING_BLOCKS, output_carpet, Ingredient.ofItems(carpet)).group("patterned_carpet").criterion(hasItem(carpet), conditionsFromItem(carpet)).offerTo(exporter, convertBetween(output_carpet, carpet));
     }
 
-    public static void offerGinghamWoolRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible wool, ItemConvertible output_carpet, ItemConvertible carpet) {
+    public static void offerGinghamWoolRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible wool) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4).input('#', wool).pattern(" # ").pattern("# #").pattern(" # ").group("gingham_wool").criterion(hasItem(wool), conditionsFromItem(wool)).offerTo(exporter);
     }
 
