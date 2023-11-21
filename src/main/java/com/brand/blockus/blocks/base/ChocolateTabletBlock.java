@@ -1,5 +1,6 @@
 package com.brand.blockus.blocks.base;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -14,6 +15,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
 public class ChocolateTabletBlock extends FacingBlock implements Waterloggable {
+    public static final MapCodec<ChocolateTabletBlock> CODEC = createCodec(ChocolateTabletBlock::new);
 
     protected static final VoxelShape UP_SHAPE;
     protected static final VoxelShape DOWN_SHAPE;
@@ -22,6 +24,10 @@ public class ChocolateTabletBlock extends FacingBlock implements Waterloggable {
     protected static final VoxelShape SOUTH_SHAPE;
     protected static final VoxelShape NORTH_SHAPE;
     public static final BooleanProperty WATERLOGGED;
+
+    public MapCodec<ChocolateTabletBlock> getCodec() {
+        return CODEC;
+    }
 
     public ChocolateTabletBlock(Settings settings) {
         super(settings);

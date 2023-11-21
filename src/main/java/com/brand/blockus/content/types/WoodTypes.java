@@ -57,11 +57,11 @@ public class WoodTypes {
         this.stairs = BlocksRegistration.registerStairs(this.planks);
         this.slab = BlocksRegistration.registerSlab(this.planks);
         this.fence = BlocksRegistration.register(type + "_fence", new FenceBlock(FabricBlockSettings.copyOf(base)));
-        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(base), woodtype));
-        this.door = BlocksRegistration.register(type + "_door", new DoorBlock(blockSettings2, blocksettype));
-        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", new TrapdoorBlock(blockSettings2, blocksettype));
+        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(woodtype, FabricBlockSettings.copyOf(base)));
+        this.door = BlocksRegistration.register(type + "_door", new DoorBlock(blocksettype, blockSettings2));
+        this.trapdoor = BlocksRegistration.register(type + "_trapdoor", new TrapdoorBlock(blocksettype, blockSettings2));
         this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(this.planks);
-        this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), blocksettype, 30, true));
+        this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(blocksettype, 30, FabricBlockSettings.copyOf(planks).noCollision()));
 
         // sign
         Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);

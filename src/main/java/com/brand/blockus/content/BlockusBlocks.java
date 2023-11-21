@@ -6,8 +6,7 @@ import com.brand.blockus.blocks.base.asphalt.RainbowAsphalt;
 import com.brand.blockus.blocks.base.redstone.FallingRedstoneBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneLantern;
 import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
-import com.brand.blockus.blocks.generator.LegacyOakSaplingGenerator;
-import com.brand.blockus.blocks.generator.WhiteOakSaplingGenerator;
+import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.content.types.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -15,6 +14,7 @@ import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.ColorCode;
 import net.minecraft.util.DyeColor;
 
 public class BlockusBlocks extends BlocksRegistration {
@@ -330,7 +330,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final BSSWTypes END_TILES = new BSSWTypes("end_tiles", Blocks.END_STONE_BRICKS);
 
     // White Oak Wood
-    public static final Block WHITE_OAK_SAPLING = register("white_oak_sapling", new SaplingBlock(new WhiteOakSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block WHITE_OAK_SAPLING = register("white_oak_sapling", new SaplingBlock(BlockusSaplingGenerator.WHITE_OAK, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block POTTED_WHITE_OAK_SAPLING = registerNoItem("potted_white_oak_sapling", createPottedPlant(WHITE_OAK_SAPLING));
     public static final Block WHITE_OAK_LOG = register("white_oak_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)));
     public static final Block STRIPPED_WHITE_OAK_LOG = register("stripped_white_oak_log", createPillarCopy(WHITE_OAK_LOG));
@@ -767,8 +767,8 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final BSSTypes GOLD_PLATING = new BSSTypes("gold_plating", Blocks.GOLD_BLOCK);
 
     // Gates - chains - bars
-    public static final Block IRON_GATE = register("iron_gate", new DoorBlock(FabricBlockSettings.copy(Blocks.IRON_DOOR), BlockSetType.IRON));
-    public static final Block GOLDEN_GATE = register("golden_gate", new DoorBlock(FabricBlockSettings.copy(Blocks.IRON_DOOR), BlockSetType.IRON));
+    public static final Block IRON_GATE = register("iron_gate", new DoorBlock(BlockSetType.IRON, FabricBlockSettings.copy(Blocks.IRON_DOOR)));
+    public static final Block GOLDEN_GATE = register("golden_gate", new DoorBlock(BlockSetType.IRON, FabricBlockSettings.copy(Blocks.IRON_DOOR)));
     public static final Block GOLDEN_BARS = register("golden_bars", new PaneBlock(FabricBlockSettings.copy(Blocks.IRON_BARS)));
     public static final Block GOLDEN_CHAIN = register("golden_chain", new ChainBlock(FabricBlockSettings.copy(Blocks.CHAIN)));
 
@@ -805,7 +805,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block STARS_BLOCK = register("stars_block", new Block(FabricBlockSettings.create().mapColor(MapColor.BLACK).strength(5.0f, 6.0f)));
 
     // Legacy
-    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", new SaplingBlock(new LegacyOakSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", new SaplingBlock(BlockusSaplingGenerator.LEGACY_OAK, FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
     public static final PottedLargeTypes POTTED_LEGACY_TREE = new PottedLargeTypes("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING);
     public static final Block POTTED_LEGACY_SAPLING = registerNoItem("potted_legacy_sapling", createPottedPlant(LEGACY_SAPLING));
     public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", createCopy(Blocks.GRASS_BLOCK));
@@ -817,7 +817,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block LEGACY_FIRST_COBBLESTONE = registerLegacy("legacy_first_cobblestone", createCopy(Blocks.COBBLESTONE));
     public static final Block LEGACY_COBBLESTONE = registerLegacy("legacy_cobblestone", createCopy(Blocks.COBBLESTONE));
     public static final Block LEGACY_MOSSY_COBBLESTONE = registerLegacy("legacy_mossy_cobblestone", createCopy(Blocks.MOSSY_COBBLESTONE));
-    public static final Block LEGACY_GRAVEL = registerLegacy("legacy_gravel", new GravelBlock(FabricBlockSettings.copy(Blocks.GRAVEL)));
+    public static final Block LEGACY_GRAVEL = registerLegacy("legacy_gravel", new ColoredFallingBlock(new ColorCode(-8356741),FabricBlockSettings.copy(Blocks.GRAVEL)));
     public static final Block LEGACY_IRON_BLOCK = registerLegacy("legacy_iron_block", createCopy(Blocks.IRON_BLOCK));
     public static final Block LEGACY_GOLD_BLOCK = registerLegacy("legacy_gold_block", createCopy(Blocks.GOLD_BLOCK));
     public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = registerLegacy("legacy_explosion_proof_gold_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)));

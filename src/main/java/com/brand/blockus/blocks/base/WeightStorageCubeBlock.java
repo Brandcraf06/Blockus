@@ -3,7 +3,6 @@ package com.brand.blockus.blocks.base;
 import com.brand.blockus.content.BlockusBlocks;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.FallingBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -15,8 +14,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class WeightStorageCubeBlock extends FallingBlock {
-
+public class WeightStorageCubeBlock extends SimpleFallingBlock {
     public WeightStorageCubeBlock(AbstractBlock.Settings settings) {
         super(settings);
     }

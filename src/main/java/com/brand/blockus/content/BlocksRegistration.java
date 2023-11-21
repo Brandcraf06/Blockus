@@ -3,6 +3,7 @@ package com.brand.blockus.content;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.Barrier;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
+import com.brand.blockus.blocks.base.SimpleFallingBlock;
 import com.brand.blockus.blocks.base.SmallHedgeBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
@@ -121,21 +122,21 @@ public class BlocksRegistration {
 
 
     // Pressure Plate
-    public static Block createPressurePlate(String baseid, PressurePlateBlock.ActivationRule type, Block base, BlockSetType blockSetType) {
-        return register(replaceId(baseid) + "_pressure_plate", new PressurePlateBlock(type, FabricBlockSettings.copy(base).solid().noCollision().pistonBehavior(PistonBehavior.DESTROY), blockSetType));
+    public static Block createPressurePlate(String baseid, Block base, BlockSetType blockSetType) {
+        return register(replaceId(baseid) + "_pressure_plate", new PressurePlateBlock(blockSetType, FabricBlockSettings.copy(base).solid().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
     }
 
     public static Block registerStonePressurePlate(Block base) {
-        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), PressurePlateBlock.ActivationRule.MOBS, base, BlockSetType.STONE);
+        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), base, BlockSetType.STONE);
     }
 
     public static Block registerWoodenPressurePlate(Block base) {
-        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), PressurePlateBlock.ActivationRule.EVERYTHING, base, BlockSetType.OAK);
+        return createPressurePlate(Registries.BLOCK.getId(base).getPath(), base, BlockSetType.OAK);
     }
 
     // Button
     public static Block createStoneButton(String id, Block base) {
-        return register(id + "_button", new ButtonBlock(FabricBlockSettings.copyOf(base).noCollision().pistonBehavior(PistonBehavior.DESTROY), BlockSetType.STONE, 20, false));
+        return register(id + "_button", new ButtonBlock(BlockSetType.STONE, 20, FabricBlockSettings.copyOf(base).noCollision().pistonBehavior(PistonBehavior.DESTROY)));
     }
 
     public static Block registerStoneButton(Block base) {
@@ -157,19 +158,19 @@ public class BlocksRegistration {
     }
 
     public static DoorBlock createWoodenDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new DoorBlock(createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASS).burnable(), blockSetType);
+        return new DoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASS).burnable());
     }
 
     public static DoorBlock createStoneDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new DoorBlock(createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASEDRUM).requiresTool(), blockSetType);
+        return new DoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASEDRUM).requiresTool());
     }
 
     public static TrapdoorBlock createWoodenTrapdoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new TrapdoorBlock(createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASS).burnable(), blockSetType);
+        return new TrapdoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASS).burnable());
     }
 
     public static TrapdoorBlock createStoneTrapdoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new TrapdoorBlock(createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASEDRUM).requiresTool(), blockSetType);
+        return new TrapdoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASEDRUM).requiresTool());
     }
 
     // Light
@@ -209,8 +210,8 @@ public class BlocksRegistration {
     }
 
     // Other
-    public static FallingBlock createFallingBlock(float hardness, float resistance, BlockSoundGroup sound, MapColor color) {
-        return new FallingBlock(FabricBlockSettings.create().mapColor(color).strength(hardness, resistance).sounds(sound));
+    public static SimpleFallingBlock createFallingBlock(float hardness, float resistance, BlockSoundGroup sound, MapColor color) {
+        return new SimpleFallingBlock(FabricBlockSettings.create().mapColor(color).strength(hardness, resistance).sounds(sound));
     }
 
     public static PaneBlock createWoodenPane() {

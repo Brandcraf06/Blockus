@@ -9,6 +9,7 @@ import com.brand.blockus.utils.tags.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -1404,10 +1405,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void generateFamilies(RecipeExporter exporter, FeatureSet enabledFeatures) {
-        BlockusWoodFamilies.getFamilies().filter((family) -> {
-            return family.shouldGenerateRecipes(enabledFeatures);
-        }).forEach((family) -> {
-            generateFamily(exporter, family);
+        BlockusWoodFamilies.getFamilies().filter(BlockFamily::shouldGenerateRecipes).forEach((family) -> {
+            generateFamily(exporter, family, enabledFeatures);
         });
     }
 }

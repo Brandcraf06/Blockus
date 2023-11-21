@@ -1,5 +1,6 @@
 package com.brand.blockus.blocks.base;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
@@ -9,8 +10,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ObsidianPressurePlateBlock extends AbstractPressurePlateBlock {
+    public static final MapCodec<ObsidianPressurePlateBlock> CODEC = createCodec(ObsidianPressurePlateBlock::new);
     public static final BooleanProperty POWERED;
 
+    public MapCodec<ObsidianPressurePlateBlock> getCodec() {
+        return CODEC;
+    }
     public ObsidianPressurePlateBlock(AbstractBlock.Settings settings) {
         super(settings, BlockSetType.STONE);
         this.setDefaultState(this.stateManager.getDefaultState().with(POWERED, false));

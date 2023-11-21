@@ -2,7 +2,6 @@ package com.brand.blockus.utils.screen;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.google.common.collect.Lists;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -13,7 +12,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.StonecuttingRecipe;
-import net.minecraft.screen.*;
+import net.minecraft.screen.Property;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.ScreenHandlerContext;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -68,7 +70,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
             }
 
             public void onTakeItem(PlayerEntity player, ItemStack stack) {
-                stack.onCraft(player.getWorld(), player, stack.getCount());
+                stack.onCraftByPlayer(player.getWorld(), player, stack.getCount());
                 LegacyStonecutterScreenHandler.this.output.unlockLastRecipe(player, this.getInputStacks());
                 ItemStack itemStack = LegacyStonecutterScreenHandler.this.inputSlot.takeStack(1);
                 if (!itemStack.isEmpty()) {
@@ -92,13 +94,13 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
         });
 
         int i;
-        for(i = 0; i < 3; ++i) {
-            for(int j = 0; j < 9; ++j) {
+        for (i = 0; i < 3; ++i) {
+            for (int j = 0; j < 9; ++j) {
                 this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
-        for(i = 0; i < 9; ++i) {
+        for (i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
 
@@ -194,7 +196,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
             Item item = itemStack2.getItem();
             itemStack = itemStack2.copy();
             if (slot == 1) {
-                item.onCraft(itemStack2, player.getWorld(), player);
+                item.onCraftByPlayer(itemStack2, player.getWorld(), player);
                 if (!this.insertItem(itemStack2, 2, 38, true)) {
                     return ItemStack.EMPTY;
                 }
