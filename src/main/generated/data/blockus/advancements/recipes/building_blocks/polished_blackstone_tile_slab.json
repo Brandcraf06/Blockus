@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_blackstone_tile_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

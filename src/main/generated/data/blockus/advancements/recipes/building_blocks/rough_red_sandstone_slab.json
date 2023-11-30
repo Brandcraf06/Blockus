@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:rough_red_sandstone_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

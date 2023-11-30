@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_brown_concrete_from_brown_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

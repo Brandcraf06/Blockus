@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:green_shingles_slab_from_green_shingles_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

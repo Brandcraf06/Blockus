@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chocolate_brick_wall_from_chocolate_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:marble_brick_stairs_from_marble_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

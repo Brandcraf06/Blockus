@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_marble_from_marble_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

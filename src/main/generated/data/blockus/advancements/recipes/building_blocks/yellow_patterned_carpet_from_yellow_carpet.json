@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:yellow_patterned_carpet_from_yellow_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

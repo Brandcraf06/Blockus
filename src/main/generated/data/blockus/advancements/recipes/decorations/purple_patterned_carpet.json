@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:purple_patterned_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

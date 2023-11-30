@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:lime_gingham_wool"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

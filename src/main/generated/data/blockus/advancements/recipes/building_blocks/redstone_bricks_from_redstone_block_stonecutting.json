@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:redstone_bricks_from_redstone_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

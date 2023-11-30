@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:lime_patterned_carpet_from_lime_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

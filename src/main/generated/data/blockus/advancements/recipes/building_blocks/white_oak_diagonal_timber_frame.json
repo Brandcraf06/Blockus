@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:white_oak_diagonal_timber_frame"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

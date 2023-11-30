@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:small_phantom_purpur_brick_stairs_from_polished_phantom_purpur_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

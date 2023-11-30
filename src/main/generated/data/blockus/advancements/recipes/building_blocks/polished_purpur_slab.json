@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_purpur_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

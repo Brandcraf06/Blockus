@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:cyan_stone_brick_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

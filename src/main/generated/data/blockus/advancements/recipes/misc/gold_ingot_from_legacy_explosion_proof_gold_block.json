@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:gold_ingot_from_legacy_explosion_proof_gold_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

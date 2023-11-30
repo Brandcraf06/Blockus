@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:blue_patterned_carpet_from_blue_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

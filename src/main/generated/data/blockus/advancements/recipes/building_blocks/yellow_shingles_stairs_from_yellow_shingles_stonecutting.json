@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:yellow_shingles_stairs_from_yellow_shingles_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

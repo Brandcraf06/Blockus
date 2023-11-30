@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:yellow_asphalt_stairs_from_asphalt_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

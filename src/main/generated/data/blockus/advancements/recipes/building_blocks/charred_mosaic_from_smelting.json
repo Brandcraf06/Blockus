@@ -28,6 +28,5 @@
     "recipes": [
       "minecraft:charred_mosaic_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

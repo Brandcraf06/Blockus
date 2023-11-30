@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:water_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:legacy_glowing_obsidian_from_glowing_obsidian_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

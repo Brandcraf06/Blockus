@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:netherite_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

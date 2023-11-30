@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_amethyst"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

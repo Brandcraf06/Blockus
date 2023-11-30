@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:weight_storage_cube"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

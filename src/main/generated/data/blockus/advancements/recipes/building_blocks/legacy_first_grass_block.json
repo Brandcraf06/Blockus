@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:legacy_first_grass_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

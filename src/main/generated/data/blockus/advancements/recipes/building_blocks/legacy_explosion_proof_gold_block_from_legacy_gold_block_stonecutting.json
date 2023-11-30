@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:legacy_explosion_proof_gold_block_from_legacy_gold_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

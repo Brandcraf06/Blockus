@@ -27,6 +27,7 @@ public class LargeFlowerPotBlock extends FlowerPotBlock {
     public LargeFlowerPotBlock(Block content, Settings settings) {
         super(content, settings);
         this.content = content;
+        CONTENT_TO_POTTED.put(content, this);
     }
 
     @Override

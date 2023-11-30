@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:beveled_glass"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

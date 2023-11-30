@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:black_shingles_slab_from_black_shingles_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

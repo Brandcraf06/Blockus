@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:black_concrete_brick_wall_from_black_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

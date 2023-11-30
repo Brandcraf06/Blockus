@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:gray_colored_tiles_from_gray_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

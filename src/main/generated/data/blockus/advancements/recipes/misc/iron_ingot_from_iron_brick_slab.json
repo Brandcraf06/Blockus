@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:iron_ingot_from_iron_brick_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:phantom_purpur_brick_wall_from_phantom_purpur_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:gold_decorated_soul_sandstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:lime_asphalt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

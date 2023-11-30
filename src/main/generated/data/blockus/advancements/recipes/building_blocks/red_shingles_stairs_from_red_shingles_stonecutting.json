@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:red_shingles_stairs_from_red_shingles_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

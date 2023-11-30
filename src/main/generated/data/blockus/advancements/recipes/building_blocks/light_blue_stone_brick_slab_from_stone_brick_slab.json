@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:light_blue_stone_brick_slab_from_stone_brick_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

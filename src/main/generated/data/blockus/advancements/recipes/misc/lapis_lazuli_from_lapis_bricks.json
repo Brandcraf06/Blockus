@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:lapis_lazuli_from_lapis_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

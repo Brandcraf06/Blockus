@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:rainbow_glass_pane_alt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

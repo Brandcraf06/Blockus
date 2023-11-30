@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:gold_plating_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

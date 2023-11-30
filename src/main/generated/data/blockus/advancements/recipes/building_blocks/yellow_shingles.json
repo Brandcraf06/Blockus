@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:yellow_shingles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_tuff"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

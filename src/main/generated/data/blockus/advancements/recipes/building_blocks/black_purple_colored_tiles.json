@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:black_purple_colored_tiles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

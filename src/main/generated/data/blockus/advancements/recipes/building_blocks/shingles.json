@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:shingles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

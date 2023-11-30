@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:sturdy_deepslate_alt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

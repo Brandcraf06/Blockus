@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_light_blue_concrete_from_light_blue_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

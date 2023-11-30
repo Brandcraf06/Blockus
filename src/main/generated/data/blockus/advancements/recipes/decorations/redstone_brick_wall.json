@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:redstone_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

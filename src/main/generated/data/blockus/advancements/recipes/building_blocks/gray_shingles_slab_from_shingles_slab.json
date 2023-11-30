@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:gray_shingles_slab_from_shingles_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

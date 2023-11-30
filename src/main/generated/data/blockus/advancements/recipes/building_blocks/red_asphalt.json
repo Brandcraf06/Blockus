@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:red_asphalt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

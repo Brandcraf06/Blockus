@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:rainbow_brick_slab_from_rainbow_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

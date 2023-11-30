@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:redstone_sand"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

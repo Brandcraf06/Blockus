@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:lapis_brick_wall_from_lapis_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

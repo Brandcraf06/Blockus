@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:gold_brick_stairs_from_gold_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

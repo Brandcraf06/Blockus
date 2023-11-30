@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:charred_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

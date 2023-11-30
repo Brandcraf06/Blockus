@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:blue_glazed_terracotta_pillar_from_blue_glazed_terracotta_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

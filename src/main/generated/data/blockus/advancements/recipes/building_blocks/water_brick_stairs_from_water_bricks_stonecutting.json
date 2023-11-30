@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:water_brick_stairs_from_water_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

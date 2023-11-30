@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:rough_soul_sandstone_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

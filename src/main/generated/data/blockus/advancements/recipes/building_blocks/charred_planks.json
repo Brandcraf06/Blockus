@@ -28,6 +28,5 @@
     "recipes": [
       "blockus:charred_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

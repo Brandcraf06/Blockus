@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:rainbow_glass_pane"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

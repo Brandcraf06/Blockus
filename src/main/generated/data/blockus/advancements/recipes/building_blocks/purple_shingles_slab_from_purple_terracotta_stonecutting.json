@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:purple_shingles_slab_from_purple_terracotta_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

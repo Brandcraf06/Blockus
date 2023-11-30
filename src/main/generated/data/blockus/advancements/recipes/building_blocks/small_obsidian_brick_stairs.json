@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:small_obsidian_brick_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

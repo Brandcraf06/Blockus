@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:legacy_glowstone_from_glowstone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

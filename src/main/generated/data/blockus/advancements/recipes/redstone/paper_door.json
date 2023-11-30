@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:paper_door"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

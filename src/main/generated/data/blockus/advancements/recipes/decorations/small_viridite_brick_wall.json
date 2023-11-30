@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:small_viridite_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

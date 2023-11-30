@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:herringbone_diorite_bricks_from_diorite_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:bluestone_tiles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

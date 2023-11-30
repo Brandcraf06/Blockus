@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:viridite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

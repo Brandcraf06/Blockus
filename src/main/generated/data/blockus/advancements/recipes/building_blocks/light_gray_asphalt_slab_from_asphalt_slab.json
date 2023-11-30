@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:light_gray_asphalt_slab_from_asphalt_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

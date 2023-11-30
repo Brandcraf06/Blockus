@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:gold_plating_stairs_from_gold_plating_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

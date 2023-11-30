@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:mud_brick_pillar"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

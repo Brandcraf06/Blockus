@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:gray_shingles_from_gray_terracotta_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

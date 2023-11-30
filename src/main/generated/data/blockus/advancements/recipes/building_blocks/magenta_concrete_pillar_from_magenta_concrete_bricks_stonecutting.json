@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:magenta_concrete_pillar_from_magenta_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

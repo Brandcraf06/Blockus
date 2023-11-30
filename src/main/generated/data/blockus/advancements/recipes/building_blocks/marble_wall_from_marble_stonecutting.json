@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:marble_wall_from_marble_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_water_bricks_from_water_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

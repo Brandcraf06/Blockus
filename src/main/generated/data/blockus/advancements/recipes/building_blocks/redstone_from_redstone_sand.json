@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:redstone_from_redstone_sand"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

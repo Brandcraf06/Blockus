@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:viridite_button"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

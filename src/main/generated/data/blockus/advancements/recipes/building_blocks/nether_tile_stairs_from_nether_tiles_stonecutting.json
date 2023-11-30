@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:nether_tile_stairs_from_nether_tiles_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

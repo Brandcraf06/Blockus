@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:yellow_concrete_pillar_from_yellow_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

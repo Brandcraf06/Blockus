@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:birch_diagonal_timber_frame"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

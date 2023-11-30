@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:cherry_small_hedge"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

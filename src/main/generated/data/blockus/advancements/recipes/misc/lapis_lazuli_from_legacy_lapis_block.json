@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:lapis_lazuli_from_legacy_lapis_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

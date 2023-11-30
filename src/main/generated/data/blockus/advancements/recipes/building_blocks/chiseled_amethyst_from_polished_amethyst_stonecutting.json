@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_amethyst_from_polished_amethyst_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

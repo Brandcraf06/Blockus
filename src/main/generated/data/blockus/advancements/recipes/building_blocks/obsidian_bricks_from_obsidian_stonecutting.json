@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:obsidian_bricks_from_obsidian_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

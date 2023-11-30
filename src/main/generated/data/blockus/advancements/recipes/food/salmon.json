@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:salmon"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

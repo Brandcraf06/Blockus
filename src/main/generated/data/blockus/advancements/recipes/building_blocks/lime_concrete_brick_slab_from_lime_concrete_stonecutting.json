@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:lime_concrete_brick_slab_from_lime_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

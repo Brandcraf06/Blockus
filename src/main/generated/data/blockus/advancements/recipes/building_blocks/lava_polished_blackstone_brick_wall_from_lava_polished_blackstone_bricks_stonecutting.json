@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:lava_polished_blackstone_brick_wall_from_lava_polished_blackstone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:light_blue_concrete_pillar_from_light_blue_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:iron_brick_slab_from_iron_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:ice_pillar_from_ice_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

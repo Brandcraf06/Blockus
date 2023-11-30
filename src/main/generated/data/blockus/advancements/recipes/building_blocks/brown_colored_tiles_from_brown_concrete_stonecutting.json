@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:brown_colored_tiles_from_brown_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

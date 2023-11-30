@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:brown_shingles_stairs_from_shingles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_limestone_stairs_from_polished_limestone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

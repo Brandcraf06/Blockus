@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:bluestone_tile_wall_from_polished_bluestone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

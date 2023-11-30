@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:bluestone_circular_paving_from_bluestone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:purple_concrete_bricks_from_purple_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

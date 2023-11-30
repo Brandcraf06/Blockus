@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_phantom_purpur_from_soul_sand"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:cyan_colored_tiles_from_cyan_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

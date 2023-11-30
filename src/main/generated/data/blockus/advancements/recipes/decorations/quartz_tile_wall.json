@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:quartz_tile_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

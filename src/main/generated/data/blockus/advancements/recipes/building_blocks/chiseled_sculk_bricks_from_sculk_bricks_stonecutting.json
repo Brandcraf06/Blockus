@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_sculk_bricks_from_sculk_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

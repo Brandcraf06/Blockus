@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:soaked_brick_wall_from_soaked_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:lime_concrete_brick_wall_from_lime_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

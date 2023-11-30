@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:rough_basalt_stairs_from_rough_basalt_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

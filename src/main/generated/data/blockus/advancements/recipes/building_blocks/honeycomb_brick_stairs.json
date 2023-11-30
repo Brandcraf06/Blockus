@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:honeycomb_brick_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

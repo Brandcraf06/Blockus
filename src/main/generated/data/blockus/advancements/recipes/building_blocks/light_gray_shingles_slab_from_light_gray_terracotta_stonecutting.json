@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:light_gray_shingles_slab_from_light_gray_terracotta_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

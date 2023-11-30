@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:magenta_redstone_lamp"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

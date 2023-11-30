@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:viridite_circular_paving_from_polished_viridite_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

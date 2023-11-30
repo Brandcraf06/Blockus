@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:small_soul_sandstone_brick_wall_from_soul_sandstone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

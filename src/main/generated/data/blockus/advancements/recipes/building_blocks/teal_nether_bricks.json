@@ -28,6 +28,5 @@
     "recipes": [
       "blockus:teal_nether_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

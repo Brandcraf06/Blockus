@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:small_marble_bricks_from_marble_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

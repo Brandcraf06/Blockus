@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:soul_o_lantern"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

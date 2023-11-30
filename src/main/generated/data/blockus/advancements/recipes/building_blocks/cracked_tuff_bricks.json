@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:cracked_tuff_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

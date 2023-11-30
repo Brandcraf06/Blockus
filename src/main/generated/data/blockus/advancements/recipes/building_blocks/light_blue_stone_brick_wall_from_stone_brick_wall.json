@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:light_blue_stone_brick_wall_from_stone_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

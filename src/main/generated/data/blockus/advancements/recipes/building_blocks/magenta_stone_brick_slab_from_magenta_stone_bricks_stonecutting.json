@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:magenta_stone_brick_slab_from_magenta_stone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

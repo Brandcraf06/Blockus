@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:jungle_mosaic"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

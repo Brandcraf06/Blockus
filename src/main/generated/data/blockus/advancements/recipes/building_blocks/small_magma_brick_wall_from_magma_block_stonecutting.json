@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:small_magma_brick_wall_from_magma_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

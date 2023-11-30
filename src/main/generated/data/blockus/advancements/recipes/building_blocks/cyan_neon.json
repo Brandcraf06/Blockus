@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:cyan_neon"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

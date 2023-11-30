@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:viridite_slab_from_viridite_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

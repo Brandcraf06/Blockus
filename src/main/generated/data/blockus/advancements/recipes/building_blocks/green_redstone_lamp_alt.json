@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:green_redstone_lamp_alt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

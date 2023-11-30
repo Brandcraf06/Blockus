@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:cherry_mosaic"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

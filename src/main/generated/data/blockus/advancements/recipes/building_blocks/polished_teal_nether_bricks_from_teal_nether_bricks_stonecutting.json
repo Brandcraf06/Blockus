@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_teal_nether_bricks_from_teal_nether_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

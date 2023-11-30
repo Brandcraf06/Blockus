@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:black_gingham_wool_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

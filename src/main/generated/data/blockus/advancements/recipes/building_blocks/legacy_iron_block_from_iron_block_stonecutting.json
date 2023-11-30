@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:legacy_iron_block_from_iron_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

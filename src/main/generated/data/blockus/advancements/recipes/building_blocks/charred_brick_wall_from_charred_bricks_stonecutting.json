@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:charred_brick_wall_from_charred_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:marble_from_calcite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

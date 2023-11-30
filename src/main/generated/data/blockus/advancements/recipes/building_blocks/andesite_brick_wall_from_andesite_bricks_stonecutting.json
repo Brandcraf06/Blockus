@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:andesite_brick_wall_from_andesite_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

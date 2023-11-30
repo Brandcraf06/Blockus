@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:dripstone_pillar_from_polished_dripstone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

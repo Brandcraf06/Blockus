@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:small_sandstone_brick_slab_from_small_sandstone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

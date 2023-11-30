@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:small_viridite_brick_stairs_from_viridite_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

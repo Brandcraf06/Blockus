@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:azalea_small_hedge_flowers"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

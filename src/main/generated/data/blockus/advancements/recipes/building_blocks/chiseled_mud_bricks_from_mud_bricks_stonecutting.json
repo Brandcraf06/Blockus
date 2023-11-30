@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_mud_bricks_from_mud_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

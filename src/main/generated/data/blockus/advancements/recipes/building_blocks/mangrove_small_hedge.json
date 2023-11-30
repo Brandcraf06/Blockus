@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:mangrove_small_hedge"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

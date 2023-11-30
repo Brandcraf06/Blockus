@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:tinted_beveled_glass"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

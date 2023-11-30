@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:lime_redstone_lamp"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:marble_tiles_from_polished_marble_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

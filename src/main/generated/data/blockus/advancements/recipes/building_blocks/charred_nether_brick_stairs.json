@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:charred_nether_brick_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

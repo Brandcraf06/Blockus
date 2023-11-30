@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:cyan_concrete_brick_wall_from_cyan_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

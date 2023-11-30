@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:brown_asphalt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:gold_ingot_from_gold_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

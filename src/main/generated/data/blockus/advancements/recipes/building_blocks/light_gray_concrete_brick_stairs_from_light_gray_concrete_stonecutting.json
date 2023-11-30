@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:light_gray_concrete_brick_stairs_from_light_gray_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

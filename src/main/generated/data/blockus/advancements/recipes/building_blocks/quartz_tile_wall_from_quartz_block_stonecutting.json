@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:quartz_tile_wall_from_quartz_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:coal_from_legacy_coal_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

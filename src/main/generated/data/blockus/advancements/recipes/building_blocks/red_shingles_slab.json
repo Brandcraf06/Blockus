@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:red_shingles_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

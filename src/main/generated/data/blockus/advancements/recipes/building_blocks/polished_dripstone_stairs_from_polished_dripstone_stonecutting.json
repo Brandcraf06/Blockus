@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_dripstone_stairs_from_polished_dripstone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

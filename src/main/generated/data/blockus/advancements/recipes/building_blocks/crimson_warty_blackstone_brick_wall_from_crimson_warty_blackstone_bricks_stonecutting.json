@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:crimson_warty_blackstone_brick_wall_from_crimson_warty_blackstone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

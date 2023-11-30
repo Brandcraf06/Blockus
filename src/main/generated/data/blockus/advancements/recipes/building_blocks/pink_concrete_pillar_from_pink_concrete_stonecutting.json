@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:pink_concrete_pillar_from_pink_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

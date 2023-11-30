@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:sturdy_blackstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

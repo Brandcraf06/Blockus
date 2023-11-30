@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:black_patterned_carpet_from_black_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

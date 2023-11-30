@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:legacy_lapis_block_from_lapis_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:red_concrete_bricks_from_red_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

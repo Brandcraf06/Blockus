@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:honeycomb_brick_stairs_from_honeycomb_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

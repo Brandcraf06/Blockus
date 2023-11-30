@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:light_blue_concrete_brick_wall_from_light_blue_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

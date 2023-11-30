@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_polished_basalt_from_polished_basalt_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

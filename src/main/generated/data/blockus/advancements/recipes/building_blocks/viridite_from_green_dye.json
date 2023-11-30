@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:viridite_from_green_dye"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

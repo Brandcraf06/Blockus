@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:warped_warty_blackstone_brick_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

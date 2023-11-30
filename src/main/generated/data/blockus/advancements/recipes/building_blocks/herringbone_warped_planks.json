@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:herringbone_warped_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

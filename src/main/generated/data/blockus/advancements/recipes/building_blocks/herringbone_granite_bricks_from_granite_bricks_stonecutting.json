@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:herringbone_granite_bricks_from_granite_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

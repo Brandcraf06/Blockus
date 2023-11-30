@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:mangrove_mosaic"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

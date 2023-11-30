@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:bluestone_pillar_from_bluestone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

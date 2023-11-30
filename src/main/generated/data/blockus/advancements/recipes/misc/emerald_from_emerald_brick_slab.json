@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:emerald_from_emerald_brick_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

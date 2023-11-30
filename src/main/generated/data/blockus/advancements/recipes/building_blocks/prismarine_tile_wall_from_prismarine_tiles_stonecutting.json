@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:prismarine_tile_wall_from_prismarine_tiles_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

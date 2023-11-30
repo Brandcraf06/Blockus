@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:gold_decorated_polished_blackstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

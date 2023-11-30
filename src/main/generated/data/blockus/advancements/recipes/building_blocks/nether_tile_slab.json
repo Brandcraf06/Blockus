@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:nether_tile_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

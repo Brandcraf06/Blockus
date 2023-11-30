@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:green_concrete_pillar_from_green_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

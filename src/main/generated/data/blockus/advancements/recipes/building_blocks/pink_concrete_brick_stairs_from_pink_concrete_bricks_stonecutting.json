@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:pink_concrete_brick_stairs_from_pink_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:amethyst_brick_stairs_from_polished_amethyst_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

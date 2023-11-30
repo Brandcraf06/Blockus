@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:charred_mosaic"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

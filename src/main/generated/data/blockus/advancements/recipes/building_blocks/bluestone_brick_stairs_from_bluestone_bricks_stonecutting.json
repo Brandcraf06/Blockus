@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:bluestone_brick_stairs_from_bluestone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

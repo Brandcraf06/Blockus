@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:lime_orange_colored_tiles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

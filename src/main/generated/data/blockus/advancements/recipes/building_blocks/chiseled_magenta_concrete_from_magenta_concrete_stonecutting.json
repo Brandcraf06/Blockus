@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_magenta_concrete_from_magenta_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

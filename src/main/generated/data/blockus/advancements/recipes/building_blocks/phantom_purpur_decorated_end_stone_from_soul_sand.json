@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:phantom_purpur_decorated_end_stone_from_soul_sand"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

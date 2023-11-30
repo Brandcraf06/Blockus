@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:acacia_small_logs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

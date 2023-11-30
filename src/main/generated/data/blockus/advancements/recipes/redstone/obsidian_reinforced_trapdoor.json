@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:obsidian_reinforced_trapdoor"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

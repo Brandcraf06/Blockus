@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:rainbow_petal_from_rainbow_rose"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

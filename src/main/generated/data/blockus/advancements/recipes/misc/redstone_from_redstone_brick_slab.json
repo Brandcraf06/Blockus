@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:redstone_from_redstone_brick_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

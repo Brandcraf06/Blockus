@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:orange_concrete_brick_stairs_from_orange_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

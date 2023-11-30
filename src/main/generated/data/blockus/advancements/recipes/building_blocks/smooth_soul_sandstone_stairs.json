@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:smooth_soul_sandstone_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

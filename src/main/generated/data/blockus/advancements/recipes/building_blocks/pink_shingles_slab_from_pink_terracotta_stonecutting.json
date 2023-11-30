@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:pink_shingles_slab_from_pink_terracotta_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

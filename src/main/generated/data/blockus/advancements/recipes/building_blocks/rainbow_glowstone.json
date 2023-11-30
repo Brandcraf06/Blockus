@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:rainbow_glowstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

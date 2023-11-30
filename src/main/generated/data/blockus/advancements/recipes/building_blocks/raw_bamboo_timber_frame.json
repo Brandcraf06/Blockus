@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:raw_bamboo_timber_frame"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

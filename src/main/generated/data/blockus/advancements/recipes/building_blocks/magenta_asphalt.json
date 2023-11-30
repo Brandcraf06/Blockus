@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:magenta_asphalt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

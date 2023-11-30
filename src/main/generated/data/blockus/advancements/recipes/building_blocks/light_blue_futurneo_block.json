@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:light_blue_futurneo_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

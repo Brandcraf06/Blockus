@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:phantom_purpur_squares_from_soul_sand"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

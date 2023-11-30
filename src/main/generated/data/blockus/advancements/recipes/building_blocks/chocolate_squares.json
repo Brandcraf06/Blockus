@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:chocolate_squares"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

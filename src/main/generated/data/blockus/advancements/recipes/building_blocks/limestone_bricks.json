@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:limestone_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

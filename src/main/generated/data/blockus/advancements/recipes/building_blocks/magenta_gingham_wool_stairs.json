@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:magenta_gingham_wool_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:gray_gingham_wool"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

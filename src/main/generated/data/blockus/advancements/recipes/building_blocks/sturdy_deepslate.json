@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:sturdy_deepslate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

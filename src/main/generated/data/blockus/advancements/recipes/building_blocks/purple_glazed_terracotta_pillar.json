@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:purple_glazed_terracotta_pillar"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

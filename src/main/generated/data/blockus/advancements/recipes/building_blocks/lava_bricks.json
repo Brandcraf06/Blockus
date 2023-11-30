@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:lava_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

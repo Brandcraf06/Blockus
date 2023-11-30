@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:gray_stone_brick_stairs_from_gray_stone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

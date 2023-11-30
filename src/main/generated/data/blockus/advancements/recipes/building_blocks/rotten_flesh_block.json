@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:rotten_flesh_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

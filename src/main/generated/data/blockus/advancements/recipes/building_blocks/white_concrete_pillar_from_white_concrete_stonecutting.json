@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:white_concrete_pillar_from_white_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

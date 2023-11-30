@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:legacy_crying_obsidian_from_crying_obsidian_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_basalt_button"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

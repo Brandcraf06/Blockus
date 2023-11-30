@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:wooden_frame"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

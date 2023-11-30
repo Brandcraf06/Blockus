@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_marble"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

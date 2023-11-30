@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_gray_concrete_from_gray_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

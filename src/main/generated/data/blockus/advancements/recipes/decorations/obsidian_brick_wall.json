@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:obsidian_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

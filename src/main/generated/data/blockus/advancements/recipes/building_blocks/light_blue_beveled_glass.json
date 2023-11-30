@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:light_blue_beveled_glass"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

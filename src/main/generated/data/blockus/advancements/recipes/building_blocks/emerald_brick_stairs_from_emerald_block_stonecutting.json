@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:emerald_brick_stairs_from_emerald_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

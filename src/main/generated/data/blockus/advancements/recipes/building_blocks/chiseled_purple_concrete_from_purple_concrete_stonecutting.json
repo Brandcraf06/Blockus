@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_purple_concrete_from_purple_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

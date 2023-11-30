@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:lapis_decorated_red_sandstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:ice_brick_wall_from_ice_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

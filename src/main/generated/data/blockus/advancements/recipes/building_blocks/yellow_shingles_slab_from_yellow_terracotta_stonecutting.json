@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:yellow_shingles_slab_from_yellow_terracotta_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

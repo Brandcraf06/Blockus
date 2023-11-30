@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:legacy_gravel_from_gravel_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

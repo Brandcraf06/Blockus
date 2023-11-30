@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:purpur_lines_from_polished_purpur_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

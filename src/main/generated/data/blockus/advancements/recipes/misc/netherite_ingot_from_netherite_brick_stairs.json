@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:netherite_ingot_from_netherite_brick_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

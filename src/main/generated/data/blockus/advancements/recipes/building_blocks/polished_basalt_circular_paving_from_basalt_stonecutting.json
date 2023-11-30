@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_basalt_circular_paving_from_basalt_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

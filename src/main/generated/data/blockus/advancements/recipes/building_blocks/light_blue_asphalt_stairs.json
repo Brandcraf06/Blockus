@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:light_blue_asphalt_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

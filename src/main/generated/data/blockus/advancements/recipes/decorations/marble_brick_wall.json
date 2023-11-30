@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:marble_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

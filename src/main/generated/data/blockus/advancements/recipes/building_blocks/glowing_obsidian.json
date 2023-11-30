@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:glowing_obsidian"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

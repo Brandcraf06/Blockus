@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:brown_stone_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

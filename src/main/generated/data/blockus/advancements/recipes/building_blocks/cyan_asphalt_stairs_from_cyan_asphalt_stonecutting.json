@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:cyan_asphalt_stairs_from_cyan_asphalt_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

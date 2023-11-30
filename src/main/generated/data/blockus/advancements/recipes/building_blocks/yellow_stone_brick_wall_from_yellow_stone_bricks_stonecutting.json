@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:yellow_stone_brick_wall_from_yellow_stone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

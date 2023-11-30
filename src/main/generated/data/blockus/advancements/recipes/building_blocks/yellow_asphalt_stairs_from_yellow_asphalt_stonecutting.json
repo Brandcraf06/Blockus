@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:yellow_asphalt_stairs_from_yellow_asphalt_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:cyan_stone_brick_stairs_from_cyan_stone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

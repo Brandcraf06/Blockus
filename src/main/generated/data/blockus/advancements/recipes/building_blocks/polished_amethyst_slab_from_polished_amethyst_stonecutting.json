@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_amethyst_slab_from_polished_amethyst_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

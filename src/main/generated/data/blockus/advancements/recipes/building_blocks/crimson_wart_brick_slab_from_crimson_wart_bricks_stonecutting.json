@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:crimson_wart_brick_slab_from_crimson_wart_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

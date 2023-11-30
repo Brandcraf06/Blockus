@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:pink_patterned_wool_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

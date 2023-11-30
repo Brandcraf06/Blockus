@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:brown_asphalt_slab_from_brown_asphalt_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

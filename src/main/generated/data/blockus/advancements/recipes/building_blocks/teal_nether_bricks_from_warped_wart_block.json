@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:teal_nether_bricks_from_warped_wart_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

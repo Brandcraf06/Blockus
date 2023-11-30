@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:diamond_from_diamond_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:caution_barrier"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

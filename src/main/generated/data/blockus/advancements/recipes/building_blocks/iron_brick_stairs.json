@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:iron_brick_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

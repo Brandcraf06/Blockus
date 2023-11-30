@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_andesite_bricks_from_polished_andesite_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

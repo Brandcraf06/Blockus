@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:apple"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

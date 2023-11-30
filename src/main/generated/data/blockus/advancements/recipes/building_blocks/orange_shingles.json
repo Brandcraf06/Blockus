@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:orange_shingles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

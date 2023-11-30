@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_viridite_stairs_from_viridite_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:herringbone_polished_basalt_bricks_from_polished_basalt_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

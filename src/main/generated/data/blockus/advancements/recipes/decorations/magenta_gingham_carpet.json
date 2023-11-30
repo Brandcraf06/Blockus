@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:magenta_gingham_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

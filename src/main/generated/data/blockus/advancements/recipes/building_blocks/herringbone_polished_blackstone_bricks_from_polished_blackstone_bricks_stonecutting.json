@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:herringbone_polished_blackstone_bricks_from_polished_blackstone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

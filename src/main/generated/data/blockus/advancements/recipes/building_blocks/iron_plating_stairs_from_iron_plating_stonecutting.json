@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:iron_plating_stairs_from_iron_plating_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

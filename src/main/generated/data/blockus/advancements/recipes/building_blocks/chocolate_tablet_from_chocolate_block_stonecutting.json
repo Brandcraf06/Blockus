@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chocolate_tablet_from_chocolate_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

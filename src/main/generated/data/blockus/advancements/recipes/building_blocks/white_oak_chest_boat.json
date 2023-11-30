@@ -28,6 +28,5 @@
     "recipes": [
       "blockus:white_oak_chest_boat"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

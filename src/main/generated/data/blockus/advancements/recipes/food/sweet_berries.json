@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:sweet_berries"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

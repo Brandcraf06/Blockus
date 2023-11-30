@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:viridite_tile_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:red_stone_brick_stairs_from_red_stone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

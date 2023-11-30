@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:oak_cross_timber_frame"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

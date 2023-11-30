@@ -43,6 +43,5 @@
     "recipes": [
       "blockus:bluestone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

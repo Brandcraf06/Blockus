@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:raw_bamboo_hanging_sign"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

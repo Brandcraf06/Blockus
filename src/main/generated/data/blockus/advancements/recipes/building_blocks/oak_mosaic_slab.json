@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:oak_mosaic_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

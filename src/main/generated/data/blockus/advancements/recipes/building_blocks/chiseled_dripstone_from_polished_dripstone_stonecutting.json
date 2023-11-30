@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_dripstone_from_polished_dripstone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

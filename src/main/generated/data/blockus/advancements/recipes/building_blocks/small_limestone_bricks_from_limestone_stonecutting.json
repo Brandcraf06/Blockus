@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:small_limestone_bricks_from_limestone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:lime_gingham_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

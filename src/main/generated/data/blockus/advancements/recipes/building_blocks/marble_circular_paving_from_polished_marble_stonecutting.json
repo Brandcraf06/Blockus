@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:marble_circular_paving_from_polished_marble_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

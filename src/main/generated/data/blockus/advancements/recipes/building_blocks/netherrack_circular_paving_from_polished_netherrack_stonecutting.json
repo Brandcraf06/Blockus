@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:netherrack_circular_paving_from_polished_netherrack_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

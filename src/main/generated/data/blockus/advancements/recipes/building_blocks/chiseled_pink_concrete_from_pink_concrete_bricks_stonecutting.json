@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_pink_concrete_from_pink_concrete_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

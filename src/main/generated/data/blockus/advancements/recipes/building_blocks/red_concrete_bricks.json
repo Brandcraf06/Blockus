@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:red_concrete_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

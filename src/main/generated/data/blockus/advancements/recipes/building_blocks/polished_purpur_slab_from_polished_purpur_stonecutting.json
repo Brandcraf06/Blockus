@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_purpur_slab_from_polished_purpur_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

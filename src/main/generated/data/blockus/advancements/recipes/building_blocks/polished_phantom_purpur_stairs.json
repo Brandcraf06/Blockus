@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_phantom_purpur_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

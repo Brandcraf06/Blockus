@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_end_stone_button"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

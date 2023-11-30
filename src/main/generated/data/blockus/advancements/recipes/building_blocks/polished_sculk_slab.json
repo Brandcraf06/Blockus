@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_sculk_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

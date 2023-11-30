@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:iron_plating_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

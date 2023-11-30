@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:chocolate_tablet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:warped_warty_blackstone_brick_slab_from_warped_warty_blackstone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

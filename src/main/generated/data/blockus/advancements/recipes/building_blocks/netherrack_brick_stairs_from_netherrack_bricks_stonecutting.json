@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:netherrack_brick_stairs_from_netherrack_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

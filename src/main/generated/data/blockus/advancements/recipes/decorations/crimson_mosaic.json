@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:crimson_mosaic"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

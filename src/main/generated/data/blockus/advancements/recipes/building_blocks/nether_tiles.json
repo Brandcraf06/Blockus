@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:nether_tiles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

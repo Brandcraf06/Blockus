@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:asphalt_slab_from_asphalt_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

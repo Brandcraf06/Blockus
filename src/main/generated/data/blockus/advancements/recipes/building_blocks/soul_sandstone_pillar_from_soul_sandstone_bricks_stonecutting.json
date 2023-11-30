@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:soul_sandstone_pillar_from_soul_sandstone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

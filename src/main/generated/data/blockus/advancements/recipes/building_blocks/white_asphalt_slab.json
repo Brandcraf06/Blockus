@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:white_asphalt_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

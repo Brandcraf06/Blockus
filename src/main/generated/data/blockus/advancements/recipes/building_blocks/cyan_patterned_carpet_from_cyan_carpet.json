@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:cyan_patterned_carpet_from_cyan_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:crimson_small_stems"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

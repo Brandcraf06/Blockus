@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:mossy_deepslate_brick_stairs_from_mossy_deepslate_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

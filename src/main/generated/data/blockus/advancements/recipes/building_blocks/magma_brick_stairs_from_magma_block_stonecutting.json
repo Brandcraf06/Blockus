@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:magma_brick_stairs_from_magma_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chiseled_green_concrete_from_green_concrete_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

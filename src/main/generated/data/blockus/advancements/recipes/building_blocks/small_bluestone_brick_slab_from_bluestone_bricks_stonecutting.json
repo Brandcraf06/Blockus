@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:small_bluestone_brick_slab_from_bluestone_bricks_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

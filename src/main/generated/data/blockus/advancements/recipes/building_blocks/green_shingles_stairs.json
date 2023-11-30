@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:green_shingles_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

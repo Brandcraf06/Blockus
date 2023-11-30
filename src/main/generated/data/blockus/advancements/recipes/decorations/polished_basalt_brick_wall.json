@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:polished_basalt_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

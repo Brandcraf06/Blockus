@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:gold_plating_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

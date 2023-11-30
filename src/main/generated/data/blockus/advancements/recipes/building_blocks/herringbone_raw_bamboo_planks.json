@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:herringbone_raw_bamboo_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:nether_star"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

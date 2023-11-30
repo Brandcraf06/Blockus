@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:acacia_mosaic_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

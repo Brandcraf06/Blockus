@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:polished_end_stone_from_end_stone_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

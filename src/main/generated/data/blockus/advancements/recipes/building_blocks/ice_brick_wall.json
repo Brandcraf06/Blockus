@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:ice_brick_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

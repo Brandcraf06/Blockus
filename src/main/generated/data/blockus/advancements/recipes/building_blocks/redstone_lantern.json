@@ -30,6 +30,5 @@
     "recipes": [
       "blockus:redstone_lantern"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

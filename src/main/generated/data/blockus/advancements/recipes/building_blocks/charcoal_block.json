@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:charcoal_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

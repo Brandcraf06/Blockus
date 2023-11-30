@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:rainbow_colored_tiles_from_rainbow_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
