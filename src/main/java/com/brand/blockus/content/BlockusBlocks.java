@@ -480,20 +480,20 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Stained Stone Bricks
     public static final BSSWTypes WHITE_STONE_BRICKS = new BSSWTypes("white_stone_bricks", Blocks.STONE_BRICKS, MapColor.WHITE);
+    public static final BSSWTypes GRAY_STONE_BRICKS = new BSSWTypes("gray_stone_bricks", Blocks.STONE_BRICKS, MapColor.GRAY);
+    public static final BSSWTypes BLACK_STONE_BRICKS = new BSSWTypes("black_stone_bricks", Blocks.STONE_BRICKS, MapColor.BLACK);
+    public static final BSSWTypes BROWN_STONE_BRICKS = new BSSWTypes("brown_stone_bricks", Blocks.STONE_BRICKS, MapColor.BROWN);
+    public static final BSSWTypes RED_STONE_BRICKS = new BSSWTypes("red_stone_bricks", Blocks.STONE_BRICKS, MapColor.RED);
     public static final BSSWTypes ORANGE_STONE_BRICKS = new BSSWTypes("orange_stone_bricks", Blocks.STONE_BRICKS, MapColor.ORANGE);
-    public static final BSSWTypes MAGENTA_STONE_BRICKS = new BSSWTypes("magenta_stone_bricks", Blocks.STONE_BRICKS, MapColor.MAGENTA);
-    public static final BSSWTypes LIGHT_BLUE_STONE_BRICKS = new BSSWTypes("light_blue_stone_bricks", Blocks.STONE_BRICKS, MapColor.LIGHT_BLUE);
     public static final BSSWTypes YELLOW_STONE_BRICKS = new BSSWTypes("yellow_stone_bricks", Blocks.STONE_BRICKS, MapColor.YELLOW);
     public static final BSSWTypes LIME_STONE_BRICKS = new BSSWTypes("lime_stone_bricks", Blocks.STONE_BRICKS, MapColor.LIME);
-    public static final BSSWTypes PINK_STONE_BRICKS = new BSSWTypes("pink_stone_bricks", Blocks.STONE_BRICKS, MapColor.PINK);
-    public static final BSSWTypes GRAY_STONE_BRICKS = new BSSWTypes("gray_stone_bricks", Blocks.STONE_BRICKS, MapColor.GRAY);
-    public static final BSSWTypes CYAN_STONE_BRICKS = new BSSWTypes("cyan_stone_bricks", Blocks.STONE_BRICKS, MapColor.CYAN);
-    public static final BSSWTypes PURPLE_STONE_BRICKS = new BSSWTypes("purple_stone_bricks", Blocks.STONE_BRICKS, MapColor.PURPLE);
-    public static final BSSWTypes BLUE_STONE_BRICKS = new BSSWTypes("blue_stone_bricks", Blocks.STONE_BRICKS, MapColor.BLUE);
-    public static final BSSWTypes BROWN_STONE_BRICKS = new BSSWTypes("brown_stone_bricks", Blocks.STONE_BRICKS, MapColor.BROWN);
     public static final BSSWTypes GREEN_STONE_BRICKS = new BSSWTypes("green_stone_bricks", Blocks.STONE_BRICKS, MapColor.GREEN);
-    public static final BSSWTypes RED_STONE_BRICKS = new BSSWTypes("red_stone_bricks", Blocks.STONE_BRICKS, MapColor.RED);
-    public static final BSSWTypes BLACK_STONE_BRICKS = new BSSWTypes("black_stone_bricks", Blocks.STONE_BRICKS, MapColor.BLACK);
+    public static final BSSWTypes CYAN_STONE_BRICKS = new BSSWTypes("cyan_stone_bricks", Blocks.STONE_BRICKS, MapColor.CYAN);
+    public static final BSSWTypes LIGHT_BLUE_STONE_BRICKS = new BSSWTypes("light_blue_stone_bricks", Blocks.STONE_BRICKS, MapColor.LIGHT_BLUE);
+    public static final BSSWTypes BLUE_STONE_BRICKS = new BSSWTypes("blue_stone_bricks", Blocks.STONE_BRICKS, MapColor.BLUE);
+    public static final BSSWTypes PURPLE_STONE_BRICKS = new BSSWTypes("purple_stone_bricks", Blocks.STONE_BRICKS, MapColor.PURPLE);
+    public static final BSSWTypes MAGENTA_STONE_BRICKS = new BSSWTypes("magenta_stone_bricks", Blocks.STONE_BRICKS, MapColor.MAGENTA);
+    public static final BSSWTypes PINK_STONE_BRICKS = new BSSWTypes("pink_stone_bricks", Blocks.STONE_BRICKS, MapColor.PINK);
 
     // Concrete
     public static final ConcreteTypes WHITE_CONCRETE_BRICKS = new ConcreteTypes("white_concrete_bricks", Blocks.WHITE_CONCRETE);
@@ -550,40 +550,40 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Neon Blocks
     public static final Block WHITE_NEON = register("white_neon", createNeonBlock(DyeColor.WHITE));
-    public static final Block ORANGE_NEON = register("orange_neon", createNeonBlock(DyeColor.ORANGE));
-    public static final Block MAGENTA_NEON = register("magenta_neon", createNeonBlock(DyeColor.MAGENTA));
-    public static final Block LIGHT_BLUE_NEON = register("light_blue_neon", createNeonBlock(DyeColor.LIGHT_BLUE));
-    public static final Block YELLOW_NEON = register("yellow_neon", createNeonBlock(DyeColor.YELLOW));
-    public static final Block LIME_NEON = register("lime_neon", createNeonBlock(DyeColor.LIME));
-    public static final Block PINK_NEON = register("pink_neon", createNeonBlock(DyeColor.PINK));
     public static final Block LIGHT_GRAY_NEON = register("light_gray_neon", createNeonBlock(DyeColor.LIGHT_GRAY));
     public static final Block GRAY_NEON = register("gray_neon", createNeonBlock(DyeColor.GRAY));
-    public static final Block CYAN_NEON = register("cyan_neon", createNeonBlock(DyeColor.CYAN));
-    public static final Block PURPLE_NEON = register("purple_neon", createNeonBlock(DyeColor.PURPLE));
-    public static final Block BLUE_NEON = register("blue_neon", createNeonBlock(DyeColor.BLUE));
-    public static final Block BROWN_NEON = register("brown_neon", createNeonBlock(DyeColor.BROWN));
-    public static final Block GREEN_NEON = register("green_neon", createNeonBlock(DyeColor.GREEN));
-    public static final Block RED_NEON = register("red_neon", createNeonBlock(DyeColor.RED));
     public static final Block BLACK_NEON = register("black_neon", createNeonBlock(DyeColor.BLACK));
+    public static final Block BROWN_NEON = register("brown_neon", createNeonBlock(DyeColor.BROWN));
+    public static final Block RED_NEON = register("red_neon", createNeonBlock(DyeColor.RED));
+    public static final Block ORANGE_NEON = register("orange_neon", createNeonBlock(DyeColor.ORANGE));
+    public static final Block YELLOW_NEON = register("yellow_neon", createNeonBlock(DyeColor.YELLOW));
+    public static final Block LIME_NEON = register("lime_neon", createNeonBlock(DyeColor.LIME));
+    public static final Block GREEN_NEON = register("green_neon", createNeonBlock(DyeColor.GREEN));
+    public static final Block CYAN_NEON = register("cyan_neon", createNeonBlock(DyeColor.CYAN));
+    public static final Block LIGHT_BLUE_NEON = register("light_blue_neon", createNeonBlock(DyeColor.LIGHT_BLUE));
+    public static final Block BLUE_NEON = register("blue_neon", createNeonBlock(DyeColor.BLUE));
+    public static final Block PURPLE_NEON = register("purple_neon", createNeonBlock(DyeColor.PURPLE));
+    public static final Block MAGENTA_NEON = register("magenta_neon", createNeonBlock(DyeColor.MAGENTA));
+    public static final Block PINK_NEON = register("pink_neon", createNeonBlock(DyeColor.PINK));
 
     // Futurneo Blocks
     public static final Block WHITE_FUTURNEO_BLOCK = register("white_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block LIGHT_GRAY_FUTURNEO_BLOCK = register("light_gray_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block GRAY_FUTURNEO_BLOCK = register("gray_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block BLACK_FUTURNEO_BLOCK = register("black_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block BROWN_FUTURNEO_BLOCK = register("brown_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block RED_FUTURNEO_BLOCK = register("red_futurneo_block", createFuturneoBlock(MapColor.BLACK));
     public static final Block ORANGE_FUTURNEO_BLOCK = register("orange_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block MAGENTA_FUTURNEO_BLOCK = register("magenta_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block LIGHT_BLUE_FUTURNEO_BLOCK = register("light_blue_futurneo_block", createFuturneoBlock(MapColor.BLACK));
     public static final Block YELLOW_FUTURNEO_BLOCK = register("yellow_futurneo_block", createFuturneoBlock(MapColor.BLACK));
     public static final Block LIME_FUTURNEO_BLOCK = register("lime_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block PINK_FUTURNEO_BLOCK = register("pink_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block GRAY_FUTURNEO_BLOCK = register("gray_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block GRAY_BRIGHT_FUTURNEO_BLOCK = register("gray_bright_futurneo_block", createFuturneoBlock(MapColor.WHITE));
-    public static final Block LIGHT_GRAY_FUTURNEO_BLOCK = register("light_gray_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block CYAN_FUTURNEO_BLOCK = register("cyan_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block PURPLE_FUTURNEO_BLOCK = register("purple_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block BLUE_FUTURNEO_BLOCK = register("blue_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block BROWN_FUTURNEO_BLOCK = register("brown_futurneo_block", createFuturneoBlock(MapColor.BLACK));
     public static final Block GREEN_FUTURNEO_BLOCK = register("green_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block RED_FUTURNEO_BLOCK = register("red_futurneo_block", createFuturneoBlock(MapColor.BLACK));
-    public static final Block BLACK_FUTURNEO_BLOCK = register("black_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block CYAN_FUTURNEO_BLOCK = register("cyan_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block LIGHT_BLUE_FUTURNEO_BLOCK = register("light_blue_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block BLUE_FUTURNEO_BLOCK = register("blue_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block PURPLE_FUTURNEO_BLOCK = register("purple_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block MAGENTA_FUTURNEO_BLOCK = register("magenta_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block PINK_FUTURNEO_BLOCK = register("pink_futurneo_block", createFuturneoBlock(MapColor.BLACK));
+    public static final Block GRAY_BRIGHT_FUTURNEO_BLOCK = register("gray_bright_futurneo_block", createFuturneoBlock(MapColor.WHITE));
     public static final Block RAINBOW_FUTURNEO_BLOCK = register("rainbow_futurneo_block", createFuturneoBlock(MapColor.BLACK));
 
     // Asphalt
@@ -608,21 +608,21 @@ public class BlockusBlocks extends BlocksRegistration {
     // Shingles
     public static final BSSTypes SHINGLES = new BSSTypes("shingles", Blocks.TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
     public static final BSSTypes WHITE_SHINGLES = new BSSTypes("white_shingles", Blocks.WHITE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes ORANGE_SHINGLES = new BSSTypes("orange_shingles", Blocks.ORANGE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes MAGENTA_SHINGLES = new BSSTypes("magenta_shingles", Blocks.MAGENTA_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes LIGHT_BLUE_SHINGLES = new BSSTypes("light_blue_shingles", Blocks.LIGHT_BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes YELLOW_SHINGLES = new BSSTypes("yellow_shingles", Blocks.YELLOW_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes LIME_SHINGLES = new BSSTypes("lime_shingles", Blocks.LIME_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes PINK_SHINGLES = new BSSTypes("pink_shingles", Blocks.PINK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
     public static final BSSTypes LIGHT_GRAY_SHINGLES = new BSSTypes("light_gray_shingles", Blocks.LIGHT_GRAY_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
     public static final BSSTypes GRAY_SHINGLES = new BSSTypes("gray_shingles", Blocks.GRAY_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes CYAN_SHINGLES = new BSSTypes("cyan_shingles", Blocks.CYAN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes PURPLE_SHINGLES = new BSSTypes("purple_shingles", Blocks.PURPLE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes BLUE_SHINGLES = new BSSTypes("blue_shingles", Blocks.BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes BROWN_SHINGLES = new BSSTypes("brown_shingles", Blocks.BROWN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes GREEN_SHINGLES = new BSSTypes("green_shingles", Blocks.GREEN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
-    public static final BSSTypes RED_SHINGLES = new BSSTypes("red_shingles", Blocks.RED_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
     public static final BSSTypes BLACK_SHINGLES = new BSSTypes("black_shingles", Blocks.BLACK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes BROWN_SHINGLES = new BSSTypes("brown_shingles", Blocks.BROWN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes RED_SHINGLES = new BSSTypes("red_shingles", Blocks.RED_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes ORANGE_SHINGLES = new BSSTypes("orange_shingles", Blocks.ORANGE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes YELLOW_SHINGLES = new BSSTypes("yellow_shingles", Blocks.YELLOW_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes LIME_SHINGLES = new BSSTypes("lime_shingles", Blocks.LIME_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes GREEN_SHINGLES = new BSSTypes("green_shingles", Blocks.GREEN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes CYAN_SHINGLES = new BSSTypes("cyan_shingles", Blocks.CYAN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes LIGHT_BLUE_SHINGLES = new BSSTypes("light_blue_shingles", Blocks.LIGHT_BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes BLUE_SHINGLES = new BSSTypes("blue_shingles", Blocks.BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes PURPLE_SHINGLES = new BSSTypes("purple_shingles", Blocks.PURPLE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes MAGENTA_SHINGLES = new BSSTypes("magenta_shingles", Blocks.MAGENTA_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
+    public static final BSSTypes PINK_SHINGLES = new BSSTypes("pink_shingles", Blocks.PINK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
 
     // Glass - Beveled Glass
     public static final Block RAINBOW_GLASS = register("rainbow_glass", createStainedGlass(DyeColor.YELLOW, Blocks.GLASS));
@@ -667,57 +667,57 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Patterned Wools
     public static final WoolTypes WHITE_PATTERNED_WOOL = new WoolTypes(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET, DyeColor.WHITE);
+    public static final WoolTypes LIGHT_GRAY_PATTERNED_WOOL = new WoolTypes(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY);
+    public static final WoolTypes GRAY_PATTERNED_WOOL = new WoolTypes(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY);
+    public static final WoolTypes BLACK_PATTERNED_WOOL = new WoolTypes(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK);
+    public static final WoolTypes BROWN_PATTERNED_WOOL = new WoolTypes(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN);
+    public static final WoolTypes RED_PATTERNED_WOOL = new WoolTypes(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED);
     public static final WoolTypes ORANGE_PATTERNED_WOOL = new WoolTypes(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET, DyeColor.ORANGE);
-    public static final WoolTypes MAGENTA_PATTERNED_WOOL = new WoolTypes(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA);
-    public static final WoolTypes LIGHT_BLUE_PATTERNED_WOOL = new WoolTypes(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE);
     public static final WoolTypes YELLOW_PATTERNED_WOOL = new WoolTypes(Blocks.YELLOW_WOOL, Blocks.YELLOW_CARPET, DyeColor.YELLOW);
     public static final WoolTypes LIME_PATTERNED_WOOL = new WoolTypes(Blocks.LIME_WOOL, Blocks.LIME_CARPET, DyeColor.LIME);
-    public static final WoolTypes PINK_PATTERNED_WOOL = new WoolTypes(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK);
-    public static final WoolTypes GRAY_PATTERNED_WOOL = new WoolTypes(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY);
-    public static final WoolTypes LIGHT_GRAY_PATTERNED_WOOL = new WoolTypes(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY);
-    public static final WoolTypes CYAN_PATTERNED_WOOL = new WoolTypes(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN);
-    public static final WoolTypes PURPLE_PATTERNED_WOOL = new WoolTypes(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE);
-    public static final WoolTypes BLUE_PATTERNED_WOOL = new WoolTypes(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE);
-    public static final WoolTypes BROWN_PATTERNED_WOOL = new WoolTypes(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN);
     public static final WoolTypes GREEN_PATTERNED_WOOL = new WoolTypes(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET, DyeColor.GREEN);
-    public static final WoolTypes RED_PATTERNED_WOOL = new WoolTypes(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED);
-    public static final WoolTypes BLACK_PATTERNED_WOOL = new WoolTypes(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK);
+    public static final WoolTypes CYAN_PATTERNED_WOOL = new WoolTypes(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN);
+    public static final WoolTypes LIGHT_BLUE_PATTERNED_WOOL = new WoolTypes(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE);
+    public static final WoolTypes BLUE_PATTERNED_WOOL = new WoolTypes(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE);
+    public static final WoolTypes PURPLE_PATTERNED_WOOL = new WoolTypes(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE);
+    public static final WoolTypes MAGENTA_PATTERNED_WOOL = new WoolTypes(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA);
+    public static final WoolTypes PINK_PATTERNED_WOOL = new WoolTypes(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK);
 
     // Gingham Wools
     public static final WoolTypes WHITE_GINGHAM_WOOL = new WoolTypes(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET, DyeColor.WHITE, WoolTypes.GINGHAM);
+    public static final WoolTypes LIGHT_GRAY_GINGHAM_WOOL = new WoolTypes(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY, WoolTypes.GINGHAM);
+    public static final WoolTypes GRAY_GINGHAM_WOOL = new WoolTypes(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY, WoolTypes.GINGHAM);
+    public static final WoolTypes BLACK_GINGHAM_WOOL = new WoolTypes(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK, WoolTypes.GINGHAM);
+    public static final WoolTypes BROWN_GINGHAM_WOOL = new WoolTypes(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN, WoolTypes.GINGHAM);
+    public static final WoolTypes RED_GINGHAM_WOOL = new WoolTypes(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED, WoolTypes.GINGHAM);
     public static final WoolTypes ORANGE_GINGHAM_WOOL = new WoolTypes(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET, DyeColor.ORANGE, WoolTypes.GINGHAM);
-    public static final WoolTypes MAGENTA_GINGHAM_WOOL = new WoolTypes(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA, WoolTypes.GINGHAM);
-    public static final WoolTypes LIGHT_BLUE_GINGHAM_WOOL = new WoolTypes(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE, WoolTypes.GINGHAM);
     public static final WoolTypes YELLOW_GINGHAM_WOOL = new WoolTypes(Blocks.YELLOW_WOOL, Blocks.YELLOW_CARPET, DyeColor.YELLOW, WoolTypes.GINGHAM);
     public static final WoolTypes LIME_GINGHAM_WOOL = new WoolTypes(Blocks.LIME_WOOL, Blocks.LIME_CARPET, DyeColor.LIME, WoolTypes.GINGHAM);
-    public static final WoolTypes PINK_GINGHAM_WOOL = new WoolTypes(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK, WoolTypes.GINGHAM);
-    public static final WoolTypes GRAY_GINGHAM_WOOL = new WoolTypes(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY, WoolTypes.GINGHAM);
-    public static final WoolTypes LIGHT_GRAY_GINGHAM_WOOL = new WoolTypes(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY, WoolTypes.GINGHAM);
-    public static final WoolTypes CYAN_GINGHAM_WOOL = new WoolTypes(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN, WoolTypes.GINGHAM);
-    public static final WoolTypes PURPLE_GINGHAM_WOOL = new WoolTypes(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE, WoolTypes.GINGHAM);
-    public static final WoolTypes BLUE_GINGHAM_WOOL = new WoolTypes(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE, WoolTypes.GINGHAM);
-    public static final WoolTypes BROWN_GINGHAM_WOOL = new WoolTypes(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN, WoolTypes.GINGHAM);
     public static final WoolTypes GREEN_GINGHAM_WOOL = new WoolTypes(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET, DyeColor.GREEN, WoolTypes.GINGHAM);
-    public static final WoolTypes RED_GINGHAM_WOOL = new WoolTypes(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED, WoolTypes.GINGHAM);
-    public static final WoolTypes BLACK_GINGHAM_WOOL = new WoolTypes(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK, WoolTypes.GINGHAM);
+    public static final WoolTypes CYAN_GINGHAM_WOOL = new WoolTypes(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN, WoolTypes.GINGHAM);
+    public static final WoolTypes LIGHT_BLUE_GINGHAM_WOOL = new WoolTypes(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE, WoolTypes.GINGHAM);
+    public static final WoolTypes BLUE_GINGHAM_WOOL = new WoolTypes(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE, WoolTypes.GINGHAM);
+    public static final WoolTypes PURPLE_GINGHAM_WOOL = new WoolTypes(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE, WoolTypes.GINGHAM);
+    public static final WoolTypes MAGENTA_GINGHAM_WOOL = new WoolTypes(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA, WoolTypes.GINGHAM);
+    public static final WoolTypes PINK_GINGHAM_WOOL = new WoolTypes(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK, WoolTypes.GINGHAM);
 
     // Glazed Terracotta Pillars
     public static final Block WHITE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.WHITE_GLAZED_TERRACOTTA);
+    public static final Block LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA);
+    public static final Block GRAY_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.GRAY_GLAZED_TERRACOTTA);
+    public static final Block BLACK_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.BLACK_GLAZED_TERRACOTTA);
+    public static final Block BROWN_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.BROWN_GLAZED_TERRACOTTA);
+    public static final Block RED_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.RED_GLAZED_TERRACOTTA);
     public static final Block ORANGE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.ORANGE_GLAZED_TERRACOTTA);
-    public static final Block MAGENTA_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.MAGENTA_GLAZED_TERRACOTTA);
-    public static final Block LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA);
     public static final Block YELLOW_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.YELLOW_GLAZED_TERRACOTTA);
     public static final Block LIME_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.LIME_GLAZED_TERRACOTTA);
-    public static final Block PINK_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.PINK_GLAZED_TERRACOTTA);
-    public static final Block GRAY_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.GRAY_GLAZED_TERRACOTTA);
-    public static final Block LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA);
-    public static final Block CYAN_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.CYAN_GLAZED_TERRACOTTA);
-    public static final Block PURPLE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.PURPLE_GLAZED_TERRACOTTA);
-    public static final Block BLUE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.BLUE_GLAZED_TERRACOTTA);
-    public static final Block BROWN_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.BROWN_GLAZED_TERRACOTTA);
     public static final Block GREEN_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.GREEN_GLAZED_TERRACOTTA);
-    public static final Block RED_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.RED_GLAZED_TERRACOTTA);
-    public static final Block BLACK_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.BLACK_GLAZED_TERRACOTTA);
+    public static final Block CYAN_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.CYAN_GLAZED_TERRACOTTA);
+    public static final Block LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA);
+    public static final Block BLUE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.BLUE_GLAZED_TERRACOTTA);
+    public static final Block PURPLE_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.PURPLE_GLAZED_TERRACOTTA);
+    public static final Block MAGENTA_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.MAGENTA_GLAZED_TERRACOTTA);
+    public static final Block PINK_GLAZED_TERRACOTTA_PILLAR = registerPillar(Blocks.PINK_GLAZED_TERRACOTTA);
 
     // Pressure Plates
     public static final Block POLISHED_ANDESITE_PRESSURE_PLATE = registerStonePressurePlate(Blocks.POLISHED_ANDESITE);
