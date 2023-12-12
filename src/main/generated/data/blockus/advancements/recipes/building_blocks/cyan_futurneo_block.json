@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_cyan_stained_glass"
+      "has_cyan_stained_glass",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

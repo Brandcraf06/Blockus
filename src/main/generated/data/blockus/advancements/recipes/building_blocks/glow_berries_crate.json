@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_glow_berries"
+      "has_glow_berries",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

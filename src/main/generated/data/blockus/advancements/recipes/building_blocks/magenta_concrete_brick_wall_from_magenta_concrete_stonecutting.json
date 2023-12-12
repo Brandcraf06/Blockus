@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_magenta_concrete"
+      "has_magenta_concrete",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

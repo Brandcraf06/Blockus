@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_brown_redstone_lamp"
+      "has_brown_redstone_lamp",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

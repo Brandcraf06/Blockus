@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_mangrove_leaves"
+      "has_mangrove_leaves",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

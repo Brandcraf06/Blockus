@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_diamond_brick_wall"
+      "has_diamond_brick_wall",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

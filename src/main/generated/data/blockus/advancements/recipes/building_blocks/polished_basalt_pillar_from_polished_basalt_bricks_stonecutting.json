@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_polished_basalt_bricks"
+      "has_polished_basalt_bricks",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

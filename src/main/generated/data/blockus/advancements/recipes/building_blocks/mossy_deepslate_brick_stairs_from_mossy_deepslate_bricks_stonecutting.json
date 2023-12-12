@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_mossy_deepslate_bricks"
+      "has_mossy_deepslate_bricks",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

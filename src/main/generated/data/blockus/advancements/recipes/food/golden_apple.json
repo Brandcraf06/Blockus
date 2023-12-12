@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_golden_apple_crate"
+      "has_golden_apple_crate",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

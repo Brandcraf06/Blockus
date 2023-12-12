@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_honeycomb_block"
+      "has_honeycomb_block",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

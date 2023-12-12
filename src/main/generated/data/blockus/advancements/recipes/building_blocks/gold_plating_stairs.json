@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_gold_plating"
+      "has_gold_plating",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

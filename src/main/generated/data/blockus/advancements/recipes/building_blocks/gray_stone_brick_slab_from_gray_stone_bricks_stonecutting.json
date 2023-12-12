@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_gray_stone_bricks"
+      "has_gray_stone_bricks",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

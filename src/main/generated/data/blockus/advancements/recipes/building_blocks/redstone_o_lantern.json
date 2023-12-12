@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_carved_pumpkin",
-      "has_redstone_torch"
+      "has_redstone_torch",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

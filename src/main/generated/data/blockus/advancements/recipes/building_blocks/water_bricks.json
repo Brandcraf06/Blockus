@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_water_bucket",
-      "has_stone_bricks"
+      "has_stone_bricks",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

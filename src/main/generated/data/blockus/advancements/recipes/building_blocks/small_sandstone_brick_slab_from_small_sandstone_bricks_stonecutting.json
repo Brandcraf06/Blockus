@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_small_sandstone_bricks"
+      "has_small_sandstone_bricks",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

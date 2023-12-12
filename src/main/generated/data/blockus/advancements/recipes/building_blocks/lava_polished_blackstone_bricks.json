@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_lava_bucket",
-      "has_polished_blackstone_bricks"
+      "has_polished_blackstone_bricks",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

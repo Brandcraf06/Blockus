@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_sculk",
-      "has_deepslate"
+      "has_deepslate",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

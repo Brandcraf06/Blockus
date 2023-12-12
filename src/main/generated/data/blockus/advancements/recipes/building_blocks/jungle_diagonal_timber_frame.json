@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_jungle_timber_frame"
+      "has_jungle_timber_frame",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_rough_soul_sandstone"
+      "has_rough_soul_sandstone",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

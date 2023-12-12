@@ -18,7 +18,7 @@ public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable
     }
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
+    public boolean isFertilizable(WorldView worldView, BlockPos pos, BlockState state, boolean isClient) {
         return true;
     }
 

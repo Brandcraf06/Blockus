@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_golden_bars"
+      "has_golden_bars",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

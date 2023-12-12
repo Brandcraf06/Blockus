@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_prismarine_tiles"
+      "has_prismarine_tiles",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

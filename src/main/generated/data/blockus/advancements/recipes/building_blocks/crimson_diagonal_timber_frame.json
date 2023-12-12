@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_crimson_timber_frame"
+      "has_crimson_timber_frame",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

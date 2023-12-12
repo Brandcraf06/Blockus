@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_white_concrete",
-      "has_brown_concrete"
+      "has_brown_concrete",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

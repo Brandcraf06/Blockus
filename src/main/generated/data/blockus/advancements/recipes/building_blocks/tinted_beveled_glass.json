@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_tinted_glass"
+      "has_tinted_glass",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

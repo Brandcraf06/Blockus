@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_rainbow_block"
+      "has_rainbow_block",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_polished_phantom_purpur"
+      "has_polished_phantom_purpur",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

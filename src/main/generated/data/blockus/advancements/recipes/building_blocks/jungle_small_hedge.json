@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_jungle_leaves"
+      "has_jungle_leaves",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
