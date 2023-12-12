@@ -68,6 +68,7 @@ public class BlockusBlocks extends BlocksRegistration {
     // Tuff
     public static final BSSTypes POLISHED_TUFF = new BSSTypes("polished_tuff", Blocks.TUFF);
     public static final BSSWTypes TUFF_BRICKS = new BSSWTypes("tuff_bricks", BlockusBlocks.POLISHED_TUFF.block);
+    public static final BSSWTypes MOSSY_TUFF_BRICKS = new BSSWTypes("mossy_tuff_bricks", BlockusBlocks.TUFF_BRICKS.block);
     public static final Block CRACKED_TUFF_BRICKS = register("cracked_tuff_bricks", createCopy(BlockusBlocks.TUFF_BRICKS.block));
     public static final Block CHISELED_TUFF = register("chiseled_tuff", createCopy(BlockusBlocks.TUFF_BRICKS.block));
     public static final Block HERRINGBONE_TUFF_BRICKS = register("herringbone_tuff_bricks", createCopy(BlockusBlocks.TUFF_BRICKS.block));

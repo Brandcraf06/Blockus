@@ -268,6 +268,10 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.TUFF_BRICKS.stairs);
             entries.add(BlockusBlocks.TUFF_BRICKS.slab);
             entries.add(BlockusBlocks.TUFF_BRICKS.wall);
+            entries.add(BlockusBlocks.MOSSY_TUFF_BRICKS.block);
+            entries.add(BlockusBlocks.MOSSY_TUFF_BRICKS.stairs);
+            entries.add(BlockusBlocks.MOSSY_TUFF_BRICKS.slab);
+            entries.add(BlockusBlocks.MOSSY_TUFF_BRICKS.wall);
             entries.add(BlockusBlocks.CRACKED_TUFF_BRICKS);
             entries.add(BlockusBlocks.CHISELED_TUFF);
             entries.add(BlockusBlocks.HERRINGBONE_TUFF_BRICKS);
