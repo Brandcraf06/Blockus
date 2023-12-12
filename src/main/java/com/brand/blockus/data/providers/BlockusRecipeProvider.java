@@ -169,6 +169,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
 
         // Tuff
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.MOSSY_TUFF_BRICKS.block).input(BlockusBlocks.TUFF_BRICKS.block).input(Blocks.VINE).group("mossy_tuff_bricks").criterion("has_vine", conditionsFromItem(Blocks.VINE)).offerTo(exporter, convertBetween(BlockusBlocks.MOSSY_TUFF_BRICKS.block, Blocks.VINE));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BlockusBlocks.MOSSY_TUFF_BRICKS.block).input(BlockusBlocks.TUFF_BRICKS.block).input(Blocks.MOSS_BLOCK).group("mossy_tuff_bricks").criterion("has_moss_block", conditionsFromItem(Blocks.MOSS_BLOCK)).offerTo(exporter, convertBetween(BlockusBlocks.MOSSY_TUFF_BRICKS.block, Blocks.MOSS_BLOCK));
+        offerStonecuttingRecipe(exporter, BlockusBlocks.MOSSY_TUFF_BRICKS.stairs, BlockusBlocks.MOSSY_TUFF_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.MOSSY_TUFF_BRICKS.slab, 2, BlockusBlocks.MOSSY_TUFF_BRICKS.block);
+        offerStonecuttingRecipe(exporter, BlockusBlocks.MOSSY_TUFF_BRICKS.wall, BlockusBlocks.MOSSY_TUFF_BRICKS.block);
+
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_TUFF.block, Blocks.TUFF);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_TUFF.stairs, Blocks.TUFF, BlockusBlocks.POLISHED_TUFF.block);
         offerStonecuttingRecipe(exporter, BlockusBlocks.POLISHED_TUFF.slab, 2, Blocks.TUFF, BlockusBlocks.POLISHED_TUFF.block);

@@ -813,6 +813,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
+            .add(BlockusBlocks.MOSSY_TUFF_BRICKS.block)
+            .add(BlockusBlocks.MOSSY_TUFF_BRICKS.stairs)
+            .add(BlockusBlocks.MOSSY_TUFF_BRICKS.slab)
             .add(BlockusBlocks.POLISHED_TUFF.block)
             .add(BlockusBlocks.POLISHED_TUFF.stairs)
             .add(BlockusBlocks.POLISHED_TUFF.slab)
