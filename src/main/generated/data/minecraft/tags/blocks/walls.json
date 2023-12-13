@@ -90,6 +90,22 @@
     "blockus:purple_stone_brick_wall",
     "blockus:magenta_stone_brick_wall",
     "blockus:pink_stone_brick_wall",
+    "blockus:white_concrete_brick_wall",
+    "blockus:light_gray_concrete_brick_wall",
+    "blockus:gray_concrete_brick_wall",
+    "blockus:black_concrete_brick_wall",
+    "blockus:brown_concrete_brick_wall",
+    "blockus:red_concrete_brick_wall",
+    "blockus:orange_concrete_brick_wall",
+    "blockus:yellow_concrete_brick_wall",
+    "blockus:lime_concrete_brick_wall",
+    "blockus:green_concrete_brick_wall",
+    "blockus:cyan_concrete_brick_wall",
+    "blockus:light_blue_concrete_brick_wall",
+    "blockus:blue_concrete_brick_wall",
+    "blockus:purple_concrete_brick_wall",
+    "blockus:magenta_concrete_brick_wall",
+    "blockus:pink_concrete_brick_wall",
     "#blockus:barriers"
   ]
 }
