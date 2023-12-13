@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "blockus:block/rainbow_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "blockus:block/rainbow_block"
+    },
+    "axis=z": {
+      "model": "blockus:block/rainbow_block",
+      "x": 90
     }
   }
 }

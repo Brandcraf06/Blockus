@@ -1329,6 +1329,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswTypes.wall);
         }
 
+        for (ConcreteTypes concreteType : ConcreteTypes.values()) {
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(concreteType.stairs);
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(concreteType.slab);
+            this.getOrCreateTagBuilder(BlockTags.WALLS).add(concreteType.wall);
+        }
+
         this.getOrCreateTagBuilder(BlockTags.WALLS)
             .addTag(BlockusBlockTags.BARRIERS);
 
