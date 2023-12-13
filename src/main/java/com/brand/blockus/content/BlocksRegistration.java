@@ -50,6 +50,10 @@ public class BlocksRegistration {
         return new Block(FabricBlockSettings.copy(base));
     }
 
+    public static Block createCopy(Block base, PistonBehavior pistonBehavior) {
+        return new Block(FabricBlockSettings.copyOf(base).pistonBehavior(pistonBehavior));
+    }
+
     public static Block createPillarCopy(Block base) {
         return new PillarBlock(FabricBlockSettings.copy(base));
     }
@@ -178,8 +182,8 @@ public class BlocksRegistration {
         return new Block(FabricBlockSettings.create().mapColor(color).strength(hardness, resistance).sounds(sound).luminance(luminance));
     }
 
-    public static Block createLightBlock(float hardness, float resistance, BlockSoundGroup sound, int luminance, MapColor color) {
-        return new Block(FabricBlockSettings.create().mapColor(color).strength(hardness, resistance).sounds(sound).luminance(luminance).instrument(Instrument.BASEDRUM).requiresTool());
+    public static Block createGlowingObsidian(Block base, int luminance, PistonBehavior pistonBehavior) {
+        return new Block(FabricBlockSettings.copyOf(base).luminance(luminance).pistonBehavior(pistonBehavior));
     }
 
     public static Block createNeonBlock(DyeColor color) {

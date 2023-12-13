@@ -6,6 +6,7 @@ import net.minecraft.block.AmethystBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.RedstoneBlock;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.sound.BlockSoundGroup;
 
 import java.util.ArrayList;
@@ -44,7 +45,10 @@ public class BSSWTypes {
 
     public BSSWTypes(String type, Block base) {
         this(type, FabricBlockSettings.copyOf(base));
+    }
 
+    public BSSWTypes(String type, Block base, PistonBehavior pistonBehavior) {
+        this(type, FabricBlockSettings.copyOf(base).pistonBehavior(pistonBehavior));
     }
 
     public BSSWTypes(String type, Block base, int luminance) {
