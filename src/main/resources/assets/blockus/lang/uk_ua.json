@@ -252,6 +252,7 @@
   "block.blockus.prismarine_tile_wall": "Стіна з призмаринових кахлів",
   "block.blockus.blackstone_door": "Чорнокам'яні двері",
   "block.blockus.blackstone_trapdoor": "Чорнокам'яний люк",
+
   "block.blockus.colored_tiles": "Кольорові кахлі",
   "block.blockus.white_colored_tiles": "Білі кольорові кахлі",
   "block.blockus.orange_colored_tiles": "Помаранчеві кольорові кахлі",
@@ -270,6 +271,7 @@
   "block.blockus.red_colored_tiles": "Червоні кольорові кахлі",
   "block.blockus.black_colored_tiles": "Чорні кольорові кахлі",
   "block.blockus.rainbow_colored_tiles": "Веселкові кольорові кахлі",
+
   "block.blockus.raw_bamboo_planks": "Сирі бамбукові дошки",
   "block.blockus.raw_bamboo_door": "Сирі бамбукові двері",
   "block.blockus.raw_bamboo_slab": "Сира бамбукова плита",
@@ -1088,6 +1090,10 @@
   "block.blockus.amethyst_pillar": "Аметистова колона",
   "block.blockus.polished_tuff_pressure_plate": "Натискна плита з полірованого туфу",
   "block.blockus.polished_tuff_button": "Кнопка з полірованого туфу",
+  "block.blockus.mossy_tuff_bricks": "Моховита туфова цегла",
+  "block.blockus.mossy_tuff_brick_stairs": "Сходи з моховитої туфової цегли",
+  "block.blockus.mossy_tuff_brick_slab": "Плита з моховитої туфової цегли",
+  "block.blockus.mossy_tuff_brick_wall": "Стіна з моховитої туфової цегли",
   "block.blockus.mossy_deepslate_bricks": "Моховита глибосланцева цегла",
   "block.blockus.mossy_deepslate_brick_stairs": "Сходи з моховитої глибосланцевої цегли",
   "block.blockus.mossy_deepslate_brick_slab": "Плита з моховитої глибосланцевої цегли",
