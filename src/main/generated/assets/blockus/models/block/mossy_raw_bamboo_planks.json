@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "blockus:block/mossy_raw_bamboo_planks"
+  }
+}

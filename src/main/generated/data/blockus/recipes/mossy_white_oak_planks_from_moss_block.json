@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_white_oak_planks",
+  "ingredients": [
+    {
+      "item": "blockus:white_oak_planks"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "result": {
+    "item": "blockus:mossy_white_oak_planks"
+  }
+}

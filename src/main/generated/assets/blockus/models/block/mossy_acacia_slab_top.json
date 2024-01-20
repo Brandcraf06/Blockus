@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "blockus:block/mossy_acacia_planks",
+    "side": "blockus:block/mossy_acacia_planks",
+    "top": "blockus:block/mossy_acacia_planks"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_warped_planks",
+  "ingredients": [
+    {
+      "item": "minecraft:warped_planks"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "blockus:mossy_warped_planks"
+  }
+}

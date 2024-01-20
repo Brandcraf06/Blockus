@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/mossy_cherry_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/mossy_cherry_planks"
+    },
+    "type=top": {
+      "model": "blockus:block/mossy_cherry_slab_top"
+    }
+  }
+}

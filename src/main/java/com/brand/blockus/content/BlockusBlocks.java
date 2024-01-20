@@ -353,13 +353,29 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final BSSTypes JUNGLE_MOSAIC = new BSSTypes("jungle_mosaic", Blocks.JUNGLE_PLANKS);
     public static final BSSTypes ACACIA_MOSAIC = new BSSTypes("acacia_mosaic", Blocks.ACACIA_PLANKS);
     public static final BSSTypes DARK_OAK_MOSAIC = new BSSTypes("dark_oak_mosaic", Blocks.DARK_OAK_PLANKS);
-    public static final BSSTypes CHERRY_MOSAIC = new BSSTypes("cherry_mosaic", Blocks.MANGROVE_PLANKS);
+    public static final BSSTypes CHERRY_MOSAIC = new BSSTypes("cherry_mosaic", Blocks.CHERRY_PLANKS);
     public static final BSSTypes MANGROVE_MOSAIC = new BSSTypes("mangrove_mosaic", Blocks.MANGROVE_PLANKS);
     public static final BSSTypes RAW_BAMBOO_MOSAIC = new BSSTypes("raw_bamboo_mosaic", RAW_BAMBOO.planks);
     public static final BSSTypes WHITE_OAK_MOSAIC = new BSSTypes("white_oak_mosaic", WHITE_OAK.planks);
     public static final BSSTypes WARPED_MOSAIC = new BSSTypes("warped_mosaic", Blocks.WARPED_PLANKS);
     public static final BSSTypes CRIMSON_MOSAIC = new BSSTypes("crimson_mosaic", Blocks.CRIMSON_PLANKS);
     public static final BSSTypes CHARRED_MOSAIC = new BSSTypes("charred_mosaic", CHARRED.planks);
+
+    // Mossy Planks
+    public static final BSSTypes MOSSY_OAK_PLANKS = new BSSTypes("mossy_oak_planks", Blocks.OAK_PLANKS);
+    public static final BSSTypes MOSSY_SPRUCE_PLANKS = new BSSTypes("mossy_spruce_planks", Blocks.SPRUCE_PLANKS);
+    public static final BSSTypes MOSSY_BIRCH_PLANKS = new BSSTypes("mossy_birch_planks", Blocks.BIRCH_PLANKS);
+    public static final BSSTypes MOSSY_JUNGLE_PLANKS = new BSSTypes("mossy_jungle_planks", Blocks.JUNGLE_PLANKS);
+    public static final BSSTypes MOSSY_ACACIA_PLANKS = new BSSTypes("mossy_acacia_planks", Blocks.ACACIA_PLANKS);
+    public static final BSSTypes MOSSY_DARK_OAK_PLANKS = new BSSTypes("mossy_dark_oak_planks", Blocks.DARK_OAK_PLANKS);
+    public static final BSSTypes MOSSY_CHERRY_PLANKS = new BSSTypes("mossy_cherry_planks", Blocks.CHERRY_PLANKS);
+    public static final BSSTypes MOSSY_MANGROVE_PLANKS = new BSSTypes("mossy_mangrove_planks", Blocks.MANGROVE_PLANKS);
+    public static final BSSTypes MOSSY_BAMBOO_PLANKS = new BSSTypes("mossy_bamboo_planks", Blocks.BAMBOO_PLANKS);
+    public static final BSSTypes MOSSY_RAW_BAMBOO_PLANKS = new BSSTypes("mossy_raw_bamboo_planks", RAW_BAMBOO.planks);
+    public static final BSSTypes MOSSY_WHITE_OAK_PLANKS = new BSSTypes("mossy_white_oak_planks", WHITE_OAK.planks);
+    public static final BSSTypes MOSSY_WARPED_PLANKS = new BSSTypes("mossy_warped_planks", Blocks.WARPED_PLANKS);
+    public static final BSSTypes MOSSY_CRIMSON_PLANKS = new BSSTypes("mossy_crimson_planks", Blocks.CRIMSON_PLANKS);
+    public static final BSSTypes MOSSY_CHARRED_PLANKS = new BSSTypes("mossy_charred_planks", CHARRED.planks);
 
     // Herringbone Planks
     public static final Block HERRINGBONE_OAK_PLANKS = register("herringbone_oak_planks", createCopy(Blocks.OAK_PLANKS));
@@ -368,7 +384,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block HERRINGBONE_JUNGLE_PLANKS = register("herringbone_jungle_planks", createCopy(Blocks.JUNGLE_PLANKS));
     public static final Block HERRINGBONE_ACACIA_PLANKS = register("herringbone_acacia_planks", createCopy(Blocks.ACACIA_PLANKS));
     public static final Block HERRINGBONE_DARK_OAK_PLANKS = register("herringbone_dark_oak_planks", createCopy(Blocks.DARK_OAK_PLANKS));
-    public static final Block HERRINGBONE_CHERRY_PLANKS = register("herringbone_cherry_planks", createCopy(Blocks.MANGROVE_PLANKS));
+    public static final Block HERRINGBONE_CHERRY_PLANKS = register("herringbone_cherry_planks", createCopy(Blocks.CHERRY_PLANKS));
     public static final Block HERRINGBONE_MANGROVE_PLANKS = register("herringbone_mangrove_planks", createCopy(Blocks.MANGROVE_PLANKS));
     public static final Block HERRINGBONE_BAMBOO_PLANKS = register("herringbone_bamboo_planks", createCopy(Blocks.BAMBOO_PLANKS));
     public static final Block HERRINGBONE_RAW_BAMBOO_PLANKS = register("herringbone_raw_bamboo_planks", createCopy(RAW_BAMBOO.planks));
