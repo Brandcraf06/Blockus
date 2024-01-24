@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_charred_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:mossy_charred_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:mossy_charred_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mossy_charred_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:mossy_charred_stairs"
+    ]
+  },
+  "sends_telemetry_event": false
+}

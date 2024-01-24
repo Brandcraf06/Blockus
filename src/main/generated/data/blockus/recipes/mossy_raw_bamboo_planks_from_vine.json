@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_raw_bamboo_planks",
+  "ingredients": [
+    {
+      "item": "blockus:raw_bamboo_planks"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "blockus:mossy_raw_bamboo_planks"
+  }
+}

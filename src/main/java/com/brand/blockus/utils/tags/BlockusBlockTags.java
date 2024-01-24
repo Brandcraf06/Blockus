@@ -67,6 +67,8 @@ public class BlockusBlockTags {
     public static final TagKey<Block> WARPED_NETHER_GRASS = register("warped_nether_grass");
     public static final TagKey<Block> WATER_BRICKS = register("water_bricks");
     public static final TagKey<Block> WHITE_OAK_LOGS = register("white_oak_logs");
+    public static final TagKey<Block> ALL_WOODEN_MOSAICS = register("all_wooden_mosaics");
+    public static final TagKey<Block> ALL_MOSSY_PLANKS = register("all_mossy_planks");
 
     private BlockusBlockTags() {
     }
