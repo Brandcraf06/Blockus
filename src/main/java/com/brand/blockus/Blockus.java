@@ -9,6 +9,7 @@ import com.brand.blockus.itemgroups.content.*;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import com.brand.blockus.utils.effect.BlockusEffects;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
+import com.brand.blockus.worldgen.foliage.BlockusFoliagePlacerType;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -36,6 +37,7 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(BlockusEntities.class);
         Reflection.initialize(ColoredTilesTypes.class);
         Reflection.initialize(BlockusEffects.class);
+        Reflection.initialize(BlockusFoliagePlacerType.class);
 
         BlockusItemGroups.init();
         BuildingBlocksGroup.init();

@@ -1,3 +1,7 @@
+* Changes to white oak tree :
+  * New and better foliage shape
+  * Improved sapling texture
+  * The trunk can be randomly 1 block higher instead of 2
 * Added Mossy Planks, Stairs & Slabs
 * Added #blockus:all_wooden_mosaics & #blockus:all_mossy_planks block tags
 * Changed Birch Timber Frames textures
