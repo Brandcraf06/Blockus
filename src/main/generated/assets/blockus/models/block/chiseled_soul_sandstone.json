@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "blockus:block/chiseled_soul_sandstone"
+    "end": "blockus:block/soul_sandstone_top",
+    "side": "blockus:block/chiseled_soul_sandstone"
   }
 }
