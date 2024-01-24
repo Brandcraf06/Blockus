@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/mossy_charred_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/mossy_charred_planks"
+    },
+    "type=top": {
+      "model": "blockus:block/mossy_charred_slab_top"
+    }
+  }
+}

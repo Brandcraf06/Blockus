@@ -2,9 +2,9 @@ package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.content.types.WoolTypes;
 import com.brand.blockus.content.types.TimberFrameTypes;
 import com.brand.blockus.content.types.WoodTypes;
+import com.brand.blockus.content.types.WoolTypes;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.block.Block;
@@ -24,14 +24,14 @@ public class Instance {
 
 // Burning
 
-        // general		
+        // General
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WOODEN_FRAME, 30, 60);
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
         FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
         FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
         FuelRegistry.INSTANCE.add(BlockusBlocks.WOODEN_FRAME, 300);
 
-        // small hedges
+        // Small hedges
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.OAK_SMALL_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ACACIA_SMALL_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BIRCH_SMALL_HEDGE, 30, 60);
@@ -43,7 +43,7 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.AZALEA_SMALL_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, 30, 60);
 
-        // paper
+        // Paper
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.FRAMED_PAPER_BLOCK, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_WALL, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.PAPER_BLOCK, 30, 60);
@@ -56,12 +56,12 @@ public class Instance {
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_LAMP, 300);
         FuelRegistry.INSTANCE.add(BlockusBlocks.PAPER_BLOCK, 400);
 
-        // thatch
+        // Thatch
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH.block, 60, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH.slab, 60, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH.stairs, 60, 20);
 
-        // timber frames
+        // Timber frames
         for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
             for (Block block : new Block[]{timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross}) {
                 if (!block.asItem().isFireproof()) {
@@ -71,7 +71,7 @@ public class Instance {
             }
         }
 
-        // patterned wools
+        // Patterned wools
         for (WoolTypes woolTypes : WoolTypes.values()) {
             FlammableBlockRegistry.getDefaultInstance().add(woolTypes.block, 30, 60);
             FlammableBlockRegistry.getDefaultInstance().add(woolTypes.stairs, 30, 60);
@@ -81,7 +81,7 @@ public class Instance {
             FuelRegistry.INSTANCE.add(woolTypes.slab, 50);
         }
 
-        // wood
+        // Wood set
         for (WoodTypes woodType : WoodTypes.values()) {
             if (woodType.isBurnable()) {
                 FlammableBlockRegistry.getDefaultInstance().add(woodType.planks, 5, 20);
@@ -94,14 +94,14 @@ public class Instance {
             }
         }
 
-        // white oak
+        // White oak
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_LOG, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_WOOD, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_LEAVES, 30, 60);
 
-        // mosaic
+        // Wooden mosaic
         Block[][] woodenMosaics = {
             {BlockusBlocks.OAK_MOSAIC.block, BlockusBlocks.OAK_MOSAIC.stairs, BlockusBlocks.OAK_MOSAIC.slab},
             {BlockusBlocks.BIRCH_MOSAIC.block, BlockusBlocks.BIRCH_MOSAIC.stairs, BlockusBlocks.BIRCH_MOSAIC.slab},
@@ -128,7 +128,35 @@ public class Instance {
             FuelRegistry.INSTANCE.add(slab, 150);
         }
 
-        // herringbone planks
+        // Mossy planks
+        Block[][] mossyWood = {
+            {BlockusBlocks.MOSSY_OAK_PLANKS.block, BlockusBlocks.MOSSY_OAK_PLANKS.stairs, BlockusBlocks.MOSSY_OAK_PLANKS.slab},
+            {BlockusBlocks.MOSSY_BIRCH_PLANKS.block, BlockusBlocks.MOSSY_BIRCH_PLANKS.stairs, BlockusBlocks.MOSSY_BIRCH_PLANKS.slab},
+            {BlockusBlocks.MOSSY_SPRUCE_PLANKS.block, BlockusBlocks.MOSSY_SPRUCE_PLANKS.stairs, BlockusBlocks.MOSSY_SPRUCE_PLANKS.slab},
+            {BlockusBlocks.MOSSY_JUNGLE_PLANKS.block, BlockusBlocks.MOSSY_JUNGLE_PLANKS.stairs, BlockusBlocks.MOSSY_JUNGLE_PLANKS.slab},
+            {BlockusBlocks.MOSSY_ACACIA_PLANKS.block, BlockusBlocks.MOSSY_ACACIA_PLANKS.stairs, BlockusBlocks.MOSSY_ACACIA_PLANKS.slab},
+            {BlockusBlocks.MOSSY_DARK_OAK_PLANKS.block, BlockusBlocks.MOSSY_DARK_OAK_PLANKS.stairs, BlockusBlocks.MOSSY_DARK_OAK_PLANKS.slab},
+            {BlockusBlocks.MOSSY_MANGROVE_PLANKS.block, BlockusBlocks.MOSSY_MANGROVE_PLANKS.stairs, BlockusBlocks.MOSSY_MANGROVE_PLANKS.slab},
+            {BlockusBlocks.MOSSY_WHITE_OAK_PLANKS.block, BlockusBlocks.MOSSY_WHITE_OAK_PLANKS.stairs, BlockusBlocks.MOSSY_WHITE_OAK_PLANKS.slab},
+            {BlockusBlocks.MOSSY_BAMBOO_PLANKS.block, BlockusBlocks.MOSSY_BAMBOO_PLANKS.stairs, BlockusBlocks.MOSSY_BAMBOO_PLANKS.slab},
+            {BlockusBlocks.MOSSY_RAW_BAMBOO_PLANKS.block, BlockusBlocks.MOSSY_RAW_BAMBOO_PLANKS.stairs, BlockusBlocks.MOSSY_RAW_BAMBOO_PLANKS.slab},
+            {BlockusBlocks.MOSSY_CHERRY_PLANKS.block, BlockusBlocks.MOSSY_CHERRY_PLANKS.stairs, BlockusBlocks.MOSSY_CHERRY_PLANKS.slab}
+        };
+
+        for (Block[] blocks : mossyWood) {
+            Block block = blocks[0];
+            Block stairs = blocks[1];
+            Block slab = blocks[2];
+
+            FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
+            FlammableBlockRegistry.getDefaultInstance().add(stairs, 5, 20);
+            FlammableBlockRegistry.getDefaultInstance().add(slab, 5, 20);
+            FuelRegistry.INSTANCE.add(block, 300);
+            FuelRegistry.INSTANCE.add(stairs, 300);
+            FuelRegistry.INSTANCE.add(slab, 150);
+        }
+
+        // Herringbone planks
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_OAK_PLANKS, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS, 5, 20);
@@ -139,7 +167,7 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, 5, 20);
 
-        // small logs		
+        // Small logs
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.OAK_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BIRCH_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.SPRUCE_SMALL_LOGS, 5, 5);
@@ -149,7 +177,7 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.MANGROVE_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 5, 5);
 
-        // legacy
+        // Legacy blocks
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.LEGACY_LOG, 5, 5);
 
 // Composting
@@ -184,7 +212,7 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.COOKIE_BLOCK, 1.0f);
 
 
-// Instance
+// Other
 
         addStrippables();
         addPathBlocks();

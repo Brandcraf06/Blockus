@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_charred_planks",
+  "ingredients": [
+    {
+      "item": "blockus:charred_planks"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "result": {
+    "item": "blockus:mossy_charred_planks"
+  }
+}
