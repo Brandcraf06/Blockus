@@ -17,10 +17,12 @@ public class BSSWTypes {
     public final Block block;
     public final Block slab;
     public final Block stairs;
+    public final String type;
     public final Block wall;
 
     public BSSWTypes(String type, Block.Settings blockSettings) {
         Block blockInstance;
+        this.type = type;
 
         if (BlocksRegistration.isAmethyst(type)) {
             blockInstance = new AmethystBlock(FabricBlockSettings.copyOf(blockSettings));
