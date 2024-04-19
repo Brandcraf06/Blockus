@@ -3,6 +3,7 @@ package com.brand.blockus.content.types;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.content.BlocksRegistration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -26,7 +27,7 @@ public class TimberFrameTypes {
 
         this.base = base;
 
-        FabricBlockSettings blockSettings = FabricBlockSettings.copyOf(base);
+        AbstractBlock.Settings blockSettings = AbstractBlock.Settings.copy(base);
 
         Item.Settings itemSettings = new Item.Settings();
         if (fireproof) {

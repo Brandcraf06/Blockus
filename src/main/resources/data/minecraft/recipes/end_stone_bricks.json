@@ -1,16 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
+  "category": "building",
   "key": {
     "#": {
       "item": "blockus:polished_end_stone"
     }
   },
+  "pattern": [
+    "##",
+    "##"
+  ],
   "result": {
-    "item": "minecraft:end_stone_bricks",
-    "count": 4
+    "count": 4,
+    "id": "minecraft:end_stone_bricks"
   }
 }

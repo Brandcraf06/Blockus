@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "blockus:andesite_bricks"
   },
-  "result": "blockus:cracked_andesite_bricks"
+  "result": {
+    "id": "blockus:cracked_andesite_bricks"
+  }
 }

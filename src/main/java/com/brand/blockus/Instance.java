@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
@@ -16,6 +17,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
+import net.minecraft.village.TradedItem;
 
 public class Instance {
 
@@ -64,7 +66,7 @@ public class Instance {
         // Timber frames
         for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
             for (Block block : new Block[]{timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross}) {
-                if (!block.asItem().isFireproof()) {
+                if (!block.asItem().getComponents().contains(DataComponentTypes.FIRE_RESISTANT)) {
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
                     FuelRegistry.INSTANCE.add(block, 300);
                 }
@@ -254,7 +256,7 @@ public class Instance {
         }
 
         public TradeOffer create(Entity entity, Random random) {
-            return new TradeOffer(new ItemStack(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, 1, 0.05f);
+            return new TradeOffer(new TradedItem(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, 1, 0.05f);
         }
     }
 }

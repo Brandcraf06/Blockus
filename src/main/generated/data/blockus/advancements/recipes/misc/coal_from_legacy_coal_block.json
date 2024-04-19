@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:legacy_coal_block"
-            ]
+            "items": "blockus:legacy_coal_block"
           }
         ]
       },

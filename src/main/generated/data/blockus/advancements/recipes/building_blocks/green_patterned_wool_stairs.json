@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:green_patterned_wool"
-            ]
+            "items": "blockus:green_patterned_wool"
           }
         ]
       },

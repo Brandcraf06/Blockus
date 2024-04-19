@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "blockus:polished_basalt_bricks"
   },
-  "result": "blockus:cracked_polished_basalt_bricks"
+  "result": {
+    "id": "blockus:cracked_polished_basalt_bricks"
+  }
 }

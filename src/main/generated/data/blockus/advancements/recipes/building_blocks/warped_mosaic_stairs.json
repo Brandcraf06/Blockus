@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:warped_mosaic"
-            ]
+            "items": "blockus:warped_mosaic"
           }
         ]
       },

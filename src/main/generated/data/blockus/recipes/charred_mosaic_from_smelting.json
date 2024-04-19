@@ -6,5 +6,7 @@
   "ingredient": {
     "tag": "blockus:wooden_mosaic_that_burn"
   },
-  "result": "blockus:charred_mosaic"
+  "result": {
+    "id": "blockus:charred_mosaic"
+  }
 }

@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:yellow_concrete_bricks"
-            ]
+            "items": "blockus:yellow_concrete_bricks"
           }
         ]
       },

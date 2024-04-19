@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:charred_nether_bricks"
   },
-  "result": "blockus:charred_nether_brick_pillar"
+  "result": {
+    "count": 1,
+    "id": "blockus:charred_nether_brick_pillar"
+  }
 }

@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:yellow_patterned_wool"
-            ]
+            "items": "blockus:yellow_patterned_wool"
           }
         ]
       },

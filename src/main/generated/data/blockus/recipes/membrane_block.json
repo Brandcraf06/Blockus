@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:membrane_block"
+    "count": 1,
+    "id": "blockus:membrane_block"
   }
 }

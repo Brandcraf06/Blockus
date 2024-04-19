@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:quartz_tiles"
-            ]
+            "items": "blockus:quartz_tiles"
           }
         ]
       },

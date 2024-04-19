@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:sugar_block"
+    "count": 1,
+    "id": "blockus:sugar_block"
   }
 }

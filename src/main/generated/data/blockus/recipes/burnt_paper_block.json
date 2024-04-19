@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "blockus:paper_block"
   },
-  "result": "blockus:burnt_paper_block"
+  "result": {
+    "id": "blockus:burnt_paper_block"
+  }
 }

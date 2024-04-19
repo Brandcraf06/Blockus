@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:cookie_block"
-            ]
+            "items": "blockus:cookie_block"
           }
         ]
       },

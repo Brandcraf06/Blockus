@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:mossy_deepslate_bricks"
-            ]
+            "items": "blockus:mossy_deepslate_bricks"
           }
         ]
       },

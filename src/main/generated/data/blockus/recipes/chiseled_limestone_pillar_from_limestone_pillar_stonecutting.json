@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:limestone_pillar"
   },
-  "result": "blockus:chiseled_limestone_pillar"
+  "result": {
+    "count": 1,
+    "id": "blockus:chiseled_limestone_pillar"
+  }
 }

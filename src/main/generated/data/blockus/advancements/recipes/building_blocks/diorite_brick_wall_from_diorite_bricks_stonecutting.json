@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:diorite_bricks"
-            ]
+            "items": "blockus:diorite_bricks"
           }
         ]
       },

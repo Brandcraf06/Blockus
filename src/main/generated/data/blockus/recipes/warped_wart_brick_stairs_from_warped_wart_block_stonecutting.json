@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:warped_wart_block"
   },
-  "result": "blockus:warped_wart_brick_stairs"
+  "result": {
+    "count": 1,
+    "id": "blockus:warped_wart_brick_stairs"
+  }
 }

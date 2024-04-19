@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:black_beveled_glass"
-            ]
+            "items": "blockus:black_beveled_glass"
           }
         ]
       },

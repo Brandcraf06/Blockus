@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:stonecutter"
-            ]
+            "items": "minecraft:stonecutter"
           }
         ]
       },

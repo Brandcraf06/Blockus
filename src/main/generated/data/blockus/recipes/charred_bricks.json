@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "minecraft:bricks"
   },
-  "result": "blockus:charred_bricks"
+  "result": {
+    "id": "blockus:charred_bricks"
+  }
 }

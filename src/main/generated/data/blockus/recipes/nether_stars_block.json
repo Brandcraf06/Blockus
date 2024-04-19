@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:nether_stars_block"
+    "count": 1,
+    "id": "blockus:nether_stars_block"
   }
 }

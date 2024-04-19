@@ -4,6 +4,9 @@ import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.registry.Registerable;
+import net.minecraft.registry.RegistryEntryLookup;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.BlockTags;
@@ -25,70 +28,73 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup registries, FabricDynamicRegistryProvider.Entries entries) {
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.LIMESTONE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_LIMESTONE_UPPER);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_LIMESTONE_LOWER);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.MARBLE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_MARBLE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.BLUESTONE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_BLUESTONE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.VIRIDITE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.VIRIDITE_EXTRA);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_VIRIDITE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_VIRIDITE_EXTRA);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.WHITE_OAK);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_WHITE_OAK);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_WHITE_OAK_RARE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.WHITE_OAK_CHECKED);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.LEGACY_OAK);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.LEGACY_OAK_CHECKED);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.RAINBOW_ROSE);
+        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_RAINBOW_ROSE);
+    }
+
+    public static void bootstrapConfiguredFeatures(Registerable<ConfiguredFeature<?, ?>> registerable) {
+        ConfiguredFeatures.register(registerable, BlockusWorldgenFeatures.LIMESTONE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.LIMESTONE.block.getDefaultState(), 64));
+        ConfiguredFeatures.register(registerable, BlockusWorldgenFeatures.MARBLE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.MARBLE.block.getDefaultState(), 64));
+        ConfiguredFeatures.register(registerable, BlockusWorldgenFeatures.BLUESTONE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.BLUESTONE.block.getDefaultState(), 64));
+        ConfiguredFeatures.register(registerable, BlockusWorldgenFeatures.VIRIDITE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 33));
+        ConfiguredFeatures.register(registerable, BlockusWorldgenFeatures.VIRIDITE_EXTRA, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 42));
+        ConfiguredFeatures.register(registerable, BlockusWorldgenFeatures.WHITE_OAK, Feature.TREE, BlockusWorldgenFeatures.white_oak().build());
+        ConfiguredFeatures.register(registerable, BlockusWorldgenFeatures.LEGACY_OAK, Feature.TREE, BlockusWorldgenFeatures.legacy_oak().build());
+        ConfiguredFeatures.register(registerable, BlockusWorldgenFeatures.RAINBOW_ROSE, Feature.FLOWER, new RandomPatchFeatureConfig(12, 7, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
+    }
+
+    public static void bootstrapPlacedFeatures(Registerable<PlacedFeature> registerable) {
+        RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatures = registerable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         // limestone
-        ConfiguredFeature<?, ?> LIMESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.LIMESTONE.block.getDefaultState(), 64));
-        RegistryEntry<ConfiguredFeature<?, ?>> limestone = entries.add(BlockusWorldgenFeatures.LIMESTONE, LIMESTONE);
+        RegistryEntry<ConfiguredFeature<?, ?>> limestone = configuredFeatures.getOrThrow(BlockusWorldgenFeatures.LIMESTONE);
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_LIMESTONE_UPPER, limestone, BlockusWorldgenFeatures.modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128))));
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_LIMESTONE_LOWER, limestone, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
 
-        PlacedFeature PLACED_LIMESTONE_UPPER = new PlacedFeature(limestone, BlockusWorldgenFeatures.modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128))));
-        entries.add(BlockusWorldgenFeatures.PLACED_LIMESTONE_UPPER, PLACED_LIMESTONE_UPPER);
-
-        PlacedFeature PLACED_LIMESTONE_LOWER = new PlacedFeature(limestone, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
-        entries.add(BlockusWorldgenFeatures.PLACED_LIMESTONE_LOWER, PLACED_LIMESTONE_LOWER);
-
-        // marble
-        ConfiguredFeature<?, ?> MARBLE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.MARBLE.block.getDefaultState(), 64));
-        RegistryEntry<ConfiguredFeature<?, ?>> marble = entries.add(BlockusWorldgenFeatures.MARBLE, MARBLE);
-
-        PlacedFeature PLACED_MARBLE = new PlacedFeature(marble, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
-        entries.add(BlockusWorldgenFeatures.PLACED_MARBLE, PLACED_MARBLE);
+        // limestone
+        RegistryEntry<ConfiguredFeature<?, ?>> marble = configuredFeatures.getOrThrow(BlockusWorldgenFeatures.MARBLE);
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_MARBLE, marble, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
 
         // bluestone
-        ConfiguredFeature<?, ?> BLUESTONE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.BLUESTONE.block.getDefaultState(), 64));
-        RegistryEntry<ConfiguredFeature<?, ?>> bluestone = entries.add(BlockusWorldgenFeatures.BLUESTONE, BLUESTONE);
-
-        PlacedFeature PLACED_BLUESTONE = new PlacedFeature(bluestone, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))));
-        entries.add(BlockusWorldgenFeatures.PLACED_BLUESTONE, PLACED_BLUESTONE);
+        RegistryEntry<ConfiguredFeature<?, ?>> bluestone = configuredFeatures.getOrThrow(BlockusWorldgenFeatures.BLUESTONE);
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_BLUESTONE, bluestone, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))));
 
         // viridite
-        ConfiguredFeature<?, ?> VIRIDITE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 33));
-        RegistryEntry<ConfiguredFeature<?, ?>> viridite = entries.add(BlockusWorldgenFeatures.VIRIDITE, VIRIDITE);
-
-        PlacedFeature PLACED_VIRIDITE = new PlacedFeature(viridite, BlockusWorldgenFeatures.modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16))));
-        entries.add(BlockusWorldgenFeatures.PLACED_VIRIDITE, PLACED_VIRIDITE);
-
-        ConfiguredFeature<?, ?> VIRIDITE_EXTRA = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 42));
-        RegistryEntry<ConfiguredFeature<?, ?>> viriditeExtra = entries.add(BlockusWorldgenFeatures.VIRIDITE_EXTRA, VIRIDITE_EXTRA);
-
-        PlacedFeature PLACED_VIRIDITE_EXTRA = new PlacedFeature(viriditeExtra, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16))));
-        entries.add(BlockusWorldgenFeatures.PLACED_VIRIDITE_EXTRA, PLACED_VIRIDITE_EXTRA);
+        RegistryEntry<ConfiguredFeature<?, ?>> viridite = configuredFeatures.getOrThrow(BlockusWorldgenFeatures.VIRIDITE);
+        RegistryEntry<ConfiguredFeature<?, ?>> viriditeExtra = configuredFeatures.getOrThrow(BlockusWorldgenFeatures.VIRIDITE_EXTRA);
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_VIRIDITE, viridite, BlockusWorldgenFeatures.modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16))));
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_VIRIDITE_EXTRA, viriditeExtra, BlockusWorldgenFeatures.modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16))));
 
         // white oak
-        ConfiguredFeature<?, ?> WHITE_OAK = new ConfiguredFeature<>(Feature.TREE, BlockusWorldgenFeatures.white_oak().build());
-        RegistryEntry<ConfiguredFeature<?, ?>> whiteOak = entries.add(BlockusWorldgenFeatures.WHITE_OAK, WHITE_OAK);
-
-        PlacedFeature PLACED_WHITE_OAK = new PlacedFeature(whiteOak, List.of(new PlacementModifier[]{RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))}));
-        entries.add(BlockusWorldgenFeatures.PLACED_WHITE_OAK, PLACED_WHITE_OAK);
-
-        PlacedFeature PLACED_WHITE_OAK_RARE = new PlacedFeature(whiteOak, List.of(new PlacementModifier[]{RarityFilterPlacementModifier.of(192), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN))}));
-        entries.add(BlockusWorldgenFeatures.PLACED_WHITE_OAK_RARE, PLACED_WHITE_OAK_RARE);
-
-        PlacedFeature WHITE_OAK_CHECKED = new PlacedFeature(whiteOak, List.of(new PlacementModifier[]{PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)}));
-        entries.add(BlockusWorldgenFeatures.WHITE_OAK_CHECKED, WHITE_OAK_CHECKED);
+        RegistryEntry<ConfiguredFeature<?, ?>> whiteOak = configuredFeatures.getOrThrow(BlockusWorldgenFeatures.WHITE_OAK);
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_WHITE_OAK, whiteOak, RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)));
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_WHITE_OAK_RARE, whiteOak, RarityFilterPlacementModifier.of(192), SquarePlacementModifier.of(), SurfaceWaterDepthFilterPlacementModifier.of(0), PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BiomePlacementModifier.of(), BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)));
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.WHITE_OAK_CHECKED, whiteOak, PlacedFeatures.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING));
 
         // legacy oak
-        ConfiguredFeature<?, ?> LEGACY_OAK = new ConfiguredFeature<>(Feature.TREE, BlockusWorldgenFeatures.legacy_oak().build());
-        RegistryEntry<ConfiguredFeature<?, ?>> legacyOak = entries.add(BlockusWorldgenFeatures.LEGACY_OAK, LEGACY_OAK);
-
-        PlacedFeature LEGACY_OAK_CHECKED = new PlacedFeature(legacyOak, List.of(new PlacementModifier[]{PlacedFeatures.wouldSurvive(BlockusBlocks.LEGACY_SAPLING)}));
-        entries.add(BlockusWorldgenFeatures.LEGACY_OAK_CHECKED, LEGACY_OAK_CHECKED);
+        RegistryEntry<ConfiguredFeature<?, ?>> legacyOak = configuredFeatures.getOrThrow(BlockusWorldgenFeatures.LEGACY_OAK);
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.LEGACY_OAK_CHECKED, legacyOak, PlacedFeatures.wouldSurvive(BlockusBlocks.LEGACY_SAPLING));
 
         // rainbow rose
-        ConfiguredFeature<?, ?> RAINBOW_ROSE = new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(12, 7, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
-        RegistryEntry<ConfiguredFeature<?, ?>> rainbowRose = entries.add(BlockusWorldgenFeatures.RAINBOW_ROSE, RAINBOW_ROSE);
-
-        PlacedFeature PLACED_RAINBOW_ROSE = new PlacedFeature(rainbowRose, List.of(new PlacementModifier[]{SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()}));
-        entries.add(BlockusWorldgenFeatures.PLACED_RAINBOW_ROSE, PLACED_RAINBOW_ROSE);
+        RegistryEntry<ConfiguredFeature<?, ?>> rainbowRose = configuredFeatures.getOrThrow(BlockusWorldgenFeatures.RAINBOW_ROSE);
+        PlacedFeatures.register(registerable, BlockusWorldgenFeatures.PLACED_RAINBOW_ROSE, rainbowRose, SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
     }
 
     @Override

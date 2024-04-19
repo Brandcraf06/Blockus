@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "blockus:soul_sandstone"
   },
-  "result": "blockus:smooth_soul_sandstone"
+  "result": {
+    "id": "blockus:smooth_soul_sandstone"
+  }
 }

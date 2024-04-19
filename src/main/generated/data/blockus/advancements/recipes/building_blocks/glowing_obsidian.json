@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:shroomlight"
-            ]
+            "items": "minecraft:shroomlight"
           }
         ]
       },

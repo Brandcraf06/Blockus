@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:white_oak_leaves"
-            ]
+            "items": "blockus:white_oak_leaves"
           }
         ]
       },

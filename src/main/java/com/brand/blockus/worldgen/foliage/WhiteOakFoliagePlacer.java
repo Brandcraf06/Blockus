@@ -1,6 +1,7 @@
 package com.brand.blockus.worldgen.foliage;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.IntProvider;
@@ -11,7 +12,7 @@ import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 
 public class WhiteOakFoliagePlacer extends FoliagePlacer {
-    public static final Codec<WhiteOakFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> {
+    public static final MapCodec<WhiteOakFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
         return fillFoliagePlacerFields(instance).and(instance.group(IntProvider.createValidatingCodec(4, 16).fieldOf("height").forGetter((foliagePlacer) -> {
             return foliagePlacer.height;
         }), Codec.floatRange(0.0F, 1.0F).fieldOf("wide_bottom_layer_hole_chance").forGetter((foliagePlacer) -> {

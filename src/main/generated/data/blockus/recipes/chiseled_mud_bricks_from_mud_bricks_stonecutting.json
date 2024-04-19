@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:mud_bricks"
   },
-  "result": "blockus:chiseled_mud_bricks"
+  "result": {
+    "count": 1,
+    "id": "blockus:chiseled_mud_bricks"
+  }
 }

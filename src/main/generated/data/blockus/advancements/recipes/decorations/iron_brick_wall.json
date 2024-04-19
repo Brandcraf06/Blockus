@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:iron_bricks"
-            ]
+            "items": "blockus:iron_bricks"
           }
         ]
       },

@@ -1,7 +1,7 @@
 package com.brand.blockus.content.types;
 
 import com.brand.blockus.content.BlocksRegistration;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.PillarBlock;
 
@@ -22,13 +22,13 @@ public class ConcreteTypes {
 
         this.base = base;
 
-        this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(base)));
+        this.block = BlocksRegistration.register(type, new Block(AbstractBlock.Settings.copy(base)));
         this.slab = BlocksRegistration.registerSlab(this.block);
         this.stairs = BlocksRegistration.registerStairs(this.block);
         this.wall = BlocksRegistration.registerWall(this.block);
         String replace = type.replace("_bricks", "");
-        this.chiseled = BlocksRegistration.register("chiseled_" + replace, new Block(FabricBlockSettings.copyOf(base)));
-        this.pillar = BlocksRegistration.register(replace + "_pillar", new PillarBlock(FabricBlockSettings.copyOf(base)));
+        this.chiseled = BlocksRegistration.register("chiseled_" + replace, new Block(AbstractBlock.Settings.copy(base)));
+        this.pillar = BlocksRegistration.register(replace + "_pillar", new PillarBlock(AbstractBlock.Settings.copy(base)));
 
         LIST.add(this);
     }

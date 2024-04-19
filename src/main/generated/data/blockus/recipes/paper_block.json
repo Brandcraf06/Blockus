@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:paper_block"
+    "count": 1,
+    "id": "blockus:paper_block"
   }
 }

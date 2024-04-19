@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "blockus:soul_soils"
+            "items": "#blockus:soul_soils"
           }
         ]
       },

@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:rotten_flesh_block"
+    "count": 1,
+    "id": "blockus:rotten_flesh_block"
   }
 }

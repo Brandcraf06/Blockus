@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:emerald_brick_wall"
-            ]
+            "items": "blockus:emerald_brick_wall"
           }
         ]
       },

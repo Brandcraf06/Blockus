@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:polished_end_stone"
-            ]
+            "items": "blockus:polished_end_stone"
           }
         ]
       },

@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:diamond_block"
   },
-  "result": "blockus:diamond_bricks"
+  "result": {
+    "count": 1,
+    "id": "blockus:diamond_bricks"
+  }
 }

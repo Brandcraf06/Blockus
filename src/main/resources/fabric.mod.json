@@ -35,10 +35,10 @@
     "blockus.mixin.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.0",
+    "fabricloader": ">=0.15.6",
     "fabric-api": "*",
-    "minecraft": ">=1.20.3",
-    "java": ">=17"
+    "minecraft": ">=1.20.4",
+    "java": ">=21"
   },
   "suggests": {
     "columns": "*",

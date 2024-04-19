@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:cyan_concrete_bricks"
   },
-  "result": "blockus:chiseled_cyan_concrete"
+  "result": {
+    "count": 1,
+    "id": "blockus:chiseled_cyan_concrete"
+  }
 }

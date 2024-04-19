@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:magma_block"
   },
-  "result": "blockus:small_magma_bricks"
+  "result": {
+    "count": 1,
+    "id": "blockus:small_magma_bricks"
+  }
 }

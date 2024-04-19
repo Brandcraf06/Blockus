@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:sugar_block"
-            ]
+            "items": "blockus:sugar_block"
           }
         ]
       },

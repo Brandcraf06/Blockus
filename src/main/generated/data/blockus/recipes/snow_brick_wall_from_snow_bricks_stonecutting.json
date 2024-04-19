@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:snow_bricks"
   },
-  "result": "blockus:snow_brick_wall"
+  "result": {
+    "count": 1,
+    "id": "blockus:snow_brick_wall"
+  }
 }

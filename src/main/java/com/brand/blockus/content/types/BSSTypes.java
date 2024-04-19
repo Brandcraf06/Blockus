@@ -1,7 +1,7 @@
 package com.brand.blockus.content.types;
 
 import com.brand.blockus.content.BlocksRegistration;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.AmethystBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
@@ -18,14 +18,14 @@ public class BSSTypes {
     public final String type;
     public Block base;
 
-    public BSSTypes(String type, Block.Settings blockSettings) {
+    public BSSTypes(String type, AbstractBlock.Settings blockSettings) {
         Block blockInstance;
         this.type = type;
 
         if (BlocksRegistration.isAmethyst(type)) {
-            blockInstance = new AmethystBlock(FabricBlockSettings.copyOf(blockSettings));
+            blockInstance = new AmethystBlock(blockSettings);
         } else {
-            blockInstance = new Block(FabricBlockSettings.copyOf(blockSettings));
+            blockInstance = new Block(blockSettings);
         }
 
         this.block = BlocksRegistration.register(type, blockInstance);
@@ -36,21 +36,21 @@ public class BSSTypes {
     }
 
     public BSSTypes(String type, Block base) {
-        this(type, FabricBlockSettings.copyOf(base));
+        this(type, AbstractBlock.Settings.copy(base));
         this.base = base;
     }
 
     public BSSTypes(String type, Block base, MapColor color) {
-        this(type, FabricBlockSettings.copyOf(base).mapColor(color));
+        this(type, AbstractBlock.Settings.copy(base).mapColor(color));
 
     }
 
     public BSSTypes(String type, Block base, BlockSoundGroup sounds) {
-        this(type, FabricBlockSettings.copyOf(base).sounds(sounds));
+        this(type, AbstractBlock.Settings.copy(base).sounds(sounds));
     }
 
     public BSSTypes(String type, float hardness, float resistance, MapColor color) {
-        this(type, FabricBlockSettings.create().mapColor(color).strength(hardness, resistance).sounds(BlockSoundGroup.STONE));
+        this(type, AbstractBlock.Settings.create().mapColor(color).strength(hardness, resistance).sounds(BlockSoundGroup.STONE));
 
     }
 

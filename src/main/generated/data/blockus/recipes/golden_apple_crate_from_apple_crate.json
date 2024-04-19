@@ -15,6 +15,7 @@
     "XXX"
   ],
   "result": {
-    "item": "blockus:golden_apple_crate"
+    "count": 1,
+    "id": "blockus:golden_apple_crate"
   }
 }

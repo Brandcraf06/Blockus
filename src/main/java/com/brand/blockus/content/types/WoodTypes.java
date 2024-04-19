@@ -7,7 +7,6 @@ import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.Item;
@@ -43,9 +42,9 @@ public class WoodTypes {
         this.base = base;
         this.burnable = burnable;
 
-        FabricBlockSettings blockSettings = FabricBlockSettings.create().mapColor(color).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(sound).burnable();
-        FabricBlockSettings blockSettings2 = BlocksRegistration.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, Instrument.BASS).burnable();
-        FabricBlockSettings signSettings = FabricBlockSettings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
+        AbstractBlock.Settings blockSettings = AbstractBlock.Settings.create().mapColor(color).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(sound).burnable();
+        AbstractBlock.Settings blockSettings2 = BlocksRegistration.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, Instrument.BASS).burnable();
+        AbstractBlock.Settings signSettings = AbstractBlock.Settings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
 
         if (burnable) {
             blockSettings = blockSettings.burnable();
@@ -56,12 +55,12 @@ public class WoodTypes {
         this.planks = BlocksRegistration.register(type + "_planks", new Block(blockSettings));
         this.stairs = BlocksRegistration.registerStairs(this.planks);
         this.slab = BlocksRegistration.registerSlab(this.planks);
-        this.fence = BlocksRegistration.register(type + "_fence", new FenceBlock(FabricBlockSettings.copyOf(base)));
-        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(woodtype, FabricBlockSettings.copyOf(base)));
+        this.fence = BlocksRegistration.register(type + "_fence", new FenceBlock(AbstractBlock.Settings.copy(base)));
+        this.fence_gate = BlocksRegistration.register(type + "_fence_gate", new FenceGateBlock(woodtype, AbstractBlock.Settings.copy(base)));
         this.door = BlocksRegistration.register(type + "_door", new DoorBlock(blocksettype, blockSettings2));
         this.trapdoor = BlocksRegistration.register(type + "_trapdoor", new TrapdoorBlock(blocksettype, blockSettings2));
         this.pressure_plate = BlocksRegistration.registerWoodenPressurePlate(this.planks);
-        this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(blocksettype, 30, FabricBlockSettings.copyOf(planks).noCollision()));
+        this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(blocksettype, 30, AbstractBlock.Settings.copy(planks).noCollision()));
 
         // sign
         Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);

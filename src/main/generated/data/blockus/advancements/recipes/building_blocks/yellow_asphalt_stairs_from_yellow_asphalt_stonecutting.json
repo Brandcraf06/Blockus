@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:yellow_asphalt"
-            ]
+            "items": "blockus:yellow_asphalt"
           }
         ]
       },

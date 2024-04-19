@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:deepslate"
-            ]
+            "items": "minecraft:deepslate"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sculk"
-            ]
+            "items": "minecraft:sculk"
           }
         ]
       },

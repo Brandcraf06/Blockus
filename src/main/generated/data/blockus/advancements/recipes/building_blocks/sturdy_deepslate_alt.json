@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cobbled_deepslate"
-            ]
+            "items": "minecraft:cobbled_deepslate"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:deepslate"
-            ]
+            "items": "minecraft:deepslate"
           }
         ]
       },

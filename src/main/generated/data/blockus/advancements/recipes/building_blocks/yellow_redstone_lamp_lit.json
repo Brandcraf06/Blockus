@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:yellow_redstone_lamp"
-            ]
+            "items": "blockus:yellow_redstone_lamp"
           }
         ]
       },

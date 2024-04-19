@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:fire_charge"
-            ]
+            "items": "minecraft:fire_charge"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:nether_bricks"
-            ]
+            "items": "minecraft:nether_bricks"
           }
         ]
       },

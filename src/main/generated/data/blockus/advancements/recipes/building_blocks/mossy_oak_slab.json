@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:mossy_oak_planks"
-            ]
+            "items": "blockus:mossy_oak_planks"
           }
         ]
       },

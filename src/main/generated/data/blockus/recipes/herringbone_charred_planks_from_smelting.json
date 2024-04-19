@@ -6,5 +6,7 @@
   "ingredient": {
     "tag": "blockus:herringbone_planks_that_burn"
   },
-  "result": "blockus:herringbone_charred_planks"
+  "result": {
+    "id": "blockus:herringbone_charred_planks"
+  }
 }

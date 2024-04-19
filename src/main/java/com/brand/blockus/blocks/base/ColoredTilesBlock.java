@@ -2,8 +2,10 @@ package com.brand.blockus.blocks.base;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.block.Block;
-import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.item.TooltipType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -43,8 +45,8 @@ public class ColoredTilesBlock extends HorizontalAxisBlockBase {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, BlockView world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
+        super.appendTooltip(stack, context, tooltip, options);
         tooltip.add(Text.translatable(Util.createTranslationKey("color", Identifier.tryParse(getColor(tile1)))).formatted(Formatting.GRAY).append(" & ").append(Text.translatable(Util.createTranslationKey("color", Identifier.tryParse(getColor(tile2)))).formatted(Formatting.GRAY)));
     }
 }

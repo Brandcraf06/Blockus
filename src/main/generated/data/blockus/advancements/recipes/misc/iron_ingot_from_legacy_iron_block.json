@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:legacy_iron_block"
-            ]
+            "items": "blockus:legacy_iron_block"
           }
         ]
       },

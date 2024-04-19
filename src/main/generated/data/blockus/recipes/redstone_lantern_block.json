@@ -15,6 +15,7 @@
     " # "
   ],
   "result": {
-    "item": "blockus:redstone_lantern_block"
+    "count": 1,
+    "id": "blockus:redstone_lantern_block"
   }
 }

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:gray_asphalt"
-            ]
+            "items": "blockus:gray_asphalt"
           }
         ]
       },

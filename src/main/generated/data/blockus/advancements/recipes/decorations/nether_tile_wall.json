@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:nether_tiles"
-            ]
+            "items": "blockus:nether_tiles"
           }
         ]
       },

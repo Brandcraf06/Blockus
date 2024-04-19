@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:thatch"
-            ]
+            "items": "blockus:thatch"
           }
         ]
       },

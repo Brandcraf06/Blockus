@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:raw_bamboo_diagonal_timber_frame"
-            ]
+            "items": "blockus:raw_bamboo_diagonal_timber_frame"
           }
         ]
       },

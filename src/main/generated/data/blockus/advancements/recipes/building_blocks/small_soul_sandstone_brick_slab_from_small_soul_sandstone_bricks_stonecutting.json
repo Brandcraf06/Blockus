@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:small_soul_sandstone_bricks"
-            ]
+            "items": "blockus:small_soul_sandstone_bricks"
           }
         ]
       },

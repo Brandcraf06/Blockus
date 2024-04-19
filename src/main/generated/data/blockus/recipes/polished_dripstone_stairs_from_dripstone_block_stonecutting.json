@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:dripstone_block"
   },
-  "result": "blockus:polished_dripstone_stairs"
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_dripstone_stairs"
+  }
 }

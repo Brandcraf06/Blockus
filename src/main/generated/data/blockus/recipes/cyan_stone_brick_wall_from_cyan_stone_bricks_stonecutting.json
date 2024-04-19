@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:cyan_stone_bricks"
   },
-  "result": "blockus:cyan_stone_brick_wall"
+  "result": {
+    "count": 1,
+    "id": "blockus:cyan_stone_brick_wall"
+  }
 }

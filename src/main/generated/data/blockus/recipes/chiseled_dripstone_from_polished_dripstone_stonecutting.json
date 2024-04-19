@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:polished_dripstone"
   },
-  "result": "blockus:chiseled_dripstone"
+  "result": {
+    "count": 1,
+    "id": "blockus:chiseled_dripstone"
+  }
 }

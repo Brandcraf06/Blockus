@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:lime_concrete"
-            ]
+            "items": "minecraft:lime_concrete"
           }
         ]
       },

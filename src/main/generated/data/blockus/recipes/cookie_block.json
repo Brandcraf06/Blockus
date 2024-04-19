@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:cookie_block"
+    "count": 1,
+    "id": "blockus:cookie_block"
   }
 }

@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:pink_concrete"
   },
-  "result": "blockus:pink_concrete_bricks"
+  "result": {
+    "count": 1,
+    "id": "blockus:pink_concrete_bricks"
+  }
 }

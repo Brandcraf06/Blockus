@@ -11,6 +11,7 @@
     }
   ],
   "result": {
-    "item": "blockus:gray_redstone_lamp_lit"
+    "count": 1,
+    "id": "blockus:gray_redstone_lamp_lit"
   }
 }

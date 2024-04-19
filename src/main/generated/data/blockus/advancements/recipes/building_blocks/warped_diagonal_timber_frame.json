@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:warped_timber_frame"
-            ]
+            "items": "blockus:warped_timber_frame"
           }
         ]
       },

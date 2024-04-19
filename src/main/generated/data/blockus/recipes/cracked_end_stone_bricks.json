@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "minecraft:end_stone_bricks"
   },
-  "result": "blockus:cracked_end_stone_bricks"
+  "result": {
+    "id": "blockus:cracked_end_stone_bricks"
+  }
 }

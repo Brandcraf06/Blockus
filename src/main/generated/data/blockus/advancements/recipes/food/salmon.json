@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:salmon_crate"
-            ]
+            "items": "blockus:salmon_crate"
           }
         ]
       },

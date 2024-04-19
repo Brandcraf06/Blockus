@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:netherrack_bricks"
-            ]
+            "items": "blockus:netherrack_bricks"
           }
         ]
       },

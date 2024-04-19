@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:membrane_block"
-            ]
+            "items": "blockus:membrane_block"
           }
         ]
       },

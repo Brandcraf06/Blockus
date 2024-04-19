@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:rough_soul_sandstone"
-            ]
+            "items": "blockus:rough_soul_sandstone"
           }
         ]
       },

@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:blaze_bricks"
   },
-  "result": "blockus:blaze_brick_wall"
+  "result": {
+    "count": 1,
+    "id": "blockus:blaze_brick_wall"
+  }
 }

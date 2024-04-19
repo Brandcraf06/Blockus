@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:bricks"
-            ]
+            "items": "minecraft:bricks"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sand"
-            ]
+            "items": "minecraft:sand"
           }
         ]
       },

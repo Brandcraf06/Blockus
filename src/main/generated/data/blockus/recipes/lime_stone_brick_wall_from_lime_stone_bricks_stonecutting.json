@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:lime_stone_bricks"
   },
-  "result": "blockus:lime_stone_brick_wall"
+  "result": {
+    "count": 1,
+    "id": "blockus:lime_stone_brick_wall"
+  }
 }

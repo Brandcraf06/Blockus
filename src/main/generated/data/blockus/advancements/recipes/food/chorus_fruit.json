@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:chorus_block"
-            ]
+            "items": "blockus:chorus_block"
           }
         ]
       },

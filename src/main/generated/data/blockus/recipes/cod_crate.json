@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:cod_crate"
+    "count": 1,
+    "id": "blockus:cod_crate"
   }
 }

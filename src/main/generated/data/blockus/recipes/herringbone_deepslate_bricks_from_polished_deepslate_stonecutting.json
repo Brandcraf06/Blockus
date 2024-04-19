@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:polished_deepslate"
   },
-  "result": "blockus:herringbone_deepslate_bricks"
+  "result": {
+    "count": 1,
+    "id": "blockus:herringbone_deepslate_bricks"
+  }
 }

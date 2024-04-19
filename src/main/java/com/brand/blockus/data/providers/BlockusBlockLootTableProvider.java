@@ -22,14 +22,16 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.operator.BoundedIntUnaryOperator;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.registry.RegistryWrapper;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
 import static com.brand.blockus.content.BlockusBlocks.*;
 
 public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider {
-    public BlockusBlockLootTableProvider(FabricDataOutput output) {
-        super(output);
+    public BlockusBlockLootTableProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
     }
 
     @Override

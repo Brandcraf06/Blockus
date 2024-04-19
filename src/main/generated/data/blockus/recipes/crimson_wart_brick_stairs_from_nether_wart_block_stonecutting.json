@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:nether_wart_block"
   },
-  "result": "blockus:crimson_wart_brick_stairs"
+  "result": {
+    "count": 1,
+    "id": "blockus:crimson_wart_brick_stairs"
+  }
 }

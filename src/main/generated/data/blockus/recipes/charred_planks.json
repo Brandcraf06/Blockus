@@ -6,5 +6,7 @@
   "ingredient": {
     "tag": "blockus:planks_that_burn"
   },
-  "result": "blockus:charred_planks"
+  "result": {
+    "id": "blockus:charred_planks"
+  }
 }

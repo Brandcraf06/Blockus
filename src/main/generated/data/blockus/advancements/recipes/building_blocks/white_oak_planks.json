@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "blockus:white_oak_logs"
+            "items": "#blockus:white_oak_logs"
           }
         ]
       },

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:flowering_azalea_leaves"
-            ]
+            "items": "minecraft:flowering_azalea_leaves"
           }
         ]
       },

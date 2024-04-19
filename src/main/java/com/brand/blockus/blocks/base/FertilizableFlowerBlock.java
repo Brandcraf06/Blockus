@@ -3,17 +3,19 @@ package com.brand.blockus.blocks.base;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
 import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.SuspiciousStewIngredient;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
-public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable {
+public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable, SuspiciousStewIngredient {
 
-    public FertilizableFlowerBlock(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
+    public FertilizableFlowerBlock(RegistryEntry<StatusEffect> suspiciousStewEffect, int effectDuration, Settings settings) {
         super(suspiciousStewEffect, effectDuration, settings);
     }
 

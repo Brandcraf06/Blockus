@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:purpur_lines"
-            ]
+            "items": "blockus:purpur_lines"
           }
         ]
       },

@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "blockus:diorite_bricks"
   },
-  "result": "blockus:cracked_diorite_bricks"
+  "result": {
+    "id": "blockus:cracked_diorite_bricks"
+  }
 }

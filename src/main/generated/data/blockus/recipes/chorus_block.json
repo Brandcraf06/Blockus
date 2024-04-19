@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:chorus_block"
+    "count": 1,
+    "id": "blockus:chorus_block"
   }
 }

@@ -16,6 +16,7 @@
     " S "
   ],
   "result": {
-    "item": "blockus:white_redstone_lamp"
+    "count": 1,
+    "id": "blockus:white_redstone_lamp"
   }
 }

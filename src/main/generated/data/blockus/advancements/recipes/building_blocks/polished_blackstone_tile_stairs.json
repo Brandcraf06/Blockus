@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:polished_blackstone_tiles"
-            ]
+            "items": "blockus:polished_blackstone_tiles"
           }
         ]
       },

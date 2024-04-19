@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "blockus:herringbone_planks_that_burn"
+            "items": "#blockus:herringbone_planks_that_burn"
           }
         ]
       },

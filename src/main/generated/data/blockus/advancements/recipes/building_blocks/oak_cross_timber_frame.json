@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:oak_diagonal_timber_frame"
-            ]
+            "items": "blockus:oak_diagonal_timber_frame"
           }
         ]
       },

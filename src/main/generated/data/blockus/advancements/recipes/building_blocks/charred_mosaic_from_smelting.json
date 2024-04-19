@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "blockus:wooden_mosaic_that_burn"
+            "items": "#blockus:wooden_mosaic_that_burn"
           }
         ]
       },

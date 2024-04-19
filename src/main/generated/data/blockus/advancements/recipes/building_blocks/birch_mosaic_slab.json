@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:birch_mosaic"
-            ]
+            "items": "blockus:birch_mosaic"
           }
         ]
       },

@@ -2,7 +2,7 @@ package com.brand.blockus.content.types;
 
 import com.brand.blockus.blocks.base.ColoredTilesBlock;
 import com.brand.blockus.content.BlocksRegistration;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
@@ -19,7 +19,7 @@ public class ColoredTilesTypes {
 
         String type = getColor(tile1) + "_" + getColor(tile2) + "_colored_tiles";
 
-        this.block = BlocksRegistration.register(type, new ColoredTilesBlock(tile1, tile2, FabricBlockSettings.copyOf(tile2)));
+        this.block = BlocksRegistration.register(type, new ColoredTilesBlock(tile1, tile2, AbstractBlock.Settings.copy(tile2)));
         this.tile1 = tile1;
         this.tile2 = tile2;
 

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:orange_gingham_wool"
-            ]
+            "items": "blockus:orange_gingham_wool"
           }
         ]
       },

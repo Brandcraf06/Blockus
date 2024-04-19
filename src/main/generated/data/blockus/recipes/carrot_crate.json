@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:carrot_crate"
+    "count": 1,
+    "id": "blockus:carrot_crate"
   }
 }

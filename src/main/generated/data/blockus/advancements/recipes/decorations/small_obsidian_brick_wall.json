@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:small_obsidian_bricks"
-            ]
+            "items": "blockus:small_obsidian_bricks"
           }
         ]
       },

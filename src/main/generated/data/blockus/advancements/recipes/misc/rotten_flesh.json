@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:rotten_flesh_block"
-            ]
+            "items": "blockus:rotten_flesh_block"
           }
         ]
       },

@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:viridite_pillar"
-            ]
+            "items": "blockus:viridite_pillar"
           }
         ]
       },

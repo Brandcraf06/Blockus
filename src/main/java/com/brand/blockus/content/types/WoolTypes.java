@@ -1,7 +1,7 @@
 package com.brand.blockus.content.types;
 
 import com.brand.blockus.content.BlocksRegistration;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.DyedCarpetBlock;
 import net.minecraft.util.DyeColor;
@@ -27,10 +27,10 @@ public class WoolTypes {
 
 
         String type = dyecolor.getName() + typeSuffix;
-        this.block = BlocksRegistration.register(type, new Block(FabricBlockSettings.copyOf(base)));
+        this.block = BlocksRegistration.register(type, new Block(AbstractBlock.Settings.copy(base)));
         this.slab = BlocksRegistration.registerSlab(this.block);
         this.stairs = BlocksRegistration.registerStairs(this.block);
-        this.carpet = BlocksRegistration.register(type.replace("wool", "carpet"), new DyedCarpetBlock(dyecolor, FabricBlockSettings.copyOf(base2)));
+        this.carpet = BlocksRegistration.register(type.replace("wool", "carpet"), new DyedCarpetBlock(dyecolor, AbstractBlock.Settings.copy(base2)));
 
 
         LIST.add(this);

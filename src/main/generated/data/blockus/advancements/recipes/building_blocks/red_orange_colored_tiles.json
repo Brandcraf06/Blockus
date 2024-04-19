@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:orange_concrete"
-            ]
+            "items": "minecraft:orange_concrete"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:red_concrete"
-            ]
+            "items": "minecraft:red_concrete"
           }
         ]
       },

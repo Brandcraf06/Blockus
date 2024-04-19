@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:red_terracotta"
   },
-  "result": "blockus:red_shingles"
+  "result": {
+    "count": 1,
+    "id": "blockus:red_shingles"
+  }
 }

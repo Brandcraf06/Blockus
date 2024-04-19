@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:lava_bricks"
   },
-  "result": "blockus:lava_brick_wall"
+  "result": {
+    "count": 1,
+    "id": "blockus:lava_brick_wall"
+  }
 }

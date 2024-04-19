@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:blue_shingles"
-            ]
+            "items": "blockus:blue_shingles"
           }
         ]
       },

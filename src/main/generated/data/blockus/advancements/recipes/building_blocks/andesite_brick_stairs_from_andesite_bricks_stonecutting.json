@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:andesite_bricks"
-            ]
+            "items": "blockus:andesite_bricks"
           }
         ]
       },

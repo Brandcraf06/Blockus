@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:red_sandstone_bricks"
   },
-  "result": "blockus:red_sandstone_pillar"
+  "result": {
+    "count": 1,
+    "id": "blockus:red_sandstone_pillar"
+  }
 }

@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "blockus:dripstone_bricks"
   },
-  "result": "blockus:cracked_dripstone_bricks"
+  "result": {
+    "id": "blockus:cracked_dripstone_bricks"
+  }
 }

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:prismarine_tiles"
-            ]
+            "items": "blockus:prismarine_tiles"
           }
         ]
       },

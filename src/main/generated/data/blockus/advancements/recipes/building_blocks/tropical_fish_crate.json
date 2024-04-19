@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:tropical_fish"
-            ]
+            "items": "minecraft:tropical_fish"
           }
         ]
       },

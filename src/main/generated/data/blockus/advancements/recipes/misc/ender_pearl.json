@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:ender_block"
-            ]
+            "items": "blockus:ender_block"
           }
         ]
       },

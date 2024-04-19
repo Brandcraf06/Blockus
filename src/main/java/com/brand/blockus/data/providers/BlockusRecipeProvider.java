@@ -17,17 +17,20 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 
+import java.util.concurrent.CompletableFuture;
+
 import static com.brand.blockus.content.BlockusBlocks.*;
 
 
 public class BlockusRecipeProvider extends FabricRecipeProvider {
-    public BlockusRecipeProvider(FabricDataOutput output) {
-        super(output);
+    public BlockusRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
     }
 
     @Override
@@ -1199,7 +1202,6 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, NETHERITE_SLAB, 2, Blocks.NETHERITE_BLOCK);
 
         // Other
-
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, CHARCOAL_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.SUGAR, RecipeCategory.BUILDING_BLOCKS, SUGAR_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.ENDER_PEARL, RecipeCategory.BUILDING_BLOCKS, ENDER_BLOCK);

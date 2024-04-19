@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:redstone_sand"
-            ]
+            "items": "blockus:redstone_sand"
           }
         ]
       },

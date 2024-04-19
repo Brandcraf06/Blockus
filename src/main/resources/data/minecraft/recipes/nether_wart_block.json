@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "###",
@@ -11,6 +12,7 @@
     }
   },
   "result": {
-    "item": "minecraft:nether_wart_block"
+    "count": 1,
+    "id": "minecraft:nether_wart_block"
   }
 }

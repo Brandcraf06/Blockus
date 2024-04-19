@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:framed_paper_block"
-            ]
+            "items": "blockus:framed_paper_block"
           }
         ]
       },

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:caution_block"
-            ]
+            "items": "blockus:caution_block"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:road_barrier"
-            ]
+            "items": "blockus:road_barrier"
           }
         ]
       },

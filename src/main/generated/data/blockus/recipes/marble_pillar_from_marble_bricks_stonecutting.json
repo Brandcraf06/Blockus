@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:marble_bricks"
   },
-  "result": "blockus:marble_pillar"
+  "result": {
+    "count": 1,
+    "id": "blockus:marble_pillar"
+  }
 }

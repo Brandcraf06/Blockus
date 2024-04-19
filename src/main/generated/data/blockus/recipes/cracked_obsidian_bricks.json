@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "blockus:obsidian_bricks"
   },
-  "result": "blockus:cracked_obsidian_bricks"
+  "result": {
+    "id": "blockus:cracked_obsidian_bricks"
+  }
 }

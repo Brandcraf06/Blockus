@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:mossy_crimson_planks"
-            ]
+            "items": "blockus:mossy_crimson_planks"
           }
         ]
       },

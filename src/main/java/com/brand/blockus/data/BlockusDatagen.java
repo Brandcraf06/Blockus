@@ -4,8 +4,10 @@ import com.brand.blockus.data.providers.*;
 import com.brand.blockus.worldgen.BlockusWorldgenProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.resource.conditions.v1.ConditionJsonProvider;
-import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 public class BlockusDatagen implements DataGeneratorEntrypoint {
     @Override
@@ -23,7 +25,13 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
 //        pack.addProvider(BlockusPromenadeBlockLootTableProvider::new);
     }
 
-    public static ConditionJsonProvider getLoadCondition(String... modIds) {
-        return DefaultResourceConditions.allModsLoaded(modIds);
+    @Override
+    public void buildRegistry(RegistryBuilder registryBuilder) {
+        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, BlockusWorldgenProvider::bootstrapConfiguredFeatures);
+        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, BlockusWorldgenProvider::bootstrapPlacedFeatures);
+    }
+
+    public static ResourceCondition getLoadCondition(String... modIds) {
+        return ResourceConditions.allModsLoaded(modIds);
     }
 }

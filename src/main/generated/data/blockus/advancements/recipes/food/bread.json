@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:bread_box"
-            ]
+            "items": "blockus:bread_box"
           }
         ]
       },

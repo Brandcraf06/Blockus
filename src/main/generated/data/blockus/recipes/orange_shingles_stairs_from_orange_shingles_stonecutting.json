@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:orange_shingles"
   },
-  "result": "blockus:orange_shingles_stairs"
+  "result": {
+    "count": 1,
+    "id": "blockus:orange_shingles_stairs"
+  }
 }

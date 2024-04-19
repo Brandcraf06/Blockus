@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "blockus:warped_nether_grass"
+            "items": "#blockus:warped_nether_grass"
           }
         ]
       },

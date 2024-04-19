@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:weight_storage_cube"
-            ]
+            "items": "blockus:weight_storage_cube"
           }
         ]
       },

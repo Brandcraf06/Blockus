@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:lantern"
-            ]
+            "items": "minecraft:lantern"
           }
         ]
       },

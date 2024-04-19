@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:white_gingham_wool"
-            ]
+            "items": "blockus:white_gingham_wool"
           }
         ]
       },

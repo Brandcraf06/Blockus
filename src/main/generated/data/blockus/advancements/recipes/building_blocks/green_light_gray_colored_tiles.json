@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:green_concrete"
-            ]
+            "items": "minecraft:green_concrete"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:light_gray_concrete"
-            ]
+            "items": "minecraft:light_gray_concrete"
           }
         ]
       },

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:stripped_white_oak_log"
-            ]
+            "items": "blockus:stripped_white_oak_log"
           }
         ]
       },

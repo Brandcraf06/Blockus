@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:rough_basalt"
-            ]
+            "items": "blockus:rough_basalt"
           }
         ]
       },

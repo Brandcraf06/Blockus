@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:andesite_bricks"
   },
-  "result": "blockus:polished_andesite_pillar"
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_andesite_pillar"
+  }
 }

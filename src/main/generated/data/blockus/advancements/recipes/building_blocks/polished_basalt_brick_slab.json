@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:polished_basalt_bricks"
-            ]
+            "items": "blockus:polished_basalt_bricks"
           }
         ]
       },

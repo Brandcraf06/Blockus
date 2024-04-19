@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:polished_limestone"
   },
-  "result": "blockus:limestone_circular_paving"
+  "result": {
+    "count": 1,
+    "id": "blockus:limestone_circular_paving"
+  }
 }

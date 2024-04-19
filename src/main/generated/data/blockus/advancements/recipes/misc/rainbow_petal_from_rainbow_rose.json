@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:rainbow_rose"
-            ]
+            "items": "blockus:rainbow_rose"
           }
         ]
       },

@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:polished_netherrack"
   },
-  "result": "blockus:polished_netherrack_stairs"
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_netherrack_stairs"
+  }
 }

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:purpur_pillar"
-            ]
+            "items": "minecraft:purpur_pillar"
           }
         ]
       },

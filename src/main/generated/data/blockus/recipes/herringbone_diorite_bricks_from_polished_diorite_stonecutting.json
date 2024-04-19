@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:polished_diorite"
   },
-  "result": "blockus:herringbone_diorite_bricks"
+  "result": {
+    "count": 1,
+    "id": "blockus:herringbone_diorite_bricks"
+  }
 }

@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:prismarine_bricks"
   },
-  "result": "blockus:prismarine_circular_paving"
+  "result": {
+    "count": 1,
+    "id": "blockus:prismarine_circular_paving"
+  }
 }

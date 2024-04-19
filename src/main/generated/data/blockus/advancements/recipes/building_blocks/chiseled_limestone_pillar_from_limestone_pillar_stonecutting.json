@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:limestone_pillar"
-            ]
+            "items": "blockus:limestone_pillar"
           }
         ]
       },

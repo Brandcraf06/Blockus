@@ -2,7 +2,6 @@ package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
-import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -139,12 +138,6 @@ public class BlockusClient implements ClientModInitializer {
         TerraformBoatClientHelper.registerModelLayers(Blockus.id("charred"), false);
         TerraformBoatClientHelper.registerModelLayers(Blockus.id("white_oak"), false);
 
-        registerSignSprite("raw_bamboo");
-        registerSignSprite("charred");
-        registerSignSprite("white_oak");
-        registerSignSprite("hanging/raw_bamboo");
-        registerSignSprite("hanging/charred");
-        registerSignSprite("hanging/white_oak");
 
         /*if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.initClient();
@@ -162,10 +155,4 @@ public class BlockusClient implements ClientModInitializer {
             return provider == null ? -1 : provider.getColor(item, layer);
         }, block.asItem());
     }
-
-    private void registerSignSprite(String path) {
-        Identifier id = Blockus.id("entity/signs/" + path);
-        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
-    }
-
 }

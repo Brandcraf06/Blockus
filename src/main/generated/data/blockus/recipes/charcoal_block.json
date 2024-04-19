@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:charcoal_block"
+    "count": 1,
+    "id": "blockus:charcoal_block"
   }
 }

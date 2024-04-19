@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "blockus:bread_box"
+    "count": 1,
+    "id": "blockus:bread_box"
   }
 }

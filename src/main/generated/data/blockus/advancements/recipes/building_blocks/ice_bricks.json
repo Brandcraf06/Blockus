@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "blockus:natural_ice"
+            "items": "#blockus:natural_ice"
           }
         ]
       },

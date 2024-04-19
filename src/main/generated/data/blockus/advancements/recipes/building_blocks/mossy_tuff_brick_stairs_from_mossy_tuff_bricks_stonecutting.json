@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:mossy_tuff_bricks"
-            ]
+            "items": "blockus:mossy_tuff_bricks"
           }
         ]
       },

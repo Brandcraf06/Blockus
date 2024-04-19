@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "blockus:lime_redstone_lamp"
-            ]
+            "items": "blockus:lime_redstone_lamp"
           }
         ]
       },

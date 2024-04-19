@@ -15,6 +15,7 @@
     "XXX"
   ],
   "result": {
-    "item": "blockus:redstone_sand"
+    "count": 1,
+    "id": "blockus:redstone_sand"
   }
 }

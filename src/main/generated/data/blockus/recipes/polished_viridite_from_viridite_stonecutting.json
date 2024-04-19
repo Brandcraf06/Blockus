@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "blockus:viridite"
   },
-  "result": "blockus:polished_viridite"
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_viridite"
+  }
 }
