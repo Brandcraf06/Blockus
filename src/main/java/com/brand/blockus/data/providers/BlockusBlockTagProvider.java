@@ -5,7 +5,7 @@ import com.brand.blockus.content.types.*;
 import com.brand.blockus.utils.tags.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryKeys;
@@ -1240,9 +1240,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.BEVELED_GLASS)
             .addTag(BlockusBlockTags.NEON);
 
-        this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)
-            .addTag(BlockusBlockTags.BEVELED_GLASS);
-
         this.getOrCreateTagBuilder(BlockTags.INFINIBURN_OVERWORLD)
             .addTag(BlockusBlockTags.NETHERRACK_BLOCKS)
             .addTag(BlockusBlockTags.MAGMA_BRICKS)
@@ -1454,13 +1451,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(PAPER_TRAPDOOR);
 
         this.getOrCreateTagBuilder(BlockTags.WOOL)
-            .addTag(BlockusBlockTags.PATTERNED_WOOL);
+            .addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS);
 
         this.getOrCreateTagBuilder(BlockTags.WOOL_CARPETS)
             .addTag(BlockusBlockTags.PATTERNED_CARPETS);
-
-        this.getOrCreateTagBuilder(BlockTags.DAMPENS_VIBRATIONS)
-            .addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS);
 
         this.getOrCreateTagBuilder(BlockTags.ANIMALS_SPAWNABLE_ON)
             .add(LEGACY_GRASS_BLOCK)
@@ -1484,5 +1478,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(new Identifier("promenade", "maple_logs"))
             .addOptional(new Identifier(Blockus.MOD_ID, "maple_small_logs"));
+
+        // Conventional Block Tags
+        this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)
+            .addTag(BlockusBlockTags.BEVELED_GLASS);
     }
 }

@@ -280,9 +280,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(CHARRED.trapdoor.asItem())
             .add(WHITE_OAK.trapdoor.asItem());
 
-        this.copy(BlockTags.WOOL, ItemTags.WOOL);
+        this.getOrCreateTagBuilder(ItemTags.WOOL)
+            .addTag(BlockusItemTags.PATTERNED_WOOL);
+
         this.copy(BlockTags.WOOL_CARPETS, ItemTags.WOOL_CARPETS);
-        this.copy(BlockTags.DAMPENS_VIBRATIONS, ItemTags.DAMPENS_VIBRATIONS);
         this.copy(BlockTags.DIRT, ItemTags.DIRT);
 
 
