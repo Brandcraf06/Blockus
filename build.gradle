@@ -98,6 +98,7 @@ publishMods {
     accessToken = providers.environmentVariable("MODRINTH_TOKEN")
     projectId = "zFiY2Go0"
     minecraftVersions.add("${minecraft_version}")
+    minecraftVersions.add("1.20.5")
     requires {
       slug = "fabric-api"
     }
@@ -108,6 +109,7 @@ publishMods {
     projectId = "312289"
     displayName = "(${project.minecraft_version}) Blockus $project.version"
     minecraftVersions.add("${minecraft_version}")
+    minecraftVersions.add("1.20.5")
     requires {
       slug = "fabric-api"
     }
