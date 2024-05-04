@@ -30,7 +30,7 @@ import java.util.Map;
 public class LargeFlowerPotBlock extends Block {
     public static final MapCodec<LargeFlowerPotBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(Registries.BLOCK.getCodec().fieldOf("potted").forGetter((block) -> block.content), createSettingsCodec()).apply(instance, LargeFlowerPotBlock::new));
     private static final Map<Block, Block> CONTENT_TO_POTTED = Maps.newHashMap();
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 10.0, 15.0);
     private final Block content;
 
     public MapCodec<LargeFlowerPotBlock> getCodec() {
