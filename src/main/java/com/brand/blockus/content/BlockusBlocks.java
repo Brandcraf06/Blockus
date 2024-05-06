@@ -65,14 +65,12 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block DRIPSTONE_PILLAR = createPillar("dripstone", BlockusBlocks.DRIPSTONE_BRICKS.block);
 
     // Tuff
-    public static final BSSTypes POLISHED_TUFF = new BSSTypes("polished_tuff", Blocks.TUFF);
-    public static final BSSWTypes TUFF_BRICKS = new BSSWTypes("tuff_bricks", BlockusBlocks.POLISHED_TUFF.block);
-    public static final BSSWTypes MOSSY_TUFF_BRICKS = new BSSWTypes("mossy_tuff_bricks", BlockusBlocks.TUFF_BRICKS.block);
-    public static final Block CRACKED_TUFF_BRICKS = register("cracked_tuff_bricks", createCopy(BlockusBlocks.TUFF_BRICKS.block));
-    public static final Block CHISELED_TUFF = register("chiseled_tuff", createCopy(BlockusBlocks.TUFF_BRICKS.block));
-    public static final Block HERRINGBONE_TUFF_BRICKS = register("herringbone_tuff_bricks", createCopy(BlockusBlocks.TUFF_BRICKS.block));
-    public static final Block TUFF_CIRCULAR_PAVING = register("tuff_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.TUFF_BRICKS.block)));
-    public static final Block TUFF_PILLAR = createPillar("tuff", BlockusBlocks.POLISHED_TUFF.block);
+    public static final BSSWTypes MOSSY_TUFF_BRICKS = new BSSWTypes("mossy_tuff_bricks", Blocks.TUFF_BRICKS);
+    public static final Block CRACKED_TUFF_BRICKS = register("cracked_tuff_bricks", createCopy(Blocks.TUFF_BRICKS));
+    public static final Block CARVED_TUFF = register("carved_tuff", createCopy(Blocks.TUFF_BRICKS));
+    public static final Block HERRINGBONE_TUFF_BRICKS = register("herringbone_tuff_bricks", createCopy(Blocks.TUFF_BRICKS));
+    public static final Block TUFF_CIRCULAR_PAVING = register("tuff_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(Blocks.TUFF_BRICKS)));
+    public static final Block TUFF_PILLAR = createPillar("tuff", Blocks.POLISHED_TUFF);
 
     // Deepslate
     public static final BSSWTypes MOSSY_DEEPSLATE_BRICKS = new BSSWTypes("mossy_deepslate_bricks", Blocks.DEEPSLATE_BRICKS);
@@ -747,7 +745,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_END_STONE_PRESSURE_PLATE = registerStonePressurePlate(BlockusBlocks.POLISHED_END_STONE.block);
     public static final Block POLISHED_BASALT_PRESSURE_PLATE = registerStonePressurePlate(Blocks.POLISHED_BASALT);
     public static final Block POLISHED_DEEPSLATE_PRESSURE_PLATE = registerStonePressurePlate(Blocks.POLISHED_DEEPSLATE);
-    public static final Block POLISHED_TUFF_PRESSURE_PLATE = registerStonePressurePlate(BlockusBlocks.POLISHED_TUFF.block);
+    public static final Block POLISHED_TUFF_PRESSURE_PLATE = registerStonePressurePlate(Blocks.POLISHED_TUFF);
     public static final Block POLISHED_SCULK_PRESSURE_PLATE = registerStonePressurePlate(BlockusBlocks.POLISHED_SCULK.block);
     public static final Block OBSIDIAN_PRESSURE_PLATE = register("obsidian_pressure_plate", new ObsidianPressurePlateBlock(AbstractBlock.Settings.copy(Blocks.OBSIDIAN).solid().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
 
@@ -763,7 +761,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block POLISHED_END_STONE_BUTTON = registerStoneButton(BlockusBlocks.POLISHED_END_STONE.block);
     public static final Block POLISHED_BASALT_BUTTON = registerStoneButton(Blocks.POLISHED_BASALT);
     public static final Block POLISHED_DEEPSLATE_BUTTON = registerStoneButton(Blocks.POLISHED_DEEPSLATE);
-    public static final Block POLISHED_TUFF_BUTTON = registerStoneButton(BlockusBlocks.POLISHED_TUFF.block);
+    public static final Block POLISHED_TUFF_BUTTON = registerStoneButton(Blocks.POLISHED_TUFF);
     public static final Block POLISHED_SCULK_BUTTON = registerStoneButton(BlockusBlocks.POLISHED_SCULK.block);
 
     // Thatch

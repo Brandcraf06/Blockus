@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blockus:chiseled_tuff"
+          "name": "blockus:carved_tuff"
         }
       ],
       "rolls": 1.0

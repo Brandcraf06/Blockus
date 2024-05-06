@@ -176,30 +176,20 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
 
         // Tuff
-        offerMossyRecipe(exporter, MOSSY_TUFF_BRICKS.block, TUFF_BRICKS.block);
+        offerMossyRecipe(exporter, MOSSY_TUFF_BRICKS.block, Blocks.TUFF_BRICKS);
         offerStonecuttingRecipe(exporter, MOSSY_TUFF_BRICKS.stairs, MOSSY_TUFF_BRICKS.block);
         offerStonecuttingRecipe(exporter, MOSSY_TUFF_BRICKS.slab, 2, MOSSY_TUFF_BRICKS.block);
         offerStonecuttingRecipe(exporter, MOSSY_TUFF_BRICKS.wall, MOSSY_TUFF_BRICKS.block);
 
-        offerStonecuttingRecipe(exporter, POLISHED_TUFF.block, Blocks.TUFF);
-        offerStonecuttingRecipe(exporter, POLISHED_TUFF.stairs, Blocks.TUFF, POLISHED_TUFF.block);
-        offerStonecuttingRecipe(exporter, POLISHED_TUFF.slab, 2, Blocks.TUFF, POLISHED_TUFF.block);
-        offerPolishedStoneRecipe(exporter, POLISHED_TUFF.block, Blocks.TUFF);
 
-        offerStonecuttingRecipe(exporter, TUFF_BRICKS.block, Blocks.TUFF, POLISHED_TUFF.block);
-        offerStonecuttingRecipe(exporter, TUFF_BRICKS.stairs, Blocks.TUFF, POLISHED_TUFF.block, TUFF_BRICKS.block);
-        offerStonecuttingRecipe(exporter, TUFF_BRICKS.slab, 2, Blocks.TUFF, POLISHED_TUFF.block, TUFF_BRICKS.block);
-        offerStonecuttingRecipe(exporter, TUFF_BRICKS.wall, Blocks.TUFF, POLISHED_TUFF.block, TUFF_BRICKS.block);
-        offerPolishedStoneRecipe(exporter, TUFF_BRICKS.block, POLISHED_TUFF.block);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Blocks.TUFF_BRICKS), RecipeCategory.BUILDING_BLOCKS, CRACKED_TUFF_BRICKS.asItem(), 0.1F, 200).criterion(hasItem(Blocks.TUFF_BRICKS), conditionsFromItem(Blocks.TUFF_BRICKS)).offerTo(exporter);
 
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(TUFF_BRICKS.block), RecipeCategory.BUILDING_BLOCKS, CRACKED_TUFF_BRICKS.asItem(), 0.1F, 200).criterion(hasItem(TUFF_BRICKS.block), conditionsFromItem(TUFF_BRICKS.block)).offerTo(exporter);
+        offerStonecuttingRecipe(exporter, CARVED_TUFF, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
+        offerStonecuttingRecipe(exporter, TUFF_PILLAR, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
+        offerStonecuttingRecipe(exporter, HERRINGBONE_TUFF_BRICKS, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
+        offerStonecuttingRecipe(exporter, TUFF_CIRCULAR_PAVING, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
 
-        offerStonecuttingRecipe(exporter, CHISELED_TUFF, Blocks.TUFF, POLISHED_TUFF.block, TUFF_BRICKS.block);
-        offerStonecuttingRecipe(exporter, TUFF_PILLAR, Blocks.TUFF, POLISHED_TUFF.block, TUFF_BRICKS.block);
-        offerStonecuttingRecipe(exporter, HERRINGBONE_TUFF_BRICKS, Blocks.TUFF, POLISHED_TUFF.block, TUFF_BRICKS.block);
-        offerStonecuttingRecipe(exporter, TUFF_CIRCULAR_PAVING, Blocks.TUFF, POLISHED_TUFF.block, TUFF_BRICKS.block);
-
-        offerPressurePlateButtonRecipe(exporter, POLISHED_TUFF_PRESSURE_PLATE, POLISHED_TUFF_BUTTON, POLISHED_TUFF.block);
+        offerPressurePlateButtonRecipe(exporter, POLISHED_TUFF_PRESSURE_PLATE, POLISHED_TUFF_BUTTON, Blocks.POLISHED_TUFF);
 
         // Amethyst
         offerStonecuttingRecipe(exporter, POLISHED_AMETHYST.block, Blocks.AMETHYST_BLOCK);

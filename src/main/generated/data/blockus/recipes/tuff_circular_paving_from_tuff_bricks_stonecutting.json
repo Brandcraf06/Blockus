@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "blockus:tuff_bricks"
+    "item": "minecraft:tuff_bricks"
   },
   "result": {
     "count": 1,

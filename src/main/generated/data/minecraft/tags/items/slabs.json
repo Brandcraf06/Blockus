@@ -1,7 +1,6 @@
 {
   "values": [
     "blockus:polished_dripstone_slab",
-    "blockus:polished_tuff_slab",
     "blockus:polished_sculk_slab",
     "blockus:polished_amethyst_slab",
     "blockus:rough_basalt_slab",
@@ -71,7 +70,6 @@
     "blockus:diorite_brick_slab",
     "blockus:granite_brick_slab",
     "blockus:dripstone_brick_slab",
-    "blockus:tuff_brick_slab",
     "blockus:mossy_tuff_brick_slab",
     "blockus:mossy_deepslate_brick_slab",
     "blockus:sculk_brick_slab",

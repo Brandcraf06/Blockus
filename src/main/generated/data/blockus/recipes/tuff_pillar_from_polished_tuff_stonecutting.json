@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "blockus:polished_tuff"
+    "item": "minecraft:polished_tuff"
   },
   "result": {
     "count": 1,

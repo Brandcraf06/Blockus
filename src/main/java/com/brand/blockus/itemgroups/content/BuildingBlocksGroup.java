@@ -302,21 +302,14 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.CHISELED_DRIPSTONE);
             entries.add(BlockusBlocks.DRIPSTONE_PILLAR);
 
-            entries.add(BlockusBlocks.POLISHED_TUFF.block);
-            entries.add(BlockusBlocks.POLISHED_TUFF.stairs);
-            entries.add(BlockusBlocks.POLISHED_TUFF.slab);
             entries.add(BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE);
             entries.add(BlockusBlocks.POLISHED_TUFF_BUTTON);
-            entries.add(BlockusBlocks.TUFF_BRICKS.block);
-            entries.add(BlockusBlocks.TUFF_BRICKS.stairs);
-            entries.add(BlockusBlocks.TUFF_BRICKS.slab);
-            entries.add(BlockusBlocks.TUFF_BRICKS.wall);
             entries.add(BlockusBlocks.MOSSY_TUFF_BRICKS.block);
             entries.add(BlockusBlocks.MOSSY_TUFF_BRICKS.stairs);
             entries.add(BlockusBlocks.MOSSY_TUFF_BRICKS.slab);
             entries.add(BlockusBlocks.MOSSY_TUFF_BRICKS.wall);
             entries.add(BlockusBlocks.CRACKED_TUFF_BRICKS);
-            entries.add(BlockusBlocks.CHISELED_TUFF);
+            entries.add(BlockusBlocks.CARVED_TUFF);
             entries.add(BlockusBlocks.HERRINGBONE_TUFF_BRICKS);
             entries.add(BlockusBlocks.TUFF_PILLAR);
             entries.add(BlockusBlocks.TUFF_CIRCULAR_PAVING);

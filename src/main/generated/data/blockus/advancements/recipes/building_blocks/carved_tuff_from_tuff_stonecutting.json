@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:tuff_brick_stairs"
+        "recipe": "minecraft:carved_tuff_from_tuff_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_tuff_bricks": {
+    "has_tuff": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:tuff_bricks"
+            "items": "minecraft:tuff"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_tuff_bricks"
+      "has_tuff"
     ]
   ],
   "rewards": {
     "recipes": [
-      "blockus:tuff_brick_stairs"
+      "minecraft:carved_tuff_from_tuff_stonecutting"
     ]
   }
 }

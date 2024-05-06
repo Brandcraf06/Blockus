@@ -4,7 +4,7 @@
   "group": "mossy_tuff_bricks",
   "ingredients": [
     {
-      "item": "blockus:tuff_bricks"
+      "item": "minecraft:tuff_bricks"
     },
     {
       "item": "minecraft:vine"
