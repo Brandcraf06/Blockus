@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blockus:white_oak_hanging_sign"
+          "name": "blockus:white_oak_sign"
         }
       ],
       "rolls": 1.0
