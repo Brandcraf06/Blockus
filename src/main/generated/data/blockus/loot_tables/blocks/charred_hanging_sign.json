@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blockus:charred_sign"
+          "name": "blockus:charred_hanging_sign"
         }
       ],
       "rolls": 1.0
