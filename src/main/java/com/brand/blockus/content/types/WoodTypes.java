@@ -45,11 +45,13 @@ public class WoodTypes {
         AbstractBlock.Settings blockSettings = AbstractBlock.Settings.create().mapColor(color).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(sound).burnable();
         AbstractBlock.Settings blockSettings2 = BlocksRegistration.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, Instrument.BASS).burnable();
         AbstractBlock.Settings signSettings = AbstractBlock.Settings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
+        AbstractBlock.Settings hangingSignSettings = AbstractBlock.Settings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
 
         if (burnable) {
             blockSettings = blockSettings.burnable();
             blockSettings2 = blockSettings2.burnable();
             signSettings = signSettings.burnable();
+            hangingSignSettings = hangingSignSettings.burnable();
         }
 
         this.planks = BlocksRegistration.register(type + "_planks", new Block(blockSettings));
@@ -70,8 +72,8 @@ public class WoodTypes {
 
         Identifier hangingSignPath = new Identifier(Blockus.MOD_ID, "entity/signs/hanging/" + type);
         Identifier hangingSignGuiPath = new Identifier(Blockus.MOD_ID, "textures/gui/hanging_signs/" + type);
-        this.ceiling_hanging_sign = BlocksRegistration.registerNoItem(type + "_hanging_sign", new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, signSettings));
-        this.wall_hanging_sign = BlocksRegistration.registerNoItem(type + "_wall_hanging_sign", new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, signSettings.dropsLike(ceiling_hanging_sign)));
+        this.ceiling_hanging_sign = BlocksRegistration.registerNoItem(type + "_hanging_sign", new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, hangingSignSettings));
+        this.wall_hanging_sign = BlocksRegistration.registerNoItem(type + "_wall_hanging_sign", new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, hangingSignSettings.dropsLike(ceiling_hanging_sign)));
         this.hanging_sign = BlockusItems.registerHangingSign(ceiling_hanging_sign, wall_hanging_sign);
 
         LIST.add(this);

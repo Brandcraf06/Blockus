@@ -1458,20 +1458,20 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_GRASS_BLOCK)
             .add(LEGACY_FIRST_GRASS_BLOCK);
 
-        this.getOrCreateTagBuilder(new Identifier("promenade", "cherry_oak_logs"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "cherry_oak_small_logs"));
-
-        this.getOrCreateTagBuilder(new Identifier("promenade", "dark_amaranth_stems"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "dark_amaranth_small_stems"));
-
-        this.getOrCreateTagBuilder(new Identifier("promenade", "leaf_piles"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "white_oak_leaf_pile"));
-
-        this.getOrCreateTagBuilder(new Identifier("promenade", "palm_logs"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "palm_small_logs"));
-
-        this.getOrCreateTagBuilder(new Identifier("promenade", "maple_logs"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "maple_small_logs"));
+//        this.getOrCreateTagBuilder(new Identifier("promenade", "cherry_oak_logs"))
+//            .addOptional(new Identifier(Blockus.MOD_ID, "cherry_oak_small_logs"));
+//
+//        this.getOrCreateTagBuilder(new Identifier("promenade", "dark_amaranth_stems"))
+//            .addOptional(new Identifier(Blockus.MOD_ID, "dark_amaranth_small_stems"));
+//
+//        this.getOrCreateTagBuilder(new Identifier("promenade", "leaf_piles"))
+//            .addOptional(new Identifier(Blockus.MOD_ID, "white_oak_leaf_pile"));
+//
+//        this.getOrCreateTagBuilder(new Identifier("promenade", "palm_logs"))
+//            .addOptional(new Identifier(Blockus.MOD_ID, "palm_small_logs"));
+//
+//        this.getOrCreateTagBuilder(new Identifier("promenade", "maple_logs"))
+//            .addOptional(new Identifier(Blockus.MOD_ID, "maple_small_logs"));
 
         // Conventional Block Tags
         this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)
