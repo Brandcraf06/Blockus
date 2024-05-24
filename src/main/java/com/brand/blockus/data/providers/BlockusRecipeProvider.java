@@ -1421,7 +1421,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     public static void offerStonecuttingRecipe(RecipeExporter exporter, ItemConvertible output, int count, ItemConvertible... ingredients) {
 
         for (ItemConvertible itemConvertible : ingredients) {
-            SingleItemRecipeJsonBuilder var10000 = SingleItemRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(itemConvertible), RecipeCategory.BUILDING_BLOCKS, output, count).criterion(hasItem(itemConvertible), conditionsFromItem(itemConvertible));
+            StonecuttingRecipeJsonBuilder var10000 = StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItems(itemConvertible), RecipeCategory.BUILDING_BLOCKS, output, count).criterion(hasItem(itemConvertible), conditionsFromItem(itemConvertible));
             String var10002 = convertBetween(output, itemConvertible);
             var10000.offerTo(exporter, var10002 + "_stonecutting");
         }

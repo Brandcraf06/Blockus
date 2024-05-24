@@ -12,16 +12,15 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
 
 public class BlockusItemGroups {
 
-    public static final RegistryKey<ItemGroup> BLOCKUS_BUILDING_BLOCKS = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(Blockus.MOD_ID, "blockus_building_blocks"));
-    public static final RegistryKey<ItemGroup> BLOCKUS_COLORED_BLOCKS = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(Blockus.MOD_ID, "blockus_colored"));
-    public static final RegistryKey<ItemGroup> BLOCKUS_COLORED_TILES = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(Blockus.MOD_ID, "blockus_colored_tiles"));
-    public static final RegistryKey<ItemGroup> BLOCKUS_NATURAL = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(Blockus.MOD_ID, "blockus_natural"));
-    public static final RegistryKey<ItemGroup> BLOCKUS_FUNCTIONAL_BLOCKS = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(Blockus.MOD_ID, "blockus_functional"));
-    public static final RegistryKey<ItemGroup> BLOCKUS_LEGACY_BLOCKS = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(Blockus.MOD_ID, "blockus_legacy"));
+    public static final RegistryKey<ItemGroup> BLOCKUS_BUILDING_BLOCKS = RegistryKey.of(RegistryKeys.ITEM_GROUP, Blockus.id("blockus_building_blocks"));
+    public static final RegistryKey<ItemGroup> BLOCKUS_COLORED_BLOCKS = RegistryKey.of(RegistryKeys.ITEM_GROUP, Blockus.id("blockus_colored"));
+    public static final RegistryKey<ItemGroup> BLOCKUS_COLORED_TILES = RegistryKey.of(RegistryKeys.ITEM_GROUP, Blockus.id("blockus_colored_tiles"));
+    public static final RegistryKey<ItemGroup> BLOCKUS_NATURAL = RegistryKey.of(RegistryKeys.ITEM_GROUP, Blockus.id("blockus_natural"));
+    public static final RegistryKey<ItemGroup> BLOCKUS_FUNCTIONAL_BLOCKS = RegistryKey.of(RegistryKeys.ITEM_GROUP, Blockus.id("blockus_functional"));
+    public static final RegistryKey<ItemGroup> BLOCKUS_LEGACY_BLOCKS = RegistryKey.of(RegistryKeys.ITEM_GROUP, Blockus.id("blockus_legacy"));
     public static Text BLOCKUS_GROUPS_TEXT = Text.literal(" (Blockus)").formatted(Formatting.DARK_AQUA);
 
     public static void init() {

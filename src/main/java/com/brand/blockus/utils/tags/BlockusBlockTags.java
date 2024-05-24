@@ -74,6 +74,6 @@ public class BlockusBlockTags {
     }
 
     private static TagKey<Block> register(String id) {
-        return TagKey.of(RegistryKeys.BLOCK, new Identifier(Blockus.MOD_ID, id));
+        return TagKey.of(RegistryKeys.BLOCK, Blockus.id(id));
     }
 }

@@ -14,7 +14,7 @@ import com.brand.blockus.blocks.base.redstone.RedstoneWallBlock;
 import com.brand.blockus.blocks.blockitems.GlintBlockItem;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
@@ -116,7 +116,7 @@ public class BlocksRegistration {
     }
 
     public static Barrier createBarrier(float hardness, float resistance, MapColor color) {
-        return new Barrier(AbstractBlock.Settings.create().mapColor(color).strength(hardness, resistance).instrument(Instrument.BASEDRUM).requiresTool());
+        return new Barrier(AbstractBlock.Settings.create().mapColor(color).strength(hardness, resistance).instrument(NoteBlockInstrument.BASEDRUM).requiresTool());
     }
 
     public static Block registerSmallHedge(String id, Block base) {
@@ -148,32 +148,32 @@ public class BlocksRegistration {
 
     // Plants
     public static FlowerPotBlock createPottedPlant(Block content) {
-        return new FlowerPotBlock(content, AbstractBlock.Settings.create().instrument(Instrument.BASEDRUM).breakInstantly().pistonBehavior(PistonBehavior.DESTROY).nonOpaque());
+        return new FlowerPotBlock(content, AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BASEDRUM).breakInstantly().pistonBehavior(PistonBehavior.DESTROY).nonOpaque());
     }
 
     public static LargeFlowerPotBlock createLargeFlowerPot(Block content) {
-        return new LargeFlowerPotBlock(content, AbstractBlock.Settings.create().instrument(Instrument.BASEDRUM).strength(0.5F, 1.0F).pistonBehavior(PistonBehavior.BLOCK).nonOpaque());
+        return new LargeFlowerPotBlock(content, AbstractBlock.Settings.create().instrument(NoteBlockInstrument.BASEDRUM).strength(0.5F, 1.0F).pistonBehavior(PistonBehavior.BLOCK).nonOpaque());
     }
 
     // Door & Trapdoor
-    public static AbstractBlock.Settings createDoorTrapdoorBlockSettings(float hardness, float resistance, BlockSoundGroup sound, MapColor color, Instrument instrument) {
+    public static AbstractBlock.Settings createDoorTrapdoorBlockSettings(float hardness, float resistance, BlockSoundGroup sound, MapColor color, NoteBlockInstrument instrument) {
         return AbstractBlock.Settings.create().mapColor(color).instrument(instrument).strength(hardness, resistance).sounds(sound).nonOpaque().pistonBehavior(PistonBehavior.DESTROY);
     }
 
     public static DoorBlock createWoodenDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new DoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASS).burnable());
+        return new DoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, NoteBlockInstrument.BASS).burnable());
     }
 
     public static DoorBlock createStoneDoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new DoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASEDRUM).requiresTool());
+        return new DoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresTool());
     }
 
     public static TrapdoorBlock createWoodenTrapdoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new TrapdoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASS).burnable());
+        return new TrapdoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, NoteBlockInstrument.BASS).burnable());
     }
 
     public static TrapdoorBlock createStoneTrapdoor(float hardness, float resistance, BlockSoundGroup sound, MapColor color, BlockSetType blockSetType) {
-        return new TrapdoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, Instrument.BASEDRUM).requiresTool());
+        return new TrapdoorBlock(blockSetType, createDoorTrapdoorBlockSettings(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresTool());
     }
 
     // Light
@@ -218,15 +218,15 @@ public class BlocksRegistration {
     }
 
     public static PaneBlock createWoodenPane() {
-        return new PaneBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(Instrument.BASS).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).burnable());
+        return new PaneBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).burnable());
     }
 
     public static Block createCrates() {
-        return new Block(AbstractBlock.Settings.create().mapColor(Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).instrument(Instrument.BASS).sounds(BlockSoundGroup.WOOD));
+        return new Block(AbstractBlock.Settings.create().mapColor(Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).instrument(NoteBlockInstrument.BASS).sounds(BlockSoundGroup.WOOD));
     }
 
     public static Block createLightCrate() {
-        return new Block(AbstractBlock.Settings.create().mapColor(Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance((state) -> 14).instrument(Instrument.BASS).sounds(BlockSoundGroup.WOOD));
+        return new Block(AbstractBlock.Settings.create().mapColor(Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance((state) -> 14).instrument(NoteBlockInstrument.BASS).sounds(BlockSoundGroup.WOOD));
     }
 
     // Register

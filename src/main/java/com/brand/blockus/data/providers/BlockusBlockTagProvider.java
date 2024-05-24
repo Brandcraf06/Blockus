@@ -271,7 +271,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(GOLDEN_APPLE_CRATE)
             .add(GOLDEN_CARROT_CRATE)
             .add(GLOW_BERRIES_CRATE)
-            .addOptional(new Identifier(Blockus.MOD_ID, "blueberries_crate"));
+            .addOptional(Blockus.id("blueberries_crate"));
 
         this.getOrCreateTagBuilder(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
             .add(FRAMED_PAPER_BLOCK)
@@ -338,12 +338,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POTTED_CACTUS_LARGE.block)
             .add(POTTED_BAMBOO_LARGE.block)
             .add(POTTED_PITCHER_PLANT.block)
-            .addOptional(new Identifier(Blockus.MOD_ID, "potted_autumn_birch"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "potted_autumn_oak"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "potted_palm"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "potted_pink_cherry_oak"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "potted_white_cherry_oak"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "potted_huge_dark_amaranth_fungus"));
+            .addOptional(Blockus.id("potted_autumn_birch"))
+            .addOptional(Blockus.id("potted_autumn_oak"))
+            .addOptional(Blockus.id("potted_palm"))
+            .addOptional(Blockus.id("potted_pink_cherry_oak"))
+            .addOptional(Blockus.id("potted_white_cherry_oak"))
+            .addOptional(Blockus.id("potted_huge_dark_amaranth_fungus"));
 
         this.getOrCreateTagBuilder(BlockusBlockTags.LAVA_BRICKS)
             .add(LAVA_BRICKS.block)
@@ -683,14 +683,14 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(AZALEA_SMALL_HEDGE)
             .add(FLOWERING_AZALEA_SMALL_HEDGE)
             .add(MOSS_SMALL_HEDGE)
-            .addOptional(new Identifier(Blockus.MOD_ID, "sap_maple_small_hedge"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "vermilion_maple_small_hedge"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "fulvous_maple_small_hedge"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "mikado_maple_small_hedge"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "pink_cherry_oak_small_hedge"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "white_cherry_oak_small_hedge"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "palm_small_hedge"))
-            .addOptional(new Identifier(Blockus.MOD_ID, "dark_amaranth_small_hedge"));
+            .addOptional(Blockus.id("sap_maple_small_hedge"))
+            .addOptional(Blockus.id("vermilion_maple_small_hedge"))
+            .addOptional(Blockus.id("fulvous_maple_small_hedge"))
+            .addOptional(Blockus.id("mikado_maple_small_hedge"))
+            .addOptional(Blockus.id("pink_cherry_oak_small_hedge"))
+            .addOptional(Blockus.id("white_cherry_oak_small_hedge"))
+            .addOptional(Blockus.id("palm_small_hedge"))
+            .addOptional(Blockus.id("dark_amaranth_small_hedge"));
 
         this.getOrCreateTagBuilder(BlockusBlockTags.SNOW_BRICKS)
             .add(SNOW_BRICKS.block)
@@ -927,7 +927,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MOSSY_WARPED_PLANKS.slab)
             .add(MOSSY_CHARRED_PLANKS.slab);
 
-        this.getOrCreateTagBuilder(new Identifier("c", "planks_that_burn"))
+        this.getOrCreateTagBuilder(Identifier.of("c", "planks_that_burn"))
             .add(Blocks.OAK_PLANKS)
             .add(Blocks.SPRUCE_PLANKS)
             .add(Blocks.BIRCH_PLANKS)
@@ -1459,19 +1459,19 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_FIRST_GRASS_BLOCK);
 
 //        this.getOrCreateTagBuilder(new Identifier("promenade", "cherry_oak_logs"))
-//            .addOptional(new Identifier(Blockus.MOD_ID, "cherry_oak_small_logs"));
+//            .addOptional(Blockus.id("cherry_oak_small_logs"));
 //
 //        this.getOrCreateTagBuilder(new Identifier("promenade", "dark_amaranth_stems"))
-//            .addOptional(new Identifier(Blockus.MOD_ID, "dark_amaranth_small_stems"));
+//            .addOptional(Blockus.id("dark_amaranth_small_stems"));
 //
 //        this.getOrCreateTagBuilder(new Identifier("promenade", "leaf_piles"))
-//            .addOptional(new Identifier(Blockus.MOD_ID, "white_oak_leaf_pile"));
+//            .addOptional(Blockus.id("white_oak_leaf_pile"));
 //
 //        this.getOrCreateTagBuilder(new Identifier("promenade", "palm_logs"))
-//            .addOptional(new Identifier(Blockus.MOD_ID, "palm_small_logs"));
+//            .addOptional(Blockus.id("palm_small_logs"));
 //
 //        this.getOrCreateTagBuilder(new Identifier("promenade", "maple_logs"))
-//            .addOptional(new Identifier(Blockus.MOD_ID, "maple_small_logs"));
+//            .addOptional(Blockus.id("maple_small_logs"));
 
         // Conventional Block Tags
         this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)

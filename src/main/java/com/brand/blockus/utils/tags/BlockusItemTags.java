@@ -1,6 +1,7 @@
 package com.brand.blockus.utils.tags;
 
 import com.brand.blockus.Blockus;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -27,6 +28,6 @@ public final class BlockusItemTags {
     }
 
     private static TagKey<Item> register(String id) {
-        return TagKey.of(RegistryKeys.ITEM, new Identifier(Blockus.MOD_ID, id));
+        return TagKey.of(RegistryKeys.ITEM, Blockus.id(id));
     }
 }

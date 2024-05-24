@@ -130,7 +130,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(RAW_BAMBOO_MOSAIC.block.asItem())
             .add(WHITE_OAK_MOSAIC.block.asItem());
 
-        this.copy(new Identifier("c", "planks_that_burn"));
+        this.copy(Identifier.of("c", "planks_that_burn"));
 
         this.copy(BlockTags.ACACIA_LOGS, ItemTags.ACACIA_LOGS);
 

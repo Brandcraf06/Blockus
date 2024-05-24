@@ -6,7 +6,7 @@ import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
 import com.brand.blockus.content.BlocksRegistration;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.util.DyeColor;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class AsphaltTypes {
         String type = color.getName() + "_asphalt";
         String type2 = type.replace("black_asphalt", "asphalt");
 
-        Block.Settings blockSettings = AbstractBlock.Settings.create().mapColor(color).instrument(Instrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool();
+        Block.Settings blockSettings = AbstractBlock.Settings.create().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool();
 
         this.block = BlocksRegistration.register(type2, new AsphaltBlock(blockSettings));
         this.slab = BlocksRegistration.register(type2 + "_slab", new AsphaltSlab(AbstractBlock.Settings.copy(block)));

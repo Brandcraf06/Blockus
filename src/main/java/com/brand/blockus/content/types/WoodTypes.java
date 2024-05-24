@@ -8,7 +8,7 @@ import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
@@ -42,8 +42,8 @@ public class WoodTypes {
         this.base = base;
         this.burnable = burnable;
 
-        AbstractBlock.Settings blockSettings = AbstractBlock.Settings.create().mapColor(color).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(sound).burnable();
-        AbstractBlock.Settings blockSettings2 = BlocksRegistration.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, Instrument.BASS).burnable();
+        AbstractBlock.Settings blockSettings = AbstractBlock.Settings.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(sound).burnable();
+        AbstractBlock.Settings blockSettings2 = BlocksRegistration.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS).burnable();
         AbstractBlock.Settings signSettings = AbstractBlock.Settings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
         AbstractBlock.Settings hangingSignSettings = AbstractBlock.Settings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
 
@@ -65,13 +65,13 @@ public class WoodTypes {
         this.button = BlocksRegistration.register(type + "_button", new ButtonBlock(blocksettype, 30, AbstractBlock.Settings.copy(planks).noCollision()));
 
         // sign
-        Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);
+        Identifier signPath = Blockus.id("entity/signs/" + type);
         this.standing_sign = BlocksRegistration.registerNoItem(type + "_sign", new TerraformSignBlock(signPath, signSettings));
         this.wall_sign = BlocksRegistration.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(signPath, signSettings.dropsLike(standing_sign)));
         this.sign = BlockusItems.registerSign(standing_sign, wall_sign);
 
-        Identifier hangingSignPath = new Identifier(Blockus.MOD_ID, "entity/signs/hanging/" + type);
-        Identifier hangingSignGuiPath = new Identifier(Blockus.MOD_ID, "textures/gui/hanging_signs/" + type);
+        Identifier hangingSignPath = Blockus.id("entity/signs/hanging/" + type);
+        Identifier hangingSignGuiPath = Blockus.id("textures/gui/hanging_signs/" + type);
         this.ceiling_hanging_sign = BlocksRegistration.registerNoItem(type + "_hanging_sign", new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, hangingSignSettings));
         this.wall_hanging_sign = BlocksRegistration.registerNoItem(type + "_wall_hanging_sign", new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, hangingSignSettings.dropsLike(ceiling_hanging_sign)));
         this.hanging_sign = BlockusItems.registerHangingSign(ceiling_hanging_sign, wall_hanging_sign);

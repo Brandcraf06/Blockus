@@ -9,7 +9,7 @@ import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
 import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.content.types.*;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
@@ -617,7 +617,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final AsphaltTypes PURPLE_ASPHALT = new AsphaltTypes(DyeColor.PURPLE);
     public static final AsphaltTypes MAGENTA_ASPHALT = new AsphaltTypes(DyeColor.MAGENTA);
     public static final AsphaltTypes PINK_ASPHALT = new AsphaltTypes(DyeColor.PINK);
-    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt", new RainbowAsphalt(AbstractBlock.Settings.create().mapColor(DyeColor.BLUE).instrument(Instrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool()));
+    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt", new RainbowAsphalt(AbstractBlock.Settings.create().mapColor(DyeColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool()));
 
     // Shingles
     public static final BSSTypes SHINGLES = new BSSTypes("shingles", Blocks.TERRACOTTA, BlockSoundGroup.NETHER_BRICKS);
@@ -770,11 +770,11 @@ public class BlockusBlocks extends BlocksRegistration {
     // Paper
     public static final Block PAPER_BLOCK = register("paper_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
     public static final Block BURNT_PAPER_BLOCK = register("burnt_paper_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS)));
-    public static final Block FRAMED_PAPER_BLOCK = register("framed_paper_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.OFF_WHITE).instrument(Instrument.BASS).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block FRAMED_PAPER_BLOCK = register("framed_paper_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.OFF_WHITE).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).burnable()));
     public static final Block PAPER_WALL = register("paper_wall", createWoodenPane());
     public static final Block PAPER_DOOR = register("paper_door", createWoodenDoor(0.1f, 0.8f, BlockSoundGroup.WOOD, MapColor.OFF_WHITE, BlockSetType.OAK));
     public static final Block PAPER_TRAPDOOR = register("paper_trapdoor", createWoodenTrapdoor(0.1f, 0.8f, BlockSoundGroup.WOOD, MapColor.OFF_WHITE, BlockSetType.OAK));
-    public static final Block PAPER_LAMP = register("paper_lamp", new PaperLampBlock(AbstractBlock.Settings.create().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS).luminance((state) -> 15).instrument(Instrument.BASS)));
+    public static final Block PAPER_LAMP = register("paper_lamp", new PaperLampBlock(AbstractBlock.Settings.create().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS).luminance((state) -> 15).instrument(NoteBlockInstrument.BASS)));
 
     // Plating
     public static final BSSTypes IRON_PLATING = new BSSTypes("iron_plating", Blocks.IRON_BLOCK, MapColor.STONE_GRAY);

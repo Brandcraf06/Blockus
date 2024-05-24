@@ -24,7 +24,7 @@ public class Blockus implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     public static Identifier id(String name) {
-        return new Identifier(MOD_ID, name);
+        return Identifier.of(MOD_ID, name);
     }
 
     @Override

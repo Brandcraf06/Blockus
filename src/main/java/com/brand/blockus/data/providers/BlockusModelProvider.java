@@ -1,5 +1,6 @@
 package com.brand.blockus.data.providers;
 
+import com.brand.blockus.Blockus;
 import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusWoodFamilies;
@@ -837,15 +838,15 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public static Identifier getBlockId(String id) {
-        return new Identifier("blockus", "block/" + id);
+        return Blockus.id( "block/" + id);
     }
 
     public static Identifier getBlockId(Block block) {
-        return new Identifier("blockus", "block/" + BLOCK.getId(block).getPath());
+        return Blockus.id( "block/" + BLOCK.getId(block).getPath());
     }
 
     public static Identifier getModifiedBlockId(Block block, String target, String replacement) {
-        return new Identifier("blockus", "block/" + BLOCK.getId(block).getPath().replace(target, replacement));
+        return Blockus.id( "block/" + BLOCK.getId(block).getPath().replace(target, replacement));
     }
 
 // TextureMaps
