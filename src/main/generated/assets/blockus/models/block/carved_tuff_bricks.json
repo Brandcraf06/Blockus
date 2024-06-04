@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "blockus:block/carved_tuff"
+    "all": "blockus:block/carved_tuff_bricks"
   }
 }

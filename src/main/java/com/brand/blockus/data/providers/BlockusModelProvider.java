@@ -118,7 +118,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerPillar(modelGenerator, BlockusBlocks.DRIPSTONE_PILLAR);
 
         // Tuff
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.CARVED_TUFF);
+        modelGenerator.registerSimpleCubeAll(BlockusBlocks.CARVED_TUFF_BRICKS);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CRACKED_TUFF_BRICKS);
         this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE, BlockusBlocks.POLISHED_TUFF_BUTTON, Blocks.POLISHED_TUFF);
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.TUFF_CIRCULAR_PAVING);

@@ -67,7 +67,7 @@ public class BlockusBlocks extends BlocksRegistration {
     // Tuff
     public static final BSSWTypes MOSSY_TUFF_BRICKS = new BSSWTypes("mossy_tuff_bricks", Blocks.TUFF_BRICKS);
     public static final Block CRACKED_TUFF_BRICKS = register("cracked_tuff_bricks", createCopy(Blocks.TUFF_BRICKS));
-    public static final Block CARVED_TUFF = register("carved_tuff", createCopy(Blocks.TUFF_BRICKS));
+    public static final Block CARVED_TUFF_BRICKS = register("carved_tuff_bricks", createCopy(Blocks.TUFF_BRICKS));
     public static final Block HERRINGBONE_TUFF_BRICKS = register("herringbone_tuff_bricks", createCopy(Blocks.TUFF_BRICKS));
     public static final Block TUFF_CIRCULAR_PAVING = register("tuff_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(Blocks.TUFF_BRICKS)));
     public static final Block TUFF_PILLAR = createPillar("tuff", Blocks.POLISHED_TUFF);

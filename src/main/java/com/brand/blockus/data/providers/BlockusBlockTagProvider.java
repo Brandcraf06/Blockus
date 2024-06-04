@@ -817,7 +817,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MOSSY_TUFF_BRICKS.stairs)
             .add(MOSSY_TUFF_BRICKS.slab)
             .add(CRACKED_TUFF_BRICKS)
-            .add(CARVED_TUFF)
+            .add(CARVED_TUFF_BRICKS)
             .add(HERRINGBONE_TUFF_BRICKS)
             .add(TUFF_PILLAR)
             .add(TUFF_CIRCULAR_PAVING);

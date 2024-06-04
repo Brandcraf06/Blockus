@@ -184,7 +184,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Blocks.TUFF_BRICKS), RecipeCategory.BUILDING_BLOCKS, CRACKED_TUFF_BRICKS.asItem(), 0.1F, 200).criterion(hasItem(Blocks.TUFF_BRICKS), conditionsFromItem(Blocks.TUFF_BRICKS)).offerTo(exporter);
 
-        offerStonecuttingRecipe(exporter, CARVED_TUFF, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
+        offerStonecuttingRecipe(exporter, CARVED_TUFF_BRICKS, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
         offerStonecuttingRecipe(exporter, TUFF_PILLAR, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
         offerStonecuttingRecipe(exporter, HERRINGBONE_TUFF_BRICKS, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
         offerStonecuttingRecipe(exporter, TUFF_CIRCULAR_PAVING, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);

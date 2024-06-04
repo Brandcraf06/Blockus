@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:carved_tuff_from_tuff_stonecutting"
+        "recipe": "minecraft:carved_tuff_bricks_from_tuff_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:carved_tuff_from_tuff_stonecutting"
+      "minecraft:carved_tuff_bricks_from_tuff_stonecutting"
     ]
   }
 }

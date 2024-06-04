@@ -167,7 +167,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             CARROT_CRATE,
             CAUTION_BARRIER,
             CAUTION_BLOCK,
-            CARVED_TUFF,
+            CARVED_TUFF_BRICKS,
             CHARCOAL_BLOCK,
             CHARRED_NETHER_BRICK_PILLAR,
             CHERRY_SMALL_LOGS,
