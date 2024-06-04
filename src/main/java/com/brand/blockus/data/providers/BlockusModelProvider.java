@@ -32,24 +32,22 @@ public class BlockusModelProvider extends FabricModelProvider {
             modelGenerator.registerCubeAllModelTexturePool(family.getBaseBlock()).family(family);
         });
 
-        for (BSSTypes bssType : BSSTypes.values()) {
+        for (BSSWTypes bssType : BSSWTypes.values()) {
             if (bssType.type.contains("rough") && bssType.type.contains("sandstone")) {
                 this.registerBlockStairsSlabWithBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
             } else if (bssType.type.contains("smooth") && bssType.type.contains("sandstone") || bssType.type.contains("rough_basalt")) {
                 this.registerBlockStairsSlabWithTop(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
+            }
+              else if (bssType.block == BlockusBlocks.SOUL_SANDSTONE.block) {
+                this.registerBlockStairsSlabwithTopBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab);
             } else {
                 this.registerBlockStairsAndSlab(modelGenerator, bssType.block, bssType.stairs, bssType.slab);
             }
-        }
-
-        for (BSSWTypes bsswType : BSSWTypes.values()) {
-            if (bsswType.block == BlockusBlocks.SOUL_SANDSTONE.block) {
-                this.registerBlockStairsSlabwithTopBottom(modelGenerator, bsswType.block, bsswType.stairs, bsswType.slab);
-                this.registerWall(modelGenerator, bsswType.wall, bsswType.block);
-            } else {
-                this.registerBlockStairsSlabAndWall(modelGenerator, bsswType.block, bsswType.stairs, bsswType.slab, bsswType.wall);
+            if (bssType.wall != null) {
+                this.registerWall(modelGenerator, bssType.wall, bssType.block);
             }
         }
+
 
         for (ConcreteTypes concreteType : ConcreteTypes.values()) {
             this.registerBlockStairsSlabAndWall(modelGenerator, concreteType.block, concreteType.stairs, concreteType.slab, concreteType.wall);

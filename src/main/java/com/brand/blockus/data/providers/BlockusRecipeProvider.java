@@ -36,15 +36,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
 
-        for (BSSWTypes bsswType : BSSWTypes.values()) {
-            BlockusRecipeProvider.offerStairsRecipe(exporter, bsswType.stairs, bsswType.block);
-            RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, bsswType.slab, bsswType.block);
-            RecipeProvider.offerWallRecipe(exporter, RecipeCategory.DECORATIONS, bsswType.wall, bsswType.block);
-        }
-
-        for (BSSTypes bssType : BSSTypes.values()) {
+        for (BSSWTypes bssType : BSSWTypes.values()) {
             BlockusRecipeProvider.offerStairsRecipe(exporter, bssType.stairs, bssType.block);
             RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, bssType.slab, bssType.block);
+            if (bssType.wall != null) {
+                RecipeProvider.offerWallRecipe(exporter, RecipeCategory.DECORATIONS, bssType.wall, bssType.block);
+            }
         }
 
         for (ConcreteTypes concreteType : ConcreteTypes.values()) {

@@ -1384,15 +1384,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BLACKSTONE_TRAPDOOR);
 
 
-        for (BSSTypes bssTypes : BSSTypes.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bssTypes.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bssTypes.slab);
-        }
-
-        for (BSSWTypes bsswTypes : BSSWTypes.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bsswTypes.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bsswTypes.slab);
-            this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswTypes.wall);
+        for (BSSWTypes BsswTypes : BSSWTypes.values()) {
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(BsswTypes.stairs);
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(BsswTypes.slab);
+            if (BsswTypes.wall != null) {
+                this.getOrCreateTagBuilder(BlockTags.WALLS).add(BsswTypes.wall);
+            }
         }
 
         for (ConcreteTypes concreteType : ConcreteTypes.values()) {

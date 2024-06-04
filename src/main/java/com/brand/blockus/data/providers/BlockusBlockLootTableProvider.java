@@ -43,13 +43,11 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
     public void generate() {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
 
-        for (BSSTypes bssType : BSSTypes.values()) {
+        for (BSSWTypes bssType : BSSWTypes.values()) {
             this.addBlockStairsandSlabDrops(bssType.block, bssType.stairs, bssType.slab);
-        }
-
-        for (BSSWTypes bsswType : BSSWTypes.values()) {
-            this.addBlockStairsandSlabDrops(bsswType.block, bsswType.stairs, bsswType.slab);
-            this.addDrop(bsswType.wall);
+            if (bssType.wall != null) {
+                this.addDrop(bssType.wall);
+            }
         }
 
         for (ConcreteTypes concreteType : ConcreteTypes.values()) {
