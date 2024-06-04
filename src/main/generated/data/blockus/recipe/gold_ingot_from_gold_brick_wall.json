@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "gold_ingot",
+  "group": "minecraft:gold_ingot",
   "ingredients": [
     {
       "item": "blockus:gold_brick_wall"

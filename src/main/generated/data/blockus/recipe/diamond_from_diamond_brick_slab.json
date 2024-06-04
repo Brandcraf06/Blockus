@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "diamond",
+  "group": "minecraft:diamond",
   "ingredients": [
     {
       "item": "blockus:diamond_brick_slab"

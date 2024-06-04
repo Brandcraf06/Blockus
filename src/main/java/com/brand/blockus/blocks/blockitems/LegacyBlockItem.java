@@ -2,7 +2,7 @@ package com.brand.blockus.blocks.blockitems;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.block.Block;
-import net.minecraft.client.item.TooltipType;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

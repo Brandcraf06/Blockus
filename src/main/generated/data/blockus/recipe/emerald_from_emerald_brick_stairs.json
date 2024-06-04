@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "emerald",
+  "group": "minecraft:emerald",
   "ingredients": [
     {
       "item": "blockus:emerald_brick_stairs"

@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "iron_ingot",
+  "group": "minecraft:iron_ingot",
   "ingredients": [
     {
       "item": "blockus:iron_bricks"

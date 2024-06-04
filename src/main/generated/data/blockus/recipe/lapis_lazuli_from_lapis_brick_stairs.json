@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "lapis_lazuli",
+  "group": "minecraft:lapis_lazuli",
   "ingredients": [
     {
       "item": "blockus:lapis_brick_stairs"
