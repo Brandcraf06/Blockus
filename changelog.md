@@ -1,2 +1,2 @@
-* Fixed signs & hanging signs drop
+* Changed Chiseled Tuff texture
 
