@@ -4,7 +4,6 @@ import com.brand.blockus.Blockus;
 import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
 
 public class BlockusBlockTags {
 
@@ -62,6 +61,8 @@ public class BlockusBlockTags {
     public static final TagKey<Block> STONE_BLOCKS = register("stone_blocks");
     public static final TagKey<Block> THATCH = register("thatch");
     public static final TagKey<Block> TIMBER_FRAMES = register("timber_frames");
+    public static final TagKey<Block> WOODEN_LATTICES = register("wooden_lattices");
+    public static final TagKey<Block> WOODEN_GRATES = register("wooden_grates");
     public static final TagKey<Block> TUFF_BLOCKS = register("tuff_blocks");
     public static final TagKey<Block> VIRIDITE = register("viridite");
     public static final TagKey<Block> WARPED_NETHER_GRASS = register("warped_nether_grass");

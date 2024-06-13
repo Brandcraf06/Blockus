@@ -56,6 +56,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
             createTimberFramesRecipes(exporter, timberFrameType.base, timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross);
+            createLatticeRecipes(exporter, timberFrameType.base, timberFrameType.lattice, timberFrameType.grate);
         }
 
         for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
@@ -1195,7 +1196,6 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.ROTTEN_FLESH, RecipeCategory.BUILDING_BLOCKS, ROTTEN_FLESH_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.PHANTOM_MEMBRANE, RecipeCategory.BUILDING_BLOCKS, MEMBRANE_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.NETHER_STAR, RecipeCategory.BUILDING_BLOCKS, NETHER_STAR_BLOCK);
-        offerPolishedStoneRecipe(exporter, WOODEN_FRAME, Items.STICK);
 
         createEnclosedRecipe2(REDSTONE_SAND, Ingredient.ofItems(Items.REDSTONE), Items.SAND).criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Items.REDSTONE, 8).input(REDSTONE_SAND).criterion(hasItem(REDSTONE_SAND), conditionsFromItem(REDSTONE_SAND)).offerTo(exporter, convertBetween(Items.REDSTONE, REDSTONE_SAND));
@@ -1248,8 +1248,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         createCondensingRecipe(RecipeCategory.BUILDING_BLOCKS, output, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 
-    public static CraftingRecipeJsonBuilder createCondensingRecipe(RecipeCategory category, ItemConvertible output, Ingredient input) {
-        return ShapedRecipeJsonBuilder.create(category, output, 4).input('S', input).pattern("SS").pattern("SS");
+    public static CraftingRecipeJsonBuilder createCondensingRecipe(RecipeCategory category, ItemConvertible output, int count, Ingredient input, String group) {
+        return ShapedRecipeJsonBuilder.create(category, output, count).input('S', input).group(group).pattern("SS").pattern("SS");
     }
 
     public static void offerShapelessRecipe2(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, int outputCount) {
@@ -1346,6 +1346,11 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, block, 2).input('#', Items.PAPER).input('X', base).pattern("#X").pattern("X#").group("timber_frame").criterion(hasItem(base), conditionsFromItem(base)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, diagonal, 4).input('#', block).pattern("##").pattern("##").group("diagonal_timber_frame").criterion(hasItem(block), conditionsFromItem(block)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, cross, 4).input('#', diagonal).pattern("##").pattern("##").group("cross_timber_frame").criterion(hasItem(diagonal), conditionsFromItem(diagonal)).offerTo(exporter);
+    }
+
+    public static void createLatticeRecipes(RecipeExporter exporter, ItemConvertible base, ItemConvertible lattice, ItemConvertible grate) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, lattice, 4).input('#', Items.STICK).input('X', base).pattern(" # ").pattern("#X#").pattern(" # ").group("wooden_lattices").criterion(hasItem(base), conditionsFromItem(base)).offerTo(exporter);
+        createCondensingRecipe(RecipeCategory.BUILDING_BLOCKS, grate, 2, Ingredient.ofItems(lattice), "wooden_grates").criterion(hasItem(lattice), conditionsFromItem(lattice)).offerTo(exporter);
     }
 
     public static void offerAsphaltRecipe(RecipeExporter exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab) {

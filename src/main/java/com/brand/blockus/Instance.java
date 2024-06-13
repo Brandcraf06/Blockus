@@ -27,11 +27,9 @@ public class Instance {
 // Burning
 
         // General
-        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WOODEN_FRAME, 30, 60);
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
         FuelRegistry.INSTANCE.add(BlockusBlocks.LEGACY_COAL_BLOCK, 16000);
         FuelRegistry.INSTANCE.add(BlockusBlocks.CHARCOAL_BLOCK, 16000);
-        FuelRegistry.INSTANCE.add(BlockusBlocks.WOODEN_FRAME, 300);
 
         // Small hedges
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.OAK_SMALL_HEDGE, 30, 60);
@@ -65,7 +63,7 @@ public class Instance {
 
         // Timber frames
         for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
-            for (Block block : new Block[]{timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross}) {
+            for (Block block : timberFrameType.all) {
                 if (!block.asItem().getComponents().contains(DataComponentTypes.FIRE_RESISTANT)) {
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
                     FuelRegistry.INSTANCE.add(block, 300);

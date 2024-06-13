@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:warped_grate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_warped_lattice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:warped_lattice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_warped_lattice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:warped_grate"
+    ]
+  }
+}

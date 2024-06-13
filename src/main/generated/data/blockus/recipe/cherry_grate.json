@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_grates",
+  "key": {
+    "S": {
+      "item": "blockus:cherry_lattice"
+    }
+  },
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "result": {
+    "count": 2,
+    "id": "blockus:cherry_grate"
+  }
+}

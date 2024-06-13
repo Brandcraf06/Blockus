@@ -810,6 +810,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
                 .add(timberFrameType.block)
                 .add(timberFrameType.diagonal)
                 .add(timberFrameType.cross);
+
+            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_LATTICES)
+                .add(timberFrameType.lattice);
+
+            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_GRATES)
+                .add(timberFrameType.grate);
         }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
@@ -978,12 +984,13 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MOSSY_RAW_BAMBOO_PLANKS.block);
 
         this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-            .add(WOODEN_FRAME)
             .add(LEGACY_PLANKS)
             .add(SOUL_O_LANTERN)
             .add(REDSTONE_O_LANTERN)
             .addTag(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
             .addTag(BlockusBlockTags.TIMBER_FRAMES)
+            .addTag(BlockusBlockTags.WOODEN_LATTICES)
+            .addTag(BlockusBlockTags.WOODEN_GRATES)
             .addTag(BlockusBlockTags.FOOD_CRATES)
             .addTag(BlockusBlockTags.ALL_WOODEN_MOSAICS)
             .addTag(BlockusBlockTags.ALL_MOSSY_PLANKS);

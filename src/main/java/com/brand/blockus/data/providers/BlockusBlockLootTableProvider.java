@@ -70,7 +70,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
         for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
-            this.addDrops(timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross);
+            for (Block block : timberFrameType.all) {
+                this.addDrops(block);
+            }
         }
 
         for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
@@ -437,7 +439,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             WHITE_OAK_WOOD,
             WHITE_REDSTONE_LAMP,
             WHITE_REDSTONE_LAMP_LIT,
-            WOODEN_FRAME,
             YELLOW_COLORED_TILES,
             YELLOW_FUTURNEO_BLOCK,
             YELLOW_GLAZED_TERRACOTTA_PILLAR,

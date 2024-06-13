@@ -59,6 +59,7 @@ public class BlockusModelProvider extends FabricModelProvider {
             modelGenerator.registerSimpleCubeAll(timberFrameType.block);
             modelGenerator.registerSimpleCubeAll(timberFrameType.cross);
             this.registerDiagonalTimberFrame(modelGenerator, timberFrameType.diagonal);
+            modelGenerator.registerGlassPane(timberFrameType.grate, timberFrameType.lattice);
         }
 
         for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {

@@ -403,21 +403,21 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block CRIMSON_SMALL_STEMS = register("crimson_small_stems", createPillarCopy(Blocks.CRIMSON_STEM));
     public static final Block WHITE_OAK_SMALL_LOGS = register("white_oak_small_logs", createPillarCopy(WHITE_OAK_LOG));
 
-    // Timber Frames
-    public static final TimberFrameTypes OAK_TIMBER_FRAME = new TimberFrameTypes("oak", Blocks.OAK_PLANKS);
-    public static final TimberFrameTypes BIRCH_TIMBER_FRAME = new TimberFrameTypes("birch", Blocks.BIRCH_PLANKS);
-    public static final TimberFrameTypes SPRUCE_TIMBER_FRAME = new TimberFrameTypes("spruce", Blocks.SPRUCE_PLANKS);
-    public static final TimberFrameTypes JUNGLE_TIMBER_FRAME = new TimberFrameTypes("jungle", Blocks.JUNGLE_PLANKS);
-    public static final TimberFrameTypes ACACIA_TIMBER_FRAME = new TimberFrameTypes("acacia", Blocks.ACACIA_PLANKS);
-    public static final TimberFrameTypes DARK_OAK_TIMBER_FRAME = new TimberFrameTypes("dark_oak", Blocks.DARK_OAK_PLANKS);
-    public static final TimberFrameTypes MANGROVE_TIMBER_FRAME = new TimberFrameTypes("mangrove", Blocks.MANGROVE_PLANKS);
-    public static final TimberFrameTypes BAMBOO_TIMBER_FRAME = new TimberFrameTypes("bamboo", Blocks.BAMBOO_PLANKS);
-    public static final TimberFrameTypes CHERRY_TIMBER_FRAME = new TimberFrameTypes("cherry", Blocks.CHERRY_PLANKS);
-    public static final TimberFrameTypes RAW_BAMBOO_TIMBER_FRAME = new TimberFrameTypes("raw_bamboo", BlockusBlocks.RAW_BAMBOO.planks);
-    public static final TimberFrameTypes WHITE_OAK_TIMBER_FRAME = new TimberFrameTypes("white_oak", BlockusBlocks.WHITE_OAK.planks);
-    public static final TimberFrameTypes WARPED_TIMBER_FRAME = new TimberFrameTypes("warped", Blocks.WARPED_PLANKS, true);
-    public static final TimberFrameTypes CRIMSON_TIMBER_FRAME = new TimberFrameTypes("crimson", Blocks.CRIMSON_PLANKS, true);
-    public static final TimberFrameTypes CHARRED_TIMBER_FRAME = new TimberFrameTypes("charred", BlockusBlocks.CHARRED.planks, true);
+    // Timber Frames & Grates
+    public static final TimberFrameTypes OAK_TIMBER_FRAME = new TimberFrameTypes(Blocks.OAK_PLANKS);
+    public static final TimberFrameTypes BIRCH_TIMBER_FRAME = new TimberFrameTypes(Blocks.BIRCH_PLANKS);
+    public static final TimberFrameTypes SPRUCE_TIMBER_FRAME = new TimberFrameTypes(Blocks.SPRUCE_PLANKS);
+    public static final TimberFrameTypes JUNGLE_TIMBER_FRAME = new TimberFrameTypes(Blocks.JUNGLE_PLANKS);
+    public static final TimberFrameTypes ACACIA_TIMBER_FRAME = new TimberFrameTypes(Blocks.ACACIA_PLANKS);
+    public static final TimberFrameTypes DARK_OAK_TIMBER_FRAME = new TimberFrameTypes(Blocks.DARK_OAK_PLANKS);
+    public static final TimberFrameTypes MANGROVE_TIMBER_FRAME = new TimberFrameTypes(Blocks.MANGROVE_PLANKS);
+    public static final TimberFrameTypes BAMBOO_TIMBER_FRAME = new TimberFrameTypes(Blocks.BAMBOO_PLANKS);
+    public static final TimberFrameTypes CHERRY_TIMBER_FRAME = new TimberFrameTypes(Blocks.CHERRY_PLANKS);
+    public static final TimberFrameTypes RAW_BAMBOO_TIMBER_FRAME = new TimberFrameTypes(BlockusBlocks.RAW_BAMBOO.planks);
+    public static final TimberFrameTypes WHITE_OAK_TIMBER_FRAME = new TimberFrameTypes(BlockusBlocks.WHITE_OAK.planks);
+    public static final TimberFrameTypes WARPED_TIMBER_FRAME = new TimberFrameTypes(Blocks.WARPED_PLANKS, true);
+    public static final TimberFrameTypes CRIMSON_TIMBER_FRAME = new TimberFrameTypes(Blocks.CRIMSON_PLANKS, true);
+    public static final TimberFrameTypes CHARRED_TIMBER_FRAME = new TimberFrameTypes(BlockusBlocks.CHARRED.planks, true);
 
     // Small Hedges
     public static final Block OAK_SMALL_HEDGE = registerSmallHedge("oak_small_hedge", Blocks.OAK_LEAVES);
@@ -810,7 +810,6 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block ROTTEN_FLESH_BLOCK = register("rotten_flesh_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_RED).strength(0.5f).sounds(BlockSoundGroup.SLIME)));
     public static final Block MEMBRANE_BLOCK = register("membrane_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_WHITE).strength(0.5f).sounds(BlockSoundGroup.SLIME)));
     public static final Block NETHER_STAR_BLOCK = registerGlint("nether_stars_block", new NetherStarBlock(AbstractBlock.Settings.create().mapColor(MapColor.OFF_WHITE).strength(5.0f, 6.0f).requiresTool()));
-    public static final Block WOODEN_FRAME = register("wooden_frame", createWoodenPane());
     public static final Block REDSTONE_SAND = register("redstone_sand", new FallingRedstoneBlock(AbstractBlock.Settings.copy(Blocks.SAND).mapColor(MapColor.BRIGHT_RED)));
     public static final Block LOVE_BLOCK = register("love_block", new LoveBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(2, 6.0f).requiresTool()));
     public static final Block WEIGHT_STORAGE_CUBE = register("weight_storage_cube", new WeightStorageCubeBlock(AbstractBlock.Settings.create().mapColor(MapColor.IRON_GRAY).strength(0.1f, 6.0f)));
