@@ -42,32 +42,12 @@ dependencies {
   modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"*/
 }
 
+fabricApi {
+  configureDataGeneration()
+}
+
 loom {
 	accessWidenerPath = file("src/main/resources/blockus.aw")
-
-	runs {
-		datagen {
-			server()
-
-			name "Data Generation"
-			vmArg "-Dfabric-api.datagen"
-      vmArg "-Dfabric-api.datagen.modid=blockus"
-      vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-
-			runDir "build/datagen"
-		}
-	}
-}
-assemble.dependsOn(runDatagen)
-
-sourceSets {
-	main {
-		resources {
-			srcDirs += [
-				"src/main/generated"
-			]
-		}
-	}
 }
 
 processResources {
@@ -98,7 +78,6 @@ publishMods {
     accessToken = providers.environmentVariable("MODRINTH_TOKEN")
     projectId = "zFiY2Go0"
     minecraftVersions.add("${minecraft_version}")
-    minecraftVersions.add("1.20.5")
     requires {
       slug = "fabric-api"
     }
@@ -109,7 +88,6 @@ publishMods {
     projectId = "312289"
     displayName = "(${project.minecraft_version}) Blockus $project.version"
     minecraftVersions.add("${minecraft_version}")
-    minecraftVersions.add("1.20.5")
     requires {
       slug = "fabric-api"
     }
