@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_charred_planks": {
+    "has_charred_lattice": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:charred_planks"
+            "items": "blockus:charred_lattice"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_charred_planks"
+      "has_charred_lattice"
     ]
   ],
   "rewards": {

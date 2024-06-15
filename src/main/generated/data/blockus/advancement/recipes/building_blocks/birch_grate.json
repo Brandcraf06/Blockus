@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_birch_lattice": {
+    "has_birch_planks": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:birch_lattice"
+            "items": "minecraft:birch_planks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_birch_lattice"
+      "has_birch_planks"
     ]
   ],
   "rewards": {

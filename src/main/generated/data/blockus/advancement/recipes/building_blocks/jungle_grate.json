@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_jungle_lattice": {
+    "has_jungle_planks": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:jungle_lattice"
+            "items": "minecraft:jungle_planks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_jungle_lattice"
+      "has_jungle_planks"
     ]
   ],
   "rewards": {

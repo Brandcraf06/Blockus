@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cherry_planks": {
+    "has_cherry_lattice": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:cherry_planks"
+            "items": "blockus:cherry_lattice"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cherry_planks"
+      "has_cherry_lattice"
     ]
   ],
   "rewards": {

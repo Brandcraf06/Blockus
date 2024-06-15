@@ -7,11 +7,11 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_warped_lattice": {
+    "has_warped_planks": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:warped_lattice"
+            "items": "minecraft:warped_planks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_warped_lattice"
+      "has_warped_planks"
     ]
   ],
   "rewards": {

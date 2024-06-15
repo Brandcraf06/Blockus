@@ -7,11 +7,11 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_white_oak_lattice": {
+    "has_white_oak_planks": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:white_oak_lattice"
+            "items": "blockus:white_oak_planks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_white_oak_lattice"
+      "has_white_oak_planks"
     ]
   ],
   "rewards": {

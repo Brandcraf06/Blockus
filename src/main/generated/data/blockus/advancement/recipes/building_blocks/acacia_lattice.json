@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_acacia_planks": {
+    "has_acacia_lattice": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:acacia_planks"
+            "items": "blockus:acacia_lattice"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_acacia_planks"
+      "has_acacia_lattice"
     ]
   ],
   "rewards": {

@@ -4,19 +4,15 @@
   "group": "wooden_lattices",
   "key": {
     "#": {
-      "item": "minecraft:stick"
-    },
-    "X": {
-      "item": "minecraft:bamboo_planks"
+      "item": "blockus:bamboo_grate"
     }
   },
   "pattern": [
-    " # ",
-    "#X#",
-    " # "
+    "###",
+    "###"
   ],
   "result": {
-    "count": 4,
+    "count": 16,
     "id": "blockus:bamboo_lattice"
   }
 }

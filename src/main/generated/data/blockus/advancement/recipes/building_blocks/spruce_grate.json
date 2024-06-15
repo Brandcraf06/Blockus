@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_spruce_lattice": {
+    "has_spruce_planks": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:spruce_lattice"
+            "items": "minecraft:spruce_planks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_spruce_lattice"
+      "has_spruce_planks"
     ]
   ],
   "rewards": {

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bamboo_lattice": {
+    "has_bamboo_planks": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:bamboo_lattice"
+            "items": "minecraft:bamboo_planks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bamboo_lattice"
+      "has_bamboo_planks"
     ]
   ],
   "rewards": {

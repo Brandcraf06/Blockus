@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mangrove_planks": {
+    "has_mangrove_lattice": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:mangrove_planks"
+            "items": "blockus:mangrove_lattice"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_mangrove_planks"
+      "has_mangrove_lattice"
     ]
   ],
   "rewards": {

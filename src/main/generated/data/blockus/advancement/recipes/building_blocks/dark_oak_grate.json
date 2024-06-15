@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dark_oak_lattice": {
+    "has_dark_oak_planks": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:dark_oak_lattice"
+            "items": "minecraft:dark_oak_planks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_dark_oak_lattice"
+      "has_dark_oak_planks"
     ]
   ],
   "rewards": {

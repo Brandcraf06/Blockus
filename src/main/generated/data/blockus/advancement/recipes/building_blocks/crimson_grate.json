@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_crimson_lattice": {
+    "has_crimson_planks": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:crimson_lattice"
+            "items": "minecraft:crimson_planks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_crimson_lattice"
+      "has_crimson_planks"
     ]
   ],
   "rewards": {

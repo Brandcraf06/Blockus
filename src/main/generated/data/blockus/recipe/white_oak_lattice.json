@@ -4,19 +4,15 @@
   "group": "wooden_lattices",
   "key": {
     "#": {
-      "item": "minecraft:stick"
-    },
-    "X": {
-      "item": "blockus:white_oak_planks"
+      "item": "blockus:white_oak_grate"
     }
   },
   "pattern": [
-    " # ",
-    "#X#",
-    " # "
+    "###",
+    "###"
   ],
   "result": {
-    "count": 4,
+    "count": 16,
     "id": "blockus:white_oak_lattice"
   }
 }
