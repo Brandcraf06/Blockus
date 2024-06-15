@@ -63,7 +63,7 @@ public class Instance {
 
         // Timber frames
         for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
-            for (Block block : new Block[]{timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross}) {
+            for (Block block : timberFrameType.all) {
                 if (!block.asItem().isFireproof()) {
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
                     FuelRegistry.INSTANCE.add(block, 300);

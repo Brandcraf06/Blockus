@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_lattices",
+  "key": {
+    "#": {
+      "item": "blockus:jungle_grate"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 16,
+    "item": "blockus:jungle_lattice"
+  },
+  "show_notification": true
+}

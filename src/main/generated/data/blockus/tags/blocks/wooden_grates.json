@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "blockus:oak_grate",
+    "blockus:birch_grate",
+    "blockus:spruce_grate",
+    "blockus:jungle_grate",
+    "blockus:acacia_grate",
+    "blockus:dark_oak_grate",
+    "blockus:mangrove_grate",
+    "blockus:bamboo_grate",
+    "blockus:cherry_grate",
+    "blockus:raw_bamboo_grate",
+    "blockus:white_oak_grate",
+    "blockus:warped_grate",
+    "blockus:crimson_grate",
+    "blockus:charred_grate"
+  ]
+}

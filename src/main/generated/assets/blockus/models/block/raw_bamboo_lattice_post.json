@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "textures": {
+    "edge": "blockus:block/raw_bamboo_lattice_top",
+    "pane": "blockus:block/raw_bamboo_grate"
+  }
+}

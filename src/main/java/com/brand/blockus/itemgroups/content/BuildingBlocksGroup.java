@@ -146,6 +146,13 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
 
             for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+                entries.add(timberFrameType.lattice);
+                entries.add(timberFrameType.grate);
+            }
+            entries.add(BlockusBlocks.WOODEN_FRAME);
+
+            for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+                entries.add(timberFrameType.cross);
                 entries.add(timberFrameType.block);
                 entries.add(timberFrameType.diagonal);
                 entries.add(timberFrameType.cross);
@@ -157,7 +164,6 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.THATCH.block);
             entries.add(BlockusBlocks.THATCH.stairs);
             entries.add(BlockusBlocks.THATCH.slab);
-            entries.add(BlockusBlocks.WOODEN_FRAME);
 
             entries.add(BlockusBlocks.PAPER_BLOCK);
             entries.add(BlockusBlocks.BURNT_PAPER_BLOCK);

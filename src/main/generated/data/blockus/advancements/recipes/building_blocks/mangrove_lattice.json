@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mangrove_lattice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:mangrove_lattice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:mangrove_lattice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mangrove_lattice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:mangrove_lattice"
+    ]
+  },
+  "sends_telemetry_event": false
+}

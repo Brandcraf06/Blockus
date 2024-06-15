@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_lattices",
+  "key": {
+    "#": {
+      "item": "blockus:acacia_grate"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 16,
+    "item": "blockus:acacia_lattice"
+  },
+  "show_notification": true
+}
