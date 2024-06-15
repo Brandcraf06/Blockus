@@ -1349,8 +1349,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void createLatticeRecipes(RecipeExporter exporter, ItemConvertible base, ItemConvertible lattice, ItemConvertible grate) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, lattice, 4).input('#', Items.STICK).input('X', base).pattern(" # ").pattern("#X#").pattern(" # ").group("wooden_lattices").criterion(hasItem(base), conditionsFromItem(base)).offerTo(exporter);
-        createCondensingRecipe(RecipeCategory.BUILDING_BLOCKS, grate, 2, Ingredient.ofItems(lattice), "wooden_grates").criterion(hasItem(lattice), conditionsFromItem(lattice)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, grate, 3).input('#', Items.STICK).input('X', base).pattern(" # ").pattern("#X#").pattern(" # ").group("wooden_grates").criterion(hasItem(base), conditionsFromItem(base)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, lattice, 16).input('#', grate).pattern("###").pattern("###").group("wooden_lattices").criterion(hasItem(lattice), conditionsFromItem(lattice)).offerTo(exporter);
     }
 
     public static void offerAsphaltRecipe(RecipeExporter exporter, ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab) {
