@@ -4,4 +4,5 @@
 * Added Wooden Lattices
   * Pane version of Wooden Grates
   * Can be crafted with 4 Grates (Give 16)
+* Update zh translations by SolidBlock
 
