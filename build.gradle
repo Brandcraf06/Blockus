@@ -19,6 +19,10 @@ repositories {
   maven { url 'https://maven.minecraftforge.net/' }
 }
 
+fabricApi {
+  configureDataGeneration()
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -44,30 +48,6 @@ dependencies {
 
 loom {
 	accessWidenerPath = file("src/main/resources/blockus.aw")
-
-	runs {
-		datagen {
-			server()
-
-			name "Data Generation"
-			vmArg "-Dfabric-api.datagen"
-      vmArg "-Dfabric-api.datagen.modid=blockus"
-      vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-
-			runDir "build/datagen"
-		}
-	}
-}
-assemble.dependsOn(runDatagen)
-
-sourceSets {
-	main {
-		resources {
-			srcDirs += [
-				"src/main/generated"
-			]
-		}
-	}
 }
 
 processResources {

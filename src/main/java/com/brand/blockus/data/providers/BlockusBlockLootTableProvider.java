@@ -66,7 +66,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
         for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
-            this.addDrops(timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross);
+            for (Block block : timberFrameType.all) {
+                this.addDrops(block);
+            }
         }
 
         for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {

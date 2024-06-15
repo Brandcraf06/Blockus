@@ -1,7 +1,6 @@
 package com.brand.blockus.worldgen.foliage;
 
 import com.brand.blockus.Blockus;
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

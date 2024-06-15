@@ -3,7 +3,6 @@ package com.brand.blockus.worldgen;
 import com.brand.blockus.content.BlockusBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKeys;
@@ -18,7 +17,6 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {

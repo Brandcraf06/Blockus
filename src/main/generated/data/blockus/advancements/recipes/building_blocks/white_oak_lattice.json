@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:white_oak_lattice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_oak_lattice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:white_oak_lattice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_oak_lattice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:white_oak_lattice"
+    ]
+  }
+}

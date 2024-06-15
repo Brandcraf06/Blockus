@@ -1,6 +1,7 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.content.types.TimberFrameTypes;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -10,9 +11,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.TexturedRenderLayers;
-import net.minecraft.client.util.SpriteIdentifier;
-import net.minecraft.util.Identifier;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -87,6 +85,10 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.BLACKSTONE_TRAPDOOR,
             BlockusBlocks.REDSTONE_LANTERN
         );
+
+        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),timberFrameType.lattice, timberFrameType.grate);
+        }
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
 

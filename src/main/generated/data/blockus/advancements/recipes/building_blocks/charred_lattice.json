@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_charred_lattice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:charred_lattice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:charred_lattice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_charred_lattice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:charred_lattice"
+    ]
+  }
+}
