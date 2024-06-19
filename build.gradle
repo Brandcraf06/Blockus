@@ -46,10 +46,6 @@ fabricApi {
   configureDataGeneration()
 }
 
-loom {
-	accessWidenerPath = file("src/main/resources/blockus.aw")
-}
-
 processResources {
 	inputs.property "version", project.version
 
