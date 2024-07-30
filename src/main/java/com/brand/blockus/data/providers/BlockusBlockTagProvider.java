@@ -983,6 +983,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MOSSY_WHITE_OAK_PLANKS.block)
             .add(MOSSY_RAW_BAMBOO_PLANKS.block);
 
+        this.getOrCreateTagBuilder(Identifier.of("c", "bars"))
+            .add(GOLDEN_BARS);
+
         this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
             .add(LEGACY_PLANKS)
             .add(SOUL_O_LANTERN)

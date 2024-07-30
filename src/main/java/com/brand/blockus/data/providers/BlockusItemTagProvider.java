@@ -5,6 +5,7 @@ import com.brand.blockus.utils.tags.BlockusBlockTags;
 import com.brand.blockus.utils.tags.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
@@ -292,5 +293,9 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 //        this.copy(new Identifier("promenade", "dark_amaranth_stems"));
 //
 //        this.copy(new Identifier("promenade", "palm_logs"));
+
+        // Conventional Item Tags
+        this.getOrCreateTagBuilder(ConventionalItemTags.CHAINS)
+            .add(GOLDEN_CHAIN.asItem());
     }
 }
