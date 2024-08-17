@@ -284,7 +284,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerCubeColumn(modelGenerator, BlockusBlocks.LAPIS_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
 
         // Rainbow
-        modelGenerator.registerFlowerbed(BlockusBlocks.RAINBOW_PETAL);
+        modelGenerator.registerFlowerbed(BlockusBlocks.RAINBOW_PETALS);
         this.registerUpDefaultFacingBlock(modelGenerator, BlockusBlocks.RAINBOW_BLOCK);
         this.registerTopBottomFacingBottom(modelGenerator, BlockusBlocks.RAINBOW_ASPHALT);
         modelGenerator.registerFlowerPotPlant(BlockusBlocks.RAINBOW_ROSE, BlockusBlocks.POTTED_RAINBOW_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);

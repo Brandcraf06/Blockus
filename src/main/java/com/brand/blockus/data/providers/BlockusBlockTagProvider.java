@@ -1458,7 +1458,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.PATTERNED_CARPETS);
 
         this.getOrCreateTagBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
-            .add(RAINBOW_PETAL);
+            .add(RAINBOW_PETALS);
 
         this.getOrCreateTagBuilder(BlockTags.ANIMALS_SPAWNABLE_ON)
             .add(LEGACY_GRASS_BLOCK)

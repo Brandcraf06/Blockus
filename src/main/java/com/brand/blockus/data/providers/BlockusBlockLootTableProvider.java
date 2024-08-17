@@ -2,7 +2,6 @@ package com.brand.blockus.data.providers;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
-import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.types.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -16,7 +15,6 @@ import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.condition.TableBonusLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.LimitCountLootFunction;
 import net.minecraft.loot.function.LootFunction;
@@ -521,6 +519,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             YELLOW_BEVELED_GLASS,
             YELLOW_BEVELED_GLASS_PANE);
 
+        this.addDrop(RAINBOW_PETALS, this.flowerbedDrops(RAINBOW_PETALS));
         this.addPottedPlantDropsBatch(POTTED_WHITE_OAK_SAPLING, POTTED_RAINBOW_ROSE, POTTED_LEGACY_SAPLING);
 
         this.addDrop(LEGACY_LEAVES, (block) -> this.leavesDrops(block, LEGACY_SAPLING, SAPLING_DROP_CHANCE));
