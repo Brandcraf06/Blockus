@@ -32,6 +32,7 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.POTTED_ACACIA.block, Blocks.ACACIA_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_DARK_OAK.block, Blocks.DARK_OAK_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_MANGROVE.block, Blocks.MANGROVE_LEAVES);
+        registerBlockColor(BlockusBlocks.RAINBOW_PETAL, Blocks.PINK_PETALS);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
             BlockusBlocks.OAK_SMALL_HEDGE,
@@ -61,6 +62,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.GOLDEN_BARS,
             BlockusBlocks.RAINBOW_ROSE,
             BlockusBlocks.POTTED_RAINBOW_ROSE,
+            BlockusBlocks.RAINBOW_PETAL,
             BlockusBlocks.POTTED_ROSE_BUSH.block,
             BlockusBlocks.POTTED_LILAC.block,
             BlockusBlocks.POTTED_PEONY.block,
@@ -157,3 +159,4 @@ public class BlockusClient implements ClientModInitializer {
         }, block.asItem());
     }
 }
+

@@ -1,16 +1,30 @@
 {
   "variants": {
-    "axis=x": {
+    "facing=down": {
       "model": "blockus:block/rainbow_block",
-      "x": 90,
-      "y": 90
+      "x": 180
     },
-    "axis=y": {
+    "facing=east": {
+      "model": "blockus:block/rainbow_block",
+      "x": 270,
+      "y": 270
+    },
+    "facing=north": {
+      "model": "blockus:block/rainbow_block",
+      "x": 270,
+      "y": 180
+    },
+    "facing=south": {
+      "model": "blockus:block/rainbow_block",
+      "x": 270
+    },
+    "facing=up": {
       "model": "blockus:block/rainbow_block"
     },
-    "axis=z": {
+    "facing=west": {
       "model": "blockus:block/rainbow_block",
-      "x": 90
+      "x": 270,
+      "y": 90
     }
   }
 }

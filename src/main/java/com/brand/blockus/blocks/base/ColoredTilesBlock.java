@@ -13,7 +13,7 @@ import net.minecraft.util.Util;
 
 import java.util.List;
 
-public class ColoredTilesBlock extends HorizontalAxisBlockBase {
+public class ColoredTilesBlock extends HorizontalAxisBlock {
 
     public final Block tile1;
     public final Block tile2;

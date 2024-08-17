@@ -33,16 +33,24 @@ public class BlockusModelProvider extends FabricModelProvider {
         });
 
         for (BSSWTypes bssType : BSSWTypes.values()) {
+            // Rough Sandstones
             if (bssType.type.contains("rough") && bssType.type.contains("sandstone")) {
                 this.registerBlockStairsSlabWithBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
-            } else if (bssType.type.contains("smooth") && bssType.type.contains("sandstone") || bssType.type.contains("rough_basalt")) {
+            }
+            // Smooth Sandstones & Rough Basalt
+            else if ((bssType.type.contains("smooth") && bssType.type.contains("sandstone")) ||
+                bssType.block == BlockusBlocks.ROUGH_BASALT.block) {
                 this.registerBlockStairsSlabWithTop(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
             }
-              else if (bssType.block == BlockusBlocks.SOUL_SANDSTONE.block) {
+            // Soul Sandstone
+            else if (bssType.block == BlockusBlocks.SOUL_SANDSTONE.block) {
                 this.registerBlockStairsSlabwithTopBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab);
-            } else {
+            }
+            // Autre
+            else {
                 this.registerBlockStairsAndSlab(modelGenerator, bssType.block, bssType.stairs, bssType.slab);
             }
+
             if (bssType.wall != null) {
                 this.registerWall(modelGenerator, bssType.wall, bssType.block);
             }
@@ -276,8 +284,9 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerCubeColumn(modelGenerator, BlockusBlocks.LAPIS_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
 
         // Rainbow
-        this.registerLines(modelGenerator, BlockusBlocks.RAINBOW_BLOCK);
-        this.registerAxisRotatedBlockTopBottom(modelGenerator, BlockusBlocks.RAINBOW_ASPHALT);
+        modelGenerator.registerFlowerbed(BlockusBlocks.RAINBOW_PETAL);
+        this.registerUpDefaultFacingBlock(modelGenerator, BlockusBlocks.RAINBOW_BLOCK);
+        this.registerTopBottomFacingBottom(modelGenerator, BlockusBlocks.RAINBOW_ASPHALT);
         modelGenerator.registerFlowerPotPlant(BlockusBlocks.RAINBOW_ROSE, BlockusBlocks.POTTED_RAINBOW_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         // Purpur Blocks
@@ -434,7 +443,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Glass - Beveled Glass
         this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.RAINBOW_BEVELED_GLASS, BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.RAINBOW_GLASS, BlockusBlocks.RAINBOW_GLASS_PANE);
+        modelGenerator.registerGlassPane(BlockusBlocks.RAINBOW_GLASS, BlockusBlocks.RAINBOW_GLASS_PANE);
         this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BEVELED_GLASS, BlockusBlocks.BEVELED_GLASS_PANE);
         this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BLACK_BEVELED_GLASS, BlockusBlocks.BLACK_BEVELED_GLASS_PANE);
         this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BLUE_BEVELED_GLASS, BlockusBlocks.BLUE_BEVELED_GLASS_PANE);
@@ -532,8 +541,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         registerColoredTilesSimple(modelGenerator, BlockusBlocks.YELLOW_COLORED_TILES);
 
         // Other
-        this.registerStairs(modelGenerator, BlockusBlocks.NETHERITE_STAIRS, Blocks.NETHERITE_BLOCK);
-        this.registerSlab(modelGenerator, BlockusBlocks.NETHERITE_SLAB, Blocks.NETHERITE_BLOCK);
+        this.registerStairsAndSlab(modelGenerator, BlockusBlocks.NETHERITE_STAIRS, BlockusBlocks.NETHERITE_SLAB, Blocks.NETHERITE_BLOCK);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.NETHER_STAR_BLOCK);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_GLOWSTONE);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CAUTION_BLOCK);
@@ -634,6 +642,11 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createSlab(modelGenerator, block, textureMap, TextureMap.getId(textureSource));
     }
 
+    public final void registerStairsAndSlab(BlockStateModelGenerator modelGenerator, Block stairs, Block slab, Block block) {
+        this.registerStairs(modelGenerator, stairs, block);
+        this.registerSlab(modelGenerator, slab, block);
+    }
+
     public final void registerSlabwithTop(BlockStateModelGenerator modelGenerator, Block block, Block textureSource, Block end) {
         TextureMap textureMap = sideTopBottom(TextureMap.getId(textureSource), TextureMap.getSubId(end, "_top"));
         this.createSlab(modelGenerator, block, textureMap, TextureMap.getId(textureSource));
@@ -708,7 +721,13 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBlock(modelGenerator, block, Models.CUBE_BOTTOM_TOP, textureMap);
     }
 
-    public final void registerAxisRotatedBlockTopBottom(BlockStateModelGenerator modelGenerator, Block block) {
+    public final void registerUpDefaultFacingBlock(BlockStateModelGenerator modelGenerator, Block block) {
+        Identifier identifier = TexturedModel.CUBE_ALL.upload(block, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).coordinate(createUpDefaultRotationStates()));
+    }
+
+
+    public final void registerTopBottomFacingBottom(BlockStateModelGenerator modelGenerator, Block block) {
         TextureMap textureMap = sideTopBottom(TextureMap.getId(block), TextureMap.getSubId(block, "_top"), TextureMap.getSubId(block, "_bottom"));
         Identifier identifier = Models.CUBE_BOTTOM_TOP.upload(block, textureMap, modelGenerator.modelCollector);
         modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).coordinate(createUpDefaultRotationStates()));

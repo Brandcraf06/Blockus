@@ -1,7 +1,6 @@
 package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
@@ -50,7 +49,7 @@ public class NaturalGroup {
             entries.add(BlockusBlocks.SOUL_O_LANTERN);
 
             entries.add(BlockusBlocks.RAINBOW_ROSE);
-            entries.add(BlockusItems.RAINBOW_PETAL);
+            entries.add(BlockusBlocks.RAINBOW_PETAL);
 
         });
     }
