@@ -7,6 +7,7 @@
 * Rainbow Block can now be placed in every direction
   * Now use "facing" state instead of "axis".
   * Animation direction now changes depending on facing.
+* Added Golden Chains & Bars to c:chains & c:bars tags (legoatoom)
 * Fixed interaction with Legacy Stonecutter, Cookie Block & Weight Storage Cube
 * Fixed Rainbow Glass and Rainbow Glass Pane not being in Creative Inventory.
 
