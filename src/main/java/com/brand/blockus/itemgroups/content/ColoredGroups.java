@@ -272,6 +272,7 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.PURPLE_BEVELED_GLASS);
             entries.add(BlockusBlocks.MAGENTA_BEVELED_GLASS);
             entries.add(BlockusBlocks.PINK_BEVELED_GLASS);
+            entries.add(BlockusBlocks.RAINBOW_GLASS);
             entries.add(BlockusBlocks.RAINBOW_BEVELED_GLASS);
 
             entries.add(BlockusBlocks.BEVELED_GLASS_PANE);
@@ -291,6 +292,7 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.PURPLE_BEVELED_GLASS_PANE);
             entries.add(BlockusBlocks.MAGENTA_BEVELED_GLASS_PANE);
             entries.add(BlockusBlocks.PINK_BEVELED_GLASS_PANE);
+            entries.add(BlockusBlocks.RAINBOW_GLASS_PANE);
             entries.add(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
 
             entries.add(BlockusBlocks.RAINBOW_BLOCK);
@@ -298,6 +300,7 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.RAINBOW_BRICKS.stairs);
             entries.add(BlockusBlocks.RAINBOW_BRICKS.slab);
             entries.add(BlockusBlocks.RAINBOW_BRICKS.wall);
+
             entries.add(BlockusBlocks.RAINBOW_GLOWSTONE);
         });
 

@@ -10,7 +10,7 @@ import net.minecraft.registry.Registry;
 
 public class BlockusItems {
 
-    public static final Item RAINBOW_PETAL = register("rainbow_petal", new Item(new Item.Settings().maxCount(64)));
+    // public static final Item RAINBOW_PETAL = register("rainbow_petal", new Item(new Item.Settings().maxCount(64)));
 
 
     public static Item register(String id, Item item) {

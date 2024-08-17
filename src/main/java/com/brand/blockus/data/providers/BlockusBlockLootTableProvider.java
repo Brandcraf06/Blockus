@@ -2,7 +2,6 @@ package com.brand.blockus.data.providers;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
-import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -517,6 +516,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             YELLOW_BEVELED_GLASS,
             YELLOW_BEVELED_GLASS_PANE);
 
+        this.addDrop(RAINBOW_PETALS, this.flowerbedDrops(RAINBOW_PETALS));
         this.addPottedPlantDropsBatch(POTTED_WHITE_OAK_SAPLING, POTTED_RAINBOW_ROSE, POTTED_LEGACY_SAPLING);
 
         this.addDrop(LEGACY_LEAVES, (block) -> this.leavesDrops(block, LEGACY_SAPLING, SAPLING_DROP_CHANCE));
@@ -528,7 +528,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(BLAZE_LANTERN, (block) -> this.drops(block, Items.BLAZE_POWDER, ConstantLootNumberProvider.create(9.0F)));
         this.addDrop(BURNT_PAPER_BLOCK, (block) -> this.drops(block, Items.GUNPOWDER, ConstantLootNumberProvider.create(2.0F)));
         this.addDrop(NETHER_STAR_BLOCK, (block) -> dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(Items.NETHER_STAR).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(8.0F, 9.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE, 2)).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(8, 9))))));
-        this.addDrop(RAINBOW_GLOWSTONE, (block) -> glowstoneDrops(block).pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).conditionally(WITHOUT_SILK_TOUCH).with((this.applyExplosionDecay(block, ItemEntry.builder(BlockusItems.RAINBOW_PETAL).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE))).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(1, 4)))))));
+        this.addDrop(RAINBOW_GLOWSTONE, this::glowstoneDrops);
 
         this.addDrop(COOKIE_BLOCK, (block) -> LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(this.applyExplosionDecay(block,
             ItemEntry.builder(Items.COOKIE).apply(setCookieCount(block, 9.0F, 0))

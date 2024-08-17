@@ -293,8 +293,9 @@ public class BlockusBlocks extends BlocksRegistration {
 
     // Rainbow
     public static final Block RAINBOW_ROSE = register("rainbow_rose", new FertilizableFlowerBlock(StatusEffects.GLOWING, 8, FabricBlockSettings.create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ)));
+    public static final Block RAINBOW_PETALS = register("rainbow_petal", new FlowerbedBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.PINK_PETALS).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block POTTED_RAINBOW_ROSE = registerNoItem("potted_rainbow_rose", createPottedPlant(RAINBOW_ROSE));
-    public static final Block RAINBOW_BLOCK = register("rainbow_block", new PillarBlock(FabricBlockSettings.create().mapColor(MapColor.LIGHT_BLUE).strength(5.0f, 6.0f).requiresTool()));
+    public static final Block RAINBOW_BLOCK = register("rainbow_block", new FullFacingBlock(FabricBlockSettings.create().mapColor(MapColor.LIGHT_BLUE).strength(5.0f, 6.0f).requiresTool()));
     public static final BSSWTypes RAINBOW_BRICKS = new BSSWTypes("rainbow_bricks", Blocks.BRICKS);
     public static final Block RAINBOW_GLOWSTONE = register("rainbow_glowstone", createCopy(Blocks.GLOWSTONE));
 
@@ -868,6 +869,7 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block GREEN_COLORED_TILES = register("green_colored_tiles", createCopy(Blocks.GREEN_CONCRETE));
     public static final Block RED_COLORED_TILES = register("red_colored_tiles", createCopy(Blocks.RED_CONCRETE));
     public static final Block BLACK_COLORED_TILES = register("black_colored_tiles", createCopy(Blocks.BLACK_CONCRETE));
-    public static final Block RAINBOW_COLORED_TILES = register("rainbow_colored_tiles", new HorizontalAxisBlockBase(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_CONCRETE)));
+    public static final Block RAINBOW_COLORED_TILES = register("rainbow_colored_tiles", new HorizontalAxisBlock(FabricBlockSettings.copy(Blocks.LIGHT_BLUE_CONCRETE)));
+
 
 }
