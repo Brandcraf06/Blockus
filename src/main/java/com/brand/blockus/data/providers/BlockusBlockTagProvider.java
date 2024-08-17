@@ -989,6 +989,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MOSSY_WHITE_OAK_PLANKS.block)
             .add(MOSSY_RAW_BAMBOO_PLANKS.block);
 
+        this.getOrCreateTagBuilder(Identifier.of("c", "bars"))
+            .add(GOLDEN_BARS);
+
         this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
             .add(WOODEN_FRAME)
             .add(LEGACY_PLANKS)
@@ -1463,6 +1466,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockTags.WOOL_CARPETS)
             .addTag(BlockusBlockTags.PATTERNED_CARPETS);
+
+        this.getOrCreateTagBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
+            .add(RAINBOW_PETALS);
 
         this.getOrCreateTagBuilder(BlockTags.ANIMALS_SPAWNABLE_ON)
             .add(LEGACY_GRASS_BLOCK)

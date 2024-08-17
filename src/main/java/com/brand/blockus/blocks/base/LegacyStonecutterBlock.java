@@ -10,7 +10,6 @@ import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -22,7 +21,7 @@ public class LegacyStonecutterBlock extends Block {
         super(settings);
     }
 
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (world.isClient) {
             return ActionResult.SUCCESS;
         } else {
@@ -33,8 +32,8 @@ public class LegacyStonecutterBlock extends Block {
     }
 
     public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
-        return new SimpleNamedScreenHandlerFactory((syncId, inventory, player) -> {
-            return new LegacyStonecutterScreenHandler(syncId, inventory, ScreenHandlerContext.create(world, pos));
+        return new SimpleNamedScreenHandlerFactory((syncId, playerInventory, player) -> {
+            return new LegacyStonecutterScreenHandler(syncId, playerInventory, ScreenHandlerContext.create(world, pos));
         }, TITLE);
     }
 }

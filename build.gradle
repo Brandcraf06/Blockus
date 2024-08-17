@@ -46,10 +46,6 @@ dependencies {
   modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"*/
 }
 
-loom {
-	accessWidenerPath = file("src/main/resources/blockus.aw")
-}
-
 processResources {
 	inputs.property "version", project.version
 

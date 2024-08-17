@@ -1,7 +1,6 @@
 package com.brand.blockus.data.providers;
 
 import com.brand.blockus.content.BlockusEntities;
-import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusWoodFamilies;
 import com.brand.blockus.utils.tags.BlockusItemTags;
@@ -962,16 +961,17 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
 
         // Rainbow
-        offerShapelessRecipe(exporter, BlockusItems.RAINBOW_PETAL, RAINBOW_ROSE, "rainbow_petal", 2);
-        offerShapelessRecipe(exporter, BlockusItems.RAINBOW_PETAL, RAINBOW_BLOCK, "rainbow_petal", 4);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_BLOCK).input('#', BlockusItems.RAINBOW_PETAL).pattern("##").pattern("##").criterion(hasItem(BlockusItems.RAINBOW_PETAL), conditionsFromItem(BlockusItems.RAINBOW_PETAL)).offerTo(exporter);
+        offerShapelessRecipe(exporter, RAINBOW_PETALS, RAINBOW_ROSE, "rainbow_petal", 2);
+        offerShapelessRecipe(exporter, RAINBOW_PETALS, RAINBOW_BLOCK, "rainbow_petal", 4);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_BLOCK).input('#', RAINBOW_PETALS).pattern("##").pattern("##").criterion(hasItem(RAINBOW_PETALS), conditionsFromItem(RAINBOW_PETALS)).offerTo(exporter);
         offerStonecuttingRecipe(exporter, RAINBOW_BRICKS.block, RAINBOW_BLOCK);
         offerStonecuttingRecipe(exporter, RAINBOW_BRICKS.stairs, RAINBOW_BLOCK, RAINBOW_BRICKS.block);
         offerStonecuttingRecipe(exporter, RAINBOW_BRICKS.slab, 2, RAINBOW_BLOCK, RAINBOW_BRICKS.block);
         offerStonecuttingRecipe(exporter, RAINBOW_BRICKS.wall, RAINBOW_BLOCK, RAINBOW_BRICKS.block);
 
         offerPolishedStoneRecipe(exporter, RAINBOW_BRICKS.block, RAINBOW_BLOCK);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLOWSTONE, 4).input('S', BlockusItems.RAINBOW_PETAL).input('#', Blocks.GLOWSTONE).pattern(" S ").pattern("S#S").pattern(" S ").criterion(hasItem(BlockusItems.RAINBOW_PETAL), conditionsFromItem(BlockusItems.RAINBOW_PETAL)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLOWSTONE).input(RAINBOW_PETALS).input(Blocks.GLOWSTONE).group("rainbow_glowstone").criterion(hasItem(RAINBOW_PETALS), conditionsFromItem(RAINBOW_PETALS)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLOWSTONE, 1).input('G', Items.GLOWSTONE_DUST).group("rainbow_glowstone").input('R', RAINBOW_PETALS).pattern(" G ").pattern("GRG").pattern(" G ").criterion(hasItem(RAINBOW_PETALS), conditionsFromItem(RAINBOW_PETALS)).offerTo(exporter, getRecipeName(RAINBOW_GLOWSTONE) + "_alt");
 
 
         // Colored Stone Bricks
@@ -1010,7 +1010,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStainedRedstoneLampRecipe(exporter, BROWN_REDSTONE_LAMP, Items.BROWN_DYE, BROWN_REDSTONE_LAMP_LIT);
         offerStainedRedstoneLampRecipe(exporter, GREEN_REDSTONE_LAMP, Items.GREEN_DYE, GREEN_REDSTONE_LAMP_LIT);
         offerStainedRedstoneLampRecipe(exporter, RED_REDSTONE_LAMP, Items.RED_DYE, RED_REDSTONE_LAMP_LIT);
-        offerStainedRedstoneLampRecipe(exporter, RAINBOW_LAMP, BlockusItems.RAINBOW_PETAL, RAINBOW_LAMP_LIT);
+        offerStainedRedstoneLampRecipe(exporter, RAINBOW_LAMP, RAINBOW_PETALS, RAINBOW_LAMP_LIT);
 
         // Neon Blocks
         offerNeonRecipe(exporter, WHITE_NEON, Items.WHITE_DYE);
@@ -1052,7 +1052,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         // Asphalt
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ASPHALT.block, 8).input('X', Blocks.GRAVEL).input('#', ItemTags.COALS).pattern("XXX").pattern("X#X").pattern("XXX").group("asphalt").criterion(hasItem(Blocks.GRAVEL), conditionsFromItem(Blocks.GRAVEL)).offerTo(exporter);
-        createEnclosedRecipe(RAINBOW_ASPHALT, Ingredient.ofItems(ASPHALT.block), BlockusItems.RAINBOW_PETAL).criterion(hasItem(ASPHALT.block), conditionsFromItem(ASPHALT.block)).offerTo(exporter);
+        createEnclosedRecipe(RAINBOW_ASPHALT, Ingredient.ofItems(ASPHALT.block), RAINBOW_PETALS).criterion(hasItem(ASPHALT.block), conditionsFromItem(ASPHALT.block)).offerTo(exporter);
 
         offerAsphaltRecipe(exporter, Items.WHITE_DYE, WHITE_ASPHALT.block, WHITE_ASPHALT.stairs, WHITE_ASPHALT.slab);
         offerAsphaltRecipe(exporter, Items.ORANGE_DYE, ORANGE_ASPHALT.block, ORANGE_ASPHALT.stairs, ORANGE_ASPHALT.slab);
@@ -1114,9 +1114,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStainedBeveledGlassRecipe(exporter, GREEN_BEVELED_GLASS, GREEN_BEVELED_GLASS_PANE, Blocks.GREEN_STAINED_GLASS, Items.GREEN_DYE);
         offerStainedBeveledGlassRecipe(exporter, RED_BEVELED_GLASS, RED_BEVELED_GLASS_PANE, Blocks.RED_STAINED_GLASS, Items.RED_DYE);
         offerStainedBeveledGlassRecipe(exporter, BLACK_BEVELED_GLASS, BLACK_BEVELED_GLASS_PANE, Blocks.BLACK_STAINED_GLASS, Items.BLACK_DYE);
-        offerStainedBeveledGlassRecipe(exporter, RAINBOW_BEVELED_GLASS, RAINBOW_BEVELED_GLASS_PANE, RAINBOW_GLASS, BlockusItems.RAINBOW_PETAL);
-        createEnclosedRecipe(RAINBOW_GLASS, Ingredient.ofItems(Blocks.GLASS), BlockusItems.RAINBOW_PETAL).criterion(hasItem(BlockusItems.RAINBOW_PETAL), conditionsFromItem(BlockusItems.RAINBOW_PETAL)).offerTo(exporter);
-        createEnclosedRecipe(RAINBOW_GLASS_PANE, Ingredient.ofItems(Blocks.GLASS_PANE), BlockusItems.RAINBOW_PETAL).criterion(hasItem(BlockusItems.RAINBOW_PETAL), conditionsFromItem(BlockusItems.RAINBOW_PETAL)).offerTo(exporter, getRecipeName(RAINBOW_GLASS_PANE) + "_alt");
+        offerStainedBeveledGlassRecipe(exporter, RAINBOW_BEVELED_GLASS, RAINBOW_BEVELED_GLASS_PANE, RAINBOW_GLASS, RAINBOW_PETALS);
+        createEnclosedRecipe(RAINBOW_GLASS, Ingredient.ofItems(Blocks.GLASS), RAINBOW_PETALS).criterion(hasItem(RAINBOW_PETALS), conditionsFromItem(RAINBOW_PETALS)).offerTo(exporter);
+        createEnclosedRecipe(RAINBOW_GLASS_PANE, Ingredient.ofItems(Blocks.GLASS_PANE), RAINBOW_PETALS).criterion(hasItem(RAINBOW_PETALS), conditionsFromItem(RAINBOW_PETALS)).offerTo(exporter, getRecipeName(RAINBOW_GLASS_PANE) + "_alt");
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLASS_PANE, 16).input('#', RAINBOW_GLASS).pattern("###").pattern("###").criterion(hasItem(RAINBOW_GLASS), conditionsFromItem(RAINBOW_GLASS)).offerTo(exporter);
 
         // Colored Tiles
@@ -1411,7 +1411,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void offerNeonRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible dye) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 8).input('A', dye).input('B', Items.GLOW_INK_SAC).input('C', Items.AMETHYST_SHARD).pattern("CAC").pattern("ABA").pattern("CAC").group("neon_blocks").criterion(hasItem(Items.GLOW_INK_SAC), conditionsFromItem(Items.GLOW_INK_SAC)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 8).input('D', dye).input('S', Items.GLOW_INK_SAC).input('A', Items.AMETHYST_SHARD).pattern(" A ").pattern("SDS").pattern(" A ").group("neon_blocks").criterion(hasItem(Items.GLOW_INK_SAC), conditionsFromItem(Items.GLOW_INK_SAC)).offerTo(exporter);
     }
 
     public static void offerFuturneoRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible glass) {

@@ -1,32 +1,30 @@
 package com.brand.blockus.blocks.base.asphalt;
 
-import net.minecraft.block.Block;
+import com.brand.blockus.blocks.base.FullFacingBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.math.Direction;
+import net.minecraft.client.item.TooltipType;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
-public class RainbowAsphalt extends AsphaltBlock {
+import java.util.List;
 
-    public static final DirectionProperty FACING;
+public class RainbowAsphalt extends FullFacingBlock {
 
     public RainbowAsphalt(Settings settings) {
         super(settings);
-        this.setDefaultState(this.getDefaultState().with(FACING, Direction.NORTH));
-
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+    @Override
+    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+        AsphaltBlock.applySprintEffect(entity);
     }
 
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getSide());
-    }
-
-    static {
-        FACING = Properties.FACING;
+    @Override
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
+        AsphaltBlock.addTooltipInfo(tooltip);
     }
 }

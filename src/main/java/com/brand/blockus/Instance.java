@@ -1,7 +1,6 @@
 package com.brand.blockus;
 
 import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.BlockusItems;
 import com.brand.blockus.content.types.TimberFrameTypes;
 import com.brand.blockus.content.types.WoodTypes;
 import com.brand.blockus.content.types.WoolTypes;
@@ -195,7 +194,7 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_LEAVES, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.WHITE_OAK_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.LEGACY_SAPLING, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BlockusItems.RAINBOW_PETAL, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.RAINBOW_PETALS, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.SWEET_BERRIES_CRATE, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, 0.50f);
@@ -236,7 +235,7 @@ public class Instance {
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
             factories.add(new SellItemFactory(BlockusBlocks.LEGACY_SAPLING, 5, 1, 8));
             factories.add(new SellItemFactory(BlockusBlocks.WHITE_OAK_SAPLING, 5, 1, 8));
-            factories.add(new SellItemFactory(BlockusItems.RAINBOW_PETAL, 1, 3, 12));
+            factories.add(new SellItemFactory(BlockusBlocks.RAINBOW_PETALS, 1, 3, 12));
             factories.add(new SellItemFactory(BlockusBlocks.RAINBOW_ROSE, 1, 1, 12));
         });
     }

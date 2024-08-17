@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_2",
+  "textures": {
+    "flowerbed": "blockus:block/rainbow_petal",
+    "stem": "blockus:block/rainbow_petal_stem"
+  }
+}

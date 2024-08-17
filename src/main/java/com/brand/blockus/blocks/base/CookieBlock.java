@@ -6,7 +6,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -35,19 +34,18 @@ public class CookieBlock extends Block {
         return BITES_TO_SHAPE[state.get(BITES)];
     }
 
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (world.isClient) {
-            ItemStack itemStack = player.getStackInHand(hand);
-            if (this.tryEat(world, pos, state, player).isAccepted()) {
+            if (tryEat(world, pos, state, player).isAccepted()) {
                 return ActionResult.SUCCESS;
             }
 
-            if (itemStack.isEmpty()) {
+            if (player.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
                 return ActionResult.CONSUME;
             }
         }
 
-        return this.tryEat(world, pos, state, player);
+        return tryEat(world, pos, state, player);
     }
 
     private ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
