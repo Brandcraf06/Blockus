@@ -957,7 +957,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, RAINBOW_BRICKS.wall, RAINBOW_BLOCK, RAINBOW_BRICKS.block);
 
         offerPolishedStoneRecipe(exporter, RAINBOW_BRICKS.block, RAINBOW_BLOCK);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLOWSTONE, 4).input('S', RAINBOW_PETAL).input('#', Blocks.GLOWSTONE).pattern(" S ").pattern("S#S").pattern(" S ").criterion(hasItem(RAINBOW_PETAL), conditionsFromItem(RAINBOW_PETAL)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLOWSTONE).input(RAINBOW_PETAL).input(Blocks.GLOWSTONE).group("rainbow_glowstone").criterion(hasItem(RAINBOW_PETAL), conditionsFromItem(RAINBOW_PETAL)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLOWSTONE, 1).input('G', Items.GLOWSTONE_DUST).group("rainbow_glowstone").input('R', RAINBOW_PETAL).pattern(" G ").pattern("GRG").pattern(" G ").criterion(hasItem(RAINBOW_PETAL), conditionsFromItem(RAINBOW_PETAL)).offerTo(exporter, getRecipeName(RAINBOW_GLOWSTONE) + "_alt");
 
 
         // Colored Stone Bricks
@@ -1396,7 +1397,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void offerNeonRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible dye) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 8).input('A', dye).input('B', Items.GLOW_INK_SAC).input('C', Items.AMETHYST_SHARD).pattern("CAC").pattern("ABA").pattern("CAC").group("neon_blocks").criterion(hasItem(Items.GLOW_INK_SAC), conditionsFromItem(Items.GLOW_INK_SAC)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 8).input('D', dye).input('S', Items.GLOW_INK_SAC).input('A', Items.AMETHYST_SHARD).pattern(" A ").pattern("SDS").pattern(" A ").group("neon_blocks").criterion(hasItem(Items.GLOW_INK_SAC), conditionsFromItem(Items.GLOW_INK_SAC)).offerTo(exporter);
     }
 
     public static void offerFuturneoRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible glass) {

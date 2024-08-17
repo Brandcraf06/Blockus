@@ -4,19 +4,19 @@
   "group": "neon_blocks",
   "key": {
     "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "D": {
       "item": "minecraft:light_blue_dye"
     },
-    "B": {
+    "S": {
       "item": "minecraft:glow_ink_sac"
-    },
-    "C": {
-      "item": "minecraft:amethyst_shard"
     }
   },
   "pattern": [
-    "CAC",
-    "ABA",
-    "CAC"
+    " A ",
+    "SDS",
+    " A "
   ],
   "result": {
     "count": 8,

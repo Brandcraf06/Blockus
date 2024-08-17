@@ -1,21 +1,17 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "key": {
-    "#": {
-      "item": "minecraft:glowstone"
-    },
-    "S": {
+  "group": "rainbow_glowstone",
+  "ingredients": [
+    {
       "item": "blockus:rainbow_petal"
+    },
+    {
+      "item": "minecraft:glowstone"
     }
-  },
-  "pattern": [
-    " S ",
-    "S#S",
-    " S "
   ],
   "result": {
-    "count": 4,
+    "count": 1,
     "id": "blockus:rainbow_glowstone"
   }
 }
