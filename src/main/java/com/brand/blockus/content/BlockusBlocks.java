@@ -405,6 +405,19 @@ public class BlockusBlocks extends BlocksRegistration {
     public static final Block CRIMSON_SMALL_STEMS = register("crimson_small_stems", createPillarCopy(Blocks.CRIMSON_STEM));
     public static final Block WHITE_OAK_SMALL_LOGS = register("white_oak_small_logs", createPillarCopy(WHITE_OAK_LOG));
 
+    // Posts
+    public static final Block OAK_POST = register("oak_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).solid().burnable()));
+    public static final Block SPRUCE_POST = register("spruce_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_WOOD).solid().burnable()));
+    public static final Block BIRCH_POST = register("birch_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.BIRCH_WOOD).solid().burnable()));
+    public static final Block JUNGLE_POST = register("jungle_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.JUNGLE_WOOD).solid().burnable()));
+    public static final Block ACACIA_POST = register("acacia_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.ACACIA_WOOD).solid().burnable()));
+    public static final Block DARK_OAK_POST = register("dark_oak_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.DARK_OAK_WOOD).solid().burnable()));
+    public static final Block MANGROVE_POST = register("mangrove_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.MANGROVE_WOOD).solid().burnable()));
+    public static final Block CHERRY_POST = register("cherry_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.CHERRY_WOOD).solid().burnable()));
+    public static final Block WARPED_POST = register("warped_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.WARPED_HYPHAE).solid().burnable()));
+    public static final Block CRIMSON_POST = register("crimson_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.CRIMSON_HYPHAE).solid().burnable()));
+    public static final Block WHITE_OAK_POST = register("white_oak_post", new PostBlock(AbstractBlock.Settings.copy(WHITE_OAK_WOOD).solid().burnable()));
+
     // Timber Frames & Grates
     public static final TimberFrameTypes OAK_TIMBER_FRAME = new TimberFrameTypes(Blocks.OAK_PLANKS);
     public static final TimberFrameTypes BIRCH_TIMBER_FRAME = new TimberFrameTypes(Blocks.BIRCH_PLANKS);

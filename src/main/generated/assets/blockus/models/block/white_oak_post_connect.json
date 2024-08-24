@@ -1,0 +1,7 @@
+{
+  "parent": "blockus:block/template_post_connect",
+  "textures": {
+    "end": "blockus:block/white_oak_log_top",
+    "side": "blockus:block/white_oak_log"
+  }
+}

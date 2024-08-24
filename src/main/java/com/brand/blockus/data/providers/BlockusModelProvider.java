@@ -16,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
+import net.minecraft.data.client.VariantSettings.Rotation;
 
 import static net.minecraft.registry.Registries.BLOCK;
 
@@ -350,6 +351,19 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CRIMSON_SMALL_STEMS);
         this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.WARPED_SMALL_STEMS);
 
+        // Wood Posts
+        this.registerPost(modelGenerator, BlockusBlocks.OAK_POST, Blocks.OAK_LOG);
+        this.registerPost(modelGenerator, BlockusBlocks.SPRUCE_POST, Blocks.SPRUCE_LOG);
+        this.registerPost(modelGenerator, BlockusBlocks.BIRCH_POST, Blocks.BIRCH_LOG);
+        this.registerPost(modelGenerator, BlockusBlocks.JUNGLE_POST, Blocks.JUNGLE_LOG);
+        this.registerPost(modelGenerator, BlockusBlocks.ACACIA_POST, Blocks.ACACIA_LOG);
+        this.registerPost(modelGenerator, BlockusBlocks.DARK_OAK_POST, Blocks.DARK_OAK_LOG);
+        this.registerPost(modelGenerator, BlockusBlocks.MANGROVE_POST, Blocks.MANGROVE_LOG);
+        this.registerPost(modelGenerator, BlockusBlocks.CHERRY_POST, Blocks.CHERRY_LOG);
+        this.registerPost(modelGenerator, BlockusBlocks.WARPED_POST, Blocks.WARPED_STEM);
+        this.registerPost(modelGenerator, BlockusBlocks.CRIMSON_POST, Blocks.CRIMSON_STEM);
+        this.registerPost(modelGenerator, BlockusBlocks.WHITE_OAK_POST, BlockusBlocks.WHITE_OAK_LOG);
+
         // Small Hedges
         this.registerSmallHedge(modelGenerator, BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);
         this.registerSmallHedge(modelGenerator, BlockusBlocks.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES);
@@ -585,6 +599,25 @@ public class BlockusModelProvider extends FabricModelProvider {
     public final void registerButtonAndPressurePlate(BlockStateModelGenerator modelGenerator, Block pressurePlateBlock, Block buttonBlock, Identifier textureSource) {
         this.registerButton(modelGenerator, buttonBlock, textureSource);
         this.registerPressurePlate(modelGenerator, pressurePlateBlock, textureSource);
+    }
+
+    public final void registerPost(BlockStateModelGenerator modelGenerator, Block block, Block textureSource) {
+        TextureMap textureMap = TextureMap.sideAndEndForTop(textureSource);
+        Identifier identifier = BlockusModels.TEMPLATE_POST.upload(block, textureMap, modelGenerator.modelCollector);
+        Identifier identifier2 = BlockusModels.TEMPLATE_POST_CONNECT.upload(block, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(createPostBlockState(block, identifier, identifier2));
+        modelGenerator.registerParentedItemModel(block, identifier);
+    }
+
+    public static BlockStateSupplier createPostBlockState(Block fenceBlock, Identifier postModelId, Identifier sideModelId) {
+        return MultipartBlockStateSupplier.create(fenceBlock)
+            .with(When.create().set(Properties.AXIS, Direction.Axis.X), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(Properties.AXIS, Direction.Axis.Y), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(Properties.AXIS, Direction.Axis.Z), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(Properties.NORTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(Properties.EAST, true), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(Properties.SOUTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.Y, Rotation.R180).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(Properties.WEST, true), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.Y, Rotation.R270).put(VariantSettings.UVLOCK, false));
     }
 
     public final void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block wallBlock, Block textureSource) {

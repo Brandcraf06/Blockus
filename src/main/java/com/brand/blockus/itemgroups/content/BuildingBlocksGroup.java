@@ -127,6 +127,18 @@ public class BuildingBlocksGroup {
                 entries.add(BlockusPromenadeBlocks.PALM_SMALL_LOGS);
                 entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS);
             }*/
+            entries.add(BlockusBlocks.OAK_POST);
+            entries.add(BlockusBlocks.BIRCH_POST);
+            entries.add(BlockusBlocks.SPRUCE_POST);
+            entries.add(BlockusBlocks.JUNGLE_POST);
+            entries.add(BlockusBlocks.ACACIA_POST);
+            entries.add(BlockusBlocks.DARK_OAK_POST);
+            entries.add(BlockusBlocks.MANGROVE_POST);
+            entries.add(BlockusBlocks.CHERRY_POST);
+            entries.add(BlockusBlocks.WHITE_OAK_POST);
+            entries.add(BlockusBlocks.CRIMSON_POST);
+            entries.add(BlockusBlocks.WARPED_POST);
+
 
             entries.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
             entries.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS);

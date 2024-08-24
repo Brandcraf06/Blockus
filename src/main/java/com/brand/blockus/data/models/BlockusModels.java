@@ -11,6 +11,8 @@ public class BlockusModels {
 
     public static final Model CUBE_TILES;
     public static final Model CUBE_TILES_2;
+    public static final Model TEMPLATE_POST;
+    public static final Model TEMPLATE_POST_CONNECT;
     public static final Model TEMPLATE_SMALL_HEDGE_END;
     public static final Model TEMPLATE_SMALL_HEDGE_SIDE;
     public static final Model TEMPLATE_SMALL_HEDGE_SIDE_TALL;
@@ -34,6 +36,8 @@ public class BlockusModels {
     static {
         CUBE_TILES = createModel("cube_tiles", "", BlockusTextureKey.TILE_1, BlockusTextureKey.TILE_2);
         CUBE_TILES_2 = createModel("cube_tiles_2", "_2", BlockusTextureKey.TILE_1, BlockusTextureKey.TILE_2);
+        TEMPLATE_POST = createModel("template_post", TextureKey.END, TextureKey.SIDE);
+        TEMPLATE_POST_CONNECT = createModel("template_post_connect", "_connect", TextureKey.END, TextureKey.SIDE);
         TEMPLATE_SMALL_HEDGE_END = createModel("template_small_hedge_end", "_end", BlockusTextureKey.HEDGE);
         TEMPLATE_SMALL_HEDGE_SIDE = createModel("template_small_hedge_side", "_side", BlockusTextureKey.HEDGE);
         TEMPLATE_SMALL_HEDGE_SIDE_TALL = createModel("template_small_hedge_side_tall", "_side_tall", BlockusTextureKey.HEDGE);

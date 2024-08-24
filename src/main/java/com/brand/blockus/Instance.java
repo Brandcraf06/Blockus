@@ -176,6 +176,16 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.MANGROVE_SMALL_LOGS, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, 5, 5);
 
+        // Posts
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.OAK_POST, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.BIRCH_POST, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.SPRUCE_POST, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.JUNGLE_POST, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.ACACIA_POST, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.DARK_OAK_POST, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.MANGROVE_POST, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.WHITE_OAK_POST, 5, 5);
+
         // Legacy blocks
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.LEGACY_LOG, 5, 5);
 

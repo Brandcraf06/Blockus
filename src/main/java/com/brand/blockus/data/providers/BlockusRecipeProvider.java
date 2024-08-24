@@ -1,5 +1,6 @@
 package com.brand.blockus.data.providers;
 
+import com.brand.blockus.content.BlockusBlocks;
 import com.brand.blockus.content.BlockusEntities;
 import com.brand.blockus.content.types.*;
 import com.brand.blockus.data.family.BlockusWoodFamilies;
@@ -845,6 +846,18 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSmallLogsRecipe(exporter, CRIMSON_SMALL_STEMS, Blocks.CRIMSON_STEM);
         offerSmallLogsRecipe(exporter, WHITE_OAK_SMALL_LOGS, WHITE_OAK_LOG);
 
+        offerWoodenPostRecipe(exporter, OAK_POST, Blocks.OAK_WOOD, Blocks.OAK_PLANKS);
+        offerWoodenPostRecipe(exporter, SPRUCE_POST, Blocks.SPRUCE_WOOD, Blocks.SPRUCE_PLANKS);
+        offerWoodenPostRecipe(exporter, BIRCH_POST, Blocks.BIRCH_WOOD, Blocks.BIRCH_PLANKS);
+        offerWoodenPostRecipe(exporter, JUNGLE_POST, Blocks.JUNGLE_WOOD, Blocks.JUNGLE_WOOD);
+        offerWoodenPostRecipe(exporter, ACACIA_POST, Blocks.ACACIA_WOOD, Blocks.ACACIA_WOOD);
+        offerWoodenPostRecipe(exporter, DARK_OAK_POST, Blocks.DARK_OAK_WOOD, Blocks.DARK_OAK_WOOD);
+        offerWoodenPostRecipe(exporter, MANGROVE_POST, Blocks.MANGROVE_WOOD, Blocks.MANGROVE_WOOD);
+        offerWoodenPostRecipe(exporter, CHERRY_POST, Blocks.CHERRY_WOOD, Blocks.CHERRY_WOOD);
+        offerWoodenPostRecipe(exporter, WARPED_POST, Blocks.WARPED_HYPHAE, Blocks.WARPED_HYPHAE);
+        offerWoodenPostRecipe(exporter, CRIMSON_POST, Blocks.CRIMSON_HYPHAE, Blocks.CRIMSON_HYPHAE);
+        offerWoodenPostRecipe(exporter, WHITE_OAK_POST, WHITE_OAK_WOOD, WHITE_OAK.planks);
+
         offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, OAK_MOSAIC.block, Blocks.OAK_SLAB);
         offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, BIRCH_MOSAIC.block, Blocks.BIRCH_SLAB);
         offerMosaicRecipe(exporter, RecipeCategory.DECORATIONS, SPRUCE_MOSAIC.block, Blocks.SPRUCE_SLAB);
@@ -1283,8 +1296,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     }
 
     public static void offerSmallLogsRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 3).input(input).input(input).input(input).group("small_logs").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4).input('#', input).pattern("#").pattern("###").group("small_logs").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+    }
 
+    public static void offerWoodenPostRecipe(RecipeExporter exporter, ItemConvertible post, ItemConvertible log, ItemConvertible planks) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, post, 6).input('#', log).pattern("#").pattern("#").pattern("#").group("wooden_posts").criterion("has_woods", conditionsFromItem(log)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, planks, 2).input(post).group("planks").criterion("has_wooden_post", conditionsFromItem(post)).offerTo(exporter, convertBetween(planks, post));
     }
 
     public static void offerSmallHedgesRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
