@@ -166,6 +166,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, DRIPSTONE_BRICKS.slab, 2, Blocks.DRIPSTONE_BLOCK, POLISHED_DRIPSTONE.block, DRIPSTONE_BRICKS.block);
         offerStonecuttingRecipe(exporter, DRIPSTONE_BRICKS.wall, Blocks.DRIPSTONE_BLOCK, POLISHED_DRIPSTONE.block, DRIPSTONE_BRICKS.block);
         offerPolishedStoneRecipe(exporter, DRIPSTONE_BRICKS.block, POLISHED_DRIPSTONE.block);
+        offerMossyRecipe(exporter, MOSSY_DRIPSTONE_BRICKS.block, DRIPSTONE_BRICKS.block);
 
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(DRIPSTONE_BRICKS.block), RecipeCategory.BUILDING_BLOCKS, CRACKED_DRIPSTONE_BRICKS.asItem(), 0.1F, 200).criterion(hasItem(DRIPSTONE_BRICKS.block), conditionsFromItem(DRIPSTONE_BRICKS.block)).offerTo(exporter);
 

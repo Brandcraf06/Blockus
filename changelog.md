@@ -2,6 +2,7 @@
 * Added Copper Bricks
   * Oxidizes and can be waxed like every copper blocks
   * Crafted with 4 Cut Copper of the desired oxidation or waxed.
+* Added Mossy Dripstone Bricks
 * Added Wooden Posts
   * A post-type block that doesn't connect to each other, unlike fences.
   * Can be placed in 2 directions.

@@ -251,6 +251,10 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.DRIPSTONE_BRICKS.stairs);
             entries.add(BlockusBlocks.DRIPSTONE_BRICKS.slab);
             entries.add(BlockusBlocks.DRIPSTONE_BRICKS.wall);
+            entries.add(BlockusBlocks.MOSSY_DRIPSTONE_BRICKS.block);
+            entries.add(BlockusBlocks.MOSSY_DRIPSTONE_BRICKS.stairs);
+            entries.add(BlockusBlocks.MOSSY_DRIPSTONE_BRICKS.slab);
+            entries.add(BlockusBlocks.MOSSY_DRIPSTONE_BRICKS.wall);
             entries.add(BlockusBlocks.CRACKED_DRIPSTONE_BRICKS);
             entries.add(BlockusBlocks.CHISELED_DRIPSTONE);
             entries.add(BlockusBlocks.DRIPSTONE_PILLAR);

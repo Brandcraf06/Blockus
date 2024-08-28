@@ -240,6 +240,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(DRIPSTONE_BRICKS.block)
             .add(DRIPSTONE_BRICKS.stairs)
             .add(DRIPSTONE_BRICKS.slab)
+            .add(MOSSY_DRIPSTONE_BRICKS.block)
+            .add(MOSSY_DRIPSTONE_BRICKS.stairs)
+            .add(MOSSY_DRIPSTONE_BRICKS.slab)
             .add(CRACKED_DRIPSTONE_BRICKS)
             .add(CHISELED_DRIPSTONE)
             .add(DRIPSTONE_PILLAR);

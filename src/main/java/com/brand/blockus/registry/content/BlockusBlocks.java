@@ -61,6 +61,7 @@ public class BlockusBlocks extends BlockFactory {
     // Dripstone
     public static final BSSWBundle POLISHED_DRIPSTONE = new BSSWBundle("polished_dripstone", Blocks.DRIPSTONE_BLOCK, false);
     public static final BSSWBundle DRIPSTONE_BRICKS = new BSSWBundle("dripstone_bricks", BlockusBlocks.POLISHED_DRIPSTONE.block);
+    public static final BSSWBundle MOSSY_DRIPSTONE_BRICKS = new BSSWBundle("mossy_dripstone_bricks", BlockusBlocks.DRIPSTONE_BRICKS.block);
     public static final Block CRACKED_DRIPSTONE_BRICKS = register("cracked_dripstone_bricks", createCopy(BlockusBlocks.DRIPSTONE_BRICKS.block));
     public static final Block CHISELED_DRIPSTONE = register("chiseled_dripstone", createCopy(BlockusBlocks.DRIPSTONE_BRICKS.block));
     public static final Block DRIPSTONE_PILLAR = createPillar("dripstone", BlockusBlocks.DRIPSTONE_BRICKS.block);
