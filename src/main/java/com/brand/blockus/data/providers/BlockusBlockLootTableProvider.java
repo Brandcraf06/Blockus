@@ -2,7 +2,7 @@ package com.brand.blockus.data.providers;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -28,7 +28,7 @@ import net.minecraft.registry.RegistryWrapper;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
-import static com.brand.blockus.content.BlockusBlocks.*;
+import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider {
     public final RegistryWrapper.WrapperLookup registryLookup;
@@ -42,19 +42,26 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
     public void generate() {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
 
-        for (BSSWTypes bssType : BSSWTypes.values()) {
-            this.addBlockStairsandSlabDrops(bssType.block, bssType.stairs, bssType.slab);
-            if (bssType.wall != null) {
-                this.addDrop(bssType.wall);
+        for (BSSWBundle bsswType : BSSWBundle.values()) {
+            this.addBlockStairsandSlabDrops(bsswType.block, bsswType.stairs, bsswType.slab);
+            if (bsswType.wall != null) {
+                this.addDrop(bsswType.wall);
             }
         }
 
-        for (ConcreteTypes concreteType : ConcreteTypes.values()) {
-            this.addBlockStairsandSlabDrops(concreteType.block, concreteType.stairs, concreteType.slab);
-            this.addDrops(concreteType.wall, concreteType.chiseled, concreteType.pillar);
+        for (CopperBundle copper : CopperBundle.values()) {
+            this.addBlockStairsandSlabDrops(copper.block, copper.stairs, copper.slab);
+            this.addBlockStairsandSlabDrops(copper.blockWaxed, copper.stairsWaxed, copper.slabWaxed);
+            this.addDrop(copper.wall);
+            this.addDrop(copper.wallWaxed);
         }
 
-        for (WoodTypes woodType : WoodTypes.values()) {
+        for (ConcreteBundle concrete : ConcreteBundle.values()) {
+            this.addBlockStairsandSlabDrops(concrete.block, concrete.stairs, concrete.slab);
+            this.addDrops(concrete.wall, concrete.chiseled, concrete.pillar);
+        }
+
+        for (WoodBundle woodType : WoodBundle.values()) {
             this.addWoodSetDrop(woodType.planks,
                 woodType.stairs,
                 woodType.slab,
@@ -68,27 +75,27 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
                 woodType.ceiling_hanging_sign);
         }
 
-        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+        for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
             for (Block block : timberFrameType.all) {
                 this.addDrops(block);
             }
         }
 
-        for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
+        for (AsphaltBundle asphaltTypes : AsphaltBundle.values()) {
             this.addBlockStairsandSlabDrops(asphaltTypes.block, asphaltTypes.stairs, asphaltTypes.slab);
         }
 
-        for (PottedLargeTypes pottedLargeType : PottedLargeTypes.values()) {
+        for (PottedLargeBundle pottedLargeType : PottedLargeBundle.values()) {
             this.addPottedLargePlantDrop(pottedLargeType.block);
         }
 
-        for (WoolTypes woolTypes : WoolTypes.values()) {
-            this.addBlockStairsandSlabDrops(woolTypes.block, woolTypes.stairs, woolTypes.slab);
-            this.addDrop(woolTypes.carpet);
+        for (WoolBundle woolBundle : WoolBundle.values()) {
+            this.addBlockStairsandSlabDrops(woolBundle.block, woolBundle.stairs, woolBundle.slab);
+            this.addDrop(woolBundle.carpet);
         }
 
-        for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
-            this.addDrop(coloredTilesTypes.block);
+        for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
+            this.addDrop(coloredTilesVariants.block);
         }
 
         this.addDrops(CHISELED_MUD_BRICKS,

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "waxed_copper_bricks_stairs",
+  "key": {
+    "#": {
+      "item": "blockus:waxed_copper_bricks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "blockus:waxed_copper_brick_stairs"
+  }
+}

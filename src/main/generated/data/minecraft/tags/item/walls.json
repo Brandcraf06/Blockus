@@ -1,5 +1,13 @@
 {
   "values": [
+    "blockus:copper_brick_wall",
+    "blockus:waxed_copper_brick_wall",
+    "blockus:exposed_copper_brick_wall",
+    "blockus:waxed_exposed_copper_brick_wall",
+    "blockus:weathered_copper_brick_wall",
+    "blockus:waxed_weathered_copper_brick_wall",
+    "blockus:oxidized_copper_brick_wall",
+    "blockus:waxed_oxidized_copper_brick_wall",
     "blockus:stone_tile_wall",
     "blockus:andesite_brick_wall",
     "blockus:diorite_brick_wall",

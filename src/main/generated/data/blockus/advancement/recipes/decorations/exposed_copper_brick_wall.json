@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_exposed_copper_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:exposed_copper_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:exposed_copper_brick_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_exposed_copper_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:exposed_copper_brick_wall"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "waxed_exposed_copper_bricks_slab",
+  "key": {
+    "#": {
+      "item": "blockus:waxed_exposed_copper_bricks"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "blockus:waxed_exposed_copper_brick_slab"
+  }
+}

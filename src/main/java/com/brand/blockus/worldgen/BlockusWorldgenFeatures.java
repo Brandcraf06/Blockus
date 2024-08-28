@@ -1,7 +1,7 @@
 package com.brand.blockus.worldgen;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.worldgen.foliage.WhiteOakFoliagePlacer;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;

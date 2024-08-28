@@ -2,7 +2,7 @@
 package com.brand.blockus.modcompat.promenade;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.content.BlocksRegistration;
+import com.brand.blockus.utils.BlocksRegistration;
 import fr.hugman.dawn.Registrar;
 import fr.hugman.promenade.PromenadeFactory;
 import fr.hugman.promenade.registry.content.AmaranthContent;

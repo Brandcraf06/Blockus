@@ -1,20 +1,18 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "building",
   "group": "small_logs",
-  "ingredients": [
-    {
-      "item": "minecraft:spruce_log"
-    },
-    {
-      "item": "minecraft:spruce_log"
-    },
-    {
+  "key": {
+    "#": {
       "item": "minecraft:spruce_log"
     }
+  },
+  "pattern": [
+    " # ",
+    "###"
   ],
   "result": {
-    "count": 3,
+    "count": 4,
     "id": "blockus:spruce_small_logs"
   }
 }

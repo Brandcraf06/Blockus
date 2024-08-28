@@ -1,22 +1,22 @@
 package com.brand.blockus.data.providers;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
-import com.brand.blockus.data.family.BlockusWoodFamilies;
+import com.brand.blockus.data.family.BlockusFamilies;
 import com.brand.blockus.data.models.BlockusModels;
 import com.brand.blockus.data.models.BlockusTextureKey;
+import com.brand.blockus.registry.content.BlockusBlocks;
+import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
+import net.minecraft.data.client.VariantSettings.Rotation;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.Item;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
-import net.minecraft.data.client.VariantSettings.Rotation;
 
 import static net.minecraft.registry.Registries.BLOCK;
 
@@ -29,11 +29,11 @@ public class BlockusModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator modelGenerator) {
 
-        BlockusWoodFamilies.getFamilies().filter(BlockFamily::shouldGenerateModels).forEach((family) -> {
+        BlockusFamilies.getFamilies().filter(BlockFamily::shouldGenerateModels).forEach((family) -> {
             modelGenerator.registerCubeAllModelTexturePool(family.getBaseBlock()).family(family);
         });
 
-        for (BSSWTypes bssType : BSSWTypes.values()) {
+        for (BSSWBundle bssType : BSSWBundle.values()) {
             // Rough Sandstones
             if (bssType.type.contains("rough") && bssType.type.contains("sandstone")) {
                 this.registerBlockStairsSlabWithBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
@@ -58,30 +58,35 @@ public class BlockusModelProvider extends FabricModelProvider {
         }
 
 
-        for (ConcreteTypes concreteType : ConcreteTypes.values()) {
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.COPPER_BRICKS.block).family(BlockusFamilies.COPPER_BRICKS).parented(BlockusBlocks.COPPER_BRICKS.block, BlockusBlocks.COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_COPPER_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.EXPOSED_COPPER_BRICKS.block).family(BlockusFamilies.EXPOSED_COPPER_BRICKS).parented(BlockusBlocks.EXPOSED_COPPER_BRICKS.block, BlockusBlocks.EXPOSED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_EXPOSED_COPPER_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.WEATHERED_COPPER_BRICKS.block).family(BlockusFamilies.WEATHERED_COPPER_BRICKS).parented(BlockusBlocks.WEATHERED_COPPER_BRICKS.block, BlockusBlocks.WEATHERED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_WEATHERED_COPPER_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block).family(BlockusFamilies.OXIDIZED_COPPER_BRICKS).parented(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block, BlockusBlocks.OXIDIZED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_OXIDIZED_COPPER_BRICKS);
+
+        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.registerBlockStairsSlabAndWall(modelGenerator, concreteType.block, concreteType.stairs, concreteType.slab, concreteType.wall);
             modelGenerator.registerSimpleCubeAll(concreteType.chiseled);
             this.registerPillar(modelGenerator, concreteType.pillar);
         }
 
-        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+        for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
             modelGenerator.registerSimpleCubeAll(timberFrameType.block);
             modelGenerator.registerSimpleCubeAll(timberFrameType.cross);
             this.registerDiagonalTimberFrame(modelGenerator, timberFrameType.diagonal);
             modelGenerator.registerGlassPane(timberFrameType.grate, timberFrameType.lattice);
         }
 
-        for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
+        for (AsphaltBundle asphaltTypes : AsphaltBundle.values()) {
             this.registerBlockStairsAndSlab(modelGenerator, asphaltTypes.block, asphaltTypes.stairs, asphaltTypes.slab);
         }
 
-        for (WoolTypes woolTypes : WoolTypes.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, woolTypes.block, woolTypes.stairs, woolTypes.slab);
-            this.registerCarpet(modelGenerator, woolTypes.block, woolTypes.carpet);
+        for (WoolBundle woolBundle : WoolBundle.values()) {
+            this.registerBlockStairsAndSlab(modelGenerator, woolBundle.block, woolBundle.stairs, woolBundle.slab);
+            this.registerCarpet(modelGenerator, woolBundle.block, woolBundle.carpet);
         }
 
-        for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
-            registerColoredTiles(modelGenerator, coloredTilesTypes.block, coloredTilesTypes.tile1, coloredTilesTypes.tile2);
+        for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
+            registerColoredTiles(modelGenerator, coloredTilesVariants.block, coloredTilesVariants.tile1, coloredTilesVariants.tile2);
         }
 
         // Stone
@@ -838,7 +843,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void registerColoredTilesSimple(BlockStateModelGenerator modelGenerator, Block block) {
-        Identifier identifier = getModifiedBlockId(block,"_colored", "");
+        Identifier identifier = getModifiedBlockId(block, "_colored", "");
         this.createBlock(modelGenerator, block, TextureMap.of(TextureKey.ALL, identifier));
     }
 
@@ -889,15 +894,15 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public static Identifier getBlockId(String id) {
-        return Blockus.id( "block/" + id);
+        return Blockus.id("block/" + id);
     }
 
     public static Identifier getBlockId(Block block) {
-        return Blockus.id( "block/" + BLOCK.getId(block).getPath());
+        return Blockus.id("block/" + BLOCK.getId(block).getPath());
     }
 
     public static Identifier getModifiedBlockId(Block block, String target, String replacement) {
-        return Blockus.id( "block/" + BLOCK.getId(block).getPath().replace(target, replacement));
+        return Blockus.id("block/" + BLOCK.getId(block).getPath().replace(target, replacement));
     }
 
 // TextureMaps

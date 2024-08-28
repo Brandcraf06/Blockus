@@ -1435,5 +1435,41 @@
   "block.blockus.mossy_raw_bamboo_slab": "Mossy Raw Bamboo Slab",
   "block.blockus.mossy_charred_slab": "Mossy Charred Wood Slab",
   "block.blockus.mossy_crimson_slab": "Mossy Crimson Slab",
-  "block.blockus.mossy_warped_slab": "Mossy Warped Slab"
+  "block.blockus.mossy_warped_slab": "Mossy Warped Slab",
+
+  "block.blockus.copper_bricks": "Copper Bricks",
+  "block.blockus.exposed_copper_bricks": "Exposed Copper Bricks",
+  "block.blockus.weathered_copper_bricks": "Weathered Copper Bricks",
+  "block.blockus.oxidized_copper_bricks": "Oxidized Copper Bricks",
+  "block.blockus.waxed_copper_bricks": "Waxed Copper Bricks",
+  "block.blockus.waxed_exposed_copper_bricks": "Waxed Exposed Copper Bricks",
+  "block.blockus.waxed_weathered_copper_bricks": "Waxed Weathered Copper Bricks",
+  "block.blockus.waxed_oxidized_copper_bricks": "Waxed Oxidized Copper Bricks",
+
+  "block.blockus.copper_brick_slab": "Copper Brick Slab",
+  "block.blockus.exposed_copper_brick_slab": "Exposed Copper Brick Slab",
+  "block.blockus.weathered_copper_brick_slab": "Weathered Copper Brick Slab",
+  "block.blockus.oxidized_copper_brick_slab": "Oxidized Copper Brick Slab",
+  "block.blockus.waxed_copper_brick_slab": "Waxed Copper Brick Slab",
+  "block.blockus.waxed_exposed_copper_brick_slab": "Waxed Exposed Copper Brick Slab",
+  "block.blockus.waxed_weathered_copper_brick_slab": "Waxed Weathered Copper Brick Slab",
+  "block.blockus.waxed_oxidized_copper_brick_slab": "Waxed Oxidized Copper Brick Slab",
+
+  "block.blockus.copper_brick_stairs": "Copper Brick Stairs",
+  "block.blockus.exposed_copper_brick_stairs": "Exposed Copper Brick Stairs",
+  "block.blockus.weathered_copper_brick_stairs": "Weathered Copper Brick Stairs",
+  "block.blockus.oxidized_copper_brick_stairs": "Oxidized Copper Brick Stairs",
+  "block.blockus.waxed_copper_brick_stairs": "Waxed Copper Brick Stairs",
+  "block.blockus.waxed_exposed_copper_brick_stairs": "Waxed Exposed Copper Brick Stairs",
+  "block.blockus.waxed_weathered_copper_brick_stairs": "Waxed Weathered Copper Brick Stairs",
+  "block.blockus.waxed_oxidized_copper_brick_stairs": "Waxed Oxidized Copper Brick Stairs",
+
+  "block.blockus.copper_brick_wall": "Copper Brick Wall",
+  "block.blockus.exposed_copper_brick_wall": "Exposed Copper Brick Wall",
+  "block.blockus.weathered_copper_brick_wall": "Weathered Copper Brick Wall",
+  "block.blockus.oxidized_copper_brick_wall": "Oxidized Copper Brick Wall",
+  "block.blockus.waxed_copper_brick_wall": "Waxed Copper Brick Wall",
+  "block.blockus.waxed_exposed_copper_brick_wall": "Waxed Exposed Copper Brick Wall",
+  "block.blockus.waxed_weathered_copper_brick_wall": "Waxed Weathered Copper Brick Wall",
+  "block.blockus.waxed_oxidized_copper_brick_wall": "Waxed Oxidized Copper Brick Wall"
 }

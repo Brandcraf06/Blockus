@@ -1,7 +1,7 @@
 package com.brand.blockus.blocks.base.asphalt;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.utils.effect.BlockusEffects;
+import com.brand.blockus.registry.effect.BlockusEffects;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;

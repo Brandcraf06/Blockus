@@ -1,8 +1,10 @@
 package com.brand.blockus.data.providers;
 
-import com.brand.blockus.content.BlockusEntities;
-import com.brand.blockus.utils.tags.BlockusBlockTags;
-import com.brand.blockus.utils.tags.BlockusItemTags;
+import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.bundles.BSSWBundle;
+import com.brand.blockus.registry.tag.BlockusBlockTags;
+import com.brand.blockus.registry.tag.BlockusItemTags;
+import com.brand.blockus.utils.BlockChecker;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
@@ -19,7 +21,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-import static com.brand.blockus.content.BlockusBlocks.*;
+import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
     public BlockusItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, BlockTagProvider blockTagProvider) {
@@ -118,18 +120,14 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(HERRINGBONE_RAW_BAMBOO_PLANKS.asItem())
             .add(HERRINGBONE_WHITE_OAK_PLANKS.asItem());
 
+        for (BSSWBundle block : BSSWBundle.values()) {
+            if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.FLAMMABLE_WOODS)) {
+                this.getOrCreateTagBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
+                    .add(block.block.asItem());
+            }
+        }
         this.getOrCreateTagBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
-            .add(OAK_MOSAIC.block.asItem())
-            .add(BIRCH_MOSAIC.block.asItem())
-            .add(SPRUCE_MOSAIC.block.asItem())
-            .add(JUNGLE_MOSAIC.block.asItem())
-            .add(ACACIA_MOSAIC.block.asItem())
-            .add(DARK_OAK_MOSAIC.block.asItem())
-            .add(MANGROVE_MOSAIC.block.asItem())
-            .add(CHERRY_MOSAIC.block.asItem())
-            .add(Blocks.BAMBOO_MOSAIC.asItem())
-            .add(RAW_BAMBOO_MOSAIC.block.asItem())
-            .add(WHITE_OAK_MOSAIC.block.asItem());
+            .add(Blocks.BAMBOO_MOSAIC.asItem());
 
         this.copy(Identifier.of("c", "planks_that_burn"));
 
@@ -177,6 +175,15 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.MANGROVE_LOGS, ItemTags.MANGROVE_LOGS);
 
+        for (BSSWBundle block : BSSWBundle.values()) {
+            if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.NON_FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type, BlockChecker.NON_FLAMMABLE_WOODS)) {
+                this.getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
+                    .add(block.block.asItem())
+                    .add(block.stairs.asItem())
+                    .add(block.slab.asItem());
+            }
+        }
+
         this.getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
             .add(CHARRED.planks.asItem())
             .add(CHARRED.slab.asItem())
@@ -187,33 +194,15 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(CHARRED.stairs.asItem())
             .add(CHARRED.button.asItem())
             .add(CHARRED.door.asItem())
+            .add(BlockusEntities.CHARRED_BOAT.getItem())
+            .add(BlockusEntities.CHARRED_BOAT.getChestItem())
+            .add(CHARRED.sign)
+            .add(CHARRED.hanging_sign)
             .add(WARPED_SMALL_STEMS.asItem())
             .add(CRIMSON_SMALL_STEMS.asItem())
             .add(HERRINGBONE_CRIMSON_PLANKS.asItem())
             .add(HERRINGBONE_WARPED_PLANKS.asItem())
-            .add(HERRINGBONE_CHARRED_PLANKS.asItem())
-            .add(MOSSY_CRIMSON_PLANKS.block.asItem())
-            .add(MOSSY_WARPED_PLANKS.block.asItem())
-            .add(MOSSY_CHARRED_PLANKS.block.asItem())
-            .add(MOSSY_CRIMSON_PLANKS.stairs.asItem())
-            .add(MOSSY_WARPED_PLANKS.stairs.asItem())
-            .add(MOSSY_CHARRED_PLANKS.stairs.asItem())
-            .add(MOSSY_CRIMSON_PLANKS.slab.asItem())
-            .add(MOSSY_WARPED_PLANKS.slab.asItem())
-            .add(MOSSY_CHARRED_PLANKS.slab.asItem())
-            .add(CRIMSON_MOSAIC.block.asItem())
-            .add(WARPED_MOSAIC.block.asItem())
-            .add(CHARRED_MOSAIC.block.asItem())
-            .add(CRIMSON_MOSAIC.stairs.asItem())
-            .add(WARPED_MOSAIC.stairs.asItem())
-            .add(CHARRED_MOSAIC.stairs.asItem())
-            .add(CRIMSON_MOSAIC.slab.asItem())
-            .add(WARPED_MOSAIC.slab.asItem())
-            .add(CHARRED_MOSAIC.slab.asItem())
-            .add(BlockusEntities.CHARRED_BOAT.getItem())
-            .add(BlockusEntities.CHARRED_BOAT.getChestItem())
-            .add(CHARRED.sign)
-            .add(CHARRED.hanging_sign);
+            .add(HERRINGBONE_CHARRED_PLANKS.asItem());
 
         this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
 

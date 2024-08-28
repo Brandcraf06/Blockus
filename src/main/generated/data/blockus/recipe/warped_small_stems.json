@@ -1,20 +1,18 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "building",
   "group": "small_logs",
-  "ingredients": [
-    {
-      "item": "minecraft:warped_stem"
-    },
-    {
-      "item": "minecraft:warped_stem"
-    },
-    {
+  "key": {
+    "#": {
       "item": "minecraft:warped_stem"
     }
+  },
+  "pattern": [
+    " # ",
+    "###"
   ],
   "result": {
-    "count": 3,
+    "count": 4,
     "id": "blockus:warped_small_stems"
   }
 }

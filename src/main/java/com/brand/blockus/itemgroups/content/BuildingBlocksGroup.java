@@ -1,9 +1,12 @@
 package com.brand.blockus.itemgroups.content;
 
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.TimberFrameTypes;
-import com.brand.blockus.content.types.WoodTypes;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
+import com.brand.blockus.registry.content.BlockusBlocks;
+import com.brand.blockus.registry.content.bundles.BSSWBundle;
+import com.brand.blockus.registry.content.bundles.CopperBundle;
+import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
+import com.brand.blockus.registry.content.bundles.WoodBundle;
+import com.brand.blockus.utils.BlockChecker;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 public class BuildingBlocksGroup {
@@ -15,7 +18,7 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
 
-            for (WoodTypes woodType : WoodTypes.values()) {
+            for (WoodBundle woodType : WoodBundle.values()) {
                 entries.add(woodType.planks);
                 entries.add(woodType.stairs);
                 entries.add(woodType.slab);
@@ -27,88 +30,36 @@ public class BuildingBlocksGroup {
                 entries.add(woodType.button);
             }
 
-            entries.add(BlockusBlocks.MOSSY_OAK_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_OAK_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_OAK_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_BIRCH_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_BIRCH_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_BIRCH_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_SPRUCE_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_SPRUCE_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_SPRUCE_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_JUNGLE_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_JUNGLE_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_JUNGLE_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_ACACIA_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_ACACIA_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_ACACIA_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_DARK_OAK_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_DARK_OAK_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_DARK_OAK_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_MANGROVE_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_MANGROVE_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_MANGROVE_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_WHITE_OAK_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_WHITE_OAK_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_WHITE_OAK_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_CHERRY_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_CHERRY_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_CHERRY_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_BAMBOO_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_BAMBOO_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_BAMBOO_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_WARPED_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_WARPED_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_WARPED_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_CRIMSON_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_CRIMSON_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_CRIMSON_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_RAW_BAMBOO_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_RAW_BAMBOO_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_RAW_BAMBOO_PLANKS.slab);
-            entries.add(BlockusBlocks.MOSSY_CHARRED_PLANKS.block);
-            entries.add(BlockusBlocks.MOSSY_CHARRED_PLANKS.stairs);
-            entries.add(BlockusBlocks.MOSSY_CHARRED_PLANKS.slab);
+            entries.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
+            entries.add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
 
-            entries.add(BlockusBlocks.OAK_MOSAIC.block);
-            entries.add(BlockusBlocks.OAK_MOSAIC.stairs);
-            entries.add(BlockusBlocks.OAK_MOSAIC.slab);
-            entries.add(BlockusBlocks.BIRCH_MOSAIC.block);
-            entries.add(BlockusBlocks.BIRCH_MOSAIC.stairs);
-            entries.add(BlockusBlocks.BIRCH_MOSAIC.slab);
-            entries.add(BlockusBlocks.SPRUCE_MOSAIC.block);
-            entries.add(BlockusBlocks.SPRUCE_MOSAIC.stairs);
-            entries.add(BlockusBlocks.SPRUCE_MOSAIC.slab);
-            entries.add(BlockusBlocks.JUNGLE_MOSAIC.block);
-            entries.add(BlockusBlocks.JUNGLE_MOSAIC.stairs);
-            entries.add(BlockusBlocks.JUNGLE_MOSAIC.slab);
-            entries.add(BlockusBlocks.ACACIA_MOSAIC.block);
-            entries.add(BlockusBlocks.ACACIA_MOSAIC.stairs);
-            entries.add(BlockusBlocks.ACACIA_MOSAIC.slab);
-            entries.add(BlockusBlocks.DARK_OAK_MOSAIC.block);
-            entries.add(BlockusBlocks.DARK_OAK_MOSAIC.stairs);
-            entries.add(BlockusBlocks.DARK_OAK_MOSAIC.slab);
-            entries.add(BlockusBlocks.MANGROVE_MOSAIC.block);
-            entries.add(BlockusBlocks.MANGROVE_MOSAIC.stairs);
-            entries.add(BlockusBlocks.MANGROVE_MOSAIC.slab);
-            entries.add(BlockusBlocks.WHITE_OAK_MOSAIC.block);
-            entries.add(BlockusBlocks.WHITE_OAK_MOSAIC.stairs);
-            entries.add(BlockusBlocks.WHITE_OAK_MOSAIC.slab);
-            entries.add(BlockusBlocks.CHERRY_MOSAIC.block);
-            entries.add(BlockusBlocks.CHERRY_MOSAIC.stairs);
-            entries.add(BlockusBlocks.CHERRY_MOSAIC.slab);
-            entries.add(BlockusBlocks.WARPED_MOSAIC.block);
-            entries.add(BlockusBlocks.WARPED_MOSAIC.stairs);
-            entries.add(BlockusBlocks.WARPED_MOSAIC.slab);
-            entries.add(BlockusBlocks.CRIMSON_MOSAIC.block);
-            entries.add(BlockusBlocks.CRIMSON_MOSAIC.stairs);
-            entries.add(BlockusBlocks.CRIMSON_MOSAIC.slab);
-            entries.add(BlockusBlocks.RAW_BAMBOO_MOSAIC.block);
-            entries.add(BlockusBlocks.RAW_BAMBOO_MOSAIC.stairs);
-            entries.add(BlockusBlocks.RAW_BAMBOO_MOSAIC.slab);
-            entries.add(BlockusBlocks.CHARRED_MOSAIC.block);
-            entries.add(BlockusBlocks.CHARRED_MOSAIC.stairs);
-            entries.add(BlockusBlocks.CHARRED_MOSAIC.slab);
+            for (BSSWBundle block : BSSWBundle.values()) {
+                if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.WOODS)) {
+                    entries.add(block.block);
+                    entries.add(block.stairs);
+                    entries.add(block.slab);
+                }
+            }
+
+            for (BSSWBundle block : BSSWBundle.values()) {
+                if (BlockChecker.isMossyPlanks(block.type, BlockChecker.WOODS)) {
+                    entries.add(block.block);
+                    entries.add(block.stairs);
+                    entries.add(block.slab);
+                }
+            }
 
             entries.add(BlockusBlocks.OAK_SMALL_LOGS);
             entries.add(BlockusBlocks.BIRCH_SMALL_LOGS);
@@ -127,6 +78,7 @@ public class BuildingBlocksGroup {
                 entries.add(BlockusPromenadeBlocks.PALM_SMALL_LOGS);
                 entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS);
             }*/
+
             entries.add(BlockusBlocks.OAK_POST);
             entries.add(BlockusBlocks.BIRCH_POST);
             entries.add(BlockusBlocks.SPRUCE_POST);
@@ -139,28 +91,12 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.CRIMSON_POST);
             entries.add(BlockusBlocks.WARPED_POST);
 
-
-            entries.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
-            entries.add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
-
-            for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+            for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
                 entries.add(timberFrameType.lattice);
                 entries.add(timberFrameType.grate);
             }
 
-            for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+            for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
                 entries.add(timberFrameType.cross);
                 entries.add(timberFrameType.block);
                 entries.add(timberFrameType.diagonal);
@@ -726,6 +662,17 @@ public class BuildingBlocksGroup {
 
             entries.add(BlockusBlocks.NETHERITE_STAIRS);
             entries.add(BlockusBlocks.NETHERITE_SLAB);
+
+            for (CopperBundle copperBundle : CopperBundle.values()) {
+                entries.add(copperBundle.block);
+                entries.add(copperBundle.stairs);
+                entries.add(copperBundle.slab);
+                entries.add(copperBundle.wall);
+                entries.add(copperBundle.blockWaxed);
+                entries.add(copperBundle.stairsWaxed);
+                entries.add(copperBundle.slabWaxed);
+                entries.add(copperBundle.wallWaxed);
+            }
 
             entries.add(BlockusBlocks.CHARCOAL_BLOCK);
             entries.add(BlockusBlocks.ENDER_BLOCK);

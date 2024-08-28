@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_exposed_copper_brick_stairs",
+  "ingredients": [
+    {
+      "item": "blockus:exposed_copper_brick_stairs"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "blockus:waxed_exposed_copper_brick_stairs"
+  }
+}

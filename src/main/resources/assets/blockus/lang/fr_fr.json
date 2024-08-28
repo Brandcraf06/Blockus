@@ -1411,5 +1411,41 @@
   "block.blockus.mossy_raw_bamboo_slab": "Dalles en bambou brut moussues",
   "block.blockus.mossy_charred_slab": "Dalles en bois carbonisé moussues",
   "block.blockus.mossy_crimson_slab": "Dalles carmin moussues",
-  "block.blockus.mossy_warped_slab": "Dalles biscornu moussues"
+  "block.blockus.mossy_warped_slab": "Dalles biscornu moussues",
+
+  "block.blockus.copper_bricks": "Briques de cuivre",
+  "block.blockus.exposed_copper_bricks": "Briques de cuivre exposées",
+  "block.blockus.weathered_copper_bricks": "Briques de cuivre érodées",
+  "block.blockus.oxidized_copper_bricks": "Briques de cuivre oxydées",
+  "block.blockus.waxed_copper_bricks": "Briques de cuivre cirées",
+  "block.blockus.waxed_exposed_copper_bricks": "Briques de cuivre exposées cirées",
+  "block.blockus.waxed_weathered_copper_bricks": "Briques de cuivre érodées cirées",
+  "block.blockus.waxed_oxidized_copper_bricks": "Briques de cuivre oxydées cirées",
+
+  "block.blockus.copper_brick_slab": "Dalle de briques de cuivre",
+  "block.blockus.exposed_copper_brick_slab": "Dalle de briques de cuivre exposées",
+  "block.blockus.weathered_copper_brick_slab": "Dalle de briques de cuivre érodées",
+  "block.blockus.oxidized_copper_brick_slab": "Dalle de briques de cuivre oxydées",
+  "block.blockus.waxed_copper_brick_slab": "Dalle de briques de cuivre cirées",
+  "block.blockus.waxed_exposed_copper_brick_slab": "Dalle de briques de cuivre exposées cirées",
+  "block.blockus.waxed_weathered_copper_brick_slab": "Dalle de briques de cuivre érodées cirées",
+  "block.blockus.waxed_oxidized_copper_brick_slab": "Dalle de briques de cuivre oxydées cirées",
+
+  "block.blockus.copper_brick_stairs": "Escalier en briques de cuivre",
+  "block.blockus.exposed_copper_brick_stairs": "Escalier en briques de cuivre exposées",
+  "block.blockus.weathered_copper_brick_stairs": "Escalier en briques de cuivre érodées",
+  "block.blockus.oxidized_copper_brick_stairs": "Escalier en briques de cuivre oxydées",
+  "block.blockus.waxed_copper_brick_stairs": "Escalier en briques de cuivre cirées",
+  "block.blockus.waxed_exposed_copper_brick_stairs": "Escalier en briques de cuivre exposées cirées",
+  "block.blockus.waxed_weathered_copper_brick_stairs": "Escalier en briques de cuivre érodées cirées",
+  "block.blockus.waxed_oxidized_copper_brick_stairs": "Escalier en briques de cuivre oxydées cirées",
+
+  "block.blockus.copper_brick_wall": "Muret de briques de cuivre",
+  "block.blockus.exposed_copper_brick_wall": "Muret de briques de cuivre exposées",
+  "block.blockus.weathered_copper_brick_wall": "Muret de briques de cuivre érodées",
+  "block.blockus.oxidized_copper_brick_wall": "Muret de briques de cuivre oxydées",
+  "block.blockus.waxed_copper_brick_wall": "Muret de briques de cuivre cirées",
+  "block.blockus.waxed_exposed_copper_brick_wall": "Muret de briques de cuivre exposées cirées",
+  "block.blockus.waxed_weathered_copper_brick_wall": "Muret de briques de cuivre érodées cirées",
+  "block.blockus.waxed_oxidized_copper_brick_wall": "Muret de briques de cuivre oxydées cirées"
 }

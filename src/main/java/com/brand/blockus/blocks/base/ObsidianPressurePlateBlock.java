@@ -16,6 +16,7 @@ public class ObsidianPressurePlateBlock extends AbstractPressurePlateBlock {
     public MapCodec<ObsidianPressurePlateBlock> getCodec() {
         return CODEC;
     }
+
     public ObsidianPressurePlateBlock(AbstractBlock.Settings settings) {
         super(settings, BlockSetType.STONE);
         this.setDefaultState(this.stateManager.getDefaultState().with(POWERED, false));
