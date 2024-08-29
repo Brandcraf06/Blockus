@@ -672,18 +672,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(RED_SHINGLES.slab)
             .add(BLACK_SHINGLES.slab);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_POSTS)
-            .add(OAK_POST)
-            .add(BIRCH_POST)
-            .add(SPRUCE_POST)
-            .add(JUNGLE_POST)
-            .add(ACACIA_POST)
-            .add(DARK_OAK_POST)
-            .add(MANGROVE_POST)
-            .add(CHERRY_POST)
-            .add(WHITE_OAK_POST)
-            .add(CRIMSON_POST)
-            .add(WARPED_POST);
+        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
+            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_POSTS)
+            .add(woodenPost.block)
+            .add(woodenPost.stripped);
+        }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.SMALL_HEDGES)
             .add(OAK_SMALL_HEDGE)

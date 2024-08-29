@@ -408,17 +408,17 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block WHITE_OAK_SMALL_LOGS = register("white_oak_small_logs", createPillarCopy(WHITE_OAK_LOG));
 
     // Posts
-    public static final Block OAK_POST = register("oak_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).solid().burnable()));
-    public static final Block SPRUCE_POST = register("spruce_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_WOOD).solid().burnable()));
-    public static final Block BIRCH_POST = register("birch_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.BIRCH_WOOD).solid().burnable()));
-    public static final Block JUNGLE_POST = register("jungle_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.JUNGLE_WOOD).solid().burnable()));
-    public static final Block ACACIA_POST = register("acacia_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.ACACIA_WOOD).solid().burnable()));
-    public static final Block DARK_OAK_POST = register("dark_oak_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.DARK_OAK_WOOD).solid().burnable()));
-    public static final Block MANGROVE_POST = register("mangrove_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.MANGROVE_WOOD).solid().burnable()));
-    public static final Block CHERRY_POST = register("cherry_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.CHERRY_WOOD).solid().burnable()));
-    public static final Block WARPED_POST = register("warped_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.WARPED_HYPHAE).solid().burnable()));
-    public static final Block CRIMSON_POST = register("crimson_post", new PostBlock(AbstractBlock.Settings.copy(Blocks.CRIMSON_HYPHAE).solid().burnable()));
-    public static final Block WHITE_OAK_POST = register("white_oak_post", new PostBlock(AbstractBlock.Settings.copy(WHITE_OAK_WOOD).solid().burnable()));
+    public static final WoodenPostBundle OAK_POST = new WoodenPostBundle("oak_post", Blocks.OAK_LOG, Blocks.STRIPPED_OAK_LOG);
+    public static final WoodenPostBundle SPRUCE_POST = new WoodenPostBundle("spruce_post", Blocks.SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG);
+    public static final WoodenPostBundle BIRCH_POST = new WoodenPostBundle("birch_post", Blocks.BIRCH_LOG, Blocks.STRIPPED_BIRCH_LOG);
+    public static final WoodenPostBundle JUNGLE_POST = new WoodenPostBundle("jungle_post", Blocks.JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_LOG);
+    public static final WoodenPostBundle ACACIA_POST = new WoodenPostBundle("acacia_post", Blocks.ACACIA_LOG, Blocks.STRIPPED_ACACIA_LOG);
+    public static final WoodenPostBundle DARK_OAK_POST = new WoodenPostBundle("dark_oak_post", Blocks.DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_LOG);
+    public static final WoodenPostBundle MANGROVE_POST = new WoodenPostBundle("mangrove_post", Blocks.MANGROVE_LOG, Blocks.STRIPPED_MANGROVE_LOG);
+    public static final WoodenPostBundle CHERRY_POST = new WoodenPostBundle("cherry_post", Blocks.CHERRY_LOG, Blocks.STRIPPED_CHERRY_LOG);
+    public static final WoodenPostBundle WARPED_POST = new WoodenPostBundle("warped_post", Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM, false);
+    public static final WoodenPostBundle CRIMSON_POST = new WoodenPostBundle("crimson_post", Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM, false);
+    public static final WoodenPostBundle WHITE_OAK_POST = new WoodenPostBundle("white_oak_post", WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG, false);
 
     // Timber Frames & Grates
     public static final TimberFrameBundle OAK_TIMBER_FRAME = new TimberFrameBundle(Blocks.OAK_PLANKS);
@@ -432,9 +432,9 @@ public class BlockusBlocks extends BlockFactory {
     public static final TimberFrameBundle CHERRY_TIMBER_FRAME = new TimberFrameBundle(Blocks.CHERRY_PLANKS);
     public static final TimberFrameBundle RAW_BAMBOO_TIMBER_FRAME = new TimberFrameBundle(BlockusBlocks.RAW_BAMBOO.planks);
     public static final TimberFrameBundle WHITE_OAK_TIMBER_FRAME = new TimberFrameBundle(BlockusBlocks.WHITE_OAK.planks);
-    public static final TimberFrameBundle WARPED_TIMBER_FRAME = new TimberFrameBundle(Blocks.WARPED_PLANKS, true);
-    public static final TimberFrameBundle CRIMSON_TIMBER_FRAME = new TimberFrameBundle(Blocks.CRIMSON_PLANKS, true);
-    public static final TimberFrameBundle CHARRED_TIMBER_FRAME = new TimberFrameBundle(BlockusBlocks.CHARRED.planks, true);
+    public static final TimberFrameBundle WARPED_TIMBER_FRAME = new TimberFrameBundle(Blocks.WARPED_PLANKS, false);
+    public static final TimberFrameBundle CRIMSON_TIMBER_FRAME = new TimberFrameBundle(Blocks.CRIMSON_PLANKS, false);
+    public static final TimberFrameBundle CHARRED_TIMBER_FRAME = new TimberFrameBundle(BlockusBlocks.CHARRED.planks, false);
 
     // Small Hedges
     public static final Block OAK_SMALL_HEDGE = registerSmallHedge("oak_small_hedge", Blocks.OAK_LEAVES);

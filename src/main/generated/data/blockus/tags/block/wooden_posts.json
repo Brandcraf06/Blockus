@@ -1,15 +1,26 @@
 {
   "values": [
     "blockus:oak_post",
-    "blockus:birch_post",
+    "blockus:stripped_oak_post",
     "blockus:spruce_post",
+    "blockus:stripped_spruce_post",
+    "blockus:birch_post",
+    "blockus:stripped_birch_post",
     "blockus:jungle_post",
+    "blockus:stripped_jungle_post",
     "blockus:acacia_post",
+    "blockus:stripped_acacia_post",
     "blockus:dark_oak_post",
+    "blockus:stripped_dark_oak_post",
     "blockus:mangrove_post",
+    "blockus:stripped_mangrove_post",
     "blockus:cherry_post",
-    "blockus:white_oak_post",
+    "blockus:stripped_cherry_post",
+    "blockus:warped_post",
+    "blockus:stripped_warped_post",
     "blockus:crimson_post",
-    "blockus:warped_post"
+    "blockus:stripped_crimson_post",
+    "blockus:white_oak_post",
+    "blockus:stripped_white_oak_post"
   ]
 }

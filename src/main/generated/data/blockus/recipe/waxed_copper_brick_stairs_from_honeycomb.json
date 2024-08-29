@@ -4,7 +4,7 @@
   "group": "waxed_copper_brick_stairs",
   "ingredients": [
     {
-      "item": "blockus:copper_brick_stairs"
+      "item": "blockus:copper_bricks"
     },
     {
       "item": "minecraft:honeycomb"

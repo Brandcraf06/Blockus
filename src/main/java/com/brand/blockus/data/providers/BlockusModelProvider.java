@@ -6,6 +6,7 @@ import com.brand.blockus.data.models.BlockusModels;
 import com.brand.blockus.data.models.BlockusTextureKey;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
+import com.brand.blockus.registry.tag.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
@@ -357,17 +358,10 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.WARPED_SMALL_STEMS);
 
         // Wood Posts
-        this.registerPost(modelGenerator, BlockusBlocks.OAK_POST, Blocks.OAK_LOG);
-        this.registerPost(modelGenerator, BlockusBlocks.SPRUCE_POST, Blocks.SPRUCE_LOG);
-        this.registerPost(modelGenerator, BlockusBlocks.BIRCH_POST, Blocks.BIRCH_LOG);
-        this.registerPost(modelGenerator, BlockusBlocks.JUNGLE_POST, Blocks.JUNGLE_LOG);
-        this.registerPost(modelGenerator, BlockusBlocks.ACACIA_POST, Blocks.ACACIA_LOG);
-        this.registerPost(modelGenerator, BlockusBlocks.DARK_OAK_POST, Blocks.DARK_OAK_LOG);
-        this.registerPost(modelGenerator, BlockusBlocks.MANGROVE_POST, Blocks.MANGROVE_LOG);
-        this.registerPost(modelGenerator, BlockusBlocks.CHERRY_POST, Blocks.CHERRY_LOG);
-        this.registerPost(modelGenerator, BlockusBlocks.WARPED_POST, Blocks.WARPED_STEM);
-        this.registerPost(modelGenerator, BlockusBlocks.CRIMSON_POST, Blocks.CRIMSON_STEM);
-        this.registerPost(modelGenerator, BlockusBlocks.WHITE_OAK_POST, BlockusBlocks.WHITE_OAK_LOG);
+        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
+            this.registerPost(modelGenerator, woodenPost.block, woodenPost.base);
+            this.registerPost(modelGenerator, woodenPost.stripped, woodenPost.baseStripped);
+        }
 
         // Small Hedges
         this.registerSmallHedge(modelGenerator, BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);

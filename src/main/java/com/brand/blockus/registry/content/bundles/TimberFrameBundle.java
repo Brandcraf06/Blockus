@@ -21,21 +21,22 @@ public class TimberFrameBundle {
     public final Block grate;
     public final Block base;
     public final List<Block> all;
+    public boolean burnable;
 
     public TimberFrameBundle(Block base) {
-        this(base, false);
+        this(base, true);
     }
 
-    public TimberFrameBundle(Block base, boolean fireproof) {
-
+    public TimberFrameBundle(Block base, boolean burnablee) {
         this.base = base;
+        this.burnable = burnablee;
         String type = getWood(base);
 
         AbstractBlock.Settings blockSettings = AbstractBlock.Settings.copy(base);
 
         Item.Settings itemSettings = new Item.Settings();
-        if (fireproof) {
-            itemSettings = itemSettings.fireproof();
+        if (burnablee) {
+            blockSettings = blockSettings.burnable();
         }
 
         this.block = register(type + "_timber_frame", new Block(blockSettings), itemSettings);
@@ -54,6 +55,10 @@ public class TimberFrameBundle {
 
     public static String getWood(Block block) {
         return Registries.BLOCK.getId(block).getPath().replace("_planks", "");
+    }
+
+    public boolean isBurnable() {
+        return this.burnable;
     }
 
     public static ArrayList<TimberFrameBundle> values() {

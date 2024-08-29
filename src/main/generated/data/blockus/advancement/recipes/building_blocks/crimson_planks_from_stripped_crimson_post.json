@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:crimson_planks_from_stripped_crimson_post"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wooden_post": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:stripped_crimson_post"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wooden_post"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:crimson_planks_from_stripped_crimson_post"
+    ]
+  }
+}

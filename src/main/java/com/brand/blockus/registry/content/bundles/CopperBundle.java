@@ -78,14 +78,14 @@ public class CopperBundle {
     }
 
     public Block[] unwaxed() {
-        return new Block[]{block, slab, stairs};
+        return new Block[]{block, stairs, slab, wall};
     }
 
     public Block[] waxed() {
-        return new Block[]{blockWaxed, slabWaxed, stairsWaxed};
+        return new Block[]{blockWaxed, stairsWaxed, slabWaxed, wallWaxed};
     }
 
     public Block[] all() {
-        return new Block[]{block, blockWaxed, slab, slabWaxed, stairs, stairsWaxed, wall, wallWaxed};
+        return new Block[]{block, stairs, slab, wall, blockWaxed, stairsWaxed, slabWaxed, wallWaxed};
     }
 }

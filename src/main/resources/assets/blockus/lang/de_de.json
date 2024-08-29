@@ -1,7 +1,7 @@
 {
-  "itemGroup.blockus.blockus_building_blocks": "Bausteine §3(Blockus)",
-  "itemGroup.blockus.blockus_decorations": "Dekorative Steine §3(Blockus)",
-  "itemGroup.blockus.blockus_redstone": "Redstone §3(Blockus)",
+  "itemGroup.blockus.blockus_building_blocks": "Bausteine",
+  "itemGroup.blockus.blockus_decorations": "Dekorative Steine",
+  "itemGroup.blockus.blockus_redstone": "Redstone",
   "block.blockus.blaze_bricks": "Lavasteinziegel",
   "block.blockus.blaze_bricks_wall": "Lavasteinziegelmauer",
   "block.blockus.blaze_bricks_stairs": "Lavasteinziegelstufen",

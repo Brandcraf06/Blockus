@@ -1,7 +1,7 @@
 {
-  "itemGroup.blockus.blockus_building_blocks": "Строительные блоки §3(Blockus)",
-  "itemGroup.blockus.blockus_decorations": "Декоративные блоки §3(Blockus)",
-  "itemGroup.blockus.blockus_redstone": "Механизмы §3(Blockus)",
+  "itemGroup.blockus.blockus_building_blocks": "Строительные блоки",
+  "itemGroup.blockus.blockus_decorations": "Декоративные блоки",
+  "itemGroup.blockus.blockus_redstone": "Механизмы",
   "block.blockus.blaze_bricks": "Пламенные кирпичи",
   "block.blockus.blaze_bricks_wall": "Пламенные кирпичные стены",
   "block.blockus.blaze_bricks_stairs": "Пламенные кирпичные ступеньки",

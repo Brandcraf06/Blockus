@@ -1,10 +1,7 @@
 package com.brand.blockus.utils;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.Barrier;
-import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
-import com.brand.blockus.blocks.base.SimpleFallingBlock;
-import com.brand.blockus.blocks.base.SmallHedgeBlock;
+import com.brand.blockus.blocks.base.*;
 import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
@@ -215,6 +212,10 @@ public class BlockFactory {
 
     public static Block createLightCrate() {
         return new Block(AbstractBlock.Settings.create().mapColor(Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance((state) -> 14).instrument(NoteBlockInstrument.BASS).sounds(BlockSoundGroup.WOOD));
+    }
+
+    public static Block createWoodenPost(Block base) {
+        return new PostBlock(AbstractBlock.Settings.copy(base).solid());
     }
 
     // Register

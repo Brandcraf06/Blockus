@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:stripped_white_oak_post"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_woods": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:stripped_white_oak_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_woods"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:stripped_white_oak_post"
+    ]
+  }
+}

@@ -1,9 +1,6 @@
 package com.brand.blockus;
 
-import com.brand.blockus.registry.content.bundles.BSSWBundle;
-import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
-import com.brand.blockus.registry.content.bundles.WoodBundle;
-import com.brand.blockus.registry.content.bundles.WoolBundle;
+import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.BlockChecker;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
@@ -104,7 +101,6 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAVES, 30, 60);
 
         // Wooden mosaic
-
         for (BSSWBundle block : BSSWBundle.values()) {
             if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type, BlockChecker.FLAMMABLE_WOODS)) {
                 FlammableBlockRegistry.getDefaultInstance().add(block.block, 5, 20);
@@ -138,14 +134,12 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_SMALL_LOGS, 5, 5);
 
         // Posts
-        FlammableBlockRegistry.getDefaultInstance().add(OAK_POST, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(BIRCH_POST, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(SPRUCE_POST, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(JUNGLE_POST, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(ACACIA_POST, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(DARK_OAK_POST, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(MANGROVE_POST, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_POST, 5, 5);
+        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
+            if (woodenPost.isBurnable()) {
+            FlammableBlockRegistry.getDefaultInstance().add(woodenPost.block, 5, 5);
+            FlammableBlockRegistry.getDefaultInstance().add(woodenPost.stripped, 5, 5);
+            }
+        }
 
         // Legacy blocks
         FlammableBlockRegistry.getDefaultInstance().add(LEGACY_LOG, 5, 5);
@@ -193,6 +187,9 @@ public class Instance {
     public static void addStrippables() {
         StrippableBlockRegistry.register(WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG);
         StrippableBlockRegistry.register(WHITE_OAK_WOOD, STRIPPED_WHITE_OAK_WOOD);
+        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
+            StrippableBlockRegistry.register(woodenPost.block, woodenPost.stripped);
+        }
     }
 
     public static void addOxidizable() {

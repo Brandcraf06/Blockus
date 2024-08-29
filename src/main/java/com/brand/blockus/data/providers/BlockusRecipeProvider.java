@@ -858,17 +858,17 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerSmallLogsRecipe(exporter, CRIMSON_SMALL_STEMS, Blocks.CRIMSON_STEM);
         offerSmallLogsRecipe(exporter, WHITE_OAK_SMALL_LOGS, WHITE_OAK_LOG);
 
-        offerWoodenPostRecipe(exporter, OAK_POST, Blocks.OAK_WOOD, Blocks.OAK_PLANKS);
-        offerWoodenPostRecipe(exporter, SPRUCE_POST, Blocks.SPRUCE_WOOD, Blocks.SPRUCE_PLANKS);
-        offerWoodenPostRecipe(exporter, BIRCH_POST, Blocks.BIRCH_WOOD, Blocks.BIRCH_PLANKS);
-        offerWoodenPostRecipe(exporter, JUNGLE_POST, Blocks.JUNGLE_WOOD, Blocks.JUNGLE_WOOD);
-        offerWoodenPostRecipe(exporter, ACACIA_POST, Blocks.ACACIA_WOOD, Blocks.ACACIA_WOOD);
-        offerWoodenPostRecipe(exporter, DARK_OAK_POST, Blocks.DARK_OAK_WOOD, Blocks.DARK_OAK_WOOD);
-        offerWoodenPostRecipe(exporter, MANGROVE_POST, Blocks.MANGROVE_WOOD, Blocks.MANGROVE_WOOD);
-        offerWoodenPostRecipe(exporter, CHERRY_POST, Blocks.CHERRY_WOOD, Blocks.CHERRY_WOOD);
-        offerWoodenPostRecipe(exporter, WARPED_POST, Blocks.WARPED_HYPHAE, Blocks.WARPED_HYPHAE);
-        offerWoodenPostRecipe(exporter, CRIMSON_POST, Blocks.CRIMSON_HYPHAE, Blocks.CRIMSON_HYPHAE);
-        offerWoodenPostRecipe(exporter, WHITE_OAK_POST, WHITE_OAK_WOOD, WHITE_OAK.planks);
+        offerWoodenPostRecipe(exporter, OAK_POST, Blocks.OAK_PLANKS);
+        offerWoodenPostRecipe(exporter, SPRUCE_POST, Blocks.SPRUCE_PLANKS);
+        offerWoodenPostRecipe(exporter, BIRCH_POST, Blocks.BIRCH_PLANKS);
+        offerWoodenPostRecipe(exporter, JUNGLE_POST, Blocks.JUNGLE_PLANKS);
+        offerWoodenPostRecipe(exporter, ACACIA_POST, Blocks.ACACIA_PLANKS);
+        offerWoodenPostRecipe(exporter, DARK_OAK_POST, Blocks.DARK_OAK_PLANKS);
+        offerWoodenPostRecipe(exporter, MANGROVE_POST, Blocks.MANGROVE_PLANKS);
+        offerWoodenPostRecipe(exporter, CHERRY_POST, Blocks.CHERRY_PLANKS);
+        offerWoodenPostRecipe(exporter, WARPED_POST, Blocks.WARPED_PLANKS);
+        offerWoodenPostRecipe(exporter, CRIMSON_POST, Blocks.CRIMSON_PLANKS);
+        offerWoodenPostRecipe(exporter, WHITE_OAK_POST, WHITE_OAK.planks);
 
         for (BSSWBundle block : BSSWBundle.values()) {
             if (BlockChecker.isMossyPlanks(block.type, BlockChecker.WOODS)) {
@@ -1307,9 +1307,11 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4).input('#', input).pattern(" # ").pattern("###").group("small_logs").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 
-    public static void offerWoodenPostRecipe(RecipeExporter exporter, ItemConvertible post, ItemConvertible log, ItemConvertible planks) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, post, 6).input('#', log).pattern("#").pattern("#").pattern("#").group("wooden_posts").criterion("has_woods", conditionsFromItem(log)).offerTo(exporter);
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, planks, 2).input(post).group("planks").criterion("has_wooden_post", conditionsFromItem(post)).offerTo(exporter, convertBetween(planks, post));
+    public static void offerWoodenPostRecipe(RecipeExporter exporter, WoodenPostBundle post, ItemConvertible planks) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, post.block, 6).input('#', post.base).pattern("#").pattern("#").pattern("#").group("wooden_posts").criterion("has_woods", conditionsFromItem(post.base)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, post.stripped, 6).input('#', post.baseStripped).pattern("#").pattern("#").pattern("#").group("wooden_posts").criterion("has_woods", conditionsFromItem(post.baseStripped)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, planks, 2).input(post.block).group("planks").criterion("has_wooden_post", conditionsFromItem(post.block)).offerTo(exporter, convertBetween(planks, post.block));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, planks, 2).input(post.stripped).group("planks").criterion("has_wooden_post", conditionsFromItem(post.stripped)).offerTo(exporter, convertBetween(planks, post.stripped));
     }
 
     public static void offerSmallHedgesRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {

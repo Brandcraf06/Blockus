@@ -42,8 +42,8 @@ public class WoodBundle {
         this.base = base;
         this.burnable = burnable;
 
-        AbstractBlock.Settings blockSettings = AbstractBlock.Settings.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(sound).burnable();
-        AbstractBlock.Settings blockSettings2 = BlockFactory.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS).burnable();
+        AbstractBlock.Settings blockSettings = AbstractBlock.Settings.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(sound);
+        AbstractBlock.Settings blockSettings2 = BlockFactory.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
         AbstractBlock.Settings signSettings = AbstractBlock.Settings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
         AbstractBlock.Settings hangingSignSettings = AbstractBlock.Settings.create().mapColor(color).noCollision().strength(1.0F).sounds(sound);
 

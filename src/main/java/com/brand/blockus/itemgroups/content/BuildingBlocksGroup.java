@@ -2,12 +2,11 @@ package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.brand.blockus.registry.content.bundles.BSSWBundle;
-import com.brand.blockus.registry.content.bundles.CopperBundle;
-import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
-import com.brand.blockus.registry.content.bundles.WoodBundle;
+import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.BlockChecker;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.block.Block;
 
 public class BuildingBlocksGroup {
 
@@ -79,17 +78,10 @@ public class BuildingBlocksGroup {
                 entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS);
             }*/
 
-            entries.add(BlockusBlocks.OAK_POST);
-            entries.add(BlockusBlocks.BIRCH_POST);
-            entries.add(BlockusBlocks.SPRUCE_POST);
-            entries.add(BlockusBlocks.JUNGLE_POST);
-            entries.add(BlockusBlocks.ACACIA_POST);
-            entries.add(BlockusBlocks.DARK_OAK_POST);
-            entries.add(BlockusBlocks.MANGROVE_POST);
-            entries.add(BlockusBlocks.CHERRY_POST);
-            entries.add(BlockusBlocks.WHITE_OAK_POST);
-            entries.add(BlockusBlocks.CRIMSON_POST);
-            entries.add(BlockusBlocks.WARPED_POST);
+            for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
+                entries.add(woodenPost.block);
+                entries.add(woodenPost.stripped);
+            }
 
             for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
                 entries.add(timberFrameType.lattice);
@@ -667,16 +659,23 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.NETHERITE_STAIRS);
             entries.add(BlockusBlocks.NETHERITE_SLAB);
 
+
             for (CopperBundle copperBundle : CopperBundle.values()) {
-                entries.add(copperBundle.block);
-                entries.add(copperBundle.stairs);
-                entries.add(copperBundle.slab);
-                entries.add(copperBundle.wall);
-                entries.add(copperBundle.blockWaxed);
-                entries.add(copperBundle.stairsWaxed);
-                entries.add(copperBundle.slabWaxed);
-                entries.add(copperBundle.wallWaxed);
+                for (Block block : copperBundle.all()) {
+                    entries.add(block);
+                }
             }
+
+//            for (CopperBundle copperBundle : CopperBundle.values()) {
+//                entries.add(copperBundle.block);
+//                entries.add(copperBundle.stairs);
+//                entries.add(copperBundle.slab);
+//                entries.add(copperBundle.wall);
+//                entries.add(copperBundle.blockWaxed);
+//                entries.add(copperBundle.stairsWaxed);
+//                entries.add(copperBundle.slabWaxed);
+//                entries.add(copperBundle.wallWaxed);
+//            }
 
             entries.add(BlockusBlocks.CHARCOAL_BLOCK);
             entries.add(BlockusBlocks.ENDER_BLOCK);

@@ -1,8 +1,8 @@
 {
-  "itemGroup.blockus.blockus_building_blocks": "건축 블록 §3(블로커스)",
-  "itemGroup.blockus.blockus_decorations": "장식 블록 §3(블로커스)",
-  "itemGroup.blockus.blockus_redstone": "레드스톤 §3(블로커스)",
-  "itemGroup.blockus.blockus_legacy": "유산 블록 §3(블로커스)",
+  "itemGroup.blockus.blockus_building_blocks": "건축 블록",
+  "itemGroup.blockus.blockus_decorations": "장식 블록",
+  "itemGroup.blockus.blockus_redstone": "레드스톤",
+  "itemGroup.blockus.blockus_legacy": "유산 블록",
   "blockus.blockitem.givespeed": "그 위에 서 있는 플레이어에 신속 III 효과를 줍니다.",
   "block.blockus.blaze_bricks": "블레이즈 벽돌",
   "block.blockus.blaze_bricks_wall": "블레이즈 벽돌 담장",
