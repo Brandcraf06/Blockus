@@ -3,6 +3,8 @@ package com.brand.blockus.itemgroups.content;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.bundles.BSSWBundle;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 public class FunctionalBlocksGroup {
@@ -17,10 +19,8 @@ public class FunctionalBlocksGroup {
 
             entries.add(BlockusBlocks.REDSTONE_O_LANTERN);
             entries.add(BlockusBlocks.REDSTONE_SAND);
-            entries.add(BlockusBlocks.REDSTONE_BRICKS.block);
-            entries.add(BlockusBlocks.REDSTONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.REDSTONE_BRICKS.slab);
-            entries.add(BlockusBlocks.REDSTONE_BRICKS.wall);
+            BuildingBlocksGroup.addBSSW(entries, BlockusBlocks.REDSTONE_BRICKS);
+
 
             entries.add(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE);
 
@@ -64,5 +64,13 @@ public class FunctionalBlocksGroup {
             entries.add(BlockusEntities.CHARRED_BOAT.getChestItem());
             entries.add(BlockusEntities.RAW_BAMBOO_RAFT.getChestItem());
         });
+    }
+    public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle BSSWBundle) {
+        entries.add(BSSWBundle.block);
+        entries.add(BSSWBundle.stairs);
+        entries.add(BSSWBundle.slab);
+        if (BSSWBundle.wall != null) {
+            entries.add(BSSWBundle.wall);
+        }
     }
 }

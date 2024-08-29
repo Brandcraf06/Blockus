@@ -343,7 +343,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final WoodBundle WHITE_OAK = new WoodBundle("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, BlockSoundGroup.WOOD);
 
     // Raw Bamboo
-    public static final WoodBundle RAW_BAMBOO = new WoodBundle("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD, net.minecraft.block.WoodType.BAMBOO, BlockSetType.BAMBOO);
+    public static final WoodBundle RAW_BAMBOO = new WoodBundle("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD, WoodType.BAMBOO, BlockSetType.BAMBOO);
 
     // Charred
     public static final WoodBundle CHARRED = new WoodBundle("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, BlockSoundGroup.WOOD, false);

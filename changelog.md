@@ -1,4 +1,3 @@
-
 * Added Wooden Posts
   * A post-type block that doesn't connect to each other, unlike fences.
   * Can be stripped.

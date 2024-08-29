@@ -2,10 +2,8 @@ package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.brand.blockus.registry.content.bundles.AsphaltBundle;
-import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
-import com.brand.blockus.registry.content.bundles.ConcreteBundle;
-import com.brand.blockus.registry.content.bundles.WoolBundle;
+import com.brand.blockus.registry.content.bundles.*;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 public class ColoredGroups {
@@ -26,57 +24,23 @@ public class ColoredGroups {
                 entries.add(woolBundle.carpet);
             }
 
-            entries.add(BlockusBlocks.SHINGLES.block);
-            entries.add(BlockusBlocks.WHITE_SHINGLES.block);
-            entries.add(BlockusBlocks.LIGHT_GRAY_SHINGLES.block);
-            entries.add(BlockusBlocks.GRAY_SHINGLES.block);
-            entries.add(BlockusBlocks.BLACK_SHINGLES.block);
-            entries.add(BlockusBlocks.BROWN_SHINGLES.block);
-            entries.add(BlockusBlocks.RED_SHINGLES.block);
-            entries.add(BlockusBlocks.ORANGE_SHINGLES.block);
-            entries.add(BlockusBlocks.YELLOW_SHINGLES.block);
-            entries.add(BlockusBlocks.LIME_SHINGLES.block);
-            entries.add(BlockusBlocks.GREEN_SHINGLES.block);
-            entries.add(BlockusBlocks.CYAN_SHINGLES.block);
-            entries.add(BlockusBlocks.LIGHT_BLUE_SHINGLES.block);
-            entries.add(BlockusBlocks.BLUE_SHINGLES.block);
-            entries.add(BlockusBlocks.PURPLE_SHINGLES.block);
-            entries.add(BlockusBlocks.MAGENTA_SHINGLES.block);
-            entries.add(BlockusBlocks.PINK_SHINGLES.block);
-            entries.add(BlockusBlocks.SHINGLES.stairs);
-            entries.add(BlockusBlocks.WHITE_SHINGLES.stairs);
-            entries.add(BlockusBlocks.LIGHT_GRAY_SHINGLES.stairs);
-            entries.add(BlockusBlocks.GRAY_SHINGLES.stairs);
-            entries.add(BlockusBlocks.BLACK_SHINGLES.stairs);
-            entries.add(BlockusBlocks.BROWN_SHINGLES.stairs);
-            entries.add(BlockusBlocks.RED_SHINGLES.stairs);
-            entries.add(BlockusBlocks.ORANGE_SHINGLES.stairs);
-            entries.add(BlockusBlocks.YELLOW_SHINGLES.stairs);
-            entries.add(BlockusBlocks.LIME_SHINGLES.stairs);
-            entries.add(BlockusBlocks.GREEN_SHINGLES.stairs);
-            entries.add(BlockusBlocks.CYAN_SHINGLES.stairs);
-            entries.add(BlockusBlocks.LIGHT_BLUE_SHINGLES.stairs);
-            entries.add(BlockusBlocks.BLUE_SHINGLES.stairs);
-            entries.add(BlockusBlocks.PURPLE_SHINGLES.stairs);
-            entries.add(BlockusBlocks.MAGENTA_SHINGLES.stairs);
-            entries.add(BlockusBlocks.PINK_SHINGLES.stairs);
-            entries.add(BlockusBlocks.SHINGLES.slab);
-            entries.add(BlockusBlocks.WHITE_SHINGLES.slab);
-            entries.add(BlockusBlocks.LIGHT_GRAY_SHINGLES.slab);
-            entries.add(BlockusBlocks.GRAY_SHINGLES.slab);
-            entries.add(BlockusBlocks.BLACK_SHINGLES.slab);
-            entries.add(BlockusBlocks.BROWN_SHINGLES.slab);
-            entries.add(BlockusBlocks.RED_SHINGLES.slab);
-            entries.add(BlockusBlocks.ORANGE_SHINGLES.slab);
-            entries.add(BlockusBlocks.YELLOW_SHINGLES.slab);
-            entries.add(BlockusBlocks.LIME_SHINGLES.slab);
-            entries.add(BlockusBlocks.GREEN_SHINGLES.slab);
-            entries.add(BlockusBlocks.CYAN_SHINGLES.slab);
-            entries.add(BlockusBlocks.LIGHT_BLUE_SHINGLES.slab);
-            entries.add(BlockusBlocks.BLUE_SHINGLES.slab);
-            entries.add(BlockusBlocks.PURPLE_SHINGLES.slab);
-            entries.add(BlockusBlocks.MAGENTA_SHINGLES.slab);
-            entries.add(BlockusBlocks.PINK_SHINGLES.slab);
+            addBSSW(entries, BlockusBlocks.SHINGLES);
+            addBSSW(entries, BlockusBlocks.WHITE_SHINGLES);
+            addBSSW(entries, BlockusBlocks.LIGHT_GRAY_SHINGLES);
+            addBSSW(entries, BlockusBlocks.GRAY_SHINGLES);
+            addBSSW(entries, BlockusBlocks.BLACK_SHINGLES);
+            addBSSW(entries, BlockusBlocks.BROWN_SHINGLES);
+            addBSSW(entries, BlockusBlocks.RED_SHINGLES);
+            addBSSW(entries, BlockusBlocks.ORANGE_SHINGLES);
+            addBSSW(entries, BlockusBlocks.YELLOW_SHINGLES);
+            addBSSW(entries, BlockusBlocks.LIME_SHINGLES);
+            addBSSW(entries, BlockusBlocks.GREEN_SHINGLES);
+            addBSSW(entries, BlockusBlocks.CYAN_SHINGLES);
+            addBSSW(entries, BlockusBlocks.LIGHT_BLUE_SHINGLES);
+            addBSSW(entries, BlockusBlocks.BLUE_SHINGLES);
+            addBSSW(entries, BlockusBlocks.PURPLE_SHINGLES);
+            addBSSW(entries, BlockusBlocks.MAGENTA_SHINGLES);
+            addBSSW(entries, BlockusBlocks.PINK_SHINGLES);
 
             entries.add(BlockusBlocks.WHITE_GLAZED_TERRACOTTA_PILLAR);
             entries.add(BlockusBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR);
@@ -95,66 +59,21 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.MAGENTA_GLAZED_TERRACOTTA_PILLAR);
             entries.add(BlockusBlocks.PINK_GLAZED_TERRACOTTA_PILLAR);
 
-            entries.add(BlockusBlocks.WHITE_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.GRAY_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.BLACK_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.BROWN_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.RED_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.ORANGE_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.YELLOW_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.LIME_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.GREEN_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.CYAN_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.LIGHT_BLUE_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.BLUE_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.PURPLE_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.MAGENTA_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.PINK_STONE_BRICKS.block);
-            entries.add(BlockusBlocks.WHITE_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.GRAY_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.BLACK_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.BROWN_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.RED_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.ORANGE_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.YELLOW_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.LIME_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.GREEN_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.CYAN_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.LIGHT_BLUE_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.BLUE_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.PURPLE_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.MAGENTA_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.PINK_STONE_BRICKS.stairs);
-            entries.add(BlockusBlocks.WHITE_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.GRAY_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.BLACK_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.BROWN_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.RED_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.ORANGE_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.YELLOW_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.LIME_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.GREEN_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.CYAN_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.LIGHT_BLUE_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.BLUE_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.PURPLE_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.MAGENTA_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.PINK_STONE_BRICKS.slab);
-            entries.add(BlockusBlocks.WHITE_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.GRAY_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.BLACK_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.BROWN_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.RED_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.ORANGE_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.YELLOW_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.LIME_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.GREEN_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.CYAN_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.LIGHT_BLUE_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.BLUE_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.PURPLE_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.MAGENTA_STONE_BRICKS.wall);
-            entries.add(BlockusBlocks.PINK_STONE_BRICKS.wall);
+            addBSSW(entries, BlockusBlocks.WHITE_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.GRAY_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.BLACK_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.BROWN_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.RED_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.ORANGE_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.YELLOW_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.LIME_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.GREEN_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.CYAN_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.LIGHT_BLUE_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.BLUE_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.PURPLE_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.MAGENTA_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.PINK_STONE_BRICKS);
 
             for (ConcreteBundle concreteBundle : ConcreteBundle.values()) {
                 entries.add(concreteBundle.block);
@@ -296,10 +215,7 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
 
             entries.add(BlockusBlocks.RAINBOW_BLOCK);
-            entries.add(BlockusBlocks.RAINBOW_BRICKS.block);
-            entries.add(BlockusBlocks.RAINBOW_BRICKS.stairs);
-            entries.add(BlockusBlocks.RAINBOW_BRICKS.slab);
-            entries.add(BlockusBlocks.RAINBOW_BRICKS.wall);
+            addBSSW(entries, BlockusBlocks.RAINBOW_BRICKS);
 
             entries.add(BlockusBlocks.RAINBOW_GLOWSTONE);
         });
@@ -328,5 +244,14 @@ public class ColoredGroups {
 
             entries.add(BlockusBlocks.RAINBOW_COLORED_TILES);
         });
+    }
+
+    public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle BSSWBundle) {
+        entries.add(BSSWBundle.block);
+        entries.add(BSSWBundle.stairs);
+        entries.add(BSSWBundle.slab);
+        if (BSSWBundle.wall != null) {
+            entries.add(BSSWBundle.wall);
+        }
     }
 }
