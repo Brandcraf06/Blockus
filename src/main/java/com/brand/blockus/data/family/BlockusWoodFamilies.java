@@ -1,6 +1,6 @@
 package com.brand.blockus.data.family;
 
-import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.data.family.BlockFamily;

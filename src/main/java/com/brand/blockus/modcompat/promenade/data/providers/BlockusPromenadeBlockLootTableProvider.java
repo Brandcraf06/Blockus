@@ -1,6 +1,6 @@
 package com.brand.blockus.modcompat.promenade.data.providers;
 
-import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.data.BlockusDatagen;
 import com.brand.blockus.data.providers.BlockusBlockLootTableProvider;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;

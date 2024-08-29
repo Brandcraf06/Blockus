@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_dripstone_bricks",
+  "ingredients": [
+    {
+      "item": "blockus:dripstone_bricks"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "blockus:mossy_dripstone_bricks"
+  }
+}

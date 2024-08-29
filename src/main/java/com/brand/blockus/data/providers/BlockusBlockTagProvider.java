@@ -1,9 +1,8 @@
 package com.brand.blockus.data.providers;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
-import com.brand.blockus.utils.tags.BlockusBlockTags;
+import com.brand.blockus.registry.content.bundles.*;
+import com.brand.blockus.registry.tag.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
@@ -18,7 +17,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-import static com.brand.blockus.content.BlockusBlocks.*;
+import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
@@ -57,7 +56,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.VIBRATION_RESONATORS)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
 
-        for (AsphaltTypes asphaltType : AsphaltTypes.values()) {
+        for (AsphaltBundle asphaltType : AsphaltBundle.values()) {
             this.getOrCreateTagBuilder(BlockusBlockTags.ASPHALT)
                 .add(asphaltType.block)
                 .add(asphaltType.stairs)
@@ -199,11 +198,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BLACK_COLORED_TILES)
             .add(RAINBOW_COLORED_TILES);
 
-        for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES).add(coloredTilesTypes.block);
+        for (ColoredTilesBundle coloredTilesBundle : ColoredTilesBundle.values()) {
+            this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES).add(coloredTilesBundle.block);
         }
 
-        for (ConcreteTypes concreteType : ConcreteTypes.values()) {
+        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.getOrCreateTagBuilder(BlockusBlockTags.CONCRETE_BLOCKS)
                 .add(concreteType.block)
                 .add(concreteType.stairs)
@@ -241,6 +240,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(DRIPSTONE_BRICKS.block)
             .add(DRIPSTONE_BRICKS.stairs)
             .add(DRIPSTONE_BRICKS.slab)
+            .add(MOSSY_DRIPSTONE_BRICKS.block)
+            .add(MOSSY_DRIPSTONE_BRICKS.stairs)
+            .add(MOSSY_DRIPSTONE_BRICKS.slab)
             .add(CRACKED_DRIPSTONE_BRICKS)
             .add(CHISELED_DRIPSTONE)
             .add(DRIPSTONE_PILLAR);
@@ -505,14 +507,14 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
             .addTag(BlockusBlockTags.PATTERNED_WOOL);
 
-        for (WoolTypes woolTypes : WoolTypes.values()) {
+        for (WoolBundle woolBundle : WoolBundle.values()) {
             this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_WOOL)
-                .add(woolTypes.block);
+                .add(woolBundle.block);
             this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_CARPETS)
-                .add(woolTypes.carpet);
+                .add(woolBundle.carpet);
             this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
-                .add(woolTypes.stairs)
-                .add(woolTypes.slab);
+                .add(woolBundle.stairs)
+                .add(woolBundle.slab);
         }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS)
@@ -807,17 +809,17 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(THATCH.slab);
 
 
-        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             this.getOrCreateTagBuilder(BlockusBlockTags.TIMBER_FRAMES)
-                .add(timberFrameType.block)
-                .add(timberFrameType.diagonal)
-                .add(timberFrameType.cross);
+                .add(timberFrameBundle.block)
+                .add(timberFrameBundle.diagonal)
+                .add(timberFrameBundle.cross);
 
             this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_LATTICES)
-                .add(timberFrameType.lattice);
+                .add(timberFrameBundle.lattice);
 
             this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_GRATES)
-                .add(timberFrameType.grate);
+                .add(timberFrameBundle.grate);
         }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
@@ -1406,18 +1408,18 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BLACKSTONE_TRAPDOOR);
 
 
-        for (BSSTypes bssTypes : BSSTypes.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bssTypes.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bssTypes.slab);
+        for (BSSBundle bssBundle : BSSBundle.values()) {
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bssBundle.stairs);
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bssBundle.slab);
         }
 
-        for (BSSWTypes bsswTypes : BSSWTypes.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bsswTypes.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bsswTypes.slab);
-            this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswTypes.wall);
+        for (BSSWBundle bsswBundle : BSSWBundle.values()) {
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bsswBundle.stairs);
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bsswBundle.slab);
+            this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswBundle.wall);
         }
 
-        for (ConcreteTypes concreteType : ConcreteTypes.values()) {
+        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.getOrCreateTagBuilder(BlockTags.STAIRS).add(concreteType.stairs);
             this.getOrCreateTagBuilder(BlockTags.SLABS).add(concreteType.slab);
             this.getOrCreateTagBuilder(BlockTags.WALLS).add(concreteType.wall);

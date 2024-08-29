@@ -1,10 +1,10 @@
 package com.brand.blockus.itemgroups.content;
 
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.AsphaltTypes;
-import com.brand.blockus.content.types.ColoredTilesTypes;
-import com.brand.blockus.content.types.ConcreteTypes;
-import com.brand.blockus.content.types.WoolTypes;
+import com.brand.blockus.registry.content.BlockusBlocks;
+import com.brand.blockus.registry.content.bundles.AsphaltBundle;
+import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
+import com.brand.blockus.registry.content.bundles.ConcreteBundle;
+import com.brand.blockus.registry.content.bundles.WoolBundle;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
@@ -12,18 +12,18 @@ public class ColoredGroups {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_COLORED_BLOCKS).register((entries) -> {
-            for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
-                entries.add(asphaltTypes.block);
-                entries.add(asphaltTypes.stairs);
-                entries.add(asphaltTypes.slab);
+            for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+                entries.add(asphaltBundle.block);
+                entries.add(asphaltBundle.stairs);
+                entries.add(asphaltBundle.slab);
             }
             entries.add(BlockusBlocks.RAINBOW_ASPHALT);
 
-            for (WoolTypes woolTypes : WoolTypes.values()) {
-                entries.add(woolTypes.block);
-                entries.add(woolTypes.stairs);
-                entries.add(woolTypes.slab);
-                entries.add(woolTypes.carpet);
+            for (WoolBundle woolBundle : WoolBundle.values()) {
+                entries.add(woolBundle.block);
+                entries.add(woolBundle.stairs);
+                entries.add(woolBundle.slab);
+                entries.add(woolBundle.carpet);
             }
 
             entries.add(BlockusBlocks.SHINGLES.block);
@@ -156,13 +156,13 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.MAGENTA_STONE_BRICKS.wall);
             entries.add(BlockusBlocks.PINK_STONE_BRICKS.wall);
 
-            for (ConcreteTypes concreteTypes : ConcreteTypes.values()) {
-                entries.add(concreteTypes.block);
-                entries.add(concreteTypes.stairs);
-                entries.add(concreteTypes.slab);
-                entries.add(concreteTypes.wall);
-                entries.add(concreteTypes.chiseled);
-                entries.add(concreteTypes.pillar);
+            for (ConcreteBundle concreteBundle : ConcreteBundle.values()) {
+                entries.add(concreteBundle.block);
+                entries.add(concreteBundle.stairs);
+                entries.add(concreteBundle.slab);
+                entries.add(concreteBundle.wall);
+                entries.add(concreteBundle.chiseled);
+                entries.add(concreteBundle.pillar);
             }
 
             entries.add(BlockusBlocks.WHITE_COLORED_TILES);
@@ -322,8 +322,8 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.MAGENTA_COLORED_TILES);
             entries.add(BlockusBlocks.PINK_COLORED_TILES);
 
-            for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
-                entries.add(coloredTilesTypes.block);
+            for (ColoredTilesBundle coloredTilesBundle : ColoredTilesBundle.values()) {
+                entries.add(coloredTilesBundle.block);
             }
 
             entries.add(BlockusBlocks.RAINBOW_COLORED_TILES);

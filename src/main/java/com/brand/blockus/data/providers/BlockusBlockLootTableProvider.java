@@ -2,7 +2,7 @@ package com.brand.blockus.data.providers;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -21,12 +21,10 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.operator.BoundedIntUnaryOperator;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.RegistryWrapper;
 
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
-import static com.brand.blockus.content.BlockusBlocks.*;
+import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider {
     public BlockusBlockLootTableProvider(FabricDataOutput output) {
@@ -36,55 +34,55 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
     @Override
     public void generate() {
 
-        for (BSSTypes bssType : BSSTypes.values()) {
+        for (BSSBundle bssType : BSSBundle.values()) {
             this.addBlockStairsandSlabDrops(bssType.block, bssType.stairs, bssType.slab);
         }
 
-        for (BSSWTypes bsswType : BSSWTypes.values()) {
+        for (BSSWBundle bsswType : BSSWBundle.values()) {
             this.addBlockStairsandSlabDrops(bsswType.block, bsswType.stairs, bsswType.slab);
             this.addDrop(bsswType.wall);
         }
 
-        for (ConcreteTypes concreteType : ConcreteTypes.values()) {
+        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.addBlockStairsandSlabDrops(concreteType.block, concreteType.stairs, concreteType.slab);
             this.addDrops(concreteType.wall, concreteType.chiseled, concreteType.pillar);
         }
 
-        for (WoodTypes woodType : WoodTypes.values()) {
-            this.addWoodSetDrop(woodType.planks,
-                woodType.stairs,
-                woodType.slab,
-                woodType.fence,
-                woodType.fence_gate,
-                woodType.door,
-                woodType.trapdoor,
-                woodType.pressure_plate,
-                woodType.button,
-                woodType.standing_sign,
-                woodType.ceiling_hanging_sign);
+        for (WoodBundle woodBundle : WoodBundle.values()) {
+            this.addWoodSetDrop(woodBundle.planks,
+                woodBundle.stairs,
+                woodBundle.slab,
+                woodBundle.fence,
+                woodBundle.fence_gate,
+                woodBundle.door,
+                woodBundle.trapdoor,
+                woodBundle.pressure_plate,
+                woodBundle.button,
+                woodBundle.standing_sign,
+                woodBundle.ceiling_hanging_sign);
         }
 
-        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
-            for (Block block : timberFrameType.all) {
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            for (Block block : timberFrameBundle.all) {
                 this.addDrops(block);
             }
         }
 
-        for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
-            this.addBlockStairsandSlabDrops(asphaltTypes.block, asphaltTypes.stairs, asphaltTypes.slab);
+        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+            this.addBlockStairsandSlabDrops(asphaltBundle.block, asphaltBundle.stairs, asphaltBundle.slab);
         }
 
-        for (PottedLargeTypes pottedLargeType : PottedLargeTypes.values()) {
+        for (PottedLargeBundle pottedLargeType : PottedLargeBundle.values()) {
             this.addPottedLargePlantDrop(pottedLargeType.block);
         }
 
-        for (WoolTypes woolTypes : WoolTypes.values()) {
-            this.addBlockStairsandSlabDrops(woolTypes.block, woolTypes.stairs, woolTypes.slab);
-            this.addDrop(woolTypes.carpet);
+        for (WoolBundle woolBundle : WoolBundle.values()) {
+            this.addBlockStairsandSlabDrops(woolBundle.block, woolBundle.stairs, woolBundle.slab);
+            this.addDrop(woolBundle.carpet);
         }
 
-        for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
-            this.addDrop(coloredTilesTypes.block);
+        for (ColoredTilesBundle coloredTilesBundle : ColoredTilesBundle.values()) {
+            this.addDrop(coloredTilesBundle.block);
         }
 
         this.addDrops(CHISELED_MUD_BRICKS,

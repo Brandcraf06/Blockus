@@ -1,7 +1,7 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.TimberFrameTypes;
+import com.brand.blockus.registry.content.BlockusBlocks;
+import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
@@ -94,8 +94,8 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.REDSTONE_LANTERN
         );
 
-        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
-            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),timberFrameType.lattice, timberFrameType.grate);
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), timberFrameBundle.lattice, timberFrameBundle.grate);
         }
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),

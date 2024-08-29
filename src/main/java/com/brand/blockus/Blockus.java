@@ -1,13 +1,13 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.BlockusEntities;
-import com.brand.blockus.content.BlockusItems;
-import com.brand.blockus.content.types.ColoredTilesTypes;
+import com.brand.blockus.registry.content.BlockusBlocks;
+import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.BlockusItems;
+import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.itemgroups.content.*;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
-import com.brand.blockus.utils.effect.BlockusEffects;
+import com.brand.blockus.registry.effect.BlockusEffects;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.brand.blockus.worldgen.foliage.BlockusFoliagePlacerType;
 import com.google.common.reflect.Reflection;
@@ -35,7 +35,7 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(BlockusBlocks.class);
         Reflection.initialize(BlockusItems.class);
         Reflection.initialize(BlockusEntities.class);
-        Reflection.initialize(ColoredTilesTypes.class);
+        Reflection.initialize(ColoredTilesBundle.class);
         Reflection.initialize(BlockusEffects.class);
         Reflection.initialize(BlockusFoliagePlacerType.class);
 

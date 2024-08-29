@@ -1,9 +1,9 @@
 package com.brand.blockus;
 
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.TimberFrameTypes;
-import com.brand.blockus.content.types.WoodTypes;
-import com.brand.blockus.content.types.WoolTypes;
+import com.brand.blockus.registry.content.BlockusBlocks;
+import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
+import com.brand.blockus.registry.content.bundles.WoodBundle;
+import com.brand.blockus.registry.content.bundles.WoolBundle;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.block.Block;
@@ -61,9 +61,9 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BlockusBlocks.THATCH.stairs, 60, 20);
 
         // Timber frames
-        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
-            for (Block block : timberFrameType.all) {
-                if (!block.asItem().isFireproof()) {
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            for (Block block : timberFrameBundle.all) {
+                if (timberFrameBundle.isBurnable()) {
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
                     FuelRegistry.INSTANCE.add(block, 300);
                 }
@@ -71,25 +71,25 @@ public class Instance {
         }
 
         // Patterned wools
-        for (WoolTypes woolTypes : WoolTypes.values()) {
-            FlammableBlockRegistry.getDefaultInstance().add(woolTypes.block, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolTypes.stairs, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolTypes.slab, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolTypes.carpet, 60, 20);
-            FuelRegistry.INSTANCE.add(woolTypes.stairs, 100);
-            FuelRegistry.INSTANCE.add(woolTypes.slab, 50);
+        for (WoolBundle woolBundle : WoolBundle.values()) {
+            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.block, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.stairs, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.slab, 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.carpet, 60, 20);
+            FuelRegistry.INSTANCE.add(woolBundle.stairs, 100);
+            FuelRegistry.INSTANCE.add(woolBundle.slab, 50);
         }
 
         // Wood set
-        for (WoodTypes woodType : WoodTypes.values()) {
-            if (woodType.isBurnable()) {
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.planks, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.stairs, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.slab, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.fence, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.fence_gate, 5, 20);
-                FuelRegistry.INSTANCE.add(woodType.fence, 300);
-                FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
+        for (WoodBundle woodBundle : WoodBundle.values()) {
+            if (woodBundle.isBurnable()) {
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.planks, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.stairs, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.slab, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence_gate, 5, 20);
+                FuelRegistry.INSTANCE.add(woodBundle.fence, 300);
+                FuelRegistry.INSTANCE.add(woodBundle.fence_gate, 300);
             }
         }
 

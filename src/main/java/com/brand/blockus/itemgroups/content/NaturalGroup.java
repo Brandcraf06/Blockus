@@ -1,6 +1,6 @@
 package com.brand.blockus.itemgroups.content;
 
-import com.brand.blockus.content.BlockusBlocks;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;

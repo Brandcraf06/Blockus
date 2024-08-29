@@ -1,7 +1,7 @@
 package com.brand.blockus.data.providers;
 
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.types.*;
+import com.brand.blockus.registry.content.BlockusBlocks;
+import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.data.family.BlockusWoodFamilies;
 import com.brand.blockus.data.models.BlockusModels;
 import com.brand.blockus.data.models.BlockusTextureKey;
@@ -31,7 +31,7 @@ public class BlockusModelProvider extends FabricModelProvider {
             modelGenerator.registerCubeAllModelTexturePool(family.getBaseBlock()).family(family);
         });
 
-        for (BSSTypes bssType : BSSTypes.values()) {
+        for (BSSBundle bssType : BSSBundle.values()) {
             if (bssType.type.contains("rough") && bssType.type.contains("sandstone")) {
                 this.registerBlockStairsSlabWithBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
             } else if ((bssType.type.contains("smooth") && bssType.type.contains("sandstone")) || bssType.block == BlockusBlocks.ROUGH_BASALT.block) {
@@ -41,7 +41,7 @@ public class BlockusModelProvider extends FabricModelProvider {
             }
         }
 
-        for (BSSWTypes bsswType : BSSWTypes.values()) {
+        for (BSSWBundle bsswType : BSSWBundle.values()) {
             if (bsswType.block == BlockusBlocks.SOUL_SANDSTONE.block) {
                 this.registerBlockStairsSlabwithTopBottom(modelGenerator, bsswType.block, bsswType.stairs, bsswType.slab);
                 this.registerWall(modelGenerator, bsswType.wall, bsswType.block);
@@ -50,30 +50,30 @@ public class BlockusModelProvider extends FabricModelProvider {
             }
         }
 
-        for (ConcreteTypes concreteType : ConcreteTypes.values()) {
+        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.registerBlockStairsSlabAndWall(modelGenerator, concreteType.block, concreteType.stairs, concreteType.slab, concreteType.wall);
             modelGenerator.registerSimpleCubeAll(concreteType.chiseled);
             this.registerPillar(modelGenerator, concreteType.pillar);
         }
 
-        for (TimberFrameTypes timberFrameType : TimberFrameTypes.values()) {
-            modelGenerator.registerSimpleCubeAll(timberFrameType.block);
-            modelGenerator.registerSimpleCubeAll(timberFrameType.cross);
-            this.registerDiagonalTimberFrame(modelGenerator, timberFrameType.diagonal);
-            modelGenerator.registerGlassPane(timberFrameType.grate, timberFrameType.lattice);
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            modelGenerator.registerSimpleCubeAll(timberFrameBundle.block);
+            modelGenerator.registerSimpleCubeAll(timberFrameBundle.cross);
+            this.registerDiagonalTimberFrame(modelGenerator, timberFrameBundle.diagonal);
+            modelGenerator.registerGlassPane(timberFrameBundle.grate, timberFrameBundle.lattice);
         }
 
-        for (AsphaltTypes asphaltTypes : AsphaltTypes.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, asphaltTypes.block, asphaltTypes.stairs, asphaltTypes.slab);
+        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+            this.registerBlockStairsAndSlab(modelGenerator, asphaltBundle.block, asphaltBundle.stairs, asphaltBundle.slab);
         }
 
-        for (WoolTypes woolTypes : WoolTypes.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, woolTypes.block, woolTypes.stairs, woolTypes.slab);
-            this.registerCarpet(modelGenerator, woolTypes.block, woolTypes.carpet);
+        for (WoolBundle woolBundle : WoolBundle.values()) {
+            this.registerBlockStairsAndSlab(modelGenerator, woolBundle.block, woolBundle.stairs, woolBundle.slab);
+            this.registerCarpet(modelGenerator, woolBundle.block, woolBundle.carpet);
         }
 
-        for (ColoredTilesTypes coloredTilesTypes : ColoredTilesTypes.values()) {
-            registerColoredTiles(modelGenerator, coloredTilesTypes.block, coloredTilesTypes.tile1, coloredTilesTypes.tile2);
+        for (ColoredTilesBundle coloredTilesBundle : ColoredTilesBundle.values()) {
+            registerColoredTiles(modelGenerator, coloredTilesBundle.block, coloredTilesBundle.tile1, coloredTilesBundle.tile2);
         }
 
         // Stone

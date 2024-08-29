@@ -1,7 +1,7 @@
 package com.brand.blockus.modcompat.promenade;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.content.BlocksRegistration;
+import com.brand.blockus.utils.BlockFactory;
 import fr.hugman.dawn.Registrar;
 import fr.hugman.promenade.PromenadeFactory;
 import fr.hugman.promenade.registry.content.AmaranthContent;
@@ -21,7 +21,7 @@ import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.color.world.GrassColors;
 import net.minecraft.client.render.RenderLayer;
 
-public class BlockusPromenadeBlocks extends BlocksRegistration {
+public class BlockusPromenadeBlocks extends BlockFactory {
     public static Block POTTED_SAP_MAPLE;
     public static Block POTTED_VERMILION_MAPLE;
     public static Block POTTED_FULVOUS_MAPLE;

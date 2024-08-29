@@ -1,12 +1,10 @@
 package com.brand.blockus.data.providers;
 
-import com.brand.blockus.content.BlockusBlocks;
-import com.brand.blockus.content.BlockusEntities;
-import com.brand.blockus.utils.tags.BlockusBlockTags;
-import com.brand.blockus.utils.tags.BlockusItemTags;
+import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.tag.BlockusBlockTags;
+import com.brand.blockus.registry.tag.BlockusItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
@@ -20,7 +18,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-import static com.brand.blockus.content.BlockusBlocks.*;
+import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
     public BlockusItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, BlockTagProvider blockTagProvider) {
