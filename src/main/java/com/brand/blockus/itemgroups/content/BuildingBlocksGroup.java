@@ -5,7 +5,6 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.BlockChecker;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.Block;
 
 public class BuildingBlocksGroup {
@@ -17,16 +16,16 @@ public class BuildingBlocksGroup {
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
             entries.add(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
 
-            for (WoodBundle woodType : WoodBundle.values()) {
-                entries.add(woodType.planks);
-                entries.add(woodType.stairs);
-                entries.add(woodType.slab);
-                entries.add(woodType.fence);
-                entries.add(woodType.fence_gate);
-                entries.add(woodType.door);
-                entries.add(woodType.trapdoor);
-                entries.add(woodType.pressure_plate);
-                entries.add(woodType.button);
+            for (WoodBundle woodBundle : WoodBundle.values()) {
+                entries.add(woodBundle.planks);
+                entries.add(woodBundle.stairs);
+                entries.add(woodBundle.slab);
+                entries.add(woodBundle.fence);
+                entries.add(woodBundle.fence_gate);
+                entries.add(woodBundle.door);
+                entries.add(woodBundle.trapdoor);
+                entries.add(woodBundle.pressure_plate);
+                entries.add(woodBundle.button);
             }
 
             entries.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
@@ -83,16 +82,16 @@ public class BuildingBlocksGroup {
                 entries.add(woodenPost.stripped);
             }
 
-            for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
-                entries.add(timberFrameType.lattice);
-                entries.add(timberFrameType.grate);
+            for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+                entries.add(timberFrameBundle.lattice);
+                entries.add(timberFrameBundle.grate);
             }
 
-            for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
-                entries.add(timberFrameType.cross);
-                entries.add(timberFrameType.block);
-                entries.add(timberFrameType.diagonal);
-                entries.add(timberFrameType.cross);
+            for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+                entries.add(timberFrameBundle.cross);
+                entries.add(timberFrameBundle.block);
+                entries.add(timberFrameBundle.diagonal);
+                entries.add(timberFrameBundle.cross);
             }
 
             entries.add(BlockusBlocks.CHISELED_MUD_BRICKS);

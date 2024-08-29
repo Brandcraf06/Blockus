@@ -6,7 +6,6 @@ import com.brand.blockus.data.models.BlockusModels;
 import com.brand.blockus.data.models.BlockusTextureKey;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
-import com.brand.blockus.registry.tag.BlockusBlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
@@ -70,15 +69,15 @@ public class BlockusModelProvider extends FabricModelProvider {
             this.registerPillar(modelGenerator, concreteType.pillar);
         }
 
-        for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
-            modelGenerator.registerSimpleCubeAll(timberFrameType.block);
-            modelGenerator.registerSimpleCubeAll(timberFrameType.cross);
-            this.registerDiagonalTimberFrame(modelGenerator, timberFrameType.diagonal);
-            modelGenerator.registerGlassPane(timberFrameType.grate, timberFrameType.lattice);
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            modelGenerator.registerSimpleCubeAll(timberFrameBundle.block);
+            modelGenerator.registerSimpleCubeAll(timberFrameBundle.cross);
+            this.registerDiagonalTimberFrame(modelGenerator, timberFrameBundle.diagonal);
+            modelGenerator.registerGlassPane(timberFrameBundle.grate, timberFrameBundle.lattice);
         }
 
-        for (AsphaltBundle asphaltTypes : AsphaltBundle.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, asphaltTypes.block, asphaltTypes.stairs, asphaltTypes.slab);
+        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+            this.registerBlockStairsAndSlab(modelGenerator, asphaltBundle.block, asphaltBundle.stairs, asphaltBundle.slab);
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {

@@ -87,8 +87,8 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.REDSTONE_LANTERN
         );
 
-        for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
-            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), timberFrameType.lattice, timberFrameType.grate);
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), timberFrameBundle.lattice, timberFrameBundle.grate);
         }
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),

@@ -815,17 +815,17 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(THATCH.slab);
 
 
-        for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             this.getOrCreateTagBuilder(BlockusBlockTags.TIMBER_FRAMES)
-                .add(timberFrameType.block)
-                .add(timberFrameType.diagonal)
-                .add(timberFrameType.cross);
+                .add(timberFrameBundle.block)
+                .add(timberFrameBundle.diagonal)
+                .add(timberFrameBundle.cross);
 
             this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_LATTICES)
-                .add(timberFrameType.lattice);
+                .add(timberFrameBundle.lattice);
 
             this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_GRATES)
-                .add(timberFrameType.grate);
+                .add(timberFrameBundle.grate);
         }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
@@ -1336,11 +1336,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BLACKSTONE_TRAPDOOR);
 
 
-        for (BSSWBundle BsswTypes : BSSWBundle.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(BsswTypes.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(BsswTypes.slab);
-            if (BsswTypes.wall != null) {
-                this.getOrCreateTagBuilder(BlockTags.WALLS).add(BsswTypes.wall);
+        for (BSSWBundle bsswBundle : BSSWBundle.values()) {
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bsswBundle.stairs);
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bsswBundle.slab);
+            if (bsswBundle.wall != null) {
+                this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswBundle.wall);
             }
         }
 

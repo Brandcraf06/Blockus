@@ -54,16 +54,16 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             offerPolishedStoneRecipe(exporter, concreteType.block, concreteType.base);
         }
 
-        for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
-            createTimberFramesRecipes(exporter, timberFrameType.base, timberFrameType.block, timberFrameType.diagonal, timberFrameType.cross);
-            createLatticeRecipes(exporter, timberFrameType.base, timberFrameType.lattice, timberFrameType.grate);
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            createTimberFramesRecipes(exporter, timberFrameBundle.base, timberFrameBundle.block, timberFrameBundle.diagonal, timberFrameBundle.cross);
+            createLatticeRecipes(exporter, timberFrameBundle.base, timberFrameBundle.lattice, timberFrameBundle.grate);
         }
 
-        for (AsphaltBundle asphaltTypes : AsphaltBundle.values()) {
-            BlockusRecipeProvider.offerStairsRecipe(exporter, asphaltTypes.stairs, asphaltTypes.block);
-            RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, asphaltTypes.slab, asphaltTypes.block);
-            offerStonecuttingRecipe(exporter, asphaltTypes.stairs, asphaltTypes.block);
-            offerStonecuttingRecipe(exporter, asphaltTypes.slab, 2, asphaltTypes.block);
+        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+            BlockusRecipeProvider.offerStairsRecipe(exporter, asphaltBundle.stairs, asphaltBundle.block);
+            RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, asphaltBundle.slab, asphaltBundle.block);
+            offerStonecuttingRecipe(exporter, asphaltBundle.stairs, asphaltBundle.block);
+            offerStonecuttingRecipe(exporter, asphaltBundle.slab, 2, asphaltBundle.block);
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {

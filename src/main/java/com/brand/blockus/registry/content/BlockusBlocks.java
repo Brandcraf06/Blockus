@@ -9,6 +9,7 @@ import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
 import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.content.bundles.CopperBundle.OxidationType;
+import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.utils.BlockFactory;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -342,7 +343,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final WoodBundle WHITE_OAK = new WoodBundle("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, BlockSoundGroup.WOOD);
 
     // Raw Bamboo
-    public static final WoodBundle RAW_BAMBOO = new WoodBundle("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD, WoodType.BAMBOO, BlockSetType.BAMBOO);
+    public static final WoodBundle RAW_BAMBOO = new WoodBundle("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD, net.minecraft.block.WoodType.BAMBOO, BlockSetType.BAMBOO);
 
     // Charred
     public static final WoodBundle CHARRED = new WoodBundle("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, BlockSoundGroup.WOOD, false);

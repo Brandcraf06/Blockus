@@ -61,32 +61,32 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrops(concrete.wall, concrete.chiseled, concrete.pillar);
         }
 
-        for (WoodBundle woodType : WoodBundle.values()) {
-            this.addWoodSetDrop(woodType.planks,
-                woodType.stairs,
-                woodType.slab,
-                woodType.fence,
-                woodType.fence_gate,
-                woodType.door,
-                woodType.trapdoor,
-                woodType.pressure_plate,
-                woodType.button,
-                woodType.standing_sign,
-                woodType.ceiling_hanging_sign);
+        for (WoodBundle woodBundle : WoodBundle.values()) {
+            this.addWoodSetDrop(woodBundle.planks,
+                woodBundle.stairs,
+                woodBundle.slab,
+                woodBundle.fence,
+                woodBundle.fence_gate,
+                woodBundle.door,
+                woodBundle.trapdoor,
+                woodBundle.pressure_plate,
+                woodBundle.button,
+                woodBundle.standing_sign,
+                woodBundle.ceiling_hanging_sign);
         }
 
-        for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
-            for (Block block : timberFrameType.all) {
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            for (Block block : timberFrameBundle.all) {
                 this.addDrops(block);
             }
         }
 
-        for (AsphaltBundle asphaltTypes : AsphaltBundle.values()) {
-            this.addBlockStairsandSlabDrops(asphaltTypes.block, asphaltTypes.stairs, asphaltTypes.slab);
+        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+            this.addBlockStairsandSlabDrops(asphaltBundle.block, asphaltBundle.stairs, asphaltBundle.slab);
         }
 
-        for (PottedLargeBundle pottedLargeType : PottedLargeBundle.values()) {
-            this.addPottedLargePlantDrop(pottedLargeType.block);
+        for (PottedLargeBundle pottedLargeBundle : PottedLargeBundle.values()) {
+            this.addPottedLargePlantDrop(pottedLargeBundle.block);
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {

@@ -12,10 +12,10 @@ public class ColoredGroups {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_COLORED_BLOCKS).register((entries) -> {
-            for (AsphaltBundle asphaltTypes : AsphaltBundle.values()) {
-                entries.add(asphaltTypes.block);
-                entries.add(asphaltTypes.stairs);
-                entries.add(asphaltTypes.slab);
+            for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+                entries.add(asphaltBundle.block);
+                entries.add(asphaltBundle.stairs);
+                entries.add(asphaltBundle.slab);
             }
             entries.add(BlockusBlocks.RAINBOW_ASPHALT);
 

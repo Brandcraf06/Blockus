@@ -37,7 +37,7 @@ public class WoodBundle {
     public final Item hanging_sign;
     public boolean burnable;
 
-    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, WoodType woodtype, BlockSetType blocksettype, boolean burnable) {
+    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, net.minecraft.block.WoodType woodtype, BlockSetType blocksettype, boolean burnable) {
 
         this.base = base;
         this.burnable = burnable;
@@ -80,16 +80,16 @@ public class WoodBundle {
 
     }
 
-    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, WoodType woodtype, BlockSetType blocksettype) {
+    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, net.minecraft.block.WoodType woodtype, BlockSetType blocksettype) {
         this(type, base, color, sound, woodtype, blocksettype, true);
     }
 
     public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound) {
-        this(type, base, color, sound, WoodType.OAK, BlockSetType.OAK, true);
+        this(type, base, color, sound, net.minecraft.block.WoodType.OAK, BlockSetType.OAK, true);
     }
 
     public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, boolean burnable) {
-        this(type, base, color, sound, WoodType.OAK, BlockSetType.OAK, burnable);
+        this(type, base, color, sound, net.minecraft.block.WoodType.OAK, BlockSetType.OAK, burnable);
     }
 
     public static ArrayList<WoodBundle> values() {

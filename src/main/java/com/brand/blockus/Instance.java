@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
@@ -61,9 +60,9 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(THATCH.stairs, 60, 20);
 
         // Timber frames
-        for (TimberFrameBundle timberFrameType : TimberFrameBundle.values()) {
-            for (Block block : timberFrameType.all) {
-                if (!block.asItem().getComponents().contains(DataComponentTypes.FIRE_RESISTANT)) {
+        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+            for (Block block : timberFrameBundle.all) {
+                if (timberFrameBundle.isBurnable()) {
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
                     FuelRegistry.INSTANCE.add(block, 300);
                 }
@@ -81,15 +80,15 @@ public class Instance {
         }
 
         // Wood set
-        for (WoodBundle woodType : WoodBundle.values()) {
-            if (woodType.isBurnable()) {
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.planks, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.stairs, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.slab, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.fence, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodType.fence_gate, 5, 20);
-                FuelRegistry.INSTANCE.add(woodType.fence, 300);
-                FuelRegistry.INSTANCE.add(woodType.fence_gate, 300);
+        for (WoodBundle woodBundle : WoodBundle.values()) {
+            if (woodBundle.isBurnable()) {
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.planks, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.stairs, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.slab, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence, 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence_gate, 5, 20);
+                FuelRegistry.INSTANCE.add(woodBundle.fence, 300);
+                FuelRegistry.INSTANCE.add(woodBundle.fence_gate, 300);
             }
         }
 
