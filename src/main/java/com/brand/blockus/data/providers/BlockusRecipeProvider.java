@@ -36,11 +36,11 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
 
-        for (BSSWBundle bssType : BSSWBundle.values()) {
-            BlockusRecipeProvider.offerStairsRecipe(exporter, bssType.stairs, bssType.block);
-            RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, bssType.slab, bssType.block);
-            if (bssType.wall != null) {
-                RecipeProvider.offerWallRecipe(exporter, RecipeCategory.DECORATIONS, bssType.wall, bssType.block);
+        for (BSSWBundle BSSWBundle : BSSWBundle.values()) {
+            BlockusRecipeProvider.offerStairsRecipe(exporter, BSSWBundle.stairs, BSSWBundle.block);
+            RecipeProvider.offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, BSSWBundle.slab, BSSWBundle.block);
+            if (BSSWBundle.wall != null) {
+                RecipeProvider.offerWallRecipe(exporter, RecipeCategory.DECORATIONS, BSSWBundle.wall, BSSWBundle.block);
             }
         }
 

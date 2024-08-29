@@ -4,7 +4,7 @@
   "group": "waxed_copper_brick_wall",
   "ingredients": [
     {
-      "item": "blockus:copper_bricks"
+      "item": "blockus:copper_brick_wall"
     },
     {
       "item": "minecraft:honeycomb"

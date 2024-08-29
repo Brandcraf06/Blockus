@@ -1,11 +1,12 @@
 {
   "values": [
     "blockus:rough_basalt",
-    "blockus:rough_basalt_slab",
     "blockus:rough_basalt_stairs",
+    "blockus:rough_basalt_slab",
     "blockus:polished_basalt_bricks",
     "blockus:polished_basalt_brick_stairs",
     "blockus:polished_basalt_brick_slab",
+    "blockus:polished_basalt_brick_wall",
     "blockus:chiseled_polished_basalt",
     "blockus:cracked_polished_basalt_bricks",
     "blockus:polished_basalt_pillar",

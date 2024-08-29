@@ -1,12 +1,13 @@
 {
   "values": [
     "blockus:phantom_purpur_block",
-    "blockus:phantom_purpur_slab",
     "blockus:phantom_purpur_stairs",
+    "blockus:phantom_purpur_slab",
     "blockus:phantom_purpur_pillar",
     "blockus:phantom_purpur_bricks",
     "blockus:phantom_purpur_brick_stairs",
     "blockus:phantom_purpur_brick_slab",
+    "blockus:phantom_purpur_brick_wall",
     "blockus:polished_phantom_purpur",
     "blockus:polished_phantom_purpur_stairs",
     "blockus:polished_phantom_purpur_slab",
@@ -14,6 +15,7 @@
     "blockus:small_phantom_purpur_bricks",
     "blockus:small_phantom_purpur_brick_stairs",
     "blockus:small_phantom_purpur_brick_slab",
+    "blockus:small_phantom_purpur_brick_wall",
     "blockus:chiseled_phantom_purpur",
     "blockus:phantom_purpur_lines"
   ]

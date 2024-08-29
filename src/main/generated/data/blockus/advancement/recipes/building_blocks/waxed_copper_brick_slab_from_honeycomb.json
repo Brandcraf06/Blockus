@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_copper_bricks": {
+    "has_copper_brick_slab": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:copper_bricks"
+            "items": "blockus:copper_brick_slab"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_copper_bricks"
+      "has_copper_brick_slab"
     ]
   ],
   "rewards": {

@@ -1,7 +1,6 @@
 package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
-import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.BlockChecker;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
@@ -100,7 +99,7 @@ public class BuildingBlocksGroup {
             entries.add(CHISELED_MUD_BRICKS);
             entries.add(MUD_BRICK_PILLAR);
 
-            addBSSW(entries, THATCH);
+            addBssw(entries, THATCH);
 
             entries.add(PAPER_BLOCK);
             entries.add(BURNT_PAPER_BLOCK);
@@ -110,14 +109,14 @@ public class BuildingBlocksGroup {
             entries.add(PAPER_TRAPDOOR);
             entries.add(PAPER_LAMP);
 
-            addBSSW(entries, SNOW_BRICKS);
+            addBssw(entries, SNOW_BRICKS);
             entries.add(SNOW_PILLAR);
 
             entries.add(ICE_BRICKS);
             entries.add(ICE_BRICK_WALL);
             entries.add(ICE_PILLAR);
 
-            addBSSW(entries, STONE_TILES);
+            addBssw(entries, STONE_TILES);
             entries.add(STONE_BRICK_PILLAR);
             entries.add(HERRINGBONE_STONE_BRICKS);
             entries.add(STONE_CIRCULAR_PAVING);
@@ -128,7 +127,7 @@ public class BuildingBlocksGroup {
 
             entries.add(POLISHED_GRANITE_PRESSURE_PLATE);
             entries.add(POLISHED_GRANITE_BUTTON);
-            addBSSW(entries, GRANITE_BRICKS);
+            addBssw(entries, GRANITE_BRICKS);
             entries.add(HERRINGBONE_GRANITE_BRICKS);
             entries.add(CHISELED_GRANITE_BRICKS);
             entries.add(CRACKED_GRANITE_BRICKS);
@@ -137,7 +136,7 @@ public class BuildingBlocksGroup {
 
             entries.add(POLISHED_DIORITE_PRESSURE_PLATE);
             entries.add(POLISHED_DIORITE_BUTTON);
-            addBSSW(entries, DIORITE_BRICKS);
+            addBssw(entries, DIORITE_BRICKS);
             entries.add(HERRINGBONE_DIORITE_BRICKS);
             entries.add(CHISELED_DIORITE_BRICKS);
             entries.add(CRACKED_DIORITE_BRICKS);
@@ -146,26 +145,26 @@ public class BuildingBlocksGroup {
 
             entries.add(POLISHED_ANDESITE_PRESSURE_PLATE);
             entries.add(POLISHED_ANDESITE_BUTTON);
-            addBSSW(entries, ANDESITE_BRICKS);
+            addBssw(entries, ANDESITE_BRICKS);
             entries.add(HERRINGBONE_ANDESITE_BRICKS);
             entries.add(CHISELED_ANDESITE_BRICKS);
             entries.add(CRACKED_ANDESITE_BRICKS);
             entries.add(POLISHED_ANDESITE_PILLAR);
             entries.add(ANDESITE_CIRCULAR_PAVING);
 
-            addBSSW(entries, WATER_BRICKS);
+            addBssw(entries, WATER_BRICKS);
             entries.add(CHISELED_WATER_BRICKS);
 
-            addBSSW(entries, LAVA_BRICKS);
+            addBssw(entries, LAVA_BRICKS);
             entries.add(CHISELED_LAVA_BRICKS);
 
-            addBSSW(entries, LIMESTONE);
+            addBssw(entries, LIMESTONE);
             entries.add(LIMESTONE_PRESSURE_PLATE);
             entries.add(LIMESTONE_BUTTON);
-            addBSSW(entries, POLISHED_LIMESTONE);
-            addBSSW(entries, LIMESTONE_BRICKS);
-            addBSSW(entries, SMALL_LIMESTONE_BRICKS);
-            addBSSW(entries, LIMESTONE_TILES);
+            addBssw(entries, POLISHED_LIMESTONE);
+            addBssw(entries, LIMESTONE_BRICKS);
+            addBssw(entries, SMALL_LIMESTONE_BRICKS);
+            addBssw(entries, LIMESTONE_TILES);
             entries.add(CHISELED_LIMESTONE);
             entries.add(LIMESTONE_PILLAR);
             entries.add(CHISELED_LIMESTONE_PILLAR);
@@ -173,13 +172,13 @@ public class BuildingBlocksGroup {
             entries.add(LIMESTONE_CIRCULAR_PAVING);
             entries.add(LIMESTONE_LINES);
 
-            addBSSW(entries, MARBLE);
+            addBssw(entries, MARBLE);
             entries.add(MARBLE_PRESSURE_PLATE);
             entries.add(MARBLE_BUTTON);
-            addBSSW(entries, POLISHED_MARBLE);
-            addBSSW(entries, MARBLE_BRICKS);
-            addBSSW(entries, SMALL_MARBLE_BRICKS);
-            addBSSW(entries, MARBLE_TILES);
+            addBssw(entries, POLISHED_MARBLE);
+            addBssw(entries, MARBLE_BRICKS);
+            addBssw(entries, SMALL_MARBLE_BRICKS);
+            addBssw(entries, MARBLE_TILES);
             entries.add(CHISELED_MARBLE);
             entries.add(MARBLE_PILLAR);
             entries.add(CHISELED_MARBLE_PILLAR);
@@ -187,16 +186,16 @@ public class BuildingBlocksGroup {
             entries.add(MARBLE_CIRCULAR_PAVING);
             entries.add(MARBLE_LINES);
 
-            addBSSW(entries, POLISHED_DRIPSTONE);
-            addBSSW(entries, DRIPSTONE_BRICKS);
-            addBSSW(entries, MOSSY_DRIPSTONE_BRICKS);
+            addBssw(entries, POLISHED_DRIPSTONE);
+            addBssw(entries, DRIPSTONE_BRICKS);
+            addBssw(entries, MOSSY_DRIPSTONE_BRICKS);
             entries.add(CRACKED_DRIPSTONE_BRICKS);
             entries.add(CHISELED_DRIPSTONE);
             entries.add(DRIPSTONE_PILLAR);
 
             entries.add(POLISHED_TUFF_PRESSURE_PLATE);
             entries.add(POLISHED_TUFF_BUTTON);
-            addBSSW(entries, MOSSY_TUFF_BRICKS);
+            addBssw(entries, MOSSY_TUFF_BRICKS);
             entries.add(CRACKED_TUFF_BRICKS);
             entries.add(CARVED_TUFF_BRICKS);
             entries.add(HERRINGBONE_TUFF_BRICKS);
@@ -205,19 +204,19 @@ public class BuildingBlocksGroup {
 
             entries.add(POLISHED_DEEPSLATE_PRESSURE_PLATE);
             entries.add(POLISHED_DEEPSLATE_BUTTON);
-            addBSSW(entries, MOSSY_DEEPSLATE_BRICKS);
+            addBssw(entries, MOSSY_DEEPSLATE_BRICKS);
             entries.add(HERRINGBONE_DEEPSLATE_BRICKS);
             entries.add(DEEPSLATE_PILLAR);
             entries.add(DEEPSLATE_CIRCULAR_PAVING);
             entries.add(STURDY_DEEPSLATE);
 
-            addBSSW(entries, BLUESTONE);
+            addBssw(entries, BLUESTONE);
             entries.add(BLUESTONE_PRESSURE_PLATE);
             entries.add(BLUESTONE_BUTTON);
-            addBSSW(entries, POLISHED_BLUESTONE);
-            addBSSW(entries, BLUESTONE_BRICKS);
-            addBSSW(entries, SMALL_BLUESTONE_BRICKS);
-            addBSSW(entries, BLUESTONE_TILES);
+            addBssw(entries, POLISHED_BLUESTONE);
+            addBssw(entries, BLUESTONE_BRICKS);
+            addBssw(entries, SMALL_BLUESTONE_BRICKS);
+            addBssw(entries, BLUESTONE_TILES);
             entries.add(CHISELED_BLUESTONE);
             entries.add(BLUESTONE_PILLAR);
             entries.add(CHISELED_BLUESTONE_PILLAR);
@@ -225,13 +224,13 @@ public class BuildingBlocksGroup {
             entries.add(BLUESTONE_CIRCULAR_PAVING);
             entries.add(BLUESTONE_LINES);
 
-            addBSSW(entries, VIRIDITE);
+            addBssw(entries, VIRIDITE);
             entries.add(VIRIDITE_PRESSURE_PLATE);
             entries.add(VIRIDITE_BUTTON);
-            addBSSW(entries, POLISHED_VIRIDITE);
-            addBSSW(entries, VIRIDITE_BRICKS);
-            addBSSW(entries, SMALL_VIRIDITE_BRICKS);
-            addBSSW(entries, VIRIDITE_TILES);
+            addBssw(entries, POLISHED_VIRIDITE);
+            addBssw(entries, VIRIDITE_BRICKS);
+            addBssw(entries, SMALL_VIRIDITE_BRICKS);
+            addBssw(entries, VIRIDITE_TILES);
             entries.add(CHISELED_VIRIDITE);
             entries.add(VIRIDITE_PILLAR);
             entries.add(CHISELED_VIRIDITE_PILLAR);
@@ -239,43 +238,43 @@ public class BuildingBlocksGroup {
             entries.add(VIRIDITE_CIRCULAR_PAVING);
             entries.add(VIRIDITE_LINES);
 
-            addBSSW(entries, POLISHED_SCULK);
+            addBssw(entries, POLISHED_SCULK);
             entries.add(POLISHED_SCULK_PRESSURE_PLATE);
             entries.add(POLISHED_SCULK_BUTTON);
-            addBSSW(entries, SCULK_BRICKS);
+            addBssw(entries, SCULK_BRICKS);
             entries.add(CHISELED_SCULK_BRICKS);
             entries.add(SCULK_PILLAR);
 
-            addBSSW(entries, HONEYCOMB_BRICKS);
+            addBssw(entries, HONEYCOMB_BRICKS);
 
-            addBSSW(entries, LARGE_BRICKS);
+            addBssw(entries, LARGE_BRICKS);
             entries.add(HERRINGBONE_BRICKS);
-            addBSSW(entries, SOAKED_BRICKS);
+            addBssw(entries, SOAKED_BRICKS);
             entries.add(HERRINGBONE_SOAKED_BRICKS);
-            addBSSW(entries, SANDY_BRICKS);
+            addBssw(entries, SANDY_BRICKS);
             entries.add(HERRINGBONE_SANDY_BRICKS);
-            addBSSW(entries, CHARRED_BRICKS);
+            addBssw(entries, CHARRED_BRICKS);
             entries.add(HERRINGBONE_CHARRED_BRICKS);
 
-            addBSSW(entries, ROUGH_SANDSTONE);
-            addBSSW(entries, SANDSTONE_BRICKS);
-            addBSSW(entries, SMALL_SANDSTONE_BRICKS);
+            addBssw(entries, ROUGH_SANDSTONE);
+            addBssw(entries, SANDSTONE_BRICKS);
+            addBssw(entries, SMALL_SANDSTONE_BRICKS);
             entries.add(SANDSTONE_PILLAR);
             entries.add(GOLD_DECORATED_SANDSTONE);
             entries.add(LAPIS_DECORATED_SANDSTONE);
 
-            addBSSW(entries, ROUGH_RED_SANDSTONE);
-            addBSSW(entries, RED_SANDSTONE_BRICKS);
-            addBSSW(entries, SMALL_RED_SANDSTONE_BRICKS);
+            addBssw(entries, ROUGH_RED_SANDSTONE);
+            addBssw(entries, RED_SANDSTONE_BRICKS);
+            addBssw(entries, SMALL_RED_SANDSTONE_BRICKS);
             entries.add(RED_SANDSTONE_PILLAR);
             entries.add(GOLD_DECORATED_RED_SANDSTONE);
             entries.add(LAPIS_DECORATED_RED_SANDSTONE);
 
-            addBSSW(entries, SOUL_SANDSTONE);
-            addBSSW(entries, ROUGH_SOUL_SANDSTONE);
-            addBSSW(entries, SMOOTH_SOUL_SANDSTONE);
-            addBSSW(entries, SOUL_SANDSTONE_BRICKS);
-            addBSSW(entries, SMALL_SOUL_SANDSTONE_BRICKS);
+            addBssw(entries, SOUL_SANDSTONE);
+            addBssw(entries, ROUGH_SOUL_SANDSTONE);
+            addBssw(entries, SMOOTH_SOUL_SANDSTONE);
+            addBssw(entries, SOUL_SANDSTONE_BRICKS);
+            addBssw(entries, SMALL_SOUL_SANDSTONE_BRICKS);
             entries.add(CHISELED_SOUL_SANDSTONE);
             entries.add(CUT_SOUL_SANDSTONE);
             entries.add(CUT_SOUL_SANDSTONE_SLAB);
@@ -288,31 +287,31 @@ public class BuildingBlocksGroup {
             entries.add(DARK_PRISMARINE_PILLAR);
             entries.add(CHISELED_PRISMARINE);
             entries.add(PRISMARINE_PILLAR);
-            addBSSW(entries, PRISMARINE_TILES);
+            addBssw(entries, PRISMARINE_TILES);
 
-            addBSSW(entries, OBSIDIAN_BRICKS);
+            addBssw(entries, OBSIDIAN_BRICKS);
             entries.add(CRACKED_OBSIDIAN_BRICKS);
-            addBSSW(entries, SMALL_OBSIDIAN_BRICKS);
+            addBssw(entries, SMALL_OBSIDIAN_BRICKS);
             entries.add(OBSIDIAN_PILLAR);
             entries.add(OBSIDIAN_CIRCULAR_PAVING);
             entries.add(OBSIDIAN_REINFORCED_DOOR);
             entries.add(OBSIDIAN_REINFORCED_TRAPDOOR);
             entries.add(GLOWING_OBSIDIAN);
 
-            addBSSW(entries, POLISHED_NETHERRACK);
+            addBssw(entries, POLISHED_NETHERRACK);
             entries.add(POLISHED_NETHERRACK_PRESSURE_PLATE);
             entries.add(POLISHED_NETHERRACK_BUTTON);
-            addBSSW(entries, NETHERRACK_BRICKS);
+            addBssw(entries, NETHERRACK_BRICKS);
             entries.add(NETHERRACK_CIRCULAR_PAVING);
 
-            addBSSW(entries, MAGMA_BRICKS);
-            addBSSW(entries, SMALL_MAGMA_BRICKS);
+            addBssw(entries, MAGMA_BRICKS);
+            addBssw(entries, SMALL_MAGMA_BRICKS);
             entries.add(CHISELED_MAGMA_BRICKS);
 
-            addBSSW(entries, CRIMSON_WART_BRICKS);
-            addBSSW(entries, WARPED_WART_BRICKS);
+            addBssw(entries, CRIMSON_WART_BRICKS);
+            addBssw(entries, WARPED_WART_BRICKS);
 
-            addBSSW(entries, NETHER_TILES);
+            addBssw(entries, NETHER_TILES);
 
             entries.add(POLISHED_NETHER_BRICKS);
             entries.add(HERRINGBONE_NETHER_BRICKS);
@@ -320,21 +319,21 @@ public class BuildingBlocksGroup {
             entries.add(POLISHED_RED_NETHER_BRICKS);
             entries.add(HERRINGBONE_RED_NETHER_BRICKS);
             entries.add(RED_NETHER_BRICK_PILLAR);
-            addBSSW(entries, CHARRED_NETHER_BRICKS);
+            addBssw(entries, CHARRED_NETHER_BRICKS);
             entries.add(POLISHED_CHARRED_NETHER_BRICKS);
             entries.add(HERRINGBONE_CHARRED_NETHER_BRICKS);
             entries.add(CHARRED_NETHER_BRICK_PILLAR);
-            addBSSW(entries, TEAL_NETHER_BRICKS);
+            addBssw(entries, TEAL_NETHER_BRICKS);
             entries.add(POLISHED_TEAL_NETHER_BRICKS);
             entries.add(HERRINGBONE_TEAL_NETHER_BRICKS);
             entries.add(TEAL_NETHER_BRICK_PILLAR);
 
             entries.add(BLAZE_LANTERN);
-            addBSSW(entries, BLAZE_BRICKS);
+            addBssw(entries, BLAZE_BRICKS);
             entries.add(BLAZE_PILLAR);
 
-            addBSSW(entries, ROUGH_BASALT);
-            addBSSW(entries, POLISHED_BASALT_BRICKS);
+            addBssw(entries, ROUGH_BASALT);
+            addBssw(entries, POLISHED_BASALT_BRICKS);
             entries.add(POLISHED_BASALT_PRESSURE_PLATE);
             entries.add(POLISHED_BASALT_BUTTON);
             entries.add(CHISELED_POLISHED_BASALT);
@@ -343,46 +342,46 @@ public class BuildingBlocksGroup {
             entries.add(HERRINGBONE_POLISHED_BASALT_BRICKS);
             entries.add(POLISHED_BASALT_CIRCULAR_PAVING);
 
-            addBSSW(entries, POLISHED_BLACKSTONE_TILES);
+            addBssw(entries, POLISHED_BLACKSTONE_TILES);
             entries.add(POLISHED_BLACKSTONE_PILLAR);
             entries.add(HERRINGBONE_POLISHED_BLACKSTONE_BRICKS);
             entries.add(POLISHED_BLACKSTONE_CIRCULAR_PAVING);
-            addBSSW(entries, CRIMSON_WARTY_BLACKSTONE_BRICKS);
-            addBSSW(entries, WARPED_WARTY_BLACKSTONE_BRICKS);
+            addBssw(entries, CRIMSON_WARTY_BLACKSTONE_BRICKS);
+            addBssw(entries, WARPED_WARTY_BLACKSTONE_BRICKS);
             entries.add(BLACKSTONE_DOOR);
             entries.add(BLACKSTONE_TRAPDOOR);
             entries.add(GOLD_DECORATED_POLISHED_BLACKSTONE);
             entries.add(STURDY_BLACKSTONE);
 
-            addBSSW(entries, LAVA_POLISHED_BLACKSTONE_BRICKS);
+            addBssw(entries, LAVA_POLISHED_BLACKSTONE_BRICKS);
             entries.add(CHISELED_LAVA_POLISHED_BLACKSTONE);
 
             entries.add(CHISELED_END_STONE_BRICKS);
             entries.add(HERRINGBONE_END_STONE_BRICKS);
-            addBSSW(entries, POLISHED_END_STONE);
+            addBssw(entries, POLISHED_END_STONE);
             entries.add(POLISHED_END_STONE_PRESSURE_PLATE);
             entries.add(POLISHED_END_STONE_BUTTON);
             entries.add(CRACKED_END_STONE_BRICKS);
             entries.add(END_STONE_PILLAR);
-            addBSSW(entries, SMALL_END_STONE_BRICKS);
+            addBssw(entries, SMALL_END_STONE_BRICKS);
 
             entries.add(PURPUR_DECORATED_END_STONE);
             entries.add(PHANTOM_PURPUR_DECORATED_END_STONE);
 
-            addBSSW(entries, END_TILES);
-            addBSSW(entries, PURPUR_BRICKS);
-            addBSSW(entries, POLISHED_PURPUR);
+            addBssw(entries, END_TILES);
+            addBssw(entries, PURPUR_BRICKS);
+            addBssw(entries, POLISHED_PURPUR);
             entries.add(PURPUR_SQUARES);
-            addBSSW(entries, SMALL_PURPUR_BRICKS);
+            addBssw(entries, SMALL_PURPUR_BRICKS);
             entries.add(CHISELED_PURPUR);
             entries.add(PURPUR_LINES);
 
-            addBSSW(entries, PHANTOM_PURPUR_BLOCK);
+            addBssw(entries, PHANTOM_PURPUR_BLOCK);
             entries.add(PHANTOM_PURPUR_PILLAR);
-            addBSSW(entries, PHANTOM_PURPUR_BRICKS);
-            addBSSW(entries, POLISHED_PHANTOM_PURPUR);
+            addBssw(entries, PHANTOM_PURPUR_BRICKS);
+            addBssw(entries, POLISHED_PHANTOM_PURPUR);
             entries.add(PHANTOM_PURPUR_SQUARES);
-            addBSSW(entries, SMALL_PHANTOM_PURPUR_BRICKS);
+            addBssw(entries, SMALL_PHANTOM_PURPUR_BRICKS);
             entries.add(CHISELED_PHANTOM_PURPUR);
             entries.add(PHANTOM_PURPUR_LINES);
 
@@ -393,21 +392,21 @@ public class BuildingBlocksGroup {
             entries.add(CAUTION_BARRIER);
             entries.add(ROAD_BARRIER);
 
-            addBSSW(entries, IRON_PLATING);
+            addBssw(entries, IRON_PLATING);
             entries.add(IRON_GATE);
 
-            addBSSW(entries, GOLD_PLATING);
+            addBssw(entries, GOLD_PLATING);
             entries.add(GOLDEN_BARS);
             entries.add(GOLDEN_CHAIN);
             entries.add(GOLDEN_GATE);
 
-            addBSSW(entries, IRON_BRICKS);
-            addBSSW(entries, GOLD_BRICKS);
-            addBSSW(entries, REDSTONE_BRICKS);
-            addBSSW(entries, EMERALD_BRICKS);
-            addBSSW(entries, LAPIS_BRICKS);
-            addBSSW(entries, DIAMOND_BRICKS);
-            addBSSW(entries, NETHERITE_BRICKS);
+            addBssw(entries, IRON_BRICKS);
+            addBssw(entries, GOLD_BRICKS);
+            addBssw(entries, REDSTONE_BRICKS);
+            addBssw(entries, EMERALD_BRICKS);
+            addBssw(entries, LAPIS_BRICKS);
+            addBssw(entries, DIAMOND_BRICKS);
+            addBssw(entries, NETHERITE_BRICKS);
 
             entries.add(NETHERITE_STAIRS);
             entries.add(NETHERITE_SLAB);
@@ -424,16 +423,16 @@ public class BuildingBlocksGroup {
             entries.add(NETHER_STAR_BLOCK);
 
 
-            addBSSW(entries, QUARTZ_TILES);
+            addBssw(entries, QUARTZ_TILES);
             entries.add(QUARTZ_CIRCULAR_PAVING);
 
-            addBSSW(entries, POLISHED_AMETHYST);
-            addBSSW(entries, AMETHYST_BRICKS);
+            addBssw(entries, POLISHED_AMETHYST);
+            addBssw(entries, AMETHYST_BRICKS);
             entries.add(CHISELED_AMETHYST);
             entries.add(AMETHYST_PILLAR);
 
-            addBSSW(entries, CHOCOLATE_BLOCK);
-            addBSSW(entries, CHOCOLATE_BRICKS);
+            addBssw(entries, CHOCOLATE_BLOCK);
+            addBssw(entries, CHOCOLATE_BRICKS);
             entries.add(CHOCOLATE_SQUARES);
             entries.add(CHOCOLATE_TABLET);
 
@@ -459,7 +458,7 @@ public class BuildingBlocksGroup {
             }*/
 
             entries.add(RAINBOW_BLOCK);
-            addBSSW(entries, RAINBOW_BRICKS);
+            addBssw(entries, RAINBOW_BRICKS);
             entries.add(RAINBOW_GLOWSTONE);
 
             entries.add(WEIGHT_STORAGE_CUBE);
@@ -469,7 +468,8 @@ public class BuildingBlocksGroup {
         });
     }
 
-    public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle BSSWBundle) {
+    public static void addBssw(FabricItemGroupEntries entries, BSSWBundle BSSWBundle) {
+        // Block, stairs & slab & wall (if exist) variants of a block
         entries.add(BSSWBundle.block);
         entries.add(BSSWBundle.stairs);
         entries.add(BSSWBundle.slab);

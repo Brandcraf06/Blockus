@@ -3,6 +3,7 @@
     "blockus:purpur_bricks",
     "blockus:purpur_brick_stairs",
     "blockus:purpur_brick_slab",
+    "blockus:purpur_brick_wall",
     "blockus:polished_purpur",
     "blockus:polished_purpur_stairs",
     "blockus:polished_purpur_slab",
@@ -10,6 +11,7 @@
     "blockus:small_purpur_bricks",
     "blockus:small_purpur_brick_stairs",
     "blockus:small_purpur_brick_slab",
+    "blockus:small_purpur_brick_wall",
     "blockus:chiseled_purpur",
     "blockus:purpur_lines",
     "#blockus:phantom_purpur_blocks"

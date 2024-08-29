@@ -33,27 +33,27 @@ public class BlockusModelProvider extends FabricModelProvider {
             modelGenerator.registerCubeAllModelTexturePool(family.getBaseBlock()).family(family);
         });
 
-        for (BSSWBundle bssType : BSSWBundle.values()) {
+        for (BSSWBundle BSSWBundle : BSSWBundle.values()) {
             // Rough Sandstones
-            if (bssType.type.contains("rough") && bssType.type.contains("sandstone")) {
-                this.registerBlockStairsSlabWithBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
+            if (BSSWBundle.type.contains("rough") && BSSWBundle.type.contains("sandstone")) {
+                this.registerBlockStairsSlabWithBottom(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab, BSSWBundle.base);
             }
             // Smooth Sandstones & Rough Basalt
-            else if ((bssType.type.contains("smooth") && bssType.type.contains("sandstone")) ||
-                bssType.block == BlockusBlocks.ROUGH_BASALT.block) {
-                this.registerBlockStairsSlabWithTop(modelGenerator, bssType.block, bssType.stairs, bssType.slab, bssType.base);
+            else if ((BSSWBundle.type.contains("smooth") && BSSWBundle.type.contains("sandstone")) ||
+                BSSWBundle.block == BlockusBlocks.ROUGH_BASALT.block) {
+                this.registerBlockStairsSlabWithTop(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab, BSSWBundle.base);
             }
             // Soul Sandstone
-            else if (bssType.block == BlockusBlocks.SOUL_SANDSTONE.block) {
-                this.registerBlockStairsSlabwithTopBottom(modelGenerator, bssType.block, bssType.stairs, bssType.slab);
+            else if (BSSWBundle.block == BlockusBlocks.SOUL_SANDSTONE.block) {
+                this.registerBlockStairsSlabwithTopBottom(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab);
             }
             // Autre
             else {
-                this.registerBlockStairsAndSlab(modelGenerator, bssType.block, bssType.stairs, bssType.slab);
+                this.registerBlockStairsAndSlab(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab);
             }
 
-            if (bssType.wall != null) {
-                this.registerWall(modelGenerator, bssType.wall, bssType.block);
+            if (BSSWBundle.wall != null) {
+                this.registerWall(modelGenerator, BSSWBundle.wall, BSSWBundle.block);
             }
         }
 
