@@ -27,15 +27,15 @@ public class TimberFrameBundle {
         this(base, true);
     }
 
-    public TimberFrameBundle(Block base, boolean burnablee) {
+    public TimberFrameBundle(Block base, boolean burnable) {
         this.base = base;
-        this.burnable = burnablee;
+        this.burnable = burnable;
         String type = getWood(base);
 
         AbstractBlock.Settings blockSettings = AbstractBlock.Settings.copy(base);
 
         Item.Settings itemSettings = new Item.Settings();
-        if (burnablee) {
+        if (burnable) {
             blockSettings = blockSettings.burnable();
         }
 

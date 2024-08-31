@@ -842,31 +842,36 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STARS_BLOCK = register("stars_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.BLACK).strength(5.0f, 6.0f)));
 
     // Legacy
-    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", new SaplingBlock(BlockusSaplingGenerator.LEGACY_OAK, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", new SaplingBlock(BlockusSaplingGenerator.LEGACY_OAK, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)), "Indev");
     public static final PottedLargeBundle POTTED_LEGACY_TREE = new PottedLargeBundle("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING);
     public static final Block POTTED_LEGACY_SAPLING = registerNoItem("potted_legacy_sapling", createPottedPlant(LEGACY_SAPLING));
-    public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", createCopy(Blocks.GRASS_BLOCK));
-    public static final Block LEGACY_GRASS_BLOCK = registerLegacy("legacy_grass_block", createCopy(Blocks.GRASS_BLOCK));
-    public static final Block LEGACY_LEAVES = registerLegacy("legacy_leaves", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.LIME).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)));
-    public static final Block LEGACY_LOG = registerLegacy("legacy_log", createPillarCopy(Blocks.OAK_LOG));
-    public static final Block LEGACY_BRICKS = registerLegacy("legacy_bricks", createCopy(Blocks.BRICKS));
-    public static final Block LEGACY_PLANKS = registerLegacy("legacy_planks", createCopy(Blocks.OAK_PLANKS));
-    public static final Block LEGACY_FIRST_COBBLESTONE = registerLegacy("legacy_first_cobblestone", createCopy(Blocks.COBBLESTONE));
-    public static final Block LEGACY_COBBLESTONE = registerLegacy("legacy_cobblestone", createCopy(Blocks.COBBLESTONE));
-    public static final Block LEGACY_MOSSY_COBBLESTONE = registerLegacy("legacy_mossy_cobblestone", createCopy(Blocks.MOSSY_COBBLESTONE));
-    public static final Block LEGACY_GRAVEL = registerLegacy("legacy_gravel", new ColoredFallingBlock(new ColorCode(-8356741), AbstractBlock.Settings.copy(Blocks.GRAVEL)));
-    public static final Block LEGACY_IRON_BLOCK = registerLegacy("legacy_iron_block", createCopy(Blocks.IRON_BLOCK));
-    public static final Block LEGACY_GOLD_BLOCK = registerLegacy("legacy_gold_block", createCopy(Blocks.GOLD_BLOCK));
-    public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = registerLegacy("legacy_explosion_proof_gold_block", new Block(AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)));
-    public static final Block LEGACY_COAL_BLOCK = registerLegacy("legacy_coal_block", createCopy(Blocks.COAL_BLOCK));
-    public static final Block LEGACY_DIAMOND_BLOCK = registerLegacy("legacy_diamond_block", createCopy(Blocks.DIAMOND_BLOCK));
-    public static final Block LEGACY_LAPIS_BLOCK = registerLegacy("legacy_lapis_block", createCopy(Blocks.LAPIS_BLOCK));
-    public static final Block LEGACY_SPONGE = registerLegacy("legacy_sponge", new SpongeBlock(AbstractBlock.Settings.copy(Blocks.SPONGE)));
-    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", createCopy(Blocks.CRYING_OBSIDIAN, PistonBehavior.BLOCK));
-    public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone", createCopy(Blocks.GLOWSTONE));
-    public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", new LegacyStonecutterBlock(AbstractBlock.Settings.copy(Blocks.COBBLESTONE).strength(1.5f, 17.5f)));
-    public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createCopy(BlockusBlocks.GLOWING_OBSIDIAN));
-    public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", new Block(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()));
+    public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", createCopy(Blocks.GRASS_BLOCK), "Cave game");
+    public static final Block LEGACY_GRASS_BLOCK = registerLegacy("legacy_grass_block", createCopy(Blocks.GRASS_BLOCK), "Pre-Classic");
+    public static final Block LEGACY_LEAVES = registerLegacy("legacy_leaves", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.LIME).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never)), "Classic 0.0.15a");
+    public static final Block LEGACY_LOG = registerLegacy("legacy_log", createPillarCopy(Blocks.OAK_LOG), "Classic 0.0.14a");
+    public static final Block LEGACY_BRICKS = registerLegacy("legacy_bricks", createCopy(Blocks.BRICKS), "Classic 0.26");
+    public static final Block LEGACY_PLANKS = registerLegacy("legacy_planks", createCopy(Blocks.OAK_PLANKS), "Pre-Classic");
+    public static final Block LEGACY_FIRST_COBBLESTONE = registerLegacy("legacy_first_cobblestone", createCopy(Blocks.COBBLESTONE), "Pre-Classic");
+    public static final Block LEGACY_COBBLESTONE = registerLegacy("legacy_cobblestone", createCopy(Blocks.COBBLESTONE), "Classic 0.0.14a");
+    public static final Block LEGACY_MOSSY_COBBLESTONE = registerLegacy("legacy_mossy_cobblestone", createCopy(Blocks.MOSSY_COBBLESTONE), "Classic 0.26");
+    public static final Block LEGACY_GRAVEL = registerLegacy("legacy_gravel", new ColoredFallingBlock(new ColorCode(-8356741), AbstractBlock.Settings.copy(Blocks.GRAVEL)), "Classic 0.0.15a");
+    public static final Block LEGACY_IRON_BLOCK = registerLegacy("legacy_iron_block", createCopy(Blocks.IRON_BLOCK), "Classic 0.26");
+    public static final Block LEGACY_GOLD_BLOCK = registerLegacy("legacy_gold_block", createCopy(Blocks.GOLD_BLOCK), "Classic 0.26");
+    public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = registerLegacy("legacy_explosion_proof_gold_block", new Block(AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f)), "Classic 0.0.20a");
+    public static final Block LEGACY_COAL_BLOCK = registerLegacy("legacy_coal_block", createCopy(Blocks.COAL_BLOCK), "2.0 April Fool");
+    public static final Block LEGACY_DIAMOND_BLOCK = registerLegacy("legacy_diamond_block", createCopy(Blocks.DIAMOND_BLOCK), "Indev");
+    public static final Block LEGACY_LAPIS_BLOCK = registerLegacy("legacy_lapis_block", createCopy(Blocks.LAPIS_BLOCK), "Beta 1.2");
+    public static final Block LEGACY_SPONGE = registerLegacy("legacy_sponge", new SpongeBlock(AbstractBlock.Settings.copy(Blocks.SPONGE)), "Classic 0.0.19a");
+    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", createCopy(Blocks.CRYING_OBSIDIAN, PistonBehavior.BLOCK), "Beta 1.3 (texture)");
+    public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone", createCopy(Blocks.GLOWSTONE), "Alpha 1.2.0");
+    public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", new LegacyStonecutterBlock(AbstractBlock.Settings.copy(Blocks.COBBLESTONE).strength(1.5f, 17.5f)), "PE Alpha");
+    public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createCopy(BlockusBlocks.GLOWING_OBSIDIAN), "PE Alpha");
+    public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", new Block(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool()), "PE Alpha");
+    public static final Block LEGACY_ROSE = registerLegacy("legacy_rose", new FlowerBlock(StatusEffects.NIGHT_VISION, 5.0F, AbstractBlock.Settings.copy(Blocks.POPPY)), "Beta 1.8");
+    public static final Block POTTED_LEGACY_ROSE = registerNoItem("potted_legacy_rose", createPottedPlant(LEGACY_ROSE));
+    public static final Block LEGACY_BLUE_ROSE = registerLegacy("legacy_blue_rose", new FlowerBlock(StatusEffects.NIGHT_VISION, 5.0F, AbstractBlock.Settings.copy(Blocks.POPPY)), "PE Alpha");
+    public static final Block POTTED_LEGACY_BLUE_ROSE = registerNoItem("potted_legacy_blue_rose", createPottedPlant(LEGACY_BLUE_ROSE));
+
 
     // Colored Tiles
     /**

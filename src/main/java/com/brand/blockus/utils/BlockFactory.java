@@ -242,8 +242,8 @@ public class BlockFactory {
         return register(id, block, new GlintBlockItem(block, new Item.Settings().rarity(Rarity.UNCOMMON)));
     }
 
-    public static Block registerLegacy(String id, Block block) {
-        return register(id, block, new LegacyBlockItem(block, new Item.Settings()));
+    public static Block registerLegacy(String id, Block block, String version) {
+        return register(id, block, new LegacyBlockItem(block, new Item.Settings(), version));
     }
 
 

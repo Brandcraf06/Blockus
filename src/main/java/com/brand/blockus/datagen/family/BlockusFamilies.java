@@ -1,4 +1,4 @@
-package com.brand.blockus.data.family;
+package com.brand.blockus.datagen.family;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.google.common.collect.Maps;

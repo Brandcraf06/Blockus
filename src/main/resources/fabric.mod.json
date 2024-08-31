@@ -27,7 +27,7 @@
       "com.brand.blockus.BlockusClient"
     ],
     "fabric-datagen": [
-      "com.brand.blockus.data.BlockusDatagen"
+      "com.brand.blockus.datagen.BlockusDatagen"
     ]
   },
   "mixins": [

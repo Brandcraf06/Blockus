@@ -1,9 +1,9 @@
-package com.brand.blockus.data.providers;
+package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.data.family.BlockusFamilies;
-import com.brand.blockus.data.models.BlockusModels;
-import com.brand.blockus.data.models.BlockusTextureKey;
+import com.brand.blockus.datagen.family.BlockusFamilies;
+import com.brand.blockus.datagen.models.BlockusModels;
+import com.brand.blockus.datagen.models.BlockusTextureKey;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -532,6 +532,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.LEGACY_CRYING_OBSIDIAN);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.LEGACY_GLOWING_OBSIDIAN);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.LEGACY_GLOWSTONE);
+        modelGenerator.registerFlowerPotPlant(BlockusBlocks.LEGACY_ROSE, BlockusBlocks.POTTED_LEGACY_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        modelGenerator.registerFlowerPotPlant(BlockusBlocks.LEGACY_BLUE_ROSE, BlockusBlocks.POTTED_LEGACY_BLUE_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         // Colored Tiles
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_COLORED_TILES);

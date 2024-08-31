@@ -3,15 +3,14 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "minecraft:oak_sapling"
+      "item": "blockus:legacy_rose"
     }
   },
   "pattern": [
-    "##",
     "##"
   ],
   "result": {
-    "count": 4,
-    "id": "blockus:legacy_sapling"
+    "count": 2,
+    "id": "blockus:legacy_blue_rose"
   }
 }

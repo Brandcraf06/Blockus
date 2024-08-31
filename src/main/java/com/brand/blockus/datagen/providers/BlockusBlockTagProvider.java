@@ -1,4 +1,4 @@
-package com.brand.blockus.data.providers;
+package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.content.bundles.*;
@@ -886,7 +886,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
             .add(POTTED_WHITE_OAK_SAPLING)
-            .add(POTTED_RAINBOW_ROSE);
+            .add(POTTED_RAINBOW_ROSE)
+            .add(POTTED_LEGACY_ROSE)
+            .add(POTTED_LEGACY_BLUE_ROSE);
 
         this.getOrCreateTagBuilder(BlockTags.FLOWERS)
             .add(FLOWERING_AZALEA_SMALL_HEDGE);
@@ -984,7 +986,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(WHITE_OAK_SAPLING);
 
         this.getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
-            .add(RAINBOW_ROSE);
+            .add(RAINBOW_ROSE)
+            .add(LEGACY_ROSE)
+            .add(LEGACY_BLUE_ROSE);
 
         this.getOrCreateTagBuilder(BlockTags.SOUL_FIRE_BASE_BLOCKS)
             .addTag(BlockusBlockTags.SOUL_SANDSTONE)

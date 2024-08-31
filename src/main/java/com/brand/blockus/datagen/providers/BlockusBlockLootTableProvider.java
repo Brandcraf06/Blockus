@@ -1,4 +1,4 @@
-package com.brand.blockus.data.providers;
+package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
@@ -274,6 +274,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             LEGACY_PLANKS,
             LEGACY_SPONGE,
             LEGACY_STONECUTTER,
+            LEGACY_ROSE,
+            LEGACY_BLUE_ROSE,
             LIGHT_BLUE_COLORED_TILES,
             LIGHT_BLUE_FUTURNEO_BLOCK,
             LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR,
@@ -527,7 +529,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             YELLOW_BEVELED_GLASS_PANE);
 
         this.addDrop(RAINBOW_PETALS, this.flowerbedDrops(RAINBOW_PETALS));
-        this.addPottedPlantDropsBatch(POTTED_WHITE_OAK_SAPLING, POTTED_RAINBOW_ROSE, POTTED_LEGACY_SAPLING);
+        this.addPottedPlantDropsBatch(POTTED_WHITE_OAK_SAPLING, POTTED_RAINBOW_ROSE, POTTED_LEGACY_SAPLING, POTTED_LEGACY_ROSE, POTTED_LEGACY_BLUE_ROSE);
 
         this.addDrop(LEGACY_LEAVES, (block) -> this.leavesDrops(block, LEGACY_SAPLING, SAPLING_DROP_CHANCE));
         this.addDrop(LEGACY_GLOWSTONE, this::glowstoneDrops);

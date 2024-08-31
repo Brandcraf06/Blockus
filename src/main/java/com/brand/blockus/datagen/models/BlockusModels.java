@@ -1,4 +1,4 @@
-package com.brand.blockus.data.models;
+package com.brand.blockus.datagen.models;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.data.client.Model;

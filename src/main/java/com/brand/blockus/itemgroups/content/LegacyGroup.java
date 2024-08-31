@@ -8,6 +8,8 @@ public class LegacyGroup {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS).register((entries) -> {
+            entries.add(BlockusBlocks.LEGACY_ROSE);
+            entries.add(BlockusBlocks.LEGACY_BLUE_ROSE);
             entries.add(BlockusBlocks.LEGACY_SAPLING);
             entries.add(BlockusBlocks.LEGACY_LEAVES);
             entries.add(BlockusBlocks.LEGACY_LOG);

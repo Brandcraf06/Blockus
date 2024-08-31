@@ -1,11 +1,13 @@
-package com.brand.blockus.data;
+package com.brand.blockus.datagen;
 
-import com.brand.blockus.data.providers.*;
+import com.brand.blockus.datagen.providers.*;
 import com.brand.blockus.worldgen.BlockusWorldgenProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
+import net.minecraft.block.TrialSpawnerBlock;
+import net.minecraft.block.entity.TrialSpawnerBlockEntity;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
@@ -22,6 +24,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(BlockusBlockLootTableProvider::new);
         pack.addProvider(BlockusWorldgenProvider::new);
         pack.addProvider(BlockusModelProvider::new);
+        pack.addProvider(BlockusLangEnProvider::new);
 //        pack.addProvider(BlockusPromenadeBlockLootTableProvider::new);
     }
 

@@ -84,7 +84,11 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_PITCHER_PLANT.block,
             BlockusBlocks.BLACKSTONE_DOOR,
             BlockusBlocks.BLACKSTONE_TRAPDOOR,
-            BlockusBlocks.REDSTONE_LANTERN
+            BlockusBlocks.REDSTONE_LANTERN,
+            BlockusBlocks.LEGACY_ROSE,
+            BlockusBlocks.POTTED_LEGACY_ROSE,
+            BlockusBlocks.LEGACY_BLUE_ROSE,
+            BlockusBlocks.POTTED_LEGACY_BLUE_ROSE
         );
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {

@@ -1,4 +1,4 @@
-package com.brand.blockus.data.providers;
+package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.BSSWBundle;

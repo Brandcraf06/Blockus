@@ -1,6 +1,8 @@
 {
   "values": [
     "blockus:potted_white_oak_sapling",
-    "blockus:potted_rainbow_rose"
+    "blockus:potted_rainbow_rose",
+    "blockus:potted_legacy_rose",
+    "blockus:potted_legacy_blue_rose"
   ]
 }
