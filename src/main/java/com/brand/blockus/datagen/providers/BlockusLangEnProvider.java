@@ -879,28 +879,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.WEIGHT_STORAGE_CUBE, "Weight Storage Cube");
         translationBuilder.add(BlockusBlocks.COMPANION_CUBE, "Companion Cube");
     }
-
-//    private static void addTranslation(TranslationBuilder translationBuilder, Block block) {
-//        translationBuilder.add(block, formatId(block));
-//    }
-
-//    public static String formatId(Block block) {
-//        for (String part : new String[]{Registries.BLOCK.getId(block).getPath().replace("_", " ")}) {
-//            new StringBuilder().append(part.substring(0, 1).toUpperCase())
-//                .append(part.substring(1).toLowerCase());
-//        }
-//        return new StringBuilder().toString();
-//    }
-//
-//    public static void addBssw(TranslationBuilder translationBuilder, BSSWBundle BSSWBundle) {
-//        addTranslation(translationBuilder, BSSWBundle.block);
-//        addTranslation(translationBuilder, BSSWBundle.stairs);
-//        addTranslation(translationBuilder, BSSWBundle.slab);
-//        if (BSSWBundle.wall != null) {
-//            addTranslation(translationBuilder, BSSWBundle.wall);
-//        }
-//    }
-
+    
     public static String editedString(String string) {
         return string.replace("Bricks", "Brick").replace("Tiles", "Tile").replace(" Block", "").replace(" Planks", "");
     }
