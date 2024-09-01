@@ -2,6 +2,7 @@ package com.brand.blockus;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
+import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -93,6 +94,10 @@ public class BlockusClient implements ClientModInitializer {
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), timberFrameBundle.lattice, timberFrameBundle.grate);
+        }
+
+        for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), woodenPostBundle.block, woodenPostBundle.stripped);
         }
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),

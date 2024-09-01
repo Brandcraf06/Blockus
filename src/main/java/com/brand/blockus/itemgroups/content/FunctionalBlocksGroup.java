@@ -21,6 +21,7 @@ public class FunctionalBlocksGroup {
             entries.add(BlockusBlocks.REDSTONE_SAND);
             BuildingBlocksGroup.addBssw(entries, BlockusBlocks.REDSTONE_BRICKS);
 
+//            entries.add(BlockusBlocks.AMETHYST_LAMP);
 
             entries.add(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE);
 

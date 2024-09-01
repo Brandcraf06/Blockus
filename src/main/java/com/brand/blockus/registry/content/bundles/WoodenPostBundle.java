@@ -4,6 +4,7 @@ import com.brand.blockus.blocks.base.PostBlock;
 import com.brand.blockus.utils.BlockFactory;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 
 import java.util.ArrayList;
 

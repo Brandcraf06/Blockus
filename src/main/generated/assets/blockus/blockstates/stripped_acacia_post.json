@@ -32,41 +32,122 @@
     },
     {
       "apply": {
+        "model": "blockus:block/stripped_acacia_post_connect_top",
+        "uvlock": false,
+        "x": 90
+      },
+      "when": {
+        "north": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_acacia_post_connect",
+        "uvlock": false,
+        "x": 90
+      },
+      "when": {
+        "south": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_acacia_post_connect_top",
+        "uvlock": false,
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "east": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_acacia_post_connect",
+        "uvlock": false,
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "west": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_acacia_post_connect_top",
+        "uvlock": false
+      },
+      "when": {
+        "up": "post"
+      }
+    },
+    {
+      "apply": {
         "model": "blockus:block/stripped_acacia_post_connect",
         "uvlock": false
       },
       "when": {
-        "north": "true"
+        "down": "post"
       }
     },
     {
       "apply": {
-        "model": "blockus:block/stripped_acacia_post_connect",
+        "model": "blockus:block/chain_connect_top",
         "uvlock": false,
+        "x": 90
+      },
+      "when": {
+        "north": "chain"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect",
+        "uvlock": false,
+        "x": 90
+      },
+      "when": {
+        "south": "chain"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect_top",
+        "uvlock": false,
+        "x": 90,
         "y": 90
       },
       "when": {
-        "east": "true"
+        "east": "chain"
       }
     },
     {
       "apply": {
-        "model": "blockus:block/stripped_acacia_post_connect",
+        "model": "blockus:block/chain_connect",
         "uvlock": false,
-        "y": 180
+        "x": 90,
+        "y": 90
       },
       "when": {
-        "south": "true"
+        "west": "chain"
       }
     },
     {
       "apply": {
-        "model": "blockus:block/stripped_acacia_post_connect",
-        "uvlock": false,
-        "y": 270
+        "model": "blockus:block/chain_connect_top",
+        "uvlock": false
       },
       "when": {
-        "west": "true"
+        "up": "chain"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect",
+        "uvlock": false
+      },
+      "when": {
+        "down": "chain"
       }
     }
   ]

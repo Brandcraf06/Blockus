@@ -1,15 +1,17 @@
 * Added Wooden Posts
-  * A post-type block that doesn't connect to each other, unlike fences.
+  * A post-type block that doesn't connect to each other, unlike fences. 
+    * However, a horizontal and vertical post can connect together.
   * Can be stripped.
   * Can be placed in 2 directions.
-  * Connects to wall signs.
+  * Connects to wall signs & chains
   * Crafted with 3 logs
 * Changed Small Logs recipe, now crafted with 4 logs in triangle form and give 4.
 * Added Copper Bricks
   * Oxidizes and can be waxed like every copper blocks
   * Crafted with 4 Cut Copper of the desired oxidation or waxed.
 * Added Mossy Dripstone Bricks
-* Changed Polished Dripstone, Dripstone Bricks, Cracked Dripstone Bricks & Chiseled Dripstone textures
+* Changed Polished Dripstone, Dripstone Bricks, Cracked Dripstone Bricks, Chiseled Dripstone textures
+  * Fixed Dripstone Pillar side texture
 * Changed Glowing Obsidian texture
 * Added both Legacy Roses (Java & PE).
   * Unlike original version, Legacy Rose from PE give light blue dye.

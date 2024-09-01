@@ -879,7 +879,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.WEIGHT_STORAGE_CUBE, "Weight Storage Cube");
         translationBuilder.add(BlockusBlocks.COMPANION_CUBE, "Companion Cube");
     }
-    
+
     public static String editedString(String string) {
         return string.replace("Bricks", "Brick").replace("Tiles", "Tile").replace(" Block", "").replace(" Planks", "");
     }

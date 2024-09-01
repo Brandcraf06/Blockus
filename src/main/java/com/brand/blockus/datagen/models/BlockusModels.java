@@ -2,6 +2,7 @@ package com.brand.blockus.datagen.models;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.data.client.Model;
+import net.minecraft.data.client.Models;
 import net.minecraft.data.client.TextureKey;
 import net.minecraft.util.Identifier;
 
@@ -13,6 +14,8 @@ public class BlockusModels {
     public static final Model CUBE_TILES_2;
     public static final Model TEMPLATE_POST;
     public static final Model TEMPLATE_POST_CONNECT;
+    public static final Model TEMPLATE_POST_CONNECT_TOP;
+    public static final Model CHAIN_CONNECT;
     public static final Model TEMPLATE_SMALL_HEDGE_END;
     public static final Model TEMPLATE_SMALL_HEDGE_SIDE;
     public static final Model TEMPLATE_SMALL_HEDGE_SIDE_TALL;
@@ -38,6 +41,8 @@ public class BlockusModels {
         CUBE_TILES_2 = createModel("cube_tiles_2", "_2", BlockusTextureKey.TILE_1, BlockusTextureKey.TILE_2);
         TEMPLATE_POST = createModel("template_post", TextureKey.END, TextureKey.SIDE);
         TEMPLATE_POST_CONNECT = createModel("template_post_connect", "_connect", TextureKey.END, TextureKey.SIDE);
+        TEMPLATE_POST_CONNECT_TOP = createModel("template_post_connect_top", "_connect_top", TextureKey.END, TextureKey.SIDE);
+        CHAIN_CONNECT = createModel("chain_connect", "_connect", TextureKey.ALL);
         TEMPLATE_SMALL_HEDGE_END = createModel("template_small_hedge_end", "_end", BlockusTextureKey.HEDGE);
         TEMPLATE_SMALL_HEDGE_SIDE = createModel("template_small_hedge_side", "_side", BlockusTextureKey.HEDGE);
         TEMPLATE_SMALL_HEDGE_SIDE_TALL = createModel("template_small_hedge_side_tall", "_side_tall", BlockusTextureKey.HEDGE);

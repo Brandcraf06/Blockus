@@ -817,6 +817,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block REDSTONE_LANTERN_BLOCK = register("redstone_lantern_block", new RedstoneBlock(AbstractBlock.Settings.copy(REDSTONE_LANTERN).luminance((state) -> 7)));
     public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN).luminance((state) -> 10).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block REDSTONE_O_LANTERN = register("redstone_o_lantern", new RedstonePumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN).luminance((state) -> 7).pistonBehavior(PistonBehavior.DESTROY)));
+//    public static final Block AMETHYST_LAMP = register("amethyst_lamp", new AmethystLampBlock(AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK)));
 
     // Barriers
     public static final Block CAUTION_BARRIER = register("caution_barrier", createBarrier(1.5f, 1200.0f, MapColor.YELLOW));

@@ -1,14 +1,16 @@
 package com.brand.blockus.blocks.base;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Direction.Axis;
@@ -17,96 +19,115 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import org.jetbrains.annotations.Nullable;
 
 public class PostBlock extends PillarBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED;
-    public static final BooleanProperty NORTH;
-    public static final BooleanProperty SOUTH;
-    public static final BooleanProperty WEST;
-    public static final BooleanProperty EAST;
-    public static final MapCodec<PostBlock> CODEC = createCodec(PostBlock::new);
-    protected static final float field_31054 = 6.5F;
-    protected static final float field_31055 = 9.5F;
-    protected static final VoxelShape Y_SHAPE;
-    protected static final VoxelShape Z_SHAPE;
-    protected static final VoxelShape X_SHAPE;
-    protected static final VoxelShape COMPLETE_SHAPE;
+    public static final EnumProperty<ConnectionType> NORTH;
+    public static final EnumProperty<ConnectionType> SOUTH;
+    public static final EnumProperty<ConnectionType> WEST;
+    public static final EnumProperty<ConnectionType> EAST;
+    public static final EnumProperty<ConnectionType> UP;
+    public static final EnumProperty<ConnectionType> DOWN;
+    public static final EnumProperty<Axis> AXIS;
+    public static final VoxelShape CENTER_SHAPE = Block.createCuboidShape(6.0, 6.0, 6.0, 10.0, 10.0, 10.0);
+    public static final VoxelShape DOWN_SHAPE = Block.createCuboidShape(6.0, 0.0, 6.0, 10.0, 6.0, 10.0);
+    public static final VoxelShape UP_SHAPE = Block.createCuboidShape(6.0, 10.0, 6.0, 10.0, 16.0, 10.0);
+    public static final VoxelShape NORTH_SHAPE = Block.createCuboidShape(6.0, 6.0, 0.0, 10.0, 10.0, 6.0);
+    public static final VoxelShape SOUTH_SHAPE = Block.createCuboidShape(6.0, 6.0, 10.0, 10.0, 10.0, 16.0);
+    public static final VoxelShape WEST_SHAPE = Block.createCuboidShape(0.0, 6.0, 6.0, 6.0, 10.0, 10.0);
+    public static final VoxelShape EAST_SHAPE = Block.createCuboidShape(10.0, 6.0, 6.0, 16.0, 10.0, 10.0);
+    public static final VoxelShape[] CONNECTION_SHAPES = new VoxelShape[]{DOWN_SHAPE, UP_SHAPE, NORTH_SHAPE, SOUTH_SHAPE, WEST_SHAPE, EAST_SHAPE};
+    public static final VoxelShape[] SHAPE_CACHE = new VoxelShape[64 * 3];
+    public static final EnumProperty<ConnectionType>[] SIDES;
 
-    public PostBlock(AbstractBlock.Settings settings) {
+
+    public PostBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false).with(AXIS, Axis.Y).with(NORTH, false).with(SOUTH, false).with(WEST, false).with(EAST, false));
+        this.setDefaultState(this.stateManager.getDefaultState()
+            .with(WATERLOGGED, false)
+            .with(AXIS, Axis.Y)
+            .with(NORTH, ConnectionType.NONE)
+            .with(SOUTH, ConnectionType.NONE)
+            .with(WEST, ConnectionType.NONE)
+            .with(EAST, ConnectionType.NONE)
+            .with(UP, ConnectionType.NONE)
+            .with(DOWN, ConnectionType.NONE)
+        );
     }
 
-    public MapCodec<PostBlock> getCodec() {
-        return CODEC;
-    }
-
+    @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        VoxelShape shape = this.getBaseShape(state);
+        int index = 0;
+        for (Direction direction : Direction.values()) {
+            if (state.get(SIDES[direction.ordinal()]) != ConnectionType.NONE) {
+                index += (1 << direction.ordinal());
+            }
+        }
+        index += (64 * state.get(AXIS).ordinal());
 
-        if (state.get(NORTH)) {
-            shape = VoxelShapes.union(shape, Block.createCuboidShape(6.0, 6.0, 0.0, 10.0, 10.0, 6.0));
-        }
-        if (state.get(SOUTH)) {
-            shape = VoxelShapes.union(shape, Block.createCuboidShape(6.0, 6.0, 10.0, 10.0, 10.0, 16.0));
-        }
-        if (state.get(WEST)) {
-            shape = VoxelShapes.union(shape, Block.createCuboidShape(0.0, 6.0, 6.0, 6.0, 10.0, 10.0));
-        }
-        if (state.get(EAST)) {
-            shape = VoxelShapes.union(shape, Block.createCuboidShape(10.0, 6.0, 6.0, 16.0, 10.0, 10.0));
+        VoxelShape shapeCache = SHAPE_CACHE[index];
+        if (shapeCache == null) {
+            VoxelShape centerShape = CENTER_SHAPE;
+
+            for (Direction dir : Direction.values()) {
+                if (isConnected(state, dir)) {
+                    centerShape = VoxelShapes.union(centerShape, CONNECTION_SHAPES[dir.ordinal()]);
+                }
+            }
+
+            SHAPE_CACHE[index] = centerShape;
+            shapeCache = centerShape;
         }
 
-        return shape;
+        return shapeCache;
     }
 
-    private VoxelShape getBaseShape(BlockState state) {
-        switch (state.get(AXIS)) {
-            case X:
-                return X_SHAPE;
-            case Z:
-                return Z_SHAPE;
-            case Y:
-            default:
-                return Y_SHAPE;
+    private boolean isConnected(BlockState state, Direction dir) {
+        if (state.get(AXIS) == dir.getAxis()) {
+            return true;
         }
+        return state.get(SIDES[dir.ordinal()]) != ConnectionType.NONE;
     }
 
-    @Nullable
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
         boolean bl = fluidState.getFluid() == Fluids.WATER;
         return super.getPlacementState(ctx).with(WATERLOGGED, bl);
     }
 
-    private BlockState getConnections(World world, BlockPos pos, BlockState state) {
-        Axis axis = state.get(AXIS);
-        return state.with(NORTH, axis != Axis.Z && this.shouldConnect(world, pos, Direction.NORTH))
-            .with(SOUTH, axis != Axis.Z && this.shouldConnect(world, pos, Direction.SOUTH))
-            .with(WEST, axis != Axis.X && this.shouldConnect(world, pos, Direction.WEST))
-            .with(EAST, axis != Axis.X && this.shouldConnect(world, pos, Direction.EAST));
-    }
-
-    private boolean shouldConnect(World world, BlockPos pos, Direction direction) {
+    private ConnectionType shouldConnect(World world, BlockPos pos, Direction direction) {
         BlockState neighborState = world.getBlockState(pos.offset(direction));
 
         if (neighborState.getBlock() instanceof WallSignBlock) {
-            return direction == neighborState.get(Properties.HORIZONTAL_FACING);
+            return direction == neighborState.get(Properties.HORIZONTAL_FACING) ? ConnectionType.POST : ConnectionType.NONE;
         }
 
-        return false;
+        if (neighborState.getBlock() instanceof ChainBlock && neighborState.get(Properties.AXIS) == direction.getAxis()) {
+            return ConnectionType.CHAIN;
+        }
+
+        if (neighborState.getBlock() instanceof PostBlock && neighborState.get(Properties.AXIS) == direction.getAxis()) {
+            return ConnectionType.POST;
+        }
+
+        if (direction == Direction.UP && neighborState.isIn(BlockTags.WALL_POST_OVERRIDE)) {
+            return ConnectionType.POST;
+        }
+
+        return ConnectionType.NONE;
     }
 
     protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-        return this.getConnections((World) world, pos, super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos));
+
+        state = state.with(SIDES[direction.ordinal()], this.shouldConnect((World) world, pos, direction));
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(WATERLOGGED, AXIS, NORTH, SOUTH, WEST, EAST);
+        builder.add(WATERLOGGED, AXIS, NORTH, SOUTH, WEST, EAST, UP, DOWN);
     }
 
     protected FluidState getFluidState(BlockState state) {
@@ -119,14 +140,30 @@ public class PostBlock extends PillarBlock implements Waterloggable {
 
     static {
         WATERLOGGED = Properties.WATERLOGGED;
-        NORTH = ConnectingBlock.NORTH;
-        EAST = ConnectingBlock.EAST;
-        SOUTH = ConnectingBlock.SOUTH;
-        WEST = ConnectingBlock.WEST;
+        AXIS = Properties.AXIS;
+        NORTH = EnumProperty.of("north", ConnectionType.class);
+        SOUTH = EnumProperty.of("south", ConnectionType.class);
+        WEST = EnumProperty.of("west", ConnectionType.class);
+        EAST = EnumProperty.of("east", ConnectionType.class);
+        UP = EnumProperty.of("up", ConnectionType.class);
+        DOWN = EnumProperty.of("down", ConnectionType.class);
+        SIDES = new EnumProperty[]{DOWN, UP, NORTH, SOUTH, WEST, EAST};
+    }
 
-        Y_SHAPE = Block.createCuboidShape(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
-        Z_SHAPE = Block.createCuboidShape(6.0, 6.0, 0.0, 10.0, 10.0, 16.0);
-        X_SHAPE = Block.createCuboidShape(0.0, 6.0, 6.0, 16.0, 10.0, 10.0);
-        COMPLETE_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 16.0); // Placeholder for a fully connected shape
+    public enum ConnectionType implements StringIdentifiable {
+        NONE("none"),
+        CHAIN("chain"),
+        POST("post");
+
+        private final String name;
+
+        ConnectionType(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String asString() {
+            return this.name;
+        }
     }
 }
