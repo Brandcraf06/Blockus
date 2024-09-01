@@ -9,6 +9,9 @@
 * Added Copper Bricks
   * Oxidizes and can be waxed like every copper blocks
   * Crafted with 4 Cut Copper of the desired oxidation or waxed.
+* Added Amethyst Lamp
+  * Its light level is determined by the redstone power.
+  * Crafted with 4 Amethysts Shards around 1 Redstone Dust
 * Added Mossy Dripstone Bricks
 * Changed Polished Dripstone, Dripstone Bricks, Cracked Dripstone Bricks, Chiseled Dripstone textures
   * Fixed Dripstone Pillar side texture

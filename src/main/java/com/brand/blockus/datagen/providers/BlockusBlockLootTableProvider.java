@@ -114,6 +114,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             // Amethyst
             CHISELED_AMETHYST,
             AMETHYST_PILLAR,
+            AMETHYST_LAMP,
 
             // Sculk
             CHISELED_SCULK_BRICKS,

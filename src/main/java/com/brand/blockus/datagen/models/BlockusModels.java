@@ -2,7 +2,6 @@ package com.brand.blockus.datagen.models;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.data.client.Model;
-import net.minecraft.data.client.Models;
 import net.minecraft.data.client.TextureKey;
 import net.minecraft.util.Identifier;
 
@@ -23,9 +22,11 @@ public class BlockusModels {
     public static final Model CRATE_TEMPLATE;
     public static final Model NEON_BLOCK_TEMPLATE;
 
+
     public static Identifier getBlockId(String id) {
         return Blockus.id("block/" + id);
     }
+
 
     public static Model createModel(String parent, TextureKey... requiredTextures) {
         return new Model(Optional.of(getBlockId(parent)), Optional.empty(), requiredTextures);

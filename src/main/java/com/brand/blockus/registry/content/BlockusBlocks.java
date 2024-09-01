@@ -1,6 +1,7 @@
 package com.brand.blockus.registry.content;
 
 import com.brand.blockus.blocks.base.*;
+import com.brand.blockus.blocks.base.amethyst.AmethystLampBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystPillarBlock;
 import com.brand.blockus.blocks.base.asphalt.RainbowAsphalt;
 import com.brand.blockus.blocks.base.redstone.FallingRedstoneBlock;
@@ -9,7 +10,6 @@ import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
 import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.content.bundles.CopperBundle.OxidationType;
-import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.utils.BlockFactory;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -817,7 +817,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block REDSTONE_LANTERN_BLOCK = register("redstone_lantern_block", new RedstoneBlock(AbstractBlock.Settings.copy(REDSTONE_LANTERN).luminance((state) -> 7)));
     public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN).luminance((state) -> 10).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block REDSTONE_O_LANTERN = register("redstone_o_lantern", new RedstonePumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN).luminance((state) -> 7).pistonBehavior(PistonBehavior.DESTROY)));
-//    public static final Block AMETHYST_LAMP = register("amethyst_lamp", new AmethystLampBlock(AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK)));
+    public static final Block AMETHYST_LAMP = register("amethyst_lamp", new AmethystLampBlock(AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK)));
 
     // Barriers
     public static final Block CAUTION_BARRIER = register("caution_barrier", createBarrier(1.5f, 1200.0f, MapColor.YELLOW));

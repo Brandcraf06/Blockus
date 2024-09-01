@@ -1,6 +1,7 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.effect.BlockusEffects;
@@ -9,7 +10,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
-import com.brand.blockus.registry.content.BlockusBlocks;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -772,6 +772,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBssw(translationBuilder, BlockusBlocks.AMETHYST_BRICKS, "Amethyst Bricks");
         translationBuilder.add(BlockusBlocks.CHISELED_AMETHYST, "Chiseled Amethyst");
         translationBuilder.add(BlockusBlocks.AMETHYST_PILLAR, "Amethyst Pillar");
+        translationBuilder.add(BlockusBlocks.AMETHYST_LAMP, "Amethyst Lamp");
 
         // Dripstone
         addBssw(translationBuilder, BlockusBlocks.POLISHED_DRIPSTONE, "Polished Dripstone");
@@ -883,6 +884,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
     public static String editedString(String string) {
         return string.replace("Bricks", "Brick").replace("Tiles", "Tile").replace(" Block", "").replace(" Planks", "");
     }
+
     // Stairs & slab
     public static void addStairsSlab(TranslationBuilder translationBuilder, String string, Block stairs, Block slab) {
         translationBuilder.add(stairs, editedString(string) + " Stairs");

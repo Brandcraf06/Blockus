@@ -38,7 +38,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(POLISHED_AMETHYST))
             .add(bsswBundle(AMETHYST_BRICKS))
             .add(CHISELED_AMETHYST)
-            .add(AMETHYST_PILLAR);
+            .add(AMETHYST_PILLAR)
+            .add(AMETHYST_LAMP);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.ANDESITE_BLOCKS)
             .add(bsswBundle(ANDESITE_BRICKS))

@@ -1,10 +1,7 @@
-package com.brand.blockus.blocks.base;
+package com.brand.blockus.blocks.base.amethyst;
 
 import net.minecraft.block.Block;
-
 import net.minecraft.block.BlockState;
-import net.minecraft.block.RedstoneLampBlock;
-import net.minecraft.block.RedstoneWireBlock;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
@@ -16,7 +13,7 @@ public class AmethystLampBlock extends Block {
     public static final IntProperty POWER = Properties.POWER;
 
     public AmethystLampBlock(Settings settings) {
-        super(settings.luminance(state -> state.get(POWER)));  // Définir la luminosité en fonction de la puissance
+        super(settings.luminance(state -> state.get(POWER)));
         this.setDefaultState(this.stateManager.getDefaultState().with(POWER, 0));
     }
 

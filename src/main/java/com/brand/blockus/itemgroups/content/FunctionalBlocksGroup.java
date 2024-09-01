@@ -21,7 +21,7 @@ public class FunctionalBlocksGroup {
             entries.add(BlockusBlocks.REDSTONE_SAND);
             BuildingBlocksGroup.addBssw(entries, BlockusBlocks.REDSTONE_BRICKS);
 
-//            entries.add(BlockusBlocks.AMETHYST_LAMP);
+            entries.add(BlockusBlocks.AMETHYST_LAMP);
 
             entries.add(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE);
 
@@ -66,6 +66,7 @@ public class FunctionalBlocksGroup {
             entries.add(BlockusEntities.RAW_BAMBOO_RAFT.getChestItem());
         });
     }
+
     public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle BSSWBundle) {
         entries.add(BSSWBundle.block);
         entries.add(BSSWBundle.stairs);

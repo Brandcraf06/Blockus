@@ -135,8 +135,8 @@ public class Instance {
         // Posts
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
             if (woodenPost.isBurnable()) {
-            FlammableBlockRegistry.getDefaultInstance().add(woodenPost.block, 5, 5);
-            FlammableBlockRegistry.getDefaultInstance().add(woodenPost.stripped, 5, 5);
+                FlammableBlockRegistry.getDefaultInstance().add(woodenPost.block, 5, 5);
+                FlammableBlockRegistry.getDefaultInstance().add(woodenPost.stripped, 5, 5);
             }
         }
 
