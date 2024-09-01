@@ -24,13 +24,13 @@ public class AmethystLampBlock extends Block {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(POWER, ctx.getWorld().getReceivedRedstonePower(ctx.getBlockPos()));
+        return this.getDefaultState().with(POWER, Math.min(15, ctx.getWorld().getReceivedRedstonePower(ctx.getBlockPos())));
     }
 
     @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
         if (!world.isClient) {
-            int power = world.getReceivedRedstonePower(pos);
+            int power = Math.min(15, world.getReceivedRedstonePower(pos));
             if (power != state.get(POWER)) {
                 world.setBlockState(pos, state.with(POWER, power), Block.NOTIFY_ALL);
             }
