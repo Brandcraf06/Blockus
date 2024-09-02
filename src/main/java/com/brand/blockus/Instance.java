@@ -198,14 +198,21 @@ public class Instance {
             COPPER_BRICKS.stairsWaxed, EXPOSED_COPPER_BRICKS.stairsWaxed, WEATHERED_COPPER_BRICKS.stairsWaxed, OXIDIZED_COPPER_BRICKS.stairsWaxed);
         registerOxidizable(COPPER_BRICKS.wall, EXPOSED_COPPER_BRICKS.wall, WEATHERED_COPPER_BRICKS.wall, OXIDIZED_COPPER_BRICKS.wall,
             COPPER_BRICKS.wallWaxed, EXPOSED_COPPER_BRICKS.wallWaxed, WEATHERED_COPPER_BRICKS.wallWaxed, OXIDIZED_COPPER_BRICKS.wallWaxed);
+
+        registerOxidizable(COPPER_TUFF_BRICKS.block, EXPOSED_COPPER_TUFF_BRICKS.block, WEATHERED_COPPER_TUFF_BRICKS.block, OXIDIZED_COPPER_TUFF_BRICKS.block,
+            COPPER_TUFF_BRICKS.blockWaxed, EXPOSED_COPPER_TUFF_BRICKS.blockWaxed, WEATHERED_COPPER_TUFF_BRICKS.blockWaxed, OXIDIZED_COPPER_TUFF_BRICKS.blockWaxed);
+        registerOxidizable(COPPER_TUFF_BRICKS.stairs, EXPOSED_COPPER_TUFF_BRICKS.stairs, WEATHERED_COPPER_TUFF_BRICKS.stairs, OXIDIZED_COPPER_TUFF_BRICKS.stairs,
+            COPPER_TUFF_BRICKS.stairsWaxed, EXPOSED_COPPER_TUFF_BRICKS.stairsWaxed, WEATHERED_COPPER_TUFF_BRICKS.stairsWaxed, OXIDIZED_COPPER_TUFF_BRICKS.stairsWaxed);
+        registerOxidizable(COPPER_TUFF_BRICKS.wall, EXPOSED_COPPER_TUFF_BRICKS.wall, WEATHERED_COPPER_TUFF_BRICKS.wall, OXIDIZED_COPPER_TUFF_BRICKS.wall,
+            COPPER_TUFF_BRICKS.wallWaxed, EXPOSED_COPPER_TUFF_BRICKS.wallWaxed, WEATHERED_COPPER_TUFF_BRICKS.wallWaxed, OXIDIZED_COPPER_TUFF_BRICKS.wallWaxed);
     }
 
-    public static void registerOxidizable(Block block, Block exposed, Block weathered, Block oxidized, Block waxed, Block ewposedwaxed, Block weatheredwaxed, Block oxidizedwaxed) {
+    public static void registerOxidizable(Block block, Block exposed, Block weathered, Block oxidized, Block waxed, Block exposedwaxed, Block weatheredwaxed, Block oxidizedwaxed) {
         OxidizableBlocksRegistry.registerOxidizableBlockPair(block, exposed);
         OxidizableBlocksRegistry.registerOxidizableBlockPair(exposed, weathered);
         OxidizableBlocksRegistry.registerOxidizableBlockPair(weathered, oxidized);
         OxidizableBlocksRegistry.registerWaxableBlockPair(block, waxed);
-        OxidizableBlocksRegistry.registerWaxableBlockPair(exposed, ewposedwaxed);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(exposed, exposedwaxed);
         OxidizableBlocksRegistry.registerWaxableBlockPair(weathered, weatheredwaxed);
         OxidizableBlocksRegistry.registerWaxableBlockPair(oxidized, oxidizedwaxed);
     }

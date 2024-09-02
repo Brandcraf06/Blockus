@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_weathered_copper_tuff_brick_wall",
+  "ingredients": [
+    {
+      "item": "blockus:weathered_copper_tuff_brick_wall"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "blockus:waxed_weathered_copper_tuff_brick_wall"
+  }
+}

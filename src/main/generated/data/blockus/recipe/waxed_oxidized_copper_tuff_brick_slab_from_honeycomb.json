@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_oxidized_copper_tuff_brick_slab",
+  "ingredients": [
+    {
+      "item": "blockus:oxidized_copper_tuff_brick_slab"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "blockus:waxed_oxidized_copper_tuff_brick_slab"
+  }
+}

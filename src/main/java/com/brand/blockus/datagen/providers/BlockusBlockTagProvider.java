@@ -649,8 +649,16 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         }
 
         for (CopperBundle copperBundle : CopperBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.COPPER_BLOCKS)
-                .add(copperBundle.all());
+            for (Block block : copperBundle.all()) {
+                if (block.toString().contains("tuff")) {
+                    this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
+                        .add(block);
+                } else {
+                    this.getOrCreateTagBuilder(BlockusBlockTags.COPPER_BLOCKS)
+                        .add(block);
+                }
+            }
+
             this.getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(copperBundle.walls());
         }

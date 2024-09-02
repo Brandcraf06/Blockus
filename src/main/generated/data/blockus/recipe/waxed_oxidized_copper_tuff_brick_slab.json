@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "waxed_oxidized_coppered_tuff_bricks_slab",
+  "key": {
+    "#": {
+      "item": "blockus:waxed_oxidized_copper_tuff_bricks"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "blockus:waxed_oxidized_copper_tuff_brick_slab"
+  }
+}

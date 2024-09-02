@@ -58,12 +58,6 @@ public class BlockusModelProvider extends FabricModelProvider {
             }
         }
 
-
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.COPPER_BRICKS.block).family(BlockusFamilies.COPPER_BRICKS).parented(BlockusBlocks.COPPER_BRICKS.block, BlockusBlocks.COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_COPPER_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.EXPOSED_COPPER_BRICKS.block).family(BlockusFamilies.EXPOSED_COPPER_BRICKS).parented(BlockusBlocks.EXPOSED_COPPER_BRICKS.block, BlockusBlocks.EXPOSED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_EXPOSED_COPPER_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.WEATHERED_COPPER_BRICKS.block).family(BlockusFamilies.WEATHERED_COPPER_BRICKS).parented(BlockusBlocks.WEATHERED_COPPER_BRICKS.block, BlockusBlocks.WEATHERED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_WEATHERED_COPPER_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block).family(BlockusFamilies.OXIDIZED_COPPER_BRICKS).parented(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block, BlockusBlocks.OXIDIZED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_OXIDIZED_COPPER_BRICKS);
-
         for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.registerBlockStairsSlabAndWall(modelGenerator, concreteType.block, concreteType.stairs, concreteType.slab, concreteType.wall);
             modelGenerator.registerSimpleCubeAll(concreteType.chiseled);
@@ -89,6 +83,16 @@ public class BlockusModelProvider extends FabricModelProvider {
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
             registerColoredTiles(modelGenerator, coloredTilesVariants.block, coloredTilesVariants.tile1, coloredTilesVariants.tile2);
         }
+
+        // Copper
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.COPPER_BRICKS.block).family(BlockusFamilies.COPPER_BRICKS).parented(BlockusBlocks.COPPER_BRICKS.block, BlockusBlocks.COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_COPPER_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.EXPOSED_COPPER_BRICKS.block).family(BlockusFamilies.EXPOSED_COPPER_BRICKS).parented(BlockusBlocks.EXPOSED_COPPER_BRICKS.block, BlockusBlocks.EXPOSED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_EXPOSED_COPPER_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.WEATHERED_COPPER_BRICKS.block).family(BlockusFamilies.WEATHERED_COPPER_BRICKS).parented(BlockusBlocks.WEATHERED_COPPER_BRICKS.block, BlockusBlocks.WEATHERED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_WEATHERED_COPPER_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block).family(BlockusFamilies.OXIDIZED_COPPER_BRICKS).parented(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block, BlockusBlocks.OXIDIZED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_OXIDIZED_COPPER_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.COPPER_TUFF_BRICKS.block).family(BlockusFamilies.COPPERED_TUFF_BRICKS).parented(BlockusBlocks.COPPER_TUFF_BRICKS.block, BlockusBlocks.COPPER_TUFF_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_COPPERED_TUFF_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.block).family(BlockusFamilies.EXPOSED_COPPERED_TUFF_BRICKS).parented(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.block, BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_EXPOSED_COPPERED_TUFF_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.block).family(BlockusFamilies.WEATHERED_COPPERED_TUFF_BRICKS).parented(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.block, BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_WEATHERED_COPPERED_TUFF_BRICKS);
+        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.block).family(BlockusFamilies.OXIDIZED_COPPERED_TUFF_BRICKS).parented(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.block, BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_OXIDIZED_COPPERED_TUFF_BRICKS);
 
         // Stone
         this.registerPillar(modelGenerator, BlockusBlocks.STONE_BRICK_PILLAR);

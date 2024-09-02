@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_copper_tuff_bricks",
+  "ingredients": [
+    {
+      "item": "blockus:copper_tuff_bricks"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "blockus:waxed_copper_tuff_bricks"
+  }
+}

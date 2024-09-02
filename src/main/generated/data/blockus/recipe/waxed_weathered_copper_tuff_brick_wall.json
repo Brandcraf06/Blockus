@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "waxed_weathered_coppered_tuff_bricks_wall",
+  "key": {
+    "#": {
+      "item": "blockus:waxed_weathered_copper_tuff_bricks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "blockus:waxed_weathered_copper_tuff_brick_wall"
+  }
+}

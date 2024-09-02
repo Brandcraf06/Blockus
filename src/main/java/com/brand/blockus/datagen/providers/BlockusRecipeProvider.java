@@ -607,6 +607,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             offerWaxingRecipes(exporter, copperBundle.stairs, copperBundle.stairsWaxed);
             offerWaxingRecipes(exporter, copperBundle.wall, copperBundle.wallWaxed);
         }
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, COPPER_TUFF_BRICKS.block, 2).input('#', Items.COPPER_INGOT).input('X', Blocks.TUFF_BRICKS).pattern("#X").pattern("X#").criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT)).criterion(hasItem(Blocks.TUFF_BRICKS), conditionsFromItem(Blocks.TUFF_BRICKS)).offerTo(exporter);
 
         // Quartz Blocks
         offerStonecuttingRecipe(exporter, QUARTZ_TILES.block, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_BRICKS);

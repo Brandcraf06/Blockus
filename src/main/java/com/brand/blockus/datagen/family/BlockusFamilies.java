@@ -21,6 +21,14 @@ public class BlockusFamilies {
     public static final BlockFamily WAXED_WEATHERED_COPPER_BRICKS;
     public static final BlockFamily OXIDIZED_COPPER_BRICKS;
     public static final BlockFamily WAXED_OXIDIZED_COPPER_BRICKS;
+    public static final BlockFamily COPPERED_TUFF_BRICKS;
+    public static final BlockFamily WAXED_COPPERED_TUFF_BRICKS;
+    public static final BlockFamily EXPOSED_COPPERED_TUFF_BRICKS;
+    public static final BlockFamily WAXED_EXPOSED_COPPERED_TUFF_BRICKS;
+    public static final BlockFamily WEATHERED_COPPERED_TUFF_BRICKS;
+    public static final BlockFamily WAXED_WEATHERED_COPPERED_TUFF_BRICKS;
+    public static final BlockFamily OXIDIZED_COPPERED_TUFF_BRICKS;
+    public static final BlockFamily WAXED_OXIDIZED_COPPERED_TUFF_BRICKS;
 
     public static final Map<Block, BlockFamily> BASE_BLOCKS_TO_FAMILIES = Maps.newHashMap();
 
@@ -69,7 +77,7 @@ public class BlockusFamilies {
             .unlockCriterionName("has_planks")
             .build();
 
-        // Copper
+        // Copper Bricks
         COPPER_BRICKS = register(BlockusBlocks.COPPER_BRICKS.block).slab(BlockusBlocks.COPPER_BRICKS.slab).stairs(BlockusBlocks.COPPER_BRICKS.stairs).wall(BlockusBlocks.COPPER_BRICKS.wall).noGenerateModels().build();
         WAXED_COPPER_BRICKS = register(BlockusBlocks.COPPER_BRICKS.blockWaxed).slab(BlockusBlocks.COPPER_BRICKS.slabWaxed).stairs(BlockusBlocks.COPPER_BRICKS.stairsWaxed).wall(BlockusBlocks.COPPER_BRICKS.wallWaxed).group("waxed_copper_bricks").noGenerateModels().build();
         EXPOSED_COPPER_BRICKS = register(BlockusBlocks.EXPOSED_COPPER_BRICKS.block).slab(BlockusBlocks.EXPOSED_COPPER_BRICKS.slab).stairs(BlockusBlocks.EXPOSED_COPPER_BRICKS.stairs).wall(BlockusBlocks.EXPOSED_COPPER_BRICKS.wall).noGenerateModels().build();
@@ -78,6 +86,16 @@ public class BlockusFamilies {
         WAXED_WEATHERED_COPPER_BRICKS = register(BlockusBlocks.WEATHERED_COPPER_BRICKS.blockWaxed).slab(BlockusBlocks.WEATHERED_COPPER_BRICKS.slabWaxed).stairs(BlockusBlocks.WEATHERED_COPPER_BRICKS.stairsWaxed).wall(BlockusBlocks.WEATHERED_COPPER_BRICKS.wallWaxed).group("waxed_weathered_copper_bricks").noGenerateModels().build();
         OXIDIZED_COPPER_BRICKS = register(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block).slab(BlockusBlocks.OXIDIZED_COPPER_BRICKS.slab).stairs(BlockusBlocks.OXIDIZED_COPPER_BRICKS.stairs).wall(BlockusBlocks.OXIDIZED_COPPER_BRICKS.wall).noGenerateModels().build();
         WAXED_OXIDIZED_COPPER_BRICKS = register(BlockusBlocks.OXIDIZED_COPPER_BRICKS.blockWaxed).slab(BlockusBlocks.OXIDIZED_COPPER_BRICKS.slabWaxed).stairs(BlockusBlocks.OXIDIZED_COPPER_BRICKS.stairsWaxed).wall(BlockusBlocks.OXIDIZED_COPPER_BRICKS.wallWaxed).group("waxed_oxidized_copper_bricks").noGenerateModels().build();
+
+        // Coppered Tuff Bricks
+        COPPERED_TUFF_BRICKS = register(BlockusBlocks.COPPER_TUFF_BRICKS.block).slab(BlockusBlocks.COPPER_TUFF_BRICKS.slab).stairs(BlockusBlocks.COPPER_TUFF_BRICKS.stairs).wall(BlockusBlocks.COPPER_TUFF_BRICKS.wall).noGenerateModels().build();
+        WAXED_COPPERED_TUFF_BRICKS = register(BlockusBlocks.COPPER_TUFF_BRICKS.blockWaxed).slab(BlockusBlocks.COPPER_TUFF_BRICKS.slabWaxed).stairs(BlockusBlocks.COPPER_TUFF_BRICKS.stairsWaxed).wall(BlockusBlocks.COPPER_TUFF_BRICKS.wallWaxed).group("waxed_coppered_tuff_bricks").noGenerateModels().build();
+        EXPOSED_COPPERED_TUFF_BRICKS = register(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.block).slab(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.slab).stairs(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.stairs).wall(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.wall).noGenerateModels().build();
+        WAXED_EXPOSED_COPPERED_TUFF_BRICKS = register(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.blockWaxed).slab(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.slabWaxed).stairs(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.stairsWaxed).wall(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.wallWaxed).group("waxed_exposed_coppered_tuff_bricks").noGenerateModels().build();
+        WEATHERED_COPPERED_TUFF_BRICKS = register(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.block).slab(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.slab).stairs(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.stairs).wall(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.wall).noGenerateModels().build();
+        WAXED_WEATHERED_COPPERED_TUFF_BRICKS = register(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.blockWaxed).slab(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.slabWaxed).stairs(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.stairsWaxed).wall(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.wallWaxed).group("waxed_weathered_coppered_tuff_bricks").noGenerateModels().build();
+        OXIDIZED_COPPERED_TUFF_BRICKS = register(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.block).slab(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.slab).stairs(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.stairs).wall(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.wall).noGenerateModels().build();
+        WAXED_OXIDIZED_COPPERED_TUFF_BRICKS = register(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.blockWaxed).slab(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.slabWaxed).stairs(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.stairsWaxed).wall(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.wallWaxed).group("waxed_oxidized_coppered_tuff_bricks").noGenerateModels().build();
     }
 
     public static BlockFamily.Builder register(Block baseBlock) {

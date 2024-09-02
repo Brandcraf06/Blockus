@@ -832,6 +832,10 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addCopper(translationBuilder, BlockusBlocks.EXPOSED_COPPER_BRICKS, "Exposed Copper Bricks");
         addCopper(translationBuilder, BlockusBlocks.WEATHERED_COPPER_BRICKS, "Weathered Copper Bricks");
         addCopper(translationBuilder, BlockusBlocks.OXIDIZED_COPPER_BRICKS, "Oxidized Copper Bricks");
+        addCopper(translationBuilder, BlockusBlocks.COPPER_TUFF_BRICKS, "Copper Tuff Bricks");
+        addCopper(translationBuilder, BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS, "Exposed Copper Tuff Bricks");
+        addCopper(translationBuilder, BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS, "Weathered Copper Tuff Bricks");
+        addCopper(translationBuilder, BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS, "Oxidized Copper Tuff Bricks");
 
         // Legacy Blocks
         translationBuilder.add(BlockusBlocks.LEGACY_BRICKS, "Bricks");

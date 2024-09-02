@@ -131,6 +131,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LIMESTONE_CIRCULAR_PAVING = register("limestone_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.LIMESTONE_BRICKS.block)));
     public static final Block LIMESTONE_LINES = register("limestone_lines", createPillarCopy(BlockusBlocks.LIMESTONE_BRICKS.block));
     public static final Block LIMESTONE_PILLAR = registerPillar(BlockusBlocks.LIMESTONE.block);
+
     // Marble
     public static final BSSWBundle MARBLE = new BSSWBundle("marble", Blocks.STONE, MapColor.OFF_WHITE);
     public static final BSSWBundle POLISHED_MARBLE = new BSSWBundle("polished_marble", BlockusBlocks.MARBLE.block, false);
@@ -143,6 +144,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block MARBLE_CIRCULAR_PAVING = register("marble_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.MARBLE_BRICKS.block)));
     public static final Block MARBLE_LINES = register("marble_lines", createPillarCopy(BlockusBlocks.MARBLE_BRICKS.block));
     public static final Block MARBLE_PILLAR = registerPillar(BlockusBlocks.MARBLE.block);
+
     // Bluestone
     public static final BSSWBundle BLUESTONE = new BSSWBundle("bluestone", Blocks.STONE, MapColor.CYAN);
     public static final BSSWBundle POLISHED_BLUESTONE = new BSSWBundle("polished_bluestone", BlockusBlocks.BLUESTONE.block, false);
@@ -155,6 +157,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BLUESTONE_CIRCULAR_PAVING = register("bluestone_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.BLUESTONE_BRICKS.block)));
     public static final Block BLUESTONE_LINES = register("bluestone_lines", createPillarCopy(BlockusBlocks.BLUESTONE_BRICKS.block));
     public static final Block BLUESTONE_PILLAR = registerPillar(BlockusBlocks.BLUESTONE.block);
+
     // Viridite
     public static final BSSWBundle VIRIDITE = new BSSWBundle("viridite", Blocks.DEEPSLATE, MapColor.DARK_GREEN);
     public static final BSSWBundle POLISHED_VIRIDITE = new BSSWBundle("polished_viridite", BlockusBlocks.VIRIDITE.block, false);
@@ -167,6 +170,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block VIRIDITE_CIRCULAR_PAVING = register("viridite_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.VIRIDITE_BRICKS.block)));
     public static final Block VIRIDITE_LINES = register("viridite_lines", createPillarCopy(BlockusBlocks.VIRIDITE_BRICKS.block));
     public static final Block VIRIDITE_PILLAR = registerPillar(BlockusBlocks.VIRIDITE.block);
+
     // Lava	Bricks
     public static final BSSWBundle LAVA_BRICKS = new BSSWBundle("lava_bricks", Blocks.STONE_BRICKS, 15);
     public static final Block CHISELED_LAVA_BRICKS = register("chiseled_lava_bricks", createCopy(BlockusBlocks.LAVA_BRICKS.block));
@@ -498,6 +502,10 @@ public class BlockusBlocks extends BlockFactory {
     public static final CopperBundle EXPOSED_COPPER_BRICKS = new CopperBundle("copper_bricks", OxidationType.EXPOSED, Blocks.EXPOSED_COPPER);
     public static final CopperBundle WEATHERED_COPPER_BRICKS = new CopperBundle("copper_bricks", OxidationType.WEATHERED, Blocks.WEATHERED_COPPER);
     public static final CopperBundle OXIDIZED_COPPER_BRICKS = new CopperBundle("copper_bricks", OxidationType.OXIDIZED, Blocks.OXIDIZED_COPPER);
+    public static final CopperBundle COPPER_TUFF_BRICKS = new CopperBundle("copper_tuff_bricks", OxidationType.UNAFFECTED, Blocks.TUFF_BRICKS);
+    public static final CopperBundle EXPOSED_COPPER_TUFF_BRICKS = new CopperBundle("copper_tuff_bricks", OxidationType.EXPOSED, Blocks.TUFF_BRICKS);
+    public static final CopperBundle WEATHERED_COPPER_TUFF_BRICKS = new CopperBundle("copper_tuff_bricks", OxidationType.WEATHERED, Blocks.TUFF_BRICKS);
+    public static final CopperBundle OXIDIZED_COPPER_TUFF_BRICKS = new CopperBundle("copper_tuff_bricks", OxidationType.OXIDIZED, Blocks.TUFF_BRICKS);
 
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = register("sweet_berries_crate", createCrates());
