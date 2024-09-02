@@ -8,7 +8,7 @@
 * Added **Copper Bricks** & **Copper Tuff Bricks**
   * Oxidizes and can be waxed like every copper blocks.
   * Copper Bricks is crafted with 4 Cut Copper of the desired oxidation or waxed.
-  * Copper Tuff Bricks is crafted with 2 Copper Ingots & 2 Copper Bricks.
+  * Copper Tuff Bricks is crafted with 2 Copper Ingots & 2 Tuff Bricks.
     * Copper Tuff Bricks oxidation stages are only available with patience.
 * Added **Amethyst Lamp**.
   * Its light level is determined by the redstone power.
@@ -18,6 +18,7 @@
   * Like original version, Legacy Roses gives 2 dyes instead of one.
   * Java one is crafted with 4 Poppies and gives 2, PE one is crafted with 2 Legacy Roses & gives 2.
 * Added **Mossy Dripstone Bricks**.
+* Added **Tuff Bricks**.
 * Changed Polished Dripstone, Dripstone Bricks, Cracked Dripstone Bricks, Chiseled Dripstone textures.
   * Fixed Dripstone Pillar side texture.
 * Changed Glowing Obsidian texture.

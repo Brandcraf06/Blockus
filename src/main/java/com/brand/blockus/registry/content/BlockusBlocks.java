@@ -69,6 +69,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Tuff
     public static final BSSWBundle MOSSY_TUFF_BRICKS = new BSSWBundle("mossy_tuff_bricks", Blocks.TUFF_BRICKS);
+    public static final BSSWBundle TUFF_TILES = new BSSWBundle("tuff_tiles", Blocks.TUFF_BRICKS);
     public static final Block CRACKED_TUFF_BRICKS = register("cracked_tuff_bricks", createCopy(Blocks.TUFF_BRICKS));
     public static final Block CARVED_TUFF_BRICKS = register("carved_tuff_bricks", createCopy(Blocks.TUFF_BRICKS));
     public static final Block HERRINGBONE_TUFF_BRICKS = register("herringbone_tuff_bricks", createCopy(Blocks.TUFF_BRICKS));

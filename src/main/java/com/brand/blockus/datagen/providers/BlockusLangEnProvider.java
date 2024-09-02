@@ -783,6 +783,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.DRIPSTONE_PILLAR, "Dripstone Pillar");
 
         // Tuff
+        addBssw(translationBuilder, BlockusBlocks.TUFF_TILES, "Tuff Tiles");
         translationBuilder.add(BlockusBlocks.CRACKED_TUFF_BRICKS, "Cracked Tuff Bricks");
         translationBuilder.add(BlockusBlocks.CARVED_TUFF_BRICKS, "Carved Tuff Bricks");
         translationBuilder.add(BlockusBlocks.TUFF_PILLAR, "Tuff Pillar");

@@ -600,6 +600,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
             .add(bsswBundle(MOSSY_TUFF_BRICKS))
+            .add(bsswBundle(TUFF_TILES))
             .add(CRACKED_TUFF_BRICKS)
             .add(CARVED_TUFF_BRICKS)
             .add(HERRINGBONE_TUFF_BRICKS)

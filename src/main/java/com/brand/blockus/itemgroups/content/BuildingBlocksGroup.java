@@ -197,6 +197,7 @@ public class BuildingBlocksGroup {
             entries.add(POLISHED_TUFF_BUTTON);
             addBssw(entries, MOSSY_TUFF_BRICKS);
             entries.add(CRACKED_TUFF_BRICKS);
+            addBssw(entries, TUFF_TILES);
             entries.add(CARVED_TUFF_BRICKS);
             entries.add(HERRINGBONE_TUFF_BRICKS);
             entries.add(TUFF_PILLAR);

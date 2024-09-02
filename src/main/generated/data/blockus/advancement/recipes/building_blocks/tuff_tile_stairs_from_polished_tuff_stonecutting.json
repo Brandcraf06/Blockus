@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chocolate_bricks": {
+    "has_polished_tuff": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:chocolate_bricks"
+            "items": "minecraft:polished_tuff"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chocolate_bricks_from_chocolate_bricks_stonecutting"
+        "recipe": "minecraft:tuff_tile_stairs_from_polished_tuff_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_chocolate_bricks"
+      "has_polished_tuff"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chocolate_bricks_from_chocolate_bricks_stonecutting"
+      "minecraft:tuff_tile_stairs_from_polished_tuff_stonecutting"
     ]
   }
 }
