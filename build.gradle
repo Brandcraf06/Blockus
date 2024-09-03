@@ -1,7 +1,7 @@
 plugins {
-	id 'fabric-loom' version '1.5-SNAPSHOT'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
-  id "me.modmuss50.mod-publish-plugin" version "0.4.5"
+  id "me.modmuss50.mod-publish-plugin" version "0.6.3"
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -17,10 +17,6 @@ repositories {
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url 'https://www.cursemaven.com' }
   maven { url 'https://maven.minecraftforge.net/' }
-}
-
-fabricApi {
-  configureDataGeneration()
 }
 
 dependencies {
@@ -46,6 +42,10 @@ dependencies {
   modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"
 }
 
+fabricApi {
+  configureDataGeneration()
+}
+
 processResources {
 	inputs.property "version", project.version
 
@@ -55,7 +55,6 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
 	it.options.release = 17
 }
 

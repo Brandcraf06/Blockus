@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_oxidized_copper_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:oxidized_copper_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:oxidized_copper_brick_stairs_from_oxidized_copper_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_oxidized_copper_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:oxidized_copper_brick_stairs_from_oxidized_copper_bricks_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

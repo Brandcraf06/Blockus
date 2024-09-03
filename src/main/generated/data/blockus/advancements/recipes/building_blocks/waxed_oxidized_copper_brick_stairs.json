@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:waxed_oxidized_copper_brick_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_waxed_oxidized_copper_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:waxed_oxidized_copper_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_waxed_oxidized_copper_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:waxed_oxidized_copper_brick_stairs"
+    ]
+  },
+  "sends_telemetry_event": false
+}

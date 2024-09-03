@@ -1,13 +1,15 @@
 package com.brand.blockus.itemgroups.content;
 
-import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 public class LegacyGroup {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS).register((entries) -> {
+            entries.add(BlockusBlocks.LEGACY_ROSE);
+            entries.add(BlockusBlocks.LEGACY_BLUE_ROSE);
             entries.add(BlockusBlocks.LEGACY_SAPLING);
             entries.add(BlockusBlocks.LEGACY_LEAVES);
             entries.add(BlockusBlocks.LEGACY_LOG);

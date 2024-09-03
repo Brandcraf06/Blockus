@@ -1,20 +1,19 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "building",
   "group": "small_logs",
-  "ingredients": [
-    {
-      "item": "minecraft:dark_oak_log"
-    },
-    {
-      "item": "minecraft:dark_oak_log"
-    },
-    {
+  "key": {
+    "#": {
       "item": "minecraft:dark_oak_log"
     }
+  },
+  "pattern": [
+    " # ",
+    "###"
   ],
   "result": {
-    "count": 3,
+    "count": 4,
     "item": "blockus:dark_oak_small_logs"
-  }
+  },
+  "show_notification": true
 }

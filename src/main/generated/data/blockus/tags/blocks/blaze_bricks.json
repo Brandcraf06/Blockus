@@ -4,6 +4,7 @@
     "blockus:blaze_bricks",
     "blockus:blaze_brick_stairs",
     "blockus:blaze_brick_slab",
+    "blockus:blaze_brick_wall",
     "blockus:blaze_pillar"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "blockus:block/exposed_copper_bricks",
+    "side": "blockus:block/exposed_copper_bricks",
+    "top": "blockus:block/exposed_copper_bricks"
+  }
+}

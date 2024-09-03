@@ -4,18 +4,22 @@
     "blockus:large_bricks",
     "blockus:large_brick_stairs",
     "blockus:large_brick_slab",
+    "blockus:large_brick_wall",
     "blockus:herringbone_bricks",
     "blockus:soaked_bricks",
     "blockus:soaked_brick_stairs",
     "blockus:soaked_brick_slab",
+    "blockus:soaked_brick_wall",
     "blockus:herringbone_soaked_bricks",
     "blockus:sandy_bricks",
     "blockus:sandy_brick_stairs",
     "blockus:sandy_brick_slab",
+    "blockus:sandy_brick_wall",
     "blockus:herringbone_sandy_bricks",
     "blockus:charred_bricks",
     "blockus:charred_brick_stairs",
     "blockus:charred_brick_slab",
+    "blockus:charred_brick_wall",
     "blockus:herringbone_charred_bricks"
   ]
 }

@@ -1,16 +1,17 @@
 {
   "replace": false,
   "values": [
-    "blockus:wooden_frame",
     "blockus:legacy_planks",
     "blockus:soul_o_lantern",
     "blockus:redstone_o_lantern",
+    "blockus:wooden_frame",
     "#blockus:framed_paper_blocks",
     "#blockus:timber_frames",
     "#blockus:wooden_lattices",
     "#blockus:wooden_grates",
     "#blockus:food_crates",
     "#blockus:all_wooden_mosaics",
-    "#blockus:all_mossy_planks"
+    "#blockus:all_mossy_planks",
+    "#blockus:wooden_posts"
   ]
 }

@@ -1,8 +1,8 @@
 package com.brand.blockus.modcompat.promenade.data.providers;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.brand.blockus.data.BlockusDatagen;
-import com.brand.blockus.data.providers.BlockusBlockLootTableProvider;
+import com.brand.blockus.datagen.BlockusDatagen;
+import com.brand.blockus.datagen.providers.BlockusBlockLootTableProvider;
 import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.loot.LootTable.Builder;

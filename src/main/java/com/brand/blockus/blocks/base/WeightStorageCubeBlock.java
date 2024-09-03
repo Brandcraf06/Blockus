@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 public class WeightStorageCubeBlock extends FallingBlock {
 
-    public WeightStorageCubeBlock(AbstractBlock.Settings settings) {
+    public WeightStorageCubeBlock(Settings settings) {
         super(settings);
     }
 

@@ -2,21 +2,16 @@ package com.brand.blockus;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
-import com.brand.blockus.modcompat.promenade.BlockusPromenadeBlocks;
+import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
-import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.TexturedRenderLayers;
-import net.minecraft.client.util.SpriteIdentifier;
-import net.minecraft.util.Identifier;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -62,7 +57,6 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_WHITE_OAK_SAPLING,
             BlockusBlocks.OBSIDIAN_REINFORCED_DOOR,
             BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR,
-            BlockusBlocks.WOODEN_FRAME,
             BlockusBlocks.IRON_GATE,
             BlockusBlocks.GOLDEN_GATE,
             BlockusBlocks.GOLDEN_CHAIN,
@@ -91,11 +85,20 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_PITCHER_PLANT.block,
             BlockusBlocks.BLACKSTONE_DOOR,
             BlockusBlocks.BLACKSTONE_TRAPDOOR,
-            BlockusBlocks.REDSTONE_LANTERN
+            BlockusBlocks.AMETHYST_LANTERN,
+            BlockusBlocks.REDSTONE_LANTERN,
+            BlockusBlocks.LEGACY_ROSE,
+            BlockusBlocks.POTTED_LEGACY_ROSE,
+            BlockusBlocks.LEGACY_BLUE_ROSE,
+            BlockusBlocks.POTTED_LEGACY_BLUE_ROSE
         );
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), timberFrameBundle.lattice, timberFrameBundle.grate);
+        }
+
+        for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), woodenPostBundle.block, woodenPostBundle.stripped);
         }
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
@@ -148,16 +151,10 @@ public class BlockusClient implements ClientModInitializer {
         TerraformBoatClientHelper.registerModelLayers(Blockus.id("charred"), false);
         TerraformBoatClientHelper.registerModelLayers(Blockus.id("white_oak"), false);
 
-        registerSignSprite("raw_bamboo");
-        registerSignSprite("charred");
-        registerSignSprite("white_oak");
-        registerSignSprite("hanging/raw_bamboo");
-        registerSignSprite("hanging/charred");
-        registerSignSprite("hanging/white_oak");
 
-        if (FabricLoader.getInstance().isModLoaded("promenade")) {
+        /*if (FabricLoader.getInstance().isModLoaded("promenade")) {
             BlockusPromenadeBlocks.initClient();
-        }
+        }*/
     }
 
     public void registerBlockColor(Block block, Block templateBlock) {
@@ -171,11 +168,5 @@ public class BlockusClient implements ClientModInitializer {
             return provider == null ? -1 : provider.getColor(item, layer);
         }, block.asItem());
     }
-
-    private void registerSignSprite(String path) {
-        Identifier id = Blockus.id("entity/signs/" + path);
-        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, id));
-    }
-
 }
 

@@ -8,6 +8,7 @@
     "blockus:prismarine_pillar",
     "blockus:prismarine_tiles",
     "blockus:prismarine_tile_stairs",
-    "blockus:prismarine_tile_slab"
+    "blockus:prismarine_tile_slab",
+    "blockus:prismarine_tile_wall"
   ]
 }

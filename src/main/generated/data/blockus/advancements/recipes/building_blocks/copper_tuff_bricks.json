@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:copper_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:copper_tuff_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tuff_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:tuff_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_copper_ingot",
+      "has_tuff_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:copper_tuff_bricks"
+    ]
+  },
+  "sends_telemetry_event": false
+}

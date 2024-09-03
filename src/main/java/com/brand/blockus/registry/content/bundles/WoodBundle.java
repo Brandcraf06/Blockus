@@ -1,8 +1,8 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.utils.BlockFactory;
 import com.brand.blockus.registry.content.BlockusItems;
+import com.brand.blockus.utils.BlockFactory;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class WoodBundle {
 
-    private static final ArrayList<WoodBundle> LIST = new ArrayList<>();
+    public static final ArrayList<WoodBundle> LIST = new ArrayList<>();
 
     public final Block planks;
     public final Block stairs;
@@ -66,13 +66,13 @@ public class WoodBundle {
         this.button = BlockFactory.register(type + "_button", new ButtonBlock(FabricBlockSettings.copyOf(planks).noCollision(), blocksettype, 30, true));
 
         // sign
-        Identifier signPath = new Identifier(Blockus.MOD_ID, "entity/signs/" + type);
+        Identifier signPath = Blockus.id("entity/signs/" + type);
         this.standing_sign = BlockFactory.registerNoItem(type + "_sign", new TerraformSignBlock(signPath, signSettings));
         this.wall_sign = BlockFactory.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(signPath, signSettings.dropsLike(standing_sign)));
         this.sign = BlockusItems.registerSign(standing_sign, wall_sign);
 
-        Identifier hangingSignPath = new Identifier(Blockus.MOD_ID, "entity/signs/hanging/" + type);
-        Identifier hangingSignGuiPath = new Identifier(Blockus.MOD_ID, "textures/gui/hanging_signs/" + type);
+        Identifier hangingSignPath = Blockus.id("entity/signs/hanging/" + type);
+        Identifier hangingSignGuiPath = Blockus.id("textures/gui/hanging_signs/" + type);
         this.ceiling_hanging_sign = BlockFactory.registerNoItem(type + "_hanging_sign", new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, hangingSignSettings));
         this.wall_hanging_sign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, hangingSignSettings.dropsLike(ceiling_hanging_sign)));
         this.hanging_sign = BlockusItems.registerHangingSign(ceiling_hanging_sign, wall_hanging_sign);

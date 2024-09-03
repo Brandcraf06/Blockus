@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "waxed_oxidized_coppered_tuff_bricks_wall",
+  "key": {
+    "#": {
+      "item": "blockus:waxed_oxidized_copper_tuff_bricks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "blockus:waxed_oxidized_copper_tuff_brick_wall"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "blockus:block/template_post_connect",
+  "textures": {
+    "end": "minecraft:block/stripped_cherry_log_top",
+    "side": "minecraft:block/stripped_cherry_log"
+  }
+}

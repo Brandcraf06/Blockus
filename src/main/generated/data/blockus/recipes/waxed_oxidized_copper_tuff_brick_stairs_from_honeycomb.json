@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_oxidized_copper_tuff_brick_stairs",
+  "ingredients": [
+    {
+      "item": "blockus:oxidized_copper_tuff_brick_stairs"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "blockus:waxed_oxidized_copper_tuff_brick_stairs"
+  }
+}

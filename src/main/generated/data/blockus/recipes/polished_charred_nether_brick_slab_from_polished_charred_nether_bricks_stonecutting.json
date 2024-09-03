@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "blockus:polished_charred_nether_bricks"
+  },
+  "result": "blockus:polished_charred_nether_brick_slab"
+}

@@ -1,20 +1,19 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "building",
   "group": "small_logs",
-  "ingredients": [
-    {
-      "item": "minecraft:jungle_log"
-    },
-    {
-      "item": "minecraft:jungle_log"
-    },
-    {
+  "key": {
+    "#": {
       "item": "minecraft:jungle_log"
     }
+  },
+  "pattern": [
+    " # ",
+    "###"
   ],
   "result": {
-    "count": 3,
+    "count": 4,
     "item": "blockus:jungle_small_logs"
-  }
+  },
+  "show_notification": true
 }

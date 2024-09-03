@@ -5,6 +5,7 @@ import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
 import com.brand.blockus.utils.BlockFactory;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.util.DyeColor;
@@ -12,7 +13,7 @@ import net.minecraft.util.DyeColor;
 import java.util.ArrayList;
 
 public class AsphaltBundle {
-    private static final ArrayList<AsphaltBundle> LIST = new ArrayList<>();
+    public static final ArrayList<AsphaltBundle> LIST = new ArrayList<>();
 
     public final Block block;
     public final Block slab;

@@ -3,6 +3,7 @@
   "values": [
     "blockus:honeycomb_bricks",
     "blockus:honeycomb_brick_stairs",
-    "blockus:honeycomb_brick_slab"
+    "blockus:honeycomb_brick_slab",
+    "blockus:honeycomb_brick_wall"
   ]
 }

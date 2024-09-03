@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_weathered_copper_brick_stairs",
+  "ingredients": [
+    {
+      "item": "blockus:weathered_copper_brick_stairs"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "blockus:waxed_weathered_copper_brick_stairs"
+  }
+}

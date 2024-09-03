@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 public class ObsidianPressurePlateBlock extends AbstractPressurePlateBlock {
     public static final BooleanProperty POWERED;
 
-    public ObsidianPressurePlateBlock(AbstractBlock.Settings settings) {
+    public ObsidianPressurePlateBlock(Settings settings) {
         super(settings, BlockSetType.STONE);
         this.setDefaultState(this.stateManager.getDefaultState().with(POWERED, false));
     }

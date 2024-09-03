@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 public class GrateBlock extends TransparentBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED;
 
-    public GrateBlock(AbstractBlock.Settings settings) {
+    public GrateBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false));
     }

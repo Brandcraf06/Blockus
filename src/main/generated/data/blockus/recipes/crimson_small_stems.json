@@ -1,20 +1,19 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "building",
   "group": "small_logs",
-  "ingredients": [
-    {
-      "item": "minecraft:crimson_stem"
-    },
-    {
-      "item": "minecraft:crimson_stem"
-    },
-    {
+  "key": {
+    "#": {
       "item": "minecraft:crimson_stem"
     }
+  },
+  "pattern": [
+    " # ",
+    "###"
   ],
   "result": {
-    "count": 3,
+    "count": 4,
     "item": "blockus:crimson_small_stems"
-  }
+  },
+  "show_notification": true
 }

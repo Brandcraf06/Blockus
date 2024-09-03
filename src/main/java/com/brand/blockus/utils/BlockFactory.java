@@ -1,9 +1,7 @@
 package com.brand.blockus.utils;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.blocks.base.Barrier;
-import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
-import com.brand.blockus.blocks.base.SmallHedgeBlock;
+import com.brand.blockus.blocks.base.*;
 import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
@@ -33,25 +31,13 @@ public class BlockFactory {
         return id.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
     }
 
-    public static boolean isAmethyst(String baseid) {
-        return baseid.contains("amethyst");
-    }
-
-    public static boolean isRedstone(String baseid) {
-        return baseid.contains("redstone");
-    }
-
-    public static boolean isNetherite(String baseid) {
-        return baseid.contains("netherite");
-    }
-
     // Copy
     public static Block createCopy(Block base) {
         return new Block(FabricBlockSettings.copy(base));
     }
 
     public static Block createCopy(Block base, PistonBehavior pistonBehavior) {
-        return new Block(FabricBlockSettings.copyOf(base).pistonBehavior(pistonBehavior));
+        return new Block(FabricBlockSettings.copy(base).pistonBehavior(pistonBehavior));
     }
 
     public static Block createPillarCopy(Block base) {
@@ -70,9 +56,9 @@ public class BlockFactory {
     // Slab
     public static Block createSlab(String baseid, Block base) {
         String slabId = replaceId(baseid) + "_slab";
-        if (isAmethyst(baseid)) {
+        if (BlockChecker.isAmethyst(baseid)) {
             return register(slabId, new AmethystSlabBlock(FabricBlockSettings.copy(base)));
-        } else if (isRedstone(baseid)) {
+        } else if (BlockChecker.isRedstone(baseid)) {
             return register(slabId, new RedstoneSlabBlock(FabricBlockSettings.copy(base)));
         } else {
             return register(slabId, new SlabBlock(FabricBlockSettings.copy(base)));
@@ -85,13 +71,13 @@ public class BlockFactory {
 
     // Stairs
     public static Block createStairs(String baseid, Block base) {
-        String slabId = replaceId(baseid) + "_stairs";
-        if (isAmethyst(baseid)) {
-            return register(slabId, new AmethystStairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
-        } else if (isRedstone(baseid)) {
-            return register(slabId, new RedstoneStairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        String stairsId = replaceId(baseid) + "_stairs";
+        if (BlockChecker.isAmethyst(baseid)) {
+            return register(stairsId, new AmethystStairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
+        } else if (BlockChecker.isRedstone(baseid)) {
+            return register(stairsId, new RedstoneStairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
         } else {
-            return register(slabId, new StairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
+            return register(stairsId, new StairsBlock(base.getDefaultState(), FabricBlockSettings.copy(base)));
         }
     }
 
@@ -101,13 +87,13 @@ public class BlockFactory {
 
     // Wall
     public static Block createWall(String baseid, Block base) {
-        String slabId = replaceId(baseid) + "_wall";
-        if (isAmethyst(baseid)) {
-            return register(slabId, new AmethystWallBlock(FabricBlockSettings.copy(base)));
-        } else if (isRedstone(baseid)) {
-            return register(slabId, new RedstoneWallBlock(FabricBlockSettings.copy(base)));
+        String wallId = replaceId(baseid) + "_wall";
+        if (BlockChecker.isAmethyst(baseid)) {
+            return register(wallId, new AmethystWallBlock(FabricBlockSettings.copy(base)));
+        } else if (BlockChecker.isRedstone(baseid)) {
+            return register(wallId, new RedstoneWallBlock(FabricBlockSettings.copy(base)));
         } else {
-            return register(slabId, new WallBlock(FabricBlockSettings.copy(base)));
+            return register(wallId, new WallBlock(FabricBlockSettings.copy(base)));
         }
     }
 
@@ -120,7 +106,7 @@ public class BlockFactory {
     }
 
     public static Block registerSmallHedge(String id, Block base) {
-        return register(id, new SmallHedgeBlock(FabricBlockSettings.copyOf(base).allowsSpawning(BlockFactory::canSpawnOnLeaves).suffocates(BlockFactory::never).blockVision(BlockFactory::never)));
+        return register(id, new SmallHedgeBlock(FabricBlockSettings.copy(base).allowsSpawning(BlockFactory::canSpawnOnLeaves).suffocates(BlockFactory::never).blockVision(BlockFactory::never)));
     }
 
 
@@ -139,7 +125,7 @@ public class BlockFactory {
 
     // Button
     public static Block createStoneButton(String id, Block base) {
-        return register(id + "_button", new ButtonBlock(FabricBlockSettings.copyOf(base).noCollision().pistonBehavior(PistonBehavior.DESTROY), BlockSetType.STONE, 20, false));
+        return register(id + "_button", new ButtonBlock(FabricBlockSettings.copy(base).noCollision().pistonBehavior(PistonBehavior.DESTROY), BlockSetType.STONE, 20, false));
     }
 
     public static Block registerStoneButton(Block base) {
@@ -179,27 +165,27 @@ public class BlockFactory {
     // Light
 
     public static Block createLampBlock(float hardness, float resistance, BlockSoundGroup sound, int luminance, MapColor color) {
-        return new Block(FabricBlockSettings.create().mapColor(color).strength(hardness, resistance).sounds(sound).luminance(luminance));
+        return new Block(FabricBlockSettings.create().mapColor(color).strength(hardness, resistance).sounds(sound).luminance((state) -> luminance));
     }
 
     public static Block createGlowingObsidian(Block base, int luminance, PistonBehavior pistonBehavior) {
-        return new Block(FabricBlockSettings.copyOf(base).luminance(luminance).pistonBehavior(pistonBehavior));
+        return new Block(FabricBlockSettings.copy(base).luminance((state) -> luminance).pistonBehavior(pistonBehavior));
     }
 
     public static Block createNeonBlock(DyeColor color) {
-        return new Block(FabricBlockSettings.create().mapColor(color).luminance(3).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlockFactory::always).allowsSpawning(BlockFactory::never));
+        return new Block(FabricBlockSettings.create().mapColor(color).luminance((state) -> 3).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlockFactory::always).allowsSpawning(BlockFactory::never));
     }
 
     public static RedstoneLampBlock createRedstoneLamp() {
-        return new RedstoneLampBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).allowsSpawning(BlockFactory::always));
+        return new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP).allowsSpawning(BlockFactory::always));
     }
 
     public static Block createLitRedstoneLamp() {
-        return new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_LAMP).luminance(15).allowsSpawning(BlockFactory::always));
+        return new Block(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP).luminance((state) -> 15).allowsSpawning(BlockFactory::always));
     }
 
     public static Block createFuturneoBlock(MapColor color) {
-        return new Block(FabricBlockSettings.create().mapColor(color).luminance(15).strength(0.5f, 0.5f).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlockFactory::always));
+        return new Block(FabricBlockSettings.create().mapColor(color).luminance((state) -> 15).strength(0.5f, 0.5f).sounds(BlockSoundGroup.GLASS).allowsSpawning(BlockFactory::always));
     }
 
 
@@ -226,7 +212,11 @@ public class BlockFactory {
     }
 
     public static Block createLightCrate() {
-        return new Block(FabricBlockSettings.create().mapColor(Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance(14).instrument(Instrument.BASS).sounds(BlockSoundGroup.WOOD));
+        return new Block(FabricBlockSettings.create().mapColor(Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.5f).luminance((state) -> 14).instrument(Instrument.BASS).sounds(BlockSoundGroup.WOOD));
+    }
+
+    public static Block createWoodenPost(Block base) {
+        return new PostBlock(FabricBlockSettings.copy(base).solid());
     }
 
     // Register
@@ -243,7 +233,7 @@ public class BlockFactory {
 
     public static Block register(String id, Block block) {
         Item.Settings itemSettings = new Item.Settings();
-        if (isNetherite(id)) {
+        if (BlockChecker.isNetherite(id)) {
             itemSettings = itemSettings.fireproof();
         }
         return register(id, block, new BlockItem(block, itemSettings));
@@ -253,8 +243,8 @@ public class BlockFactory {
         return register(id, block, new GlintBlockItem(block, new Item.Settings().rarity(Rarity.UNCOMMON)));
     }
 
-    public static Block registerLegacy(String id, Block block) {
-        return register(id, block, new LegacyBlockItem(block, new Item.Settings()));
+    public static Block registerLegacy(String id, Block block, String version) {
+        return register(id, block, new LegacyBlockItem(block, new Item.Settings(), version));
     }
 
 

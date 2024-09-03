@@ -20,6 +20,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> CHOCOLATE_BLOCKS = register("chocolate_blocks");
     public static final TagKey<Block> COLORED_TILES = register("colored_tiles");
     public static final TagKey<Block> CONCRETE_BLOCKS = register("concrete_blocks");
+    public static final TagKey<Block> COPPER_BLOCKS = register("copper_blocks");
     public static final TagKey<Block> DEEPSLATE_BLOCKS = register("deepslate_blocks");
     public static final TagKey<Block> DIORITE_BLOCKS = register("diorite_blocks");
     public static final TagKey<Block> DRIPSTONE_BLOCKS = register("dripstone_blocks");
@@ -70,6 +71,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> WHITE_OAK_LOGS = register("white_oak_logs");
     public static final TagKey<Block> ALL_WOODEN_MOSAICS = register("all_wooden_mosaics");
     public static final TagKey<Block> ALL_MOSSY_PLANKS = register("all_mossy_planks");
+    public static final TagKey<Block> WOODEN_POSTS = register("wooden_posts");
 
     private BlockusBlockTags() {
     }

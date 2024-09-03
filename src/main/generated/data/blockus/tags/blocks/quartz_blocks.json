@@ -4,6 +4,7 @@
     "blockus:quartz_tiles",
     "blockus:quartz_tile_stairs",
     "blockus:quartz_tile_slab",
+    "blockus:quartz_tile_wall",
     "blockus:quartz_circular_paving"
   ]
 }

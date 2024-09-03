@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_exposed_copper_bricks",
+  "ingredients": [
+    {
+      "item": "blockus:exposed_copper_bricks"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "blockus:waxed_exposed_copper_bricks"
+  }
+}

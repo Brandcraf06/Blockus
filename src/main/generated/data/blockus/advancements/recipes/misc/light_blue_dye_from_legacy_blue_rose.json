@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_legacy_blue_rose": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:legacy_blue_rose"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:light_blue_dye_from_legacy_blue_rose"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_legacy_blue_rose",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:light_blue_dye_from_legacy_blue_rose"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:acacia_planks_from_stripped_acacia_post"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wooden_post": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blockus:stripped_acacia_post"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wooden_post",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:acacia_planks_from_stripped_acacia_post"
+    ]
+  },
+  "sends_telemetry_event": false
+}
