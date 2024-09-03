@@ -17,17 +17,14 @@ public class AmethystLampBlock extends Block {
         this.setDefaultState(this.stateManager.getDefaultState().with(POWER, 0));
     }
 
-    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(POWER);
     }
 
-    @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState().with(POWER, Math.min(15, ctx.getWorld().getReceivedRedstonePower(ctx.getBlockPos())));
     }
 
-    @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
         if (!world.isClient) {
             int power = Math.min(15, world.getReceivedRedstonePower(pos));
@@ -35,5 +32,13 @@ public class AmethystLampBlock extends Block {
                 world.setBlockState(pos, state.with(POWER, power), Block.NOTIFY_ALL);
             }
         }
+    }
+
+    protected boolean hasComparatorOutput(BlockState state) {
+        return true;
+    }
+
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return state.get(POWER);
     }
 }

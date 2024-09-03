@@ -16,6 +16,7 @@
   * Java one is crafted with 4 Poppies and gives 2, PE one is crafted with 2 Legacy Roses & gives 2.
 * Added **Amethyst Lamp**.
   * Its light level is determined by the redstone power.
+  * A comparator can read the lamp power and output an identical signal strength.
   * Crafted with 4 Amethysts Shards around 1 Redstone Dust.
 * Added **Amethyst Lantern** & **Amethyst Lantern Block**.
 * Added **Polished (Red/Teal/Charred) Nether Brick Stairs & Slab**
