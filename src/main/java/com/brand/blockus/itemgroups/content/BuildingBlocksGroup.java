@@ -314,18 +314,18 @@ public class BuildingBlocksGroup {
 
             addBssw(entries, NETHER_TILES);
 
-            entries.add(POLISHED_NETHER_BRICKS);
+            addBssw(entries, POLISHED_NETHER_BRICKS);
             entries.add(HERRINGBONE_NETHER_BRICKS);
             entries.add(NETHER_BRICK_PILLAR);
-            entries.add(POLISHED_RED_NETHER_BRICKS);
+            addBssw(entries, POLISHED_RED_NETHER_BRICKS);
             entries.add(HERRINGBONE_RED_NETHER_BRICKS);
             entries.add(RED_NETHER_BRICK_PILLAR);
             addBssw(entries, CHARRED_NETHER_BRICKS);
-            entries.add(POLISHED_CHARRED_NETHER_BRICKS);
+            addBssw(entries, POLISHED_CHARRED_NETHER_BRICKS);
             entries.add(HERRINGBONE_CHARRED_NETHER_BRICKS);
             entries.add(CHARRED_NETHER_BRICK_PILLAR);
             addBssw(entries, TEAL_NETHER_BRICKS);
-            entries.add(POLISHED_TEAL_NETHER_BRICKS);
+            addBssw(entries, POLISHED_TEAL_NETHER_BRICKS);
             entries.add(HERRINGBONE_TEAL_NETHER_BRICKS);
             entries.add(TEAL_NETHER_BRICK_PILLAR);
 
@@ -388,6 +388,7 @@ public class BuildingBlocksGroup {
 
             entries.add(LANTERN_BLOCK);
             entries.add(SOUL_LANTERN_BLOCK);
+            entries.add(AMETHYST_LANTERN_BLOCK);
 
             entries.add(CAUTION_BLOCK);
             entries.add(CAUTION_BARRIER);

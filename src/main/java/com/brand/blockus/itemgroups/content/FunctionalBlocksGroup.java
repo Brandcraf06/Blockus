@@ -1,63 +1,66 @@
 package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
-import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.BSSWBundle;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
+import static com.brand.blockus.registry.content.BlockusBlocks.*;
+
 public class FunctionalBlocksGroup {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_FUNCTIONAL_BLOCKS).register((entries) -> {
-            entries.add(BlockusBlocks.REDSTONE_LANTERN);
+            entries.add(AMETHYST_LANTERN);
+            entries.add(REDSTONE_LANTERN);
 
-            entries.add(BlockusBlocks.LANTERN_BLOCK);
-            entries.add(BlockusBlocks.SOUL_LANTERN_BLOCK);
-            entries.add(BlockusBlocks.REDSTONE_LANTERN_BLOCK);
+            entries.add(LANTERN_BLOCK);
+            entries.add(SOUL_LANTERN_BLOCK);
+            entries.add(AMETHYST_LANTERN_BLOCK);
+            entries.add(REDSTONE_LANTERN_BLOCK);
 
-            entries.add(BlockusBlocks.REDSTONE_O_LANTERN);
-            entries.add(BlockusBlocks.REDSTONE_SAND);
-            BuildingBlocksGroup.addBssw(entries, BlockusBlocks.REDSTONE_BRICKS);
+            entries.add(REDSTONE_O_LANTERN);
+            entries.add(REDSTONE_SAND);
+            BuildingBlocksGroup.addBssw(entries, REDSTONE_BRICKS);
 
-            entries.add(BlockusBlocks.AMETHYST_LAMP);
+            entries.add(AMETHYST_LAMP);
 
-            entries.add(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE);
+            entries.add(OBSIDIAN_PRESSURE_PLATE);
 
-            entries.add(BlockusBlocks.GOLDEN_CHAIN);
+            entries.add(GOLDEN_CHAIN);
 
-            entries.add(BlockusBlocks.BLAZE_LANTERN);
+            entries.add(BLAZE_LANTERN);
 
-            entries.add(BlockusBlocks.WHITE_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.GRAY_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.BROWN_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.RED_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.ORANGE_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.YELLOW_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.LIME_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.GREEN_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.CYAN_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.BLUE_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.PURPLE_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.PINK_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.RAINBOW_LAMP);
-            entries.add(BlockusBlocks.RAINBOW_GLOWSTONE);
-            entries.add(BlockusBlocks.GLOWING_OBSIDIAN);
+            entries.add(WHITE_REDSTONE_LAMP);
+            entries.add(LIGHT_GRAY_REDSTONE_LAMP);
+            entries.add(GRAY_REDSTONE_LAMP);
+            entries.add(BROWN_REDSTONE_LAMP);
+            entries.add(RED_REDSTONE_LAMP);
+            entries.add(ORANGE_REDSTONE_LAMP);
+            entries.add(YELLOW_REDSTONE_LAMP);
+            entries.add(LIME_REDSTONE_LAMP);
+            entries.add(GREEN_REDSTONE_LAMP);
+            entries.add(CYAN_REDSTONE_LAMP);
+            entries.add(LIGHT_BLUE_REDSTONE_LAMP);
+            entries.add(BLUE_REDSTONE_LAMP);
+            entries.add(PURPLE_REDSTONE_LAMP);
+            entries.add(MAGENTA_REDSTONE_LAMP);
+            entries.add(PINK_REDSTONE_LAMP);
+            entries.add(RAINBOW_LAMP);
+            entries.add(RAINBOW_GLOWSTONE);
+            entries.add(GLOWING_OBSIDIAN);
 
-            entries.add(BlockusBlocks.LARGE_FLOWER_POT);
+            entries.add(LARGE_FLOWER_POT);
 
-            entries.add(BlockusBlocks.TINTED_BEVELED_GLASS);
+            entries.add(TINTED_BEVELED_GLASS);
 
-            entries.add(BlockusBlocks.WHITE_OAK.sign);
-            entries.add(BlockusBlocks.CHARRED.sign);
-            entries.add(BlockusBlocks.RAW_BAMBOO.sign);
-            entries.add(BlockusBlocks.WHITE_OAK.hanging_sign);
-            entries.add(BlockusBlocks.CHARRED.hanging_sign);
-            entries.add(BlockusBlocks.RAW_BAMBOO.hanging_sign);
+            entries.add(WHITE_OAK.sign);
+            entries.add(CHARRED.sign);
+            entries.add(RAW_BAMBOO.sign);
+            entries.add(WHITE_OAK.hanging_sign);
+            entries.add(CHARRED.hanging_sign);
+            entries.add(RAW_BAMBOO.hanging_sign);
             entries.add(BlockusEntities.WHITE_OAK_BOAT.getItem());
             entries.add(BlockusEntities.CHARRED_BOAT.getItem());
             entries.add(BlockusEntities.RAW_BAMBOO_RAFT.getItem());

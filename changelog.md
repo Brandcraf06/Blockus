@@ -10,15 +10,17 @@
   * Copper Bricks is crafted with 4 Cut Copper of the desired oxidation or waxed.
   * Copper Tuff Bricks is crafted with 2 Copper Ingots & 2 Tuff Bricks.
     * Copper Tuff Bricks oxidation stages are only available with patience.
-* Added **Amethyst Lamp**.
-  * Its light level is determined by the redstone power.
-  * Crafted with 4 Amethysts Shards around 1 Redstone Dust.
 * Added both **Legacy Roses** (Java & PE).
   * Unlike original version, Legacy Rose from PE give light blue dye.
   * Like original version, Legacy Roses gives 2 dyes instead of one.
   * Java one is crafted with 4 Poppies and gives 2, PE one is crafted with 2 Legacy Roses & gives 2.
+* Added **Amethyst Lamp**.
+  * Its light level is determined by the redstone power.
+  * Crafted with 4 Amethysts Shards around 1 Redstone Dust.
+* Added **Amethyst Lantern** & **Amethyst Lantern Block**.
+* Added **Polished (Red/Teal/Charred) Nether Brick Stairs & Slab**
+* Added **Tuff Tiles**.
 * Added **Mossy Dripstone Bricks**.
-* Added **Tuff Bricks**.
 * Changed Polished Dripstone, Dripstone Bricks, Cracked Dripstone Bricks, Chiseled Dripstone textures.
   * Fixed Dripstone Pillar side texture.
 * Changed Glowing Obsidian texture.
@@ -27,6 +29,8 @@
 * Added the version on which the block/texture is based in the legacy blocks tooltip
 * Tweaked Cherry & Mangrove Small Logs textures.
 * Removed unused barrels translation strings.
+* Removed a recipe for making chocolate bricks with chocolate bricks in a stonecutter
+* Fixed lantern blocks not pushable by pistons
 * Fixed fireproof timber frames, wooden grates & lattices items.
 
 

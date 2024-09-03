@@ -223,8 +223,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BLAZE_LANTERN = register("blaze_lantern", createLampBlock(0.3F, 0.3F, BlockSoundGroup.GLASS, 15, MapColor.ORANGE));
 
     // Nether Bricks
-    public static final Block POLISHED_NETHER_BRICKS = register("polished_nether_bricks", createCopy(Blocks.NETHER_BRICKS));
-    public static final Block POLISHED_RED_NETHER_BRICKS = register("polished_red_nether_bricks", createCopy(Blocks.RED_NETHER_BRICKS));
+    public static final BSSWBundle POLISHED_NETHER_BRICKS = new BSSWBundle("polished_nether_bricks", Blocks.NETHER_BRICKS, false);
+    public static final BSSWBundle POLISHED_RED_NETHER_BRICKS = new BSSWBundle("polished_red_nether_bricks", Blocks.RED_NETHER_BRICKS, false);
     public static final Block HERRINGBONE_NETHER_BRICKS = register("herringbone_nether_bricks", createCopy(Blocks.NETHER_BRICKS));
     public static final Block HERRINGBONE_RED_NETHER_BRICKS = register("herringbone_red_nether_bricks", createCopy(Blocks.RED_NETHER_BRICKS));
     public static final Block NETHER_BRICK_PILLAR = registerPillar(Blocks.NETHER_BRICKS);
@@ -233,13 +233,13 @@ public class BlockusBlocks extends BlockFactory {
 
     // Charred Nether Bricks
     public static final BSSWBundle CHARRED_NETHER_BRICKS = new BSSWBundle("charred_nether_bricks", Blocks.NETHER_BRICKS, MapColor.BLACK);
-    public static final Block POLISHED_CHARRED_NETHER_BRICKS = register("polished_charred_nether_bricks", createCopy(BlockusBlocks.CHARRED_NETHER_BRICKS.block));
+    public static final BSSWBundle POLISHED_CHARRED_NETHER_BRICKS = new BSSWBundle("polished_charred_nether_bricks", BlockusBlocks.CHARRED_NETHER_BRICKS.block, false);
     public static final Block HERRINGBONE_CHARRED_NETHER_BRICKS = register("herringbone_charred_nether_bricks", createCopy(BlockusBlocks.CHARRED_NETHER_BRICKS.block));
     public static final Block CHARRED_NETHER_BRICK_PILLAR = registerPillar(BlockusBlocks.CHARRED_NETHER_BRICKS.block);
 
     // Teal Nether Bricks
     public static final BSSWBundle TEAL_NETHER_BRICKS = new BSSWBundle("teal_nether_bricks", Blocks.NETHER_BRICKS, MapColor.CYAN);
-    public static final Block POLISHED_TEAL_NETHER_BRICKS = register("polished_teal_nether_bricks", createCopy(BlockusBlocks.TEAL_NETHER_BRICKS.block));
+    public static final BSSWBundle POLISHED_TEAL_NETHER_BRICKS = new BSSWBundle("polished_teal_nether_bricks", BlockusBlocks.TEAL_NETHER_BRICKS.block, false);
     public static final Block HERRINGBONE_TEAL_NETHER_BRICKS = register("herringbone_teal_nether_bricks", createCopy(BlockusBlocks.TEAL_NETHER_BRICKS.block));
     public static final Block TEAL_NETHER_BRICK_PILLAR = registerPillar(BlockusBlocks.TEAL_NETHER_BRICKS.block);
 
@@ -820,12 +820,14 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block GOLDEN_CHAIN = register("golden_chain", new ChainBlock(AbstractBlock.Settings.copy(Blocks.CHAIN)));
 
     // Lantern Blocks
-    public static final Block LANTERN_BLOCK = register("lantern_block", createCopy(Blocks.LANTERN));
-    public static final Block SOUL_LANTERN_BLOCK = register("soul_lantern_block", createCopy(Blocks.SOUL_LANTERN));
-    public static final Block REDSTONE_LANTERN = register("redstone_lantern", new RedstoneLantern(AbstractBlock.Settings.copy(Blocks.LANTERN).luminance((state) -> 7).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block REDSTONE_LANTERN_BLOCK = register("redstone_lantern_block", new RedstoneBlock(AbstractBlock.Settings.copy(REDSTONE_LANTERN).luminance((state) -> 7)));
-    public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN).luminance((state) -> 10).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block REDSTONE_O_LANTERN = register("redstone_o_lantern", new RedstonePumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN).luminance((state) -> 7).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block LANTERN_BLOCK = register("lantern_block", createCopy(Blocks.LANTERN, PistonBehavior.NORMAL));
+    public static final Block SOUL_LANTERN_BLOCK = register("soul_lantern_block", createCopy(Blocks.SOUL_LANTERN, PistonBehavior.NORMAL));
+    public static final Block AMETHYST_LANTERN = register("amethyst_lantern", new LanternBlock(AbstractBlock.Settings.copy(Blocks.LANTERN)));
+    public static final Block AMETHYST_LANTERN_BLOCK = register("amethyst_lantern_block", createCopy(Blocks.LANTERN, PistonBehavior.NORMAL));
+    public static final Block REDSTONE_LANTERN = register("redstone_lantern", new RedstoneLantern(AbstractBlock.Settings.copy(Blocks.LANTERN).luminance((state) -> 7)));
+    public static final Block REDSTONE_LANTERN_BLOCK = register("redstone_lantern_block", new RedstoneBlock(AbstractBlock.Settings.copy(REDSTONE_LANTERN).luminance((state) -> 7).pistonBehavior(PistonBehavior.NORMAL)));
+    public static final Block SOUL_O_LANTERN = register("soul_o_lantern", new CarvedPumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN).luminance((state) -> 10)));
+    public static final Block REDSTONE_O_LANTERN = register("redstone_o_lantern", new RedstonePumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN).luminance((state) -> 7)));
     public static final Block AMETHYST_LAMP = register("amethyst_lamp", new AmethystLampBlock(AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK)));
 
     // Barriers

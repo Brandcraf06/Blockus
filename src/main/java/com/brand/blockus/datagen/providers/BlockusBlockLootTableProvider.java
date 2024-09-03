@@ -115,6 +115,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             CHISELED_AMETHYST,
             AMETHYST_PILLAR,
             AMETHYST_LAMP,
+            AMETHYST_LANTERN,
+            AMETHYST_LANTERN_BLOCK,
 
             // Sculk
             CHISELED_SCULK_BRICKS,
@@ -355,7 +357,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             POLISHED_BASALT_PRESSURE_PLATE,
             POLISHED_BLACKSTONE_CIRCULAR_PAVING,
             POLISHED_BLACKSTONE_PILLAR,
-            POLISHED_CHARRED_NETHER_BRICKS,
             POLISHED_DEEPSLATE_BUTTON,
             POLISHED_DEEPSLATE_PRESSURE_PLATE,
             POLISHED_DIORITE_BUTTON,
@@ -366,11 +367,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             POLISHED_GRANITE_BUTTON,
             POLISHED_GRANITE_PILLAR,
             POLISHED_GRANITE_PRESSURE_PLATE,
-            POLISHED_NETHER_BRICKS,
             POLISHED_NETHERRACK_BUTTON,
             POLISHED_NETHERRACK_PRESSURE_PLATE,
-            POLISHED_RED_NETHER_BRICKS,
-            POLISHED_TEAL_NETHER_BRICKS,
             POLISHED_TUFF_BUTTON,
             POLISHED_TUFF_PRESSURE_PLATE,
             POTATO_CRATE,

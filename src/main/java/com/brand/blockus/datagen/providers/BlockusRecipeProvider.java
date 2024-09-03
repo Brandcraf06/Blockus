@@ -330,13 +330,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerPressurePlateButtonRecipe(exporter, POLISHED_NETHERRACK_PRESSURE_PLATE, POLISHED_NETHERRACK_BUTTON, POLISHED_NETHERRACK.block);
 
         // Nether Bricks
-        offerStonecuttingRecipe(exporter, POLISHED_NETHER_BRICKS, Blocks.NETHER_BRICKS);
-        offerPolishedStoneRecipe(exporter, POLISHED_NETHER_BRICKS, Blocks.NETHER_BRICKS);
+        offerBsswCuttingRecipe(exporter, POLISHED_NETHER_BRICKS, Blocks.NETHER_BRICKS);
+        offerPolishedStoneRecipe(exporter, POLISHED_NETHER_BRICKS.block, Blocks.NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, NETHER_BRICK_PILLAR, Blocks.NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, HERRINGBONE_NETHER_BRICKS, Blocks.NETHER_BRICKS);
 
-        offerStonecuttingRecipe(exporter, POLISHED_RED_NETHER_BRICKS, Blocks.RED_NETHER_BRICKS);
-        offerPolishedStoneRecipe(exporter, POLISHED_RED_NETHER_BRICKS, Blocks.RED_NETHER_BRICKS);
+        offerBsswCuttingRecipe(exporter, POLISHED_RED_NETHER_BRICKS, Blocks.RED_NETHER_BRICKS);
+        offerPolishedStoneRecipe(exporter, POLISHED_RED_NETHER_BRICKS.block, Blocks.RED_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, RED_NETHER_BRICK_PILLAR, Blocks.RED_NETHER_BRICKS);
         offerStonecuttingRecipe(exporter, HERRINGBONE_RED_NETHER_BRICKS, Blocks.RED_NETHER_BRICKS);
 
@@ -345,18 +345,18 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
         // Charred Nether Bricks
         offerBsswCuttingRecipe(exporter, CHARRED_NETHER_BRICKS);
-        offerStonecuttingRecipe(exporter, POLISHED_CHARRED_NETHER_BRICKS, CHARRED_NETHER_BRICKS.block);
+        offerBsswCuttingRecipe(exporter, POLISHED_CHARRED_NETHER_BRICKS, CHARRED_NETHER_BRICKS.block);
+        offerPolishedStoneRecipe(exporter, POLISHED_CHARRED_NETHER_BRICKS.block, CHARRED_NETHER_BRICKS.block);
         offerStonecuttingRecipe(exporter, HERRINGBONE_CHARRED_NETHER_BRICKS, CHARRED_NETHER_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHARRED_NETHER_BRICK_PILLAR, CHARRED_NETHER_BRICKS.block);
-        offerPolishedStoneRecipe(exporter, POLISHED_CHARRED_NETHER_BRICKS, CHARRED_NETHER_BRICKS.block);
         createEnclosedRecipe(CHARRED_NETHER_BRICKS.block, Ingredient.ofItems(Blocks.NETHER_BRICKS), Items.FIRE_CHARGE).criterion(hasItem(Items.FIRE_CHARGE), conditionsFromItem(Items.FIRE_CHARGE)).criterion(hasItem(Blocks.NETHER_BRICKS), conditionsFromItem(Blocks.NETHER_BRICKS)).offerTo(exporter);
 
         // Teal Nether Bricks
         offerBsswCuttingRecipe(exporter, TEAL_NETHER_BRICKS);
-        offerStonecuttingRecipe(exporter, POLISHED_TEAL_NETHER_BRICKS, TEAL_NETHER_BRICKS.block);
+        offerBsswCuttingRecipe(exporter, POLISHED_TEAL_NETHER_BRICKS, TEAL_NETHER_BRICKS.block);
+        offerPolishedStoneRecipe(exporter, POLISHED_TEAL_NETHER_BRICKS.block, TEAL_NETHER_BRICKS.block);
         offerStonecuttingRecipe(exporter, HERRINGBONE_TEAL_NETHER_BRICKS, TEAL_NETHER_BRICKS.block);
         offerStonecuttingRecipe(exporter, TEAL_NETHER_BRICK_PILLAR, TEAL_NETHER_BRICKS.block);
-        offerPolishedStoneRecipe(exporter, POLISHED_TEAL_NETHER_BRICKS, TEAL_NETHER_BRICKS.block);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TEAL_NETHER_BRICKS.block).input('#', BlockusItemTags.WARPED_NETHER_GRASS).input('X', Items.NETHER_BRICK).pattern("#X").pattern("X#").group("teal_nether_bricks").criterion("has_warped_grass", conditionsFromTag(BlockusItemTags.WARPED_NETHER_GRASS)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TEAL_NETHER_BRICKS.block, 2).input(Blocks.WARPED_WART_BLOCK).input(Items.NETHER_BRICKS).group("teal_nether_bricks").criterion(hasItem(Blocks.WARPED_WART_BLOCK), conditionsFromItem(Blocks.WARPED_WART_BLOCK)).offerTo(exporter, convertBetween(TEAL_NETHER_BRICKS.block, Blocks.WARPED_WART_BLOCK));
 
@@ -852,10 +852,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, GOLDEN_CHAIN).input('X', Items.GOLD_INGOT).input('#', Items.GOLD_NUGGET).pattern("#").pattern("X").pattern("#").criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT)).offerTo(exporter);
 
         // Lantern Blocks
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, LANTERN_BLOCK).input('X', Blocks.LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(Blocks.LANTERN), conditionsFromItem(Blocks.LANTERN)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, SOUL_LANTERN_BLOCK).input('X', Blocks.SOUL_LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(Blocks.SOUL_LANTERN), conditionsFromItem(Blocks.SOUL_LANTERN)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, REDSTONE_LANTERN_BLOCK).input('X', REDSTONE_LANTERN).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(REDSTONE_LANTERN), conditionsFromItem(REDSTONE_LANTERN)).offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, REDSTONE_LANTERN).input('#', Items.REDSTONE_TORCH).input('X', Items.IRON_NUGGET).pattern("XXX").pattern("X#X").pattern("XXX").criterion("has_redstone_torch", conditionsFromItem(Items.REDSTONE_TORCH)).offerTo(exporter);
+
+        offerLanternBlockRecipe(exporter, LANTERN_BLOCK, Blocks.LANTERN);
+        offerLanternBlockRecipe(exporter, SOUL_LANTERN_BLOCK, Blocks.SOUL_LANTERN);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, AMETHYST_LANTERN).input('#', Items.TORCH).input('A', Items.AMETHYST_SHARD).input('X', Items.IRON_NUGGET).pattern("XXX").pattern("XAX").pattern("X#X").criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD)).offerTo(exporter);
+        offerLanternBlockRecipe(exporter, AMETHYST_LANTERN_BLOCK, AMETHYST_LANTERN);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, REDSTONE_LANTERN).input('#', Items.REDSTONE_TORCH).input('X', Items.IRON_NUGGET).pattern("XXX").pattern("X#X").pattern("XXX").criterion(hasItem(Items.REDSTONE_TORCH), conditionsFromItem(Items.REDSTONE_TORCH)).offerTo(exporter);
+        offerLanternBlockRecipe(exporter, REDSTONE_LANTERN_BLOCK, REDSTONE_LANTERN);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, SOUL_O_LANTERN).input('X', Blocks.CARVED_PUMPKIN).input('#', Blocks.SOUL_TORCH).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, REDSTONE_O_LANTERN).input('X', Blocks.CARVED_PUMPKIN).input('#', Blocks.REDSTONE_TORCH).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).criterion(hasItem(Blocks.REDSTONE_TORCH), conditionsFromItem(Blocks.REDSTONE_TORCH)).offerTo(exporter);
 
@@ -916,6 +919,10 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, LEGACY_BLUE_ROSE, 2).input('#', LEGACY_ROSE).pattern("##").criterion(hasItem(LEGACY_ROSE), conditionsFromItem(LEGACY_ROSE)).offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, LEGACY_FIRST_GRASS_BLOCK, 4).input('#', LEGACY_GRASS_BLOCK).pattern("##").pattern("##").criterion(hasItem(LEGACY_GRASS_BLOCK), conditionsFromItem(LEGACY_GRASS_BLOCK)).offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, LEGACY_PLANKS, 4).input(LEGACY_LOG).group("planks").criterion("has_logs", conditionsFromItem(LEGACY_LOG)).offerTo(exporter);
+    }
+
+    private void offerLanternBlockRecipe(RecipeExporter exporter, Block output, Block lantern) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output).input('X', lantern).input('#', Items.IRON_NUGGET).pattern(" # ").pattern("#X#").pattern(" # ").criterion(hasItem(lantern), conditionsFromItem(lantern)).offerTo(exporter);
     }
 
     public static void offerWaxingRecipes(RecipeExporter exporter, Block unwaxed, Block waxed) {
@@ -1117,13 +1124,17 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
     public static void offerBsswCuttingRecipe(RecipeExporter exporter, BSSWBundle bsswBundle, ItemConvertible... ingredients) {
         // For block, stairs, slab and wall (if exists) in BsswBundle.
-        offerStonecuttingRecipe(exporter, bsswBundle.block,  ingredients);
-        offerStonecuttingRecipe(exporter, bsswBundle.stairs, ingredients);
-        offerStonecuttingRecipe(exporter, bsswBundle.slab, 2, ingredients);
+        if (ingredients != null) {
+            offerStonecuttingRecipe(exporter, bsswBundle.block, ingredients);
+            offerStonecuttingRecipe(exporter, bsswBundle.stairs, ingredients);
+            offerStonecuttingRecipe(exporter, bsswBundle.slab, 2, ingredients);
+            if (bsswBundle.wall != null) {
+                offerStonecuttingRecipe(exporter, bsswBundle.wall, ingredients);
+            }
+        }
         offerStonecuttingRecipe(exporter, bsswBundle.stairs, bsswBundle.block);
         offerStonecuttingRecipe(exporter, bsswBundle.slab, 2, bsswBundle.block);
         if (bsswBundle.wall != null) {
-            offerStonecuttingRecipe(exporter, bsswBundle.wall, ingredients);
             offerStonecuttingRecipe(exporter, bsswBundle.wall, bsswBundle.block);
         }
     }

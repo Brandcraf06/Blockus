@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:teal_nether_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_teal_nether_brick_stairs"
+  }
+}

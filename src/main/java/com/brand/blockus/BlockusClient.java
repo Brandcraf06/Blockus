@@ -85,6 +85,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_PITCHER_PLANT.block,
             BlockusBlocks.BLACKSTONE_DOOR,
             BlockusBlocks.BLACKSTONE_TRAPDOOR,
+            BlockusBlocks.AMETHYST_LANTERN,
             BlockusBlocks.REDSTONE_LANTERN,
             BlockusBlocks.LEGACY_ROSE,
             BlockusBlocks.POTTED_LEGACY_ROSE,

@@ -1,7 +1,11 @@
 {
   "values": [
     "blockus:polished_nether_bricks",
+    "blockus:polished_nether_brick_stairs",
+    "blockus:polished_nether_brick_slab",
     "blockus:polished_red_nether_bricks",
+    "blockus:polished_red_nether_brick_stairs",
+    "blockus:polished_red_nether_brick_slab",
     "blockus:herringbone_nether_bricks",
     "blockus:herringbone_red_nether_bricks",
     "blockus:nether_brick_pillar",
@@ -11,6 +15,8 @@
     "blockus:charred_nether_brick_slab",
     "blockus:charred_nether_brick_wall",
     "blockus:polished_charred_nether_bricks",
+    "blockus:polished_charred_nether_brick_stairs",
+    "blockus:polished_charred_nether_brick_slab",
     "blockus:herringbone_charred_nether_bricks",
     "blockus:charred_nether_brick_pillar",
     "blockus:teal_nether_bricks",
@@ -18,6 +24,8 @@
     "blockus:teal_nether_brick_slab",
     "blockus:teal_nether_brick_wall",
     "blockus:polished_teal_nether_bricks",
+    "blockus:polished_teal_nether_brick_stairs",
+    "blockus:polished_teal_nether_brick_slab",
     "blockus:herringbone_teal_nether_bricks",
     "blockus:teal_nether_brick_pillar"
   ]

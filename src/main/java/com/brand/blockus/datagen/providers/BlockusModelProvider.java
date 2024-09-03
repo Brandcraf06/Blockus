@@ -250,19 +250,15 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Nether Bricks
         this.registerPillar(modelGenerator, BlockusBlocks.NETHER_BRICK_PILLAR);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.POLISHED_NETHER_BRICKS);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_NETHER_BRICKS);
 
         this.registerPillar(modelGenerator, BlockusBlocks.RED_NETHER_BRICK_PILLAR);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.POLISHED_RED_NETHER_BRICKS);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_RED_NETHER_BRICKS);
 
         this.registerPillar(modelGenerator, BlockusBlocks.CHARRED_NETHER_BRICK_PILLAR);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.POLISHED_CHARRED_NETHER_BRICKS);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_CHARRED_NETHER_BRICKS);
 
         this.registerPillar(modelGenerator, BlockusBlocks.TEAL_NETHER_BRICK_PILLAR);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.POLISHED_TEAL_NETHER_BRICKS);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_TEAL_NETHER_BRICKS);
 
         // Prismarine
@@ -509,6 +505,8 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Lantern Blocks
         this.registerCubeColumn(modelGenerator, BlockusBlocks.LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
+        modelGenerator.registerLantern(BlockusBlocks.AMETHYST_LANTERN);
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.AMETHYST_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
         modelGenerator.registerLantern(BlockusBlocks.REDSTONE_LANTERN);
         this.registerCubeColumn(modelGenerator, BlockusBlocks.REDSTONE_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
         this.registerCubeColumn(modelGenerator, BlockusBlocks.SOUL_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);

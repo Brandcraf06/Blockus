@@ -319,19 +319,19 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBssw(translationBuilder, BlockusBlocks.NETHER_TILES, "Nether Tiles");
         translationBuilder.add(BlockusBlocks.NETHER_BRICK_PILLAR, "Nether Brick Pillar");
         translationBuilder.add(BlockusBlocks.RED_NETHER_BRICK_PILLAR, "Red Nether Brick Pillar");
-        translationBuilder.add(BlockusBlocks.POLISHED_NETHER_BRICKS, "Polished Nether Bricks");
-        translationBuilder.add(BlockusBlocks.POLISHED_RED_NETHER_BRICKS, "Polished Red Nether Bricks");
+        addBssw(translationBuilder, BlockusBlocks.POLISHED_NETHER_BRICKS, "Polished Nether Bricks");
+        addBssw(translationBuilder, BlockusBlocks.POLISHED_RED_NETHER_BRICKS, "Polished Red Nether Bricks");
         translationBuilder.add(BlockusBlocks.HERRINGBONE_NETHER_BRICKS, "Herringbone Nether Bricks");
         translationBuilder.add(BlockusBlocks.HERRINGBONE_RED_NETHER_BRICKS, "Herringbone Red Nether Bricks");
 
         addBssw(translationBuilder, BlockusBlocks.CHARRED_NETHER_BRICKS, "Charred Nether Bricks");
         translationBuilder.add(BlockusBlocks.CHARRED_NETHER_BRICK_PILLAR, "Charred Nether Brick Pillar");
-        translationBuilder.add(BlockusBlocks.POLISHED_CHARRED_NETHER_BRICKS, "Polished Charred Nether Bricks");
+        addBssw(translationBuilder, BlockusBlocks.POLISHED_CHARRED_NETHER_BRICKS, "Polished Charred Nether Bricks");
         translationBuilder.add(BlockusBlocks.HERRINGBONE_CHARRED_NETHER_BRICKS, "Herringbone Charred Nether Bricks");
 
         addBssw(translationBuilder, BlockusBlocks.TEAL_NETHER_BRICKS, "Teal Nether Bricks");
         translationBuilder.add(BlockusBlocks.TEAL_NETHER_BRICK_PILLAR, "Teal Nether Brick Pillar");
-        translationBuilder.add(BlockusBlocks.POLISHED_TEAL_NETHER_BRICKS, "Polished Teal Nether Bricks");
+        addBssw(translationBuilder, BlockusBlocks.POLISHED_TEAL_NETHER_BRICKS, "Polished Teal Nether Bricks");
         translationBuilder.add(BlockusBlocks.HERRINGBONE_TEAL_NETHER_BRICKS, "Herringbone Teal Nether Bricks");
 
         // Quartz
@@ -727,6 +727,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.LANTERN_BLOCK, "Lantern Block");
         translationBuilder.add(BlockusBlocks.SOUL_LANTERN_BLOCK, "Soul Lantern Block");
         translationBuilder.add(BlockusBlocks.SOUL_O_LANTERN, "Soul o'Lantern");
+        translationBuilder.add(BlockusBlocks.AMETHYST_LANTERN, "Amethyst Lantern");
+        translationBuilder.add(BlockusBlocks.AMETHYST_LANTERN_BLOCK, "Amethyst Lantern Block");
         translationBuilder.add(BlockusBlocks.REDSTONE_LANTERN, "Redstone Lantern");
         translationBuilder.add(BlockusBlocks.REDSTONE_LANTERN_BLOCK, "Redstone Lantern Block");
         translationBuilder.add(BlockusBlocks.REDSTONE_O_LANTERN, "Redstone o'Lantern");
