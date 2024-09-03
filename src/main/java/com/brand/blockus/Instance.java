@@ -24,9 +24,11 @@ public class Instance {
 // Burning
 
         // General
+        FlammableBlockRegistry.getDefaultInstance().add(WOODEN_FRAME, 30, 60);
         FuelRegistry.INSTANCE.add(Items.DRIED_KELP, 200);
         FuelRegistry.INSTANCE.add(LEGACY_COAL_BLOCK, 16000);
         FuelRegistry.INSTANCE.add(CHARCOAL_BLOCK, 16000);
+        FuelRegistry.INSTANCE.add(WOODEN_FRAME, 300);
 
         // Small hedges
         FlammableBlockRegistry.getDefaultInstance().add(OAK_SMALL_HEDGE, 30, 60);
