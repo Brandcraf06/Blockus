@@ -441,6 +441,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final TimberFrameBundle WARPED_TIMBER_FRAME = new TimberFrameBundle(Blocks.WARPED_PLANKS, false);
     public static final TimberFrameBundle CRIMSON_TIMBER_FRAME = new TimberFrameBundle(Blocks.CRIMSON_PLANKS, false);
     public static final TimberFrameBundle CHARRED_TIMBER_FRAME = new TimberFrameBundle(BlockusBlocks.CHARRED.planks, false);
+    public static final Block WOODEN_FRAME = register("wooden_frame", createWoodenPane());
 
     // Small Hedges
     public static final Block OAK_SMALL_HEDGE = registerSmallHedge("oak_small_hedge", Blocks.OAK_LEAVES);

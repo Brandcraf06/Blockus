@@ -664,13 +664,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
                 .add(copperBundle.walls());
         }
 
-        for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type, BlockChecker.FLAMMABLE_WOODS)) {
-                this.getOrCreateTagBuilder(Identifier.of("c", "planks_that_burn"))
-                    .add(block.block);
-            }
-        }
-
         this.getOrCreateTagBuilder(Identifier.of("c", "planks_that_burn"))
             .add(Blocks.OAK_PLANKS)
             .add(Blocks.SPRUCE_PLANKS)
@@ -705,6 +698,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_PLANKS)
             .add(SOUL_O_LANTERN)
             .add(REDSTONE_O_LANTERN)
+            .add(WOODEN_FRAME)
             .addTag(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
             .addTag(BlockusBlockTags.TIMBER_FRAMES)
             .addTag(BlockusBlockTags.WOODEN_LATTICES)

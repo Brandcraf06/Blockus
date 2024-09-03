@@ -36,6 +36,7 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.RAINBOW_PETALS, Blocks.PINK_PETALS);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
+            BlockusBlocks.WOODEN_FRAME,
             BlockusBlocks.OAK_SMALL_HEDGE,
             BlockusBlocks.SPRUCE_SMALL_HEDGE,
             BlockusBlocks.BIRCH_SMALL_HEDGE,

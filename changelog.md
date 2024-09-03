@@ -22,6 +22,7 @@
 * Added **Polished (Red/Teal/Charred) Nether Brick Stairs & Slab**
 * Added **Tuff Tiles**.
 * Added **Mossy Dripstone Bricks**.
+* Re-added Wooden Frame (accidentally removed in 1.21)
 * Changed Polished Dripstone, Dripstone Bricks, Cracked Dripstone Bricks, Chiseled Dripstone textures.
   * Fixed Dripstone Pillar side texture.
 * Changed Glowing Obsidian texture.

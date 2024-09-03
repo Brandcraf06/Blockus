@@ -88,6 +88,7 @@ public class BuildingBlocksGroup {
                 entries.add(timberFrameBundle.lattice);
                 entries.add(timberFrameBundle.grate);
             }
+            entries.add(WOODEN_FRAME);
 
             for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
                 entries.add(timberFrameBundle.cross);

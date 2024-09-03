@@ -281,6 +281,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addTimberFrame(translationBuilder, BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME, "Raw Bamboo");
         addTimberFrame(translationBuilder, BlockusBlocks.CRIMSON_TIMBER_FRAME, "Crimson");
         addTimberFrame(translationBuilder, BlockusBlocks.WARPED_TIMBER_FRAME, "Warped");
+        translationBuilder.add(BlockusBlocks.WOODEN_FRAME, "Wooden Frame");
 
         // Netherrack
         addBssw(translationBuilder, BlockusBlocks.POLISHED_NETHERRACK, "Polished Netherrack");
