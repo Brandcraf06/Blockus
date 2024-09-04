@@ -99,7 +99,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_STONE_BRICKS);
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.STONE_CIRCULAR_PAVING);
         modelGenerator.registerDoor(BlockusBlocks.STONE_DOOR);
-        modelGenerator.registerTrapdoor(BlockusBlocks.STONE_TRAPDOOR);
+        modelGenerator.registerOrientableTrapdoor(BlockusBlocks.STONE_TRAPDOOR);
         this.registerSturdyStone(modelGenerator);
 
         // Andesite
@@ -161,7 +161,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerAmethystLamp(modelGenerator);
 
         // Blackstone
-        modelGenerator.registerTrapdoor(BlockusBlocks.BLACKSTONE_TRAPDOOR);
+        modelGenerator.registerOrientableTrapdoor(BlockusBlocks.BLACKSTONE_TRAPDOOR);
         this.registerCubeColumnNoSuffix(modelGenerator, BlockusBlocks.GOLD_DECORATED_POLISHED_BLACKSTONE, Blocks.POLISHED_BLACKSTONE);
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.POLISHED_BLACKSTONE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.POLISHED_BLACKSTONE_PILLAR);
@@ -229,7 +229,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.GLOWING_OBSIDIAN);
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.OBSIDIAN_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.OBSIDIAN_PILLAR);
-        modelGenerator.registerTrapdoor(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR);
+        modelGenerator.registerOrientableTrapdoor(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR);
         modelGenerator.registerDoor(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR);
         this.registerPressurePlate(modelGenerator, BlockusBlocks.OBSIDIAN_PRESSURE_PLATE, TextureMap.getId(Blocks.OBSIDIAN));
 
@@ -500,7 +500,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.BURNT_PAPER_BLOCK);
         modelGenerator.registerGlassPane(BlockusBlocks.FRAMED_PAPER_BLOCK, BlockusBlocks.PAPER_WALL);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.PAPER_BLOCK);
-        modelGenerator.registerTrapdoor(BlockusBlocks.PAPER_TRAPDOOR);
+        modelGenerator.registerOrientableTrapdoor(BlockusBlocks.PAPER_TRAPDOOR);
         modelGenerator.registerDoor(BlockusBlocks.PAPER_DOOR);
 
         // Lantern Blocks
