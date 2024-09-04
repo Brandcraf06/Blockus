@@ -35,5 +35,6 @@
 * Removed a recipe for making chocolate bricks with chocolate bricks in a stonecutter
 * Fixed lantern blocks not pushable by pistons
 * Fixed fireproof timber frames, wooden grates & lattices items.
+* Fixed [Trapdoor textures do not have rotation textures based on placement direction](https://github.com/Brandcraf06/Blockus/issues/332).
 
 
