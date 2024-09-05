@@ -26,11 +26,14 @@
 * Added **Mossy Dripstone Bricks**.
 * Changed Polished Dripstone, Dripstone Bricks, Cracked Dripstone Bricks, Chiseled Dripstone textures.
   * Fixed Dripstone Pillar side texture.
+* Changed Circular Pavings textures.
+* Changed Cracked Andesite & Granite textures
+* Tweaked Diorite Bricks, Cracked Diorite Bricks & Herringbone Diorite Bricks textures
 * Changed Glowing Obsidian texture.
+* Tweaked Cherry & Mangrove Small Logs textures.
 * Changed Small Logs recipe, now crafted with 4 logs in triangle form and give 4.
 * Legacy Sapling recipe now gives 4 saplings instead of one.
 * Added the version on which the block/texture is based in the legacy blocks tooltip
-* Tweaked Cherry & Mangrove Small Logs textures.
 * Removed unused barrels translation strings.
 * Removed a recipe for making chocolate bricks with chocolate bricks in a stonecutter
 * Fixed lantern blocks not pushable by pistons
