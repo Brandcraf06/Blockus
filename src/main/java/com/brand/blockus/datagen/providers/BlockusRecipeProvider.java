@@ -381,16 +381,24 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerOreBricksRecipe(exporter, NETHERITE_BRICKS, Blocks.NETHERITE_BLOCK, Items.NETHERITE_INGOT);
 
         // Copper
-        offerCopperBricksRecipe(exporter, COPPER_BRICKS, Blocks.CUT_COPPER);
-        offerCopperBricksRecipe(exporter, EXPOSED_COPPER_BRICKS, Blocks.EXPOSED_CUT_COPPER);
-        offerCopperBricksRecipe(exporter, WEATHERED_COPPER_BRICKS, Blocks.WEATHERED_CUT_COPPER);
-        offerCopperBricksRecipe(exporter, OXIDIZED_COPPER_BRICKS, Blocks.OXIDIZED_CUT_COPPER);
+        offerCopperBricksRecipe(exporter, COPPER_BRICKS, Blocks.WAXED_COPPER_BLOCK, Blocks.CUT_COPPER, Blocks.WAXED_CUT_COPPER);
+        offerCopperBricksRecipe(exporter, EXPOSED_COPPER_BRICKS, Blocks.WAXED_EXPOSED_COPPER, Blocks.EXPOSED_CUT_COPPER, Blocks.WAXED_EXPOSED_CUT_COPPER);
+        offerCopperBricksRecipe(exporter, WEATHERED_COPPER_BRICKS, Blocks.WAXED_WEATHERED_COPPER, Blocks.WEATHERED_CUT_COPPER, Blocks.WAXED_WEATHERED_CUT_COPPER);
+        offerCopperBricksRecipe(exporter, OXIDIZED_COPPER_BRICKS, Blocks.WAXED_OXIDIZED_COPPER, Blocks.OXIDIZED_CUT_COPPER, Blocks.WAXED_OXIDIZED_CUT_COPPER);
 
         for (CopperBundle copperBundle : CopperBundle.values()) {
             offerWaxingRecipes(exporter, copperBundle.block, copperBundle.blockWaxed);
             offerWaxingRecipes(exporter, copperBundle.slab, copperBundle.slabWaxed);
             offerWaxingRecipes(exporter, copperBundle.stairs, copperBundle.stairsWaxed);
             offerWaxingRecipes(exporter, copperBundle.wall, copperBundle.wallWaxed);
+            if (copperBundle.type.contains("copper_tuff_bricks")) {
+                offerStonecuttingRecipe(exporter, copperBundle.stairs, copperBundle.block);
+                offerStonecuttingRecipe(exporter, copperBundle.slab, 2, copperBundle.block);
+                offerStonecuttingRecipe(exporter, copperBundle.wall, copperBundle.block);
+                offerStonecuttingRecipe(exporter, copperBundle.stairsWaxed, copperBundle.blockWaxed);
+                offerStonecuttingRecipe(exporter, copperBundle.slabWaxed, 2, copperBundle.blockWaxed);
+                offerStonecuttingRecipe(exporter, copperBundle.wallWaxed, copperBundle.blockWaxed);
+            }
         }
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, COPPER_TUFF_BRICKS.block, 2).input('#', Items.COPPER_INGOT).input('X', Blocks.TUFF_BRICKS).pattern("#X").pattern("X#").criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT)).criterion(hasItem(Blocks.TUFF_BRICKS), conditionsFromItem(Blocks.TUFF_BRICKS)).offerTo(exporter);
 
@@ -1042,12 +1050,25 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerShapelessRecipe(exporter, ore, ore_bricks.wall, ore.toString(), 9);
     }
 
-    public static void offerCopperBricksRecipe(RecipeExporter exporter, CopperBundle block, ItemConvertible ore_block) {
-        offerStonecuttingRecipe(exporter, block.block, ore_block);
-        offerStonecuttingRecipe(exporter, block.stairs, block.block, ore_block);
-        offerStonecuttingRecipe(exporter, block.slab, 2, block.block, ore_block);
-        offerStonecuttingRecipe(exporter, block.wall, block.block, ore_block);
-        offerPolishedStoneRecipe(exporter, block.block, ore_block);
+    public static void offerCopperBricksRecipe(RecipeExporter exporter, CopperBundle block, ItemConvertible baseWaxed, ItemConvertible cutCopper, ItemConvertible cutCopperWaxed) {
+        offerStonecuttingRecipe(exporter, block.block, cutCopper);
+        offerStonecuttingRecipe(exporter, block.stairs, block.block, cutCopper);
+        offerStonecuttingRecipe(exporter, block.slab, 2, block.block, cutCopper);
+        offerStonecuttingRecipe(exporter, block.wall, block.block, cutCopper);
+        offerStonecuttingRecipe(exporter, block.blockWaxed, cutCopperWaxed);
+        offerStonecuttingRecipe(exporter, block.stairsWaxed, block.blockWaxed, cutCopperWaxed);
+        offerStonecuttingRecipe(exporter, block.slabWaxed, 2, block.blockWaxed, cutCopperWaxed);
+        offerStonecuttingRecipe(exporter, block.wallWaxed, block.blockWaxed, cutCopperWaxed);
+        offerStonecuttingRecipe(exporter, block.block, 4, block.base);
+        offerStonecuttingRecipe(exporter, block.stairs, 4, block.base);
+        offerStonecuttingRecipe(exporter, block.slab, 8, block.base);
+        offerStonecuttingRecipe(exporter, block.wall, 4, block.base);
+        offerStonecuttingRecipe(exporter, block.blockWaxed, 4, baseWaxed);
+        offerStonecuttingRecipe(exporter, block.stairsWaxed, 4, baseWaxed);
+        offerStonecuttingRecipe(exporter, block.slabWaxed, 8, baseWaxed);
+        offerStonecuttingRecipe(exporter, block.wallWaxed, 4, baseWaxed);
+        offerPolishedStoneRecipe(exporter, block.block, cutCopper);
+        offerPolishedStoneRecipe(exporter, block.blockWaxed, cutCopperWaxed);
     }
 
     public static void createTimberFramesRecipes(RecipeExporter exporter, ItemConvertible base, ItemConvertible block, ItemConvertible diagonal, ItemConvertible cross) {

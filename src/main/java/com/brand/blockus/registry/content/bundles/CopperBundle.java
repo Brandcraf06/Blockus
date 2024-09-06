@@ -18,6 +18,7 @@ public class CopperBundle {
     public Block stairsWaxed;
     public Block wallWaxed;
     public final String type;
+    public final Block base;
 
     public enum OxidationType {
         UNAFFECTED(OxidationLevel.UNAFFECTED, ""),
@@ -44,6 +45,7 @@ public class CopperBundle {
 
     public CopperBundle(String type, OxidationType oxidation, Block base) {
         this.type = type;
+        this.base = base;
         this.block = BlockFactory.register(oxidation.getName() + type, new OxidizableBlock(oxidation.getLevel(), AbstractBlock.Settings.copy(base)));
         this.slab = BlockFactory.register(oxidation.getName() + BlockFactory.replaceId(type) + "_slab", new OxidizableSlabBlock(oxidation.getLevel(), AbstractBlock.Settings.copy(base)));
         this.stairs = BlockFactory.register(oxidation.getName() + BlockFactory.replaceId(type) + "_stairs", new OxidizableStairsBlock(oxidation.getLevel(), base.getDefaultState(), AbstractBlock.Settings.copy(base)));

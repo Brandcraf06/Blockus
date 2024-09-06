@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:copper_tuff_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "blockus:copper_tuff_brick_stairs"
+  }
+}
