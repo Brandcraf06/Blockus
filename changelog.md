@@ -39,5 +39,5 @@
 * Fixed lantern blocks not pushable by pistons
 * Fixed fireproof timber frames, wooden grates & lattices items.
 * Fixed [Trapdoor textures do not have rotation textures based on placement direction](https://github.com/Brandcraf06/Blockus/issues/332).
-
+* _Fix 2.7.18_ : Waxed Copper Bricks & Copper Tuff Bricks stonecutting recipes
 

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "item": "minecraft:weathered_copper"
+  },
+  "result": "blockus:weathered_copper_brick_stairs"
+}
