@@ -14,16 +14,16 @@ import net.minecraft.registry.Registries;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
+import net.minecraft.world.tick.ScheduledTickView;
 
 import java.util.Map;
 
@@ -47,7 +47,7 @@ public class LargeFlowerPotBlock extends Block {
         return SHAPE;
     }
 
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         Item var10 = stack.getItem();
         Block var10000;
         if (var10 instanceof BlockItem blockItem) {
@@ -58,15 +58,15 @@ public class LargeFlowerPotBlock extends Block {
 
         BlockState blockState = var10000.getDefaultState();
         if (blockState.isAir()) {
-            return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
         } else if (!this.isEmpty()) {
-            return ItemActionResult.CONSUME;
+            return ActionResult.CONSUME;
         } else {
             world.setBlockState(pos, blockState, 3);
             world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
             player.incrementStat(Stats.POT_FLOWER);
             stack.decrementUnlessCreative(1, player);
-            return ItemActionResult.success(world.isClient);
+            return ActionResult.SUCCESS;
         }
     }
 
@@ -81,7 +81,7 @@ public class LargeFlowerPotBlock extends Block {
 
             world.setBlockState(pos, BlockusBlocks.LARGE_FLOWER_POT.getDefaultState(), 3);
             world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-            return ActionResult.success(world.isClient);
+            return ActionResult.SUCCESS;
         }
     }
 
@@ -93,8 +93,8 @@ public class LargeFlowerPotBlock extends Block {
         return this.content == Blocks.AIR;
     }
 
-    protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
+        return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 
     public Block getContent() {

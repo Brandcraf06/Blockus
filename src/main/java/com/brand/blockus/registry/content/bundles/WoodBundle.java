@@ -37,7 +37,7 @@ public class WoodBundle {
     public final Item hanging_sign;
     public boolean burnable;
 
-    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, net.minecraft.block.WoodType woodtype, BlockSetType blocksettype, boolean burnable) {
+    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, WoodType woodtype, BlockSetType blocksettype, boolean burnable) {
 
         this.base = base;
         this.burnable = burnable;
@@ -67,13 +67,13 @@ public class WoodBundle {
         // sign
         Identifier signPath = Blockus.id("entity/signs/" + type);
         this.standing_sign = BlockFactory.registerNoItem(type + "_sign", new TerraformSignBlock(signPath, signSettings));
-        this.wall_sign = BlockFactory.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(signPath, signSettings.dropsLike(standing_sign)));
+        this.wall_sign = BlockFactory.registerNoItem(type + "_wall_sign", new TerraformWallSignBlock(signPath, copyLootTable(standing_sign).mapColor(color).noCollision().strength(1.0F).sounds(sound)));
         this.sign = BlockusItems.registerSign(standing_sign, wall_sign);
 
         Identifier hangingSignPath = Blockus.id("entity/signs/hanging/" + type);
         Identifier hangingSignGuiPath = Blockus.id("textures/gui/hanging_signs/" + type);
-        this.ceiling_hanging_sign = BlockFactory.registerNoItem(type + "_hanging_sign", new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, hangingSignSettings));
-        this.wall_hanging_sign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, hangingSignSettings.dropsLike(ceiling_hanging_sign)));
+        this.ceiling_hanging_sign = BlockFactory.registerNoItem(type + "_hanging_sign", new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, signSettings));
+        this.wall_hanging_sign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, copyLootTable(ceiling_hanging_sign).mapColor(color).noCollision().strength(1.0F).sounds(sound)));
         this.hanging_sign = BlockusItems.registerHangingSign(ceiling_hanging_sign, wall_hanging_sign);
 
         LIST.add(this);
@@ -90,6 +90,11 @@ public class WoodBundle {
 
     public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, boolean burnable) {
         this(type, base, color, sound, net.minecraft.block.WoodType.OAK, BlockSetType.OAK, burnable);
+    }
+
+    public static AbstractBlock.Settings copyLootTable(Block block) {
+        AbstractBlock.Settings settings2 = AbstractBlock.Settings.create().lootTable(block.getLootTableKey()).overrideTranslationKey(block.getTranslationKey());
+        return settings2;
     }
 
     public static ArrayList<WoodBundle> values() {

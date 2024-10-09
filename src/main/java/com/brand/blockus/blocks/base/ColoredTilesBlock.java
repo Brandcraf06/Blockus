@@ -20,26 +20,13 @@ public class ColoredTilesBlock extends HorizontalAxisBlock {
     public String translationKey;
 
     public ColoredTilesBlock(Block tile1, Block tile2, Settings settings) {
-        super(settings);
+        super(settings.overrideTranslationKey(Util.createTranslationKey("block", Blockus.id("colored_tiles"))));
         this.tile1 = tile1;
         this.tile2 = tile2;
     }
 
     public static String getColor(Block block) {
         return Registries.BLOCK.getId(block).getPath().replace("_concrete", "");
-    }
-
-    @Override
-    public String getTranslationKey() {
-        return this.getColoredTilesTranslationKey();
-    }
-
-    public String getColoredTilesTranslationKey() {
-        if (this.translationKey == null) {
-            this.translationKey = Util.createTranslationKey("block", Blockus.id("colored_tiles"));
-        }
-
-        return this.translationKey;
     }
 
     @Override

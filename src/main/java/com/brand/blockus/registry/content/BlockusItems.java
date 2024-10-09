@@ -15,7 +15,7 @@ public class BlockusItems {
     }
 
     public static Item registerSign(Block standingBlock, Block wallBlock) {
-        return Registry.register(Registries.ITEM, Registries.BLOCK.getId(standingBlock), new SignItem(new Item.Settings().maxCount(16), standingBlock, wallBlock));
+        return Registry.register(Registries.ITEM, Registries.BLOCK.getId(standingBlock), new SignItem(standingBlock, wallBlock, new Item.Settings().maxCount(16)));
     }
 
     public static Item registerHangingSign(Block hangingSign, Block wallHangingSign) {

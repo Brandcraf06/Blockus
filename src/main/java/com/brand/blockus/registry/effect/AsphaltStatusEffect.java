@@ -7,6 +7,6 @@ public class AsphaltStatusEffect extends StatusEffect {
 
     public AsphaltStatusEffect() {
         super(
-            StatusEffectCategory.BENEFICIAL, 0x1D1B36);
+                StatusEffectCategory.BENEFICIAL, 0x1D1B36);
     }
 }

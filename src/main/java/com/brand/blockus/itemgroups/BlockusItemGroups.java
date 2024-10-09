@@ -25,34 +25,34 @@ public class BlockusItemGroups {
 
     public static void init() {
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_BUILDING_BLOCKS, FabricItemGroup.builder()
-            .displayName(Text.translatable("itemGroup.blockus_building_blocks").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(BlockusBlocks.BLAZE_BRICKS.block))
-            .build()
+                .displayName(Text.translatable("itemGroup.blockus_building_blocks").append(BLOCKUS_GROUPS_TEXT))
+                .icon(() -> new ItemStack(BlockusBlocks.BLAZE_BRICKS.block))
+                .build()
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_COLORED_BLOCKS, FabricItemGroup.builder()
-            .displayName(Text.translatable("itemGroup.blockus_colored").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(BlockusBlocks.LIME_ASPHALT.block))
-            .build()
+                .displayName(Text.translatable("itemGroup.blockus_colored").append(BLOCKUS_GROUPS_TEXT))
+                .icon(() -> new ItemStack(BlockusBlocks.LIME_ASPHALT.block))
+                .build()
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_COLORED_TILES, FabricItemGroup.builder()
-            .displayName(Text.translatable("itemGroup.blockus_colored_tiles").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(ColoredTilesBundle.RED_BLUE_COLORED_TILES.block))
-            .build()
+                .displayName(Text.translatable("itemGroup.blockus_colored_tiles").append(BLOCKUS_GROUPS_TEXT))
+                .icon(() -> new ItemStack(ColoredTilesBundle.RED_BLUE_COLORED_TILES.block))
+                .build()
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_NATURAL, FabricItemGroup.builder()
-            .displayName(Text.translatable("itemGroup.blockus_natural").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(BlockusBlocks.WHITE_OAK_SAPLING))
-            .build()
+                .displayName(Text.translatable("itemGroup.blockus_natural").append(BLOCKUS_GROUPS_TEXT))
+                .icon(() -> new ItemStack(BlockusBlocks.WHITE_OAK_SAPLING))
+                .build()
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_FUNCTIONAL_BLOCKS, FabricItemGroup.builder()
-            .displayName(Text.translatable("itemGroup.blockus_functional").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(BlockusBlocks.REDSTONE_LANTERN))
-            .build()
+                .displayName(Text.translatable("itemGroup.blockus_functional").append(BLOCKUS_GROUPS_TEXT))
+                .icon(() -> new ItemStack(BlockusBlocks.REDSTONE_LANTERN))
+                .build()
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_LEGACY_BLOCKS, FabricItemGroup.builder()
-            .displayName(Text.translatable("itemGroup.blockus_legacy").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(BlockusBlocks.LEGACY_BRICKS))
-            .build()
+                .displayName(Text.translatable("itemGroup.blockus_legacy").append(BLOCKUS_GROUPS_TEXT))
+                .icon(() -> new ItemStack(BlockusBlocks.LEGACY_BRICKS))
+                .build()
         );
     }
 }

@@ -1,7 +1,6 @@
 package com.brand.blockus.utils.screen;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.google.common.collect.Lists;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -10,8 +9,8 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.StonecuttingRecipe;
+import net.minecraft.recipe.display.CuttingRecipeDisplay;
 import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.screen.Property;
 import net.minecraft.screen.ScreenHandler;
@@ -23,6 +22,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
 import java.util.List;
+import java.util.Optional;
 
 public class LegacyStonecutterScreenHandler extends ScreenHandler {
     public static final int INPUT_ID = 0;
@@ -32,9 +32,9 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
     private static final int OUTPUT_START = 29;
     private static final int OUTPUT_END = 38;
     private final ScreenHandlerContext context;
-    private final Property selectedRecipe;
+    final Property selectedRecipe;
     private final World world;
-    private List<RecipeEntry<StonecuttingRecipe>> availableRecipes;
+    private CuttingRecipeDisplay.Grouping<StonecuttingRecipe> availableRecipes;
     private ItemStack inputStack;
     long lastTakeTime;
     final Slot inputSlot;
@@ -50,7 +50,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
     public LegacyStonecutterScreenHandler(int syncId, PlayerInventory playerInventory, final ScreenHandlerContext context) {
         super(ScreenHandlerType.STONECUTTER, syncId);
         this.selectedRecipe = Property.create();
-        this.availableRecipes = Lists.newArrayList();
+        this.availableRecipes = CuttingRecipeDisplay.Grouping.empty();
         this.inputStack = ItemStack.EMPTY;
         this.contentsChangedListener = () -> {
         };
@@ -75,7 +75,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
                 LegacyStonecutterScreenHandler.this.output.unlockLastRecipe(player, this.getInputStacks());
                 ItemStack itemStack = LegacyStonecutterScreenHandler.this.inputSlot.takeStack(1);
                 if (!itemStack.isEmpty()) {
-                    LegacyStonecutterScreenHandler.this.populateResult();
+                    LegacyStonecutterScreenHandler.this.populateResult(LegacyStonecutterScreenHandler.this.selectedRecipe.get());
                 }
 
                 context.run((world, pos) -> {
@@ -93,18 +93,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
                 return List.of(LegacyStonecutterScreenHandler.this.inputSlot.getStack());
             }
         });
-
-        int i;
-        for (i = 0; i < 3; ++i) {
-            for (int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
-            }
-        }
-
-        for (i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
-        }
-
+        this.addPlayerSlots(playerInventory, 8, 84);
         this.addProperty(this.selectedRecipe);
     }
 
@@ -112,7 +101,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
         return this.selectedRecipe.get();
     }
 
-    public List<RecipeEntry<StonecuttingRecipe>> getAvailableRecipes() {
+    public CuttingRecipeDisplay.Grouping<StonecuttingRecipe> getAvailableRecipes() {
         return this.availableRecipes;
     }
 
@@ -131,7 +120,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
     public boolean onButtonClick(PlayerEntity player, int id) {
         if (this.isInBounds(id)) {
             this.selectedRecipe.set(id);
-            this.populateResult();
+            this.populateResult(id);
         }
 
         return true;
@@ -145,39 +134,38 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
         ItemStack itemStack = this.inputSlot.getStack();
         if (!itemStack.isOf(this.inputStack.getItem())) {
             this.inputStack = itemStack.copy();
-            this.updateInput(inventory, itemStack);
+            this.updateInput(itemStack);
         }
 
     }
 
-    private static SingleStackRecipeInput createRecipeInput(Inventory inventory) {
-        return new SingleStackRecipeInput(inventory.getStack(0));
-    }
-
-    private void updateInput(Inventory input, ItemStack stack) {
-        this.availableRecipes.clear();
+    private void updateInput(ItemStack stack) {
         this.selectedRecipe.set(-1);
         this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
         if (!stack.isEmpty()) {
-            this.availableRecipes = this.world.getRecipeManager().getAllMatches(RecipeType.STONECUTTING, createRecipeInput(input), this.world);
+            this.availableRecipes = this.world.getRecipeManager().getStonecutterRecipes().filter(stack);
+        } else {
+            this.availableRecipes = CuttingRecipeDisplay.Grouping.empty();
         }
 
     }
 
-    void populateResult() {
-        if (!this.availableRecipes.isEmpty() && this.isInBounds(this.selectedRecipe.get())) {
-            RecipeEntry<StonecuttingRecipe> recipeEntry = this.availableRecipes.get(this.selectedRecipe.get());
-            ItemStack itemStack = recipeEntry.value().craft(createRecipeInput(this.input), this.world.getRegistryManager());
-            if (itemStack.isItemEnabled(this.world.getEnabledFeatures())) {
-                this.output.setLastRecipe(recipeEntry);
-                this.outputSlot.setStackNoCallbacks(itemStack);
-            } else {
-                this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
-            }
+    void populateResult(int selectedId) {
+        Optional optional;
+        if (!this.availableRecipes.isEmpty() && this.isInBounds(selectedId)) {
+            CuttingRecipeDisplay.GroupEntry<StonecuttingRecipe> groupEntry = this.availableRecipes.entries().get(selectedId);
+            optional = groupEntry.recipe().recipe();
         } else {
-            this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
+            optional = Optional.empty();
         }
 
+        optional.ifPresentOrElse((recipe) -> {
+            this.output.setLastRecipe((RecipeEntry<?>) recipe);
+            this.outputSlot.setStackNoCallbacks(((StonecuttingRecipe) ((RecipeEntry<?>) recipe).value()).craft(new SingleStackRecipeInput(this.input.getStack(0)), this.world.getRegistryManager()));
+        }, () -> {
+            this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
+            this.output.setLastRecipe(null);
+        });
         this.sendContentUpdates();
     }
 
@@ -211,7 +199,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
                 if (!this.insertItem(itemStack2, 2, 38, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.world.getRecipeManager().getFirstMatch(RecipeType.STONECUTTING, new SingleStackRecipeInput(itemStack2), this.world).isPresent()) {
+            } else if (this.world.getRecipeManager().getStonecutterRecipes().contains(itemStack2)) {
                 if (!this.insertItem(itemStack2, 0, 1, false)) {
                     return ItemStack.EMPTY;
                 }
@@ -233,6 +221,10 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
             }
 
             slot2.onTakeItem(player, itemStack2);
+            if (slot == 1) {
+                player.dropItem(itemStack2, false);
+            }
+
             this.sendContentUpdates();
         }
 

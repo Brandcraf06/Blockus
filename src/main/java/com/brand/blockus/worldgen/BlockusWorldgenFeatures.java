@@ -66,49 +66,49 @@ public class BlockusWorldgenFeatures {
     public static void registerConfiguredFeature() {
 
         BiomeModifications.addFeature(
-            BiomeSelectors.foundInOverworld(),
-            GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_limestone_upper")));
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_limestone_upper")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.foundInOverworld(),
-            GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_limestone_lower")));
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_limestone_lower")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.foundInOverworld(),
-            GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_marble")));
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_marble")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.foundInOverworld(),
-            GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_bluestone")));
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_bluestone")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.foundInOverworld(),
-            GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_viridite")));
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_viridite")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.includeByKey(BiomeKeys.DEEP_DARK),
-            GenerationStep.Feature.UNDERGROUND_ORES,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_viridite_extra")));
+                BiomeSelectors.includeByKey(BiomeKeys.DEEP_DARK),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("ore_viridite_extra")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST),
-            GenerationStep.Feature.VEGETAL_DECORATION,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak")));
+                BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.tag(ConventionalBiomeTags.PLAINS),
-            GenerationStep.Feature.VEGETAL_DECORATION,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak_rare")));
+                BiomeSelectors.tag(ConventionalBiomeTags.PLAINS),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("white_oak_rare")));
 
         BiomeModifications.addFeature(
-            BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.MEADOW),
-            GenerationStep.Feature.VEGETAL_DECORATION,
-            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("rainbow_rose")));
+                BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.MEADOW),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Blockus.id("rainbow_rose")));
 
     }
 

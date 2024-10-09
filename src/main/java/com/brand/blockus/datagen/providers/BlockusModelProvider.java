@@ -41,7 +41,7 @@ public class BlockusModelProvider extends FabricModelProvider {
             }
             // Smooth Sandstones & Rough Basalt
             else if ((BSSWBundle.type.contains("smooth") && BSSWBundle.type.contains("sandstone")) ||
-                BSSWBundle.block == BlockusBlocks.ROUGH_BASALT.block) {
+                    BSSWBundle.block == BlockusBlocks.ROUGH_BASALT.block) {
                 this.registerBlockStairsSlabWithTop(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab, BSSWBundle.base);
             }
             // Soul Sandstone
@@ -617,36 +617,36 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public static BlockStateSupplier createPostBlockState(Block postBlock, Identifier postModelId, Identifier sideModelId, Identifier topModelId, Identifier chainModelId, Identifier topChainModelId) {
         return MultipartBlockStateSupplier.create(postBlock)
-            .with(When.create().set(Properties.AXIS, Direction.Axis.X), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(Properties.AXIS, Direction.Axis.Y), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(Properties.AXIS, Direction.Axis.Z), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.UP, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.DOWN, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.UP, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.DOWN, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.UVLOCK, false));
+                .with(When.create().set(Properties.AXIS, Direction.Axis.X), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(Properties.AXIS, Direction.Axis.Y), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(Properties.AXIS, Direction.Axis.Z), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.UP, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.DOWN, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.UP, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.UVLOCK, false))
+                .with(When.create().set(PostBlock.DOWN, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.UVLOCK, false));
     }
 
     public final void registerCookieBlock(BlockStateModelGenerator modelGenerator) {
         Block block = BlockusBlocks.COOKIE_BLOCK;
         Identifier identifier = TexturedModel.CUBE_ALL.upload(block, modelGenerator.modelCollector);
         modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).coordinate(BlockStateVariantMap.create(com.brand.blockus.utils.Properties.BITES_9)
-            .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
-            .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice1")))
-            .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice2")))
-            .register(3, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice3")))
-            .register(4, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice4")))
-            .register(5, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice5")))
-            .register(6, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice6")))
-            .register(7, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice7")))
-            .register(8, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice8")))));
+                .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
+                .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice1")))
+                .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice2")))
+                .register(3, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice3")))
+                .register(4, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice4")))
+                .register(5, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice5")))
+                .register(6, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice6")))
+                .register(7, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice7")))
+                .register(8, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_slice8")))));
     }
 
     public final void registerAmethystLamp(BlockStateModelGenerator modelGenerator) {
@@ -656,22 +656,22 @@ public class BlockusModelProvider extends FabricModelProvider {
         Identifier identifier3 = modelGenerator.createSubModel(block, "_medium", Models.CUBE_ALL, TextureMap::all);
         Identifier identifier4 = modelGenerator.createSubModel(block, "_high", Models.CUBE_ALL, TextureMap::all);
         modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).coordinate(BlockStateVariantMap.create(Properties.POWER)
-            .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
-            .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
-            .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
-            .register(3, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
-            .register(4, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
-            .register(5, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
-            .register(6, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
-            .register(7, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
-            .register(8, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
-            .register(9, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
-            .register(10, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
-            .register(11, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))
-            .register(12, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))
-            .register(13, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))
-            .register(14, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))
-            .register(15, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))));
+                .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
+                .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
+                .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
+                .register(3, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
+                .register(4, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
+                .register(5, BlockStateVariant.create().put(VariantSettings.MODEL, identifier2))
+                .register(6, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
+                .register(7, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
+                .register(8, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
+                .register(9, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
+                .register(10, BlockStateVariant.create().put(VariantSettings.MODEL, identifier3))
+                .register(11, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))
+                .register(12, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))
+                .register(13, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))
+                .register(14, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))
+                .register(15, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))));
     }
 
     public final void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block wallBlock, Block textureSource) {
@@ -863,10 +863,10 @@ public class BlockusModelProvider extends FabricModelProvider {
         TextureMap textureMap = (new TextureMap()).put(TextureKey.PARTICLE, identifier2).put(TextureKey.NORTH, identifier2).put(TextureKey.SOUTH, identifier2).put(TextureKey.EAST, identifier2).put(TextureKey.WEST, identifier3).put(TextureKey.DOWN, identifier3).put(TextureKey.UP, identifier3);
         Models.CUBE.upload(block, textureMap, modelGenerator.modelCollector);
         modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_FACING)
-            .register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.MODEL, identifier))
-            .register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R180))
-            .register(Direction.WEST, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R270))
-            .register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R90))));
+                .register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.MODEL, identifier))
+                .register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .register(Direction.WEST, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+                .register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, VariantSettings.Rotation.R90))));
     }
 
     public final void registerBeveledGlassPane(BlockStateModelGenerator modelGenerator, Block glass, Block glassPane) {
@@ -887,8 +887,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         BlockusModels.CUBE_TILES.upload(block, textures, modelGenerator.modelCollector);
         BlockusModels.CUBE_TILES_2.upload(block, textures, modelGenerator.modelCollector);
         modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block).coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_AXIS)
-            .register(Direction.Axis.X, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
-            .register(Direction.Axis.Z, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_2")))));
+                .register(Direction.Axis.X, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(block)))
+                .register(Direction.Axis.Z, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(block, "_2")))));
     }
 
     public final void registerColoredTilesSimple(BlockStateModelGenerator modelGenerator, Block block) {
@@ -930,12 +930,12 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public static BlockStateVariantMap createUpDefaultRotationStates() {
         return BlockStateVariantMap.create(Properties.FACING)
-            .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R180))
-            .register(Direction.UP, BlockStateVariant.create())
-            .register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R180))
-            .register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270))
-            .register(Direction.WEST, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R90))
-            .register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R270));
+                .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R180))
+                .register(Direction.UP, BlockStateVariant.create())
+                .register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270))
+                .register(Direction.WEST, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R270).put(VariantSettings.Y, VariantSettings.Rotation.R270));
     }
 
     public static Identifier getTilesId(Block block) {

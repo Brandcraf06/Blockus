@@ -26,25 +26,25 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup registries, FabricDynamicRegistryProvider.Entries entries) {
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.LIMESTONE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_LIMESTONE_UPPER);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_LIMESTONE_LOWER);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.MARBLE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_MARBLE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.BLUESTONE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_BLUESTONE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.VIRIDITE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.VIRIDITE_EXTRA);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_VIRIDITE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_VIRIDITE_EXTRA);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.WHITE_OAK);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_WHITE_OAK);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_WHITE_OAK_RARE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.WHITE_OAK_CHECKED);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.LEGACY_OAK);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.LEGACY_OAK_CHECKED);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.RAINBOW_ROSE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_RAINBOW_ROSE);
+        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.LIMESTONE);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_LIMESTONE_UPPER);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_LIMESTONE_LOWER);
+        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.MARBLE);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_MARBLE);
+        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.BLUESTONE);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_BLUESTONE);
+        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.VIRIDITE);
+        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.VIRIDITE_EXTRA);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_VIRIDITE);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_VIRIDITE_EXTRA);
+        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.WHITE_OAK);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_WHITE_OAK);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_WHITE_OAK_RARE);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.WHITE_OAK_CHECKED);
+        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.LEGACY_OAK);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.LEGACY_OAK_CHECKED);
+        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), BlockusWorldgenFeatures.RAINBOW_ROSE);
+        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), BlockusWorldgenFeatures.PLACED_RAINBOW_ROSE);
     }
 
     public static void bootstrapConfiguredFeatures(Registerable<ConfiguredFeature<?, ?>> registerable) {

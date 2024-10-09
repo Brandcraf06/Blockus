@@ -8,8 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -19,16 +19,16 @@ public class WeightStorageCubeBlock extends SimpleFallingBlock {
         super(settings);
     }
 
-    public ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (stack.isOf(Items.POPPY)) {
             change(world, pos, state);
             if (!player.getAbilities().creativeMode) {
                 itemStack.decrement(1);
-                return ItemActionResult.success(world.isClient);
+                return ActionResult.SUCCESS;
             }
         }
-        return ItemActionResult.CONSUME;
+        return ActionResult.CONSUME;
     }
 
     public static void change(World world, BlockPos pos, BlockState state) {
