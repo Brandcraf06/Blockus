@@ -404,6 +404,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             RAINBOW_GLASS_PANE,
             RAINBOW_LAMP,
             RAINBOW_LAMP_LIT,
+            RAINBOW_NEON,
             RED_COLORED_TILES,
             RED_FUTURNEO_BLOCK,
             RED_GLAZED_TERRACOTTA_PILLAR,

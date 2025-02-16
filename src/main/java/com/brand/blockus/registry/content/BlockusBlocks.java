@@ -628,6 +628,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block PURPLE_NEON = neonBlock("purple_neon", DyeColor.PURPLE);
     public static final Block MAGENTA_NEON = neonBlock("magenta_neon", DyeColor.MAGENTA);
     public static final Block PINK_NEON = neonBlock("pink_neon", DyeColor.PINK);
+    public static final Block RAINBOW_NEON = neonBlock("rainbow_neon", DyeColor.LIGHT_BLUE);
 
     // Futurneo Blocks
     public static final Block WHITE_FUTURNEO_BLOCK = futurneoBlock("white_futurneo_block", MapColor.BLACK);

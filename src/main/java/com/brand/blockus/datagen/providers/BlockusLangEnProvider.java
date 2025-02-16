@@ -682,6 +682,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.GREEN_NEON, "Green Neon");
         translationBuilder.add(BlockusBlocks.RED_NEON, "Red Neon");
         translationBuilder.add(BlockusBlocks.BLACK_NEON, "Black Neon");
+        translationBuilder.add(BlockusBlocks.RAINBOW_NEON, "Rainbow Neon");
 
         // Futurneo Blocks
         translationBuilder.add(BlockusBlocks.WHITE_FUTURNEO_BLOCK, "White Futurneo Block");
