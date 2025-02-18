@@ -84,6 +84,11 @@ public class BlockusModelProvider extends FabricModelProvider {
             registerColoredTiles(modelGenerator, coloredTilesVariants.block, coloredTilesVariants.tile1, coloredTilesVariants.tile2);
         }
 
+        for (PottedLargeBundle pottedLargeBundle : PottedLargeBundle.values()) {
+            modelGenerator.registerSimpleState(pottedLargeBundle.block);
+        }
+        modelGenerator.registerSimpleState(BlockusBlocks.LARGE_FLOWER_POT);
+
         // Copper
         modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.COPPER_BRICKS.block).family(BlockusFamilies.COPPER_BRICKS).parented(BlockusBlocks.COPPER_BRICKS.block, BlockusBlocks.COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_COPPER_BRICKS);
         modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.EXPOSED_COPPER_BRICKS.block).family(BlockusFamilies.EXPOSED_COPPER_BRICKS).parented(BlockusBlocks.EXPOSED_COPPER_BRICKS.block, BlockusBlocks.EXPOSED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_EXPOSED_COPPER_BRICKS);
@@ -101,6 +106,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerDoor(BlockusBlocks.STONE_DOOR);
         modelGenerator.registerOrientableTrapdoor(BlockusBlocks.STONE_TRAPDOOR);
         this.registerSturdyStone(modelGenerator);
+        this.registerSmoothStoneStairs(modelGenerator);
 
         // Andesite
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.ANDESITE_CIRCULAR_PAVING);
@@ -502,6 +508,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.PAPER_BLOCK);
         modelGenerator.registerOrientableTrapdoor(BlockusBlocks.PAPER_TRAPDOOR);
         modelGenerator.registerDoor(BlockusBlocks.PAPER_DOOR);
+        modelGenerator.registerSimpleState(BlockusBlocks.PAPER_LAMP);
 
         // Lantern Blocks
         this.registerCubeColumn(modelGenerator, BlockusBlocks.LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
@@ -813,7 +820,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).coordinate(createUpDefaultRotationStates()));
     }
 
-
     public final void registerTopBottomFacingBottom(BlockStateModelGenerator modelGenerator, Block block) {
         TextureMap textureMap = sideTopBottom(TextureMap.getId(block), TextureMap.getSubId(block, "_top"), TextureMap.getSubId(block, "_bottom"));
         Identifier identifier = Models.CUBE_BOTTOM_TOP.upload(block, textureMap, modelGenerator.modelCollector);
@@ -828,6 +834,11 @@ public class BlockusModelProvider extends FabricModelProvider {
     public final void registerSturdyStone(BlockStateModelGenerator modelGenerator) {
         Identifier identifier = TextureMap.getSubId(Blocks.FURNACE, "_top");
         this.createBlock(modelGenerator, BlockusBlocks.STURDY_STONE, TextureMap.of(TextureKey.ALL, identifier));
+    }
+
+    public final void registerSmoothStoneStairs(BlockStateModelGenerator modelGenerator) {
+        TextureMap textureMap = sideTopBottom(TextureMap.getSubId(Blocks.SMOOTH_STONE_SLAB, "_side"), TextureMap.getId(Blocks.SMOOTH_STONE));
+        this.createStairs(modelGenerator, BlockusBlocks.SMOOTH_STONE_STAIRS, textureMap);
     }
 
     public final void registerNeonBlock(BlockStateModelGenerator modelGenerator, Block block) {
