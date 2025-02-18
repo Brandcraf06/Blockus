@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "neon_blocks",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "D": {
+      "item": "blockus:rainbow_petal"
+    },
+    "S": {
+      "item": "minecraft:glow_ink_sac"
+    }
+  },
+  "pattern": [
+    " A ",
+    "SDS",
+    " A "
+  ],
+  "result": {
+    "count": 8,
+    "id": "blockus:rainbow_neon"
+  }
+}

@@ -118,6 +118,7 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.PURPLE_NEON);
             entries.add(BlockusBlocks.MAGENTA_NEON);
             entries.add(BlockusBlocks.PINK_NEON);
+            entries.add(BlockusBlocks.RAINBOW_NEON);
 
             entries.add(BlockusBlocks.WHITE_FUTURNEO_BLOCK);
             entries.add(BlockusBlocks.LIGHT_GRAY_FUTURNEO_BLOCK);

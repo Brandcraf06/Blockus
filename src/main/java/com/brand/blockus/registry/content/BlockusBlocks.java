@@ -613,6 +613,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block PURPLE_NEON = register("purple_neon", createNeonBlock(DyeColor.PURPLE));
     public static final Block MAGENTA_NEON = register("magenta_neon", createNeonBlock(DyeColor.MAGENTA));
     public static final Block PINK_NEON = register("pink_neon", createNeonBlock(DyeColor.PINK));
+    public static final Block RAINBOW_NEON = register("rainbow_neon", createNeonBlock(DyeColor.LIGHT_BLUE));
 
     // Futurneo Blocks
     public static final Block WHITE_FUTURNEO_BLOCK = register("white_futurneo_block", createFuturneoBlock(MapColor.BLACK));

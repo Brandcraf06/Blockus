@@ -360,7 +360,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BROWN_NEON)
             .add(GREEN_NEON)
             .add(RED_NEON)
-            .add(BLACK_NEON);
+            .add(BLACK_NEON)
+            .add(RAINBOW_NEON);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.NETHER_BRICKS)
             .add(bsswBundle(POLISHED_NETHER_BRICKS))
