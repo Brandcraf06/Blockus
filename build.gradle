@@ -1,7 +1,7 @@
 plugins {
-  id 'fabric-loom' version '1.9-SNAPSHOT'
+  id 'fabric-loom' version '1.10-SNAPSHOT'
   id 'maven-publish'
-  id "me.modmuss50.mod-publish-plugin" version "0.7.4"
+  id "me.modmuss50.mod-publish-plugin" version "0.8.4"
 }
 
 version = "${mod_version}+${minecraft_version}"
@@ -52,7 +52,7 @@ processResources {
   inputs.property "version", project.version
 
   filesMatching("fabric.mod.json") {
-    expand "version": project.version
+    expand "version": inputs.properties.version
   }
 }
 
@@ -66,8 +66,10 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 jar {
+  inputs.property "archivesName", project.base.archivesName
+
   from("LICENSE") {
-    rename { "${it}_${project.archivesBaseName}" }
+    rename { "${it}_${inputs.properties.archivesName}"}
   }
 }
 

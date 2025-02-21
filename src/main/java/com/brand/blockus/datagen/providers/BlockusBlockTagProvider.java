@@ -682,6 +682,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.DARK_OAK_PLANKS)
             .add(Blocks.MANGROVE_PLANKS)
             .add(Blocks.CHERRY_PLANKS)
+            .add(Blocks.PALE_OAK_PLANKS)
             .add(Blocks.BAMBOO_PLANKS)
             .add(RAW_BAMBOO.planks)
             .add(WHITE_OAK.planks)
