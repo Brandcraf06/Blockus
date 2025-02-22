@@ -9,8 +9,8 @@ import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneSlabBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneStairsBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneWallBlock;
-import com.brand.blockus.blocks.blockitems.GlintBlockItem;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
+import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
@@ -247,11 +247,11 @@ public class BlockFactory {
         return register(id, factory, settings, itemSettings);
     }
 
-    public static Block registerGlint(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings blockSettings) {
+    public static Block registerNetherStarBlock(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings blockSettings) {
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Blockus.id(id));
         Block block = registerNoItem(id, factory, blockSettings);
         var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, key.getValue());
-        Registry.register(Registries.ITEM, itemRegistryKey, new GlintBlockItem(block, new Item.Settings().registryKey(itemRegistryKey).useBlockPrefixedTranslationKey().rarity(Rarity.UNCOMMON)));
+        Registry.register(Registries.ITEM, itemRegistryKey, new NetherStarBlockItem(block, new Item.Settings().registryKey(itemRegistryKey).useBlockPrefixedTranslationKey().rarity(Rarity.UNCOMMON)));
         return block;
     }
 
@@ -290,5 +290,4 @@ public class BlockFactory {
     public static Boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
         return type == EntityType.OCELOT || type == EntityType.PARROT;
     }
-
 }

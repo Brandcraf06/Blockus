@@ -540,7 +540,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             YELLOW_BEVELED_GLASS,
             YELLOW_BEVELED_GLASS_PANE);
 
-        this.addDrop(RAINBOW_PETALS, this.flowerbedDrops(RAINBOW_PETALS));
+        this.addDrop(RAINBOW_PETALS, this.segmentedDrops(RAINBOW_PETALS));
         this.addPottedPlantDropsBatch(POTTED_WHITE_OAK_SAPLING, POTTED_RAINBOW_ROSE, POTTED_LEGACY_SAPLING, POTTED_LEGACY_ROSE, POTTED_LEGACY_BLUE_ROSE);
 
         this.addDrop(LEGACY_LEAVES, (block) -> this.leavesDrops(block, LEGACY_SAPLING, SAPLING_DROP_CHANCE));

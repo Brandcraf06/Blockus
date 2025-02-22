@@ -3,7 +3,6 @@
     {
       "apply": {
         "model": "blockus:block/white_oak_post",
-        "uvlock": false,
         "x": 90,
         "y": 90
       },
@@ -13,8 +12,7 @@
     },
     {
       "apply": {
-        "model": "blockus:block/white_oak_post",
-        "uvlock": false
+        "model": "blockus:block/white_oak_post"
       },
       "when": {
         "axis": "y"
@@ -23,7 +21,6 @@
     {
       "apply": {
         "model": "blockus:block/white_oak_post",
-        "uvlock": false,
         "x": 90
       },
       "when": {
@@ -33,7 +30,6 @@
     {
       "apply": {
         "model": "blockus:block/white_oak_post_connect_top",
-        "uvlock": false,
         "x": 90
       },
       "when": {
@@ -43,7 +39,6 @@
     {
       "apply": {
         "model": "blockus:block/white_oak_post_connect",
-        "uvlock": false,
         "x": 90
       },
       "when": {
@@ -53,7 +48,6 @@
     {
       "apply": {
         "model": "blockus:block/white_oak_post_connect_top",
-        "uvlock": false,
         "x": 90,
         "y": 90
       },
@@ -64,7 +58,6 @@
     {
       "apply": {
         "model": "blockus:block/white_oak_post_connect",
-        "uvlock": false,
         "x": 90,
         "y": 90
       },
@@ -74,8 +67,7 @@
     },
     {
       "apply": {
-        "model": "blockus:block/white_oak_post_connect_top",
-        "uvlock": false
+        "model": "blockus:block/white_oak_post_connect_top"
       },
       "when": {
         "up": "post"
@@ -83,8 +75,7 @@
     },
     {
       "apply": {
-        "model": "blockus:block/white_oak_post_connect",
-        "uvlock": false
+        "model": "blockus:block/white_oak_post_connect"
       },
       "when": {
         "down": "post"
@@ -93,7 +84,6 @@
     {
       "apply": {
         "model": "blockus:block/chain_connect_top",
-        "uvlock": false,
         "x": 90
       },
       "when": {
@@ -103,7 +93,6 @@
     {
       "apply": {
         "model": "blockus:block/chain_connect",
-        "uvlock": false,
         "x": 90
       },
       "when": {
@@ -113,7 +102,6 @@
     {
       "apply": {
         "model": "blockus:block/chain_connect_top",
-        "uvlock": false,
         "x": 90,
         "y": 90
       },
@@ -124,7 +112,6 @@
     {
       "apply": {
         "model": "blockus:block/chain_connect",
-        "uvlock": false,
         "x": 90,
         "y": 90
       },
@@ -134,8 +121,7 @@
     },
     {
       "apply": {
-        "model": "blockus:block/chain_connect_top",
-        "uvlock": false
+        "model": "blockus:block/chain_connect_top"
       },
       "when": {
         "up": "chain"
@@ -143,8 +129,7 @@
     },
     {
       "apply": {
-        "model": "blockus:block/chain_connect",
-        "uvlock": false
+        "model": "blockus:block/chain_connect"
       },
       "when": {
         "down": "chain"

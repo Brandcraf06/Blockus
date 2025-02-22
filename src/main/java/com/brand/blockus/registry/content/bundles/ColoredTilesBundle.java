@@ -2,11 +2,11 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.ColoredTilesBlock;
+import com.brand.blockus.blocks.blockitems.ColoredTilesBlockItem;
 import com.brand.blockus.utils.BlockFactory;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -42,7 +42,7 @@ public class ColoredTilesBundle {
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Blockus.id(id));
         Block block = BlockFactory.registerNoItem(id, factory, blockSettings);
         var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, key.getValue());
-        Registry.register(Registries.ITEM, itemRegistryKey, new BlockItem(block, new Item.Settings().registryKey(itemRegistryKey).translationKey(Util.createTranslationKey("block", Blockus.id("colored_tiles")))));
+        Registry.register(Registries.ITEM, itemRegistryKey, new ColoredTilesBlockItem(block, new Item.Settings().registryKey(itemRegistryKey).translationKey(Util.createTranslationKey("block", Blockus.id("colored_tiles")))));
         return block;
     }
 

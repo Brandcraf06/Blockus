@@ -1,7 +1,6 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.datagen.family.BlockusFamilies;
-import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusItemTags;

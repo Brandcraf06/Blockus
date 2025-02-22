@@ -26,7 +26,7 @@ public class WoolBundle {
         this.typeSuffix = typeSuffix;
 
 
-        String type = dyecolor.getName() + typeSuffix;
+        String type = dyecolor.getId() + typeSuffix;
         this.block = BlockFactory.register(type, BlockFactory.createCopy(base));
         this.slab = BlockFactory.registerSlab(this.block);
         this.stairs = BlockFactory.registerStairs(this.block);
