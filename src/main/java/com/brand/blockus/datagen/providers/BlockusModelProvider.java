@@ -331,9 +331,9 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_END_STONE_BRICKS);
 
         // White Oak Wood
-        modelGenerator.registerLog(BlockusBlocks.WHITE_OAK_LOG).log(BlockusBlocks.WHITE_OAK_LOG).wood(BlockusBlocks.WHITE_OAK_WOOD);
+        modelGenerator.createLogTexturePool(BlockusBlocks.WHITE_OAK_LOG).log(BlockusBlocks.WHITE_OAK_LOG).wood(BlockusBlocks.WHITE_OAK_WOOD);
         modelGenerator.registerSingleton(BlockusBlocks.WHITE_OAK_LEAVES, TexturedModel.LEAVES);
-        modelGenerator.registerLog(BlockusBlocks.STRIPPED_WHITE_OAK_LOG).log(BlockusBlocks.STRIPPED_WHITE_OAK_LOG).wood(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
+        modelGenerator.createLogTexturePool(BlockusBlocks.STRIPPED_WHITE_OAK_LOG).log(BlockusBlocks.STRIPPED_WHITE_OAK_LOG).wood(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
         registerFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.WHITE_OAK_SAPLING, BlockusBlocks.POTTED_WHITE_OAK_SAPLING, CrossType.NOT_TINTED);
 
         // Hanging Signs

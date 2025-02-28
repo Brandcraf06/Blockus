@@ -1,5 +1,5 @@
 {
-  "feature": "blockus:white_oak_leaf_litter",
+  "feature": "blockus:fallen_white_oak",
   "placement": [
     {
       "type": "minecraft:count",
@@ -8,7 +8,7 @@
         "distribution": [
           {
             "data": 0,
-            "weight": 24
+            "weight": 79
           },
           {
             "data": 1,
