@@ -435,6 +435,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerNeonBlock(modelGenerator, BlockusBlocks.RED_NEON);
         this.registerNeonBlock(modelGenerator, BlockusBlocks.WHITE_NEON);
         this.registerNeonBlock(modelGenerator, BlockusBlocks.YELLOW_NEON);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.RAINBOW_NEON);
 
         // Futurneo Blocks
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);

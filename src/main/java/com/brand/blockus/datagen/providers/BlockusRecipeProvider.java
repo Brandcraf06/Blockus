@@ -718,6 +718,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerNeonRecipe(exporter, GREEN_NEON, Items.GREEN_DYE);
         offerNeonRecipe(exporter, RED_NEON, Items.RED_DYE);
         offerNeonRecipe(exporter, BLACK_NEON, Items.BLACK_DYE);
+        offerNeonRecipe(exporter, RAINBOW_NEON, RAINBOW_PETALS);
 
         // Futurneo Blocks
         offerFuturneoRecipe(exporter, WHITE_FUTURNEO_BLOCK, Blocks.WHITE_STAINED_GLASS);
