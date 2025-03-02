@@ -1,4 +1,5 @@
-* Fixed Wooden Posts don't drop when broken
-* Changed Polished Purpur & Purpur Bricks textures to be more unique and consistent with Purpur Block
-* Changed some Small Logs textures
-* Tweaked Timber Frames textures
+**Last 1.20.1 update for real**
+* Changed Rainbow Petals block texture
+* Changed Mossy Planks textures
+* Changed Dark Oak Grate/Lattice texture
+* Tweaked Nether Bricks textures
