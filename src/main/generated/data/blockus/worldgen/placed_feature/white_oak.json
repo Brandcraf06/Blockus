@@ -2,8 +2,20 @@
   "feature": "blockus:white_oak",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 32
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 0,
+            "weight": 24
+          },
+          {
+            "data": 1,
+            "weight": 1
+          }
+        ]
+      }
     },
     {
       "type": "minecraft:in_square"
