@@ -88,7 +88,8 @@ public class BlockusWorldgenFeatures {
         BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.IS_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, PLACED_WHITE_OAK_RARE);
         BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.IS_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, PLACED_FALLEN_WHITE_OAK);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.MEADOW), GenerationStep.Feature.VEGETAL_DECORATION, PLACED_RAINBOW_ROSE);
+        BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.IS_FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, PLACED_RAINBOW_ROSE);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MEADOW), GenerationStep.Feature.VEGETAL_DECORATION, PLACED_RAINBOW_ROSE);
     }
 
     private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
