@@ -122,6 +122,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHISELED_BLUESTONE)
             .add(BLUESTONE_CIRCULAR_PAVING)
             .add(CHISELED_BLUESTONE_PILLAR)
+            .add(CHISELED_BLUESTONE_BRICKS)
             .add(BLUESTONE_LINES);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BRICKS_BLOCKS)
@@ -311,6 +312,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(SMALL_LIMESTONE_BRICKS))
             .add(CHISELED_LIMESTONE)
             .add(CHISELED_LIMESTONE_PILLAR)
+            .add(CHISELED_LIMESTONE_BRICKS)
             .add(LIMESTONE_LINES)
             .add(LIMESTONE_CIRCULAR_PAVING);
 
@@ -324,6 +326,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(SMALL_VIRIDITE_BRICKS))
             .add(CHISELED_VIRIDITE)
             .add(CHISELED_VIRIDITE_PILLAR)
+            .add(CHISELED_VIRIDITE_BRICKS)
             .add(VIRIDITE_CIRCULAR_PAVING)
             .add(VIRIDITE_LINES);
 
@@ -341,6 +344,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MARBLE_SQUARES)
             .add(bsswBundle(SMALL_MARBLE_BRICKS))
             .add(CHISELED_MARBLE_PILLAR)
+            .add(CHISELED_MARBLE_BRICKS)
             .add(CHISELED_MARBLE)
             .add(MARBLE_LINES)
             .add(MARBLE_CIRCULAR_PAVING);

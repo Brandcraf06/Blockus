@@ -169,6 +169,7 @@ public class BuildingBlocksGroup {
             addBssw(entries, SMALL_LIMESTONE_BRICKS);
             addBssw(entries, LIMESTONE_TILES);
             entries.add(CHISELED_LIMESTONE);
+            entries.add(CHISELED_LIMESTONE_BRICKS);
             entries.add(LIMESTONE_PILLAR);
             entries.add(CHISELED_LIMESTONE_PILLAR);
             entries.add(LIMESTONE_SQUARES);
@@ -183,6 +184,7 @@ public class BuildingBlocksGroup {
             addBssw(entries, SMALL_MARBLE_BRICKS);
             addBssw(entries, MARBLE_TILES);
             entries.add(CHISELED_MARBLE);
+            entries.add(CHISELED_MARBLE_BRICKS);
             entries.add(MARBLE_PILLAR);
             entries.add(CHISELED_MARBLE_PILLAR);
             entries.add(MARBLE_SQUARES);
@@ -222,6 +224,7 @@ public class BuildingBlocksGroup {
             addBssw(entries, SMALL_BLUESTONE_BRICKS);
             addBssw(entries, BLUESTONE_TILES);
             entries.add(CHISELED_BLUESTONE);
+            entries.add(CHISELED_BLUESTONE_BRICKS);
             entries.add(BLUESTONE_PILLAR);
             entries.add(CHISELED_BLUESTONE_PILLAR);
             entries.add(BLUESTONE_SQUARES);
@@ -236,6 +239,7 @@ public class BuildingBlocksGroup {
             addBssw(entries, SMALL_VIRIDITE_BRICKS);
             addBssw(entries, VIRIDITE_TILES);
             entries.add(CHISELED_VIRIDITE);
+            entries.add(CHISELED_VIRIDITE_BRICKS);
             entries.add(VIRIDITE_PILLAR);
             entries.add(CHISELED_VIRIDITE_PILLAR);
             entries.add(VIRIDITE_SQUARES);
