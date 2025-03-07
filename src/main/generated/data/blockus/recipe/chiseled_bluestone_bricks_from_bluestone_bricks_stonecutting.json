@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:bluestone_bricks",
+  "result": {
+    "count": 1,
+    "id": "blockus:chiseled_bluestone_bricks"
+  }
+}

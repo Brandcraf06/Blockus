@@ -187,18 +187,20 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Limestone
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_LIMESTONE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_PILLAR, BlockusBlocks.POLISHED_LIMESTONE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_BRICKS, BlockusBlocks.POLISHED_LIMESTONE.block);
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.LIMESTONE_PILLAR);
+        this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_PILLAR);
         this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.LIMESTONE_PRESSURE_PLATE, BlockusBlocks.LIMESTONE_BUTTON, BlockusBlocks.LIMESTONE.block);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIMESTONE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.LIMESTONE_LINES);
 
         // Marble
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_MARBLE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_MARBLE_PILLAR, BlockusBlocks.POLISHED_MARBLE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_MARBLE_BRICKS, BlockusBlocks.POLISHED_MARBLE.block);
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.MARBLE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.MARBLE_PILLAR);
+        this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_MARBLE_PILLAR);
         this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.MARBLE_PRESSURE_PLATE, BlockusBlocks.MARBLE_BUTTON, BlockusBlocks.MARBLE.block);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.MARBLE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.MARBLE_LINES);
@@ -207,17 +209,19 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.BLUESTONE_CIRCULAR_PAVING);
         this.registerLines(modelGenerator, BlockusBlocks.BLUESTONE_LINES);
         this.registerPillar(modelGenerator, BlockusBlocks.BLUESTONE_PILLAR);
+        this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_PILLAR);
         this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.BLUESTONE_PRESSURE_PLATE, BlockusBlocks.BLUESTONE_BUTTON, BlockusBlocks.BLUESTONE.block);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.BLUESTONE_SQUARES);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_BLUESTONE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_PILLAR, BlockusBlocks.POLISHED_BLUESTONE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_BRICKS, BlockusBlocks.POLISHED_BLUESTONE.block);
 
 
         // Viridite
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_VIRIDITE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_PILLAR, BlockusBlocks.POLISHED_VIRIDITE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_BRICKS, BlockusBlocks.POLISHED_VIRIDITE.block);
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.VIRIDITE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.VIRIDITE_PILLAR);
+        this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_PILLAR);
         this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.VIRIDITE_PRESSURE_PLATE, BlockusBlocks.VIRIDITE_BUTTON, BlockusBlocks.VIRIDITE.block);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.VIRIDITE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.VIRIDITE_LINES);
@@ -658,7 +662,7 @@ public class BlockusModelProvider extends FabricModelProvider {
             .with(When.create().set(Properties.AXIS, Direction.Axis.Z), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.UP, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.DOWN, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.UVLOCK, false))

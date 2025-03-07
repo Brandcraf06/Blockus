@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "blockus:block/chiseled_limestone_bricks_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "blockus:block/chiseled_limestone_bricks"
+    },
+    "axis=z": {
+      "model": "blockus:block/chiseled_limestone_bricks_horizontal",
+      "x": 90
+    }
+  }
+}
