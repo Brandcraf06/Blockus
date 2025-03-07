@@ -127,6 +127,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle SMALL_LIMESTONE_BRICKS = new BSSWBundle("small_limestone_bricks", LIMESTONE_BRICKS.block);
     public static final BSSWBundle LIMESTONE_TILES = new BSSWBundle("limestone_tiles", LIMESTONE_BRICKS.block);
     public static final Block CHISELED_LIMESTONE = register("chiseled_limestone", createCopy(BlockusBlocks.LIMESTONE_BRICKS.block));
+    public static final Block CHISELED_LIMESTONE_BRICKS = register("chiseled_limestone_bricks", createPillarCopy(BlockusBlocks.LIMESTONE_BRICKS.block));
     public static final Block CHISELED_LIMESTONE_PILLAR = registerPillar(BlockusBlocks.CHISELED_LIMESTONE);
     public static final Block LIMESTONE_SQUARES = register("limestone_squares", createCopy(BlockusBlocks.LIMESTONE_BRICKS.block));
     public static final Block LIMESTONE_CIRCULAR_PAVING = register("limestone_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.LIMESTONE_BRICKS.block)));
@@ -140,6 +141,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle SMALL_MARBLE_BRICKS = new BSSWBundle("small_marble_bricks", MARBLE_BRICKS.block);
     public static final BSSWBundle MARBLE_TILES = new BSSWBundle("marble_tiles", MARBLE_BRICKS.block);
     public static final Block CHISELED_MARBLE = register("chiseled_marble", createCopy(BlockusBlocks.MARBLE_BRICKS.block));
+    public static final Block CHISELED_MARBLE_BRICKS = register("chiseled_marble_bricks", createPillarCopy(BlockusBlocks.MARBLE_BRICKS.block));
     public static final Block CHISELED_MARBLE_PILLAR = registerPillar(BlockusBlocks.CHISELED_MARBLE);
     public static final Block MARBLE_SQUARES = register("marble_squares", createCopy(BlockusBlocks.MARBLE_BRICKS.block));
     public static final Block MARBLE_CIRCULAR_PAVING = register("marble_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.MARBLE_BRICKS.block)));
@@ -153,6 +155,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle SMALL_BLUESTONE_BRICKS = new BSSWBundle("small_bluestone_bricks", BLUESTONE_BRICKS.block);
     public static final BSSWBundle BLUESTONE_TILES = new BSSWBundle("bluestone_tiles", BLUESTONE_BRICKS.block);
     public static final Block CHISELED_BLUESTONE = register("chiseled_bluestone", createCopy(BlockusBlocks.BLUESTONE_BRICKS.block));
+    public static final Block CHISELED_BLUESTONE_BRICKS = register("chiseled_bluestone_bricks", createPillarCopy(BlockusBlocks.BLUESTONE_BRICKS.block));
     public static final Block CHISELED_BLUESTONE_PILLAR = registerPillar(BlockusBlocks.CHISELED_BLUESTONE);
     public static final Block BLUESTONE_SQUARES = register("bluestone_squares", createCopy(BlockusBlocks.BLUESTONE_BRICKS.block));
     public static final Block BLUESTONE_CIRCULAR_PAVING = register("bluestone_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.BLUESTONE_BRICKS.block)));
@@ -166,6 +169,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle SMALL_VIRIDITE_BRICKS = new BSSWBundle("small_viridite_bricks", VIRIDITE_BRICKS.block);
     public static final BSSWBundle VIRIDITE_TILES = new BSSWBundle("viridite_tiles", VIRIDITE_BRICKS.block);
     public static final Block CHISELED_VIRIDITE = register("chiseled_viridite", createCopy(BlockusBlocks.VIRIDITE_BRICKS.block));
+    public static final Block CHISELED_VIRIDITE_BRICKS = register("chiseled_viridite_bricks", createPillarCopy(BlockusBlocks.VIRIDITE_BRICKS.block));
     public static final Block CHISELED_VIRIDITE_PILLAR = registerPillar(BlockusBlocks.CHISELED_VIRIDITE);
     public static final Block VIRIDITE_SQUARES = register("viridite_squares", createCopy(BlockusBlocks.VIRIDITE_BRICKS.block));
     public static final Block VIRIDITE_CIRCULAR_PAVING = register("viridite_circular_paving", new OrientableBlockBase(AbstractBlock.Settings.copy(BlockusBlocks.VIRIDITE_BRICKS.block)));

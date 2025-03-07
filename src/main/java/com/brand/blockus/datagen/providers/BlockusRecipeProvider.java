@@ -221,6 +221,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerBsswCuttingRecipe(exporter, LIMESTONE_TILES, LIMESTONE.block, POLISHED_LIMESTONE.block, LIMESTONE_BRICKS.block);
         offerPolishedStoneRecipe(exporter, LIMESTONE_TILES.block, LIMESTONE_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHISELED_LIMESTONE, LIMESTONE.block, POLISHED_LIMESTONE.block, LIMESTONE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, CHISELED_LIMESTONE_BRICKS, LIMESTONE.block, POLISHED_LIMESTONE.block, LIMESTONE_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHISELED_LIMESTONE_PILLAR, LIMESTONE.block, POLISHED_LIMESTONE.block, LIMESTONE_BRICKS.block, LIMESTONE_PILLAR);
         offerStonecuttingRecipe(exporter, LIMESTONE_PILLAR, LIMESTONE.block, POLISHED_LIMESTONE.block, LIMESTONE_BRICKS.block);
         offerStonecuttingRecipe(exporter, LIMESTONE_SQUARES, LIMESTONE.block, POLISHED_LIMESTONE.block, LIMESTONE_BRICKS.block);
@@ -240,6 +241,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerBsswCuttingRecipe(exporter, MARBLE_TILES, MARBLE.block, POLISHED_MARBLE.block, MARBLE_BRICKS.block);
         offerPolishedStoneRecipe(exporter, MARBLE_TILES.block, MARBLE_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHISELED_MARBLE, MARBLE.block, POLISHED_MARBLE.block, MARBLE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, CHISELED_MARBLE_BRICKS, MARBLE.block, POLISHED_MARBLE.block, MARBLE_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHISELED_MARBLE_PILLAR, MARBLE.block, POLISHED_MARBLE.block, MARBLE_BRICKS.block, MARBLE_PILLAR);
         offerStonecuttingRecipe(exporter, MARBLE_PILLAR, MARBLE.block, POLISHED_MARBLE.block, MARBLE_BRICKS.block);
         offerStonecuttingRecipe(exporter, MARBLE_SQUARES, MARBLE.block, POLISHED_MARBLE.block, MARBLE_BRICKS.block);
@@ -258,6 +260,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerBsswCuttingRecipe(exporter, BLUESTONE_TILES, BLUESTONE.block, POLISHED_BLUESTONE.block, BLUESTONE_BRICKS.block);
         offerPolishedStoneRecipe(exporter, BLUESTONE_TILES.block, BLUESTONE_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHISELED_BLUESTONE, BLUESTONE.block, POLISHED_BLUESTONE.block, BLUESTONE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, CHISELED_BLUESTONE_BRICKS, BLUESTONE.block, POLISHED_BLUESTONE.block, BLUESTONE_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHISELED_BLUESTONE_PILLAR, BLUESTONE.block, POLISHED_BLUESTONE.block, BLUESTONE_BRICKS.block, BLUESTONE_PILLAR);
         offerStonecuttingRecipe(exporter, BLUESTONE_PILLAR, BLUESTONE.block, POLISHED_BLUESTONE.block, BLUESTONE_BRICKS.block);
         offerStonecuttingRecipe(exporter, BLUESTONE_SQUARES, BLUESTONE.block, POLISHED_BLUESTONE.block, BLUESTONE_BRICKS.block);
@@ -277,6 +280,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerBsswCuttingRecipe(exporter, VIRIDITE_TILES, VIRIDITE.block, POLISHED_VIRIDITE.block, VIRIDITE_BRICKS.block);
         offerPolishedStoneRecipe(exporter, VIRIDITE_TILES.block, VIRIDITE_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHISELED_VIRIDITE, VIRIDITE.block, POLISHED_VIRIDITE.block, VIRIDITE_BRICKS.block);
+        offerStonecuttingRecipe(exporter, CHISELED_VIRIDITE_BRICKS, VIRIDITE.block, POLISHED_VIRIDITE.block, VIRIDITE_BRICKS.block);
         offerStonecuttingRecipe(exporter, CHISELED_VIRIDITE_PILLAR, VIRIDITE.block, POLISHED_VIRIDITE.block, VIRIDITE_BRICKS.block, VIRIDITE_PILLAR);
         offerStonecuttingRecipe(exporter, VIRIDITE_PILLAR, VIRIDITE.block, POLISHED_VIRIDITE.block, VIRIDITE_BRICKS.block);
         offerStonecuttingRecipe(exporter, VIRIDITE_SQUARES, VIRIDITE.block, POLISHED_VIRIDITE.block, VIRIDITE_BRICKS.block);

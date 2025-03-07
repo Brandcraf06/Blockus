@@ -1,3 +1,2 @@
-* White oak trees now generate in dark forests.
-* White oak trees are now slightly more common, especially in plains.
-* Rainbow roses now generate in every biomes in `is_flower_forest` conventional biome tag.
+- Changed Chiseled Marble/Limestone/Bluestone/Viridite Pillar texture
+- Old (but tweaked) texture is now used for new Chiseled Marble/Limestone/Bluestone/Viridite Bricks

@@ -486,6 +486,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.LIMESTONE_PILLAR, "Limestone Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_LIMESTONE, "Chiseled Limestone");
         translationBuilder.add(BlockusBlocks.CHISELED_LIMESTONE_PILLAR, "Chiseled Limestone Pillar");
+        translationBuilder.add(BlockusBlocks.CHISELED_LIMESTONE_BRICKS, "Chiseled Limestone Bricks");
         translationBuilder.add(BlockusBlocks.LIMESTONE_SQUARES, "Limestone Squares");
         translationBuilder.add(BlockusBlocks.LIMESTONE_LINES, "Limestone Lines");
 
@@ -498,6 +499,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.MARBLE_PILLAR, "Marble Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_MARBLE, "Chiseled Marble");
         translationBuilder.add(BlockusBlocks.CHISELED_MARBLE_PILLAR, "Chiseled Marble Pillar");
+        translationBuilder.add(BlockusBlocks.CHISELED_MARBLE_BRICKS, "Chiseled Marble Bricks");
         translationBuilder.add(BlockusBlocks.MARBLE_SQUARES, "Marble Squares");
         translationBuilder.add(BlockusBlocks.MARBLE_LINES, "Marble Lines");
 
@@ -510,6 +512,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.BLUESTONE_PILLAR, "Bluestone Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_BLUESTONE, "Chiseled Bluestone");
         translationBuilder.add(BlockusBlocks.CHISELED_BLUESTONE_PILLAR, "Chiseled Bluestone Pillar");
+        translationBuilder.add(BlockusBlocks.CHISELED_BLUESTONE_BRICKS, "Chiseled Bluestone Bricks");
         translationBuilder.add(BlockusBlocks.BLUESTONE_SQUARES, "Bluestone Squares");
         translationBuilder.add(BlockusBlocks.BLUESTONE_LINES, "Bluestone Lines");
 
@@ -522,6 +525,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.VIRIDITE_PILLAR, "Viridite Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_VIRIDITE, "Chiseled Viridite");
         translationBuilder.add(BlockusBlocks.CHISELED_VIRIDITE_PILLAR, "Chiseled Viridite Pillar");
+        translationBuilder.add(BlockusBlocks.CHISELED_VIRIDITE_BRICKS, "Chiseled Viridite Bricks");
         translationBuilder.add(BlockusBlocks.VIRIDITE_SQUARES, "Viridite Squares");
         translationBuilder.add(BlockusBlocks.VIRIDITE_LINES, "Viridite Lines");
 

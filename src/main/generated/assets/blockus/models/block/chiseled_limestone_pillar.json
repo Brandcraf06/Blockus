@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "blockus:block/polished_limestone",
+    "end": "blockus:block/chiseled_limestone_pillar_top",
     "side": "blockus:block/chiseled_limestone_pillar"
   }
 }
