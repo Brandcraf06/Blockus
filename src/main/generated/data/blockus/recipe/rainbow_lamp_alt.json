@@ -4,7 +4,7 @@
   "group": "lit_redstone_lamps",
   "key": {
     "#": "blockus:redstone_lamp_lit",
-    "S": "blockus:rainbow_petal"
+    "S": "blockus:rainbow_petals"
   },
   "pattern": [
     " S ",

@@ -4,7 +4,7 @@
   "group": "rainbow_glowstone",
   "key": {
     "G": "minecraft:glowstone_dust",
-    "R": "blockus:rainbow_petal"
+    "R": "blockus:rainbow_petals"
   },
   "pattern": [
     " G ",

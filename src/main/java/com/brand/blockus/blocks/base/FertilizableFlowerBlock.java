@@ -1,9 +1,8 @@
 package com.brand.blockus.blocks.base;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.SuspiciousStewIngredient;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.block.*;
+import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -21,7 +20,7 @@ public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable
 
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
-        return true;
+        return Fertilizable.canSpread(world, pos, state);
     }
 
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
@@ -29,6 +28,8 @@ public class FertilizableFlowerBlock extends FlowerBlock implements Fertilizable
     }
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        dropStack(world, pos, new ItemStack(this));
+        Fertilizable.findPosToSpreadTo(world, pos, state).ifPresent((posx) -> {
+            world.setBlockState(posx, this.getDefaultState());
+        });
     }
 }

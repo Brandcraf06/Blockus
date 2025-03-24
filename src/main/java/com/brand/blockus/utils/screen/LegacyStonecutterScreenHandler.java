@@ -1,6 +1,8 @@
 package com.brand.blockus.utils.screen;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -12,10 +14,7 @@ import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.StonecuttingRecipe;
 import net.minecraft.recipe.display.CuttingRecipeDisplay;
 import net.minecraft.recipe.input.SingleStackRecipeInput;
-import net.minecraft.screen.Property;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerContext;
-import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -71,7 +70,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
             }
 
             public void onTakeItem(PlayerEntity player, ItemStack stack) {
-                stack.onCraftByPlayer(player.getWorld(), player, stack.getCount());
+                stack.onCraftByPlayer(player, stack.getCount());
                 LegacyStonecutterScreenHandler.this.output.unlockLastRecipe(player, this.getInputStacks());
                 ItemStack itemStack = LegacyStonecutterScreenHandler.this.inputSlot.takeStack(1);
                 if (!itemStack.isEmpty()) {
@@ -118,12 +117,16 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
     }
 
     public boolean onButtonClick(PlayerEntity player, int id) {
-        if (this.isInBounds(id)) {
-            this.selectedRecipe.set(id);
-            this.populateResult(id);
-        }
+        if (this.selectedRecipe.get() == id) {
+            return false;
+        } else {
+            if (this.isInBounds(id)) {
+                this.selectedRecipe.set(id);
+                this.populateResult(id);
+            }
 
-        return true;
+            return true;
+        }
     }
 
     private boolean isInBounds(int id) {
@@ -189,7 +192,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
             Item item = itemStack2.getItem();
             itemStack = itemStack2.copy();
             if (slot == 1) {
-                item.onCraftByPlayer(itemStack2, player.getWorld(), player);
+                item.onCraftByPlayer(itemStack2, player);
                 if (!this.insertItem(itemStack2, 2, 38, true)) {
                     return ItemStack.EMPTY;
                 }

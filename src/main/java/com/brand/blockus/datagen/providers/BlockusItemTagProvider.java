@@ -7,6 +7,7 @@ import com.brand.blockus.registry.tag.BlockusItemTags;
 import com.brand.blockus.utils.BlockChecker;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -289,5 +290,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         // Conventional Item Tags
         this.getOrCreateTagBuilder(ConventionalItemTags.CHAINS)
             .add(GOLDEN_CHAIN.asItem());
+
+        this.copy(ConventionalBlockTags.SMALL_FLOWERS, ConventionalItemTags.SMALL_FLOWERS);
+
     }
 }

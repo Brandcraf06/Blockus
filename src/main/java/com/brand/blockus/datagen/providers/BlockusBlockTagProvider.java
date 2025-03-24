@@ -1,6 +1,7 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.BlockChecker;
@@ -1176,6 +1177,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         // Conventional Block Tags
         this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)
             .addTag(BlockusBlockTags.BEVELED_GLASS);
+
+        this.getOrCreateTagBuilder(ConventionalBlockTags.SMALL_FLOWERS)
+            .add(RAINBOW_ROSE);
     }
 
     public static Block[] bsswBundle(BSSWBundle block) {

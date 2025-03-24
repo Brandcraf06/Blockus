@@ -6,19 +6,12 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
-import net.minecraft.village.TradedItem;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class Instance {
-
     public static void init() {
 
 
@@ -243,30 +236,15 @@ public class Instance {
     }
 
     public static void addTradeOffers() {
-        TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
-            factories.add(new SellItemFactory(LEGACY_SAPLING, 5, 1, 8));
-            factories.add(new SellItemFactory(WHITE_OAK_SAPLING, 5, 1, 8));
-            factories.add(new SellItemFactory(RAINBOW_PETALS, 1, 3, 12));
-            factories.add(new SellItemFactory(RAINBOW_ROSE, 1, 1, 12));
-        });
-    }
+        TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
+            TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
+            new TradeOffers.SellItemFactory(LEGACY_SAPLING.asItem(), 5, 1, 8, 1),
+            new TradeOffers.SellItemFactory(WHITE_OAK_SAPLING.asItem(), 5, 1, 8, 1),
+            new TradeOffers.SellItemFactory(RAINBOW_PETALS.asItem(), 1, 3, 12, 1),
+            new TradeOffers.SellItemFactory(RAINBOW_ROSE.asItem(), 1, 1, 12, 1)));
 
-
-    static class SellItemFactory implements TradeOffers.Factory {
-        private final ItemStack sell;
-        private final int price;
-        private final int count;
-        private final int maxUses;
-
-        public SellItemFactory(ItemConvertible stack, int price, int count, int maxUses) {
-            this.sell = new ItemStack(stack);
-            this.price = price;
-            this.count = count;
-            this.maxUses = maxUses;
-        }
-
-        public TradeOffer create(Entity entity, Random random) {
-            return new TradeOffer(new TradedItem(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, 1, 0.05f);
-        }
+        TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
+            TradeOfferHelper.WanderingTraderOffersBuilder.SELL_SPECIAL_ITEMS_POOL,
+            new TradeOffers.SellItemFactory(WHITE_OAK_LOG.asItem(), 1, 8, 4, 1)));
     }
 }
