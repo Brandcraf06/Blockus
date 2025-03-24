@@ -1,2 +1,2 @@
-- Changed Chiseled Marble/Limestone/Bluestone/Viridite Pillar texture
-- Old (but tweaked) texture is now used for new Chiseled Marble/Limestone/Bluestone/Viridite Bricks
+- Changed Chiseled Marble, Limestone, Bluestone & Viridite Pillar texture
+- Added Chiseled Marble, Limestone, Bluestone & Viridite Bricks (Use old (but tweaked) chiseled pillar texture)
