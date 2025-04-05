@@ -205,8 +205,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CRACKED_OBSIDIAN_BRICKS = register("cracked_obsidian_bricks", createCopy(BlockusBlocks.OBSIDIAN_BRICKS.block));
     public static final Block OBSIDIAN_PILLAR = registerPillar("obsidian", BlockusBlocks.OBSIDIAN_BRICKS.block);
     public static final Block OBSIDIAN_CIRCULAR_PAVING = register("obsidian_circular_paving", OrientableBlockBase::new, createCopy(BlockusBlocks.OBSIDIAN_BRICKS.block));
-    public static final Block OBSIDIAN_REINFORCED_DOOR = stoneDoor("obsidian_reinforced_door", 50.0F, 1200.0F, BlockSoundGroup.STONE, MapColor.BLACK, BlockSetType.IRON);
-    public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = stoneTrapdoor("obsidian_reinforced_trapdoor", 50.0F, 1200.0F, BlockSoundGroup.STONE, MapColor.BLACK, BlockSetType.IRON);
+    public static final Block OBSIDIAN_REINFORCED_DOOR = stoneDoor("obsidian_reinforced_door", 50.0F, 1200.0F, BlockSoundGroup.STONE, MapColor.BLACK, BlockSetType.GOLD);
+    public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = stoneTrapdoor("obsidian_reinforced_trapdoor", 50.0F, 1200.0F, BlockSoundGroup.STONE, MapColor.BLACK, BlockSetType.GOLD);
     public static final Block GLOWING_OBSIDIAN = register("glowing_obsidian", createCopy(Blocks.OBSIDIAN, PistonBehavior.BLOCK).luminance((state) -> 15));
 
     // Netherrack
@@ -838,8 +838,8 @@ public class BlockusBlocks extends BlockFactory {
 
     // Gates - chains - bars
     public static final Block IRON_GATE = register("iron_gate", (settings) -> new DoorBlock(BlockSetType.IRON, settings), createCopy(Blocks.IRON_DOOR));
-    public static final Block GOLDEN_GATE = register("golden_gate", (settings) -> new DoorBlock(BlockSetType.IRON, settings), createCopy(Blocks.IRON_DOOR));
-    public static final Block GOLDEN_BARS = register("golden_bars", PaneBlock::new, createCopy(Blocks.IRON_BARS));
+    public static final Block GOLDEN_GATE = register("golden_gate", (settings) -> new DoorBlock(BlockSetType.GOLD, settings), createCopy(Blocks.IRON_DOOR));
+    public static final Block GOLDEN_BARS = register("golden_bars", PaneBlock::new, createCopy(Blocks.IRON_BARS).sounds(BlockSoundGroup.METAL));
     public static final Block GOLDEN_CHAIN = register("golden_chain", ChainBlock::new, createCopy(Blocks.CHAIN));
 
     // Lantern Blocks
