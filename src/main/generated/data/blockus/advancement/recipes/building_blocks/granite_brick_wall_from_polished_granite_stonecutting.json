@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:granite_brick_wall_from_polished_granite_stonecutting"
+        "recipe": "blockus:granite_brick_wall_from_polished_granite_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:granite_brick_wall_from_polished_granite_stonecutting"
+      "blockus:granite_brick_wall_from_polished_granite_stonecutting"
     ]
   }
 }

@@ -36,33 +36,14 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.RAINBOW_PETALS, Blocks.PINK_PETALS);
 
         BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT,
-            BlockusBlocks.WOODEN_FRAME,
-            BlockusBlocks.OAK_SMALL_HEDGE,
-            BlockusBlocks.SPRUCE_SMALL_HEDGE,
-            BlockusBlocks.BIRCH_SMALL_HEDGE,
-            BlockusBlocks.JUNGLE_SMALL_HEDGE,
-            BlockusBlocks.ACACIA_SMALL_HEDGE,
-            BlockusBlocks.DARK_OAK_SMALL_HEDGE,
-            BlockusBlocks.MANGROVE_SMALL_HEDGE,
-            BlockusBlocks.CHERRY_SMALL_HEDGE,
-            BlockusBlocks.PALE_OAK_SMALL_HEDGE,
-            BlockusBlocks.WHITE_OAK_SMALL_HEDGE,
             BlockusBlocks.RAW_BAMBOO.door,
             BlockusBlocks.RAW_BAMBOO.trapdoor,
-            BlockusBlocks.AZALEA_SMALL_HEDGE,
-            BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE,
-            BlockusBlocks.LEGACY_LEAVES,
-            BlockusBlocks.WHITE_OAK_LEAVES,
             BlockusBlocks.LEGACY_SAPLING,
             BlockusBlocks.POTTED_LEGACY_SAPLING,
             BlockusBlocks.WHITE_OAK_SAPLING,
             BlockusBlocks.POTTED_WHITE_OAK_SAPLING,
             BlockusBlocks.OBSIDIAN_REINFORCED_DOOR,
             BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR,
-            BlockusBlocks.IRON_GATE,
-            BlockusBlocks.GOLDEN_GATE,
-            BlockusBlocks.GOLDEN_CHAIN,
-            BlockusBlocks.GOLDEN_BARS,
             BlockusBlocks.RAINBOW_ROSE,
             BlockusBlocks.POTTED_RAINBOW_ROSE,
             BlockusBlocks.RAINBOW_PETALS,
@@ -96,12 +77,36 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_LEGACY_BLUE_ROSE
         );
 
+        BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED,
+            BlockusBlocks.OAK_SMALL_HEDGE,
+            BlockusBlocks.SPRUCE_SMALL_HEDGE,
+            BlockusBlocks.BIRCH_SMALL_HEDGE,
+            BlockusBlocks.JUNGLE_SMALL_HEDGE,
+            BlockusBlocks.ACACIA_SMALL_HEDGE,
+            BlockusBlocks.DARK_OAK_SMALL_HEDGE,
+            BlockusBlocks.MANGROVE_SMALL_HEDGE,
+            BlockusBlocks.CHERRY_SMALL_HEDGE,
+            BlockusBlocks.PALE_OAK_SMALL_HEDGE,
+            BlockusBlocks.WHITE_OAK_SMALL_HEDGE,
+            BlockusBlocks.AZALEA_SMALL_HEDGE,
+            BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE,
+            BlockusBlocks.LEGACY_LEAVES,
+            BlockusBlocks.WHITE_OAK_LEAVES,
+            BlockusBlocks.WOODEN_FRAME,
+            BlockusBlocks.IRON_GATE,
+            BlockusBlocks.GOLDEN_GATE,
+            BlockusBlocks.GOLDEN_CHAIN,
+            BlockusBlocks.GOLDEN_BARS,
+            BlockusBlocks.BEVELED_GLASS,
+            BlockusBlocks.BEVELED_GLASS_PANE
+        );
+
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, timberFrameBundle.lattice, timberFrameBundle.grate);
         }
 
         for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
-            BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, woodenPostBundle.block, woodenPostBundle.stripped);
+            BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, woodenPostBundle.block, woodenPostBundle.stripped);
         }
 
         BlockRenderLayerMap.putBlocks(BlockRenderLayer.TRANSLUCENT,
@@ -109,7 +114,6 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.RAINBOW_GLASS,
             BlockusBlocks.RAINBOW_GLASS_PANE,
 
-            BlockusBlocks.BEVELED_GLASS,
             BlockusBlocks.WHITE_BEVELED_GLASS,
             BlockusBlocks.ORANGE_BEVELED_GLASS,
             BlockusBlocks.MAGENTA_BEVELED_GLASS,
@@ -128,7 +132,6 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.BLACK_BEVELED_GLASS,
             BlockusBlocks.RAINBOW_BEVELED_GLASS,
 
-            BlockusBlocks.BEVELED_GLASS_PANE,
             BlockusBlocks.WHITE_BEVELED_GLASS_PANE,
             BlockusBlocks.ORANGE_BEVELED_GLASS_PANE,
             BlockusBlocks.MAGENTA_BEVELED_GLASS_PANE,

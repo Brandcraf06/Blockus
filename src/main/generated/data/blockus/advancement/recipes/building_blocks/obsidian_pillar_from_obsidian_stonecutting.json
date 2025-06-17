@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:obsidian_pillar_from_obsidian_stonecutting"
+        "recipe": "blockus:obsidian_pillar_from_obsidian_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:obsidian_pillar_from_obsidian_stonecutting"
+      "blockus:obsidian_pillar_from_obsidian_stonecutting"
     ]
   }
 }

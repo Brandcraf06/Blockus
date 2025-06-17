@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:lapis_lazuli_from_legacy_lapis_block"
+        "recipe": "blockus:lapis_lazuli_from_legacy_lapis_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:lapis_lazuli_from_legacy_lapis_block"
+      "blockus:lapis_lazuli_from_legacy_lapis_block"
     ]
   }
 }

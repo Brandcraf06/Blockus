@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bluestone_tile_wall_from_bluestone_tiles_stonecutting"
+        "recipe": "blockus:bluestone_tile_wall_from_bluestone_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bluestone_tile_wall_from_bluestone_tiles_stonecutting"
+      "blockus:bluestone_tile_wall_from_bluestone_tiles_stonecutting"
     ]
   }
 }

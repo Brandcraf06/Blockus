@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:purple_shingles_stairs_from_purple_terracotta_stonecutting"
+        "recipe": "blockus:purple_shingles_stairs_from_purple_terracotta_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:purple_shingles_stairs_from_purple_terracotta_stonecutting"
+      "blockus:purple_shingles_stairs_from_purple_terracotta_stonecutting"
     ]
   }
 }

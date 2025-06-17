@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:gray_shingles_slab_from_gray_terracotta_stonecutting"
+        "recipe": "blockus:gray_shingles_slab_from_gray_terracotta_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:gray_shingles_slab_from_gray_terracotta_stonecutting"
+      "blockus:gray_shingles_slab_from_gray_terracotta_stonecutting"
     ]
   }
 }

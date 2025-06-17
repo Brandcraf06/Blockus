@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mossy_deepslate_brick_wall_from_mossy_deepslate_bricks_stonecutting"
+        "recipe": "blockus:mossy_deepslate_brick_wall_from_mossy_deepslate_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mossy_deepslate_brick_wall_from_mossy_deepslate_bricks_stonecutting"
+      "blockus:mossy_deepslate_brick_wall_from_mossy_deepslate_bricks_stonecutting"
     ]
   }
 }

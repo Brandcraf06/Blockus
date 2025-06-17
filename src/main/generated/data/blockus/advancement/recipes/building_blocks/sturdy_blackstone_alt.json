@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:sturdy_blackstone_alt"
+        "recipe": "blockus:sturdy_blackstone_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:sturdy_blackstone_alt"
+      "blockus:sturdy_blackstone_alt"
     ]
   }
 }

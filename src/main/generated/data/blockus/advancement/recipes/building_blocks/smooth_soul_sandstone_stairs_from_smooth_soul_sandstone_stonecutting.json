@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smooth_soul_sandstone_stairs_from_smooth_soul_sandstone_stonecutting"
+        "recipe": "blockus:smooth_soul_sandstone_stairs_from_smooth_soul_sandstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smooth_soul_sandstone_stairs_from_smooth_soul_sandstone_stonecutting"
+      "blockus:smooth_soul_sandstone_stairs_from_smooth_soul_sandstone_stonecutting"
     ]
   }
 }

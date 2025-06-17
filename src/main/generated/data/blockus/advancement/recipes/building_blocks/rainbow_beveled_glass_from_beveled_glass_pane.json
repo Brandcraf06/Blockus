@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:rainbow_beveled_glass_from_beveled_glass_pane"
+        "recipe": "blockus:rainbow_beveled_glass_from_beveled_glass_pane"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:rainbow_beveled_glass_from_beveled_glass_pane"
+      "blockus:rainbow_beveled_glass_from_beveled_glass_pane"
     ]
   }
 }

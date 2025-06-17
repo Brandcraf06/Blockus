@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chiseled_amethyst_from_amethyst_bricks_stonecutting"
+        "recipe": "blockus:chiseled_amethyst_from_amethyst_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chiseled_amethyst_from_amethyst_bricks_stonecutting"
+      "blockus:chiseled_amethyst_from_amethyst_bricks_stonecutting"
     ]
   }
 }

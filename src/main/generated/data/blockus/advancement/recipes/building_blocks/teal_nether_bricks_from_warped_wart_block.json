@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:teal_nether_bricks_from_warped_wart_block"
+        "recipe": "blockus:teal_nether_bricks_from_warped_wart_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:teal_nether_bricks_from_warped_wart_block"
+      "blockus:teal_nether_bricks_from_warped_wart_block"
     ]
   }
 }

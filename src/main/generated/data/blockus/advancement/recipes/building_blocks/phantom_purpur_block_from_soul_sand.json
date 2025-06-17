@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:phantom_purpur_block_from_soul_sand"
+        "recipe": "blockus:phantom_purpur_block_from_soul_sand"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:phantom_purpur_block_from_soul_sand"
+      "blockus:phantom_purpur_block_from_soul_sand"
     ]
   }
 }

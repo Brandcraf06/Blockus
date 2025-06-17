@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:legacy_iron_block_from_iron_block_stonecutting"
+        "recipe": "blockus:legacy_iron_block_from_iron_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:legacy_iron_block_from_iron_block_stonecutting"
+      "blockus:legacy_iron_block_from_iron_block_stonecutting"
     ]
   }
 }

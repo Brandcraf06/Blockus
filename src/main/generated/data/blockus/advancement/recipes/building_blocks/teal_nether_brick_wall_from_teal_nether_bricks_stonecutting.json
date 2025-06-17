@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:teal_nether_brick_wall_from_teal_nether_bricks_stonecutting"
+        "recipe": "blockus:teal_nether_brick_wall_from_teal_nether_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:teal_nether_brick_wall_from_teal_nether_bricks_stonecutting"
+      "blockus:teal_nether_brick_wall_from_teal_nether_bricks_stonecutting"
     ]
   }
 }

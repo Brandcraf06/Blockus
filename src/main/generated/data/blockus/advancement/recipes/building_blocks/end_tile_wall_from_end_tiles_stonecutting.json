@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:end_tile_wall_from_end_tiles_stonecutting"
+        "recipe": "blockus:end_tile_wall_from_end_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:end_tile_wall_from_end_tiles_stonecutting"
+      "blockus:end_tile_wall_from_end_tiles_stonecutting"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:magenta_stone_brick_stairs_from_stone_brick_stairs"
+        "recipe": "blockus:magenta_stone_brick_stairs_from_stone_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:magenta_stone_brick_stairs_from_stone_brick_stairs"
+      "blockus:magenta_stone_brick_stairs_from_stone_brick_stairs"
     ]
   }
 }

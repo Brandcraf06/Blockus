@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:gold_ingot_from_gold_brick_wall"
+        "recipe": "blockus:gold_ingot_from_gold_brick_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:gold_ingot_from_gold_brick_wall"
+      "blockus:gold_ingot_from_gold_brick_wall"
     ]
   }
 }

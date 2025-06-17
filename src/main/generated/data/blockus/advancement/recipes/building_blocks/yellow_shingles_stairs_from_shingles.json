@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:yellow_shingles_stairs_from_shingles"
+        "recipe": "blockus:yellow_shingles_stairs_from_shingles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:yellow_shingles_stairs_from_shingles"
+      "blockus:yellow_shingles_stairs_from_shingles"
     ]
   }
 }

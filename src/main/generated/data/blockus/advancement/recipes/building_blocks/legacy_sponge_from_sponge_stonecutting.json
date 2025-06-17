@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:legacy_sponge_from_sponge_stonecutting"
+        "recipe": "blockus:legacy_sponge_from_sponge_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:legacy_sponge_from_sponge_stonecutting"
+      "blockus:legacy_sponge_from_sponge_stonecutting"
     ]
   }
 }

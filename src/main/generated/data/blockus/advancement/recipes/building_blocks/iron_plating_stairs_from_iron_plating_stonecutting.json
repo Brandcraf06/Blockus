@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:iron_plating_stairs_from_iron_plating_stonecutting"
+        "recipe": "blockus:iron_plating_stairs_from_iron_plating_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:iron_plating_stairs_from_iron_plating_stonecutting"
+      "blockus:iron_plating_stairs_from_iron_plating_stonecutting"
     ]
   }
 }

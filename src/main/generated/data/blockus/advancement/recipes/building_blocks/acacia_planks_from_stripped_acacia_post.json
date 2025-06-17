@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:acacia_planks_from_stripped_acacia_post"
+        "recipe": "blockus:acacia_planks_from_stripped_acacia_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:acacia_planks_from_stripped_acacia_post"
+      "blockus:acacia_planks_from_stripped_acacia_post"
     ]
   }
 }

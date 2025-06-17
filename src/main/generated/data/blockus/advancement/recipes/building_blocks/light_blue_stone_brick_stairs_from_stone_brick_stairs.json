@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:light_blue_stone_brick_stairs_from_stone_brick_stairs"
+        "recipe": "blockus:light_blue_stone_brick_stairs_from_stone_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:light_blue_stone_brick_stairs_from_stone_brick_stairs"
+      "blockus:light_blue_stone_brick_stairs_from_stone_brick_stairs"
     ]
   }
 }

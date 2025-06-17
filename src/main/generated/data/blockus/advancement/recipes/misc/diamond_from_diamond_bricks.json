@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:diamond_from_diamond_bricks"
+        "recipe": "blockus:diamond_from_diamond_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:diamond_from_diamond_bricks"
+      "blockus:diamond_from_diamond_bricks"
     ]
   }
 }

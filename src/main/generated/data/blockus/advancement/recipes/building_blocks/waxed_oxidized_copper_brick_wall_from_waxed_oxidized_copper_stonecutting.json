@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:waxed_oxidized_copper_brick_wall_from_waxed_oxidized_copper_stonecutting"
+        "recipe": "blockus:waxed_oxidized_copper_brick_wall_from_waxed_oxidized_copper_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:waxed_oxidized_copper_brick_wall_from_waxed_oxidized_copper_stonecutting"
+      "blockus:waxed_oxidized_copper_brick_wall_from_waxed_oxidized_copper_stonecutting"
     ]
   }
 }

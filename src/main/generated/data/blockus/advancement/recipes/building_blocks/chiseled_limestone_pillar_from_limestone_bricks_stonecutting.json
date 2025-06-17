@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chiseled_limestone_pillar_from_limestone_bricks_stonecutting"
+        "recipe": "blockus:chiseled_limestone_pillar_from_limestone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chiseled_limestone_pillar_from_limestone_bricks_stonecutting"
+      "blockus:chiseled_limestone_pillar_from_limestone_bricks_stonecutting"
     ]
   }
 }

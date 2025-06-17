@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:diorite_brick_stairs_from_polished_diorite_stonecutting"
+        "recipe": "blockus:diorite_brick_stairs_from_polished_diorite_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:diorite_brick_stairs_from_polished_diorite_stonecutting"
+      "blockus:diorite_brick_stairs_from_polished_diorite_stonecutting"
     ]
   }
 }

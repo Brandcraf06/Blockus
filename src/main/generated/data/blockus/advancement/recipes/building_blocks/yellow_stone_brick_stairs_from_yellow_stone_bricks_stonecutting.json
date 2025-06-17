@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:yellow_stone_brick_stairs_from_yellow_stone_bricks_stonecutting"
+        "recipe": "blockus:yellow_stone_brick_stairs_from_yellow_stone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:yellow_stone_brick_stairs_from_yellow_stone_bricks_stonecutting"
+      "blockus:yellow_stone_brick_stairs_from_yellow_stone_bricks_stonecutting"
     ]
   }
 }

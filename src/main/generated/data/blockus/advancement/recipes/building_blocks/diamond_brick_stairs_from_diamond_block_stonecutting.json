@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:diamond_brick_stairs_from_diamond_block_stonecutting"
+        "recipe": "blockus:diamond_brick_stairs_from_diamond_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:diamond_brick_stairs_from_diamond_block_stonecutting"
+      "blockus:diamond_brick_stairs_from_diamond_block_stonecutting"
     ]
   }
 }

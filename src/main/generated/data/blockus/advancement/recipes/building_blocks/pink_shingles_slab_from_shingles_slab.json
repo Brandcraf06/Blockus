@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pink_shingles_slab_from_shingles_slab"
+        "recipe": "blockus:pink_shingles_slab_from_shingles_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pink_shingles_slab_from_shingles_slab"
+      "blockus:pink_shingles_slab_from_shingles_slab"
     ]
   }
 }

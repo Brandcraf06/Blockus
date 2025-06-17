@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:prismarine_tile_wall_from_prismarine_tiles_stonecutting"
+        "recipe": "blockus:prismarine_tile_wall_from_prismarine_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:prismarine_tile_wall_from_prismarine_tiles_stonecutting"
+      "blockus:prismarine_tile_wall_from_prismarine_tiles_stonecutting"
     ]
   }
 }

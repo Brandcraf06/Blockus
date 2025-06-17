@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:purple_patterned_carpet_from_purple_carpet"
+        "recipe": "blockus:purple_patterned_carpet_from_purple_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:purple_patterned_carpet_from_purple_carpet"
+      "blockus:purple_patterned_carpet_from_purple_carpet"
     ]
   }
 }

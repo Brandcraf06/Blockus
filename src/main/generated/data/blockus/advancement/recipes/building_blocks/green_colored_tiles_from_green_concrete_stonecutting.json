@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:green_colored_tiles_from_green_concrete_stonecutting"
+        "recipe": "blockus:green_colored_tiles_from_green_concrete_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:green_colored_tiles_from_green_concrete_stonecutting"
+      "blockus:green_colored_tiles_from_green_concrete_stonecutting"
     ]
   }
 }

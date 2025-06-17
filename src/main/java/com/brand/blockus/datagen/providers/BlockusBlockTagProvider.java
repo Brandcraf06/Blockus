@@ -218,7 +218,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(GOLDEN_APPLE_CRATE)
             .add(GOLDEN_CARROT_CRATE)
             .add(GLOW_BERRIES_CRATE)
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("blueberries_crate")));
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("blueberries_crate")))
+        ;
 
         this.valueLookupBuilder(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
             .add(FRAMED_PAPER_BLOCK)
@@ -282,12 +283,13 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POTTED_CACTUS_LARGE.block)
             .add(POTTED_BAMBOO_LARGE.block)
             .add(POTTED_PITCHER_PLANT.block)
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_autumn_birch")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_autumn_oak")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_palm")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_pink_cherry_oak")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_white_cherry_oak")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_huge_dark_amaranth_fungus")));
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_autumn_birch")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_autumn_oak")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_palm")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_pink_cherry_oak")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_white_cherry_oak")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_huge_dark_amaranth_fungus")))
+        ;
 
         this.valueLookupBuilder(BlockusBlockTags.LAVA_BRICKS)
             .add(bsswBundle(LAVA_BRICKS))
@@ -517,14 +519,15 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(FLOWERING_AZALEA_SMALL_HEDGE)
             .add(MOSS_SMALL_HEDGE)
             .add(PALE_MOSS_SMALL_HEDGE)
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("sap_maple_small_hedge")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("vermilion_maple_small_hedge")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("fulvous_maple_small_hedge")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("mikado_maple_small_hedge")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("pink_cherry_oak_small_hedge")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("white_cherry_oak_small_hedge")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("palm_small_hedge")))
-            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("dark_amaranth_small_hedge")));
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("sap_maple_small_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("vermilion_maple_small_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("fulvous_maple_small_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("mikado_maple_small_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("pink_cherry_oak_small_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("white_cherry_oak_small_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("palm_small_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("dark_amaranth_small_hedge")))
+        ;
 
         this.valueLookupBuilder(BlockusBlockTags.SNOW_BRICKS)
             .add(bsswBundle(SNOW_BRICKS))

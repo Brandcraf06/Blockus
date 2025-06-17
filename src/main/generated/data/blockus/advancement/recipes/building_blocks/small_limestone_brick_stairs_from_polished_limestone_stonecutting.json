@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:small_limestone_brick_stairs_from_polished_limestone_stonecutting"
+        "recipe": "blockus:small_limestone_brick_stairs_from_polished_limestone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:small_limestone_brick_stairs_from_polished_limestone_stonecutting"
+      "blockus:small_limestone_brick_stairs_from_polished_limestone_stonecutting"
     ]
   }
 }

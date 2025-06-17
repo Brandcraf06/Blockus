@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:polished_blackstone_pillar_from_polished_blackstone_stonecutting"
+        "recipe": "blockus:polished_blackstone_pillar_from_polished_blackstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:polished_blackstone_pillar_from_polished_blackstone_stonecutting"
+      "blockus:polished_blackstone_pillar_from_polished_blackstone_stonecutting"
     ]
   }
 }

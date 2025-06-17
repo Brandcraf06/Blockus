@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:yellow_patterned_carpet_from_yellow_carpet"
+        "recipe": "blockus:yellow_patterned_carpet_from_yellow_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:yellow_patterned_carpet_from_yellow_carpet"
+      "blockus:yellow_patterned_carpet_from_yellow_carpet"
     ]
   }
 }

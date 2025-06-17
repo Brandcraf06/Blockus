@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:redstone_brick_wall_from_redstone_block_stonecutting"
+        "recipe": "blockus:redstone_brick_wall_from_redstone_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:redstone_brick_wall_from_redstone_block_stonecutting"
+      "blockus:redstone_brick_wall_from_redstone_block_stonecutting"
     ]
   }
 }

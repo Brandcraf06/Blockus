@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mossy_birch_planks_from_moss_block"
+        "recipe": "blockus:mossy_birch_planks_from_moss_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mossy_birch_planks_from_moss_block"
+      "blockus:mossy_birch_planks_from_moss_block"
     ]
   }
 }

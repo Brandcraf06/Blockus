@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:golden_carrot_crate_from_carrot_crate"
+        "recipe": "blockus:golden_carrot_crate_from_carrot_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:golden_carrot_crate_from_carrot_crate"
+      "blockus:golden_carrot_crate_from_carrot_crate"
     ]
   }
 }

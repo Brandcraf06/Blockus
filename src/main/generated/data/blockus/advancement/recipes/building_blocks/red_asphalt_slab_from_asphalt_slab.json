@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:red_asphalt_slab_from_asphalt_slab"
+        "recipe": "blockus:red_asphalt_slab_from_asphalt_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:red_asphalt_slab_from_asphalt_slab"
+      "blockus:red_asphalt_slab_from_asphalt_slab"
     ]
   }
 }

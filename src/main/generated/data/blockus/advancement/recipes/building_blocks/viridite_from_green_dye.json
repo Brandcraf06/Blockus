@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:viridite_from_green_dye"
+        "recipe": "blockus:viridite_from_green_dye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:viridite_from_green_dye"
+      "blockus:viridite_from_green_dye"
     ]
   }
 }

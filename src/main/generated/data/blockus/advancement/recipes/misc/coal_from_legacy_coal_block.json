@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:coal_from_legacy_coal_block"
+        "recipe": "blockus:coal_from_legacy_coal_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:coal_from_legacy_coal_block"
+      "blockus:coal_from_legacy_coal_block"
     ]
   }
 }

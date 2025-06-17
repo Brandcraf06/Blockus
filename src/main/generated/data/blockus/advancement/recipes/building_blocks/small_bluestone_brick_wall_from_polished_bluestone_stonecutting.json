@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:small_bluestone_brick_wall_from_polished_bluestone_stonecutting"
+        "recipe": "blockus:small_bluestone_brick_wall_from_polished_bluestone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:small_bluestone_brick_wall_from_polished_bluestone_stonecutting"
+      "blockus:small_bluestone_brick_wall_from_polished_bluestone_stonecutting"
     ]
   }
 }

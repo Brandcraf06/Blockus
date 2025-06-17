@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:light_gray_concrete_bricks_from_light_gray_concrete_stonecutting"
+        "recipe": "blockus:light_gray_concrete_bricks_from_light_gray_concrete_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:light_gray_concrete_bricks_from_light_gray_concrete_stonecutting"
+      "blockus:light_gray_concrete_bricks_from_light_gray_concrete_stonecutting"
     ]
   }
 }

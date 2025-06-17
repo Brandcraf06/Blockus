@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:crimson_wart_brick_slab_from_nether_wart_block_stonecutting"
+        "recipe": "blockus:crimson_wart_brick_slab_from_nether_wart_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:crimson_wart_brick_slab_from_nether_wart_block_stonecutting"
+      "blockus:crimson_wart_brick_slab_from_nether_wart_block_stonecutting"
     ]
   }
 }

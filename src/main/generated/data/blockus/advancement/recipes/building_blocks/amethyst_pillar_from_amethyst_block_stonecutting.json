@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:amethyst_pillar_from_amethyst_block_stonecutting"
+        "recipe": "blockus:amethyst_pillar_from_amethyst_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:amethyst_pillar_from_amethyst_block_stonecutting"
+      "blockus:amethyst_pillar_from_amethyst_block_stonecutting"
     ]
   }
 }

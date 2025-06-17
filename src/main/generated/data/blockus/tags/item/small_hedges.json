@@ -15,38 +15,6 @@
     "blockus:azalea_small_hedge",
     "blockus:azalea_small_hedge_flowers",
     "blockus:moss_small_hedge",
-    "blockus:pale_moss_small_hedge",
-    {
-      "id": "blockus:sap_maple_small_hedge",
-      "required": false
-    },
-    {
-      "id": "blockus:vermilion_maple_small_hedge",
-      "required": false
-    },
-    {
-      "id": "blockus:fulvous_maple_small_hedge",
-      "required": false
-    },
-    {
-      "id": "blockus:mikado_maple_small_hedge",
-      "required": false
-    },
-    {
-      "id": "blockus:pink_cherry_oak_small_hedge",
-      "required": false
-    },
-    {
-      "id": "blockus:white_cherry_oak_small_hedge",
-      "required": false
-    },
-    {
-      "id": "blockus:palm_small_hedge",
-      "required": false
-    },
-    {
-      "id": "blockus:dark_amaranth_small_hedge",
-      "required": false
-    }
+    "blockus:pale_moss_small_hedge"
   ]
 }

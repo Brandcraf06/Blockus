@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blue_stone_brick_slab_from_stone_brick_slab"
+        "recipe": "blockus:blue_stone_brick_slab_from_stone_brick_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blue_stone_brick_slab_from_stone_brick_slab"
+      "blockus:blue_stone_brick_slab_from_stone_brick_slab"
     ]
   }
 }

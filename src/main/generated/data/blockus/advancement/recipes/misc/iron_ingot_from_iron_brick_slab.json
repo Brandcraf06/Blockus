@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:iron_ingot_from_iron_brick_slab"
+        "recipe": "blockus:iron_ingot_from_iron_brick_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:iron_ingot_from_iron_brick_slab"
+      "blockus:iron_ingot_from_iron_brick_slab"
     ]
   }
 }

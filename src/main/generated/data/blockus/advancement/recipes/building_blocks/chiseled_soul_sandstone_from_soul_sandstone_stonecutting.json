@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chiseled_soul_sandstone_from_soul_sandstone_stonecutting"
+        "recipe": "blockus:chiseled_soul_sandstone_from_soul_sandstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chiseled_soul_sandstone_from_soul_sandstone_stonecutting"
+      "blockus:chiseled_soul_sandstone_from_soul_sandstone_stonecutting"
     ]
   }
 }

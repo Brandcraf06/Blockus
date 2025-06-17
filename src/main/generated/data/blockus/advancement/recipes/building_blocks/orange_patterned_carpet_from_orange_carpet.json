@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:orange_patterned_carpet_from_orange_carpet"
+        "recipe": "blockus:orange_patterned_carpet_from_orange_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:orange_patterned_carpet_from_orange_carpet"
+      "blockus:orange_patterned_carpet_from_orange_carpet"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:gray_stone_brick_stairs_from_stone_brick_stairs"
+        "recipe": "blockus:gray_stone_brick_stairs_from_stone_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:gray_stone_brick_stairs_from_stone_brick_stairs"
+      "blockus:gray_stone_brick_stairs_from_stone_brick_stairs"
     ]
   }
 }
