@@ -1,7 +1,6 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.Blockus;
-import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.BlockChecker;
@@ -28,21 +27,16 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         super(output, registriesFuture);
     }
 
-    public FabricTagBuilder getOrCreateTagBuilder(Identifier id) {
-        TagKey<Block> tag = TagKey.of(RegistryKeys.BLOCK, id);
-        return this.getOrCreateTagBuilder(tag);
-    }
-
     @Override
     protected void configure(RegistryWrapper.WrapperLookup registries) {
-        this.getOrCreateTagBuilder(BlockusBlockTags.AMETHYST_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.AMETHYST_BLOCKS)
             .add(bsswBundle(POLISHED_AMETHYST))
             .add(bsswBundle(AMETHYST_BRICKS))
             .add(CHISELED_AMETHYST)
             .add(AMETHYST_PILLAR)
             .add(AMETHYST_LAMP);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.ANDESITE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.ANDESITE_BLOCKS)
             .add(bsswBundle(ANDESITE_BRICKS))
             .add(HERRINGBONE_ANDESITE_BRICKS)
             .add(CHISELED_ANDESITE_BRICKS)
@@ -50,24 +44,24 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POLISHED_ANDESITE_PILLAR)
             .add(ANDESITE_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockTags.VIBRATION_RESONATORS)
+        this.valueLookupBuilder(BlockTags.VIBRATION_RESONATORS)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
 
         for (AsphaltBundle asphaltType : AsphaltBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.ASPHALT)
+            this.valueLookupBuilder(BlockusBlockTags.ASPHALT)
                 .add(asphaltType.block)
                 .add(asphaltType.stairs)
                 .add(asphaltType.slab);
         }
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.ASPHALT)
+        this.valueLookupBuilder(BlockusBlockTags.ASPHALT)
             .add(RAINBOW_ASPHALT);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.BARRIERS)
+        this.valueLookupBuilder(BlockusBlockTags.BARRIERS)
             .add(CAUTION_BARRIER)
             .add(ROAD_BARRIER);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.BASALT_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.BASALT_BLOCKS)
             .add(bsswBundle(ROUGH_BASALT))
             .add(bsswBundle(POLISHED_BASALT_BRICKS))
             .add(CHISELED_POLISHED_BASALT)
@@ -76,7 +70,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(HERRINGBONE_POLISHED_BASALT_BRICKS)
             .add(POLISHED_BASALT_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.BEVELED_GLASS)
+        this.valueLookupBuilder(BlockusBlockTags.BEVELED_GLASS)
             .add(BEVELED_GLASS)
             .add(WHITE_BEVELED_GLASS)
             .add(ORANGE_BEVELED_GLASS)
@@ -96,7 +90,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BLACK_BEVELED_GLASS)
             .add(RAINBOW_BEVELED_GLASS);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.BLACKSTONE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.BLACKSTONE_BLOCKS)
             .add(bsswBundle(POLISHED_BLACKSTONE_TILES))
             .add(POLISHED_BLACKSTONE_PILLAR)
             .add(HERRINGBONE_POLISHED_BLACKSTONE_BRICKS)
@@ -108,11 +102,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BLACKSTONE_TRAPDOOR)
             .add(STURDY_BLACKSTONE);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.BLAZE_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.BLAZE_BRICKS)
             .add(bsswBundle(BLAZE_BRICKS))
             .add(BLAZE_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.BLUESTONE)
+        this.valueLookupBuilder(BlockusBlockTags.BLUESTONE)
             .add(bsswBundle(BLUESTONE))
             .add(BLUESTONE_PILLAR)
             .add(bsswBundle(BLUESTONE_BRICKS))
@@ -126,7 +120,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHISELED_BLUESTONE_BRICKS)
             .add(BLUESTONE_LINES);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.BRICKS_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.BRICKS_BLOCKS)
             .add(bsswBundle(LARGE_BRICKS))
             .add(HERRINGBONE_BRICKS)
             .add(bsswBundle(SOAKED_BRICKS))
@@ -136,13 +130,13 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(CHARRED_BRICKS))
             .add(HERRINGBONE_CHARRED_BRICKS);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.CHOCOLATE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.CHOCOLATE_BLOCKS)
             .add(bsswBundle(CHOCOLATE_BLOCK))
             .add(bsswBundle(CHOCOLATE_BRICKS))
             .add(CHOCOLATE_SQUARES)
             .add(CHOCOLATE_TABLET);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES)
+        this.valueLookupBuilder(BlockusBlockTags.COLORED_TILES)
             .add(WHITE_COLORED_TILES)
             .add(ORANGE_COLORED_TILES)
             .add(MAGENTA_COLORED_TILES)
@@ -162,11 +156,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(RAINBOW_COLORED_TILES);
 
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES).add(coloredTilesVariants.block);
+            this.valueLookupBuilder(BlockusBlockTags.COLORED_TILES).add(coloredTilesVariants.block);
         }
 
         for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.CONCRETE_BLOCKS)
+            this.valueLookupBuilder(BlockusBlockTags.CONCRETE_BLOCKS)
                 .add(concreteType.block)
                 .add(concreteType.stairs)
                 .add(concreteType.slab)
@@ -174,17 +168,17 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
                 .add(concreteType.pillar);
         }
 
-        this.getOrCreateTagBuilder(BlockTags.CRYSTAL_SOUND_BLOCKS)
+        this.valueLookupBuilder(BlockTags.CRYSTAL_SOUND_BLOCKS)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.DEEPSLATE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.DEEPSLATE_BLOCKS)
             .add(bsswBundle(MOSSY_DEEPSLATE_BRICKS))
             .add(HERRINGBONE_DEEPSLATE_BRICKS)
             .add(DEEPSLATE_PILLAR)
             .add(DEEPSLATE_CIRCULAR_PAVING)
             .add(STURDY_DEEPSLATE);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.DIORITE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.DIORITE_BLOCKS)
             .add(bsswBundle(DIORITE_BRICKS))
             .add(HERRINGBONE_DIORITE_BRICKS)
             .add(CHISELED_DIORITE_BRICKS)
@@ -192,7 +186,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POLISHED_DIORITE_PILLAR)
             .add(DIORITE_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.DRIPSTONE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.DRIPSTONE_BLOCKS)
             .add(bsswBundle(POLISHED_DRIPSTONE))
             .add(bsswBundle(DRIPSTONE_BRICKS))
             .add(bsswBundle(MOSSY_DRIPSTONE_BRICKS))
@@ -200,7 +194,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHISELED_DRIPSTONE)
             .add(DRIPSTONE_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.END_STONE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.END_STONE_BLOCKS)
             .add(CHISELED_END_STONE_BRICKS)
             .add(HERRINGBONE_END_STONE_BRICKS)
             .add(bsswBundle(POLISHED_END_STONE))
@@ -210,7 +204,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(PURPUR_DECORATED_END_STONE)
             .add(PHANTOM_PURPUR_DECORATED_END_STONE);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.FOOD_CRATES)
+        this.valueLookupBuilder(BlockusBlockTags.FOOD_CRATES)
             .add(SWEET_BERRIES_CRATE)
             .add(SALMON_CRATE)
             .add(PUFFERFISH_CRATE)
@@ -224,15 +218,15 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(GOLDEN_APPLE_CRATE)
             .add(GOLDEN_CARROT_CRATE)
             .add(GLOW_BERRIES_CRATE)
-            .addOptional(Blockus.id("blueberries_crate"));
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("blueberries_crate")));
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
             .add(FRAMED_PAPER_BLOCK)
             .add(PAPER_WALL)
             .add(PAPER_DOOR)
             .add(PAPER_TRAPDOOR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
+        this.valueLookupBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
             .add(WHITE_GLAZED_TERRACOTTA_PILLAR)
             .add(ORANGE_GLAZED_TERRACOTTA_PILLAR)
             .add(MAGENTA_GLAZED_TERRACOTTA_PILLAR)
@@ -250,7 +244,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(RED_GLAZED_TERRACOTTA_PILLAR)
             .add(BLACK_GLAZED_TERRACOTTA_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.GRANITE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.GRANITE_BLOCKS)
             .add(bsswBundle(GRANITE_BRICKS))
             .add(HERRINGBONE_GRANITE_BRICKS)
             .add(CHISELED_GRANITE_BRICKS)
@@ -258,14 +252,14 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POLISHED_GRANITE_PILLAR)
             .add(GRANITE_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.HONEYCOMB_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.HONEYCOMB_BLOCKS)
             .add(bsswBundle(HONEYCOMB_BRICKS));
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.ICE_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.ICE_BRICKS)
             .add(ICE_BRICKS)
             .add(ICE_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.LARGE_FLOWER_POTS)
+        this.valueLookupBuilder(BlockusBlockTags.LARGE_FLOWER_POTS)
             .add(LARGE_FLOWER_POT)
             .add(POTTED_ROSE_BUSH.block)
             .add(POTTED_LILAC.block)
@@ -288,22 +282,22 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POTTED_CACTUS_LARGE.block)
             .add(POTTED_BAMBOO_LARGE.block)
             .add(POTTED_PITCHER_PLANT.block)
-            .addOptional(Blockus.id("potted_autumn_birch"))
-            .addOptional(Blockus.id("potted_autumn_oak"))
-            .addOptional(Blockus.id("potted_palm"))
-            .addOptional(Blockus.id("potted_pink_cherry_oak"))
-            .addOptional(Blockus.id("potted_white_cherry_oak"))
-            .addOptional(Blockus.id("potted_huge_dark_amaranth_fungus"));
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_autumn_birch")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_autumn_oak")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_palm")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_pink_cherry_oak")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_white_cherry_oak")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_huge_dark_amaranth_fungus")));
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.LAVA_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.LAVA_BRICKS)
             .add(bsswBundle(LAVA_BRICKS))
             .add(CHISELED_LAVA_BRICKS);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.LAVA_POLISHED_BLACKSTONE_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.LAVA_POLISHED_BLACKSTONE_BRICKS)
             .add(bsswBundle(LAVA_POLISHED_BLACKSTONE_BRICKS))
             .add(CHISELED_LAVA_POLISHED_BLACKSTONE);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.LIMESTONE)
+        this.valueLookupBuilder(BlockusBlockTags.LIMESTONE)
             .add(bsswBundle(LIMESTONE))
             .add(bsswBundle(POLISHED_LIMESTONE))
             .add(bsswBundle(LIMESTONE_BRICKS))
@@ -317,7 +311,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LIMESTONE_LINES)
             .add(LIMESTONE_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.VIRIDITE)
+        this.valueLookupBuilder(BlockusBlockTags.VIRIDITE)
             .add(bsswBundle(VIRIDITE))
             .add(bsswBundle(POLISHED_VIRIDITE))
             .add(bsswBundle(VIRIDITE_BRICKS))
@@ -331,12 +325,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(VIRIDITE_CIRCULAR_PAVING)
             .add(VIRIDITE_LINES);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.MAGMA_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.MAGMA_BRICKS)
             .add(bsswBundle(MAGMA_BRICKS))
             .add(bsswBundle(SMALL_MAGMA_BRICKS))
             .add(CHISELED_MAGMA_BRICKS);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.MARBLE)
+        this.valueLookupBuilder(BlockusBlockTags.MARBLE)
             .add(bsswBundle(MARBLE))
             .add(bsswBundle(POLISHED_MARBLE))
             .add(bsswBundle(MARBLE_BRICKS))
@@ -350,7 +344,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MARBLE_LINES)
             .add(MARBLE_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.NEON)
+        this.valueLookupBuilder(BlockusBlockTags.NEON)
             .add(WHITE_NEON)
             .add(ORANGE_NEON)
             .add(MAGENTA_NEON)
@@ -369,7 +363,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(BLACK_NEON)
             .add(RAINBOW_NEON);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.NETHER_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.NETHER_BRICKS)
             .add(bsswBundle(POLISHED_NETHER_BRICKS))
             .add(bsswBundle(POLISHED_RED_NETHER_BRICKS))
             .add(HERRINGBONE_NETHER_BRICKS)
@@ -385,12 +379,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(HERRINGBONE_TEAL_NETHER_BRICKS)
             .add(TEAL_NETHER_BRICK_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.NETHERRACK_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.NETHERRACK_BLOCKS)
             .add(bsswBundle(POLISHED_NETHERRACK))
             .add(bsswBundle(NETHERRACK_BRICKS))
             .add(NETHERRACK_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.OBSIDIAN)
+        this.valueLookupBuilder(BlockusBlockTags.OBSIDIAN)
             .add(bsswBundle(OBSIDIAN_BRICKS))
             .add(CRACKED_OBSIDIAN_BRICKS)
             .add(bsswBundle(SMALL_OBSIDIAN_BRICKS))
@@ -402,20 +396,20 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_CRYING_OBSIDIAN)
             .add(LEGACY_GLOWING_OBSIDIAN);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
+        this.valueLookupBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
             .addTag(BlockusBlockTags.PATTERNED_WOOL);
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_WOOL)
+            this.valueLookupBuilder(BlockusBlockTags.PATTERNED_WOOL)
                 .add(woolBundle.block);
-            this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_CARPETS)
+            this.valueLookupBuilder(BlockusBlockTags.PATTERNED_CARPETS)
                 .add(woolBundle.carpet);
-            this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
+            this.valueLookupBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
                 .add(woolBundle.stairs)
                 .add(woolBundle.slab);
         }
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS)
             .add(bsswBundle(PHANTOM_PURPUR_BLOCK))
             .add(PHANTOM_PURPUR_PILLAR)
             .add(bsswBundle(PHANTOM_PURPUR_BRICKS))
@@ -425,11 +419,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHISELED_PHANTOM_PURPUR)
             .add(PHANTOM_PURPUR_LINES);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.PLATINGS)
+        this.valueLookupBuilder(BlockusBlockTags.PLATINGS)
             .add(bsswBundle(IRON_PLATING))
             .add(bsswBundle(GOLD_PLATING));
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.PRISMARINE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.PRISMARINE_BLOCKS)
             .add(PRISMARINE_CIRCULAR_PAVING)
             .add(CHISELED_DARK_PRISMARINE)
             .add(DARK_PRISMARINE_PILLAR)
@@ -437,7 +431,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(PRISMARINE_PILLAR)
             .add(bsswBundle(PRISMARINE_TILES));
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.PURPUR_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.PURPUR_BLOCKS)
             .add(bsswBundle(PURPUR_BRICKS))
             .add(bsswBundle(POLISHED_PURPUR))
             .add(PURPUR_SQUARES)
@@ -446,15 +440,15 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(PURPUR_LINES)
             .addTag(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.QUARTZ_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.QUARTZ_BLOCKS)
             .add(bsswBundle(QUARTZ_TILES))
             .add(QUARTZ_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.RAINBOW_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.RAINBOW_BLOCKS)
             .add(RAINBOW_BLOCK)
             .add(bsswBundle(RAINBOW_BRICKS));
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.RED_SANDSTONE)
+        this.valueLookupBuilder(BlockusBlockTags.RED_SANDSTONE)
             .add(bsswBundle(ROUGH_RED_SANDSTONE))
             .add(bsswBundle(RED_SANDSTONE_BRICKS))
             .add(bsswBundle(SMALL_RED_SANDSTONE_BRICKS))
@@ -462,12 +456,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LAPIS_DECORATED_RED_SANDSTONE)
             .add(RED_SANDSTONE_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.RESIN_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.RESIN_BLOCKS)
             .add(bsswBundle(LARGE_RESIN_BRICKS))
             .add(HERRINGBONE_RESIN_BRICKS)
             .add(RESIN_BRICK_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.SANDSTONE)
+        this.valueLookupBuilder(BlockusBlockTags.SANDSTONE)
             .add(bsswBundle(ROUGH_SANDSTONE))
             .add(bsswBundle(SANDSTONE_BRICKS))
             .add(bsswBundle(SMALL_SANDSTONE_BRICKS))
@@ -475,13 +469,13 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LAPIS_DECORATED_SANDSTONE)
             .add(SANDSTONE_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.SCULK_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.SCULK_BLOCKS)
             .add(bsswBundle(POLISHED_SCULK))
             .add(bsswBundle(SCULK_BRICKS))
             .add(CHISELED_SCULK_BRICKS)
             .add(SCULK_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.SHINGLES)
+        this.valueLookupBuilder(BlockusBlockTags.SHINGLES)
             .add(bsswBundle(SHINGLES))
             .add(bsswBundle(WHITE_SHINGLES))
             .add(bsswBundle(ORANGE_SHINGLES))
@@ -501,12 +495,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(BLACK_SHINGLES));
 
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_POSTS)
+            this.valueLookupBuilder(BlockusBlockTags.WOODEN_POSTS)
                 .add(woodenPost.block)
                 .add(woodenPost.stripped);
         }
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.SMALL_HEDGES)
+        this.valueLookupBuilder(BlockusBlockTags.SMALL_HEDGES)
             .add(OAK_SMALL_HEDGE)
             .add(SPRUCE_SMALL_HEDGE)
             .add(BIRCH_SMALL_HEDGE)
@@ -523,20 +517,20 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(FLOWERING_AZALEA_SMALL_HEDGE)
             .add(MOSS_SMALL_HEDGE)
             .add(PALE_MOSS_SMALL_HEDGE)
-            .addOptional(Blockus.id("sap_maple_small_hedge"))
-            .addOptional(Blockus.id("vermilion_maple_small_hedge"))
-            .addOptional(Blockus.id("fulvous_maple_small_hedge"))
-            .addOptional(Blockus.id("mikado_maple_small_hedge"))
-            .addOptional(Blockus.id("pink_cherry_oak_small_hedge"))
-            .addOptional(Blockus.id("white_cherry_oak_small_hedge"))
-            .addOptional(Blockus.id("palm_small_hedge"))
-            .addOptional(Blockus.id("dark_amaranth_small_hedge"));
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("sap_maple_small_hedge")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("vermilion_maple_small_hedge")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("fulvous_maple_small_hedge")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("mikado_maple_small_hedge")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("pink_cherry_oak_small_hedge")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("white_cherry_oak_small_hedge")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("palm_small_hedge")))
+            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("dark_amaranth_small_hedge")));
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.SNOW_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.SNOW_BRICKS)
             .add(bsswBundle(SNOW_BRICKS))
             .add(SNOW_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.SOUL_SANDSTONE)
+        this.valueLookupBuilder(BlockusBlockTags.SOUL_SANDSTONE)
             .add(bsswBundle(SOUL_SANDSTONE))
             .add(bsswBundle(ROUGH_SOUL_SANDSTONE))
             .add(bsswBundle(SMOOTH_SOUL_SANDSTONE))
@@ -549,11 +543,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LAPIS_DECORATED_SOUL_SANDSTONE)
             .add(SOUL_SANDSTONE_PILLAR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.SOUL_SOILS)
+        this.valueLookupBuilder(BlockusBlockTags.SOUL_SOILS)
             .add(Blocks.SOUL_SAND)
             .add(Blocks.SOUL_SOIL);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.STAINED_STONE_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.STAINED_STONE_BRICKS)
             .add(bsswBundle(WHITE_STONE_BRICKS))
             .add(bsswBundle(ORANGE_STONE_BRICKS))
             .add(bsswBundle(MAGENTA_STONE_BRICKS))
@@ -570,7 +564,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(RED_STONE_BRICKS))
             .add(bsswBundle(BLACK_STONE_BRICKS));
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.STONE_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.STONE_BLOCKS)
             .add(bsswBundle(STONE_TILES))
             .add(STONE_BRICK_PILLAR)
             .add(HERRINGBONE_STONE_BRICKS)
@@ -580,7 +574,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(STONE_TRAPDOOR)
             .add(STURDY_STONE);
 
-        this.getOrCreateTagBuilder(BlockTags.STONE_BUTTONS)
+        this.valueLookupBuilder(BlockTags.STONE_BUTTONS)
             .add(POLISHED_ANDESITE_BUTTON)
             .add(POLISHED_DIORITE_BUTTON)
             .add(POLISHED_GRANITE_BUTTON)
@@ -595,24 +589,24 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POLISHED_SCULK_BUTTON)
             .add(VIRIDITE_BUTTON);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.THATCH)
+        this.valueLookupBuilder(BlockusBlockTags.THATCH)
             .add(bsswBundle(THATCH));
 
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.TIMBER_FRAMES)
+            this.valueLookupBuilder(BlockusBlockTags.TIMBER_FRAMES)
                 .add(timberFrameBundle.block)
                 .add(timberFrameBundle.diagonal)
                 .add(timberFrameBundle.cross);
 
-            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_LATTICES)
+            this.valueLookupBuilder(BlockusBlockTags.WOODEN_LATTICES)
                 .add(timberFrameBundle.lattice);
 
-            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_GRATES)
+            this.valueLookupBuilder(BlockusBlockTags.WOODEN_GRATES)
                 .add(timberFrameBundle.grate);
         }
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
+        this.valueLookupBuilder(BlockusBlockTags.TUFF_BLOCKS)
             .add(bsswBundle(MOSSY_TUFF_BRICKS))
             .add(bsswBundle(TUFF_TILES))
             .add(CRACKED_TUFF_BRICKS)
@@ -621,15 +615,15 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(TUFF_PILLAR)
             .add(TUFF_CIRCULAR_PAVING);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.WARPED_NETHER_GRASS)
+        this.valueLookupBuilder(BlockusBlockTags.WARPED_NETHER_GRASS)
             .add(Blocks.NETHER_SPROUTS)
             .add(Blocks.WARPED_ROOTS);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.WATER_BRICKS)
+        this.valueLookupBuilder(BlockusBlockTags.WATER_BRICKS)
             .add(bsswBundle(WATER_BRICKS))
             .add(CHISELED_WATER_BRICKS);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.WHITE_OAK_LOGS)
+        this.valueLookupBuilder(BlockusBlockTags.WHITE_OAK_LOGS)
             .add(WHITE_OAK_LOG)
             .add(WHITE_OAK_WOOD)
             .add(STRIPPED_WHITE_OAK_LOG)
@@ -638,27 +632,27 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         for (BSSWBundle block : BSSWBundle.values()) {
             if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.WOODS)) {
-                this.getOrCreateTagBuilder(BlockusBlockTags.ALL_WOODEN_MOSAICS)
+                this.valueLookupBuilder(BlockusBlockTags.ALL_WOODEN_MOSAICS)
                     .add(block.block)
                     .add(block.stairs)
                     .add(block.slab);
             }
             if (BlockChecker.isMossyPlanks(block.type, BlockChecker.WOODS)) {
-                this.getOrCreateTagBuilder(BlockusBlockTags.ALL_MOSSY_PLANKS)
+                this.valueLookupBuilder(BlockusBlockTags.ALL_MOSSY_PLANKS)
                     .add(block.block)
                     .add(block.stairs)
                     .add(block.slab);
             }
         }
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.ALL_WOODEN_MOSAICS)
+        this.valueLookupBuilder(BlockusBlockTags.ALL_WOODEN_MOSAICS)
             .add(Blocks.BAMBOO_MOSAIC)
             .add(Blocks.BAMBOO_MOSAIC_STAIRS)
             .add(Blocks.BAMBOO_MOSAIC_SLAB);
 
         for (BSSWBundle block : BSSWBundle.values()) {
             if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type, BlockChecker.FLAMMABLE_WOODS)) {
-                this.getOrCreateTagBuilder(Identifier.of("c", "planks_that_burn"))
+                this.valueLookupBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "planks_that_burn")))
                     .add(block.block);
             }
         }
@@ -666,19 +660,19 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         for (CopperBundle copperBundle : CopperBundle.values()) {
             for (Block block : copperBundle.all()) {
                 if (block.toString().contains("tuff")) {
-                    this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
+                    this.valueLookupBuilder(BlockusBlockTags.TUFF_BLOCKS)
                         .add(block);
                 } else {
-                    this.getOrCreateTagBuilder(BlockusBlockTags.COPPER_BLOCKS)
+                    this.valueLookupBuilder(BlockusBlockTags.COPPER_BLOCKS)
                         .add(block);
                 }
             }
 
-            this.getOrCreateTagBuilder(BlockTags.WALLS)
+            this.valueLookupBuilder(BlockTags.WALLS)
                 .add(copperBundle.walls());
         }
 
-        this.getOrCreateTagBuilder(Identifier.of("c", "planks_that_burn"))
+        this.valueLookupBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "planks_that_burn")))
             .add(Blocks.OAK_PLANKS)
             .add(Blocks.SPRUCE_PLANKS)
             .add(Blocks.BIRCH_PLANKS)
@@ -706,11 +700,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(HERRINGBONE_RAW_BAMBOO_PLANKS)
             .add(HERRINGBONE_PALE_OAK_PLANKS);
 
-        this.getOrCreateTagBuilder(Identifier.of("c", "bars"))
+        this.valueLookupBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "bars")))
             .add(GOLDEN_BARS);
 
         // Vanilla Block Tags
-        this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+        this.valueLookupBuilder(BlockTags.AXE_MINEABLE)
             .add(LEGACY_PLANKS)
             .add(SOUL_O_LANTERN)
             .add(REDSTONE_O_LANTERN)
@@ -724,7 +718,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.ALL_MOSSY_PLANKS)
             .addTag(BlockusBlockTags.WOODEN_POSTS);
 
-        this.getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+        this.valueLookupBuilder(BlockTags.HOE_MINEABLE)
             .add(ROTTEN_FLESH_BLOCK)
             .add(CHORUS_BLOCK)
             .add(LEGACY_SPONGE)
@@ -733,7 +727,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.THATCH)
             .addTag(BlockusBlockTags.SMALL_HEDGES);
 
-        this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+        this.valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
             .add(NETHERITE_STAIRS)
             .add(NETHERITE_SLAB)
             .add(CHARCOAL_BLOCK)
@@ -828,7 +822,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockTags.STONE_PRESSURE_PLATES)
             .add(OBSIDIAN_PRESSURE_PLATE);
 
-        this.getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+        this.valueLookupBuilder(BlockTags.SHOVEL_MINEABLE)
             .add(PATH)
             .add(SUGAR_BLOCK)
             .add(REDSTONE_SAND)
@@ -837,16 +831,16 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_GRAVEL)
             .add(SUGAR_BLOCK);
 
-        this.getOrCreateTagBuilder(BlockTags.ACACIA_LOGS)
+        this.valueLookupBuilder(BlockTags.ACACIA_LOGS)
             .add(ACACIA_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.BASE_STONE_OVERWORLD)
+        this.valueLookupBuilder(BlockTags.BASE_STONE_OVERWORLD)
             .add(LIMESTONE.block)
             .add(MARBLE.block)
             .add(BLUESTONE.block)
             .add(VIRIDITE.block);
 
-        this.getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
+        this.valueLookupBuilder(BlockTags.BEACON_BASE_BLOCKS)
             .add(LEGACY_GOLD_BLOCK)
             .add(LEGACY_EXPLOSION_PROOF_GOLD_BLOCK)
             .add(LEGACY_IRON_BLOCK)
@@ -860,10 +854,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bssBundle(DIAMOND_BRICKS))
             .add(bssBundle(NETHERITE_BRICKS));
 
-        this.getOrCreateTagBuilder(BlockTags.BIRCH_LOGS)
+        this.valueLookupBuilder(BlockTags.BIRCH_LOGS)
             .add(BIRCH_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.BUTTONS)
+        this.valueLookupBuilder(BlockTags.BUTTONS)
             .add(POLISHED_ANDESITE_BUTTON)
             .add(POLISHED_DIORITE_BUTTON)
             .add(POLISHED_GRANITE_BUTTON)
@@ -878,45 +872,45 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POLISHED_SCULK_BUTTON)
             .add(VIRIDITE_BUTTON);
 
-        this.getOrCreateTagBuilder(BlockTags.PALE_OAK_LOGS)
+        this.valueLookupBuilder(BlockTags.PALE_OAK_LOGS)
             .add(PALE_OAK_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.CHERRY_LOGS)
+        this.valueLookupBuilder(BlockTags.CHERRY_LOGS)
             .add(CHERRY_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.CRIMSON_STEMS)
+        this.valueLookupBuilder(BlockTags.CRIMSON_STEMS)
             .add(CRIMSON_SMALL_STEMS);
 
-        this.getOrCreateTagBuilder(BlockTags.DARK_OAK_LOGS)
+        this.valueLookupBuilder(BlockTags.DARK_OAK_LOGS)
             .add(DARK_OAK_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
+        this.valueLookupBuilder(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
             .add(BLUESTONE.block)
             .add(VIRIDITE.block);
 
-        this.getOrCreateTagBuilder(BlockTags.DOORS)
+        this.valueLookupBuilder(BlockTags.DOORS)
             .add(OBSIDIAN_REINFORCED_DOOR)
             .add(STONE_DOOR)
             .add(BLACKSTONE_DOOR)
             .add(IRON_GATE)
             .add(GOLDEN_GATE);
 
-        this.getOrCreateTagBuilder(BlockTags.DRAGON_IMMUNE)
+        this.valueLookupBuilder(BlockTags.DRAGON_IMMUNE)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .add(NETHER_STAR_BLOCK);
 
-        this.getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+        this.valueLookupBuilder(BlockTags.FENCE_GATES)
             .add(RAW_BAMBOO.fence_gate)
             .add(CHARRED.fence_gate)
             .add(WHITE_OAK.fence_gate);
 
-        this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
+        this.valueLookupBuilder(BlockTags.FLOWER_POTS)
             .add(POTTED_WHITE_OAK_SAPLING)
             .add(POTTED_RAINBOW_ROSE)
             .add(POTTED_LEGACY_ROSE)
             .add(POTTED_LEGACY_BLUE_ROSE);
 
-        this.getOrCreateTagBuilder(BlockTags.GUARDED_BY_PIGLINS)
+        this.valueLookupBuilder(BlockTags.GUARDED_BY_PIGLINS)
             .add(LEGACY_GOLD_BLOCK)
             .add(LEGACY_EXPLOSION_PROOF_GOLD_BLOCK)
             .add(GOLDEN_CHAIN)
@@ -931,61 +925,61 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(GOLDEN_APPLE_CRATE)
             .add(GOLDEN_CARROT_CRATE);
 
-        this.getOrCreateTagBuilder(BlockTags.ICE)
+        this.valueLookupBuilder(BlockTags.ICE)
             .addTag(BlockusBlockTags.ICE_BRICKS)
             .add(ICE_BRICK_WALL);
 
-        this.getOrCreateTagBuilder(BlockTags.IMPERMEABLE)
+        this.valueLookupBuilder(BlockTags.IMPERMEABLE)
             .addTag(BlockusBlockTags.BEVELED_GLASS)
             .addTag(BlockusBlockTags.NEON);
 
-        this.getOrCreateTagBuilder(BlockTags.INFINIBURN_OVERWORLD)
+        this.valueLookupBuilder(BlockTags.INFINIBURN_OVERWORLD)
             .addTag(BlockusBlockTags.NETHERRACK_BLOCKS)
             .addTag(BlockusBlockTags.MAGMA_BRICKS)
             .add(CHARCOAL_BLOCK);
 
-        this.getOrCreateTagBuilder(BlockTags.JUNGLE_LOGS)
+        this.valueLookupBuilder(BlockTags.JUNGLE_LOGS)
             .add(JUNGLE_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.LEAVES)
+        this.valueLookupBuilder(BlockTags.LEAVES)
             .add(WHITE_OAK_LEAVES)
             .add(LEGACY_LEAVES);
 
-        this.getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+        this.valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
             .addTag(BlockusBlockTags.WHITE_OAK_LOGS)
             .add(LEGACY_LOG);
 
-        this.getOrCreateTagBuilder(BlockTags.MANGROVE_LOGS)
+        this.valueLookupBuilder(BlockTags.MANGROVE_LOGS)
             .add(MANGROVE_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+        this.valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .add(NETHERITE_STAIRS)
             .add(NETHERITE_SLAB)
             .add(bsswBundle(NETHERITE_BRICKS));
 
-        this.getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+        this.valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL)
             .add(bsswBundle(GOLD_BRICKS))
             .add(bsswBundle(DIAMOND_BRICKS))
             .add(bsswBundle(EMERALD_BRICKS))
             .add(NETHER_STAR_BLOCK);
 
-        this.getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+        this.valueLookupBuilder(BlockTags.NEEDS_STONE_TOOL)
             .add(ENDER_BLOCK)
             .add(bsswBundle(IRON_BRICKS))
             .add(bsswBundle(LAPIS_BRICKS));
 
-        this.getOrCreateTagBuilder(BlockTags.OAK_LOGS)
+        this.valueLookupBuilder(BlockTags.OAK_LOGS)
             .add(OAK_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
+        this.valueLookupBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
             .add(WHITE_OAK_LOG);
 
-        this.getOrCreateTagBuilder(BlockTags.PIGLIN_REPELLENTS)
+        this.valueLookupBuilder(BlockTags.PIGLIN_REPELLENTS)
             .add(SOUL_LANTERN_BLOCK)
             .add(SOUL_O_LANTERN);
 
-        this.getOrCreateTagBuilder(BlockTags.PLANKS)
+        this.valueLookupBuilder(BlockTags.PLANKS)
             .add(RAW_BAMBOO.planks)
             .add(CHARRED.planks)
             .add(WHITE_OAK.planks)
@@ -1006,62 +1000,62 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(HERRINGBONE_CHARRED_PLANKS)
             .add(HERRINGBONE_PALE_OAK_PLANKS);
 
-        this.getOrCreateTagBuilder(BlockTags.SAPLINGS)
+        this.valueLookupBuilder(BlockTags.SAPLINGS)
             .add(WHITE_OAK_SAPLING);
 
-        this.getOrCreateTagBuilder(BlockTags.FLOWERS)
+        this.valueLookupBuilder(BlockTags.FLOWERS)
             .add(FLOWERING_AZALEA_SMALL_HEDGE);
 
-        this.getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
+        this.valueLookupBuilder(BlockTags.SMALL_FLOWERS)
             .add(RAINBOW_ROSE)
             .add(LEGACY_ROSE)
             .add(LEGACY_BLUE_ROSE);
 
-        this.getOrCreateTagBuilder(BlockTags.BEE_ATTRACTIVE)
+        this.valueLookupBuilder(BlockTags.BEE_ATTRACTIVE)
             .add(RAINBOW_ROSE)
             .add(LEGACY_ROSE)
             .add(LEGACY_BLUE_ROSE)
             .add(FLOWERING_AZALEA_SMALL_HEDGE);
 
 
-        this.getOrCreateTagBuilder(BlockTags.SOUL_FIRE_BASE_BLOCKS)
+        this.valueLookupBuilder(BlockTags.SOUL_FIRE_BASE_BLOCKS)
             .addTag(BlockusBlockTags.SOUL_SANDSTONE)
             .addTag(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS);
 
-        this.getOrCreateTagBuilder(BlockTags.SOUL_SPEED_BLOCKS)
+        this.valueLookupBuilder(BlockTags.SOUL_SPEED_BLOCKS)
             .addTag(BlockusBlockTags.SOUL_SANDSTONE)
             .add(SOUL_SANDSTONE.wall)
             .add(SOUL_SANDSTONE_BRICKS.wall)
             .add(SMALL_SOUL_SANDSTONE_BRICKS.wall);
 
-        this.getOrCreateTagBuilder(BlockTags.SPRUCE_LOGS)
+        this.valueLookupBuilder(BlockTags.SPRUCE_LOGS)
             .add(SPRUCE_SMALL_LOGS);
 
-        this.getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
+        this.valueLookupBuilder(BlockTags.STANDING_SIGNS)
             .add(RAW_BAMBOO.standing_sign)
             .add(CHARRED.standing_sign)
             .add(WHITE_OAK.standing_sign);
 
-        this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
+        this.valueLookupBuilder(BlockTags.WALL_SIGNS)
             .add(RAW_BAMBOO.wall_sign)
             .add(CHARRED.wall_sign)
             .add(WHITE_OAK.wall_sign);
 
-        this.getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS)
+        this.valueLookupBuilder(BlockTags.CEILING_HANGING_SIGNS)
             .add(RAW_BAMBOO.ceiling_hanging_sign)
             .add(CHARRED.ceiling_hanging_sign)
             .add(WHITE_OAK.ceiling_hanging_sign);
 
-        this.getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS)
+        this.valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS)
             .add(RAW_BAMBOO.wall_hanging_sign)
             .add(CHARRED.wall_hanging_sign)
             .add(WHITE_OAK.wall_hanging_sign);
 
-        this.getOrCreateTagBuilder(BlockTags.STONE_ORE_REPLACEABLES)
+        this.valueLookupBuilder(BlockTags.STONE_ORE_REPLACEABLES)
             .add(LIMESTONE.block)
             .add(MARBLE.block);
 
-        this.getOrCreateTagBuilder(BlockTags.STONE_PRESSURE_PLATES)
+        this.valueLookupBuilder(BlockTags.STONE_PRESSURE_PLATES)
             .add(POLISHED_ANDESITE_PRESSURE_PLATE)
             .add(POLISHED_DIORITE_PRESSURE_PLATE)
             .add(POLISHED_GRANITE_PRESSURE_PLATE)
@@ -1076,109 +1070,109 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(POLISHED_TUFF_PRESSURE_PLATE)
             .add(VIRIDITE_PRESSURE_PLATE);
 
-        this.getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
+        this.valueLookupBuilder(BlockTags.PRESSURE_PLATES)
             .add(OBSIDIAN_PRESSURE_PLATE);
 
-        this.getOrCreateTagBuilder(BlockTags.TRAPDOORS)
+        this.valueLookupBuilder(BlockTags.TRAPDOORS)
             .add(OBSIDIAN_REINFORCED_TRAPDOOR)
             .add(STONE_TRAPDOOR)
             .add(BLACKSTONE_TRAPDOOR);
 
 
         for (BSSWBundle bsswBundle : BSSWBundle.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bsswBundle.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bsswBundle.slab);
+            this.valueLookupBuilder(BlockTags.STAIRS).add(bsswBundle.stairs);
+            this.valueLookupBuilder(BlockTags.SLABS).add(bsswBundle.slab);
             if (bsswBundle.wall != null) {
-                this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswBundle.wall);
+                this.valueLookupBuilder(BlockTags.WALLS).add(bsswBundle.wall);
             }
         }
 
         for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(concreteType.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(concreteType.slab);
-            this.getOrCreateTagBuilder(BlockTags.WALLS).add(concreteType.wall);
+            this.valueLookupBuilder(BlockTags.STAIRS).add(concreteType.stairs);
+            this.valueLookupBuilder(BlockTags.SLABS).add(concreteType.slab);
+            this.valueLookupBuilder(BlockTags.WALLS).add(concreteType.wall);
         }
 
-        this.getOrCreateTagBuilder(BlockTags.WALLS)
+        this.valueLookupBuilder(BlockTags.WALLS)
             .addTag(BlockusBlockTags.BARRIERS);
 
-        this.getOrCreateTagBuilder(BlockTags.WARPED_STEMS)
+        this.valueLookupBuilder(BlockTags.WARPED_STEMS)
             .add(WARPED_SMALL_STEMS);
 
-        this.getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS)
+        this.valueLookupBuilder(BlockTags.WOODEN_BUTTONS)
             .add(RAW_BAMBOO.button)
             .add(CHARRED.button)
             .add(WHITE_OAK.button);
 
-        this.getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
+        this.valueLookupBuilder(BlockTags.WOODEN_DOORS)
             .add(RAW_BAMBOO.door)
             .add(CHARRED.door)
             .add(WHITE_OAK.door)
             .add(PAPER_DOOR);
 
-        this.getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
+        this.valueLookupBuilder(BlockTags.WOODEN_FENCES)
             .add(RAW_BAMBOO.fence)
             .add(CHARRED.fence)
             .add(WHITE_OAK.fence);
 
-        this.getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
+        this.valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
             .add(RAW_BAMBOO.pressure_plate)
             .add(CHARRED.pressure_plate)
             .add(WHITE_OAK.pressure_plate);
 
-        this.getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
+        this.valueLookupBuilder(BlockTags.WOODEN_SLABS)
             .add(RAW_BAMBOO.slab)
             .add(CHARRED.slab)
             .add(WHITE_OAK.slab);
 
-        this.getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
+        this.valueLookupBuilder(BlockTags.WOODEN_STAIRS)
             .add(RAW_BAMBOO.stairs)
             .add(CHARRED.stairs)
             .add(WHITE_OAK.stairs);
 
-        this.getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
+        this.valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS)
             .add(RAW_BAMBOO.trapdoor)
             .add(CHARRED.trapdoor)
             .add(WHITE_OAK.trapdoor)
             .add(PAPER_TRAPDOOR);
 
-        this.getOrCreateTagBuilder(BlockTags.WOOL)
+        this.valueLookupBuilder(BlockTags.WOOL)
             .addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS);
 
-        this.getOrCreateTagBuilder(BlockTags.WOOL_CARPETS)
+        this.valueLookupBuilder(BlockTags.WOOL_CARPETS)
             .addTag(BlockusBlockTags.PATTERNED_CARPETS);
 
-        this.getOrCreateTagBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
+        this.valueLookupBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
             .add(RAINBOW_PETALS);
 
-        this.getOrCreateTagBuilder(BlockTags.ANIMALS_SPAWNABLE_ON)
+        this.valueLookupBuilder(BlockTags.ANIMALS_SPAWNABLE_ON)
             .add(LEGACY_GRASS_BLOCK)
             .add(LEGACY_FIRST_GRASS_BLOCK);
 
-        this.getOrCreateTagBuilder(BlockTags.DIRT)
+        this.valueLookupBuilder(BlockTags.DIRT)
             .add(LEGACY_GRASS_BLOCK)
             .add(LEGACY_FIRST_GRASS_BLOCK);
 
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "cherry_oak_logs"))
+//        this.valueLookupBuilder(new Identifier("promenade", "cherry_oak_logs"))
 //            .addOptional(Blockus.id("cherry_oak_small_logs"));
 //
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "dark_amaranth_stems"))
+//        this.valueLookupBuilder(new Identifier("promenade", "dark_amaranth_stems"))
 //            .addOptional(Blockus.id("dark_amaranth_small_stems"));
 //
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "leaf_piles"))
+//        this.valueLookupBuilder(new Identifier("promenade", "leaf_piles"))
 //            .addOptional(Blockus.id("white_oak_leaf_pile"));
 //
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "palm_logs"))
+//        this.valueLookupBuilder(new Identifier("promenade", "palm_logs"))
 //            .addOptional(Blockus.id("palm_small_logs"));
 //
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "maple_logs"))
+//        this.valueLookupBuilder(new Identifier("promenade", "maple_logs"))
 //            .addOptional(Blockus.id("maple_small_logs"));
 
         // Conventional Block Tags
-        this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)
+        this.valueLookupBuilder(ConventionalBlockTags.GLASS_BLOCKS)
             .addTag(BlockusBlockTags.BEVELED_GLASS);
 
-        this.getOrCreateTagBuilder(ConventionalBlockTags.SMALL_FLOWERS)
+        this.valueLookupBuilder(ConventionalBlockTags.SMALL_FLOWERS)
             .add(RAINBOW_ROSE);
     }
 

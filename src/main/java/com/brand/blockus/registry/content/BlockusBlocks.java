@@ -1,5 +1,6 @@
 package com.brand.blockus.registry.content;
 
+import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.*;
 import com.brand.blockus.blocks.base.amethyst.AmethystLampBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystPillarBlock;
@@ -11,6 +12,9 @@ import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.content.bundles.CopperBundle.OxidationType;
 import com.brand.blockus.utils.BlockFactory;
+import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
@@ -349,6 +353,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle END_TILES = new BSSWBundle("end_tiles", Blocks.END_STONE_BRICKS);
 
     // White Oak Wood
+    private static final WoodType WHITE_OAK_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(Blockus.id("white_oak"));
     public static final Block WHITE_OAK_SAPLING = register("white_oak_sapling", (settings) -> new SaplingBlock(BlockusSaplingGenerator.WHITE_OAK, settings), createCopy(Blocks.OAK_SAPLING).pistonBehavior(PistonBehavior.DESTROY));
     public static final Block POTTED_WHITE_OAK_SAPLING = pottedPlant("potted_white_oak_sapling", WHITE_OAK_SAPLING);
     public static final Block WHITE_OAK_LOG = register("white_oak_log", PillarBlock::new, createCopy(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
@@ -356,13 +361,15 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block WHITE_OAK_WOOD = registerPillar2("white_oak_wood", WHITE_OAK_LOG);
     public static final Block STRIPPED_WHITE_OAK_WOOD = registerPillar2("stripped_white_oak_wood", WHITE_OAK_LOG);
     public static final Block WHITE_OAK_LEAVES = register("white_oak_leaves", (settings) -> new UntintedParticleLeavesBlock(0.01F, EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 14061641), settings), createCopy(Blocks.OAK_LEAVES).mapColor(MapColor.ORANGE).pistonBehavior(PistonBehavior.DESTROY).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never));
-    public static final WoodBundle WHITE_OAK = new WoodBundle("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, BlockSoundGroup.WOOD);
+    public static final WoodBundle WHITE_OAK = new WoodBundle("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, WHITE_OAK_WOOD_TYPE, BlockSoundGroup.WOOD);
 
     // Raw Bamboo
-    public static final WoodBundle RAW_BAMBOO = new WoodBundle("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD, WoodType.BAMBOO, BlockSetType.BAMBOO);
+    private static final WoodType RAW_BAMBOO_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.BAMBOO).register(Blockus.id("raw_bamboo"), BlockSetTypeBuilder.copyOf(BlockSetType.BAMBOO).register(Blockus.id("raw_bamboo")));
+    public static final WoodBundle RAW_BAMBOO = new WoodBundle("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD, RAW_BAMBOO_WOOD_TYPE, BlockSetType.BAMBOO);
 
     // Charred
-    public static final WoodBundle CHARRED = new WoodBundle("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, BlockSoundGroup.WOOD, false);
+    private static final WoodType CHARRED_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(Blockus.id("charred"));
+    public static final WoodBundle CHARRED = new WoodBundle("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, CHARRED_WOOD_TYPE, BlockSoundGroup.WOOD, false);
 
     // Mosaics
     public static final BSSWBundle OAK_MOSAIC = new BSSWBundle("oak_mosaic", Blocks.OAK_PLANKS, false);
