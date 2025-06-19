@@ -4,16 +4,14 @@
 	},
 	"elements": [
 		{
-			"name": "hedge",
 			"from": [5, 0, 0],
-			"to": [11, 16, 8],
+			"to": [11, 16, 5],
 			"faces": {
-				"north": {"uv": [5, 0, 11, 16], "texture": "#hedge", "cullface": "north", "tintindex": 0},
-				"east": {"uv": [8, 0, 16, 16], "texture": "#hedge", "tintindex": 0},
-				"south": {"uv": [5, 0, 11, 16], "texture": "#hedge", "cullface": "south", "tintindex": 0},
-				"west": {"uv": [0, 0, 8, 16], "texture": "#hedge", "tintindex": 0},
-				"up": {"uv": [5, 0, 11, 8], "texture": "#hedge", "tintindex": 0},
-				"down": {"uv": [5, 8, 11, 16], "texture": "#hedge", "cullface": "down", "tintindex": 0}
+				"north": {"uv": [5, 0, 11, 16], "texture": "#hedge", "tintindex": 0},
+				"east": {"uv": [11, 0, 16, 16], "texture": "#hedge", "tintindex": 0},
+				"west": {"uv": [0, 0, 5, 16], "texture": "#hedge", "tintindex": 0},
+				"up": {"uv": [5, 0, 11, 5], "texture": "#hedge", "tintindex": 0},
+				"down": {"uv": [5, 11, 11, 16], "texture": "#hedge", "tintindex": 0}
 			}
 		}
 	]

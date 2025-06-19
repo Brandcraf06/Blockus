@@ -2,10 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "blockus:block/pale_oak_small_hedge_end"
-      },
-      "when": {
-        "up": "true"
+        "model": "blockus:block/pale_oak_small_hedge_post"
       }
     },
     {
@@ -14,7 +11,7 @@
         "uvlock": true
       },
       "when": {
-        "north": "low"
+        "north": "true"
       }
     },
     {
@@ -24,66 +21,64 @@
         "y": 90
       },
       "when": {
-        "east": "low"
+        "east": "true"
       }
     },
     {
       "apply": {
-        "model": "blockus:block/pale_oak_small_hedge_side",
-        "uvlock": true,
-        "y": 180
-      },
-      "when": {
-        "south": "low"
-      }
-    },
-    {
-      "apply": {
-        "model": "blockus:block/pale_oak_small_hedge_side",
-        "uvlock": true,
-        "y": 270
-      },
-      "when": {
-        "west": "low"
-      }
-    },
-    {
-      "apply": {
-        "model": "blockus:block/pale_oak_small_hedge_side_tall",
+        "model": "blockus:block/pale_oak_small_hedge_side_alt",
         "uvlock": true
       },
       "when": {
-        "north": "tall"
+        "south": "true"
       }
     },
     {
       "apply": {
-        "model": "blockus:block/pale_oak_small_hedge_side_tall",
+        "model": "blockus:block/pale_oak_small_hedge_side_alt",
         "uvlock": true,
         "y": 90
       },
       "when": {
-        "east": "tall"
+        "west": "true"
       }
     },
     {
       "apply": {
-        "model": "blockus:block/pale_oak_small_hedge_side_tall",
-        "uvlock": true,
-        "y": 180
+        "model": "blockus:block/pale_oak_small_hedge_noside",
+        "uvlock": true
       },
       "when": {
-        "south": "tall"
+        "north": "false"
       }
     },
     {
       "apply": {
-        "model": "blockus:block/pale_oak_small_hedge_side_tall",
+        "model": "blockus:block/pale_oak_small_hedge_noside_alt",
+        "uvlock": true
+      },
+      "when": {
+        "east": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/pale_oak_small_hedge_noside_alt",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/pale_oak_small_hedge_noside",
         "uvlock": true,
         "y": 270
       },
       "when": {
-        "west": "tall"
+        "west": "false"
       }
     }
   ]

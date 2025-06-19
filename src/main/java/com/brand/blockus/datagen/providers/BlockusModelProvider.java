@@ -12,6 +12,7 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.enums.WallShape;
 import net.minecraft.client.data.*;
 import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.data.family.BlockFamily;
@@ -721,12 +722,14 @@ public class BlockusModelProvider extends FabricModelProvider {
         registerSmallHedge(modelGenerator, hedgeBlock, textureSource, true, tintColor);
     }
 
-    private void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block hedgeBlock, Block textureSource, boolean isTinted, int tintColor) {
+    public final void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block hedgeBlock, Block textureSource, boolean isTinted, int tintColor) {
         TextureMap textureMap = TextureMap.of(BlockusTextureKey.HEDGE, TextureMap.getId(textureSource));
-        WeightedVariant modelVariant = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_END.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
-        WeightedVariant modelVariant2 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
-        WeightedVariant modelVariant3 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE_TALL.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
-        modelGenerator.blockStateCollector.accept(createWallBlockState(hedgeBlock, modelVariant, modelVariant2, modelVariant3));
+        WeightedVariant weightedVariant = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_POST.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant2 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant3 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant4 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_NOSIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant5 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_NOSIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        modelGenerator.blockStateCollector.accept(MultipartBlockModelDefinitionCreator.create(hedgeBlock).with(weightedVariant).with(createMultipartConditionBuilder().put(Properties.NORTH, true), weightedVariant2.apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.EAST, true), weightedVariant2.apply(ROTATE_Y_90).apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.SOUTH, true), weightedVariant3.apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.WEST, true), weightedVariant3.apply(ROTATE_Y_90).apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.NORTH, false), weightedVariant4.apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.EAST, false), weightedVariant5.apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.SOUTH, false), weightedVariant5.apply(ROTATE_Y_90).apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.WEST, false), weightedVariant4.apply(ROTATE_Y_270).apply(UV_LOCK)));
         Identifier identifier = BlockusModels.TEMPLATE_SMALL_HEDGE_INVENTORY.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
         if (isTinted) {
             modelGenerator.registerTintedItemModel(hedgeBlock, identifier, ItemModels.constantTintSource(tintColor));
