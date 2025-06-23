@@ -1,6 +1,7 @@
 package com.brand.blockus.blocks.base;
 
 import net.minecraft.block.*;
+import net.minecraft.block.enums.Attachment;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -104,15 +105,15 @@ public class PostBlock extends PillarBlock implements Waterloggable {
             return direction == neighborState.get(Properties.HORIZONTAL_FACING) ? ConnectionType.POST : ConnectionType.NONE;
         }
 
-        if (neighborState.getBlock() instanceof ChainBlock && neighborState.get(Properties.AXIS) == direction.getAxis()) {
+        if ((neighborState.getBlock() instanceof ChainBlock && neighborState.get(Properties.AXIS) == direction.getAxis())
+            || (direction == Direction.DOWN && neighborState.getBlock() instanceof LanternBlock && neighborState.get(LanternBlock.HANGING))
+            || (direction == Direction.DOWN && neighborState.getBlock() instanceof HangingSignBlock)) {
             return ConnectionType.CHAIN;
         }
 
-        if (neighborState.getBlock() instanceof PostBlock && neighborState.get(Properties.AXIS) == direction.getAxis()) {
-            return ConnectionType.POST;
-        }
-
-        if (direction == Direction.UP && neighborState.isIn(BlockTags.WALL_POST_OVERRIDE)) {
+        if ((neighborState.getBlock() instanceof PostBlock && neighborState.get(Properties.AXIS) == direction.getAxis())
+            ||(direction == Direction.UP && neighborState.isIn(BlockTags.WALL_POST_OVERRIDE))
+            ||(direction == Direction.DOWN && neighborState.getBlock() instanceof BellBlock) && neighborState.get(Properties.ATTACHMENT) == Attachment.CEILING) {
             return ConnectionType.POST;
         }
 
