@@ -1,6 +1,0 @@
-{
-  "parent": "blockus:block/template_small_hedge_side",
-  "textures": {
-    "hedge": "promenade:block/maple/leaves/fulvous/regular"
-  }
-}

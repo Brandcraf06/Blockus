@@ -1,6 +1,0 @@
-{
-  "parent": "blockus:block/template_small_hedge_end",
-  "textures": {
-    "hedge": "promenade:block/dark_amaranth/wart_block"
-  }
-}

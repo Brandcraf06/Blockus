@@ -686,14 +686,16 @@ public class BlockusModelProvider extends FabricModelProvider {
             .register(15, BlockStateVariant.create().put(VariantSettings.MODEL, identifier4))));
     }
 
-    public final void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block wallBlock, Block textureSource) {
+    public final void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block hedgeBlock, Block textureSource) {
         TextureMap textureMap = TextureMap.of(BlockusTextureKey.HEDGE, TextureMap.getId(textureSource));
-        Identifier identifier = BlockusModels.TEMPLATE_SMALL_HEDGE_END.upload(wallBlock, textureMap, modelGenerator.modelCollector);
-        Identifier identifier2 = BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE.upload(wallBlock, textureMap, modelGenerator.modelCollector);
-        Identifier identifier3 = BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE_TALL.upload(wallBlock, textureMap, modelGenerator.modelCollector);
-        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createWallBlockState(wallBlock, identifier, identifier2, identifier3));
-        Identifier identifier4 = BlockusModels.TEMPLATE_SMALL_HEDGE_INVENTORY.upload(wallBlock, textureMap, modelGenerator.modelCollector);
-        modelGenerator.registerParentedItemModel(wallBlock, identifier4);
+        Identifier identifier = BlockusModels.TEMPLATE_SMALL_HEDGE_POST.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier2 = BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier3 = BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier4 = BlockusModels.TEMPLATE_SMALL_HEDGE_NOSIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier5 = BlockusModels.TEMPLATE_SMALL_HEDGE_NOSIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(hedgeBlock).with(BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).with(When.create().set(Properties.NORTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier2).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.EAST, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier2).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, Rotation.R90)).with(When.create().set(Properties.SOUTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier3).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.WEST, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier3).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, Rotation.R90)).with(When.create().set(Properties.NORTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier4).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.EAST, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier5).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.SOUTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier5).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, Rotation.R90)).with(When.create().set(Properties.WEST, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier4).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, Rotation.R270)));
+        Identifier identifier6 = BlockusModels.TEMPLATE_SMALL_HEDGE_INVENTORY.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        modelGenerator.registerParentedItemModel(hedgeBlock, identifier6);
     }
 
     public final void registerCarpet(BlockStateModelGenerator modelGenerator, Block wool, Block carpet) {

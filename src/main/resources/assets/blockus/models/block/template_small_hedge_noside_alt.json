@@ -1,0 +1,14 @@
+{
+	"textures": {
+		"particle": "#hedge"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 16, 11],
+			"faces": {
+				"east": {"uv": [5, 0, 11, 16], "texture": "#hedge", "tintindex": 0}
+			}
+		}
+	]
+}
