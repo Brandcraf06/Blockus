@@ -3,7 +3,10 @@
   "package": "com.brand.blockus.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "RedstoneWireBlockMixin"
+    "RedstoneWireBlockMixin",
+    "LanternBlockMixin",
+    "HangingSignBlockMixin",
+    "BellBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
