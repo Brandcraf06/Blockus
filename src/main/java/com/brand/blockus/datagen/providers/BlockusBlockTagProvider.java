@@ -1,6 +1,5 @@
 package com.brand.blockus.datagen.providers;
 
-import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.BlockChecker;

@@ -1,27 +1,15 @@
 package com.brand.blockus.mixin;
 
-import com.brand.blockus.blocks.base.PostBlock;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BellBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ConduitBlock;
-import net.minecraft.block.enums.Attachment;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.WorldView;
 import net.minecraft.world.dimension.NetherPortal;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Mutable;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(NetherPortal.class)
 public class NetherPortalMixin {

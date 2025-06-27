@@ -1,8 +1,6 @@
 package com.brand.blockus.utils.screen;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;

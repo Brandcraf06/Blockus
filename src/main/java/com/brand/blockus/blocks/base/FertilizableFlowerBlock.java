@@ -1,10 +1,7 @@
 package com.brand.blockus.blocks.base;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
-import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
