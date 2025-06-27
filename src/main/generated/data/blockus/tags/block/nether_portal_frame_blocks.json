@@ -1,0 +1,12 @@
+{
+  "values": [
+    "minecraft:obsidian",
+    "blockus:obsidian_bricks",
+    "blockus:cracked_obsidian_bricks",
+    "blockus:small_obsidian_bricks",
+    "blockus:obsidian_pillar",
+    "blockus:obsidian_circular_paving",
+    "blockus:glowing_obsidian",
+    "blockus:legacy_glowing_obsidian"
+  ]
+}

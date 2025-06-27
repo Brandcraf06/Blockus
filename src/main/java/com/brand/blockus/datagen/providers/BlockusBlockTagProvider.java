@@ -400,6 +400,16 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_CRYING_OBSIDIAN)
             .add(LEGACY_GLOWING_OBSIDIAN);
 
+        this.getOrCreateTagBuilder(BlockusBlockTags.NETHER_PORTAL_FRAME_BLOCKS)
+            .add(Blocks.OBSIDIAN)
+            .add(OBSIDIAN_BRICKS.block)
+            .add(CRACKED_OBSIDIAN_BRICKS)
+            .add(SMALL_OBSIDIAN_BRICKS.block)
+            .add(OBSIDIAN_PILLAR)
+            .add(OBSIDIAN_CIRCULAR_PAVING)
+            .add(GLOWING_OBSIDIAN)
+            .add(LEGACY_GLOWING_OBSIDIAN);
+
         this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
             .addTag(BlockusBlockTags.PATTERNED_WOOL);
 
