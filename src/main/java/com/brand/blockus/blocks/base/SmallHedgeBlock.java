@@ -18,9 +18,9 @@ import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
 
 public class SmallHedgeBlock extends HorizontalConnectingBlock {
-    public static final MapCodec<PaneBlock> CODEC = createCodec(PaneBlock::new);
+    public static final MapCodec<SmallHedgeBlock> CODEC = createCodec(SmallHedgeBlock::new);
 
-    public MapCodec<? extends PaneBlock> getCodec() {
+    public MapCodec<? extends SmallHedgeBlock> getCodec() {
         return CODEC;
     }
 
