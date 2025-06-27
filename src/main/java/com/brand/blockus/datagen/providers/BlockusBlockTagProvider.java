@@ -511,31 +511,31 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
                 .add(woodenPost.stripped);
         }
 
-        this.valueLookupBuilder(BlockusBlockTags.SMALL_HEDGES)
-            .add(OAK_SMALL_HEDGE)
-            .add(SPRUCE_SMALL_HEDGE)
-            .add(BIRCH_SMALL_HEDGE)
-            .add(JUNGLE_SMALL_HEDGE)
-            .add(ACACIA_SMALL_HEDGE)
-            .add(DARK_OAK_SMALL_HEDGE)
-            .add(MANGROVE_SMALL_HEDGE)
-            .add(CHERRY_SMALL_HEDGE)
-            .add(PALE_OAK_SMALL_HEDGE)
-            .add(WHITE_OAK_SMALL_HEDGE)
-            .add(CRIMSON_SMALL_HEDGE)
-            .add(WARPED_SMALL_HEDGE)
-            .add(AZALEA_SMALL_HEDGE)
-            .add(FLOWERING_AZALEA_SMALL_HEDGE)
-            .add(MOSS_SMALL_HEDGE)
-            .add(PALE_MOSS_SMALL_HEDGE)
-//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("sap_maple_small_hedge")))
-//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("vermilion_maple_small_hedge")))
-//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("fulvous_maple_small_hedge")))
-//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("mikado_maple_small_hedge")))
-//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("pink_cherry_oak_small_hedge")))
-//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("white_cherry_oak_small_hedge")))
-//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("palm_small_hedge")))
-//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("dark_amaranth_small_hedge")))
+        this.valueLookupBuilder(BlockusBlockTags.HEDGES)
+            .add(OAK_HEDGE)
+            .add(SPRUCE_HEDGE)
+            .add(BIRCH_HEDGE)
+            .add(JUNGLE_HEDGE)
+            .add(ACACIA_HEDGE)
+            .add(DARK_OAK_HEDGE)
+            .add(MANGROVE_HEDGE)
+            .add(CHERRY_HEDGE)
+            .add(PALE_OAK_HEDGE)
+            .add(WHITE_OAK_HEDGE)
+            .add(CRIMSON_HEDGE)
+            .add(WARPED_HEDGE)
+            .add(AZALEA_HEDGE)
+            .add(FLOWERING_AZALEA_HEDGE)
+            .add(MOSS_HEDGE)
+            .add(PALE_MOSS_HEDGE)
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("sap_maple_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("vermilion_maple_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("fulvous_maple_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("mikado_maple_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("pink_cherry_oak_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("white_cherry_oak_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("palm_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("dark_amaranth_hedge")))
         ;
 
         this.valueLookupBuilder(BlockusBlockTags.SNOW_BRICKS)
@@ -737,7 +737,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(WHITE_OAK_LEAVES)
             .add(LEGACY_LEAVES)
             .addTag(BlockusBlockTags.THATCH)
-            .addTag(BlockusBlockTags.SMALL_HEDGES);
+            .addTag(BlockusBlockTags.HEDGES);
 
         this.valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
             .add(NETHERITE_STAIRS)
@@ -1016,7 +1016,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(WHITE_OAK_SAPLING);
 
         this.valueLookupBuilder(BlockTags.FLOWERS)
-            .add(FLOWERING_AZALEA_SMALL_HEDGE);
+            .add(FLOWERING_AZALEA_HEDGE);
 
         this.valueLookupBuilder(BlockTags.SMALL_FLOWERS)
             .add(RAINBOW_ROSE)
@@ -1027,7 +1027,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(RAINBOW_ROSE)
             .add(LEGACY_ROSE)
             .add(LEGACY_BLUE_ROSE)
-            .add(FLOWERING_AZALEA_SMALL_HEDGE);
+            .add(FLOWERING_AZALEA_HEDGE);
 
 
         this.valueLookupBuilder(BlockTags.SOUL_FIRE_BASE_BLOCKS)

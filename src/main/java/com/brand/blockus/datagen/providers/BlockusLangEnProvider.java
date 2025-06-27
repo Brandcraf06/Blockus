@@ -617,22 +617,22 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.BREAD_BOX, "Bread Box");
 
         // Hedges
-        translationBuilder.add(BlockusBlocks.OAK_SMALL_HEDGE, "Oak Small Hedge");
-        translationBuilder.add(BlockusBlocks.SPRUCE_SMALL_HEDGE, "Spruce Small Hedge");
-        translationBuilder.add(BlockusBlocks.BIRCH_SMALL_HEDGE, "Birch Small Hedge");
-        translationBuilder.add(BlockusBlocks.JUNGLE_SMALL_HEDGE, "Jungle Small Hedge");
-        translationBuilder.add(BlockusBlocks.ACACIA_SMALL_HEDGE, "Acacia Small Hedge");
-        translationBuilder.add(BlockusBlocks.DARK_OAK_SMALL_HEDGE, "Dark Oak Small Hedge");
-        translationBuilder.add(BlockusBlocks.MANGROVE_SMALL_HEDGE, "Mangrove Small Hedge");
-        translationBuilder.add(BlockusBlocks.CHERRY_SMALL_HEDGE, "Cherry Small Hedge");
-        translationBuilder.add(BlockusBlocks.PALE_OAK_SMALL_HEDGE, "Pale Oak Small Hedge");
-        translationBuilder.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, "White Oak Small Hedge");
-        translationBuilder.add(BlockusBlocks.AZALEA_SMALL_HEDGE, "Azalea Small Hedge");
-        translationBuilder.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, "Flowering Azalea Small Hedge");
-        translationBuilder.add(BlockusBlocks.MOSS_SMALL_HEDGE, "Moss Small Hedge");
-        translationBuilder.add(BlockusBlocks.PALE_MOSS_SMALL_HEDGE, "Pale Moss Small Hedge");
-        translationBuilder.add(BlockusBlocks.WARPED_SMALL_HEDGE, "Warped Small Hedge");
-        translationBuilder.add(BlockusBlocks.CRIMSON_SMALL_HEDGE, "Crimson Small Hedge");
+        translationBuilder.add(BlockusBlocks.OAK_HEDGE, "Oak Hedge");
+        translationBuilder.add(BlockusBlocks.SPRUCE_HEDGE, "Spruce Hedge");
+        translationBuilder.add(BlockusBlocks.BIRCH_HEDGE, "Birch Hedge");
+        translationBuilder.add(BlockusBlocks.JUNGLE_HEDGE, "Jungle Hedge");
+        translationBuilder.add(BlockusBlocks.ACACIA_HEDGE, "Acacia Hedge");
+        translationBuilder.add(BlockusBlocks.DARK_OAK_HEDGE, "Dark Oak Hedge");
+        translationBuilder.add(BlockusBlocks.MANGROVE_HEDGE, "Mangrove Hedge");
+        translationBuilder.add(BlockusBlocks.CHERRY_HEDGE, "Cherry Hedge");
+        translationBuilder.add(BlockusBlocks.PALE_OAK_HEDGE, "Pale Oak Hedge");
+        translationBuilder.add(BlockusBlocks.WHITE_OAK_HEDGE, "White Oak Hedge");
+        translationBuilder.add(BlockusBlocks.AZALEA_HEDGE, "Azalea Hedge");
+        translationBuilder.add(BlockusBlocks.FLOWERING_AZALEA_HEDGE, "Flowering Azalea Hedge");
+        translationBuilder.add(BlockusBlocks.MOSS_HEDGE, "Moss Hedge");
+        translationBuilder.add(BlockusBlocks.PALE_MOSS_HEDGE, "Pale Moss Hedge");
+        translationBuilder.add(BlockusBlocks.WARPED_HEDGE, "Warped Hedge");
+        translationBuilder.add(BlockusBlocks.CRIMSON_HEDGE, "Crimson Hedge");
 
         // Patterned Wools
         addWoolBundle(translationBuilder, BlockusBlocks.WHITE_PATTERNED_WOOL, "White Patterned Wool");

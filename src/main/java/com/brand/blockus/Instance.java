@@ -35,16 +35,16 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(WOODEN_FRAME, 30, 60);
 
         // Small hedges
-        FlammableBlockRegistry.getDefaultInstance().add(OAK_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(ACACIA_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(BIRCH_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(DARK_OAK_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(JUNGLE_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(SPRUCE_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(MANGROVE_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(AZALEA_SMALL_HEDGE, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(FLOWERING_AZALEA_SMALL_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(OAK_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(ACACIA_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(BIRCH_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(DARK_OAK_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(JUNGLE_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(SPRUCE_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(MANGROVE_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(AZALEA_HEDGE, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(FLOWERING_AZALEA_HEDGE, 30, 60);
 
         // Paper
         FlammableBlockRegistry.getDefaultInstance().add(FRAMED_PAPER_BLOCK, 30, 60);
@@ -151,32 +151,32 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(LEGACY_LOG, 5, 5);
 
 // Composting
-        CompostingChanceRegistry.INSTANCE.add(OAK_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(ACACIA_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BIRCH_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(DARK_OAK_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(JUNGLE_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(SPRUCE_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(MANGROVE_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(CHERRY_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(PALE_OAK_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(AZALEA_SMALL_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(WHITE_OAK_SMALL_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(OAK_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(ACACIA_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(BIRCH_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(DARK_OAK_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(JUNGLE_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(SPRUCE_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(MANGROVE_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(CHERRY_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(PALE_OAK_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(AZALEA_HEDGE, 0.30f);
+        CompostingChanceRegistry.INSTANCE.add(WHITE_OAK_HEDGE, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(WHITE_OAK_LEAVES, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(WHITE_OAK_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(LEGACY_SAPLING, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(RAINBOW_PETALS, 0.30f);
         CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(SWEET_BERRIES_CRATE, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(FLOWERING_AZALEA_SMALL_HEDGE, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(MOSS_SMALL_HEDGE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(PALE_MOSS_SMALL_HEDGE, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(FLOWERING_AZALEA_HEDGE, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(MOSS_HEDGE, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(PALE_MOSS_HEDGE, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(RAINBOW_ROSE, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(THATCH.slab, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(THATCH.block, 0.75f);
         CompostingChanceRegistry.INSTANCE.add(THATCH.stairs, 0.75f);
-        CompostingChanceRegistry.INSTANCE.add(WARPED_SMALL_HEDGE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(CRIMSON_SMALL_HEDGE, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(WARPED_HEDGE, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(CRIMSON_HEDGE, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(APPLE_CRATE, 0.95f);
         CompostingChanceRegistry.INSTANCE.add(BEETROOT_CRATE, 0.95f);
         CompostingChanceRegistry.INSTANCE.add(CARROT_CRATE, 0.95f);

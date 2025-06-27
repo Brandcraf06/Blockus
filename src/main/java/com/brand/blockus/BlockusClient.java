@@ -17,13 +17,13 @@ public class BlockusClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        registerBlockColor(BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);
-        registerBlockColor(BlockusBlocks.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES);
-        registerBlockColor(BlockusBlocks.BIRCH_SMALL_HEDGE, Blocks.BIRCH_LEAVES);
-        registerBlockColor(BlockusBlocks.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
-        registerBlockColor(BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
-        registerBlockColor(BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
-        registerBlockColor(BlockusBlocks.MANGROVE_SMALL_HEDGE, Blocks.MANGROVE_LEAVES);
+        registerBlockColor(BlockusBlocks.OAK_HEDGE, Blocks.OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.SPRUCE_HEDGE, Blocks.SPRUCE_LEAVES);
+        registerBlockColor(BlockusBlocks.BIRCH_HEDGE, Blocks.BIRCH_LEAVES);
+        registerBlockColor(BlockusBlocks.JUNGLE_HEDGE, Blocks.JUNGLE_LEAVES);
+        registerBlockColor(BlockusBlocks.ACACIA_HEDGE, Blocks.ACACIA_LEAVES);
+        registerBlockColor(BlockusBlocks.DARK_OAK_HEDGE, Blocks.DARK_OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN.block, Blocks.POTTED_FERN);
         registerBlockColor(BlockusBlocks.POTTED_OAK.block, Blocks.OAK_LEAVES);
         registerBlockColor(BlockusBlocks.POTTED_SPRUCE.block, Blocks.SPRUCE_LEAVES);
@@ -77,18 +77,18 @@ public class BlockusClient implements ClientModInitializer {
         );
 
         BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED,
-            BlockusBlocks.OAK_SMALL_HEDGE,
-            BlockusBlocks.SPRUCE_SMALL_HEDGE,
-            BlockusBlocks.BIRCH_SMALL_HEDGE,
-            BlockusBlocks.JUNGLE_SMALL_HEDGE,
-            BlockusBlocks.ACACIA_SMALL_HEDGE,
-            BlockusBlocks.DARK_OAK_SMALL_HEDGE,
-            BlockusBlocks.MANGROVE_SMALL_HEDGE,
-            BlockusBlocks.CHERRY_SMALL_HEDGE,
-            BlockusBlocks.PALE_OAK_SMALL_HEDGE,
-            BlockusBlocks.WHITE_OAK_SMALL_HEDGE,
-            BlockusBlocks.AZALEA_SMALL_HEDGE,
-            BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE,
+            BlockusBlocks.OAK_HEDGE,
+            BlockusBlocks.SPRUCE_HEDGE,
+            BlockusBlocks.BIRCH_HEDGE,
+            BlockusBlocks.JUNGLE_HEDGE,
+            BlockusBlocks.ACACIA_HEDGE,
+            BlockusBlocks.DARK_OAK_HEDGE,
+            BlockusBlocks.MANGROVE_HEDGE,
+            BlockusBlocks.CHERRY_HEDGE,
+            BlockusBlocks.PALE_OAK_HEDGE,
+            BlockusBlocks.WHITE_OAK_HEDGE,
+            BlockusBlocks.AZALEA_HEDGE,
+            BlockusBlocks.FLOWERING_AZALEA_HEDGE,
             BlockusBlocks.LEGACY_LEAVES,
             BlockusBlocks.WHITE_OAK_LEAVES,
             BlockusBlocks.WOODEN_FRAME,

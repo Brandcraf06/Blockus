@@ -469,22 +469,22 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block WOODEN_FRAME = woodenPane("wooden_frame");
 
     // Small Hedges
-    public static final Block OAK_SMALL_HEDGE = smallHedge("oak_small_hedge", Blocks.OAK_LEAVES);
-    public static final Block SPRUCE_SMALL_HEDGE = smallHedge("spruce_small_hedge", Blocks.SPRUCE_LEAVES);
-    public static final Block BIRCH_SMALL_HEDGE = smallHedge("birch_small_hedge", Blocks.BIRCH_LEAVES);
-    public static final Block JUNGLE_SMALL_HEDGE = smallHedge("jungle_small_hedge", Blocks.JUNGLE_LEAVES);
-    public static final Block ACACIA_SMALL_HEDGE = smallHedge("acacia_small_hedge", Blocks.ACACIA_LEAVES);
-    public static final Block DARK_OAK_SMALL_HEDGE = smallHedge("dark_oak_small_hedge", Blocks.DARK_OAK_LEAVES);
-    public static final Block MANGROVE_SMALL_HEDGE = smallHedge("mangrove_small_hedge", Blocks.MANGROVE_LEAVES);
-    public static final Block CHERRY_SMALL_HEDGE = smallHedge("cherry_small_hedge", Blocks.CHERRY_LEAVES);
-    public static final Block PALE_OAK_SMALL_HEDGE = smallHedge("pale_oak_small_hedge", Blocks.PALE_OAK_LEAVES);
-    public static final Block WHITE_OAK_SMALL_HEDGE = smallHedge("white_oak_small_hedge", WHITE_OAK_LEAVES);
-    public static final Block AZALEA_SMALL_HEDGE = smallHedge("azalea_small_hedge", Blocks.AZALEA_LEAVES);
-    public static final Block FLOWERING_AZALEA_SMALL_HEDGE = smallHedge("azalea_small_hedge_flowers", Blocks.FLOWERING_AZALEA_LEAVES);
-    public static final Block MOSS_SMALL_HEDGE = smallHedge("moss_small_hedge", Blocks.MOSS_BLOCK);
-    public static final Block PALE_MOSS_SMALL_HEDGE = smallHedge("pale_moss_small_hedge", Blocks.PALE_MOSS_BLOCK);
-    public static final Block CRIMSON_SMALL_HEDGE = smallHedge("crimson_small_hedge", Blocks.NETHER_WART_BLOCK);
-    public static final Block WARPED_SMALL_HEDGE = smallHedge("warped_small_hedge", Blocks.WARPED_WART_BLOCK);
+    public static final Block OAK_HEDGE = smallHedge("oak_hedge", Blocks.OAK_LEAVES);
+    public static final Block SPRUCE_HEDGE = smallHedge("spruce_hedge", Blocks.SPRUCE_LEAVES);
+    public static final Block BIRCH_HEDGE = smallHedge("birch_hedge", Blocks.BIRCH_LEAVES);
+    public static final Block JUNGLE_HEDGE = smallHedge("jungle_hedge", Blocks.JUNGLE_LEAVES);
+    public static final Block ACACIA_HEDGE = smallHedge("acacia_hedge", Blocks.ACACIA_LEAVES);
+    public static final Block DARK_OAK_HEDGE = smallHedge("dark_oak_hedge", Blocks.DARK_OAK_LEAVES);
+    public static final Block MANGROVE_HEDGE = smallHedge("mangrove_hedge", Blocks.MANGROVE_LEAVES);
+    public static final Block CHERRY_HEDGE = smallHedge("cherry_hedge", Blocks.CHERRY_LEAVES);
+    public static final Block PALE_OAK_HEDGE = smallHedge("pale_oak_hedge", Blocks.PALE_OAK_LEAVES);
+    public static final Block WHITE_OAK_HEDGE = smallHedge("white_oak_hedge", WHITE_OAK_LEAVES);
+    public static final Block AZALEA_HEDGE = smallHedge("azalea_hedge", Blocks.AZALEA_LEAVES);
+    public static final Block FLOWERING_AZALEA_HEDGE = smallHedge("flowering_azalea_hedge", Blocks.FLOWERING_AZALEA_LEAVES);
+    public static final Block MOSS_HEDGE = smallHedge("moss_hedge", Blocks.MOSS_BLOCK);
+    public static final Block PALE_MOSS_HEDGE = smallHedge("pale_moss_hedge", Blocks.PALE_MOSS_BLOCK);
+    public static final Block CRIMSON_HEDGE = smallHedge("crimson_hedge", Blocks.NETHER_WART_BLOCK);
+    public static final Block WARPED_HEDGE = smallHedge("warped_hedge", Blocks.WARPED_WART_BLOCK);
 
     // Large Flower Pots
     public static final Block LARGE_FLOWER_POT = largeFlowerPot("large_flower_pot");

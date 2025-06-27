@@ -382,22 +382,22 @@ public class BlockusModelProvider extends FabricModelProvider {
         }
 
         // Small Hedges
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES, -12012264);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES, -10380959);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.BIRCH_SMALL_HEDGE, Blocks.BIRCH_LEAVES, -8345771);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES, -12012264);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES, -12012264);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES, -12012264);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.MANGROVE_SMALL_HEDGE, Blocks.MANGROVE_LEAVES, -7158200);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.CHERRY_SMALL_HEDGE, Blocks.CHERRY_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.PALE_OAK_SMALL_HEDGE, Blocks.PALE_OAK_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.WARPED_SMALL_HEDGE, Blocks.WARPED_WART_BLOCK);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.CRIMSON_SMALL_HEDGE, Blocks.NETHER_WART_BLOCK);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.AZALEA_SMALL_HEDGE, Blocks.AZALEA_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.MOSS_SMALL_HEDGE, Blocks.MOSS_BLOCK);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.PALE_MOSS_SMALL_HEDGE, Blocks.PALE_MOSS_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.OAK_HEDGE, Blocks.OAK_LEAVES, -12012264);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.SPRUCE_HEDGE, Blocks.SPRUCE_LEAVES, -10380959);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.BIRCH_HEDGE, Blocks.BIRCH_LEAVES, -8345771);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.JUNGLE_HEDGE, Blocks.JUNGLE_LEAVES, -12012264);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.ACACIA_HEDGE, Blocks.ACACIA_LEAVES, -12012264);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.DARK_OAK_HEDGE, Blocks.DARK_OAK_LEAVES, -12012264);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES, -7158200);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.CHERRY_HEDGE, Blocks.CHERRY_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.PALE_OAK_HEDGE, Blocks.PALE_OAK_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.WARPED_HEDGE, Blocks.WARPED_WART_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.CRIMSON_HEDGE, Blocks.NETHER_WART_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.WHITE_OAK_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.AZALEA_HEDGE, Blocks.AZALEA_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.FLOWERING_AZALEA_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.MOSS_HEDGE, Blocks.MOSS_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.PALE_MOSS_HEDGE, Blocks.PALE_MOSS_BLOCK);
 
         // Food Blocks
         this.registerFishCrate(modelGenerator, BlockusBlocks.COD_CRATE);
@@ -723,13 +723,13 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block hedgeBlock, Block textureSource, boolean isTinted, int tintColor) {
         TextureMap textureMap = TextureMap.of(BlockusTextureKey.HEDGE, TextureMap.getId(textureSource));
-        WeightedVariant weightedVariant = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_POST.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
-        WeightedVariant weightedVariant2 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
-        WeightedVariant weightedVariant3 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
-        WeightedVariant weightedVariant4 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_NOSIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
-        WeightedVariant weightedVariant5 = createWeightedVariant(BlockusModels.TEMPLATE_SMALL_HEDGE_NOSIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant = createWeightedVariant(BlockusModels.TEMPLATE_HEDGE_POST.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant2 = createWeightedVariant(BlockusModels.TEMPLATE_HEDGE_SIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant3 = createWeightedVariant(BlockusModels.TEMPLATE_HEDGE_SIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant4 = createWeightedVariant(BlockusModels.TEMPLATE_HEDGE_NOSIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant5 = createWeightedVariant(BlockusModels.TEMPLATE_HEDGE_NOSIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector));
         modelGenerator.blockStateCollector.accept(MultipartBlockModelDefinitionCreator.create(hedgeBlock).with(weightedVariant).with(createMultipartConditionBuilder().put(Properties.NORTH, true), weightedVariant2.apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.EAST, true), weightedVariant2.apply(ROTATE_Y_90).apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.SOUTH, true), weightedVariant3.apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.WEST, true), weightedVariant3.apply(ROTATE_Y_90).apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.NORTH, false), weightedVariant4.apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.EAST, false), weightedVariant5.apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.SOUTH, false), weightedVariant5.apply(ROTATE_Y_90).apply(UV_LOCK)).with(createMultipartConditionBuilder().put(Properties.WEST, false), weightedVariant4.apply(ROTATE_Y_270).apply(UV_LOCK)));
-        Identifier identifier = BlockusModels.TEMPLATE_SMALL_HEDGE_INVENTORY.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier = BlockusModels.TEMPLATE_HEDGE_INVENTORY.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
         if (isTinted) {
             modelGenerator.registerTintedItemModel(hedgeBlock, identifier, ItemModels.constantTintSource(tintColor));
         } else {
