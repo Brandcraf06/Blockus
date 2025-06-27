@@ -6,7 +6,8 @@
     "RedstoneWireBlockMixin",
     "LanternBlockMixin",
     "HangingSignBlockMixin",
-    "BellBlockMixin"
+    "BellBlockMixin",
+    "NetherPortalMixin"
   ],
   "injectors": {
     "defaultRequire": 1

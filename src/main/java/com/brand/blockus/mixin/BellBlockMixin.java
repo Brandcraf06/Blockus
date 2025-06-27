@@ -3,7 +3,6 @@ package com.brand.blockus.mixin;
 import com.brand.blockus.blocks.base.PostBlock;
 import net.minecraft.block.BellBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LanternBlock;
 import net.minecraft.block.enums.Attachment;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
