@@ -15,11 +15,13 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Util;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
 
 public class ColoredTilesBundle {
     private static final ArrayList<ColoredTilesBundle> LIST = new ArrayList<>();
+    private static final Map<Block, Block[]> tilePairs = new LinkedHashMap<>();
     public final Block block;
     public final Block tile1;
     public final Block tile2;
@@ -48,69 +50,69 @@ public class ColoredTilesBundle {
         return LIST;
     }
 
-    private static final Map<Block, Block[]> tilePairs = Map.ofEntries(
-        Map.entry(Blocks.WHITE_CONCRETE, new Block[]{
+    static {
+        tilePairs.put(Blocks.WHITE_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BLACK_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.RED_CONCRETE,
             Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE, Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.CYAN_CONCRETE,
             Blocks.LIGHT_BLUE_CONCRETE, Blocks.BLUE_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
-        }),
-        Map.entry(Blocks.BLACK_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.BLACK_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.RED_CONCRETE,
             Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE, Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE,
             Blocks.CYAN_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE, Blocks.BLUE_CONCRETE, Blocks.PURPLE_CONCRETE,
             Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
-        }),
-        Map.entry(Blocks.RED_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.RED_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
             Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE, Blocks.BLUE_CONCRETE,
             Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
-        }),
-        Map.entry(Blocks.BLUE_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.BLUE_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
             Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE, Blocks.PURPLE_CONCRETE,
             Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
-        }),
-        Map.entry(Blocks.LIGHT_BLUE_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.LIGHT_BLUE_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
             Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE,
             Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
-        }),
-        Map.entry(Blocks.GREEN_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.GREEN_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
             Blocks.LIME_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
-        }),
-        Map.entry(Blocks.LIME_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.LIME_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
             Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
-        }),
-        Map.entry(Blocks.YELLOW_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.YELLOW_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE,
             Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
-        }),
-        Map.entry(Blocks.PINK_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.PINK_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE,
             Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE
-        }),
-        Map.entry(Blocks.PURPLE_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.PURPLE_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE,
             Blocks.CYAN_CONCRETE, Blocks.MAGENTA_CONCRETE
-        }),
-        Map.entry(Blocks.MAGENTA_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.MAGENTA_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.CYAN_CONCRETE
-        }),
-        Map.entry(Blocks.ORANGE_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.ORANGE_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.CYAN_CONCRETE
-        }),
-        Map.entry(Blocks.CYAN_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.CYAN_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE
-        }),
-        Map.entry(Blocks.BROWN_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.BROWN_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE
-        }),
-        Map.entry(Blocks.GRAY_CONCRETE, new Block[]{
+        });
+        tilePairs.put(Blocks.GRAY_CONCRETE, new Block[]{
             Blocks.LIGHT_GRAY_CONCRETE
-        })
-    );
+        });
+    }
 
     public static ColoredTilesBundle get(Block tile1, Block tile2) {
         for (ColoredTilesBundle bundle : LIST) {
