@@ -1,6 +1,7 @@
 package com.brand.blockus.utils.helper;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.blocks.blockitems.ColoredTilesBlockItem;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.utils.BlockChecker;
@@ -13,6 +14,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Rarity;
+import net.minecraft.util.Util;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -107,6 +109,13 @@ public class BlockBuilder {
         return register(id, block -> {
             var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, Blockus.id(id));
             return new LegacyBlockItem(block, this.itemSettings.registryKey(itemRegistryKey), version);
+        });
+    }
+
+    public Block registerColoredTiles(String id) {
+        return register(id, block -> {
+            var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, Blockus.id(id));
+            return new ColoredTilesBlockItem(block, this.itemSettings.registryKey(itemRegistryKey).translationKey(Util.createTranslationKey("block", Blockus.id("colored_tiles"))));
         });
     }
 }

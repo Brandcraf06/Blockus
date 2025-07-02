@@ -1,7 +1,9 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.ColoredTilesBlock;
+import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.BlockFactory;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
@@ -9,6 +11,7 @@ import net.minecraft.registry.Registries;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 public class ColoredTilesBundle {
     private static final ArrayList<ColoredTilesBundle> LIST = new ArrayList<>();
@@ -19,10 +22,14 @@ public class ColoredTilesBundle {
 
     public ColoredTilesBundle(Block tile1, Block tile2) {
         String type = getColor(tile1) + "_" + getColor(tile2) + "_colored_tiles";
-        this.block = BlockFactory.registerCopy(type, (settings) -> new ColoredTilesBlock(tile1, tile2, settings), tile2);
+        this.block = register(type, (settings) -> new ColoredTilesBlock(tile1, tile2, settings), BlockFactory.createCopy(tile2));
         this.tile1 = tile1;
         this.tile2 = tile2;
         LIST.add(this);
+    }
+
+    public static Block register(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+        return new BlockBuilder(factory, settings).registerColoredTiles(id);
     }
 
     public static String getColor(Block block) {
