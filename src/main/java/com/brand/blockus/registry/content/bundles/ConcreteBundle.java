@@ -1,6 +1,6 @@
 package com.brand.blockus.registry.content.bundles;
 
-import com.brand.blockus.utils.BlockFactory;
+import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.block.Block;
 
 import java.util.ArrayList;
@@ -20,13 +20,13 @@ public class ConcreteBundle {
 
         this.base = base;
 
-        this.block = BlockFactory.register(type, BlockFactory.createCopy(base));
-        this.slab = BlockFactory.registerSlab(this.block);
-        this.stairs = BlockFactory.registerStairs(this.block);
-        this.wall = BlockFactory.registerWall(this.block);
+        this.block = BlockFactory.registerCopy(type, base);
+        this.slab = BlockFactory.slab(this.block);
+        this.stairs = BlockFactory.stairs(this.block);
+        this.wall = BlockFactory.wall(this.block);
         String replace = type.replace("_bricks", "");
-        this.chiseled = BlockFactory.register("chiseled_" + replace, BlockFactory.createCopy(base));
-        this.pillar = BlockFactory.registerPillar2(replace + "_pillar", base);
+        this.chiseled = BlockFactory.registerCopy("chiseled_" + replace, base);
+        this.pillar = BlockFactory.pillar2(replace + "_pillar", base);
 
         LIST.add(this);
     }

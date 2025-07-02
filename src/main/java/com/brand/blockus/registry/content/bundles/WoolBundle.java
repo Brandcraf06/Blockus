@@ -1,7 +1,6 @@
 package com.brand.blockus.registry.content.bundles;
 
-import com.brand.blockus.utils.BlockFactory;
-import net.minecraft.block.AbstractBlock;
+import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.block.Block;
 import net.minecraft.block.DyedCarpetBlock;
 import net.minecraft.util.DyeColor;
@@ -27,10 +26,10 @@ public class WoolBundle {
 
 
         String type = dyecolor.getId() + typeSuffix;
-        this.block = BlockFactory.register(type, BlockFactory.createCopy(base));
-        this.slab = BlockFactory.registerSlab(this.block);
-        this.stairs = BlockFactory.registerStairs(this.block);
-        this.carpet = BlockFactory.register(type.replace("wool", "carpet"), (settings) -> new DyedCarpetBlock(dyecolor, settings), AbstractBlock.Settings.copy(base2));
+        this.block = BlockFactory.registerCopy(type, base);
+        this.slab = BlockFactory.slab(this.block);
+        this.stairs = BlockFactory.stairs(this.block);
+        this.carpet = BlockFactory.registerCopy(type.replace("wool", "carpet"), (settings) -> new DyedCarpetBlock(dyecolor, settings), base2);
 
 
         LIST.add(this);

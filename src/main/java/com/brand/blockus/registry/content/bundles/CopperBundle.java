@@ -1,7 +1,7 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.OxidizableWallBlock;
-import com.brand.blockus.utils.BlockFactory;
+import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.block.Block;
 import net.minecraft.block.Oxidizable.OxidationLevel;
 import net.minecraft.block.OxidizableBlock;
@@ -49,14 +49,14 @@ public class CopperBundle {
     public CopperBundle(String type, OxidationType oxidation, Block base) {
         this.type = type;
         this.base = base;
-        this.block = BlockFactory.register(oxidation.getName() + type, (settings) -> new OxidizableBlock(oxidation.getLevel(), settings), BlockFactory.createCopy(base));
-        this.slab = BlockFactory.register(oxidation.getName() + BlockFactory.replaceId(type) + "_slab", (settings) -> new OxidizableSlabBlock(oxidation.getLevel(), settings), BlockFactory.createCopy(base));
-        this.stairs = BlockFactory.register(oxidation.getName() + BlockFactory.replaceId(type) + "_stairs", (settings) -> new OxidizableStairsBlock(oxidation.getLevel(), base.getDefaultState(), settings), BlockFactory.createCopy(base));
-        this.wall = BlockFactory.register(oxidation.getName() + BlockFactory.replaceId(type) + "_wall", (settings) -> new OxidizableWallBlock(oxidation.getLevel(), settings), BlockFactory.createCopy(base));
-        this.blockWaxed = BlockFactory.register("waxed_" + oxidation.getName() + type, BlockFactory.createCopy(base));
-        this.slabWaxed = BlockFactory.registerSlab(blockWaxed);
-        this.stairsWaxed = BlockFactory.registerStairs(blockWaxed);
-        this.wallWaxed = BlockFactory.registerWall(blockWaxed);
+        this.block = BlockFactory.registerCopy(oxidation.getName() + type, (settings) -> new OxidizableBlock(oxidation.getLevel(), settings), base);
+        this.slab = BlockFactory.registerCopy(oxidation.getName() + BlockFactory.replaceId(type) + "_slab", (settings) -> new OxidizableSlabBlock(oxidation.getLevel(), settings), base);
+        this.stairs = BlockFactory.registerCopy(oxidation.getName() + BlockFactory.replaceId(type) + "_stairs", (settings) -> new OxidizableStairsBlock(oxidation.getLevel(), base.getDefaultState(), settings), base);
+        this.wall = BlockFactory.registerCopy(oxidation.getName() + BlockFactory.replaceId(type) + "_wall", (settings) -> new OxidizableWallBlock(oxidation.getLevel(), settings), base);
+        this.blockWaxed = BlockFactory.registerCopy("waxed_" + oxidation.getName() + type, base);
+        this.slabWaxed = BlockFactory.slab(blockWaxed);
+        this.stairsWaxed = BlockFactory.stairs(blockWaxed);
+        this.wallWaxed = BlockFactory.wall(blockWaxed);
 
 
         LIST.add(this);

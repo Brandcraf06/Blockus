@@ -1,7 +1,7 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.PostBlock;
-import com.brand.blockus.utils.BlockFactory;
+import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 
@@ -26,8 +26,8 @@ public class WoodenPostBundle {
             blockSettings = blockSettings.burnable();
         }
 
-        this.block = BlockFactory.register(name, PostBlock::new, blockSettings);
-        this.stripped = BlockFactory.register("stripped_" + name, PostBlock::new, blockSettings);
+        this.block = BlockFactory.registerOf(name, PostBlock::new, blockSettings);
+        this.stripped = BlockFactory.registerOf("stripped_" + name, PostBlock::new, blockSettings);
 
         LIST.add(this);
     }

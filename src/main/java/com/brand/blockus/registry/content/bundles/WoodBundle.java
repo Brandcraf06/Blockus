@@ -2,7 +2,7 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.content.BlockusItems;
-import com.brand.blockus.utils.BlockFactory;
+import com.brand.blockus.utils.helper.BlockFactory;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -42,7 +42,7 @@ public class WoodBundle {
         this.burnable = burnable;
 
         AbstractBlock.Settings blockSettings = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(sound);
-        AbstractBlock.Settings doorTrapdoorSettings = BlockFactory.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
+        AbstractBlock.Settings doorTrapdoorSettings = BlockFactory.doorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
         AbstractBlock.Settings signSettings = BlockFactory.create().mapColor(color).noCollision().strength(1.0F);
 
         if (burnable) {
@@ -51,13 +51,13 @@ public class WoodBundle {
             signSettings = signSettings.burnable();
         }
 
-        this.planks = BlockFactory.register(type + "_planks", blockSettings);
-        this.stairs = BlockFactory.registerStairs(this.planks);
-        this.slab = BlockFactory.registerSlab(this.planks);
-        this.fence = BlockFactory.register(type + "_fence", FenceBlock::new, BlockFactory.createCopy(base));
-        this.fence_gate = BlockFactory.register(type + "_fence_gate", (settings) -> new FenceGateBlock(woodType, settings), BlockFactory.createCopy(base));
-        this.door = BlockFactory.register(type + "_door", (settings) -> new DoorBlock(blockSetType, settings), doorTrapdoorSettings);
-        this.trapdoor = BlockFactory.register(type + "_trapdoor", (settings) -> new TrapdoorBlock(blockSetType, settings), doorTrapdoorSettings);
+        this.planks = BlockFactory.registerOf(type + "_planks", blockSettings);
+        this.stairs = BlockFactory.stairs(this.planks);
+        this.slab = BlockFactory.slab(this.planks);
+        this.fence = BlockFactory.registerCopy(type + "_fence", FenceBlock::new, base);
+        this.fence_gate = BlockFactory.registerCopy(type + "_fence_gate", (settings) -> new FenceGateBlock(woodType, settings), base);
+        this.door = BlockFactory.registerOf(type + "_door", (settings) -> new DoorBlock(blockSetType, settings), doorTrapdoorSettings);
+        this.trapdoor = BlockFactory.registerOf(type + "_trapdoor", (settings) -> new TrapdoorBlock(blockSetType, settings), doorTrapdoorSettings);
         this.pressure_plate = BlockFactory.pressurePlate(this.planks, blockSetType);
         this.button = BlockFactory.button(this.planks, blockSetType, 30);
 

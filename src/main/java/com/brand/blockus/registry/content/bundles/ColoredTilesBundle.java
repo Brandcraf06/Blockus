@@ -1,23 +1,14 @@
 package com.brand.blockus.registry.content.bundles;
 
-import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.ColoredTilesBlock;
-import com.brand.blockus.blocks.blockitems.ColoredTilesBlockItem;
-import com.brand.blockus.utils.BlockFactory;
-import net.minecraft.block.AbstractBlock;
+import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Util;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.function.Function;
 
 public class ColoredTilesBundle {
     private static final ArrayList<ColoredTilesBundle> LIST = new ArrayList<>();
@@ -28,7 +19,7 @@ public class ColoredTilesBundle {
 
     public ColoredTilesBundle(Block tile1, Block tile2) {
         String type = getColor(tile1) + "_" + getColor(tile2) + "_colored_tiles";
-        this.block = register(type, (settings) -> new ColoredTilesBlock(tile1, tile2, settings), BlockFactory.createCopy(tile2));
+        this.block = BlockFactory.registerCopy(type, (settings) -> new ColoredTilesBlock(tile1, tile2, settings), tile2);
         this.tile1 = tile1;
         this.tile2 = tile2;
         LIST.add(this);
@@ -36,14 +27,6 @@ public class ColoredTilesBundle {
 
     public static String getColor(Block block) {
         return Registries.BLOCK.getId(block).getPath().replace("_concrete", "");
-    }
-
-    public static Block register(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings blockSettings) {
-        RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Blockus.id(id));
-        Block block = BlockFactory.registerNoItem(id, factory, blockSettings);
-        var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, key.getValue());
-        Registry.register(Registries.ITEM, itemRegistryKey, new ColoredTilesBlockItem(block, new Item.Settings().registryKey(itemRegistryKey).translationKey(Util.createTranslationKey("block", Blockus.id("colored_tiles")))));
-        return block;
     }
 
     public static ArrayList<ColoredTilesBundle> values() {

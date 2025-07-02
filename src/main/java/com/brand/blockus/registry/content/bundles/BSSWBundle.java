@@ -1,7 +1,7 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.utils.BlockChecker;
-import com.brand.blockus.utils.BlockFactory;
+import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.sound.BlockSoundGroup;
@@ -34,10 +34,10 @@ public class BSSWBundle {
             factory = Block::new;
         }
 
-        this.block = BlockFactory.register(type, factory, blockSettings);
-        this.slab = BlockFactory.registerSlab(this.block);
-        this.stairs = BlockFactory.registerStairs(this.block);
-        this.wall = includeWall ? BlockFactory.registerWall(this.block) : null;
+        this.block = BlockFactory.registerOf(type, factory, blockSettings);
+        this.slab = BlockFactory.slab(this.block);
+        this.stairs = BlockFactory.stairs(this.block);
+        this.wall = includeWall ? BlockFactory.wall(this.block) : null;
 
         LIST.add(this);
     }

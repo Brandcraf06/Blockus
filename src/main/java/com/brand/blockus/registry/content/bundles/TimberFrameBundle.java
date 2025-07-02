@@ -1,7 +1,7 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.OrientableBlockBase;
-import com.brand.blockus.utils.BlockFactory;
+import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.block.*;
 import net.minecraft.registry.Registries;
 
@@ -36,11 +36,11 @@ public class TimberFrameBundle {
             blockSettings = blockSettings.burnable();
         }
 
-        this.block = BlockFactory.register(type + "_timber_frame", blockSettings);
-        this.diagonal = BlockFactory.register(type + "_diagonal_timber_frame", OrientableBlockBase::new, blockSettings);
-        this.cross = BlockFactory.register(type + "_cross_timber_frame", blockSettings);
-        this.lattice = BlockFactory.register(type + "_lattice", PaneBlock::new, BlockFactory.createCopy(base));
-        this.grate = BlockFactory.register(type + "_grate", GrateBlock::new, BlockFactory.createCopy(base).nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never));
+        this.block = BlockFactory.registerOf(type + "_timber_frame", blockSettings);
+        this.diagonal = BlockFactory.registerOf(type + "_diagonal_timber_frame", OrientableBlockBase::new, blockSettings);
+        this.cross = BlockFactory.registerOf(type + "_cross_timber_frame", blockSettings);
+        this.lattice = BlockFactory.registerCopy(type + "_lattice", PaneBlock::new, base);
+        this.grate = BlockFactory.registerCopy(type + "_grate", GrateBlock::new, base, settings -> settings.nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never));
         this.all = List.of(block, diagonal, cross, lattice, grate);
 
         LIST.add(this);
