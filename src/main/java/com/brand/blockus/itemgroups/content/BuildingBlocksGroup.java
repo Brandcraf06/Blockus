@@ -19,15 +19,15 @@ public class BuildingBlocksGroup {
             entries.add(STRIPPED_WHITE_OAK_WOOD);
 
             for (WoodBundle woodBundle : WoodBundle.values()) {
-                entries.add(woodBundle.planks);
-                entries.add(woodBundle.stairs);
-                entries.add(woodBundle.slab);
-                entries.add(woodBundle.fence);
-                entries.add(woodBundle.fence_gate);
-                entries.add(woodBundle.door);
-                entries.add(woodBundle.trapdoor);
-                entries.add(woodBundle.pressure_plate);
-                entries.add(woodBundle.button);
+                entries.add(woodBundle.planks());
+                entries.add(woodBundle.stairs());
+                entries.add(woodBundle.slab());
+                entries.add(woodBundle.fence());
+                entries.add(woodBundle.fenceGate());
+                entries.add(woodBundle.door());
+                entries.add(woodBundle.trapdoor());
+                entries.add(woodBundle.pressurePlate());
+                entries.add(woodBundle.button());
             }
 
             entries.add(HERRINGBONE_OAK_PLANKS);
@@ -47,18 +47,18 @@ public class BuildingBlocksGroup {
             entries.add(HERRINGBONE_CHARRED_PLANKS);
 
             for (BSSWBundle block : BSSWBundle.values()) {
-                if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.WOODS)) {
-                    entries.add(block.block);
-                    entries.add(block.stairs);
-                    entries.add(block.slab);
+                if (BlockChecker.isWoodenMosaic(block.type(), BlockChecker.WOODS)) {
+                    entries.add(block.block());
+                    entries.add(block.stairs());
+                    entries.add(block.slab());
                 }
             }
 
             for (BSSWBundle block : BSSWBundle.values()) {
-                if (BlockChecker.isMossyPlanks(block.type, BlockChecker.WOODS)) {
-                    entries.add(block.block);
-                    entries.add(block.stairs);
-                    entries.add(block.slab);
+                if (BlockChecker.isMossyPlanks(block.type(), BlockChecker.WOODS)) {
+                    entries.add(block.block());
+                    entries.add(block.stairs());
+                    entries.add(block.slab());
                 }
             }
 
@@ -82,21 +82,21 @@ public class BuildingBlocksGroup {
             }*/
 
             for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-                entries.add(woodenPost.block);
-                entries.add(woodenPost.stripped);
+                entries.add(woodenPost.block());
+                entries.add(woodenPost.stripped());
             }
 
             for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-                entries.add(timberFrameBundle.lattice);
-                entries.add(timberFrameBundle.grate);
+                entries.add(timberFrameBundle.lattice());
+                entries.add(timberFrameBundle.grate());
             }
             entries.add(WOODEN_FRAME);
 
             for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-                entries.add(timberFrameBundle.cross);
-                entries.add(timberFrameBundle.block);
-                entries.add(timberFrameBundle.diagonal);
-                entries.add(timberFrameBundle.cross);
+                entries.add(timberFrameBundle.cross());
+                entries.add(timberFrameBundle.block());
+                entries.add(timberFrameBundle.diagonal());
+                entries.add(timberFrameBundle.cross());
             }
 
             entries.add(CHISELED_MUD_BRICKS);
@@ -481,13 +481,10 @@ public class BuildingBlocksGroup {
         });
     }
 
-    public static void addBssw(FabricItemGroupEntries entries, BSSWBundle BSSWBundle) {
+    public static void addBssw(FabricItemGroupEntries entries, BSSWBundle bsswBundle) {
         // Block, stairs & slab & wall (if exist) variants of a block
-        entries.add(BSSWBundle.block);
-        entries.add(BSSWBundle.stairs);
-        entries.add(BSSWBundle.slab);
-        if (BSSWBundle.wall != null) {
-            entries.add(BSSWBundle.wall);
+        for (Block block : bsswBundle.all()) {
+            entries.add(block);
         }
     }
 }

@@ -38,56 +38,56 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         for (BSSWBundle BSSWBundle : BSSWBundle.values()) {
             // Rough Sandstones
-            if (BSSWBundle.type.contains("rough") && BSSWBundle.type.contains("sandstone")) {
-                this.registerBlockStairsSlabWithBottom(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab, BSSWBundle.base);
+            if (BSSWBundle.type().contains("rough") && BSSWBundle.type().contains("sandstone")) {
+                this.registerBlockStairsSlabWithBottom(modelGenerator, BSSWBundle.block(), BSSWBundle.stairs(), BSSWBundle.slab(), BSSWBundle.base());
             }
             // Smooth Sandstones & Rough Basalt
-            else if ((BSSWBundle.type.contains("smooth") && BSSWBundle.type.contains("sandstone")) ||
-                BSSWBundle.block == BlockusBlocks.ROUGH_BASALT.block) {
-                this.registerBlockStairsSlabWithTop(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab, BSSWBundle.base);
+            else if ((BSSWBundle.type().contains("smooth") && BSSWBundle.type().contains("sandstone")) ||
+                BSSWBundle.block() == BlockusBlocks.ROUGH_BASALT.block()) {
+                this.registerBlockStairsSlabWithTop(modelGenerator, BSSWBundle.block(), BSSWBundle.stairs(), BSSWBundle.slab(), BSSWBundle.base());
             }
             // Soul Sandstone
-            else if (BSSWBundle.block == BlockusBlocks.SOUL_SANDSTONE.block) {
-                this.registerBlockStairsSlabwithTopBottom(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab);
+            else if (BSSWBundle.block() == BlockusBlocks.SOUL_SANDSTONE.block()) {
+                this.registerBlockStairsSlabwithTopBottom(modelGenerator, BSSWBundle.block(), BSSWBundle.stairs(), BSSWBundle.slab());
             }
             // Autre
             else {
-                this.registerBlockStairsAndSlab(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab);
+                this.registerBlockStairsAndSlab(modelGenerator, BSSWBundle.block(), BSSWBundle.stairs(), BSSWBundle.slab());
             }
 
-            if (BSSWBundle.wall != null) {
-                this.registerWall(modelGenerator, BSSWBundle.wall, BSSWBundle.block);
+            if (BSSWBundle.wall() != null) {
+                this.registerWall(modelGenerator, BSSWBundle.wall(), BSSWBundle.block());
             }
         }
 
         for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-            this.registerBlockStairsSlabAndWall(modelGenerator, concreteType.block, concreteType.stairs, concreteType.slab, concreteType.wall);
-            modelGenerator.registerSimpleCubeAll(concreteType.chiseled);
-            this.registerPillar(modelGenerator, concreteType.pillar);
+            this.registerBlockStairsSlabAndWall(modelGenerator, concreteType.block(), concreteType.stairs(), concreteType.slab(), concreteType.wall());
+            modelGenerator.registerSimpleCubeAll(concreteType.chiseled());
+            this.registerPillar(modelGenerator, concreteType.pillar());
         }
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            modelGenerator.registerSimpleCubeAll(timberFrameBundle.block);
-            modelGenerator.registerSimpleCubeAll(timberFrameBundle.cross);
-            this.registerDiagonalTimberFrame(modelGenerator, timberFrameBundle.diagonal);
-            modelGenerator.registerGlassAndPane(timberFrameBundle.grate, timberFrameBundle.lattice);
+            modelGenerator.registerSimpleCubeAll(timberFrameBundle.block());
+            modelGenerator.registerSimpleCubeAll(timberFrameBundle.cross());
+            this.registerDiagonalTimberFrame(modelGenerator, timberFrameBundle.diagonal());
+            modelGenerator.registerGlassAndPane(timberFrameBundle.grate(), timberFrameBundle.lattice());
         }
 
         for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, asphaltBundle.block, asphaltBundle.stairs, asphaltBundle.slab);
+            this.registerBlockStairsAndSlab(modelGenerator, asphaltBundle.block(), asphaltBundle.stairs(), asphaltBundle.slab());
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, woolBundle.block, woolBundle.stairs, woolBundle.slab);
-            this.registerCarpet(modelGenerator, woolBundle.block, woolBundle.carpet);
+            this.registerBlockStairsAndSlab(modelGenerator, woolBundle.block(), woolBundle.stairs(), woolBundle.slab());
+            this.registerCarpet(modelGenerator, woolBundle.block(), woolBundle.carpet());
         }
 
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-            registerColoredTiles(modelGenerator, coloredTilesVariants.block, coloredTilesVariants.tile1, coloredTilesVariants.tile2);
+            registerColoredTiles(modelGenerator, coloredTilesVariants.block(), coloredTilesVariants.tile1(), coloredTilesVariants.tile2());
         }
 
         for (PottedLargeBundle pottedLargeBundle : PottedLargeBundle.values()) {
-            modelGenerator.registerSimpleState(pottedLargeBundle.block);
+            modelGenerator.registerSimpleState(pottedLargeBundle.block());
         }
         modelGenerator.registerSimpleState(BlockusBlocks.LARGE_FLOWER_POT);
 
@@ -161,7 +161,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Sculk
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_SCULK_BRICKS);
         this.registerPillar(modelGenerator, BlockusBlocks.SCULK_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_SCULK_PRESSURE_PLATE, BlockusBlocks.POLISHED_SCULK_BUTTON, BlockusBlocks.POLISHED_SCULK.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_SCULK_PRESSURE_PLATE, BlockusBlocks.POLISHED_SCULK_BUTTON, BlockusBlocks.POLISHED_SCULK.block());
 
         // Amethyst
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_AMETHYST);
@@ -187,21 +187,21 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Limestone
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_LIMESTONE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_BRICKS, BlockusBlocks.POLISHED_LIMESTONE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_BRICKS, BlockusBlocks.POLISHED_LIMESTONE.block());
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.LIMESTONE_PILLAR);
         this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.LIMESTONE_PRESSURE_PLATE, BlockusBlocks.LIMESTONE_BUTTON, BlockusBlocks.LIMESTONE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.LIMESTONE_PRESSURE_PLATE, BlockusBlocks.LIMESTONE_BUTTON, BlockusBlocks.LIMESTONE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIMESTONE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.LIMESTONE_LINES);
 
         // Marble
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_MARBLE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_MARBLE_BRICKS, BlockusBlocks.POLISHED_MARBLE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_MARBLE_BRICKS, BlockusBlocks.POLISHED_MARBLE.block());
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.MARBLE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.MARBLE_PILLAR);
         this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_MARBLE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.MARBLE_PRESSURE_PLATE, BlockusBlocks.MARBLE_BUTTON, BlockusBlocks.MARBLE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.MARBLE_PRESSURE_PLATE, BlockusBlocks.MARBLE_BUTTON, BlockusBlocks.MARBLE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.MARBLE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.MARBLE_LINES);
 
@@ -210,19 +210,19 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerLines(modelGenerator, BlockusBlocks.BLUESTONE_LINES);
         this.registerPillar(modelGenerator, BlockusBlocks.BLUESTONE_PILLAR);
         this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.BLUESTONE_PRESSURE_PLATE, BlockusBlocks.BLUESTONE_BUTTON, BlockusBlocks.BLUESTONE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.BLUESTONE_PRESSURE_PLATE, BlockusBlocks.BLUESTONE_BUTTON, BlockusBlocks.BLUESTONE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.BLUESTONE_SQUARES);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_BLUESTONE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_BRICKS, BlockusBlocks.POLISHED_BLUESTONE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_BRICKS, BlockusBlocks.POLISHED_BLUESTONE.block());
 
 
         // Viridite
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_VIRIDITE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_BRICKS, BlockusBlocks.POLISHED_VIRIDITE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_BRICKS, BlockusBlocks.POLISHED_VIRIDITE.block());
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.VIRIDITE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.VIRIDITE_PILLAR);
         this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.VIRIDITE_PRESSURE_PLATE, BlockusBlocks.VIRIDITE_BUTTON, BlockusBlocks.VIRIDITE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.VIRIDITE_PRESSURE_PLATE, BlockusBlocks.VIRIDITE_BUTTON, BlockusBlocks.VIRIDITE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.VIRIDITE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.VIRIDITE_LINES);
 
@@ -248,7 +248,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Netherrack
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.NETHERRACK_CIRCULAR_PAVING);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE, BlockusBlocks.POLISHED_NETHERRACK_BUTTON, BlockusBlocks.POLISHED_NETHERRACK.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE, BlockusBlocks.POLISHED_NETHERRACK_BUTTON, BlockusBlocks.POLISHED_NETHERRACK.block());
 
         // Quartz Blocks
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.QUARTZ_CIRCULAR_PAVING);
@@ -300,12 +300,12 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerCubeColumn(modelGenerator, BlockusBlocks.LAPIS_DECORATED_RED_SANDSTONE, Blocks.RED_SANDSTONE);
 
         // Soul Sandstone
-        this.registerCubeColumn(modelGenerator, BlockusBlocks.CHISELED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
-        this.registerCubeColumn(modelGenerator, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
-        this.registerSlabwithTop(modelGenerator, BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.CHISELED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
+        this.registerSlabwithTop(modelGenerator, BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
         this.registerPillar(modelGenerator, BlockusBlocks.SOUL_SANDSTONE_PILLAR);
-        this.registerCubeColumn(modelGenerator, BlockusBlocks.GOLD_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
-        this.registerCubeColumn(modelGenerator, BlockusBlocks.LAPIS_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.GOLD_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.LAPIS_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
 
         // Rainbow
         modelGenerator.registerFlowerbed(BlockusBlocks.RAINBOW_PETALS);
@@ -330,7 +330,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_END_STONE_BRICKS);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CRACKED_END_STONE_BRICKS);
         this.registerPillar(modelGenerator, BlockusBlocks.END_STONE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE, BlockusBlocks.POLISHED_END_STONE_BUTTON, BlockusBlocks.POLISHED_END_STONE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE, BlockusBlocks.POLISHED_END_STONE_BUTTON, BlockusBlocks.POLISHED_END_STONE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_END_STONE_BRICKS);
 
         // White Oak Wood
@@ -340,9 +340,9 @@ public class BlockusModelProvider extends FabricModelProvider {
         registerFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.WHITE_OAK_SAPLING, BlockusBlocks.POTTED_WHITE_OAK_SAPLING, CrossType.NOT_TINTED);
 
         // Hanging Signs
-        modelGenerator.registerHangingSign(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK.ceiling_hanging_sign, BlockusBlocks.WHITE_OAK.wall_hanging_sign);
-        modelGenerator.registerHangingSign(BlockusBlocks.RAW_BAMBOO.planks, BlockusBlocks.RAW_BAMBOO.ceiling_hanging_sign, BlockusBlocks.RAW_BAMBOO.wall_hanging_sign);
-        modelGenerator.registerHangingSign(BlockusBlocks.CHARRED.planks, BlockusBlocks.CHARRED.ceiling_hanging_sign, BlockusBlocks.CHARRED.wall_hanging_sign);
+        modelGenerator.registerHangingSign(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK.ceilingHangingSign(), BlockusBlocks.WHITE_OAK.wallHangingSign());
+        modelGenerator.registerHangingSign(BlockusBlocks.RAW_BAMBOO.planks(), BlockusBlocks.RAW_BAMBOO.ceilingHangingSign(), BlockusBlocks.RAW_BAMBOO.wallHangingSign());
+        modelGenerator.registerHangingSign(BlockusBlocks.CHARRED.planks(), BlockusBlocks.CHARRED.ceilingHangingSign(), BlockusBlocks.CHARRED.wallHangingSign());
 
         // Herringbone Planks
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
@@ -377,8 +377,8 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Posts
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            this.registerPost(modelGenerator, woodenPost.block, woodenPost.base);
-            this.registerPost(modelGenerator, woodenPost.stripped, woodenPost.baseStripped);
+            this.registerPost(modelGenerator, woodenPost.block(), woodenPost.base());
+            this.registerPost(modelGenerator, woodenPost.stripped(), woodenPost.baseStripped());
         }
 
         // Small Hedges
@@ -899,7 +899,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void registerCopperBlocks(BlockStateModelGenerator modelGenerator, CopperBundle block, BlockusFamilies.CopperFamily family) {
-        modelGenerator.registerCubeAllModelTexturePool(block.block).family(family.unwaxed).parented(block.block, block.blockWaxed).family(family.waxed);
+        modelGenerator.registerCubeAllModelTexturePool(block.block()).family(family.unwaxed).parented(block.block(), block.blockWaxed()).family(family.waxed);
     }
 
     public final void registerCrate(BlockStateModelGenerator modelGenerator, Block block) {

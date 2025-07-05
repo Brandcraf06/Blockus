@@ -53,12 +53,12 @@ public class FunctionalBlocksGroup {
 
             entries.add(TINTED_BEVELED_GLASS);
 
-            entries.add(WHITE_OAK.sign);
-            entries.add(CHARRED.sign);
-            entries.add(RAW_BAMBOO.sign);
-            entries.add(WHITE_OAK.hanging_sign);
-            entries.add(CHARRED.hanging_sign);
-            entries.add(RAW_BAMBOO.hanging_sign);
+            entries.add(WHITE_OAK.sign());
+            entries.add(CHARRED.sign());
+            entries.add(RAW_BAMBOO.sign());
+            entries.add(WHITE_OAK.hangingSign());
+            entries.add(CHARRED.hangingSign());
+            entries.add(RAW_BAMBOO.hangingSign());
             entries.add(BlockusEntities.WHITE_OAK_BOAT);
             entries.add(BlockusEntities.WHITE_OAK_CHEST_BOAT);
             entries.add(BlockusEntities.CHARRED_BOAT);

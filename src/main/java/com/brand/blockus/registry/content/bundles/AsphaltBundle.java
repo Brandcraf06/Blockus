@@ -10,27 +10,48 @@ import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.util.DyeColor;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class AsphaltBundle {
-    public static final ArrayList<AsphaltBundle> LIST = new ArrayList<>();
+public record AsphaltBundle(
+    Block block,
+    Block stairs,
+    Block slab
+) {
 
-    public final Block block;
-    public final Block slab;
-    public final Block stairs;
+    public static final List<AsphaltBundle> LIST = new ArrayList<>();
 
-    public AsphaltBundle(DyeColor color) {
-        String type = color.getId() + "_asphalt";
-        String type2 = type.replace("black_asphalt", "asphalt");
-
-        Block.Settings blockSettings = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool();
-
-        this.block = BlockFactory.registerOf(type2, AsphaltBlock::new, blockSettings);
-        this.slab = BlockFactory.registerOf(type2 + "_slab", AsphaltSlab::new, AbstractBlock.Settings.copy(block));
-        this.stairs = BlockFactory.registerOf(type2 + "_stairs", (settings) -> new AsphaltStairs(block.getDefaultState(), settings), AbstractBlock.Settings.copy(block));
-
-        LIST.add(this);
-    }
-    public static ArrayList<AsphaltBundle> values() {
+    public static List<AsphaltBundle> values() {
         return LIST;
+    }
+
+    public static Builder of(DyeColor color) {
+        return new Builder(color);
+    }
+
+    public List<Block> all() {
+        return List.of(block, stairs, slab);
+    }
+
+    public static class Builder {
+        public final DyeColor color;
+
+        public Builder(DyeColor color) {
+            this.color = color;
+        }
+
+        public AsphaltBundle register() {
+            String type = color.getId() + "_asphalt";
+            String type2 = type.replace("black_asphalt", "asphalt");
+
+            Block.Settings blockSettings = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool();
+            Block block = BlockFactory.registerOf(type2, AsphaltBlock::new, blockSettings);
+            AsphaltBundle bundle = new AsphaltBundle(
+                block,
+                BlockFactory.registerOf(type2 + "_stairs", (settings) -> new AsphaltStairs(block.getDefaultState(), settings), AbstractBlock.Settings.copy(block)),
+                BlockFactory.registerOf(type2 + "_slab", AsphaltSlab::new, AbstractBlock.Settings.copy(block))
+            );
+            LIST.add(bundle);
+            return bundle;
+        }
     }
 }

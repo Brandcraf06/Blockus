@@ -43,64 +43,64 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getOrThrow(RegistryKeys.ENCHANTMENT);
 
         for (BSSWBundle bsswType : BSSWBundle.values()) {
-            this.addBlockStairsandSlabDrops(bsswType.block, bsswType.stairs, bsswType.slab);
-            if (bsswType.wall != null) {
-                this.addDrop(bsswType.wall);
+            this.addBlockStairsandSlabDrops(bsswType.block(), bsswType.stairs(), bsswType.slab());
+            if (bsswType.wall() != null) {
+                this.addDrop(bsswType.wall());
             }
         }
 
         for (CopperBundle copper : CopperBundle.values()) {
-            this.addBlockStairsandSlabDrops(copper.block, copper.stairs, copper.slab);
-            this.addBlockStairsandSlabDrops(copper.blockWaxed, copper.stairsWaxed, copper.slabWaxed);
-            this.addDrop(copper.wall);
-            this.addDrop(copper.wallWaxed);
+            this.addBlockStairsandSlabDrops(copper.block(), copper.stairs(), copper.slab());
+            this.addBlockStairsandSlabDrops(copper.blockWaxed(), copper.stairsWaxed(), copper.slabWaxed());
+            this.addDrop(copper.wall());
+            this.addDrop(copper.wallWaxed());
         }
 
         for (ConcreteBundle concrete : ConcreteBundle.values()) {
-            this.addBlockStairsandSlabDrops(concrete.block, concrete.stairs, concrete.slab);
-            this.addDrops(concrete.wall, concrete.chiseled, concrete.pillar);
+            this.addBlockStairsandSlabDrops(concrete.block(), concrete.stairs(), concrete.slab());
+            this.addDrops(concrete.wall(), concrete.chiseled(), concrete.pillar());
         }
 
         for (WoodBundle woodBundle : WoodBundle.values()) {
-            this.addWoodSetDrop(woodBundle.planks,
-                woodBundle.stairs,
-                woodBundle.slab,
-                woodBundle.fence,
-                woodBundle.fence_gate,
-                woodBundle.door,
-                woodBundle.trapdoor,
-                woodBundle.pressure_plate,
-                woodBundle.button,
-                woodBundle.standing_sign,
-                woodBundle.ceiling_hanging_sign);
+            this.addWoodSetDrop(woodBundle.planks(),
+                woodBundle.stairs(),
+                woodBundle.slab(),
+                woodBundle.fence(),
+                woodBundle.fenceGate(),
+                woodBundle.door(),
+                woodBundle.trapdoor(),
+                woodBundle.pressurePlate(),
+                woodBundle.button(),
+                woodBundle.standingSign(),
+                woodBundle.ceilingHangingSign());
         }
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            for (Block block : timberFrameBundle.all) {
+            for (Block block : timberFrameBundle.all()) {
                 this.addDrops(block);
             }
         }
 
         for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
-            this.addBlockStairsandSlabDrops(asphaltBundle.block, asphaltBundle.stairs, asphaltBundle.slab);
+            this.addBlockStairsandSlabDrops(asphaltBundle.block(), asphaltBundle.stairs(), asphaltBundle.slab());
         }
 
         for (PottedLargeBundle pottedLargeBundle : PottedLargeBundle.values()) {
-            this.addPottedLargePlantDrop(pottedLargeBundle.block);
+            this.addPottedLargePlantDrop(pottedLargeBundle.block());
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            this.addBlockStairsandSlabDrops(woolBundle.block, woolBundle.stairs, woolBundle.slab);
-            this.addDrop(woolBundle.carpet);
+            this.addBlockStairsandSlabDrops(woolBundle.block(), woolBundle.stairs(), woolBundle.slab());
+            this.addDrop(woolBundle.carpet());
         }
 
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-            this.addDrop(coloredTilesVariants.block);
+            this.addDrop(coloredTilesVariants.block());
         }
 
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            this.addDrop(woodenPost.block);
-            this.addDrop(woodenPost.stripped);
+            this.addDrop(woodenPost.block());
+            this.addDrop(woodenPost.stripped());
         }
 
         this.addDrops(CHISELED_MUD_BRICKS,

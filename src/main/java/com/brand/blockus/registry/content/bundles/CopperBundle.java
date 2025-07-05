@@ -9,19 +9,58 @@ import net.minecraft.block.OxidizableSlabBlock;
 import net.minecraft.block.OxidizableStairsBlock;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class CopperBundle {
-    public static final ArrayList<CopperBundle> LIST = new ArrayList<>();
-    public Block block;
-    public Block slab;
-    public Block stairs;
-    public Block wall;
-    public Block blockWaxed;
-    public Block slabWaxed;
-    public Block stairsWaxed;
-    public Block wallWaxed;
-    public final String type;
-    public final Block base;
+public record CopperBundle(
+    String type,
+    Block base,
+    Block block,
+    Block stairs,
+    Block slab,
+    Block wall,
+    Block blockWaxed,
+    Block stairsWaxed,
+    Block slabWaxed,
+    Block wallWaxed
+) {
+
+    public static final List<CopperBundle> LIST = new ArrayList<>();
+
+    public static List<CopperBundle> values() {
+        return LIST;
+    }
+
+    public static CopperBundle.Builder of(String type, OxidationType oxidation, Block base) {
+        return new CopperBundle.Builder(type, oxidation, base);
+    }
+
+    public List<Block> allBlocks() {
+        return List.of(block, blockWaxed);
+    }
+
+    public List<Block> allSlabs() {
+        return List.of(slab, slabWaxed);
+    }
+
+    public List<Block> allStairs() {
+        return List.of(stairs, stairsWaxed);
+    }
+
+    public List<Block> allWalls() {
+        return List.of(wall, wallWaxed);
+    }
+
+    public List<Block> allUnwaxed() {
+        return List.of(block, stairs, slab, wall);
+    }
+
+    public List<Block> allWaxed() {
+        return List.of(blockWaxed, stairsWaxed, slabWaxed, wallWaxed);
+    }
+
+    public List<Block> all() {
+        return List.of(block, stairs, slab, wall, blockWaxed, stairsWaxed, slabWaxed, wallWaxed);
+    }
 
     public enum OxidationType {
         UNAFFECTED(OxidationLevel.UNAFFECTED, ""),
@@ -30,67 +69,50 @@ public class CopperBundle {
         OXIDIZED(OxidationLevel.OXIDIZED, "oxidized_");
 
         private final OxidationLevel oxidationLevel;
-        private final String name;
+        private final String prefix;
 
-        OxidationType(OxidationLevel oxidationLevel, String name) {
+        OxidationType(OxidationLevel oxidationLevel, String prefix) {
             this.oxidationLevel = oxidationLevel;
-            this.name = name;
+            this.prefix = prefix;
         }
 
         public OxidationLevel getLevel() {
             return oxidationLevel;
         }
 
-        public String getName() {
-            return name;
+        public String getPrefix() {
+            return prefix;
         }
     }
 
-    public CopperBundle(String type, OxidationType oxidation, Block base) {
-        this.type = type;
-        this.base = base;
-        this.block = BlockFactory.registerCopy(oxidation.getName() + type, (settings) -> new OxidizableBlock(oxidation.getLevel(), settings), base);
-        this.slab = BlockFactory.registerCopy(oxidation.getName() + BlockFactory.replaceId(type) + "_slab", (settings) -> new OxidizableSlabBlock(oxidation.getLevel(), settings), base);
-        this.stairs = BlockFactory.registerCopy(oxidation.getName() + BlockFactory.replaceId(type) + "_stairs", (settings) -> new OxidizableStairsBlock(oxidation.getLevel(), base.getDefaultState(), settings), base);
-        this.wall = BlockFactory.registerCopy(oxidation.getName() + BlockFactory.replaceId(type) + "_wall", (settings) -> new OxidizableWallBlock(oxidation.getLevel(), settings), base);
-        this.blockWaxed = BlockFactory.registerCopy("waxed_" + oxidation.getName() + type, base);
-        this.slabWaxed = BlockFactory.slab(blockWaxed);
-        this.stairsWaxed = BlockFactory.stairs(blockWaxed);
-        this.wallWaxed = BlockFactory.wall(blockWaxed);
+    public static class Builder {
+        public final String type;
+        public final Block base;
+        public final OxidationType oxidation;
 
+        public Builder(String type, OxidationType oxidation, Block base) {
+            this.type = type;
+            this.base = base;
+            this.oxidation = oxidation;
+        }
 
-        LIST.add(this);
-    }
-
-    public static ArrayList<CopperBundle> values() {
-        return LIST;
-    }
-
-    public Block[] blocks() {
-        return new Block[]{block, blockWaxed};
-    }
-
-    public Block[] slabs() {
-        return new Block[]{slab, slabWaxed};
-    }
-
-    public Block[] stairs() {
-        return new Block[]{stairs, stairsWaxed};
-    }
-
-    public Block[] walls() {
-        return new Block[]{wall, wallWaxed};
-    }
-
-    public Block[] unwaxed() {
-        return new Block[]{block, stairs, slab, wall};
-    }
-
-    public Block[] waxed() {
-        return new Block[]{blockWaxed, stairsWaxed, slabWaxed, wallWaxed};
-    }
-
-    public Block[] all() {
-        return new Block[]{block, stairs, slab, wall, blockWaxed, stairsWaxed, slabWaxed, wallWaxed};
+        public com.brand.blockus.registry.content.bundles.CopperBundle register() {
+            String prefix = oxidation.getPrefix();
+            OxidationLevel oxidationLevel = oxidation.getLevel();
+            Block block = BlockFactory.registerCopy(prefix + type, (settings) -> new OxidizableBlock(oxidation.getLevel(), settings), base);
+            Block blockWaxed = BlockFactory.registerCopy("waxed_" + prefix + type, base);
+            CopperBundle bundle = new CopperBundle(type, base,
+                block,
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_stairs", (settings) -> new OxidizableStairsBlock(oxidationLevel, base.getDefaultState(), settings), base),
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_slab", (settings) -> new OxidizableSlabBlock(oxidationLevel, settings), base),
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_wall", (settings) -> new OxidizableWallBlock(oxidationLevel, settings), base),
+                blockWaxed,
+                BlockFactory.stairs(blockWaxed),
+                BlockFactory.slab(blockWaxed),
+                BlockFactory.wall(blockWaxed)
+            );
+            LIST.add(bundle);
+            return bundle;
+        }
     }
 }

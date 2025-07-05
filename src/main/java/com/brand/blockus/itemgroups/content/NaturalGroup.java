@@ -9,10 +9,10 @@ public class NaturalGroup {
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_NATURAL).register((entries) -> {
             entries.add(BlockusBlocks.PATH);
-            entries.add(BlockusBlocks.LIMESTONE.block);
-            entries.add(BlockusBlocks.MARBLE.block);
-            entries.add(BlockusBlocks.BLUESTONE.block);
-            entries.add(BlockusBlocks.VIRIDITE.block);
+            entries.add(BlockusBlocks.LIMESTONE.block());
+            entries.add(BlockusBlocks.MARBLE.block());
+            entries.add(BlockusBlocks.BLUESTONE.block());
+            entries.add(BlockusBlocks.VIRIDITE.block());
 
             entries.add(BlockusBlocks.WHITE_OAK_LOG);
             entries.add(BlockusBlocks.WHITE_OAK_SAPLING);

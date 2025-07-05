@@ -47,27 +47,27 @@ public class BlockusFamilies {
     }
 
     public static CopperFamily register(CopperBundle block) {
-        BlockFamily unwaxed = register(block.block).slab(block.slab).stairs(block.stairs).wall(block.wall).noGenerateModels().build();
-        BlockFamily waxed = register(block.blockWaxed).slab(block.slabWaxed).stairs(block.stairsWaxed).wall(block.wallWaxed).group("waxed_" + Registries.BLOCK.getId(block.block).getPath()).noGenerateModels().build();
+        BlockFamily unwaxed = register(block.block()).slab(block.slab()).stairs(block.stairs()).wall(block.wall()).noGenerateModels().build();
+        BlockFamily waxed = register(block.blockWaxed()).slab(block.slabWaxed()).stairs(block.stairsWaxed()).wall(block.wallWaxed()).group("waxed_" + Registries.BLOCK.getId(block.block()).getPath()).noGenerateModels().build();
         return new CopperFamily(unwaxed, waxed);
     }
 
     public static BlockFamily register(WoodBundle wood, boolean customFence) {
-        BlockFamily.Builder builder = register(wood.planks)
-            .button(wood.button)
-            .pressurePlate(wood.pressure_plate)
-            .sign(wood.standing_sign, wood.wall_sign)
-            .slab(wood.slab)
-            .stairs(wood.stairs)
-            .door(wood.door)
-            .trapdoor(wood.trapdoor)
+        BlockFamily.Builder builder = register(wood.planks())
+            .button(wood.button())
+            .pressurePlate(wood.pressurePlate())
+            .sign(wood.standingSign(), wood.wallSign())
+            .slab(wood.slab())
+            .stairs(wood.stairs())
+            .door(wood.door())
+            .trapdoor(wood.trapdoor())
             .group("wooden")
             .unlockCriterionName("has_planks");
 
         if (customFence) {
-            builder.customFence(wood.fence).customFenceGate(wood.fence_gate);
+            builder.customFence(wood.fence()).customFenceGate(wood.fenceGate());
         } else {
-            builder.fence(wood.fence).fenceGate(wood.fence_gate);
+            builder.fence(wood.fence()).fenceGate(wood.fenceGate());
         }
 
         return builder.build();

@@ -24,19 +24,19 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.ACACIA_HEDGE, Blocks.ACACIA_LEAVES);
         registerBlockColor(BlockusBlocks.DARK_OAK_HEDGE, Blocks.DARK_OAK_LEAVES);
         registerBlockColor(BlockusBlocks.MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN.block, Blocks.POTTED_FERN);
-        registerBlockColor(BlockusBlocks.POTTED_OAK.block, Blocks.OAK_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_SPRUCE.block, Blocks.SPRUCE_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_BIRCH.block, Blocks.BIRCH_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_JUNGLE.block, Blocks.JUNGLE_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_ACACIA.block, Blocks.ACACIA_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_DARK_OAK.block, Blocks.DARK_OAK_LEAVES);
-        registerBlockColor(BlockusBlocks.POTTED_MANGROVE.block, Blocks.MANGROVE_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_LARGE_FERN.block(), Blocks.POTTED_FERN);
+        registerBlockColor(BlockusBlocks.POTTED_OAK.block(), Blocks.OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_SPRUCE.block(), Blocks.SPRUCE_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_BIRCH.block(), Blocks.BIRCH_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_JUNGLE.block(), Blocks.JUNGLE_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_ACACIA.block(), Blocks.ACACIA_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_DARK_OAK.block(), Blocks.DARK_OAK_LEAVES);
+        registerBlockColor(BlockusBlocks.POTTED_MANGROVE.block(), Blocks.MANGROVE_LEAVES);
         registerBlockColor(BlockusBlocks.RAINBOW_PETALS, Blocks.PINK_PETALS);
 
         BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT,
-            BlockusBlocks.RAW_BAMBOO.door,
-            BlockusBlocks.RAW_BAMBOO.trapdoor,
+            BlockusBlocks.RAW_BAMBOO.door(),
+            BlockusBlocks.RAW_BAMBOO.trapdoor(),
             BlockusBlocks.LEGACY_SAPLING,
             BlockusBlocks.POTTED_LEGACY_SAPLING,
             BlockusBlocks.WHITE_OAK_SAPLING,
@@ -46,26 +46,26 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.RAINBOW_ROSE,
             BlockusBlocks.POTTED_RAINBOW_ROSE,
             BlockusBlocks.RAINBOW_PETALS,
-            BlockusBlocks.POTTED_ROSE_BUSH.block,
-            BlockusBlocks.POTTED_LILAC.block,
-            BlockusBlocks.POTTED_PEONY.block,
-            BlockusBlocks.POTTED_LARGE_FERN.block,
-            BlockusBlocks.POTTED_OAK.block,
-            BlockusBlocks.POTTED_SPRUCE.block,
-            BlockusBlocks.POTTED_BIRCH.block,
-            BlockusBlocks.POTTED_JUNGLE.block,
-            BlockusBlocks.POTTED_ACACIA.block,
-            BlockusBlocks.POTTED_DARK_OAK.block,
-            BlockusBlocks.POTTED_MANGROVE.block,
-            BlockusBlocks.POTTED_CHERRY_BLOSSOM.block,
-            BlockusBlocks.POTTED_PALE_OAK.block,
-            BlockusBlocks.POTTED_WHITE_OAK.block,
-            BlockusBlocks.POTTED_CACTUS_LARGE.block,
-            BlockusBlocks.POTTED_BAMBOO_LARGE.block,
-            BlockusBlocks.POTTED_AZALEA_LARGE.block,
-            BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block,
-            BlockusBlocks.POTTED_LEGACY_TREE.block,
-            BlockusBlocks.POTTED_PITCHER_PLANT.block,
+            BlockusBlocks.POTTED_ROSE_BUSH.block(),
+            BlockusBlocks.POTTED_LILAC.block(),
+            BlockusBlocks.POTTED_PEONY.block(),
+            BlockusBlocks.POTTED_LARGE_FERN.block(),
+            BlockusBlocks.POTTED_OAK.block(),
+            BlockusBlocks.POTTED_SPRUCE.block(),
+            BlockusBlocks.POTTED_BIRCH.block(),
+            BlockusBlocks.POTTED_JUNGLE.block(),
+            BlockusBlocks.POTTED_ACACIA.block(),
+            BlockusBlocks.POTTED_DARK_OAK.block(),
+            BlockusBlocks.POTTED_MANGROVE.block(),
+            BlockusBlocks.POTTED_CHERRY_BLOSSOM.block(),
+            BlockusBlocks.POTTED_PALE_OAK.block(),
+            BlockusBlocks.POTTED_WHITE_OAK.block(),
+            BlockusBlocks.POTTED_CACTUS_LARGE.block(),
+            BlockusBlocks.POTTED_BAMBOO_LARGE.block(),
+            BlockusBlocks.POTTED_AZALEA_LARGE.block(),
+            BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block(),
+            BlockusBlocks.POTTED_LEGACY_TREE.block(),
+            BlockusBlocks.POTTED_PITCHER_PLANT.block(),
             BlockusBlocks.BLACKSTONE_DOOR,
             BlockusBlocks.BLACKSTONE_TRAPDOOR,
             BlockusBlocks.AMETHYST_LANTERN,
@@ -101,11 +101,11 @@ public class BlockusClient implements ClientModInitializer {
         );
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, timberFrameBundle.lattice, timberFrameBundle.grate);
+            BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, timberFrameBundle.lattice(), timberFrameBundle.grate());
         }
 
         for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
-            BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, woodenPostBundle.block, woodenPostBundle.stripped);
+            BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, woodenPostBundle.block(), woodenPostBundle.stripped());
         }
 
         BlockRenderLayerMap.putBlocks(BlockRenderLayer.TRANSLUCENT,

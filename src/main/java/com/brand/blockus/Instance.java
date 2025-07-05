@@ -53,14 +53,14 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(BURNT_PAPER_BLOCK, 5, 60);
 
         // Thatch
-        FlammableBlockRegistry.getDefaultInstance().add(THATCH.block, 60, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(THATCH.slab, 60, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(THATCH.stairs, 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(THATCH.block(), 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(THATCH.slab(), 60, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(THATCH.stairs(), 60, 20);
 
         // Timber frames
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            for (Block block : timberFrameBundle.all) {
-                if (timberFrameBundle.isBurnable()) {
+            for (Block block : timberFrameBundle.all()) {
+                if (timberFrameBundle.burnable()) {
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
                     FuelRegistryEvents.BUILD.register((builder, context) -> builder.add(block, 300));
                 }
@@ -69,27 +69,27 @@ public class Instance {
 
         // Patterned wools
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.block, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.stairs, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.slab, 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.carpet, 60, 20);
+            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.block(), 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.stairs(), 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.slab(), 30, 60);
+            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.carpet(), 60, 20);
             FuelRegistryEvents.BUILD.register((builder, context) -> {
-                builder.add(woolBundle.stairs, 100);
-                builder.add(woolBundle.slab, 50);
+                builder.add(woolBundle.stairs(), 100);
+                builder.add(woolBundle.slab(), 50);
             });
         }
 
         // Wood set
         for (WoodBundle woodBundle : WoodBundle.values()) {
-            if (woodBundle.isBurnable()) {
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.planks, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.stairs, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.slab, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence_gate, 5, 20);
+            if (woodBundle.burnable()) {
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.planks(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.stairs(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.slab(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fenceGate(), 5, 20);
                 FuelRegistryEvents.BUILD.register((builder, context) -> {
-                    builder.add(woodBundle.fence, 300);
-                    builder.add(woodBundle.fence_gate, 300);
+                    builder.add(woodBundle.fence(), 300);
+                    builder.add(woodBundle.fenceGate(), 300);
                 });
             }
         }
@@ -103,14 +103,14 @@ public class Instance {
 
         // Wooden mosaic
         for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type, BlockChecker.FLAMMABLE_WOODS)) {
-                FlammableBlockRegistry.getDefaultInstance().add(block.block, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(block.stairs, 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(block.slab, 5, 20);
+            if (BlockChecker.isWoodenMosaic(block.type(), BlockChecker.FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type(), BlockChecker.FLAMMABLE_WOODS)) {
+                FlammableBlockRegistry.getDefaultInstance().add(block.block(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(block.stairs(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(block.slab(), 5, 20);
                 FuelRegistryEvents.BUILD.register((builder, context) -> {
-                    builder.add(block.block, 300);
-                    builder.add(block.stairs, 300);
-                    builder.add(block.slab, 150);
+                    builder.add(block.block(), 300);
+                    builder.add(block.stairs(), 300);
+                    builder.add(block.slab(), 150);
                 });
             }
         }
@@ -141,9 +141,9 @@ public class Instance {
 
         // Posts
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            if (woodenPost.isBurnable()) {
-                FlammableBlockRegistry.getDefaultInstance().add(woodenPost.block, 5, 5);
-                FlammableBlockRegistry.getDefaultInstance().add(woodenPost.stripped, 5, 5);
+            if (woodenPost.burnable()) {
+                FlammableBlockRegistry.getDefaultInstance().add(woodenPost.block(), 5, 5);
+                FlammableBlockRegistry.getDefaultInstance().add(woodenPost.stripped(), 5, 5);
             }
         }
 
@@ -172,9 +172,9 @@ public class Instance {
         CompostingChanceRegistry.INSTANCE.add(MOSS_HEDGE, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(PALE_MOSS_HEDGE, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(RAINBOW_ROSE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(THATCH.slab, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(THATCH.block, 0.75f);
-        CompostingChanceRegistry.INSTANCE.add(THATCH.stairs, 0.75f);
+        CompostingChanceRegistry.INSTANCE.add(THATCH.slab(), 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(THATCH.block(), 0.75f);
+        CompostingChanceRegistry.INSTANCE.add(THATCH.stairs(), 0.75f);
         CompostingChanceRegistry.INSTANCE.add(WARPED_HEDGE, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(CRIMSON_HEDGE, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(APPLE_CRATE, 0.95f);
@@ -196,7 +196,7 @@ public class Instance {
         StrippableBlockRegistry.register(WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG);
         StrippableBlockRegistry.register(WHITE_OAK_WOOD, STRIPPED_WHITE_OAK_WOOD);
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            StrippableBlockRegistry.register(woodenPost.block, woodenPost.stripped);
+            StrippableBlockRegistry.register(woodenPost.block(), woodenPost.stripped());
         }
     }
 
@@ -216,10 +216,10 @@ public class Instance {
     }
 
     public static void registerOxidizable(CopperBundle block, CopperBundle exposed, CopperBundle weathered, CopperBundle oxidized) {
-        registerOxidizable(block.block, exposed.block, weathered.block, oxidized.block, block.blockWaxed, exposed.blockWaxed, weathered.blockWaxed, oxidized.blockWaxed);
-        registerOxidizable(block.stairs, exposed.stairs, weathered.stairs, oxidized.stairs, block.stairsWaxed, exposed.stairsWaxed, weathered.stairsWaxed, oxidized.stairsWaxed);
-        registerOxidizable(block.slab, exposed.slab, weathered.slab, oxidized.slab, block.slabWaxed, exposed.slabWaxed, weathered.slabWaxed, oxidized.slabWaxed);
-        registerOxidizable(block.wall, exposed.wall, weathered.wall, oxidized.wall, block.wallWaxed, exposed.wallWaxed, weathered.wallWaxed, oxidized.wallWaxed);
+        registerOxidizable(block.block(), exposed.block(), weathered.block(), oxidized.block(), block.blockWaxed(), exposed.blockWaxed(), weathered.blockWaxed(), oxidized.blockWaxed());
+        registerOxidizable(block.stairs(), exposed.stairs(), weathered.stairs(), oxidized.stairs(), block.stairsWaxed(), exposed.stairsWaxed(), weathered.stairsWaxed(), oxidized.stairsWaxed());
+        registerOxidizable(block.slab(), exposed.slab(), weathered.slab(), oxidized.slab(), block.slabWaxed(), exposed.slabWaxed(), weathered.slabWaxed(), oxidized.slabWaxed());
+        registerOxidizable(block.wall(), exposed.wall(), weathered.wall(), oxidized.wall(), block.wallWaxed(), exposed.wallWaxed(), weathered.wallWaxed(), oxidized.wallWaxed());
     }
 
     public static void addPathBlocks() {

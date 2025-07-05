@@ -710,29 +710,29 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Large flower pot
         translationBuilder.add(BlockusBlocks.LARGE_FLOWER_POT, "Large Flower Pot");
-        translationBuilder.add(BlockusBlocks.POTTED_ROSE_BUSH.block, "Potted Rose Bush");
-        translationBuilder.add(BlockusBlocks.POTTED_LILAC.block, "Potted Lilac");
-        translationBuilder.add(BlockusBlocks.POTTED_PEONY.block, "Potted Peony");
-        translationBuilder.add(BlockusBlocks.POTTED_LARGE_FERN.block, "Potted Large Fern");
-        translationBuilder.add(BlockusBlocks.POTTED_OAK.block, "Potted Oak");
-        translationBuilder.add(BlockusBlocks.POTTED_SPRUCE.block, "Potted Spruce");
-        translationBuilder.add(BlockusBlocks.POTTED_BIRCH.block, "Potted Birch");
-        translationBuilder.add(BlockusBlocks.POTTED_JUNGLE.block, "Potted Jungle");
-        translationBuilder.add(BlockusBlocks.POTTED_ACACIA.block, "Potted Acacia");
-        translationBuilder.add(BlockusBlocks.POTTED_DARK_OAK.block, "Potted Dark Oak");
-        translationBuilder.add(BlockusBlocks.POTTED_MANGROVE.block, "Potted Mangrove");
-        translationBuilder.add(BlockusBlocks.POTTED_CHERRY_BLOSSOM.block, "Potted Cherry Blossom");
-        translationBuilder.add(BlockusBlocks.POTTED_PALE_OAK.block, "Potted Pale Oak");
-        translationBuilder.add(BlockusBlocks.POTTED_WHITE_OAK.block, "Potted White Oak");
-        translationBuilder.add(BlockusBlocks.POTTED_HUGE_RED_MUSHROOM.block, "Potted Huge Red Mushroom");
-        translationBuilder.add(BlockusBlocks.POTTED_HUGE_BROWN_MUSHROOM.block, "Potted Huge Brown Mushroom");
-        translationBuilder.add(BlockusBlocks.POTTED_HUGE_CRIMSON_FUNGUS.block, "Potted Huge Crimson Fungus");
-        translationBuilder.add(BlockusBlocks.POTTED_HUGE_WARPED_FUNGUS.block, "Potted Huge Warped Fungus");
-        translationBuilder.add(BlockusBlocks.POTTED_CACTUS_LARGE.block, "Large Potted Cactus");
-        translationBuilder.add(BlockusBlocks.POTTED_BAMBOO_LARGE.block, "Large Potted Bamboo");
-        translationBuilder.add(BlockusBlocks.POTTED_AZALEA_LARGE.block, "Large Potted Azalea");
-        translationBuilder.add(BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block, "Large Potted Flowering Azalea");
-        translationBuilder.add(BlockusBlocks.POTTED_PITCHER_PLANT.block, "Potted Pitcher Plant");
+        translationBuilder.add(BlockusBlocks.POTTED_ROSE_BUSH.block(), "Potted Rose Bush");
+        translationBuilder.add(BlockusBlocks.POTTED_LILAC.block(), "Potted Lilac");
+        translationBuilder.add(BlockusBlocks.POTTED_PEONY.block(), "Potted Peony");
+        translationBuilder.add(BlockusBlocks.POTTED_LARGE_FERN.block(), "Potted Large Fern");
+        translationBuilder.add(BlockusBlocks.POTTED_OAK.block(), "Potted Oak");
+        translationBuilder.add(BlockusBlocks.POTTED_SPRUCE.block(), "Potted Spruce");
+        translationBuilder.add(BlockusBlocks.POTTED_BIRCH.block(), "Potted Birch");
+        translationBuilder.add(BlockusBlocks.POTTED_JUNGLE.block(), "Potted Jungle");
+        translationBuilder.add(BlockusBlocks.POTTED_ACACIA.block(), "Potted Acacia");
+        translationBuilder.add(BlockusBlocks.POTTED_DARK_OAK.block(), "Potted Dark Oak");
+        translationBuilder.add(BlockusBlocks.POTTED_MANGROVE.block(), "Potted Mangrove");
+        translationBuilder.add(BlockusBlocks.POTTED_CHERRY_BLOSSOM.block(), "Potted Cherry Blossom");
+        translationBuilder.add(BlockusBlocks.POTTED_PALE_OAK.block(), "Potted Pale Oak");
+        translationBuilder.add(BlockusBlocks.POTTED_WHITE_OAK.block(), "Potted White Oak");
+        translationBuilder.add(BlockusBlocks.POTTED_HUGE_RED_MUSHROOM.block(), "Potted Huge Red Mushroom");
+        translationBuilder.add(BlockusBlocks.POTTED_HUGE_BROWN_MUSHROOM.block(), "Potted Huge Brown Mushroom");
+        translationBuilder.add(BlockusBlocks.POTTED_HUGE_CRIMSON_FUNGUS.block(), "Potted Huge Crimson Fungus");
+        translationBuilder.add(BlockusBlocks.POTTED_HUGE_WARPED_FUNGUS.block(), "Potted Huge Warped Fungus");
+        translationBuilder.add(BlockusBlocks.POTTED_CACTUS_LARGE.block(), "Large Potted Cactus");
+        translationBuilder.add(BlockusBlocks.POTTED_BAMBOO_LARGE.block(), "Large Potted Bamboo");
+        translationBuilder.add(BlockusBlocks.POTTED_AZALEA_LARGE.block(), "Large Potted Azalea");
+        translationBuilder.add(BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block(), "Large Potted Flowering Azalea");
+        translationBuilder.add(BlockusBlocks.POTTED_PITCHER_PLANT.block(), "Potted Pitcher Plant");
 
         // Thatch
         addBssw(translationBuilder, BlockusBlocks.THATCH, "Thatch");
@@ -888,7 +888,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.LEGACY_GLOWSTONE, "Glowstone");
         translationBuilder.add(BlockusBlocks.LEGACY_NETHER_REACTOR_CORE, "Nether Reactor Core");
         translationBuilder.add(BlockusBlocks.LEGACY_PLANKS, "Planks");
-        translationBuilder.add(BlockusBlocks.POTTED_LEGACY_TREE.block, "Potted Legacy Tree");
+        translationBuilder.add(BlockusBlocks.POTTED_LEGACY_TREE.block(), "Potted Legacy Tree");
         translationBuilder.add(BlockusBlocks.POTTED_LEGACY_SAPLING, "Potted Legacy Sapling");
         translationBuilder.add(BlockusBlocks.LEGACY_ROSE, "Rose");
         translationBuilder.add(BlockusBlocks.POTTED_LEGACY_ROSE, "Potted Rose");
@@ -936,75 +936,75 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
     // Block, stairs & slab & wall (if exist)
     public static void addBssw(TranslationBuilder translationBuilder, BSSWBundle bundle, String string) {
-        addBlockStairsSlab(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab);
-        if (bundle.wall != null) {
-            translationBuilder.add(bundle.wall, editedString(string) + " Wall");
+        addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
+        if (bundle.wall() != null) {
+            translationBuilder.add(bundle.wall(), editedString(string) + " Wall");
         }
     }
 
     public static void addWoodenBss(TranslationBuilder translationBuilder, BSSWBundle bundle, String string) {
         // Stairs & Slab with "Wooden" specified - Used for Mossy Charred Planks
-        translationBuilder.add(bundle.block, string);
-        translationBuilder.add(bundle.stairs, editedString(string) + " Wooden Stairs");
-        translationBuilder.add(bundle.slab, editedString(string) + " Wooden Slab");
+        translationBuilder.add(bundle.block(), string);
+        translationBuilder.add(bundle.stairs(), editedString(string) + " Wooden Stairs");
+        translationBuilder.add(bundle.slab(), editedString(string) + " Wooden Slab");
     }
 
     // Wood
     public static void addWoodBundle(TranslationBuilder translationBuilder, WoodBundle bundle, String string) {
         String charredException = editedString(string).replace("Charred", "Charred Wooden");
-        translationBuilder.add(bundle.planks, string);
-        translationBuilder.add(bundle.stairs, charredException + " Stairs");
-        translationBuilder.add(bundle.slab, charredException + " Slab");
-        translationBuilder.add(bundle.fence, editedString(string) + " Fence");
-        translationBuilder.add(bundle.fence_gate, editedString(string) + " Fence Gate");
-        translationBuilder.add(bundle.door, charredException + " Door");
-        translationBuilder.add(bundle.trapdoor, charredException + " Trapdoor");
-        translationBuilder.add(bundle.pressure_plate, charredException + " Pressure Plate");
-        translationBuilder.add(bundle.button, charredException + " Button");
-        translationBuilder.add(bundle.sign, editedString(string) + " Sign");
-        translationBuilder.add(bundle.sign.getTranslationKey().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
-        translationBuilder.add(bundle.hanging_sign, editedString(string) + " Hanging Sign");
-        translationBuilder.add(bundle.hanging_sign.getTranslationKey().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
+        translationBuilder.add(bundle.planks(), string);
+        translationBuilder.add(bundle.stairs(), charredException + " Stairs");
+        translationBuilder.add(bundle.slab(), charredException + " Slab");
+        translationBuilder.add(bundle.fence(), editedString(string) + " Fence");
+        translationBuilder.add(bundle.fenceGate(), editedString(string) + " Fence Gate");
+        translationBuilder.add(bundle.door(), charredException + " Door");
+        translationBuilder.add(bundle.trapdoor(), charredException + " Trapdoor");
+        translationBuilder.add(bundle.pressurePlate(), charredException + " Pressure Plate");
+        translationBuilder.add(bundle.button(), charredException + " Button");
+        translationBuilder.add(bundle.sign(), editedString(string) + " Sign");
+        translationBuilder.add(bundle.sign().getTranslationKey().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
+        translationBuilder.add(bundle.hangingSign(), editedString(string) + " Hanging Sign");
+        translationBuilder.add(bundle.hangingSign().getTranslationKey().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
     }
 
     // Wooden Posts
     public static void addWoodenPost(TranslationBuilder translationBuilder, WoodenPostBundle bundle, String string) {
-        translationBuilder.add(bundle.block, string);
-        translationBuilder.add(bundle.stripped, "Stripped " + string);
+        translationBuilder.add(bundle.block(), string);
+        translationBuilder.add(bundle.stripped(), "Stripped " + string);
     }
 
     // Timber Frames, Lattice & Grate
     public static void addTimberFrame(TranslationBuilder translationBuilder, TimberFrameBundle bundle, String wood) {
-        translationBuilder.add(bundle.block, wood + " Timber Frame");
-        translationBuilder.add(bundle.diagonal, wood + " Diagonal Timber Frame");
-        translationBuilder.add(bundle.cross, wood + " Cross Timber Frame");
-        translationBuilder.add(bundle.lattice, wood + " Lattice");
-        translationBuilder.add(bundle.grate, wood + " Grate");
+        translationBuilder.add(bundle.block(), wood + " Timber Frame");
+        translationBuilder.add(bundle.diagonal(), wood + " Diagonal Timber Frame");
+        translationBuilder.add(bundle.cross(), wood + " Cross Timber Frame");
+        translationBuilder.add(bundle.lattice(), wood + " Lattice");
+        translationBuilder.add(bundle.grate(), wood + " Grate");
     }
 
     // Concrete
     public static void addConcrete(TranslationBuilder translationBuilder, ConcreteBundle bundle, String string) {
         String removeBricks = string.replace(" Bricks", "");
-        addBlockStairsSlabWall(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab, bundle.wall);
-        translationBuilder.add(bundle.chiseled, "Chiseled " + removeBricks);
-        translationBuilder.add(bundle.pillar, removeBricks + " Pillar");
+        addBlockStairsSlabWall(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
+        translationBuilder.add(bundle.chiseled(), "Chiseled " + removeBricks);
+        translationBuilder.add(bundle.pillar(), removeBricks + " Pillar");
     }
 
     // Patterned Wools
     public static void addWoolBundle(TranslationBuilder translationBuilder, WoolBundle bundle, String string) {
-        addBlockStairsSlab(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab);
-        translationBuilder.add(bundle.carpet, string.replace("Wool", "Carpet"));
+        addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
+        translationBuilder.add(bundle.carpet(), string.replace("Wool", "Carpet"));
     }
 
     // Asphalt
     public static void addAsphalt(TranslationBuilder translationBuilder, AsphaltBundle bundle, String string) {
-        addBlockStairsSlab(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab);
+        addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
     }
 
     // Copper
     public static void addCopper(TranslationBuilder translationBuilder, CopperBundle bundle, String string) {
         String waxedString = "Waxed " + string;
-        addBlockStairsSlabWall(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab, bundle.wall);
-        addBlockStairsSlabWall(translationBuilder, waxedString, bundle.blockWaxed, bundle.stairsWaxed, bundle.slabWaxed, bundle.wallWaxed);
+        addBlockStairsSlabWall(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
+        addBlockStairsSlabWall(translationBuilder, waxedString, bundle.blockWaxed(), bundle.stairsWaxed(), bundle.slabWaxed(), bundle.wallWaxed());
     }
 }

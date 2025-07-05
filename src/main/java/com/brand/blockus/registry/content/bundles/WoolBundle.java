@@ -6,41 +6,62 @@ import net.minecraft.block.DyedCarpetBlock;
 import net.minecraft.util.DyeColor;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class WoolBundle {
-    private static final ArrayList<WoolBundle> LIST = new ArrayList<>();
+public record WoolBundle(
+    String typeSuffix,
+    Block basewool,
+    Block basecarpet,
+    Block block,
+    Block stairs,
+    Block slab,
+    Block carpet
+) {
+
+    public static final List<WoolBundle> LIST = new ArrayList<>();
     public static final String PATTERNED = "_patterned_wool";
     public static final String GINGHAM = "_gingham_wool";
-    public final Block basewool;
-    public final Block basecarpet;
-    public final Block block;
-    public final Block slab;
-    public final Block stairs;
-    public final Block carpet;
-    public String typeSuffix;
 
-    public WoolBundle(Block base, Block base2, DyeColor dyecolor, String typeSuffix) {
-        this.basewool = base;
-        this.basecarpet = base2;
-        this.typeSuffix = typeSuffix;
-
-
-        String type = dyecolor.getId() + typeSuffix;
-        this.block = BlockFactory.registerCopy(type, base);
-        this.slab = BlockFactory.slab(this.block);
-        this.stairs = BlockFactory.stairs(this.block);
-        this.carpet = BlockFactory.registerCopy(type.replace("wool", "carpet"), (settings) -> new DyedCarpetBlock(dyecolor, settings), base2);
-
-
-        LIST.add(this);
-    }
-
-    public WoolBundle(Block base, Block base2, DyeColor dyecolor) {
-        this(base, base2, dyecolor, PATTERNED);
-    }
-
-    public static ArrayList<WoolBundle> values() {
+    public static List<WoolBundle> values() {
         return LIST;
     }
 
+    public static Builder of(Block base, Block base2, DyeColor color, String typeSuffix) {
+        return new Builder(base, base2, color, typeSuffix);
+    }
+
+    public static Builder of(Block base, Block base2, DyeColor color) {
+        return new Builder(base, base2, color, PATTERNED);
+    }
+
+    public List<Block> all() {
+        return List.of(block, stairs, slab, carpet);
+    }
+
+    public static class Builder {
+        public final Block baseWool;
+        public final Block baseCarpet;
+        public final DyeColor color;
+        public String typeSuffix;
+
+        public Builder(Block base, Block base2, DyeColor color, String typeSuffix) {
+            this.baseWool = base;
+            this.baseCarpet = base2;
+            this.typeSuffix = typeSuffix;
+            this.color = color;
+        }
+
+        public WoolBundle register() {
+            String type = color.getId() + typeSuffix;
+            Block block = BlockFactory.registerCopy(type, baseWool);
+            WoolBundle bundle = new WoolBundle(typeSuffix, baseWool, baseCarpet,
+                block,
+                BlockFactory.stairs(block),
+                BlockFactory.slab(block),
+                BlockFactory.registerCopy(type.replace("wool", "carpet"), (settings) -> new DyedCarpetBlock(color, settings), baseCarpet)
+            );
+            LIST.add(bundle);
+            return bundle;
+        }
+    }
 }

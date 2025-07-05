@@ -20,13 +20,15 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class BlockBuilder {
-    private static final Function<AbstractBlock.Settings, Block> DEFAULT_FACTORY = Block::new;
-    private static final Supplier<Item.Settings> DEFAULT_ITEM_SETTINGS = () -> new Item.Settings().useBlockPrefixedTranslationKey();
+    public static final Function<AbstractBlock.Settings, Block> DEFAULT_FACTORY = Block::new;
+    public static final Supplier<Item.Settings> DEFAULT_ITEM_SETTINGS = () -> new Item.Settings().useBlockPrefixedTranslationKey();
 
-    private Function<AbstractBlock.Settings, Block> factory = DEFAULT_FACTORY;
-    private AbstractBlock.Settings settings;
+    public Function<AbstractBlock.Settings, Block> factory = DEFAULT_FACTORY;
+    public AbstractBlock.Settings settings;
 
-    private Item.Settings itemSettings = DEFAULT_ITEM_SETTINGS.get();
+    public Item.Settings itemSettings = DEFAULT_ITEM_SETTINGS.get();
+
+    public Block base;
 
     public BlockBuilder(Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         this.factory = factory;
@@ -39,6 +41,7 @@ public class BlockBuilder {
 
     public BlockBuilder(Block block) {
         this.settings = AbstractBlock.Settings.copy(block);
+        this.base = block;
     }
 
     public BlockBuilder factory(Function<AbstractBlock.Settings, Block> factory) {
@@ -69,6 +72,10 @@ public class BlockBuilder {
     public BlockBuilder noItem() {
         this.itemSettings = null;
         return this;
+    }
+
+    public Block getBase() {
+        return this.base;
     }
 
     public Block register(String id, Function<Block, Item> itemFactory) {

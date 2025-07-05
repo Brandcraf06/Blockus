@@ -5,23 +5,23 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.Block;
 
 public class ColoredGroups {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_COLORED_BLOCKS).register((entries) -> {
             for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
-                entries.add(asphaltBundle.block);
-                entries.add(asphaltBundle.stairs);
-                entries.add(asphaltBundle.slab);
+                for (Block block : asphaltBundle.all()) {
+                    entries.add(block);
+                }
             }
             entries.add(BlockusBlocks.RAINBOW_ASPHALT);
 
             for (WoolBundle woolBundle : WoolBundle.values()) {
-                entries.add(woolBundle.block);
-                entries.add(woolBundle.stairs);
-                entries.add(woolBundle.slab);
-                entries.add(woolBundle.carpet);
+                for (Block block : woolBundle.all()) {
+                    entries.add(block);
+                }
             }
 
             addBSSW(entries, BlockusBlocks.SHINGLES);
@@ -76,12 +76,9 @@ public class ColoredGroups {
             addBSSW(entries, BlockusBlocks.PINK_STONE_BRICKS);
 
             for (ConcreteBundle concreteBundle : ConcreteBundle.values()) {
-                entries.add(concreteBundle.block);
-                entries.add(concreteBundle.stairs);
-                entries.add(concreteBundle.slab);
-                entries.add(concreteBundle.wall);
-                entries.add(concreteBundle.chiseled);
-                entries.add(concreteBundle.pillar);
+                for (Block block : concreteBundle.all()) {
+                    entries.add(block);
+                }
             }
 
             entries.add(BlockusBlocks.WHITE_COLORED_TILES);
@@ -240,19 +237,16 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.PINK_COLORED_TILES);
 
             for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-                entries.add(coloredTilesVariants.block);
+                entries.add(coloredTilesVariants.block());
             }
 
             entries.add(BlockusBlocks.RAINBOW_COLORED_TILES);
         });
     }
 
-    public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle BSSWBundle) {
-        entries.add(BSSWBundle.block);
-        entries.add(BSSWBundle.stairs);
-        entries.add(BSSWBundle.slab);
-        if (BSSWBundle.wall != null) {
-            entries.add(BSSWBundle.wall);
+    public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle bsswBundle) {
+        for (Block block : bsswBundle.all()) {
+            entries.add(block);
         }
     }
 }
