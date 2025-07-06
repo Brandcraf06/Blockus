@@ -18,6 +18,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
@@ -72,23 +73,10 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockusBlockTags.SOUL_SOILS, BlockusItemTags.SOUL_SOILS);
 
         this.valueLookupBuilder(BlockusItemTags.STAINED_STONE_BRICKS)
-            .add(WHITE_STONE_BRICKS.block().asItem())
-            .add(ORANGE_STONE_BRICKS.block().asItem())
-            .add(MAGENTA_STONE_BRICKS.block().asItem())
-            .add(LIGHT_BLUE_STONE_BRICKS.block().asItem())
-            .add(YELLOW_STONE_BRICKS.block().asItem())
-            .add(LIME_STONE_BRICKS.block().asItem())
-            .add(PINK_STONE_BRICKS.block().asItem())
-            .add(GRAY_STONE_BRICKS.block().asItem())
-            .add(GRAY_STONE_BRICKS.block().asItem())
-            .add(Items.STONE_BRICKS)
-            .add(CYAN_STONE_BRICKS.block().asItem())
-            .add(PURPLE_STONE_BRICKS.block().asItem())
-            .add(BLUE_STONE_BRICKS.block().asItem())
-            .add(BROWN_STONE_BRICKS.block().asItem())
-            .add(GREEN_STONE_BRICKS.block().asItem())
-            .add(RED_STONE_BRICKS.block().asItem())
-            .add(BLACK_STONE_BRICKS.block().asItem());
+            .add(Items.STONE_BRICKS);
+        for (DyeColor color : DyeColor.values()) {
+            valueLookupBuilder(BlockusItemTags.STAINED_STONE_BRICKS).add(STAINED_STONE_BRICKS.colorMap().get(color).block().asItem());
+        }
 
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
 

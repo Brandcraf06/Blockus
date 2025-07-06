@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:light_gray_stone_bricks",
+  "result": {
+    "count": 1,
+    "id": "blockus:light_gray_stone_brick_stairs"
+  }
+}

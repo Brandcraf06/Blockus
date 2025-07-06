@@ -60,7 +60,7 @@ public record BSSWBundle(
         return new Builder(type, new BlockBuilder(BlockFactory.create()).settings(settings -> settings.strength(hardness, resistance).mapColor(color)));
     }
 
-    public List<Block> all() {
+    public Block[] all() {
         List<Block> list = new ArrayList<>();
         list.add(block);
         list.add(stairs);
@@ -68,7 +68,7 @@ public record BSSWBundle(
         if (wall != null) {
             list.add(wall);
         }
-        return List.copyOf(list);
+        return list.toArray(new Block[0]);
     }
 
     public List<Block> noWall() {

@@ -12,6 +12,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -464,23 +465,13 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(SCULK_PILLAR);
 
         this.valueLookupBuilder(BlockusBlockTags.SHINGLES)
-            .add(bsswBundle(SHINGLES))
-            .add(bsswBundle(WHITE_SHINGLES))
-            .add(bsswBundle(ORANGE_SHINGLES))
-            .add(bsswBundle(MAGENTA_SHINGLES))
-            .add(bsswBundle(LIGHT_BLUE_SHINGLES))
-            .add(bsswBundle(YELLOW_SHINGLES))
-            .add(bsswBundle(LIME_SHINGLES))
-            .add(bsswBundle(PINK_SHINGLES))
-            .add(bsswBundle(GRAY_SHINGLES))
-            .add(bsswBundle(LIGHT_GRAY_SHINGLES))
-            .add(bsswBundle(CYAN_SHINGLES))
-            .add(bsswBundle(PURPLE_SHINGLES))
-            .add(bsswBundle(BLUE_SHINGLES))
-            .add(bsswBundle(BROWN_SHINGLES))
-            .add(bsswBundle(GREEN_SHINGLES))
-            .add(bsswBundle(RED_SHINGLES))
-            .add(bsswBundle(BLACK_SHINGLES));
+            .add(bsswBundle(SHINGLES));
+
+        for (DyeColor color : DyeColor.values()) {
+            for (Block block : STAINED_SHINGLES.colorMap().get(color).all()) {
+                valueLookupBuilder(BlockusBlockTags.SHINGLES).add(block);
+            }
+        }
 
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
             this.valueLookupBuilder(BlockusBlockTags.WOODEN_POSTS)
@@ -535,22 +526,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.SOUL_SAND)
             .add(Blocks.SOUL_SOIL);
 
-        this.valueLookupBuilder(BlockusBlockTags.STAINED_STONE_BRICKS)
-            .add(bsswBundle(WHITE_STONE_BRICKS))
-            .add(bsswBundle(ORANGE_STONE_BRICKS))
-            .add(bsswBundle(MAGENTA_STONE_BRICKS))
-            .add(bsswBundle(LIGHT_BLUE_STONE_BRICKS))
-            .add(bsswBundle(YELLOW_STONE_BRICKS))
-            .add(bsswBundle(LIME_STONE_BRICKS))
-            .add(bsswBundle(PINK_STONE_BRICKS))
-            .add(bsswBundle(GRAY_STONE_BRICKS))
-            .add(bsswBundle(CYAN_STONE_BRICKS))
-            .add(bsswBundle(PURPLE_STONE_BRICKS))
-            .add(bsswBundle(BLUE_STONE_BRICKS))
-            .add(bsswBundle(BROWN_STONE_BRICKS))
-            .add(bsswBundle(GREEN_STONE_BRICKS))
-            .add(bsswBundle(RED_STONE_BRICKS))
-            .add(bsswBundle(BLACK_STONE_BRICKS));
+        for (DyeColor color : DyeColor.values()) {
+            for (Block block : STAINED_STONE_BRICKS.colorMap().get(color).all()) {
+                valueLookupBuilder(BlockusBlockTags.STAINED_STONE_BRICKS).add(block);
+            }
+        }
 
         this.valueLookupBuilder(BlockusBlockTags.STONE_BLOCKS)
             .add(bsswBundle(STONE_TILES))
@@ -1158,11 +1138,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(RAINBOW_ROSE);
     }
 
-    public static List<Block> bsswBundle(BSSWBundle block) {
+    public static Block[] bsswBundle(BSSWBundle block) {
         return block.all();
     }
 
     public static List<Block> bssBundle(BSSWBundle block) {
         return block.noWall();
     }
+    
 }

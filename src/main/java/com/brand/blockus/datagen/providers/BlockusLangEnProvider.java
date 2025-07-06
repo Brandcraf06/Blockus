@@ -10,8 +10,12 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.DyeColor;
 
+import java.util.Arrays;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 public class BlockusLangEnProvider extends FabricLanguageProvider {
     public BlockusLangEnProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
@@ -71,40 +75,15 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.PAPER_LAMP, "Paper Lamp");
 
         // Stained Stone Bricks
-        addBssw(translationBuilder, BlockusBlocks.WHITE_STONE_BRICKS, "White Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.ORANGE_STONE_BRICKS, "Orange Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.MAGENTA_STONE_BRICKS, "Magenta Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.LIGHT_BLUE_STONE_BRICKS, "Light Blue Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.YELLOW_STONE_BRICKS, "Yellow Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.LIME_STONE_BRICKS, "Lime Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.PINK_STONE_BRICKS, "Pink Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.GRAY_STONE_BRICKS, "Gray Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.CYAN_STONE_BRICKS, "Cyan Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.PURPLE_STONE_BRICKS, "Purple Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.BLUE_STONE_BRICKS, "Blue Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.BROWN_STONE_BRICKS, "Brown Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.GREEN_STONE_BRICKS, "Green Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.RED_STONE_BRICKS, "Red Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.BLACK_STONE_BRICKS, "Black Stone Bricks");
+        for (var entry : BlockusBlocks.STAINED_STONE_BRICKS.colorMap().entrySet()) {
+            addBssw(translationBuilder, entry.getValue(), colorName(entry) + " Stone Bricks");
+        }
 
         // Shingles
+        for (var entry : BlockusBlocks.STAINED_SHINGLES.colorMap().entrySet()) {
+            addBssw(translationBuilder, entry.getValue(), colorName(entry) + " Shingles");
+        }
         addBssw(translationBuilder, BlockusBlocks.SHINGLES, "Shingles");
-        addBssw(translationBuilder, BlockusBlocks.WHITE_SHINGLES, "White Shingles");
-        addBssw(translationBuilder, BlockusBlocks.ORANGE_SHINGLES, "Orange Shingles");
-        addBssw(translationBuilder, BlockusBlocks.MAGENTA_SHINGLES, "Magenta Shingles");
-        addBssw(translationBuilder, BlockusBlocks.LIGHT_BLUE_SHINGLES, "Light Blue Shingles");
-        addBssw(translationBuilder, BlockusBlocks.YELLOW_SHINGLES, "Yellow Shingles");
-        addBssw(translationBuilder, BlockusBlocks.LIME_SHINGLES, "Lime Shingles");
-        addBssw(translationBuilder, BlockusBlocks.PINK_SHINGLES, "Pink Shingles");
-        addBssw(translationBuilder, BlockusBlocks.LIGHT_GRAY_SHINGLES, "Light Gray Shingles");
-        addBssw(translationBuilder, BlockusBlocks.GRAY_SHINGLES, "Gray Shingles");
-        addBssw(translationBuilder, BlockusBlocks.CYAN_SHINGLES, "Cyan Shingles");
-        addBssw(translationBuilder, BlockusBlocks.PURPLE_SHINGLES, "Purple Shingles");
-        addBssw(translationBuilder, BlockusBlocks.BLUE_SHINGLES, "Blue Shingles");
-        addBssw(translationBuilder, BlockusBlocks.BROWN_SHINGLES, "Brown Shingles");
-        addBssw(translationBuilder, BlockusBlocks.GREEN_SHINGLES, "Green Shingles");
-        addBssw(translationBuilder, BlockusBlocks.RED_SHINGLES, "Red Shingles");
-        addBssw(translationBuilder, BlockusBlocks.BLACK_SHINGLES, "Black Shingles");
 
         // Concrete
         addConcrete(translationBuilder, BlockusBlocks.WHITE_CONCRETE_BRICKS, "White Concrete Bricks");
@@ -1006,5 +985,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         String waxedString = "Waxed " + string;
         addBlockStairsSlabWall(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
         addBlockStairsSlabWall(translationBuilder, waxedString, bundle.blockWaxed(), bundle.stairsWaxed(), bundle.slabWaxed(), bundle.wallWaxed());
+    }
+
+    public static String colorName(Map.Entry<DyeColor, BSSWBundle> entry) {
+        DyeColor color = entry.getKey();
+        return Arrays.stream(color.name().toLowerCase().split("_"))
+            .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
+            .collect(Collectors.joining(" "));
     }
 }

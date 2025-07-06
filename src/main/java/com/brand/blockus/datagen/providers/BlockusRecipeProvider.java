@@ -1,10 +1,13 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.datagen.family.BlockusFamilies;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusItemTags;
 import com.brand.blockus.utils.BlockChecker;
+import com.brand.blockus.utils.helper.BlockMaps;
+import com.google.common.collect.ImmutableMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
@@ -22,7 +25,9 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.resource.featuretoggle.FeatureSet;
+import net.minecraft.util.DyeColor;
 
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
@@ -32,6 +37,25 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
     public BlockusRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
+
+    public static final Map<DyeColor, ItemConvertible> DYE_MAP = ImmutableMap.<DyeColor, ItemConvertible>builder()
+        .put(DyeColor.WHITE, Items.WHITE_DYE)
+        .put(DyeColor.LIGHT_GRAY, Items.LIGHT_GRAY_DYE)
+        .put(DyeColor.GRAY, Items.GRAY_DYE)
+        .put(DyeColor.BLACK, Items.BLACK_DYE)
+        .put(DyeColor.BROWN, Items.BROWN_DYE)
+        .put(DyeColor.RED, Items.RED_DYE)
+        .put(DyeColor.ORANGE, Items.ORANGE_DYE)
+        .put(DyeColor.YELLOW, Items.YELLOW_DYE)
+        .put(DyeColor.LIME, Items.LIME_DYE)
+        .put(DyeColor.GREEN, Items.GREEN_DYE)
+        .put(DyeColor.CYAN, Items.CYAN_DYE)
+        .put(DyeColor.LIGHT_BLUE, Items.LIGHT_BLUE_DYE)
+        .put(DyeColor.BLUE, Items.BLUE_DYE)
+        .put(DyeColor.PURPLE, Items.PURPLE_DYE)
+        .put(DyeColor.MAGENTA, Items.MAGENTA_DYE)
+        .put(DyeColor.PINK, Items.PINK_DYE)
+        .build();
 
     @Override
     protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registryLookup, RecipeExporter exporter) {
@@ -678,23 +702,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLOWSTONE, 1).input('G', Items.GLOWSTONE_DUST).group("rainbow_glowstone").input('R', RAINBOW_PETALS).pattern(" G ").pattern("GRG").pattern(" G ").criterion(hasItem(RAINBOW_PETALS), conditionsFromItem(RAINBOW_PETALS)).offerTo(exporter, getRecipeName(RAINBOW_GLOWSTONE) + "_alt");
 
                 // Colored Stone Bricks
-                offerStainedStoneBricksRecipe(Items.WHITE_DYE, WHITE_STONE_BRICKS.block(), WHITE_STONE_BRICKS.stairs(), WHITE_STONE_BRICKS.slab(), WHITE_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.ORANGE_DYE, ORANGE_STONE_BRICKS.block(), ORANGE_STONE_BRICKS.stairs(), ORANGE_STONE_BRICKS.slab(), ORANGE_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.MAGENTA_DYE, MAGENTA_STONE_BRICKS.block(), MAGENTA_STONE_BRICKS.stairs(), MAGENTA_STONE_BRICKS.slab(), MAGENTA_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.LIGHT_BLUE_DYE, LIGHT_BLUE_STONE_BRICKS.block(), LIGHT_BLUE_STONE_BRICKS.stairs(), LIGHT_BLUE_STONE_BRICKS.slab(), LIGHT_BLUE_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.YELLOW_DYE, YELLOW_STONE_BRICKS.block(), YELLOW_STONE_BRICKS.stairs(), YELLOW_STONE_BRICKS.slab(), YELLOW_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.LIME_DYE, LIME_STONE_BRICKS.block(), LIME_STONE_BRICKS.stairs(), LIME_STONE_BRICKS.slab(), LIME_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.PINK_DYE, PINK_STONE_BRICKS.block(), PINK_STONE_BRICKS.stairs(), PINK_STONE_BRICKS.slab(), PINK_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.GRAY_DYE, GRAY_STONE_BRICKS.block(), GRAY_STONE_BRICKS.stairs(), GRAY_STONE_BRICKS.slab(), GRAY_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.CYAN_DYE, CYAN_STONE_BRICKS.block(), CYAN_STONE_BRICKS.stairs(), CYAN_STONE_BRICKS.slab(), CYAN_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.PURPLE_DYE, PURPLE_STONE_BRICKS.block(), PURPLE_STONE_BRICKS.stairs(), PURPLE_STONE_BRICKS.slab(), PURPLE_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.BLUE_DYE, BLUE_STONE_BRICKS.block(), BLUE_STONE_BRICKS.stairs(), BLUE_STONE_BRICKS.slab(), BLUE_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.BROWN_DYE, BROWN_STONE_BRICKS.block(), BROWN_STONE_BRICKS.stairs(), BROWN_STONE_BRICKS.slab(), BROWN_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.GREEN_DYE, GREEN_STONE_BRICKS.block(), GREEN_STONE_BRICKS.stairs(), GREEN_STONE_BRICKS.slab(), GREEN_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.RED_DYE, RED_STONE_BRICKS.block(), RED_STONE_BRICKS.stairs(), RED_STONE_BRICKS.slab(), RED_STONE_BRICKS.wall());
-                offerStainedStoneBricksRecipe(Items.BLACK_DYE, BLACK_STONE_BRICKS.block(), BLACK_STONE_BRICKS.stairs(), BLACK_STONE_BRICKS.slab(), BLACK_STONE_BRICKS.wall());
-
-                // Concrete
+                for (DyeColor color : DyeColor.values()) {
+                    BSSWBundle bundle = STAINED_STONE_BRICKS.colorMap().get(color);
+                    if (bundle != null) {
+                        offerStainedStoneBricksRecipe(DYE_MAP.get(color), bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
+                    }
+                }
 
                 // Redstone Lamps
                 createShapeless(RecipeCategory.BUILDING_BLOCKS, REDSTONE_LAMP_LIT).input(Blocks.REDSTONE_LAMP).input(Blocks.REDSTONE_TORCH).group("lit_redstone_lamps").criterion(hasItem(Blocks.REDSTONE_LAMP), conditionsFromItem(Blocks.REDSTONE_LAMP)).offerTo(exporter);
@@ -775,24 +788,14 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerAsphaltRecipe(Items.RED_DYE, RED_ASPHALT.block(), RED_ASPHALT.stairs(), RED_ASPHALT.slab());
 
                 // Shingles
+                
                 offerBsswCuttingRecipe(SHINGLES, Blocks.TERRACOTTA);
                 offerPolishedStoneRecipe(SHINGLES.block(), Blocks.TERRACOTTA);
-                offerShinglesRecipe(Items.WHITE_DYE, WHITE_SHINGLES.block(), WHITE_SHINGLES.stairs(), WHITE_SHINGLES.slab(), Blocks.WHITE_TERRACOTTA);
-                offerShinglesRecipe(Items.ORANGE_DYE, ORANGE_SHINGLES.block(), ORANGE_SHINGLES.stairs(), ORANGE_SHINGLES.slab(), Blocks.ORANGE_TERRACOTTA);
-                offerShinglesRecipe(Items.MAGENTA_DYE, MAGENTA_SHINGLES.block(), MAGENTA_SHINGLES.stairs(), MAGENTA_SHINGLES.slab(), Blocks.MAGENTA_TERRACOTTA);
-                offerShinglesRecipe(Items.LIGHT_BLUE_DYE, LIGHT_BLUE_SHINGLES.block(), LIGHT_BLUE_SHINGLES.stairs(), LIGHT_BLUE_SHINGLES.slab(), Blocks.LIGHT_BLUE_TERRACOTTA);
-                offerShinglesRecipe(Items.YELLOW_DYE, YELLOW_SHINGLES.block(), YELLOW_SHINGLES.stairs(), YELLOW_SHINGLES.slab(), Blocks.YELLOW_TERRACOTTA);
-                offerShinglesRecipe(Items.LIME_DYE, LIME_SHINGLES.block(), LIME_SHINGLES.stairs(), LIME_SHINGLES.slab(), Blocks.LIME_TERRACOTTA);
-                offerShinglesRecipe(Items.PINK_DYE, PINK_SHINGLES.block(), PINK_SHINGLES.stairs(), PINK_SHINGLES.slab(), Blocks.PINK_TERRACOTTA);
-                offerShinglesRecipe(Items.LIGHT_GRAY_DYE, LIGHT_GRAY_SHINGLES.block(), LIGHT_GRAY_SHINGLES.stairs(), LIGHT_GRAY_SHINGLES.slab(), Blocks.LIGHT_GRAY_TERRACOTTA);
-                offerShinglesRecipe(Items.GRAY_DYE, GRAY_SHINGLES.block(), GRAY_SHINGLES.stairs(), GRAY_SHINGLES.slab(), Blocks.GRAY_TERRACOTTA);
-                offerShinglesRecipe(Items.CYAN_DYE, CYAN_SHINGLES.block(), CYAN_SHINGLES.stairs(), CYAN_SHINGLES.slab(), Blocks.CYAN_TERRACOTTA);
-                offerShinglesRecipe(Items.PURPLE_DYE, PURPLE_SHINGLES.block(), PURPLE_SHINGLES.stairs(), PURPLE_SHINGLES.slab(), Blocks.PURPLE_TERRACOTTA);
-                offerShinglesRecipe(Items.BLUE_DYE, BLUE_SHINGLES.block(), BLUE_SHINGLES.stairs(), BLUE_SHINGLES.slab(), Blocks.BLUE_TERRACOTTA);
-                offerShinglesRecipe(Items.BROWN_DYE, BROWN_SHINGLES.block(), BROWN_SHINGLES.stairs(), BROWN_SHINGLES.slab(), Blocks.BROWN_TERRACOTTA);
-                offerShinglesRecipe(Items.GREEN_DYE, GREEN_SHINGLES.block(), GREEN_SHINGLES.stairs(), GREEN_SHINGLES.slab(), Blocks.GREEN_TERRACOTTA);
-                offerShinglesRecipe(Items.RED_DYE, RED_SHINGLES.block(), RED_SHINGLES.stairs(), RED_SHINGLES.slab(), Blocks.RED_TERRACOTTA);
-                offerShinglesRecipe(Items.BLACK_DYE, BLACK_SHINGLES.block(), BLACK_SHINGLES.stairs(), BLACK_SHINGLES.slab(), Blocks.BLACK_TERRACOTTA);
+
+                for (DyeColor color : DyeColor.values()) {
+                    BSSWBundle bundle = STAINED_SHINGLES.colorMap().get(color);
+                    offerShinglesRecipe(DYE_MAP.get(color), bundle.block(), bundle.stairs(), bundle.slab(), BlockMaps.TERRACOTTA_MAP.get(color));
+                }
 
                 // Glass - Beveled Glass
                 offerPolishedStoneRecipe(TINTED_BEVELED_GLASS, Blocks.TINTED_GLASS);

@@ -3,13 +3,26 @@ package com.brand.blockus.itemgroups.content;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
+import com.brand.blockus.utils.helper.BlockMaps;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.util.DyeColor;
+
+import java.util.Map;
 
 public class ColoredGroups {
 
+    public static final DyeColor[] COLOR_ORDER = {
+        DyeColor.WHITE, DyeColor.LIGHT_GRAY, DyeColor.GRAY, DyeColor.BLACK,
+        DyeColor.BROWN, DyeColor.RED, DyeColor.ORANGE, DyeColor.YELLOW,
+        DyeColor.LIME, DyeColor.GREEN, DyeColor.CYAN, DyeColor.LIGHT_BLUE,
+        DyeColor.BLUE, DyeColor.PURPLE, DyeColor.MAGENTA, DyeColor.PINK
+    };
+
     public static void init() {
+
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_COLORED_BLOCKS).register((entries) -> {
             for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
                 for (Block block : asphaltBundle.all()) {
@@ -25,22 +38,7 @@ public class ColoredGroups {
             }
 
             addBSSW(entries, BlockusBlocks.SHINGLES);
-            addBSSW(entries, BlockusBlocks.WHITE_SHINGLES);
-            addBSSW(entries, BlockusBlocks.LIGHT_GRAY_SHINGLES);
-            addBSSW(entries, BlockusBlocks.GRAY_SHINGLES);
-            addBSSW(entries, BlockusBlocks.BLACK_SHINGLES);
-            addBSSW(entries, BlockusBlocks.BROWN_SHINGLES);
-            addBSSW(entries, BlockusBlocks.RED_SHINGLES);
-            addBSSW(entries, BlockusBlocks.ORANGE_SHINGLES);
-            addBSSW(entries, BlockusBlocks.YELLOW_SHINGLES);
-            addBSSW(entries, BlockusBlocks.LIME_SHINGLES);
-            addBSSW(entries, BlockusBlocks.GREEN_SHINGLES);
-            addBSSW(entries, BlockusBlocks.CYAN_SHINGLES);
-            addBSSW(entries, BlockusBlocks.LIGHT_BLUE_SHINGLES);
-            addBSSW(entries, BlockusBlocks.BLUE_SHINGLES);
-            addBSSW(entries, BlockusBlocks.PURPLE_SHINGLES);
-            addBSSW(entries, BlockusBlocks.MAGENTA_SHINGLES);
-            addBSSW(entries, BlockusBlocks.PINK_SHINGLES);
+            addBSSW(entries, BlockusBlocks.STAINED_SHINGLES);
 
             entries.add(BlockusBlocks.WHITE_GLAZED_TERRACOTTA_PILLAR);
             entries.add(BlockusBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR);
@@ -59,21 +57,7 @@ public class ColoredGroups {
             entries.add(BlockusBlocks.MAGENTA_GLAZED_TERRACOTTA_PILLAR);
             entries.add(BlockusBlocks.PINK_GLAZED_TERRACOTTA_PILLAR);
 
-            addBSSW(entries, BlockusBlocks.WHITE_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.GRAY_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.BLACK_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.BROWN_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.RED_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.ORANGE_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.YELLOW_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.LIME_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.GREEN_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.CYAN_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.LIGHT_BLUE_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.BLUE_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.PURPLE_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.MAGENTA_STONE_BRICKS);
-            addBSSW(entries, BlockusBlocks.PINK_STONE_BRICKS);
+            addBSSW(entries, BlockusBlocks.STAINED_STONE_BRICKS);
 
             for (ConcreteBundle concreteBundle : ConcreteBundle.values()) {
                 for (Block block : concreteBundle.all()) {
@@ -247,6 +231,12 @@ public class ColoredGroups {
     public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle bsswBundle) {
         for (Block block : bsswBundle.all()) {
             entries.add(block);
+        }
+    }
+
+    public static void addBSSW(FabricItemGroupEntries entries, StainedBSSWBundle stainedBssw) {
+        for (DyeColor dyeColor : COLOR_ORDER) {
+            addBSSW(entries, stainedBssw.colorMap().get(dyeColor));
         }
     }
 }

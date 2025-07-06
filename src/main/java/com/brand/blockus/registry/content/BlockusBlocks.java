@@ -12,6 +12,7 @@ import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.content.bundles.CopperBundle.OxidationType;
 import com.brand.blockus.utils.helper.BlockFactory;
+import com.brand.blockus.utils.helper.BlockMaps;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
@@ -555,21 +556,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BREAD_BOX = registerCopy("bread_box", OrientableBlockBase::new, Blocks.OAK_PLANKS, settings -> settings.strength(2.5f));
 
     // Stained Stone Bricks
-    public static final BSSWBundle WHITE_STONE_BRICKS = BSSWBundle.of("white_stone_bricks", Blocks.STONE_BRICKS, MapColor.WHITE).register();
-    public static final BSSWBundle GRAY_STONE_BRICKS = BSSWBundle.of("gray_stone_bricks", Blocks.STONE_BRICKS, MapColor.GRAY).register();
-    public static final BSSWBundle BLACK_STONE_BRICKS = BSSWBundle.of("black_stone_bricks", Blocks.STONE_BRICKS, MapColor.BLACK).register();
-    public static final BSSWBundle BROWN_STONE_BRICKS = BSSWBundle.of("brown_stone_bricks", Blocks.STONE_BRICKS, MapColor.BROWN).register();
-    public static final BSSWBundle RED_STONE_BRICKS = BSSWBundle.of("red_stone_bricks", Blocks.STONE_BRICKS, MapColor.RED).register();
-    public static final BSSWBundle ORANGE_STONE_BRICKS = BSSWBundle.of("orange_stone_bricks", Blocks.STONE_BRICKS, MapColor.ORANGE).register();
-    public static final BSSWBundle YELLOW_STONE_BRICKS = BSSWBundle.of("yellow_stone_bricks", Blocks.STONE_BRICKS, MapColor.YELLOW).register();
-    public static final BSSWBundle LIME_STONE_BRICKS = BSSWBundle.of("lime_stone_bricks", Blocks.STONE_BRICKS, MapColor.LIME).register();
-    public static final BSSWBundle GREEN_STONE_BRICKS = BSSWBundle.of("green_stone_bricks", Blocks.STONE_BRICKS, MapColor.GREEN).register();
-    public static final BSSWBundle CYAN_STONE_BRICKS = BSSWBundle.of("cyan_stone_bricks", Blocks.STONE_BRICKS, MapColor.CYAN).register();
-    public static final BSSWBundle LIGHT_BLUE_STONE_BRICKS = BSSWBundle.of("light_blue_stone_bricks", Blocks.STONE_BRICKS, MapColor.LIGHT_BLUE).register();
-    public static final BSSWBundle BLUE_STONE_BRICKS = BSSWBundle.of("blue_stone_bricks", Blocks.STONE_BRICKS, MapColor.BLUE).register();
-    public static final BSSWBundle PURPLE_STONE_BRICKS = BSSWBundle.of("purple_stone_bricks", Blocks.STONE_BRICKS, MapColor.PURPLE).register();
-    public static final BSSWBundle MAGENTA_STONE_BRICKS = BSSWBundle.of("magenta_stone_bricks", Blocks.STONE_BRICKS, MapColor.MAGENTA).register();
-    public static final BSSWBundle PINK_STONE_BRICKS = BSSWBundle.of("pink_stone_bricks", Blocks.STONE_BRICKS, MapColor.PINK).register();
+    public static final StainedBSSWBundle STAINED_STONE_BRICKS = StainedBSSWBundle.of("stone_bricks", Blocks.STONE_BRICKS).useMapColor().register();
 
     // Concrete
     public static final ConcreteBundle WHITE_CONCRETE_BRICKS = ConcreteBundle.of("white_concrete_bricks", Blocks.WHITE_CONCRETE).register();
@@ -684,22 +671,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Shingles
     public static final BSSWBundle SHINGLES = BSSWBundle.of("shingles", Blocks.TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle WHITE_SHINGLES = BSSWBundle.of("white_shingles", Blocks.WHITE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle LIGHT_GRAY_SHINGLES = BSSWBundle.of("light_gray_shingles", Blocks.LIGHT_GRAY_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle GRAY_SHINGLES = BSSWBundle.of("gray_shingles", Blocks.GRAY_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle BLACK_SHINGLES = BSSWBundle.of("black_shingles", Blocks.BLACK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle BROWN_SHINGLES = BSSWBundle.of("brown_shingles", Blocks.BROWN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle RED_SHINGLES = BSSWBundle.of("red_shingles", Blocks.RED_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle ORANGE_SHINGLES = BSSWBundle.of("orange_shingles", Blocks.ORANGE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle YELLOW_SHINGLES = BSSWBundle.of("yellow_shingles", Blocks.YELLOW_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle LIME_SHINGLES = BSSWBundle.of("lime_shingles", Blocks.LIME_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle GREEN_SHINGLES = BSSWBundle.of("green_shingles", Blocks.GREEN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle CYAN_SHINGLES = BSSWBundle.of("cyan_shingles", Blocks.CYAN_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle LIGHT_BLUE_SHINGLES = BSSWBundle.of("light_blue_shingles", Blocks.LIGHT_BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle BLUE_SHINGLES = BSSWBundle.of("blue_shingles", Blocks.BLUE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle PURPLE_SHINGLES = BSSWBundle.of("purple_shingles", Blocks.PURPLE_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle MAGENTA_SHINGLES = BSSWBundle.of("magenta_shingles", Blocks.MAGENTA_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle PINK_SHINGLES = BSSWBundle.of("pink_shingles", Blocks.PINK_TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
+    public static final StainedBSSWBundle STAINED_SHINGLES = StainedBSSWBundle.of("shingles", BlockMaps.TERRACOTTA_MAP).settings(settings -> settings.sounds(BlockSoundGroup.NETHER_BRICKS)).includeWall(false).register();
 
     // Glass - Beveled Glass
     public static final Block RAINBOW_GLASS = stainedGlass("rainbow_glass", DyeColor.YELLOW, Blocks.GLASS);
