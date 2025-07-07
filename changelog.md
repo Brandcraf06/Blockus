@@ -7,4 +7,6 @@
   * Renamed `small_hedges` tags into `hedges`
 * Improved hedges block and model to make them more visually consistent (Hedges already placed will need to be updated)
 * Hedges can now connect to leaves
+* Changed Redstone Lamps textures
+* Added Black Redstone Lamp for consistency
 * Added Light Gray Stone Bricks for consistency (slightly lighter than stone bricks)

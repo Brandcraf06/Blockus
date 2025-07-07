@@ -234,6 +234,10 @@ public class BlockFactory {
         return of(create().mapColor(color).luminance((state) -> 2).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlockFactory::always).allowsSpawning(BlockFactory::never)).register(id);
     }
 
+    public static Block neonBlock(DyeColor color) {
+        return of(create().mapColor(color).luminance((state) -> 2).sounds(BlockSoundGroup.GLASS).strength(0.5f, 0.5f).emissiveLighting(BlockFactory::always).allowsSpawning(BlockFactory::never)).getBase();
+    }
+
     public static Block redstoneLamp(String id, MapColor mapColor) {
         return registerCopy(id, RedstoneLampBlock::new, Blocks.REDSTONE_LAMP, settings -> settings.mapColor(mapColor).allowsSpawning(BlockFactory::always));
     }

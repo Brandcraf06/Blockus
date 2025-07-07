@@ -69,23 +69,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.valueLookupBuilder(BlockusBlockTags.BEVELED_GLASS)
             .add(BEVELED_GLASS)
-            .add(WHITE_BEVELED_GLASS)
-            .add(ORANGE_BEVELED_GLASS)
-            .add(MAGENTA_BEVELED_GLASS)
-            .add(LIGHT_BLUE_BEVELED_GLASS)
-            .add(YELLOW_BEVELED_GLASS)
-            .add(LIME_BEVELED_GLASS)
-            .add(PINK_BEVELED_GLASS)
-            .add(GRAY_BEVELED_GLASS)
-            .add(LIGHT_GRAY_BEVELED_GLASS)
-            .add(CYAN_BEVELED_GLASS)
-            .add(PURPLE_BEVELED_GLASS)
-            .add(BLUE_BEVELED_GLASS)
-            .add(BROWN_BEVELED_GLASS)
-            .add(GREEN_BEVELED_GLASS)
-            .add(RED_BEVELED_GLASS)
-            .add(BLACK_BEVELED_GLASS)
             .add(RAINBOW_BEVELED_GLASS);
+        for (DyeColor color : DyeColor.values()) {
+            valueLookupBuilder(BlockusBlockTags.BEVELED_GLASS).add(STAINED_BEVELED_GLASS.colorMap().get(color));
+        }
 
         this.valueLookupBuilder(BlockusBlockTags.BLACKSTONE_BLOCKS)
             .add(bsswBundle(POLISHED_BLACKSTONE_TILES))
@@ -133,28 +120,14 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHOCOLATE_SQUARES)
             .add(CHOCOLATE_TABLET);
 
-        this.valueLookupBuilder(BlockusBlockTags.COLORED_TILES)
-            .add(WHITE_COLORED_TILES)
-            .add(ORANGE_COLORED_TILES)
-            .add(MAGENTA_COLORED_TILES)
-            .add(LIGHT_BLUE_COLORED_TILES)
-            .add(YELLOW_COLORED_TILES)
-            .add(LIME_COLORED_TILES)
-            .add(PINK_COLORED_TILES)
-            .add(GRAY_COLORED_TILES)
-            .add(LIGHT_GRAY_COLORED_TILES)
-            .add(CYAN_COLORED_TILES)
-            .add(PURPLE_COLORED_TILES)
-            .add(BLUE_COLORED_TILES)
-            .add(BROWN_COLORED_TILES)
-            .add(GREEN_COLORED_TILES)
-            .add(RED_COLORED_TILES)
-            .add(BLACK_COLORED_TILES)
-            .add(RAINBOW_COLORED_TILES);
-
+        for (DyeColor color : DyeColor.values()) {
+            valueLookupBuilder(BlockusBlockTags.COLORED_TILES).add(COLORED_TILES.colorMap().get(color));
+        }
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
             this.valueLookupBuilder(BlockusBlockTags.COLORED_TILES).add(coloredTilesVariants.block());
         }
+        this.valueLookupBuilder(BlockusBlockTags.COLORED_TILES)
+            .add(RAINBOW_COLORED_TILES);
 
         for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.valueLookupBuilder(BlockusBlockTags.CONCRETE_BLOCKS)
@@ -220,23 +193,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(PAPER_DOOR)
             .add(PAPER_TRAPDOOR);
 
-        this.valueLookupBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
-            .add(WHITE_GLAZED_TERRACOTTA_PILLAR)
-            .add(ORANGE_GLAZED_TERRACOTTA_PILLAR)
-            .add(MAGENTA_GLAZED_TERRACOTTA_PILLAR)
-            .add(LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR)
-            .add(YELLOW_GLAZED_TERRACOTTA_PILLAR)
-            .add(LIME_GLAZED_TERRACOTTA_PILLAR)
-            .add(PINK_GLAZED_TERRACOTTA_PILLAR)
-            .add(GRAY_GLAZED_TERRACOTTA_PILLAR)
-            .add(LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR)
-            .add(CYAN_GLAZED_TERRACOTTA_PILLAR)
-            .add(PURPLE_GLAZED_TERRACOTTA_PILLAR)
-            .add(BLUE_GLAZED_TERRACOTTA_PILLAR)
-            .add(BROWN_GLAZED_TERRACOTTA_PILLAR)
-            .add(GREEN_GLAZED_TERRACOTTA_PILLAR)
-            .add(RED_GLAZED_TERRACOTTA_PILLAR)
-            .add(BLACK_GLAZED_TERRACOTTA_PILLAR);
+        for (DyeColor color : DyeColor.values()) {
+            valueLookupBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS).add(GLAZED_TERRACOTTA_PILLAR.colorMap().get(color));
+        }
 
         this.valueLookupBuilder(BlockusBlockTags.GRANITE_BLOCKS)
             .add(bsswBundle(GRANITE_BRICKS))
@@ -323,23 +282,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MARBLE_LINES)
             .add(MARBLE_CIRCULAR_PAVING);
 
+        for (DyeColor color : DyeColor.values()) {
+            valueLookupBuilder(BlockusBlockTags.NEON).add(NEON_BLOCK.colorMap().get(color));
+        }
         this.valueLookupBuilder(BlockusBlockTags.NEON)
-            .add(WHITE_NEON)
-            .add(ORANGE_NEON)
-            .add(MAGENTA_NEON)
-            .add(LIGHT_BLUE_NEON)
-            .add(YELLOW_NEON)
-            .add(LIME_NEON)
-            .add(PINK_NEON)
-            .add(GRAY_NEON)
-            .add(LIGHT_GRAY_NEON)
-            .add(CYAN_NEON)
-            .add(PURPLE_NEON)
-            .add(BLUE_NEON)
-            .add(BROWN_NEON)
-            .add(GREEN_NEON)
-            .add(RED_NEON)
-            .add(BLACK_NEON)
             .add(RAINBOW_NEON);
 
         this.valueLookupBuilder(BlockusBlockTags.NETHER_BRICKS)

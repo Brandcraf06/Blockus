@@ -1,6 +1,7 @@
 package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
@@ -30,21 +31,7 @@ public class FunctionalBlocksGroup {
 
             entries.add(BLAZE_LANTERN);
 
-            entries.add(WHITE_REDSTONE_LAMP);
-            entries.add(LIGHT_GRAY_REDSTONE_LAMP);
-            entries.add(GRAY_REDSTONE_LAMP);
-            entries.add(BROWN_REDSTONE_LAMP);
-            entries.add(RED_REDSTONE_LAMP);
-            entries.add(ORANGE_REDSTONE_LAMP);
-            entries.add(YELLOW_REDSTONE_LAMP);
-            entries.add(LIME_REDSTONE_LAMP);
-            entries.add(GREEN_REDSTONE_LAMP);
-            entries.add(CYAN_REDSTONE_LAMP);
-            entries.add(LIGHT_BLUE_REDSTONE_LAMP);
-            entries.add(BLUE_REDSTONE_LAMP);
-            entries.add(PURPLE_REDSTONE_LAMP);
-            entries.add(MAGENTA_REDSTONE_LAMP);
-            entries.add(PINK_REDSTONE_LAMP);
+            ColoredGroups.add(entries, BlockusBlocks.STAINED_REDSTONE_LAMP);
             entries.add(RAINBOW_LAMP);
             entries.add(RAINBOW_GLOWSTONE);
             entries.add(GLOWING_OBSIDIAN);

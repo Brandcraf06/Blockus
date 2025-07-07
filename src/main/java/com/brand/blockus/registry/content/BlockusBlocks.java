@@ -577,76 +577,18 @@ public class BlockusBlocks extends BlockFactory {
     public static final ConcreteBundle PINK_CONCRETE_BRICKS = ConcreteBundle.of("pink_concrete_bricks", Blocks.PINK_CONCRETE).register();
 
     // Redstone Lamps
-    public static final Block WHITE_REDSTONE_LAMP = redstoneLamp("white_redstone_lamp", MapColor.WHITE);
-    public static final Block ORANGE_REDSTONE_LAMP = redstoneLamp("orange_redstone_lamp", MapColor.ORANGE);
-    public static final Block MAGENTA_REDSTONE_LAMP = redstoneLamp("magenta_redstone_lamp", MapColor.MAGENTA);
-    public static final Block LIGHT_BLUE_REDSTONE_LAMP = redstoneLamp("light_blue_redstone_lamp", MapColor.LIGHT_BLUE);
-    public static final Block YELLOW_REDSTONE_LAMP = redstoneLamp("yellow_redstone_lamp", MapColor.YELLOW);
-    public static final Block LIME_REDSTONE_LAMP = redstoneLamp("lime_redstone_lamp", MapColor.LIME);
-    public static final Block PINK_REDSTONE_LAMP = redstoneLamp("pink_redstone_lamp", MapColor.PINK);
-    public static final Block GRAY_REDSTONE_LAMP = redstoneLamp("gray_redstone_lamp", MapColor.GRAY);
-    public static final Block LIGHT_GRAY_REDSTONE_LAMP = redstoneLamp("light_gray_redstone_lamp", MapColor.LIGHT_GRAY);
-    public static final Block CYAN_REDSTONE_LAMP = redstoneLamp("cyan_redstone_lamp", MapColor.CYAN);
-    public static final Block PURPLE_REDSTONE_LAMP = redstoneLamp("purple_redstone_lamp", MapColor.PURPLE);
-    public static final Block BLUE_REDSTONE_LAMP = redstoneLamp("blue_redstone_lamp", MapColor.BLUE);
-    public static final Block BROWN_REDSTONE_LAMP = redstoneLamp("brown_redstone_lamp", MapColor.BROWN);
-    public static final Block GREEN_REDSTONE_LAMP = redstoneLamp("green_redstone_lamp", MapColor.GREEN);
-    public static final Block RED_REDSTONE_LAMP = redstoneLamp("red_redstone_lamp", MapColor.RED);
+    public static final StainedBlockBundle STAINED_REDSTONE_LAMP = StainedBlockBundle.of("redstone_lamp", (id, color) -> BlockFactory.redstoneLamp(id, BlockMaps.COLOR_MAP.get(color)));
     public static final Block REDSTONE_LAMP_LIT = litRedstoneLamp("redstone_lamp_lit", Blocks.REDSTONE_LAMP);
-    public static final Block WHITE_REDSTONE_LAMP_LIT = litRedstoneLamp("white_redstone_lamp_lit", WHITE_REDSTONE_LAMP);
-    public static final Block ORANGE_REDSTONE_LAMP_LIT = litRedstoneLamp("orange_redstone_lamp_lit", ORANGE_REDSTONE_LAMP);
-    public static final Block MAGENTA_REDSTONE_LAMP_LIT = litRedstoneLamp("magenta_redstone_lamp_lit", MAGENTA_REDSTONE_LAMP);
-    public static final Block LIGHT_BLUE_REDSTONE_LAMP_LIT = litRedstoneLamp("light_blue_redstone_lamp_lit", LIGHT_BLUE_REDSTONE_LAMP);
-    public static final Block YELLOW_REDSTONE_LAMP_LIT = litRedstoneLamp("yellow_redstone_lamp_lit", YELLOW_REDSTONE_LAMP);
-    public static final Block LIME_REDSTONE_LAMP_LIT = litRedstoneLamp("lime_redstone_lamp_lit", LIME_REDSTONE_LAMP);
-    public static final Block PINK_REDSTONE_LAMP_LIT = litRedstoneLamp("pink_redstone_lamp_lit", PINK_REDSTONE_LAMP);
-    public static final Block GRAY_REDSTONE_LAMP_LIT = litRedstoneLamp("gray_redstone_lamp_lit", GRAY_REDSTONE_LAMP);
-    public static final Block LIGHT_GRAY_REDSTONE_LAMP_LIT = litRedstoneLamp("light_gray_redstone_lamp_lit", LIGHT_GRAY_REDSTONE_LAMP);
-    public static final Block CYAN_REDSTONE_LAMP_LIT = litRedstoneLamp("cyan_redstone_lamp_lit", CYAN_REDSTONE_LAMP);
-    public static final Block PURPLE_REDSTONE_LAMP_LIT = litRedstoneLamp("purple_redstone_lamp_lit", PURPLE_REDSTONE_LAMP);
-    public static final Block BLUE_REDSTONE_LAMP_LIT = litRedstoneLamp("blue_redstone_lamp_lit", BLUE_REDSTONE_LAMP);
-    public static final Block BROWN_REDSTONE_LAMP_LIT = litRedstoneLamp("brown_redstone_lamp_lit", BROWN_REDSTONE_LAMP);
-    public static final Block GREEN_REDSTONE_LAMP_LIT = litRedstoneLamp("green_redstone_lamp_lit", GREEN_REDSTONE_LAMP);
-    public static final Block RED_REDSTONE_LAMP_LIT = litRedstoneLamp("red_redstone_lamp_lit", RED_REDSTONE_LAMP);
+    public static final StainedBlockBundle STAINED_REDSTONE_LAMP_LIT = StainedBlockBundle.of("redstone_lamp_lit", STAINED_REDSTONE_LAMP.colorMap(), BlockFactory::litRedstoneLamp);
     public static final Block RAINBOW_LAMP = redstoneLamp("rainbow_lamp", MapColor.TERRACOTTA_ORANGE);
     public static final Block RAINBOW_LAMP_LIT = litRedstoneLamp("rainbow_lamp_lit", RAINBOW_LAMP);
 
     // Neon Blocks
-    public static final Block WHITE_NEON = neonBlock("white_neon", DyeColor.WHITE);
-    public static final Block LIGHT_GRAY_NEON = neonBlock("light_gray_neon", DyeColor.LIGHT_GRAY);
-    public static final Block GRAY_NEON = neonBlock("gray_neon", DyeColor.GRAY);
-    public static final Block BLACK_NEON = neonBlock("black_neon", DyeColor.BLACK);
-    public static final Block BROWN_NEON = neonBlock("brown_neon", DyeColor.BROWN);
-    public static final Block RED_NEON = neonBlock("red_neon", DyeColor.RED);
-    public static final Block ORANGE_NEON = neonBlock("orange_neon", DyeColor.ORANGE);
-    public static final Block YELLOW_NEON = neonBlock("yellow_neon", DyeColor.YELLOW);
-    public static final Block LIME_NEON = neonBlock("lime_neon", DyeColor.LIME);
-    public static final Block GREEN_NEON = neonBlock("green_neon", DyeColor.GREEN);
-    public static final Block CYAN_NEON = neonBlock("cyan_neon", DyeColor.CYAN);
-    public static final Block LIGHT_BLUE_NEON = neonBlock("light_blue_neon", DyeColor.LIGHT_BLUE);
-    public static final Block BLUE_NEON = neonBlock("blue_neon", DyeColor.BLUE);
-    public static final Block PURPLE_NEON = neonBlock("purple_neon", DyeColor.PURPLE);
-    public static final Block MAGENTA_NEON = neonBlock("magenta_neon", DyeColor.MAGENTA);
-    public static final Block PINK_NEON = neonBlock("pink_neon", DyeColor.PINK);
+    public static final StainedBlockBundle NEON_BLOCK = StainedBlockBundle.of("neon", BlockFactory::neonBlock);
     public static final Block RAINBOW_NEON = neonBlock("rainbow_neon", DyeColor.LIGHT_BLUE);
 
     // Futurneo Blocks
-    public static final Block WHITE_FUTURNEO_BLOCK = futurneoBlock("white_futurneo_block", MapColor.BLACK);
-    public static final Block LIGHT_GRAY_FUTURNEO_BLOCK = futurneoBlock("light_gray_futurneo_block", MapColor.BLACK);
-    public static final Block GRAY_FUTURNEO_BLOCK = futurneoBlock("gray_futurneo_block", MapColor.BLACK);
-    public static final Block BLACK_FUTURNEO_BLOCK = futurneoBlock("black_futurneo_block", MapColor.BLACK);
-    public static final Block BROWN_FUTURNEO_BLOCK = futurneoBlock("brown_futurneo_block", MapColor.BLACK);
-    public static final Block RED_FUTURNEO_BLOCK = futurneoBlock("red_futurneo_block", MapColor.BLACK);
-    public static final Block ORANGE_FUTURNEO_BLOCK = futurneoBlock("orange_futurneo_block", MapColor.BLACK);
-    public static final Block YELLOW_FUTURNEO_BLOCK = futurneoBlock("yellow_futurneo_block", MapColor.BLACK);
-    public static final Block LIME_FUTURNEO_BLOCK = futurneoBlock("lime_futurneo_block", MapColor.BLACK);
-    public static final Block GREEN_FUTURNEO_BLOCK = futurneoBlock("green_futurneo_block", MapColor.BLACK);
-    public static final Block CYAN_FUTURNEO_BLOCK = futurneoBlock("cyan_futurneo_block", MapColor.BLACK);
-    public static final Block LIGHT_BLUE_FUTURNEO_BLOCK = futurneoBlock("light_blue_futurneo_block", MapColor.BLACK);
-    public static final Block BLUE_FUTURNEO_BLOCK = futurneoBlock("blue_futurneo_block", MapColor.BLACK);
-    public static final Block PURPLE_FUTURNEO_BLOCK = futurneoBlock("purple_futurneo_block", MapColor.BLACK);
-    public static final Block MAGENTA_FUTURNEO_BLOCK = futurneoBlock("magenta_futurneo_block", MapColor.BLACK);
-    public static final Block PINK_FUTURNEO_BLOCK = futurneoBlock("pink_futurneo_block", MapColor.BLACK);
+    public static final StainedBlockBundle FUTURNEO_BLOCK = StainedBlockBundle.of("futurneo_block", (id, color) -> BlockFactory.futurneoBlock(id, MapColor.BLACK));
     public static final Block GRAY_BRIGHT_FUTURNEO_BLOCK = futurneoBlock("gray_bright_futurneo_block", MapColor.WHITE);
     public static final Block RAINBOW_FUTURNEO_BLOCK = futurneoBlock("rainbow_futurneo_block", MapColor.BLACK);
 
@@ -677,40 +619,10 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block RAINBOW_GLASS = stainedGlass("rainbow_glass", DyeColor.YELLOW, Blocks.GLASS);
     public static final Block RAINBOW_GLASS_PANE = stainedGlassPane("rainbow_glass_pane", DyeColor.YELLOW, Blocks.GLASS_PANE);
     public static final Block BEVELED_GLASS = registerCopy("beveled_glass", TransparentBlock::new, Blocks.GLASS);
-    public static final Block WHITE_BEVELED_GLASS = stainedGlass("white_beveled_glass", DyeColor.WHITE, Blocks.WHITE_STAINED_GLASS);
-    public static final Block ORANGE_BEVELED_GLASS = stainedGlass("orange_beveled_glass", DyeColor.ORANGE, Blocks.ORANGE_STAINED_GLASS);
-    public static final Block MAGENTA_BEVELED_GLASS = stainedGlass("magenta_beveled_glass", DyeColor.MAGENTA, Blocks.MAGENTA_STAINED_GLASS);
-    public static final Block LIGHT_BLUE_BEVELED_GLASS = stainedGlass("light_blue_beveled_glass", DyeColor.LIGHT_BLUE, Blocks.LIGHT_BLUE_STAINED_GLASS);
-    public static final Block YELLOW_BEVELED_GLASS = stainedGlass("yellow_beveled_glass", DyeColor.YELLOW, Blocks.YELLOW_STAINED_GLASS);
-    public static final Block LIME_BEVELED_GLASS = stainedGlass("lime_beveled_glass", DyeColor.LIME, Blocks.LIME_STAINED_GLASS);
-    public static final Block PINK_BEVELED_GLASS = stainedGlass("pink_beveled_glass", DyeColor.PINK, Blocks.PINK_STAINED_GLASS);
-    public static final Block LIGHT_GRAY_BEVELED_GLASS = stainedGlass("light_gray_beveled_glass", DyeColor.LIGHT_GRAY, Blocks.LIGHT_GRAY_STAINED_GLASS);
-    public static final Block GRAY_BEVELED_GLASS = stainedGlass("gray_beveled_glass", DyeColor.GRAY, Blocks.GRAY_STAINED_GLASS);
-    public static final Block CYAN_BEVELED_GLASS = stainedGlass("cyan_beveled_glass", DyeColor.CYAN, Blocks.CYAN_STAINED_GLASS);
-    public static final Block PURPLE_BEVELED_GLASS = stainedGlass("purple_beveled_glass", DyeColor.PURPLE, Blocks.PURPLE_STAINED_GLASS);
-    public static final Block BLUE_BEVELED_GLASS = stainedGlass("blue_beveled_glass", DyeColor.BLUE, Blocks.BLUE_STAINED_GLASS);
-    public static final Block BROWN_BEVELED_GLASS = stainedGlass("brown_beveled_glass", DyeColor.BROWN, Blocks.BROWN_STAINED_GLASS);
-    public static final Block GREEN_BEVELED_GLASS = stainedGlass("green_beveled_glass", DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS);
-    public static final Block RED_BEVELED_GLASS = stainedGlass("red_beveled_glass", DyeColor.RED, Blocks.RED_STAINED_GLASS);
-    public static final Block BLACK_BEVELED_GLASS = stainedGlass("black_beveled_glass", DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS);
+    public static final StainedBlockBundle STAINED_BEVELED_GLASS = StainedBlockBundle.of("beveled_glass", (id, color) -> BlockFactory.stainedGlass(id, color, BlockMaps.STAINED_GLASS_MAP.get(color)));
     public static final Block RAINBOW_BEVELED_GLASS = stainedGlass("rainbow_beveled_glass", DyeColor.YELLOW, RAINBOW_GLASS);
     public static final Block BEVELED_GLASS_PANE = registerCopy("beveled_glass_pane", PaneBlock::new, Blocks.GLASS_PANE);
-    public static final Block WHITE_BEVELED_GLASS_PANE = stainedGlassPane("white_beveled_glass_pane", DyeColor.WHITE, Blocks.WHITE_STAINED_GLASS_PANE);
-    public static final Block ORANGE_BEVELED_GLASS_PANE = stainedGlassPane("orange_beveled_glass_pane", DyeColor.ORANGE, Blocks.ORANGE_STAINED_GLASS_PANE);
-    public static final Block MAGENTA_BEVELED_GLASS_PANE = stainedGlassPane("magenta_beveled_glass_pane", DyeColor.MAGENTA, Blocks.MAGENTA_STAINED_GLASS_PANE);
-    public static final Block LIGHT_BLUE_BEVELED_GLASS_PANE = stainedGlassPane("light_blue_beveled_glass_pane", DyeColor.LIGHT_BLUE, Blocks.LIGHT_BLUE_STAINED_GLASS_PANE);
-    public static final Block YELLOW_BEVELED_GLASS_PANE = stainedGlassPane("yellow_beveled_glass_pane", DyeColor.YELLOW, Blocks.YELLOW_STAINED_GLASS_PANE);
-    public static final Block LIME_BEVELED_GLASS_PANE = stainedGlassPane("lime_beveled_glass_pane", DyeColor.LIME, Blocks.LIME_STAINED_GLASS_PANE);
-    public static final Block PINK_BEVELED_GLASS_PANE = stainedGlassPane("pink_beveled_glass_pane", DyeColor.PINK, Blocks.PINK_STAINED_GLASS_PANE);
-    public static final Block LIGHT_GRAY_BEVELED_GLASS_PANE = stainedGlassPane("light_gray_beveled_glass_pane", DyeColor.LIGHT_GRAY, Blocks.LIGHT_GRAY_STAINED_GLASS_PANE);
-    public static final Block GRAY_BEVELED_GLASS_PANE = stainedGlassPane("gray_beveled_glass_pane", DyeColor.GRAY, Blocks.GRAY_STAINED_GLASS_PANE);
-    public static final Block CYAN_BEVELED_GLASS_PANE = stainedGlassPane("cyan_beveled_glass_pane", DyeColor.CYAN, Blocks.CYAN_STAINED_GLASS_PANE);
-    public static final Block PURPLE_BEVELED_GLASS_PANE = stainedGlassPane("purple_beveled_glass_pane", DyeColor.PURPLE, Blocks.PURPLE_STAINED_GLASS_PANE);
-    public static final Block BLUE_BEVELED_GLASS_PANE = stainedGlassPane("blue_beveled_glass_pane", DyeColor.BLUE, Blocks.BLUE_STAINED_GLASS_PANE);
-    public static final Block BROWN_BEVELED_GLASS_PANE = stainedGlassPane("brown_beveled_glass_pane", DyeColor.BROWN, Blocks.BROWN_STAINED_GLASS_PANE);
-    public static final Block GREEN_BEVELED_GLASS_PANE = stainedGlassPane("green_beveled_glass_pane", DyeColor.GREEN, Blocks.GREEN_STAINED_GLASS_PANE);
-    public static final Block RED_BEVELED_GLASS_PANE = stainedGlassPane("red_beveled_glass_pane", DyeColor.RED, Blocks.RED_STAINED_GLASS_PANE);
-    public static final Block BLACK_BEVELED_GLASS_PANE = stainedGlassPane("black_beveled_glass_pane", DyeColor.BLACK, Blocks.BLACK_STAINED_GLASS_PANE);
+    public static final StainedBlockBundle STAINED_BEVELED_GLASS_PANE = StainedBlockBundle.of("beveled_glass_pane", (id, color) -> BlockFactory.stainedGlassPane(id, color, BlockMaps.STAINED_GLASS_PANE_MAP.get(color)));
     public static final Block RAINBOW_BEVELED_GLASS_PANE = stainedGlassPane("rainbow_beveled_glass_pane", DyeColor.YELLOW, RAINBOW_GLASS_PANE);
     public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS, settings -> settings.allowsSpawning(BlockusBlocks::never).solidBlock(BlockusBlocks::never).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never));
 
@@ -751,22 +663,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final WoolBundle PINK_GINGHAM_WOOL = WoolBundle.of(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK, WoolBundle.GINGHAM).register();
 
     // Glazed Terracotta Pillars
-    public static final Block WHITE_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.WHITE_GLAZED_TERRACOTTA);
-    public static final Block LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA);
-    public static final Block GRAY_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.GRAY_GLAZED_TERRACOTTA);
-    public static final Block BLACK_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.BLACK_GLAZED_TERRACOTTA);
-    public static final Block BROWN_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.BROWN_GLAZED_TERRACOTTA);
-    public static final Block RED_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.RED_GLAZED_TERRACOTTA);
-    public static final Block ORANGE_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.ORANGE_GLAZED_TERRACOTTA);
-    public static final Block YELLOW_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.YELLOW_GLAZED_TERRACOTTA);
-    public static final Block LIME_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.LIME_GLAZED_TERRACOTTA);
-    public static final Block GREEN_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.GREEN_GLAZED_TERRACOTTA);
-    public static final Block CYAN_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.CYAN_GLAZED_TERRACOTTA);
-    public static final Block LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA);
-    public static final Block BLUE_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.BLUE_GLAZED_TERRACOTTA);
-    public static final Block PURPLE_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.PURPLE_GLAZED_TERRACOTTA);
-    public static final Block MAGENTA_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.MAGENTA_GLAZED_TERRACOTTA);
-    public static final Block PINK_GLAZED_TERRACOTTA_PILLAR = pillar(Blocks.PINK_GLAZED_TERRACOTTA);
+    public static final StainedBlockBundle GLAZED_TERRACOTTA_PILLAR = StainedBlockBundle.of(BlockMaps.GLAZED_TERRACOTTA_MAP, BlockFactory::pillar);
 
     // Pressure Plates
     public static final Block POLISHED_ANDESITE_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_ANDESITE);
@@ -891,21 +788,6 @@ public class BlockusBlocks extends BlockFactory {
     /**
      * <p>Bicolor variants in {@link ColoredTilesBundle}.
      */
-    public static final Block WHITE_COLORED_TILES = registerCopy("white_colored_tiles", Blocks.WHITE_CONCRETE);
-    public static final Block ORANGE_COLORED_TILES = registerCopy("orange_colored_tiles", Blocks.ORANGE_CONCRETE);
-    public static final Block MAGENTA_COLORED_TILES = registerCopy("magenta_colored_tiles", Blocks.MAGENTA_CONCRETE);
-    public static final Block LIGHT_BLUE_COLORED_TILES = registerCopy("light_blue_colored_tiles", Blocks.LIGHT_BLUE_CONCRETE);
-    public static final Block YELLOW_COLORED_TILES = registerCopy("yellow_colored_tiles", Blocks.YELLOW_CONCRETE);
-    public static final Block LIME_COLORED_TILES = registerCopy("lime_colored_tiles", Blocks.LIME_CONCRETE);
-    public static final Block PINK_COLORED_TILES = registerCopy("pink_colored_tiles", Blocks.PINK_CONCRETE);
-    public static final Block GRAY_COLORED_TILES = registerCopy("gray_colored_tiles", Blocks.GRAY_CONCRETE);
-    public static final Block LIGHT_GRAY_COLORED_TILES = registerCopy("light_gray_colored_tiles", Blocks.LIGHT_GRAY_CONCRETE);
-    public static final Block CYAN_COLORED_TILES = registerCopy("cyan_colored_tiles", Blocks.CYAN_CONCRETE);
-    public static final Block PURPLE_COLORED_TILES = registerCopy("purple_colored_tiles", Blocks.PURPLE_CONCRETE);
-    public static final Block BLUE_COLORED_TILES = registerCopy("blue_colored_tiles", Blocks.BLUE_CONCRETE);
-    public static final Block BROWN_COLORED_TILES = registerCopy("brown_colored_tiles", Blocks.BROWN_CONCRETE);
-    public static final Block GREEN_COLORED_TILES = registerCopy("green_colored_tiles", Blocks.GREEN_CONCRETE);
-    public static final Block RED_COLORED_TILES = registerCopy("red_colored_tiles", Blocks.RED_CONCRETE);
-    public static final Block BLACK_COLORED_TILES = registerCopy("black_colored_tiles", Blocks.BLACK_CONCRETE);
+    public static final StainedBlockBundle COLORED_TILES = StainedBlockBundle.of("colored_tiles", (id, color) -> BlockFactory.registerCopy(id, BlockMaps.CONCRETE_MAP.get(color)));
     public static final Block RAINBOW_COLORED_TILES = registerCopy("rainbow_colored_tiles", HorizontalAxisBlock::new, Blocks.LIGHT_BLUE_CONCRETE);
 }

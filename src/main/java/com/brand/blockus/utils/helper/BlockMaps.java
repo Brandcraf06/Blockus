@@ -2,32 +2,39 @@ package com.brand.blockus.utils.helper;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.Identifier;
 
+import java.util.EnumMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class BlockMaps {
-    public static final Map<DyeColor, Block> TERRACOTTA_MAP = ImmutableMap.<DyeColor, Block>builder()
-        .put(DyeColor.WHITE, Blocks.WHITE_TERRACOTTA)
-        .put(DyeColor.LIGHT_GRAY, Blocks.LIGHT_GRAY_TERRACOTTA)
-        .put(DyeColor.GRAY, Blocks.GRAY_TERRACOTTA)
-        .put(DyeColor.BLACK, Blocks.BLACK_TERRACOTTA)
-        .put(DyeColor.BROWN, Blocks.BROWN_TERRACOTTA)
-        .put(DyeColor.RED, Blocks.RED_TERRACOTTA)
-        .put(DyeColor.ORANGE, Blocks.ORANGE_TERRACOTTA)
-        .put(DyeColor.YELLOW, Blocks.YELLOW_TERRACOTTA)
-        .put(DyeColor.LIME, Blocks.LIME_TERRACOTTA)
-        .put(DyeColor.GREEN, Blocks.GREEN_TERRACOTTA)
-        .put(DyeColor.CYAN, Blocks.CYAN_TERRACOTTA)
-        .put(DyeColor.LIGHT_BLUE, Blocks.LIGHT_BLUE_TERRACOTTA)
-        .put(DyeColor.BLUE, Blocks.BLUE_TERRACOTTA)
-        .put(DyeColor.PURPLE, Blocks.PURPLE_TERRACOTTA)
-        .put(DyeColor.MAGENTA, Blocks.MAGENTA_TERRACOTTA)
-        .put(DyeColor.PINK, Blocks.PINK_TERRACOTTA)
-        .build();
 
+    public static final Map<DyeColor, ColorData> COLOR_DATA;
+
+    static {
+        Map<DyeColor, ColorData> map = new EnumMap<>(DyeColor.class);
+        for (DyeColor color : DyeColor.values()) {
+            map.put(color, new ColorData(
+                getBlock(color, "_terracotta"),
+                getBlock(color, "_glazed_terracotta"),
+                getBlock(color, "_stained_glass"),
+                getBlock(color, "_stained_glass_pane"),
+                getBlock(color, "_concrete")
+            ));
+        }
+        COLOR_DATA = Map.copyOf(map);
+    }
+
+    public static final Map<DyeColor, Block> TERRACOTTA_MAP = extract(ColorData::terracotta);
+    public static final Map<DyeColor, Block> GLAZED_TERRACOTTA_MAP = extract(ColorData::glazedTerracotta);
+    public static final Map<DyeColor, Block> STAINED_GLASS_MAP = extract(ColorData::stainedGlass);
+    public static final Map<DyeColor, Block> STAINED_GLASS_PANE_MAP = extract(ColorData::stainedGlassPane);
+    public static final Map<DyeColor, Block> CONCRETE_MAP = extract(ColorData::concrete);
     public static final Map<DyeColor, MapColor> COLOR_MAP = ImmutableMap.<DyeColor, MapColor>builder()
         .put(DyeColor.WHITE, MapColor.WHITE)
         .put(DyeColor.LIGHT_GRAY, MapColor.LIGHT_GRAY)
@@ -46,4 +53,21 @@ public class BlockMaps {
         .put(DyeColor.MAGENTA, MapColor.MAGENTA)
         .put(DyeColor.PINK, MapColor.PINK)
         .build();
+
+    public static Block getBlock(DyeColor color, String suffix) {
+        return Registries.BLOCK.get(Identifier.of("minecraft", color.name().toLowerCase() + suffix));
+    }
+
+    public static <T> Map<DyeColor, T> extract(Function<ColorData, T> mapper) {
+        return COLOR_DATA.entrySet().stream()
+            .collect(Collectors.toMap(Map.Entry::getKey, entry -> mapper.apply(entry.getValue())));
+    }
+
+    public record ColorData(
+        Block terracotta,
+        Block glazedTerracotta,
+        Block stainedGlass,
+        Block stainedGlassPane,
+        Block concrete) {
+    }
 }

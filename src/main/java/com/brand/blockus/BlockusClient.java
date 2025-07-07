@@ -4,6 +4,7 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
 import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
+import com.brand.blockus.utils.helper.BlockMaps;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
@@ -11,6 +12,12 @@ import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.block.*;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.render.BlockRenderLayer;
+import net.minecraft.util.DyeColor;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -108,47 +115,15 @@ public class BlockusClient implements ClientModInitializer {
             BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, woodenPostBundle.block(), woodenPostBundle.stripped());
         }
 
-        BlockRenderLayerMap.putBlocks(BlockRenderLayer.TRANSLUCENT,
+        for (DyeColor color : DyeColor.values()) {
+            BlockRenderLayerMap.putBlocks(BlockRenderLayer.TRANSLUCENT, STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
+        }
 
+        BlockRenderLayerMap.putBlocks(BlockRenderLayer.TRANSLUCENT,
             BlockusBlocks.RAINBOW_GLASS,
             BlockusBlocks.RAINBOW_GLASS_PANE,
-
-            BlockusBlocks.WHITE_BEVELED_GLASS,
-            BlockusBlocks.ORANGE_BEVELED_GLASS,
-            BlockusBlocks.MAGENTA_BEVELED_GLASS,
-            BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS,
-            BlockusBlocks.YELLOW_BEVELED_GLASS,
-            BlockusBlocks.LIME_BEVELED_GLASS,
-            BlockusBlocks.PINK_BEVELED_GLASS,
-            BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS,
-            BlockusBlocks.GRAY_BEVELED_GLASS,
-            BlockusBlocks.CYAN_BEVELED_GLASS,
-            BlockusBlocks.PURPLE_BEVELED_GLASS,
-            BlockusBlocks.BLUE_BEVELED_GLASS,
-            BlockusBlocks.BROWN_BEVELED_GLASS,
-            BlockusBlocks.GREEN_BEVELED_GLASS,
-            BlockusBlocks.RED_BEVELED_GLASS,
-            BlockusBlocks.BLACK_BEVELED_GLASS,
             BlockusBlocks.RAINBOW_BEVELED_GLASS,
-
-            BlockusBlocks.WHITE_BEVELED_GLASS_PANE,
-            BlockusBlocks.ORANGE_BEVELED_GLASS_PANE,
-            BlockusBlocks.MAGENTA_BEVELED_GLASS_PANE,
-            BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS_PANE,
-            BlockusBlocks.YELLOW_BEVELED_GLASS_PANE,
-            BlockusBlocks.LIME_BEVELED_GLASS_PANE,
-            BlockusBlocks.PINK_BEVELED_GLASS_PANE,
-            BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS_PANE,
-            BlockusBlocks.GRAY_BEVELED_GLASS_PANE,
-            BlockusBlocks.CYAN_BEVELED_GLASS_PANE,
-            BlockusBlocks.PURPLE_BEVELED_GLASS_PANE,
-            BlockusBlocks.BLUE_BEVELED_GLASS_PANE,
-            BlockusBlocks.BROWN_BEVELED_GLASS_PANE,
-            BlockusBlocks.GREEN_BEVELED_GLASS_PANE,
-            BlockusBlocks.RED_BEVELED_GLASS_PANE,
-            BlockusBlocks.BLACK_BEVELED_GLASS_PANE,
             BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE,
-
             BlockusBlocks.TINTED_BEVELED_GLASS
         );
 

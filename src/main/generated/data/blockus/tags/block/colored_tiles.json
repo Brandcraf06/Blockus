@@ -16,7 +16,6 @@
     "blockus:green_colored_tiles",
     "blockus:red_colored_tiles",
     "blockus:black_colored_tiles",
-    "blockus:rainbow_colored_tiles",
     "blockus:white_light_gray_colored_tiles",
     "blockus:white_gray_colored_tiles",
     "blockus:white_black_colored_tiles",
@@ -136,6 +135,7 @@
     "blockus:cyan_brown_colored_tiles",
     "blockus:brown_light_gray_colored_tiles",
     "blockus:brown_gray_colored_tiles",
-    "blockus:gray_light_gray_colored_tiles"
+    "blockus:gray_light_gray_colored_tiles",
+    "blockus:rainbow_colored_tiles"
   ]
 }

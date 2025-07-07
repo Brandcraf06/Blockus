@@ -136,22 +136,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Colored Tiles
         translationBuilder.add("block.blockus.colored_tiles", "Colored Tiles");
-        translationBuilder.add(BlockusBlocks.WHITE_COLORED_TILES, "White Colored Tiles");
-        translationBuilder.add(BlockusBlocks.ORANGE_COLORED_TILES, "Orange Colored Tiles");
-        translationBuilder.add(BlockusBlocks.MAGENTA_COLORED_TILES, "Magenta Colored Tiles");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_COLORED_TILES, "Light Blue Colored Tiles");
-        translationBuilder.add(BlockusBlocks.YELLOW_COLORED_TILES, "Yellow Colored Tiles");
-        translationBuilder.add(BlockusBlocks.LIME_COLORED_TILES, "Lime Colored Tiles");
-        translationBuilder.add(BlockusBlocks.PINK_COLORED_TILES, "Pink Colored Tiles");
-        translationBuilder.add(BlockusBlocks.GRAY_COLORED_TILES, "Gray Colored Tiles");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_COLORED_TILES, "Light Gray Colored Tiles");
-        translationBuilder.add(BlockusBlocks.CYAN_COLORED_TILES, "Cyan Colored Tiles");
-        translationBuilder.add(BlockusBlocks.PURPLE_COLORED_TILES, "Purple Colored Tiles");
-        translationBuilder.add(BlockusBlocks.BLUE_COLORED_TILES, "Blue Colored Tiles");
-        translationBuilder.add(BlockusBlocks.BROWN_COLORED_TILES, "Brown Colored Tiles");
-        translationBuilder.add(BlockusBlocks.GREEN_COLORED_TILES, "Green Colored Tiles");
-        translationBuilder.add(BlockusBlocks.RED_COLORED_TILES, "Red Colored Tiles");
-        translationBuilder.add(BlockusBlocks.BLACK_COLORED_TILES, "Black Colored Tiles");
+        for (var entry : BlockusBlocks.COLORED_TILES.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Colored Tiles");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_COLORED_TILES, "Rainbow Colored Tiles");
 
         // Woods
@@ -373,40 +360,14 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_GLASS, "Rainbow Glass");
         translationBuilder.add(BlockusBlocks.RAINBOW_GLASS_PANE, "Rainbow Glass Pane");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS, "Beveled Glass");
-        translationBuilder.add(BlockusBlocks.WHITE_BEVELED_GLASS, "White Beveled Glass");
-        translationBuilder.add(BlockusBlocks.ORANGE_BEVELED_GLASS, "Orange Beveled Glass");
-        translationBuilder.add(BlockusBlocks.MAGENTA_BEVELED_GLASS, "Magenta Beveled Glass");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS, "Light Blue Beveled Glass");
-        translationBuilder.add(BlockusBlocks.YELLOW_BEVELED_GLASS, "Yellow Beveled Glass");
-        translationBuilder.add(BlockusBlocks.LIME_BEVELED_GLASS, "Lime Beveled Glass");
-        translationBuilder.add(BlockusBlocks.PINK_BEVELED_GLASS, "Pink Beveled Glass");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS, "Light Gray Beveled Glass");
-        translationBuilder.add(BlockusBlocks.GRAY_BEVELED_GLASS, "Gray Beveled Glass");
-        translationBuilder.add(BlockusBlocks.CYAN_BEVELED_GLASS, "Cyan Beveled Glass");
-        translationBuilder.add(BlockusBlocks.PURPLE_BEVELED_GLASS, "Purple Beveled Glass");
-        translationBuilder.add(BlockusBlocks.BLUE_BEVELED_GLASS, "Blue Beveled Glass");
-        translationBuilder.add(BlockusBlocks.BROWN_BEVELED_GLASS, "Brown Beveled Glass");
-        translationBuilder.add(BlockusBlocks.GREEN_BEVELED_GLASS, "Green Beveled Glass");
-        translationBuilder.add(BlockusBlocks.RED_BEVELED_GLASS, "Red Beveled Glass");
-        translationBuilder.add(BlockusBlocks.BLACK_BEVELED_GLASS, "Black Beveled Glass");
+        for (var entry : BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Beveled Glass");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS, "Rainbow Beveled Glass");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS_PANE, "Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.WHITE_BEVELED_GLASS_PANE, "White Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.ORANGE_BEVELED_GLASS_PANE, "Orange Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.MAGENTA_BEVELED_GLASS_PANE, "Magenta Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS_PANE, "Light Blue Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.YELLOW_BEVELED_GLASS_PANE, "Yellow Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.LIME_BEVELED_GLASS_PANE, "Lime Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.PINK_BEVELED_GLASS_PANE, "Pink Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS_PANE, "Light Gray Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.GRAY_BEVELED_GLASS_PANE, "Gray Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.CYAN_BEVELED_GLASS_PANE, "Cyan Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.PURPLE_BEVELED_GLASS_PANE, "Purple Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.BLUE_BEVELED_GLASS_PANE, "Blue Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.BROWN_BEVELED_GLASS_PANE, "Brown Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.GREEN_BEVELED_GLASS_PANE, "Green Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.RED_BEVELED_GLASS_PANE, "Red Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.BLACK_BEVELED_GLASS_PANE, "Black Beveled Glass Pane");
+        for (var entry : BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Beveled Glass Pane");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE, "Rainbow Beveled Glass Pane");
         translationBuilder.add(BlockusBlocks.TINTED_BEVELED_GLASS, "Tinted Beveled Glass");
 
@@ -424,22 +385,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.END_STONE_PILLAR, "End Stone Pillar");
 
         // Glazed Terracotta
-        translationBuilder.add(BlockusBlocks.WHITE_GLAZED_TERRACOTTA_PILLAR, "White Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.ORANGE_GLAZED_TERRACOTTA_PILLAR, "Orange Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.MAGENTA_GLAZED_TERRACOTTA_PILLAR, "Magenta Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR, "Light Blue Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.YELLOW_GLAZED_TERRACOTTA_PILLAR, "Yellow Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.LIME_GLAZED_TERRACOTTA_PILLAR, "Lime Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.PINK_GLAZED_TERRACOTTA_PILLAR, "Pink Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR, "Light Gray Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.GRAY_GLAZED_TERRACOTTA_PILLAR, "Gray Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.CYAN_GLAZED_TERRACOTTA_PILLAR, "Cyan Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.PURPLE_GLAZED_TERRACOTTA_PILLAR, "Purple Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.BLUE_GLAZED_TERRACOTTA_PILLAR, "Blue Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.BROWN_GLAZED_TERRACOTTA_PILLAR, "Brown Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.GREEN_GLAZED_TERRACOTTA_PILLAR, "Green Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.RED_GLAZED_TERRACOTTA_PILLAR, "Red Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.BLACK_GLAZED_TERRACOTTA_PILLAR, "Black Glazed Terracotta Pillar");
+        for (var entry : BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Glazed Terracotta Pillar");
+        }
 
         // Asphalt
         addAsphalt(translationBuilder, BlockusBlocks.ASPHALT, "Asphalt");
@@ -549,36 +497,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_LAMP, "Rainbow Lamp");
         translationBuilder.add(BlockusBlocks.RAINBOW_LAMP_LIT, "Lit Rainbow Lamp");
         translationBuilder.add(BlockusBlocks.REDSTONE_LAMP_LIT, "Lit Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.WHITE_REDSTONE_LAMP, "White Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.WHITE_REDSTONE_LAMP_LIT, "Lit White Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.ORANGE_REDSTONE_LAMP, "Orange Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.ORANGE_REDSTONE_LAMP_LIT, "Lit Orange Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP, "Magenta Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT, "Lit Magenta Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP, "Light Blue Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP_LIT, "Lit Light Blue Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.YELLOW_REDSTONE_LAMP, "Yellow Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT, "Lit Yellow Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIME_REDSTONE_LAMP, "Lime Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIME_REDSTONE_LAMP_LIT, "Lit Lime Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.PINK_REDSTONE_LAMP, "Pink Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.PINK_REDSTONE_LAMP_LIT, "Lit Pink Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.GRAY_REDSTONE_LAMP, "Gray Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.GRAY_REDSTONE_LAMP_LIT, "Lit Gray Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP, "Light Gray Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP_LIT, "Lit Light Gray Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.CYAN_REDSTONE_LAMP, "Cyan Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.CYAN_REDSTONE_LAMP_LIT, "Lit Cyan Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.PURPLE_REDSTONE_LAMP, "Purple Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.PURPLE_REDSTONE_LAMP_LIT, "Lit Purple Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.BLUE_REDSTONE_LAMP, "Blue Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.BLUE_REDSTONE_LAMP_LIT, "Lit Blue Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.BROWN_REDSTONE_LAMP, "Brown Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.BROWN_REDSTONE_LAMP_LIT, "Lit Brown Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.GREEN_REDSTONE_LAMP, "Green Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.GREEN_REDSTONE_LAMP_LIT, "Lit Green Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.RED_REDSTONE_LAMP, "Red Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.RED_REDSTONE_LAMP_LIT, "Lit Red Redstone Lamp");
+        for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Redstone Lamp");
+        }
+        for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), "Lit " + colorName(entry.getKey()) + " Redstone Lamp");
+        }
 
         // Food Crates
         translationBuilder.add(BlockusBlocks.COD_CRATE, "Cod Crate");
@@ -649,42 +573,16 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addWoolBundle(translationBuilder, BlockusBlocks.BLACK_GINGHAM_WOOL, "Black Gingham Wool");
 
         // Neons
-        translationBuilder.add(BlockusBlocks.WHITE_NEON, "White Neon");
-        translationBuilder.add(BlockusBlocks.ORANGE_NEON, "Orange Neon");
-        translationBuilder.add(BlockusBlocks.MAGENTA_NEON, "Magenta Neon");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_NEON, "Light Blue Neon");
-        translationBuilder.add(BlockusBlocks.YELLOW_NEON, "Yellow Neon");
-        translationBuilder.add(BlockusBlocks.LIME_NEON, "Lime Neon");
-        translationBuilder.add(BlockusBlocks.PINK_NEON, "Pink Neon");
-        translationBuilder.add(BlockusBlocks.GRAY_NEON, "Gray Neon");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_NEON, "Light Gray Neon");
-        translationBuilder.add(BlockusBlocks.CYAN_NEON, "Cyan Neon");
-        translationBuilder.add(BlockusBlocks.PURPLE_NEON, "Purple Neon");
-        translationBuilder.add(BlockusBlocks.BLUE_NEON, "Blue Neon");
-        translationBuilder.add(BlockusBlocks.BROWN_NEON, "Brown Neon");
-        translationBuilder.add(BlockusBlocks.GREEN_NEON, "Green Neon");
-        translationBuilder.add(BlockusBlocks.RED_NEON, "Red Neon");
-        translationBuilder.add(BlockusBlocks.BLACK_NEON, "Black Neon");
+        for (var entry : BlockusBlocks.NEON_BLOCK.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Neon");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_NEON, "Rainbow Neon");
 
         // Futurneo Blocks
-        translationBuilder.add(BlockusBlocks.WHITE_FUTURNEO_BLOCK, "White Futurneo Block");
-        translationBuilder.add(BlockusBlocks.ORANGE_FUTURNEO_BLOCK, "Orange Futurneo Block");
-        translationBuilder.add(BlockusBlocks.MAGENTA_FUTURNEO_BLOCK, "Magenta Futurneo Block");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_FUTURNEO_BLOCK, "Light Blue Futurneo Block");
-        translationBuilder.add(BlockusBlocks.YELLOW_FUTURNEO_BLOCK, "Yellow Futurneo Block");
-        translationBuilder.add(BlockusBlocks.LIME_FUTURNEO_BLOCK, "Lime Futurneo Block");
-        translationBuilder.add(BlockusBlocks.PINK_FUTURNEO_BLOCK, "Pink Futurneo Block");
-        translationBuilder.add(BlockusBlocks.GRAY_FUTURNEO_BLOCK, "Gray Futurneo Block");
+        for (var entry : BlockusBlocks.FUTURNEO_BLOCK.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Futurneo Block");
+        }
         translationBuilder.add(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK, "Gray Bright Futurneo Block");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_FUTURNEO_BLOCK, "Light Gray Futurneo Block");
-        translationBuilder.add(BlockusBlocks.CYAN_FUTURNEO_BLOCK, "Cyan Futurneo Block");
-        translationBuilder.add(BlockusBlocks.PURPLE_FUTURNEO_BLOCK, "Purple Futurneo Block");
-        translationBuilder.add(BlockusBlocks.BLUE_FUTURNEO_BLOCK, "Blue Futurneo Block");
-        translationBuilder.add(BlockusBlocks.BROWN_FUTURNEO_BLOCK, "Brown Futurneo Block");
-        translationBuilder.add(BlockusBlocks.GREEN_FUTURNEO_BLOCK, "Green Futurneo Block");
-        translationBuilder.add(BlockusBlocks.RED_FUTURNEO_BLOCK, "Red Futurneo Block");
-        translationBuilder.add(BlockusBlocks.BLACK_FUTURNEO_BLOCK, "Black Futurneo Block");
         translationBuilder.add(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK, "Rainbow Futurneo Block");
 
         // Large flower pot
@@ -987,10 +885,14 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBlockStairsSlabWall(translationBuilder, waxedString, bundle.blockWaxed(), bundle.stairsWaxed(), bundle.slabWaxed(), bundle.wallWaxed());
     }
 
+    public static String colorName(DyeColor color) {
+        return Arrays.stream(color.getId().split("_"))
+            .map(string -> string.substring(0,1).toUpperCase() + string.substring(1))
+            .collect(Collectors.joining(" "));
+    }
+
     public static String colorName(Map.Entry<DyeColor, BSSWBundle> entry) {
         DyeColor color = entry.getKey();
-        return Arrays.stream(color.name().toLowerCase().split("_"))
-            .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
-            .collect(Collectors.joining(" "));
+        return colorName(color);
     }
 }

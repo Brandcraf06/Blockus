@@ -17,9 +17,11 @@ import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.Item;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
+import static com.brand.blockus.registry.content.BlockusBlocks.*;
 import static net.minecraft.client.data.BlockStateModelGenerator.*;
 import static net.minecraft.registry.Registries.BLOCK;
 
@@ -421,100 +423,36 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Redstone Lamps
         this.registerLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.REDSTONE_LAMP_LIT);
         this.registerRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.RAINBOW_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.BLUE_REDSTONE_LAMP, BlockusBlocks.BLUE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.BROWN_REDSTONE_LAMP, BlockusBlocks.BROWN_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.CYAN_REDSTONE_LAMP, BlockusBlocks.CYAN_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.GRAY_REDSTONE_LAMP, BlockusBlocks.GRAY_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.GREEN_REDSTONE_LAMP, BlockusBlocks.GREEN_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP, BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP, BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.LIME_REDSTONE_LAMP, BlockusBlocks.LIME_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.MAGENTA_REDSTONE_LAMP, BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.ORANGE_REDSTONE_LAMP, BlockusBlocks.ORANGE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.PINK_REDSTONE_LAMP, BlockusBlocks.PINK_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.PURPLE_REDSTONE_LAMP, BlockusBlocks.PURPLE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.RED_REDSTONE_LAMP, BlockusBlocks.RED_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.WHITE_REDSTONE_LAMP, BlockusBlocks.WHITE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.YELLOW_REDSTONE_LAMP, BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT);
+        for (DyeColor color : DyeColor.values()) {
+            this.registerRedstoneLamp(modelGenerator, STAINED_REDSTONE_LAMP.colorMap().get(color), BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().get(color));
+        }
 
         // Neon Blocks
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.BLACK_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.BLUE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.BROWN_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.CYAN_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.GRAY_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.GREEN_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIGHT_BLUE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIGHT_GRAY_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIME_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.MAGENTA_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.ORANGE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.PINK_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.PURPLE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.RED_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.WHITE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.YELLOW_NEON);
+        for (Block block : NEON_BLOCK.colorMap().values()) {
+            this.registerNeonBlock(modelGenerator, block);
+        }
         this.registerNeonBlock(modelGenerator, BlockusBlocks.RAINBOW_NEON);
 
         // Futurneo Blocks
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.BLACK_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.BLUE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.BROWN_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.CYAN_FUTURNEO_BLOCK);
+        for (Block block : FUTURNEO_BLOCK.colorMap().values()) {
+            modelGenerator.registerSimpleCubeAll(block);
+        }
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.GRAY_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.GREEN_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIGHT_BLUE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIGHT_GRAY_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIME_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.MAGENTA_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.ORANGE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.PINK_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.PURPLE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.RED_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.WHITE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.YELLOW_FUTURNEO_BLOCK);
+        modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
 
         // Glass - Beveled Glass
         this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.RAINBOW_BEVELED_GLASS, BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
         modelGenerator.registerGlassAndPane(BlockusBlocks.RAINBOW_GLASS, BlockusBlocks.RAINBOW_GLASS_PANE);
         this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BEVELED_GLASS, BlockusBlocks.BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BLACK_BEVELED_GLASS, BlockusBlocks.BLACK_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BLUE_BEVELED_GLASS, BlockusBlocks.BLUE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BROWN_BEVELED_GLASS, BlockusBlocks.BROWN_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.CYAN_BEVELED_GLASS, BlockusBlocks.CYAN_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.GRAY_BEVELED_GLASS, BlockusBlocks.GRAY_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.GREEN_BEVELED_GLASS, BlockusBlocks.GREEN_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS, BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS, BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.LIME_BEVELED_GLASS, BlockusBlocks.LIME_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.MAGENTA_BEVELED_GLASS, BlockusBlocks.MAGENTA_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.ORANGE_BEVELED_GLASS, BlockusBlocks.ORANGE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.PINK_BEVELED_GLASS, BlockusBlocks.PINK_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.PURPLE_BEVELED_GLASS, BlockusBlocks.PURPLE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.RED_BEVELED_GLASS, BlockusBlocks.RED_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.WHITE_BEVELED_GLASS, BlockusBlocks.WHITE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.YELLOW_BEVELED_GLASS, BlockusBlocks.YELLOW_BEVELED_GLASS_PANE);
+        for (DyeColor color : DyeColor.values()) {
+            this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().get(color), BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
+        }
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.TINTED_BEVELED_GLASS);
 
         // Glazed Terracotta Pillars
-        this.registerPillar(modelGenerator, BlockusBlocks.BLACK_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.BLUE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.BROWN_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.CYAN_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.GRAY_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.GREEN_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.LIME_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.MAGENTA_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.ORANGE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.PINK_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.PURPLE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.RED_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.WHITE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.YELLOW_GLAZED_TERRACOTTA_PILLAR);
+        for (Block block : GLAZED_TERRACOTTA_PILLAR.colorMap().values()) {
+            this.registerPillar(modelGenerator, block);
+        }
 
         // Paper
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.BURNT_PAPER_BLOCK);
@@ -563,22 +501,9 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Colored Tiles
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.BLACK_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.BLUE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.BROWN_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.CYAN_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.GRAY_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.GREEN_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.LIGHT_BLUE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.LIGHT_GRAY_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.LIME_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.MAGENTA_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.ORANGE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.PINK_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.PURPLE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.RED_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.WHITE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.YELLOW_COLORED_TILES);
+        for (DyeColor color : DyeColor.values()) {
+            this.registerColoredTilesSimple(modelGenerator, COLORED_TILES.colorMap().get(color));
+        }
 
         // Other
         this.registerStairsAndSlab(modelGenerator, BlockusBlocks.NETHERITE_STAIRS, BlockusBlocks.NETHERITE_SLAB, Blocks.NETHERITE_BLOCK);
