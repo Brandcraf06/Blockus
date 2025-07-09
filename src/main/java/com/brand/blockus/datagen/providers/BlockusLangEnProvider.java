@@ -80,28 +80,15 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         }
 
         // Shingles
+        addBssw(translationBuilder, BlockusBlocks.SHINGLES, "Shingles");
         for (var entry : BlockusBlocks.STAINED_SHINGLES.colorMap().entrySet()) {
             addBssw(translationBuilder, entry.getValue(), colorName(entry) + " Shingles");
         }
-        addBssw(translationBuilder, BlockusBlocks.SHINGLES, "Shingles");
 
         // Concrete
-        addConcrete(translationBuilder, BlockusBlocks.WHITE_CONCRETE_BRICKS, "White Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.ORANGE_CONCRETE_BRICKS, "Orange Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.MAGENTA_CONCRETE_BRICKS, "Magenta Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS, "Light Blue Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.YELLOW_CONCRETE_BRICKS, "Yellow Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.LIME_CONCRETE_BRICKS, "Lime Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.PINK_CONCRETE_BRICKS, "Pink Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.GRAY_CONCRETE_BRICKS, "Gray Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS, "Light Gray Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.CYAN_CONCRETE_BRICKS, "Cyan Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.PURPLE_CONCRETE_BRICKS, "Purple Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.BLUE_CONCRETE_BRICKS, "Blue Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.BROWN_CONCRETE_BRICKS, "Brown Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.GREEN_CONCRETE_BRICKS, "Green Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.RED_CONCRETE_BRICKS, "Red Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.BLACK_CONCRETE_BRICKS, "Black Concrete Bricks");
+        for (var entry : BlockusBlocks.CONCRETE_BRICKS.colorMap().entrySet()) {
+            addConcrete(translationBuilder, entry.getValue(), colorName(entry.getKey()) + " Concrete Bricks");
+        }
 
         // Basalt
         addBssw(translationBuilder, BlockusBlocks.ROUGH_BASALT, "Rough Basalt");
@@ -390,22 +377,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         }
 
         // Asphalt
-        addAsphalt(translationBuilder, BlockusBlocks.ASPHALT, "Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.WHITE_ASPHALT, "White Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.ORANGE_ASPHALT, "Orange Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.MAGENTA_ASPHALT, "Magenta Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.LIGHT_BLUE_ASPHALT, "Light Blue Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.YELLOW_ASPHALT, "Yellow Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.LIME_ASPHALT, "Lime Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.PINK_ASPHALT, "Pink Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.LIGHT_GRAY_ASPHALT, "Light Gray Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.GRAY_ASPHALT, "Gray Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.CYAN_ASPHALT, "Cyan Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.PURPLE_ASPHALT, "Purple Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.BLUE_ASPHALT, "Blue Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.BROWN_ASPHALT, "Brown Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.GREEN_ASPHALT, "Green Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.RED_ASPHALT, "Red Asphalt");
+        for (var entry : BlockusBlocks.ASPHALT.colorMap().entrySet()) {
+            addAsphalt(translationBuilder, entry.getValue(), entry.getKey() == DyeColor.BLACK ? "Asphalt" : colorName(entry.getKey()) + " Asphalt");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_ASPHALT, "Rainbow Asphalt");
 
         // Obsidian
@@ -538,39 +512,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.CRIMSON_HEDGE, "Crimson Hedge");
 
         // Patterned Wools
-        addWoolBundle(translationBuilder, BlockusBlocks.WHITE_PATTERNED_WOOL, "White Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.ORANGE_PATTERNED_WOOL, "Orange Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.MAGENTA_PATTERNED_WOOL, "Magenta Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL, "Light Blue Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.YELLOW_PATTERNED_WOOL, "Yellow Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIME_PATTERNED_WOOL, "Lime Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.PINK_PATTERNED_WOOL, "Pink Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.GRAY_PATTERNED_WOOL, "Gray Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL, "Light Gray Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.CYAN_PATTERNED_WOOL, "Cyan Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.PURPLE_PATTERNED_WOOL, "Purple Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BLUE_PATTERNED_WOOL, "Blue Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BROWN_PATTERNED_WOOL, "Brown Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.GREEN_PATTERNED_WOOL, "Green Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.RED_PATTERNED_WOOL, "Red Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BLACK_PATTERNED_WOOL, "Black Patterned Wool");
-
-        addWoolBundle(translationBuilder, BlockusBlocks.WHITE_GINGHAM_WOOL, "White Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.ORANGE_GINGHAM_WOOL, "Orange Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.MAGENTA_GINGHAM_WOOL, "Magenta Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIGHT_BLUE_GINGHAM_WOOL, "Light Blue Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.YELLOW_GINGHAM_WOOL, "Yellow Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIME_GINGHAM_WOOL, "Lime Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.PINK_GINGHAM_WOOL, "Pink Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.GRAY_GINGHAM_WOOL, "Gray Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIGHT_GRAY_GINGHAM_WOOL, "Light Gray Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.CYAN_GINGHAM_WOOL, "Cyan Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.PURPLE_GINGHAM_WOOL, "Purple Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BLUE_GINGHAM_WOOL, "Blue Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BROWN_GINGHAM_WOOL, "Brown Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.GREEN_GINGHAM_WOOL, "Green Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.RED_GINGHAM_WOOL, "Red Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BLACK_GINGHAM_WOOL, "Black Gingham Wool");
+        for (var entry : BlockusBlocks.PATTERNED_WOOL.colorMap().entrySet()) {
+            addWoolBundle(translationBuilder, entry.getValue(), colorName(entry.getKey()) + " Patterned Wool");
+        }
+        for (var entry : BlockusBlocks.GINGHAM_WOOL.colorMap().entrySet()) {
+            addWoolBundle(translationBuilder, entry.getValue(), colorName(entry.getKey()) + " Gingham Wool");
+        }
 
         // Neons
         for (var entry : BlockusBlocks.NEON_BLOCK.colorMap().entrySet()) {
@@ -860,7 +807,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
     }
 
     // Concrete
-    public static void addConcrete(TranslationBuilder translationBuilder, ConcreteBundle bundle, String string) {
+    public static void addConcrete(TranslationBuilder translationBuilder, ConcreteBundle.ConcreteVariants bundle, String string) {
         String removeBricks = string.replace(" Bricks", "");
         addBlockStairsSlabWall(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
         translationBuilder.add(bundle.chiseled(), "Chiseled " + removeBricks);
@@ -868,14 +815,14 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
     }
 
     // Patterned Wools
-    public static void addWoolBundle(TranslationBuilder translationBuilder, WoolBundle bundle, String string) {
+    public static void addWoolBundle(TranslationBuilder translationBuilder, WoolBundle.WoolVariants bundle, String string) {
         addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
         translationBuilder.add(bundle.carpet(), string.replace("Wool", "Carpet"));
     }
 
     // Asphalt
-    public static void addAsphalt(TranslationBuilder translationBuilder, AsphaltBundle bundle, String string) {
-        addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
+    public static void addAsphalt(TranslationBuilder translationBuilder, AsphaltBundle.AsphaltVariants bundle, String name) {
+        addBlockStairsSlab(translationBuilder, name, bundle.block(), bundle.stairs(), bundle.slab());
     }
 
     // Copper

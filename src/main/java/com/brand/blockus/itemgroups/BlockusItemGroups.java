@@ -12,7 +12,10 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
+
+import static com.brand.blockus.registry.content.BlockusBlocks.ASPHALT;
 
 public class BlockusItemGroups {
 
@@ -32,7 +35,7 @@ public class BlockusItemGroups {
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_COLORED_BLOCKS, FabricItemGroup.builder()
             .displayName(Text.translatable("itemGroup.blockus_colored").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(BlockusBlocks.LIME_ASPHALT.block()))
+            .icon(() -> new ItemStack(ASPHALT.colorMap().get(DyeColor.LIME).block()))
             .build()
         );
         Registry.register(Registries.ITEM_GROUP, BLOCKUS_COLORED_TILES, FabricItemGroup.builder()

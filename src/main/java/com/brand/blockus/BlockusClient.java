@@ -4,7 +4,6 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
 import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
-import com.brand.blockus.utils.helper.BlockMaps;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
@@ -13,9 +12,6 @@ import net.minecraft.block.*;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.util.DyeColor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 

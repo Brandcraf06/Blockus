@@ -2,6 +2,7 @@ package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -58,8 +59,10 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
         for (ConcreteBundle concrete : ConcreteBundle.values()) {
-            this.addBlockStairsandSlabDrops(concrete.block(), concrete.stairs(), concrete.slab());
-            this.addDrops(concrete.wall(), concrete.chiseled(), concrete.pillar());
+            for (ConcreteBundle.ConcreteVariants variants : concrete.colorMap().values()) {
+                this.addBlockStairsandSlabDrops(variants.block(), variants.stairs(), variants.slab());
+                this.addDrops(variants.wall(), variants.chiseled(), variants.pillar());
+            }
         }
 
         for (WoodBundle woodBundle : WoodBundle.values()) {
@@ -82,7 +85,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             }
         }
 
-        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+        for (AsphaltBundle.AsphaltVariants asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
             this.addBlockStairsandSlabDrops(asphaltBundle.block(), asphaltBundle.stairs(), asphaltBundle.slab());
         }
 
@@ -91,8 +94,10 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            this.addBlockStairsandSlabDrops(woolBundle.block(), woolBundle.stairs(), woolBundle.slab());
-            this.addDrop(woolBundle.carpet());
+            for (WoolBundle.WoolVariants variants : woolBundle.colorMap().values()) {
+                this.addBlockStairsandSlabDrops(variants.block(), variants.stairs(), variants.slab());
+                this.addDrop(variants.carpet());
+            }
         }
 
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
@@ -104,8 +109,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             this.addDrop(woodenPost.stripped());
         }
 
-        for (StainedBlockBundle bundle : List.of(NEON_BLOCK, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, STAINED_REDSTONE_LAMP, STAINED_REDSTONE_LAMP_LIT, COLORED_TILES)) {
-            bundle.colorMap().values().forEach(this::addDrops);
+        for (StainedBlockBundle stainedBlockBundle : List.of(NEON_BLOCK, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, STAINED_REDSTONE_LAMP, STAINED_REDSTONE_LAMP_LIT, COLORED_TILES)) {
+            stainedBlockBundle.colorMap().values().forEach(this::addDrops);
         }
 
         this.addDrops(CHISELED_MUD_BRICKS,

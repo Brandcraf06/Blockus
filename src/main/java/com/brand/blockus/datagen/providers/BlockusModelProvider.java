@@ -62,10 +62,12 @@ public class BlockusModelProvider extends FabricModelProvider {
             }
         }
 
-        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-            this.registerBlockStairsSlabAndWall(modelGenerator, concreteType.block(), concreteType.stairs(), concreteType.slab(), concreteType.wall());
-            modelGenerator.registerSimpleCubeAll(concreteType.chiseled());
-            this.registerPillar(modelGenerator, concreteType.pillar());
+        for (ConcreteBundle concrete : ConcreteBundle.values()) {
+            for (ConcreteBundle.ConcreteVariants variants : concrete.colorMap().values()) {
+                this.registerBlockStairsSlabAndWall(modelGenerator, variants.block(), variants.stairs(), variants.slab(), variants.wall());
+                modelGenerator.registerSimpleCubeAll(variants.chiseled());
+                this.registerPillar(modelGenerator, variants.pillar());
+            }
         }
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
@@ -75,13 +77,15 @@ public class BlockusModelProvider extends FabricModelProvider {
             modelGenerator.registerGlassAndPane(timberFrameBundle.grate(), timberFrameBundle.lattice());
         }
 
-        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+        for (AsphaltBundle.AsphaltVariants asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
             this.registerBlockStairsAndSlab(modelGenerator, asphaltBundle.block(), asphaltBundle.stairs(), asphaltBundle.slab());
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, woolBundle.block(), woolBundle.stairs(), woolBundle.slab());
-            this.registerCarpet(modelGenerator, woolBundle.block(), woolBundle.carpet());
+            for (WoolBundle.WoolVariants variants : woolBundle.colorMap().values()) {
+                this.registerBlockStairsAndSlab(modelGenerator, variants.block(), variants.stairs(), variants.slab());
+                this.registerCarpet(modelGenerator, variants.block(), variants.carpet());
+            }
         }
 
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {

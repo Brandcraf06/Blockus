@@ -11,28 +11,27 @@ import java.util.function.Function;
 public record StainedBlockBundle(Map<DyeColor, Block> colorMap) {
 
     public static StainedBlockBundle of(String id, BiFunction<String, DyeColor, Block> blockProvider) {
-        Map<DyeColor, Block> map = new EnumMap<>(DyeColor.class);
+        Map<DyeColor, Block> colorMap = new EnumMap<>(DyeColor.class);
         for (DyeColor color : DyeColor.values()) {
-            map.put(color, blockProvider.apply(color.getId() + "_" + id, color));
+            colorMap.put(color, blockProvider.apply(color.getId() + "_" + id, color));
         }
-        return new StainedBlockBundle(Map.copyOf(map));
+        return new StainedBlockBundle(Map.copyOf(colorMap));
     }
 
-    public static StainedBlockBundle of(Map<DyeColor, Block> baseBlockMap, Function<Block, Block> blockFactory) {
-        Map<DyeColor, Block> map = new EnumMap<>(DyeColor.class);
+    public static StainedBlockBundle of(Map<DyeColor, Block> baseBlockColorMap, Function<Block, Block> blockFactory) {
+        Map<DyeColor, Block> colorMap = new EnumMap<>(DyeColor.class);
         for (DyeColor color : DyeColor.values()) {
-            map.put(color, blockFactory.apply(baseBlockMap.get(color)));
+            colorMap.put(color, blockFactory.apply(baseBlockColorMap.get(color)));
         }
-        return new StainedBlockBundle(Map.copyOf(map));
+        return new StainedBlockBundle(Map.copyOf(colorMap));
     }
 
-    public static StainedBlockBundle of(String id, Map<DyeColor, Block> baseBlockMap, BiFunction<String, Block, Block> blockFactory) {
-        Map<DyeColor, Block> map = new EnumMap<>(DyeColor.class);
+    public static StainedBlockBundle of(String id, Map<DyeColor, Block> baseBlockColorMap, BiFunction<String, Block, Block> blockFactory) {
+        Map<DyeColor, Block> colorMap = new EnumMap<>(DyeColor.class);
         for (DyeColor color : DyeColor.values()) {
-            Block base = baseBlockMap.get(color);
-            map.put(color, blockFactory.apply(color.getId() + "_" + id, base));
+            colorMap.put(color, blockFactory.apply(color.getId() + "_" + id, baseBlockColorMap.get(color)));
         }
-        return new StainedBlockBundle(Map.copyOf(map));
+        return new StainedBlockBundle(Map.copyOf(colorMap));
     }
 
     public Block[] all() {

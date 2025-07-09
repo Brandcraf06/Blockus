@@ -24,7 +24,9 @@ public class BlockMaps {
                 getBlock(color, "_glazed_terracotta"),
                 getBlock(color, "_stained_glass"),
                 getBlock(color, "_stained_glass_pane"),
-                getBlock(color, "_concrete")
+                getBlock(color, "_concrete"),
+                getBlock(color, "_wool"),
+                getBlock(color, "_carpet")
             ));
         }
         COLOR_DATA = Map.copyOf(map);
@@ -35,6 +37,8 @@ public class BlockMaps {
     public static final Map<DyeColor, Block> STAINED_GLASS_MAP = extract(ColorData::stainedGlass);
     public static final Map<DyeColor, Block> STAINED_GLASS_PANE_MAP = extract(ColorData::stainedGlassPane);
     public static final Map<DyeColor, Block> CONCRETE_MAP = extract(ColorData::concrete);
+    public static final Map<DyeColor, Block> WOOL_MAP = extract(ColorData::wool);
+    public static final Map<DyeColor, Block> CARPET_MAP = extract(ColorData::carpet);
     public static final Map<DyeColor, MapColor> COLOR_MAP = ImmutableMap.<DyeColor, MapColor>builder()
         .put(DyeColor.WHITE, MapColor.WHITE)
         .put(DyeColor.LIGHT_GRAY, MapColor.LIGHT_GRAY)
@@ -55,7 +59,7 @@ public class BlockMaps {
         .build();
 
     public static Block getBlock(DyeColor color, String suffix) {
-        return Registries.BLOCK.get(Identifier.of("minecraft", color.name().toLowerCase() + suffix));
+        return Registries.BLOCK.get(Identifier.ofVanilla(color.name().toLowerCase() + suffix));
     }
 
     public static <T> Map<DyeColor, T> extract(Function<ColorData, T> mapper) {
@@ -68,6 +72,9 @@ public class BlockMaps {
         Block glazedTerracotta,
         Block stainedGlass,
         Block stainedGlassPane,
-        Block concrete) {
+        Block concrete,
+        Block wool,
+        Block carpet
+    ) {
     }
 }

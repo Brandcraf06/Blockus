@@ -72,13 +72,17 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 }
 
                 for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-                    offerStonecuttingRecipe(concreteType.block(), concreteType.base());
-                    offerStonecuttingRecipe(concreteType.stairs(), concreteType.base(), concreteType.block());
-                    offerStonecuttingRecipe(concreteType.slab(), 2, concreteType.base(), concreteType.block());
-                    offerStonecuttingRecipe(concreteType.wall(), concreteType.base(), concreteType.block());
-                    offerStonecuttingRecipe(concreteType.chiseled(), concreteType.base(), concreteType.block());
-                    offerStonecuttingRecipe(concreteType.pillar(), concreteType.base(), concreteType.block());
-                    offerPolishedStoneRecipe(concreteType.block(), concreteType.base());
+                    for (Map.Entry<DyeColor, ConcreteBundle.ConcreteVariants> entry : concreteType.colorMap().entrySet()) {
+                        ConcreteBundle.ConcreteVariants variants = entry.getValue();
+                        Block base = BlockMaps.CONCRETE_MAP.get(entry.getKey());
+                        offerStonecuttingRecipe(variants.block(), base);
+                        offerStonecuttingRecipe(variants.stairs(), base, variants.block());
+                        offerStonecuttingRecipe(variants.slab(), 2, base, variants.block());
+                        offerStonecuttingRecipe(variants.wall(), base, variants.block());
+                        offerStonecuttingRecipe(variants.chiseled(), base, variants.block());
+                        offerStonecuttingRecipe(variants.pillar(), base, variants.block());
+                        offerPolishedStoneRecipe(variants.block(), base);
+                    }
                 }
 
                 for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
@@ -86,7 +90,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                     createLatticeRecipes(timberFrameBundle.base(), timberFrameBundle.lattice(), timberFrameBundle.grate());
                 }
 
-                for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
+                for (AsphaltBundle.AsphaltVariants asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
                     offerStairsRecipe(asphaltBundle.stairs(), asphaltBundle.block());
                     offerSlabRecipe(RecipeCategory.BUILDING_BLOCKS, asphaltBundle.slab(), asphaltBundle.block());
                     offerStonecuttingRecipe(asphaltBundle.stairs(), asphaltBundle.block());
@@ -94,14 +98,18 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 }
 
                 for (WoolBundle woolBundle : WoolBundle.values()) {
-                    if (woolBundle.typeSuffix().equals(WoolBundle.PATTERNED)) {
-                        offerPatternedWoolRecipe(woolBundle.block(), woolBundle.basewool(), woolBundle.carpet(), woolBundle.basecarpet());
-                    } else if (woolBundle.typeSuffix().equals(WoolBundle.GINGHAM)) {
-                        offerGinghamWoolRecipe(woolBundle.block(), woolBundle.basewool());
+                    for (Map.Entry<DyeColor, WoolBundle.WoolVariants> entry : woolBundle.colorMap().entrySet()) {
+                        WoolBundle.WoolVariants variants = entry.getValue();
+                        if (woolBundle == BlockusBlocks.PATTERNED_WOOL) {
+                            offerPatternedWoolRecipe(variants.block(), BlockMaps.WOOL_MAP.get(entry.getKey()), variants.carpet(), BlockMaps.CARPET_MAP.get(entry.getKey()));
+                        } else if (woolBundle == BlockusBlocks.GINGHAM_WOOL) {
+                            offerGinghamWoolRecipe(variants.block(), BlockMaps.WOOL_MAP.get(entry.getKey()));
+                        }
+
+                        offerStairsRecipe(variants.stairs(), variants.block());
+                        offerSlabRecipe(RecipeCategory.BUILDING_BLOCKS, variants.slab(), variants.block());
+                        offerCarpetRecipe(variants.carpet(), variants.block());
                     }
-                    offerStairsRecipe(woolBundle.stairs(), woolBundle.block());
-                    offerSlabRecipe(RecipeCategory.BUILDING_BLOCKS, woolBundle.slab(), woolBundle.block());
-                    offerCarpetRecipe(woolBundle.carpet(), woolBundle.block());
                 }
 
                 for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
@@ -704,9 +712,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 // Colored Stone Bricks
                 for (DyeColor color : DyeColor.values()) {
                     BSSWBundle bundle = STAINED_STONE_BRICKS.colorMap().get(color);
-                    if (bundle != null) {
-                        offerStainedStoneBricksRecipe(DYE_MAP.get(color), bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
-                    }
+                    offerStainedStoneBricksRecipe(DYE_MAP.get(color), bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
                 }
 
                 // Redstone Lamps
@@ -719,7 +725,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 // Neon Blocks
                 for (DyeColor color : DyeColor.values()) {
                     Block block = NEON_BLOCK.colorMap().get(color);
-                        offerNeonRecipe(block, DYE_MAP.get(color));
+                    offerNeonRecipe(block, DYE_MAP.get(color));
                 }
                 offerNeonRecipe(RAINBOW_NEON, RAINBOW_PETALS);
 
@@ -732,26 +738,16 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerFuturneoRecipe(RAINBOW_FUTURNEO_BLOCK, RAINBOW_GLASS);
 
                 // Asphalt
-                createShaped(RecipeCategory.BUILDING_BLOCKS, ASPHALT.block(), 8).input('X', Blocks.GRAVEL).input('#', ItemTags.COALS).pattern("XXX").pattern("X#X").pattern("XXX").group("asphalt").criterion(hasItem(Blocks.GRAVEL), conditionsFromItem(Blocks.GRAVEL)).offerTo(exporter);
-                createEnclosedRecipe(RAINBOW_ASPHALT, Ingredient.ofItems(ASPHALT.block()), RAINBOW_PETALS).criterion(hasItem(ASPHALT.block()), conditionsFromItem(ASPHALT.block())).offerTo(exporter);
-                offerAsphaltRecipe(Items.WHITE_DYE, WHITE_ASPHALT.block(), WHITE_ASPHALT.stairs(), WHITE_ASPHALT.slab());
-                offerAsphaltRecipe(Items.ORANGE_DYE, ORANGE_ASPHALT.block(), ORANGE_ASPHALT.stairs(), ORANGE_ASPHALT.slab());
-                offerAsphaltRecipe(Items.MAGENTA_DYE, MAGENTA_ASPHALT.block(), MAGENTA_ASPHALT.stairs(), MAGENTA_ASPHALT.slab());
-                offerAsphaltRecipe(Items.LIGHT_BLUE_DYE, LIGHT_BLUE_ASPHALT.block(), LIGHT_BLUE_ASPHALT.stairs(), LIGHT_BLUE_ASPHALT.slab());
-                offerAsphaltRecipe(Items.YELLOW_DYE, YELLOW_ASPHALT.block(), YELLOW_ASPHALT.stairs(), YELLOW_ASPHALT.slab());
-                offerAsphaltRecipe(Items.LIME_DYE, LIME_ASPHALT.block(), LIME_ASPHALT.stairs(), LIME_ASPHALT.slab());
-                offerAsphaltRecipe(Items.PINK_DYE, PINK_ASPHALT.block(), PINK_ASPHALT.stairs(), PINK_ASPHALT.slab());
-                offerAsphaltRecipe(Items.LIGHT_GRAY_DYE, LIGHT_GRAY_ASPHALT.block(), LIGHT_GRAY_ASPHALT.stairs(), LIGHT_GRAY_ASPHALT.slab());
-                offerAsphaltRecipe(Items.GRAY_DYE, GRAY_ASPHALT.block(), GRAY_ASPHALT.stairs(), GRAY_ASPHALT.slab());
-                offerAsphaltRecipe(Items.CYAN_DYE, CYAN_ASPHALT.block(), CYAN_ASPHALT.stairs(), CYAN_ASPHALT.slab());
-                offerAsphaltRecipe(Items.PURPLE_DYE, PURPLE_ASPHALT.block(), PURPLE_ASPHALT.stairs(), PURPLE_ASPHALT.slab());
-                offerAsphaltRecipe(Items.BLUE_DYE, BLUE_ASPHALT.block(), BLUE_ASPHALT.stairs(), BLUE_ASPHALT.slab());
-                offerAsphaltRecipe(Items.BROWN_DYE, BROWN_ASPHALT.block(), BROWN_ASPHALT.stairs(), BROWN_ASPHALT.slab());
-                offerAsphaltRecipe(Items.GREEN_DYE, GREEN_ASPHALT.block(), GREEN_ASPHALT.stairs(), GREEN_ASPHALT.slab());
-                offerAsphaltRecipe(Items.RED_DYE, RED_ASPHALT.block(), RED_ASPHALT.stairs(), RED_ASPHALT.slab());
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ASPHALT.baseColor().block(), 8).input('X', Blocks.GRAVEL).input('#', ItemTags.COALS).pattern("XXX").pattern("X#X").pattern("XXX").group("asphalt").criterion(hasItem(Blocks.GRAVEL), conditionsFromItem(Blocks.GRAVEL)).offerTo(exporter);
+                createEnclosedRecipe(RAINBOW_ASPHALT, Ingredient.ofItems(ASPHALT.baseColor().block()), RAINBOW_PETALS).criterion(hasItem(ASPHALT.baseColor().block()), conditionsFromItem(ASPHALT.baseColor().block())).offerTo(exporter);
+
+                for (DyeColor color : DyeColor.values()) {
+                    if (color == DyeColor.BLACK) continue;
+                    AsphaltBundle.AsphaltVariants bundle = ASPHALT.colorMap().get(color);
+                    offerAsphaltRecipe(DYE_MAP.get(color), bundle.block(), bundle.stairs(), bundle.slab());
+                }
 
                 // Shingles
-                
                 offerBsswCuttingRecipe(SHINGLES, Blocks.TERRACOTTA);
                 offerPolishedStoneRecipe(SHINGLES.block(), Blocks.TERRACOTTA);
 
@@ -1031,9 +1027,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             }
 
             public void offerAsphaltRecipe(ItemConvertible center, ItemConvertible output, ItemConvertible output_stairs, ItemConvertible output_slab) {
-                createEnclosedRecipe(output, Ingredient.ofItems(ASPHALT.block()), center).group("asphalt").criterion(hasItem(ASPHALT.block()), conditionsFromItem(ASPHALT.block())).offerTo(exporter);
-                createEnclosedRecipe(output_stairs, Ingredient.ofItems(ASPHALT.stairs()), center).group("asphalt_stairs").criterion(hasItem(ASPHALT.block()), conditionsFromItem(ASPHALT.block())).offerTo(exporter, convertBetween(output_stairs, ASPHALT.stairs()));
-                createEnclosedRecipe(output_slab, Ingredient.ofItems(ASPHALT.slab()), center).group("asphalt_slab").criterion(hasItem(ASPHALT.block()), conditionsFromItem(ASPHALT.block())).offerTo(exporter, convertBetween(output_slab, ASPHALT.slab()));
+                createEnclosedRecipe(output, Ingredient.ofItems(ASPHALT.baseColor().block()), center).group("asphalt").criterion(hasItem(ASPHALT.baseColor().block()), conditionsFromItem(ASPHALT.baseColor().block())).offerTo(exporter);
+                createEnclosedRecipe(output_stairs, Ingredient.ofItems(ASPHALT.baseColor().stairs()), center).group("asphalt_stairs").criterion(hasItem(ASPHALT.baseColor().stairs()), conditionsFromItem(ASPHALT.baseColor().stairs())).offerTo(exporter, convertBetween(output_stairs, ASPHALT.baseColor().stairs()));
+                createEnclosedRecipe(output_slab, Ingredient.ofItems(ASPHALT.baseColor().slab()), center).group("asphalt_slab").criterion(hasItem(ASPHALT.baseColor().slab()), conditionsFromItem(ASPHALT.baseColor().slab())).offerTo(exporter, convertBetween(output_slab, ASPHALT.baseColor().slab()));
             }
 
             public void offerPatternedWoolRecipe(ItemConvertible output, ItemConvertible wool, ItemConvertible output_carpet, ItemConvertible carpet) {

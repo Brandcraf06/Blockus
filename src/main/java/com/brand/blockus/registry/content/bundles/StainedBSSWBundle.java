@@ -57,7 +57,7 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
         }
 
         public StainedBSSWBundle register() {
-            Map<DyeColor, BSSWBundle> colorMap = new HashMap<>();
+            Map<DyeColor, BSSWBundle> colorMap = new EnumMap<>(DyeColor.class);
 
             for (DyeColor color : DyeColor.values()) {
                 String blockPath = color.getId() + "_" + this.id;
@@ -72,9 +72,7 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
                     blockBuilder.settings(s -> s.mapColor(BlockMaps.COLOR_MAP.get(color)));
                 }
 
-                BSSWBundle bundle = BSSWBundle.of(blockPath, blockBuilder)
-                    .includeWall(includeWall)
-                    .register();
+                BSSWBundle bundle = BSSWBundle.of(blockPath, blockBuilder).includeWall(includeWall).register();
 
                 colorMap.put(color, bundle);
             }

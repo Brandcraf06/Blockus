@@ -69,14 +69,16 @@ public class Instance {
 
         // Patterned wools
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.block(), 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.stairs(), 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.slab(), 30, 60);
-            FlammableBlockRegistry.getDefaultInstance().add(woolBundle.carpet(), 60, 20);
-            FuelRegistryEvents.BUILD.register((builder, context) -> {
-                builder.add(woolBundle.stairs(), 100);
-                builder.add(woolBundle.slab(), 50);
-            });
+            for (WoolBundle.WoolVariants blocks : woolBundle.colorMap().values()) {
+                FlammableBlockRegistry.getDefaultInstance().add(blocks.block(), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(blocks.stairs(), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(blocks.slab(), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(blocks.carpet(), 60, 20);
+                FuelRegistryEvents.BUILD.register((builder, context) -> {
+                    builder.add(blocks.stairs(), 100);
+                    builder.add(blocks.slab(), 50);
+                });
+            }
         }
 
         // Wood set

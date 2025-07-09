@@ -30,8 +30,8 @@ public record CopperBundle(
         return LIST;
     }
 
-    public static CopperBundle.Builder of(String type, OxidationType oxidation, Block base) {
-        return new CopperBundle.Builder(type, oxidation, base);
+    public static Builder of(String type, OxidationType oxidation, Block base) {
+        return new Builder(type, oxidation, base);
     }
 
     public List<Block> allBlocks() {
@@ -96,7 +96,7 @@ public record CopperBundle(
             this.oxidation = oxidation;
         }
 
-        public com.brand.blockus.registry.content.bundles.CopperBundle register() {
+        public CopperBundle register() {
             String prefix = oxidation.getPrefix();
             OxidationLevel oxidationLevel = oxidation.getLevel();
             Block block = BlockFactory.registerCopy(prefix + type, (settings) -> new OxidizableBlock(oxidation.getLevel(), settings), base);

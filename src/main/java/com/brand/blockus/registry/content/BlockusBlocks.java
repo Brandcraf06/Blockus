@@ -26,6 +26,8 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.ColorCode;
 import net.minecraft.util.DyeColor;
 
+import java.util.Map;
+
 public class BlockusBlocks extends BlockFactory {
 
     // Stone
@@ -559,22 +561,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final StainedBSSWBundle STAINED_STONE_BRICKS = StainedBSSWBundle.of("stone_bricks", Blocks.STONE_BRICKS).useMapColor().register();
 
     // Concrete
-    public static final ConcreteBundle WHITE_CONCRETE_BRICKS = ConcreteBundle.of("white_concrete_bricks", Blocks.WHITE_CONCRETE).register();
-    public static final ConcreteBundle LIGHT_GRAY_CONCRETE_BRICKS = ConcreteBundle.of("light_gray_concrete_bricks", Blocks.LIGHT_GRAY_CONCRETE).register();
-    public static final ConcreteBundle GRAY_CONCRETE_BRICKS = ConcreteBundle.of("gray_concrete_bricks", Blocks.GRAY_CONCRETE).register();
-    public static final ConcreteBundle BLACK_CONCRETE_BRICKS = ConcreteBundle.of("black_concrete_bricks", Blocks.BLACK_CONCRETE).register();
-    public static final ConcreteBundle BROWN_CONCRETE_BRICKS = ConcreteBundle.of("brown_concrete_bricks", Blocks.BROWN_CONCRETE).register();
-    public static final ConcreteBundle RED_CONCRETE_BRICKS = ConcreteBundle.of("red_concrete_bricks", Blocks.RED_CONCRETE).register();
-    public static final ConcreteBundle ORANGE_CONCRETE_BRICKS = ConcreteBundle.of("orange_concrete_bricks", Blocks.ORANGE_CONCRETE).register();
-    public static final ConcreteBundle YELLOW_CONCRETE_BRICKS = ConcreteBundle.of("yellow_concrete_bricks", Blocks.YELLOW_CONCRETE).register();
-    public static final ConcreteBundle LIME_CONCRETE_BRICKS = ConcreteBundle.of("lime_concrete_bricks", Blocks.LIME_CONCRETE).register();
-    public static final ConcreteBundle GREEN_CONCRETE_BRICKS = ConcreteBundle.of("green_concrete_bricks", Blocks.GREEN_CONCRETE).register();
-    public static final ConcreteBundle CYAN_CONCRETE_BRICKS = ConcreteBundle.of("cyan_concrete_bricks", Blocks.CYAN_CONCRETE).register();
-    public static final ConcreteBundle LIGHT_BLUE_CONCRETE_BRICKS = ConcreteBundle.of("light_blue_concrete_bricks", Blocks.LIGHT_BLUE_CONCRETE).register();
-    public static final ConcreteBundle BLUE_CONCRETE_BRICKS = ConcreteBundle.of("blue_concrete_bricks", Blocks.BLUE_CONCRETE).register();
-    public static final ConcreteBundle PURPLE_CONCRETE_BRICKS = ConcreteBundle.of("purple_concrete_bricks", Blocks.PURPLE_CONCRETE).register();
-    public static final ConcreteBundle MAGENTA_CONCRETE_BRICKS = ConcreteBundle.of("magenta_concrete_bricks", Blocks.MAGENTA_CONCRETE).register();
-    public static final ConcreteBundle PINK_CONCRETE_BRICKS = ConcreteBundle.of("pink_concrete_bricks", Blocks.PINK_CONCRETE).register();
+    public static final ConcreteBundle CONCRETE_BRICKS = ConcreteBundle.of("concrete_bricks").register();
 
     // Redstone Lamps
     public static final StainedBlockBundle STAINED_REDSTONE_LAMP = StainedBlockBundle.of("redstone_lamp", (id, color) -> BlockFactory.redstoneLamp(id, BlockMaps.COLOR_MAP.get(color)));
@@ -593,22 +580,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block RAINBOW_FUTURNEO_BLOCK = futurneoBlock("rainbow_futurneo_block", MapColor.BLACK);
 
     // Asphalt
-    public static final AsphaltBundle ASPHALT = AsphaltBundle.of(DyeColor.BLACK).register();
-    public static final AsphaltBundle WHITE_ASPHALT = AsphaltBundle.of(DyeColor.WHITE).register();
-    public static final AsphaltBundle LIGHT_GRAY_ASPHALT = AsphaltBundle.of(DyeColor.LIGHT_GRAY).register();
-    public static final AsphaltBundle GRAY_ASPHALT = AsphaltBundle.of(DyeColor.GRAY).register();
-    public static final AsphaltBundle BROWN_ASPHALT = AsphaltBundle.of(DyeColor.BROWN).register();
-    public static final AsphaltBundle RED_ASPHALT = AsphaltBundle.of(DyeColor.RED).register();
-    public static final AsphaltBundle ORANGE_ASPHALT = AsphaltBundle.of(DyeColor.ORANGE).register();
-    public static final AsphaltBundle YELLOW_ASPHALT = AsphaltBundle.of(DyeColor.YELLOW).register();
-    public static final AsphaltBundle LIME_ASPHALT = AsphaltBundle.of(DyeColor.LIME).register();
-    public static final AsphaltBundle GREEN_ASPHALT = AsphaltBundle.of(DyeColor.GREEN).register();
-    public static final AsphaltBundle CYAN_ASPHALT = AsphaltBundle.of(DyeColor.CYAN).register();
-    public static final AsphaltBundle LIGHT_BLUE_ASPHALT = AsphaltBundle.of(DyeColor.LIGHT_BLUE).register();
-    public static final AsphaltBundle BLUE_ASPHALT = AsphaltBundle.of(DyeColor.BLUE).register();
-    public static final AsphaltBundle PURPLE_ASPHALT = AsphaltBundle.of(DyeColor.PURPLE).register();
-    public static final AsphaltBundle MAGENTA_ASPHALT = AsphaltBundle.of(DyeColor.MAGENTA).register();
-    public static final AsphaltBundle PINK_ASPHALT = AsphaltBundle.of(DyeColor.PINK).register();
+    public static final AsphaltBundle ASPHALT = AsphaltBundle.of().register();
     public static final Block RAINBOW_ASPHALT = registerOf("rainbow_asphalt", RainbowAsphalt::new, create().mapColor(DyeColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool());
 
     // Shingles
@@ -627,40 +599,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS, settings -> settings.allowsSpawning(BlockusBlocks::never).solidBlock(BlockusBlocks::never).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never));
 
     // Patterned Wools
-    public static final WoolBundle WHITE_PATTERNED_WOOL = WoolBundle.of(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET, DyeColor.WHITE).register();
-    public static final WoolBundle LIGHT_GRAY_PATTERNED_WOOL = WoolBundle.of(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY).register();
-    public static final WoolBundle GRAY_PATTERNED_WOOL = WoolBundle.of(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY).register();
-    public static final WoolBundle BLACK_PATTERNED_WOOL = WoolBundle.of(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK).register();
-    public static final WoolBundle BROWN_PATTERNED_WOOL = WoolBundle.of(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN).register();
-    public static final WoolBundle RED_PATTERNED_WOOL = WoolBundle.of(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED).register();
-    public static final WoolBundle ORANGE_PATTERNED_WOOL = WoolBundle.of(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET, DyeColor.ORANGE).register();
-    public static final WoolBundle YELLOW_PATTERNED_WOOL = WoolBundle.of(Blocks.YELLOW_WOOL, Blocks.YELLOW_CARPET, DyeColor.YELLOW).register();
-    public static final WoolBundle LIME_PATTERNED_WOOL = WoolBundle.of(Blocks.LIME_WOOL, Blocks.LIME_CARPET, DyeColor.LIME).register();
-    public static final WoolBundle GREEN_PATTERNED_WOOL = WoolBundle.of(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET, DyeColor.GREEN).register();
-    public static final WoolBundle CYAN_PATTERNED_WOOL = WoolBundle.of(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN).register();
-    public static final WoolBundle LIGHT_BLUE_PATTERNED_WOOL = WoolBundle.of(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE).register();
-    public static final WoolBundle BLUE_PATTERNED_WOOL = WoolBundle.of(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE).register();
-    public static final WoolBundle PURPLE_PATTERNED_WOOL = WoolBundle.of(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE).register();
-    public static final WoolBundle MAGENTA_PATTERNED_WOOL = WoolBundle.of(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA).register();
-    public static final WoolBundle PINK_PATTERNED_WOOL = WoolBundle.of(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK).register();
-
-    // Gingham Wools
-    public static final WoolBundle WHITE_GINGHAM_WOOL = WoolBundle.of(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET, DyeColor.WHITE, WoolBundle.GINGHAM).register();
-    public static final WoolBundle LIGHT_GRAY_GINGHAM_WOOL = WoolBundle.of(Blocks.LIGHT_GRAY_WOOL, Blocks.LIGHT_GRAY_CARPET, DyeColor.LIGHT_GRAY, WoolBundle.GINGHAM).register();
-    public static final WoolBundle GRAY_GINGHAM_WOOL = WoolBundle.of(Blocks.GRAY_WOOL, Blocks.GRAY_CARPET, DyeColor.GRAY, WoolBundle.GINGHAM).register();
-    public static final WoolBundle BLACK_GINGHAM_WOOL = WoolBundle.of(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET, DyeColor.BLACK, WoolBundle.GINGHAM).register();
-    public static final WoolBundle BROWN_GINGHAM_WOOL = WoolBundle.of(Blocks.BROWN_WOOL, Blocks.BROWN_CARPET, DyeColor.BROWN, WoolBundle.GINGHAM).register();
-    public static final WoolBundle RED_GINGHAM_WOOL = WoolBundle.of(Blocks.RED_WOOL, Blocks.RED_CARPET, DyeColor.RED, WoolBundle.GINGHAM).register();
-    public static final WoolBundle ORANGE_GINGHAM_WOOL = WoolBundle.of(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET, DyeColor.ORANGE, WoolBundle.GINGHAM).register();
-    public static final WoolBundle YELLOW_GINGHAM_WOOL = WoolBundle.of(Blocks.YELLOW_WOOL, Blocks.YELLOW_CARPET, DyeColor.YELLOW, WoolBundle.GINGHAM).register();
-    public static final WoolBundle LIME_GINGHAM_WOOL = WoolBundle.of(Blocks.LIME_WOOL, Blocks.LIME_CARPET, DyeColor.LIME, WoolBundle.GINGHAM).register();
-    public static final WoolBundle GREEN_GINGHAM_WOOL = WoolBundle.of(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET, DyeColor.GREEN, WoolBundle.GINGHAM).register();
-    public static final WoolBundle CYAN_GINGHAM_WOOL = WoolBundle.of(Blocks.CYAN_WOOL, Blocks.CYAN_CARPET, DyeColor.CYAN, WoolBundle.GINGHAM).register();
-    public static final WoolBundle LIGHT_BLUE_GINGHAM_WOOL = WoolBundle.of(Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_BLUE_CARPET, DyeColor.LIGHT_BLUE, WoolBundle.GINGHAM).register();
-    public static final WoolBundle BLUE_GINGHAM_WOOL = WoolBundle.of(Blocks.BLUE_WOOL, Blocks.BLUE_CARPET, DyeColor.BLUE, WoolBundle.GINGHAM).register();
-    public static final WoolBundle PURPLE_GINGHAM_WOOL = WoolBundle.of(Blocks.PURPLE_WOOL, Blocks.PURPLE_CARPET, DyeColor.PURPLE, WoolBundle.GINGHAM).register();
-    public static final WoolBundle MAGENTA_GINGHAM_WOOL = WoolBundle.of(Blocks.MAGENTA_WOOL, Blocks.MAGENTA_CARPET, DyeColor.MAGENTA, WoolBundle.GINGHAM).register();
-    public static final WoolBundle PINK_GINGHAM_WOOL = WoolBundle.of(Blocks.PINK_WOOL, Blocks.PINK_CARPET, DyeColor.PINK, WoolBundle.GINGHAM).register();
+    public static final WoolBundle PATTERNED_WOOL = WoolBundle.of("patterned_wool").register();
+    public static final WoolBundle GINGHAM_WOOL = WoolBundle.of("gingham_wool").register();
 
     // Glazed Terracotta Pillars
     public static final StainedBlockBundle GLAZED_TERRACOTTA_PILLAR = StainedBlockBundle.of(BlockMaps.GLAZED_TERRACOTTA_MAP, BlockFactory::pillar);
