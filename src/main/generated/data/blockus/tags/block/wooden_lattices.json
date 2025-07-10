@@ -1,8 +1,8 @@
 {
   "values": [
     "blockus:oak_lattice",
-    "blockus:birch_lattice",
     "blockus:spruce_lattice",
+    "blockus:birch_lattice",
     "blockus:jungle_lattice",
     "blockus:acacia_lattice",
     "blockus:dark_oak_lattice",

@@ -85,7 +85,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             }
         }
 
-        for (AsphaltBundle.AsphaltVariants asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
+        for (var asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
             this.addBlockStairsandSlabDrops(asphaltBundle.block(), asphaltBundle.stairs(), asphaltBundle.slab());
         }
 
@@ -94,7 +94,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            for (WoolBundle.WoolVariants variants : woolBundle.colorMap().values()) {
+            for (var variants : woolBundle.colorMap().values()) {
                 this.addBlockStairsandSlabDrops(variants.block(), variants.stairs(), variants.slab());
                 this.addDrop(variants.carpet());
             }
@@ -105,13 +105,20 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            this.addDrop(woodenPost.block());
-            this.addDrop(woodenPost.stripped());
+            for (Block block : woodenPost.all()) {
+                this.addDrops(block);
+            }
         }
 
         for (StainedBlockBundle stainedBlockBundle : List.of(NEON_BLOCK, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, STAINED_REDSTONE_LAMP, STAINED_REDSTONE_LAMP_LIT, COLORED_TILES)) {
             stainedBlockBundle.colorMap().values().forEach(this::addDrops);
         }
+
+        for (ExtraWoodBundle<Block> extraWoodBundle : List.of(HERRINGBONE_PLANKS, SMALL_LOGS)) {
+            extraWoodBundle.bundle().values().forEach(this::addDrops);
+        }
+
+
 
         this.addDrops(CHISELED_MUD_BRICKS,
             MUD_BRICK_PILLAR,
@@ -140,32 +147,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             SCULK_PILLAR,
             POLISHED_SCULK_PRESSURE_PLATE,
 
-            // Herringbone Planks
-            HERRINGBONE_OAK_PLANKS,
-            HERRINGBONE_BIRCH_PLANKS,
-            HERRINGBONE_SPRUCE_PLANKS,
-            HERRINGBONE_JUNGLE_PLANKS,
-            HERRINGBONE_ACACIA_PLANKS,
-            HERRINGBONE_DARK_OAK_PLANKS,
-            HERRINGBONE_MANGROVE_PLANKS,
-            HERRINGBONE_CHERRY_PLANKS,
-            HERRINGBONE_BAMBOO_PLANKS,
-            HERRINGBONE_RAW_BAMBOO_PLANKS,
-            HERRINGBONE_WHITE_OAK_PLANKS,
-            HERRINGBONE_CRIMSON_PLANKS,
-            HERRINGBONE_WARPED_PLANKS,
-            HERRINGBONE_CHARRED_PLANKS,
-            HERRINGBONE_PALE_OAK_PLANKS,
-
-
             // Other
             LEGACY_LOG,
             LEGACY_SAPLING,
-            ACACIA_SMALL_LOGS,
             ANDESITE_CIRCULAR_PAVING,
             APPLE_CRATE,
             BEETROOT_CRATE,
-            BIRCH_SMALL_LOGS,
             BLACKSTONE_TRAPDOOR,
             BLAZE_PILLAR,
             BLUESTONE_BUTTON,
@@ -181,7 +168,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             CARVED_TUFF_BRICKS,
             CHARCOAL_BLOCK,
             CHARRED_NETHER_BRICK_PILLAR,
-            CHERRY_SMALL_LOGS,
             CHISELED_ANDESITE_BRICKS,
             CHISELED_BLUESTONE,
             CHISELED_DARK_PRISMARINE,
@@ -218,9 +204,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             CRACKED_POLISHED_BASALT_BRICKS,
             CRACKED_TUFF_BRICKS,
             CRIMSON_HEDGE,
-            CRIMSON_SMALL_STEMS,
             CUT_SOUL_SANDSTONE,
-            DARK_OAK_SMALL_LOGS,
             DARK_PRISMARINE_PILLAR,
             DEEPSLATE_CIRCULAR_PAVING,
             DEEPSLATE_PILLAR,
@@ -241,7 +225,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             GOLDEN_CHAIN,
             GRANITE_CIRCULAR_PAVING,
             GRAY_BRIGHT_FUTURNEO_BLOCK,
-            JUNGLE_SMALL_LOGS,
             LANTERN_BLOCK,
             LAPIS_DECORATED_RED_SANDSTONE,
             LAPIS_DECORATED_SANDSTONE,
@@ -273,7 +256,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             LIMESTONE_SQUARES,
             LIMESTONE_LINES,
             LOVE_BLOCK,
-            MANGROVE_SMALL_LOGS,
             MARBLE_BUTTON,
             MARBLE_CIRCULAR_PAVING,
             MARBLE_PILLAR,
@@ -285,12 +267,10 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             NETHER_BRICK_PILLAR,
             NETHERITE_STAIRS,
             NETHERRACK_CIRCULAR_PAVING,
-            OAK_SMALL_LOGS,
             OBSIDIAN_CIRCULAR_PAVING,
             OBSIDIAN_PILLAR,
             OBSIDIAN_PRESSURE_PLATE,
             OBSIDIAN_REINFORCED_TRAPDOOR,
-            PALE_OAK_SMALL_LOGS,
             PALE_MOSS_HEDGE,
             PAPER_BLOCK,
             PAPER_LAMP,
@@ -360,7 +340,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             SOUL_O_LANTERN,
             REDSTONE_O_LANTERN,
             SOUL_SANDSTONE_PILLAR,
-            SPRUCE_SMALL_LOGS,
             STARS_BLOCK,
             STONE_BRICK_PILLAR,
             STONE_CIRCULAR_PAVING,
@@ -377,11 +356,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             TUFF_CIRCULAR_PAVING,
             TUFF_PILLAR,
             WARPED_HEDGE,
-            WARPED_SMALL_STEMS,
             WEIGHT_STORAGE_CUBE,
             WHITE_OAK_LOG,
             WHITE_OAK_SAPLING,
-            WHITE_OAK_SMALL_LOGS,
             WHITE_OAK_WOOD,
             HERRINGBONE_ANDESITE_BRICKS,
             HERRINGBONE_BRICKS,

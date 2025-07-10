@@ -1,13 +1,15 @@
 package com.brand.blockus;
 
 import com.brand.blockus.registry.content.bundles.*;
-import com.brand.blockus.utils.BlockChecker;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffers;
+
+import java.util.List;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
@@ -60,7 +62,8 @@ public class Instance {
         // Timber frames
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             for (Block block : timberFrameBundle.all()) {
-                if (timberFrameBundle.burnable()) {
+                for (var entry : timberFrameBundle.woodMap().entrySet()) {
+                    if (!entry.getKey().data().isBurnable()) continue;
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
                     FuelRegistryEvents.BUILD.register((builder, context) -> builder.add(block, 300));
                 }
@@ -104,48 +107,50 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_LEAVES, 30, 60);
 
         // Wooden mosaic
-        for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type(), BlockChecker.FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type(), BlockChecker.FLAMMABLE_WOODS)) {
-                FlammableBlockRegistry.getDefaultInstance().add(block.block(), 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(block.stairs(), 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(block.slab(), 5, 20);
+        for (var wood : WoodMaps.values()) {
+            if (!wood.data().isBurnable()) continue;
+            for (var woodMap : List.of(WOODEN_MOSAIC, MOSSY_PLANKS)) {
+                var bundle = woodMap.get(wood.getId());
+                if (bundle == null) continue;
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.block(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.slab(), 5, 20);
+
                 FuelRegistryEvents.BUILD.register((builder, context) -> {
-                    builder.add(block.block(), 300);
-                    builder.add(block.stairs(), 300);
-                    builder.add(block.slab(), 150);
+                    builder.add(bundle.block(), 300);
+                    builder.add(bundle.stairs(), 300);
+                    builder.add(bundle.slab(), 150);
                 });
             }
         }
 
         // Herringbone planks
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_OAK_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_BIRCH_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_SPRUCE_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_JUNGLE_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_ACACIA_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_DARK_OAK_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_MANGROVE_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_WHITE_OAK_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_BAMBOO_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_PALE_OAK_PLANKS, 5, 20);
+        for (var wood : WoodMaps.values()) {
+            if (!wood.data().isBurnable()) continue;
+            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
+            if (herringbonePlanks != null) {
+                FlammableBlockRegistry.getDefaultInstance().add(HERRINGBONE_PLANKS.bundle().get(wood.getId()), 5, 20);
+            }
+        }
 
-
-        // Small logs
-        FlammableBlockRegistry.getDefaultInstance().add(OAK_SMALL_LOGS, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(BIRCH_SMALL_LOGS, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(SPRUCE_SMALL_LOGS, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(JUNGLE_SMALL_LOGS, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(ACACIA_SMALL_LOGS, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(DARK_OAK_SMALL_LOGS, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(MANGROVE_SMALL_LOGS, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(WHITE_OAK_SMALL_LOGS, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(PALE_OAK_SMALL_LOGS, 5, 5);
+        // Small log
+        for (var wood : WoodMaps.values()) {
+            if (!wood.data().isBurnable()) continue;
+            FlammableBlockRegistry.getDefaultInstance().add(SMALL_LOGS.bundle().get(wood.getId()), 5, 5);
+        }
 
         // Posts
-        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            if (woodenPost.burnable()) {
-                FlammableBlockRegistry.getDefaultInstance().add(woodenPost.block(), 5, 5);
-                FlammableBlockRegistry.getDefaultInstance().add(woodenPost.stripped(), 5, 5);
+        for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
+            for (var entry : woodenPostBundle.woodMap().entrySet()) {
+                if (entry == null) continue;
+                if (!entry.getKey().data().isBurnable()) continue;
+                WoodenPostBundle.WoodenPostVariants variants = entry.getValue();
+                FlammableBlockRegistry.getDefaultInstance().add(variants.block(), 5, 5);
+                FlammableBlockRegistry.getDefaultInstance().add(variants.stripped(), 5, 5);
+                FuelRegistryEvents.BUILD.register((builder, context) -> {
+                    builder.add(variants.block(), 150);
+                    builder.add(variants.stripped(), 150);
+                });
             }
         }
 
@@ -197,8 +202,10 @@ public class Instance {
     public static void addStrippables() {
         StrippableBlockRegistry.register(WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG);
         StrippableBlockRegistry.register(WHITE_OAK_WOOD, STRIPPED_WHITE_OAK_WOOD);
-        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            StrippableBlockRegistry.register(woodenPost.block(), woodenPost.stripped());
+        for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
+            for (WoodenPostBundle.WoodenPostVariants variants : woodenPostBundle.woodMap().values()) {
+                StrippableBlockRegistry.register(variants.block(), variants.stripped());
+            }
         }
     }
 

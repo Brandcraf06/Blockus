@@ -1,10 +1,9 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.registry.content.BlockusEntities;
-import com.brand.blockus.registry.content.bundles.BSSWBundle;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.registry.tag.BlockusItemTags;
-import com.brand.blockus.utils.BlockChecker;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
@@ -97,29 +96,19 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(WHITE_OAK.planks().asItem())
             .add(LEGACY_PLANKS.asItem());
 
-        this.valueLookupBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN)
-            .add(HERRINGBONE_OAK_PLANKS.asItem())
-            .add(HERRINGBONE_BIRCH_PLANKS.asItem())
-            .add(HERRINGBONE_SPRUCE_PLANKS.asItem())
-            .add(HERRINGBONE_JUNGLE_PLANKS.asItem())
-            .add(HERRINGBONE_ACACIA_PLANKS.asItem())
-            .add(HERRINGBONE_DARK_OAK_PLANKS.asItem())
-            .add(HERRINGBONE_MANGROVE_PLANKS.asItem())
-            .add(HERRINGBONE_CHERRY_PLANKS.asItem())
-            .add(HERRINGBONE_BAMBOO_PLANKS.asItem())
-            .add(HERRINGBONE_RAW_BAMBOO_PLANKS.asItem())
-            .add(HERRINGBONE_WHITE_OAK_PLANKS.asItem())
-            .add(HERRINGBONE_PALE_OAK_PLANKS.asItem());
-
-
-        for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type(), BlockChecker.FLAMMABLE_WOODS)) {
-                this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
-                    .add(block.block().asItem());
-            }
-        }
         this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
             .add(Blocks.BAMBOO_MOSAIC.asItem());
+        for (var wood : WoodMaps.values()) {
+            if (!wood.data().isBurnable()) continue;
+            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
+            if (herringbonePlanks != null) {
+                this.valueLookupBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN).add(herringbonePlanks.asItem());
+            }
+            var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
+            if (woodMosaic != null) {
+                this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN).add(woodMosaic.block().asItem());
+            }
+        }
 
         this.copy(Identifier.of("c", "planks_that_burn"));
 
@@ -167,15 +156,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.MANGROVE_LOGS, ItemTags.MANGROVE_LOGS);
 
-        for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type(), BlockChecker.NON_FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type(), BlockChecker.NON_FLAMMABLE_WOODS)) {
-                for (Block b : block.all()) {
-                    this.valueLookupBuilder(ItemTags.NON_FLAMMABLE_WOOD).add(b.asItem());
-                }
-            }
-        }
-
-        this.valueLookupBuilder(ItemTags.NON_FLAMMABLE_WOOD)
+        var nonFlammableWood = this.valueLookupBuilder(ItemTags.NON_FLAMMABLE_WOOD);
+        nonFlammableWood
             .add(CHARRED.planks().asItem())
             .add(CHARRED.slab().asItem())
             .add(CHARRED.pressurePlate().asItem())
@@ -189,11 +171,23 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusEntities.CHARRED_CHEST_BOAT.asItem())
             .add(CHARRED.sign())
             .add(CHARRED.hangingSign())
-            .add(WARPED_SMALL_STEMS.asItem())
-            .add(CRIMSON_SMALL_STEMS.asItem())
-            .add(HERRINGBONE_CRIMSON_PLANKS.asItem())
-            .add(HERRINGBONE_WARPED_PLANKS.asItem())
-            .add(HERRINGBONE_CHARRED_PLANKS.asItem());
+            .add(SMALL_LOGS.get(WoodMaps.WARPED.getId()).asItem())
+            .add(SMALL_LOGS.get(WoodMaps.CRIMSON.getId()).asItem());
+        for (var wood : WoodMaps.values()) {
+            if (wood.data().isBurnable()) continue;
+            var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
+            if (woodMosaic != null) {
+                nonFlammableWood.add(woodMosaic.block().asItem());
+            }
+            var mossyPlanks = MOSSY_PLANKS.bundle().get(wood.getId());
+            if (mossyPlanks != null) {
+                nonFlammableWood.add(mossyPlanks.block().asItem());
+            }
+            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
+            if (herringbonePlanks != null) {
+                nonFlammableWood.add(herringbonePlanks.asItem());
+            }
+        }
 
         this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
 
@@ -266,13 +260,6 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.WOOL_CARPETS, ItemTags.WOOL_CARPETS);
         this.copy(BlockTags.DIRT, ItemTags.DIRT);
-
-
-//        this.copy(new Identifier("promenade", "cherry_oak_logs"));
-//
-//        this.copy(new Identifier("promenade", "dark_amaranth_stems"));
-//
-//        this.copy(new Identifier("promenade", "palm_logs"));
 
         // Conventional Item Tags
         this.valueLookupBuilder(ConventionalItemTags.CHAINS)

@@ -5,6 +5,7 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.effect.BlockusEffects;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
@@ -13,7 +14,6 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.DyeColor;
 
 import java.util.Arrays;
-import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
@@ -76,18 +76,18 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Stained Stone Bricks
         for (var entry : BlockusBlocks.STAINED_STONE_BRICKS.colorMap().entrySet()) {
-            addBssw(translationBuilder, entry.getValue(), colorName(entry) + " Stone Bricks");
+            addBssw(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Stone Bricks");
         }
 
         // Shingles
         addBssw(translationBuilder, BlockusBlocks.SHINGLES, "Shingles");
         for (var entry : BlockusBlocks.STAINED_SHINGLES.colorMap().entrySet()) {
-            addBssw(translationBuilder, entry.getValue(), colorName(entry) + " Shingles");
+            addBssw(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Shingles");
         }
 
         // Concrete
         for (var entry : BlockusBlocks.CONCRETE_BRICKS.colorMap().entrySet()) {
-            addConcrete(translationBuilder, entry.getValue(), colorName(entry.getKey()) + " Concrete Bricks");
+            addConcrete(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Concrete Bricks");
         }
 
         // Basalt
@@ -124,7 +124,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         // Colored Tiles
         translationBuilder.add("block.blockus.colored_tiles", "Colored Tiles");
         for (var entry : BlockusBlocks.COLORED_TILES.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Colored Tiles");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Colored Tiles");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_COLORED_TILES, "Rainbow Colored Tiles");
 
@@ -146,103 +146,40 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusEntities.CHARRED_BOAT, "Charred Boat");
         translationBuilder.add(BlockusEntities.CHARRED_CHEST_BOAT, "Charred Boat with Chest");
 
-        // Small logs
-        translationBuilder.add(BlockusBlocks.OAK_SMALL_LOGS, "Small Oak Logs");
-        translationBuilder.add(BlockusBlocks.SPRUCE_SMALL_LOGS, "Small Spruce Logs");
-        translationBuilder.add(BlockusBlocks.BIRCH_SMALL_LOGS, "Small Birch Logs");
-        translationBuilder.add(BlockusBlocks.JUNGLE_SMALL_LOGS, "Small Jungle Logs");
-        translationBuilder.add(BlockusBlocks.ACACIA_SMALL_LOGS, "Small Acacia Logs");
-        translationBuilder.add(BlockusBlocks.DARK_OAK_SMALL_LOGS, "Small Dark Oak Logs");
-        translationBuilder.add(BlockusBlocks.MANGROVE_SMALL_LOGS, "Small Mangrove Logs");
-        translationBuilder.add(BlockusBlocks.CHERRY_SMALL_LOGS, "Small Cherry Logs");
-        translationBuilder.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, "Small White Oak Logs");
-        translationBuilder.add(BlockusBlocks.CRIMSON_SMALL_STEMS, "Small Crimson Stems");
-        translationBuilder.add(BlockusBlocks.WARPED_SMALL_STEMS, "Small Warped Stems");
-        translationBuilder.add(BlockusBlocks.PALE_OAK_SMALL_LOGS, "Small Pale Oak Logs");
-
+        // Small log
+        for (var entry : BlockusBlocks.SMALL_LOGS.bundle().entrySet()) {
+            String suffix = (entry.getKey().equals(WoodMaps.CRIMSON.getId()) || entry.getKey().equals(WoodMaps.WARPED.getId())) ? " Stems" : " Logs";
+            translationBuilder.add(entry.getValue(), "Small " + name(entry.getKey()) + suffix);
+        }
 
         // Wooden Posts
-        addWoodenPost(translationBuilder, BlockusBlocks.OAK_POST, "Oak Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.SPRUCE_POST, "Spruce Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.BIRCH_POST, "Birch Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.JUNGLE_POST, "Jungle Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.ACACIA_POST, "Acacia Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.DARK_OAK_POST, "Dark Oak Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.MANGROVE_POST, "Mangrove Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.CHERRY_POST, "Cherry Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.WHITE_OAK_POST, "White Oak Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.CRIMSON_POST, "Crimson Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.WARPED_POST, "Warped Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.PALE_OAK_POST, "Pale Oak Post");
-
+        for (var entry : BlockusBlocks.WOODEN_POST.woodMap().entrySet()) {
+            addWoodenPost(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Post");
+        }
 
         // Mosaics
-        addBssw(translationBuilder, BlockusBlocks.RAW_BAMBOO_MOSAIC, "Raw Bamboo Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.OAK_MOSAIC, "Oak Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.SPRUCE_MOSAIC, "Spruce Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.BIRCH_MOSAIC, "Birch Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.JUNGLE_MOSAIC, "Jungle Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.ACACIA_MOSAIC, "Acacia Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.DARK_OAK_MOSAIC, "Dark Oak Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.CHERRY_MOSAIC, "Cherry Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.MANGROVE_MOSAIC, "Mangrove Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.WHITE_OAK_MOSAIC, "White Oak Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.WARPED_MOSAIC, "Warped Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.CRIMSON_MOSAIC, "Crimson Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.CHARRED_MOSAIC, "Charred Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.PALE_OAK_MOSAIC, "Pale Oak Mosaic");
-
+        for (var entry : BlockusBlocks.WOODEN_MOSAIC.bundle().entrySet()) {
+            addBssw(translationBuilder, entry.getValue(), name(entry.getKey()) + " Mosaic");
+        }
 
         // Mossy Planks
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_OAK_PLANKS, "Mossy Oak Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_SPRUCE_PLANKS, "Mossy Spruce Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_BIRCH_PLANKS, "Mossy Birch Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_JUNGLE_PLANKS, "Mossy Jungle Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_ACACIA_PLANKS, "Mossy Acacia Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_DARK_OAK_PLANKS, "Mossy Dark Oak Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_MANGROVE_PLANKS, "Mossy Mangrove Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_CHERRY_PLANKS, "Mossy Cherry Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_WHITE_OAK_PLANKS, "Mossy White Oak Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_BAMBOO_PLANKS, "Mossy Bamboo Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_RAW_BAMBOO_PLANKS, "Mossy Raw Bamboo Planks");
-        addWoodenBss(translationBuilder, BlockusBlocks.MOSSY_CHARRED_PLANKS, "Mossy Charred Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_CRIMSON_PLANKS, "Mossy Crimson Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_WARPED_PLANKS, "Mossy Warped Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_PALE_OAK_PLANKS, "Mossy Pale Oak Planks");
+        for (var entry : BlockusBlocks.MOSSY_PLANKS.bundle().entrySet()) {
+            if (entry.getKey().equals(WoodMaps.CHARRED.getId())) {
+                addWoodenBss(translationBuilder, entry.getValue(), "Mossy " + name(entry.getKey()) + " Planks");
+            } else {
+                addBssw(translationBuilder, entry.getValue(), "Mossy " + name(entry.getKey()) + " Planks");
+            }
+        }
 
         // Herringbone Planks
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS, "Herringbone Oak Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS, "Herringbone Spruce Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS, "Herringbone Birch Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS, "Herringbone Jungle Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, "Herringbone Acacia Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, "Herringbone Dark Oak Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS, "Herringbone Mangrove Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS, "Herringbone Cherry Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, "Herringbone White Oak Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, "Herringbone Bamboo Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS, "Herringbone Raw Bamboo Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS, "Herringbone Charred Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS, "Herringbone Crimson Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS, "Herringbone Warped Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_PALE_OAK_PLANKS, "Herringbone Pale Oak Planks");
+        for (var entry : BlockusBlocks.HERRINGBONE_PLANKS.bundle().entrySet()) {
+            translationBuilder.add(entry.getValue(), "Herringbone " + name(entry.getKey()) + " Planks");
+        }
 
         // Timber Frames, Lattices & Wooden Grates
-        addTimberFrame(translationBuilder, BlockusBlocks.OAK_TIMBER_FRAME, "Oak");
-        addTimberFrame(translationBuilder, BlockusBlocks.SPRUCE_TIMBER_FRAME, "Spruce");
-        addTimberFrame(translationBuilder, BlockusBlocks.BIRCH_TIMBER_FRAME, "Birch");
-        addTimberFrame(translationBuilder, BlockusBlocks.JUNGLE_TIMBER_FRAME, "Jungle");
-        addTimberFrame(translationBuilder, BlockusBlocks.ACACIA_TIMBER_FRAME, "Acacia");
-        addTimberFrame(translationBuilder, BlockusBlocks.DARK_OAK_TIMBER_FRAME, "Dark Oak");
-        addTimberFrame(translationBuilder, BlockusBlocks.MANGROVE_TIMBER_FRAME, "Mangrove");
-        addTimberFrame(translationBuilder, BlockusBlocks.CHERRY_TIMBER_FRAME, "Cherry");
-        addTimberFrame(translationBuilder, BlockusBlocks.CHARRED_TIMBER_FRAME, "Charred");
-        addTimberFrame(translationBuilder, BlockusBlocks.WHITE_OAK_TIMBER_FRAME, "White Oak");
-        addTimberFrame(translationBuilder, BlockusBlocks.BAMBOO_TIMBER_FRAME, "Bamboo");
-        addTimberFrame(translationBuilder, BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME, "Raw Bamboo");
-        addTimberFrame(translationBuilder, BlockusBlocks.CRIMSON_TIMBER_FRAME, "Crimson");
-        addTimberFrame(translationBuilder, BlockusBlocks.WARPED_TIMBER_FRAME, "Warped");
-        addTimberFrame(translationBuilder, BlockusBlocks.PALE_OAK_TIMBER_FRAME, "Pale Oak");
+        for (var entry : BlockusBlocks.TIMBER_FRAME.woodMap().entrySet()) {
+            addTimberFrame(translationBuilder, entry.getValue(), name(entry.getKey().getId()));
+        }
         translationBuilder.add(BlockusBlocks.WOODEN_FRAME, "Wooden Frame");
 
         // Netherrack
@@ -348,12 +285,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_GLASS_PANE, "Rainbow Glass Pane");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS, "Beveled Glass");
         for (var entry : BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Beveled Glass");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Beveled Glass");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS, "Rainbow Beveled Glass");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS_PANE, "Beveled Glass Pane");
         for (var entry : BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Beveled Glass Pane");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Beveled Glass Pane");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE, "Rainbow Beveled Glass Pane");
         translationBuilder.add(BlockusBlocks.TINTED_BEVELED_GLASS, "Tinted Beveled Glass");
@@ -373,12 +310,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Glazed Terracotta
         for (var entry : BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Glazed Terracotta Pillar");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Glazed Terracotta Pillar");
         }
 
         // Asphalt
         for (var entry : BlockusBlocks.ASPHALT.colorMap().entrySet()) {
-            addAsphalt(translationBuilder, entry.getValue(), entry.getKey() == DyeColor.BLACK ? "Asphalt" : colorName(entry.getKey()) + " Asphalt");
+            addAsphalt(translationBuilder, entry.getValue(), entry.getKey() == DyeColor.BLACK ? "Asphalt" : name(entry.getKey().getId()) + " Asphalt");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_ASPHALT, "Rainbow Asphalt");
 
@@ -472,10 +409,10 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_LAMP_LIT, "Lit Rainbow Lamp");
         translationBuilder.add(BlockusBlocks.REDSTONE_LAMP_LIT, "Lit Redstone Lamp");
         for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Redstone Lamp");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Redstone Lamp");
         }
         for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), "Lit " + colorName(entry.getKey()) + " Redstone Lamp");
+            translationBuilder.add(entry.getValue(), "Lit " + name(entry.getKey().getId()) + " Redstone Lamp");
         }
 
         // Food Crates
@@ -513,21 +450,21 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Patterned Wools
         for (var entry : BlockusBlocks.PATTERNED_WOOL.colorMap().entrySet()) {
-            addWoolBundle(translationBuilder, entry.getValue(), colorName(entry.getKey()) + " Patterned Wool");
+            addWoolBundle(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Patterned Wool");
         }
         for (var entry : BlockusBlocks.GINGHAM_WOOL.colorMap().entrySet()) {
-            addWoolBundle(translationBuilder, entry.getValue(), colorName(entry.getKey()) + " Gingham Wool");
+            addWoolBundle(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Gingham Wool");
         }
 
         // Neons
         for (var entry : BlockusBlocks.NEON_BLOCK.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Neon");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Neon");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_NEON, "Rainbow Neon");
 
         // Futurneo Blocks
         for (var entry : BlockusBlocks.FUTURNEO_BLOCK.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), colorName(entry.getKey()) + " Futurneo Block");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Futurneo Block");
         }
         translationBuilder.add(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK, "Gray Bright Futurneo Block");
         translationBuilder.add(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK, "Rainbow Futurneo Block");
@@ -792,13 +729,13 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
     }
 
     // Wooden Posts
-    public static void addWoodenPost(TranslationBuilder translationBuilder, WoodenPostBundle bundle, String string) {
+    public static void addWoodenPost(TranslationBuilder translationBuilder, WoodenPostBundle.WoodenPostVariants bundle, String string) {
         translationBuilder.add(bundle.block(), string);
         translationBuilder.add(bundle.stripped(), "Stripped " + string);
     }
 
     // Timber Frames, Lattice & Grate
-    public static void addTimberFrame(TranslationBuilder translationBuilder, TimberFrameBundle bundle, String wood) {
+    public static void addTimberFrame(TranslationBuilder translationBuilder, TimberFrameBundle.TimberFrameVariants bundle, String wood) {
         translationBuilder.add(bundle.block(), wood + " Timber Frame");
         translationBuilder.add(bundle.diagonal(), wood + " Diagonal Timber Frame");
         translationBuilder.add(bundle.cross(), wood + " Cross Timber Frame");
@@ -821,8 +758,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
     }
 
     // Asphalt
-    public static void addAsphalt(TranslationBuilder translationBuilder, AsphaltBundle.AsphaltVariants bundle, String name) {
-        addBlockStairsSlab(translationBuilder, name, bundle.block(), bundle.stairs(), bundle.slab());
+    public static void addAsphalt(TranslationBuilder translationBuilder, AsphaltBundle.AsphaltVariants bundle, String string) {
+        addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
     }
 
     // Copper
@@ -832,14 +769,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBlockStairsSlabWall(translationBuilder, waxedString, bundle.blockWaxed(), bundle.stairsWaxed(), bundle.slabWaxed(), bundle.wallWaxed());
     }
 
-    public static String colorName(DyeColor color) {
-        return Arrays.stream(color.getId().split("_"))
-            .map(string -> string.substring(0,1).toUpperCase() + string.substring(1))
+    public static String name(String id) {
+        return Arrays.stream(id.split("_"))
+            .map(part -> Character.toUpperCase(part.charAt(0)) + part.substring(1))
             .collect(Collectors.joining(" "));
-    }
-
-    public static String colorName(Map.Entry<DyeColor, BSSWBundle> entry) {
-        DyeColor color = entry.getKey();
-        return colorName(color);
     }
 }

@@ -1,12 +1,11 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.datagen.family.BlockusFamilies;
-import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusItemTags;
-import com.brand.blockus.utils.BlockChecker;
 import com.brand.blockus.utils.helper.BlockMaps;
+import com.brand.blockus.utils.helper.WoodMaps;
 import com.google.common.collect.ImmutableMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -85,12 +84,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                     }
                 }
 
-                for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-                    createTimberFramesRecipes(timberFrameBundle.base(), timberFrameBundle.block(), timberFrameBundle.diagonal(), timberFrameBundle.cross());
-                    createLatticeRecipes(timberFrameBundle.base(), timberFrameBundle.lattice(), timberFrameBundle.grate());
-                }
-
-                for (AsphaltBundle.AsphaltVariants asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
+                for (AsphaltBundle.AsphaltVariants asphaltBundle : ASPHALT.colorMap().values()) {
                     offerStairsRecipe(asphaltBundle.stairs(), asphaltBundle.block());
                     offerSlabRecipe(RecipeCategory.BUILDING_BLOCKS, asphaltBundle.slab(), asphaltBundle.block());
                     offerStonecuttingRecipe(asphaltBundle.stairs(), asphaltBundle.block());
@@ -100,9 +94,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 for (WoolBundle woolBundle : WoolBundle.values()) {
                     for (Map.Entry<DyeColor, WoolBundle.WoolVariants> entry : woolBundle.colorMap().entrySet()) {
                         WoolBundle.WoolVariants variants = entry.getValue();
-                        if (woolBundle == BlockusBlocks.PATTERNED_WOOL) {
+                        if (woolBundle == PATTERNED_WOOL) {
                             offerPatternedWoolRecipe(variants.block(), BlockMaps.WOOL_MAP.get(entry.getKey()), variants.carpet(), BlockMaps.CARPET_MAP.get(entry.getKey()));
-                        } else if (woolBundle == BlockusBlocks.GINGHAM_WOOL) {
+                        } else if (woolBundle == GINGHAM_WOOL) {
                             offerGinghamWoolRecipe(variants.block(), BlockMaps.WOOL_MAP.get(entry.getKey()));
                         }
 
@@ -584,71 +578,44 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerBoatsRecipe(BlockusEntities.CHARRED_BOAT, BlockusEntities.CHARRED_CHEST_BOAT, CHARRED.planks());
                 CookingRecipeJsonBuilder.createSmelting(ingredientFromTag(BlockusItemTags.PLANKS_THAT_BURN), RecipeCategory.BUILDING_BLOCKS, CHARRED.planks(), 0.1F, 200).criterion("has_planks", conditionsFromTag(BlockusItemTags.PLANKS_THAT_BURN)).offerTo(exporter);
 
-                offerSmallLogsRecipe(OAK_SMALL_LOGS, Blocks.OAK_LOG);
-                offerSmallLogsRecipe(SPRUCE_SMALL_LOGS, Blocks.SPRUCE_LOG);
-                offerSmallLogsRecipe(BIRCH_SMALL_LOGS, Blocks.BIRCH_LOG);
-                offerSmallLogsRecipe(JUNGLE_SMALL_LOGS, Blocks.JUNGLE_LOG);
-                offerSmallLogsRecipe(ACACIA_SMALL_LOGS, Blocks.ACACIA_LOG);
-                offerSmallLogsRecipe(DARK_OAK_SMALL_LOGS, Blocks.DARK_OAK_LOG);
-                offerSmallLogsRecipe(MANGROVE_SMALL_LOGS, Blocks.MANGROVE_LOG);
-                offerSmallLogsRecipe(CHERRY_SMALL_LOGS, Blocks.CHERRY_LOG);
-                offerSmallLogsRecipe(WARPED_SMALL_STEMS, Blocks.WARPED_STEM);
-                offerSmallLogsRecipe(CRIMSON_SMALL_STEMS, Blocks.CRIMSON_STEM);
-                offerSmallLogsRecipe(WHITE_OAK_SMALL_LOGS, WHITE_OAK_LOG);
-                offerSmallLogsRecipe(PALE_OAK_SMALL_LOGS, Blocks.PALE_OAK_LOG);
+                for (var entry : SMALL_LOGS.bundle().entrySet()) {
+                    offerSmallLogsRecipe(entry.getValue(), WoodMaps.LOG_MAP.get(entry.getKey()));
+                }
 
-                offerWoodenPostRecipe(OAK_POST, Blocks.OAK_PLANKS);
-                offerWoodenPostRecipe(SPRUCE_POST, Blocks.SPRUCE_PLANKS);
-                offerWoodenPostRecipe(BIRCH_POST, Blocks.BIRCH_PLANKS);
-                offerWoodenPostRecipe(JUNGLE_POST, Blocks.JUNGLE_PLANKS);
-                offerWoodenPostRecipe(ACACIA_POST, Blocks.ACACIA_PLANKS);
-                offerWoodenPostRecipe(DARK_OAK_POST, Blocks.DARK_OAK_PLANKS);
-                offerWoodenPostRecipe(MANGROVE_POST, Blocks.MANGROVE_PLANKS);
-                offerWoodenPostRecipe(CHERRY_POST, Blocks.CHERRY_PLANKS);
-                offerWoodenPostRecipe(WARPED_POST, Blocks.WARPED_PLANKS);
-                offerWoodenPostRecipe(CRIMSON_POST, Blocks.CRIMSON_PLANKS);
-                offerWoodenPostRecipe(WHITE_OAK_POST, WHITE_OAK.planks());
-                offerWoodenPostRecipe(PALE_OAK_POST, Blocks.PALE_OAK_PLANKS);
-
-
-                for (BSSWBundle block : BSSWBundle.values()) {
-                    if (BlockChecker.isMossyPlanks(block.type(), BlockChecker.WOODS)) {
-                        offerMossyRecipe(block.block(), block.base());
+                for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
+                    for (var entry : woodenPost.woodMap().entrySet()) {
+                        Block log = WoodMaps.LOG_MAP.get(entry.getKey().getId());
+                        Block strippedLog = WoodMaps.STRIPPED_LOG_MAP.get(entry.getKey().getId());
+                        if (log == null || strippedLog == null) {
+                            continue;
+                        }
+                        offerWoodenPostRecipe(entry.getValue(), log, strippedLog, WoodMaps.PLANKS_MAP.get(entry.getKey().getId()));
                     }
                 }
 
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, OAK_MOSAIC.block(), Blocks.OAK_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, BIRCH_MOSAIC.block(), Blocks.BIRCH_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, SPRUCE_MOSAIC.block(), Blocks.SPRUCE_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, JUNGLE_MOSAIC.block(), Blocks.JUNGLE_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, ACACIA_MOSAIC.block(), Blocks.ACACIA_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, DARK_OAK_MOSAIC.block(), Blocks.DARK_OAK_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, MANGROVE_MOSAIC.block(), Blocks.MANGROVE_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, CHERRY_MOSAIC.block(), Blocks.CHERRY_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, WHITE_OAK_MOSAIC.block(), WHITE_OAK.slab());
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, RAW_BAMBOO_MOSAIC.block(), RAW_BAMBOO.slab());
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, CRIMSON_MOSAIC.block(), Blocks.CRIMSON_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, WARPED_MOSAIC.block(), Blocks.WARPED_SLAB);
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, CHARRED_MOSAIC.block(), CHARRED.slab());
-                offerMosaicRecipe(RecipeCategory.DECORATIONS, PALE_OAK_MOSAIC.block(), Blocks.PALE_OAK_SLAB);
-                offerCharredSmeltingRecipe(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN, CHARRED_MOSAIC.block(), "mosaic");
+                for (var entry : MOSSY_PLANKS.bundle().entrySet()) {
+                    offerMossyRecipe( entry.getValue().block(), entry.getValue().base());
+                }
 
-                offerHerringBoneRecipe(HERRINGBONE_OAK_PLANKS, Blocks.OAK_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_BIRCH_PLANKS, Blocks.BIRCH_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_SPRUCE_PLANKS, Blocks.SPRUCE_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_JUNGLE_PLANKS, Blocks.JUNGLE_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_ACACIA_PLANKS, Blocks.ACACIA_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_DARK_OAK_PLANKS, Blocks.DARK_OAK_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_MANGROVE_PLANKS, Blocks.MANGROVE_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_CHERRY_PLANKS, Blocks.CHERRY_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_WHITE_OAK_PLANKS, WHITE_OAK.planks());
-                offerHerringBoneRecipe(HERRINGBONE_BAMBOO_PLANKS, Blocks.BAMBOO_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_RAW_BAMBOO_PLANKS, RAW_BAMBOO.planks());
-                offerHerringBoneRecipe(HERRINGBONE_CRIMSON_PLANKS, Blocks.CRIMSON_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_WARPED_PLANKS, Blocks.WARPED_PLANKS);
-                offerHerringBoneRecipe(HERRINGBONE_CHARRED_PLANKS, CHARRED.planks());
-                offerHerringBoneRecipe(HERRINGBONE_PALE_OAK_PLANKS, Blocks.PALE_OAK_PLANKS);
-                offerCharredSmeltingRecipe(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN, HERRINGBONE_CHARRED_PLANKS, "herringbone_planks");
+                for (var entry : WOODEN_MOSAIC.bundle().entrySet()) {
+                    offerMosaicRecipe(RecipeCategory.DECORATIONS, entry.getValue().block(), WoodMaps.SLAB_MAP.get(entry.getKey()));
+                }
+                offerCharredSmeltingRecipe(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN, WOODEN_MOSAIC.get(WoodMaps.CHARRED.getId()).block(), "mosaic");
+
+
+                for (var entry : HERRINGBONE_PLANKS.bundle().entrySet()) {
+                    offerHerringBoneRecipe(entry.getValue(), WoodMaps.PLANKS_MAP.get(entry.getKey()));
+                }
+                offerCharredSmeltingRecipe(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN, HERRINGBONE_PLANKS.get(WoodMaps.CHARRED.getId()), "herringbone_planks");
+
+                for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
+                    for (var entry : timberFrameBundle.woodMap().entrySet()) {
+                        var variants = entry.getValue();
+                        Block planks = WoodMaps.PLANKS_MAP.get(entry.getKey().getId());
+                        createTimberFramesRecipes(planks, variants.block(), variants.diagonal(), variants.cross());
+                        createLatticeRecipes(WoodMaps.PLANKS_MAP.get(entry.getKey().getId()), variants.lattice(), variants.grate());
+                    }
+                }
 
                 // Small Hedges
                 offerSmallHedgesRecipe(OAK_HEDGE, Blocks.OAK_LEAVES);
@@ -761,7 +728,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerPolishedStoneRecipe(BEVELED_GLASS, Blocks.GLASS);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, BEVELED_GLASS_PANE, 16).input('#', BEVELED_GLASS).pattern("###").pattern("###").group("beveled_glass_pane").criterion("has_beveled_glass", conditionsFromItem(BEVELED_GLASS_PANE)).offerTo(exporter);
                 for (DyeColor color : DyeColor.values()) {
-                    offerStainedBeveledGlassRecipe(BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().get(color), BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().get(color), BlockMaps.STAINED_GLASS_MAP.get(color), DYE_MAP.get(color));
+                    offerStainedBeveledGlassRecipe(STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color), BlockMaps.STAINED_GLASS_MAP.get(color), DYE_MAP.get(color));
                 }
                 offerStainedBeveledGlassRecipe(RAINBOW_BEVELED_GLASS, RAINBOW_BEVELED_GLASS_PANE, RAINBOW_GLASS, RAINBOW_PETALS);
                 createEnclosedRecipe(RAINBOW_GLASS, Ingredient.ofItems(Blocks.GLASS), RAINBOW_PETALS).criterion(hasItem(RAINBOW_PETALS), conditionsFromItem(RAINBOW_PETALS)).offerTo(exporter);
@@ -933,11 +900,11 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.BUILDING_BLOCKS, output, 4).input('#', input).pattern(" # ").pattern("###").group("small_logs").criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
             }
 
-            public void offerWoodenPostRecipe(WoodenPostBundle post, ItemConvertible planks) {
-                createShaped(RecipeCategory.BUILDING_BLOCKS, post.block(), 6).input('#', post.base()).pattern("#").pattern("#").pattern("#").group("wooden_posts").criterion("has_woods", conditionsFromItem(post.base())).offerTo(exporter);
-                createShaped(RecipeCategory.BUILDING_BLOCKS, post.stripped(), 6).input('#', post.baseStripped()).pattern("#").pattern("#").pattern("#").group("wooden_posts").criterion("has_woods", conditionsFromItem(post.baseStripped())).offerTo(exporter);
+            public void offerWoodenPostRecipe(WoodenPostBundle.WoodenPostVariants post, ItemConvertible base, ItemConvertible base2, ItemConvertible planks) {
+                createShaped(RecipeCategory.BUILDING_BLOCKS, post.block(), 6).input('#', base).pattern("#").pattern("#").pattern("#").group("wooden_posts").criterion("has_woods", conditionsFromItem(base)).offerTo(exporter);
+                createShaped(RecipeCategory.BUILDING_BLOCKS, post.stripped(), 6).input('#', base2).pattern("#").pattern("#").pattern("#").group("stripped_wooden_posts").criterion("has_woods", conditionsFromItem(base2)).offerTo(exporter);
                 createShapeless(RecipeCategory.BUILDING_BLOCKS, planks, 2).input(post.block()).group("planks").criterion("has_wooden_post", conditionsFromItem(post.block())).offerTo(exporter, convertBetween(planks, post.block()));
-                createShapeless(RecipeCategory.BUILDING_BLOCKS, planks, 2).input(post.stripped()).group("planks").criterion("has_wooden_post", conditionsFromItem(post.stripped())).offerTo(exporter, convertBetween(planks, post.stripped()));
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, planks, 2).input(post.stripped()).group("planks").criterion("has_stripped_wooden_post", conditionsFromItem(post.stripped())).offerTo(exporter, convertBetween(planks, post.stripped()));
             }
 
             public void offerSmallHedgesRecipe(ItemConvertible output, ItemConvertible input) {

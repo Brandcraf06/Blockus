@@ -104,11 +104,15 @@ public class BlockusClient implements ClientModInitializer {
         );
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, timberFrameBundle.lattice(), timberFrameBundle.grate());
+            for (var variants : timberFrameBundle.woodMap().values()) {
+                BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, variants.lattice(), variants.grate());
+            }
         }
 
         for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
-            BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, woodenPostBundle.block(), woodenPostBundle.stripped());
+            for (var variants : woodenPostBundle.woodMap().values()) {
+                BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, variants.block(), variants.stripped());
+            }
         }
 
         for (DyeColor color : DyeColor.values()) {

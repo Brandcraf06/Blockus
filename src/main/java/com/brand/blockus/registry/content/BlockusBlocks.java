@@ -13,6 +13,7 @@ import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.content.bundles.CopperBundle.OxidationType;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.BlockMaps;
+import com.brand.blockus.utils.helper.WoodMaps;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
@@ -25,8 +26,6 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.ColorCode;
 import net.minecraft.util.DyeColor;
-
-import java.util.Map;
 
 public class BlockusBlocks extends BlockFactory {
 
@@ -374,101 +373,18 @@ public class BlockusBlocks extends BlockFactory {
     private static final WoodType CHARRED_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(Blockus.id("charred"));
     public static final WoodBundle CHARRED = WoodBundle.of("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, BlockSoundGroup.WOOD, CHARRED_WOOD_TYPE, BlockSetType.OAK, false).register();
 
-    // Mosaics
-    public static final BSSWBundle OAK_MOSAIC = BSSWBundle.of("oak_mosaic", Blocks.OAK_PLANKS).includeWall(false).register();
-    public static final BSSWBundle SPRUCE_MOSAIC = BSSWBundle.of("spruce_mosaic", Blocks.SPRUCE_PLANKS).includeWall(false).register();
-    public static final BSSWBundle BIRCH_MOSAIC = BSSWBundle.of("birch_mosaic", Blocks.BIRCH_PLANKS).includeWall(false).register();
-    public static final BSSWBundle JUNGLE_MOSAIC = BSSWBundle.of("jungle_mosaic", Blocks.JUNGLE_PLANKS).includeWall(false).register();
-    public static final BSSWBundle ACACIA_MOSAIC = BSSWBundle.of("acacia_mosaic", Blocks.ACACIA_PLANKS).includeWall(false).register();
-    public static final BSSWBundle DARK_OAK_MOSAIC = BSSWBundle.of("dark_oak_mosaic", Blocks.DARK_OAK_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MANGROVE_MOSAIC = BSSWBundle.of("mangrove_mosaic", Blocks.MANGROVE_PLANKS).includeWall(false).register();
-    public static final BSSWBundle CHERRY_MOSAIC = BSSWBundle.of("cherry_mosaic", Blocks.CHERRY_PLANKS).includeWall(false).register();
-    public static final BSSWBundle PALE_OAK_MOSAIC = BSSWBundle.of("pale_oak_mosaic", Blocks.PALE_OAK_PLANKS).includeWall(false).register();
-    public static final BSSWBundle RAW_BAMBOO_MOSAIC = BSSWBundle.of("raw_bamboo_mosaic", RAW_BAMBOO.planks()).includeWall(false).register();
-    public static final BSSWBundle WHITE_OAK_MOSAIC = BSSWBundle.of("white_oak_mosaic", WHITE_OAK.planks()).includeWall(false).register();
-    public static final BSSWBundle CRIMSON_MOSAIC = BSSWBundle.of("crimson_mosaic", Blocks.CRIMSON_PLANKS).includeWall(false).register();
-    public static final BSSWBundle WARPED_MOSAIC = BSSWBundle.of("warped_mosaic", Blocks.WARPED_PLANKS).includeWall(false).register();
-    public static final BSSWBundle CHARRED_MOSAIC = BSSWBundle.of("charred_mosaic", CHARRED.planks()).includeWall(false).register();
-
-
-    // Mossy Planks
-    public static final BSSWBundle MOSSY_OAK_PLANKS = BSSWBundle.of("mossy_oak_planks", Blocks.OAK_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_SPRUCE_PLANKS = BSSWBundle.of("mossy_spruce_planks", Blocks.SPRUCE_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_BIRCH_PLANKS = BSSWBundle.of("mossy_birch_planks", Blocks.BIRCH_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_JUNGLE_PLANKS = BSSWBundle.of("mossy_jungle_planks", Blocks.JUNGLE_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_ACACIA_PLANKS = BSSWBundle.of("mossy_acacia_planks", Blocks.ACACIA_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_DARK_OAK_PLANKS = BSSWBundle.of("mossy_dark_oak_planks", Blocks.DARK_OAK_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_MANGROVE_PLANKS = BSSWBundle.of("mossy_mangrove_planks", Blocks.MANGROVE_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_CHERRY_PLANKS = BSSWBundle.of("mossy_cherry_planks", Blocks.CHERRY_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_PALE_OAK_PLANKS = BSSWBundle.of("mossy_pale_oak_planks", Blocks.PALE_OAK_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_BAMBOO_PLANKS = BSSWBundle.of("mossy_bamboo_planks", Blocks.BAMBOO_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_RAW_BAMBOO_PLANKS = BSSWBundle.of("mossy_raw_bamboo_planks", RAW_BAMBOO.planks()).includeWall(false).register();
-    public static final BSSWBundle MOSSY_WHITE_OAK_PLANKS = BSSWBundle.of("mossy_white_oak_planks", WHITE_OAK.planks()).includeWall(false).register();
-    public static final BSSWBundle MOSSY_CRIMSON_PLANKS = BSSWBundle.of("mossy_crimson_planks", Blocks.CRIMSON_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_WARPED_PLANKS = BSSWBundle.of("mossy_warped_planks", Blocks.WARPED_PLANKS).includeWall(false).register();
-    public static final BSSWBundle MOSSY_CHARRED_PLANKS = BSSWBundle.of("mossy_charred_planks", CHARRED.planks()).includeWall(false).register();
-
-    // Herringbone Planks
-    public static final Block HERRINGBONE_OAK_PLANKS = registerCopy("herringbone_oak_planks", Blocks.OAK_PLANKS);
-    public static final Block HERRINGBONE_SPRUCE_PLANKS = registerCopy("herringbone_spruce_planks", Blocks.SPRUCE_PLANKS);
-    public static final Block HERRINGBONE_BIRCH_PLANKS = registerCopy("herringbone_birch_planks", Blocks.BIRCH_PLANKS);
-    public static final Block HERRINGBONE_JUNGLE_PLANKS = registerCopy("herringbone_jungle_planks", Blocks.JUNGLE_PLANKS);
-    public static final Block HERRINGBONE_ACACIA_PLANKS = registerCopy("herringbone_acacia_planks", Blocks.ACACIA_PLANKS);
-    public static final Block HERRINGBONE_DARK_OAK_PLANKS = registerCopy("herringbone_dark_oak_planks", Blocks.DARK_OAK_PLANKS);
-    public static final Block HERRINGBONE_MANGROVE_PLANKS = registerCopy("herringbone_mangrove_planks", Blocks.MANGROVE_PLANKS);
-    public static final Block HERRINGBONE_CHERRY_PLANKS = registerCopy("herringbone_cherry_planks", Blocks.CHERRY_PLANKS);
-    public static final Block HERRINGBONE_PALE_OAK_PLANKS = registerCopy("herringbone_pale_oak_planks", Blocks.PALE_OAK_PLANKS);
-    public static final Block HERRINGBONE_BAMBOO_PLANKS = registerCopy("herringbone_bamboo_planks", Blocks.BAMBOO_PLANKS);
-    public static final Block HERRINGBONE_RAW_BAMBOO_PLANKS = registerCopy("herringbone_raw_bamboo_planks", RAW_BAMBOO.planks());
-    public static final Block HERRINGBONE_WHITE_OAK_PLANKS = registerCopy("herringbone_white_oak_planks", WHITE_OAK.planks());
-    public static final Block HERRINGBONE_CRIMSON_PLANKS = registerCopy("herringbone_crimson_planks", Blocks.CRIMSON_PLANKS);
-    public static final Block HERRINGBONE_WARPED_PLANKS = registerCopy("herringbone_warped_planks", Blocks.WARPED_PLANKS);
-    public static final Block HERRINGBONE_CHARRED_PLANKS = registerCopy("herringbone_charred_planks", CHARRED.planks());
-
-    // Small Logs
-    public static final Block OAK_SMALL_LOGS = pillar2("oak_small_logs", Blocks.OAK_LOG);
-    public static final Block SPRUCE_SMALL_LOGS = pillar2("spruce_small_logs", Blocks.SPRUCE_LOG);
-    public static final Block BIRCH_SMALL_LOGS = pillar2("birch_small_logs", Blocks.BIRCH_LOG);
-    public static final Block JUNGLE_SMALL_LOGS = pillar2("jungle_small_logs", Blocks.JUNGLE_LOG);
-    public static final Block ACACIA_SMALL_LOGS = pillar2("acacia_small_logs", Blocks.ACACIA_LOG);
-    public static final Block DARK_OAK_SMALL_LOGS = pillar2("dark_oak_small_logs", Blocks.DARK_OAK_LOG);
-    public static final Block MANGROVE_SMALL_LOGS = pillar2("mangrove_small_logs", Blocks.MANGROVE_LOG);
-    public static final Block CHERRY_SMALL_LOGS = pillar2("cherry_small_logs", Blocks.CHERRY_LOG);
-    public static final Block PALE_OAK_SMALL_LOGS = pillar2("pale_oak_small_logs", Blocks.PALE_OAK_LOG);
-    public static final Block WHITE_OAK_SMALL_LOGS = pillar2("white_oak_small_logs", WHITE_OAK_LOG);
-    public static final Block CRIMSON_SMALL_STEMS = pillar2("crimson_small_stems", Blocks.CRIMSON_STEM);
-    public static final Block WARPED_SMALL_STEMS = pillar2("warped_small_stems", Blocks.WARPED_STEM);
-
-    // Posts
-    public static final WoodenPostBundle OAK_POST = WoodenPostBundle.of("oak_post", Blocks.OAK_LOG, Blocks.STRIPPED_OAK_LOG).register();
-    public static final WoodenPostBundle SPRUCE_POST = WoodenPostBundle.of("spruce_post", Blocks.SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG).register();
-    public static final WoodenPostBundle BIRCH_POST = WoodenPostBundle.of("birch_post", Blocks.BIRCH_LOG, Blocks.STRIPPED_BIRCH_LOG).register();
-    public static final WoodenPostBundle JUNGLE_POST = WoodenPostBundle.of("jungle_post", Blocks.JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_LOG).register();
-    public static final WoodenPostBundle ACACIA_POST = WoodenPostBundle.of("acacia_post", Blocks.ACACIA_LOG, Blocks.STRIPPED_ACACIA_LOG).register();
-    public static final WoodenPostBundle DARK_OAK_POST = WoodenPostBundle.of("dark_oak_post", Blocks.DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_LOG).register();
-    public static final WoodenPostBundle MANGROVE_POST = WoodenPostBundle.of("mangrove_post", Blocks.MANGROVE_LOG, Blocks.STRIPPED_MANGROVE_LOG).register();
-    public static final WoodenPostBundle CHERRY_POST = WoodenPostBundle.of("cherry_post", Blocks.CHERRY_LOG, Blocks.STRIPPED_CHERRY_LOG).register();
-    public static final WoodenPostBundle PALE_OAK_POST = WoodenPostBundle.of("pale_oak_post", Blocks.PALE_OAK_LOG, Blocks.STRIPPED_PALE_OAK_LOG).register();
-    public static final WoodenPostBundle WHITE_OAK_POST = WoodenPostBundle.of("white_oak_post", WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG,false).register();
-    public static final WoodenPostBundle CRIMSON_POST = WoodenPostBundle.of("crimson_post", Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM, false).register();
-    public static final WoodenPostBundle WARPED_POST = WoodenPostBundle.of("warped_post", Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM, false).register();
-
-    // Timber Frames & Grates
-    public static final TimberFrameBundle OAK_TIMBER_FRAME = TimberFrameBundle.of(Blocks.OAK_PLANKS).register();
-    public static final TimberFrameBundle BIRCH_TIMBER_FRAME = TimberFrameBundle.of(Blocks.BIRCH_PLANKS).register();
-    public static final TimberFrameBundle SPRUCE_TIMBER_FRAME = TimberFrameBundle.of(Blocks.SPRUCE_PLANKS).register();
-    public static final TimberFrameBundle JUNGLE_TIMBER_FRAME = TimberFrameBundle.of(Blocks.JUNGLE_PLANKS).register();
-    public static final TimberFrameBundle ACACIA_TIMBER_FRAME = TimberFrameBundle.of(Blocks.ACACIA_PLANKS).register();
-    public static final TimberFrameBundle DARK_OAK_TIMBER_FRAME = TimberFrameBundle.of(Blocks.DARK_OAK_PLANKS).register();
-    public static final TimberFrameBundle MANGROVE_TIMBER_FRAME = TimberFrameBundle.of(Blocks.MANGROVE_PLANKS).register();
-    public static final TimberFrameBundle CHERRY_TIMBER_FRAME = TimberFrameBundle.of(Blocks.CHERRY_PLANKS).register();
-    public static final TimberFrameBundle PALE_OAK_TIMBER_FRAME = TimberFrameBundle.of(Blocks.PALE_OAK_PLANKS).register();
-    public static final TimberFrameBundle BAMBOO_TIMBER_FRAME = TimberFrameBundle.of(Blocks.BAMBOO_PLANKS).register();
-    public static final TimberFrameBundle RAW_BAMBOO_TIMBER_FRAME = TimberFrameBundle.of(BlockusBlocks.RAW_BAMBOO.planks()).register();
-    public static final TimberFrameBundle WHITE_OAK_TIMBER_FRAME = TimberFrameBundle.of(BlockusBlocks.WHITE_OAK.planks()).register();
-    public static final TimberFrameBundle CRIMSON_TIMBER_FRAME = TimberFrameBundle.of(Blocks.CRIMSON_PLANKS,false).register();
-    public static final TimberFrameBundle WARPED_TIMBER_FRAME = TimberFrameBundle.of(Blocks.WARPED_PLANKS,false).register();
-    public static final TimberFrameBundle CHARRED_TIMBER_FRAME = TimberFrameBundle.of(BlockusBlocks.CHARRED.planks(),false).register();
+    // Extra Wood Blocks
+    public static final ExtraWoodBundle<BSSWBundle> WOODEN_MOSAIC = ExtraWoodBundle.of(wood -> wood + "_mosaic", WoodMaps.PLANKS_MAP::get, ExtraWoodBundle.exclude(WoodMaps.BAMBOO));
+    public static final ExtraWoodBundle<BSSWBundle> MOSSY_PLANKS = ExtraWoodBundle.of(wood -> "mossy_" + wood + "_planks", WoodMaps.PLANKS_MAP::get);
+    public static final ExtraWoodBundle<Block> HERRINGBONE_PLANKS = ExtraWoodBundle.of(wood -> registerCopy("herringbone_" + wood + "_planks", WoodMaps.PLANKS_MAP.get(wood)));
+    public static final ExtraWoodBundle<Block> SMALL_LOGS = ExtraWoodBundle.of(wood -> {
+        Block log = WoodMaps.LOG_MAP.get(wood);
+        if (log == null) return null;
+        String suffix = (wood.equals(WoodMaps.CRIMSON.getId()) || wood.equals(WoodMaps.WARPED.getId())) ? "stems" : "logs";
+        return pillar2(wood + "_small_" + suffix, log);
+    });
+    public static final WoodenPostBundle WOODEN_POST = WoodenPostBundle.register();
+    public static final TimberFrameBundle TIMBER_FRAME = TimberFrameBundle.register();
     public static final Block WOODEN_FRAME = woodenPane("wooden_frame");
 
     // Hedges
