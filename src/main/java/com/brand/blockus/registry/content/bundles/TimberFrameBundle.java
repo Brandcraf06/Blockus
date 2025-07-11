@@ -1,60 +1,66 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.OrientableBlockBase;
-import com.brand.blockus.utils.BlockFactory;
+import com.brand.blockus.utils.helper.BlockFactory;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.minecraft.block.*;
-import net.minecraft.registry.Registries;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 
-public class TimberFrameBundle {
+public record TimberFrameBundle(Map<WoodMaps, TimberFrameVariants> woodMap) {
 
-    private static final ArrayList<TimberFrameBundle> LIST = new ArrayList<>();
+    public static final List<TimberFrameBundle> LIST = new ArrayList<>();
 
-    public final Block block;
-    public final Block diagonal;
-    public final Block cross;
-    public final Block lattice;
-    public final Block grate;
-    public final Block base;
-    public final List<Block> all;
-    public boolean burnable;
-
-    public TimberFrameBundle(Block base) {
-        this(base, true);
+    public static List<TimberFrameBundle> values() {
+        return LIST;
     }
 
-    public TimberFrameBundle(Block base, boolean burnable) {
-        this.base = base;
-        this.burnable = burnable;
-        String type = getWood(base);
+    public static AbstractBlock.Settings settings(Block base, boolean isBurnable) {
+        AbstractBlock.Settings blockSettings = BlockFactory.createCopy(base).solid();
+        return isBurnable ? blockSettings.burnable() : blockSettings;
+    }
 
-        AbstractBlock.Settings blockSettings = BlockFactory.createCopy(base);
+    public List<Block> all() {
+        List<Block> list = new ArrayList<>();
+        for (WoodMaps wood : WoodMaps.values()) {
+            TimberFrameVariants variants = woodMap.get(wood);
+            if (variants != null) {
+                list.add(variants.block());
+                list.add(variants.diagonal());
+                list.add(variants.cross());
+                list.add(variants.lattice());
+                list.add(variants.grate());
+            }
+        }
+        return list;
+    }
 
-        if (burnable) {
-            blockSettings = blockSettings.burnable();
+    public record TimberFrameVariants(Block block, Block diagonal, Block cross, Block lattice, Block grate) {
+    }
+
+    public static TimberFrameBundle register() {
+        Map<WoodMaps, TimberFrameVariants> woodMap = new EnumMap<>(WoodMaps.class);
+
+        for (WoodMaps wood : WoodMaps.values()) {
+            Block planks = WoodMaps.PLANKS_MAP.get(wood.getId());
+            if (planks == null) {
+                System.err.println("[WARN] Missing planks for: " + wood.getId());
+                continue;
+            }
+            Block block = BlockFactory.registerOf(wood.getId() + "_timber_frame", settings(planks, wood.data().isBurnable()));
+            Block diagonal = BlockFactory.registerOf(wood.getId() + "_diagonal_timber_frame", OrientableBlockBase::new, settings(planks, wood.data().isBurnable()));
+            Block cross = BlockFactory.registerOf(wood.getId() + "_cross_timber_frame", settings(planks, wood.data().isBurnable()));
+            Block lattice = BlockFactory.registerCopy(wood.getId() + "_lattice", PaneBlock::new, planks);
+            Block grate = BlockFactory.registerCopy(wood.getId() + "_grate", GrateBlock::new, planks, settings -> settings.nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never));
+
+            woodMap.put(wood, new TimberFrameVariants(block, diagonal, cross, lattice, grate));
         }
 
-        this.block = BlockFactory.register(type + "_timber_frame", blockSettings);
-        this.diagonal = BlockFactory.register(type + "_diagonal_timber_frame", OrientableBlockBase::new, blockSettings);
-        this.cross = BlockFactory.register(type + "_cross_timber_frame", blockSettings);
-        this.lattice = BlockFactory.register(type + "_lattice", PaneBlock::new, BlockFactory.createCopy(base));
-        this.grate = BlockFactory.register(type + "_grate", GrateBlock::new, BlockFactory.createCopy(base).nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never));
-        this.all = List.of(block, diagonal, cross, lattice, grate);
-
-        LIST.add(this);
-    }
-
-    public static String getWood(Block block) {
-        return Registries.BLOCK.getId(block).getPath().replace("_planks", "");
-    }
-
-    public boolean isBurnable() {
-        return this.burnable;
-    }
-
-    public static ArrayList<TimberFrameBundle> values() {
-        return LIST;
+        TimberFrameBundle bundle = new TimberFrameBundle(woodMap);
+        LIST.add(bundle);
+        return bundle;
     }
 }

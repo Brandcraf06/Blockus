@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "blockus:rainbow_petal",
+    "#": "blockus:rainbow_petals",
     "X": "minecraft:glass"
   },
   "pattern": [

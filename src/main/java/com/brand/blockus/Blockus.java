@@ -2,6 +2,7 @@ package com.brand.blockus;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.itemgroups.content.*;
+import com.brand.blockus.registry.BlockusAliases;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.BlockusItems;
@@ -50,7 +51,7 @@ public class Blockus implements ModInitializer {
 
         Instance.init();
         BlockusWorldgenFeatures.registerConfiguredFeature();
-
+        BlockusAliases.init();
     }
 
     public static Text STEPPED_ON_TEXT = Text.translatable(Util.createTranslationKey("blockitem", Blockus.id("when_stepped_on"))).formatted(Formatting.GRAY);

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "redstone_lamps",
+  "key": {
+    "#": "minecraft:redstone_lamp",
+    "S": "minecraft:black_dye"
+  },
+  "pattern": [
+    " S ",
+    "S#S",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "blockus:black_redstone_lamp"
+  }
+}

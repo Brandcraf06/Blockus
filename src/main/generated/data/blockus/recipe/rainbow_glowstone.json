@@ -3,7 +3,7 @@
   "category": "building",
   "group": "rainbow_glowstone",
   "ingredients": [
-    "blockus:rainbow_petal",
+    "blockus:rainbow_petals",
     "minecraft:glowstone"
   ],
   "result": {

@@ -9,10 +9,10 @@ public class NaturalGroup {
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_NATURAL).register((entries) -> {
             entries.add(BlockusBlocks.PATH);
-            entries.add(BlockusBlocks.LIMESTONE.block);
-            entries.add(BlockusBlocks.MARBLE.block);
-            entries.add(BlockusBlocks.BLUESTONE.block);
-            entries.add(BlockusBlocks.VIRIDITE.block);
+            entries.add(BlockusBlocks.LIMESTONE.block());
+            entries.add(BlockusBlocks.MARBLE.block());
+            entries.add(BlockusBlocks.BLUESTONE.block());
+            entries.add(BlockusBlocks.VIRIDITE.block());
 
             entries.add(BlockusBlocks.WHITE_OAK_LOG);
             entries.add(BlockusBlocks.WHITE_OAK_SAPLING);
@@ -21,31 +21,31 @@ public class NaturalGroup {
                 entries.add(BlockusPromenadeBlocks.WHITE_OAK_LEAF_PILE);
             }*/
 
-            entries.add(BlockusBlocks.OAK_SMALL_HEDGE);
-            entries.add(BlockusBlocks.SPRUCE_SMALL_HEDGE);
-            entries.add(BlockusBlocks.BIRCH_SMALL_HEDGE);
-            entries.add(BlockusBlocks.JUNGLE_SMALL_HEDGE);
-            entries.add(BlockusBlocks.ACACIA_SMALL_HEDGE);
-            entries.add(BlockusBlocks.DARK_OAK_SMALL_HEDGE);
-            entries.add(BlockusBlocks.MANGROVE_SMALL_HEDGE);
-            entries.add(BlockusBlocks.CHERRY_SMALL_HEDGE);
-            entries.add(BlockusBlocks.PALE_OAK_SMALL_HEDGE);
-            entries.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE);
-            entries.add(BlockusBlocks.CRIMSON_SMALL_HEDGE);
-            entries.add(BlockusBlocks.WARPED_SMALL_HEDGE);
-            entries.add(BlockusBlocks.AZALEA_SMALL_HEDGE);
-            entries.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE);
-            entries.add(BlockusBlocks.MOSS_SMALL_HEDGE);
-            entries.add(BlockusBlocks.PALE_MOSS_SMALL_HEDGE);
+            entries.add(BlockusBlocks.OAK_HEDGE);
+            entries.add(BlockusBlocks.SPRUCE_HEDGE);
+            entries.add(BlockusBlocks.BIRCH_HEDGE);
+            entries.add(BlockusBlocks.JUNGLE_HEDGE);
+            entries.add(BlockusBlocks.ACACIA_HEDGE);
+            entries.add(BlockusBlocks.DARK_OAK_HEDGE);
+            entries.add(BlockusBlocks.MANGROVE_HEDGE);
+            entries.add(BlockusBlocks.CHERRY_HEDGE);
+            entries.add(BlockusBlocks.PALE_OAK_HEDGE);
+            entries.add(BlockusBlocks.WHITE_OAK_HEDGE);
+            entries.add(BlockusBlocks.CRIMSON_HEDGE);
+            entries.add(BlockusBlocks.WARPED_HEDGE);
+            entries.add(BlockusBlocks.AZALEA_HEDGE);
+            entries.add(BlockusBlocks.FLOWERING_AZALEA_HEDGE);
+            entries.add(BlockusBlocks.MOSS_HEDGE);
+            entries.add(BlockusBlocks.PALE_MOSS_HEDGE);
 /*            if (FabricLoader.getInstance().isModLoaded("promenade")) {
-                entries.add(BlockusPromenadeBlocks.SAP_MAPLE_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.VERMILION_MAPLE_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.FULVOUS_MAPLE_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.MIKADO_MAPLE_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.BLUSH_SAKURA_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.COTTON_SAKURA_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.PALM_SMALL_HEDGE);
-                entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_HEDGE);
+                entries.add(BlockusPromenadeBlocks.SAP_MAPLE_HEDGE);
+                entries.add(BlockusPromenadeBlocks.VERMILION_MAPLE_HEDGE);
+                entries.add(BlockusPromenadeBlocks.FULVOUS_MAPLE_HEDGE);
+                entries.add(BlockusPromenadeBlocks.MIKADO_MAPLE_HEDGE);
+                entries.add(BlockusPromenadeBlocks.BLUSH_SAKURA_HEDGE);
+                entries.add(BlockusPromenadeBlocks.COTTON_SAKURA_HEDGE);
+                entries.add(BlockusPromenadeBlocks.PALM_HEDGE);
+                entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_HEDGE);
             }*/
 
             entries.add(BlockusBlocks.SOUL_O_LANTERN);

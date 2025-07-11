@@ -112,8 +112,8 @@ public class PostBlock extends PillarBlock implements Waterloggable {
         }
 
         if ((neighborState.getBlock() instanceof PostBlock && neighborState.get(Properties.AXIS) == direction.getAxis())
-            ||(direction == Direction.UP && neighborState.isIn(BlockTags.WALL_POST_OVERRIDE))
-            ||(direction == Direction.DOWN && neighborState.getBlock() instanceof BellBlock) && neighborState.get(Properties.ATTACHMENT) == Attachment.CEILING) {
+            || (direction == Direction.UP && neighborState.isIn(BlockTags.WALL_POST_OVERRIDE))
+            || (direction == Direction.DOWN && neighborState.getBlock() instanceof BellBlock) && neighborState.get(Properties.ATTACHMENT) == Attachment.CEILING) {
             return ConnectionType.POST;
         }
 

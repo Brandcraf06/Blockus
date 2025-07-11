@@ -2,7 +2,7 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.content.BlockusItems;
-import com.brand.blockus.utils.BlockFactory;
+import com.brand.blockus.utils.helper.BlockFactory;
 import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
@@ -16,80 +16,37 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class WoodBundle {
+public record WoodBundle(
+    String type,
+    boolean burnable,
+    Block base,
+    Block planks,
+    Block stairs,
+    Block slab,
+    Block fence,
+    Block fenceGate,
+    Block door,
+    Block trapdoor,
+    Block pressurePlate,
+    Block button,
+    Block standingSign,
+    Block wallSign,
+    Item sign,
+    Block ceilingHangingSign,
+    Block wallHangingSign,
+    Item hangingSign
+) {
 
-    public static final ArrayList<WoodBundle> LIST = new ArrayList<>();
+    public static final List<WoodBundle> LIST = new ArrayList<>();
 
-    public final Block planks;
-    public final Block stairs;
-    public final Block slab;
-    public final Block fence;
-    public final Block fence_gate;
-    public final Block door;
-    public final Block trapdoor;
-    public final Block base;
-    public final Block pressure_plate;
-    public final Block button;
-    public final Block standing_sign;
-    public final Block wall_sign;
-    public final Item sign;
-    public final Block ceiling_hanging_sign;
-    public final Block wall_hanging_sign;
-    public final Item hanging_sign;
-    public boolean burnable;
-
-    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, WoodType woodtype, BlockSetType blockSetType, boolean burnable) {
-
-        this.base = base;
-        this.burnable = burnable;
-
-        AbstractBlock.Settings blockSettings = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(sound);
-        AbstractBlock.Settings doorTrapdoorSettings = BlockFactory.createDoorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
-        AbstractBlock.Settings signSettings = BlockFactory.create().mapColor(color).noCollision().strength(1.0F);
-
-        if (burnable) {
-            blockSettings = blockSettings.burnable();
-            doorTrapdoorSettings = doorTrapdoorSettings.burnable();
-            signSettings = signSettings.burnable();
-        }
-
-        this.planks = BlockFactory.register(type + "_planks", blockSettings);
-        this.stairs = BlockFactory.registerStairs(this.planks);
-        this.slab = BlockFactory.registerSlab(this.planks);
-        this.fence = BlockFactory.register(type + "_fence", FenceBlock::new, BlockFactory.createCopy(base));
-        this.fence_gate = BlockFactory.register(type + "_fence_gate", (settings) -> new FenceGateBlock(woodtype, settings), BlockFactory.createCopy(base));
-        this.door = BlockFactory.register(type + "_door", (settings) -> new DoorBlock(blockSetType, settings), doorTrapdoorSettings);
-        this.trapdoor = BlockFactory.register(type + "_trapdoor", (settings) -> new TrapdoorBlock(blockSetType, settings), doorTrapdoorSettings);
-        this.pressure_plate = BlockFactory.pressurePlate(this.planks, blockSetType);
-        this.button = BlockFactory.button(this.planks, blockSetType, 30);
-
-        // sign
-        Identifier signPath = Blockus.id("entity/signs/" + type);
-        this.standing_sign = BlockFactory.registerNoItem(type + "_sign", (settings) -> new TerraformSignBlock(signPath, settings), signSettings);
-        this.wall_sign = BlockFactory.registerNoItem(type + "_wall_sign", (settings) -> new TerraformWallSignBlock(signPath, settings), copyLootTable(standing_sign, color, burnable));
-        this.sign = BlockusItems.register(this.standing_sign, (block, settings) -> new SignItem(block, this.wall_sign, settings), (new Item.Settings()).maxCount(16));
-
-        Identifier hangingSignPath = Blockus.id("entity/signs/hanging/" + type);
-        Identifier hangingSignGuiPath = Blockus.id("textures/gui/hanging_signs/" + type);
-        this.ceiling_hanging_sign = BlockFactory.registerNoItem(type + "_hanging_sign", (settings) -> new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, settings), signSettings);
-        this.wall_hanging_sign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", (settings) -> new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, woodtype, settings), copyLootTable(ceiling_hanging_sign, color, burnable));
-        this.hanging_sign = BlockusItems.register(this.ceiling_hanging_sign, (block, settings) -> new HangingSignItem(block, this.wall_hanging_sign, settings), (new Item.Settings()).maxCount(16));
-
-        LIST.add(this);
-
+    public static List<WoodBundle> values() {
+        return LIST;
     }
 
-    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, net.minecraft.block.WoodType woodtype, BlockSetType blockSetType) {
-        this(type, base, color, sound, woodtype, blockSetType, true);
-    }
-
-    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound) {
-        this(type, base, color, sound, net.minecraft.block.WoodType.OAK, BlockSetType.OAK, true);
-    }
-
-    public WoodBundle(String type, Block base, MapColor color, BlockSoundGroup sound, boolean burnable) {
-        this(type, base, color, sound, net.minecraft.block.WoodType.OAK, BlockSetType.OAK, burnable);
+    public static Builder of(String type, Block base, MapColor color, BlockSoundGroup sound, WoodType woodType, BlockSetType blockSetType, boolean burnable) {
+        return new Builder(type, base, color, sound, woodType, blockSetType, burnable);
     }
 
     public static AbstractBlock.Settings copyLootTable(Block block, MapColor color, boolean burnable) {
@@ -100,11 +57,65 @@ public class WoodBundle {
         return settings;
     }
 
-    public static ArrayList<WoodBundle> values() {
-        return LIST;
-    }
+    public static class Builder {
+        public final String type;
+        public final Block base;
+        public final MapColor color;
+        public final BlockSoundGroup sound;
+        public final WoodType woodType;
+        public final BlockSetType blockSetType;
+        public final boolean burnable;
 
-    public boolean isBurnable() {
-        return this.burnable;
+        public Builder(String type, Block base, MapColor color, BlockSoundGroup sound, WoodType woodType, BlockSetType blockSetType, boolean burnable) {
+            this.type = type;
+            this.base = base;
+            this.color = color;
+            this.sound = sound;
+            this.woodType = woodType;
+            this.blockSetType = blockSetType;
+            this.burnable = burnable;
+        }
+
+        public WoodBundle register() {
+            AbstractBlock.Settings blockSettings = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(sound);
+            AbstractBlock.Settings doorTrapdoorSettings = BlockFactory.doorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
+            AbstractBlock.Settings signSettings = BlockFactory.create().mapColor(color).noCollision().strength(1.0F);
+
+            if (burnable) {
+                blockSettings = blockSettings.burnable();
+                doorTrapdoorSettings = doorTrapdoorSettings.burnable();
+                signSettings = signSettings.burnable();
+            }
+
+            Block planks = BlockFactory.registerOf(type + "_planks", blockSettings);
+            Block stairs = BlockFactory.stairs(planks);
+            Block slab = BlockFactory.slab(planks);
+            Block fence = BlockFactory.registerCopy(type + "_fence", FenceBlock::new, base);
+            Block fenceGate = BlockFactory.registerCopy(type + "_fence_gate", (settings) -> new FenceGateBlock(woodType, settings), base);
+            Block door = BlockFactory.registerOf(type + "_door", (settings) -> new DoorBlock(blockSetType, settings), doorTrapdoorSettings);
+            Block trapdoor = BlockFactory.registerOf(type + "_trapdoor", (settings) -> new TrapdoorBlock(blockSetType, settings), doorTrapdoorSettings);
+            Block pressurePlate = BlockFactory.pressurePlate(planks, blockSetType);
+            Block button = BlockFactory.button(planks, blockSetType, 30);
+
+
+            Identifier signPath = Blockus.id("entity/signs/" + type);
+            Block standingSign = BlockFactory.registerNoItem(type + "_sign", (settings) -> new TerraformSignBlock(signPath, settings), signSettings);
+            Block wallSign = BlockFactory.registerNoItem(type + "_wall_sign", (settings) -> new TerraformWallSignBlock(signPath, settings), copyLootTable(standingSign, color, burnable));
+            Item sign = BlockusItems.register(standingSign, (block, settings) -> new SignItem(block, wallSign, settings), new Item.Settings().maxCount(16));
+
+            Identifier hangingSignPath = Blockus.id("entity/signs/hanging/" + type);
+            Identifier hangingSignGuiPath = Blockus.id("textures/gui/hanging_signs/" + type);
+            Block ceilingHangingSign = BlockFactory.registerNoItem(type + "_hanging_sign", (settings) -> new TerraformHangingSignBlock(hangingSignPath, hangingSignGuiPath, settings), signSettings);
+            Block wallHangingSign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", (settings) -> new TerraformWallHangingSignBlock(hangingSignPath, hangingSignGuiPath, woodType, settings), copyLootTable(ceilingHangingSign, color, burnable));
+            Item hangingSign = BlockusItems.register(ceilingHangingSign, (block, settings) -> new HangingSignItem(block, wallHangingSign, settings), new Item.Settings().maxCount(16));
+
+            WoodBundle bundle = new WoodBundle(type, burnable, base, planks, stairs, slab, fence, fenceGate, door, trapdoor, pressurePlate, button, standingSign, wallSign, sign, ceilingHangingSign, wallHangingSign, hangingSign);
+
+            LIST.add(bundle);
+            return bundle;
+        }
     }
 }
+
+
+

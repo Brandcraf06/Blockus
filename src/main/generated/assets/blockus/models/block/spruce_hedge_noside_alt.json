@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/template_hedge_noside_alt",
+  "textures": {
+    "hedge": "minecraft:block/spruce_leaves"
+  }
+}

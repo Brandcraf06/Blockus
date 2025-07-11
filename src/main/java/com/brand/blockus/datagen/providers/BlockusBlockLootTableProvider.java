@@ -2,6 +2,7 @@ package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.blocks.base.CookieBlock;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -25,6 +26,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
@@ -43,65 +45,79 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getOrThrow(RegistryKeys.ENCHANTMENT);
 
         for (BSSWBundle bsswType : BSSWBundle.values()) {
-            this.addBlockStairsandSlabDrops(bsswType.block, bsswType.stairs, bsswType.slab);
-            if (bsswType.wall != null) {
-                this.addDrop(bsswType.wall);
+            this.addBlockStairsandSlabDrops(bsswType.block(), bsswType.stairs(), bsswType.slab());
+            if (bsswType.wall() != null) {
+                this.addDrop(bsswType.wall());
             }
         }
 
         for (CopperBundle copper : CopperBundle.values()) {
-            this.addBlockStairsandSlabDrops(copper.block, copper.stairs, copper.slab);
-            this.addBlockStairsandSlabDrops(copper.blockWaxed, copper.stairsWaxed, copper.slabWaxed);
-            this.addDrop(copper.wall);
-            this.addDrop(copper.wallWaxed);
+            this.addBlockStairsandSlabDrops(copper.block(), copper.stairs(), copper.slab());
+            this.addBlockStairsandSlabDrops(copper.blockWaxed(), copper.stairsWaxed(), copper.slabWaxed());
+            this.addDrop(copper.wall());
+            this.addDrop(copper.wallWaxed());
         }
 
         for (ConcreteBundle concrete : ConcreteBundle.values()) {
-            this.addBlockStairsandSlabDrops(concrete.block, concrete.stairs, concrete.slab);
-            this.addDrops(concrete.wall, concrete.chiseled, concrete.pillar);
+            for (ConcreteBundle.ConcreteVariants variants : concrete.colorMap().values()) {
+                this.addBlockStairsandSlabDrops(variants.block(), variants.stairs(), variants.slab());
+                this.addDrops(variants.wall(), variants.chiseled(), variants.pillar());
+            }
         }
 
         for (WoodBundle woodBundle : WoodBundle.values()) {
-            this.addWoodSetDrop(woodBundle.planks,
-                woodBundle.stairs,
-                woodBundle.slab,
-                woodBundle.fence,
-                woodBundle.fence_gate,
-                woodBundle.door,
-                woodBundle.trapdoor,
-                woodBundle.pressure_plate,
-                woodBundle.button,
-                woodBundle.standing_sign,
-                woodBundle.ceiling_hanging_sign);
+            this.addWoodSetDrop(woodBundle.planks(),
+                woodBundle.stairs(),
+                woodBundle.slab(),
+                woodBundle.fence(),
+                woodBundle.fenceGate(),
+                woodBundle.door(),
+                woodBundle.trapdoor(),
+                woodBundle.pressurePlate(),
+                woodBundle.button(),
+                woodBundle.standingSign(),
+                woodBundle.ceilingHangingSign());
         }
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            for (Block block : timberFrameBundle.all) {
+            for (Block block : timberFrameBundle.all()) {
                 this.addDrops(block);
             }
         }
 
-        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
-            this.addBlockStairsandSlabDrops(asphaltBundle.block, asphaltBundle.stairs, asphaltBundle.slab);
+        for (var asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
+            this.addBlockStairsandSlabDrops(asphaltBundle.block(), asphaltBundle.stairs(), asphaltBundle.slab());
         }
 
         for (PottedLargeBundle pottedLargeBundle : PottedLargeBundle.values()) {
-            this.addPottedLargePlantDrop(pottedLargeBundle.block);
+            this.addPottedLargePlantDrop(pottedLargeBundle.block());
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            this.addBlockStairsandSlabDrops(woolBundle.block, woolBundle.stairs, woolBundle.slab);
-            this.addDrop(woolBundle.carpet);
+            for (var variants : woolBundle.colorMap().values()) {
+                this.addBlockStairsandSlabDrops(variants.block(), variants.stairs(), variants.slab());
+                this.addDrop(variants.carpet());
+            }
         }
 
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-            this.addDrop(coloredTilesVariants.block);
+            this.addDrop(coloredTilesVariants.block());
         }
 
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            this.addDrop(woodenPost.block);
-            this.addDrop(woodenPost.stripped);
+            for (Block block : woodenPost.all()) {
+                this.addDrops(block);
+            }
         }
+
+        for (StainedBlockBundle stainedBlockBundle : List.of(NEON_BLOCK, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, STAINED_REDSTONE_LAMP, STAINED_REDSTONE_LAMP_LIT, COLORED_TILES)) {
+            stainedBlockBundle.colorMap().values().forEach(this::addDrops);
+        }
+
+        for (ExtraWoodBundle<Block> extraWoodBundle : List.of(HERRINGBONE_PLANKS, SMALL_LOGS)) {
+            extraWoodBundle.bundle().values().forEach(this::addDrops);
+        }
+
 
         this.addDrops(CHISELED_MUD_BRICKS,
             MUD_BRICK_PILLAR,
@@ -130,44 +146,14 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             SCULK_PILLAR,
             POLISHED_SCULK_PRESSURE_PLATE,
 
-            // Herringbone Planks
-            HERRINGBONE_OAK_PLANKS,
-            HERRINGBONE_BIRCH_PLANKS,
-            HERRINGBONE_SPRUCE_PLANKS,
-            HERRINGBONE_JUNGLE_PLANKS,
-            HERRINGBONE_ACACIA_PLANKS,
-            HERRINGBONE_DARK_OAK_PLANKS,
-            HERRINGBONE_MANGROVE_PLANKS,
-            HERRINGBONE_CHERRY_PLANKS,
-            HERRINGBONE_BAMBOO_PLANKS,
-            HERRINGBONE_RAW_BAMBOO_PLANKS,
-            HERRINGBONE_WHITE_OAK_PLANKS,
-            HERRINGBONE_CRIMSON_PLANKS,
-            HERRINGBONE_WARPED_PLANKS,
-            HERRINGBONE_CHARRED_PLANKS,
-            HERRINGBONE_PALE_OAK_PLANKS,
-
-
             // Other
             LEGACY_LOG,
             LEGACY_SAPLING,
-            ACACIA_SMALL_LOGS,
             ANDESITE_CIRCULAR_PAVING,
             APPLE_CRATE,
             BEETROOT_CRATE,
-            BIRCH_SMALL_LOGS,
-            BLACK_COLORED_TILES,
-            BLACK_FUTURNEO_BLOCK,
-            BLACK_GLAZED_TERRACOTTA_PILLAR,
-            BLACK_NEON,
             BLACKSTONE_TRAPDOOR,
             BLAZE_PILLAR,
-            BLUE_COLORED_TILES,
-            BLUE_FUTURNEO_BLOCK,
-            BLUE_GLAZED_TERRACOTTA_PILLAR,
-            BLUE_NEON,
-            BLUE_REDSTONE_LAMP,
-            BLUE_REDSTONE_LAMP_LIT,
             BLUESTONE_BUTTON,
             BLUESTONE_CIRCULAR_PAVING,
             BLUESTONE_LINES,
@@ -175,19 +161,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             BLUESTONE_PRESSURE_PLATE,
             BLUESTONE_SQUARES,
             BREAD_BOX,
-            BROWN_COLORED_TILES,
-            BROWN_FUTURNEO_BLOCK,
-            BROWN_GLAZED_TERRACOTTA_PILLAR,
-            BROWN_NEON,
-            BROWN_REDSTONE_LAMP,
-            BROWN_REDSTONE_LAMP_LIT,
             CARROT_CRATE,
             CAUTION_BARRIER,
             CAUTION_BLOCK,
             CARVED_TUFF_BRICKS,
             CHARCOAL_BLOCK,
             CHARRED_NETHER_BRICK_PILLAR,
-            CHERRY_SMALL_LOGS,
             CHISELED_ANDESITE_BRICKS,
             CHISELED_BLUESTONE,
             CHISELED_DARK_PRISMARINE,
@@ -223,16 +202,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             CRACKED_OBSIDIAN_BRICKS,
             CRACKED_POLISHED_BASALT_BRICKS,
             CRACKED_TUFF_BRICKS,
-            CRIMSON_SMALL_HEDGE,
-            CRIMSON_SMALL_STEMS,
+            CRIMSON_HEDGE,
             CUT_SOUL_SANDSTONE,
-            CYAN_COLORED_TILES,
-            CYAN_FUTURNEO_BLOCK,
-            CYAN_GLAZED_TERRACOTTA_PILLAR,
-            CYAN_NEON,
-            CYAN_REDSTONE_LAMP,
-            CYAN_REDSTONE_LAMP_LIT,
-            DARK_OAK_SMALL_LOGS,
             DARK_PRISMARINE_PILLAR,
             DEEPSLATE_CIRCULAR_PAVING,
             DEEPSLATE_PILLAR,
@@ -253,19 +224,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             GOLDEN_CHAIN,
             GRANITE_CIRCULAR_PAVING,
             GRAY_BRIGHT_FUTURNEO_BLOCK,
-            GRAY_COLORED_TILES,
-            GRAY_FUTURNEO_BLOCK,
-            GRAY_GLAZED_TERRACOTTA_PILLAR,
-            GRAY_NEON,
-            GRAY_REDSTONE_LAMP,
-            GRAY_REDSTONE_LAMP_LIT,
-            GREEN_COLORED_TILES,
-            GREEN_FUTURNEO_BLOCK,
-            GREEN_GLAZED_TERRACOTTA_PILLAR,
-            GREEN_NEON,
-            GREEN_REDSTONE_LAMP,
-            GREEN_REDSTONE_LAMP_LIT,
-            JUNGLE_SMALL_LOGS,
             LANTERN_BLOCK,
             LAPIS_DECORATED_RED_SANDSTONE,
             LAPIS_DECORATED_SANDSTONE,
@@ -290,24 +248,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             LEGACY_STONECUTTER,
             LEGACY_ROSE,
             LEGACY_BLUE_ROSE,
-            LIGHT_BLUE_COLORED_TILES,
-            LIGHT_BLUE_FUTURNEO_BLOCK,
-            LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR,
-            LIGHT_BLUE_NEON,
-            LIGHT_BLUE_REDSTONE_LAMP,
-            LIGHT_BLUE_REDSTONE_LAMP_LIT,
-            LIGHT_GRAY_COLORED_TILES,
-            LIGHT_GRAY_FUTURNEO_BLOCK,
-            LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR,
-            LIGHT_GRAY_NEON,
-            LIGHT_GRAY_REDSTONE_LAMP,
-            LIGHT_GRAY_REDSTONE_LAMP_LIT,
-            LIME_COLORED_TILES,
-            LIME_FUTURNEO_BLOCK,
-            LIME_GLAZED_TERRACOTTA_PILLAR,
-            LIME_NEON,
-            LIME_REDSTONE_LAMP,
-            LIME_REDSTONE_LAMP_LIT,
             LIMESTONE_BUTTON,
             LIMESTONE_CIRCULAR_PAVING,
             LIMESTONE_PILLAR,
@@ -315,13 +255,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             LIMESTONE_SQUARES,
             LIMESTONE_LINES,
             LOVE_BLOCK,
-            MAGENTA_COLORED_TILES,
-            MAGENTA_FUTURNEO_BLOCK,
-            MAGENTA_GLAZED_TERRACOTTA_PILLAR,
-            MAGENTA_NEON,
-            MAGENTA_REDSTONE_LAMP,
-            MAGENTA_REDSTONE_LAMP_LIT,
-            MANGROVE_SMALL_LOGS,
             MARBLE_BUTTON,
             MARBLE_CIRCULAR_PAVING,
             MARBLE_PILLAR,
@@ -329,23 +262,15 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             MARBLE_SQUARES,
             MARBLE_LINES,
             MEMBRANE_BLOCK,
-            MOSS_SMALL_HEDGE,
+            MOSS_HEDGE,
             NETHER_BRICK_PILLAR,
             NETHERITE_STAIRS,
             NETHERRACK_CIRCULAR_PAVING,
-            OAK_SMALL_LOGS,
             OBSIDIAN_CIRCULAR_PAVING,
             OBSIDIAN_PILLAR,
             OBSIDIAN_PRESSURE_PLATE,
             OBSIDIAN_REINFORCED_TRAPDOOR,
-            ORANGE_COLORED_TILES,
-            ORANGE_FUTURNEO_BLOCK,
-            ORANGE_GLAZED_TERRACOTTA_PILLAR,
-            ORANGE_NEON,
-            ORANGE_REDSTONE_LAMP,
-            ORANGE_REDSTONE_LAMP_LIT,
-            PALE_OAK_SMALL_LOGS,
-            PALE_MOSS_SMALL_HEDGE,
+            PALE_MOSS_HEDGE,
             PAPER_BLOCK,
             PAPER_LAMP,
             PAPER_TRAPDOOR,
@@ -355,12 +280,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             PHANTOM_PURPUR_LINES,
             PHANTOM_PURPUR_PILLAR,
             PHANTOM_PURPUR_SQUARES,
-            PINK_COLORED_TILES,
-            PINK_FUTURNEO_BLOCK,
-            PINK_GLAZED_TERRACOTTA_PILLAR,
-            PINK_NEON,
-            PINK_REDSTONE_LAMP,
-            PINK_REDSTONE_LAMP_LIT,
             POLISHED_ANDESITE_BUTTON,
             POLISHED_ANDESITE_PILLAR,
             POLISHED_ANDESITE_PRESSURE_PLATE,
@@ -388,12 +307,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             PRISMARINE_CIRCULAR_PAVING,
             PRISMARINE_PILLAR,
             PUFFERFISH_CRATE,
-            PURPLE_COLORED_TILES,
-            PURPLE_FUTURNEO_BLOCK,
-            PURPLE_GLAZED_TERRACOTTA_PILLAR,
-            PURPLE_NEON,
-            PURPLE_REDSTONE_LAMP,
-            PURPLE_REDSTONE_LAMP_LIT,
             PURPUR_DECORATED_END_STONE,
             PURPUR_LINES,
             PURPUR_SQUARES,
@@ -409,13 +322,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             RAINBOW_LAMP,
             RAINBOW_LAMP_LIT,
             RAINBOW_NEON,
-            RED_COLORED_TILES,
-            RED_FUTURNEO_BLOCK,
-            RED_GLAZED_TERRACOTTA_PILLAR,
-            RED_NEON,
             RED_NETHER_BRICK_PILLAR,
-            RED_REDSTONE_LAMP,
-            RED_REDSTONE_LAMP_LIT,
             RED_SANDSTONE_PILLAR,
             REDSTONE_LAMP_LIT,
             REDSTONE_LANTERN,
@@ -432,7 +339,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             SOUL_O_LANTERN,
             REDSTONE_O_LANTERN,
             SOUL_SANDSTONE_PILLAR,
-            SPRUCE_SMALL_LOGS,
             STARS_BLOCK,
             STONE_BRICK_PILLAR,
             STONE_CIRCULAR_PAVING,
@@ -448,25 +354,11 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             TROPICAL_FISH_CRATE,
             TUFF_CIRCULAR_PAVING,
             TUFF_PILLAR,
-            WARPED_SMALL_HEDGE,
-            WARPED_SMALL_STEMS,
+            WARPED_HEDGE,
             WEIGHT_STORAGE_CUBE,
-            WHITE_COLORED_TILES,
-            WHITE_FUTURNEO_BLOCK,
-            WHITE_GLAZED_TERRACOTTA_PILLAR,
-            WHITE_NEON,
             WHITE_OAK_LOG,
             WHITE_OAK_SAPLING,
-            WHITE_OAK_SMALL_LOGS,
             WHITE_OAK_WOOD,
-            WHITE_REDSTONE_LAMP,
-            WHITE_REDSTONE_LAMP_LIT,
-            YELLOW_COLORED_TILES,
-            YELLOW_FUTURNEO_BLOCK,
-            YELLOW_GLAZED_TERRACOTTA_PILLAR,
-            YELLOW_NEON,
-            YELLOW_REDSTONE_LAMP,
-            YELLOW_REDSTONE_LAMP_LIT,
             HERRINGBONE_ANDESITE_BRICKS,
             HERRINGBONE_BRICKS,
             HERRINGBONE_RESIN_BRICKS,
@@ -493,56 +385,29 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrops(this::slabDrops, CUT_SOUL_SANDSTONE_SLAB, NETHERITE_SLAB);
         this.addDrops(this::doorDrops, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_REINFORCED_DOOR, PAPER_DOOR, STONE_DOOR);
         this.addDrops(this::stickDrops,
-            ACACIA_SMALL_HEDGE,
-            AZALEA_SMALL_HEDGE,
-            FLOWERING_AZALEA_SMALL_HEDGE,
-            BIRCH_SMALL_HEDGE,
-            DARK_OAK_SMALL_HEDGE,
-            JUNGLE_SMALL_HEDGE,
-            OAK_SMALL_HEDGE,
-            SPRUCE_SMALL_HEDGE,
-            MANGROVE_SMALL_HEDGE,
-            CHERRY_SMALL_HEDGE,
-            PALE_OAK_SMALL_HEDGE,
-            WHITE_OAK_SMALL_HEDGE);
+            ACACIA_HEDGE,
+            AZALEA_HEDGE,
+            FLOWERING_AZALEA_HEDGE,
+            BIRCH_HEDGE,
+            DARK_OAK_HEDGE,
+            JUNGLE_HEDGE,
+            OAK_HEDGE,
+            SPRUCE_HEDGE,
+            MANGROVE_HEDGE,
+            CHERRY_HEDGE,
+            PALE_OAK_HEDGE,
+            WHITE_OAK_HEDGE);
 
-        this.addDropsWithSilkTouch(BEVELED_GLASS,
+        this.addDropsWithSilkTouch(
+            BEVELED_GLASS,
             BEVELED_GLASS_PANE,
-            BLACK_BEVELED_GLASS,
-            BLACK_BEVELED_GLASS_PANE,
-            BLUE_BEVELED_GLASS,
-            BLUE_BEVELED_GLASS_PANE,
-            BROWN_BEVELED_GLASS,
-            BROWN_BEVELED_GLASS_PANE,
-            CYAN_BEVELED_GLASS,
-            CYAN_BEVELED_GLASS_PANE,
-            GRAY_BEVELED_GLASS,
-            GRAY_BEVELED_GLASS_PANE,
-            GREEN_BEVELED_GLASS,
-            GREEN_BEVELED_GLASS_PANE,
             ICE_BRICK_WALL,
             ICE_BRICKS,
-            ICE_PILLAR,
-            LIGHT_BLUE_BEVELED_GLASS,
-            LIGHT_BLUE_BEVELED_GLASS_PANE,
-            LIGHT_GRAY_BEVELED_GLASS,
-            LIGHT_GRAY_BEVELED_GLASS_PANE,
-            LIME_BEVELED_GLASS,
-            LIME_BEVELED_GLASS_PANE,
-            MAGENTA_BEVELED_GLASS,
-            MAGENTA_BEVELED_GLASS_PANE,
-            ORANGE_BEVELED_GLASS,
-            ORANGE_BEVELED_GLASS_PANE,
-            PINK_BEVELED_GLASS,
-            PINK_BEVELED_GLASS_PANE,
-            PURPLE_BEVELED_GLASS,
-            PURPLE_BEVELED_GLASS_PANE,
-            RED_BEVELED_GLASS,
-            RED_BEVELED_GLASS_PANE,
-            WHITE_BEVELED_GLASS,
-            WHITE_BEVELED_GLASS_PANE,
-            YELLOW_BEVELED_GLASS,
-            YELLOW_BEVELED_GLASS_PANE);
+            ICE_PILLAR);
+
+        for (StainedBlockBundle bundle : List.of(STAINED_BEVELED_GLASS, STAINED_BEVELED_GLASS_PANE)) {
+            bundle.colorMap().values().forEach(this::addDropsWithSilkTouch);
+        }
 
         this.addDrop(RAINBOW_PETALS, this.flowerbedDrops(RAINBOW_PETALS));
         this.addPottedPlantDropsBatch(POTTED_WHITE_OAK_SAPLING, POTTED_RAINBOW_ROSE, POTTED_LEGACY_SAPLING, POTTED_LEGACY_ROSE, POTTED_LEGACY_BLUE_ROSE);

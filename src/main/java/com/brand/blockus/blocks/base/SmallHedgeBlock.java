@@ -25,7 +25,7 @@ public class SmallHedgeBlock extends HorizontalConnectingBlock {
     }
 
     public SmallHedgeBlock(AbstractBlock.Settings settings) {
-        super(3.0F, 3.0F, 16.0F, 16.0F, 24.0F, settings);
+        super(6.0F, 16.0F, 6.0F, 16.0F, 24.0F, settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(NORTH, false).with(EAST, false).with(SOUTH, false).with(WEST, false).with(WATERLOGGED, false));
     }
 
@@ -62,7 +62,7 @@ public class SmallHedgeBlock extends HorizontalConnectingBlock {
                 return true;
             }
 
-            if ((Boolean)state.get((Property)FACING_PROPERTIES.get(direction)) && (Boolean)stateFrom.get((Property)FACING_PROPERTIES.get(direction.getOpposite()))) {
+            if ((Boolean) state.get((Property) FACING_PROPERTIES.get(direction)) && (Boolean) stateFrom.get((Property) FACING_PROPERTIES.get(direction.getOpposite()))) {
                 return true;
             }
         }
@@ -73,7 +73,7 @@ public class SmallHedgeBlock extends HorizontalConnectingBlock {
     public final boolean connectsTo(BlockState state, boolean faceFullSquare, Direction side) {
         Block block = state.getBlock();
         boolean bl = block instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
-        return state.isIn(BlockusBlockTags.SMALL_HEDGES) || block instanceof LeavesBlock || !cannotConnect(state) && faceFullSquare || block instanceof PaneBlock || bl;
+        return state.isIn(BlockusBlockTags.HEDGES) || block instanceof LeavesBlock || !cannotConnect(state) && faceFullSquare || block instanceof PaneBlock || bl;
     }
 
     public void appendProperties(StateManager.Builder<Block, BlockState> builder) {

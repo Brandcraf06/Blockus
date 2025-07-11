@@ -4,7 +4,7 @@
   "group": "neon_blocks",
   "key": {
     "A": "minecraft:amethyst_shard",
-    "D": "blockus:rainbow_petal",
+    "D": "blockus:rainbow_petals",
     "S": "minecraft:glow_ink_sac"
   },
   "pattern": [

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_stone_bricks",
+  "key": {
+    "#": "minecraft:light_gray_dye",
+    "X": "minecraft:stone_bricks"
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "count": 8,
+    "id": "blockus:light_gray_stone_bricks"
+  }
+}

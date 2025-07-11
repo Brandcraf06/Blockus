@@ -8,6 +8,8 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.block.WireOrientation;
+import org.jetbrains.annotations.Nullable;
 
 public class AmethystLampBlock extends Block {
     public static final IntProperty POWER = Properties.POWER;
@@ -25,7 +27,7 @@ public class AmethystLampBlock extends Block {
         return this.getDefaultState().with(POWER, Math.min(15, ctx.getWorld().getReceivedRedstonePower(ctx.getBlockPos())));
     }
 
-    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
+    protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, @Nullable WireOrientation wireOrientation, boolean notify) {
         if (!world.isClient) {
             int power = Math.min(15, world.getReceivedRedstonePower(pos));
             if (power != state.get(POWER)) {

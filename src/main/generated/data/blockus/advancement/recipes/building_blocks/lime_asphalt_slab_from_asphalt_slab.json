@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_asphalt": {
+    "has_asphalt_slab": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:asphalt"
+            "items": "blockus:asphalt_slab"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_asphalt"
+      "has_asphalt_slab"
     ]
   ],
   "rewards": {

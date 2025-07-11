@@ -1,12 +1,12 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.registry.content.BlockusEntities;
-import com.brand.blockus.registry.content.bundles.BSSWBundle;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.registry.tag.BlockusItemTags;
-import com.brand.blockus.utils.BlockChecker;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -17,6 +17,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
@@ -51,43 +52,30 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusEntities.WHITE_OAK_CHEST_BOAT);
 
         this.getOrCreateTagBuilder(ItemTags.SIGNS)
-            .add(RAW_BAMBOO.sign)
-            .add(CHARRED.sign)
-            .add(WHITE_OAK.sign);
+            .add(RAW_BAMBOO.sign())
+            .add(CHARRED.sign())
+            .add(WHITE_OAK.sign());
 
         this.copy(BlockTags.STONE_BUTTONS, ItemTags.STONE_BUTTONS);
 
         this.getOrCreateTagBuilder(ItemTags.HANGING_SIGNS)
-            .add(RAW_BAMBOO.hanging_sign)
-            .add(CHARRED.hanging_sign)
-            .add(WHITE_OAK.hanging_sign);
+            .add(RAW_BAMBOO.hangingSign())
+            .add(CHARRED.hangingSign())
+            .add(WHITE_OAK.hangingSign());
 
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
         this.copy(BlockusBlockTags.PATTERNED_CARPETS, BlockusItemTags.PATTERNED_CARPETS);
         this.copy(BlockusBlockTags.ALL_PATTERNED_WOOLS, BlockusItemTags.ALL_PATTERNED_WOOLS);
 
-        this.copy(BlockusBlockTags.SMALL_HEDGES, BlockusItemTags.SMALL_HEDGES);
+        this.copy(BlockusBlockTags.HEDGES, BlockusItemTags.HEDGES);
 
         this.copy(BlockusBlockTags.SOUL_SOILS, BlockusItemTags.SOUL_SOILS);
 
         this.getOrCreateTagBuilder(BlockusItemTags.STAINED_STONE_BRICKS)
-            .add(WHITE_STONE_BRICKS.block.asItem())
-            .add(ORANGE_STONE_BRICKS.block.asItem())
-            .add(MAGENTA_STONE_BRICKS.block.asItem())
-            .add(LIGHT_BLUE_STONE_BRICKS.block.asItem())
-            .add(YELLOW_STONE_BRICKS.block.asItem())
-            .add(LIME_STONE_BRICKS.block.asItem())
-            .add(PINK_STONE_BRICKS.block.asItem())
-            .add(GRAY_STONE_BRICKS.block.asItem())
-            .add(GRAY_STONE_BRICKS.block.asItem())
-            .add(Items.STONE_BRICKS)
-            .add(CYAN_STONE_BRICKS.block.asItem())
-            .add(PURPLE_STONE_BRICKS.block.asItem())
-            .add(BLUE_STONE_BRICKS.block.asItem())
-            .add(BROWN_STONE_BRICKS.block.asItem())
-            .add(GREEN_STONE_BRICKS.block.asItem())
-            .add(RED_STONE_BRICKS.block.asItem())
-            .add(BLACK_STONE_BRICKS.block.asItem());
+            .add(Items.STONE_BRICKS);
+        for (DyeColor color : DyeColor.values()) {
+            getOrCreateTagBuilder(BlockusItemTags.STAINED_STONE_BRICKS).add(STAINED_STONE_BRICKS.colorMap().get(color).block().asItem());
+        }
 
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
 
@@ -104,33 +92,23 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(Items.CHERRY_PLANKS)
             .add(Items.PALE_OAK_PLANKS)
             .add(Items.BAMBOO_PLANKS)
-            .add(RAW_BAMBOO.planks.asItem())
-            .add(WHITE_OAK.planks.asItem())
+            .add(RAW_BAMBOO.planks().asItem())
+            .add(WHITE_OAK.planks().asItem())
             .add(LEGACY_PLANKS.asItem());
 
-        this.getOrCreateTagBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN)
-            .add(HERRINGBONE_OAK_PLANKS.asItem())
-            .add(HERRINGBONE_BIRCH_PLANKS.asItem())
-            .add(HERRINGBONE_SPRUCE_PLANKS.asItem())
-            .add(HERRINGBONE_JUNGLE_PLANKS.asItem())
-            .add(HERRINGBONE_ACACIA_PLANKS.asItem())
-            .add(HERRINGBONE_DARK_OAK_PLANKS.asItem())
-            .add(HERRINGBONE_MANGROVE_PLANKS.asItem())
-            .add(HERRINGBONE_CHERRY_PLANKS.asItem())
-            .add(HERRINGBONE_BAMBOO_PLANKS.asItem())
-            .add(HERRINGBONE_RAW_BAMBOO_PLANKS.asItem())
-            .add(HERRINGBONE_WHITE_OAK_PLANKS.asItem())
-            .add(HERRINGBONE_PALE_OAK_PLANKS.asItem());
-
-
-        for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.FLAMMABLE_WOODS)) {
-                this.getOrCreateTagBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
-                    .add(block.block.asItem());
-            }
-        }
         this.getOrCreateTagBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
             .add(Blocks.BAMBOO_MOSAIC.asItem());
+        for (var wood : WoodMaps.values()) {
+            if (!wood.data().isBurnable()) continue;
+            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
+            if (herringbonePlanks != null) {
+                this.getOrCreateTagBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN).add(herringbonePlanks.asItem());
+            }
+            var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
+            if (woodMosaic != null) {
+                this.getOrCreateTagBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN).add(woodMosaic.block().asItem());
+            }
+        }
 
         this.copy(Identifier.of("c", "planks_that_burn"));
 
@@ -178,34 +156,38 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.MANGROVE_LOGS, ItemTags.MANGROVE_LOGS);
 
-        for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.NON_FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type, BlockChecker.NON_FLAMMABLE_WOODS)) {
-                this.getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
-                    .add(block.block.asItem())
-                    .add(block.stairs.asItem())
-                    .add(block.slab.asItem());
-            }
-        }
-
-        this.getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD)
-            .add(CHARRED.planks.asItem())
-            .add(CHARRED.slab.asItem())
-            .add(CHARRED.pressure_plate.asItem())
-            .add(CHARRED.fence.asItem())
-            .add(CHARRED.trapdoor.asItem())
-            .add(CHARRED.fence_gate.asItem())
-            .add(CHARRED.stairs.asItem())
-            .add(CHARRED.button.asItem())
-            .add(CHARRED.door.asItem())
+        var nonFlammableWood = this.getOrCreateTagBuilder(ItemTags.NON_FLAMMABLE_WOOD);
+        nonFlammableWood
+            .add(CHARRED.planks().asItem())
+            .add(CHARRED.slab().asItem())
+            .add(CHARRED.pressurePlate().asItem())
+            .add(CHARRED.fence().asItem())
+            .add(CHARRED.trapdoor().asItem())
+            .add(CHARRED.fenceGate().asItem())
+            .add(CHARRED.stairs().asItem())
+            .add(CHARRED.button().asItem())
+            .add(CHARRED.door().asItem())
             .add(BlockusEntities.CHARRED_BOAT.asItem())
             .add(BlockusEntities.CHARRED_CHEST_BOAT.asItem())
-            .add(CHARRED.sign)
-            .add(CHARRED.hanging_sign)
-            .add(WARPED_SMALL_STEMS.asItem())
-            .add(CRIMSON_SMALL_STEMS.asItem())
-            .add(HERRINGBONE_CRIMSON_PLANKS.asItem())
-            .add(HERRINGBONE_WARPED_PLANKS.asItem())
-            .add(HERRINGBONE_CHARRED_PLANKS.asItem());
+            .add(CHARRED.sign())
+            .add(CHARRED.hangingSign())
+            .add(SMALL_LOGS.get(WoodMaps.WARPED.getId()).asItem())
+            .add(SMALL_LOGS.get(WoodMaps.CRIMSON.getId()).asItem());
+        for (var wood : WoodMaps.values()) {
+            if (wood.data().isBurnable()) continue;
+            var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
+            if (woodMosaic != null) {
+                nonFlammableWood.add(woodMosaic.block().asItem());
+            }
+            var mossyPlanks = MOSSY_PLANKS.bundle().get(wood.getId());
+            if (mossyPlanks != null) {
+                nonFlammableWood.add(mossyPlanks.block().asItem());
+            }
+            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
+            if (herringbonePlanks != null) {
+                nonFlammableWood.add(herringbonePlanks.asItem());
+            }
+        }
 
         this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
 
@@ -219,13 +201,13 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(GOLD_DECORATED_RED_SANDSTONE.asItem())
             .add(GOLD_DECORATED_SOUL_SANDSTONE.asItem())
             .add(GOLD_DECORATED_POLISHED_BLACKSTONE.asItem())
-            .add(GOLD_PLATING.block.asItem())
-            .add(GOLD_PLATING.stairs.asItem())
-            .add(GOLD_PLATING.slab.asItem())
-            .add(GOLD_BRICKS.block.asItem())
-            .add(GOLD_BRICKS.stairs.asItem())
-            .add(GOLD_BRICKS.slab.asItem())
-            .add(GOLD_BRICKS.wall.asItem())
+            .add(GOLD_PLATING.block().asItem())
+            .add(GOLD_PLATING.stairs().asItem())
+            .add(GOLD_PLATING.slab().asItem())
+            .add(GOLD_BRICKS.block().asItem())
+            .add(GOLD_BRICKS.stairs().asItem())
+            .add(GOLD_BRICKS.slab().asItem())
+            .add(GOLD_BRICKS.wall().asItem())
             .add(GOLDEN_APPLE_CRATE.asItem())
             .add(GOLDEN_CARROT_CRATE.asItem());
 
@@ -256,9 +238,9 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
 
         this.getOrCreateTagBuilder(ItemTags.WOODEN_DOORS)
-            .add(RAW_BAMBOO.door.asItem())
-            .add(CHARRED.door.asItem())
-            .add(WHITE_OAK.door.asItem());
+            .add(RAW_BAMBOO.door().asItem())
+            .add(CHARRED.door().asItem())
+            .add(WHITE_OAK.door().asItem());
 
         this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
 
@@ -269,9 +251,9 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
 
         this.getOrCreateTagBuilder(ItemTags.WOODEN_TRAPDOORS)
-            .add(RAW_BAMBOO.trapdoor.asItem())
-            .add(CHARRED.trapdoor.asItem())
-            .add(WHITE_OAK.trapdoor.asItem());
+            .add(RAW_BAMBOO.trapdoor().asItem())
+            .add(CHARRED.trapdoor().asItem())
+            .add(WHITE_OAK.trapdoor().asItem());
 
         this.getOrCreateTagBuilder(ItemTags.WOOL)
             .addTag(BlockusItemTags.PATTERNED_WOOL);
@@ -279,15 +261,11 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.WOOL_CARPETS, ItemTags.WOOL_CARPETS);
         this.copy(BlockTags.DIRT, ItemTags.DIRT);
 
-
-//        this.copy(new Identifier("promenade", "cherry_oak_logs"));
-//
-//        this.copy(new Identifier("promenade", "dark_amaranth_stems"));
-//
-//        this.copy(new Identifier("promenade", "palm_logs"));
-
         // Conventional Item Tags
         this.getOrCreateTagBuilder(ConventionalItemTags.CHAINS)
             .add(GOLDEN_CHAIN.asItem());
+
+        this.copy(ConventionalBlockTags.SMALL_FLOWERS, ConventionalItemTags.SMALL_FLOWERS);
+
     }
 }

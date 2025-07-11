@@ -1,8 +1,5 @@
 {
   "values": [
-    "blockus:asphalt",
-    "blockus:asphalt_stairs",
-    "blockus:asphalt_slab",
     "blockus:white_asphalt",
     "blockus:white_asphalt_stairs",
     "blockus:white_asphalt_slab",
@@ -12,6 +9,9 @@
     "blockus:gray_asphalt",
     "blockus:gray_asphalt_stairs",
     "blockus:gray_asphalt_slab",
+    "blockus:asphalt",
+    "blockus:asphalt_stairs",
+    "blockus:asphalt_slab",
     "blockus:brown_asphalt",
     "blockus:brown_asphalt_stairs",
     "blockus:brown_asphalt_slab",
