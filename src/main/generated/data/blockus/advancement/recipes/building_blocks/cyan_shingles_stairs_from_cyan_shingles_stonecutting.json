@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cyan_shingles_stairs_from_cyan_shingles_stonecutting"
+        "recipe": "blockus:cyan_shingles_stairs_from_cyan_shingles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cyan_shingles_stairs_from_cyan_shingles_stonecutting"
+      "blockus:cyan_shingles_stairs_from_cyan_shingles_stonecutting"
     ]
   }
 }

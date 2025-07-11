@@ -1,9 +1,8 @@
 package com.brand.blockus.datagen.providers;
 
-import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
-import com.brand.blockus.utils.BlockChecker;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
@@ -13,9 +12,9 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -25,11 +24,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
     public BlockusBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
-    }
-
-    public FabricTagBuilder getOrCreateTagBuilder(Identifier id) {
-        TagKey<Block> tag = TagKey.of(RegistryKeys.BLOCK, id);
-        return this.getOrCreateTagBuilder(tag);
     }
 
     @Override
@@ -52,13 +46,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockTags.VIBRATION_RESONATORS)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
 
-        for (AsphaltBundle asphaltType : AsphaltBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.ASPHALT)
-                .add(asphaltType.block)
-                .add(asphaltType.stairs)
-                .add(asphaltType.slab);
+        for (Block block : ASPHALT.all()) {
+            getOrCreateTagBuilder(BlockusBlockTags.ASPHALT).add(block);
         }
-
         this.getOrCreateTagBuilder(BlockusBlockTags.ASPHALT)
             .add(RAINBOW_ASPHALT);
 
@@ -77,23 +67,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BEVELED_GLASS)
             .add(BEVELED_GLASS)
-            .add(WHITE_BEVELED_GLASS)
-            .add(ORANGE_BEVELED_GLASS)
-            .add(MAGENTA_BEVELED_GLASS)
-            .add(LIGHT_BLUE_BEVELED_GLASS)
-            .add(YELLOW_BEVELED_GLASS)
-            .add(LIME_BEVELED_GLASS)
-            .add(PINK_BEVELED_GLASS)
-            .add(GRAY_BEVELED_GLASS)
-            .add(LIGHT_GRAY_BEVELED_GLASS)
-            .add(CYAN_BEVELED_GLASS)
-            .add(PURPLE_BEVELED_GLASS)
-            .add(BLUE_BEVELED_GLASS)
-            .add(BROWN_BEVELED_GLASS)
-            .add(GREEN_BEVELED_GLASS)
-            .add(RED_BEVELED_GLASS)
-            .add(BLACK_BEVELED_GLASS)
             .add(RAINBOW_BEVELED_GLASS);
+        for (DyeColor color : DyeColor.values()) {
+            getOrCreateTagBuilder(BlockusBlockTags.BEVELED_GLASS).add(STAINED_BEVELED_GLASS.colorMap().get(color));
+        }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BLACKSTONE_BLOCKS)
             .add(bsswBundle(POLISHED_BLACKSTONE_TILES))
@@ -141,36 +118,18 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHOCOLATE_SQUARES)
             .add(CHOCOLATE_TABLET);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES)
-            .add(WHITE_COLORED_TILES)
-            .add(ORANGE_COLORED_TILES)
-            .add(MAGENTA_COLORED_TILES)
-            .add(LIGHT_BLUE_COLORED_TILES)
-            .add(YELLOW_COLORED_TILES)
-            .add(LIME_COLORED_TILES)
-            .add(PINK_COLORED_TILES)
-            .add(GRAY_COLORED_TILES)
-            .add(LIGHT_GRAY_COLORED_TILES)
-            .add(CYAN_COLORED_TILES)
-            .add(PURPLE_COLORED_TILES)
-            .add(BLUE_COLORED_TILES)
-            .add(BROWN_COLORED_TILES)
-            .add(GREEN_COLORED_TILES)
-            .add(RED_COLORED_TILES)
-            .add(BLACK_COLORED_TILES)
-            .add(RAINBOW_COLORED_TILES);
-
-        for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES).add(coloredTilesVariants.block);
+        for (DyeColor color : DyeColor.values()) {
+            getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES).add(COLORED_TILES.colorMap().get(color));
         }
+        for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
+            this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES).add(coloredTilesVariants.block());
+        }
+        this.getOrCreateTagBuilder(BlockusBlockTags.COLORED_TILES)
+            .add(RAINBOW_COLORED_TILES);
 
         for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.getOrCreateTagBuilder(BlockusBlockTags.CONCRETE_BLOCKS)
-                .add(concreteType.block)
-                .add(concreteType.stairs)
-                .add(concreteType.slab)
-                .add(concreteType.chiseled)
-                .add(concreteType.pillar);
+                .add(concreteType.all().toArray(new Block[0]));
         }
 
         this.getOrCreateTagBuilder(BlockTags.CRYSTAL_SOUND_BLOCKS)
@@ -223,7 +182,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(GOLDEN_APPLE_CRATE)
             .add(GOLDEN_CARROT_CRATE)
             .add(GLOW_BERRIES_CRATE)
-            .addOptional(Blockus.id("blueberries_crate"));
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("blueberries_crate")))
+        ;
 
         this.getOrCreateTagBuilder(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
             .add(FRAMED_PAPER_BLOCK)
@@ -231,23 +191,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(PAPER_DOOR)
             .add(PAPER_TRAPDOOR);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
-            .add(WHITE_GLAZED_TERRACOTTA_PILLAR)
-            .add(ORANGE_GLAZED_TERRACOTTA_PILLAR)
-            .add(MAGENTA_GLAZED_TERRACOTTA_PILLAR)
-            .add(LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR)
-            .add(YELLOW_GLAZED_TERRACOTTA_PILLAR)
-            .add(LIME_GLAZED_TERRACOTTA_PILLAR)
-            .add(PINK_GLAZED_TERRACOTTA_PILLAR)
-            .add(GRAY_GLAZED_TERRACOTTA_PILLAR)
-            .add(LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR)
-            .add(CYAN_GLAZED_TERRACOTTA_PILLAR)
-            .add(PURPLE_GLAZED_TERRACOTTA_PILLAR)
-            .add(BLUE_GLAZED_TERRACOTTA_PILLAR)
-            .add(BROWN_GLAZED_TERRACOTTA_PILLAR)
-            .add(GREEN_GLAZED_TERRACOTTA_PILLAR)
-            .add(RED_GLAZED_TERRACOTTA_PILLAR)
-            .add(BLACK_GLAZED_TERRACOTTA_PILLAR);
+        for (DyeColor color : DyeColor.values()) {
+            getOrCreateTagBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS).add(GLAZED_TERRACOTTA_PILLAR.colorMap().get(color));
+        }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.GRANITE_BLOCKS)
             .add(bsswBundle(GRANITE_BRICKS))
@@ -266,32 +212,18 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.LARGE_FLOWER_POTS)
             .add(LARGE_FLOWER_POT)
-            .add(POTTED_ROSE_BUSH.block)
-            .add(POTTED_LILAC.block)
-            .add(POTTED_PEONY.block)
-            .add(POTTED_LARGE_FERN.block)
-            .add(POTTED_OAK.block)
-            .add(POTTED_SPRUCE.block)
-            .add(POTTED_BIRCH.block)
-            .add(POTTED_JUNGLE.block)
-            .add(POTTED_ACACIA.block)
-            .add(POTTED_DARK_OAK.block)
-            .add(POTTED_MANGROVE.block)
-            .add(POTTED_CHERRY_BLOSSOM.block)
-            .add(POTTED_WHITE_OAK.block)
-            .add(POTTED_HUGE_RED_MUSHROOM.block)
-            .add(POTTED_HUGE_BROWN_MUSHROOM.block)
-            .add(POTTED_HUGE_CRIMSON_FUNGUS.block)
-            .add(POTTED_HUGE_WARPED_FUNGUS.block)
-            .add(POTTED_CACTUS_LARGE.block)
-            .add(POTTED_BAMBOO_LARGE.block)
-            .add(POTTED_PITCHER_PLANT.block)
-            .addOptional(Blockus.id("potted_autumn_birch"))
-            .addOptional(Blockus.id("potted_autumn_oak"))
-            .addOptional(Blockus.id("potted_palm"))
-            .addOptional(Blockus.id("potted_pink_cherry_oak"))
-            .addOptional(Blockus.id("potted_white_cherry_oak"))
-            .addOptional(Blockus.id("potted_huge_dark_amaranth_fungus"));
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_autumn_birch")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_autumn_oak")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_palm")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_pink_cherry_oak")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_white_cherry_oak")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("potted_huge_dark_amaranth_fungus")))
+        ;
+
+        for (PottedLargeBundle pottedLargeType : PottedLargeBundle.values()) {
+            this.getOrCreateTagBuilder(BlockusBlockTags.LARGE_FLOWER_POTS)
+                .add(pottedLargeType.block());
+        }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.LAVA_BRICKS)
             .add(bsswBundle(LAVA_BRICKS))
@@ -348,23 +280,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MARBLE_LINES)
             .add(MARBLE_CIRCULAR_PAVING);
 
+        for (DyeColor color : DyeColor.values()) {
+            getOrCreateTagBuilder(BlockusBlockTags.NEON).add(NEON_BLOCK.colorMap().get(color));
+        }
         this.getOrCreateTagBuilder(BlockusBlockTags.NEON)
-            .add(WHITE_NEON)
-            .add(ORANGE_NEON)
-            .add(MAGENTA_NEON)
-            .add(LIGHT_BLUE_NEON)
-            .add(YELLOW_NEON)
-            .add(LIME_NEON)
-            .add(PINK_NEON)
-            .add(GRAY_NEON)
-            .add(LIGHT_GRAY_NEON)
-            .add(CYAN_NEON)
-            .add(PURPLE_NEON)
-            .add(BLUE_NEON)
-            .add(BROWN_NEON)
-            .add(GREEN_NEON)
-            .add(RED_NEON)
-            .add(BLACK_NEON)
             .add(RAINBOW_NEON);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.NETHER_BRICKS)
@@ -402,9 +321,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockusBlockTags.NETHER_PORTAL_FRAME_BLOCKS)
             .add(Blocks.OBSIDIAN)
-            .add(OBSIDIAN_BRICKS.block)
+            .add(OBSIDIAN_BRICKS.block())
             .add(CRACKED_OBSIDIAN_BRICKS)
-            .add(SMALL_OBSIDIAN_BRICKS.block)
+            .add(SMALL_OBSIDIAN_BRICKS.block())
             .add(OBSIDIAN_PILLAR)
             .add(OBSIDIAN_CIRCULAR_PAVING)
             .add(GLOWING_OBSIDIAN)
@@ -414,13 +333,15 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.PATTERNED_WOOL);
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_WOOL)
-                .add(woolBundle.block);
-            this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_CARPETS)
-                .add(woolBundle.carpet);
-            this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
-                .add(woolBundle.stairs)
-                .add(woolBundle.slab);
+            for (var variants : woolBundle.colorMap().values()) {
+                this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_WOOL)
+                    .add(variants.block());
+                this.getOrCreateTagBuilder(BlockusBlockTags.PATTERNED_CARPETS)
+                    .add(variants.carpet());
+                this.getOrCreateTagBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
+                    .add(variants.stairs())
+                    .add(variants.slab());
+            }
         }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS)
@@ -485,53 +406,42 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(SCULK_PILLAR);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.SHINGLES)
-            .add(bsswBundle(SHINGLES))
-            .add(bsswBundle(WHITE_SHINGLES))
-            .add(bsswBundle(ORANGE_SHINGLES))
-            .add(bsswBundle(MAGENTA_SHINGLES))
-            .add(bsswBundle(LIGHT_BLUE_SHINGLES))
-            .add(bsswBundle(YELLOW_SHINGLES))
-            .add(bsswBundle(LIME_SHINGLES))
-            .add(bsswBundle(PINK_SHINGLES))
-            .add(bsswBundle(GRAY_SHINGLES))
-            .add(bsswBundle(LIGHT_GRAY_SHINGLES))
-            .add(bsswBundle(CYAN_SHINGLES))
-            .add(bsswBundle(PURPLE_SHINGLES))
-            .add(bsswBundle(BLUE_SHINGLES))
-            .add(bsswBundle(BROWN_SHINGLES))
-            .add(bsswBundle(GREEN_SHINGLES))
-            .add(bsswBundle(RED_SHINGLES))
-            .add(bsswBundle(BLACK_SHINGLES));
+            .add(bsswBundle(SHINGLES));
 
-        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_POSTS)
-                .add(woodenPost.block)
-                .add(woodenPost.stripped);
+        for (DyeColor color : DyeColor.values()) {
+            for (Block block : STAINED_SHINGLES.colorMap().get(color).all()) {
+                getOrCreateTagBuilder(BlockusBlockTags.SHINGLES).add(block);
+            }
         }
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.SMALL_HEDGES)
-            .add(OAK_SMALL_HEDGE)
-            .add(SPRUCE_SMALL_HEDGE)
-            .add(BIRCH_SMALL_HEDGE)
-            .add(JUNGLE_SMALL_HEDGE)
-            .add(ACACIA_SMALL_HEDGE)
-            .add(DARK_OAK_SMALL_HEDGE)
-            .add(MANGROVE_SMALL_HEDGE)
-            .add(CHERRY_SMALL_HEDGE)
-            .add(WHITE_OAK_SMALL_HEDGE)
-            .add(CRIMSON_SMALL_HEDGE)
-            .add(WARPED_SMALL_HEDGE)
-            .add(AZALEA_SMALL_HEDGE)
-            .add(FLOWERING_AZALEA_SMALL_HEDGE)
-            .add(MOSS_SMALL_HEDGE)
-            .addOptional(Blockus.id("sap_maple_small_hedge"))
-            .addOptional(Blockus.id("vermilion_maple_small_hedge"))
-            .addOptional(Blockus.id("fulvous_maple_small_hedge"))
-            .addOptional(Blockus.id("mikado_maple_small_hedge"))
-            .addOptional(Blockus.id("pink_cherry_oak_small_hedge"))
-            .addOptional(Blockus.id("white_cherry_oak_small_hedge"))
-            .addOptional(Blockus.id("palm_small_hedge"))
-            .addOptional(Blockus.id("dark_amaranth_small_hedge"));
+        for (Block block : WOODEN_POST.all()) {
+            getOrCreateTagBuilder(BlockusBlockTags.WOODEN_POSTS).add(block);
+        }
+
+        this.getOrCreateTagBuilder(BlockusBlockTags.HEDGES)
+            .add(OAK_HEDGE)
+            .add(SPRUCE_HEDGE)
+            .add(BIRCH_HEDGE)
+            .add(JUNGLE_HEDGE)
+            .add(ACACIA_HEDGE)
+            .add(DARK_OAK_HEDGE)
+            .add(MANGROVE_HEDGE)
+            .add(CHERRY_HEDGE)
+            .add(WHITE_OAK_HEDGE)
+            .add(CRIMSON_HEDGE)
+            .add(WARPED_HEDGE)
+            .add(AZALEA_HEDGE)
+            .add(FLOWERING_AZALEA_HEDGE)
+            .add(MOSS_HEDGE)
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("sap_maple_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("vermilion_maple_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("fulvous_maple_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("mikado_maple_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("pink_cherry_oak_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("white_cherry_oak_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("palm_hedge")))
+//            .addOptionalTag(TagKey.of(RegistryKeys.BLOCK, Blockus.id("dark_amaranth_hedge")))
+        ;
 
         this.getOrCreateTagBuilder(BlockusBlockTags.SNOW_BRICKS)
             .add(bsswBundle(SNOW_BRICKS))
@@ -554,22 +464,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.SOUL_SAND)
             .add(Blocks.SOUL_SOIL);
 
-        this.getOrCreateTagBuilder(BlockusBlockTags.STAINED_STONE_BRICKS)
-            .add(bsswBundle(WHITE_STONE_BRICKS))
-            .add(bsswBundle(ORANGE_STONE_BRICKS))
-            .add(bsswBundle(MAGENTA_STONE_BRICKS))
-            .add(bsswBundle(LIGHT_BLUE_STONE_BRICKS))
-            .add(bsswBundle(YELLOW_STONE_BRICKS))
-            .add(bsswBundle(LIME_STONE_BRICKS))
-            .add(bsswBundle(PINK_STONE_BRICKS))
-            .add(bsswBundle(GRAY_STONE_BRICKS))
-            .add(bsswBundle(CYAN_STONE_BRICKS))
-            .add(bsswBundle(PURPLE_STONE_BRICKS))
-            .add(bsswBundle(BLUE_STONE_BRICKS))
-            .add(bsswBundle(BROWN_STONE_BRICKS))
-            .add(bsswBundle(GREEN_STONE_BRICKS))
-            .add(bsswBundle(RED_STONE_BRICKS))
-            .add(bsswBundle(BLACK_STONE_BRICKS));
+        for (DyeColor color : DyeColor.values()) {
+            for (Block block : STAINED_STONE_BRICKS.colorMap().get(color).all()) {
+                getOrCreateTagBuilder(BlockusBlockTags.STAINED_STONE_BRICKS).add(block);
+            }
+        }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.STONE_BLOCKS)
             .add(bsswBundle(STONE_TILES))
@@ -599,18 +498,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.getOrCreateTagBuilder(BlockusBlockTags.THATCH)
             .add(bsswBundle(THATCH));
 
-
-        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            this.getOrCreateTagBuilder(BlockusBlockTags.TIMBER_FRAMES)
-                .add(timberFrameBundle.block)
-                .add(timberFrameBundle.diagonal)
-                .add(timberFrameBundle.cross);
-
-            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_LATTICES)
-                .add(timberFrameBundle.lattice);
-
-            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_GRATES)
-                .add(timberFrameBundle.grate);
+        for (var wood : WoodMaps.values()) {
+            var variants = TIMBER_FRAME.woodMap().get(wood);
+            this.getOrCreateTagBuilder(BlockusBlockTags.TIMBER_FRAMES).add(variants.block()).add(variants.diagonal()).add(variants.cross());
+            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_LATTICES).add(variants.lattice());
+            this.getOrCreateTagBuilder(BlockusBlockTags.WOODEN_GRATES).add(variants.grate());
         }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.TUFF_BLOCKS)
@@ -635,20 +527,19 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(WHITE_OAK_WOOD)
             .add(STRIPPED_WHITE_OAK_LOG)
             .add(STRIPPED_WHITE_OAK_WOOD)
-            .add(WHITE_OAK_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.WHITE_OAK.getId()));
 
-        for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.WOODS)) {
-                this.getOrCreateTagBuilder(BlockusBlockTags.ALL_WOODEN_MOSAICS)
-                    .add(block.block)
-                    .add(block.stairs)
-                    .add(block.slab);
+        for (var wood : WoodMaps.values()) {
+            var bundle = WOODEN_MOSAIC.bundle().get(wood.getId());
+            if (bundle != null) {
+                this.getOrCreateTagBuilder(BlockusBlockTags.ALL_WOODEN_MOSAICS).add(bundle.all());
             }
-            if (BlockChecker.isMossyPlanks(block.type, BlockChecker.WOODS)) {
-                this.getOrCreateTagBuilder(BlockusBlockTags.ALL_MOSSY_PLANKS)
-                    .add(block.block)
-                    .add(block.stairs)
-                    .add(block.slab);
+        }
+
+        for (var wood : WoodMaps.values()) {
+            var bundle = MOSSY_PLANKS.bundle().get(wood.getId());
+            if (bundle != null) {
+                this.getOrCreateTagBuilder(BlockusBlockTags.ALL_MOSSY_PLANKS).add(bundle.all());
             }
         }
 
@@ -657,10 +548,33 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.BAMBOO_MOSAIC_STAIRS)
             .add(Blocks.BAMBOO_MOSAIC_SLAB);
 
-        for (BSSWBundle block : BSSWBundle.values()) {
-            if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.FLAMMABLE_WOODS) || BlockChecker.isMossyPlanks(block.type, BlockChecker.FLAMMABLE_WOODS)) {
-                this.getOrCreateTagBuilder(Identifier.of("c", "planks_that_burn"))
-                    .add(block.block);
+        var planksThatBurn = this.getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "planks_that_burn")));
+        planksThatBurn
+            .add(Blocks.OAK_PLANKS)
+            .add(Blocks.SPRUCE_PLANKS)
+            .add(Blocks.BIRCH_PLANKS)
+            .add(Blocks.JUNGLE_PLANKS)
+            .add(Blocks.ACACIA_PLANKS)
+            .add(Blocks.DARK_OAK_PLANKS)
+            .add(Blocks.MANGROVE_PLANKS)
+            .add(Blocks.CHERRY_PLANKS)
+            .add(Blocks.BAMBOO_PLANKS)
+            .add(RAW_BAMBOO.planks())
+            .add(WHITE_OAK.planks())
+            .add(LEGACY_PLANKS);
+        for (var wood : WoodMaps.values()) {
+            if (!wood.data().isBurnable()) continue;
+            var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
+            if (woodMosaic != null) {
+                planksThatBurn.add(woodMosaic.block());
+            }
+            var mossyPlanks = MOSSY_PLANKS.bundle().get(wood.getId());
+            if (mossyPlanks != null) {
+                planksThatBurn.add(mossyPlanks.block());
+            }
+            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
+            if (herringbonePlanks != null) {
+                planksThatBurn.add(herringbonePlanks);
             }
         }
 
@@ -676,36 +590,10 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             }
 
             this.getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(copperBundle.walls());
+                .add(copperBundle.allWalls().toArray(new Block[0]));
         }
 
-        this.getOrCreateTagBuilder(Identifier.of("c", "planks_that_burn"))
-            .add(Blocks.OAK_PLANKS)
-            .add(Blocks.SPRUCE_PLANKS)
-            .add(Blocks.BIRCH_PLANKS)
-            .add(Blocks.JUNGLE_PLANKS)
-            .add(Blocks.ACACIA_PLANKS)
-            .add(Blocks.DARK_OAK_PLANKS)
-            .add(Blocks.MANGROVE_PLANKS)
-            .add(Blocks.CHERRY_PLANKS)
-            .add(Blocks.BAMBOO_PLANKS)
-            .add(RAW_BAMBOO.planks)
-            .add(WHITE_OAK.planks)
-            .add(LEGACY_PLANKS)
-
-            .add(HERRINGBONE_OAK_PLANKS)
-            .add(HERRINGBONE_BIRCH_PLANKS)
-            .add(HERRINGBONE_SPRUCE_PLANKS)
-            .add(HERRINGBONE_JUNGLE_PLANKS)
-            .add(HERRINGBONE_ACACIA_PLANKS)
-            .add(HERRINGBONE_DARK_OAK_PLANKS)
-            .add(HERRINGBONE_MANGROVE_PLANKS)
-            .add(HERRINGBONE_CHERRY_PLANKS)
-            .add(HERRINGBONE_BAMBOO_PLANKS)
-            .add(HERRINGBONE_WHITE_OAK_PLANKS)
-            .add(HERRINGBONE_RAW_BAMBOO_PLANKS);
-
-        this.getOrCreateTagBuilder(Identifier.of("c", "bars"))
+        this.getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "bars")))
             .add(GOLDEN_BARS);
 
         // Vanilla Block Tags
@@ -730,7 +618,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(WHITE_OAK_LEAVES)
             .add(LEGACY_LEAVES)
             .addTag(BlockusBlockTags.THATCH)
-            .addTag(BlockusBlockTags.SMALL_HEDGES);
+            .addTag(BlockusBlockTags.HEDGES);
 
         this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
             .add(NETHERITE_STAIRS)
@@ -836,13 +724,13 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(SUGAR_BLOCK);
 
         this.getOrCreateTagBuilder(BlockTags.ACACIA_LOGS)
-            .add(ACACIA_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.ACACIA.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.BASE_STONE_OVERWORLD)
-            .add(LIMESTONE.block)
-            .add(MARBLE.block)
-            .add(BLUESTONE.block)
-            .add(VIRIDITE.block);
+            .add(LIMESTONE.block())
+            .add(MARBLE.block())
+            .add(BLUESTONE.block())
+            .add(VIRIDITE.block());
 
         this.getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
             .add(LEGACY_GOLD_BLOCK)
@@ -852,14 +740,14 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(NETHERITE_SLAB)
             .add(NETHERITE_STAIRS)
             .add(NETHER_STAR_BLOCK)
-            .add(bssBundle(IRON_BRICKS))
-            .add(bssBundle(GOLD_BRICKS))
-            .add(bssBundle(EMERALD_BRICKS))
-            .add(bssBundle(DIAMOND_BRICKS))
-            .add(bssBundle(NETHERITE_BRICKS));
+            .add(bssBundle(IRON_BRICKS).toArray(new Block[0]))
+            .add(bssBundle(GOLD_BRICKS).toArray(new Block[0]))
+            .add(bssBundle(EMERALD_BRICKS).toArray(new Block[0]))
+            .add(bssBundle(DIAMOND_BRICKS).toArray(new Block[0]))
+            .add(bssBundle(NETHERITE_BRICKS).toArray(new Block[0]));
 
         this.getOrCreateTagBuilder(BlockTags.BIRCH_LOGS)
-            .add(BIRCH_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.BIRCH.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.BUTTONS)
             .add(POLISHED_ANDESITE_BUTTON)
@@ -877,17 +765,17 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(VIRIDITE_BUTTON);
 
         this.getOrCreateTagBuilder(BlockTags.CHERRY_LOGS)
-            .add(CHERRY_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.CHERRY.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.CRIMSON_STEMS)
-            .add(CRIMSON_SMALL_STEMS);
+            .add(SMALL_LOGS.get(WoodMaps.CRIMSON.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.DARK_OAK_LOGS)
-            .add(DARK_OAK_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.DARK_OAK.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
-            .add(BLUESTONE.block)
-            .add(VIRIDITE.block);
+            .add(BLUESTONE.block())
+            .add(VIRIDITE.block());
 
         this.getOrCreateTagBuilder(BlockTags.DOORS)
             .add(OBSIDIAN_REINFORCED_DOOR)
@@ -901,18 +789,15 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(NETHER_STAR_BLOCK);
 
         this.getOrCreateTagBuilder(BlockTags.FENCE_GATES)
-            .add(RAW_BAMBOO.fence_gate)
-            .add(CHARRED.fence_gate)
-            .add(WHITE_OAK.fence_gate);
+            .add(RAW_BAMBOO.fenceGate())
+            .add(CHARRED.fenceGate())
+            .add(WHITE_OAK.fenceGate());
 
         this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
             .add(POTTED_WHITE_OAK_SAPLING)
             .add(POTTED_RAINBOW_ROSE)
             .add(POTTED_LEGACY_ROSE)
             .add(POTTED_LEGACY_BLUE_ROSE);
-
-        this.getOrCreateTagBuilder(BlockTags.FLOWERS)
-            .add(FLOWERING_AZALEA_SMALL_HEDGE);
 
         this.getOrCreateTagBuilder(BlockTags.GUARDED_BY_PIGLINS)
             .add(LEGACY_GOLD_BLOCK)
@@ -943,7 +828,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHARCOAL_BLOCK);
 
         this.getOrCreateTagBuilder(BlockTags.JUNGLE_LOGS)
-            .add(JUNGLE_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.JUNGLE.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.LEAVES)
             .add(WHITE_OAK_LEAVES)
@@ -954,7 +839,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_LOG);
 
         this.getOrCreateTagBuilder(BlockTags.MANGROVE_LOGS)
-            .add(MANGROVE_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.MANGROVE.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .addTag(BlockusBlockTags.OBSIDIAN)
@@ -974,7 +859,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(LAPIS_BRICKS));
 
         this.getOrCreateTagBuilder(BlockTags.OAK_LOGS)
-            .add(OAK_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.OAK.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
             .add(WHITE_OAK_LOG);
@@ -984,27 +869,22 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(SOUL_O_LANTERN);
 
         this.getOrCreateTagBuilder(BlockTags.PLANKS)
-            .add(RAW_BAMBOO.planks)
-            .add(CHARRED.planks)
-            .add(WHITE_OAK.planks)
-            .add(LEGACY_PLANKS)
-            .add(HERRINGBONE_OAK_PLANKS)
-            .add(HERRINGBONE_BIRCH_PLANKS)
-            .add(HERRINGBONE_SPRUCE_PLANKS)
-            .add(HERRINGBONE_JUNGLE_PLANKS)
-            .add(HERRINGBONE_ACACIA_PLANKS)
-            .add(HERRINGBONE_DARK_OAK_PLANKS)
-            .add(HERRINGBONE_MANGROVE_PLANKS)
-            .add(HERRINGBONE_CHERRY_PLANKS)
-            .add(HERRINGBONE_BAMBOO_PLANKS)
-            .add(HERRINGBONE_RAW_BAMBOO_PLANKS)
-            .add(HERRINGBONE_WHITE_OAK_PLANKS)
-            .add(HERRINGBONE_CRIMSON_PLANKS)
-            .add(HERRINGBONE_WARPED_PLANKS)
-            .add(HERRINGBONE_CHARRED_PLANKS);
+            .add(RAW_BAMBOO.planks())
+            .add(CHARRED.planks())
+            .add(WHITE_OAK.planks())
+            .add(LEGACY_PLANKS);
+        for (var wood : WoodMaps.values()) {
+            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
+            if (herringbonePlanks != null) {
+                this.getOrCreateTagBuilder(BlockTags.PLANKS).add(herringbonePlanks);
+            }
+        }
 
         this.getOrCreateTagBuilder(BlockTags.SAPLINGS)
             .add(WHITE_OAK_SAPLING);
+
+        this.getOrCreateTagBuilder(BlockTags.FLOWERS)
+            .add(FLOWERING_AZALEA_HEDGE);
 
         this.getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
             .add(RAINBOW_ROSE)
@@ -1017,36 +897,36 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.getOrCreateTagBuilder(BlockTags.SOUL_SPEED_BLOCKS)
             .addTag(BlockusBlockTags.SOUL_SANDSTONE)
-            .add(SOUL_SANDSTONE.wall)
-            .add(SOUL_SANDSTONE_BRICKS.wall)
-            .add(SMALL_SOUL_SANDSTONE_BRICKS.wall);
+            .add(SOUL_SANDSTONE.wall())
+            .add(SOUL_SANDSTONE_BRICKS.wall())
+            .add(SMALL_SOUL_SANDSTONE_BRICKS.wall());
 
         this.getOrCreateTagBuilder(BlockTags.SPRUCE_LOGS)
-            .add(SPRUCE_SMALL_LOGS);
+            .add(SMALL_LOGS.get(WoodMaps.SPRUCE.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
-            .add(RAW_BAMBOO.standing_sign)
-            .add(CHARRED.standing_sign)
-            .add(WHITE_OAK.standing_sign);
+            .add(RAW_BAMBOO.standingSign())
+            .add(CHARRED.standingSign())
+            .add(WHITE_OAK.standingSign());
 
         this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
-            .add(RAW_BAMBOO.wall_sign)
-            .add(CHARRED.wall_sign)
-            .add(WHITE_OAK.wall_sign);
+            .add(RAW_BAMBOO.wallSign())
+            .add(CHARRED.wallSign())
+            .add(WHITE_OAK.wallSign());
 
         this.getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS)
-            .add(RAW_BAMBOO.ceiling_hanging_sign)
-            .add(CHARRED.ceiling_hanging_sign)
-            .add(WHITE_OAK.ceiling_hanging_sign);
+            .add(RAW_BAMBOO.ceilingHangingSign())
+            .add(CHARRED.ceilingHangingSign())
+            .add(WHITE_OAK.ceilingHangingSign());
 
         this.getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS)
-            .add(RAW_BAMBOO.wall_hanging_sign)
-            .add(CHARRED.wall_hanging_sign)
-            .add(WHITE_OAK.wall_hanging_sign);
+            .add(RAW_BAMBOO.wallHangingSign())
+            .add(CHARRED.wallHangingSign())
+            .add(WHITE_OAK.wallHangingSign());
 
         this.getOrCreateTagBuilder(BlockTags.STONE_ORE_REPLACEABLES)
-            .add(LIMESTONE.block)
-            .add(MARBLE.block);
+            .add(LIMESTONE.block())
+            .add(MARBLE.block());
 
         this.getOrCreateTagBuilder(BlockTags.STONE_PRESSURE_PLATES)
             .add(POLISHED_ANDESITE_PRESSURE_PLATE)
@@ -1073,60 +953,62 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
 
         for (BSSWBundle bsswBundle : BSSWBundle.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bsswBundle.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bsswBundle.slab);
-            if (bsswBundle.wall != null) {
-                this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswBundle.wall);
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(bsswBundle.stairs());
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(bsswBundle.slab());
+            if (bsswBundle.wall() != null) {
+                this.getOrCreateTagBuilder(BlockTags.WALLS).add(bsswBundle.wall());
             }
         }
 
-        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(concreteType.stairs);
-            this.getOrCreateTagBuilder(BlockTags.SLABS).add(concreteType.slab);
-            this.getOrCreateTagBuilder(BlockTags.WALLS).add(concreteType.wall);
+        for (ConcreteBundle concrete : ConcreteBundle.values()) {
+            for (var variants : concrete.colorMap().values()) {
+                this.getOrCreateTagBuilder(BlockTags.STAIRS).add(variants.stairs());
+                this.getOrCreateTagBuilder(BlockTags.SLABS).add(variants.slab());
+                this.getOrCreateTagBuilder(BlockTags.WALLS).add(variants.wall());
+            }
         }
 
         this.getOrCreateTagBuilder(BlockTags.WALLS)
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.getOrCreateTagBuilder(BlockTags.WARPED_STEMS)
-            .add(WARPED_SMALL_STEMS);
+            .add(SMALL_LOGS.get(WoodMaps.WARPED.getId()));
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS)
-            .add(RAW_BAMBOO.button)
-            .add(CHARRED.button)
-            .add(WHITE_OAK.button);
+            .add(RAW_BAMBOO.button())
+            .add(CHARRED.button())
+            .add(WHITE_OAK.button());
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
-            .add(RAW_BAMBOO.door)
-            .add(CHARRED.door)
-            .add(WHITE_OAK.door)
+            .add(RAW_BAMBOO.door())
+            .add(CHARRED.door())
+            .add(WHITE_OAK.door())
             .add(PAPER_DOOR);
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
-            .add(RAW_BAMBOO.fence)
-            .add(CHARRED.fence)
-            .add(WHITE_OAK.fence);
+            .add(RAW_BAMBOO.fence())
+            .add(CHARRED.fence())
+            .add(WHITE_OAK.fence());
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
-            .add(RAW_BAMBOO.pressure_plate)
-            .add(CHARRED.pressure_plate)
-            .add(WHITE_OAK.pressure_plate);
+            .add(RAW_BAMBOO.pressurePlate())
+            .add(CHARRED.pressurePlate())
+            .add(WHITE_OAK.pressurePlate());
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
-            .add(RAW_BAMBOO.slab)
-            .add(CHARRED.slab)
-            .add(WHITE_OAK.slab);
+            .add(RAW_BAMBOO.slab())
+            .add(CHARRED.slab())
+            .add(WHITE_OAK.slab());
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
-            .add(RAW_BAMBOO.stairs)
-            .add(CHARRED.stairs)
-            .add(WHITE_OAK.stairs);
+            .add(RAW_BAMBOO.stairs())
+            .add(CHARRED.stairs())
+            .add(WHITE_OAK.stairs());
 
         this.getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
-            .add(RAW_BAMBOO.trapdoor)
-            .add(CHARRED.trapdoor)
-            .add(WHITE_OAK.trapdoor)
+            .add(RAW_BAMBOO.trapdoor())
+            .add(CHARRED.trapdoor())
+            .add(WHITE_OAK.trapdoor())
             .add(PAPER_TRAPDOOR);
 
         this.getOrCreateTagBuilder(BlockTags.WOOL)
@@ -1146,40 +1028,17 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_GRASS_BLOCK)
             .add(LEGACY_FIRST_GRASS_BLOCK);
 
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "cherry_oak_logs"))
-//            .addOptional(Blockus.id("cherry_oak_small_logs"));
-//
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "dark_amaranth_stems"))
-//            .addOptional(Blockus.id("dark_amaranth_small_stems"));
-//
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "leaf_piles"))
-//            .addOptional(Blockus.id("white_oak_leaf_pile"));
-//
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "palm_logs"))
-//            .addOptional(Blockus.id("palm_small_logs"));
-//
-//        this.getOrCreateTagBuilder(new Identifier("promenade", "maple_logs"))
-//            .addOptional(Blockus.id("maple_small_logs"));
-
         // Conventional Block Tags
         this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)
             .addTag(BlockusBlockTags.BEVELED_GLASS);
     }
 
     public static Block[] bsswBundle(BSSWBundle block) {
-        // Block, stairs & slab & wall (if exist) variants of a block
-        List<Block> list = new ArrayList<>();
-        list.add(block.block);
-        list.add(block.stairs);
-        list.add(block.slab);
-        if (block.wall != null) {
-            list.add(block.wall);
-        }
-        return list.toArray(new Block[0]);
+        return block.all();
     }
 
-    public static Block[] bssBundle(BSSWBundle block) {
-        // Block, stairs & slab variants of a block
-        return new Block[]{block.block, block.stairs, block.slab};
+    public static List<Block> bssBundle(BSSWBundle block) {
+        return block.noWall();
     }
+
 }

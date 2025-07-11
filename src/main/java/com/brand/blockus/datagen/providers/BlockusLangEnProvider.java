@@ -5,13 +5,17 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.effect.BlockusEffects;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.DyeColor;
 
+import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 public class BlockusLangEnProvider extends FabricLanguageProvider {
     public BlockusLangEnProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
@@ -71,58 +75,20 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.PAPER_LAMP, "Paper Lamp");
 
         // Stained Stone Bricks
-        addBssw(translationBuilder, BlockusBlocks.WHITE_STONE_BRICKS, "White Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.ORANGE_STONE_BRICKS, "Orange Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.MAGENTA_STONE_BRICKS, "Magenta Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.LIGHT_BLUE_STONE_BRICKS, "Light Blue Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.YELLOW_STONE_BRICKS, "Yellow Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.LIME_STONE_BRICKS, "Lime Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.PINK_STONE_BRICKS, "Pink Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.GRAY_STONE_BRICKS, "Gray Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.CYAN_STONE_BRICKS, "Cyan Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.PURPLE_STONE_BRICKS, "Purple Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.BLUE_STONE_BRICKS, "Blue Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.BROWN_STONE_BRICKS, "Brown Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.GREEN_STONE_BRICKS, "Green Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.RED_STONE_BRICKS, "Red Stone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.BLACK_STONE_BRICKS, "Black Stone Bricks");
+        for (var entry : BlockusBlocks.STAINED_STONE_BRICKS.colorMap().entrySet()) {
+            addBssw(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Stone Bricks");
+        }
 
         // Shingles
         addBssw(translationBuilder, BlockusBlocks.SHINGLES, "Shingles");
-        addBssw(translationBuilder, BlockusBlocks.WHITE_SHINGLES, "White Shingles");
-        addBssw(translationBuilder, BlockusBlocks.ORANGE_SHINGLES, "Orange Shingles");
-        addBssw(translationBuilder, BlockusBlocks.MAGENTA_SHINGLES, "Magenta Shingles");
-        addBssw(translationBuilder, BlockusBlocks.LIGHT_BLUE_SHINGLES, "Light Blue Shingles");
-        addBssw(translationBuilder, BlockusBlocks.YELLOW_SHINGLES, "Yellow Shingles");
-        addBssw(translationBuilder, BlockusBlocks.LIME_SHINGLES, "Lime Shingles");
-        addBssw(translationBuilder, BlockusBlocks.PINK_SHINGLES, "Pink Shingles");
-        addBssw(translationBuilder, BlockusBlocks.LIGHT_GRAY_SHINGLES, "Light Gray Shingles");
-        addBssw(translationBuilder, BlockusBlocks.GRAY_SHINGLES, "Gray Shingles");
-        addBssw(translationBuilder, BlockusBlocks.CYAN_SHINGLES, "Cyan Shingles");
-        addBssw(translationBuilder, BlockusBlocks.PURPLE_SHINGLES, "Purple Shingles");
-        addBssw(translationBuilder, BlockusBlocks.BLUE_SHINGLES, "Blue Shingles");
-        addBssw(translationBuilder, BlockusBlocks.BROWN_SHINGLES, "Brown Shingles");
-        addBssw(translationBuilder, BlockusBlocks.GREEN_SHINGLES, "Green Shingles");
-        addBssw(translationBuilder, BlockusBlocks.RED_SHINGLES, "Red Shingles");
-        addBssw(translationBuilder, BlockusBlocks.BLACK_SHINGLES, "Black Shingles");
+        for (var entry : BlockusBlocks.STAINED_SHINGLES.colorMap().entrySet()) {
+            addBssw(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Shingles");
+        }
 
         // Concrete
-        addConcrete(translationBuilder, BlockusBlocks.WHITE_CONCRETE_BRICKS, "White Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.ORANGE_CONCRETE_BRICKS, "Orange Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.MAGENTA_CONCRETE_BRICKS, "Magenta Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.LIGHT_BLUE_CONCRETE_BRICKS, "Light Blue Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.YELLOW_CONCRETE_BRICKS, "Yellow Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.LIME_CONCRETE_BRICKS, "Lime Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.PINK_CONCRETE_BRICKS, "Pink Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.GRAY_CONCRETE_BRICKS, "Gray Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.LIGHT_GRAY_CONCRETE_BRICKS, "Light Gray Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.CYAN_CONCRETE_BRICKS, "Cyan Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.PURPLE_CONCRETE_BRICKS, "Purple Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.BLUE_CONCRETE_BRICKS, "Blue Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.BROWN_CONCRETE_BRICKS, "Brown Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.GREEN_CONCRETE_BRICKS, "Green Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.RED_CONCRETE_BRICKS, "Red Concrete Bricks");
-        addConcrete(translationBuilder, BlockusBlocks.BLACK_CONCRETE_BRICKS, "Black Concrete Bricks");
+        for (var entry : BlockusBlocks.CONCRETE_BRICKS.colorMap().entrySet()) {
+            addConcrete(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Concrete Bricks");
+        }
 
         // Basalt
         addBssw(translationBuilder, BlockusBlocks.ROUGH_BASALT, "Rough Basalt");
@@ -157,22 +123,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Colored Tiles
         translationBuilder.add("block.blockus.colored_tiles", "Colored Tiles");
-        translationBuilder.add(BlockusBlocks.WHITE_COLORED_TILES, "White Colored Tiles");
-        translationBuilder.add(BlockusBlocks.ORANGE_COLORED_TILES, "Orange Colored Tiles");
-        translationBuilder.add(BlockusBlocks.MAGENTA_COLORED_TILES, "Magenta Colored Tiles");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_COLORED_TILES, "Light Blue Colored Tiles");
-        translationBuilder.add(BlockusBlocks.YELLOW_COLORED_TILES, "Yellow Colored Tiles");
-        translationBuilder.add(BlockusBlocks.LIME_COLORED_TILES, "Lime Colored Tiles");
-        translationBuilder.add(BlockusBlocks.PINK_COLORED_TILES, "Pink Colored Tiles");
-        translationBuilder.add(BlockusBlocks.GRAY_COLORED_TILES, "Gray Colored Tiles");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_COLORED_TILES, "Light Gray Colored Tiles");
-        translationBuilder.add(BlockusBlocks.CYAN_COLORED_TILES, "Cyan Colored Tiles");
-        translationBuilder.add(BlockusBlocks.PURPLE_COLORED_TILES, "Purple Colored Tiles");
-        translationBuilder.add(BlockusBlocks.BLUE_COLORED_TILES, "Blue Colored Tiles");
-        translationBuilder.add(BlockusBlocks.BROWN_COLORED_TILES, "Brown Colored Tiles");
-        translationBuilder.add(BlockusBlocks.GREEN_COLORED_TILES, "Green Colored Tiles");
-        translationBuilder.add(BlockusBlocks.RED_COLORED_TILES, "Red Colored Tiles");
-        translationBuilder.add(BlockusBlocks.BLACK_COLORED_TILES, "Black Colored Tiles");
+        for (var entry : BlockusBlocks.COLORED_TILES.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Colored Tiles");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_COLORED_TILES, "Rainbow Colored Tiles");
 
         // Woods
@@ -193,94 +146,40 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusEntities.CHARRED_BOAT.getItem(), "Charred Boat");
         translationBuilder.add(BlockusEntities.CHARRED_BOAT.getChestItem(), "Charred Boat with Chest");
 
-        // Small logs
-        translationBuilder.add(BlockusBlocks.OAK_SMALL_LOGS, "Small Oak Logs");
-        translationBuilder.add(BlockusBlocks.SPRUCE_SMALL_LOGS, "Small Spruce Logs");
-        translationBuilder.add(BlockusBlocks.BIRCH_SMALL_LOGS, "Small Birch Logs");
-        translationBuilder.add(BlockusBlocks.JUNGLE_SMALL_LOGS, "Small Jungle Logs");
-        translationBuilder.add(BlockusBlocks.ACACIA_SMALL_LOGS, "Small Acacia Logs");
-        translationBuilder.add(BlockusBlocks.DARK_OAK_SMALL_LOGS, "Small Dark Oak Logs");
-        translationBuilder.add(BlockusBlocks.MANGROVE_SMALL_LOGS, "Small Mangrove Logs");
-        translationBuilder.add(BlockusBlocks.CHERRY_SMALL_LOGS, "Small Cherry Logs");
-        translationBuilder.add(BlockusBlocks.WHITE_OAK_SMALL_LOGS, "Small White Oak Logs");
-        translationBuilder.add(BlockusBlocks.CRIMSON_SMALL_STEMS, "Small Crimson Stems");
-        translationBuilder.add(BlockusBlocks.WARPED_SMALL_STEMS, "Small Warped Stems");
+        // Small log
+        for (var entry : BlockusBlocks.SMALL_LOGS.bundle().entrySet()) {
+            String suffix = (entry.getKey().equals(WoodMaps.CRIMSON.getId()) || entry.getKey().equals(WoodMaps.WARPED.getId())) ? " Stems" : " Logs";
+            translationBuilder.add(entry.getValue(), "Small " + name(entry.getKey()) + suffix);
+        }
 
         // Wooden Posts
-        addWoodenPost(translationBuilder, BlockusBlocks.OAK_POST, "Oak Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.SPRUCE_POST, "Spruce Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.BIRCH_POST, "Birch Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.JUNGLE_POST, "Jungle Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.ACACIA_POST, "Acacia Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.DARK_OAK_POST, "Dark Oak Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.MANGROVE_POST, "Mangrove Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.CHERRY_POST, "Cherry Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.WHITE_OAK_POST, "White Oak Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.CRIMSON_POST, "Crimson Post");
-        addWoodenPost(translationBuilder, BlockusBlocks.WARPED_POST, "Warped Post");
+        for (var entry : BlockusBlocks.WOODEN_POST.woodMap().entrySet()) {
+            addWoodenPost(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Post");
+        }
 
         // Mosaics
-        addBssw(translationBuilder, BlockusBlocks.RAW_BAMBOO_MOSAIC, "Raw Bamboo Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.OAK_MOSAIC, "Oak Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.SPRUCE_MOSAIC, "Spruce Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.BIRCH_MOSAIC, "Birch Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.JUNGLE_MOSAIC, "Jungle Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.ACACIA_MOSAIC, "Acacia Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.DARK_OAK_MOSAIC, "Dark Oak Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.CHERRY_MOSAIC, "Cherry Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.MANGROVE_MOSAIC, "Mangrove Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.WHITE_OAK_MOSAIC, "White Oak Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.WARPED_MOSAIC, "Warped Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.CRIMSON_MOSAIC, "Crimson Mosaic");
-        addBssw(translationBuilder, BlockusBlocks.CHARRED_MOSAIC, "Charred Mosaic");
+        for (var entry : BlockusBlocks.WOODEN_MOSAIC.bundle().entrySet()) {
+            addBssw(translationBuilder, entry.getValue(), name(entry.getKey()) + " Mosaic");
+        }
 
         // Mossy Planks
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_OAK_PLANKS, "Mossy Oak Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_SPRUCE_PLANKS, "Mossy Spruce Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_BIRCH_PLANKS, "Mossy Birch Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_JUNGLE_PLANKS, "Mossy Jungle Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_ACACIA_PLANKS, "Mossy Acacia Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_DARK_OAK_PLANKS, "Mossy Dark Oak Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_MANGROVE_PLANKS, "Mossy Mangrove Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_CHERRY_PLANKS, "Mossy Cherry Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_WHITE_OAK_PLANKS, "Mossy White Oak Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_BAMBOO_PLANKS, "Mossy Bamboo Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_RAW_BAMBOO_PLANKS, "Mossy Raw Bamboo Planks");
-        addWoodenBss(translationBuilder, BlockusBlocks.MOSSY_CHARRED_PLANKS, "Mossy Charred Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_CRIMSON_PLANKS, "Mossy Crimson Planks");
-        addBssw(translationBuilder, BlockusBlocks.MOSSY_WARPED_PLANKS, "Mossy Warped Planks");
+        for (var entry : BlockusBlocks.MOSSY_PLANKS.bundle().entrySet()) {
+            if (entry.getKey().equals(WoodMaps.CHARRED.getId())) {
+                addWoodenBss(translationBuilder, entry.getValue(), "Mossy " + name(entry.getKey()) + " Planks");
+            } else {
+                addBssw(translationBuilder, entry.getValue(), "Mossy " + name(entry.getKey()) + " Planks");
+            }
+        }
 
         // Herringbone Planks
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_OAK_PLANKS, "Herringbone Oak Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS, "Herringbone Spruce Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS, "Herringbone Birch Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS, "Herringbone Jungle Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS, "Herringbone Acacia Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS, "Herringbone Dark Oak Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS, "Herringbone Mangrove Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS, "Herringbone Cherry Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS, "Herringbone White Oak Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS, "Herringbone Bamboo Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS, "Herringbone Raw Bamboo Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS, "Herringbone Charred Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS, "Herringbone Crimson Planks");
-        translationBuilder.add(BlockusBlocks.HERRINGBONE_WARPED_PLANKS, "Herringbone Warped Planks");
+        for (var entry : BlockusBlocks.HERRINGBONE_PLANKS.bundle().entrySet()) {
+            translationBuilder.add(entry.getValue(), "Herringbone " + name(entry.getKey()) + " Planks");
+        }
 
         // Timber Frames, Lattices & Wooden Grates
-        addTimberFrame(translationBuilder, BlockusBlocks.OAK_TIMBER_FRAME, "Oak");
-        addTimberFrame(translationBuilder, BlockusBlocks.SPRUCE_TIMBER_FRAME, "Spruce");
-        addTimberFrame(translationBuilder, BlockusBlocks.BIRCH_TIMBER_FRAME, "Birch");
-        addTimberFrame(translationBuilder, BlockusBlocks.JUNGLE_TIMBER_FRAME, "Jungle");
-        addTimberFrame(translationBuilder, BlockusBlocks.ACACIA_TIMBER_FRAME, "Acacia");
-        addTimberFrame(translationBuilder, BlockusBlocks.DARK_OAK_TIMBER_FRAME, "Dark Oak");
-        addTimberFrame(translationBuilder, BlockusBlocks.MANGROVE_TIMBER_FRAME, "Mangrove");
-        addTimberFrame(translationBuilder, BlockusBlocks.CHERRY_TIMBER_FRAME, "Cherry");
-        addTimberFrame(translationBuilder, BlockusBlocks.CHARRED_TIMBER_FRAME, "Charred");
-        addTimberFrame(translationBuilder, BlockusBlocks.WHITE_OAK_TIMBER_FRAME, "White Oak");
-        addTimberFrame(translationBuilder, BlockusBlocks.BAMBOO_TIMBER_FRAME, "Bamboo");
-        addTimberFrame(translationBuilder, BlockusBlocks.RAW_BAMBOO_TIMBER_FRAME, "Raw Bamboo");
-        addTimberFrame(translationBuilder, BlockusBlocks.CRIMSON_TIMBER_FRAME, "Crimson");
-        addTimberFrame(translationBuilder, BlockusBlocks.WARPED_TIMBER_FRAME, "Warped");
+        for (var entry : BlockusBlocks.TIMBER_FRAME.woodMap().entrySet()) {
+            addTimberFrame(translationBuilder, entry.getValue(), name(entry.getKey().getId()));
+        }
         translationBuilder.add(BlockusBlocks.WOODEN_FRAME, "Wooden Frame");
 
         // Netherrack
@@ -379,40 +278,14 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_GLASS, "Rainbow Glass");
         translationBuilder.add(BlockusBlocks.RAINBOW_GLASS_PANE, "Rainbow Glass Pane");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS, "Beveled Glass");
-        translationBuilder.add(BlockusBlocks.WHITE_BEVELED_GLASS, "White Beveled Glass");
-        translationBuilder.add(BlockusBlocks.ORANGE_BEVELED_GLASS, "Orange Beveled Glass");
-        translationBuilder.add(BlockusBlocks.MAGENTA_BEVELED_GLASS, "Magenta Beveled Glass");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS, "Light Blue Beveled Glass");
-        translationBuilder.add(BlockusBlocks.YELLOW_BEVELED_GLASS, "Yellow Beveled Glass");
-        translationBuilder.add(BlockusBlocks.LIME_BEVELED_GLASS, "Lime Beveled Glass");
-        translationBuilder.add(BlockusBlocks.PINK_BEVELED_GLASS, "Pink Beveled Glass");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS, "Light Gray Beveled Glass");
-        translationBuilder.add(BlockusBlocks.GRAY_BEVELED_GLASS, "Gray Beveled Glass");
-        translationBuilder.add(BlockusBlocks.CYAN_BEVELED_GLASS, "Cyan Beveled Glass");
-        translationBuilder.add(BlockusBlocks.PURPLE_BEVELED_GLASS, "Purple Beveled Glass");
-        translationBuilder.add(BlockusBlocks.BLUE_BEVELED_GLASS, "Blue Beveled Glass");
-        translationBuilder.add(BlockusBlocks.BROWN_BEVELED_GLASS, "Brown Beveled Glass");
-        translationBuilder.add(BlockusBlocks.GREEN_BEVELED_GLASS, "Green Beveled Glass");
-        translationBuilder.add(BlockusBlocks.RED_BEVELED_GLASS, "Red Beveled Glass");
-        translationBuilder.add(BlockusBlocks.BLACK_BEVELED_GLASS, "Black Beveled Glass");
+        for (var entry : BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Beveled Glass");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS, "Rainbow Beveled Glass");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS_PANE, "Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.WHITE_BEVELED_GLASS_PANE, "White Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.ORANGE_BEVELED_GLASS_PANE, "Orange Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.MAGENTA_BEVELED_GLASS_PANE, "Magenta Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS_PANE, "Light Blue Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.YELLOW_BEVELED_GLASS_PANE, "Yellow Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.LIME_BEVELED_GLASS_PANE, "Lime Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.PINK_BEVELED_GLASS_PANE, "Pink Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS_PANE, "Light Gray Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.GRAY_BEVELED_GLASS_PANE, "Gray Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.CYAN_BEVELED_GLASS_PANE, "Cyan Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.PURPLE_BEVELED_GLASS_PANE, "Purple Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.BLUE_BEVELED_GLASS_PANE, "Blue Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.BROWN_BEVELED_GLASS_PANE, "Brown Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.GREEN_BEVELED_GLASS_PANE, "Green Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.RED_BEVELED_GLASS_PANE, "Red Beveled Glass Pane");
-        translationBuilder.add(BlockusBlocks.BLACK_BEVELED_GLASS_PANE, "Black Beveled Glass Pane");
+        for (var entry : BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Beveled Glass Pane");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE, "Rainbow Beveled Glass Pane");
         translationBuilder.add(BlockusBlocks.TINTED_BEVELED_GLASS, "Tinted Beveled Glass");
 
@@ -430,40 +303,14 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.END_STONE_PILLAR, "End Stone Pillar");
 
         // Glazed Terracotta
-        translationBuilder.add(BlockusBlocks.WHITE_GLAZED_TERRACOTTA_PILLAR, "White Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.ORANGE_GLAZED_TERRACOTTA_PILLAR, "Orange Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.MAGENTA_GLAZED_TERRACOTTA_PILLAR, "Magenta Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR, "Light Blue Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.YELLOW_GLAZED_TERRACOTTA_PILLAR, "Yellow Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.LIME_GLAZED_TERRACOTTA_PILLAR, "Lime Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.PINK_GLAZED_TERRACOTTA_PILLAR, "Pink Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR, "Light Gray Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.GRAY_GLAZED_TERRACOTTA_PILLAR, "Gray Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.CYAN_GLAZED_TERRACOTTA_PILLAR, "Cyan Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.PURPLE_GLAZED_TERRACOTTA_PILLAR, "Purple Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.BLUE_GLAZED_TERRACOTTA_PILLAR, "Blue Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.BROWN_GLAZED_TERRACOTTA_PILLAR, "Brown Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.GREEN_GLAZED_TERRACOTTA_PILLAR, "Green Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.RED_GLAZED_TERRACOTTA_PILLAR, "Red Glazed Terracotta Pillar");
-        translationBuilder.add(BlockusBlocks.BLACK_GLAZED_TERRACOTTA_PILLAR, "Black Glazed Terracotta Pillar");
+        for (var entry : BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Glazed Terracotta Pillar");
+        }
 
         // Asphalt
-        addAsphalt(translationBuilder, BlockusBlocks.ASPHALT, "Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.WHITE_ASPHALT, "White Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.ORANGE_ASPHALT, "Orange Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.MAGENTA_ASPHALT, "Magenta Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.LIGHT_BLUE_ASPHALT, "Light Blue Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.YELLOW_ASPHALT, "Yellow Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.LIME_ASPHALT, "Lime Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.PINK_ASPHALT, "Pink Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.LIGHT_GRAY_ASPHALT, "Light Gray Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.GRAY_ASPHALT, "Gray Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.CYAN_ASPHALT, "Cyan Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.PURPLE_ASPHALT, "Purple Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.BLUE_ASPHALT, "Blue Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.BROWN_ASPHALT, "Brown Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.GREEN_ASPHALT, "Green Asphalt");
-        addAsphalt(translationBuilder, BlockusBlocks.RED_ASPHALT, "Red Asphalt");
+        for (var entry : BlockusBlocks.ASPHALT.colorMap().entrySet()) {
+            addAsphalt(translationBuilder, entry.getValue(), entry.getKey() == DyeColor.BLACK ? "Asphalt" : name(entry.getKey().getName()) + " Asphalt");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_ASPHALT, "Rainbow Asphalt");
 
         // Obsidian
@@ -555,36 +402,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_LAMP, "Rainbow Lamp");
         translationBuilder.add(BlockusBlocks.RAINBOW_LAMP_LIT, "Lit Rainbow Lamp");
         translationBuilder.add(BlockusBlocks.REDSTONE_LAMP_LIT, "Lit Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.WHITE_REDSTONE_LAMP, "White Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.WHITE_REDSTONE_LAMP_LIT, "Lit White Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.ORANGE_REDSTONE_LAMP, "Orange Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.ORANGE_REDSTONE_LAMP_LIT, "Lit Orange Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP, "Magenta Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT, "Lit Magenta Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP, "Light Blue Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP_LIT, "Lit Light Blue Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.YELLOW_REDSTONE_LAMP, "Yellow Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT, "Lit Yellow Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIME_REDSTONE_LAMP, "Lime Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIME_REDSTONE_LAMP_LIT, "Lit Lime Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.PINK_REDSTONE_LAMP, "Pink Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.PINK_REDSTONE_LAMP_LIT, "Lit Pink Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.GRAY_REDSTONE_LAMP, "Gray Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.GRAY_REDSTONE_LAMP_LIT, "Lit Gray Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP, "Light Gray Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP_LIT, "Lit Light Gray Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.CYAN_REDSTONE_LAMP, "Cyan Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.CYAN_REDSTONE_LAMP_LIT, "Lit Cyan Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.PURPLE_REDSTONE_LAMP, "Purple Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.PURPLE_REDSTONE_LAMP_LIT, "Lit Purple Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.BLUE_REDSTONE_LAMP, "Blue Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.BLUE_REDSTONE_LAMP_LIT, "Lit Blue Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.BROWN_REDSTONE_LAMP, "Brown Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.BROWN_REDSTONE_LAMP_LIT, "Lit Brown Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.GREEN_REDSTONE_LAMP, "Green Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.GREEN_REDSTONE_LAMP_LIT, "Lit Green Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.RED_REDSTONE_LAMP, "Red Redstone Lamp");
-        translationBuilder.add(BlockusBlocks.RED_REDSTONE_LAMP_LIT, "Lit Red Redstone Lamp");
+        for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Redstone Lamp");
+        }
+        for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), "Lit " + name(entry.getKey().getName()) + " Redstone Lamp");
+        }
 
         // Food Crates
         translationBuilder.add(BlockusBlocks.COD_CRATE, "Cod Crate");
@@ -602,119 +425,66 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.BREAD_BOX, "Bread Box");
 
         // Hedges
-        translationBuilder.add(BlockusBlocks.OAK_SMALL_HEDGE, "Oak Small Hedge");
-        translationBuilder.add(BlockusBlocks.SPRUCE_SMALL_HEDGE, "Spruce Small Hedge");
-        translationBuilder.add(BlockusBlocks.BIRCH_SMALL_HEDGE, "Birch Small Hedge");
-        translationBuilder.add(BlockusBlocks.JUNGLE_SMALL_HEDGE, "Jungle Small Hedge");
-        translationBuilder.add(BlockusBlocks.ACACIA_SMALL_HEDGE, "Acacia Small Hedge");
-        translationBuilder.add(BlockusBlocks.DARK_OAK_SMALL_HEDGE, "Dark Oak Small Hedge");
-        translationBuilder.add(BlockusBlocks.MANGROVE_SMALL_HEDGE, "Mangrove Small Hedge");
-        translationBuilder.add(BlockusBlocks.CHERRY_SMALL_HEDGE, "Cherry Small Hedge");
-        translationBuilder.add(BlockusBlocks.WHITE_OAK_SMALL_HEDGE, "White Oak Small Hedge");
-        translationBuilder.add(BlockusBlocks.AZALEA_SMALL_HEDGE, "Azalea Small Hedge");
-        translationBuilder.add(BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, "Flowering Azalea Small Hedge");
-        translationBuilder.add(BlockusBlocks.MOSS_SMALL_HEDGE, "Moss Small Hedge");
-        translationBuilder.add(BlockusBlocks.WARPED_SMALL_HEDGE, "Warped Small Hedge");
-        translationBuilder.add(BlockusBlocks.CRIMSON_SMALL_HEDGE, "Crimson Small Hedge");
+        translationBuilder.add(BlockusBlocks.OAK_HEDGE, "Oak Hedge");
+        translationBuilder.add(BlockusBlocks.SPRUCE_HEDGE, "Spruce Hedge");
+        translationBuilder.add(BlockusBlocks.BIRCH_HEDGE, "Birch Hedge");
+        translationBuilder.add(BlockusBlocks.JUNGLE_HEDGE, "Jungle Hedge");
+        translationBuilder.add(BlockusBlocks.ACACIA_HEDGE, "Acacia Hedge");
+        translationBuilder.add(BlockusBlocks.DARK_OAK_HEDGE, "Dark Oak Hedge");
+        translationBuilder.add(BlockusBlocks.MANGROVE_HEDGE, "Mangrove Hedge");
+        translationBuilder.add(BlockusBlocks.CHERRY_HEDGE, "Cherry Hedge");
+        translationBuilder.add(BlockusBlocks.WHITE_OAK_HEDGE, "White Oak Hedge");
+        translationBuilder.add(BlockusBlocks.AZALEA_HEDGE, "Azalea Hedge");
+        translationBuilder.add(BlockusBlocks.FLOWERING_AZALEA_HEDGE, "Flowering Azalea Hedge");
+        translationBuilder.add(BlockusBlocks.MOSS_HEDGE, "Moss Hedge");
+        translationBuilder.add(BlockusBlocks.WARPED_HEDGE, "Warped Hedge");
+        translationBuilder.add(BlockusBlocks.CRIMSON_HEDGE, "Crimson Hedge");
 
         // Patterned Wools
-        addWoolBundle(translationBuilder, BlockusBlocks.WHITE_PATTERNED_WOOL, "White Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.ORANGE_PATTERNED_WOOL, "Orange Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.MAGENTA_PATTERNED_WOOL, "Magenta Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIGHT_BLUE_PATTERNED_WOOL, "Light Blue Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.YELLOW_PATTERNED_WOOL, "Yellow Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIME_PATTERNED_WOOL, "Lime Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.PINK_PATTERNED_WOOL, "Pink Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.GRAY_PATTERNED_WOOL, "Gray Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIGHT_GRAY_PATTERNED_WOOL, "Light Gray Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.CYAN_PATTERNED_WOOL, "Cyan Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.PURPLE_PATTERNED_WOOL, "Purple Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BLUE_PATTERNED_WOOL, "Blue Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BROWN_PATTERNED_WOOL, "Brown Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.GREEN_PATTERNED_WOOL, "Green Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.RED_PATTERNED_WOOL, "Red Patterned Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BLACK_PATTERNED_WOOL, "Black Patterned Wool");
-
-        addWoolBundle(translationBuilder, BlockusBlocks.WHITE_GINGHAM_WOOL, "White Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.ORANGE_GINGHAM_WOOL, "Orange Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.MAGENTA_GINGHAM_WOOL, "Magenta Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIGHT_BLUE_GINGHAM_WOOL, "Light Blue Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.YELLOW_GINGHAM_WOOL, "Yellow Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIME_GINGHAM_WOOL, "Lime Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.PINK_GINGHAM_WOOL, "Pink Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.GRAY_GINGHAM_WOOL, "Gray Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.LIGHT_GRAY_GINGHAM_WOOL, "Light Gray Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.CYAN_GINGHAM_WOOL, "Cyan Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.PURPLE_GINGHAM_WOOL, "Purple Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BLUE_GINGHAM_WOOL, "Blue Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BROWN_GINGHAM_WOOL, "Brown Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.GREEN_GINGHAM_WOOL, "Green Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.RED_GINGHAM_WOOL, "Red Gingham Wool");
-        addWoolBundle(translationBuilder, BlockusBlocks.BLACK_GINGHAM_WOOL, "Black Gingham Wool");
+        for (var entry : BlockusBlocks.PATTERNED_WOOL.colorMap().entrySet()) {
+            addWoolBundle(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Patterned Wool");
+        }
+        for (var entry : BlockusBlocks.GINGHAM_WOOL.colorMap().entrySet()) {
+            addWoolBundle(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Gingham Wool");
+        }
 
         // Neons
-        translationBuilder.add(BlockusBlocks.WHITE_NEON, "White Neon");
-        translationBuilder.add(BlockusBlocks.ORANGE_NEON, "Orange Neon");
-        translationBuilder.add(BlockusBlocks.MAGENTA_NEON, "Magenta Neon");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_NEON, "Light Blue Neon");
-        translationBuilder.add(BlockusBlocks.YELLOW_NEON, "Yellow Neon");
-        translationBuilder.add(BlockusBlocks.LIME_NEON, "Lime Neon");
-        translationBuilder.add(BlockusBlocks.PINK_NEON, "Pink Neon");
-        translationBuilder.add(BlockusBlocks.GRAY_NEON, "Gray Neon");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_NEON, "Light Gray Neon");
-        translationBuilder.add(BlockusBlocks.CYAN_NEON, "Cyan Neon");
-        translationBuilder.add(BlockusBlocks.PURPLE_NEON, "Purple Neon");
-        translationBuilder.add(BlockusBlocks.BLUE_NEON, "Blue Neon");
-        translationBuilder.add(BlockusBlocks.BROWN_NEON, "Brown Neon");
-        translationBuilder.add(BlockusBlocks.GREEN_NEON, "Green Neon");
-        translationBuilder.add(BlockusBlocks.RED_NEON, "Red Neon");
-        translationBuilder.add(BlockusBlocks.BLACK_NEON, "Black Neon");
+        for (var entry : BlockusBlocks.NEON_BLOCK.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Neon");
+        }
         translationBuilder.add(BlockusBlocks.RAINBOW_NEON, "Rainbow Neon");
 
         // Futurneo Blocks
-        translationBuilder.add(BlockusBlocks.WHITE_FUTURNEO_BLOCK, "White Futurneo Block");
-        translationBuilder.add(BlockusBlocks.ORANGE_FUTURNEO_BLOCK, "Orange Futurneo Block");
-        translationBuilder.add(BlockusBlocks.MAGENTA_FUTURNEO_BLOCK, "Magenta Futurneo Block");
-        translationBuilder.add(BlockusBlocks.LIGHT_BLUE_FUTURNEO_BLOCK, "Light Blue Futurneo Block");
-        translationBuilder.add(BlockusBlocks.YELLOW_FUTURNEO_BLOCK, "Yellow Futurneo Block");
-        translationBuilder.add(BlockusBlocks.LIME_FUTURNEO_BLOCK, "Lime Futurneo Block");
-        translationBuilder.add(BlockusBlocks.PINK_FUTURNEO_BLOCK, "Pink Futurneo Block");
-        translationBuilder.add(BlockusBlocks.GRAY_FUTURNEO_BLOCK, "Gray Futurneo Block");
+        for (var entry : BlockusBlocks.FUTURNEO_BLOCK.colorMap().entrySet()) {
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Futurneo Block");
+        }
         translationBuilder.add(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK, "Gray Bright Futurneo Block");
-        translationBuilder.add(BlockusBlocks.LIGHT_GRAY_FUTURNEO_BLOCK, "Light Gray Futurneo Block");
-        translationBuilder.add(BlockusBlocks.CYAN_FUTURNEO_BLOCK, "Cyan Futurneo Block");
-        translationBuilder.add(BlockusBlocks.PURPLE_FUTURNEO_BLOCK, "Purple Futurneo Block");
-        translationBuilder.add(BlockusBlocks.BLUE_FUTURNEO_BLOCK, "Blue Futurneo Block");
-        translationBuilder.add(BlockusBlocks.BROWN_FUTURNEO_BLOCK, "Brown Futurneo Block");
-        translationBuilder.add(BlockusBlocks.GREEN_FUTURNEO_BLOCK, "Green Futurneo Block");
-        translationBuilder.add(BlockusBlocks.RED_FUTURNEO_BLOCK, "Red Futurneo Block");
-        translationBuilder.add(BlockusBlocks.BLACK_FUTURNEO_BLOCK, "Black Futurneo Block");
         translationBuilder.add(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK, "Rainbow Futurneo Block");
 
         // Large flower pot
         translationBuilder.add(BlockusBlocks.LARGE_FLOWER_POT, "Large Flower Pot");
-        translationBuilder.add(BlockusBlocks.POTTED_ROSE_BUSH.block, "Potted Rose Bush");
-        translationBuilder.add(BlockusBlocks.POTTED_LILAC.block, "Potted Lilac");
-        translationBuilder.add(BlockusBlocks.POTTED_PEONY.block, "Potted Peony");
-        translationBuilder.add(BlockusBlocks.POTTED_LARGE_FERN.block, "Potted Large Fern");
-        translationBuilder.add(BlockusBlocks.POTTED_OAK.block, "Potted Oak");
-        translationBuilder.add(BlockusBlocks.POTTED_SPRUCE.block, "Potted Spruce");
-        translationBuilder.add(BlockusBlocks.POTTED_BIRCH.block, "Potted Birch");
-        translationBuilder.add(BlockusBlocks.POTTED_JUNGLE.block, "Potted Jungle");
-        translationBuilder.add(BlockusBlocks.POTTED_ACACIA.block, "Potted Acacia");
-        translationBuilder.add(BlockusBlocks.POTTED_DARK_OAK.block, "Potted Dark Oak");
-        translationBuilder.add(BlockusBlocks.POTTED_MANGROVE.block, "Potted Mangrove");
-        translationBuilder.add(BlockusBlocks.POTTED_CHERRY_BLOSSOM.block, "Potted Cherry Blossom");
-        translationBuilder.add(BlockusBlocks.POTTED_WHITE_OAK.block, "Potted White Oak");
-        translationBuilder.add(BlockusBlocks.POTTED_HUGE_RED_MUSHROOM.block, "Potted Huge Red Mushroom");
-        translationBuilder.add(BlockusBlocks.POTTED_HUGE_BROWN_MUSHROOM.block, "Potted Huge Brown Mushroom");
-        translationBuilder.add(BlockusBlocks.POTTED_HUGE_CRIMSON_FUNGUS.block, "Potted Huge Crimson Fungus");
-        translationBuilder.add(BlockusBlocks.POTTED_HUGE_WARPED_FUNGUS.block, "Potted Huge Warped Fungus");
-        translationBuilder.add(BlockusBlocks.POTTED_CACTUS_LARGE.block, "Large Potted Cactus");
-        translationBuilder.add(BlockusBlocks.POTTED_BAMBOO_LARGE.block, "Large Potted Bamboo");
-        translationBuilder.add(BlockusBlocks.POTTED_AZALEA_LARGE.block, "Large Potted Azalea");
-        translationBuilder.add(BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block, "Large Potted Flowering Azalea");
-        translationBuilder.add(BlockusBlocks.POTTED_PITCHER_PLANT.block, "Potted Pitcher Plant");
+        translationBuilder.add(BlockusBlocks.POTTED_ROSE_BUSH.block(), "Potted Rose Bush");
+        translationBuilder.add(BlockusBlocks.POTTED_LILAC.block(), "Potted Lilac");
+        translationBuilder.add(BlockusBlocks.POTTED_PEONY.block(), "Potted Peony");
+        translationBuilder.add(BlockusBlocks.POTTED_LARGE_FERN.block(), "Potted Large Fern");
+        translationBuilder.add(BlockusBlocks.POTTED_OAK.block(), "Potted Oak");
+        translationBuilder.add(BlockusBlocks.POTTED_SPRUCE.block(), "Potted Spruce");
+        translationBuilder.add(BlockusBlocks.POTTED_BIRCH.block(), "Potted Birch");
+        translationBuilder.add(BlockusBlocks.POTTED_JUNGLE.block(), "Potted Jungle");
+        translationBuilder.add(BlockusBlocks.POTTED_ACACIA.block(), "Potted Acacia");
+        translationBuilder.add(BlockusBlocks.POTTED_DARK_OAK.block(), "Potted Dark Oak");
+        translationBuilder.add(BlockusBlocks.POTTED_MANGROVE.block(), "Potted Mangrove");
+        translationBuilder.add(BlockusBlocks.POTTED_CHERRY_BLOSSOM.block(), "Potted Cherry Blossom");
+        translationBuilder.add(BlockusBlocks.POTTED_WHITE_OAK.block(), "Potted White Oak");
+        translationBuilder.add(BlockusBlocks.POTTED_HUGE_RED_MUSHROOM.block(), "Potted Huge Red Mushroom");
+        translationBuilder.add(BlockusBlocks.POTTED_HUGE_BROWN_MUSHROOM.block(), "Potted Huge Brown Mushroom");
+        translationBuilder.add(BlockusBlocks.POTTED_HUGE_CRIMSON_FUNGUS.block(), "Potted Huge Crimson Fungus");
+        translationBuilder.add(BlockusBlocks.POTTED_HUGE_WARPED_FUNGUS.block(), "Potted Huge Warped Fungus");
+        translationBuilder.add(BlockusBlocks.POTTED_CACTUS_LARGE.block(), "Large Potted Cactus");
+        translationBuilder.add(BlockusBlocks.POTTED_BAMBOO_LARGE.block(), "Large Potted Bamboo");
+        translationBuilder.add(BlockusBlocks.POTTED_AZALEA_LARGE.block(), "Large Potted Azalea");
+        translationBuilder.add(BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block(), "Large Potted Flowering Azalea");
+        translationBuilder.add(BlockusBlocks.POTTED_PITCHER_PLANT.block(), "Potted Pitcher Plant");
 
         // Thatch
         addBssw(translationBuilder, BlockusBlocks.THATCH, "Thatch");
@@ -870,7 +640,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.LEGACY_GLOWSTONE, "Glowstone");
         translationBuilder.add(BlockusBlocks.LEGACY_NETHER_REACTOR_CORE, "Nether Reactor Core");
         translationBuilder.add(BlockusBlocks.LEGACY_PLANKS, "Planks");
-        translationBuilder.add(BlockusBlocks.POTTED_LEGACY_TREE.block, "Potted Legacy Tree");
+        translationBuilder.add(BlockusBlocks.POTTED_LEGACY_TREE.block(), "Potted Legacy Tree");
         translationBuilder.add(BlockusBlocks.POTTED_LEGACY_SAPLING, "Potted Legacy Sapling");
         translationBuilder.add(BlockusBlocks.LEGACY_ROSE, "Rose");
         translationBuilder.add(BlockusBlocks.POTTED_LEGACY_ROSE, "Potted Rose");
@@ -918,75 +688,81 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
     // Block, stairs & slab & wall (if exist)
     public static void addBssw(TranslationBuilder translationBuilder, BSSWBundle bundle, String string) {
-        addBlockStairsSlab(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab);
-        if (bundle.wall != null) {
-            translationBuilder.add(bundle.wall, editedString(string) + " Wall");
+        addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
+        if (bundle.wall() != null) {
+            translationBuilder.add(bundle.wall(), editedString(string) + " Wall");
         }
     }
 
     public static void addWoodenBss(TranslationBuilder translationBuilder, BSSWBundle bundle, String string) {
         // Stairs & Slab with "Wooden" specified - Used for Mossy Charred Planks
-        translationBuilder.add(bundle.block, string);
-        translationBuilder.add(bundle.stairs, editedString(string) + " Wooden Stairs");
-        translationBuilder.add(bundle.slab, editedString(string) + " Wooden Slab");
+        translationBuilder.add(bundle.block(), string);
+        translationBuilder.add(bundle.stairs(), editedString(string) + " Wooden Stairs");
+        translationBuilder.add(bundle.slab(), editedString(string) + " Wooden Slab");
     }
 
     // Wood
     public static void addWoodBundle(TranslationBuilder translationBuilder, WoodBundle bundle, String string) {
         String charredException = editedString(string).replace("Charred", "Charred Wooden");
-        translationBuilder.add(bundle.planks, string);
-        translationBuilder.add(bundle.stairs, charredException + " Stairs");
-        translationBuilder.add(bundle.slab, charredException + " Slab");
-        translationBuilder.add(bundle.fence, editedString(string) + " Fence");
-        translationBuilder.add(bundle.fence_gate, editedString(string) + " Fence Gate");
-        translationBuilder.add(bundle.door, charredException + " Door");
-        translationBuilder.add(bundle.trapdoor, charredException + " Trapdoor");
-        translationBuilder.add(bundle.pressure_plate, charredException + " Pressure Plate");
-        translationBuilder.add(bundle.button, charredException + " Button");
-        translationBuilder.add(bundle.sign, editedString(string) + " Sign");
-        translationBuilder.add(bundle.sign.getTranslationKey().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
-        translationBuilder.add(bundle.hanging_sign, editedString(string) + " Hanging Sign");
-        translationBuilder.add(bundle.hanging_sign.getTranslationKey().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
+        translationBuilder.add(bundle.planks(), string);
+        translationBuilder.add(bundle.stairs(), charredException + " Stairs");
+        translationBuilder.add(bundle.slab(), charredException + " Slab");
+        translationBuilder.add(bundle.fence(), editedString(string) + " Fence");
+        translationBuilder.add(bundle.fenceGate(), editedString(string) + " Fence Gate");
+        translationBuilder.add(bundle.door(), charredException + " Door");
+        translationBuilder.add(bundle.trapdoor(), charredException + " Trapdoor");
+        translationBuilder.add(bundle.pressurePlate(), charredException + " Pressure Plate");
+        translationBuilder.add(bundle.button(), charredException + " Button");
+        translationBuilder.add(bundle.sign(), editedString(string) + " Sign");
+        translationBuilder.add(bundle.sign().getTranslationKey().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
+        translationBuilder.add(bundle.hangingSign(), editedString(string) + " Hanging Sign");
+        translationBuilder.add(bundle.hangingSign().getTranslationKey().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
     }
 
     // Wooden Posts
-    public static void addWoodenPost(TranslationBuilder translationBuilder, WoodenPostBundle bundle, String string) {
-        translationBuilder.add(bundle.block, string);
-        translationBuilder.add(bundle.stripped, "Stripped " + string);
+    public static void addWoodenPost(TranslationBuilder translationBuilder, WoodenPostBundle.WoodenPostVariants bundle, String string) {
+        translationBuilder.add(bundle.block(), string);
+        translationBuilder.add(bundle.stripped(), "Stripped " + string);
     }
 
     // Timber Frames, Lattice & Grate
-    public static void addTimberFrame(TranslationBuilder translationBuilder, TimberFrameBundle bundle, String wood) {
-        translationBuilder.add(bundle.block, wood + " Timber Frame");
-        translationBuilder.add(bundle.diagonal, wood + " Diagonal Timber Frame");
-        translationBuilder.add(bundle.cross, wood + " Cross Timber Frame");
-        translationBuilder.add(bundle.lattice, wood + " Lattice");
-        translationBuilder.add(bundle.grate, wood + " Grate");
+    public static void addTimberFrame(TranslationBuilder translationBuilder, TimberFrameBundle.TimberFrameVariants bundle, String wood) {
+        translationBuilder.add(bundle.block(), wood + " Timber Frame");
+        translationBuilder.add(bundle.diagonal(), wood + " Diagonal Timber Frame");
+        translationBuilder.add(bundle.cross(), wood + " Cross Timber Frame");
+        translationBuilder.add(bundle.lattice(), wood + " Lattice");
+        translationBuilder.add(bundle.grate(), wood + " Grate");
     }
 
     // Concrete
-    public static void addConcrete(TranslationBuilder translationBuilder, ConcreteBundle bundle, String string) {
+    public static void addConcrete(TranslationBuilder translationBuilder, ConcreteBundle.ConcreteVariants bundle, String string) {
         String removeBricks = string.replace(" Bricks", "");
-        addBlockStairsSlabWall(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab, bundle.wall);
-        translationBuilder.add(bundle.chiseled, "Chiseled " + removeBricks);
-        translationBuilder.add(bundle.pillar, removeBricks + " Pillar");
+        addBlockStairsSlabWall(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
+        translationBuilder.add(bundle.chiseled(), "Chiseled " + removeBricks);
+        translationBuilder.add(bundle.pillar(), removeBricks + " Pillar");
     }
 
     // Patterned Wools
-    public static void addWoolBundle(TranslationBuilder translationBuilder, WoolBundle bundle, String string) {
-        addBlockStairsSlab(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab);
-        translationBuilder.add(bundle.carpet, string.replace("Wool", "Carpet"));
+    public static void addWoolBundle(TranslationBuilder translationBuilder, WoolBundle.WoolVariants bundle, String string) {
+        addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
+        translationBuilder.add(bundle.carpet(), string.replace("Wool", "Carpet"));
     }
 
     // Asphalt
-    public static void addAsphalt(TranslationBuilder translationBuilder, AsphaltBundle bundle, String string) {
-        addBlockStairsSlab(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab);
+    public static void addAsphalt(TranslationBuilder translationBuilder, AsphaltBundle.AsphaltVariants bundle, String string) {
+        addBlockStairsSlab(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab());
     }
 
     // Copper
     public static void addCopper(TranslationBuilder translationBuilder, CopperBundle bundle, String string) {
         String waxedString = "Waxed " + string;
-        addBlockStairsSlabWall(translationBuilder, string, bundle.block, bundle.stairs, bundle.slab, bundle.wall);
-        addBlockStairsSlabWall(translationBuilder, waxedString, bundle.blockWaxed, bundle.stairsWaxed, bundle.slabWaxed, bundle.wallWaxed);
+        addBlockStairsSlabWall(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
+        addBlockStairsSlabWall(translationBuilder, waxedString, bundle.blockWaxed(), bundle.stairsWaxed(), bundle.slabWaxed(), bundle.wallWaxed());
+    }
+
+    public static String name(String id) {
+        return Arrays.stream(id.split("_"))
+            .map(part -> Character.toUpperCase(part.charAt(0)) + part.substring(1))
+            .collect(Collectors.joining(" "));
     }
 }

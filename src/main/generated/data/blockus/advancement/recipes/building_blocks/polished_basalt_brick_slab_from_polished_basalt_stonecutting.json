@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:polished_basalt_brick_slab_from_polished_basalt_stonecutting"
+        "recipe": "blockus:polished_basalt_brick_slab_from_polished_basalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:polished_basalt_brick_slab_from_polished_basalt_stonecutting"
+      "blockus:polished_basalt_brick_slab_from_polished_basalt_stonecutting"
     ]
   }
 }

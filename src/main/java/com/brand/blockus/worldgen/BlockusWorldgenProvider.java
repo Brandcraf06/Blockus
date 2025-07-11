@@ -55,11 +55,11 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
     }
 
     public static void bootstrapConfiguredFeatures(Registerable<ConfiguredFeature<?, ?>> registerable) {
-        ConfiguredFeatures.register(registerable, LIMESTONE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.LIMESTONE.block.getDefaultState(), 64));
-        ConfiguredFeatures.register(registerable, MARBLE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.MARBLE.block.getDefaultState(), 64));
-        ConfiguredFeatures.register(registerable, BLUESTONE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.BLUESTONE.block.getDefaultState(), 64));
-        ConfiguredFeatures.register(registerable, VIRIDITE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 33));
-        ConfiguredFeatures.register(registerable, VIRIDITE_EXTRA, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block.getDefaultState(), 42));
+        ConfiguredFeatures.register(registerable, LIMESTONE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.LIMESTONE.block().getDefaultState(), 64));
+        ConfiguredFeatures.register(registerable, MARBLE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.MARBLE.block().getDefaultState(), 64));
+        ConfiguredFeatures.register(registerable, BLUESTONE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.BLUESTONE.block().getDefaultState(), 64));
+        ConfiguredFeatures.register(registerable, VIRIDITE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block().getDefaultState(), 33));
+        ConfiguredFeatures.register(registerable, VIRIDITE_EXTRA, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block().getDefaultState(), 42));
 
         ConfiguredFeatures.register(registerable, WHITE_OAK, Feature.TREE, white_oak().build());
 

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:rough_soul_sandstone_stairs_from_rough_soul_sandstone_stonecutting"
+        "recipe": "blockus:rough_soul_sandstone_stairs_from_rough_soul_sandstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:rough_soul_sandstone_stairs_from_rough_soul_sandstone_stonecutting"
+      "blockus:rough_soul_sandstone_stairs_from_rough_soul_sandstone_stonecutting"
     ]
   }
 }

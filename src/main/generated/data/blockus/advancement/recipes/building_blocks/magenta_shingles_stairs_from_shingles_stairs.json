@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:magenta_shingles_stairs_from_shingles_stairs"
+        "recipe": "blockus:magenta_shingles_stairs_from_shingles_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:magenta_shingles_stairs_from_shingles_stairs"
+      "blockus:magenta_shingles_stairs_from_shingles_stairs"
     ]
   }
 }

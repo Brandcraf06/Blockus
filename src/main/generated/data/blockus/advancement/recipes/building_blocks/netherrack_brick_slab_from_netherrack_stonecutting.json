@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:netherrack_brick_slab_from_netherrack_stonecutting"
+        "recipe": "blockus:netherrack_brick_slab_from_netherrack_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:netherrack_brick_slab_from_netherrack_stonecutting"
+      "blockus:netherrack_brick_slab_from_netherrack_stonecutting"
     ]
   }
 }

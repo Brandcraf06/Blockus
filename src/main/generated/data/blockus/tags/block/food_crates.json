@@ -12,10 +12,6 @@
     "blockus:bread_box",
     "blockus:golden_apple_crate",
     "blockus:golden_carrot_crate",
-    "blockus:glow_berries_crate",
-    {
-      "id": "blockus:blueberries_crate",
-      "required": false
-    }
+    "blockus:glow_berries_crate"
   ]
 }

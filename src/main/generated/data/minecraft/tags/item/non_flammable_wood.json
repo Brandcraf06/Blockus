@@ -1,23 +1,5 @@
 {
   "values": [
-    "blockus:warped_mosaic",
-    "blockus:warped_mosaic_stairs",
-    "blockus:warped_mosaic_slab",
-    "blockus:crimson_mosaic",
-    "blockus:crimson_mosaic_stairs",
-    "blockus:crimson_mosaic_slab",
-    "blockus:charred_mosaic",
-    "blockus:charred_mosaic_stairs",
-    "blockus:charred_mosaic_slab",
-    "blockus:mossy_warped_planks",
-    "blockus:mossy_warped_stairs",
-    "blockus:mossy_warped_slab",
-    "blockus:mossy_crimson_planks",
-    "blockus:mossy_crimson_stairs",
-    "blockus:mossy_crimson_slab",
-    "blockus:mossy_charred_planks",
-    "blockus:mossy_charred_stairs",
-    "blockus:mossy_charred_slab",
     "blockus:charred_planks",
     "blockus:charred_slab",
     "blockus:charred_pressure_plate",
@@ -33,8 +15,14 @@
     "blockus:charred_hanging_sign",
     "blockus:warped_small_stems",
     "blockus:crimson_small_stems",
+    "blockus:crimson_mosaic",
+    "blockus:mossy_crimson_planks",
     "blockus:herringbone_crimson_planks",
+    "blockus:warped_mosaic",
+    "blockus:mossy_warped_planks",
     "blockus:herringbone_warped_planks",
+    "blockus:charred_mosaic",
+    "blockus:mossy_charred_planks",
     "blockus:herringbone_charred_planks"
   ]
 }

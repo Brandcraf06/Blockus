@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "waxed_coppered_tuff_bricks_slab",
+  "group": "waxed_copper_tuff_bricks_slab",
   "key": {
     "#": {
       "item": "blockus:waxed_copper_tuff_bricks"

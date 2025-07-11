@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:green_stone_brick_slab_from_stone_brick_slab"
+        "recipe": "blockus:green_stone_brick_slab_from_stone_brick_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:green_stone_brick_slab_from_stone_brick_slab"
+      "blockus:green_stone_brick_slab_from_stone_brick_slab"
     ]
   }
 }

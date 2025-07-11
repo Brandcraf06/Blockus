@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blaze_lantern"
+        "recipe": "blockus:blaze_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blaze_lantern"
+      "blockus:blaze_lantern"
     ]
   }
 }

@@ -1,47 +1,74 @@
 package com.brand.blockus.registry.content.bundles;
 
-import com.brand.blockus.utils.BlockFactory;
-import net.minecraft.block.AbstractBlock;
+import com.brand.blockus.utils.helper.BlockFactory;
+import com.brand.blockus.utils.helper.BlockMaps;
+import com.brand.blockus.utils.helper.BlockOrder;
 import net.minecraft.block.Block;
 import net.minecraft.block.DyedCarpetBlock;
 import net.minecraft.util.DyeColor;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
 
-public class WoolBundle {
-    private static final ArrayList<WoolBundle> LIST = new ArrayList<>();
-    public static final String PATTERNED = "_patterned_wool";
-    public static final String GINGHAM = "_gingham_wool";
-    public final Block basewool;
-    public final Block basecarpet;
-    public final Block block;
-    public final Block slab;
-    public final Block stairs;
-    public final Block carpet;
-    public String typeSuffix;
+public record WoolBundle(Map<DyeColor, WoolVariants> colorMap) {
 
-    public WoolBundle(Block base, Block base2, DyeColor dyecolor, String typeSuffix) {
-        this.basewool = base;
-        this.basecarpet = base2;
-        this.typeSuffix = typeSuffix;
+    public static final List<WoolBundle> LIST = new ArrayList<>();
 
-
-        String type = dyecolor.getName() + typeSuffix;
-        this.block = BlockFactory.register(type, new Block(AbstractBlock.Settings.copy(base)));
-        this.slab = BlockFactory.registerSlab(this.block);
-        this.stairs = BlockFactory.registerStairs(this.block);
-        this.carpet = BlockFactory.register(type.replace("wool", "carpet"), new DyedCarpetBlock(dyecolor, AbstractBlock.Settings.copy(base2)));
-
-
-        LIST.add(this);
-    }
-
-    public WoolBundle(Block base, Block base2, DyeColor dyecolor) {
-        this(base, base2, dyecolor, PATTERNED);
-    }
-
-    public static ArrayList<WoolBundle> values() {
+    public static List<WoolBundle> values() {
         return LIST;
     }
 
+    public static Builder of(String id) {
+        return new Builder(id);
+    }
+
+    public List<Block> all() {
+        List<Block> list = new ArrayList<>();
+        for (DyeColor color : BlockOrder.COLOR) {
+            WoolVariants variants = colorMap.get(color);
+            list.add(variants.block());
+            list.add(variants.stairs());
+            list.add(variants.slab());
+            list.add(variants.carpet());
+        }
+        return list;
+    }
+
+    public record WoolVariants(Block block, Block stairs, Block slab, Block carpet) {
+    }
+
+    public static class Builder {
+        private final String id;
+        public DyeColor color;
+
+        public Builder(String id) {
+            this.id = id;
+        }
+
+        public Builder(String id, DyeColor color) {
+            this.id = id;
+            this.color = color;
+        }
+
+        public WoolBundle register() {
+            Map<DyeColor, WoolVariants> colorMap = new EnumMap<>(DyeColor.class);
+
+            for (DyeColor color : DyeColor.values()) {
+                String type = color.getName() + "_" + id;
+
+                Block block = BlockFactory.registerCopy(type, BlockMaps.WOOL_MAP.get(color));
+                Block stairs = BlockFactory.stairs(block);
+                Block slab = BlockFactory.slab(block);
+                Block carpet = BlockFactory.registerCopy(type.replace("wool", "carpet"), (settings) -> new DyedCarpetBlock(color, settings), BlockMaps.CARPET_MAP.get(color));
+
+                colorMap.put(color, new WoolVariants(block, stairs, slab, carpet));
+            }
+
+            WoolBundle bundle = new WoolBundle(colorMap);
+            LIST.add(bundle);
+            return bundle;
+        }
+    }
 }

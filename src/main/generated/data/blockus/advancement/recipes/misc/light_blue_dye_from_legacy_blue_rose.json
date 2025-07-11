@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:light_blue_dye_from_legacy_blue_rose"
+        "recipe": "blockus:light_blue_dye_from_legacy_blue_rose"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:light_blue_dye_from_legacy_blue_rose"
+      "blockus:light_blue_dye_from_legacy_blue_rose"
     ]
   }
 }

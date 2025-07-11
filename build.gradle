@@ -1,22 +1,22 @@
 plugins {
-	id 'fabric-loom' version '1.7-SNAPSHOT'
+	id 'fabric-loom' version "${loom_version}"
 	id 'maven-publish'
-  id "me.modmuss50.mod-publish-plugin" version "0.6.3"
+	id "me.modmuss50.mod-publish-plugin" version "0.8.4"
 }
 
-sourceCompatibility = JavaVersion.VERSION_21
-targetCompatibility = JavaVersion.VERSION_21
-
-archivesBaseName = project.archives_base_name
 version = "${mod_version}+${minecraft_version}"
 group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
 
 repositories {
 	maven { url 'https://server.bbkr.space/artifactory/libs-release' }
 	maven { url 'https://maven.terraformersmc.com/' }
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url 'https://www.cursemaven.com' }
-  maven { url 'https://maven.minecraftforge.net/' }
+	maven { url 'https://maven.minecraftforge.net/' }
 }
 
 dependencies {
@@ -32,25 +32,27 @@ dependencies {
 	modImplementation "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
 
 	// Terraform
-  modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
-  modImplementation "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_version}"
-/*   modImplementation "com.terraformersmc:biolith:${biolith_version}"
+/*  modImplementation "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_version}"
+/*  modImplementation "com.terraformersmc:biolith:${biolith_version}"
 
-  // Promenade
-  modImplementation "curse.maven:promenade-399648:${project.promenade_version}"
-  modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"*/
+	// Promenade
+	modImplementation "curse.maven:promenade-399648:${project.promenade_version}"
+	modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"*/
 }
 
 fabricApi {
-  configureDataGeneration()
+	configureDataGeneration {
+		client = true
+	}
 }
 
 processResources {
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		expand "version": inputs.properties.version
 	}
 }
 
@@ -58,38 +60,45 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 21
 }
 
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
 jar {
+	inputs.property "archivesName", project.base.archivesName
+
 	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}" }
+		rename { "${it}_${inputs.properties.archivesName}"}
 	}
 }
 
 publishMods {
-  file = remapJar.archiveFile
-  changelog = file("changelog.md").text
-  type = STABLE
-  modLoaders.add("fabric")
+	file = remapJar.archiveFile
+	changelog = file("changelog.md").text
+	type = STABLE
+	modLoaders.add("fabric")
 
-  modrinth {
-    accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-    projectId = "zFiY2Go0"
-    minecraftVersions.add("${minecraft_version}")
-    minecraftVersions.add("1.21")
-    requires {
-      slug = "fabric-api"
-    }
-  }
+	modrinth {
+		accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+		projectId = "zFiY2Go0"
+		minecraftVersions.add("${minecraft_version}")
+		minecraftVersions.add("1.21")
+		requires {
+			slug = "fabric-api"
+		}
+	}
 
-  curseforge {
-    accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
-    projectId = "312289"
-    displayName = "(${project.minecraft_version}) Blockus $project.version"
-    minecraftVersions.add("${minecraft_version}")
-    minecraftVersions.add("1.21")
-    requires {
-      slug = "fabric-api"
-    }
-  }
+	curseforge {
+		accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+		projectId = "312289"
+		displayName = "(${project.minecraft_version}) Blockus $project.version"
+		minecraftVersions.add("${minecraft_version}")
+		minecraftVersions.add("1.21")
+		requires {
+			slug = "fabric-api"
+		}
+	}
 }
 
   

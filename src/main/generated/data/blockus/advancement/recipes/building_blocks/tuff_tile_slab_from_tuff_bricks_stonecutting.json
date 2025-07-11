@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:tuff_tile_slab_from_tuff_bricks_stonecutting"
+        "recipe": "blockus:tuff_tile_slab_from_tuff_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:tuff_tile_slab_from_tuff_bricks_stonecutting"
+      "blockus:tuff_tile_slab_from_tuff_bricks_stonecutting"
     ]
   }
 }

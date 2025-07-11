@@ -6,20 +6,25 @@ import com.brand.blockus.datagen.family.BlockusFamilies;
 import com.brand.blockus.datagen.models.BlockusModels;
 import com.brand.blockus.datagen.models.BlockusTextureKey;
 import com.brand.blockus.registry.content.BlockusBlocks;
+import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
-import net.minecraft.data.client.VariantSettings.Rotation;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.TextureMap;
+import net.minecraft.data.client.TexturedModel;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
-import static net.minecraft.registry.Registries.BLOCK;
 
 public class BlockusModelProvider extends FabricModelProvider {
 
@@ -36,68 +41,65 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         for (BSSWBundle BSSWBundle : BSSWBundle.values()) {
             // Rough Sandstones
-            if (BSSWBundle.type.contains("rough") && BSSWBundle.type.contains("sandstone")) {
-                this.registerBlockStairsSlabWithBottom(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab, BSSWBundle.base);
+            if (BSSWBundle.type().contains("rough") && BSSWBundle.type().contains("sandstone")) {
+                this.registerBlockStairsSlabWithBottom(modelGenerator, BSSWBundle.block(), BSSWBundle.stairs(), BSSWBundle.slab(), BSSWBundle.base());
             }
             // Smooth Sandstones & Rough Basalt
-            else if ((BSSWBundle.type.contains("smooth") && BSSWBundle.type.contains("sandstone")) ||
-                BSSWBundle.block == BlockusBlocks.ROUGH_BASALT.block) {
-                this.registerBlockStairsSlabWithTop(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab, BSSWBundle.base);
+            else if ((BSSWBundle.type().contains("smooth") && BSSWBundle.type().contains("sandstone")) ||
+                BSSWBundle.block() == BlockusBlocks.ROUGH_BASALT.block()) {
+                this.registerBlockStairsSlabWithTop(modelGenerator, BSSWBundle.block(), BSSWBundle.stairs(), BSSWBundle.slab(), BSSWBundle.base());
             }
             // Soul Sandstone
-            else if (BSSWBundle.block == BlockusBlocks.SOUL_SANDSTONE.block) {
-                this.registerBlockStairsSlabwithTopBottom(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab);
+            else if (BSSWBundle.block() == BlockusBlocks.SOUL_SANDSTONE.block()) {
+                this.registerBlockStairsSlabwithTopBottom(modelGenerator, BSSWBundle.block(), BSSWBundle.stairs(), BSSWBundle.slab());
             }
             // Autre
             else {
-                this.registerBlockStairsAndSlab(modelGenerator, BSSWBundle.block, BSSWBundle.stairs, BSSWBundle.slab);
+                this.registerBlockStairsAndSlab(modelGenerator, BSSWBundle.block(), BSSWBundle.stairs(), BSSWBundle.slab());
             }
 
-            if (BSSWBundle.wall != null) {
-                this.registerWall(modelGenerator, BSSWBundle.wall, BSSWBundle.block);
+            if (BSSWBundle.wall() != null) {
+                this.registerWall(modelGenerator, BSSWBundle.wall(), BSSWBundle.block());
             }
         }
 
-        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-            this.registerBlockStairsSlabAndWall(modelGenerator, concreteType.block, concreteType.stairs, concreteType.slab, concreteType.wall);
-            modelGenerator.registerSimpleCubeAll(concreteType.chiseled);
-            this.registerPillar(modelGenerator, concreteType.pillar);
+        for (ConcreteBundle concrete : ConcreteBundle.values()) {
+            for (ConcreteBundle.ConcreteVariants variants : concrete.colorMap().values()) {
+                this.registerBlockStairsSlabAndWall(modelGenerator, variants.block(), variants.stairs(), variants.slab(), variants.wall());
+                modelGenerator.registerSimpleCubeAll(variants.chiseled());
+                this.registerPillar(modelGenerator, variants.pillar());
+            }
         }
 
-        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            modelGenerator.registerSimpleCubeAll(timberFrameBundle.block);
-            modelGenerator.registerSimpleCubeAll(timberFrameBundle.cross);
-            this.registerDiagonalTimberFrame(modelGenerator, timberFrameBundle.diagonal);
-            modelGenerator.registerGlassPane(timberFrameBundle.grate, timberFrameBundle.lattice);
-        }
-
-        for (AsphaltBundle asphaltBundle : AsphaltBundle.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, asphaltBundle.block, asphaltBundle.stairs, asphaltBundle.slab);
+        for (AsphaltBundle.AsphaltVariants asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
+            this.registerBlockStairsAndSlab(modelGenerator, asphaltBundle.block(), asphaltBundle.stairs(), asphaltBundle.slab());
         }
 
         for (WoolBundle woolBundle : WoolBundle.values()) {
-            this.registerBlockStairsAndSlab(modelGenerator, woolBundle.block, woolBundle.stairs, woolBundle.slab);
-            this.registerCarpet(modelGenerator, woolBundle.block, woolBundle.carpet);
+            for (WoolBundle.WoolVariants variants : woolBundle.colorMap().values()) {
+                this.registerBlockStairsAndSlab(modelGenerator, variants.block(), variants.stairs(), variants.slab());
+                this.registerCarpet(modelGenerator, variants.block(), variants.carpet());
+            }
         }
 
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-            registerColoredTiles(modelGenerator, coloredTilesVariants.block, coloredTilesVariants.tile1, coloredTilesVariants.tile2);
+            registerColoredTiles(modelGenerator, coloredTilesVariants.block(), coloredTilesVariants.tile1(), coloredTilesVariants.tile2());
         }
 
         for (PottedLargeBundle pottedLargeBundle : PottedLargeBundle.values()) {
-            modelGenerator.registerSimpleState(pottedLargeBundle.block);
+            modelGenerator.registerSimpleState(pottedLargeBundle.block());
         }
         modelGenerator.registerSimpleState(BlockusBlocks.LARGE_FLOWER_POT);
 
         // Copper
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.COPPER_BRICKS.block).family(BlockusFamilies.COPPER_BRICKS).parented(BlockusBlocks.COPPER_BRICKS.block, BlockusBlocks.COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_COPPER_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.EXPOSED_COPPER_BRICKS.block).family(BlockusFamilies.EXPOSED_COPPER_BRICKS).parented(BlockusBlocks.EXPOSED_COPPER_BRICKS.block, BlockusBlocks.EXPOSED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_EXPOSED_COPPER_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.WEATHERED_COPPER_BRICKS.block).family(BlockusFamilies.WEATHERED_COPPER_BRICKS).parented(BlockusBlocks.WEATHERED_COPPER_BRICKS.block, BlockusBlocks.WEATHERED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_WEATHERED_COPPER_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block).family(BlockusFamilies.OXIDIZED_COPPER_BRICKS).parented(BlockusBlocks.OXIDIZED_COPPER_BRICKS.block, BlockusBlocks.OXIDIZED_COPPER_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_OXIDIZED_COPPER_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.COPPER_TUFF_BRICKS.block).family(BlockusFamilies.COPPERED_TUFF_BRICKS).parented(BlockusBlocks.COPPER_TUFF_BRICKS.block, BlockusBlocks.COPPER_TUFF_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_COPPERED_TUFF_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.block).family(BlockusFamilies.EXPOSED_COPPERED_TUFF_BRICKS).parented(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.block, BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_EXPOSED_COPPERED_TUFF_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.block).family(BlockusFamilies.WEATHERED_COPPERED_TUFF_BRICKS).parented(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.block, BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_WEATHERED_COPPERED_TUFF_BRICKS);
-        modelGenerator.registerCubeAllModelTexturePool(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.block).family(BlockusFamilies.OXIDIZED_COPPERED_TUFF_BRICKS).parented(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.block, BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS.blockWaxed).family(BlockusFamilies.WAXED_OXIDIZED_COPPERED_TUFF_BRICKS);
+        registerCopperBlocks(modelGenerator, BlockusBlocks.COPPER_BRICKS, BlockusFamilies.COPPER_BRICKS);
+        registerCopperBlocks(modelGenerator, BlockusBlocks.EXPOSED_COPPER_BRICKS, BlockusFamilies.EXPOSED_COPPER_BRICKS);
+        registerCopperBlocks(modelGenerator, BlockusBlocks.WEATHERED_COPPER_BRICKS, BlockusFamilies.WEATHERED_COPPER_BRICKS);
+        registerCopperBlocks(modelGenerator, BlockusBlocks.OXIDIZED_COPPER_BRICKS, BlockusFamilies.OXIDIZED_COPPER_BRICKS);
+        registerCopperBlocks(modelGenerator, BlockusBlocks.COPPER_TUFF_BRICKS, BlockusFamilies.COPPER_TUFF_BRICKS);
+        registerCopperBlocks(modelGenerator, BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS, BlockusFamilies.EXPOSED_COPPER_TUFF_BRICKS);
+        registerCopperBlocks(modelGenerator, BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS, BlockusFamilies.WEATHERED_COPPER_TUFF_BRICKS);
+        registerCopperBlocks(modelGenerator, BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS, BlockusFamilies.OXIDIZED_COPPER_TUFF_BRICKS);
 
         // Stone
         this.registerPillar(modelGenerator, BlockusBlocks.STONE_BRICK_PILLAR);
@@ -159,7 +161,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Sculk
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_SCULK_BRICKS);
         this.registerPillar(modelGenerator, BlockusBlocks.SCULK_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_SCULK_PRESSURE_PLATE, BlockusBlocks.POLISHED_SCULK_BUTTON, BlockusBlocks.POLISHED_SCULK.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_SCULK_PRESSURE_PLATE, BlockusBlocks.POLISHED_SCULK_BUTTON, BlockusBlocks.POLISHED_SCULK.block());
 
         // Amethyst
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_AMETHYST);
@@ -185,21 +187,21 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Limestone
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_LIMESTONE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_BRICKS, BlockusBlocks.POLISHED_LIMESTONE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_BRICKS, BlockusBlocks.POLISHED_LIMESTONE.block());
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.LIMESTONE_PILLAR);
         this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.LIMESTONE_PRESSURE_PLATE, BlockusBlocks.LIMESTONE_BUTTON, BlockusBlocks.LIMESTONE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.LIMESTONE_PRESSURE_PLATE, BlockusBlocks.LIMESTONE_BUTTON, BlockusBlocks.LIMESTONE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIMESTONE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.LIMESTONE_LINES);
 
         // Marble
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_MARBLE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_MARBLE_BRICKS, BlockusBlocks.POLISHED_MARBLE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_MARBLE_BRICKS, BlockusBlocks.POLISHED_MARBLE.block());
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.MARBLE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.MARBLE_PILLAR);
         this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_MARBLE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.MARBLE_PRESSURE_PLATE, BlockusBlocks.MARBLE_BUTTON, BlockusBlocks.MARBLE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.MARBLE_PRESSURE_PLATE, BlockusBlocks.MARBLE_BUTTON, BlockusBlocks.MARBLE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.MARBLE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.MARBLE_LINES);
 
@@ -208,19 +210,19 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerLines(modelGenerator, BlockusBlocks.BLUESTONE_LINES);
         this.registerPillar(modelGenerator, BlockusBlocks.BLUESTONE_PILLAR);
         this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.BLUESTONE_PRESSURE_PLATE, BlockusBlocks.BLUESTONE_BUTTON, BlockusBlocks.BLUESTONE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.BLUESTONE_PRESSURE_PLATE, BlockusBlocks.BLUESTONE_BUTTON, BlockusBlocks.BLUESTONE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.BLUESTONE_SQUARES);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_BLUESTONE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_BRICKS, BlockusBlocks.POLISHED_BLUESTONE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_BRICKS, BlockusBlocks.POLISHED_BLUESTONE.block());
 
 
         // Viridite
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_VIRIDITE);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_BRICKS, BlockusBlocks.POLISHED_VIRIDITE.block);
+        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_BRICKS, BlockusBlocks.POLISHED_VIRIDITE.block());
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.VIRIDITE_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.VIRIDITE_PILLAR);
         this.registerPillar(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.VIRIDITE_PRESSURE_PLATE, BlockusBlocks.VIRIDITE_BUTTON, BlockusBlocks.VIRIDITE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.VIRIDITE_PRESSURE_PLATE, BlockusBlocks.VIRIDITE_BUTTON, BlockusBlocks.VIRIDITE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.VIRIDITE_SQUARES);
         this.registerLines(modelGenerator, BlockusBlocks.VIRIDITE_LINES);
 
@@ -246,7 +248,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Netherrack
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.NETHERRACK_CIRCULAR_PAVING);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE, BlockusBlocks.POLISHED_NETHERRACK_BUTTON, BlockusBlocks.POLISHED_NETHERRACK.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE, BlockusBlocks.POLISHED_NETHERRACK_BUTTON, BlockusBlocks.POLISHED_NETHERRACK.block());
 
         // Quartz Blocks
         modelGenerator.registerSouthDefaultHorizontalFacing(TexturedModel.TEMPLATE_GLAZED_TERRACOTTA, BlockusBlocks.QUARTZ_CIRCULAR_PAVING);
@@ -294,12 +296,12 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerCubeColumn(modelGenerator, BlockusBlocks.LAPIS_DECORATED_RED_SANDSTONE, Blocks.RED_SANDSTONE);
 
         // Soul Sandstone
-        this.registerCubeColumn(modelGenerator, BlockusBlocks.CHISELED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
-        this.registerCubeColumn(modelGenerator, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
-        this.registerSlabwithTop(modelGenerator, BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.CHISELED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
+        this.registerSlabwithTop(modelGenerator, BlockusBlocks.CUT_SOUL_SANDSTONE_SLAB, BlockusBlocks.CUT_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
         this.registerPillar(modelGenerator, BlockusBlocks.SOUL_SANDSTONE_PILLAR);
-        this.registerCubeColumn(modelGenerator, BlockusBlocks.GOLD_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
-        this.registerCubeColumn(modelGenerator, BlockusBlocks.LAPIS_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block);
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.GOLD_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
+        this.registerCubeColumn(modelGenerator, BlockusBlocks.LAPIS_DECORATED_SOUL_SANDSTONE, BlockusBlocks.SOUL_SANDSTONE.block());
 
         // Rainbow
         modelGenerator.registerFlowerbed(BlockusBlocks.RAINBOW_PETALS);
@@ -320,12 +322,11 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerPillar(modelGenerator, BlockusBlocks.PHANTOM_PURPUR_PILLAR);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.PHANTOM_PURPUR_SQUARES);
 
-
         // End Stone
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CHISELED_END_STONE_BRICKS);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.CRACKED_END_STONE_BRICKS);
         this.registerPillar(modelGenerator, BlockusBlocks.END_STONE_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE, BlockusBlocks.POLISHED_END_STONE_BUTTON, BlockusBlocks.POLISHED_END_STONE.block);
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_END_STONE_PRESSURE_PLATE, BlockusBlocks.POLISHED_END_STONE_BUTTON, BlockusBlocks.POLISHED_END_STONE.block());
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_END_STONE_BRICKS);
 
         // White Oak Wood
@@ -335,60 +336,49 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerFlowerPotPlant(BlockusBlocks.WHITE_OAK_SAPLING, BlockusBlocks.POTTED_WHITE_OAK_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         // Hanging Signs
-        modelGenerator.registerHangingSign(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK.ceiling_hanging_sign, BlockusBlocks.WHITE_OAK.wall_hanging_sign);
-        modelGenerator.registerHangingSign(BlockusBlocks.RAW_BAMBOO.planks, BlockusBlocks.RAW_BAMBOO.ceiling_hanging_sign, BlockusBlocks.RAW_BAMBOO.wall_hanging_sign);
-        modelGenerator.registerHangingSign(BlockusBlocks.CHARRED.planks, BlockusBlocks.CHARRED.ceiling_hanging_sign, BlockusBlocks.CHARRED.wall_hanging_sign);
+        modelGenerator.registerHangingSign(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK.ceilingHangingSign(), BlockusBlocks.WHITE_OAK.wallHangingSign());
+        modelGenerator.registerHangingSign(BlockusBlocks.RAW_BAMBOO.planks(), BlockusBlocks.RAW_BAMBOO.ceilingHangingSign(), BlockusBlocks.RAW_BAMBOO.wallHangingSign());
+        modelGenerator.registerHangingSign(BlockusBlocks.CHARRED.planks(), BlockusBlocks.CHARRED.ceilingHangingSign(), BlockusBlocks.CHARRED.wallHangingSign());
 
         // Herringbone Planks
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_OAK_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_BIRCH_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_SPRUCE_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_JUNGLE_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_ACACIA_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_DARK_OAK_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_MANGROVE_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_CHERRY_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_RAW_BAMBOO_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_BAMBOO_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_CRIMSON_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_WARPED_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_CHARRED_PLANKS);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.HERRINGBONE_WHITE_OAK_PLANKS);
+        for (Block block : BlockusBlocks.HERRINGBONE_PLANKS.bundle().values()) {
+            modelGenerator.registerSimpleCubeAll(block);
+        }
 
         // Small Logs
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.ACACIA_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.BIRCH_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHERRY_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.DARK_OAK_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.JUNGLE_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.MANGROVE_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.OAK_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.SPRUCE_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.WHITE_OAK_SMALL_LOGS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CRIMSON_SMALL_STEMS);
-        this.registerAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.WARPED_SMALL_STEMS);
+        for (Block block : BlockusBlocks.SMALL_LOGS.bundle().values()) {
+            this.registerAxisRotatedCubeColumn(modelGenerator, block);
+        }
 
         // Posts
-        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            this.registerPost(modelGenerator, woodenPost.block, woodenPost.base);
-            this.registerPost(modelGenerator, woodenPost.stripped, woodenPost.baseStripped);
+        for (var entry : BlockusBlocks.WOODEN_POST.woodMap().entrySet()) {
+            this.registerPost(modelGenerator, entry.getValue().block(), WoodMaps.LOG_MAP.get(entry.getKey().getId()));
+            this.registerPost(modelGenerator, entry.getValue().stripped(), WoodMaps.STRIPPED_LOG_MAP.get(entry.getKey().getId()));
+        }
+
+        // Timber Frames, Lattices & Wooden Grates
+        for (var entry : BlockusBlocks.TIMBER_FRAME.woodMap().entrySet()) {
+            modelGenerator.registerSimpleCubeAll(entry.getValue().block());
+            modelGenerator.registerSimpleCubeAll(entry.getValue().cross());
+            this.registerDiagonalTimberFrame(modelGenerator, entry.getValue().diagonal());
+            modelGenerator.registerGlassPane(entry.getValue().grate(), entry.getValue().lattice());
         }
 
         // Small Hedges
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.OAK_SMALL_HEDGE, Blocks.OAK_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.SPRUCE_SMALL_HEDGE, Blocks.SPRUCE_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.BIRCH_SMALL_HEDGE, Blocks.BIRCH_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.JUNGLE_SMALL_HEDGE, Blocks.JUNGLE_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.ACACIA_SMALL_HEDGE, Blocks.ACACIA_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.DARK_OAK_SMALL_HEDGE, Blocks.DARK_OAK_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.MANGROVE_SMALL_HEDGE, Blocks.MANGROVE_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.CHERRY_SMALL_HEDGE, Blocks.CHERRY_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.WARPED_SMALL_HEDGE, Blocks.WARPED_WART_BLOCK);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.CRIMSON_SMALL_HEDGE, Blocks.NETHER_WART_BLOCK);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.WHITE_OAK_SMALL_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.AZALEA_SMALL_HEDGE, Blocks.AZALEA_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.FLOWERING_AZALEA_SMALL_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.MOSS_SMALL_HEDGE, Blocks.MOSS_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.OAK_HEDGE, Blocks.OAK_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.SPRUCE_HEDGE, Blocks.SPRUCE_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.BIRCH_HEDGE, Blocks.BIRCH_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.JUNGLE_HEDGE, Blocks.JUNGLE_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.ACACIA_HEDGE, Blocks.ACACIA_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.DARK_OAK_HEDGE, Blocks.DARK_OAK_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.CHERRY_HEDGE, Blocks.CHERRY_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.WARPED_HEDGE, Blocks.WARPED_WART_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.CRIMSON_HEDGE, Blocks.NETHER_WART_BLOCK);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.WHITE_OAK_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.AZALEA_HEDGE, Blocks.AZALEA_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.FLOWERING_AZALEA_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
+        this.registerSmallHedge(modelGenerator, BlockusBlocks.MOSS_HEDGE, Blocks.MOSS_BLOCK);
 
         // Food Blocks
         this.registerFishCrate(modelGenerator, BlockusBlocks.COD_CRATE);
@@ -412,100 +402,36 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Redstone Lamps
         this.registerLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.REDSTONE_LAMP_LIT);
         this.registerRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.RAINBOW_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.BLUE_REDSTONE_LAMP, BlockusBlocks.BLUE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.BROWN_REDSTONE_LAMP, BlockusBlocks.BROWN_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.CYAN_REDSTONE_LAMP, BlockusBlocks.CYAN_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.GRAY_REDSTONE_LAMP, BlockusBlocks.GRAY_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.GREEN_REDSTONE_LAMP, BlockusBlocks.GREEN_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP, BlockusBlocks.LIGHT_BLUE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP, BlockusBlocks.LIGHT_GRAY_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.LIME_REDSTONE_LAMP, BlockusBlocks.LIME_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.MAGENTA_REDSTONE_LAMP, BlockusBlocks.MAGENTA_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.ORANGE_REDSTONE_LAMP, BlockusBlocks.ORANGE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.PINK_REDSTONE_LAMP, BlockusBlocks.PINK_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.PURPLE_REDSTONE_LAMP, BlockusBlocks.PURPLE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.RED_REDSTONE_LAMP, BlockusBlocks.RED_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.WHITE_REDSTONE_LAMP, BlockusBlocks.WHITE_REDSTONE_LAMP_LIT);
-        this.registerRedstoneLamp(modelGenerator, BlockusBlocks.YELLOW_REDSTONE_LAMP, BlockusBlocks.YELLOW_REDSTONE_LAMP_LIT);
+        for (DyeColor color : DyeColor.values()) {
+            this.registerRedstoneLamp(modelGenerator, BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().get(color), BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().get(color));
+        }
 
         // Neon Blocks
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.BLACK_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.BLUE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.BROWN_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.CYAN_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.GRAY_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.GREEN_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIGHT_BLUE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIGHT_GRAY_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.LIME_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.MAGENTA_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.ORANGE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.PINK_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.PURPLE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.RED_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.WHITE_NEON);
-        this.registerNeonBlock(modelGenerator, BlockusBlocks.YELLOW_NEON);
+        for (Block block : BlockusBlocks.NEON_BLOCK.colorMap().values()) {
+            this.registerNeonBlock(modelGenerator, block);
+        }
         this.registerNeonBlock(modelGenerator, BlockusBlocks.RAINBOW_NEON);
 
         // Futurneo Blocks
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.BLACK_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.BLUE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.BROWN_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.CYAN_FUTURNEO_BLOCK);
+        for (Block block : BlockusBlocks.FUTURNEO_BLOCK.colorMap().values()) {
+            modelGenerator.registerSimpleCubeAll(block);
+        }
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.GRAY_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.GREEN_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIGHT_BLUE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIGHT_GRAY_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.LIME_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.MAGENTA_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.ORANGE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.PINK_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.PURPLE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.RED_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.WHITE_FUTURNEO_BLOCK);
-        modelGenerator.registerSimpleCubeAll(BlockusBlocks.YELLOW_FUTURNEO_BLOCK);
+        modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
 
         // Glass - Beveled Glass
         this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.RAINBOW_BEVELED_GLASS, BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
         modelGenerator.registerGlassPane(BlockusBlocks.RAINBOW_GLASS, BlockusBlocks.RAINBOW_GLASS_PANE);
         this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BEVELED_GLASS, BlockusBlocks.BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BLACK_BEVELED_GLASS, BlockusBlocks.BLACK_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BLUE_BEVELED_GLASS, BlockusBlocks.BLUE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.BROWN_BEVELED_GLASS, BlockusBlocks.BROWN_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.CYAN_BEVELED_GLASS, BlockusBlocks.CYAN_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.GRAY_BEVELED_GLASS, BlockusBlocks.GRAY_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.GREEN_BEVELED_GLASS, BlockusBlocks.GREEN_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS, BlockusBlocks.LIGHT_BLUE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS, BlockusBlocks.LIGHT_GRAY_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.LIME_BEVELED_GLASS, BlockusBlocks.LIME_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.MAGENTA_BEVELED_GLASS, BlockusBlocks.MAGENTA_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.ORANGE_BEVELED_GLASS, BlockusBlocks.ORANGE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.PINK_BEVELED_GLASS, BlockusBlocks.PINK_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.PURPLE_BEVELED_GLASS, BlockusBlocks.PURPLE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.RED_BEVELED_GLASS, BlockusBlocks.RED_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.WHITE_BEVELED_GLASS, BlockusBlocks.WHITE_BEVELED_GLASS_PANE);
-        this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.YELLOW_BEVELED_GLASS, BlockusBlocks.YELLOW_BEVELED_GLASS_PANE);
+        for (DyeColor color : DyeColor.values()) {
+            this.registerBeveledGlassPane(modelGenerator, BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().get(color), BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
+        }
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.TINTED_BEVELED_GLASS);
 
         // Glazed Terracotta Pillars
-        this.registerPillar(modelGenerator, BlockusBlocks.BLACK_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.BLUE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.BROWN_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.CYAN_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.GRAY_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.GREEN_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.LIME_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.MAGENTA_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.ORANGE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.PINK_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.PURPLE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.RED_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.WHITE_GLAZED_TERRACOTTA_PILLAR);
-        this.registerPillar(modelGenerator, BlockusBlocks.YELLOW_GLAZED_TERRACOTTA_PILLAR);
+        for (Block block : BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.colorMap().values()) {
+            this.registerPillar(modelGenerator, block);
+        }
 
         // Paper
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.BURNT_PAPER_BLOCK);
@@ -554,22 +480,9 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Colored Tiles
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.RAINBOW_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.BLACK_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.BLUE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.BROWN_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.CYAN_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.GRAY_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.GREEN_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.LIGHT_BLUE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.LIGHT_GRAY_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.LIME_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.MAGENTA_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.ORANGE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.PINK_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.PURPLE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.RED_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.WHITE_COLORED_TILES);
-        registerColoredTilesSimple(modelGenerator, BlockusBlocks.YELLOW_COLORED_TILES);
+        for (DyeColor color : DyeColor.values()) {
+            this.registerColoredTilesSimple(modelGenerator, BlockusBlocks.COLORED_TILES.colorMap().get(color));
+        }
 
         // Other
         this.registerStairsAndSlab(modelGenerator, BlockusBlocks.NETHERITE_STAIRS, BlockusBlocks.NETHERITE_SLAB, Blocks.NETHERITE_BLOCK);
@@ -586,10 +499,28 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.STARS_BLOCK);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.SUGAR_BLOCK);
         modelGenerator.registerSimpleCubeAll(BlockusBlocks.WEIGHT_STORAGE_CUBE);
+        modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_CHAIN.asItem());
+        modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_BARS);
+        modelGenerator.registerItemModel(BlockusBlocks.WOODEN_FRAME);
+        modelGenerator.registerItemModel(BlockusBlocks.IRON_GATE.asItem());
+        modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_GATE.asItem());
+        registerInventoryItemModel(modelGenerator, BlockusBlocks.CAUTION_BARRIER);
+        registerInventoryItemModel(modelGenerator, BlockusBlocks.ROAD_BARRIER);
+        modelGenerator.registerParentedItemModel(BlockusBlocks.PATH, ModelIds.getBlockSubModelId(BlockusBlocks.PATH, "4"));
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator modelGenerator) {
+        modelGenerator.register(BlockusEntities.CHARRED_BOAT.getItem().asItem(), Models.GENERATED);
+        modelGenerator.register(BlockusEntities.CHARRED_BOAT.getChestItem().asItem(), Models.GENERATED);
+        modelGenerator.register(BlockusEntities.RAW_BAMBOO_RAFT.getItem().asItem(), Models.GENERATED);
+        modelGenerator.register(BlockusEntities.RAW_BAMBOO_RAFT.getChestItem().asItem(), Models.GENERATED);
+        modelGenerator.register(BlockusEntities.WHITE_OAK_BOAT.getItem().asItem(), Models.GENERATED);
+        modelGenerator.register(BlockusEntities.WHITE_OAK_BOAT.getChestItem().asItem(), Models.GENERATED);
+    }
+
+    public final void registerInventoryItemModel(BlockStateModelGenerator modelGenerator, Block block) {
+        modelGenerator.registerParentedItemModel(block, ModelIds.getBlockSubModelId(block, "_inventory"));
     }
 
     public final void registerPillar(BlockStateModelGenerator modelGenerator, Block block) {
@@ -629,19 +560,19 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public static BlockStateSupplier createPostBlockState(Block postBlock, Identifier postModelId, Identifier sideModelId, Identifier topModelId, Identifier chainModelId, Identifier topChainModelId) {
         return MultipartBlockStateSupplier.create(postBlock)
-            .with(When.create().set(Properties.AXIS, Direction.Axis.X), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(Properties.AXIS, Direction.Axis.X), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(Properties.AXIS, Direction.Axis.Y), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(Properties.AXIS, Direction.Axis.Z), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(Properties.AXIS, Direction.Axis.Z), BlockStateVariant.create().put(VariantSettings.MODEL, postModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.UP, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, topModelId).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.DOWN, PostBlock.ConnectionType.POST), BlockStateVariant.create().put(VariantSettings.MODEL, sideModelId).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
-            .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.X, Rotation.R90).put(VariantSettings.Y, Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.NORTH, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.SOUTH, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.EAST, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
+            .with(When.create().set(PostBlock.WEST, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.X, VariantSettings.Rotation.R90).put(VariantSettings.Y, VariantSettings.Rotation.R90).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.UP, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, topChainModelId).put(VariantSettings.UVLOCK, false))
             .with(When.create().set(PostBlock.DOWN, PostBlock.ConnectionType.CHAIN), BlockStateVariant.create().put(VariantSettings.MODEL, chainModelId).put(VariantSettings.UVLOCK, false));
     }
@@ -688,13 +619,13 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerSmallHedge(BlockStateModelGenerator modelGenerator, Block hedgeBlock, Block textureSource) {
         TextureMap textureMap = TextureMap.of(BlockusTextureKey.HEDGE, TextureMap.getId(textureSource));
-        Identifier identifier = BlockusModels.TEMPLATE_SMALL_HEDGE_POST.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
-        Identifier identifier2 = BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
-        Identifier identifier3 = BlockusModels.TEMPLATE_SMALL_HEDGE_SIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
-        Identifier identifier4 = BlockusModels.TEMPLATE_SMALL_HEDGE_NOSIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
-        Identifier identifier5 = BlockusModels.TEMPLATE_SMALL_HEDGE_NOSIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
-        modelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(hedgeBlock).with(BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).with(When.create().set(Properties.NORTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier2).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.EAST, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier2).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, Rotation.R90)).with(When.create().set(Properties.SOUTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier3).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.WEST, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier3).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, Rotation.R90)).with(When.create().set(Properties.NORTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier4).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.EAST, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier5).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.SOUTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier5).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, Rotation.R90)).with(When.create().set(Properties.WEST, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier4).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, Rotation.R270)));
-        Identifier identifier6 = BlockusModels.TEMPLATE_SMALL_HEDGE_INVENTORY.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier = BlockusModels.TEMPLATE_HEDGE_POST.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier2 = BlockusModels.TEMPLATE_HEDGE_SIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier3 = BlockusModels.TEMPLATE_HEDGE_SIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier4 = BlockusModels.TEMPLATE_HEDGE_NOSIDE.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier5 = BlockusModels.TEMPLATE_HEDGE_NOSIDE_ALT.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
+        modelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(hedgeBlock).with(BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).with(When.create().set(Properties.NORTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier2).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.EAST, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier2).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, VariantSettings.Rotation.R90)).with(When.create().set(Properties.SOUTH, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier3).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.WEST, true), BlockStateVariant.create().put(VariantSettings.MODEL, identifier3).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, VariantSettings.Rotation.R90)).with(When.create().set(Properties.NORTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier4).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.EAST, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier5).put(VariantSettings.UVLOCK, true)).with(When.create().set(Properties.SOUTH, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier5).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, VariantSettings.Rotation.R90)).with(When.create().set(Properties.WEST, false), BlockStateVariant.create().put(VariantSettings.MODEL, identifier4).put(VariantSettings.UVLOCK, true).put(VariantSettings.Y, VariantSettings.Rotation.R270)));
+        Identifier identifier6 = BlockusModels.TEMPLATE_HEDGE_INVENTORY.upload(hedgeBlock, textureMap, modelGenerator.modelCollector);
         modelGenerator.registerParentedItemModel(hedgeBlock, identifier6);
     }
 
@@ -858,6 +789,10 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBlock(modelGenerator, block, Models.CUBE_BOTTOM_TOP, textureMap);
     }
 
+    public final void registerCopperBlocks(BlockStateModelGenerator modelGenerator, CopperBundle block, BlockusFamilies.CopperFamily family) {
+        modelGenerator.registerCubeAllModelTexturePool(block.block()).family(family.unwaxed).parented(block.block(), block.blockWaxed()).family(family.waxed);
+    }
+
     public final void registerCrate(BlockStateModelGenerator modelGenerator, Block block) {
         TextureMap textureMap = sideTop(TextureMap.getSubId(block, "_side"), TextureMap.getId(block));
         this.createBlock(modelGenerator, block, BlockusModels.CRATE_TEMPLATE, textureMap);
@@ -965,11 +900,11 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public static Identifier getBlockId(Block block) {
-        return Blockus.id("block/" + BLOCK.getId(block).getPath());
+        return Blockus.id("block/" + Registries.BLOCK.getId(block).getPath());
     }
 
     public static Identifier getModifiedBlockId(Block block, String target, String replacement) {
-        return Blockus.id("block/" + BLOCK.getId(block).getPath().replace(target, replacement));
+        return Blockus.id("block/" + Registries.BLOCK.getId(block).getPath().replace(target, replacement));
     }
 
 // TextureMaps

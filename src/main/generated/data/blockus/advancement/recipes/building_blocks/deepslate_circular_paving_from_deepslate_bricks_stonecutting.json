@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:deepslate_circular_paving_from_deepslate_bricks_stonecutting"
+        "recipe": "blockus:deepslate_circular_paving_from_deepslate_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:deepslate_circular_paving_from_deepslate_bricks_stonecutting"
+      "blockus:deepslate_circular_paving_from_deepslate_bricks_stonecutting"
     ]
   }
 }

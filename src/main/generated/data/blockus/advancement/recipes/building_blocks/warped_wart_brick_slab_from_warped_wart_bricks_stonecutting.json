@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:warped_wart_brick_slab_from_warped_wart_bricks_stonecutting"
+        "recipe": "blockus:warped_wart_brick_slab_from_warped_wart_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:warped_wart_brick_slab_from_warped_wart_bricks_stonecutting"
+      "blockus:warped_wart_brick_slab_from_warped_wart_bricks_stonecutting"
     ]
   }
 }

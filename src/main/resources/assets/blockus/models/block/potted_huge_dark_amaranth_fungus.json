@@ -1,8 +1,0 @@
-{
-  "parent": "blockus:block/large_tree_pot",
-  "textures": {
-    "log": "blockus:block/promenade/dark_amaranth_small_stems",
-    "leaves": "promenade:block/dark_amaranth/wart_block",
-    "soil": "promenade:block/black_dylium/top"
-  }
-}

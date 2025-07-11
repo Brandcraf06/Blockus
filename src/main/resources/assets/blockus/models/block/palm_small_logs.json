@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "blockus:block/promenade/palm_small_logs_top",
-    "side": "blockus:block/promenade/palm_small_logs"
-  }
-}

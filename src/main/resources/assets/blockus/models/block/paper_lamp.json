@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "block/block",
 	"texture_size": [64, 64],
 	"textures": {
 		"particle": "blockus:block/paper_lamp",

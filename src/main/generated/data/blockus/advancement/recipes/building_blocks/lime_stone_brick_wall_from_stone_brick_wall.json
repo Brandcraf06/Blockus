@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:lime_stone_brick_wall_from_stone_brick_wall"
+        "recipe": "blockus:lime_stone_brick_wall_from_stone_brick_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:lime_stone_brick_wall_from_stone_brick_wall"
+      "blockus:lime_stone_brick_wall_from_stone_brick_wall"
     ]
   }
 }

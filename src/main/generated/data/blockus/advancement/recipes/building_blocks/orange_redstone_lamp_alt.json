@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:orange_redstone_lamp_alt"
+        "recipe": "blockus:orange_redstone_lamp_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:orange_redstone_lamp_alt"
+      "blockus:orange_redstone_lamp_alt"
     ]
   }
 }

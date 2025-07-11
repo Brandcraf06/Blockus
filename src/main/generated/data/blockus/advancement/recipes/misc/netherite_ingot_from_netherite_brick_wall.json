@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:netherite_ingot_from_netherite_brick_wall"
+        "recipe": "blockus:netherite_ingot_from_netherite_brick_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:netherite_ingot_from_netherite_brick_wall"
+      "blockus:netherite_ingot_from_netherite_brick_wall"
     ]
   }
 }

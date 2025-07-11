@@ -12,7 +12,7 @@ public final class BlockusItemTags {
     public static final TagKey<Item> PATTERNED_WOOL = register("patterned_wool");
     public static final TagKey<Item> PATTERNED_CARPETS = register("patterned_carpets");
     public static final TagKey<Item> ALL_PATTERNED_WOOLS = register("all_patterned_wools");
-    public static final TagKey<Item> SMALL_HEDGES = register("small_hedges");
+    public static final TagKey<Item> HEDGES = register("hedges");
     public static final TagKey<Item> SOUL_SOILS = register("soul_soils");
     public static final TagKey<Item> STAINED_STONE_BRICKS = register("stained_stone_bricks");
     public static final TagKey<Item> WARPED_NETHER_GRASS = register("warped_nether_grass");

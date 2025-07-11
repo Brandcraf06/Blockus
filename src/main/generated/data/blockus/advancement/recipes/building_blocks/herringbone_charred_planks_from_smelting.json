@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:herringbone_charred_planks_from_smelting"
+        "recipe": "blockus:herringbone_charred_planks_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:herringbone_charred_planks_from_smelting"
+      "blockus:herringbone_charred_planks_from_smelting"
     ]
   }
 }

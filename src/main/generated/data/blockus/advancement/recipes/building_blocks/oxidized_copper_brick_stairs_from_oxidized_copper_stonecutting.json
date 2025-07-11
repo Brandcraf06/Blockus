@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:oxidized_copper_brick_stairs_from_oxidized_copper_stonecutting"
+        "recipe": "blockus:oxidized_copper_brick_stairs_from_oxidized_copper_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:oxidized_copper_brick_stairs_from_oxidized_copper_stonecutting"
+      "blockus:oxidized_copper_brick_stairs_from_oxidized_copper_stonecutting"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:red_sandstone_pillar_from_red_sandstone_stonecutting"
+        "recipe": "blockus:red_sandstone_pillar_from_red_sandstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:red_sandstone_pillar_from_red_sandstone_stonecutting"
+      "blockus:red_sandstone_pillar_from_red_sandstone_stonecutting"
     ]
   }
 }

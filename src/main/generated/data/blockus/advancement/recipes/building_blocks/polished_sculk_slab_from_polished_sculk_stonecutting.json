@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:polished_sculk_slab_from_polished_sculk_stonecutting"
+        "recipe": "blockus:polished_sculk_slab_from_polished_sculk_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:polished_sculk_slab_from_polished_sculk_stonecutting"
+      "blockus:polished_sculk_slab_from_polished_sculk_stonecutting"
     ]
   }
 }

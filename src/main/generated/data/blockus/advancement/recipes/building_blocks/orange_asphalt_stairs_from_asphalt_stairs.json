@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_asphalt": {
+    "has_asphalt_stairs": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:asphalt"
+            "items": "blockus:asphalt_stairs"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:orange_asphalt_stairs_from_asphalt_stairs"
+        "recipe": "blockus:orange_asphalt_stairs_from_asphalt_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_asphalt"
+      "has_asphalt_stairs"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:orange_asphalt_stairs_from_asphalt_stairs"
+      "blockus:orange_asphalt_stairs_from_asphalt_stairs"
     ]
   }
 }

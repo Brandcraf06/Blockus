@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:purple_asphalt_stairs_from_purple_asphalt_stonecutting"
+        "recipe": "blockus:purple_asphalt_stairs_from_purple_asphalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:purple_asphalt_stairs_from_purple_asphalt_stonecutting"
+      "blockus:purple_asphalt_stairs_from_purple_asphalt_stonecutting"
     ]
   }
 }

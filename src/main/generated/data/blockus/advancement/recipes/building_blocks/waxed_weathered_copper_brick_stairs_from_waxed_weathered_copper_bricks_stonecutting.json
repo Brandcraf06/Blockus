@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:waxed_weathered_copper_brick_stairs_from_waxed_weathered_copper_bricks_stonecutting"
+        "recipe": "blockus:waxed_weathered_copper_brick_stairs_from_waxed_weathered_copper_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:waxed_weathered_copper_brick_stairs_from_waxed_weathered_copper_bricks_stonecutting"
+      "blockus:waxed_weathered_copper_brick_stairs_from_waxed_weathered_copper_bricks_stonecutting"
     ]
   }
 }

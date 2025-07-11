@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:legacy_glowing_obsidian_from_glowing_obsidian_stonecutting"
+        "recipe": "blockus:legacy_glowing_obsidian_from_glowing_obsidian_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:legacy_glowing_obsidian_from_glowing_obsidian_stonecutting"
+      "blockus:legacy_glowing_obsidian_from_glowing_obsidian_stonecutting"
     ]
   }
 }

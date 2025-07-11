@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:red_beveled_glass_from_beveled_glass"
+        "recipe": "blockus:red_beveled_glass_from_beveled_glass"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:red_beveled_glass_from_beveled_glass"
+      "blockus:red_beveled_glass_from_beveled_glass"
     ]
   }
 }

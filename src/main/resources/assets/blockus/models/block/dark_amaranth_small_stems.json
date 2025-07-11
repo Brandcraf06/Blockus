@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "blockus:block/promenade/dark_amaranth_small_stems_top",
-    "side": "blockus:block/promenade/dark_amaranth_small_stems"
-  }
-}

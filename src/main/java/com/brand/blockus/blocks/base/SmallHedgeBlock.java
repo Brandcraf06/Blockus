@@ -71,7 +71,7 @@ public class SmallHedgeBlock extends HorizontalConnectingBlock {
     public final boolean connectsTo(BlockState state, boolean faceFullSquare, Direction side) {
         Block block = state.getBlock();
         boolean bl = block instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
-        return state.isIn(BlockusBlockTags.SMALL_HEDGES) || block instanceof LeavesBlock || !cannotConnect(state) && faceFullSquare || block instanceof PaneBlock || bl;
+        return state.isIn(BlockusBlockTags.HEDGES) || block instanceof LeavesBlock || !cannotConnect(state) && faceFullSquare || block instanceof PaneBlock || bl;
     }
 
     public void appendProperties(StateManager.Builder<Block, BlockState> builder) {

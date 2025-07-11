@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:legacy_explosion_proof_gold_block_from_gold_block_stonecutting"
+        "recipe": "blockus:legacy_explosion_proof_gold_block_from_gold_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:legacy_explosion_proof_gold_block_from_gold_block_stonecutting"
+      "blockus:legacy_explosion_proof_gold_block_from_gold_block_stonecutting"
     ]
   }
 }

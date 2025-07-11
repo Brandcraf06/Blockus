@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chiseled_dark_prismarine_from_dark_prismarine_stonecutting"
+        "recipe": "blockus:chiseled_dark_prismarine_from_dark_prismarine_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chiseled_dark_prismarine_from_dark_prismarine_stonecutting"
+      "blockus:chiseled_dark_prismarine_from_dark_prismarine_stonecutting"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pink_patterned_carpet_from_pink_carpet"
+        "recipe": "blockus:pink_patterned_carpet_from_pink_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pink_patterned_carpet_from_pink_carpet"
+      "blockus:pink_patterned_carpet_from_pink_carpet"
     ]
   }
 }

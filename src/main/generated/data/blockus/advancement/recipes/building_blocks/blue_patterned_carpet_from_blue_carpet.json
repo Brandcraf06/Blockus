@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blue_patterned_carpet_from_blue_carpet"
+        "recipe": "blockus:blue_patterned_carpet_from_blue_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blue_patterned_carpet_from_blue_carpet"
+      "blockus:blue_patterned_carpet_from_blue_carpet"
     ]
   }
 }

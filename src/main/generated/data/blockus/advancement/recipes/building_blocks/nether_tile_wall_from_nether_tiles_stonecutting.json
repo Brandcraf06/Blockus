@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:nether_tile_wall_from_nether_tiles_stonecutting"
+        "recipe": "blockus:nether_tile_wall_from_nether_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:nether_tile_wall_from_nether_tiles_stonecutting"
+      "blockus:nether_tile_wall_from_nether_tiles_stonecutting"
     ]
   }
 }

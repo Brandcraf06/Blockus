@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:magma_brick_wall_from_magma_block_stonecutting"
+        "recipe": "blockus:magma_brick_wall_from_magma_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:magma_brick_wall_from_magma_block_stonecutting"
+      "blockus:magma_brick_wall_from_magma_block_stonecutting"
     ]
   }
 }

@@ -4,7 +4,8 @@
 	"ambientocclusion": false,
 	"textures": {
 		"post": "blockus:block/barrier_post",
-		"barrier": "blockus:block/caution_barrier"
+		"barrier": "blockus:block/caution_barrier",
+		"particle": "#post"
 	},
 	"elements": [
 		{

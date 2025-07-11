@@ -1,202 +1,58 @@
 {
-  "credit": "Made with Blockbench",
-  "textures": {
-    "1": "blockus:block/iron_gate_bottom",
-    "particle": "blockus:block/iron_gate"
-  },
-  "elements": [
-    {
-      "name": "vbar1",
-      "from": [
-        0,
-        0.01,
-        0
-      ],
-      "to": [
-        2,
-        0.01,
-        16
-      ],
-      "faces": {
-        "up": {
-          "uv": [
-            5,
-            0,
-            6.999,
-            16
-          ],
-          "texture": "#1"
-        },
-        "down": {
-          "uv": [
-            5,
-            0,
-            6.998,
-            16
-          ],
-          "texture": "#1"
-        }
-      }
-    },
-    {
-      "name": "vbar2",
-      "from": [
-        0,
-        0,
-        15.99
-      ],
-      "to": [
-        2,
-        16,
-        15.99
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            0,
-            1.999,
-            16
-          ],
-          "texture": "#1"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            1.999,
-            16
-          ],
-          "texture": "#1"
-        },
-        "up": {
-          "uv": [
-            5,
-            0,
-            6.999,
-            16
-          ],
-          "texture": "#1"
-        },
-        "down": {
-          "uv": [
-            5,
-            0,
-            6.998,
-            16
-          ],
-          "texture": "#1"
-        }
-      }
-    },
-    {
-      "name": "vbar3",
-      "from": [
-        0,
-        0,
-        0.01
-      ],
-      "to": [
-        2,
-        16,
-        0.01
-      ],
-      "rotation": {
-        "angle": 0,
-        "axis": "y",
-        "origin": [
-          8,
-          8,
-          -8
-        ]
-      },
-      "faces": {
-        "north": {
-          "uv": [
-            14,
-            0,
-            15.998,
-            16
-          ],
-          "texture": "#1"
-        },
-        "south": {
-          "uv": [
-            14,
-            0,
-            15.998,
-            16
-          ],
-          "texture": "#1"
-        },
-        "up": {
-          "uv": [
-            5,
-            0,
-            6.999,
-            16
-          ],
-          "texture": "#1"
-        },
-        "down": {
-          "uv": [
-            5,
-            0,
-            6.998,
-            16
-          ],
-          "texture": "#1"
-        }
-      }
-    },
-    {
-      "name": "vbar2",
-      "from": [
-        1,
-        0,
-        0
-      ],
-      "to": [
-        1,
-        16,
-        16
-      ],
-      "faces": {
-        "east": {
-          "uv": [
-            16,
-            0,
-            0,
-            16
-          ],
-          "texture": "#1"
-        },
-        "west": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#1"
-        }
-      }
-    }
-  ],
-  "groups": [
-    {
-      "name": "vbar",
-      "origin": [
-        8,
-        8,
-        8
-      ],
-      "children": [
-        0,
-        1,
-        2,
-        3
-      ]
-    }
-  ]
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "blockus:block/iron_gate_bottom",
+		"particle": "blockus:block/iron_gate"
+	},
+	"elements": [
+		{
+			"name": "vbar1",
+			"from": [0, 0.01, 0],
+			"to": [2, 0.01, 16],
+			"faces": {
+				"up": {"uv": [5, 0, 6.999, 16], "texture": "#1"},
+				"down": {"uv": [5, 0, 6.998, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "vbar2",
+			"from": [0, 0, 15.99],
+			"to": [2, 16, 15.99],
+			"faces": {
+				"north": {"uv": [0, 0, 1.999, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 1.999, 16], "texture": "#1"},
+				"up": {"uv": [5, 0, 6.999, 16], "texture": "#1"},
+				"down": {"uv": [5, 0, 6.998, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "vbar3",
+			"from": [0, 0, 0.01],
+			"to": [2, 16, 0.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, -8]},
+			"faces": {
+				"north": {"uv": [14, 0, 15.998, 16], "texture": "#1"},
+				"south": {"uv": [14, 0, 15.998, 16], "texture": "#1"},
+				"up": {"uv": [5, 0, 6.999, 16], "texture": "#1"},
+				"down": {"uv": [5, 0, 6.998, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "vbar2",
+			"from": [1, 0, 0],
+			"to": [1, 16, 16],
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "vbar",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
 }

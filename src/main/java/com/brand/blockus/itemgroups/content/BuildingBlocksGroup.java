@@ -2,10 +2,12 @@ package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.bundles.*;
-import com.brand.blockus.utils.BlockChecker;
+import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
+
+import java.util.Collection;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
@@ -19,82 +21,62 @@ public class BuildingBlocksGroup {
             entries.add(STRIPPED_WHITE_OAK_WOOD);
 
             for (WoodBundle woodBundle : WoodBundle.values()) {
-                entries.add(woodBundle.planks);
-                entries.add(woodBundle.stairs);
-                entries.add(woodBundle.slab);
-                entries.add(woodBundle.fence);
-                entries.add(woodBundle.fence_gate);
-                entries.add(woodBundle.door);
-                entries.add(woodBundle.trapdoor);
-                entries.add(woodBundle.pressure_plate);
-                entries.add(woodBundle.button);
+                entries.add(woodBundle.planks());
+                entries.add(woodBundle.stairs());
+                entries.add(woodBundle.slab());
+                entries.add(woodBundle.fence());
+                entries.add(woodBundle.fenceGate());
+                entries.add(woodBundle.door());
+                entries.add(woodBundle.trapdoor());
+                entries.add(woodBundle.pressurePlate());
+                entries.add(woodBundle.button());
             }
 
-            entries.add(HERRINGBONE_OAK_PLANKS);
-            entries.add(HERRINGBONE_BIRCH_PLANKS);
-            entries.add(HERRINGBONE_SPRUCE_PLANKS);
-            entries.add(HERRINGBONE_JUNGLE_PLANKS);
-            entries.add(HERRINGBONE_ACACIA_PLANKS);
-            entries.add(HERRINGBONE_DARK_OAK_PLANKS);
-            entries.add(HERRINGBONE_MANGROVE_PLANKS);
-            entries.add(HERRINGBONE_CHERRY_PLANKS);
-            entries.add(HERRINGBONE_BAMBOO_PLANKS);
-            entries.add(HERRINGBONE_RAW_BAMBOO_PLANKS);
-            entries.add(HERRINGBONE_WHITE_OAK_PLANKS);
-            entries.add(HERRINGBONE_CRIMSON_PLANKS);
-            entries.add(HERRINGBONE_WARPED_PLANKS);
-            entries.add(HERRINGBONE_CHARRED_PLANKS);
+            for (var wood : WoodMaps.values()) {
+                var bundle = HERRINGBONE_PLANKS.bundle().get(wood.getId());
+                entries.add(bundle);
+            }
 
-            for (BSSWBundle block : BSSWBundle.values()) {
-                if (BlockChecker.isWoodenMosaic(block.type, BlockChecker.WOODS)) {
-                    entries.add(block.block);
-                    entries.add(block.stairs);
-                    entries.add(block.slab);
+            for (var wood : WoodMaps.values()) {
+                var bundle = WOODEN_MOSAIC.bundle().get(wood.getId());
+                if (bundle != null) {
+                    entries.add(bundle.block());
+                    entries.add(bundle.stairs());
+                    entries.add(bundle.slab());
                 }
             }
 
-            for (BSSWBundle block : BSSWBundle.values()) {
-                if (BlockChecker.isMossyPlanks(block.type, BlockChecker.WOODS)) {
-                    entries.add(block.block);
-                    entries.add(block.stairs);
-                    entries.add(block.slab);
+            for (var wood : WoodMaps.values()) {
+                var bundle = MOSSY_PLANKS.bundle().get(wood.getId());
+                if (bundle != null) {
+                    entries.add(bundle.block());
+                    entries.add(bundle.stairs());
+                    entries.add(bundle.slab());
                 }
             }
 
-            entries.add(OAK_SMALL_LOGS);
-            entries.add(BIRCH_SMALL_LOGS);
-            entries.add(SPRUCE_SMALL_LOGS);
-            entries.add(JUNGLE_SMALL_LOGS);
-            entries.add(ACACIA_SMALL_LOGS);
-            entries.add(DARK_OAK_SMALL_LOGS);
-            entries.add(MANGROVE_SMALL_LOGS);
-            entries.add(CHERRY_SMALL_LOGS);
-            entries.add(WHITE_OAK_SMALL_LOGS);
-            entries.add(CRIMSON_SMALL_STEMS);
-            entries.add(WARPED_SMALL_STEMS);
-   /*         if (FabricLoader.getInstance().isModLoaded("promenade")) {
-                entries.add(BlockusPromenadeBlocks.SAKURA_SMALL_LOGS);
-                entries.add(BlockusPromenadeBlocks.MAPLE_SMALL_LOGS);
-                entries.add(BlockusPromenadeBlocks.PALM_SMALL_LOGS);
-                entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_SMALL_STEMS);
-            }*/
+            for (var wood : WoodMaps.values()) {
+                var bundle = SMALL_LOGS.bundle().get(wood.getId());
+                if (bundle != null) {
+                    entries.add(bundle);
+                }
+            }
 
             for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-                entries.add(woodenPost.block);
-                entries.add(woodenPost.stripped);
+                add(entries, woodenPost.all());
             }
 
-            for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-                entries.add(timberFrameBundle.lattice);
-                entries.add(timberFrameBundle.grate);
+            for (var wood : WoodMaps.values()) {
+                var bundle = TIMBER_FRAME.woodMap().get(wood);
+                entries.add(bundle.lattice());
+                entries.add(bundle.grate());
             }
             entries.add(WOODEN_FRAME);
-
-            for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-                entries.add(timberFrameBundle.cross);
-                entries.add(timberFrameBundle.block);
-                entries.add(timberFrameBundle.diagonal);
-                entries.add(timberFrameBundle.cross);
+            for (var wood : WoodMaps.values()) {
+                var bundle = TIMBER_FRAME.woodMap().get(wood);
+                entries.add(bundle.block());
+                entries.add(bundle.diagonal());
+                entries.add(bundle.cross());
             }
 
             entries.add(CHISELED_MUD_BRICKS);
@@ -475,13 +457,16 @@ public class BuildingBlocksGroup {
         });
     }
 
-    public static void addBssw(FabricItemGroupEntries entries, BSSWBundle BSSWBundle) {
+    public static void addBssw(FabricItemGroupEntries entries, BSSWBundle bsswBundle) {
         // Block, stairs & slab & wall (if exist) variants of a block
-        entries.add(BSSWBundle.block);
-        entries.add(BSSWBundle.stairs);
-        entries.add(BSSWBundle.slab);
-        if (BSSWBundle.wall != null) {
-            entries.add(BSSWBundle.wall);
+        for (Block block : bsswBundle.all()) {
+            entries.add(block);
+        }
+    }
+
+    public static void add(FabricItemGroupEntries entries, Collection<Block> blocks) {
+        for (Block block : blocks) {
+            entries.add(block);
         }
     }
 }

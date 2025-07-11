@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:small_phantom_purpur_brick_slab_from_phantom_purpur_bricks_stonecutting"
+        "recipe": "blockus:small_phantom_purpur_brick_slab_from_phantom_purpur_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:small_phantom_purpur_brick_slab_from_phantom_purpur_bricks_stonecutting"
+      "blockus:small_phantom_purpur_brick_slab_from_phantom_purpur_bricks_stonecutting"
     ]
   }
 }

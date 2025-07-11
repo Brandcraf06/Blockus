@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rainbow_petal": {
+    "has_rainbow_petals": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:rainbow_petal"
+            "items": "blockus:rainbow_petals"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:rainbow_glowstone_alt"
+        "recipe": "blockus:rainbow_glowstone_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_rainbow_petal"
+      "has_rainbow_petals"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:rainbow_glowstone_alt"
+      "blockus:rainbow_glowstone_alt"
     ]
   }
 }

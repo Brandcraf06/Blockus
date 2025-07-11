@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:sweet_berries_crate"
+        "recipe": "blockus:sweet_berries_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:sweet_berries_crate"
+      "blockus:sweet_berries_crate"
     ]
   }
 }
