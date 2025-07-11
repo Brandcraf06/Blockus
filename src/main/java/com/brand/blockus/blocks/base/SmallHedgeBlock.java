@@ -62,7 +62,7 @@ public class SmallHedgeBlock extends HorizontalConnectingBlock {
                 return true;
             }
 
-            if ((Boolean)state.get((Property)FACING_PROPERTIES.get(direction)) && (Boolean)stateFrom.get((Property)FACING_PROPERTIES.get(direction.getOpposite()))) {
+            if ((Boolean) state.get((Property) FACING_PROPERTIES.get(direction)) && (Boolean) stateFrom.get((Property) FACING_PROPERTIES.get(direction.getOpposite()))) {
                 return true;
             }
         }

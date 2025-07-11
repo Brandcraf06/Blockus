@@ -72,7 +72,7 @@ public class BlockusFamilies {
 
         return builder.build();
     }
-    
+
     public static BlockFamily.Builder register(Block baseBlock) {
         BlockFamily.Builder builder = new BlockFamily.Builder(baseBlock);
         BlockFamily blockFamily = BASE_BLOCKS_TO_FAMILIES.put(baseBlock, builder.build());

@@ -1,11 +1,9 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.OrientableBlockBase;
-import com.brand.blockus.blocks.base.PostBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.minecraft.block.*;
-import net.minecraft.registry.Registries;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -40,7 +38,8 @@ public record TimberFrameBundle(Map<WoodMaps, TimberFrameVariants> woodMap) {
         return list;
     }
 
-    public record TimberFrameVariants(Block block, Block diagonal, Block cross, Block lattice, Block grate) {}
+    public record TimberFrameVariants(Block block, Block diagonal, Block cross, Block lattice, Block grate) {
+    }
 
     public static TimberFrameBundle register() {
         Map<WoodMaps, TimberFrameVariants> woodMap = new EnumMap<>(WoodMaps.class);

@@ -594,7 +594,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 }
 
                 for (var entry : MOSSY_PLANKS.bundle().entrySet()) {
-                    offerMossyRecipe( entry.getValue().block(), entry.getValue().base());
+                    offerMossyRecipe(entry.getValue().block(), entry.getValue().base());
                 }
 
                 for (var entry : WOODEN_MOSAIC.bundle().entrySet()) {

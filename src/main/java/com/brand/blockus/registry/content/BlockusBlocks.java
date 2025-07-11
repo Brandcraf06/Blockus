@@ -157,7 +157,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block MARBLE_PILLAR = pillar(BlockusBlocks.MARBLE.block());
 
     // Bluestone
-    public static final BSSWBundle BLUESTONE = BSSWBundle.of("bluestone", Blocks.STONE, MapColor.CYAN).register();;
+    public static final BSSWBundle BLUESTONE = BSSWBundle.of("bluestone", Blocks.STONE, MapColor.CYAN).register();
     public static final BSSWBundle POLISHED_BLUESTONE = BSSWBundle.of("polished_bluestone", BlockusBlocks.BLUESTONE.block()).includeWall(false).register();
     public static final BSSWBundle BLUESTONE_BRICKS = BSSWBundle.of("bluestone_bricks", BLUESTONE.block()).register();
     public static final BSSWBundle SMALL_BLUESTONE_BRICKS = BSSWBundle.of("small_bluestone_bricks", BLUESTONE_BRICKS.block()).register();

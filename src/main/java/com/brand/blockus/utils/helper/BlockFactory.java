@@ -1,6 +1,5 @@
 package com.brand.blockus.utils.helper;
 
-import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.blocks.base.SmallHedgeBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
@@ -9,22 +8,14 @@ import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneSlabBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneStairsBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneWallBlock;
-import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
-import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.utils.BlockChecker;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.EntityType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
-import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
@@ -104,7 +95,7 @@ public class BlockFactory {
 
     public static Block pillar(Block base) {
         return pillar(Registries.BLOCK.getId(base).getPath(), base);
-   }
+    }
 
     // Slab
     public static Block slab(String baseId, Block base) {

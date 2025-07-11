@@ -16,7 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(NetherPortal.class)
 public class NetherPortalMixin {
 
-    @Shadow @Mutable
+    @Shadow
+    @Mutable
     private static AbstractBlock.ContextPredicate IS_VALID_FRAME_BLOCK;
 
     @Inject(method = "<clinit>", at = @At("TAIL"))

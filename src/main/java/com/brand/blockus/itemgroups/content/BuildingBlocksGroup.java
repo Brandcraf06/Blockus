@@ -68,15 +68,15 @@ public class BuildingBlocksGroup {
 
             for (var wood : WoodMaps.values()) {
                 var bundle = TIMBER_FRAME.woodMap().get(wood);
-                    entries.add(bundle.lattice());
-                    entries.add(bundle.grate());
+                entries.add(bundle.lattice());
+                entries.add(bundle.grate());
             }
             entries.add(WOODEN_FRAME);
             for (var wood : WoodMaps.values()) {
                 var bundle = TIMBER_FRAME.woodMap().get(wood);
-                    entries.add(bundle.block());
-                    entries.add(bundle.diagonal());
-                    entries.add(bundle.cross());
+                entries.add(bundle.block());
+                entries.add(bundle.diagonal());
+                entries.add(bundle.cross());
             }
 
             entries.add(CHISELED_MUD_BRICKS);

@@ -119,7 +119,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         }
 
 
-
         this.addDrops(CHISELED_MUD_BRICKS,
             MUD_BRICK_PILLAR,
 
