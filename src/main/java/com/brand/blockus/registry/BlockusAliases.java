@@ -26,8 +26,8 @@ public class BlockusAliases {
         for (String type : smallLogs) {
             addBlockAndItemAlias(type + "_small_logs", "small_" + type + "_logs");
         }
-        addBlockAndItemAlias("small_crimson_stems", "small_crimson_stems");
-        addBlockAndItemAlias("small_warped_stems", "small_warped_stems");
+        addBlockAndItemAlias("crimson_small_stems", "small_crimson_stems");
+        addBlockAndItemAlias("warped_small_stems", "small_warped_stems");
 
     }
 
