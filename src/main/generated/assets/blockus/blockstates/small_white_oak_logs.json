@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "blockus:block/small_white_oak_logs_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "blockus:block/small_white_oak_logs"
+    },
+    "axis=z": {
+      "model": "blockus:block/small_white_oak_logs_horizontal",
+      "x": 90
+    }
+  }
+}
