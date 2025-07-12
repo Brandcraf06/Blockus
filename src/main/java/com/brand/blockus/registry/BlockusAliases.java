@@ -17,6 +17,18 @@ public class BlockusAliases {
             addBlockAndItemAlias(type + "_small_hedge", type + "_hedge");
         }
         addBlockAndItemAlias("azalea_small_hedge_flowers", "flowering_azalea_hedge");
+
+        String[] smallLogs = {
+            "oak", "spruce", "birch", "jungle", "acacia", "dark_oak",
+            "mangrove", "cherry", "pale_oak", "white_oak"
+        };
+
+        for (String type : smallLogs) {
+            addBlockAndItemAlias(type + "_small_logs", "small_" + type + "_logs");
+        }
+        addBlockAndItemAlias("small_crimson_stems", "small_crimson_stems");
+        addBlockAndItemAlias("small_warped_stems", "small_warped_stems");
+
     }
 
     private static void addBlockAndItemAlias(String from, String to) {

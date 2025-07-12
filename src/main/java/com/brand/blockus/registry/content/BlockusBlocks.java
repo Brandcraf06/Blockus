@@ -381,7 +381,7 @@ public class BlockusBlocks extends BlockFactory {
         Block log = WoodMaps.LOG_MAP.get(wood);
         if (log == null) return null;
         String suffix = (wood.equals(WoodMaps.CRIMSON.getId()) || wood.equals(WoodMaps.WARPED.getId())) ? "stems" : "logs";
-        return pillar2(wood + "_small_" + suffix, log);
+        return pillar2("small_" + wood + "_" + suffix, log);
     });
     public static final WoodenPostBundle WOODEN_POST = WoodenPostBundle.register();
     public static final TimberFrameBundle TIMBER_FRAME = TimberFrameBundle.register();

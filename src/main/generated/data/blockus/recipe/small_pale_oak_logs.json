@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "small_logs",
+  "key": {
+    "#": "minecraft:pale_oak_log"
+  },
+  "pattern": [
+    " # ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "blockus:small_pale_oak_logs"
+  }
+}

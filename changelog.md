@@ -5,6 +5,7 @@
 * Renamed every small hedges into hedges
   * Changed `azalea_small_hedge_flowers` ID into `flowering_azalea_hedge`
   * Renamed `small_hedges` tags into `hedges`
+  * Changed `[wood]_small_logs/stems` IDs into `small_[wood]_logs/stems`
 * Improved hedges block and model to make them more visually consistent (Hedges already placed will need to be updated)
 * Hedges can now connect to leaves
 * Changed Redstone Lamps textures
