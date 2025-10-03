@@ -18,7 +18,7 @@ public class BlockMaps {
 
     static {
         Map<DyeColor, ColorData> map = new EnumMap<>(DyeColor.class);
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BlockOrder.COLOR) {
             map.put(color, new ColorData(
                 getBlock(color, "_terracotta"),
                 getBlock(color, "_glazed_terracotta"),

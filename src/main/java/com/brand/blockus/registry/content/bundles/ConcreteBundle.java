@@ -51,7 +51,7 @@ public record ConcreteBundle(Map<DyeColor, ConcreteVariants> colorMap) {
         public ConcreteBundle register() {
             Map<DyeColor, ConcreteVariants> colorMap = new EnumMap<>(DyeColor.class);
 
-            for (DyeColor color : DyeColor.values()) {
+            for (DyeColor color : BlockOrder.COLOR) {
                 String type = color.getName() + "_" + id;
                 String removeBricks = type.replace("_bricks", "");
                 Block base = BlockMaps.CONCRETE_MAP.get(color);

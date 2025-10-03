@@ -57,7 +57,7 @@ public record AsphaltBundle(Map<DyeColor, AsphaltVariants> colorMap) {
         public AsphaltBundle register() {
             Map<DyeColor, AsphaltVariants> colorMap = new EnumMap<>(DyeColor.class);
 
-            for (DyeColor color : DyeColor.values()) {
+            for (DyeColor color : BlockOrder.COLOR) {
                 String type = color.getName() + "_" + id;
                 String type2 = type.replace("black_" + id, id);
 

@@ -55,7 +55,7 @@ public record WoolBundle(Map<DyeColor, WoolVariants> colorMap) {
         public WoolBundle register() {
             Map<DyeColor, WoolVariants> colorMap = new EnumMap<>(DyeColor.class);
 
-            for (DyeColor color : DyeColor.values()) {
+            for (DyeColor color : BlockOrder.COLOR) {
                 String type = color.getName() + "_" + id;
 
                 Block block = BlockFactory.registerCopy(type, BlockMaps.WOOL_MAP.get(color));
