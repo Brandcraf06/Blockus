@@ -4,6 +4,7 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
 import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
+import com.brand.blockus.utils.helper.BlockOrder;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
@@ -115,7 +116,7 @@ public class BlockusClient implements ClientModInitializer {
             }
         }
 
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BlockOrder.COLOR) {
             BlockRenderLayerMap.putBlocks(BlockRenderLayer.TRANSLUCENT, STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
         }
 

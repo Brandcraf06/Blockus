@@ -2,6 +2,7 @@ package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
+import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -68,7 +69,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.valueLookupBuilder(BlockusBlockTags.BEVELED_GLASS)
             .add(BEVELED_GLASS)
             .add(RAINBOW_BEVELED_GLASS);
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BlockOrder.COLOR) {
             valueLookupBuilder(BlockusBlockTags.BEVELED_GLASS).add(STAINED_BEVELED_GLASS.colorMap().get(color));
         }
 
@@ -118,7 +119,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHOCOLATE_SQUARES)
             .add(CHOCOLATE_TABLET);
 
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BlockOrder.COLOR) {
             valueLookupBuilder(BlockusBlockTags.COLORED_TILES).add(COLORED_TILES.colorMap().get(color));
         }
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
@@ -191,7 +192,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(PAPER_DOOR)
             .add(PAPER_TRAPDOOR);
 
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BlockOrder.COLOR) {
             valueLookupBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS).add(GLAZED_TERRACOTTA_PILLAR.colorMap().get(color));
         }
 
@@ -280,7 +281,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MARBLE_LINES)
             .add(MARBLE_CIRCULAR_PAVING);
 
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BlockOrder.COLOR) {
             valueLookupBuilder(BlockusBlockTags.NEON).add(NEON_BLOCK.colorMap().get(color));
         }
         this.valueLookupBuilder(BlockusBlockTags.NEON)
@@ -413,7 +414,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.valueLookupBuilder(BlockusBlockTags.SHINGLES)
             .add(bsswBundle(SHINGLES));
 
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BlockOrder.COLOR) {
             for (Block block : STAINED_SHINGLES.colorMap().get(color).all()) {
                 valueLookupBuilder(BlockusBlockTags.SHINGLES).add(block);
             }
@@ -471,7 +472,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.SOUL_SAND)
             .add(Blocks.SOUL_SOIL);
 
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BlockOrder.COLOR) {
             for (Block block : STAINED_STONE_BRICKS.colorMap().get(color).all()) {
                 valueLookupBuilder(BlockusBlockTags.STAINED_STONE_BRICKS).add(block);
             }

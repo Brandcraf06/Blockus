@@ -5,6 +5,7 @@ import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusItemTags;
 import com.brand.blockus.utils.helper.BlockMaps;
+import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import com.google.common.collect.ImmutableMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -677,27 +678,27 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLOWSTONE, 1).input('G', Items.GLOWSTONE_DUST).group("rainbow_glowstone").input('R', RAINBOW_PETALS).pattern(" G ").pattern("GRG").pattern(" G ").criterion(hasItem(RAINBOW_PETALS), conditionsFromItem(RAINBOW_PETALS)).offerTo(exporter, getRecipeName(RAINBOW_GLOWSTONE) + "_alt");
 
                 // Colored Stone Bricks
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     BSSWBundle bundle = STAINED_STONE_BRICKS.colorMap().get(color);
                     offerStainedStoneBricksRecipe(DYE_MAP.get(color), bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
                 }
 
                 // Redstone Lamps
                 createShapeless(RecipeCategory.BUILDING_BLOCKS, REDSTONE_LAMP_LIT).input(Blocks.REDSTONE_LAMP).input(Blocks.REDSTONE_TORCH).group("lit_redstone_lamps").criterion(hasItem(Blocks.REDSTONE_LAMP), conditionsFromItem(Blocks.REDSTONE_LAMP)).offerTo(exporter);
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     offerStainedRedstoneLampRecipe(STAINED_REDSTONE_LAMP.colorMap().get(color), DYE_MAP.get(color), STAINED_REDSTONE_LAMP_LIT.colorMap().get(color));
                 }
                 offerStainedRedstoneLampRecipe(RAINBOW_LAMP, RAINBOW_PETALS, RAINBOW_LAMP_LIT);
 
                 // Neon Blocks
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     Block block = NEON_BLOCK.colorMap().get(color);
                     offerNeonRecipe(block, DYE_MAP.get(color));
                 }
                 offerNeonRecipe(RAINBOW_NEON, RAINBOW_PETALS);
 
                 // Futurneo Blocks
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     Block block = FUTURNEO_BLOCK.colorMap().get(color);
                     offerFuturneoRecipe(block, BlockMaps.STAINED_GLASS_MAP.get(color));
                 }
@@ -708,7 +709,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ASPHALT.baseColor().block(), 8).input('X', Blocks.GRAVEL).input('#', ItemTags.COALS).pattern("XXX").pattern("X#X").pattern("XXX").group("asphalt").criterion(hasItem(Blocks.GRAVEL), conditionsFromItem(Blocks.GRAVEL)).offerTo(exporter);
                 createEnclosedRecipe(RAINBOW_ASPHALT, Ingredient.ofItems(ASPHALT.baseColor().block()), RAINBOW_PETALS).criterion(hasItem(ASPHALT.baseColor().block()), conditionsFromItem(ASPHALT.baseColor().block())).offerTo(exporter);
 
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     if (color == DyeColor.BLACK) continue;
                     AsphaltBundle.AsphaltVariants bundle = ASPHALT.colorMap().get(color);
                     offerAsphaltRecipe(DYE_MAP.get(color), bundle.block(), bundle.stairs(), bundle.slab());
@@ -718,7 +719,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerBsswCuttingRecipe(SHINGLES, Blocks.TERRACOTTA);
                 offerPolishedStoneRecipe(SHINGLES.block(), Blocks.TERRACOTTA);
 
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     BSSWBundle bundle = STAINED_SHINGLES.colorMap().get(color);
                     offerShinglesRecipe(DYE_MAP.get(color), bundle.block(), bundle.stairs(), bundle.slab(), BlockMaps.TERRACOTTA_MAP.get(color));
                 }
@@ -727,7 +728,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerPolishedStoneRecipe(TINTED_BEVELED_GLASS, Blocks.TINTED_GLASS);
                 offerPolishedStoneRecipe(BEVELED_GLASS, Blocks.GLASS);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, BEVELED_GLASS_PANE, 16).input('#', BEVELED_GLASS).pattern("###").pattern("###").group("beveled_glass_pane").criterion("has_beveled_glass", conditionsFromItem(BEVELED_GLASS_PANE)).offerTo(exporter);
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     offerStainedBeveledGlassRecipe(STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color), BlockMaps.STAINED_GLASS_MAP.get(color), DYE_MAP.get(color));
                 }
                 offerStainedBeveledGlassRecipe(RAINBOW_BEVELED_GLASS, RAINBOW_BEVELED_GLASS_PANE, RAINBOW_GLASS, RAINBOW_PETALS);
@@ -736,13 +737,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.BUILDING_BLOCKS, RAINBOW_GLASS_PANE, 16).input('#', RAINBOW_GLASS).pattern("###").pattern("###").criterion(hasItem(RAINBOW_GLASS), conditionsFromItem(RAINBOW_GLASS)).offerTo(exporter);
 
                 // Colored Tiles
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     offerUnicolorColoredTilesRecipe(COLORED_TILES.colorMap().get(color), BlockMaps.CONCRETE_MAP.get(color));
                 }
                 offerUnicolorColoredTilesRecipe(RAINBOW_COLORED_TILES, RAINBOW_BLOCK);
 
                 // Glazed Terracotta Pillars
-                for (DyeColor color : DyeColor.values()) {
+                for (DyeColor color : BlockOrder.COLOR) {
                     offerPillarRecipe(GLAZED_TERRACOTTA_PILLAR.colorMap().get(color), BlockMaps.GLAZED_TERRACOTTA_MAP.get(color));
                 }
 

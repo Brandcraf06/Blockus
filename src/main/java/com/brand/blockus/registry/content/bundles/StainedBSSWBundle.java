@@ -2,6 +2,7 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.BlockMaps;
+import com.brand.blockus.utils.helper.BlockOrder;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.util.DyeColor;
@@ -17,7 +18,7 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
     }
 
     public static Builder of(String id, Block baseBlock) {
-        return new Builder(id, Arrays.stream(DyeColor.values()).collect(Collectors.toMap(color -> color, color -> baseBlock)));
+        return new Builder(id, Arrays.stream(BlockOrder.COLOR).collect(Collectors.toMap(color -> color, color -> baseBlock)));
     }
 
     public Block[] all() {
@@ -59,7 +60,7 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
         public StainedBSSWBundle register() {
             Map<DyeColor, BSSWBundle> colorMap = new EnumMap<>(DyeColor.class);
 
-            for (DyeColor color : DyeColor.values()) {
+            for (DyeColor color : BlockOrder.COLOR) {
                 String blockPath = color.getId() + "_" + this.id;
                 Block baseBlock = baseBlockColorMap.get(color);
                 BlockBuilder blockBuilder = new BlockBuilder(baseBlock);
