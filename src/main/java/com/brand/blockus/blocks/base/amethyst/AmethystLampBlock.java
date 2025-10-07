@@ -7,6 +7,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.block.WireOrientation;
 import org.jetbrains.annotations.Nullable;
@@ -28,7 +29,7 @@ public class AmethystLampBlock extends Block {
     }
 
     protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, @Nullable WireOrientation wireOrientation, boolean notify) {
-        if (!world.isClient) {
+        if (!world.isClient()) {
             int power = Math.min(15, world.getReceivedRedstonePower(pos));
             if (power != state.get(POWER)) {
                 world.setBlockState(pos, state.with(POWER, power), Block.NOTIFY_ALL);
@@ -40,7 +41,7 @@ public class AmethystLampBlock extends Block {
         return true;
     }
 
-    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos, Direction direction) {
         return state.get(POWER);
     }
 }

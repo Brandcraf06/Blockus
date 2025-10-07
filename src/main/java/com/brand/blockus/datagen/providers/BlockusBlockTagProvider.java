@@ -57,6 +57,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CAUTION_BARRIER)
             .add(ROAD_BARRIER);
 
+        this.valueLookupBuilder(BlockTags.BARS)
+            .add(GOLDEN_BARS);
+
         this.valueLookupBuilder(BlockusBlockTags.BASALT_BLOCKS)
             .add(bsswBundle(ROUGH_BASALT))
             .add(bsswBundle(POLISHED_BASALT_BRICKS))
@@ -112,6 +115,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(HERRINGBONE_SANDY_BRICKS)
             .add(bsswBundle(CHARRED_BRICKS))
             .add(HERRINGBONE_CHARRED_BRICKS);
+
+        this.valueLookupBuilder(BlockTags.CHAINS)
+            .add(GOLDEN_CHAIN);
 
         this.valueLookupBuilder(BlockusBlockTags.CHOCOLATE_BLOCKS)
             .add(bsswBundle(CHOCOLATE_BLOCK))
@@ -652,8 +658,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_LAPIS_BLOCK)
             .add(LEGACY_STONECUTTER)
             .add(LEGACY_NETHER_REACTOR_CORE)
-            .add(GOLDEN_BARS)
-            .add(GOLDEN_CHAIN)
             .add(GOLDEN_GATE)
             .add(IRON_GATE)
             .add(LANTERN_BLOCK)

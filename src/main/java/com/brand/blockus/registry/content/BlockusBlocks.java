@@ -18,8 +18,10 @@ import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.particle.TintedParticleEffect;
@@ -572,7 +574,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block IRON_GATE = registerCopy("iron_gate", settings -> new DoorBlock(BlockSetType.IRON, settings), Blocks.IRON_DOOR);
     public static final Block GOLDEN_GATE = registerCopy("golden_gate", settings -> new DoorBlock(BlockSetType.GOLD, settings), Blocks.IRON_DOOR);
     public static final Block GOLDEN_BARS = registerCopy("golden_bars", PaneBlock::new, Blocks.IRON_BARS, settings -> settings.sounds(BlockSoundGroup.METAL));
-    public static final Block GOLDEN_CHAIN = registerCopy("golden_chain", ChainBlock::new, Blocks.CHAIN);
+    public static final Block GOLDEN_CHAIN = registerCopy("golden_chain", ChainBlock::new, Blocks.IRON_CHAIN);
 
     // Lantern Blocks
     public static final Block LANTERN_BLOCK = registerCopy("lantern_block", Blocks.LANTERN, settings -> settings.pistonBehavior(PistonBehavior.NORMAL));

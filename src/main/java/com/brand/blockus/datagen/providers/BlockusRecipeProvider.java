@@ -571,7 +571,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerBarkBlockRecipe(WHITE_OAK_WOOD, WHITE_OAK_LOG);
                 offerPlanksRecipe(WHITE_OAK.planks(), BlockusItemTags.WHITE_OAK_LOGS, 4);
                 offerHangingSignRecipe(RAW_BAMBOO.hangingSign(), Blocks.BAMBOO_BLOCK);
-                createShaped(RecipeCategory.DECORATIONS, CHARRED.hangingSign(), 2).group("hanging_sign").input('#', CHARRED.planks()).input('X', Items.CHAIN).pattern("X X").pattern("###").pattern("###").criterion("has_charred_planks", conditionsFromItem(CHARRED.planks())).offerTo(exporter);
+                createShaped(RecipeCategory.DECORATIONS, CHARRED.hangingSign(), 2).group("hanging_sign").input('#', CHARRED.planks()).input('X', Items.IRON_CHAIN).pattern("X X").pattern("###").pattern("###").criterion("has_charred_planks", conditionsFromItem(CHARRED.planks())).offerTo(exporter);
 
                 createShapeless(RecipeCategory.BUILDING_BLOCKS, RAW_BAMBOO.planks(), 2).input(Blocks.BAMBOO_BLOCK).group("planks").criterion("has_log", conditionsFromItem(Blocks.BAMBOO_BLOCK)).offerTo(exporter);
                 offerBoatsRecipe(BlockusEntities.WHITE_OAK_BOAT, BlockusEntities.WHITE_OAK_CHEST_BOAT, WHITE_OAK.planks());

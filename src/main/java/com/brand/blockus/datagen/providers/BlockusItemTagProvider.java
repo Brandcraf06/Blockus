@@ -41,11 +41,14 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup registries) {
 
         this.copy(BlockusBlockTags.BARRIERS, BlockusItemTags.BARRIERS);
+        this.copy(BlockTags.BARS, ItemTags.BARS);
 
         this.valueLookupBuilder(ItemTags.BOATS)
             .add(BlockusEntities.RAW_BAMBOO_RAFT)
             .add(BlockusEntities.CHARRED_BOAT)
             .add(BlockusEntities.WHITE_OAK_BOAT);
+
+        this.copy(BlockTags.CHAINS, ItemTags.CHAINS);
 
         this.valueLookupBuilder(ItemTags.CHEST_BOATS)
             .add(BlockusEntities.RAW_BAMBOO_CHEST_RAFT)

@@ -60,7 +60,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
         };
         this.output = new CraftingResultInventory();
         this.context = context;
-        this.world = playerInventory.player.getWorld();
+        this.world = playerInventory.player.getEntityWorld();
         this.inputSlot = this.addSlot(new Slot(this.input, 0, 20, 33));
         this.outputSlot = this.addSlot(new Slot(this.output, 1, 143, 33) {
             public boolean canInsert(ItemStack stack) {
@@ -152,7 +152,7 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
     }
 
     void populateResult(int selectedId) {
-        Optional optional;
+        Optional<RecipeEntry<StonecuttingRecipe>> optional;
         if (!this.availableRecipes.isEmpty() && this.isInBounds(selectedId)) {
             CuttingRecipeDisplay.GroupEntry<StonecuttingRecipe> groupEntry = this.availableRecipes.entries().get(selectedId);
             optional = groupEntry.recipe().recipe();
@@ -161,8 +161,8 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
         }
 
         optional.ifPresentOrElse((recipe) -> {
-            this.output.setLastRecipe((RecipeEntry<?>) recipe);
-            this.outputSlot.setStackNoCallbacks(((StonecuttingRecipe) ((RecipeEntry<?>) recipe).value()).craft(new SingleStackRecipeInput(this.input.getStack(0)), this.world.getRegistryManager()));
+            this.output.setLastRecipe(recipe);
+            this.outputSlot.setStackNoCallbacks(recipe.value().craft(new SingleStackRecipeInput(this.input.getStack(0)), this.world.getRegistryManager()));
         }, () -> {
             this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
             this.output.setLastRecipe(null);
@@ -235,8 +235,6 @@ public class LegacyStonecutterScreenHandler extends ScreenHandler {
     public void onClosed(PlayerEntity player) {
         super.onClosed(player);
         this.output.removeStack(1);
-        this.context.run((world, pos) -> {
-            this.dropInventory(player, this.input);
-        });
+        this.context.run((world, pos) -> this.dropInventory(player, this.input));
     }
 }

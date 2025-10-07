@@ -1,1 +1,7 @@
-* Fixed a crash caused by incompatibility with mods that add new colors/dyes. [#361](https://github.com/Brandcraf06/Blockus/issues/361)
+* Updated to 1.21.10
+
+To do :
+* Added Copper Lantern Blocks
+* Added Copper Gate
+* Added White Oak, Raw Bamboo & Charred Shelves
+  * Charred shelf are made with charred planks but give 2 shelves instead of 6.
