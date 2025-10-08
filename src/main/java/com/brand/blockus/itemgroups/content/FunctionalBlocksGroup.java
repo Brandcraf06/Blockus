@@ -3,6 +3,7 @@ package com.brand.blockus.itemgroups.content;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.bundles.WoodBundle;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
@@ -40,18 +41,19 @@ public class FunctionalBlocksGroup {
 
             entries.add(TINTED_BEVELED_GLASS);
 
-            entries.add(WHITE_OAK.sign());
-            entries.add(CHARRED.sign());
-            entries.add(RAW_BAMBOO.sign());
-            entries.add(WHITE_OAK.hangingSign());
-            entries.add(CHARRED.hangingSign());
-            entries.add(RAW_BAMBOO.hangingSign());
+            for (WoodBundle woodBundle : WoodBundle.values()) {
+                entries.add(woodBundle.shelf());
+            }
+            for (WoodBundle woodBundle : WoodBundle.values()) {
+                entries.add(woodBundle.sign());
+                entries.add(woodBundle.hangingSign());
+            }
             entries.add(BlockusEntities.WHITE_OAK_BOAT);
             entries.add(BlockusEntities.WHITE_OAK_CHEST_BOAT);
-            entries.add(BlockusEntities.CHARRED_BOAT);
-            entries.add(BlockusEntities.CHARRED_CHEST_BOAT);
             entries.add(BlockusEntities.RAW_BAMBOO_RAFT);
             entries.add(BlockusEntities.RAW_BAMBOO_CHEST_RAFT);
+            entries.add(BlockusEntities.CHARRED_BOAT);
+            entries.add(BlockusEntities.CHARRED_CHEST_BOAT);
         });
     }
 }
