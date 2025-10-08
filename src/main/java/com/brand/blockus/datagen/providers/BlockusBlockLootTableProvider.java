@@ -75,6 +75,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
                 woodBundle.trapdoor(),
                 woodBundle.pressurePlate(),
                 woodBundle.button(),
+                woodBundle.shelf(),
                 woodBundle.standingSign(),
                 woodBundle.ceilingHangingSign());
         }
@@ -457,9 +458,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         this.addDrop(slab, this::slabDrops);
     }
 
-    public void addWoodSetDrop(Block planks, Block stairs, Block slab, Block fence, Block fence_gate, Block door, Block trapdoor, Block pressure_plate, Block button, Block standing_sign, Block ceiling_hanging_sign) {
+    public void addWoodSetDrop(Block planks, Block stairs, Block slab, Block fence, Block fence_gate, Block door, Block trapdoor, Block pressure_plate, Block button, Block shelf, Block standing_sign, Block ceiling_hanging_sign) {
         this.addBlockStairsandSlabDrops(planks, stairs, slab);
-        this.addDrops(fence, fence_gate, trapdoor, pressure_plate, button, standing_sign, ceiling_hanging_sign);
+        this.addDrops(fence, fence_gate, trapdoor, pressure_plate, button, shelf, standing_sign, ceiling_hanging_sign);
         this.addDrop(door, this::doorDrops);
     }
 

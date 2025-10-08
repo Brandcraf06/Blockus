@@ -91,6 +91,11 @@ public class BlockusModelProvider extends FabricModelProvider {
         }
         modelGenerator.registerSimpleState(BlockusBlocks.LARGE_FLOWER_POT);
 
+        // Shelf
+        modelGenerator.registerShelf(BlockusBlocks.WHITE_OAK.shelf(), BlockusBlocks.STRIPPED_WHITE_OAK_LOG);
+        modelGenerator.registerShelf(BlockusBlocks.RAW_BAMBOO.shelf(), Blocks.BAMBOO_BLOCK);
+        modelGenerator.registerShelf(BlockusBlocks.CHARRED.shelf(), BlockusBlocks.CHARRED.planks());
+
         // Copper
         registerCopperBlocks(modelGenerator, BlockusBlocks.COPPER_BRICKS, BlockusFamilies.COPPER_BRICKS);
         registerCopperBlocks(modelGenerator, BlockusBlocks.EXPOSED_COPPER_BRICKS, BlockusFamilies.EXPOSED_COPPER_BRICKS);

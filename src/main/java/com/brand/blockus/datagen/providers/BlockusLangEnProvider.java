@@ -722,6 +722,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(bundle.trapdoor(), charredException + " Trapdoor");
         translationBuilder.add(bundle.pressurePlate(), charredException + " Pressure Plate");
         translationBuilder.add(bundle.button(), charredException + " Button");
+        translationBuilder.add(bundle.shelf(), editedString(string) + " Shelf");
         translationBuilder.add(bundle.sign(), editedString(string) + " Sign");
         translationBuilder.add(bundle.sign().getTranslationKey().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
         translationBuilder.add(bundle.hangingSign(), editedString(string) + " Hanging Sign");

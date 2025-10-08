@@ -1,6 +1,7 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.registry.tag.BlockusItemTags;
 import com.brand.blockus.utils.helper.BlockOrder;
@@ -55,17 +56,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusEntities.CHARRED_CHEST_BOAT)
             .add(BlockusEntities.WHITE_OAK_CHEST_BOAT);
 
-        this.valueLookupBuilder(ItemTags.SIGNS)
-            .add(RAW_BAMBOO.sign())
-            .add(CHARRED.sign())
-            .add(WHITE_OAK.sign());
-
         this.copy(BlockTags.STONE_BUTTONS, ItemTags.STONE_BUTTONS);
-
-        this.valueLookupBuilder(ItemTags.HANGING_SIGNS)
-            .add(RAW_BAMBOO.hangingSign())
-            .add(CHARRED.hangingSign())
-            .add(WHITE_OAK.hangingSign());
 
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
         this.copy(BlockusBlockTags.PATTERNED_CARPETS, BlockusItemTags.PATTERNED_CARPETS);
@@ -239,12 +230,16 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         this.copy(BlockTags.WARPED_STEMS, ItemTags.WARPED_STEMS);
 
+        for (WoodBundle woodBundle : WoodBundle.values()) {
+            this.valueLookupBuilder(ItemTags.WOODEN_DOORS).add(woodBundle.door().asItem());
+            this.valueLookupBuilder(ItemTags.WOODEN_TRAPDOORS).add(woodBundle.trapdoor().asItem());
+            this.valueLookupBuilder(ItemTags.SIGNS).add(woodBundle.sign().asItem());
+            this.valueLookupBuilder(ItemTags.HANGING_SIGNS).add(woodBundle.hangingSign().asItem());
+        }
+
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
 
-        this.valueLookupBuilder(ItemTags.WOODEN_DOORS)
-            .add(RAW_BAMBOO.door().asItem())
-            .add(CHARRED.door().asItem())
-            .add(WHITE_OAK.door().asItem());
+        this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
 
         this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
 
@@ -253,11 +248,6 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         this.copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
 
         this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
-
-        this.valueLookupBuilder(ItemTags.WOODEN_TRAPDOORS)
-            .add(RAW_BAMBOO.trapdoor().asItem())
-            .add(CHARRED.trapdoor().asItem())
-            .add(WHITE_OAK.trapdoor().asItem());
 
         this.valueLookupBuilder(ItemTags.WOOL)
             .addTag(BlockusItemTags.PATTERNED_WOOL);

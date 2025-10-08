@@ -7,11 +7,13 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
+import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.registry.effect.BlockusEffects;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.brand.blockus.worldgen.foliage.BlockusFoliagePlacerType;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -52,6 +54,10 @@ public class Blockus implements ModInitializer {
         Instance.init();
         BlockusWorldgenFeatures.registerConfiguredFeature();
         BlockusAliases.init();
+
+        for (WoodBundle woodBundle : WoodBundle.values()) {
+            BlockEntityType.SHELF.addSupportedBlock(woodBundle.shelf());
+        }
     }
 
     public static Text STEPPED_ON_TEXT = Text.translatable(Util.createTranslationKey("blockitem", Blockus.id("when_stepped_on"))).formatted(Formatting.GRAY);

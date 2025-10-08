@@ -1,8 +1,5 @@
 {
   "values": [
-    "blockus:raw_bamboo_planks",
-    "blockus:charred_planks",
-    "blockus:white_oak_planks",
     "blockus:legacy_planks",
     "blockus:herringbone_oak_planks",
     "blockus:herringbone_spruce_planks",
@@ -18,6 +15,9 @@
     "blockus:herringbone_white_oak_planks",
     "blockus:herringbone_crimson_planks",
     "blockus:herringbone_warped_planks",
-    "blockus:herringbone_charred_planks"
+    "blockus:herringbone_charred_planks",
+    "blockus:white_oak_planks",
+    "blockus:raw_bamboo_planks",
+    "blockus:charred_planks"
   ]
 }

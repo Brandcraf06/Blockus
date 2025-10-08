@@ -1,7 +1,7 @@
 {
   "values": [
+    "blockus:white_oak_trapdoor",
     "blockus:raw_bamboo_trapdoor",
-    "blockus:charred_trapdoor",
-    "blockus:white_oak_trapdoor"
+    "blockus:charred_trapdoor"
   ]
 }

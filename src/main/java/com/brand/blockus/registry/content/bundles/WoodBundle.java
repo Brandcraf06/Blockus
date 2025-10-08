@@ -27,6 +27,7 @@ public record WoodBundle(
     Block trapdoor,
     Block pressurePlate,
     Block button,
+    Block shelf,
     Block standingSign,
     Block wallSign,
     Item sign,
@@ -76,11 +77,13 @@ public record WoodBundle(
             AbstractBlock.Settings blockSettings = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(sound);
             AbstractBlock.Settings doorTrapdoorSettings = BlockFactory.doorTrapdoorBlockSettings(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
             AbstractBlock.Settings signSettings = BlockFactory.create().mapColor(color).noCollision().strength(1.0F);
+            AbstractBlock.Settings shelfSettings = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).sounds(BlockSoundGroup.SHELF).strength(2.0F, 3.0F);
 
             if (burnable) {
                 blockSettings = blockSettings.burnable();
                 doorTrapdoorSettings = doorTrapdoorSettings.burnable();
                 signSettings = signSettings.burnable();
+                shelfSettings = signSettings.burnable();
             }
 
             Block planks = BlockFactory.registerOf(type + "_planks", blockSettings);
@@ -92,6 +95,7 @@ public record WoodBundle(
             Block trapdoor = BlockFactory.registerOf(type + "_trapdoor", (settings) -> new TrapdoorBlock(blockSetType, settings), doorTrapdoorSettings);
             Block pressurePlate = BlockFactory.pressurePlate(planks, blockSetType);
             Block button = BlockFactory.button(planks, blockSetType, 30);
+            Block shelf = BlockFactory.registerOf(type + "_shelf", ShelfBlock::new, shelfSettings);
 
             Block standingSign = TerraformSignBlockHelper.registerSignBlock(Blockus.id(type + "_sign"), (settings) -> new SignBlock(woodType, settings), signSettings);
             Block wallSign = TerraformSignBlockHelper.registerSignBlock(Blockus.id(type + "_wall_sign"), (settings) -> new WallSignBlock(woodType, settings), WoodBundle.copyLootTable(standingSign, color, burnable));
@@ -101,7 +105,7 @@ public record WoodBundle(
             Block wallHangingSign = TerraformSignBlockHelper.registerSignBlock(Blockus.id(type + "_wall_hanging_sign"), (settings) -> new WallHangingSignBlock(woodType, settings), WoodBundle.copyLootTable(ceilingHangingSign, color, burnable));
             Item hangingSign = BlockusItems.register(ceilingHangingSign, (block, settings) -> new HangingSignItem(block, wallHangingSign, settings), new Item.Settings().maxCount(16));
 
-            WoodBundle bundle = new WoodBundle(type, burnable, base, planks, stairs, slab, fence, fenceGate, door, trapdoor, pressurePlate, button, standingSign, wallSign, sign, ceilingHangingSign, wallHangingSign, hangingSign);
+            WoodBundle bundle = new WoodBundle(type, burnable, base, planks, stairs, slab, fence, fenceGate, door, trapdoor, pressurePlate, button, shelf, standingSign, wallSign, sign, ceilingHangingSign, wallHangingSign, hangingSign);
 
             LIST.add(bundle);
             return bundle;

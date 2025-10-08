@@ -30,6 +30,7 @@ public class BuildingBlocksGroup {
                 entries.add(woodBundle.trapdoor());
                 entries.add(woodBundle.pressurePlate());
                 entries.add(woodBundle.button());
+                entries.add(woodBundle.shelf());
             }
 
             for (var wood : WoodMaps.values()) {

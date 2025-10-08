@@ -5,6 +5,7 @@ import com.brand.blockus.registry.content.bundles.CopperBundle;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
+import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.registry.Registries;
 

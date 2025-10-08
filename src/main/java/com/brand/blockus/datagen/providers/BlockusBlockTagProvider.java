@@ -805,11 +805,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.OBSIDIAN)
             .add(NETHER_STAR_BLOCK);
 
-        this.valueLookupBuilder(BlockTags.FENCE_GATES)
-            .add(RAW_BAMBOO.fenceGate())
-            .add(CHARRED.fenceGate())
-            .add(WHITE_OAK.fenceGate());
-
         this.valueLookupBuilder(BlockTags.FLOWER_POTS)
             .add(POTTED_WHITE_OAK_SAPLING)
             .add(POTTED_RAINBOW_ROSE)
@@ -886,9 +881,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(SOUL_O_LANTERN);
 
         this.valueLookupBuilder(BlockTags.PLANKS)
-            .add(RAW_BAMBOO.planks())
-            .add(CHARRED.planks())
-            .add(WHITE_OAK.planks())
             .add(LEGACY_PLANKS);
         for (var wood : WoodMaps.values()) {
             var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
@@ -927,26 +919,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         this.valueLookupBuilder(BlockTags.SPRUCE_LOGS)
             .add(SMALL_LOGS.get(WoodMaps.SPRUCE.getId()));
-
-        this.valueLookupBuilder(BlockTags.STANDING_SIGNS)
-            .add(RAW_BAMBOO.standingSign())
-            .add(CHARRED.standingSign())
-            .add(WHITE_OAK.standingSign());
-
-        this.valueLookupBuilder(BlockTags.WALL_SIGNS)
-            .add(RAW_BAMBOO.wallSign())
-            .add(CHARRED.wallSign())
-            .add(WHITE_OAK.wallSign());
-
-        this.valueLookupBuilder(BlockTags.CEILING_HANGING_SIGNS)
-            .add(RAW_BAMBOO.ceilingHangingSign())
-            .add(CHARRED.ceilingHangingSign())
-            .add(WHITE_OAK.ceilingHangingSign());
-
-        this.valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS)
-            .add(RAW_BAMBOO.wallHangingSign())
-            .add(CHARRED.wallHangingSign())
-            .add(WHITE_OAK.wallHangingSign());
 
         this.valueLookupBuilder(BlockTags.STONE_ORE_REPLACEABLES)
             .add(LIMESTONE.block())
@@ -998,41 +970,27 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.valueLookupBuilder(BlockTags.WARPED_STEMS)
             .add(SMALL_LOGS.get(WoodMaps.WARPED.getId()));
 
-        this.valueLookupBuilder(BlockTags.WOODEN_BUTTONS)
-            .add(RAW_BAMBOO.button())
-            .add(CHARRED.button())
-            .add(WHITE_OAK.button());
+        for (WoodBundle woodBundle : WoodBundle.values()) {
+            this.valueLookupBuilder(BlockTags.PLANKS).add(woodBundle.planks());
+            this.valueLookupBuilder(BlockTags.WOODEN_STAIRS).add(woodBundle.stairs());
+            this.valueLookupBuilder(BlockTags.WOODEN_SLABS).add(woodBundle.slab());
+            this.valueLookupBuilder(BlockTags.WOODEN_FENCES).add(woodBundle.fence());
+            this.valueLookupBuilder(BlockTags.FENCE_GATES).add(woodBundle.fenceGate());
+            this.valueLookupBuilder(BlockTags.WOODEN_DOORS).add(woodBundle.door());
+            this.valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS).add(woodBundle.trapdoor());
+            this.valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(woodBundle.pressurePlate());
+            this.valueLookupBuilder(BlockTags.WOODEN_BUTTONS).add(woodBundle.button());
+            this.valueLookupBuilder(BlockTags.WOODEN_SHELVES).add(woodBundle.shelf());
+            this.valueLookupBuilder(BlockTags.STANDING_SIGNS).add(woodBundle.standingSign());
+            this.valueLookupBuilder(BlockTags.WALL_SIGNS).add(woodBundle.wallSign());
+            this.valueLookupBuilder(BlockTags.CEILING_HANGING_SIGNS).add(woodBundle.ceilingHangingSign());
+            this.valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS).add(woodBundle.wallHangingSign());
+        }
 
         this.valueLookupBuilder(BlockTags.WOODEN_DOORS)
-            .add(RAW_BAMBOO.door())
-            .add(CHARRED.door())
-            .add(WHITE_OAK.door())
             .add(PAPER_DOOR);
 
-        this.valueLookupBuilder(BlockTags.WOODEN_FENCES)
-            .add(RAW_BAMBOO.fence())
-            .add(CHARRED.fence())
-            .add(WHITE_OAK.fence());
-
-        this.valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
-            .add(RAW_BAMBOO.pressurePlate())
-            .add(CHARRED.pressurePlate())
-            .add(WHITE_OAK.pressurePlate());
-
-        this.valueLookupBuilder(BlockTags.WOODEN_SLABS)
-            .add(RAW_BAMBOO.slab())
-            .add(CHARRED.slab())
-            .add(WHITE_OAK.slab());
-
-        this.valueLookupBuilder(BlockTags.WOODEN_STAIRS)
-            .add(RAW_BAMBOO.stairs())
-            .add(CHARRED.stairs())
-            .add(WHITE_OAK.stairs());
-
         this.valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS)
-            .add(RAW_BAMBOO.trapdoor())
-            .add(CHARRED.trapdoor())
-            .add(WHITE_OAK.trapdoor())
             .add(PAPER_TRAPDOOR);
 
         this.valueLookupBuilder(BlockTags.WOOL)
