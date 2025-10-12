@@ -22,14 +22,6 @@
     "blockus:legacy_lapis_block",
     "blockus:legacy_stonecutter",
     "blockus:legacy_nether_reactor_core",
-    "blockus:golden_gate",
-    "blockus:iron_gate",
-    "blockus:lantern_block",
-    "blockus:soul_lantern_block",
-    "blockus:redstone_lantern",
-    "blockus:redstone_lantern_block",
-    "blockus:amethyst_lantern",
-    "blockus:amethyst_lantern_block",
     "blockus:crimson_wart_bricks",
     "blockus:crimson_wart_brick_stairs",
     "blockus:crimson_wart_brick_slab",
@@ -122,6 +114,8 @@
     "#blockus:large_flower_pots",
     "#blockus:copper_blocks",
     "#blockus:resin_blocks",
+    "#blockus:lantern_blocks",
+    "#blockus:gates",
     "#minecraft:stone_pressure_plates",
     "blockus:obsidian_pressure_plate"
   ]

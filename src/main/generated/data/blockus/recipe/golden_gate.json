@@ -1,14 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "redstone",
   "key": {
-    "#": "minecraft:gold_nugget",
-    "X": "blockus:golden_bars"
+    "#": "blockus:golden_bars"
   },
   "pattern": [
     "##",
-    "XX",
-    "XX"
+    "##",
+    "##"
   ],
   "result": {
     "count": 3,

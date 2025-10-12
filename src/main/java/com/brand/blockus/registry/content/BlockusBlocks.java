@@ -10,18 +10,16 @@ import com.brand.blockus.blocks.base.redstone.RedstoneLantern;
 import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
 import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.registry.content.bundles.*;
-import com.brand.blockus.registry.content.bundles.CopperBundle.OxidationType;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.BlockMaps;
+import com.brand.blockus.registry.content.bundles.CopperBSSWBundle.OxidationType;
 import com.brand.blockus.utils.helper.WoodMaps;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.particle.TintedParticleEffect;
@@ -449,14 +447,16 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle NETHERITE_BRICKS = BSSWBundle.of("netherite_bricks", Blocks.NETHERITE_BLOCK).register();
 
     // Copper
-    public static final CopperBundle COPPER_BRICKS = CopperBundle.of("copper_bricks", OxidationType.UNAFFECTED, Blocks.COPPER_BLOCK).register();
-    public static final CopperBundle EXPOSED_COPPER_BRICKS = CopperBundle.of("copper_bricks", OxidationType.EXPOSED, Blocks.EXPOSED_COPPER).register();
-    public static final CopperBundle WEATHERED_COPPER_BRICKS = CopperBundle.of("copper_bricks", OxidationType.WEATHERED, Blocks.WEATHERED_COPPER).register();
-    public static final CopperBundle OXIDIZED_COPPER_BRICKS = CopperBundle.of("copper_bricks", OxidationType.OXIDIZED, Blocks.OXIDIZED_COPPER).register();
-    public static final CopperBundle COPPER_TUFF_BRICKS = CopperBundle.of("copper_tuff_bricks", OxidationType.UNAFFECTED, Blocks.TUFF_BRICKS).register();
-    public static final CopperBundle EXPOSED_COPPER_TUFF_BRICKS = CopperBundle.of("copper_tuff_bricks", OxidationType.EXPOSED, Blocks.TUFF_BRICKS).register();
-    public static final CopperBundle WEATHERED_COPPER_TUFF_BRICKS = CopperBundle.of("copper_tuff_bricks", OxidationType.WEATHERED, Blocks.TUFF_BRICKS).register();
-    public static final CopperBundle OXIDIZED_COPPER_TUFF_BRICKS = CopperBundle.of("copper_tuff_bricks", OxidationType.OXIDIZED, Blocks.TUFF_BRICKS).register();
+    public static final CopperBSSWBundle COPPER_BRICKS = CopperBSSWBundle.of("copper_bricks", OxidationType.UNAFFECTED, Blocks.COPPER_BLOCK).register();
+    public static final CopperBSSWBundle EXPOSED_COPPER_BRICKS = CopperBSSWBundle.of("copper_bricks", OxidationType.EXPOSED, Blocks.EXPOSED_COPPER).register();
+    public static final CopperBSSWBundle WEATHERED_COPPER_BRICKS = CopperBSSWBundle.of("copper_bricks", OxidationType.WEATHERED, Blocks.WEATHERED_COPPER).register();
+    public static final CopperBSSWBundle OXIDIZED_COPPER_BRICKS = CopperBSSWBundle.of("copper_bricks", OxidationType.OXIDIZED, Blocks.OXIDIZED_COPPER).register();
+    public static final CopperBSSWBundle COPPER_TUFF_BRICKS = CopperBSSWBundle.of("copper_tuff_bricks", OxidationType.UNAFFECTED, Blocks.TUFF_BRICKS).register();
+    public static final CopperBSSWBundle EXPOSED_COPPER_TUFF_BRICKS = CopperBSSWBundle.of("copper_tuff_bricks", OxidationType.EXPOSED, Blocks.TUFF_BRICKS).register();
+    public static final CopperBSSWBundle WEATHERED_COPPER_TUFF_BRICKS = CopperBSSWBundle.of("copper_tuff_bricks", OxidationType.WEATHERED, Blocks.TUFF_BRICKS).register();
+    public static final CopperBSSWBundle OXIDIZED_COPPER_TUFF_BRICKS = CopperBSSWBundle.of("copper_tuff_bricks", OxidationType.OXIDIZED, Blocks.TUFF_BRICKS).register();
+    public static final CopperBundle COPPER_LANTERN_BLOCK = CopperBundle.create("copper_lantern_block", BlockFactory::registerOf, Block::new, OxidizableBlock::new, (oxidationLevel) -> createCopy(Blocks.LANTERN).pistonBehavior(PistonBehavior.NORMAL));
+    public static final CopperBundle COPPER_GATE = CopperBundle.create("copper_gate", BlockFactory::registerOf, settings -> new DoorBlock(BlockSetType.COPPER, settings), (oxidationLevel, settings) -> new OxidizableDoorBlock(BlockSetType.COPPER, oxidationLevel, settings), (oxidationLevel) -> createCopy(Blocks.COPPER_DOOR));
 
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = crate("sweet_berries_crate");

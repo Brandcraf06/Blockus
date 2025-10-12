@@ -51,7 +51,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             }
         }
 
-        for (CopperBundle copper : CopperBundle.values()) {
+        for (CopperBSSWBundle copper : CopperBSSWBundle.values()) {
             this.addBlockStairsandSlabDrops(copper.block(), copper.stairs(), copper.slab());
             this.addBlockStairsandSlabDrops(copper.blockWaxed(), copper.stairsWaxed(), copper.slabWaxed());
             this.addDrop(copper.wall());
@@ -119,6 +119,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             extraWoodBundle.bundle().values().forEach(this::addDrops);
         }
 
+        COPPER_LANTERN_BLOCK.forEach(this::addDrop);
+        COPPER_GATE.forEach((block) -> this.addDrop(block, this::doorDrops));
 
         this.addDrops(CHISELED_MUD_BRICKS,
             MUD_BRICK_PILLAR,

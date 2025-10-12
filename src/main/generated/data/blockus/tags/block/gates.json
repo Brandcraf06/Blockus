@@ -1,0 +1,14 @@
+{
+  "values": [
+    "blockus:golden_gate",
+    "blockus:iron_gate",
+    "blockus:copper_gate",
+    "blockus:waxed_copper_gate",
+    "blockus:exposed_copper_gate",
+    "blockus:waxed_exposed_copper_gate",
+    "blockus:weathered_copper_gate",
+    "blockus:waxed_weathered_copper_gate",
+    "blockus:oxidized_copper_gate",
+    "blockus:waxed_oxidized_copper_gate"
+  ]
+}

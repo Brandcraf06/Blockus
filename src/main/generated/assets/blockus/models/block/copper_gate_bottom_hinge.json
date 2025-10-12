@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/gate_bottom_hinge",
+  "textures": {
+    "bottom": "blockus:block/copper_gate_bottom"
+  }
+}

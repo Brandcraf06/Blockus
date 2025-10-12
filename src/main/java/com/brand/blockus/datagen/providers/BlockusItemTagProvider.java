@@ -56,6 +56,8 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(BlockusEntities.CHARRED_CHEST_BOAT)
             .add(BlockusEntities.WHITE_OAK_CHEST_BOAT);
 
+        this.copy(BlockTags.LANTERNS, ItemTags.LANTERNS);
+
         this.copy(BlockTags.STONE_BUTTONS, ItemTags.STONE_BUTTONS);
 
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
@@ -90,6 +92,20 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(RAW_BAMBOO.planks().asItem())
             .add(WHITE_OAK.planks().asItem())
             .add(LEGACY_PLANKS.asItem());
+
+        this.valueLookupBuilder(BlockusItemTags.SHELVES_THAT_BURN)
+            .add(Items.OAK_SHELF)
+            .add(Items.SPRUCE_SHELF)
+            .add(Items.BIRCH_SHELF)
+            .add(Items.JUNGLE_SHELF)
+            .add(Items.ACACIA_SHELF)
+            .add(Items.DARK_OAK_SHELF)
+            .add(Items.MANGROVE_SHELF)
+            .add(Items.CHERRY_SHELF)
+            .add(Items.PALE_OAK_SHELF)
+            .add(Items.BAMBOO_SHELF)
+            .add(RAW_BAMBOO.shelf().asItem())
+            .add(WHITE_OAK.shelf().asItem());
 
         this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
             .add(Blocks.BAMBOO_MOSAIC.asItem());

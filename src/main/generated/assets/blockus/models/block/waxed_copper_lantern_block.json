@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "blockus:block/copper_lantern_block_top",
+    "side": "blockus:block/copper_lantern_block"
+  }
+}

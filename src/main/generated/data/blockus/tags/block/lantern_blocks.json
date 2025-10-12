@@ -1,0 +1,16 @@
+{
+  "values": [
+    "blockus:lantern_block",
+    "blockus:soul_lantern_block",
+    "blockus:redstone_lantern_block",
+    "blockus:amethyst_lantern_block",
+    "blockus:copper_lantern_block",
+    "blockus:waxed_copper_lantern_block",
+    "blockus:exposed_copper_lantern_block",
+    "blockus:waxed_exposed_copper_lantern_block",
+    "blockus:weathered_copper_lantern_block",
+    "blockus:waxed_weathered_copper_lantern_block",
+    "blockus:oxidized_copper_lantern_block",
+    "blockus:waxed_oxidized_copper_lantern_block"
+  ]
+}

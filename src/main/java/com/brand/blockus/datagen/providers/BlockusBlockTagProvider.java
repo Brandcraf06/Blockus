@@ -202,6 +202,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             valueLookupBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS).add(GLAZED_TERRACOTTA_PILLAR.colorMap().get(color));
         }
 
+        this.valueLookupBuilder(BlockusBlockTags.GATES)
+            .add(GOLDEN_GATE)
+            .add(IRON_GATE)
+            .add(COPPER_GATE.getAll());
+
         this.valueLookupBuilder(BlockusBlockTags.GRANITE_BLOCKS)
             .add(bsswBundle(GRANITE_BRICKS))
             .add(HERRINGBONE_GRANITE_BRICKS)
@@ -231,6 +236,17 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             this.valueLookupBuilder(BlockusBlockTags.LARGE_FLOWER_POTS)
                 .add(pottedLargeType.block());
         }
+
+        this.valueLookupBuilder(BlockTags.LANTERNS)
+            .add(REDSTONE_LANTERN)
+            .add(AMETHYST_LANTERN);
+
+        this.valueLookupBuilder(BlockusBlockTags.LANTERN_BLOCKS)
+            .add(LANTERN_BLOCK)
+            .add(SOUL_LANTERN_BLOCK)
+            .add(REDSTONE_LANTERN_BLOCK)
+            .add(AMETHYST_LANTERN_BLOCK)
+            .add(COPPER_LANTERN_BLOCK.getAll());
 
         this.valueLookupBuilder(BlockusBlockTags.LAVA_BRICKS)
             .add(bsswBundle(LAVA_BRICKS))
@@ -593,8 +609,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             }
         }
 
-        for (CopperBundle copperBundle : CopperBundle.values()) {
-            for (Block block : copperBundle.all()) {
+        for (CopperBSSWBundle copper : CopperBSSWBundle.values()) {
+            for (Block block : copper.all()) {
                 if (block.toString().contains("tuff")) {
                     this.valueLookupBuilder(BlockusBlockTags.TUFF_BLOCKS)
                         .add(block);
@@ -605,11 +621,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             }
 
             this.valueLookupBuilder(BlockTags.WALLS)
-                .add(copperBundle.allWalls());
+                .add(copper.allWalls());
         }
-
-        this.valueLookupBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "bars")))
-            .add(GOLDEN_BARS);
 
         // Vanilla Block Tags
         this.valueLookupBuilder(BlockTags.AXE_MINEABLE)
@@ -658,14 +671,6 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_LAPIS_BLOCK)
             .add(LEGACY_STONECUTTER)
             .add(LEGACY_NETHER_REACTOR_CORE)
-            .add(GOLDEN_GATE)
-            .add(IRON_GATE)
-            .add(LANTERN_BLOCK)
-            .add(SOUL_LANTERN_BLOCK)
-            .add(REDSTONE_LANTERN)
-            .add(REDSTONE_LANTERN_BLOCK)
-            .add(AMETHYST_LANTERN)
-            .add(AMETHYST_LANTERN_BLOCK)
             .add(bsswBundle(CRIMSON_WART_BRICKS))
             .add(bsswBundle(WARPED_WART_BRICKS))
             .add(bsswBundle(NETHER_TILES))
@@ -725,6 +730,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.LARGE_FLOWER_POTS)
             .addTag(BlockusBlockTags.COPPER_BLOCKS)
             .addTag(BlockusBlockTags.RESIN_BLOCKS)
+            .addTag(BlockusBlockTags.LANTERN_BLOCKS)
+            .addTag(BlockusBlockTags.GATES)
             .addTag(BlockTags.STONE_PRESSURE_PLATES)
             .add(OBSIDIAN_PRESSURE_PLATE);
 
@@ -798,8 +805,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(OBSIDIAN_REINFORCED_DOOR)
             .add(STONE_DOOR)
             .add(BLACKSTONE_DOOR)
-            .add(IRON_GATE)
-            .add(GOLDEN_GATE);
+            .addTag(BlockusBlockTags.GATES);
 
         this.valueLookupBuilder(BlockTags.DRAGON_IMMUNE)
             .addTag(BlockusBlockTags.OBSIDIAN)

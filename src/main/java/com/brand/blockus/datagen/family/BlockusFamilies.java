@@ -1,7 +1,7 @@
 package com.brand.blockus.datagen.family;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.brand.blockus.registry.content.bundles.CopperBundle;
+import com.brand.blockus.registry.content.bundles.CopperBSSWBundle;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
@@ -46,7 +46,7 @@ public class BlockusFamilies {
         OXIDIZED_COPPER_TUFF_BRICKS = register(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS);
     }
 
-    public static CopperFamily register(CopperBundle block) {
+    public static CopperFamily register(CopperBSSWBundle block) {
         BlockFamily unwaxed = register(block.block()).slab(block.slab()).stairs(block.stairs()).wall(block.wall()).noGenerateModels().build();
         BlockFamily waxed = register(block.blockWaxed()).slab(block.slabWaxed()).stairs(block.stairsWaxed()).wall(block.wallWaxed()).group("waxed_" + Registries.BLOCK.getId(block.block()).getPath()).noGenerateModels().build();
         return new CopperFamily(unwaxed, waxed);

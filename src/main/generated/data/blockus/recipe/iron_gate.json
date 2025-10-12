@@ -1,14 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "redstone",
   "key": {
-    "#": "minecraft:iron_nugget",
-    "X": "minecraft:iron_bars"
+    "#": "minecraft:iron_bars"
   },
   "pattern": [
     "##",
-    "XX",
-    "XX"
+    "##",
+    "##"
   ],
   "result": {
     "count": 3,

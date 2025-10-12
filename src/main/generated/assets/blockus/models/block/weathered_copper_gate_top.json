@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/gate_top",
+  "textures": {
+    "top": "blockus:block/weathered_copper_gate_top"
+  }
+}

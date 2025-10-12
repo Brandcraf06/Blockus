@@ -459,6 +459,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerLantern(BlockusBlocks.REDSTONE_LANTERN);
         this.registerCubeColumn(modelGenerator, BlockusBlocks.REDSTONE_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
         this.registerCubeColumn(modelGenerator, BlockusBlocks.SOUL_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
+        BlockusBlocks.COPPER_LANTERN_BLOCK.getWaxingMap().forEach((unwaxed, waxed) -> this.registerCopperCubeColumn(modelGenerator, unwaxed, waxed));
         this.registerPumpkins(modelGenerator, BlockusBlocks.SOUL_O_LANTERN);
         this.registerPumpkins(modelGenerator, BlockusBlocks.REDSTONE_O_LANTERN);
 
@@ -513,8 +514,9 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_CHAIN.asItem());
         modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_BARS);
         modelGenerator.registerItemModel(BlockusBlocks.WOODEN_FRAME);
-        modelGenerator.registerItemModel(BlockusBlocks.IRON_GATE.asItem());
-        modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_GATE.asItem());
+        this.registerGate(modelGenerator, BlockusBlocks.IRON_GATE);
+        this.registerGate(modelGenerator, BlockusBlocks.GOLDEN_GATE);
+        BlockusBlocks.COPPER_GATE.getWaxingMap().forEach((unwaxed, waxed) -> this.registerCopperGate(modelGenerator, unwaxed, waxed));
         registerInventoryItemModel(modelGenerator, BlockusBlocks.CAUTION_BARRIER);
         registerInventoryItemModel(modelGenerator, BlockusBlocks.ROAD_BARRIER);
         modelGenerator.registerParentedItemModel(BlockusBlocks.PATH, ModelIds.getBlockSubModelId(BlockusBlocks.PATH, "4"));
@@ -762,6 +764,12 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBlock(modelGenerator, block, Models.CUBE_COLUMN, textureMap);
     }
 
+    public final void registerCopperCubeColumn(BlockStateModelGenerator modelGenerator, Block unwaxed, Block waxed) {
+        TextureMap textureMap = TextureMap.sideEnd(TextureMap.getId(unwaxed), TextureMap.getSubId(unwaxed, "_top"));
+        this.createBlock(modelGenerator, unwaxed, Models.CUBE_COLUMN, textureMap);
+        this.createBlock(modelGenerator, waxed, Models.CUBE_COLUMN, textureMap);
+    }
+
     public final void registerCubeColumnNoSuffix(BlockStateModelGenerator modelGenerator, Block block, Block end) {
         TextureMap textureMap = TextureMap.sideEnd(TextureMap.getId(block), TextureMap.getId(end));
         this.createBlock(modelGenerator, block, Models.CUBE_COLUMN, textureMap);
@@ -813,7 +821,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBlock(modelGenerator, block, Models.CUBE_BOTTOM_TOP, textureMap);
     }
 
-    public final void registerCopperBlocks(BlockStateModelGenerator modelGenerator, CopperBundle block, BlockusFamilies.CopperFamily family) {
+    public final void registerCopperBlocks(BlockStateModelGenerator modelGenerator, CopperBSSWBundle block, BlockusFamilies.CopperFamily family) {
         modelGenerator.registerCubeAllModelTexturePool(block.block()).family(family.unwaxed).parented(block.block(), block.blockWaxed()).family(family.waxed);
     }
 
@@ -903,6 +911,30 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.blockStateCollector.accept(createWallBlockState(block, modelVariant, modelVariant2, modelVariant3));
         Identifier identifier = Models.WALL_INVENTORY.upload(block, textureMap, modelGenerator.modelCollector);
         modelGenerator.registerParentedItemModel(block, identifier);
+    }
+
+    public void registerGate(BlockStateModelGenerator modelGenerator, Block gateBlock) {
+        TextureMap textureMap = TextureMap.topBottom(gateBlock);
+        WeightedVariant weightedVariant = createWeightedVariant(BlockusModels.GATE_BOTTOM.upload(gateBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant2 = createWeightedVariant(BlockusModels.GATE_BOTTOM_HINGE.upload(gateBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant3 = createWeightedVariant(BlockusModels.GATE_TOP.upload(gateBlock, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant4 = createWeightedVariant(BlockusModels.GATE_TOP_HINGE.upload(gateBlock, textureMap, modelGenerator.modelCollector));
+        modelGenerator.registerItemModel(gateBlock.asItem());
+        modelGenerator.blockStateCollector.accept(createDoorBlockState(gateBlock, weightedVariant, weightedVariant2, weightedVariant2, weightedVariant, weightedVariant3, weightedVariant4, weightedVariant4, weightedVariant3));
+    }
+
+    public void registerCopperGate(BlockStateModelGenerator modelGenerator, Block unwaxed, Block waxed) {
+        TextureMap textureMap = TextureMap.topBottom(unwaxed);
+        WeightedVariant weightedVariant = createWeightedVariant(BlockusModels.GATE_BOTTOM.upload(unwaxed, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant2 = createWeightedVariant(BlockusModels.GATE_BOTTOM_HINGE.upload(unwaxed, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant3 = createWeightedVariant(BlockusModels.GATE_TOP.upload(unwaxed, textureMap, modelGenerator.modelCollector));
+        WeightedVariant weightedVariant4 = createWeightedVariant(BlockusModels.GATE_TOP_HINGE.upload(unwaxed, textureMap, modelGenerator.modelCollector));
+        Identifier identifier = modelGenerator.uploadItemModel(unwaxed.asItem());
+        modelGenerator.registerItemModel(unwaxed.asItem(), identifier);
+        modelGenerator.registerItemModel(waxed.asItem(), identifier);
+        modelGenerator.blockStateCollector.accept(createDoorBlockState(unwaxed, weightedVariant, weightedVariant2, weightedVariant2, weightedVariant, weightedVariant3, weightedVariant4, weightedVariant4, weightedVariant3));
+        modelGenerator.blockStateCollector.accept(createDoorBlockState(waxed, weightedVariant, weightedVariant2, weightedVariant2, weightedVariant, weightedVariant3, weightedVariant4, weightedVariant4, weightedVariant3));
+
     }
 
     public static BlockStateVariantMap createUpDefaultRotationStates() {

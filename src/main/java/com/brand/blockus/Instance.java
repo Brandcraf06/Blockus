@@ -4,6 +4,7 @@ import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
+import net.fabricmc.fabric.impl.content.registry.OxidizableBlocksRegistryImpl;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
@@ -95,6 +96,7 @@ public class Instance {
                 FuelRegistryEvents.BUILD.register((builder, context) -> {
                     builder.add(woodBundle.fence(), 300);
                     builder.add(woodBundle.fenceGate(), 300);
+                    builder.add(woodBundle.shelf(), 300);
                 });
             }
         }
@@ -212,6 +214,10 @@ public class Instance {
     public static void addOxidizable() {
         registerOxidizable(COPPER_BRICKS, EXPOSED_COPPER_BRICKS, WEATHERED_COPPER_BRICKS, OXIDIZED_COPPER_BRICKS);
         registerOxidizable(COPPER_TUFF_BRICKS, EXPOSED_COPPER_TUFF_BRICKS, WEATHERED_COPPER_TUFF_BRICKS, OXIDIZED_COPPER_TUFF_BRICKS);
+        COPPER_LANTERN_BLOCK.getOxidizingMap().forEach(OxidizableBlocksRegistryImpl::registerOxidizableBlockPair);
+        COPPER_LANTERN_BLOCK.getWaxingMap().forEach(OxidizableBlocksRegistryImpl::registerWaxableBlockPair);
+        COPPER_GATE.getOxidizingMap().forEach(OxidizableBlocksRegistryImpl::registerOxidizableBlockPair);
+        COPPER_GATE.getWaxingMap().forEach(OxidizableBlocksRegistryImpl::registerWaxableBlockPair);
     }
 
     public static void registerOxidizable(Block block, Block exposed, Block weathered, Block oxidized, Block waxed, Block exposedwaxed, Block weatheredwaxed, Block oxidizedwaxed) {
@@ -224,7 +230,7 @@ public class Instance {
         OxidizableBlocksRegistry.registerWaxableBlockPair(oxidized, oxidizedwaxed);
     }
 
-    public static void registerOxidizable(CopperBundle block, CopperBundle exposed, CopperBundle weathered, CopperBundle oxidized) {
+    public static void registerOxidizable(CopperBSSWBundle block, CopperBSSWBundle exposed, CopperBSSWBundle weathered, CopperBSSWBundle oxidized) {
         registerOxidizable(block.block(), exposed.block(), weathered.block(), oxidized.block(), block.blockWaxed(), exposed.blockWaxed(), weathered.blockWaxed(), oxidized.blockWaxed());
         registerOxidizable(block.stairs(), exposed.stairs(), weathered.stairs(), oxidized.stairs(), block.stairsWaxed(), exposed.stairsWaxed(), weathered.stairsWaxed(), oxidized.stairsWaxed());
         registerOxidizable(block.slab(), exposed.slab(), weathered.slab(), oxidized.slab(), block.slabWaxed(), exposed.slabWaxed(), weathered.slabWaxed(), oxidized.slabWaxed());

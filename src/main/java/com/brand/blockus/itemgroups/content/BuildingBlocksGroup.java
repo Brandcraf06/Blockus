@@ -405,11 +405,12 @@ public class BuildingBlocksGroup {
             entries.add(NETHERITE_SLAB);
 
 
-            for (CopperBundle copperBundle : CopperBundle.values()) {
+            for (CopperBSSWBundle copperBundle : CopperBSSWBundle.values()) {
                 for (Block block : copperBundle.all()) {
                     entries.add(block);
                 }
             }
+            COPPER_GATE.forEach(entries::add);
 
             entries.add(CHARCOAL_BLOCK);
             entries.add(ENDER_BLOCK);

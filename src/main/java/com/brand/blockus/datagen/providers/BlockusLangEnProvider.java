@@ -616,14 +616,17 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBssw(translationBuilder, BlockusBlocks.DIAMOND_BRICKS, "Diamond Bricks");
         addBssw(translationBuilder, BlockusBlocks.NETHERITE_BRICKS, "Netherite Bricks");
 
-        addCopper(translationBuilder, BlockusBlocks.COPPER_BRICKS, "Copper Bricks");
-        addCopper(translationBuilder, BlockusBlocks.EXPOSED_COPPER_BRICKS, "Exposed Copper Bricks");
-        addCopper(translationBuilder, BlockusBlocks.WEATHERED_COPPER_BRICKS, "Weathered Copper Bricks");
-        addCopper(translationBuilder, BlockusBlocks.OXIDIZED_COPPER_BRICKS, "Oxidized Copper Bricks");
-        addCopper(translationBuilder, BlockusBlocks.COPPER_TUFF_BRICKS, "Copper Tuff Bricks");
-        addCopper(translationBuilder, BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS, "Exposed Copper Tuff Bricks");
-        addCopper(translationBuilder, BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS, "Weathered Copper Tuff Bricks");
-        addCopper(translationBuilder, BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS, "Oxidized Copper Tuff Bricks");
+        // Copper
+        addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.COPPER_BRICKS, "Copper Bricks");
+        addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.EXPOSED_COPPER_BRICKS, "Exposed Copper Bricks");
+        addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.WEATHERED_COPPER_BRICKS, "Weathered Copper Bricks");
+        addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.OXIDIZED_COPPER_BRICKS, "Oxidized Copper Bricks");
+        addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.COPPER_TUFF_BRICKS, "Copper Tuff Bricks");
+        addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS, "Exposed Copper Tuff Bricks");
+        addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS, "Weathered Copper Tuff Bricks");
+        addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS, "Oxidized Copper Tuff Bricks");
+        addCopper(translationBuilder, BlockusBlocks.COPPER_LANTERN_BLOCK, "Copper Lantern Block");
+        addCopper(translationBuilder, BlockusBlocks.COPPER_GATE, "Copper Gate");
 
         // Legacy Blocks
         translationBuilder.add(BlockusBlocks.LEGACY_BRICKS, "Bricks");
@@ -764,7 +767,18 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
     }
 
     // Copper
-    public static void addCopper(TranslationBuilder translationBuilder, CopperBundle bundle, String string) {
+    public static void addCopper(TranslationBuilder translationBuilder, CopperBundle block, String string) {
+        translationBuilder.add(block.unaffected(), string);
+        translationBuilder.add(block.exposed(), "Exposed " + string);
+        translationBuilder.add(block.weathered(), "Weathered " + string);
+        translationBuilder.add(block.oxidized(), "Oxidized " + string);
+        translationBuilder.add(block.waxed(), "Waxed " + string);
+        translationBuilder.add(block.waxedExposed(), "Waxed Exposed " + string);
+        translationBuilder.add(block.waxedWeathered(), "Waxed Weathered " + string);
+        translationBuilder.add(block.waxedOxidized(), "Waxed Oxidized " + string);
+    }
+
+    public static void addCopperBlockStairsSlabWall(TranslationBuilder translationBuilder, CopperBSSWBundle bundle, String string) {
         String waxedString = "Waxed " + string;
         addBlockStairsSlabWall(translationBuilder, string, bundle.block(), bundle.stairs(), bundle.slab(), bundle.wall());
         addBlockStairsSlabWall(translationBuilder, waxedString, bundle.blockWaxed(), bundle.stairsWaxed(), bundle.slabWaxed(), bundle.wallWaxed());

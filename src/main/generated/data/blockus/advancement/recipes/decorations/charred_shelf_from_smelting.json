@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_shelves": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#blockus:shelves_that_burn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:charred_shelf_from_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shelves"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:charred_shelf_from_smelting"
+    ]
+  }
+}

@@ -103,6 +103,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.BEVELED_GLASS,
             BlockusBlocks.BEVELED_GLASS_PANE
         );
+        BlockusBlocks.COPPER_GATE.forEach((block) -> BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, block));
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             for (var variants : timberFrameBundle.woodMap().values()) {

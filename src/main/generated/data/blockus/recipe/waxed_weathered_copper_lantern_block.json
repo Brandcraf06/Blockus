@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "minecraft:copper_nugget",
+    "X": "minecraft:waxed_weathered_copper_lantern"
+  },
+  "pattern": [
+    " # ",
+    "#X#",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "blockus:waxed_weathered_copper_lantern_block"
+  }
+}
