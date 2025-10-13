@@ -461,6 +461,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerCubeColumn(modelGenerator, BlockusBlocks.SOUL_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
         BlockusBlocks.COPPER_LANTERN_BLOCK.getWaxingMap().forEach((unwaxed, waxed) -> this.registerCopperCubeColumn(modelGenerator, unwaxed, waxed));
         this.registerPumpkins(modelGenerator, BlockusBlocks.SOUL_O_LANTERN);
+        this.registerPumpkins(modelGenerator, BlockusBlocks.COPPER_JACK_O_LANTERN);
         this.registerPumpkins(modelGenerator, BlockusBlocks.REDSTONE_O_LANTERN);
 
         // Legacy

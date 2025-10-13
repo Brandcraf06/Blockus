@@ -4,6 +4,7 @@
   * Shelves can be used in a furnace to make charred shelves.
 * Added Copper Lantern Blocks
 * Added Copper Gates
+* Added Copper Jack o'Lantern
 * Changed Iron & Golden Gates recipes, which now require 6 iron/golden bars.
 * Tweaked Raw Bamboo Door, Trapdoor, Grate & Lattice textures
 * Added #lantern_blocks and #gates block tags

@@ -628,6 +628,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.valueLookupBuilder(BlockTags.AXE_MINEABLE)
             .add(LEGACY_PLANKS)
             .add(SOUL_O_LANTERN)
+            .add(COPPER_JACK_O_LANTERN)
             .add(REDSTONE_O_LANTERN)
             .add(WOODEN_FRAME)
             .addTag(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
@@ -743,6 +744,12 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(LEGACY_GRASS_BLOCK)
             .add(LEGACY_GRAVEL)
             .add(SUGAR_BLOCK);
+
+        this.valueLookupBuilder(BlockTags.SWORD_EFFICIENT)
+            .add(SOUL_O_LANTERN)
+            .add(COPPER_JACK_O_LANTERN)
+            .add(REDSTONE_O_LANTERN)
+            .add(CHORUS_BLOCK);
 
         this.valueLookupBuilder(BlockTags.ACACIA_LOGS)
             .add(SMALL_LOGS.get(WoodMaps.ACACIA.getId()));

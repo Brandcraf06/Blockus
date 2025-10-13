@@ -49,6 +49,8 @@ public class NaturalGroup {
             }*/
 
             entries.add(BlockusBlocks.SOUL_O_LANTERN);
+            entries.add(BlockusBlocks.COPPER_JACK_O_LANTERN);
+            entries.add(BlockusBlocks.REDSTONE_O_LANTERN);
 
             entries.add(BlockusBlocks.RAINBOW_ROSE);
             entries.add(BlockusBlocks.RAINBOW_PETALS);

@@ -512,6 +512,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.LANTERN_BLOCK, "Lantern Block");
         translationBuilder.add(BlockusBlocks.SOUL_LANTERN_BLOCK, "Soul Lantern Block");
         translationBuilder.add(BlockusBlocks.SOUL_O_LANTERN, "Soul o'Lantern");
+        translationBuilder.add(BlockusBlocks.COPPER_JACK_O_LANTERN, "Copper Jack o'Lantern");
         translationBuilder.add(BlockusBlocks.AMETHYST_LANTERN, "Amethyst Lantern");
         translationBuilder.add(BlockusBlocks.AMETHYST_LANTERN_BLOCK, "Amethyst Lantern Block");
         translationBuilder.add(BlockusBlocks.REDSTONE_LANTERN, "Redstone Lantern");

@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_soul_torch": {
+    "has_copper_torch": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:soul_torch"
+            "items": "minecraft:copper_torch"
           }
         ]
       },
@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:soul_o_lantern"
+        "recipe": "blockus:copper_jack_o_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -32,12 +32,12 @@
     [
       "has_the_recipe",
       "has_carved_pumpkin",
-      "has_soul_torch"
+      "has_copper_torch"
     ]
   ],
   "rewards": {
     "recipes": [
-      "blockus:soul_o_lantern"
+      "blockus:copper_jack_o_lantern"
     ]
   }
 }

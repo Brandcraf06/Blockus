@@ -584,6 +584,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block REDSTONE_LANTERN = registerCopy("redstone_lantern", RedstoneLantern::new, Blocks.LANTERN, settings -> settings.luminance((state) -> 7));
     public static final Block REDSTONE_LANTERN_BLOCK = registerCopy("redstone_lantern_block", RedstoneBlock::new, REDSTONE_LANTERN, settings -> settings.luminance((state) -> 7).pistonBehavior(PistonBehavior.NORMAL));
     public static final Block SOUL_O_LANTERN = registerCopy("soul_o_lantern", CarvedPumpkinBlock::new, Blocks.JACK_O_LANTERN, settings -> settings.luminance((state) -> 10));
+    public static final Block COPPER_JACK_O_LANTERN = registerCopy("copper_jack_o_lantern", CarvedPumpkinBlock::new, Blocks.JACK_O_LANTERN);
     public static final Block REDSTONE_O_LANTERN = registerCopy("redstone_o_lantern", RedstonePumpkinBlock::new, Blocks.JACK_O_LANTERN, settings -> settings.luminance((state) -> 7));
     public static final Block AMETHYST_LAMP = registerCopy("amethyst_lamp", AmethystLampBlock::new, Blocks.AMETHYST_BLOCK);
 

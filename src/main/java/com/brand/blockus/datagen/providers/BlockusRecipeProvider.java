@@ -792,8 +792,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerLanternBlockRecipe(AMETHYST_LANTERN_BLOCK, AMETHYST_LANTERN, Items.IRON_NUGGET);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, REDSTONE_LANTERN).input('#', Items.REDSTONE_TORCH).input('X', Items.IRON_NUGGET).pattern("XXX").pattern("X#X").pattern("XXX").criterion(hasItem(Items.REDSTONE_TORCH), conditionsFromItem(Items.REDSTONE_TORCH)).offerTo(exporter);
                 offerLanternBlockRecipe(REDSTONE_LANTERN_BLOCK, REDSTONE_LANTERN, Items.IRON_NUGGET);
-                createShaped(RecipeCategory.BUILDING_BLOCKS, SOUL_O_LANTERN).input('X', Blocks.CARVED_PUMPKIN).input('#', Blocks.SOUL_TORCH).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).offerTo(exporter);
-                createShaped(RecipeCategory.BUILDING_BLOCKS, REDSTONE_O_LANTERN).input('X', Blocks.CARVED_PUMPKIN).input('#', Blocks.REDSTONE_TORCH).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).criterion(hasItem(Blocks.REDSTONE_TORCH), conditionsFromItem(Blocks.REDSTONE_TORCH)).offerTo(exporter);
+                offerJackOLanternRecipe(SOUL_O_LANTERN, Blocks.SOUL_TORCH);
+                offerJackOLanternRecipe(COPPER_JACK_O_LANTERN, Blocks.COPPER_TORCH);
+                offerJackOLanternRecipe(REDSTONE_O_LANTERN, Blocks.REDSTONE_TORCH);
                 offerLanternBlockRecipe(COPPER_LANTERN_BLOCK.unaffected(), Blocks.COPPER_LANTERNS.unaffected(), Items.COPPER_NUGGET);
                 offerLanternBlockRecipe(COPPER_LANTERN_BLOCK.exposed(), Blocks.COPPER_LANTERNS.exposed(), Items.COPPER_NUGGET);
                 offerLanternBlockRecipe(COPPER_LANTERN_BLOCK.weathered(), Blocks.COPPER_LANTERNS.weathered(), Items.COPPER_NUGGET);
@@ -870,6 +871,10 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
             public void offerWaxingRecipes(Block unwaxed, Block waxed) {
                 createShapeless(RecipeCategory.BUILDING_BLOCKS, waxed).input(unwaxed).input(Items.HONEYCOMB).group(getItemPath(waxed)).criterion(hasItem(unwaxed), conditionsFromItem(unwaxed)).offerTo(exporter, convertBetween(waxed, Items.HONEYCOMB));
+            }
+
+            public void offerJackOLanternRecipe(Block output, Block input) {
+                createShaped(RecipeCategory.BUILDING_BLOCKS, output).input('X', Blocks.CARVED_PUMPKIN).input('#', input).pattern("X").pattern("#").criterion(hasItem(Blocks.CARVED_PUMPKIN), conditionsFromItem(Blocks.CARVED_PUMPKIN)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
             }
 
             public void offerCharredSmeltingRecipe(TagKey<Item> input, RecipeCategory category, ItemConvertible output, String hasitem) {

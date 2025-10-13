@@ -197,6 +197,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             CHORUS_BLOCK,
             COD_CRATE,
             COMPANION_CUBE,
+            COPPER_JACK_O_LANTERN,
             CRACKED_ANDESITE_BRICKS,
             CRACKED_DIORITE_BRICKS,
             CRACKED_DRIPSTONE_BRICKS,
