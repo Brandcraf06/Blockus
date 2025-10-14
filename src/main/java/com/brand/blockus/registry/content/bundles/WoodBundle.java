@@ -97,12 +97,12 @@ public record WoodBundle(
             Block button = BlockFactory.button(planks, blockSetType, 30);
             Block shelf = BlockFactory.registerOf(type + "_shelf", ShelfBlock::new, shelfSettings);
 
-            Block standingSign = TerraformSignBlockHelper.registerSignBlock(Blockus.id(type + "_sign"), (settings) -> new SignBlock(woodType, settings), signSettings);
-            Block wallSign = TerraformSignBlockHelper.registerSignBlock(Blockus.id(type + "_wall_sign"), (settings) -> new WallSignBlock(woodType, settings), WoodBundle.copyLootTable(standingSign, color, burnable));
+            Block standingSign = BlockFactory.registerNoItem(type + "_sign", (settings) -> new SignBlock(woodType, settings), signSettings);
+            Block wallSign = BlockFactory.registerNoItem(type + "_wall_sign", (settings) -> new WallSignBlock(woodType, settings), WoodBundle.copyLootTable(standingSign, color, burnable));
             Item sign = BlockusItems.register(standingSign, (block, settings) -> new SignItem(block, wallSign, settings), new Item.Settings().maxCount(16));
 
-            Block ceilingHangingSign = TerraformSignBlockHelper.registerSignBlock(Blockus.id(type + "_hanging_sign"), (settings) -> new HangingSignBlock(woodType, settings), signSettings);
-            Block wallHangingSign = TerraformSignBlockHelper.registerSignBlock(Blockus.id(type + "_wall_hanging_sign"), (settings) -> new WallHangingSignBlock(woodType, settings), WoodBundle.copyLootTable(ceilingHangingSign, color, burnable));
+            Block ceilingHangingSign = BlockFactory.registerNoItem(type + "_hanging_sign", (settings) -> new HangingSignBlock(woodType, settings), signSettings);
+            Block wallHangingSign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", (settings) -> new WallHangingSignBlock(woodType, settings), WoodBundle.copyLootTable(ceilingHangingSign, color, burnable));
             Item hangingSign = BlockusItems.register(ceilingHangingSign, (block, settings) -> new HangingSignItem(block, wallHangingSign, settings), new Item.Settings().maxCount(16));
 
             WoodBundle bundle = new WoodBundle(type, burnable, base, planks, stairs, slab, fence, fenceGate, door, trapdoor, pressurePlate, button, shelf, standingSign, wallSign, sign, ceilingHangingSign, wallHangingSign, hangingSign);

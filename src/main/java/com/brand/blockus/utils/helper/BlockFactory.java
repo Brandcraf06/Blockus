@@ -44,6 +44,10 @@ public class BlockFactory {
         return new BlockBuilder(settings);
     }
 
+    public static Block registerNoItem(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+        return of(factory, settings).noItem().register(id);
+    }
+
     public static Block registerOf(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         return of(factory, settings).register(id);
     }

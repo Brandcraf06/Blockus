@@ -662,7 +662,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerDirectionalCarpet(BlockStateModelGenerator modelGenerator, Block block, Block carpet) {
         TexturedModel.CARPET.get(block).upload(carpet, modelGenerator.modelCollector);
-        modelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(carpet, createWeightedVariant(ModelIds.getBlockModelId(carpet))).coordinate(createUpDefaultRotationStates()));
+        modelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(carpet, createWeightedVariant(ModelIds.getBlockModelId(carpet))).apply(createUpDefaultRotationStates()));
     }
 
     public final void registerBlockStairsSlabWithBottom(BlockStateModelGenerator modelGenerator, Block block, Block stairs, Block slab, Block base) {
@@ -788,13 +788,13 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerUpDefaultFacingBlock(BlockStateModelGenerator modelGenerator, Block block) {
         WeightedVariant modelVariant = createWeightedVariant(TexturedModel.CUBE_ALL.upload(block, modelGenerator.modelCollector));
-        modelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(block, modelVariant).coordinate(createUpDefaultRotationStates()));
+        modelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(block, modelVariant).apply(createUpDefaultRotationStates()));
     }
 
     public final void registerTopBottomFacingBottom(BlockStateModelGenerator modelGenerator, Block block) {
         TextureMap textureMap = sideTopBottom(TextureMap.getId(block), TextureMap.getSubId(block, "_top"), TextureMap.getSubId(block, "_bottom"));
         WeightedVariant modelVariant = createWeightedVariant(Models.CUBE_BOTTOM_TOP.upload(block, textureMap, modelGenerator.modelCollector));
-        modelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(block, modelVariant).coordinate(createUpDefaultRotationStates()));
+        modelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(block, modelVariant).apply(createUpDefaultRotationStates()));
     }
 
     public final void registerPumpkins(BlockStateModelGenerator modelGenerator, Block block) {
@@ -834,7 +834,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     public final void registerBreadBox(BlockStateModelGenerator modelGenerator, Block block) {
         TextureMap textureMap = frontTopSideBottom(block);
         WeightedVariant modelVariant = createWeightedVariant(Models.ORIENTABLE_WITH_BOTTOM.upload(block, textureMap, modelGenerator.modelCollector));
-        modelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(block, modelVariant).coordinate(BlockStateVariantMap.operations(Properties.HORIZONTAL_FACING).register(Direction.EAST, ROTATE_Y_90).register(Direction.SOUTH, ROTATE_Y_180).register(Direction.WEST, ROTATE_Y_270).register(Direction.NORTH, NO_OP)));
+        modelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(block, modelVariant).apply(BlockStateVariantMap.operations(Properties.HORIZONTAL_FACING).register(Direction.EAST, ROTATE_Y_90).register(Direction.SOUTH, ROTATE_Y_180).register(Direction.WEST, ROTATE_Y_270).register(Direction.NORTH, NO_OP)));
     }
 
     public void registerLegacyStonecutter(BlockStateModelGenerator modelGenerator, Block block) {

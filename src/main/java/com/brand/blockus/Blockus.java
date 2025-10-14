@@ -56,6 +56,10 @@ public class Blockus implements ModInitializer {
         BlockusAliases.init();
 
         for (WoodBundle woodBundle : WoodBundle.values()) {
+            BlockEntityType.SIGN.addSupportedBlock(woodBundle.standingSign());
+            BlockEntityType.SIGN.addSupportedBlock(woodBundle.wallSign());
+            BlockEntityType.HANGING_SIGN.addSupportedBlock(woodBundle.ceilingHangingSign());
+            BlockEntityType.HANGING_SIGN.addSupportedBlock(woodBundle.wallHangingSign());
             BlockEntityType.SHELF.addSupportedBlock(woodBundle.shelf());
         }
     }
