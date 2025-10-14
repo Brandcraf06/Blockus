@@ -34,12 +34,4 @@ public class BlockusItems {
     public static Item register(String id) {
         return register(id, Item::new, new Item.Settings());
     }
-
-//    public static Item registerSign(Block standingBlock, Block wallBlock) {
-//        return Registry.register(Registries.ITEM, Registries.BLOCK.getId(standingBlock), new SignItem(standingBlock, wallBlock, new Item.Settings().maxCount(16)));
-//    }
-//
-//    public static Item registerHangingSign(Block hangingSign, Block wallHangingSign) {
-//        return Registry.register(Registries.ITEM, Registries.BLOCK.getId(hangingSign), new HangingSignItem(hangingSign, wallHangingSign, new Item.Settings().maxCount(16)));
-//    }
 }
