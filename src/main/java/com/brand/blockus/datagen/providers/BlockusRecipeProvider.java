@@ -957,12 +957,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             }
 
             public void offerStoneDoorTrapdoorRecipe(ItemConvertible door, ItemConvertible trapdoor, ItemConvertible input, ItemConvertible slab) {
-                createDoorRecipe(door, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+                offerDoorRecipe(door, input);
                 createShaped(RecipeCategory.REDSTONE, trapdoor, 4).input('#', slab).pattern("###").pattern("###").criterion(hasItem(slab), conditionsFromItem(slab)).offerTo(exporter);
             }
 
             public void offerDoorTrapdoorRecipe(ItemConvertible door, ItemConvertible trapdoor, ItemConvertible input) {
-                createDoorRecipe(door, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+                offerDoorRecipe(door, input);
                 createTrapdoorRecipe(trapdoor, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
             }
 
