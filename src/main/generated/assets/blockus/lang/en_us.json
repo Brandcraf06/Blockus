@@ -1554,6 +1554,7 @@
   "blockitem.blockus.legacy": "Legacy",
   "blockitem.blockus.when_stepped_on": "When stepped on:",
   "effect.blockus.asphalt_sprint": "Asphalt Sprint",
+  "gamerule.enableAsphaltSprint": "Enable Asphalt Sprint",
   "item.blockus.charred_boat": "Charred Boat",
   "item.blockus.charred_chest_boat": "Charred Boat with Chest",
   "item.blockus.raw_bamboo_chest_raft": "Raw Bamboo Raft with Chest",

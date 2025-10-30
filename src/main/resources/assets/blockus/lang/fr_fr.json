@@ -1554,6 +1554,7 @@
   "blockitem.blockus.legacy": "Ancien",
   "blockitem.blockus.when_stepped_on": "En cas de piétinement :",
   "effect.blockus.asphalt_sprint": "Sprint sur asphalte",
+  "gamerule.enableAsphaltSprint": "Activer le sprint sur asphalte",
   "item.blockus.charred_boat": "Bateau carbonisé",
   "item.blockus.charred_chest_boat": "Bateau de stockage carbonisé",
   "item.blockus.raw_bamboo_chest_raft": "Radeau de stockage en bambou brut",

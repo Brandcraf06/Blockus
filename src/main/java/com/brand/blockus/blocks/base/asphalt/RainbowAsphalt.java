@@ -14,6 +14,6 @@ public class RainbowAsphalt extends FullFacingBlock {
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        AsphaltBlock.applySprintEffect(entity);
+        AsphaltBlock.applySprintEffect(world, entity);
     }
 }
