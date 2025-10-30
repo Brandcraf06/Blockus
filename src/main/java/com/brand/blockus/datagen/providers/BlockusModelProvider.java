@@ -503,8 +503,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_CHAIN.asItem());
         modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_BARS);
         modelGenerator.registerItemModel(BlockusBlocks.WOODEN_FRAME);
-        modelGenerator.registerItemModel(BlockusBlocks.IRON_GATE.asItem());
-        modelGenerator.registerItemModel(BlockusBlocks.GOLDEN_GATE.asItem());
+        registerGate(modelGenerator, BlockusBlocks.IRON_GATE);
+        registerGate(modelGenerator, BlockusBlocks.GOLDEN_GATE);
         registerInventoryItemModel(modelGenerator, BlockusBlocks.CAUTION_BARRIER);
         registerInventoryItemModel(modelGenerator, BlockusBlocks.ROAD_BARRIER);
         modelGenerator.registerParentedItemModel(BlockusBlocks.PATH, ModelIds.getBlockSubModelId(BlockusBlocks.PATH, "4"));
@@ -880,6 +880,16 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createWallBlockState(block, identifier, identifier2, identifier3));
         Identifier identifier4 = Models.WALL_INVENTORY.upload(block, textureMap, modelGenerator.modelCollector);
         modelGenerator.registerParentedItemModel(block, identifier4);
+    }
+
+    public void registerGate(BlockStateModelGenerator modelGenerator, Block gateBlock) {
+        TextureMap textureMap = TextureMap.topBottom(gateBlock);
+        Identifier identifier = BlockusModels.GATE_BOTTOM.upload(gateBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier2 = BlockusModels.GATE_BOTTOM_HINGE.upload(gateBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier3 = BlockusModels.GATE_TOP.upload(gateBlock, textureMap, modelGenerator.modelCollector);
+        Identifier identifier4 = BlockusModels.GATE_TOP_HINGE.upload(gateBlock, textureMap, modelGenerator.modelCollector);
+        modelGenerator.registerItemModel(gateBlock.asItem());
+        modelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createDoorBlockState(gateBlock, identifier, identifier2, identifier2, identifier, identifier3, identifier4, identifier4, identifier3));
     }
 
     public static BlockStateVariantMap createUpDefaultRotationStates() {

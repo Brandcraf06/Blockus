@@ -21,6 +21,10 @@ public class BlockusModels {
     public static final Model TEMPLATE_HEDGE_SIDE;
     public static final Model TEMPLATE_HEDGE_SIDE_ALT;
     public static final Model TEMPLATE_HEDGE_INVENTORY;
+    public static final Model GATE_BOTTOM;
+    public static final Model GATE_BOTTOM_HINGE;
+    public static final Model GATE_TOP;
+    public static final Model GATE_TOP_HINGE;
     public static final Model CRATE_TEMPLATE;
     public static final Model NEON_BLOCK_TEMPLATE;
 
@@ -38,6 +42,7 @@ public class BlockusModels {
         return new Model(Optional.of(getBlockId(parent)), Optional.of(variant), requiredTextures);
     }
 
+
     static {
         CUBE_TILES = createModel("cube_tiles", "", BlockusTextureKey.TILE_1, BlockusTextureKey.TILE_2);
         CUBE_TILES_2 = createModel("cube_tiles_2", "_2", BlockusTextureKey.TILE_1, BlockusTextureKey.TILE_2);
@@ -51,6 +56,10 @@ public class BlockusModels {
         TEMPLATE_HEDGE_SIDE = createModel("template_hedge_side", "_side", BlockusTextureKey.HEDGE);
         TEMPLATE_HEDGE_SIDE_ALT = createModel("template_hedge_side_alt", "_side_alt", BlockusTextureKey.HEDGE);
         TEMPLATE_HEDGE_INVENTORY = createModel("template_hedge_inventory", "_inventory", BlockusTextureKey.HEDGE);
+        GATE_BOTTOM = createModel("gate_bottom", "_bottom", TextureKey.BOTTOM);
+        GATE_BOTTOM_HINGE = createModel("gate_bottom_hinge", "_bottom_hinge", TextureKey.BOTTOM);
+        GATE_TOP = createModel("gate_top", "_top", TextureKey.TOP);
+        GATE_TOP_HINGE = createModel("gate_top_hinge", "_top_hinge", TextureKey.TOP);
         CRATE_TEMPLATE = createModel("crate_template", TextureKey.TOP, TextureKey.SIDE);
         NEON_BLOCK_TEMPLATE = createModel("neon_block_template", TextureKey.ALL);
     }

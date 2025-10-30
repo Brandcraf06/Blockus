@@ -5,6 +5,7 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.effect.BlockusEffects;
+import com.brand.blockus.registry.gamerule.BlockusGamerules;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -34,6 +35,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS, "Legacy Blocks");
         translationBuilder.add("blockitem.blockus.when_stepped_on", "When stepped on:");
         translationBuilder.add("blockitem.blockus.legacy", "Legacy");
+        translationBuilder.add(BlockusGamerules.ENABLE_ASPHALT_SPRINT.getTranslationKey(), "Enable Asphalt Sprint");
 
         // Blaze
         addBssw(translationBuilder, BlockusBlocks.BLAZE_BRICKS, "Blaze Bricks");

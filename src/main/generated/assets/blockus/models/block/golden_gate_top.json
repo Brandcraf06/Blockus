@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/gate_top",
+  "textures": {
+    "top": "blockus:block/golden_gate_top"
+  }
+}

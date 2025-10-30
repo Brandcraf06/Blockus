@@ -8,6 +8,7 @@ import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
 import com.brand.blockus.registry.effect.BlockusEffects;
+import com.brand.blockus.registry.gamerule.BlockusGamerules;
 import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.brand.blockus.worldgen.foliage.BlockusFoliagePlacerType;
 import com.google.common.reflect.Reflection;
@@ -37,6 +38,7 @@ public class Blockus implements ModInitializer {
         Reflection.initialize(ColoredTilesBundle.class);
         Reflection.initialize(BlockusEffects.class);
         Reflection.initialize(BlockusFoliagePlacerType.class);
+        Reflection.initialize(BlockusGamerules.class);
 
         BlockusItemGroups.init();
         BuildingBlocksGroup.init();
