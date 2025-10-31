@@ -7,14 +7,14 @@ import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -23,12 +23,12 @@ import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
-    public BlockusBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public BlockusBlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup registries) {
+    protected void addTags(HolderLookup.Provider registries) {
         this.valueLookupBuilder(BlockusBlockTags.AMETHYST_BLOCKS)
             .add(bsswBundle(POLISHED_AMETHYST))
             .add(bsswBundle(AMETHYST_BRICKS))
@@ -136,7 +136,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         for (ConcreteBundle concreteType : ConcreteBundle.values()) {
             this.valueLookupBuilder(BlockusBlockTags.CONCRETE_BLOCKS)
-                .add(concreteType.all());
+                .addAll(concreteType.all());
         }
 
         this.valueLookupBuilder(BlockTags.CRYSTAL_SOUND_BLOCKS)
@@ -205,7 +205,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         this.valueLookupBuilder(BlockusBlockTags.GATES)
             .add(GOLDEN_GATE)
             .add(IRON_GATE)
-            .add(COPPER_GATE.getAll());
+            .addAll(COPPER_GATE.getAll());
 
         this.valueLookupBuilder(BlockusBlockTags.GRANITE_BLOCKS)
             .add(bsswBundle(GRANITE_BRICKS))
@@ -246,7 +246,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(SOUL_LANTERN_BLOCK)
             .add(REDSTONE_LANTERN_BLOCK)
             .add(AMETHYST_LANTERN_BLOCK)
-            .add(COPPER_LANTERN_BLOCK.getAll());
+            .addAll(COPPER_LANTERN_BLOCK.getAll());
 
         this.valueLookupBuilder(BlockusBlockTags.LAVA_BRICKS)
             .add(bsswBundle(LAVA_BRICKS))
@@ -578,7 +578,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.BAMBOO_MOSAIC_STAIRS)
             .add(Blocks.BAMBOO_MOSAIC_SLAB);
 
-        var planksThatBurn = this.valueLookupBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "planks_that_burn")));
+        var planksThatBurn = this.valueLookupBuilder(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "planks_that_burn")));
         planksThatBurn
             .add(Blocks.OAK_PLANKS)
             .add(Blocks.SPRUCE_PLANKS)
@@ -621,11 +621,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             }
 
             this.valueLookupBuilder(BlockTags.WALLS)
-                .add(copper.allWalls());
+                .addAll(copper.allWalls());
         }
 
         // Vanilla Block Tags
-        this.valueLookupBuilder(BlockTags.AXE_MINEABLE)
+        this.valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
             .add(LEGACY_PLANKS)
             .add(SOUL_O_LANTERN)
             .add(COPPER_JACK_O_LANTERN)
@@ -640,7 +640,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.ALL_MOSSY_PLANKS)
             .addTag(BlockusBlockTags.WOODEN_POSTS);
 
-        this.valueLookupBuilder(BlockTags.HOE_MINEABLE)
+        this.valueLookupBuilder(BlockTags.MINEABLE_WITH_HOE)
             .add(ROTTEN_FLESH_BLOCK)
             .add(CHORUS_BLOCK)
             .add(LEGACY_SPONGE)
@@ -649,7 +649,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.THATCH)
             .addTag(BlockusBlockTags.HEDGES);
 
-        this.valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
+        this.valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
             .add(NETHERITE_STAIRS)
             .add(NETHERITE_SLAB)
             .add(CHARCOAL_BLOCK)
@@ -736,7 +736,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockTags.STONE_PRESSURE_PLATES)
             .add(OBSIDIAN_PRESSURE_PLATE);
 
-        this.valueLookupBuilder(BlockTags.SHOVEL_MINEABLE)
+        this.valueLookupBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
             .add(PATH)
             .add(SUGAR_BLOCK)
             .add(REDSTONE_SAND)
@@ -768,11 +768,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(NETHERITE_SLAB)
             .add(NETHERITE_STAIRS)
             .add(NETHER_STAR_BLOCK)
-            .add(bssBundle(IRON_BRICKS))
-            .add(bssBundle(GOLD_BRICKS))
-            .add(bssBundle(EMERALD_BRICKS))
-            .add(bssBundle(DIAMOND_BRICKS))
-            .add(bssBundle(NETHERITE_BRICKS));
+            .addAll(bssBundle(IRON_BRICKS))
+            .addAll(bssBundle(GOLD_BRICKS))
+            .addAll(bssBundle(EMERALD_BRICKS))
+            .addAll(bssBundle(DIAMOND_BRICKS))
+            .addAll(bssBundle(NETHERITE_BRICKS));
 
         this.valueLookupBuilder(BlockTags.BIRCH_LOGS)
             .add(SMALL_LOGS.get(WoodMaps.BIRCH.getId()));

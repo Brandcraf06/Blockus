@@ -3,9 +3,9 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.BlockMaps;
 import com.brand.blockus.utils.helper.BlockOrder;
-import net.minecraft.block.Block;
-import net.minecraft.block.DyedCarpetBlock;
-import net.minecraft.util.DyeColor;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.WoolCarpetBlock;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -56,12 +56,12 @@ public record WoolBundle(Map<DyeColor, WoolVariants> colorMap) {
             Map<DyeColor, WoolVariants> colorMap = new EnumMap<>(DyeColor.class);
 
             for (DyeColor color : BlockOrder.COLOR) {
-                String type = color.getId() + "_" + id;
+                String type = color.getName() + "_" + id;
 
                 Block block = BlockFactory.registerCopy(type, BlockMaps.WOOL_MAP.get(color));
                 Block stairs = BlockFactory.stairs(block);
                 Block slab = BlockFactory.slab(block);
-                Block carpet = BlockFactory.registerCopy(type.replace("wool", "carpet"), (settings) -> new DyedCarpetBlock(color, settings), BlockMaps.CARPET_MAP.get(color));
+                Block carpet = BlockFactory.registerCopy(type.replace("wool", "carpet"), (settings) -> new WoolCarpetBlock(color, settings), BlockMaps.CARPET_MAP.get(color));
 
                 colorMap.put(color, new WoolVariants(block, stairs, slab, carpet));
             }

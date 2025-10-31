@@ -2,27 +2,27 @@ package com.brand.blockus.blocks.blockitems;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.effect.BlockusEffects;
-import net.minecraft.block.Block;
-import net.minecraft.component.type.TooltipDisplayComponent;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.screen.ScreenTexts;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Consumer;
 
 public class AsphaltBlockItem extends BlockItem {
 
-    public AsphaltBlockItem(Block block, Settings settings) {
+    public AsphaltBlockItem(Block block, Properties settings) {
         super(block, settings);
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
-        textConsumer.accept(ScreenTexts.EMPTY);
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
+        textConsumer.accept(CommonComponents.EMPTY);
         textConsumer.accept(Blockus.STEPPED_ON_TEXT);
-        textConsumer.accept(ScreenTexts.space().append(BlockusEffects.ASPHALT_SPRINT.value().getName()).formatted(Formatting.BLUE));
+        textConsumer.accept(CommonComponents.space().append(BlockusEffects.ASPHALT_SPRINT.value().getDisplayName()).withStyle(ChatFormatting.BLUE));
     }
 }

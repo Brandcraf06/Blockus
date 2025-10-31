@@ -3,8 +3,8 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.BlockMaps;
 import com.brand.blockus.utils.helper.BlockOrder;
-import net.minecraft.block.Block;
-import net.minecraft.util.DyeColor;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -52,7 +52,7 @@ public record ConcreteBundle(Map<DyeColor, ConcreteVariants> colorMap) {
             Map<DyeColor, ConcreteVariants> colorMap = new EnumMap<>(DyeColor.class);
 
             for (DyeColor color : BlockOrder.COLOR) {
-                String type = color.getId() + "_" + id;
+                String type = color.getName() + "_" + id;
                 String removeBricks = type.replace("_bricks", "");
                 Block base = BlockMaps.CONCRETE_MAP.get(color);
 

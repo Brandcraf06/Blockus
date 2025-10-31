@@ -3,7 +3,11 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.blocks.base.OrientableBlockBase;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.WoodMaps;
-import net.minecraft.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.WaterloggedTransparentBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -18,9 +22,9 @@ public record TimberFrameBundle(Map<WoodMaps, TimberFrameVariants> woodMap) {
         return LIST;
     }
 
-    public static AbstractBlock.Settings settings(Block base, boolean isBurnable) {
-        AbstractBlock.Settings blockSettings = BlockFactory.createCopy(base).solid();
-        return isBurnable ? blockSettings.burnable() : blockSettings;
+    public static BlockBehaviour.Properties settings(Block base, boolean isBurnable) {
+        BlockBehaviour.Properties blockSettings = BlockFactory.createCopy(base).forceSolidOn();
+        return isBurnable ? blockSettings.ignitedByLava() : blockSettings;
     }
 
     public List<Block> all() {
@@ -53,8 +57,8 @@ public record TimberFrameBundle(Map<WoodMaps, TimberFrameVariants> woodMap) {
             Block block = BlockFactory.registerOf(wood.getId() + "_timber_frame", settings(planks, wood.data().isBurnable()));
             Block diagonal = BlockFactory.registerOf(wood.getId() + "_diagonal_timber_frame", OrientableBlockBase::new, settings(planks, wood.data().isBurnable()));
             Block cross = BlockFactory.registerOf(wood.getId() + "_cross_timber_frame", settings(planks, wood.data().isBurnable()));
-            Block lattice = BlockFactory.registerCopy(wood.getId() + "_lattice", PaneBlock::new, planks);
-            Block grate = BlockFactory.registerCopy(wood.getId() + "_grate", GrateBlock::new, planks, settings -> settings.nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never));
+            Block lattice = BlockFactory.registerCopy(wood.getId() + "_lattice", IronBarsBlock::new, planks);
+            Block grate = BlockFactory.registerCopy(wood.getId() + "_grate", WaterloggedTransparentBlock::new, planks, settings -> settings.noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never));
 
             woodMap.put(wood, new TimberFrameVariants(block, diagonal, cross, lattice, grate));
         }

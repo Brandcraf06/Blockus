@@ -6,8 +6,8 @@ import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.BlockOrder;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.Block;
-import net.minecraft.util.DyeColor;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
 
 import java.util.Collection;
 
@@ -19,7 +19,7 @@ public class ColoredGroups {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_COLORED_BLOCKS).register((entries) -> {
 
             add(entries, BlockusBlocks.ASPHALT.all());
-            entries.add(BlockusBlocks.RAINBOW_ASPHALT);
+            entries.accept(BlockusBlocks.RAINBOW_ASPHALT);
 
             for (WoolBundle woolBundle : WoolBundle.values()) {
                 add(entries, woolBundle.all());
@@ -37,52 +37,52 @@ public class ColoredGroups {
             }
 
             add(entries, BlockusBlocks.COLORED_TILES);
-            entries.add(BlockusBlocks.RAINBOW_COLORED_TILES);
+            entries.accept(BlockusBlocks.RAINBOW_COLORED_TILES);
 
             add(entries, BlockusBlocks.NEON_BLOCK);
-            entries.add(BlockusBlocks.RAINBOW_NEON);
+            entries.accept(BlockusBlocks.RAINBOW_NEON);
 
             add(entries, BlockusBlocks.FUTURNEO_BLOCK);
-            entries.add(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK);
-            entries.add(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
+            entries.accept(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK);
+            entries.accept(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
 
             add(entries, BlockusBlocks.STAINED_REDSTONE_LAMP);
-            entries.add(BlockusBlocks.RAINBOW_LAMP);
-            entries.add(BlockusBlocks.REDSTONE_LAMP_LIT);
+            entries.accept(BlockusBlocks.RAINBOW_LAMP);
+            entries.accept(BlockusBlocks.REDSTONE_LAMP_LIT);
             add(entries, BlockusBlocks.STAINED_REDSTONE_LAMP_LIT);
-            entries.add(BlockusBlocks.RAINBOW_LAMP_LIT);
+            entries.accept(BlockusBlocks.RAINBOW_LAMP_LIT);
 
-            entries.add(BlockusBlocks.BEVELED_GLASS);
-            entries.add(BlockusBlocks.TINTED_BEVELED_GLASS);
+            entries.accept(BlockusBlocks.BEVELED_GLASS);
+            entries.accept(BlockusBlocks.TINTED_BEVELED_GLASS);
             add(entries, BlockusBlocks.STAINED_BEVELED_GLASS);
-            entries.add(BlockusBlocks.RAINBOW_GLASS);
-            entries.add(BlockusBlocks.RAINBOW_BEVELED_GLASS);
+            entries.accept(BlockusBlocks.RAINBOW_GLASS);
+            entries.accept(BlockusBlocks.RAINBOW_BEVELED_GLASS);
 
-            entries.add(BlockusBlocks.BEVELED_GLASS_PANE);
+            entries.accept(BlockusBlocks.BEVELED_GLASS_PANE);
             add(entries, BlockusBlocks.STAINED_BEVELED_GLASS_PANE);
-            entries.add(BlockusBlocks.RAINBOW_GLASS_PANE);
-            entries.add(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
+            entries.accept(BlockusBlocks.RAINBOW_GLASS_PANE);
+            entries.accept(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
 
-            entries.add(BlockusBlocks.RAINBOW_BLOCK);
+            entries.accept(BlockusBlocks.RAINBOW_BLOCK);
             addBSSW(entries, BlockusBlocks.RAINBOW_BRICKS);
 
-            entries.add(BlockusBlocks.RAINBOW_GLOWSTONE);
+            entries.accept(BlockusBlocks.RAINBOW_GLOWSTONE);
         });
 
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_COLORED_TILES).register((entries) -> {
             add(entries, BlockusBlocks.COLORED_TILES);
 
             for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-                entries.add(coloredTilesVariants.block());
+                entries.accept(coloredTilesVariants.block());
             }
 
-            entries.add(BlockusBlocks.RAINBOW_COLORED_TILES);
+            entries.accept(BlockusBlocks.RAINBOW_COLORED_TILES);
         });
     }
 
     public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle bsswBundle) {
         for (Block block : bsswBundle.all()) {
-            entries.add(block);
+            entries.accept(block);
         }
     }
 
@@ -94,13 +94,13 @@ public class ColoredGroups {
 
     public static void add(FabricItemGroupEntries entries, Collection<Block> blocks) {
         for (Block block : blocks) {
-            entries.add(block);
+            entries.accept(block);
         }
     }
 
     public static void add(FabricItemGroupEntries entries, StainedBlockBundle stainedBlock) {
         for (DyeColor dyeColor : BlockOrder.COLOR) {
-            entries.add(stainedBlock.colorMap().get(dyeColor));
+            entries.accept(stainedBlock.colorMap().get(dyeColor));
         }
     }
 }

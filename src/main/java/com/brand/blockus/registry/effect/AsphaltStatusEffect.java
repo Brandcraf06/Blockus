@@ -1,12 +1,12 @@
 package com.brand.blockus.registry.effect;
 
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 
-public class AsphaltStatusEffect extends StatusEffect {
+public class AsphaltStatusEffect extends MobEffect {
 
     public AsphaltStatusEffect() {
         super(
-            StatusEffectCategory.BENEFICIAL, 0x1D1B36);
+            MobEffectCategory.BENEFICIAL, 0x1D1B36);
     }
 }

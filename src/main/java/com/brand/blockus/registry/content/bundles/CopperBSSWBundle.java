@@ -2,11 +2,11 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.OxidizableWallBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
-import net.minecraft.block.Block;
-import net.minecraft.block.Oxidizable.OxidationLevel;
-import net.minecraft.block.OxidizableBlock;
-import net.minecraft.block.OxidizableSlabBlock;
-import net.minecraft.block.OxidizableStairsBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
+import net.minecraft.world.level.block.WeatheringCopperFullBlock;
+import net.minecraft.world.level.block.WeatheringCopperSlabBlock;
+import net.minecraft.world.level.block.WeatheringCopperStairBlock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,20 +63,20 @@ public record CopperBSSWBundle(
     }
 
     public enum OxidationType {
-        UNAFFECTED(OxidationLevel.UNAFFECTED, ""),
-        EXPOSED(OxidationLevel.EXPOSED, "exposed_"),
-        WEATHERED(OxidationLevel.WEATHERED, "weathered_"),
-        OXIDIZED(OxidationLevel.OXIDIZED, "oxidized_");
+        UNAFFECTED(WeatherState.UNAFFECTED, ""),
+        EXPOSED(WeatherState.EXPOSED, "exposed_"),
+        WEATHERED(WeatherState.WEATHERED, "weathered_"),
+        OXIDIZED(WeatherState.OXIDIZED, "oxidized_");
 
-        private final OxidationLevel oxidationLevel;
+        private final WeatherState oxidationLevel;
         private final String prefix;
 
-        OxidationType(OxidationLevel oxidationLevel, String prefix) {
+        OxidationType(WeatherState oxidationLevel, String prefix) {
             this.oxidationLevel = oxidationLevel;
             this.prefix = prefix;
         }
 
-        public OxidationLevel getLevel() {
+        public WeatherState getLevel() {
             return oxidationLevel;
         }
 
@@ -98,13 +98,13 @@ public record CopperBSSWBundle(
 
         public CopperBSSWBundle register() {
             String prefix = oxidation.getPrefix();
-            OxidationLevel oxidationLevel = oxidation.getLevel();
-            Block block = BlockFactory.registerCopy(prefix + type, (settings) -> new OxidizableBlock(oxidation.getLevel(), settings), base);
+            WeatherState oxidationLevel = oxidation.getLevel();
+            Block block = BlockFactory.registerCopy(prefix + type, (settings) -> new WeatheringCopperFullBlock(oxidation.getLevel(), settings), base);
             Block blockWaxed = BlockFactory.registerCopy("waxed_" + prefix + type, base);
             CopperBSSWBundle bundle = new CopperBSSWBundle(type, base,
                 block,
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_stairs", (settings) -> new OxidizableStairsBlock(oxidationLevel, base.getDefaultState(), settings), base),
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_slab", (settings) -> new OxidizableSlabBlock(oxidationLevel, settings), base),
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_stairs", (settings) -> new WeatheringCopperStairBlock(oxidationLevel, base.defaultBlockState(), settings), base),
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_slab", (settings) -> new WeatheringCopperSlabBlock(oxidationLevel, settings), base),
                 BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_wall", (settings) -> new OxidizableWallBlock(oxidationLevel, settings), base),
                 blockWaxed,
                 BlockFactory.stairs(blockWaxed),

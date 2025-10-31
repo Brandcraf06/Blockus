@@ -1,19 +1,19 @@
 package com.brand.blockus.blocks.base.asphalt;
 
 import com.brand.blockus.blocks.base.FullFacingBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class RainbowAsphalt extends FullFacingBlock {
 
-    public RainbowAsphalt(Settings settings) {
+    public RainbowAsphalt(Properties settings) {
         super(settings);
     }
 
     @Override
-    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+    public void stepOn(Level world, BlockPos pos, BlockState state, Entity entity) {
         AsphaltBlock.applySprintEffect(world, entity);
     }
 }

@@ -1,31 +1,31 @@
 package com.brand.blockus.blocks.blockitems;
 
 import com.brand.blockus.Blockus;
-import net.minecraft.block.Block;
-import net.minecraft.component.type.TooltipDisplayComponent;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.screen.ScreenTexts;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Util;
+import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Consumer;
 
 public class LegacyBlockItem extends BlockItem {
     private final String version;
 
-    public LegacyBlockItem(Block block, Settings settings, String version) {
+    public LegacyBlockItem(Block block, Properties settings, String version) {
         super(block, settings);
         this.version = version;
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
-        textConsumer.accept(Text.translatable(Util.createTranslationKey("blockitem", Blockus.id("legacy"))).formatted(Formatting.LIGHT_PURPLE));
-        textConsumer.accept(ScreenTexts.EMPTY);
-        textConsumer.accept(Text.literal(version).formatted(Formatting.ITALIC).formatted(Formatting.GRAY));
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
+        textConsumer.accept(Component.translatable(Util.makeDescriptionId("blockitem", Blockus.id("legacy"))).withStyle(ChatFormatting.LIGHT_PURPLE));
+        textConsumer.accept(CommonComponents.EMPTY);
+        textConsumer.accept(Component.literal(version).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
 
     }
 }

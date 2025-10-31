@@ -1,35 +1,35 @@
 package com.brand.blockus.blocks.blockitems;
 
 import com.brand.blockus.Blockus;
-import net.minecraft.block.Block;
-import net.minecraft.component.type.TooltipDisplayComponent;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.screen.ScreenTexts;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Consumer;
 
 public class NetherStarBlockItem extends BlockItem {
 
-    public NetherStarBlockItem(Block block, Settings settings) {
+    public NetherStarBlockItem(Block block, Properties settings) {
         super(block, settings);
     }
 
-    public boolean hasGlint(ItemStack stack) {
+    public boolean isFoil(ItemStack stack) {
         return true;
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
-        textConsumer.accept(ScreenTexts.EMPTY);
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
+        textConsumer.accept(CommonComponents.EMPTY);
         textConsumer.accept(Blockus.STEPPED_ON_TEXT);
-        textConsumer.accept(ScreenTexts.space().append(StatusEffects.REGENERATION.value().getName()).append(" IV").formatted(Formatting.BLUE));
-        textConsumer.accept(ScreenTexts.space().append(StatusEffects.ABSORPTION.value().getName()).append(" IV").formatted(Formatting.BLUE).append(" - 00:45"));
-        textConsumer.accept(ScreenTexts.space().append(StatusEffects.STRENGTH.value().getName()).append(" III").formatted(Formatting.BLUE).append(" - 00:04"));
+        textConsumer.accept(CommonComponents.space().append(MobEffects.REGENERATION.value().getDisplayName()).append(" IV").withStyle(ChatFormatting.BLUE));
+        textConsumer.accept(CommonComponents.space().append(MobEffects.ABSORPTION.value().getDisplayName()).append(" IV").withStyle(ChatFormatting.BLUE).append(" - 00:45"));
+        textConsumer.accept(CommonComponents.space().append(MobEffects.STRENGTH.value().getDisplayName()).append(" III").withStyle(ChatFormatting.BLUE).append(" - 00:04"));
     }
 }
 

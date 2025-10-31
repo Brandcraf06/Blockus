@@ -1,21 +1,21 @@
 package com.brand.blockus.blocks.base.redstone;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
-public class RedstoneStairsBlock extends StairsBlock {
-    public RedstoneStairsBlock(BlockState state, Settings settings) {
+public class RedstoneStairsBlock extends StairBlock {
+    public RedstoneStairsBlock(BlockState state, Properties settings) {
         super(state, settings);
     }
 
-    public boolean emitsRedstonePower(BlockState state) {
+    public boolean isSignalSource(BlockState state) {
         return true;
     }
 
-    public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
+    public int getSignal(BlockState state, BlockGetter world, BlockPos pos, Direction direction) {
         return 15;
     }
 }

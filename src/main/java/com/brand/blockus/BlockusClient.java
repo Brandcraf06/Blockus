@@ -9,12 +9,14 @@ import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.minecraft.block.*;
-import net.minecraft.client.color.block.BlockColorProvider;
-import net.minecraft.client.render.BlockRenderLayer;
-import net.minecraft.util.DyeColor;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
-import static com.brand.blockus.registry.content.BlockusBlocks.*;
+import static com.brand.blockus.registry.content.BlockusBlocks.STAINED_BEVELED_GLASS;
+import static com.brand.blockus.registry.content.BlockusBlocks.STAINED_BEVELED_GLASS_PANE;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -38,7 +40,7 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.POTTED_MANGROVE.block(), Blocks.MANGROVE_LEAVES);
         registerBlockColor(BlockusBlocks.RAINBOW_PETALS, Blocks.PINK_PETALS);
 
-        BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT,
+        BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT,
             BlockusBlocks.RAW_BAMBOO.door(),
             BlockusBlocks.RAW_BAMBOO.trapdoor(),
             BlockusBlocks.LEGACY_SAPLING,
@@ -80,7 +82,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_LEGACY_BLUE_ROSE
         );
 
-        BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED,
+        BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT_MIPPED,
             BlockusBlocks.OAK_HEDGE,
             BlockusBlocks.SPRUCE_HEDGE,
             BlockusBlocks.BIRCH_HEDGE,
@@ -103,25 +105,25 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.BEVELED_GLASS,
             BlockusBlocks.BEVELED_GLASS_PANE
         );
-        BlockusBlocks.COPPER_GATE.forEach((block) -> BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, block));
+        BlockusBlocks.COPPER_GATE.forEach((block) -> BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT_MIPPED, block));
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             for (var variants : timberFrameBundle.woodMap().values()) {
-                BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT_MIPPED, variants.lattice(), variants.grate());
+                BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT_MIPPED, variants.lattice(), variants.grate());
             }
         }
 
         for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
             for (var variants : woodenPostBundle.woodMap().values()) {
-                BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, variants.block(), variants.stripped());
+                BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, variants.block(), variants.stripped());
             }
         }
 
         for (DyeColor color : BlockOrder.COLOR) {
-            BlockRenderLayerMap.putBlocks(BlockRenderLayer.TRANSLUCENT, STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
+            BlockRenderLayerMap.putBlocks(ChunkSectionLayer.TRANSLUCENT, STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
         }
 
-        BlockRenderLayerMap.putBlocks(BlockRenderLayer.TRANSLUCENT,
+        BlockRenderLayerMap.putBlocks(ChunkSectionLayer.TRANSLUCENT,
             BlockusBlocks.RAINBOW_GLASS,
             BlockusBlocks.RAINBOW_GLASS_PANE,
             BlockusBlocks.RAINBOW_BEVELED_GLASS,
@@ -141,7 +143,7 @@ public class BlockusClient implements ClientModInitializer {
 
     public void registerBlockColor(Block block, Block templateBlock) {
         ColorProviderRegistry.BLOCK.register((block1, pos, world, layer) -> {
-            BlockColorProvider provider = ColorProviderRegistry.BLOCK.get(templateBlock);
+            BlockColor provider = ColorProviderRegistry.BLOCK.get(templateBlock);
             return provider == null ? -1 : provider.getColor(block1, pos, world, layer);
         }, block);
     }

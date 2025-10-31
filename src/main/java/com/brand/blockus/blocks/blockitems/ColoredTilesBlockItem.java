@@ -1,32 +1,32 @@
 package com.brand.blockus.blocks.blockitems;
 
 import com.brand.blockus.blocks.base.ColoredTilesBlock;
-import net.minecraft.block.Block;
-import net.minecraft.component.type.TooltipDisplayComponent;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
+import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Consumer;
 
 public class ColoredTilesBlockItem extends BlockItem {
 
-    public ColoredTilesBlockItem(Block block, Settings settings) {
+    public ColoredTilesBlockItem(Block block, Properties settings) {
         super(block, settings);
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
         if (this.getBlock() instanceof ColoredTilesBlock coloredTilesBlock) {
-            textConsumer.accept(Text.translatable(Util.createTranslationKey("color", Identifier.tryParse(ColoredTilesBlock.getColor(coloredTilesBlock.tile1))))
-                .formatted(Formatting.GRAY)
+            textConsumer.accept(Component.translatable(Util.makeDescriptionId("color", ResourceLocation.tryParse(ColoredTilesBlock.getColor(coloredTilesBlock.tile1))))
+                .withStyle(ChatFormatting.GRAY)
                 .append(" & ")
-                .append(Text.translatable(Util.createTranslationKey("color", Identifier.tryParse(ColoredTilesBlock.getColor(coloredTilesBlock.tile2))))
-                    .formatted(Formatting.GRAY)));
+                .append(Component.translatable(Util.makeDescriptionId("color", ResourceLocation.tryParse(ColoredTilesBlock.getColor(coloredTilesBlock.tile2))))
+                    .withStyle(ChatFormatting.GRAY)));
         }
     }
 }

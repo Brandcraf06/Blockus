@@ -9,22 +9,22 @@ import com.brand.blockus.registry.gamerule.BlockusGamerules;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.DyeColor;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public class BlockusLangEnProvider extends FabricLanguageProvider {
-    public BlockusLangEnProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public BlockusLangEnProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(output, registryLookup);
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
 
         translationBuilder.add(BlockusEffects.ASPHALT_SPRINT.value(), "Asphalt Sprint");
         translationBuilder.add(BlockusItemGroups.BLOCKUS_BUILDING_BLOCKS, "Building Blocks");
@@ -35,7 +35,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS, "Legacy Blocks");
         translationBuilder.add("blockitem.blockus.when_stepped_on", "When stepped on:");
         translationBuilder.add("blockitem.blockus.legacy", "Legacy");
-        translationBuilder.add(BlockusGamerules.ENABLE_ASPHALT_SPRINT.getTranslationKey(), "Enable Asphalt Sprint");
+        translationBuilder.add(BlockusGamerules.ENABLE_ASPHALT_SPRINT.getDescriptionId(), "Enable Asphalt Sprint");
 
         // Blaze
         addBssw(translationBuilder, BlockusBlocks.BLAZE_BRICKS, "Blaze Bricks");
@@ -78,18 +78,18 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Stained Stone Bricks
         for (var entry : BlockusBlocks.STAINED_STONE_BRICKS.colorMap().entrySet()) {
-            addBssw(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Stone Bricks");
+            addBssw(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Stone Bricks");
         }
 
         // Shingles
         addBssw(translationBuilder, BlockusBlocks.SHINGLES, "Shingles");
         for (var entry : BlockusBlocks.STAINED_SHINGLES.colorMap().entrySet()) {
-            addBssw(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Shingles");
+            addBssw(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Shingles");
         }
 
         // Concrete
         for (var entry : BlockusBlocks.CONCRETE_BRICKS.colorMap().entrySet()) {
-            addConcrete(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Concrete Bricks");
+            addConcrete(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Concrete Bricks");
         }
 
         // Basalt
@@ -126,7 +126,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         // Colored Tiles
         translationBuilder.add("block.blockus.colored_tiles", "Colored Tiles");
         for (var entry : BlockusBlocks.COLORED_TILES.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Colored Tiles");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Colored Tiles");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_COLORED_TILES, "Rainbow Colored Tiles");
 
@@ -287,12 +287,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_GLASS_PANE, "Rainbow Glass Pane");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS, "Beveled Glass");
         for (var entry : BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Beveled Glass");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Beveled Glass");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS, "Rainbow Beveled Glass");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS_PANE, "Beveled Glass Pane");
         for (var entry : BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Beveled Glass Pane");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Beveled Glass Pane");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE, "Rainbow Beveled Glass Pane");
         translationBuilder.add(BlockusBlocks.TINTED_BEVELED_GLASS, "Tinted Beveled Glass");
@@ -312,12 +312,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Glazed Terracotta
         for (var entry : BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Glazed Terracotta Pillar");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Glazed Terracotta Pillar");
         }
 
         // Asphalt
         for (var entry : BlockusBlocks.ASPHALT.colorMap().entrySet()) {
-            addAsphalt(translationBuilder, entry.getValue(), entry.getKey() == DyeColor.BLACK ? "Asphalt" : name(entry.getKey().getId()) + " Asphalt");
+            addAsphalt(translationBuilder, entry.getValue(), entry.getKey() == DyeColor.BLACK ? "Asphalt" : name(entry.getKey().getName()) + " Asphalt");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_ASPHALT, "Rainbow Asphalt");
 
@@ -411,10 +411,10 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_LAMP_LIT, "Lit Rainbow Lamp");
         translationBuilder.add(BlockusBlocks.REDSTONE_LAMP_LIT, "Lit Redstone Lamp");
         for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Redstone Lamp");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Redstone Lamp");
         }
         for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), "Lit " + name(entry.getKey().getId()) + " Redstone Lamp");
+            translationBuilder.add(entry.getValue(), "Lit " + name(entry.getKey().getName()) + " Redstone Lamp");
         }
 
         // Food Crates
@@ -452,21 +452,21 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Patterned Wools
         for (var entry : BlockusBlocks.PATTERNED_WOOL.colorMap().entrySet()) {
-            addWoolBundle(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Patterned Wool");
+            addWoolBundle(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Patterned Wool");
         }
         for (var entry : BlockusBlocks.GINGHAM_WOOL.colorMap().entrySet()) {
-            addWoolBundle(translationBuilder, entry.getValue(), name(entry.getKey().getId()) + " Gingham Wool");
+            addWoolBundle(translationBuilder, entry.getValue(), name(entry.getKey().getName()) + " Gingham Wool");
         }
 
         // Neons
         for (var entry : BlockusBlocks.NEON_BLOCK.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Neon");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Neon");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_NEON, "Rainbow Neon");
 
         // Futurneo Blocks
         for (var entry : BlockusBlocks.FUTURNEO_BLOCK.colorMap().entrySet()) {
-            translationBuilder.add(entry.getValue(), name(entry.getKey().getId()) + " Futurneo Block");
+            translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Futurneo Block");
         }
         translationBuilder.add(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK, "Gray Bright Futurneo Block");
         translationBuilder.add(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK, "Rainbow Futurneo Block");
@@ -730,9 +730,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(bundle.button(), charredException + " Button");
         translationBuilder.add(bundle.shelf(), editedString(string) + " Shelf");
         translationBuilder.add(bundle.sign(), editedString(string) + " Sign");
-        translationBuilder.add(bundle.sign().getTranslationKey().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
+        translationBuilder.add(bundle.sign().getDescriptionId().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
         translationBuilder.add(bundle.hangingSign(), editedString(string) + " Hanging Sign");
-        translationBuilder.add(bundle.hangingSign().getTranslationKey().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
+        translationBuilder.add(bundle.hangingSign().getDescriptionId().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
     }
 
     // Wooden Posts

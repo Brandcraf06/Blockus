@@ -3,12 +3,12 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.utils.BlockChecker;
 import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.BlockFactory;
-import net.minecraft.block.AmethystBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.RedstoneBlock;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.world.level.block.AmethystBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.PoweredBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,15 +41,15 @@ public record BSSWBundle(
     }
 
     public static Builder of(String type, Block base, int luminance) {
-        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.luminance((state) -> luminance)));
+        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.lightLevel((state) -> luminance)));
     }
 
-    public static Builder of(String type, Block base, PistonBehavior pistonBehavior) {
-        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.pistonBehavior(pistonBehavior)));
+    public static Builder of(String type, Block base, PushReaction pistonBehavior) {
+        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.pushReaction(pistonBehavior)));
     }
 
-    public static Builder of(String type, Block base, BlockSoundGroup sound) {
-        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.sounds(sound)));
+    public static Builder of(String type, Block base, SoundType sound) {
+        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.sound(sound)));
     }
 
     public static Builder of(String type, Block base, float hardness, float resistance, MapColor mapcolor) {
@@ -94,7 +94,7 @@ public record BSSWBundle(
             if (BlockChecker.isAmethyst(type)) {
                 blockBuilder.factory(AmethystBlock::new);
             } else if (BlockChecker.isRedstone(type)) {
-                blockBuilder.factory(RedstoneBlock::new);
+                blockBuilder.factory(PoweredBlock::new);
             } else {
                 blockBuilder.factory(Block::new);
             }

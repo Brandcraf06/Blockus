@@ -1,6 +1,6 @@
 package com.brand.blockus.utils.helper;
 
-import net.minecraft.util.DyeColor;
+import net.minecraft.world.item.DyeColor;
 
 public class BlockOrder {
     public static final DyeColor[] COLOR = {

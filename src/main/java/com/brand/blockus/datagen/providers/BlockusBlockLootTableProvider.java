@@ -6,25 +6,25 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Block;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
-import net.minecraft.loot.condition.TableBonusLootCondition;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.ApplyBonusLootFunction;
-import net.minecraft.loot.function.LimitCountLootFunction;
-import net.minecraft.loot.function.LootFunction;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.operator.BoundedIntUnaryOperator;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.IntRange;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.LimitCount;
+import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -33,29 +33,29 @@ import java.util.function.Function;
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider {
-    public final RegistryWrapper.WrapperLookup registryLookup;
+    public final HolderLookup.Provider registryLookup;
 
-    public BlockusBlockLootTableProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public BlockusBlockLootTableProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(output, registryLookup);
         this.registryLookup = registryLookup.join();
     }
 
     @Override
     public void generate() {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getOrThrow(RegistryKeys.ENCHANTMENT);
+        HolderLookup.RegistryLookup<Enchantment> impl = this.registryLookup.lookupOrThrow(Registries.ENCHANTMENT);
 
         for (BSSWBundle bsswType : BSSWBundle.values()) {
             this.addBlockStairsandSlabDrops(bsswType.block(), bsswType.stairs(), bsswType.slab());
             if (bsswType.wall() != null) {
-                this.addDrop(bsswType.wall());
+                this.dropSelf(bsswType.wall());
             }
         }
 
         for (CopperBSSWBundle copper : CopperBSSWBundle.values()) {
             this.addBlockStairsandSlabDrops(copper.block(), copper.stairs(), copper.slab());
             this.addBlockStairsandSlabDrops(copper.blockWaxed(), copper.stairsWaxed(), copper.slabWaxed());
-            this.addDrop(copper.wall());
-            this.addDrop(copper.wallWaxed());
+            this.dropSelf(copper.wall());
+            this.dropSelf(copper.wallWaxed());
         }
 
         for (ConcreteBundle concrete : ConcreteBundle.values()) {
@@ -97,12 +97,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
         for (WoolBundle woolBundle : WoolBundle.values()) {
             for (var variants : woolBundle.colorMap().values()) {
                 this.addBlockStairsandSlabDrops(variants.block(), variants.stairs(), variants.slab());
-                this.addDrop(variants.carpet());
+                this.dropSelf(variants.carpet());
             }
         }
 
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-            this.addDrop(coloredTilesVariants.block());
+            this.dropSelf(coloredTilesVariants.block());
         }
 
         for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
@@ -119,8 +119,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             extraWoodBundle.bundle().values().forEach(this::addDrops);
         }
 
-        COPPER_LANTERN_BLOCK.forEach(this::addDrop);
-        COPPER_GATE.forEach((block) -> this.addDrop(block, this::doorDrops));
+        COPPER_LANTERN_BLOCK.forEach(this::dropSelf);
+        COPPER_GATE.forEach((block) -> this.add(block, this::createDoorTable));
 
         this.addDrops(CHISELED_MUD_BRICKS,
             MUD_BRICK_PILLAR,
@@ -386,8 +386,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             CHOCOLATE_TABLET,
             CHOCOLATE_SQUARES);
 
-        this.addDrops(this::slabDrops, CUT_SOUL_SANDSTONE_SLAB, NETHERITE_SLAB);
-        this.addDrops(this::doorDrops, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_REINFORCED_DOOR, PAPER_DOOR, STONE_DOOR);
+        this.addDrops(this::createSlabItemTable, CUT_SOUL_SANDSTONE_SLAB, NETHERITE_SLAB);
+        this.addDrops(this::createDoorTable, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_REINFORCED_DOOR, PAPER_DOOR, STONE_DOOR);
         this.addDrops(this::stickDrops,
             ACACIA_HEDGE,
             AZALEA_HEDGE,
@@ -413,22 +413,22 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
             bundle.colorMap().values().forEach(this::addDropsWithSilkTouch);
         }
 
-        this.addDrop(RAINBOW_PETALS, this.segmentedDrops(RAINBOW_PETALS));
+        this.add(RAINBOW_PETALS, this.createSegmentedBlockDrops(RAINBOW_PETALS));
         this.addPottedPlantDropsBatch(POTTED_WHITE_OAK_SAPLING, POTTED_RAINBOW_ROSE, POTTED_LEGACY_SAPLING, POTTED_LEGACY_ROSE, POTTED_LEGACY_BLUE_ROSE);
 
-        this.addDrop(LEGACY_LEAVES, (block) -> this.leavesDrops(block, LEGACY_SAPLING, SAPLING_DROP_CHANCE));
-        this.addDrop(LEGACY_GLOWSTONE, this::glowstoneDrops);
-        this.addDrop(LEGACY_GRAVEL, (block) -> dropsWithSilkTouch(block, this.addSurvivesExplosionCondition(block, ItemEntry.builder(Items.FLINT).conditionally(TableBonusLootCondition.builder(impl.getOrThrow(Enchantments.FORTUNE), 0.1F, 0.14285715F, 0.25F, 1.0F)).alternatively(ItemEntry.builder(block)))));
-        this.addDrop(LEGACY_NETHER_REACTOR_CORE, (block) -> LootTable.builder().pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(3.0F)).with(ItemEntry.builder(Items.DIAMOND)))).pool(this.addSurvivesExplosionCondition(block, LootPool.builder().rolls(ConstantLootNumberProvider.create(6.0F)).with(ItemEntry.builder(Items.IRON_INGOT)))));
+        this.add(LEGACY_LEAVES, (block) -> this.createLeavesDrops(block, LEGACY_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(LEGACY_GLOWSTONE, this::glowstoneDrops);
+        this.add(LEGACY_GRAVEL, (block) -> createSilkTouchDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.FLINT).when(BonusLevelTableCondition.bonusLevelFlatChance(impl.getOrThrow(Enchantments.FORTUNE), 0.1F, 0.14285715F, 0.25F, 1.0F)).otherwise(LootItem.lootTableItem(block)))));
+        this.add(LEGACY_NETHER_REACTOR_CORE, (block) -> LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(3.0F)).add(LootItem.lootTableItem(Items.DIAMOND)))).withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(6.0F)).add(LootItem.lootTableItem(Items.IRON_INGOT)))));
 
-        this.addDrop(WHITE_OAK_LEAVES, (block) -> this.oakLeavesDrops(block, WHITE_OAK_SAPLING, SAPLING_DROP_CHANCE));
-        this.addDrop(BLAZE_LANTERN, (block) -> this.drops(block, Items.BLAZE_POWDER, ConstantLootNumberProvider.create(9.0F)));
-        this.addDrop(BURNT_PAPER_BLOCK, (block) -> this.drops(block, Items.GUNPOWDER, ConstantLootNumberProvider.create(2.0F)));
-        this.addDrop(NETHER_STAR_BLOCK, (block) -> dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(Items.NETHER_STAR).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(8.0F, 9.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE), 2)).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(8, 9))))));
-        this.addDrop(RAINBOW_GLOWSTONE, this::glowstoneDrops);
+        this.add(WHITE_OAK_LEAVES, (block) -> this.createOakLeavesDrops(block, WHITE_OAK_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(BLAZE_LANTERN, (block) -> this.createSingleItemTableWithSilkTouch(block, Items.BLAZE_POWDER, ConstantValue.exactly(9.0F)));
+        this.add(BURNT_PAPER_BLOCK, (block) -> this.createSingleItemTableWithSilkTouch(block, Items.GUNPOWDER, ConstantValue.exactly(2.0F)));
+        this.add(NETHER_STAR_BLOCK, (block) -> createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.NETHER_STAR).apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 9.0F))).apply(ApplyBonusCount.addUniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE), 2)).apply(LimitCount.limitCount(IntRange.range(8, 9))))));
+        this.add(RAINBOW_GLOWSTONE, this::glowstoneDrops);
 
-        this.addDrop(COOKIE_BLOCK, (block) -> LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(this.applyExplosionDecay(block,
-            ItemEntry.builder(Items.COOKIE).apply(setCookieCount(block, 9.0F, 0))
+        this.add(COOKIE_BLOCK, (block) -> LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(this.applyExplosionDecay(block,
+            LootItem.lootTableItem(Items.COOKIE).apply(setCookieCount(block, 9.0F, 0))
                 .apply(setCookieCount(block, 8.0F, 1))
                 .apply(setCookieCount(block, 7.0F, 2))
                 .apply(setCookieCount(block, 6.0F, 3))
@@ -441,50 +441,50 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
 
 
     public void addDrops(Block... blocks) {
-        for (Block block : blocks) this.addDrop(block);
+        for (Block block : blocks) this.dropSelf(block);
     }
 
     public void addDrops(Function<Block, LootTable.Builder> lootTableFunction, Block... blocks) {
-        for (Block block : blocks) this.addDrop(block, lootTableFunction.apply(block));
+        for (Block block : blocks) this.add(block, lootTableFunction.apply(block));
     }
 
     public void addDropsWithSilkTouch(Block... blocks) {
-        for (Block block : blocks) this.addDropWithSilkTouch(block);
+        for (Block block : blocks) this.dropWhenSilkTouch(block);
     }
 
     public void addPottedPlantDropsBatch(Block... blocks) {
-        for (Block block : blocks) this.addPottedPlantDrops(block);
+        for (Block block : blocks) this.dropPottedContents(block);
     }
 
     public void addBlockStairsandSlabDrops(Block block, Block stairs, Block slab) {
         this.addDrops(block, stairs);
-        this.addDrop(slab, this::slabDrops);
+        this.add(slab, this::createSlabItemTable);
     }
 
     public void addWoodSetDrop(Block planks, Block stairs, Block slab, Block fence, Block fence_gate, Block door, Block trapdoor, Block pressure_plate, Block button, Block shelf, Block standing_sign, Block ceiling_hanging_sign) {
         this.addBlockStairsandSlabDrops(planks, stairs, slab);
         this.addDrops(fence, fence_gate, trapdoor, pressure_plate, button, shelf, standing_sign, ceiling_hanging_sign);
-        this.addDrop(door, this::doorDrops);
+        this.add(door, this::createDoorTable);
     }
 
-    public LootFunction.Builder setCookieCount(Block block, float count, int bites) {
-        return SetCountLootFunction.builder(ConstantLootNumberProvider.create(count)).conditionally(BlockStatePropertyLootCondition.builder(block).properties(net.minecraft.predicate.StatePredicate.Builder.create().exactMatch(CookieBlock.BITES, bites)));
+    public LootItemFunction.Builder setCookieCount(Block block, float count, int bites) {
+        return SetItemCountFunction.setCount(ConstantValue.exactly(count)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(CookieBlock.BITES, bites)));
     }
 
     public LootTable.Builder glowstoneDrops(Block block) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getOrThrow(RegistryKeys.ENCHANTMENT);
-        return dropsWithSilkTouch(block, this.applyExplosionDecay(block, ItemEntry.builder(Items.GLOWSTONE_DUST).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 4.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE))).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.create(1, 4)))));
+        HolderLookup.RegistryLookup<Enchantment> impl = this.registryLookup.lookupOrThrow(Registries.ENCHANTMENT);
+        return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.GLOWSTONE_DUST).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))).apply(ApplyBonusCount.addUniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE))).apply(LimitCount.limitCount(IntRange.range(1, 4)))));
     }
 
     public LootTable.Builder stickDrops(Block block) {
-        return dropsWithSilkTouchOrShears(block, addSurvivesExplosionCondition(block, ItemEntry.builder(Items.STICK)));
+        return createSilkTouchOrShearsDispatchTable(block, applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK)));
     }
 
-    public LootTable.Builder pottedLargePlantDrops(ItemConvertible plant) {
-        return LootTable.builder().pool(addSurvivesExplosionCondition(LARGE_FLOWER_POT, LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(LARGE_FLOWER_POT)))).pool(addSurvivesExplosionCondition(plant, LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(plant))));
+    public LootTable.Builder pottedLargePlantDrops(ItemLike plant) {
+        return LootTable.lootTable().withPool(applyExplosionCondition(LARGE_FLOWER_POT, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(LARGE_FLOWER_POT)))).withPool(applyExplosionCondition(plant, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(plant))));
     }
 
     public void addPottedLargePlantDrop(Block block) {
-        this.addDrop(block, (flowerPot) -> this.pottedLargePlantDrops(((LargeFlowerPotBlock) flowerPot).getContent()));
+        this.add(block, (flowerPot) -> this.pottedLargePlantDrops(((LargeFlowerPotBlock) flowerPot).getContent()));
     }
 }

@@ -5,10 +5,10 @@ import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.fabricmc.fabric.impl.content.registry.OxidizableBlocksRegistryImpl;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Items;
-import net.minecraft.village.TradeOffers;
+import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 
@@ -238,20 +238,20 @@ public class Instance {
     }
 
     public static void addPathBlocks() {
-        FlattenableBlockRegistry.register(Blocks.DIRT_PATH, PATH.getDefaultState());
-        FlattenableBlockRegistry.register(PATH, Blocks.DIRT.getDefaultState());
+        FlattenableBlockRegistry.register(Blocks.DIRT_PATH, PATH.defaultBlockState());
+        FlattenableBlockRegistry.register(PATH, Blocks.DIRT.defaultBlockState());
     }
 
     public static void addTradeOffers() {
         TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
             TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
-            new TradeOffers.SellItemFactory(LEGACY_SAPLING.asItem(), 5, 1, 8, 1),
-            new TradeOffers.SellItemFactory(WHITE_OAK_SAPLING.asItem(), 5, 1, 8, 1),
-            new TradeOffers.SellItemFactory(RAINBOW_PETALS.asItem(), 1, 3, 12, 1),
-            new TradeOffers.SellItemFactory(RAINBOW_ROSE.asItem(), 1, 1, 12, 1)));
+            new VillagerTrades.ItemsForEmeralds(LEGACY_SAPLING.asItem(), 5, 1, 8, 1),
+            new VillagerTrades.ItemsForEmeralds(WHITE_OAK_SAPLING.asItem(), 5, 1, 8, 1),
+            new VillagerTrades.ItemsForEmeralds(RAINBOW_PETALS.asItem(), 1, 3, 12, 1),
+            new VillagerTrades.ItemsForEmeralds(RAINBOW_ROSE.asItem(), 1, 1, 12, 1)));
 
         TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
             TradeOfferHelper.WanderingTraderOffersBuilder.SELL_SPECIAL_ITEMS_POOL,
-            new TradeOffers.SellItemFactory(WHITE_OAK_LOG.asItem(), 1, 8, 4, 1)));
+            new VillagerTrades.ItemsForEmeralds(WHITE_OAK_LOG.asItem(), 1, 8, 4, 1)));
     }
 }

@@ -3,8 +3,8 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.blocks.base.PostBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.WoodMaps;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -19,9 +19,9 @@ public record WoodenPostBundle(Map<WoodMaps, WoodenPostVariants> woodMap) {
         return LIST;
     }
 
-    public static AbstractBlock.Settings settings(Block base, boolean isBurnable) {
-        AbstractBlock.Settings blockSettings = BlockFactory.createCopy(base).solid();
-        return isBurnable ? blockSettings.burnable() : blockSettings;
+    public static BlockBehaviour.Properties settings(Block base, boolean isBurnable) {
+        BlockBehaviour.Properties blockSettings = BlockFactory.createCopy(base).forceSolidOn();
+        return isBurnable ? blockSettings.ignitedByLava() : blockSettings;
     }
 
     public List<Block> all() {

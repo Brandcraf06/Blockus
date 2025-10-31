@@ -5,66 +5,66 @@ import com.brand.blockus.blocks.blockitems.ColoredTilesBlockItem;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.utils.BlockChecker;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Rarity;
-import net.minecraft.util.Util;
+import net.minecraft.Util;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class BlockBuilder {
-    public static final Function<AbstractBlock.Settings, Block> DEFAULT_FACTORY = Block::new;
-    public static final Supplier<Item.Settings> DEFAULT_ITEM_SETTINGS = () -> new Item.Settings().useBlockPrefixedTranslationKey();
+    public static final Function<BlockBehaviour.Properties, Block> DEFAULT_FACTORY = Block::new;
+    public static final Supplier<Item.Properties> DEFAULT_ITEM_SETTINGS = () -> new Item.Properties().useBlockDescriptionPrefix();
 
-    public Function<AbstractBlock.Settings, Block> factory = DEFAULT_FACTORY;
-    public AbstractBlock.Settings settings;
+    public Function<BlockBehaviour.Properties, Block> factory = DEFAULT_FACTORY;
+    public BlockBehaviour.Properties settings;
 
-    public Item.Settings itemSettings = DEFAULT_ITEM_SETTINGS.get();
+    public Item.Properties itemSettings = DEFAULT_ITEM_SETTINGS.get();
 
     public Block base;
 
-    public BlockBuilder(Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+    public BlockBuilder(Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
         this.factory = factory;
         this.settings = settings;
     }
 
-    public BlockBuilder(AbstractBlock.Settings settings) {
+    public BlockBuilder(BlockBehaviour.Properties settings) {
         this.settings = settings;
     }
 
     public BlockBuilder(Block block) {
-        this.settings = AbstractBlock.Settings.copy(block);
+        this.settings = BlockBehaviour.Properties.ofFullCopy(block);
         this.base = block;
     }
 
-    public BlockBuilder factory(Function<AbstractBlock.Settings, Block> factory) {
+    public BlockBuilder factory(Function<BlockBehaviour.Properties, Block> factory) {
         this.factory = factory;
         return this;
     }
 
-    public BlockBuilder settings(AbstractBlock.Settings settings) {
+    public BlockBuilder settings(BlockBehaviour.Properties settings) {
         this.settings = settings;
         return this;
     }
 
-    public BlockBuilder settings(Function<AbstractBlock.Settings, AbstractBlock.Settings> settingsConsumer) {
+    public BlockBuilder settings(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settingsConsumer) {
         this.settings = settingsConsumer.apply(this.settings);
         return this;
     }
 
-    public BlockBuilder itemSettings(Item.Settings settings) {
+    public BlockBuilder itemSettings(Item.Properties settings) {
         this.itemSettings = settings;
         return this;
     }
 
-    public BlockBuilder itemSettings(Function<Item.Settings, Item.Settings> settings) {
+    public BlockBuilder itemSettings(Function<Item.Properties, Item.Properties> settings) {
         this.itemSettings = settings.apply(this.itemSettings);
         return this;
     }
@@ -79,15 +79,15 @@ public class BlockBuilder {
     }
 
     public Block register(String id, Function<Block, Item> itemFactory) {
-        RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Blockus.id(id));
+        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Blockus.id(id));
         if (this.factory == null) {
             throw new IllegalStateException("Cannot register block: factory is not set!");
         }
-        var block = this.factory.apply(this.settings.registryKey(key));
-        Registry.register(Registries.BLOCK, key, block);
-        if (this.itemSettings instanceof Item.Settings) {
-            var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, key.getValue());
-            Registry.register(Registries.ITEM, itemRegistryKey, itemFactory.apply(block)
+        var block = this.factory.apply(this.settings.setId(key));
+        Registry.register(BuiltInRegistries.BLOCK, key, block);
+        if (this.itemSettings instanceof Item.Properties) {
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, key.location());
+            Registry.register(BuiltInRegistries.ITEM, itemRegistryKey, itemFactory.apply(block)
             );
         }
 
@@ -96,33 +96,33 @@ public class BlockBuilder {
 
     public Block register(String id) {
         return register(id, block -> {
-            var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, Blockus.id(id));
-            Item.Settings itemSettings = this.itemSettings;
-            if (BlockChecker.isNetherite(id) && itemSettings instanceof Item.Settings settings) {
-                itemSettings = settings.fireproof();
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(id));
+            Item.Properties itemSettings = this.itemSettings;
+            if (BlockChecker.isNetherite(id) && itemSettings instanceof Item.Properties settings) {
+                itemSettings = settings.fireResistant();
             }
-            return new BlockItem(block, itemSettings.registryKey(itemRegistryKey));
+            return new BlockItem(block, itemSettings.setId(itemRegistryKey));
         });
     }
 
     public Block registerNetherStarBlock(String id) {
         return register(id, block -> {
-            var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, Blockus.id(id));
-            return new NetherStarBlockItem(block, this.itemSettings.registryKey(itemRegistryKey).rarity(Rarity.UNCOMMON));
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(id));
+            return new NetherStarBlockItem(block, this.itemSettings.setId(itemRegistryKey).rarity(Rarity.UNCOMMON));
         });
     }
 
     public Block registerLegacy(String id, String version) {
         return register(id, block -> {
-            var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, Blockus.id(id));
-            return new LegacyBlockItem(block, this.itemSettings.registryKey(itemRegistryKey), version);
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(id));
+            return new LegacyBlockItem(block, this.itemSettings.setId(itemRegistryKey), version);
         });
     }
 
     public Block registerColoredTiles(String id) {
         return register(id, block -> {
-            var itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, Blockus.id(id));
-            return new ColoredTilesBlockItem(block, this.itemSettings.registryKey(itemRegistryKey).translationKey(Util.createTranslationKey("block", Blockus.id("colored_tiles"))));
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(id));
+            return new ColoredTilesBlockItem(block, this.itemSettings.setId(itemRegistryKey).overrideDescription(Util.makeDescriptionId("block", Blockus.id("colored_tiles"))));
         });
     }
 }

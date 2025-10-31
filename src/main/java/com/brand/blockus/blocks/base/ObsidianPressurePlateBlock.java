@@ -1,44 +1,48 @@
 package com.brand.blockus.blocks.base;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BasePressurePlateBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
-public class ObsidianPressurePlateBlock extends AbstractPressurePlateBlock {
-    public static final MapCodec<ObsidianPressurePlateBlock> CODEC = createCodec(ObsidianPressurePlateBlock::new);
+public class ObsidianPressurePlateBlock extends BasePressurePlateBlock {
+    public static final MapCodec<ObsidianPressurePlateBlock> CODEC = simpleCodec(ObsidianPressurePlateBlock::new);
     public static final BooleanProperty POWERED;
 
-    public MapCodec<ObsidianPressurePlateBlock> getCodec() {
+    public MapCodec<ObsidianPressurePlateBlock> codec() {
         return CODEC;
     }
 
-    public ObsidianPressurePlateBlock(AbstractBlock.Settings settings) {
+    public ObsidianPressurePlateBlock(BlockBehaviour.Properties settings) {
         super(settings, BlockSetType.STONE);
-        this.setDefaultState(this.stateManager.getDefaultState().with(POWERED, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false));
     }
 
-    protected int getRedstoneOutput(BlockState state) {
-        return state.get(POWERED) ? 15 : 0;
+    protected int getSignalForState(BlockState state) {
+        return state.getValue(POWERED) ? 15 : 0;
     }
 
-    protected BlockState setRedstoneOutput(BlockState state, int rsOut) {
-        return state.with(POWERED, rsOut > 0);
+    protected BlockState setSignalForState(BlockState state, int rsOut) {
+        return state.setValue(POWERED, rsOut > 0);
     }
 
-    protected int getRedstoneOutput(World world, BlockPos pos) {
-        return getEntityCount(world, BOX.offset(pos), PlayerEntity.class) > 0 ? 15 : 0;
+    protected int getSignalStrength(Level world, BlockPos pos) {
+        return getEntityCount(world, TOUCH_AABB.move(pos), Player.class) > 0 ? 15 : 0;
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(POWERED);
     }
 
     static {
-        POWERED = Properties.POWERED;
+        POWERED = BlockStateProperties.POWERED;
     }
 }

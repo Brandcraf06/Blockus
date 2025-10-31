@@ -1,106 +1,106 @@
 package com.brand.blockus.blocks.base;
 
-import com.brand.blockus.utils.Properties;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.ai.pathing.NavigationType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
-import net.minecraft.world.event.GameEvent;
+import com.brand.blockus.utils.BlockusBlockStateProperties;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class CookieBlock extends Block {
-    public static final IntProperty BITES;
+    public static final IntegerProperty BITES;
     protected static final VoxelShape[] BITES_TO_SHAPE;
 
-    public CookieBlock(Settings settings) {
+    public CookieBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(BITES, 0));
+        this.registerDefaultState(this.stateDefinition.any().setValue(BITES, 0));
     }
 
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return BITES_TO_SHAPE[state.get(BITES)];
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return BITES_TO_SHAPE[state.getValue(BITES)];
     }
 
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient()) {
-            if (tryEat(world, pos, state, player).isAccepted()) {
-                return ActionResult.SUCCESS;
+    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+        if (world.isClientSide()) {
+            if (tryEat(world, pos, state, player).consumesAction()) {
+                return InteractionResult.SUCCESS;
             }
 
-            if (player.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
-                return ActionResult.CONSUME;
+            if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
+                return InteractionResult.CONSUME;
             }
         }
 
         return tryEat(world, pos, state, player);
     }
 
-    private ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {
+    private InteractionResult tryEat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
 
-        if (!player.canConsume(false)) {
-            return ActionResult.PASS;
+        if (!player.canEat(false)) {
+            return InteractionResult.PASS;
         } else {
-            player.getHungerManager().add(2, 0.1F);
-            int i = state.get(BITES);
-            world.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EAT.value(), SoundCategory.PLAYERS);
-            world.emitGameEvent(player, GameEvent.EAT, pos);
+            player.getFoodData().eat(2, 0.1F);
+            int i = state.getValue(BITES);
+            world.playSound(null, pos, SoundEvents.GENERIC_EAT.value(), SoundSource.PLAYERS);
+            world.gameEvent(player, GameEvent.EAT, pos);
             if (i < 8) {
-                world.setBlockState(pos, state.with(BITES, i + 1), 3);
+                world.setBlock(pos, state.setValue(BITES, i + 1), 3);
             } else {
                 world.removeBlock(pos, false);
-                world.emitGameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+                world.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
             }
 
-            return ActionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
         }
     }
 
-    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.down()).isSolid();
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+        return world.getBlockState(pos.below()).isSolid();
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(BITES);
     }
 
-    public int getComparatorOutput(BlockState state, World world, BlockPos pos, Direction direction) {
-        return (9 - state.get(BITES)) * 2;
+    public int getAnalogOutputSignal(BlockState state, Level world, BlockPos pos, Direction direction) {
+        return (9 - state.getValue(BITES)) * 2;
     }
 
-    public boolean hasComparatorOutput(BlockState blockState_1) {
+    public boolean hasAnalogOutputSignal(BlockState blockState_1) {
         return true;
     }
 
-    public boolean canPathfindThrough(BlockState state, NavigationType type) {
+    public boolean isPathfindable(BlockState state, PathComputationType type) {
         return false;
     }
 
     static {
-        BITES = Properties.BITES_9;
+        BITES = BlockusBlockStateProperties.BITES_9;
         BITES_TO_SHAPE = new VoxelShape[]
             {
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D),
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-                Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D)};
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D),
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+                Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D)};
     }
 }

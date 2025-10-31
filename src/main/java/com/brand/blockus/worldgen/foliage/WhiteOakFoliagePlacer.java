@@ -3,17 +3,17 @@ package com.brand.blockus.worldgen.foliage;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.intprovider.IntProvider;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.TestableWorld;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.foliage.FoliagePlacer;
-import net.minecraft.world.gen.foliage.FoliagePlacerType;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 
 public class WhiteOakFoliagePlacer extends FoliagePlacer {
     public static final MapCodec<WhiteOakFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
-        return fillFoliagePlacerFields(instance).and(instance.group(IntProvider.createValidatingCodec(4, 16).fieldOf("height").forGetter((foliagePlacer) -> {
+        return foliagePlacerParts(instance).and(instance.group(IntProvider.codec(4, 16).fieldOf("height").forGetter((foliagePlacer) -> {
             return foliagePlacer.height;
         }), Codec.floatRange(0.0F, 1.0F).fieldOf("wide_bottom_layer_hole_chance").forGetter((foliagePlacer) -> {
             return foliagePlacer.wideBottomLayerHoleChance;
@@ -40,29 +40,29 @@ public class WhiteOakFoliagePlacer extends FoliagePlacer {
         this.hangingLeavesExtensionChance = hangingLeavesExtensionChance;
     }
 
-    protected FoliagePlacerType<?> getType() {
+    protected FoliagePlacerType<?> type() {
         return BlockusFoliagePlacerType.WHITE_OAK_FOLIAGE_PLACER;
     }
 
-    protected void generate(TestableWorld world, FoliagePlacer.BlockPlacer placer, Random random, TreeFeatureConfig config, int trunkHeight, FoliagePlacer.TreeNode treeNode, int foliageHeight, int radius, int offset) {
-        boolean bl = treeNode.isGiantTrunk();
-        BlockPos blockPos = treeNode.getCenter().up(offset - 3);
-        int i = radius + treeNode.getFoliageRadius() - 1;
-        this.generateSquare(world, placer, random, config, blockPos, i - 1, foliageHeight - 3, bl);
-        this.generateSquare(world, placer, random, config, blockPos, i - 1, foliageHeight - 4, bl);
+    protected void createFoliage(LevelSimulatedReader world, FoliagePlacer.FoliageSetter placer, RandomSource random, TreeConfiguration config, int trunkHeight, FoliagePlacer.FoliageAttachment treeNode, int foliageHeight, int radius, int offset) {
+        boolean bl = treeNode.doubleTrunk();
+        BlockPos blockPos = treeNode.pos().above(offset - 3);
+        int i = radius + treeNode.radiusOffset() - 1;
+        this.placeLeavesRow(world, placer, random, config, blockPos, i - 1, foliageHeight - 3, bl);
+        this.placeLeavesRow(world, placer, random, config, blockPos, i - 1, foliageHeight - 4, bl);
 
         for (int j = foliageHeight - 5; j >= 0; --j) {
-            this.generateSquare(world, placer, random, config, blockPos, i, j, bl);
+            this.placeLeavesRow(world, placer, random, config, blockPos, i, j, bl);
         }
 
-        this.generateSquareWithHangingLeaves(world, placer, random, config, blockPos, i, -1, bl, this.hangingLeavesChance, this.hangingLeavesExtensionChance);
+        this.placeLeavesRowWithHangingLeavesBelow(world, placer, random, config, blockPos, i, -1, bl, this.hangingLeavesChance, this.hangingLeavesExtensionChance);
     }
 
-    public int getRandomHeight(Random random, int trunkHeight, TreeFeatureConfig config) {
-        return this.height.get(random);
+    public int foliageHeight(RandomSource random, int trunkHeight, TreeConfiguration config) {
+        return this.height.sample(random);
     }
 
-    public boolean isInvalidForLeaves(Random random, int dx, int y, int dz, int radius, boolean giantTrunk) {
+    public boolean shouldSkipLocation(RandomSource random, int dx, int y, int dz, int radius, boolean giantTrunk) {
         if (y == -1 && (dx == radius || dz == radius) && random.nextFloat() < this.wideBottomLayerHoleChance) {
             return true;
         } else if (y == 3) {

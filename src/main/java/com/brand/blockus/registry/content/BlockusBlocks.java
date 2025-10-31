@@ -10,22 +10,25 @@ import com.brand.blockus.blocks.base.redstone.RedstoneLantern;
 import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
 import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.registry.content.bundles.*;
+import com.brand.blockus.registry.content.bundles.CopperBSSWBundle.OxidationType;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.BlockMaps;
-import com.brand.blockus.registry.content.bundles.CopperBSSWBundle.OxidationType;
 import com.brand.blockus.utils.helper.WoodMaps;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
-import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.particle.TintedParticleEffect;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.ColorCode;
-import net.minecraft.util.DyeColor;
+import net.minecraft.core.particles.ColorParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.ColorRGBA;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 public class BlockusBlocks extends BlockFactory {
 
@@ -34,8 +37,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STONE_BRICK_PILLAR = pillar(Blocks.STONE_BRICKS);
     public static final Block HERRINGBONE_STONE_BRICKS = registerCopy("herringbone_stone_bricks", Blocks.STONE_BRICKS);
     public static final Block STONE_CIRCULAR_PAVING = registerCopy("stone_circular_paving", OrientableBlockBase::new, Blocks.STONE_BRICKS);
-    public static final Block STONE_DOOR = stoneDoor("stone_door", 1.5f, 20.0f, BlockSoundGroup.STONE, MapColor.STONE_GRAY, BlockSetType.STONE);
-    public static final Block STONE_TRAPDOOR = stoneTrapdoor("stone_trapdoor", 1.5f, 20.0f, BlockSoundGroup.STONE, MapColor.STONE_GRAY, BlockSetType.STONE);
+    public static final Block STONE_DOOR = stoneDoor("stone_door", 1.5f, 20.0f, SoundType.STONE, MapColor.STONE, BlockSetType.STONE);
+    public static final Block STONE_TRAPDOOR = stoneTrapdoor("stone_trapdoor", 1.5f, 20.0f, SoundType.STONE, MapColor.STONE, BlockSetType.STONE);
     public static final Block SMOOTH_STONE_STAIRS = stairs(Blocks.SMOOTH_STONE);
     public static final Block STURDY_STONE = pistonProof("sturdy_stone", Blocks.COBBLESTONE);
 
@@ -92,7 +95,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STURDY_DEEPSLATE = pistonProof("sturdy_deepslate", Blocks.COBBLED_DEEPSLATE);
 
     // Sculk
-    public static final BSSWBundle POLISHED_SCULK = BSSWBundle.of("polished_sculk", Blocks.POLISHED_DEEPSLATE, MapColor.CYAN).includeWall(false).register();
+    public static final BSSWBundle POLISHED_SCULK = BSSWBundle.of("polished_sculk", Blocks.POLISHED_DEEPSLATE, MapColor.COLOR_CYAN).includeWall(false).register();
     public static final BSSWBundle SCULK_BRICKS = BSSWBundle.of("sculk_bricks", BlockusBlocks.POLISHED_SCULK.block()).register();
     public static final Block CHISELED_SCULK_BRICKS = registerCopy("chiseled_sculk_bricks", BlockusBlocks.SCULK_BRICKS.block());
     public static final Block SCULK_PILLAR = pillar("sculk", BlockusBlocks.SCULK_BRICKS.block());
@@ -111,8 +114,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block HERRINGBONE_POLISHED_BLACKSTONE_BRICKS = registerCopy("herringbone_polished_blackstone_bricks", Blocks.POLISHED_BLACKSTONE);
     public static final Block POLISHED_BLACKSTONE_CIRCULAR_PAVING = registerCopy("polished_blackstone_circular_paving", OrientableBlockBase::new, Blocks.POLISHED_BLACKSTONE);
     public static final Block GOLD_DECORATED_POLISHED_BLACKSTONE = registerCopy("gold_decorated_polished_blackstone", Blocks.POLISHED_BLACKSTONE);
-    public static final Block BLACKSTONE_DOOR = stoneDoor("blackstone_door", 1.5f, 6.0f, BlockSoundGroup.STONE, MapColor.BLACK, BlockSetType.STONE);
-    public static final Block BLACKSTONE_TRAPDOOR = stoneTrapdoor("blackstone_trapdoor", 1.5f, 6.0f, BlockSoundGroup.STONE, MapColor.BLACK, BlockSetType.STONE);
+    public static final Block BLACKSTONE_DOOR = stoneDoor("blackstone_door", 1.5f, 6.0f, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.STONE);
+    public static final Block BLACKSTONE_TRAPDOOR = stoneTrapdoor("blackstone_trapdoor", 1.5f, 6.0f, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.STONE);
     public static final Block STURDY_BLACKSTONE = pistonProof("sturdy_blackstone", Blocks.BLACKSTONE);
 
     // Basalt
@@ -125,11 +128,11 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block POLISHED_BASALT_CIRCULAR_PAVING = registerCopy("polished_basalt_circular_paving", OrientableBlockBase::new, BlockusBlocks.POLISHED_BASALT_BRICKS.block());
 
     // Wart Blocks
-    public static final BSSWBundle CRIMSON_WART_BRICKS = BSSWBundle.of("crimson_wart_bricks", Blocks.NETHER_WART_BLOCK, BlockSoundGroup.NETHER_BRICKS).register();
-    public static final BSSWBundle WARPED_WART_BRICKS = BSSWBundle.of("warped_wart_bricks", Blocks.WARPED_WART_BLOCK, BlockSoundGroup.NETHER_BRICKS).register();
+    public static final BSSWBundle CRIMSON_WART_BRICKS = BSSWBundle.of("crimson_wart_bricks", Blocks.NETHER_WART_BLOCK, SoundType.NETHER_BRICKS).register();
+    public static final BSSWBundle WARPED_WART_BRICKS = BSSWBundle.of("warped_wart_bricks", Blocks.WARPED_WART_BLOCK, SoundType.NETHER_BRICKS).register();
 
     // Limestone
-    public static final BSSWBundle LIMESTONE = BSSWBundle.of("limestone", Blocks.STONE, MapColor.OAK_TAN).register();
+    public static final BSSWBundle LIMESTONE = BSSWBundle.of("limestone", Blocks.STONE, MapColor.WOOD).register();
     public static final BSSWBundle POLISHED_LIMESTONE = BSSWBundle.of("polished_limestone", BlockusBlocks.LIMESTONE.block()).includeWall(false).register();
     public static final BSSWBundle LIMESTONE_BRICKS = BSSWBundle.of("limestone_bricks", LIMESTONE.block()).register();
     public static final BSSWBundle SMALL_LIMESTONE_BRICKS = BSSWBundle.of("small_limestone_bricks", LIMESTONE_BRICKS.block()).register();
@@ -143,7 +146,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LIMESTONE_PILLAR = pillar(BlockusBlocks.LIMESTONE.block());
 
     // Marble
-    public static final BSSWBundle MARBLE = BSSWBundle.of("marble", Blocks.STONE, MapColor.OFF_WHITE).register();
+    public static final BSSWBundle MARBLE = BSSWBundle.of("marble", Blocks.STONE, MapColor.QUARTZ).register();
     public static final BSSWBundle POLISHED_MARBLE = BSSWBundle.of("polished_marble", BlockusBlocks.MARBLE.block()).includeWall(false).register();
     public static final BSSWBundle MARBLE_BRICKS = BSSWBundle.of("marble_bricks", MARBLE.block()).register();
     public static final BSSWBundle SMALL_MARBLE_BRICKS = BSSWBundle.of("small_marble_bricks", MARBLE_BRICKS.block()).register();
@@ -157,7 +160,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block MARBLE_PILLAR = pillar(BlockusBlocks.MARBLE.block());
 
     // Bluestone
-    public static final BSSWBundle BLUESTONE = BSSWBundle.of("bluestone", Blocks.STONE, MapColor.CYAN).register();
+    public static final BSSWBundle BLUESTONE = BSSWBundle.of("bluestone", Blocks.STONE, MapColor.COLOR_CYAN).register();
     public static final BSSWBundle POLISHED_BLUESTONE = BSSWBundle.of("polished_bluestone", BlockusBlocks.BLUESTONE.block()).includeWall(false).register();
     public static final BSSWBundle BLUESTONE_BRICKS = BSSWBundle.of("bluestone_bricks", BLUESTONE.block()).register();
     public static final BSSWBundle SMALL_BLUESTONE_BRICKS = BSSWBundle.of("small_bluestone_bricks", BLUESTONE_BRICKS.block()).register();
@@ -171,7 +174,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BLUESTONE_PILLAR = pillar(BlockusBlocks.BLUESTONE.block());
 
     // Viridite
-    public static final BSSWBundle VIRIDITE = BSSWBundle.of("viridite", Blocks.DEEPSLATE, MapColor.DARK_GREEN).register();
+    public static final BSSWBundle VIRIDITE = BSSWBundle.of("viridite", Blocks.DEEPSLATE, MapColor.PLANT).register();
     public static final BSSWBundle POLISHED_VIRIDITE = BSSWBundle.of("polished_viridite", BlockusBlocks.VIRIDITE.block()).includeWall(false).register();
     public static final BSSWBundle VIRIDITE_BRICKS = BSSWBundle.of("viridite_bricks", VIRIDITE.block()).register();
     public static final BSSWBundle SMALL_VIRIDITE_BRICKS = BSSWBundle.of("small_viridite_bricks", VIRIDITE_BRICKS.block()).register();
@@ -197,23 +200,23 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CHISELED_WATER_BRICKS = registerCopy("chiseled_water_bricks", BlockusBlocks.WATER_BRICKS.block());
 
     // Snow Bricks
-    public static final BSSWBundle SNOW_BRICKS = BSSWBundle.of("snow_bricks", Blocks.STONE_BRICKS, 1.0f, 3.0f, MapColor.WHITE).register();
+    public static final BSSWBundle SNOW_BRICKS = BSSWBundle.of("snow_bricks", Blocks.STONE_BRICKS, 1.0f, 3.0f, MapColor.SNOW).register();
     public static final Block SNOW_PILLAR = pillar("snow", SNOW_BRICKS.block());
 
     // Ice Bricks
-    public static final Block ICE_BRICKS = registerOf("ice_bricks", create().mapColor(MapColor.PALE_PURPLE).slipperiness(0.98F).strength(0.5F).sounds(BlockSoundGroup.GLASS));
+    public static final Block ICE_BRICKS = registerOf("ice_bricks", create().mapColor(MapColor.ICE).friction(0.98F).strength(0.5F).sound(SoundType.GLASS));
     public static final Block ICE_BRICK_WALL = wall(ICE_BRICKS);
     public static final Block ICE_PILLAR = pillar("ice", ICE_BRICKS);
 
     // Obsidian
-    public static final BSSWBundle OBSIDIAN_BRICKS = BSSWBundle.of("obsidian_bricks", Blocks.OBSIDIAN, PistonBehavior.BLOCK).register();
+    public static final BSSWBundle OBSIDIAN_BRICKS = BSSWBundle.of("obsidian_bricks", Blocks.OBSIDIAN, PushReaction.BLOCK).register();
     public static final BSSWBundle SMALL_OBSIDIAN_BRICKS = BSSWBundle.of("small_obsidian_bricks", OBSIDIAN_BRICKS.block()).register();
     public static final Block CRACKED_OBSIDIAN_BRICKS = registerCopy("cracked_obsidian_bricks", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_PILLAR = pillar("obsidian", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_CIRCULAR_PAVING = registerCopy("obsidian_circular_paving", OrientableBlockBase::new, BlockusBlocks.OBSIDIAN_BRICKS.block());
-    public static final Block OBSIDIAN_REINFORCED_DOOR = stoneDoor("obsidian_reinforced_door", 50.0F, 1200.0F, BlockSoundGroup.STONE, MapColor.BLACK, BlockSetType.GOLD);
-    public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = stoneTrapdoor("obsidian_reinforced_trapdoor", 50.0F, 1200.0F, BlockSoundGroup.STONE, MapColor.BLACK, BlockSetType.GOLD);
-    public static final Block GLOWING_OBSIDIAN = registerCopy("glowing_obsidian", Blocks.OBSIDIAN, settings -> settings.mapColor(MapColor.RED).pistonBehavior(PistonBehavior.BLOCK).luminance((state) -> 15));
+    public static final Block OBSIDIAN_REINFORCED_DOOR = stoneDoor("obsidian_reinforced_door", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
+    public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = stoneTrapdoor("obsidian_reinforced_trapdoor", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
+    public static final Block GLOWING_OBSIDIAN = registerCopy("glowing_obsidian", Blocks.OBSIDIAN, settings -> settings.mapColor(MapColor.COLOR_RED).pushReaction(PushReaction.BLOCK).lightLevel((state) -> 15));
 
     // Netherrack
     public static final BSSWBundle POLISHED_NETHERRACK = BSSWBundle.of("polished_netherrack", Blocks.NETHERRACK).includeWall(false).register();
@@ -232,7 +235,7 @@ public class BlockusBlocks extends BlockFactory {
     // Blaze Bricks
     public static final BSSWBundle BLAZE_BRICKS = BSSWBundle.of("blaze_bricks", Blocks.NETHER_BRICKS, 15).register();
     public static final Block BLAZE_PILLAR = pillar("blaze", BlockusBlocks.BLAZE_BRICKS.block());
-    public static final Block BLAZE_LANTERN = lampBlock("blaze_lantern", 0.3F, 0.3F, BlockSoundGroup.GLASS, 15, MapColor.ORANGE);
+    public static final Block BLAZE_LANTERN = lampBlock("blaze_lantern", 0.3F, 0.3F, SoundType.GLASS, 15, MapColor.COLOR_ORANGE);
 
     // Nether Bricks
     public static final BSSWBundle POLISHED_NETHER_BRICKS = BSSWBundle.of("polished_nether_bricks", Blocks.NETHER_BRICKS).includeWall(false).register();
@@ -244,13 +247,13 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle NETHER_TILES = BSSWBundle.of("nether_tiles", Blocks.NETHER_BRICKS).register();
 
     // Charred Nether Bricks
-    public static final BSSWBundle CHARRED_NETHER_BRICKS = BSSWBundle.of("charred_nether_bricks", Blocks.NETHER_BRICKS, MapColor.BLACK).register();
+    public static final BSSWBundle CHARRED_NETHER_BRICKS = BSSWBundle.of("charred_nether_bricks", Blocks.NETHER_BRICKS, MapColor.COLOR_BLACK).register();
     public static final BSSWBundle POLISHED_CHARRED_NETHER_BRICKS = BSSWBundle.of("polished_charred_nether_bricks", BlockusBlocks.CHARRED_NETHER_BRICKS.block()).includeWall(false).register();
     public static final Block HERRINGBONE_CHARRED_NETHER_BRICKS = registerCopy("herringbone_charred_nether_bricks", BlockusBlocks.CHARRED_NETHER_BRICKS.block());
     public static final Block CHARRED_NETHER_BRICK_PILLAR = pillar(BlockusBlocks.CHARRED_NETHER_BRICKS.block());
 
     // Teal Nether Bricks
-    public static final BSSWBundle TEAL_NETHER_BRICKS = BSSWBundle.of("teal_nether_bricks", Blocks.NETHER_BRICKS, MapColor.CYAN).register();
+    public static final BSSWBundle TEAL_NETHER_BRICKS = BSSWBundle.of("teal_nether_bricks", Blocks.NETHER_BRICKS, MapColor.COLOR_CYAN).register();
     public static final BSSWBundle POLISHED_TEAL_NETHER_BRICKS = BSSWBundle.of("polished_teal_nether_bricks", BlockusBlocks.TEAL_NETHER_BRICKS.block()).includeWall(false).register();
     public static final Block HERRINGBONE_TEAL_NETHER_BRICKS = registerCopy("herringbone_teal_nether_bricks", BlockusBlocks.TEAL_NETHER_BRICKS.block());
     public static final Block TEAL_NETHER_BRICK_PILLAR = pillar(BlockusBlocks.TEAL_NETHER_BRICKS.block());
@@ -301,7 +304,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LAPIS_DECORATED_RED_SANDSTONE = registerCopy("lapis_decorated_red_sandstone", Blocks.RED_SANDSTONE);
 
     // Soul Sandstone
-    public static final BSSWBundle SOUL_SANDSTONE = BSSWBundle.of("soul_sandstone", Blocks.SANDSTONE, MapColor.BROWN).register();
+    public static final BSSWBundle SOUL_SANDSTONE = BSSWBundle.of("soul_sandstone", Blocks.SANDSTONE, MapColor.COLOR_BROWN).register();
     public static final BSSWBundle ROUGH_SOUL_SANDSTONE = BSSWBundle.of("rough_soul_sandstone", BlockusBlocks.SOUL_SANDSTONE.block()).includeWall(false).register();
     public static final BSSWBundle SOUL_SANDSTONE_BRICKS = BSSWBundle.of("soul_sandstone_bricks", SOUL_SANDSTONE.block()).register();
     public static final BSSWBundle SMALL_SOUL_SANDSTONE_BRICKS = BSSWBundle.of("small_soul_sandstone_bricks", SOUL_SANDSTONE.block()).register();
@@ -314,11 +317,11 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LAPIS_DECORATED_SOUL_SANDSTONE = registerCopy("lapis_decorated_soul_sandstone", BlockusBlocks.SOUL_SANDSTONE.block());
 
     // Rainbow
-    public static final Block RAINBOW_ROSE = registerOf("rainbow_rose", settings -> new FertilizableFlowerBlock(StatusEffects.GLOWING, 8, settings), create().mapColor(MapColor.DARK_GREEN).noCollision().breakInstantly().pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ));
-    public static final Block RAINBOW_PETALS = registerOf("rainbow_petals", FlowerbedBlock::new, create().mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.FLOWERBED).pistonBehavior(PistonBehavior.DESTROY));
+    public static final Block RAINBOW_ROSE = registerOf("rainbow_rose", settings -> new FertilizableFlowerBlock(MobEffects.GLOWING, 8, settings), create().mapColor(MapColor.PLANT).noCollision().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ));
+    public static final Block RAINBOW_PETALS = registerOf("rainbow_petals", FlowerBedBlock::new, create().mapColor(MapColor.PLANT).noCollision().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY));
 
     public static final Block POTTED_RAINBOW_ROSE = pottedPlant("potted_rainbow_rose", RAINBOW_ROSE);
-    public static final Block RAINBOW_BLOCK = registerOf("rainbow_block", FullFacingBlock::new, create().mapColor(MapColor.LIGHT_BLUE).strength(5.0f, 6.0f).requiresTool());
+    public static final Block RAINBOW_BLOCK = registerOf("rainbow_block", FullFacingBlock::new, create().mapColor(MapColor.COLOR_LIGHT_BLUE).strength(5.0f, 6.0f).requiresCorrectToolForDrops());
     public static final BSSWBundle RAINBOW_BRICKS = BSSWBundle.of("rainbow_bricks", Blocks.BRICKS).register();
     public static final Block RAINBOW_GLOWSTONE = registerCopy("rainbow_glowstone", Blocks.GLOWSTONE);
 
@@ -356,22 +359,22 @@ public class BlockusBlocks extends BlockFactory {
 
     // White Oak Wood
     private static final WoodType WHITE_OAK_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(Blockus.id("white_oak"));
-    public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", settings -> new SaplingBlock(BlockusSaplingGenerator.WHITE_OAK, settings), Blocks.OAK_SAPLING, settings -> settings.pistonBehavior(PistonBehavior.DESTROY));
+    public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", settings -> new SaplingBlock(BlockusSaplingGenerator.WHITE_OAK, settings), Blocks.OAK_SAPLING, settings -> settings.pushReaction(PushReaction.DESTROY));
     public static final Block POTTED_WHITE_OAK_SAPLING = pottedPlant("potted_white_oak_sapling", WHITE_OAK_SAPLING);
-    public static final Block WHITE_OAK_LOG = registerCopy("white_oak_log", PillarBlock::new, Blocks.OAK_LOG, settings -> settings.mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
+    public static final Block WHITE_OAK_LOG = registerCopy("white_oak_log", RotatedPillarBlock::new, Blocks.OAK_LOG, settings -> settings.mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
     public static final Block STRIPPED_WHITE_OAK_LOG = pillar2("stripped_white_oak_log", WHITE_OAK_LOG);
     public static final Block WHITE_OAK_WOOD = pillar2("white_oak_wood", WHITE_OAK_LOG);
     public static final Block STRIPPED_WHITE_OAK_WOOD = pillar2("stripped_white_oak_wood", WHITE_OAK_LOG);
-    public static final Block WHITE_OAK_LEAVES = registerCopy("white_oak_leaves", settings -> new UntintedParticleLeavesBlock(0.01F, TintedParticleEffect.create(ParticleTypes.TINTED_LEAVES, 14061641), settings), Blocks.OAK_LEAVES, settings -> settings.mapColor(MapColor.ORANGE).pistonBehavior(PistonBehavior.DESTROY).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never));
-    public static final WoodBundle WHITE_OAK = WoodBundle.of("white_oak", Blocks.OAK_PLANKS, MapColor.OFF_WHITE, BlockSoundGroup.WOOD, WHITE_OAK_WOOD_TYPE, BlockSetType.OAK, true).register();
+    public static final Block WHITE_OAK_LEAVES = registerCopy("white_oak_leaves", settings -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 14061641), settings), Blocks.OAK_LEAVES, settings -> settings.mapColor(MapColor.COLOR_ORANGE).pushReaction(PushReaction.DESTROY).isValidSpawn(BlockusBlocks::canSpawnOnLeaves).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never));
+    public static final WoodBundle WHITE_OAK = WoodBundle.of("white_oak", Blocks.OAK_PLANKS, MapColor.QUARTZ, SoundType.WOOD, WHITE_OAK_WOOD_TYPE, BlockSetType.OAK, true).register();
 
     // Raw Bamboo
     private static final WoodType RAW_BAMBOO_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.BAMBOO).register(Blockus.id("raw_bamboo"), BlockSetTypeBuilder.copyOf(BlockSetType.BAMBOO).register(Blockus.id("raw_bamboo")));
-    public static final WoodBundle RAW_BAMBOO = WoodBundle.of("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.DARK_GREEN, BlockSoundGroup.BAMBOO_WOOD, RAW_BAMBOO_WOOD_TYPE, BlockSetType.BAMBOO, true).register();
+    public static final WoodBundle RAW_BAMBOO = WoodBundle.of("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.PLANT, SoundType.BAMBOO_WOOD, RAW_BAMBOO_WOOD_TYPE, BlockSetType.BAMBOO, true).register();
 
     // Charred
     private static final WoodType CHARRED_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(Blockus.id("charred"));
-    public static final WoodBundle CHARRED = WoodBundle.of("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, BlockSoundGroup.WOOD, CHARRED_WOOD_TYPE, BlockSetType.OAK, false).register();
+    public static final WoodBundle CHARRED = WoodBundle.of("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, SoundType.WOOD, CHARRED_WOOD_TYPE, BlockSetType.OAK, false).register();
 
     // Extra Wood Blocks
     public static final ExtraWoodBundle<BSSWBundle> WOODEN_MOSAIC = ExtraWoodBundle.of(wood -> wood + "_mosaic", WoodMaps.PLANKS_MAP::get, ExtraWoodBundle.exclude(WoodMaps.BAMBOO));
@@ -432,7 +435,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final PottedLargeBundle POTTED_PITCHER_PLANT = PottedLargeBundle.of("potted_pitcher_plant", Blocks.PITCHER_PLANT).register();
 
     // Chocolate
-    public static final BSSWBundle CHOCOLATE_BLOCK = BSSWBundle.of("chocolate_block", 1.0F, 1.0F, MapColor.BROWN).includeWall(false).register();
+    public static final BSSWBundle CHOCOLATE_BLOCK = BSSWBundle.of("chocolate_block", 1.0F, 1.0F, MapColor.COLOR_BROWN).includeWall(false).register();
     public static final BSSWBundle CHOCOLATE_BRICKS = BSSWBundle.of("chocolate_bricks", BlockusBlocks.CHOCOLATE_BLOCK.block()).register();
     public static final Block CHOCOLATE_SQUARES = registerCopy("chocolate_squares", BlockusBlocks.CHOCOLATE_BRICKS.block());
     public static final Block CHOCOLATE_TABLET = registerCopy("chocolate_tablet", ChocolateTabletBlock::new, BlockusBlocks.CHOCOLATE_BLOCK.block(), settings -> settings.strength(0.2F, 1.0F));
@@ -455,8 +458,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final CopperBSSWBundle EXPOSED_COPPER_TUFF_BRICKS = CopperBSSWBundle.of("copper_tuff_bricks", OxidationType.EXPOSED, Blocks.TUFF_BRICKS).register();
     public static final CopperBSSWBundle WEATHERED_COPPER_TUFF_BRICKS = CopperBSSWBundle.of("copper_tuff_bricks", OxidationType.WEATHERED, Blocks.TUFF_BRICKS).register();
     public static final CopperBSSWBundle OXIDIZED_COPPER_TUFF_BRICKS = CopperBSSWBundle.of("copper_tuff_bricks", OxidationType.OXIDIZED, Blocks.TUFF_BRICKS).register();
-    public static final CopperBundle COPPER_LANTERN_BLOCK = CopperBundle.create("copper_lantern_block", BlockFactory::registerOf, Block::new, OxidizableBlock::new, (oxidationLevel) -> createCopy(Blocks.LANTERN).pistonBehavior(PistonBehavior.NORMAL));
-    public static final CopperBundle COPPER_GATE = CopperBundle.create("copper_gate", BlockFactory::registerOf, settings -> new DoorBlock(BlockSetType.COPPER, settings), (oxidationLevel, settings) -> new OxidizableDoorBlock(BlockSetType.COPPER, oxidationLevel, settings), (oxidationLevel) -> createCopy(Blocks.COPPER_DOOR));
+    public static final CopperBundle COPPER_LANTERN_BLOCK = CopperBundle.create("copper_lantern_block", BlockFactory::registerOf, Block::new, WeatheringCopperFullBlock::new, (oxidationLevel) -> createCopy(Blocks.LANTERN).pushReaction(PushReaction.NORMAL));
+    public static final CopperBundle COPPER_GATE = CopperBundle.create("copper_gate", BlockFactory::registerOf, settings -> new DoorBlock(BlockSetType.COPPER, settings), (oxidationLevel, settings) -> new WeatheringCopperDoorBlock(BlockSetType.COPPER, oxidationLevel, settings), (oxidationLevel) -> createCopy(Blocks.COPPER_DOOR));
 
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = crate("sweet_berries_crate");
@@ -465,8 +468,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block PUFFERFISH_CRATE = crate("pufferfish_crate");
     public static final Block TROPICAL_FISH_CRATE = crate("tropical_fish_crate");
     public static final Block COD_CRATE = crate("cod_crate");
-    public static final Block COOKIE_BLOCK = registerOf("cookie_block", CookieBlock::new, create().mapColor(MapColor.ORANGE).strength(0.5F).sounds(BlockSoundGroup.GRASS));
-    public static final Block CHORUS_BLOCK = registerOf("chorus_block", PillarBlock::new, create().mapColor(MapColor.PURPLE).strength(0.5f).sounds(BlockSoundGroup.GRASS));
+    public static final Block COOKIE_BLOCK = registerOf("cookie_block", CookieBlock::new, create().mapColor(MapColor.COLOR_ORANGE).strength(0.5F).sound(SoundType.GRASS));
+    public static final Block CHORUS_BLOCK = registerOf("chorus_block", RotatedPillarBlock::new, create().mapColor(MapColor.COLOR_PURPLE).strength(0.5f).sound(SoundType.GRASS));
     public static final Block POTATO_CRATE = crate("potato_crate");
     public static final Block APPLE_CRATE = crate("apple_crate");
     public static final Block GOLDEN_APPLE_CRATE = crate("golden_apple_crate");
@@ -493,17 +496,17 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block RAINBOW_NEON = neonBlock("rainbow_neon", DyeColor.LIGHT_BLUE);
 
     // Futurneo Blocks
-    public static final StainedBlockBundle FUTURNEO_BLOCK = StainedBlockBundle.of("futurneo_block", (id, color) -> BlockFactory.futurneoBlock(id, MapColor.BLACK));
-    public static final Block GRAY_BRIGHT_FUTURNEO_BLOCK = futurneoBlock("gray_bright_futurneo_block", MapColor.WHITE);
-    public static final Block RAINBOW_FUTURNEO_BLOCK = futurneoBlock("rainbow_futurneo_block", MapColor.BLACK);
+    public static final StainedBlockBundle FUTURNEO_BLOCK = StainedBlockBundle.of("futurneo_block", (id, color) -> BlockFactory.futurneoBlock(id, MapColor.COLOR_BLACK));
+    public static final Block GRAY_BRIGHT_FUTURNEO_BLOCK = futurneoBlock("gray_bright_futurneo_block", MapColor.SNOW);
+    public static final Block RAINBOW_FUTURNEO_BLOCK = futurneoBlock("rainbow_futurneo_block", MapColor.COLOR_BLACK);
 
     // Asphalt
     public static final AsphaltBundle ASPHALT = AsphaltBundle.of().register();
-    public static final Block RAINBOW_ASPHALT = registerOf("rainbow_asphalt", RainbowAsphalt::new, create().mapColor(DyeColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool());
+    public static final Block RAINBOW_ASPHALT = registerOf("rainbow_asphalt", RainbowAsphalt::new, create().mapColor(DyeColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresCorrectToolForDrops());
 
     // Shingles
-    public static final BSSWBundle SHINGLES = BSSWBundle.of("shingles", Blocks.TERRACOTTA, BlockSoundGroup.NETHER_BRICKS).includeWall(false).register();
-    public static final StainedBSSWBundle STAINED_SHINGLES = StainedBSSWBundle.of("shingles", BlockMaps.TERRACOTTA_MAP).settings(settings -> settings.sounds(BlockSoundGroup.NETHER_BRICKS)).includeWall(false).register();
+    public static final BSSWBundle SHINGLES = BSSWBundle.of("shingles", Blocks.TERRACOTTA, SoundType.NETHER_BRICKS).includeWall(false).register();
+    public static final StainedBSSWBundle STAINED_SHINGLES = StainedBSSWBundle.of("shingles", BlockMaps.TERRACOTTA_MAP).settings(settings -> settings.sound(SoundType.NETHER_BRICKS)).includeWall(false).register();
 
     // Glass - Beveled Glass
     public static final Block RAINBOW_GLASS = stainedGlass("rainbow_glass", DyeColor.YELLOW, Blocks.GLASS);
@@ -511,10 +514,10 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BEVELED_GLASS = registerCopy("beveled_glass", TransparentBlock::new, Blocks.GLASS);
     public static final StainedBlockBundle STAINED_BEVELED_GLASS = StainedBlockBundle.of("beveled_glass", (id, color) -> BlockFactory.stainedGlass(id, color, BlockMaps.STAINED_GLASS_MAP.get(color)));
     public static final Block RAINBOW_BEVELED_GLASS = stainedGlass("rainbow_beveled_glass", DyeColor.YELLOW, RAINBOW_GLASS);
-    public static final Block BEVELED_GLASS_PANE = registerCopy("beveled_glass_pane", PaneBlock::new, Blocks.GLASS_PANE);
+    public static final Block BEVELED_GLASS_PANE = registerCopy("beveled_glass_pane", IronBarsBlock::new, Blocks.GLASS_PANE);
     public static final StainedBlockBundle STAINED_BEVELED_GLASS_PANE = StainedBlockBundle.of("beveled_glass_pane", (id, color) -> BlockFactory.stainedGlassPane(id, color, BlockMaps.STAINED_GLASS_PANE_MAP.get(color)));
     public static final Block RAINBOW_BEVELED_GLASS_PANE = stainedGlassPane("rainbow_beveled_glass_pane", DyeColor.YELLOW, RAINBOW_GLASS_PANE);
-    public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS, settings -> settings.allowsSpawning(BlockusBlocks::never).solidBlock(BlockusBlocks::never).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never));
+    public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS, settings -> settings.isValidSpawn(BlockusBlocks::never).isRedstoneConductor(BlockusBlocks::never).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never));
 
     // Patterned Wools
     public static final WoolBundle PATTERNED_WOOL = WoolBundle.of("patterned_wool").register();
@@ -537,7 +540,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block POLISHED_DEEPSLATE_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_DEEPSLATE);
     public static final Block POLISHED_TUFF_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_TUFF);
     public static final Block POLISHED_SCULK_PRESSURE_PLATE = stonePressurePlate(BlockusBlocks.POLISHED_SCULK.block());
-    public static final Block OBSIDIAN_PRESSURE_PLATE = registerOf("obsidian_pressure_plate", ObsidianPressurePlateBlock::new, pressurePlateButtonSettings(Blocks.OBSIDIAN).solid());
+    public static final Block OBSIDIAN_PRESSURE_PLATE = registerOf("obsidian_pressure_plate", ObsidianPressurePlateBlock::new, pressurePlateButtonSettings(Blocks.OBSIDIAN).forceSolidOn());
 
     // Buttons
     public static final Block POLISHED_ANDESITE_BUTTON = stoneButton(Blocks.POLISHED_ANDESITE);
@@ -558,39 +561,39 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle THATCH = BSSWBundle.of("thatch", Blocks.HAY_BLOCK).includeWall(false).register();
 
     // Paper
-    public static final Block PAPER_BLOCK = registerOf("paper_block", create().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS));
-    public static final Block BURNT_PAPER_BLOCK = registerOf("burnt_paper_block", create().mapColor(MapColor.STONE_GRAY).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS));
-    public static final Block FRAMED_PAPER_BLOCK = registerOf("framed_paper_block", create().mapColor(MapColor.OFF_WHITE).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sounds(BlockSoundGroup.WOOD).burnable());
+    public static final Block PAPER_BLOCK = registerOf("paper_block", create().mapColor(MapColor.QUARTZ).strength(0.1f, 0.8f).sound(SoundType.GRASS));
+    public static final Block BURNT_PAPER_BLOCK = registerOf("burnt_paper_block", create().mapColor(MapColor.STONE).strength(0.1f, 0.8f).sound(SoundType.GRASS));
+    public static final Block FRAMED_PAPER_BLOCK = registerOf("framed_paper_block", create().mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(SoundType.WOOD).ignitedByLava());
     public static final Block PAPER_WALL = woodenPane("paper_wall");
-    public static final Block PAPER_DOOR = woodenDoor("paper_door", 0.1f, 0.8f, BlockSoundGroup.WOOD, MapColor.OFF_WHITE, BlockSetType.OAK);
-    public static final Block PAPER_TRAPDOOR = woodenTrapdoor("paper_trapdoor", 0.1f, 0.8f, BlockSoundGroup.WOOD, MapColor.OFF_WHITE, BlockSetType.OAK);
-    public static final Block PAPER_LAMP = registerOf("paper_lamp", PaperLampBlock::new, create().mapColor(MapColor.OFF_WHITE).strength(0.1f, 0.8f).sounds(BlockSoundGroup.GRASS).luminance((state) -> 15).instrument(NoteBlockInstrument.BASS));
+    public static final Block PAPER_DOOR = woodenDoor("paper_door", 0.1f, 0.8f, SoundType.WOOD, MapColor.QUARTZ, BlockSetType.OAK);
+    public static final Block PAPER_TRAPDOOR = woodenTrapdoor("paper_trapdoor", 0.1f, 0.8f, SoundType.WOOD, MapColor.QUARTZ, BlockSetType.OAK);
+    public static final Block PAPER_LAMP = registerOf("paper_lamp", PaperLampBlock::new, create().mapColor(MapColor.QUARTZ).strength(0.1f, 0.8f).sound(SoundType.GRASS).lightLevel((state) -> 15).instrument(NoteBlockInstrument.BASS));
 
     // Plating
-    public static final BSSWBundle IRON_PLATING = BSSWBundle.of("iron_plating", Blocks.IRON_BLOCK, MapColor.STONE_GRAY).includeWall(false).register();
+    public static final BSSWBundle IRON_PLATING = BSSWBundle.of("iron_plating", Blocks.IRON_BLOCK, MapColor.STONE).includeWall(false).register();
     public static final BSSWBundle GOLD_PLATING = BSSWBundle.of("gold_plating", Blocks.GOLD_BLOCK).includeWall(false).register();
 
     // Gates - chains - bars
     public static final Block IRON_GATE = registerCopy("iron_gate", settings -> new DoorBlock(BlockSetType.IRON, settings), Blocks.IRON_DOOR);
     public static final Block GOLDEN_GATE = registerCopy("golden_gate", settings -> new DoorBlock(BlockSetType.GOLD, settings), Blocks.IRON_DOOR);
-    public static final Block GOLDEN_BARS = registerCopy("golden_bars", PaneBlock::new, Blocks.IRON_BARS, settings -> settings.sounds(BlockSoundGroup.METAL));
+    public static final Block GOLDEN_BARS = registerCopy("golden_bars", IronBarsBlock::new, Blocks.IRON_BARS, settings -> settings.sound(SoundType.METAL));
     public static final Block GOLDEN_CHAIN = registerCopy("golden_chain", ChainBlock::new, Blocks.IRON_CHAIN);
 
     // Lantern Blocks
-    public static final Block LANTERN_BLOCK = registerCopy("lantern_block", Blocks.LANTERN, settings -> settings.pistonBehavior(PistonBehavior.NORMAL));
-    public static final Block SOUL_LANTERN_BLOCK = registerCopy("soul_lantern_block", Blocks.SOUL_LANTERN, settings -> settings.pistonBehavior(PistonBehavior.NORMAL));
+    public static final Block LANTERN_BLOCK = registerCopy("lantern_block", Blocks.LANTERN, settings -> settings.pushReaction(PushReaction.NORMAL));
+    public static final Block SOUL_LANTERN_BLOCK = registerCopy("soul_lantern_block", Blocks.SOUL_LANTERN, settings -> settings.pushReaction(PushReaction.NORMAL));
     public static final Block AMETHYST_LANTERN = registerCopy("amethyst_lantern", LanternBlock::new, Blocks.LANTERN);
-    public static final Block AMETHYST_LANTERN_BLOCK = registerCopy("amethyst_lantern_block", Blocks.LANTERN, settings -> settings.pistonBehavior(PistonBehavior.NORMAL));
-    public static final Block REDSTONE_LANTERN = registerCopy("redstone_lantern", RedstoneLantern::new, Blocks.LANTERN, settings -> settings.luminance((state) -> 7));
-    public static final Block REDSTONE_LANTERN_BLOCK = registerCopy("redstone_lantern_block", RedstoneBlock::new, REDSTONE_LANTERN, settings -> settings.luminance((state) -> 7).pistonBehavior(PistonBehavior.NORMAL));
-    public static final Block SOUL_O_LANTERN = registerCopy("soul_o_lantern", CarvedPumpkinBlock::new, Blocks.JACK_O_LANTERN, settings -> settings.luminance((state) -> 10));
+    public static final Block AMETHYST_LANTERN_BLOCK = registerCopy("amethyst_lantern_block", Blocks.LANTERN, settings -> settings.pushReaction(PushReaction.NORMAL));
+    public static final Block REDSTONE_LANTERN = registerCopy("redstone_lantern", RedstoneLantern::new, Blocks.LANTERN, settings -> settings.lightLevel((state) -> 7));
+    public static final Block REDSTONE_LANTERN_BLOCK = registerCopy("redstone_lantern_block", PoweredBlock::new, REDSTONE_LANTERN, settings -> settings.lightLevel((state) -> 7).pushReaction(PushReaction.NORMAL));
+    public static final Block SOUL_O_LANTERN = registerCopy("soul_o_lantern", CarvedPumpkinBlock::new, Blocks.JACK_O_LANTERN, settings -> settings.lightLevel((state) -> 10));
     public static final Block COPPER_JACK_O_LANTERN = registerCopy("copper_jack_o_lantern", CarvedPumpkinBlock::new, Blocks.JACK_O_LANTERN);
-    public static final Block REDSTONE_O_LANTERN = registerCopy("redstone_o_lantern", RedstonePumpkinBlock::new, Blocks.JACK_O_LANTERN, settings -> settings.luminance((state) -> 7));
+    public static final Block REDSTONE_O_LANTERN = registerCopy("redstone_o_lantern", RedstonePumpkinBlock::new, Blocks.JACK_O_LANTERN, settings -> settings.lightLevel((state) -> 7));
     public static final Block AMETHYST_LAMP = registerCopy("amethyst_lamp", AmethystLampBlock::new, Blocks.AMETHYST_BLOCK);
 
     // Barriers
-    public static final Block CAUTION_BARRIER = registerOf("caution_barrier", Barrier::new, create().mapColor(MapColor.YELLOW).strength(1.5F, 1200.0F).instrument(NoteBlockInstrument.BASEDRUM).requiresTool());
-    public static final Block ROAD_BARRIER = registerOf("road_barrier", Barrier::new, create().mapColor(MapColor.STONE_GRAY).strength(2.0F, 6.0F).instrument(NoteBlockInstrument.BASEDRUM).requiresTool());
+    public static final Block CAUTION_BARRIER = registerOf("caution_barrier", Barrier::new, create().mapColor(MapColor.COLOR_YELLOW).strength(1.5F, 1200.0F).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops());
+    public static final Block ROAD_BARRIER = registerOf("road_barrier", Barrier::new, create().mapColor(MapColor.STONE).strength(2.0F, 6.0F).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops());
 
     // Netherite Blocks
     public static final Block NETHERITE_STAIRS = stairs(Blocks.NETHERITE_BLOCK);
@@ -599,17 +602,17 @@ public class BlockusBlocks extends BlockFactory {
     // Other
     public static final Block PATH = registerCopy("path", DirtPathBlock::new, Blocks.DIRT_PATH);
     public static final Block CHARCOAL_BLOCK = registerCopy("charcoal_block", Blocks.COAL_BLOCK);
-    public static final Block SUGAR_BLOCK = registerOf("sugar_block", SimpleFallingBlock::new, create().mapColor(MapColor.OFF_WHITE).strength(0.5F).sounds(BlockSoundGroup.SAND));
+    public static final Block SUGAR_BLOCK = registerOf("sugar_block", SimpleFallingBlock::new, create().mapColor(MapColor.QUARTZ).strength(0.5F).sound(SoundType.SAND));
     public static final Block ENDER_BLOCK = registerOf("ender_block", create().mapColor(MapColor.TERRACOTTA_GREEN).strength(5.0f, 6.0f));
-    public static final Block ROTTEN_FLESH_BLOCK = registerOf("rotten_flesh_block", create().mapColor(MapColor.TERRACOTTA_RED).strength(0.5f).sounds(BlockSoundGroup.SLIME));
-    public static final Block MEMBRANE_BLOCK = registerOf("membrane_block", create().mapColor(MapColor.TERRACOTTA_WHITE).strength(0.5f).sounds(BlockSoundGroup.SLIME));
-    public static final Block NETHER_STAR_BLOCK = registerNetherStarBlock("nether_stars_block", NetherStarBlock::new, create().mapColor(MapColor.OFF_WHITE).strength(5.0f, 6.0f).requiresTool());
-    public static final Block REDSTONE_SAND = registerCopy("redstone_sand", FallingRedstoneBlock::new, Blocks.SAND, settings -> settings.mapColor(MapColor.BRIGHT_RED));
-    public static final Block LOVE_BLOCK = registerOf("love_block", LoveBlock::new, create().mapColor(MapColor.PINK).strength(2, 6.0f).requiresTool());
-    public static final Block WEIGHT_STORAGE_CUBE = registerOf("weight_storage_cube", WeightStorageCubeBlock::new, create().mapColor(MapColor.IRON_GRAY).strength(0.1f, 6.0f));
-    public static final Block COMPANION_CUBE = registerOf("companion_cube", SimpleFallingBlock::new, create().mapColor(MapColor.IRON_GRAY).strength(0.1F, 6.0F).sounds(BlockSoundGroup.STONE));
-    public static final Block CAUTION_BLOCK = registerOf("caution_block", create().mapColor(MapColor.ORANGE).strength(1.5f, 1200.0f).requiresTool());
-    public static final Block STARS_BLOCK = registerOf("stars_block", create().mapColor(MapColor.BLACK).strength(5.0f, 6.0f));
+    public static final Block ROTTEN_FLESH_BLOCK = registerOf("rotten_flesh_block", create().mapColor(MapColor.TERRACOTTA_RED).strength(0.5f).sound(SoundType.SLIME_BLOCK));
+    public static final Block MEMBRANE_BLOCK = registerOf("membrane_block", create().mapColor(MapColor.TERRACOTTA_WHITE).strength(0.5f).sound(SoundType.SLIME_BLOCK));
+    public static final Block NETHER_STAR_BLOCK = registerNetherStarBlock("nether_stars_block", NetherStarBlock::new, create().mapColor(MapColor.QUARTZ).strength(5.0f, 6.0f).requiresCorrectToolForDrops());
+    public static final Block REDSTONE_SAND = registerCopy("redstone_sand", FallingRedstoneBlock::new, Blocks.SAND, settings -> settings.mapColor(MapColor.FIRE));
+    public static final Block LOVE_BLOCK = registerOf("love_block", LoveBlock::new, create().mapColor(MapColor.COLOR_PINK).strength(2, 6.0f).requiresCorrectToolForDrops());
+    public static final Block WEIGHT_STORAGE_CUBE = registerOf("weight_storage_cube", WeightStorageCubeBlock::new, create().mapColor(MapColor.METAL).strength(0.1f, 6.0f));
+    public static final Block COMPANION_CUBE = registerOf("companion_cube", SimpleFallingBlock::new, create().mapColor(MapColor.METAL).strength(0.1F, 6.0F).sound(SoundType.STONE));
+    public static final Block CAUTION_BLOCK = registerOf("caution_block", create().mapColor(MapColor.COLOR_ORANGE).strength(1.5f, 1200.0f).requiresCorrectToolForDrops());
+    public static final Block STARS_BLOCK = registerOf("stars_block", create().mapColor(MapColor.COLOR_BLACK).strength(5.0f, 6.0f));
 
     // Legacy
     public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", settings -> new SaplingBlock(BlockusSaplingGenerator.LEGACY_OAK, settings), createCopy(Blocks.OAK_SAPLING), "Indev");
@@ -617,14 +620,14 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block POTTED_LEGACY_SAPLING = pottedPlant("potted_legacy_sapling", LEGACY_SAPLING);
     public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", createCopy(Blocks.GRASS_BLOCK), "Cave game");
     public static final Block LEGACY_GRASS_BLOCK = registerLegacy("legacy_grass_block", createCopy(Blocks.GRASS_BLOCK), "Pre-Classic");
-    public static final Block LEGACY_LEAVES = registerLegacy("legacy_leaves", settings -> new TintedParticleLeavesBlock(0, settings), createCopy(Blocks.OAK_LEAVES).mapColor(MapColor.LIME).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never), "Classic 0.0.15a");
-    public static final Block LEGACY_LOG = registerLegacy("legacy_log", PillarBlock::new, createCopy(Blocks.OAK_LOG), "Classic 0.0.14a");
+    public static final Block LEGACY_LEAVES = registerLegacy("legacy_leaves", settings -> new TintedParticleLeavesBlock(0, settings), createCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_LIGHT_GREEN).isValidSpawn(BlockusBlocks::canSpawnOnLeaves).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never), "Classic 0.0.15a");
+    public static final Block LEGACY_LOG = registerLegacy("legacy_log", RotatedPillarBlock::new, createCopy(Blocks.OAK_LOG), "Classic 0.0.14a");
     public static final Block LEGACY_BRICKS = registerLegacy("legacy_bricks", createCopy(Blocks.BRICKS), "Classic 0.26");
     public static final Block LEGACY_PLANKS = registerLegacy("legacy_planks", createCopy(Blocks.OAK_PLANKS), "Pre-Classic");
     public static final Block LEGACY_FIRST_COBBLESTONE = registerLegacy("legacy_first_cobblestone", createCopy(Blocks.COBBLESTONE), "Pre-Classic");
     public static final Block LEGACY_COBBLESTONE = registerLegacy("legacy_cobblestone", createCopy(Blocks.COBBLESTONE), "Classic 0.0.14a");
     public static final Block LEGACY_MOSSY_COBBLESTONE = registerLegacy("legacy_mossy_cobblestone", createCopy(Blocks.MOSSY_COBBLESTONE), "Classic 0.26");
-    public static final Block LEGACY_GRAVEL = registerLegacy("legacy_gravel", settings -> new ColoredFallingBlock(new ColorCode(-8356741), settings), createCopy(Blocks.GRAVEL), "Classic 0.0.15a");
+    public static final Block LEGACY_GRAVEL = registerLegacy("legacy_gravel", settings -> new ColoredFallingBlock(new ColorRGBA(-8356741), settings), createCopy(Blocks.GRAVEL), "Classic 0.0.15a");
     public static final Block LEGACY_IRON_BLOCK = registerLegacy("legacy_iron_block", createCopy(Blocks.IRON_BLOCK), "Classic 0.26");
     public static final Block LEGACY_GOLD_BLOCK = registerLegacy("legacy_gold_block", createCopy(Blocks.GOLD_BLOCK), "Classic 0.26");
     public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = registerLegacy("legacy_explosion_proof_gold_block", createCopy(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f), "Classic 0.0.20a");
@@ -632,14 +635,14 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LEGACY_DIAMOND_BLOCK = registerLegacy("legacy_diamond_block", createCopy(Blocks.DIAMOND_BLOCK), "Indev");
     public static final Block LEGACY_LAPIS_BLOCK = registerLegacy("legacy_lapis_block", createCopy(Blocks.LAPIS_BLOCK), "Beta 1.2");
     public static final Block LEGACY_SPONGE = registerLegacy("legacy_sponge", SpongeBlock::new, createCopy(Blocks.SPONGE), "Classic 0.0.19a");
-    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", createCopy(Blocks.CRYING_OBSIDIAN).pistonBehavior(PistonBehavior.BLOCK), "Beta 1.3 (texture)");
+    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", createCopy(Blocks.CRYING_OBSIDIAN).pushReaction(PushReaction.BLOCK), "Beta 1.3 (texture)");
     public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone", createCopy(Blocks.GLOWSTONE), "Alpha 1.2.0");
     public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", LegacyStonecutterBlock::new, createCopy(Blocks.COBBLESTONE).strength(1.5f, 17.5f), "PE Alpha");
     public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createCopy(BlockusBlocks.GLOWING_OBSIDIAN), "PE Alpha");
-    public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", create().mapColor(MapColor.LIGHT_BLUE).strength(1.5f, 6.0f).requiresTool(), "PE Alpha");
-    public static final Block LEGACY_ROSE = registerLegacy("legacy_rose", settings -> new FlowerBlock(StatusEffects.NIGHT_VISION, 5.0F, settings), createCopy(Blocks.POPPY), "Beta 1.8");
+    public static final Block LEGACY_NETHER_REACTOR_CORE = registerLegacy("legacy_nether_reactor_core", create().mapColor(MapColor.COLOR_LIGHT_BLUE).strength(1.5f, 6.0f).requiresCorrectToolForDrops(), "PE Alpha");
+    public static final Block LEGACY_ROSE = registerLegacy("legacy_rose", settings -> new FlowerBlock(MobEffects.NIGHT_VISION, 5.0F, settings), createCopy(Blocks.POPPY), "Beta 1.8");
     public static final Block POTTED_LEGACY_ROSE = pottedPlant("potted_legacy_rose", LEGACY_ROSE);
-    public static final Block LEGACY_BLUE_ROSE = registerLegacy("legacy_blue_rose", settings -> new FlowerBlock(StatusEffects.NIGHT_VISION, 5.0F, settings), createCopy(Blocks.POPPY), "PE Alpha");
+    public static final Block LEGACY_BLUE_ROSE = registerLegacy("legacy_blue_rose", settings -> new FlowerBlock(MobEffects.NIGHT_VISION, 5.0F, settings), createCopy(Blocks.POPPY), "PE Alpha");
     public static final Block POTTED_LEGACY_BLUE_ROSE = pottedPlant("potted_legacy_blue_rose", LEGACY_BLUE_ROSE);
 
 
