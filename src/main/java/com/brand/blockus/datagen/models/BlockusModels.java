@@ -3,7 +3,7 @@ package com.brand.blockus.datagen.models;
 import com.brand.blockus.Blockus;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.Optional;
 
@@ -29,7 +29,7 @@ public class BlockusModels {
     public static final ModelTemplate NEON_BLOCK_TEMPLATE;
 
 
-    public static ResourceLocation getBlockId(String id) {
+    public static Identifier getBlockId(String id) {
         return Blockus.id("block/" + id);
     }
 

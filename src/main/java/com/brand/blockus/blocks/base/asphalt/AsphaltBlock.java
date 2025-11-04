@@ -19,7 +19,7 @@ public class AsphaltBlock extends Block {
 
     public static void applySprintEffect(Level world, Entity entity) {
         if (entity instanceof LivingEntity && world instanceof ServerLevel serverWorld) {
-            if (serverWorld.getGameRules().getBoolean(BlockusGamerules.ENABLE_ASPHALT_SPRINT)) {
+            if (serverWorld.getGameRules().get(BlockusGamerules.ENABLE_ASPHALT_SPRINT)) {
                 ((LivingEntity) entity).addEffect(new MobEffectInstance(BlockusEffects.ASPHALT_SPRINT, 5, 0, true, false, true));
             }
         }

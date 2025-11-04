@@ -2,9 +2,9 @@ package com.brand.blockus.blocks.blockitems;
 
 import com.brand.blockus.blocks.base.ColoredTilesBlock;
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -22,10 +22,10 @@ public class ColoredTilesBlockItem extends BlockItem {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
         if (this.getBlock() instanceof ColoredTilesBlock coloredTilesBlock) {
-            textConsumer.accept(Component.translatable(Util.makeDescriptionId("color", ResourceLocation.tryParse(ColoredTilesBlock.getColor(coloredTilesBlock.tile1))))
+            textConsumer.accept(Component.translatable(Util.makeDescriptionId("color", Identifier.tryParse(ColoredTilesBlock.getColor(coloredTilesBlock.tile1))))
                 .withStyle(ChatFormatting.GRAY)
                 .append(" & ")
-                .append(Component.translatable(Util.makeDescriptionId("color", ResourceLocation.tryParse(ColoredTilesBlock.getColor(coloredTilesBlock.tile2))))
+                .append(Component.translatable(Util.makeDescriptionId("color", Identifier.tryParse(ColoredTilesBlock.getColor(coloredTilesBlock.tile2))))
                     .withStyle(ChatFormatting.GRAY)));
         }
     }

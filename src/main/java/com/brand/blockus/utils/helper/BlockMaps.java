@@ -2,7 +2,7 @@ package com.brand.blockus.utils.helper;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MapColor;
@@ -59,7 +59,7 @@ public class BlockMaps {
         .build();
 
     public static Block getBlock(DyeColor color, String suffix) {
-        return BuiltInRegistries.BLOCK.getValue(ResourceLocation.withDefaultNamespace(color.name().toLowerCase() + suffix));
+        return BuiltInRegistries.BLOCK.getValue(Identifier.withDefaultNamespace(color.name().toLowerCase() + suffix));
     }
 
     public static <T> Map<DyeColor, T> extract(Function<ColorData, T> mapper) {

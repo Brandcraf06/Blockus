@@ -12,7 +12,7 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -31,7 +31,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
         super(output, registriesFuture, blockTagProvider);
     }
 
-    private void copy(ResourceLocation id) {
+    private void copy(Identifier id) {
         TagKey<Block> blockTag = TagKey.create(Registries.BLOCK, id);
         TagKey<Item> itemTag = TagKey.create(Registries.ITEM, id);
 
@@ -121,7 +121,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             }
         }
 
-        this.copy(ResourceLocation.fromNamespaceAndPath("c", "planks_that_burn"));
+        this.copy(Identifier.fromNamespaceAndPath("c", "planks_that_burn"));
 
         this.copy(BlockTags.ACACIA_LOGS, ItemTags.ACACIA_LOGS);
 

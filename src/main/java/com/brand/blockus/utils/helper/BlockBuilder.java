@@ -5,7 +5,7 @@ import com.brand.blockus.blocks.blockitems.ColoredTilesBlockItem;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.utils.BlockChecker;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -86,7 +86,7 @@ public class BlockBuilder {
         var block = this.factory.apply(this.settings.setId(key));
         Registry.register(BuiltInRegistries.BLOCK, key, block);
         if (this.itemSettings instanceof Item.Properties) {
-            var itemRegistryKey = ResourceKey.create(Registries.ITEM, key.location());
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, key.identifier());
             Registry.register(BuiltInRegistries.ITEM, itemRegistryKey, itemFactory.apply(block)
             );
         }

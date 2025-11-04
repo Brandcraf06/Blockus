@@ -28,7 +28,7 @@ public class BlockusItems {
     }
 
     private static ResourceKey<Item> keyOf(ResourceKey<Block> blockKey) {
-        return ResourceKey.create(Registries.ITEM, blockKey.location());
+        return ResourceKey.create(Registries.ITEM, blockKey.identifier());
     }
 
     public static Item register(String id) {

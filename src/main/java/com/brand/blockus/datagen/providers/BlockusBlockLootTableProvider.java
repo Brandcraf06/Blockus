@@ -6,6 +6,7 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Items;
@@ -468,7 +469,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootTableProvider 
     }
 
     public LootItemFunction.Builder setCookieCount(Block block, float count, int bites) {
-        return SetItemCountFunction.setCount(ConstantValue.exactly(count)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(CookieBlock.BITES, bites)));
+        return SetItemCountFunction.setCount(ConstantValue.exactly(count)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CookieBlock.BITES, bites)));
     }
 
     public LootTable.Builder glowstoneDrops(Block block) {

@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -79,10 +80,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.LEGACY_ROSE,
             BlockusBlocks.POTTED_LEGACY_ROSE,
             BlockusBlocks.LEGACY_BLUE_ROSE,
-            BlockusBlocks.POTTED_LEGACY_BLUE_ROSE
-        );
-
-        BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT_MIPPED,
+            BlockusBlocks.POTTED_LEGACY_BLUE_ROSE,
             BlockusBlocks.OAK_HEDGE,
             BlockusBlocks.SPRUCE_HEDGE,
             BlockusBlocks.BIRCH_HEDGE,
@@ -105,11 +103,11 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.BEVELED_GLASS,
             BlockusBlocks.BEVELED_GLASS_PANE
         );
-        BlockusBlocks.COPPER_GATE.forEach((block) -> BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT_MIPPED, block));
+        BlockusBlocks.COPPER_GATE.forEach((block) -> BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, block));
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             for (var variants : timberFrameBundle.woodMap().values()) {
-                BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT_MIPPED, variants.lattice(), variants.grate());
+                BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, variants.lattice(), variants.grate());
             }
         }
 

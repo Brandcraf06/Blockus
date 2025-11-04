@@ -2,7 +2,7 @@ package com.brand.blockus.blocks.blockitems;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
