@@ -64,8 +64,5 @@ public class Blockus implements ModInitializer {
             BlockEntityType.SHELF.addSupportedBlock(woodBundle.shelf());
         }
     }
-
-    public static Component STEPPED_ON_TEXT = Component.translatable(Util.makeDescriptionId("blockitem", Blockus.id("when_stepped_on"))).withStyle(ChatFormatting.GRAY);
-
 }
 
