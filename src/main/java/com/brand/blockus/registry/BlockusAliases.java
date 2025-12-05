@@ -1,7 +1,7 @@
 package com.brand.blockus.registry;
 
 import com.brand.blockus.Blockus;
-import net.minecraft.registry.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 public class BlockusAliases {
     public static void init() {
@@ -31,7 +31,7 @@ public class BlockusAliases {
     }
 
     private static void addBlockAndItemAlias(String from, String to) {
-        Registries.BLOCK.addAlias(Blockus.id(from), Blockus.id(to));
-        Registries.ITEM.addAlias(Blockus.id(from), Blockus.id(to));
+        BuiltInRegistries.BLOCK.addAlias(Blockus.id(from), Blockus.id(to));
+        BuiltInRegistries.ITEM.addAlias(Blockus.id(from), Blockus.id(to));
     }
 }

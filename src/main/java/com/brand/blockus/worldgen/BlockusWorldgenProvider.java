@@ -3,100 +3,110 @@ package com.brand.blockus.worldgen;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryEntryLookup;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.structure.rule.TagMatchRuleTest;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.*;
-import net.minecraft.world.gen.stateprovider.*;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 import java.util.concurrent.CompletableFuture;
 
 import static com.brand.blockus.worldgen.BlockusWorldgenFeatures.*;
 
 public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
-    public BlockusWorldgenProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public BlockusWorldgenProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup registries, FabricDynamicRegistryProvider.Entries entries) {
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), LIMESTONE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_LIMESTONE_UPPER);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_LIMESTONE_LOWER);
+    protected void configure(HolderLookup.Provider registries, FabricDynamicRegistryProvider.Entries entries) {
+        entries.add(registries.lookupOrThrow(Registries.CONFIGURED_FEATURE), LIMESTONE);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_LIMESTONE_UPPER);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_LIMESTONE_LOWER);
 
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), MARBLE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_MARBLE);
+        entries.add(registries.lookupOrThrow(Registries.CONFIGURED_FEATURE), MARBLE);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_MARBLE);
 
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), BLUESTONE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_BLUESTONE);
+        entries.add(registries.lookupOrThrow(Registries.CONFIGURED_FEATURE), BLUESTONE);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_BLUESTONE);
 
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), VIRIDITE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), VIRIDITE_EXTRA);
+        entries.add(registries.lookupOrThrow(Registries.CONFIGURED_FEATURE), VIRIDITE);
+        entries.add(registries.lookupOrThrow(Registries.CONFIGURED_FEATURE), VIRIDITE_EXTRA);
 
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_VIRIDITE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_VIRIDITE_EXTRA);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_VIRIDITE);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_VIRIDITE_EXTRA);
 
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), WHITE_OAK);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_WHITE_OAK);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_WHITE_OAK_RARE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), WHITE_OAK_CHECKED);
+        entries.add(registries.lookupOrThrow(Registries.CONFIGURED_FEATURE), WHITE_OAK);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_WHITE_OAK);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_WHITE_OAK_RARE);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), WHITE_OAK_CHECKED);
 
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), LEGACY_OAK);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), LEGACY_OAK_CHECKED);
+        entries.add(registries.lookupOrThrow(Registries.CONFIGURED_FEATURE), LEGACY_OAK);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), LEGACY_OAK_CHECKED);
 
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE), RAINBOW_ROSE);
-        entries.add(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_RAINBOW_ROSE);
+        entries.add(registries.lookupOrThrow(Registries.CONFIGURED_FEATURE), RAINBOW_ROSE);
+        entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_RAINBOW_ROSE);
     }
 
-    public static void bootstrapConfiguredFeatures(Registerable<ConfiguredFeature<?, ?>> registerable) {
-        ConfiguredFeatures.register(registerable, LIMESTONE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.LIMESTONE.block().getDefaultState(), 64));
-        ConfiguredFeatures.register(registerable, MARBLE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.MARBLE.block().getDefaultState(), 64));
-        ConfiguredFeatures.register(registerable, BLUESTONE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.BLUESTONE.block().getDefaultState(), 64));
-        ConfiguredFeatures.register(registerable, VIRIDITE, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block().getDefaultState(), 33));
-        ConfiguredFeatures.register(registerable, VIRIDITE_EXTRA, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block().getDefaultState(), 42));
+    public static void bootstrapConfiguredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> registerable) {
+        FeatureUtils.register(registerable, LIMESTONE, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.LIMESTONE.block().defaultBlockState(), 64));
+        FeatureUtils.register(registerable, MARBLE, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.MARBLE.block().defaultBlockState(), 64));
+        FeatureUtils.register(registerable, BLUESTONE, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.BLUESTONE.block().defaultBlockState(), 64));
+        FeatureUtils.register(registerable, VIRIDITE, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block().defaultBlockState(), 33));
+        FeatureUtils.register(registerable, VIRIDITE_EXTRA, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block().defaultBlockState(), 42));
 
-        ConfiguredFeatures.register(registerable, WHITE_OAK, Feature.TREE, white_oak().build());
+        FeatureUtils.register(registerable, WHITE_OAK, Feature.TREE, white_oak().build());
 
-        ConfiguredFeatures.register(registerable, LEGACY_OAK, Feature.TREE, legacy_oak().build());
+        FeatureUtils.register(registerable, LEGACY_OAK, Feature.TREE, legacy_oak().build());
 
-        ConfiguredFeatures.register(registerable, RAINBOW_ROSE, Feature.FLOWER, new RandomPatchFeatureConfig(12, 7, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
+        FeatureUtils.register(registerable, RAINBOW_ROSE, Feature.FLOWER, new RandomPatchConfiguration(12, 7, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(BlockusBlocks.RAINBOW_ROSE)))));
     }
 
-    public static void bootstrapPlacedFeatures(Registerable<PlacedFeature> registerable) {
-        RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatures = registerable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+    public static void bootstrapPlacedFeatures(BootstrapContext<PlacedFeature> registerable) {
+        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = registerable.lookup(Registries.CONFIGURED_FEATURE);
 
         // limestone
-        RegistryEntry<ConfiguredFeature<?, ?>> limestone = configuredFeatures.getOrThrow(LIMESTONE);
-        PlacedFeatures.register(registerable, PLACED_LIMESTONE_UPPER, limestone, modifiersWithRarity(6, HeightRangePlacementModifier.uniform(YOffset.fixed(64), YOffset.fixed(128))));
-        PlacedFeatures.register(registerable, PLACED_LIMESTONE_LOWER, limestone, modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
+        Holder<ConfiguredFeature<?, ?>> limestone = configuredFeatures.getOrThrow(LIMESTONE);
+        PlacementUtils.register(registerable, PLACED_LIMESTONE_UPPER, limestone, modifiersWithRarity(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(128))));
+        PlacementUtils.register(registerable, PLACED_LIMESTONE_LOWER, limestone, modifiersWithCount(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(64))));
 
         // limestone
-        PlacedFeatures.register(registerable, PLACED_MARBLE, configuredFeatures.getOrThrow(MARBLE), modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
+        PlacementUtils.register(registerable, PLACED_MARBLE, configuredFeatures.getOrThrow(MARBLE), modifiersWithCount(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(64))));
 
         // bluestone
-        PlacedFeatures.register(registerable, PLACED_BLUESTONE, configuredFeatures.getOrThrow(BLUESTONE), modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))));
+        PlacementUtils.register(registerable, PLACED_BLUESTONE, configuredFeatures.getOrThrow(BLUESTONE), modifiersWithCount(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(0))));
 
         // viridite
-        PlacedFeatures.register(registerable, PLACED_VIRIDITE, configuredFeatures.getOrThrow(VIRIDITE), modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16))));
-        PlacedFeatures.register(registerable, PLACED_VIRIDITE_EXTRA, configuredFeatures.getOrThrow(VIRIDITE_EXTRA), modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(-16))));
+        PlacementUtils.register(registerable, PLACED_VIRIDITE, configuredFeatures.getOrThrow(VIRIDITE), modifiersWithCount(1, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(-16))));
+        PlacementUtils.register(registerable, PLACED_VIRIDITE_EXTRA, configuredFeatures.getOrThrow(VIRIDITE_EXTRA), modifiersWithCount(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(-16))));
 
         // white oak
-        RegistryEntry<ConfiguredFeature<?, ?>> whiteOak = configuredFeatures.getOrThrow(WHITE_OAK);
-        PlacedFeatures.register(registerable, PLACED_WHITE_OAK, whiteOak, VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.04F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
-        PlacedFeatures.register(registerable, PLACED_WHITE_OAK_RARE, whiteOak, VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.0125F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
-        PlacedFeatures.register(registerable, WHITE_OAK_CHECKED, configuredFeatures.getOrThrow(WHITE_OAK), PlacedFeatures.wouldSurvive(BlockusBlocks.WHITE_OAK_SAPLING));
+        Holder<ConfiguredFeature<?, ?>> whiteOak = configuredFeatures.getOrThrow(WHITE_OAK);
+        PlacementUtils.register(registerable, PLACED_WHITE_OAK, whiteOak, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.04F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
+        PlacementUtils.register(registerable, PLACED_WHITE_OAK_RARE, whiteOak, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.0125F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
+        PlacementUtils.register(registerable, WHITE_OAK_CHECKED, configuredFeatures.getOrThrow(WHITE_OAK), PlacementUtils.filteredByBlockSurvival(BlockusBlocks.WHITE_OAK_SAPLING));
 
         // legacy oak
-        PlacedFeatures.register(registerable, LEGACY_OAK_CHECKED, configuredFeatures.getOrThrow(LEGACY_OAK), PlacedFeatures.wouldSurvive(BlockusBlocks.LEGACY_SAPLING));
+        PlacementUtils.register(registerable, LEGACY_OAK_CHECKED, configuredFeatures.getOrThrow(LEGACY_OAK), PlacementUtils.filteredByBlockSurvival(BlockusBlocks.LEGACY_SAPLING));
 
         // rainbow rose
-        PlacedFeatures.register(registerable, PLACED_RAINBOW_ROSE, configuredFeatures.getOrThrow(RAINBOW_ROSE), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+        PlacementUtils.register(registerable, PLACED_RAINBOW_ROSE, configuredFeatures.getOrThrow(RAINBOW_ROSE), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }
 
     @Override

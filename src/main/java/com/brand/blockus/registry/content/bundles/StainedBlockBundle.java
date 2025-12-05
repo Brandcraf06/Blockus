@@ -1,8 +1,8 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.utils.helper.BlockOrder;
-import net.minecraft.block.Block;
-import net.minecraft.util.DyeColor;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
 
 import java.util.EnumMap;
 import java.util.Map;

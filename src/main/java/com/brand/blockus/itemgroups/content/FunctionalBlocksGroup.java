@@ -11,47 +11,47 @@ public class FunctionalBlocksGroup {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_FUNCTIONAL_BLOCKS).register((entries) -> {
-            entries.add(AMETHYST_LANTERN);
-            entries.add(REDSTONE_LANTERN);
+            entries.accept(AMETHYST_LANTERN);
+            entries.accept(REDSTONE_LANTERN);
 
-            entries.add(LANTERN_BLOCK);
-            entries.add(SOUL_LANTERN_BLOCK);
-            entries.add(AMETHYST_LANTERN_BLOCK);
-            entries.add(REDSTONE_LANTERN_BLOCK);
+            entries.accept(LANTERN_BLOCK);
+            entries.accept(SOUL_LANTERN_BLOCK);
+            entries.accept(AMETHYST_LANTERN_BLOCK);
+            entries.accept(REDSTONE_LANTERN_BLOCK);
 
-            entries.add(REDSTONE_O_LANTERN);
-            entries.add(REDSTONE_SAND);
+            entries.accept(REDSTONE_O_LANTERN);
+            entries.accept(REDSTONE_SAND);
             BuildingBlocksGroup.addBssw(entries, REDSTONE_BRICKS);
 
-            entries.add(AMETHYST_LAMP);
+            entries.accept(AMETHYST_LAMP);
 
-            entries.add(OBSIDIAN_PRESSURE_PLATE);
+            entries.accept(OBSIDIAN_PRESSURE_PLATE);
 
-            entries.add(GOLDEN_CHAIN);
+            entries.accept(GOLDEN_CHAIN);
 
-            entries.add(BLAZE_LANTERN);
+            entries.accept(BLAZE_LANTERN);
 
             ColoredGroups.add(entries, BlockusBlocks.STAINED_REDSTONE_LAMP);
-            entries.add(RAINBOW_LAMP);
-            entries.add(RAINBOW_GLOWSTONE);
-            entries.add(GLOWING_OBSIDIAN);
+            entries.accept(RAINBOW_LAMP);
+            entries.accept(RAINBOW_GLOWSTONE);
+            entries.accept(GLOWING_OBSIDIAN);
 
-            entries.add(LARGE_FLOWER_POT);
+            entries.accept(LARGE_FLOWER_POT);
 
-            entries.add(TINTED_BEVELED_GLASS);
+            entries.accept(TINTED_BEVELED_GLASS);
 
-            entries.add(WHITE_OAK.sign());
-            entries.add(CHARRED.sign());
-            entries.add(RAW_BAMBOO.sign());
-            entries.add(WHITE_OAK.hangingSign());
-            entries.add(CHARRED.hangingSign());
-            entries.add(RAW_BAMBOO.hangingSign());
-            entries.add(BlockusEntities.WHITE_OAK_BOAT.getItem());
-            entries.add(BlockusEntities.CHARRED_BOAT.getItem());
-            entries.add(BlockusEntities.RAW_BAMBOO_RAFT.getItem());
-            entries.add(BlockusEntities.WHITE_OAK_BOAT.getChestItem());
-            entries.add(BlockusEntities.CHARRED_BOAT.getChestItem());
-            entries.add(BlockusEntities.RAW_BAMBOO_RAFT.getChestItem());
+            entries.accept(WHITE_OAK.sign());
+            entries.accept(CHARRED.sign());
+            entries.accept(RAW_BAMBOO.sign());
+            entries.accept(WHITE_OAK.hangingSign());
+            entries.accept(CHARRED.hangingSign());
+            entries.accept(RAW_BAMBOO.hangingSign());
+            entries.accept(BlockusEntities.WHITE_OAK_BOAT.getItem());
+            entries.accept(BlockusEntities.CHARRED_BOAT.getItem());
+            entries.accept(BlockusEntities.RAW_BAMBOO_RAFT.getItem());
+            entries.accept(BlockusEntities.WHITE_OAK_BOAT.getChestItem());
+            entries.accept(BlockusEntities.CHARRED_BOAT.getChestItem());
+            entries.accept(BlockusEntities.RAW_BAMBOO_RAFT.getChestItem());
         });
     }
 }

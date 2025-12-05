@@ -1,18 +1,18 @@
 package com.brand.blockus.registry.effect;
 
 import com.brand.blockus.Blockus;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public class BlockusEffects {
-    public static final RegistryEntry<StatusEffect> ASPHALT_SPRINT = register("asphalt_sprint", new AsphaltStatusEffect().addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, Identifier.ofVanilla("effect.speed"), 0.40D, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+    public static final Holder<MobEffect> ASPHALT_SPRINT = register("asphalt_sprint", new AsphaltStatusEffect().addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.withDefaultNamespace("effect.speed"), 0.40D, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
-    public static RegistryEntry<StatusEffect> register(String id, StatusEffect effect) {
-        return Registry.registerReference(Registries.STATUS_EFFECT, Blockus.id(id), effect);
+    public static Holder<MobEffect> register(String id, MobEffect effect) {
+        return Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Blockus.id(id), effect);
     }
 }

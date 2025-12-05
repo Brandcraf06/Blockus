@@ -1,9 +1,9 @@
 package com.brand.blockus.registry.tag;
 
 import com.brand.blockus.Blockus;
-import net.minecraft.block.Block;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.Block;
 
 public class BlockusBlockTags {
 
@@ -78,6 +78,6 @@ public class BlockusBlockTags {
     }
 
     private static TagKey<Block> register(String id) {
-        return TagKey.of(RegistryKeys.BLOCK, Blockus.id(id));
+        return TagKey.create(Registries.BLOCK, Blockus.id(id));
     }
 }

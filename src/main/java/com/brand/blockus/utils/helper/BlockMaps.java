@@ -1,11 +1,11 @@
 package com.brand.blockus.utils.helper;
 
 import com.google.common.collect.ImmutableMap;
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -40,26 +40,26 @@ public class BlockMaps {
     public static final Map<DyeColor, Block> WOOL_MAP = extract(ColorData::wool);
     public static final Map<DyeColor, Block> CARPET_MAP = extract(ColorData::carpet);
     public static final Map<DyeColor, MapColor> COLOR_MAP = ImmutableMap.<DyeColor, MapColor>builder()
-        .put(DyeColor.WHITE, MapColor.WHITE)
-        .put(DyeColor.LIGHT_GRAY, MapColor.LIGHT_GRAY)
-        .put(DyeColor.GRAY, MapColor.GRAY)
-        .put(DyeColor.BLACK, MapColor.BLACK)
-        .put(DyeColor.BROWN, MapColor.BROWN)
-        .put(DyeColor.RED, MapColor.RED)
-        .put(DyeColor.ORANGE, MapColor.ORANGE)
-        .put(DyeColor.YELLOW, MapColor.YELLOW)
-        .put(DyeColor.LIME, MapColor.LIME)
-        .put(DyeColor.GREEN, MapColor.GREEN)
-        .put(DyeColor.CYAN, MapColor.CYAN)
-        .put(DyeColor.LIGHT_BLUE, MapColor.LIGHT_BLUE)
-        .put(DyeColor.BLUE, MapColor.BLUE)
-        .put(DyeColor.PURPLE, MapColor.PURPLE)
-        .put(DyeColor.MAGENTA, MapColor.MAGENTA)
-        .put(DyeColor.PINK, MapColor.PINK)
+        .put(DyeColor.WHITE, MapColor.SNOW)
+        .put(DyeColor.LIGHT_GRAY, MapColor.COLOR_LIGHT_GRAY)
+        .put(DyeColor.GRAY, MapColor.COLOR_GRAY)
+        .put(DyeColor.BLACK, MapColor.COLOR_BLACK)
+        .put(DyeColor.BROWN, MapColor.COLOR_BROWN)
+        .put(DyeColor.RED, MapColor.COLOR_RED)
+        .put(DyeColor.ORANGE, MapColor.COLOR_ORANGE)
+        .put(DyeColor.YELLOW, MapColor.COLOR_YELLOW)
+        .put(DyeColor.LIME, MapColor.COLOR_LIGHT_GREEN)
+        .put(DyeColor.GREEN, MapColor.COLOR_GREEN)
+        .put(DyeColor.CYAN, MapColor.COLOR_CYAN)
+        .put(DyeColor.LIGHT_BLUE, MapColor.COLOR_LIGHT_BLUE)
+        .put(DyeColor.BLUE, MapColor.COLOR_BLUE)
+        .put(DyeColor.PURPLE, MapColor.COLOR_PURPLE)
+        .put(DyeColor.MAGENTA, MapColor.COLOR_MAGENTA)
+        .put(DyeColor.PINK, MapColor.COLOR_PINK)
         .build();
 
     public static Block getBlock(DyeColor color, String suffix) {
-        return Registries.BLOCK.get(Identifier.ofVanilla(color.name().toLowerCase() + suffix));
+        return BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(color.name().toLowerCase() + suffix));
     }
 
     public static <T> Map<DyeColor, T> extract(Function<ColorData, T> mapper) {

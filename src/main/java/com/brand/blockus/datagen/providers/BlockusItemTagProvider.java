@@ -7,38 +7,37 @@ import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    public BlockusItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, BlockTagProvider blockTagProvider) {
+    public BlockusItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture, BlockTagProvider blockTagProvider) {
         super(output, registriesFuture, blockTagProvider);
     }
 
-    private void copy(Identifier id) {
-        TagKey<Block> blockTag = TagKey.of(RegistryKeys.BLOCK, id);
-        TagKey<Item> itemTag = TagKey.of(RegistryKeys.ITEM, id);
+    private void copy(ResourceLocation id) {
+        TagKey<Block> blockTag = TagKey.create(Registries.BLOCK, id);
+        TagKey<Item> itemTag = TagKey.create(Registries.ITEM, id);
 
         this.copy(blockTag, itemTag);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup registries) {
+    protected void addTags(HolderLookup.Provider registries) {
 
         this.copy(BlockusBlockTags.BARRIERS, BlockusItemTags.BARRIERS);
 
@@ -110,7 +109,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             }
         }
 
-        this.copy(Identifier.of("c", "planks_that_burn"));
+        this.copy(ResourceLocation.fromNamespaceAndPath("c", "planks_that_burn"));
 
         this.copy(BlockTags.ACACIA_LOGS, ItemTags.ACACIA_LOGS);
 

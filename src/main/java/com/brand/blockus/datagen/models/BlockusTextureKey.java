@@ -1,16 +1,16 @@
 package com.brand.blockus.datagen.models;
 
-import net.minecraft.data.client.TextureKey;
+import net.minecraft.data.models.model.TextureSlot;
 
 public final class BlockusTextureKey {
 
-    public static final TextureKey TILE_1;
-    public static final TextureKey TILE_2;
-    public static final TextureKey HEDGE;
+    public static final TextureSlot TILE_1;
+    public static final TextureSlot TILE_2;
+    public static final TextureSlot HEDGE;
 
     static {
-        TILE_1 = TextureKey.of("tile_1");
-        TILE_2 = TextureKey.of("tile_2");
-        HEDGE = TextureKey.of("hedge");
+        TILE_1 = TextureSlot.create("tile_1");
+        TILE_2 = TextureSlot.create("tile_2");
+        HEDGE = TextureSlot.create("hedge");
     }
 }

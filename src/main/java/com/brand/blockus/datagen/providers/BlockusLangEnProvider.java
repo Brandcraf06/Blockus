@@ -9,22 +9,22 @@ import com.brand.blockus.registry.gamerule.BlockusGamerules;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.DyeColor;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public class BlockusLangEnProvider extends FabricLanguageProvider {
-    public BlockusLangEnProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public BlockusLangEnProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(output, registryLookup);
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
 
         translationBuilder.add(BlockusEffects.ASPHALT_SPRINT.value(), "Asphalt Sprint");
         translationBuilder.add(BlockusItemGroups.BLOCKUS_BUILDING_BLOCKS, "Building Blocks");
@@ -35,7 +35,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS, "Legacy Blocks");
         translationBuilder.add("blockitem.blockus.when_stepped_on", "When stepped on:");
         translationBuilder.add("blockitem.blockus.legacy", "Legacy");
-        translationBuilder.add(BlockusGamerules.ENABLE_ASPHALT_SPRINT.getTranslationKey(), "Enable Asphalt Sprint");
+        translationBuilder.add(BlockusGamerules.ENABLE_ASPHALT_SPRINT.getDescriptionId(), "Enable Asphalt Sprint");
 
         // Blaze
         addBssw(translationBuilder, BlockusBlocks.BLAZE_BRICKS, "Blaze Bricks");
@@ -716,9 +716,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(bundle.pressurePlate(), charredException + " Pressure Plate");
         translationBuilder.add(bundle.button(), charredException + " Button");
         translationBuilder.add(bundle.sign(), editedString(string) + " Sign");
-        translationBuilder.add(bundle.sign().getTranslationKey().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
+        translationBuilder.add(bundle.sign().getDescriptionId().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
         translationBuilder.add(bundle.hangingSign(), editedString(string) + " Hanging Sign");
-        translationBuilder.add(bundle.hangingSign().getTranslationKey().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
+        translationBuilder.add(bundle.hangingSign().getDescriptionId().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
     }
 
     // Wooden Posts

@@ -13,10 +13,10 @@ import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.brand.blockus.worldgen.foliage.BlockusFoliagePlacerType;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
+import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,8 +25,8 @@ public class Blockus implements ModInitializer {
     public static final String MOD_ID = "blockus";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public static Identifier id(String name) {
-        return Identifier.of(MOD_ID, name);
+    public static ResourceLocation id(String name) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Blockus implements ModInitializer {
         BlockusAliases.init();
     }
 
-    public static Text STEPPED_ON_TEXT = Text.translatable(Util.createTranslationKey("blockitem", Blockus.id("when_stepped_on"))).formatted(Formatting.GRAY);
+    public static Component STEPPED_ON_TEXT = Component.translatable(Util.makeDescriptionId("blockitem", Blockus.id("when_stepped_on"))).withStyle(ChatFormatting.GRAY);
 
 }
 

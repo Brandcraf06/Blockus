@@ -5,62 +5,62 @@ import com.brand.blockus.blocks.blockitems.ColoredTilesBlockItem;
 import com.brand.blockus.blocks.blockitems.LegacyBlockItem;
 import com.brand.blockus.blocks.blockitems.NetherStarBlockItem;
 import com.brand.blockus.utils.BlockChecker;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class BlockBuilder {
-    public static final Function<AbstractBlock.Settings, Block> DEFAULT_FACTORY = Block::new;
-    public static final Supplier<Item.Settings> DEFAULT_ITEM_SETTINGS = Item.Settings::new;
+    public static final Function<BlockBehaviour.Properties, Block> DEFAULT_FACTORY = Block::new;
+    public static final Supplier<Item.Properties> DEFAULT_ITEM_SETTINGS = Item.Properties::new;
 
-    public Function<AbstractBlock.Settings, Block> factory = DEFAULT_FACTORY;
-    public AbstractBlock.Settings settings;
+    public Function<BlockBehaviour.Properties, Block> factory = DEFAULT_FACTORY;
+    public BlockBehaviour.Properties settings;
 
-    public Item.Settings itemSettings = DEFAULT_ITEM_SETTINGS.get();
+    public Item.Properties itemSettings = DEFAULT_ITEM_SETTINGS.get();
     public Block base;
 
-    public BlockBuilder(Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+    public BlockBuilder(Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
         this.factory = factory;
         this.settings = settings;
     }
 
-    public BlockBuilder(AbstractBlock.Settings settings) {
+    public BlockBuilder(BlockBehaviour.Properties settings) {
         this.settings = settings;
     }
 
     public BlockBuilder(Block block) {
-        this.settings = AbstractBlock.Settings.copy(block);
+        this.settings = BlockBehaviour.Properties.ofFullCopy(block);
         this.base = block;
     }
 
-    public BlockBuilder factory(Function<AbstractBlock.Settings, Block> factory) {
+    public BlockBuilder factory(Function<BlockBehaviour.Properties, Block> factory) {
         this.factory = factory;
         return this;
     }
 
-    public BlockBuilder settings(AbstractBlock.Settings settings) {
+    public BlockBuilder settings(BlockBehaviour.Properties settings) {
         this.settings = settings;
         return this;
     }
 
-    public BlockBuilder settings(Function<AbstractBlock.Settings, AbstractBlock.Settings> settingsConsumer) {
+    public BlockBuilder settings(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settingsConsumer) {
         this.settings = settingsConsumer.apply(this.settings);
         return this;
     }
 
-    public BlockBuilder itemSettings(Item.Settings settings) {
+    public BlockBuilder itemSettings(Item.Properties settings) {
         this.itemSettings = settings;
         return this;
     }
 
-    public BlockBuilder itemSettings(Function<Item.Settings, Item.Settings> settings) {
+    public BlockBuilder itemSettings(Function<Item.Properties, Item.Properties> settings) {
         this.itemSettings = settings.apply(this.itemSettings);
         return this;
     }
@@ -75,13 +75,13 @@ public class BlockBuilder {
     }
 
     public Block register(String id, Function<Block, Item> itemFactory) {
-        Identifier identifier = Blockus.id(id);
+        ResourceLocation identifier = Blockus.id(id);
         Block block = this.factory.apply(this.settings);
-        Registry.register(Registries.BLOCK, identifier, block);
+        Registry.register(BuiltInRegistries.BLOCK, identifier, block);
 
         if (this.itemSettings != null) {
             Item item = itemFactory.apply(block);
-            Registry.register(Registries.ITEM, identifier, item);
+            Registry.register(BuiltInRegistries.ITEM, identifier, item);
         }
 
         return block;
@@ -89,9 +89,9 @@ public class BlockBuilder {
 
     public Block register(String id) {
         return register(id, block -> {
-            Item.Settings settings = this.itemSettings;
+            Item.Properties settings = this.itemSettings;
             if (BlockChecker.isNetherite(id)) {
-                settings = new Item.Settings().fireproof();
+                settings = new Item.Properties().fireResistant();
             }
             return new BlockItem(block, settings);
         });

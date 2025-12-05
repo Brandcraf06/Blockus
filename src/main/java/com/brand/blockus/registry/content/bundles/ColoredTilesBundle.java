@@ -2,10 +2,10 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.ColoredTilesBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -111,12 +111,12 @@ public record ColoredTilesBundle(
         return new Builder(tile1, tile2);
     }
 
-    public static Block registerCopy(String id, Function<AbstractBlock.Settings, Block> factory, Block base) {
+    public static Block registerCopy(String id, Function<BlockBehaviour.Properties, Block> factory, Block base) {
         return BlockFactory.copy(base).factory(factory).registerColoredTiles(id);
     }
 
     public static String getColor(Block block) {
-        return Registries.BLOCK.getId(block).getPath().replace("_concrete", "");
+        return BuiltInRegistries.BLOCK.getKey(block).getPath().replace("_concrete", "");
     }
 
     public static class Builder {

@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
-import net.minecraft.registry.RegistryBuilder;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 
 public class BlockusDatagen implements DataGeneratorEntrypoint {
     @Override
@@ -27,9 +27,9 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
     }
 
     @Override
-    public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, BlockusWorldgenProvider::bootstrapConfiguredFeatures);
-        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, BlockusWorldgenProvider::bootstrapPlacedFeatures);
+    public void buildRegistry(RegistrySetBuilder registryBuilder) {
+        registryBuilder.add(Registries.CONFIGURED_FEATURE, BlockusWorldgenProvider::bootstrapConfiguredFeatures);
+        registryBuilder.add(Registries.PLACED_FEATURE, BlockusWorldgenProvider::bootstrapPlacedFeatures);
     }
 
     public static ResourceCondition getLoadCondition(String... modIds) {

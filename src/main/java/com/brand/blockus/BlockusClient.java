@@ -1,7 +1,6 @@
 package com.brand.blockus;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.TimberFrameBundle;
 import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
 import com.brand.blockus.utils.helper.BlockOrder;
@@ -9,13 +8,15 @@ import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.minecraft.block.*;
-import net.minecraft.client.color.block.BlockColorProvider;
-import net.minecraft.client.color.item.ItemColorProvider;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.util.DyeColor;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
-import static com.brand.blockus.registry.content.BlockusBlocks.*;
+import static com.brand.blockus.registry.content.BlockusBlocks.STAINED_BEVELED_GLASS;
+import static com.brand.blockus.registry.content.BlockusBlocks.STAINED_BEVELED_GLASS_PANE;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -39,7 +40,7 @@ public class BlockusClient implements ClientModInitializer {
         registerBlockColor(BlockusBlocks.POTTED_MANGROVE.block(), Blocks.MANGROVE_LEAVES);
         registerBlockColor(BlockusBlocks.RAINBOW_PETALS, Blocks.PINK_PETALS);
 
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
             BlockusBlocks.RAW_BAMBOO.door(),
             BlockusBlocks.RAW_BAMBOO.trapdoor(),
             BlockusBlocks.LEGACY_SAPLING,
@@ -80,7 +81,7 @@ public class BlockusClient implements ClientModInitializer {
             BlockusBlocks.POTTED_LEGACY_BLUE_ROSE
         );
 
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutoutMipped(),
             BlockusBlocks.OAK_HEDGE,
             BlockusBlocks.SPRUCE_HEDGE,
             BlockusBlocks.BIRCH_HEDGE,
@@ -105,21 +106,21 @@ public class BlockusClient implements ClientModInitializer {
 
         for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
             for (var variants : timberFrameBundle.woodMap().values()) {
-                BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(), variants.lattice(), variants.grate());
+                BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutoutMipped(), variants.lattice(), variants.grate());
             }
         }
 
         for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
             for (var variants : woodenPostBundle.woodMap().values()) {
-                BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), variants.block(), variants.stripped());
+                BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(), variants.block(), variants.stripped());
             }
         }
 
         for (DyeColor color : BlockOrder.COLOR) {
-            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.translucent(), STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
         }
 
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.translucent(),
             BlockusBlocks.RAINBOW_GLASS,
             BlockusBlocks.RAINBOW_GLASS_PANE,
             BlockusBlocks.RAINBOW_BEVELED_GLASS,
@@ -139,12 +140,12 @@ public class BlockusClient implements ClientModInitializer {
 
     public void registerBlockColor(Block block, Block templateBlock) {
         ColorProviderRegistry.BLOCK.register((block1, pos, world, layer) -> {
-            BlockColorProvider provider = ColorProviderRegistry.BLOCK.get(templateBlock);
+            BlockColor provider = ColorProviderRegistry.BLOCK.get(templateBlock);
             return provider == null ? -1 : provider.getColor(block1, pos, world, layer);
         }, block);
 
         ColorProviderRegistry.ITEM.register((item, layer) -> {
-            ItemColorProvider provider = ColorProviderRegistry.ITEM.get(templateBlock);
+            ItemColor provider = ColorProviderRegistry.ITEM.get(templateBlock);
             return provider == null ? -1 : provider.getColor(item, layer);
         }, block.asItem());
     }

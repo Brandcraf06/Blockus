@@ -7,14 +7,14 @@ import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -23,12 +23,12 @@ import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
-    public BlockusBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public BlockusBlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup registries) {
+    protected void addTags(HolderLookup.Provider registries) {
         this.getOrCreateTagBuilder(BlockusBlockTags.AMETHYST_BLOCKS)
             .add(bsswBundle(POLISHED_AMETHYST))
             .add(bsswBundle(AMETHYST_BRICKS))
@@ -549,7 +549,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.BAMBOO_MOSAIC_STAIRS)
             .add(Blocks.BAMBOO_MOSAIC_SLAB);
 
-        var planksThatBurn = this.getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "planks_that_burn")));
+        var planksThatBurn = this.getOrCreateTagBuilder(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "planks_that_burn")));
         planksThatBurn
             .add(Blocks.OAK_PLANKS)
             .add(Blocks.SPRUCE_PLANKS)
@@ -594,11 +594,11 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
                 .add(copperBundle.allWalls().toArray(new Block[0]));
         }
 
-        this.getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "bars")))
+        this.getOrCreateTagBuilder(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "bars")))
             .add(GOLDEN_BARS);
 
         // Vanilla Block Tags
-        this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+        this.getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
             .add(LEGACY_PLANKS)
             .add(SOUL_O_LANTERN)
             .add(REDSTONE_O_LANTERN)
@@ -612,7 +612,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.ALL_MOSSY_PLANKS)
             .addTag(BlockusBlockTags.WOODEN_POSTS);
 
-        this.getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+        this.getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
             .add(ROTTEN_FLESH_BLOCK)
             .add(CHORUS_BLOCK)
             .add(LEGACY_SPONGE)
@@ -621,7 +621,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.THATCH)
             .addTag(BlockusBlockTags.HEDGES);
 
-        this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+        this.getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
             .add(NETHERITE_STAIRS)
             .add(NETHERITE_SLAB)
             .add(CHARCOAL_BLOCK)
@@ -715,7 +715,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockTags.STONE_PRESSURE_PLATES)
             .add(OBSIDIAN_PRESSURE_PLATE);
 
-        this.getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+        this.getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
             .add(PATH)
             .add(SUGAR_BLOCK)
             .add(REDSTONE_SAND)

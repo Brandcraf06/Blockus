@@ -5,10 +5,10 @@ import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.BlockOrder;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.enums.NoteBlockInstrument;
-import net.minecraft.util.DyeColor;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -43,13 +43,13 @@ public record AsphaltBundle(Map<DyeColor, AsphaltVariants> colorMap) {
 
     public static class Builder {
         private final String id;
-        private Function<AbstractBlock.Settings, AbstractBlock.Settings> settings = Function.identity();
+        private Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settings = Function.identity();
 
         public Builder(String id) {
             this.id = id;
         }
 
-        public Builder settings(Function<AbstractBlock.Settings, AbstractBlock.Settings> settings) {
+        public Builder settings(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settings) {
             this.settings = settings;
             return this;
         }
@@ -61,11 +61,11 @@ public record AsphaltBundle(Map<DyeColor, AsphaltVariants> colorMap) {
                 String type = color.getName() + "_" + id;
                 String type2 = type.replace("black_" + id, id);
 
-                Block.Settings blockSettings = settings.apply(BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool());
+                Block.Properties blockSettings = settings.apply(BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresCorrectToolForDrops());
 
                 Block block = BlockFactory.registerOf(type2, AsphaltBlock::new, blockSettings);
-                Block stairs = BlockFactory.registerOf(type2 + "_stairs", s -> new AsphaltStairs(block.getDefaultState(), s), AbstractBlock.Settings.copy(block));
-                Block slab = BlockFactory.registerOf(type2 + "_slab", AsphaltSlab::new, AbstractBlock.Settings.copy(block));
+                Block stairs = BlockFactory.registerOf(type2 + "_stairs", s -> new AsphaltStairs(block.defaultBlockState(), s), BlockBehaviour.Properties.ofFullCopy(block));
+                Block slab = BlockFactory.registerOf(type2 + "_slab", AsphaltSlab::new, BlockBehaviour.Properties.ofFullCopy(block));
 
                 colorMap.put(color, new AsphaltVariants(block, stairs, slab));
             }

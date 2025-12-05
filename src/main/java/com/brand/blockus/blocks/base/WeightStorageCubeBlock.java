@@ -1,40 +1,40 @@
 package com.brand.blockus.blocks.base;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 
 public class WeightStorageCubeBlock extends SimpleFallingBlock {
-    public WeightStorageCubeBlock(AbstractBlock.Settings settings) {
+    public WeightStorageCubeBlock(BlockBehaviour.Properties settings) {
         super(settings);
     }
 
-    public ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        ItemStack itemStack = player.getStackInHand(hand);
-        if (stack.isOf(Items.POPPY)) {
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        ItemStack itemStack = player.getItemInHand(hand);
+        if (stack.is(Items.POPPY)) {
             change(world, pos, state);
-            if (!player.getAbilities().creativeMode) {
-                itemStack.decrement(1);
-                return ItemActionResult.success(world.isClient);
+            if (!player.getAbilities().instabuild) {
+                itemStack.shrink(1);
+                return ItemInteractionResult.sidedSuccess(world.isClientSide);
             }
         }
-        return ItemActionResult.CONSUME;
+        return ItemInteractionResult.CONSUME;
     }
 
-    public static void change(World world, BlockPos pos, BlockState state) {
-        world.setBlockState(pos, BlockusBlocks.COMPANION_CUBE.getDefaultState());
-        world.addBlockBreakParticles(pos, state);
-        world.playSound(null, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+    public static void change(Level world, BlockPos pos, BlockState state) {
+        world.setBlockAndUpdate(pos, BlockusBlocks.COMPANION_CUBE.defaultBlockState());
+        world.addDestroyBlockEffect(pos, state);
+        world.playSound(null, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.STONE_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
     }
 
 }

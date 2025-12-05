@@ -1,39 +1,39 @@
 package com.brand.blockus.blocks.base;
 
 import com.brand.blockus.utils.screen.LegacyStonecutterScreenHandler;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.screen.ScreenHandlerContext;
-import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
-import net.minecraft.stat.Stats;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 
 public class LegacyStonecutterBlock extends Block {
-    private static final Text TITLE = Text.translatable("container.stonecutter");
+    private static final Component TITLE = Component.translatable("container.stonecutter");
 
-    public LegacyStonecutterBlock(Settings settings) {
+    public LegacyStonecutterBlock(Properties settings) {
         super(settings);
     }
 
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient) {
-            return ActionResult.SUCCESS;
+    public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+        if (world.isClientSide) {
+            return InteractionResult.SUCCESS;
         } else {
-            player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
-            player.incrementStat(Stats.INTERACT_WITH_STONECUTTER);
-            return ActionResult.CONSUME;
+            player.openMenu(state.getMenuProvider(world, pos));
+            player.awardStat(Stats.INTERACT_WITH_STONECUTTER);
+            return InteractionResult.CONSUME;
         }
     }
 
-    public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
-        return new SimpleNamedScreenHandlerFactory((syncId, playerInventory, player) -> {
-            return new LegacyStonecutterScreenHandler(syncId, playerInventory, ScreenHandlerContext.create(world, pos));
+    public MenuProvider getMenuProvider(BlockState state, Level world, BlockPos pos) {
+        return new SimpleMenuProvider((syncId, playerInventory, player) -> {
+            return new LegacyStonecutterScreenHandler(syncId, playerInventory, ContainerLevelAccess.create(world, pos));
         }, TITLE);
     }
 }

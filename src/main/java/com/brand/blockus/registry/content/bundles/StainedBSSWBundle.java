@@ -3,9 +3,9 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.BlockMaps;
 import com.brand.blockus.utils.helper.BlockOrder;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.util.DyeColor;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.*;
 import java.util.function.Function;
@@ -32,7 +32,7 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
     public static class Builder {
         private final String id;
         private final Map<DyeColor, Block> baseBlockColorMap;
-        private Function<AbstractBlock.Settings, AbstractBlock.Settings> settings = null;
+        private Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settings = null;
         private boolean includeWall = true;
         private boolean useMapColor = false;
 
@@ -42,7 +42,7 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
             this.baseBlockColorMap = baseBlockColorMap;
         }
 
-        public Builder settings(Function<AbstractBlock.Settings, AbstractBlock.Settings> settings) {
+        public Builder settings(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settings) {
             this.settings = settings;
             return this;
         }

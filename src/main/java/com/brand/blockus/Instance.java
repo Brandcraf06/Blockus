@@ -4,16 +4,16 @@ import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradeOffers;
-import net.minecraft.village.TradedItem;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 
@@ -225,8 +225,8 @@ public class Instance {
     }
 
     public static void addPathBlocks() {
-        FlattenableBlockRegistry.register(Blocks.DIRT_PATH, PATH.getDefaultState());
-        FlattenableBlockRegistry.register(PATH, Blocks.DIRT.getDefaultState());
+        FlattenableBlockRegistry.register(Blocks.DIRT_PATH, PATH.defaultBlockState());
+        FlattenableBlockRegistry.register(PATH, Blocks.DIRT.defaultBlockState());
     }
 
     public static void addTradeOffers() {
@@ -239,21 +239,21 @@ public class Instance {
     }
 
 
-    static class SellItemFactory implements TradeOffers.Factory {
+    static class SellItemFactory implements VillagerTrades.ItemListing {
         private final ItemStack sell;
         private final int price;
         private final int count;
         private final int maxUses;
 
-        public SellItemFactory(ItemConvertible stack, int price, int count, int maxUses) {
+        public SellItemFactory(ItemLike stack, int price, int count, int maxUses) {
             this.sell = new ItemStack(stack);
             this.price = price;
             this.count = count;
             this.maxUses = maxUses;
         }
 
-        public TradeOffer create(Entity entity, Random random) {
-            return new TradeOffer(new TradedItem(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, 1, 0.05f);
+        public MerchantOffer getOffer(Entity entity, RandomSource random) {
+            return new MerchantOffer(new ItemCost(Items.EMERALD, this.price), new ItemStack(this.sell.getItem(), this.count), this.maxUses, 1, 0.05f);
         }
     }
 }

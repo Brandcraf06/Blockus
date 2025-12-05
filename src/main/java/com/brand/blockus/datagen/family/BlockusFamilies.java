@@ -4,9 +4,9 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.CopperBundle;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.google.common.collect.Maps;
-import net.minecraft.block.Block;
-import net.minecraft.data.family.BlockFamily;
-import net.minecraft.registry.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.BlockFamily;
+import net.minecraft.world.level.block.Block;
 
 import java.util.Map;
 import java.util.stream.Stream;
@@ -47,8 +47,8 @@ public class BlockusFamilies {
     }
 
     public static CopperFamily register(CopperBundle block) {
-        BlockFamily unwaxed = register(block.block()).slab(block.slab()).stairs(block.stairs()).wall(block.wall()).noGenerateModels().build();
-        BlockFamily waxed = register(block.blockWaxed()).slab(block.slabWaxed()).stairs(block.stairsWaxed()).wall(block.wallWaxed()).group("waxed_" + Registries.BLOCK.getId(block.block()).getPath()).noGenerateModels().build();
+        BlockFamily unwaxed = register(block.block()).slab(block.slab()).stairs(block.stairs()).wall(block.wall()).dontGenerateModel().getFamily();
+        BlockFamily waxed = register(block.blockWaxed()).slab(block.slabWaxed()).stairs(block.stairsWaxed()).wall(block.wallWaxed()).recipeGroupPrefix("waxed_" + BuiltInRegistries.BLOCK.getKey(block.block()).getPath()).dontGenerateModel().getFamily();
         return new CopperFamily(unwaxed, waxed);
     }
 
@@ -61,8 +61,8 @@ public class BlockusFamilies {
             .stairs(wood.stairs())
             .door(wood.door())
             .trapdoor(wood.trapdoor())
-            .group("wooden")
-            .unlockCriterionName("has_planks");
+            .recipeGroupPrefix("wooden")
+            .recipeUnlockedBy("has_planks");
 
         if (customFence) {
             builder.customFence(wood.fence()).customFenceGate(wood.fenceGate());
@@ -70,14 +70,14 @@ public class BlockusFamilies {
             builder.fence(wood.fence()).fenceGate(wood.fenceGate());
         }
 
-        return builder.build();
+        return builder.getFamily();
     }
 
     public static BlockFamily.Builder register(Block baseBlock) {
         BlockFamily.Builder builder = new BlockFamily.Builder(baseBlock);
-        BlockFamily blockFamily = BASE_BLOCKS_TO_FAMILIES.put(baseBlock, builder.build());
+        BlockFamily blockFamily = BASE_BLOCKS_TO_FAMILIES.put(baseBlock, builder.getFamily());
         if (blockFamily != null) {
-            throw new IllegalStateException("Duplicate family definition for " + Registries.BLOCK.getId(baseBlock));
+            throw new IllegalStateException("Duplicate family definition for " + BuiltInRegistries.BLOCK.getKey(baseBlock));
         } else {
             return builder;
         }

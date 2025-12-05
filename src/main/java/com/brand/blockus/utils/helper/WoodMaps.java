@@ -1,8 +1,8 @@
 package com.brand.blockus.utils.helper;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.Arrays;
 import java.util.Map;

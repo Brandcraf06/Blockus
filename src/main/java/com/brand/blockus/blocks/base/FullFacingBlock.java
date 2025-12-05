@@ -1,30 +1,30 @@
 package com.brand.blockus.blocks.base;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FacingBlock;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 
-public class FullFacingBlock extends FacingBlock {
+public class FullFacingBlock extends DirectionalBlock {
 
-    public static final MapCodec<FullFacingBlock> CODEC = createCodec(FullFacingBlock::new);
+    public static final MapCodec<FullFacingBlock> CODEC = simpleCodec(FullFacingBlock::new);
 
 
-    public FullFacingBlock(Settings settings) {
+    public FullFacingBlock(Properties settings) {
         super(settings);
     }
 
-    public MapCodec<FullFacingBlock> getCodec() {
+    public MapCodec<FullFacingBlock> codec() {
         return CODEC;
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
 
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getPlayerLookDirection().getOpposite());
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return this.defaultBlockState().setValue(FACING, ctx.getNearestLookingDirection().getOpposite());
     }
 }
