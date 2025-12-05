@@ -11,13 +11,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-
-import static com.brand.blockus.registry.content.BlockusBlocks.STAINED_BEVELED_GLASS;
-import static com.brand.blockus.registry.content.BlockusBlocks.STAINED_BEVELED_GLASS_PANE;
 
 public class BlockusClient implements ClientModInitializer {
 
@@ -118,7 +114,7 @@ public class BlockusClient implements ClientModInitializer {
         }
 
         for (DyeColor color : BlockOrder.COLOR) {
-            BlockRenderLayerMap.putBlocks(ChunkSectionLayer.TRANSLUCENT, STAINED_BEVELED_GLASS.colorMap().get(color), STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
+            BlockRenderLayerMap.putBlocks(ChunkSectionLayer.TRANSLUCENT, BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().get(color), BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
         }
 
         BlockRenderLayerMap.putBlocks(ChunkSectionLayer.TRANSLUCENT,

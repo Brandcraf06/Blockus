@@ -15,15 +15,14 @@ import com.brand.blockus.worldgen.foliage.BlockusFoliagePlacerType;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.ChatFormatting;
-import net.minecraft.util.Util;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Util;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Blockus implements ModInitializer {
-
     public static final String MOD_ID = "blockus";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 

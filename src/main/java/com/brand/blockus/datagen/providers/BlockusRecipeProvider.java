@@ -30,7 +30,6 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
-import static net.minecraft.data.recipes.RecipeProvider.*;
 
 
 public class BlockusRecipeProvider extends FabricRecipeProvider {
