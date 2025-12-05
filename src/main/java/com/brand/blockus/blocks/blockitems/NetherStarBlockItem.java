@@ -2,6 +2,7 @@ package com.brand.blockus.blocks.blockitems;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
@@ -27,7 +28,7 @@ public class NetherStarBlockItem extends BlockItem {
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag options) {
         super.appendHoverText(stack, context, tooltip, options);
         tooltip.add(CommonComponents.EMPTY);
-        tooltip.add(Blockus.STEPPED_ON_TEXT);
+        tooltip.add(Component.translatable(Util.makeDescriptionId("blockitem", Blockus.id("when_stepped_on"))).withStyle(ChatFormatting.GRAY));
         tooltip.add(CommonComponents.space().append(MobEffects.REGENERATION.value().getDisplayName()).append(" IV").withStyle(ChatFormatting.BLUE));
         tooltip.add(CommonComponents.space().append(MobEffects.ABSORPTION.value().getDisplayName()).append(" IV").withStyle(ChatFormatting.BLUE).append(" - 00:45"));
         tooltip.add(CommonComponents.space().append(MobEffects.DAMAGE_BOOST.value().getDisplayName()).append(" III").withStyle(ChatFormatting.BLUE).append(" - 00:04"));
