@@ -1,93 +1,89 @@
 plugins {
-	id 'fabric-loom' version "${loom_version}"
-	id 'maven-publish'
-	id "me.modmuss50.mod-publish-plugin" version "0.8.4"
+  id 'net.fabricmc.fabric-loom' version "${loom_version}"
+  id 'maven-publish'
+  id "me.modmuss50.mod-publish-plugin" version "1.1.0"
 }
 
 version = "${mod_version}+${minecraft_version}"
 group = project.maven_group
 
 base {
-	archivesName = project.archives_base_name
+  archivesName = project.archives_base_name
 }
 
 repositories {
-	maven { url 'https://server.bbkr.space/artifactory/libs-release' }
-	maven { url 'https://maven.terraformersmc.com/' }
-	maven { url "https://maven.shedaniel.me/" }
-	maven { url 'https://www.cursemaven.com' }
-	maven { url 'https://maven.minecraftforge.net/' }
-}
-
-dependencies {
-	// To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-	// Fabric API
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	// Terraform
-	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
-	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
+  maven { url 'https://maven.terraformersmc.com/' }
 }
 
 fabricApi {
-	configureDataGeneration {
-		client = true
-	}
+  configureDataGeneration {
+    client = true
+  }
+}
+
+dependencies {
+  // To change the versions see the gradle.properties file
+  minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+  implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+  // Fabric API. This is technically optional, but you probably want it anyway.
+  implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+  // Terraform
+  implementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
+  include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
+
 }
 
 processResources {
-	inputs.property "version", project.version
+  inputs.property "version", project.version
 
-	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
-	}
+  filesMatching("fabric.mod.json") {
+    expand "version": inputs.properties.version
+  }
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+  it.options.release = 25
 }
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
+  sourceCompatibility = JavaVersion.VERSION_25
+  targetCompatibility = JavaVersion.VERSION_25
 }
 
 jar {
-	inputs.property "archivesName", project.base.archivesName
+  inputs.property "archivesName", project.base.archivesName
 
-	from("LICENSE") {
-		rename { "${it}_${inputs.properties.archivesName}"}
-	}
+  from("LICENSE") {
+    rename { "${it}_${inputs.properties.archivesName}" }
+  }
 }
 
 publishMods {
-	file = remapJar.archiveFile
-	changelog = file("changelog.md").text
-	type = STABLE
-	modLoaders.add("fabric")
+  file = jar.archiveFile
+  changelog = file("changelog.md").text
+  type = STABLE
+  modLoaders.add("fabric")
 
-	modrinth {
-		accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-		projectId = "zFiY2Go0"
-		minecraftVersions.add("${minecraft_version}")
-		requires {
-			slug = "fabric-api"
-		}
-	}
-
-	curseforge {
-		accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
-		projectId = "312289"
-		displayName = "(${project.minecraft_version}) Blockus $project.version"
-		minecraftVersions.add("${minecraft_version}")
+  modrinth {
+    accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+    projectId = "zFiY2Go0"
+    minecraftVersions.add("${minecraft_version}")
     requires {
-			slug = "fabric-api"
-		}
-	}
+      slug = "fabric-api"
+    }
+  }
+
+  curseforge {
+    accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+    projectId = "312289"
+    displayName = "(${project.minecraft_version}) Blockus $project.version"
+    minecraftVersions.add("${minecraft_version}")
+    requires {
+      slug = "fabric-api"
+    }
+  }
 }
 
-  
