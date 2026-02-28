@@ -5,19 +5,23 @@
       {
         "type": "minecraft:alter_ground",
         "provider": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "blockus:legacy_grass_block"
-          }
+          "rules": [
+            {
+              "if_true": {
+                "type": "minecraft:matching_block_tag",
+                "tag": "minecraft:substrate_overworld"
+              },
+              "then": {
+                "type": "minecraft:simple_state_provider",
+                "state": {
+                  "Name": "blockus:legacy_grass_block"
+                }
+              }
+            }
+          ]
         }
       }
     ],
-    "dirt_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:dirt"
-      }
-    },
     "foliage_placer": {
       "type": "minecraft:blob_foliage_placer",
       "height": 3,
@@ -35,7 +39,6 @@
         }
       }
     },
-    "force_dirt": false,
     "ignore_vines": false,
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:rough_basalt",
   "result": {
-    "count": 1,
     "id": "blockus:rough_basalt_stairs"
   }
 }

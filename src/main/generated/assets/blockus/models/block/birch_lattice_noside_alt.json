@@ -1,6 +1,9 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside_alt",
   "textures": {
-    "pane": "blockus:block/birch_grate"
+    "pane": {
+      "force_translucent": true,
+      "sprite": "blockus:block/birch_grate"
+    }
   }
 }

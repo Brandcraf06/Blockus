@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:polished_sculk",
   "result": {
-    "count": 1,
     "id": "blockus:sculk_bricks"
   }
 }

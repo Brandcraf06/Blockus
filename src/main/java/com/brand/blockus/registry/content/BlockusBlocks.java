@@ -14,7 +14,6 @@ import com.brand.blockus.registry.content.bundles.CopperBSSWBundle.OxidationType
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.BlockMaps;
 import com.brand.blockus.utils.helper.WoodMaps;
-import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.core.particles.ColorParticleOption;
@@ -358,7 +357,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle END_TILES = BSSWBundle.of("end_tiles", Blocks.END_STONE_BRICKS).register();
 
     // White Oak Wood
-    private static final WoodType WHITE_OAK_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(Blockus.id("white_oak"));
+    public static final WoodType WHITE_OAK_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Blockus.id("white_oak"), BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Blockus.id("white_oak")));
     public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", settings -> new SaplingBlock(BlockusSaplingGenerator.WHITE_OAK, settings), Blocks.OAK_SAPLING, settings -> settings.pushReaction(PushReaction.DESTROY));
     public static final Block POTTED_WHITE_OAK_SAPLING = pottedPlant("potted_white_oak_sapling", WHITE_OAK_SAPLING);
     public static final Block WHITE_OAK_LOG = registerCopy("white_oak_log", RotatedPillarBlock::new, Blocks.OAK_LOG, settings -> settings.mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
@@ -373,7 +372,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final WoodBundle RAW_BAMBOO = WoodBundle.of("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.PLANT, SoundType.BAMBOO_WOOD, RAW_BAMBOO_WOOD_TYPE, BlockSetType.BAMBOO, true).register();
 
     // Charred
-    private static final WoodType CHARRED_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(Blockus.id("charred"));
+    public static final WoodType CHARRED_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Blockus.id("charred"), BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Blockus.id("charred")));
     public static final WoodBundle CHARRED = WoodBundle.of("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, SoundType.WOOD, CHARRED_WOOD_TYPE, BlockSetType.OAK, false).register();
 
     // Extra Wood Blocks

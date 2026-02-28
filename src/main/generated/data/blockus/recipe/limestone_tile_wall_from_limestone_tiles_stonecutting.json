@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:limestone_tiles",
   "result": {
-    "count": 1,
     "id": "blockus:limestone_tile_wall"
   }
 }

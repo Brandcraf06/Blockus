@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:polished_purpur",
   "result": {
-    "count": 1,
     "id": "blockus:purpur_brick_stairs"
   }
 }

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:copper_tuff_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:copper_tuff_brick_wall"
   }
 }

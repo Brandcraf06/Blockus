@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:red_nether_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:herringbone_red_nether_bricks"
   }
 }

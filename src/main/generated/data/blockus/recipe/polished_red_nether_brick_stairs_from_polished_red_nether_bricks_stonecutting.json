@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:polished_red_nether_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:polished_red_nether_brick_stairs"
   }
 }

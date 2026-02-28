@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:mossy_dripstone_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:mossy_dripstone_brick_wall"
   }
 }

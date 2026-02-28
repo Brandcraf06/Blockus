@@ -1,6 +1,9 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "blockus:block/framed_paper_block"
+    "all": {
+      "force_translucent": true,
+      "sprite": "blockus:block/framed_paper_block"
+    }
   }
 }

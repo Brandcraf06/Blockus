@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:block/template_glass_pane_side",
   "textures": {
-    "edge": "blockus:block/pale_oak_lattice_top",
-    "pane": "blockus:block/pale_oak_grate"
+    "edge": {
+      "force_translucent": true,
+      "sprite": "blockus:block/pale_oak_lattice_top"
+    },
+    "pane": {
+      "force_translucent": true,
+      "sprite": "blockus:block/pale_oak_grate"
+    }
   }
 }

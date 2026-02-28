@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:magenta_stone_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:magenta_stone_brick_wall"
   }
 }

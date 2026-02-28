@@ -83,7 +83,7 @@ public class BlockusFamilies {
         }
     }
 
-    public static Stream<BlockFamily> getFamilies() {
+    public static Stream<BlockFamily> getAllFamilies() {
         return BASE_BLOCKS_TO_FAMILIES.values().stream();
     }
 

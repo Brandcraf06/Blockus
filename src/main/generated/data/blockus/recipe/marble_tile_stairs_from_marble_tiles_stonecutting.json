@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:marble_tiles",
   "result": {
-    "count": 1,
     "id": "blockus:marble_tile_stairs"
   }
 }

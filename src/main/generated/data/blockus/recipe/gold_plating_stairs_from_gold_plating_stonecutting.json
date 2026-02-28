@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:gold_plating",
   "result": {
-    "count": 1,
     "id": "blockus:gold_plating_stairs"
   }
 }

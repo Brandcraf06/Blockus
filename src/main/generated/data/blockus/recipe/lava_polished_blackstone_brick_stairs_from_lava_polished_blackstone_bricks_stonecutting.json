@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:lava_polished_blackstone_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:lava_polished_blackstone_brick_stairs"
   }
 }

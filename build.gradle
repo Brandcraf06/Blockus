@@ -28,11 +28,11 @@ dependencies {
   implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
   // Fabric API. This is technically optional, but you probably want it anyway.
-  implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+  implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
   // Terraform
-  implementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
-  include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
+//  implementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
+//  include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
 
 }
 

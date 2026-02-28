@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:andesite_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:andesite_circular_paving"
   }
 }

@@ -2,12 +2,12 @@ package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 
 public class NaturalGroup {
 
     public static void init() {
-        ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_NATURAL).register((entries) -> {
+        CreativeModeTabEvents.modifyOutputEvent(BlockusItemGroups.BLOCKUS_NATURAL).register((entries) -> {
             entries.accept(BlockusBlocks.PATH);
             entries.accept(BlockusBlocks.LIMESTONE.block());
             entries.accept(BlockusBlocks.MARBLE.block());

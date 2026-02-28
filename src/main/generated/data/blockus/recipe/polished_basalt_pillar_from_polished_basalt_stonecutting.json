@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:polished_basalt",
   "result": {
-    "count": 1,
     "id": "blockus:polished_basalt_pillar"
   }
 }

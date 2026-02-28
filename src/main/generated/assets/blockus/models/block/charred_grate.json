@@ -1,6 +1,9 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "blockus:block/charred_grate"
+    "all": {
+      "force_translucent": true,
+      "sprite": "blockus:block/charred_grate"
+    }
   }
 }

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:orange_asphalt",
   "result": {
-    "count": 1,
     "id": "blockus:orange_asphalt_stairs"
   }
 }

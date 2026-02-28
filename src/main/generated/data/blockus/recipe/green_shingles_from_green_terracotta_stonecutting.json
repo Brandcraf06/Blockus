@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:green_terracotta",
   "result": {
-    "count": 1,
     "id": "blockus:green_shingles"
   }
 }

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:blackstone",
   "result": {
-    "count": 1,
     "id": "blockus:polished_blackstone_circular_paving"
   }
 }

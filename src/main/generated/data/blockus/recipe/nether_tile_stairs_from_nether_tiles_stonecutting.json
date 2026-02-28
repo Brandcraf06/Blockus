@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:nether_tiles",
   "result": {
-    "count": 1,
     "id": "blockus:nether_tile_stairs"
   }
 }

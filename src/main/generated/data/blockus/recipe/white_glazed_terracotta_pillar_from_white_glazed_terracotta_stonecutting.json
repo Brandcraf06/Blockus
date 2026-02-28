@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:white_glazed_terracotta",
   "result": {
-    "count": 1,
     "id": "blockus:white_glazed_terracotta_pillar"
   }
 }

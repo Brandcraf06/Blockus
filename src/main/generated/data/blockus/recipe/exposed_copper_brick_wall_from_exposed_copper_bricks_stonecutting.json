@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:exposed_copper_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:exposed_copper_brick_wall"
   }
 }

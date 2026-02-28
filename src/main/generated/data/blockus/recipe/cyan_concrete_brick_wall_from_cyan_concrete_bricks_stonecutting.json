@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:cyan_concrete_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:cyan_concrete_brick_wall"
   }
 }

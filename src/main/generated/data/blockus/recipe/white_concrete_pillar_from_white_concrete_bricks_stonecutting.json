@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:white_concrete_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:white_concrete_pillar"
   }
 }

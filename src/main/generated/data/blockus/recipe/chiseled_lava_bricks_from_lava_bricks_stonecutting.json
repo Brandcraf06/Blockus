@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:lava_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:chiseled_lava_bricks"
   }
 }

@@ -1,6 +1,9 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "blockus:block/oak_grate"
+    "all": {
+      "force_translucent": true,
+      "sprite": "blockus:block/oak_grate"
+    }
   }
 }

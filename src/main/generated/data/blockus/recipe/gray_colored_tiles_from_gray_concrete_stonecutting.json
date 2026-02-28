@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:gray_concrete",
   "result": {
-    "count": 1,
     "id": "blockus:gray_colored_tiles"
   }
 }

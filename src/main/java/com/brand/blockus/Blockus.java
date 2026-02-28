@@ -14,10 +14,7 @@ import com.brand.blockus.worldgen.BlockusWorldgenFeatures;
 import com.brand.blockus.worldgen.foliage.BlockusFoliagePlacerType;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
-import net.minecraft.util.Util;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,11 +54,11 @@ public class Blockus implements ModInitializer {
         BlockusAliases.init();
 
         for (WoodBundle woodBundle : WoodBundle.values()) {
-            BlockEntityType.SIGN.addSupportedBlock(woodBundle.standingSign());
-            BlockEntityType.SIGN.addSupportedBlock(woodBundle.wallSign());
-            BlockEntityType.HANGING_SIGN.addSupportedBlock(woodBundle.ceilingHangingSign());
-            BlockEntityType.HANGING_SIGN.addSupportedBlock(woodBundle.wallHangingSign());
-            BlockEntityType.SHELF.addSupportedBlock(woodBundle.shelf());
+            BlockEntityType.SIGN.addValidBlock(woodBundle.standingSign());
+            BlockEntityType.SIGN.addValidBlock(woodBundle.wallSign());
+            BlockEntityType.HANGING_SIGN.addValidBlock(woodBundle.ceilingHangingSign());
+            BlockEntityType.HANGING_SIGN.addValidBlock(woodBundle.wallHangingSign());
+            BlockEntityType.SHELF.addValidBlock(woodBundle.shelf());
         }
     }
 }

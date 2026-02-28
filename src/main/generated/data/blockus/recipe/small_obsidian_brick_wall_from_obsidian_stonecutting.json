@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:obsidian",
   "result": {
-    "count": 1,
     "id": "blockus:small_obsidian_brick_wall"
   }
 }

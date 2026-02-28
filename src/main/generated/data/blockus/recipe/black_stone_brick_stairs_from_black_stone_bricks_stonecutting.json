@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:black_stone_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:black_stone_brick_stairs"
   }
 }

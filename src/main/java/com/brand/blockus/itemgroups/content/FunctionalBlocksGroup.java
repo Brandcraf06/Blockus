@@ -4,14 +4,14 @@ import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class FunctionalBlocksGroup {
 
     public static void init() {
-        ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_FUNCTIONAL_BLOCKS).register((entries) -> {
+        CreativeModeTabEvents.modifyOutputEvent(BlockusItemGroups.BLOCKUS_FUNCTIONAL_BLOCKS).register((entries) -> {
             entries.accept(AMETHYST_LANTERN);
             entries.accept(REDSTONE_LANTERN);
 

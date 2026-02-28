@@ -8,11 +8,10 @@ import com.brand.blockus.utils.helper.BlockMaps;
 import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import com.google.common.collect.ImmutableMap;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.BlockFamily;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -21,6 +20,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -33,7 +33,7 @@ import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 
 public class BlockusRecipeProvider extends FabricRecipeProvider {
-    public BlockusRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+    public BlockusRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
@@ -57,8 +57,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         .build();
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput exporter) {
-        return new RecipeProvider(registryLookup, exporter) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registriesFuture, RecipeOutput exporter) {
+        return new RecipeProvider(registriesFuture, exporter) {
             @Override
             public void buildRecipes() {
 
@@ -466,7 +466,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 // Charred Bricks
                 offerBsswCuttingRecipe(CHARRED_BRICKS);
                 offerStonecuttingRecipe(HERRINGBONE_CHARRED_BRICKS, CHARRED_BRICKS.block());
-                SimpleCookingRecipeBuilder.smelting(Ingredient.of(Blocks.BRICKS), RecipeCategory.BUILDING_BLOCKS, CHARRED_BRICKS.block().asItem(), 0.1F, 200).unlockedBy("has_bricks", has(Blocks.BRICKS)).save(exporter);
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(Blocks.BRICKS), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, CHARRED_BRICKS.block().asItem(), 0.1F, 200).unlockedBy("has_bricks", has(Blocks.BRICKS)).save(exporter);
 
                 // Resin Bricks
                 offerBsswCuttingRecipe(LARGE_RESIN_BRICKS, Blocks.RESIN_BRICKS);
@@ -496,7 +496,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerBsswCuttingRecipe(SOUL_SANDSTONE);
                 shaped(RecipeCategory.BUILDING_BLOCKS, SOUL_SANDSTONE.block()).define('#', BlockusItemTags.SOUL_SOILS).pattern("##").pattern("##").unlockedBy("has_soul_sand", has(BlockusItemTags.SOUL_SOILS)).save(exporter);
                 offerBsswCuttingRecipe(SMOOTH_SOUL_SANDSTONE);
-                SimpleCookingRecipeBuilder.smelting(Ingredient.of(SOUL_SANDSTONE.block()), RecipeCategory.BUILDING_BLOCKS, SMOOTH_SOUL_SANDSTONE.block().asItem(), 0.1F, 200).unlockedBy("has_soul_sandstone", has(SOUL_SANDSTONE.block())).save(exporter);
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(SOUL_SANDSTONE.block()), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, SMOOTH_SOUL_SANDSTONE.block().asItem(), 0.1F, 200).unlockedBy("has_soul_sandstone", has(SOUL_SANDSTONE.block())).save(exporter);
                 offerPolishedStoneRecipe(CUT_SOUL_SANDSTONE, SOUL_SANDSTONE.block());
                 offerStonecuttingRecipe(CUT_SOUL_SANDSTONE, SOUL_SANDSTONE.block());
                 offerStonecuttingRecipe(CUT_SOUL_SANDSTONE_SLAB, 2, SOUL_SANDSTONE.block(), CUT_SOUL_SANDSTONE);
@@ -582,7 +582,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerBoatsRecipe(BlockusEntities.WHITE_OAK_BOAT, BlockusEntities.WHITE_OAK_CHEST_BOAT, WHITE_OAK.planks());
                 offerBoatsRecipe(BlockusEntities.RAW_BAMBOO_RAFT, BlockusEntities.RAW_BAMBOO_CHEST_RAFT, RAW_BAMBOO.planks());
                 offerBoatsRecipe(BlockusEntities.CHARRED_BOAT, BlockusEntities.CHARRED_CHEST_BOAT, CHARRED.planks());
-                SimpleCookingRecipeBuilder.smelting(tag(BlockusItemTags.PLANKS_THAT_BURN), RecipeCategory.BUILDING_BLOCKS, CHARRED.planks(), 0.1F, 200).unlockedBy("has_planks", has(BlockusItemTags.PLANKS_THAT_BURN)).save(exporter);
+                SimpleCookingRecipeBuilder.smelting(tag(BlockusItemTags.PLANKS_THAT_BURN), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, CHARRED.planks(), 0.1F, 200).unlockedBy("has_planks", has(BlockusItemTags.PLANKS_THAT_BURN)).save(exporter);
 
                 for (var entry : SMALL_LOGS.bundle().entrySet()) {
                     offerSmallLogsRecipe(entry.getValue(), WoodMaps.LOG_MAP.get(entry.getKey()));
@@ -757,7 +757,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
                 // Paper
                 nineBlockStorageRecipes(RecipeCategory.MISC, Items.PAPER, RecipeCategory.BUILDING_BLOCKS, PAPER_BLOCK);
-                SimpleCookingRecipeBuilder.smelting(Ingredient.of(PAPER_BLOCK), RecipeCategory.BUILDING_BLOCKS, BURNT_PAPER_BLOCK.asItem(), 0.1F, 200).unlockedBy("has_paper_block", has(PAPER_BLOCK)).save(exporter);
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(PAPER_BLOCK), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, BURNT_PAPER_BLOCK.asItem(), 0.1F, 200).unlockedBy("has_paper_block", has(PAPER_BLOCK)).save(exporter);
                 shaped(RecipeCategory.BUILDING_BLOCKS, FRAMED_PAPER_BLOCK, 4).define('X', Items.PAPER).define('#', Items.STICK).pattern("###").pattern("XXX").pattern("###").unlockedBy(getHasName(Items.PAPER), has(Items.PAPER)).save(exporter);
                 offerPolishedStoneRecipe(PAPER_WALL, FRAMED_PAPER_BLOCK);
                 createEnclosedRecipe2(PAPER_LAMP, Ingredient.of(Items.PAPER), Items.TORCH).unlockedBy(getHasName(Items.PAPER), has(Items.PAPER)).save(exporter);
@@ -877,7 +877,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             }
 
             public void offerCharredSmeltingRecipe(TagKey<Item> input, RecipeCategory category, ItemLike output, String hasitem) {
-                SimpleCookingRecipeBuilder.smelting(tag(input), category, output, 0.1F, 200).unlockedBy("has_" + hasitem, has(input)).save(exporter, getSimpleRecipeName(output) + "_from_smelting");
+                SimpleCookingRecipeBuilder.smelting(tag(input), category, CookingBookCategory.BLOCKS, output, 0.1F, 200).unlockedBy("has_" + hasitem, has(input)).save(exporter, getSimpleRecipeName(output) + "_from_smelting");
             }
 
             public void offerMossyRecipe(ItemLike output, ItemLike input) {
@@ -1116,10 +1116,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 }
             }
 
-            public void generateForEnabledBlockFamilies(FeatureFlagSet enabledFeatures) {
-                BlockusFamilies.getFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach((family) -> {
-                    generateRecipes(family, enabledFeatures);
-                });
+            public void generateForEnabledBlockFamilies(FeatureFlagSet flagSet) {
+                BlockusFamilies.getAllFamilies().forEach((family) -> this.generateRecipes(family, flagSet));
             }
         };
     }

@@ -14,13 +14,7 @@ import java.util.function.Function;
 public class BlockusItems {
 
     public static Item register(ResourceKey<Item> key, Function<Item.Properties, Item> factory, Item.Properties settings) {
-        Item item = factory.apply(settings.setId(key));
-        return Registry.register(BuiltInRegistries.ITEM, key, item);
-    }
-
-    public static Item register(String id, Function<Item.Properties, Item> factory, Item.Properties settings) {
-        Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Blockus.id(id))));
-        return Registry.register(BuiltInRegistries.ITEM, id, item);
+        return Registry.register(BuiltInRegistries.ITEM, key, factory.apply(settings.setId(key)));
     }
 
     public static Item register(Block block, BiFunction<Block, Item.Properties, Item> factory, Item.Properties settings) {
@@ -31,7 +25,7 @@ public class BlockusItems {
         return ResourceKey.create(Registries.ITEM, blockKey.identifier());
     }
 
-    public static Item register(String id) {
-        return register(id, Item::new, new Item.Properties());
+    public static Item register(String name) {
+        return register(ResourceKey.create(Registries.ITEM, Blockus.id(name)), Item::new, new Item.Properties());
     }
 }

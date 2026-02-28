@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:charred_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:charred_brick_wall"
   }
 }

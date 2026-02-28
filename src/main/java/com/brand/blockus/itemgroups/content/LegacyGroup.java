@@ -2,12 +2,12 @@ package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 
 public class LegacyGroup {
 
     public static void init() {
-        ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS).register((entries) -> {
+        CreativeModeTabEvents.modifyOutputEvent(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS).register((entries) -> {
             entries.accept(BlockusBlocks.LEGACY_ROSE);
             entries.accept(BlockusBlocks.LEGACY_BLUE_ROSE);
             entries.accept(BlockusBlocks.LEGACY_SAPLING);

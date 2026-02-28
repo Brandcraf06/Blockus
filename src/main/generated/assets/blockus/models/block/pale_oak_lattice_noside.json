@@ -1,6 +1,9 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside",
   "textures": {
-    "pane": "blockus:block/pale_oak_grate"
+    "pane": {
+      "force_translucent": true,
+      "sprite": "blockus:block/pale_oak_grate"
+    }
   }
 }

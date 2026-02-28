@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:small_end_stone_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:small_end_stone_brick_stairs"
   }
 }

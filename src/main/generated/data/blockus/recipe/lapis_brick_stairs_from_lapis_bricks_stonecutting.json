@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:lapis_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:lapis_brick_stairs"
   }
 }

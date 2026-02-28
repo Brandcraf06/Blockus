@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:polished_end_stone",
   "result": {
-    "count": 1,
     "id": "blockus:small_end_stone_brick_wall"
   }
 }

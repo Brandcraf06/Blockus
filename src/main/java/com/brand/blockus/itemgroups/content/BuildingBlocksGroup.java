@@ -6,8 +6,8 @@ import com.brand.blockus.registry.content.bundles.CopperBSSWBundle;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
 import com.brand.blockus.utils.helper.WoodMaps;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Collection;
@@ -17,7 +17,7 @@ import static com.brand.blockus.registry.content.BlockusBlocks.*;
 public class BuildingBlocksGroup {
 
     public static void init() {
-        ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_BUILDING_BLOCKS).register((entries) -> {
+        CreativeModeTabEvents.modifyOutputEvent(BlockusItemGroups.BLOCKUS_BUILDING_BLOCKS).register((entries) -> {
             entries.accept(WHITE_OAK_LOG);
             entries.accept(WHITE_OAK_WOOD);
             entries.accept(STRIPPED_WHITE_OAK_LOG);
@@ -465,14 +465,14 @@ public class BuildingBlocksGroup {
         });
     }
 
-    public static void addBssw(FabricItemGroupEntries entries, BSSWBundle bsswBundle) {
+    public static void addBssw(FabricCreativeModeTabOutput entries, BSSWBundle bsswBundle) {
         // Block, stairs & slab & wall (if exist) variants of a block
         for (Block block : bsswBundle.all()) {
             entries.accept(block);
         }
     }
 
-    public static void add(FabricItemGroupEntries entries, Collection<Block> blocks) {
+    public static void add(FabricCreativeModeTabOutput entries, Collection<Block> blocks) {
         for (Block block : blocks) {
             entries.accept(block);
         }

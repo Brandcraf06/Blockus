@@ -12,7 +12,7 @@ import com.brand.blockus.utils.BlockusBlockStateProperties;
 import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
@@ -21,6 +21,7 @@ import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.model.Material;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
@@ -35,14 +36,14 @@ import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
 public class BlockusModelProvider extends FabricModelProvider {
 
-    public BlockusModelProvider(FabricDataOutput output) {
+    public BlockusModelProvider(FabricPackOutput output) {
         super(output);
     }
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators modelGenerator) {
 
-        BlockusFamilies.getFamilies().filter(BlockFamily::shouldGenerateModel).forEach((family) -> {
+        BlockusFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateModel).forEach((family) -> {
             modelGenerator.family(family.getBaseBlock()).generateFor(family);
         });
 
@@ -194,7 +195,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_POLISHED_BASALT_BRICKS);
         modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.POLISHED_BASALT_CIRCULAR_PAVING);
         this.registerPillar(modelGenerator, BlockusBlocks.POLISHED_BASALT_PILLAR);
-        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE, BlockusBlocks.POLISHED_BASALT_BUTTON, TextureMapping.getBlockTexture(Blocks.POLISHED_BASALT, "_top"));
+        this.registerButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE, BlockusBlocks.POLISHED_BASALT_BUTTON, Blocks.POLISHED_BASALT, "_top");
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_POLISHED_BASALT_BRICKS);
 
         // Limestone
@@ -565,18 +566,18 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.registerPressurePlate(modelGenerator, pressurePlateBlock, TextureMapping.getBlockTexture(textureID));
     }
 
-    public final void registerButtonAndPressurePlate(BlockModelGenerators modelGenerator, Block pressurePlateBlock, Block buttonBlock, Identifier textureSource) {
-        this.registerButton(modelGenerator, buttonBlock, textureSource);
-        this.registerPressurePlate(modelGenerator, pressurePlateBlock, textureSource);
+    public final void registerButtonAndPressurePlate(BlockModelGenerators modelGenerator, Block pressurePlateBlock, Block buttonBlock, Block textureid, String suffix) {
+        this.registerButton(modelGenerator, buttonBlock, TextureMapping.getBlockTexture(textureid, suffix));
+        this.registerPressurePlate(modelGenerator, pressurePlateBlock, TextureMapping.getBlockTexture(textureid, suffix));
     }
 
     public final void registerPost(BlockModelGenerators modelGenerator, Block block, Block textureSource) {
         TextureMapping textureMap = TextureMapping.logColumn(textureSource);
-        Identifier identifier = BlockusModels.TEMPLATE_POST.create(block, textureMap, modelGenerator.modelOutput);
+        Identifier model = BlockusModels.TEMPLATE_POST.create(block, textureMap, modelGenerator.modelOutput);
         MultiVariant modelVariant = plainVariant(BlockusModels.TEMPLATE_POST_CONNECT.create(block, textureMap, modelGenerator.modelOutput));
         MultiVariant modelVariant2 = plainVariant(BlockusModels.TEMPLATE_POST_CONNECT_TOP.create(block, textureMap, modelGenerator.modelOutput));
-        modelGenerator.blockStateOutput.accept(createPostBlockState(block, plainVariant(identifier), modelVariant, modelVariant2, plainVariant(Blockus.id("block/chain_connect")), plainVariant(Blockus.id("block/chain_connect_top"))));
-        modelGenerator.registerSimpleItemModel(block, identifier);
+        modelGenerator.blockStateOutput.accept(createPostBlockState(block, plainVariant(model), modelVariant, modelVariant2, plainVariant(Blockus.id("block/chain_connect")), plainVariant(Blockus.id("block/chain_connect_top"))));
+        modelGenerator.registerSimpleItemModel(block, model);
     }
 
     public static BlockModelDefinitionGenerator createPostBlockState(Block postBlock, MultiVariant postModelId, MultiVariant sideModelId, MultiVariant topModelId, MultiVariant chainModelId, MultiVariant topChainModelId) {
@@ -654,11 +655,11 @@ public class BlockusModelProvider extends FabricModelProvider {
         MultiVariant weightedVariant4 = plainVariant(BlockusModels.TEMPLATE_HEDGE_NOSIDE.create(hedgeBlock, textureMap, modelGenerator.modelOutput));
         MultiVariant weightedVariant5 = plainVariant(BlockusModels.TEMPLATE_HEDGE_NOSIDE_ALT.create(hedgeBlock, textureMap, modelGenerator.modelOutput));
         modelGenerator.blockStateOutput.accept(MultiPartGenerator.multiPart(hedgeBlock).with(weightedVariant).with(condition().term(BlockStateProperties.NORTH, true), weightedVariant2.with(UV_LOCK)).with(condition().term(BlockStateProperties.EAST, true), weightedVariant2.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.SOUTH, true), weightedVariant3.with(UV_LOCK)).with(condition().term(BlockStateProperties.WEST, true), weightedVariant3.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.NORTH, false), weightedVariant4.with(UV_LOCK)).with(condition().term(BlockStateProperties.EAST, false), weightedVariant5.with(UV_LOCK)).with(condition().term(BlockStateProperties.SOUTH, false), weightedVariant5.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.WEST, false), weightedVariant4.with(Y_ROT_270).with(UV_LOCK)));
-        Identifier identifier = BlockusModels.TEMPLATE_HEDGE_INVENTORY.create(hedgeBlock, textureMap, modelGenerator.modelOutput);
+        Identifier model = BlockusModels.TEMPLATE_HEDGE_INVENTORY.create(hedgeBlock, textureMap, modelGenerator.modelOutput);
         if (isTinted) {
-            modelGenerator.registerSimpleTintedItemModel(hedgeBlock, identifier, ItemModelUtils.constantTint(tintColor));
+            modelGenerator.registerSimpleTintedItemModel(hedgeBlock, model, ItemModelUtils.constantTint(tintColor));
         } else {
-            modelGenerator.registerSimpleItemModel(hedgeBlock, identifier);
+            modelGenerator.registerSimpleItemModel(hedgeBlock, model);
         }
     }
 
@@ -673,7 +674,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void registerBlockStairsSlabWithBottom(BlockModelGenerators modelGenerator, Block block, Block stairs, Block slab, Block base) {
-        Identifier textureID = TextureMapping.getBlockTexture(base, "_bottom");
+        Material textureID = TextureMapping.getBlockTexture(base, "_bottom");
         TextureMapping blockTextureMap = TextureMapping.singleSlot(TextureSlot.ALL, textureID);
         TextureMapping textureMap = sideTopBottom(textureID);
         this.createBlock(modelGenerator, block, blockTextureMap);
@@ -682,7 +683,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void registerBlockStairsSlabWithTop(BlockModelGenerators modelGenerator, Block block, Block stairs, Block slab, Block base) {
-        Identifier textureID = TextureMapping.getBlockTexture(base, "_top");
+        Material textureID = TextureMapping.getBlockTexture(base, "_top");
         TextureMapping blockTextureMap = TextureMapping.singleSlot(TextureSlot.ALL, textureID);
         TextureMapping textureMap = sideTopBottom(textureID);
         this.createBlock(modelGenerator, block, blockTextureMap);
@@ -704,7 +705,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerSlab(BlockModelGenerators modelGenerator, Block block, Block textureSource) {
         TextureMapping textureMap = sideTopBottom(TextureMapping.getBlockTexture(textureSource));
-        this.createSlab(modelGenerator, block, textureMap, TextureMapping.getBlockTexture(textureSource));
+        this.createSlab(modelGenerator, block, textureMap, TextureMapping.getBlockTexture(textureSource).sprite());
     }
 
     public final void registerStairsAndSlab(BlockModelGenerators modelGenerator, Block stairs, Block slab, Block block) {
@@ -714,7 +715,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerSlabwithTop(BlockModelGenerators modelGenerator, Block block, Block textureSource, Block end) {
         TextureMapping textureMap = sideTopBottom(TextureMapping.getBlockTexture(textureSource), TextureMapping.getBlockTexture(end, "_top"));
-        this.createSlab(modelGenerator, block, textureMap, TextureMapping.getBlockTexture(textureSource));
+        this.createSlab(modelGenerator, block, textureMap, TextureMapping.getBlockTexture(textureSource).sprite());
     }
 
     public final void registerWall(BlockModelGenerators modelGenerator, Block block, Block textureSource) {
@@ -722,16 +723,16 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createWall(modelGenerator, block, textureMap);
     }
 
-    public final void registerButton(BlockModelGenerators modelGenerator, Block buttonBlock, Identifier textureSource) {
+    public final void registerButton(BlockModelGenerators modelGenerator, Block buttonBlock, Material textureSource) {
         TextureMapping textureMap = TextureMapping.defaultTexture(textureSource);
         MultiVariant modelVariant = plainVariant(ModelTemplates.BUTTON.create(buttonBlock, textureMap, modelGenerator.modelOutput));
         MultiVariant modelVariant2 = plainVariant(ModelTemplates.BUTTON_PRESSED.create(buttonBlock, textureMap, modelGenerator.modelOutput));
-        Identifier identifier = ModelTemplates.BUTTON_INVENTORY.create(buttonBlock, textureMap, modelGenerator.modelOutput);
+        Identifier model = ModelTemplates.BUTTON_INVENTORY.create(buttonBlock, textureMap, modelGenerator.modelOutput);
         modelGenerator.blockStateOutput.accept(createButton(buttonBlock, modelVariant, modelVariant2));
-        modelGenerator.registerSimpleItemModel(buttonBlock, identifier);
+        modelGenerator.registerSimpleItemModel(buttonBlock, model);
     }
 
-    public final void registerPressurePlate(BlockModelGenerators modelGenerator, Block pressurePlateBlock, Identifier textureSource) {
+    public final void registerPressurePlate(BlockModelGenerators modelGenerator, Block pressurePlateBlock, Material textureSource) {
         TextureMapping textureMap = TextureMapping.defaultTexture(textureSource);
         MultiVariant modelVariant = plainVariant(ModelTemplates.PRESSURE_PLATE_UP.create(pressurePlateBlock, textureMap, modelGenerator.modelOutput));
         MultiVariant modelVariant2 = plainVariant(ModelTemplates.PRESSURE_PLATE_DOWN.create(pressurePlateBlock, textureMap, modelGenerator.modelOutput));
@@ -810,8 +811,8 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void registerSturdyStone(BlockModelGenerators modelGenerator) {
-        Identifier identifier = TextureMapping.getBlockTexture(Blocks.FURNACE, "_top");
-        this.createBlock(modelGenerator, BlockusBlocks.STURDY_STONE, TextureMapping.singleSlot(TextureSlot.ALL, identifier));
+        Material texture = TextureMapping.getBlockTexture(Blocks.FURNACE, "_top");
+        this.createBlock(modelGenerator, BlockusBlocks.STURDY_STONE, TextureMapping.singleSlot(TextureSlot.ALL, texture));
     }
 
     public final void registerSmoothStoneStairs(BlockModelGenerators modelGenerator) {
@@ -851,9 +852,9 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     private void registerDiagonalTimberFrame(BlockModelGenerators modelGenerator, Block block) {
         MultiVariant modelVariant = plainVariant(ModelLocationUtils.getModelLocation(block));
-        Identifier identifier = TextureMapping.getBlockTexture(block, "_right");
-        Identifier identifier2 = TextureMapping.getBlockTexture(block, "_left");
-        TextureMapping textureMap = (new TextureMapping()).put(TextureSlot.PARTICLE, identifier).put(TextureSlot.NORTH, identifier).put(TextureSlot.SOUTH, identifier).put(TextureSlot.EAST, identifier).put(TextureSlot.WEST, identifier2).put(TextureSlot.DOWN, identifier2).put(TextureSlot.UP, identifier2);
+        Material texture = TextureMapping.getBlockTexture(block, "_right");
+        Material texture2 = TextureMapping.getBlockTexture(block, "_left");
+        TextureMapping textureMap = (new TextureMapping()).put(TextureSlot.PARTICLE, texture).put(TextureSlot.NORTH, texture).put(TextureSlot.SOUTH, texture).put(TextureSlot.EAST, texture).put(TextureSlot.WEST, texture2).put(TextureSlot.DOWN, texture2).put(TextureSlot.UP, texture2);
         ModelTemplates.CUBE.create(block, textureMap, modelGenerator.modelOutput);
         modelGenerator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(BlockStateProperties.HORIZONTAL_FACING)
             .select(Direction.NORTH, modelVariant)
@@ -885,8 +886,8 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void registerColoredTilesSimple(BlockModelGenerators modelGenerator, Block block) {
-        Identifier identifier = getModifiedBlockId(block, "_colored", "");
-        this.createBlock(modelGenerator, block, TextureMapping.singleSlot(TextureSlot.ALL, identifier));
+        Material texture = getModifiedBlockId(block, "_colored", "");
+        this.createBlock(modelGenerator, block, TextureMapping.singleSlot(TextureSlot.ALL, texture));
     }
 
     public final void createBlock(BlockModelGenerators modelGenerator, Block block, ModelTemplate model, TextureMapping textureMap) {
@@ -899,17 +900,17 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void createStairs(BlockModelGenerators modelGenerator, Block block, TextureMapping textureMap) {
         MultiVariant modelVariant = plainVariant(ModelTemplates.STAIRS_INNER.create(block, textureMap, modelGenerator.modelOutput));
-        Identifier identifier = ModelTemplates.STAIRS_STRAIGHT.create(block, textureMap, modelGenerator.modelOutput);
+        Identifier model = ModelTemplates.STAIRS_STRAIGHT.create(block, textureMap, modelGenerator.modelOutput);
         MultiVariant modelVariant2 = plainVariant(ModelTemplates.STAIRS_OUTER.create(block, textureMap, modelGenerator.modelOutput));
-        modelGenerator.blockStateOutput.accept(BlockModelGenerators.createStairs(block, modelVariant, plainVariant(identifier), modelVariant2));
-        modelGenerator.registerSimpleItemModel(block, identifier);
+        modelGenerator.blockStateOutput.accept(BlockModelGenerators.createStairs(block, modelVariant, plainVariant(model), modelVariant2));
+        modelGenerator.registerSimpleItemModel(block, model);
     }
 
     public final void createSlab(BlockModelGenerators modelGenerator, Block block, TextureMapping textureMap, Identifier doubleSlab) {
-        Identifier identifier = ModelTemplates.SLAB_BOTTOM.create(block, textureMap, modelGenerator.modelOutput);
-        MultiVariant modelVariant = plainVariant(ModelTemplates.SLAB_TOP.create(block, textureMap, modelGenerator.modelOutput));
-        modelGenerator.blockStateOutput.accept(BlockModelGenerators.createSlab(block, plainVariant(identifier), modelVariant, plainVariant(doubleSlab)));
-        modelGenerator.registerSimpleItemModel(block, identifier);
+        Identifier bottom = ModelTemplates.SLAB_BOTTOM.create(block, textureMap, modelGenerator.modelOutput);
+        MultiVariant top = plainVariant(ModelTemplates.SLAB_TOP.create(block, textureMap, modelGenerator.modelOutput));
+        modelGenerator.blockStateOutput.accept(BlockModelGenerators.createSlab(block, BlockModelGenerators.plainVariant(bottom), top, BlockModelGenerators.plainVariant(doubleSlab)));
+        modelGenerator.registerSimpleItemModel(block, bottom);
     }
 
     public final void createWall(BlockModelGenerators modelGenerator, Block block, TextureMapping textureMap) {
@@ -917,8 +918,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         MultiVariant modelVariant2 = plainVariant(ModelTemplates.WALL_LOW_SIDE.create(block, textureMap, modelGenerator.modelOutput));
         MultiVariant modelVariant3 = plainVariant(ModelTemplates.WALL_TALL_SIDE.create(block, textureMap, modelGenerator.modelOutput));
         modelGenerator.blockStateOutput.accept(BlockModelGenerators.createWall(block, modelVariant, modelVariant2, modelVariant3));
-        Identifier identifier = ModelTemplates.WALL_INVENTORY.create(block, textureMap, modelGenerator.modelOutput);
-        modelGenerator.registerSimpleItemModel(block, identifier);
+        Identifier model = ModelTemplates.WALL_INVENTORY.create(block, textureMap, modelGenerator.modelOutput);
+        modelGenerator.registerSimpleItemModel(block, model);
     }
 
     public void registerGate(BlockModelGenerators modelGenerator, Block gateBlock) {
@@ -937,9 +938,9 @@ public class BlockusModelProvider extends FabricModelProvider {
         MultiVariant weightedVariant2 = plainVariant(BlockusModels.GATE_BOTTOM_HINGE.create(unwaxed, textureMap, modelGenerator.modelOutput));
         MultiVariant weightedVariant3 = plainVariant(BlockusModels.GATE_TOP.create(unwaxed, textureMap, modelGenerator.modelOutput));
         MultiVariant weightedVariant4 = plainVariant(BlockusModels.GATE_TOP_HINGE.create(unwaxed, textureMap, modelGenerator.modelOutput));
-        Identifier identifier = modelGenerator.createFlatItemModel(unwaxed.asItem());
-        modelGenerator.registerSimpleItemModel(unwaxed.asItem(), identifier);
-        modelGenerator.registerSimpleItemModel(waxed.asItem(), identifier);
+        Identifier model = modelGenerator.createFlatItemModel(unwaxed.asItem());
+        modelGenerator.registerSimpleItemModel(unwaxed.asItem(), model);
+        modelGenerator.registerSimpleItemModel(waxed.asItem(), model);
         modelGenerator.blockStateOutput.accept(createDoor(unwaxed, weightedVariant, weightedVariant2, weightedVariant2, weightedVariant, weightedVariant3, weightedVariant4, weightedVariant4, weightedVariant3));
         modelGenerator.blockStateOutput.accept(createDoor(waxed, weightedVariant, weightedVariant2, weightedVariant2, weightedVariant, weightedVariant3, weightedVariant4, weightedVariant4, weightedVariant3));
 
@@ -955,41 +956,43 @@ public class BlockusModelProvider extends FabricModelProvider {
             .select(Direction.EAST, X_ROT_270.then(Y_ROT_270));
     }
 
-    public static Identifier getTilesId(Block block) {
+    public static Material getTilesId(Block block) {
         return getModifiedBlockId(block, "_concrete", "_tiles");
     }
 
-    public static Identifier getBlockId(String id) {
-        return Blockus.id("block/" + id);
+    public static Material getBlockId(String name) {
+        Identifier id = Blockus.id(name);
+        return new Material(id.withPath((path) -> "block/" + path));
     }
 
     public static Identifier getBlockId(Block block) {
         return Blockus.id("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath());
     }
 
-    public static Identifier getModifiedBlockId(Block block, String target, String replacement) {
-        return Blockus.id("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath().replace(target, replacement));
+    public static Material getModifiedBlockId(Block block, String target, String replacement) {
+        Identifier id = Blockus.id(BuiltInRegistries.BLOCK.getKey(block).getPath().replace(target, replacement));
+        return new Material(id.withPrefix("block/"));
     }
 
 // TextureMaps
 
-    private static TextureMapping tilesTextures(Block tile1, Block tile2) {
+    public static TextureMapping tilesTextures(Block tile1, Block tile2) {
         return (new TextureMapping()).put(BlockusTextureKey.TILE_1, getTilesId(tile1)).put(BlockusTextureKey.TILE_2, getTilesId(tile2));
     }
 
-    public static TextureMapping sideTop(Identifier block, Identifier top) {
+    public static TextureMapping sideTop(Material block, Material top) {
         return (new TextureMapping()).put(TextureSlot.SIDE, block).put(TextureSlot.TOP, top);
     }
 
-    public static TextureMapping sideTopBottom(Identifier block, Identifier top, Identifier bottom) {
+    public static TextureMapping sideTopBottom(Material block, Material top, Material bottom) {
         return (new TextureMapping()).put(TextureSlot.SIDE, block).put(TextureSlot.TOP, top).put(TextureSlot.BOTTOM, bottom);
     }
 
-    public static TextureMapping sideTopBottom(Identifier block, Identifier end) {
+    public static TextureMapping sideTopBottom(Material block, Material end) {
         return (new TextureMapping()).put(TextureSlot.SIDE, block).put(TextureSlot.TOP, end).put(TextureSlot.BOTTOM, end);
     }
 
-    public static TextureMapping sideTopBottom(Identifier block) {
+    public static TextureMapping sideTopBottom(Material block) {
         return (new TextureMapping()).put(TextureSlot.SIDE, block).put(TextureSlot.TOP, block).put(TextureSlot.BOTTOM, block);
     }
 

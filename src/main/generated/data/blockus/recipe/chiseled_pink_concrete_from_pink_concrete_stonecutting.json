@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:pink_concrete",
   "result": {
-    "count": 1,
     "id": "blockus:chiseled_pink_concrete"
   }
 }

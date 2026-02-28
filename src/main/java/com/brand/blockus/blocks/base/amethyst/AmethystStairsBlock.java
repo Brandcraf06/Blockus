@@ -14,10 +14,10 @@ public class AmethystStairsBlock extends StairBlock {
         super(state, settings);
     }
 
-    public void onProjectileHit(Level world, BlockState state, BlockHitResult hit, Projectile projectile) {
-        if (!world.isClientSide()) {
-            BlockPos blockPos = hit.getBlockPos();
-            world.playSound(null, blockPos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS, 1.0F, 0.5F + world.random.nextFloat() * 1.2F);
+    public void onProjectileHit(Level level, BlockState state, BlockHitResult hitResult, Projectile projectile) {
+        if (!level.isClientSide()) {
+            BlockPos hitPos = hitResult.getBlockPos();
+            level.playSound(null, hitPos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS, 1.0F, 0.5F + level.getRandom().nextFloat() * 1.2F);
         }
 
     }

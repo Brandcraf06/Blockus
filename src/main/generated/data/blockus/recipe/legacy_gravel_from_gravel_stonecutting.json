@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:gravel",
   "result": {
-    "count": 1,
     "id": "blockus:legacy_gravel"
   }
 }

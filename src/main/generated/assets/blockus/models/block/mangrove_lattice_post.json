@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:block/template_glass_pane_post",
   "textures": {
-    "edge": "blockus:block/mangrove_lattice_top",
-    "pane": "blockus:block/mangrove_grate"
+    "edge": {
+      "force_translucent": true,
+      "sprite": "blockus:block/mangrove_lattice_top"
+    },
+    "pane": {
+      "force_translucent": true,
+      "sprite": "blockus:block/mangrove_grate"
+    }
   }
 }

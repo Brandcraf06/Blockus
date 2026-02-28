@@ -4,8 +4,8 @@ import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.BlockOrder;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 
@@ -16,7 +16,7 @@ public class ColoredGroups {
 
     public static void init() {
 
-        ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_COLORED_BLOCKS).register((entries) -> {
+        CreativeModeTabEvents.modifyOutputEvent(BlockusItemGroups.BLOCKUS_COLORED_BLOCKS).register((entries) -> {
 
             add(entries, BlockusBlocks.ASPHALT.all());
             entries.accept(BlockusBlocks.RAINBOW_ASPHALT);
@@ -69,7 +69,7 @@ public class ColoredGroups {
             entries.accept(BlockusBlocks.RAINBOW_GLOWSTONE);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(BlockusItemGroups.BLOCKUS_COLORED_TILES).register((entries) -> {
+        CreativeModeTabEvents.modifyOutputEvent(BlockusItemGroups.BLOCKUS_COLORED_TILES).register((entries) -> {
             add(entries, BlockusBlocks.COLORED_TILES);
 
             for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
@@ -80,25 +80,25 @@ public class ColoredGroups {
         });
     }
 
-    public static void addBSSW(FabricItemGroupEntries entries, BSSWBundle bsswBundle) {
+    public static void addBSSW(FabricCreativeModeTabOutput entries, BSSWBundle bsswBundle) {
         for (Block block : bsswBundle.all()) {
             entries.accept(block);
         }
     }
 
-    public static void addBSSW(FabricItemGroupEntries entries, StainedBSSWBundle stainedBssw) {
+    public static void addBSSW(FabricCreativeModeTabOutput entries, StainedBSSWBundle stainedBssw) {
         for (DyeColor dyeColor : BlockOrder.COLOR) {
             addBSSW(entries, stainedBssw.colorMap().get(dyeColor));
         }
     }
 
-    public static void add(FabricItemGroupEntries entries, Collection<Block> blocks) {
+    public static void add(FabricCreativeModeTabOutput entries, Collection<Block> blocks) {
         for (Block block : blocks) {
             entries.accept(block);
         }
     }
 
-    public static void add(FabricItemGroupEntries entries, StainedBlockBundle stainedBlock) {
+    public static void add(FabricCreativeModeTabOutput entries, StainedBlockBundle stainedBlock) {
         for (DyeColor dyeColor : BlockOrder.COLOR) {
             entries.accept(stainedBlock.colorMap().get(dyeColor));
         }

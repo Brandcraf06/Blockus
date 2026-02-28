@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:netherrack",
   "result": {
-    "count": 1,
     "id": "blockus:netherrack_brick_stairs"
   }
 }

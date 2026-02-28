@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:polished_viridite",
   "result": {
-    "count": 1,
     "id": "blockus:viridite_squares"
   }
 }

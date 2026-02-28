@@ -4,8 +4,8 @@ import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -21,9 +21,9 @@ import java.util.concurrent.CompletableFuture;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
-public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
-    public BlockusBlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+    public BlockusBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 

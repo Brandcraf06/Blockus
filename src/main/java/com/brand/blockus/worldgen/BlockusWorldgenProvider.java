@@ -2,7 +2,7 @@ package com.brand.blockus.worldgen;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.google.common.collect.ImmutableList;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -34,7 +34,7 @@ import java.util.concurrent.CompletableFuture;
 import static com.brand.blockus.worldgen.BlockusWorldgenFeatures.*;
 
 public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
-    public BlockusWorldgenProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+    public BlockusWorldgenProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
@@ -80,11 +80,11 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
 
         PlaceOnGroundDecorator placeOnGroundTreeDecorator = new PlaceOnGroundDecorator(96, 4, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 3)));
         PlaceOnGroundDecorator placeOnGroundTreeDecorator2 = new PlaceOnGroundDecorator(150, 2, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 4)));
-        FeatureUtils.register(registerable, WHITE_OAK, Feature.TREE, white_oak().build());
-        FeatureUtils.register(registerable, WHITE_OAK_LEAF_LITTER, Feature.TREE, white_oak().decorators(ImmutableList.of(placeOnGroundTreeDecorator, placeOnGroundTreeDecorator2)).build());
+        FeatureUtils.register(registerable, WHITE_OAK, Feature.TREE, createWhiteOak().build());
+        FeatureUtils.register(registerable, WHITE_OAK_LEAF_LITTER, Feature.TREE, createWhiteOak().decorators(ImmutableList.of(placeOnGroundTreeDecorator, placeOnGroundTreeDecorator2)).build());
         FeatureUtils.register(registerable, FALLEN_WHITE_OAK, Feature.FALLEN_TREE, fallen(BlockusBlocks.WHITE_OAK_LOG, 4, 9).build());
 
-        FeatureUtils.register(registerable, LEGACY_OAK, Feature.TREE, legacy_oak().build());
+        FeatureUtils.register(registerable, LEGACY_OAK, Feature.TREE, createLegacyOak().build());
         FeatureUtils.register(registerable, RAINBOW_ROSE, Feature.FLOWER, new RandomPatchConfiguration(12, 7, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(BlockusBlocks.RAINBOW_ROSE)))));
     }
 

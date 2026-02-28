@@ -7,7 +7,7 @@ import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.effect.BlockusEffects;
 import com.brand.blockus.registry.gamerule.BlockusGamerules;
 import com.brand.blockus.utils.helper.WoodMaps;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.DyeColor;
@@ -19,12 +19,12 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public class BlockusLangEnProvider extends FabricLanguageProvider {
-    public BlockusLangEnProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
-        super(output, registryLookup);
+    public BlockusLangEnProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(output, registriesFuture);
     }
 
     @Override
-    public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(HolderLookup.Provider registriesFuture, TranslationBuilder translationBuilder) {
 
         translationBuilder.add(BlockusEffects.ASPHALT_SPRINT.value(), "Asphalt Sprint");
         translationBuilder.add(BlockusItemGroups.BLOCKUS_BUILDING_BLOCKS, "Building Blocks");

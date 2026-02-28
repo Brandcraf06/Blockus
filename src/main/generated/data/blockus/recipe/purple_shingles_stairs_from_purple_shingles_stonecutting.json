@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:purple_shingles",
   "result": {
-    "count": 1,
     "id": "blockus:purple_shingles_stairs"
   }
 }

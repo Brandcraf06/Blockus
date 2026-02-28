@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:crimson_wart_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:crimson_wart_brick_stairs"
   }
 }

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:sandy_bricks",
   "result": {
-    "count": 1,
     "id": "blockus:sandy_brick_stairs"
   }
 }

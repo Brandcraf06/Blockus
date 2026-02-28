@@ -2,10 +2,8 @@ package com.brand.blockus;
 
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.WoodMaps;
-import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.fabricmc.fabric.impl.content.registry.OxidizableBlocksRegistryImpl;
-import net.minecraft.world.entity.npc.villager.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -20,7 +18,7 @@ public class Instance {
 
 // Burning
         // Fuel
-        FuelRegistryEvents.BUILD.register((builder, context) -> {
+        FuelValueEvents.BUILD.register((builder, context) -> {
             builder.add(Items.DRIED_KELP, 200);
             builder.add(LEGACY_COAL_BLOCK, 16000);
             builder.add(CHARCOAL_BLOCK, 16000);
@@ -66,7 +64,7 @@ public class Instance {
                 for (var entry : timberFrameBundle.woodMap().entrySet()) {
                     if (!entry.getKey().data().isBurnable()) continue;
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
-                    FuelRegistryEvents.BUILD.register((builder, context) -> builder.add(block, 300));
+                    FuelValueEvents.BUILD.register((builder, context) -> builder.add(block, 300));
                 }
             }
         }
@@ -78,7 +76,7 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(blocks.stairs(), 30, 60);
                 FlammableBlockRegistry.getDefaultInstance().add(blocks.slab(), 30, 60);
                 FlammableBlockRegistry.getDefaultInstance().add(blocks.carpet(), 60, 20);
-                FuelRegistryEvents.BUILD.register((builder, context) -> {
+                FuelValueEvents.BUILD.register((builder, context) -> {
                     builder.add(blocks.stairs(), 100);
                     builder.add(blocks.slab(), 50);
                 });
@@ -93,7 +91,7 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(woodBundle.slab(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fenceGate(), 5, 20);
-                FuelRegistryEvents.BUILD.register((builder, context) -> {
+                FuelValueEvents.BUILD.register((builder, context) -> {
                     builder.add(woodBundle.fence(), 300);
                     builder.add(woodBundle.fenceGate(), 300);
                     builder.add(woodBundle.shelf(), 300);
@@ -118,7 +116,7 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.slab(), 5, 20);
 
-                FuelRegistryEvents.BUILD.register((builder, context) -> {
+                FuelValueEvents.BUILD.register((builder, context) -> {
                     builder.add(bundle.block(), 300);
                     builder.add(bundle.stairs(), 300);
                     builder.add(bundle.slab(), 150);
@@ -149,7 +147,7 @@ public class Instance {
                 WoodenPostBundle.WoodenPostVariants variants = entry.getValue();
                 FlammableBlockRegistry.getDefaultInstance().add(variants.block(), 5, 5);
                 FlammableBlockRegistry.getDefaultInstance().add(variants.stripped(), 5, 5);
-                FuelRegistryEvents.BUILD.register((builder, context) -> {
+                FuelValueEvents.BUILD.register((builder, context) -> {
                     builder.add(variants.block(), 150);
                     builder.add(variants.stripped(), 150);
                 });
@@ -160,38 +158,38 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(LEGACY_LOG, 5, 5);
 
 // Composting
-        CompostingChanceRegistry.INSTANCE.add(OAK_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(ACACIA_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(BIRCH_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(DARK_OAK_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(JUNGLE_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(SPRUCE_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(MANGROVE_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(CHERRY_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(PALE_OAK_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(AZALEA_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(WHITE_OAK_HEDGE, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(WHITE_OAK_LEAVES, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(WHITE_OAK_SAPLING, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(LEGACY_SAPLING, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(RAINBOW_PETALS, 0.30f);
-        CompostingChanceRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(SWEET_BERRIES_CRATE, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(FLOWERING_AZALEA_HEDGE, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(MOSS_HEDGE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(PALE_MOSS_HEDGE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(RAINBOW_ROSE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(THATCH.slab(), 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(THATCH.block(), 0.75f);
-        CompostingChanceRegistry.INSTANCE.add(THATCH.stairs(), 0.75f);
-        CompostingChanceRegistry.INSTANCE.add(WARPED_HEDGE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(CRIMSON_HEDGE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(APPLE_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BEETROOT_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(CARROT_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(POTATO_CRATE, 0.95f);
-        CompostingChanceRegistry.INSTANCE.add(BREAD_BOX, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(COOKIE_BLOCK, 1.0f);
+        CompostableRegistry.INSTANCE.add(OAK_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(ACACIA_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(BIRCH_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(DARK_OAK_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(JUNGLE_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(SPRUCE_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(MANGROVE_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(CHERRY_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(PALE_OAK_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(AZALEA_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(WHITE_OAK_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(WHITE_OAK_LEAVES, 0.30f);
+        CompostableRegistry.INSTANCE.add(WHITE_OAK_SAPLING, 0.30f);
+        CompostableRegistry.INSTANCE.add(LEGACY_SAPLING, 0.30f);
+        CompostableRegistry.INSTANCE.add(RAINBOW_PETALS, 0.30f);
+        CompostableRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
+        CompostableRegistry.INSTANCE.add(SWEET_BERRIES_CRATE, 0.50f);
+        CompostableRegistry.INSTANCE.add(FLOWERING_AZALEA_HEDGE, 0.50f);
+        CompostableRegistry.INSTANCE.add(MOSS_HEDGE, 0.65f);
+        CompostableRegistry.INSTANCE.add(PALE_MOSS_HEDGE, 0.65f);
+        CompostableRegistry.INSTANCE.add(RAINBOW_ROSE, 0.65f);
+        CompostableRegistry.INSTANCE.add(THATCH.slab(), 0.65f);
+        CompostableRegistry.INSTANCE.add(THATCH.block(), 0.75f);
+        CompostableRegistry.INSTANCE.add(THATCH.stairs(), 0.75f);
+        CompostableRegistry.INSTANCE.add(WARPED_HEDGE, 0.85f);
+        CompostableRegistry.INSTANCE.add(CRIMSON_HEDGE, 0.85f);
+        CompostableRegistry.INSTANCE.add(APPLE_CRATE, 0.95f);
+        CompostableRegistry.INSTANCE.add(BEETROOT_CRATE, 0.95f);
+        CompostableRegistry.INSTANCE.add(CARROT_CRATE, 0.95f);
+        CompostableRegistry.INSTANCE.add(POTATO_CRATE, 0.95f);
+        CompostableRegistry.INSTANCE.add(BREAD_BOX, 1.0f);
+        CompostableRegistry.INSTANCE.add(COOKIE_BLOCK, 1.0f);
 
 // Other
 
@@ -214,20 +212,20 @@ public class Instance {
     public static void addOxidizable() {
         registerOxidizable(COPPER_BRICKS, EXPOSED_COPPER_BRICKS, WEATHERED_COPPER_BRICKS, OXIDIZED_COPPER_BRICKS);
         registerOxidizable(COPPER_TUFF_BRICKS, EXPOSED_COPPER_TUFF_BRICKS, WEATHERED_COPPER_TUFF_BRICKS, OXIDIZED_COPPER_TUFF_BRICKS);
-        COPPER_LANTERN_BLOCK.getOxidizingMap().forEach(OxidizableBlocksRegistryImpl::registerOxidizableBlockPair);
-        COPPER_LANTERN_BLOCK.getWaxingMap().forEach(OxidizableBlocksRegistryImpl::registerWaxableBlockPair);
-        COPPER_GATE.getOxidizingMap().forEach(OxidizableBlocksRegistryImpl::registerOxidizableBlockPair);
-        COPPER_GATE.getWaxingMap().forEach(OxidizableBlocksRegistryImpl::registerWaxableBlockPair);
+        COPPER_LANTERN_BLOCK.getOxidizingMap().forEach(OxidizableBlocksRegistryImpl::registerNextStage);
+        COPPER_LANTERN_BLOCK.getWaxingMap().forEach(OxidizableBlocksRegistryImpl::registerWaxable);
+        COPPER_GATE.getOxidizingMap().forEach(OxidizableBlocksRegistryImpl::registerNextStage);
+        COPPER_GATE.getWaxingMap().forEach(OxidizableBlocksRegistryImpl::registerWaxable);
     }
 
     public static void registerOxidizable(Block block, Block exposed, Block weathered, Block oxidized, Block waxed, Block exposedwaxed, Block weatheredwaxed, Block oxidizedwaxed) {
-        OxidizableBlocksRegistry.registerOxidizableBlockPair(block, exposed);
-        OxidizableBlocksRegistry.registerOxidizableBlockPair(exposed, weathered);
-        OxidizableBlocksRegistry.registerOxidizableBlockPair(weathered, oxidized);
-        OxidizableBlocksRegistry.registerWaxableBlockPair(block, waxed);
-        OxidizableBlocksRegistry.registerWaxableBlockPair(exposed, exposedwaxed);
-        OxidizableBlocksRegistry.registerWaxableBlockPair(weathered, weatheredwaxed);
-        OxidizableBlocksRegistry.registerWaxableBlockPair(oxidized, oxidizedwaxed);
+        OxidizableBlocksRegistry.registerNextStage(block, exposed);
+        OxidizableBlocksRegistry.registerNextStage(exposed, weathered);
+        OxidizableBlocksRegistry.registerNextStage(weathered, oxidized);
+        OxidizableBlocksRegistry.registerWaxable(block, waxed);
+        OxidizableBlocksRegistry.registerWaxable(exposed, exposedwaxed);
+        OxidizableBlocksRegistry.registerWaxable(weathered, weatheredwaxed);
+        OxidizableBlocksRegistry.registerWaxable(oxidized, oxidizedwaxed);
     }
 
     public static void registerOxidizable(CopperBSSWBundle block, CopperBSSWBundle exposed, CopperBSSWBundle weathered, CopperBSSWBundle oxidized) {
@@ -243,15 +241,15 @@ public class Instance {
     }
 
     public static void addTradeOffers() {
-        TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
-            TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
-            new VillagerTrades.ItemsForEmeralds(LEGACY_SAPLING.asItem(), 5, 1, 8, 1),
-            new VillagerTrades.ItemsForEmeralds(WHITE_OAK_SAPLING.asItem(), 5, 1, 8, 1),
-            new VillagerTrades.ItemsForEmeralds(RAINBOW_PETALS.asItem(), 1, 3, 12, 1),
-            new VillagerTrades.ItemsForEmeralds(RAINBOW_ROSE.asItem(), 1, 1, 12, 1)));
-
-        TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
-            TradeOfferHelper.WanderingTraderOffersBuilder.SELL_SPECIAL_ITEMS_POOL,
-            new VillagerTrades.ItemsForEmeralds(WHITE_OAK_LOG.asItem(), 1, 8, 4, 1)));
+//        TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
+//            TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
+//            new VillagerTrades.ItemsForEmeralds(LEGACY_SAPLING.asItem(), 5, 1, 8, 1),
+//            new VillagerTrades.ItemsForEmeralds(WHITE_OAK_SAPLING.asItem(), 5, 1, 8, 1),
+//            new VillagerTrades.ItemsForEmeralds(RAINBOW_PETALS.asItem(), 1, 3, 12, 1),
+//            new VillagerTrades.ItemsForEmeralds(RAINBOW_ROSE.asItem(), 1, 1, 12, 1)));
+//
+//        TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
+//            TradeOfferHelper.WanderingTraderOffersBuilder.SELL_SPECIAL_ITEMS_POOL,
+//            new VillagerTrades.ItemsForEmeralds(WHITE_OAK_LOG.asItem(), 1, 8, 4, 1)));
     }
 }

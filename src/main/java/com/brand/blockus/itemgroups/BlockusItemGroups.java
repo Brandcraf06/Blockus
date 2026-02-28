@@ -3,7 +3,7 @@ package com.brand.blockus.itemgroups;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,32 +28,32 @@ public class BlockusItemGroups {
     public static Component BLOCKUS_GROUPS_TEXT = Component.literal(" (Blockus)").withStyle(ChatFormatting.DARK_AQUA);
 
     public static void init() {
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_BUILDING_BLOCKS, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_BUILDING_BLOCKS, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_building_blocks").append(BLOCKUS_GROUPS_TEXT))
             .icon(() -> new ItemStack(BlockusBlocks.BLAZE_BRICKS.block()))
             .build()
         );
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_BLOCKS, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_BLOCKS, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_colored").append(BLOCKUS_GROUPS_TEXT))
             .icon(() -> new ItemStack(ASPHALT.colorMap().get(DyeColor.LIME).block()))
             .build()
         );
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_TILES, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_TILES, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_colored_tiles").append(BLOCKUS_GROUPS_TEXT))
             .icon(() -> new ItemStack(ColoredTilesBundle.get(Blocks.RED_CONCRETE, Blocks.BLUE_CONCRETE).block()))
             .build()
         );
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_NATURAL, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_NATURAL, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_natural").append(BLOCKUS_GROUPS_TEXT))
             .icon(() -> new ItemStack(BlockusBlocks.WHITE_OAK_SAPLING))
             .build()
         );
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_FUNCTIONAL_BLOCKS, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_FUNCTIONAL_BLOCKS, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_functional").append(BLOCKUS_GROUPS_TEXT))
             .icon(() -> new ItemStack(BlockusBlocks.REDSTONE_LANTERN))
             .build()
         );
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_LEGACY_BLOCKS, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_LEGACY_BLOCKS, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_legacy").append(BLOCKUS_GROUPS_TEXT))
             .icon(() -> new ItemStack(BlockusBlocks.LEGACY_BRICKS))
             .build()

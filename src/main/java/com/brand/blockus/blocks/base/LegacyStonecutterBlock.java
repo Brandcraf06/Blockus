@@ -1,6 +1,6 @@
 package com.brand.blockus.blocks.base;
 
-import com.brand.blockus.utils.screen.LegacyStonecutterScreenHandler;
+import com.brand.blockus.utils.screen.LegacyStonecutterMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
@@ -33,7 +33,7 @@ public class LegacyStonecutterBlock extends Block {
 
     public MenuProvider getMenuProvider(BlockState state, Level world, BlockPos pos) {
         return new SimpleMenuProvider((syncId, playerInventory, player) -> {
-            return new LegacyStonecutterScreenHandler(syncId, playerInventory, ContainerLevelAccess.create(world, pos));
+            return new LegacyStonecutterMenu(syncId, playerInventory, ContainerLevelAccess.create(world, pos));
         }, TITLE);
     }
 }

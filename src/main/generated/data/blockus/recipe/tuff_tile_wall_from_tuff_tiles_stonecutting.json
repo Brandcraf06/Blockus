@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "blockus:tuff_tiles",
   "result": {
-    "count": 1,
     "id": "blockus:tuff_tile_wall"
   }
 }
