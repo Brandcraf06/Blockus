@@ -2,7 +2,7 @@ package com.brand.blockus.itemgroups.content;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 
@@ -49,12 +49,12 @@ public class FunctionalBlocksGroup {
                 entries.accept(woodBundle.sign());
                 entries.accept(woodBundle.hangingSign());
             }
-            entries.accept(BlockusEntities.WHITE_OAK_BOAT);
-            entries.accept(BlockusEntities.WHITE_OAK_CHEST_BOAT);
-            entries.accept(BlockusEntities.RAW_BAMBOO_RAFT);
-            entries.accept(BlockusEntities.RAW_BAMBOO_CHEST_RAFT);
-            entries.accept(BlockusEntities.CHARRED_BOAT);
-            entries.accept(BlockusEntities.CHARRED_CHEST_BOAT);
+            entries.accept(BlockusItems.WHITE_OAK_BOAT);
+            entries.accept(BlockusItems.WHITE_OAK_CHEST_BOAT);
+            entries.accept(BlockusItems.RAW_BAMBOO_RAFT);
+            entries.accept(BlockusItems.RAW_BAMBOO_CHEST_RAFT);
+            entries.accept(BlockusItems.CHARRED_BOAT);
+            entries.accept(BlockusItems.CHARRED_CHEST_BOAT);
         });
     }
 }

@@ -45,10 +45,6 @@ public class Blockus implements ModInitializer {
         FunctionalBlocksGroup.init();
         LegacyGroup.init();
 
-       /* if (FabricLoader.getInstance().isModLoaded("promenade")) {
-            BlockusPromenadeBlocks.init();
-        }*/
-
         Instance.init();
         BlockusWorldgenFeatures.registerConfiguredFeature();
         BlockusAliases.init();

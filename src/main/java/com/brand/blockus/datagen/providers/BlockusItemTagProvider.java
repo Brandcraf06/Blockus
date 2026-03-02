@@ -1,6 +1,6 @@
 package com.brand.blockus.datagen.providers;
 
-import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.registry.tag.BlockusItemTags;
@@ -45,16 +45,16 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockTags.BARS, ItemTags.BARS);
 
         this.valueLookupBuilder(ItemTags.BOATS)
-            .add(BlockusEntities.RAW_BAMBOO_RAFT)
-            .add(BlockusEntities.CHARRED_BOAT)
-            .add(BlockusEntities.WHITE_OAK_BOAT);
+            .add(BlockusItems.RAW_BAMBOO_RAFT)
+            .add(BlockusItems.CHARRED_BOAT)
+            .add(BlockusItems.WHITE_OAK_BOAT);
 
         this.copy(BlockTags.CHAINS, ItemTags.CHAINS);
 
         this.valueLookupBuilder(ItemTags.CHEST_BOATS)
-            .add(BlockusEntities.RAW_BAMBOO_CHEST_RAFT)
-            .add(BlockusEntities.CHARRED_CHEST_BOAT)
-            .add(BlockusEntities.WHITE_OAK_CHEST_BOAT);
+            .add(BlockusItems.RAW_BAMBOO_CHEST_RAFT)
+            .add(BlockusItems.CHARRED_CHEST_BOAT)
+            .add(BlockusItems.WHITE_OAK_CHEST_BOAT);
 
         this.copy(BlockTags.LANTERNS, ItemTags.LANTERNS);
 
@@ -178,8 +178,8 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(CHARRED.stairs().asItem())
             .add(CHARRED.button().asItem())
             .add(CHARRED.door().asItem())
-            .add(BlockusEntities.CHARRED_BOAT.asItem())
-            .add(BlockusEntities.CHARRED_CHEST_BOAT.asItem())
+            .add(BlockusItems.CHARRED_BOAT)
+            .add(BlockusItems.CHARRED_CHEST_BOAT)
             .add(CHARRED.sign())
             .add(CHARRED.hangingSign())
             .add(SMALL_LOGS.get(WoodMaps.WARPED.getId()).asItem())

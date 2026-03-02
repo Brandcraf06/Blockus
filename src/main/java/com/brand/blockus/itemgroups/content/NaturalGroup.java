@@ -17,9 +17,6 @@ public class NaturalGroup {
             entries.accept(BlockusBlocks.WHITE_OAK_LOG);
             entries.accept(BlockusBlocks.WHITE_OAK_SAPLING);
             entries.accept(BlockusBlocks.WHITE_OAK_LEAVES);
-        /*    if (FabricLoader.getInstance().isModLoaded("promenade")) {
-                entries.add(BlockusPromenadeBlocks.WHITE_OAK_LEAF_PILE);
-            }*/
 
             entries.accept(BlockusBlocks.OAK_HEDGE);
             entries.accept(BlockusBlocks.SPRUCE_HEDGE);
@@ -37,16 +34,6 @@ public class NaturalGroup {
             entries.accept(BlockusBlocks.FLOWERING_AZALEA_HEDGE);
             entries.accept(BlockusBlocks.MOSS_HEDGE);
             entries.accept(BlockusBlocks.PALE_MOSS_HEDGE);
-/*            if (FabricLoader.getInstance().isModLoaded("promenade")) {
-                entries.add(BlockusPromenadeBlocks.SAP_MAPLE_HEDGE);
-                entries.add(BlockusPromenadeBlocks.VERMILION_MAPLE_HEDGE);
-                entries.add(BlockusPromenadeBlocks.FULVOUS_MAPLE_HEDGE);
-                entries.add(BlockusPromenadeBlocks.MIKADO_MAPLE_HEDGE);
-                entries.add(BlockusPromenadeBlocks.BLUSH_SAKURA_HEDGE);
-                entries.add(BlockusPromenadeBlocks.COTTON_SAKURA_HEDGE);
-                entries.add(BlockusPromenadeBlocks.PALM_HEDGE);
-                entries.add(BlockusPromenadeBlocks.DARK_AMARANTH_HEDGE);
-            }*/
 
             entries.accept(BlockusBlocks.SOUL_O_LANTERN);
             entries.accept(BlockusBlocks.COPPER_JACK_O_LANTERN);

@@ -1,7 +1,7 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.datagen.family.BlockusFamilies;
-import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusItemTags;
 import com.brand.blockus.utils.helper.BlockMaps;
@@ -579,9 +579,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerCharredSmeltingRecipe(BlockusItemTags.SHELVES_THAT_BURN, RecipeCategory.DECORATIONS, CHARRED.shelf(), "shelves");
 
                 shapeless(RecipeCategory.BUILDING_BLOCKS, RAW_BAMBOO.planks(), 2).requires(Blocks.BAMBOO_BLOCK).group("planks").unlockedBy("has_log", has(Blocks.BAMBOO_BLOCK)).save(exporter);
-                offerBoatsRecipe(BlockusEntities.WHITE_OAK_BOAT, BlockusEntities.WHITE_OAK_CHEST_BOAT, WHITE_OAK.planks());
-                offerBoatsRecipe(BlockusEntities.RAW_BAMBOO_RAFT, BlockusEntities.RAW_BAMBOO_CHEST_RAFT, RAW_BAMBOO.planks());
-                offerBoatsRecipe(BlockusEntities.CHARRED_BOAT, BlockusEntities.CHARRED_CHEST_BOAT, CHARRED.planks());
+                offerBoatsRecipe(BlockusItems.WHITE_OAK_BOAT, BlockusItems.WHITE_OAK_CHEST_BOAT, WHITE_OAK.planks());
+                offerBoatsRecipe(BlockusItems.RAW_BAMBOO_RAFT, BlockusItems.RAW_BAMBOO_CHEST_RAFT, RAW_BAMBOO.planks());
+                offerBoatsRecipe(BlockusItems.CHARRED_BOAT, BlockusItems.CHARRED_CHEST_BOAT, CHARRED.planks());
                 SimpleCookingRecipeBuilder.smelting(tag(BlockusItemTags.PLANKS_THAT_BURN), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, CHARRED.planks(), 0.1F, 200).unlockedBy("has_planks", has(BlockusItemTags.PLANKS_THAT_BURN)).save(exporter);
 
                 for (var entry : SMALL_LOGS.bundle().entrySet()) {

@@ -6,7 +6,7 @@ import com.brand.blockus.datagen.family.BlockusFamilies;
 import com.brand.blockus.datagen.models.BlockusModels;
 import com.brand.blockus.datagen.models.BlockusTextureKey;
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.BlockusBlockStateProperties;
 import com.brand.blockus.utils.helper.BlockOrder;
@@ -533,12 +533,12 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators modelGenerator) {
-        modelGenerator.generateFlatItem(BlockusEntities.CHARRED_BOAT.asItem(), ModelTemplates.FLAT_ITEM);
-        modelGenerator.generateFlatItem(BlockusEntities.CHARRED_CHEST_BOAT.asItem(), ModelTemplates.FLAT_ITEM);
-        modelGenerator.generateFlatItem(BlockusEntities.RAW_BAMBOO_RAFT.asItem(), ModelTemplates.FLAT_ITEM);
-        modelGenerator.generateFlatItem(BlockusEntities.RAW_BAMBOO_CHEST_RAFT.asItem(), ModelTemplates.FLAT_ITEM);
-        modelGenerator.generateFlatItem(BlockusEntities.WHITE_OAK_BOAT.asItem(), ModelTemplates.FLAT_ITEM);
-        modelGenerator.generateFlatItem(BlockusEntities.WHITE_OAK_CHEST_BOAT.asItem(), ModelTemplates.FLAT_ITEM);
+        modelGenerator.generateFlatItem(BlockusItems.CHARRED_BOAT, ModelTemplates.FLAT_ITEM);
+        modelGenerator.generateFlatItem(BlockusItems.CHARRED_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+        modelGenerator.generateFlatItem(BlockusItems.RAW_BAMBOO_RAFT, ModelTemplates.FLAT_ITEM);
+        modelGenerator.generateFlatItem(BlockusItems.RAW_BAMBOO_CHEST_RAFT, ModelTemplates.FLAT_ITEM);
+        modelGenerator.generateFlatItem(BlockusItems.WHITE_OAK_BOAT, ModelTemplates.FLAT_ITEM);
+        modelGenerator.generateFlatItem(BlockusItems.WHITE_OAK_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
     }
 
     public final void registerInventoryItemModel(BlockModelGenerators modelGenerator, Block block) {

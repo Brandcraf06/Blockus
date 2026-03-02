@@ -450,9 +450,6 @@ public class BuildingBlocksGroup {
             entries.accept(GOLDEN_APPLE_CRATE);
             entries.accept(GOLDEN_CARROT_CRATE);
             entries.accept(GLOW_BERRIES_CRATE);
-           /* if (FabricLoader.getInstance().isModLoaded("promenade")) {
-                entries.add(BlockusPromenadeBlocks.BLUEBERRIES_CRATE);
-            }*/
 
             entries.accept(RAINBOW_BLOCK);
             addBssw(entries, RAINBOW_BRICKS);

@@ -3,6 +3,7 @@ package com.brand.blockus.datagen.providers;
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
+import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.effect.BlockusEffects;
 import com.brand.blockus.registry.gamerule.BlockusGamerules;
@@ -10,7 +11,10 @@ import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
@@ -139,14 +143,14 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD, "Stripped White Oak Wood");
         translationBuilder.add(BlockusBlocks.WHITE_OAK_LEAVES, "White Oak Leaves");
         addWoodBundle(translationBuilder, BlockusBlocks.WHITE_OAK, "White Oak Planks");
-        translationBuilder.add(BlockusEntities.WHITE_OAK_BOAT, "White Oak Boat");
-        translationBuilder.add(BlockusEntities.WHITE_OAK_CHEST_BOAT, "White Oak Boat with Chest");
+        addBoats(translationBuilder, BlockusEntities.WHITE_OAK_BOAT, BlockusItems.WHITE_OAK_BOAT, "White Oak Boat");
+        addBoats(translationBuilder, BlockusEntities.WHITE_OAK_CHEST_BOAT, BlockusItems.WHITE_OAK_CHEST_BOAT, "White Oak Boat with Chest");
         addWoodBundle(translationBuilder, BlockusBlocks.RAW_BAMBOO, "Raw Bamboo Planks");
-        translationBuilder.add(BlockusEntities.RAW_BAMBOO_RAFT, "Raw Bamboo Raft");
-        translationBuilder.add(BlockusEntities.RAW_BAMBOO_CHEST_RAFT, "Raw Bamboo Raft with Chest");
+        addBoats(translationBuilder,BlockusEntities.RAW_BAMBOO_RAFT, BlockusItems.RAW_BAMBOO_RAFT, "Raw Bamboo Raft");
+        addBoats(translationBuilder,BlockusEntities.RAW_BAMBOO_CHEST_RAFT, BlockusItems.RAW_BAMBOO_CHEST_RAFT, "Raw Bamboo Raft with Chest");
         addWoodBundle(translationBuilder, BlockusBlocks.CHARRED, "Charred Planks");
-        translationBuilder.add(BlockusEntities.CHARRED_BOAT, "Charred Boat");
-        translationBuilder.add(BlockusEntities.CHARRED_CHEST_BOAT, "Charred Boat with Chest");
+        addBoats(translationBuilder,BlockusEntities.CHARRED_BOAT, BlockusItems.CHARRED_BOAT, "Charred Boat");
+        addBoats(translationBuilder,BlockusEntities.CHARRED_CHEST_BOAT, BlockusItems.CHARRED_CHEST_BOAT, "Charred Boat with Chest");
 
         // Small log
         for (var entry : BlockusBlocks.SMALL_LOGS.bundle().entrySet()) {
@@ -733,6 +737,12 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(bundle.sign().getDescriptionId().replace("sign", "wall_sign"), editedString(string) + " Wall Sign");
         translationBuilder.add(bundle.hangingSign(), editedString(string) + " Hanging Sign");
         translationBuilder.add(bundle.hangingSign().getDescriptionId().replace("hanging_sign", "wall_hanging_sign"), editedString(string) + " Wall Hanging Sign");
+    }
+
+    // Boats
+    public static <T extends Entity> void addBoats(TranslationBuilder translationBuilder, EntityType<T> entity, Item item, String string) {
+        translationBuilder.add(entity, string);
+        translationBuilder.add(item, string);
     }
 
     // Wooden Posts
