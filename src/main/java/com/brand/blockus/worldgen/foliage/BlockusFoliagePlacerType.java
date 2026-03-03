@@ -11,15 +11,15 @@ public class BlockusFoliagePlacerType<P extends FoliagePlacer> {
     public static final FoliagePlacerType<WhiteOakFoliagePlacer> WHITE_OAK_FOLIAGE_PLACER;
     public final MapCodec<P> codec;
 
-    public static <P extends FoliagePlacer> FoliagePlacerType register(String id, MapCodec<P> codec) {
-        return Registry.register(BuiltInRegistries.FOLIAGE_PLACER_TYPE, Blockus.id(id), new FoliagePlacerType(codec));
+    public static <P extends FoliagePlacer> FoliagePlacerType register(String name, MapCodec<P> codec) {
+        return Registry.register(BuiltInRegistries.FOLIAGE_PLACER_TYPE, Blockus.id(name), new FoliagePlacerType(codec));
     }
 
     public BlockusFoliagePlacerType(MapCodec<P> codec) {
         this.codec = codec;
     }
 
-    public MapCodec<P> getCodec() {
+    public MapCodec<P> codec() {
         return this.codec;
     }
 

@@ -26,7 +26,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLogsDecorator;
@@ -73,7 +73,7 @@ public class BlockusWorldgenFeatures {
     }
 
     public static TreeConfiguration.TreeConfigurationBuilder createLegacyOak() {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BlockusBlocks.LEGACY_LOG), new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.simple(BlockusBlocks.LEGACY_LEAVES), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1)).decorators(ImmutableList.of(new AlterGroundDecorator(RuleBasedBlockStateProvider.ifTrueThenProvide(BlockPredicate.matchesTag(BlockTags.SUBSTRATE_OVERWORLD), BlockusBlocks.LEGACY_GRASS_BLOCK))));
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BlockusBlocks.LEGACY_LOG), new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.simple(BlockusBlocks.LEGACY_LEAVES), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1)).decorators(ImmutableList.of(new AlterGroundDecorator(RuleBasedStateProvider.ifTrueThenProvide(BlockPredicate.matchesTag(BlockTags.SUBSTRATE_OVERWORLD), BlockusBlocks.LEGACY_GRASS_BLOCK))));
     }
 
     public static void registerConfiguredFeature() {
