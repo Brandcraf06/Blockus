@@ -102,6 +102,7 @@ public class BuildingBlocksGroup {
             entries.accept(ICE_BRICK_WALL);
             entries.accept(ICE_PILLAR);
 
+            addBssw(entries, COBBLESTONE_BRICKS);
             addBssw(entries, STONE_TILES);
             entries.accept(STONE_BRICK_PILLAR);
             entries.accept(HERRINGBONE_STONE_BRICKS);
@@ -110,6 +111,7 @@ public class BuildingBlocksGroup {
             entries.accept(STONE_DOOR);
             entries.accept(STONE_TRAPDOOR);
             entries.accept(STURDY_STONE);
+            addBssw(entries, MOSSY_COBBLESTONE_BRICKS);
 
             entries.accept(POLISHED_GRANITE_PRESSURE_PLATE);
             entries.accept(POLISHED_GRANITE_BUTTON);
@@ -191,6 +193,7 @@ public class BuildingBlocksGroup {
             entries.accept(TUFF_PILLAR);
             entries.accept(TUFF_CIRCULAR_PAVING);
 
+            addBssw(entries, COBBLED_DEEPSLATE_BRICKS);
             entries.accept(POLISHED_DEEPSLATE_PRESSURE_PLATE);
             entries.accept(POLISHED_DEEPSLATE_BUTTON);
             addBssw(entries, MOSSY_DEEPSLATE_BRICKS);
