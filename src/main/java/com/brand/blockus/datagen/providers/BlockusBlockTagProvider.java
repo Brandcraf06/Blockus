@@ -137,6 +137,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.DEEPSLATE_BLOCKS)
+            .add(bsswBundle(COBBLED_DEEPSLATE_BRICKS))
             .add(bsswBundle(MOSSY_DEEPSLATE_BRICKS))
             .add(HERRINGBONE_DEEPSLATE_BRICKS)
             .add(DEEPSLATE_PILLAR)
@@ -472,6 +473,8 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         }
 
         this.getOrCreateTagBuilder(BlockusBlockTags.STONE_BLOCKS)
+            .add(bsswBundle(COBBLESTONE_BRICKS))
+            .add(bsswBundle(MOSSY_COBBLESTONE_BRICKS))
             .add(bsswBundle(STONE_TILES))
             .add(STONE_BRICK_PILLAR)
             .add(HERRINGBONE_STONE_BRICKS)

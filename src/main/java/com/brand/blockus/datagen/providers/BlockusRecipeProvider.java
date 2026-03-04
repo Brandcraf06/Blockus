@@ -112,6 +112,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, CHISELED_MUD_BRICKS, Blocks.MUD_BRICKS);
 
         // Stone
+        offerBsswCuttingRecipe(exporter, COBBLESTONE_BRICKS, Blocks.COBBLESTONE);
+        offerBsswCuttingRecipe(exporter, MOSSY_COBBLESTONE_BRICKS, Blocks.MOSSY_COBBLESTONE);
+        offerMossyRecipe(exporter, MOSSY_COBBLESTONE_BRICKS.block(), COBBLESTONE_BRICKS.block());
         offerBsswCuttingRecipe(exporter, STONE_TILES, Blocks.STONE, Blocks.STONE_BRICKS);
         offerPolishedStoneRecipe(exporter, STONE_TILES.block(), Blocks.STONE_BRICKS);
         offerStonecuttingRecipe(exporter, STONE_BRICK_PILLAR, Blocks.STONE, Blocks.STONE_BRICKS);
@@ -185,6 +188,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, AMETHYST_LAMP).define('#', Items.AMETHYST_SHARD).define('X', Items.REDSTONE).pattern(" # ").pattern("#X#").pattern(" # ").unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD)).save(exporter);
 
         // Deepslate
+        offerBsswCuttingRecipe(exporter, COBBLED_DEEPSLATE_BRICKS, Blocks.COBBLED_DEEPSLATE);
         offerMossyRecipe(exporter, MOSSY_DEEPSLATE_BRICKS.block(), Blocks.DEEPSLATE_BRICKS);
         offerBsswCuttingRecipe(exporter, MOSSY_DEEPSLATE_BRICKS);
         offerStonecuttingRecipe(exporter, DEEPSLATE_PILLAR, Blocks.COBBLED_DEEPSLATE, Blocks.POLISHED_DEEPSLATE, Blocks.DEEPSLATE_BRICKS);

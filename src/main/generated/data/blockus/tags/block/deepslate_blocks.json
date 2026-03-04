@@ -1,5 +1,9 @@
 {
   "values": [
+    "blockus:cobbled_deepslate_bricks",
+    "blockus:cobbled_deepslate_brick_stairs",
+    "blockus:cobbled_deepslate_brick_slab",
+    "blockus:cobbled_deepslate_brick_wall",
     "blockus:mossy_deepslate_bricks",
     "blockus:mossy_deepslate_brick_stairs",
     "blockus:mossy_deepslate_brick_slab",

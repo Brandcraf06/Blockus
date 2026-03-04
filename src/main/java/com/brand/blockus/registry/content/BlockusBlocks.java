@@ -30,6 +30,8 @@ import net.minecraft.world.level.material.PushReaction;
 public class BlockusBlocks extends BlockFactory {
 
     // Stone
+    public static final BSSWBundle COBBLESTONE_BRICKS = BSSWBundle.of("cobblestone_bricks", Blocks.COBBLESTONE).register();
+    public static final BSSWBundle MOSSY_COBBLESTONE_BRICKS = BSSWBundle.of("mossy_cobblestone_bricks", Blocks.MOSSY_COBBLESTONE).register();
     public static final BSSWBundle STONE_TILES = BSSWBundle.of("stone_tiles", Blocks.STONE_BRICKS).register();
     public static final Block STONE_BRICK_PILLAR = pillar(Blocks.STONE_BRICKS);
     public static final Block HERRINGBONE_STONE_BRICKS = registerCopy("herringbone_stone_bricks", Blocks.STONE_BRICKS);
@@ -85,6 +87,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block TUFF_PILLAR = pillar("tuff", Blocks.POLISHED_TUFF);
 
     // Deepslate
+    public static final BSSWBundle COBBLED_DEEPSLATE_BRICKS = BSSWBundle.of("cobbled_deepslate_bricks", Blocks.COBBLED_DEEPSLATE).register();
     public static final BSSWBundle MOSSY_DEEPSLATE_BRICKS = BSSWBundle.of("mossy_deepslate_bricks", Blocks.DEEPSLATE_BRICKS).register();
     public static final Block DEEPSLATE_PILLAR = pillar("deepslate", Blocks.POLISHED_DEEPSLATE);
     public static final Block HERRINGBONE_DEEPSLATE_BRICKS = registerCopy("herringbone_deepslate_bricks", Blocks.DEEPSLATE_BRICKS);

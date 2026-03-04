@@ -1,5 +1,7 @@
 {
   "values": [
+    "blockus:cobblestone_brick_slab",
+    "blockus:mossy_cobblestone_brick_slab",
     "blockus:stone_tile_slab",
     "blockus:andesite_brick_slab",
     "blockus:diorite_brick_slab",
@@ -9,6 +11,7 @@
     "blockus:mossy_dripstone_brick_slab",
     "blockus:mossy_tuff_brick_slab",
     "blockus:tuff_tile_slab",
+    "blockus:cobbled_deepslate_brick_slab",
     "blockus:mossy_deepslate_brick_slab",
     "blockus:polished_sculk_slab",
     "blockus:sculk_brick_slab",
