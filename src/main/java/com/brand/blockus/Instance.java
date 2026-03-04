@@ -199,7 +199,6 @@ public class Instance {
         addStrippables();
         addOxidizable();
         addPathBlocks();
-        addTradeOffers();
     }
 
     public static void addStrippables() {
@@ -241,18 +240,5 @@ public class Instance {
     public static void addPathBlocks() {
         FlattenableBlockRegistry.register(Blocks.DIRT_PATH, PATH.defaultBlockState());
         FlattenableBlockRegistry.register(PATH, Blocks.DIRT.defaultBlockState());
-    }
-
-    public static void addTradeOffers() {
-//        TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
-//            TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
-//            new VillagerTrades.ItemsForEmeralds(LEGACY_SAPLING.asItem(), 5, 1, 8, 1),
-//            new VillagerTrades.ItemsForEmeralds(WHITE_OAK_SAPLING.asItem(), 5, 1, 8, 1),
-//            new VillagerTrades.ItemsForEmeralds(RAINBOW_PETALS.asItem(), 1, 3, 12, 1),
-//            new VillagerTrades.ItemsForEmeralds(RAINBOW_ROSE.asItem(), 1, 1, 12, 1)));
-//
-//        TradeOfferHelper.registerWanderingTraderOffers(builder -> builder.addOffersToPool(
-//            TradeOfferHelper.WanderingTraderOffersBuilder.SELL_SPECIAL_ITEMS_POOL,
-//            new VillagerTrades.ItemsForEmeralds(WHITE_OAK_LOG.asItem(), 1, 8, 4, 1)));
     }
 }
