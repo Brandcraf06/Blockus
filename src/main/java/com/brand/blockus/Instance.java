@@ -133,7 +133,10 @@ public class Instance {
         // Small log
         for (var wood : WoodMaps.values()) {
             if (!wood.data().isBurnable()) continue;
-            FlammableBlockRegistry.getDefaultInstance().add(SMALL_LOGS.bundle().get(wood.getId()), 5, 5);
+            var smallLogs = SMALL_LOGS.bundle().get(wood.getId());
+            if (smallLogs != null) {
+                FlammableBlockRegistry.getDefaultInstance().add(smallLogs, 5, 5);
+            }
         }
 
         // Posts
