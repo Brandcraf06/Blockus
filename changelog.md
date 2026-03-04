@@ -1,3 +1,3 @@
-* Updated to 1.21.11
-* Renamed `enableAsphaltSprint` gamerule to `blockus:enable_asphalt_sprint`
-* Migrated code to Mojang mappings
+* Added Cobblestone Bricks, Mossy Cobblestone Bricks & Cobbled Deepslate Bricks
+  * Made with Cobblestone, Mossy Cobblestone & Cobbled Deepslate in stonecutter
+* Changed top texture of mud brick pillar

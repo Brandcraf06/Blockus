@@ -189,6 +189,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBssw(translationBuilder, BlockusBlocks.NETHERRACK_BRICKS, "Netherrack Bricks");
 
         // Stone
+        addBssw(translationBuilder, BlockusBlocks.COBBLESTONE_BRICKS, "Cobblestone Bricks");
+        addBssw(translationBuilder, BlockusBlocks.MOSSY_COBBLESTONE_BRICKS, "Mossy Cobblestone Bricks");
         addBssw(translationBuilder, BlockusBlocks.STONE_TILES, "Stone Tiles");
         translationBuilder.add(BlockusBlocks.STONE_BRICK_PILLAR, "Stone Brick Pillar");
         translationBuilder.add(BlockusBlocks.SMOOTH_STONE_STAIRS, "Smooth Stone Stairs");
@@ -591,6 +593,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE, "Polished Deepslate Pressure Plate");
         translationBuilder.add(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON, "Polished Deepslate Button");
         addBssw(translationBuilder, BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, "Mossy Deepslate Bricks");
+        addBssw(translationBuilder, BlockusBlocks.COBBLED_DEEPSLATE_BRICKS, "Cobbled Deepslate Bricks");
 
         // Sculk
         addBssw(translationBuilder, BlockusBlocks.POLISHED_SCULK, "Polished Sculk");
