@@ -4,7 +4,7 @@ import com.brand.blockus.Blockus;
 import com.brand.blockus.blocks.base.PostBlock;
 import com.brand.blockus.datagen.family.BlockusFamilies;
 import com.brand.blockus.datagen.models.BlockusModels;
-import com.brand.blockus.datagen.models.BlockusTextureKey;
+import com.brand.blockus.datagen.models.BlockusTextureSlot;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.*;
@@ -31,6 +31,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.WallSide;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
@@ -67,7 +68,7 @@ public class BlockusModelProvider extends FabricModelProvider {
             }
 
             if (BSSWBundle.wall() != null) {
-                this.registerWall(modelGenerator, BSSWBundle.wall(), BSSWBundle.block());
+                this.createWall(modelGenerator, BSSWBundle.wall(), BSSWBundle.block());
             }
         }
 
@@ -382,22 +383,22 @@ public class BlockusModelProvider extends FabricModelProvider {
         }
 
         // Small Hedges
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.OAK_HEDGE, Blocks.OAK_LEAVES, -12012264);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.SPRUCE_HEDGE, Blocks.SPRUCE_LEAVES, -10380959);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.BIRCH_HEDGE, Blocks.BIRCH_LEAVES, -8345771);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.JUNGLE_HEDGE, Blocks.JUNGLE_LEAVES, -12012264);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.ACACIA_HEDGE, Blocks.ACACIA_LEAVES, -12012264);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.DARK_OAK_HEDGE, Blocks.DARK_OAK_LEAVES, -12012264);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES, -7158200);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.CHERRY_HEDGE, Blocks.CHERRY_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.PALE_OAK_HEDGE, Blocks.PALE_OAK_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.WARPED_HEDGE, Blocks.WARPED_WART_BLOCK);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.CRIMSON_HEDGE, Blocks.NETHER_WART_BLOCK);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.WHITE_OAK_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.AZALEA_HEDGE, Blocks.AZALEA_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.FLOWERING_AZALEA_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.MOSS_HEDGE, Blocks.MOSS_BLOCK);
-        this.registerSmallHedge(modelGenerator, BlockusBlocks.PALE_MOSS_HEDGE, Blocks.PALE_MOSS_BLOCK);
+        this.createHedge(modelGenerator, BlockusBlocks.OAK_HEDGE, Blocks.OAK_LEAVES, -12012264);
+        this.createHedge(modelGenerator, BlockusBlocks.SPRUCE_HEDGE, Blocks.SPRUCE_LEAVES, -10380959);
+        this.createHedge(modelGenerator, BlockusBlocks.BIRCH_HEDGE, Blocks.BIRCH_LEAVES, -8345771);
+        this.createHedge(modelGenerator, BlockusBlocks.JUNGLE_HEDGE, Blocks.JUNGLE_LEAVES, -12012264);
+        this.createHedge(modelGenerator, BlockusBlocks.ACACIA_HEDGE, Blocks.ACACIA_LEAVES, -12012264);
+        this.createHedge(modelGenerator, BlockusBlocks.DARK_OAK_HEDGE, Blocks.DARK_OAK_LEAVES, -12012264);
+        this.createHedge(modelGenerator, BlockusBlocks.MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES, -7158200);
+        this.createHedge(modelGenerator, BlockusBlocks.CHERRY_HEDGE, Blocks.CHERRY_LEAVES);
+        this.createHedge(modelGenerator, BlockusBlocks.PALE_OAK_HEDGE, Blocks.PALE_OAK_LEAVES);
+        this.createHedge(modelGenerator, BlockusBlocks.WARPED_HEDGE, Blocks.WARPED_WART_BLOCK);
+        this.createHedge(modelGenerator, BlockusBlocks.CRIMSON_HEDGE, Blocks.NETHER_WART_BLOCK);
+        this.createHedge(modelGenerator, BlockusBlocks.WHITE_OAK_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);
+        this.createHedge(modelGenerator, BlockusBlocks.AZALEA_HEDGE, Blocks.AZALEA_LEAVES);
+        this.createHedge(modelGenerator, BlockusBlocks.FLOWERING_AZALEA_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
+        this.createHedge(modelGenerator, BlockusBlocks.MOSS_HEDGE, Blocks.MOSS_BLOCK);
+        this.createHedge(modelGenerator, BlockusBlocks.PALE_MOSS_HEDGE, Blocks.PALE_MOSS_BLOCK);
 
         // Food Blocks
         this.registerFishCrate(modelGenerator, BlockusBlocks.COD_CRATE);
@@ -521,13 +522,14 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.SUGAR_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.WEIGHT_STORAGE_CUBE);
         modelGenerator.registerSimpleFlatItemModel(BlockusBlocks.GOLDEN_CHAIN.asItem());
-        modelGenerator.registerSimpleFlatItemModel(BlockusBlocks.GOLDEN_BARS);
+        modelGenerator.createAxisAlignedPillarBlockCustomModel(BlockusBlocks.GOLDEN_CHAIN, plainVariant(TexturedModel.CHAIN.create(BlockusBlocks.GOLDEN_CHAIN, modelGenerator.modelOutput)));
+        modelGenerator.createBarsAndItem(BlockusBlocks.GOLDEN_BARS);
         modelGenerator.registerSimpleFlatItemModel(BlockusBlocks.WOODEN_FRAME);
         this.registerGate(modelGenerator, BlockusBlocks.IRON_GATE);
         this.registerGate(modelGenerator, BlockusBlocks.GOLDEN_GATE);
         BlockusBlocks.COPPER_GATE.getWaxingMap().forEach((unwaxed, waxed) -> this.registerCopperGate(modelGenerator, unwaxed, waxed));
-        registerInventoryItemModel(modelGenerator, BlockusBlocks.CAUTION_BARRIER);
-        registerInventoryItemModel(modelGenerator, BlockusBlocks.ROAD_BARRIER);
+        this.createBarrier(modelGenerator, BlockusBlocks.CAUTION_BARRIER);
+        this.createBarrier(modelGenerator, BlockusBlocks.ROAD_BARRIER);
         modelGenerator.registerSimpleItemModel(BlockusBlocks.PATH, ModelLocationUtils.getModelLocation(BlockusBlocks.PATH, "4"));
     }
 
@@ -573,9 +575,9 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void registerPost(BlockModelGenerators modelGenerator, Block block, Block textureSource) {
         TextureMapping textureMap = TextureMapping.logColumn(textureSource);
-        Identifier model = BlockusModels.TEMPLATE_POST.create(block, textureMap, modelGenerator.modelOutput);
-        MultiVariant modelVariant = plainVariant(BlockusModels.TEMPLATE_POST_CONNECT.create(block, textureMap, modelGenerator.modelOutput));
-        MultiVariant modelVariant2 = plainVariant(BlockusModels.TEMPLATE_POST_CONNECT_TOP.create(block, textureMap, modelGenerator.modelOutput));
+        Identifier model = BlockusModels.POST.create(block, textureMap, modelGenerator.modelOutput);
+        MultiVariant modelVariant = plainVariant(BlockusModels.POST_CONNECT.create(block, textureMap, modelGenerator.modelOutput));
+        MultiVariant modelVariant2 = plainVariant(BlockusModels.POST_CONNECT_TOP.create(block, textureMap, modelGenerator.modelOutput));
         modelGenerator.blockStateOutput.accept(createPostBlockState(block, plainVariant(model), modelVariant, modelVariant2, plainVariant(Blockus.id("block/chain_connect")), plainVariant(Blockus.id("block/chain_connect_top"))));
         modelGenerator.registerSimpleItemModel(block, model);
     }
@@ -639,27 +641,27 @@ public class BlockusModelProvider extends FabricModelProvider {
             .select(15, modelVariant4)));
     }
 
-    public final void registerSmallHedge(BlockModelGenerators modelGenerator, Block hedgeBlock, Block textureSource) {
-        registerSmallHedge(modelGenerator, hedgeBlock, textureSource, false, 0);
+    public final void createHedge(BlockModelGenerators modelGenerator, Block hedge, Block textureSource) {
+        createHedge(modelGenerator, hedge, textureSource, false, 0);
     }
 
-    public final void registerSmallHedge(BlockModelGenerators modelGenerator, Block hedgeBlock, Block textureSource, int tintColor) {
-        registerSmallHedge(modelGenerator, hedgeBlock, textureSource, true, tintColor);
+    public final void createHedge(BlockModelGenerators modelGenerator, Block hedge, Block textureSource, int tintColor) {
+        createHedge(modelGenerator, hedge, textureSource, true, tintColor);
     }
 
-    public final void registerSmallHedge(BlockModelGenerators modelGenerator, Block hedgeBlock, Block textureSource, boolean isTinted, int tintColor) {
-        TextureMapping textureMap = TextureMapping.singleSlot(BlockusTextureKey.HEDGE, TextureMapping.getBlockTexture(textureSource));
-        MultiVariant weightedVariant = plainVariant(BlockusModels.TEMPLATE_HEDGE_POST.create(hedgeBlock, textureMap, modelGenerator.modelOutput));
-        MultiVariant weightedVariant2 = plainVariant(BlockusModels.TEMPLATE_HEDGE_SIDE.create(hedgeBlock, textureMap, modelGenerator.modelOutput));
-        MultiVariant weightedVariant3 = plainVariant(BlockusModels.TEMPLATE_HEDGE_SIDE_ALT.create(hedgeBlock, textureMap, modelGenerator.modelOutput));
-        MultiVariant weightedVariant4 = plainVariant(BlockusModels.TEMPLATE_HEDGE_NOSIDE.create(hedgeBlock, textureMap, modelGenerator.modelOutput));
-        MultiVariant weightedVariant5 = plainVariant(BlockusModels.TEMPLATE_HEDGE_NOSIDE_ALT.create(hedgeBlock, textureMap, modelGenerator.modelOutput));
-        modelGenerator.blockStateOutput.accept(MultiPartGenerator.multiPart(hedgeBlock).with(weightedVariant).with(condition().term(BlockStateProperties.NORTH, true), weightedVariant2.with(UV_LOCK)).with(condition().term(BlockStateProperties.EAST, true), weightedVariant2.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.SOUTH, true), weightedVariant3.with(UV_LOCK)).with(condition().term(BlockStateProperties.WEST, true), weightedVariant3.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.NORTH, false), weightedVariant4.with(UV_LOCK)).with(condition().term(BlockStateProperties.EAST, false), weightedVariant5.with(UV_LOCK)).with(condition().term(BlockStateProperties.SOUTH, false), weightedVariant5.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.WEST, false), weightedVariant4.with(Y_ROT_270).with(UV_LOCK)));
-        Identifier model = BlockusModels.TEMPLATE_HEDGE_INVENTORY.create(hedgeBlock, textureMap, modelGenerator.modelOutput);
+    public final void createHedge(BlockModelGenerators modelGenerator, Block hedge, Block textureSource, boolean isTinted, int tintColor) {
+        TextureMapping mapping = TextureMapping.singleSlot(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(textureSource));
+        MultiVariant hedgePost = plainVariant(BlockusModels.HEDGE_POST.create(hedge, mapping, modelGenerator.modelOutput));
+        MultiVariant hedgeSide = plainVariant(BlockusModels.HEDGE_SIDE.create(hedge, mapping, modelGenerator.modelOutput));
+        MultiVariant hedgeSideAlt = plainVariant(BlockusModels.HEDGE_SIDE_ALT.create(hedge, mapping, modelGenerator.modelOutput));
+        MultiVariant hedgeNoside = plainVariant(BlockusModels.HEDGE_NOSIDE.create(hedge, mapping, modelGenerator.modelOutput));
+        MultiVariant hedgeNosideAlt = plainVariant(BlockusModels.HEDGE_NOSIDE_ALT.create(hedge, mapping, modelGenerator.modelOutput));
+        modelGenerator.blockStateOutput.accept(MultiPartGenerator.multiPart(hedge).with(hedgePost).with(condition().term(BlockStateProperties.NORTH, true), hedgeSide.with(UV_LOCK)).with(condition().term(BlockStateProperties.EAST, true), hedgeSide.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.SOUTH, true), hedgeSideAlt.with(UV_LOCK)).with(condition().term(BlockStateProperties.WEST, true), hedgeSideAlt.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.NORTH, false), hedgeNoside.with(UV_LOCK)).with(condition().term(BlockStateProperties.EAST, false), hedgeNosideAlt.with(UV_LOCK)).with(condition().term(BlockStateProperties.SOUTH, false), hedgeNosideAlt.with(Y_ROT_90).with(UV_LOCK)).with(condition().term(BlockStateProperties.WEST, false), hedgeNoside.with(Y_ROT_270).with(UV_LOCK)));
+        Identifier inventory = BlockusModels.HEDGE_INVENTORY.create(hedge, mapping, modelGenerator.modelOutput);
         if (isTinted) {
-            modelGenerator.registerSimpleTintedItemModel(hedgeBlock, model, ItemModelUtils.constantTint(tintColor));
+            modelGenerator.registerSimpleTintedItemModel(hedge, inventory, ItemModelUtils.constantTint(tintColor));
         } else {
-            modelGenerator.registerSimpleItemModel(hedgeBlock, model);
+            modelGenerator.registerSimpleItemModel(hedge, inventory);
         }
     }
 
@@ -718,7 +720,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createSlab(modelGenerator, block, textureMap, TextureMapping.getBlockTexture(textureSource).sprite());
     }
 
-    public final void registerWall(BlockModelGenerators modelGenerator, Block block, Block textureSource) {
+    public final void createWall(BlockModelGenerators modelGenerator, Block block, Block textureSource) {
         TextureMapping textureMap = TextureMapping.singleSlot(TextureSlot.WALL, TextureMapping.getBlockTexture(textureSource));
         this.createWall(modelGenerator, block, textureMap);
     }
@@ -913,13 +915,26 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleItemModel(block, bottom);
     }
 
-    public final void createWall(BlockModelGenerators modelGenerator, Block block, TextureMapping textureMap) {
-        MultiVariant modelVariant = plainVariant(ModelTemplates.WALL_POST.create(block, textureMap, modelGenerator.modelOutput));
-        MultiVariant modelVariant2 = plainVariant(ModelTemplates.WALL_LOW_SIDE.create(block, textureMap, modelGenerator.modelOutput));
-        MultiVariant modelVariant3 = plainVariant(ModelTemplates.WALL_TALL_SIDE.create(block, textureMap, modelGenerator.modelOutput));
-        modelGenerator.blockStateOutput.accept(BlockModelGenerators.createWall(block, modelVariant, modelVariant2, modelVariant3));
-        Identifier model = ModelTemplates.WALL_INVENTORY.create(block, textureMap, modelGenerator.modelOutput);
-        modelGenerator.registerSimpleItemModel(block, model);
+    public static BlockModelDefinitionGenerator createBarrier(Block block, MultiVariant post, MultiVariant side) {
+        return MultiPartGenerator.multiPart(block).with(condition().term(BlockStateProperties.UP, true), post).with(condition().term(BlockStateProperties.NORTH_WALL, WallSide.LOW), side).with(condition().term(BlockStateProperties.EAST_WALL, WallSide.LOW), side.with(Y_ROT_90)).with(condition().term(BlockStateProperties.SOUTH_WALL, WallSide.LOW), side.with(Y_ROT_180)).with(condition().term(BlockStateProperties.WEST_WALL, WallSide.LOW), side.with(Y_ROT_270)).with(condition().term(BlockStateProperties.NORTH_WALL, WallSide.TALL), side).with(condition().term(BlockStateProperties.EAST_WALL, WallSide.TALL), side.with(Y_ROT_90)).with(condition().term(BlockStateProperties.SOUTH_WALL, WallSide.TALL), side.with(Y_ROT_180)).with(condition().term(BlockStateProperties.WEST_WALL, WallSide.TALL), side.with(Y_ROT_270));
+    }
+
+    public final void createBarrier(BlockModelGenerators modelGenerator, Block block) {
+        TextureMapping mapping = TextureMapping.singleSlot(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block));
+        MultiVariant barrierPost = plainVariant(BlockusModels.BARRIER_POST.create(block, mapping, modelGenerator.modelOutput));
+        MultiVariant barrierSide = plainVariant(BlockusModels.BARRIER_SIDE.create(block, mapping, modelGenerator.modelOutput));
+        modelGenerator.blockStateOutput.accept(createBarrier(block, barrierPost, barrierSide));
+        Identifier inventory = BlockusModels.BARRIER_INVENTORY.create(block, mapping, modelGenerator.modelOutput);
+        modelGenerator.registerSimpleItemModel(block, inventory);
+    }
+
+    public final void createWall(BlockModelGenerators modelGenerator, Block block, TextureMapping mapping) {
+        MultiVariant wallPost = plainVariant(ModelTemplates.WALL_POST.create(block, mapping, modelGenerator.modelOutput));
+        MultiVariant wallLowSide = plainVariant(ModelTemplates.WALL_LOW_SIDE.create(block, mapping, modelGenerator.modelOutput));
+        MultiVariant wallTallSide = plainVariant(ModelTemplates.WALL_TALL_SIDE.create(block, mapping, modelGenerator.modelOutput));
+        modelGenerator.blockStateOutput.accept(BlockModelGenerators.createWall(block, wallPost, wallLowSide, wallTallSide));
+        Identifier inventory = ModelTemplates.WALL_INVENTORY.create(block, mapping, modelGenerator.modelOutput);
+        modelGenerator.registerSimpleItemModel(block, inventory);
     }
 
     public void registerGate(BlockModelGenerators modelGenerator, Block gateBlock) {
@@ -977,7 +992,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 // TextureMaps
 
     public static TextureMapping tilesTextures(Block tile1, Block tile2) {
-        return (new TextureMapping()).put(BlockusTextureKey.TILE_1, getTilesId(tile1)).put(BlockusTextureKey.TILE_2, getTilesId(tile2));
+        return (new TextureMapping()).put(BlockusTextureSlot.TILE_1, getTilesId(tile1)).put(BlockusTextureSlot.TILE_2, getTilesId(tile2));
     }
 
     public static TextureMapping sideTop(Material block, Material top) {

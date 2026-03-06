@@ -1,6 +1,6 @@
 {
   "parent": "blockus:block/template_hedge_post",
   "textures": {
-    "hedge": "minecraft:block/dark_oak_leaves"
+    "texture": "minecraft:block/dark_oak_leaves"
   }
 }

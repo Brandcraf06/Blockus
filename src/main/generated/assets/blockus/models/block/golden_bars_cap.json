@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_bars_cap",
+  "textures": {
+    "bars": "blockus:block/golden_bars",
+    "edge": "blockus:block/golden_bars"
+  }
+}

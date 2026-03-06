@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/template_barrier_inventory",
+  "textures": {
+    "texture": "blockus:block/road_barrier"
+  }
+}
