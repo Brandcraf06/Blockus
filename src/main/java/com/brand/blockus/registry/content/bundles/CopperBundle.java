@@ -2,10 +2,7 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableList;
-import net.minecraft.client.particle.GlowParticle;
-import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.minecraft.world.level.block.WeatheringCopperDoorBlock;

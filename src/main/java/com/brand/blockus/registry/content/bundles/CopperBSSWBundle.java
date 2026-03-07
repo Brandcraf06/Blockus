@@ -2,7 +2,6 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.OxidizableWallBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
-import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.minecraft.world.level.block.WeatheringCopperFullBlock;
