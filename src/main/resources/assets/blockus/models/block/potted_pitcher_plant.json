@@ -1,8 +1,0 @@
-{
-  "parent": "blockus:block/large_flower_pot_double_cross",
-  "textures": {
-    "plant_top": "block/pitcher_crop_top_stage_4",
-    "plant_bottom": "block/pitcher_crop_bottom_stage_4",
-    "soil": "block/dirt"
-  }
-}

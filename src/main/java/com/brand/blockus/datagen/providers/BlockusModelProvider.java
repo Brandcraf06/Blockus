@@ -95,9 +95,31 @@ public class BlockusModelProvider extends FabricModelProvider {
             createColoredTiles(modelGenerator, bundle.block(), bundle.tile1(), bundle.tile2());
         }
 
-        for (PottedLargeBundle bundle : PottedLargeBundle.values()) {
-            modelGenerator.createNonTemplateModelBlock(bundle.block());
-        }
+        // Large Pots
+        createLargeFlowerPot(modelGenerator, BlockusBlocks.POTTED_ROSE_BUSH.block(), Blocks.ROSE_BUSH);
+        createLargeFlowerPot(modelGenerator, BlockusBlocks.POTTED_LILAC.block(), Blocks.LILAC);
+        createLargeFlowerPot(modelGenerator, BlockusBlocks.POTTED_PEONY.block(), Blocks.PEONY);
+        createPottedPitcherPlant(modelGenerator, BlockusBlocks.POTTED_PITCHER_PLANT.block());
+        createLargeFlowerPot(modelGenerator, BlockusBlocks.POTTED_LARGE_FERN.block(), Blocks.LARGE_FERN);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_OAK.block(), Blocks.OAK_LEAVES, Blocks.OAK_LOG);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_SPRUCE.block(), Blocks.SPRUCE_LEAVES, Blocks.SPRUCE_LOG);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_BIRCH.block(), Blocks.BIRCH_LEAVES, Blocks.BIRCH_LOG);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_JUNGLE.block(), Blocks.JUNGLE_LEAVES, Blocks.JUNGLE_LOG);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_ACACIA.block(), Blocks.ACACIA_LEAVES, Blocks.ACACIA_LOG);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_DARK_OAK.block(), Blocks.DARK_OAK_LEAVES, Blocks.DARK_OAK_LOG);
+        modelGenerator.createNonTemplateModelBlock(BlockusBlocks.POTTED_MANGROVE.block());
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_CHERRY_BLOSSOM.block(), Blocks.CHERRY_LEAVES, Blocks.CHERRY_LOG, Blocks.MOSS_BLOCK);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_PALE_OAK.block(), Blocks.PALE_OAK_LEAVES, Blocks.PALE_OAK_LOG, Blocks.PALE_MOSS_BLOCK);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_WHITE_OAK.block(), BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_LOG);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_LEGACY_TREE.block(), BlockusBlocks.LEGACY_LEAVES, BlockusBlocks.LEGACY_LOG, "legacy_grass_block_top");
+        createHugeRedMushroomPot(modelGenerator, BlockusBlocks.POTTED_HUGE_RED_MUSHROOM.block());
+        modelGenerator.createNonTemplateModelBlock(BlockusBlocks.POTTED_HUGE_BROWN_MUSHROOM.block());
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_HUGE_CRIMSON_FUNGUS.block(), Blocks.NETHER_WART_BLOCK, Blocks.CRIMSON_STEM, Blocks.CRIMSON_NYLIUM);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_HUGE_WARPED_FUNGUS.block(), Blocks.WARPED_WART_BLOCK, Blocks.WARPED_STEM, Blocks.WARPED_NYLIUM);
+        modelGenerator.createNonTemplateModelBlock(BlockusBlocks.POTTED_CACTUS_LARGE.block());
+        modelGenerator.createNonTemplateModelBlock(BlockusBlocks.POTTED_BAMBOO_LARGE.block());
+        createPottedAzaleaLarge(modelGenerator, BlockusBlocks.POTTED_AZALEA_LARGE.block(), Blocks.AZALEA);
+        createPottedAzaleaLarge(modelGenerator, BlockusBlocks.POTTED_FLOWERING_AZALEA_LARGE.block(), Blocks.FLOWERING_AZALEA);
         modelGenerator.createNonTemplateModelBlock(BlockusBlocks.LARGE_FLOWER_POT);
 
         // Shelf
@@ -599,6 +621,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void createCookieBlock(BlockModelGenerators modelGenerator) {
         Block block = BlockusBlocks.COOKIE_BLOCK;
+        MultiVariant itemModel = plainVariant(TexturedModel.CUBE.create(block, modelGenerator.modelOutput));
         modelGenerator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(BlockusBlockStateProperties.BITES_9)
             .select(0, plainVariant(ModelLocationUtils.getModelLocation(block)))
             .select(1, plainVariant(ModelLocationUtils.getModelLocation(block, "_slice1")))
@@ -613,6 +636,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void createAmethystLamp(BlockModelGenerators modelGenerator) {
         Block block = BlockusBlocks.AMETHYST_LAMP;
+        MultiVariant itemModel = plainVariant(TexturedModel.CUBE.create(block, modelGenerator.modelOutput));
         MultiVariant low = plainVariant(modelGenerator.createSuffixedVariant(block, "_low", ModelTemplates.CUBE_ALL, TextureMapping::cube));
         MultiVariant medium = plainVariant(modelGenerator.createSuffixedVariant(block, "_medium", ModelTemplates.CUBE_ALL, TextureMapping::cube));
         MultiVariant high = plainVariant(modelGenerator.createSuffixedVariant(block, "_high", ModelTemplates.CUBE_ALL, TextureMapping::cube));
@@ -940,7 +964,43 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleItemModel(waxed.asItem(), itemModel);
         modelGenerator.blockStateOutput.accept(createDoor(unwaxed, bottom, bottomHinge, bottomHinge, bottom, top, topHinge, topHinge, top));
         modelGenerator.blockStateOutput.accept(createDoor(waxed, bottom, bottomHinge, bottomHinge, bottom, top, topHinge, topHinge, top));
+    }
 
+    public final void createTreePot(BlockModelGenerators modelGenerator, Block block, Block leaves, Block log, Block soil) {
+        TextureMapping mapping = treePot(leaves, log, TextureMapping.getBlockTexture(log, "_top"), TextureMapping.getBlockTexture(soil));
+        this.createBlock(modelGenerator, block, BlockusModels.TREE_POT, mapping);
+    }
+
+    public final void createTreePot(BlockModelGenerators modelGenerator, Block block, Block leaves, Block log) {
+        createTreePot(modelGenerator, block, leaves, log, Blocks.DIRT);
+    }
+
+    public final void createTreePot(BlockModelGenerators modelGenerator, Block block, Block leaves, Block log, String soil) {
+        TextureMapping mapping = treePot(leaves, log, TextureMapping.getBlockTexture(log, "_top"), getBlockId(soil));
+        this.createBlock(modelGenerator, block, BlockusModels.TREE_POT, mapping);
+    }
+
+    public final void createHugeRedMushroomPot(BlockModelGenerators modelGenerator, Block block) {
+        TextureMapping mapping = treePot(Blocks.RED_MUSHROOM_BLOCK, Blocks.MUSHROOM_STEM, TextureMapping.getBlockTexture(Blocks.MUSHROOM_STEM), getBlockId(Identifier.withDefaultNamespace("mycelium_top")));
+        this.createBlock(modelGenerator, block, BlockusModels.TREE_POT, mapping);
+    }
+
+    public final void createLargeFlowerPot(BlockModelGenerators modelGenerator, Block block, Material top, Material bottom) {
+        TextureMapping mapping = topBottom(top, bottom).put(BlockusTextureSlot.SOIL, TextureMapping.getBlockTexture(Blocks.DIRT));
+        this.createBlock(modelGenerator, block, BlockusModels.LARGE_FLOWER_POT_DOUBLE_CROSS, mapping);
+    }
+
+    public final void createLargeFlowerPot(BlockModelGenerators modelGenerator, Block block, Block flower) {
+        createLargeFlowerPot(modelGenerator, block, TextureMapping.getBlockTexture(flower, "_top"), TextureMapping.getBlockTexture(flower, "_bottom"));
+    }
+
+    public final void createPottedPitcherPlant(BlockModelGenerators modelGenerator, Block block) {
+        createLargeFlowerPot(modelGenerator, block, TextureMapping.getBlockTexture(Blocks.PITCHER_CROP, "_top_stage_4"), TextureMapping.getBlockTexture(Blocks.PITCHER_CROP, "_bottom_stage_4"));
+    }
+
+    public final void createPottedAzaleaLarge(BlockModelGenerators modelGenerator, Block block, Block azalea) {
+        TextureMapping mapping = TextureMapping.cubeTop(azalea);
+        this.createBlock(modelGenerator, block, BlockusModels.POTTED_AZALEA_LARGE, mapping);
     }
 
     public static PropertyDispatch createUpDefaultRotationStates() {
@@ -957,9 +1017,12 @@ public class BlockusModelProvider extends FabricModelProvider {
         return getModifiedBlockId(block, "_concrete", "_tiles");
     }
 
-    public static Material getBlockId(String name) {
-        Identifier id = Blockus.id(name);
+    public static Material getBlockId(Identifier id) {
         return new Material(id.withPath((path) -> "block/" + path));
+    }
+
+    public static Material getBlockId(String name) {
+        return getBlockId(Blockus.id(name));
     }
 
     public static Identifier getBlockId(Block block) {
@@ -981,6 +1044,10 @@ public class BlockusModelProvider extends FabricModelProvider {
         return (new TextureMapping()).put(TextureSlot.SIDE, block).put(TextureSlot.TOP, top);
     }
 
+    public static TextureMapping topBottom(Material top, Material bottom) {
+        return (new TextureMapping()).put(TextureSlot.TOP, top).put(TextureSlot.BOTTOM, bottom);
+    }
+
     public static TextureMapping sideTopBottom(Material block, Material top, Material bottom) {
         return (new TextureMapping()).put(TextureSlot.SIDE, block).put(TextureSlot.TOP, top).put(TextureSlot.BOTTOM, bottom);
     }
@@ -995,6 +1062,10 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public static TextureMapping frontTopSideBottom(Block block) {
         return (new TextureMapping()).put(TextureSlot.FRONT, TextureMapping.getBlockTexture(block)).put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top")).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_side")).put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(block, "_side"));
+    }
+
+    public static TextureMapping treePot(Block leaves, Block log, Material logTop, Material soil) {
+        return (new TextureMapping()).put(BlockusTextureSlot.LEAVES, TextureMapping.getBlockTexture(leaves)).put(BlockusTextureSlot.LOG, TextureMapping.getBlockTexture(log)).put(BlockusTextureSlot.LOG_TOP, logTop).put(BlockusTextureSlot.SOIL, soil);
     }
 
     // Tint

@@ -30,6 +30,9 @@ public class BlockusModels {
     public static final ModelTemplate GATE_TOP_HINGE;
     public static final ModelTemplate CRATE_TEMPLATE;
     public static final ModelTemplate NEON_BLOCK_TEMPLATE;
+    public static final ModelTemplate TREE_POT;
+    public static final ModelTemplate POTTED_AZALEA_LARGE;
+    public static final ModelTemplate LARGE_FLOWER_POT_DOUBLE_CROSS;
 
 
     public static Identifier getBlockId(String id) {
@@ -67,5 +70,8 @@ public class BlockusModels {
         GATE_TOP_HINGE = create("gate_top_hinge", "_top_hinge", TextureSlot.TOP);
         CRATE_TEMPLATE = create("crate_template", TextureSlot.TOP, TextureSlot.SIDE);
         NEON_BLOCK_TEMPLATE = create("neon_block_template", TextureSlot.ALL);
+        TREE_POT = create("tree_pot", BlockusTextureSlot.LEAVES, BlockusTextureSlot.LOG, BlockusTextureSlot.LOG_TOP, BlockusTextureSlot.SOIL);
+        POTTED_AZALEA_LARGE = create("template_potted_azalea_large", TextureSlot.SIDE, TextureSlot.TOP);
+        LARGE_FLOWER_POT_DOUBLE_CROSS = create("large_flower_pot_double_cross", TextureSlot.TOP, TextureSlot.BOTTOM, BlockusTextureSlot.SOIL);
     }
 }

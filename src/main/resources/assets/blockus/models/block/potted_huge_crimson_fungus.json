@@ -1,8 +1,0 @@
-{
-  "parent": "blockus:block/large_tree_pot",
-  "textures": {
-    "log": "blockus:block/small_crimson_stems",
-    "leaves": "block/nether_wart_block",
-    "soil": "block/crimson_nylium"
-  }
-}

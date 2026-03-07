@@ -1,9 +1,0 @@
-{
-  "parent": "blockus:block/tinted_large_tree_pot",
-  "textures": {
-    "log_top": "blockus:block/small_jungle_logs_top",
-    "log": "blockus:block/small_jungle_logs",
-    "leaves": "block/jungle_leaves",
-    "soil": "block/dirt"
-  }
-}

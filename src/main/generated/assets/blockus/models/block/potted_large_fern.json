@@ -1,0 +1,8 @@
+{
+  "parent": "blockus:block/large_flower_pot_double_cross",
+  "textures": {
+    "bottom": "minecraft:block/large_fern_bottom",
+    "soil": "minecraft:block/dirt",
+    "top": "minecraft:block/large_fern_top"
+  }
+}

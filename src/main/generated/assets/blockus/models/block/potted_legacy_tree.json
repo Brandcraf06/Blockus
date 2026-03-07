@@ -1,0 +1,9 @@
+{
+  "parent": "blockus:block/tree_pot",
+  "textures": {
+    "leaves": "blockus:block/legacy_leaves",
+    "log": "blockus:block/legacy_log",
+    "log_top": "blockus:block/legacy_log_top",
+    "soil": "blockus:block/legacy_grass_block_top"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "blockus:block/tree_pot",
+  "textures": {
+    "leaves": "minecraft:block/warped_wart_block",
+    "log": "minecraft:block/warped_stem",
+    "log_top": "minecraft:block/warped_stem_top",
+    "soil": "minecraft:block/warped_nylium"
+  }
+}

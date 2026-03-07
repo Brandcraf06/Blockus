@@ -1,0 +1,9 @@
+{
+  "parent": "blockus:block/tree_pot",
+  "textures": {
+    "leaves": "minecraft:block/birch_leaves",
+    "log": "minecraft:block/birch_log",
+    "log_top": "minecraft:block/birch_log_top",
+    "soil": "minecraft:block/dirt"
+  }
+}
