@@ -37,27 +37,27 @@ public record BSSWBundle(
     }
 
     public static Builder of(String type, Block base, MapColor mapcolor) {
-        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.mapColor(mapcolor)));
+        return new Builder(type, new BlockBuilder(base).properties(properties -> properties.mapColor(mapcolor)));
     }
 
     public static Builder of(String type, Block base, int luminance) {
-        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.lightLevel((state) -> luminance)));
+        return new Builder(type, new BlockBuilder(base).properties(properties -> properties.lightLevel((state) -> luminance)));
     }
 
     public static Builder of(String type, Block base, PushReaction pistonBehavior) {
-        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.pushReaction(pistonBehavior)));
+        return new Builder(type, new BlockBuilder(base).properties(properties -> properties.pushReaction(pistonBehavior)));
     }
 
     public static Builder of(String type, Block base, SoundType sound) {
-        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.sound(sound)));
+        return new Builder(type, new BlockBuilder(base).properties(properties -> properties.sound(sound)));
     }
 
     public static Builder of(String type, Block base, float hardness, float resistance, MapColor mapcolor) {
-        return new Builder(type, new BlockBuilder(base).settings(settings -> settings.strength(hardness, resistance).mapColor(mapcolor)));
+        return new Builder(type, new BlockBuilder(base).properties(properties -> properties.strength(hardness, resistance).mapColor(mapcolor)));
     }
 
     public static Builder of(String type, float hardness, float resistance, MapColor color) {
-        return new Builder(type, new BlockBuilder(BlockFactory.create()).settings(settings -> settings.strength(hardness, resistance).mapColor(color)));
+        return new Builder(type, new BlockBuilder(BlockFactory.create()).properties(properties -> properties.strength(hardness, resistance).mapColor(color)));
     }
 
     public Block[] all() {

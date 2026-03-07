@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class RedstoneWallBlock extends WallBlock {
-    public RedstoneWallBlock(Properties settings) {
-        super(settings);
+    public RedstoneWallBlock(Properties properties) {
+        super(properties);
     }
 
     public boolean isSignalSource(BlockState state) {

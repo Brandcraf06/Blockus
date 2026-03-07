@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class RainbowAsphalt extends FullFacingBlock {
 
-    public RainbowAsphalt(Properties settings) {
-        super(settings);
+    public RainbowAsphalt(Properties properties) {
+        super(properties);
     }
 
     @Override

@@ -12,8 +12,8 @@ public class PaperLampBlock extends Block {
     public static final VoxelShape LAMP = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
 
 
-    public PaperLampBlock(Properties settings) {
-        super(settings);
+    public PaperLampBlock(Properties properties) {
+        super(properties);
     }
 
     @Override

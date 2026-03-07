@@ -26,8 +26,8 @@ public class CookieBlock extends Block {
     public static final IntegerProperty BITES;
     protected static final VoxelShape[] BITES_TO_SHAPE;
 
-    public CookieBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties settings) {
-        super(settings);
+    public CookieBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties properties) {
+        super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(BITES, 0));
     }
 
@@ -81,7 +81,7 @@ public class CookieBlock extends Block {
         return (9 - state.getValue(BITES)) * 2;
     }
 
-    public boolean hasAnalogOutputSignal(BlockState blockState_1) {
+    public boolean hasAnalogOutputSignal(BlockState state) {
         return true;
     }
 

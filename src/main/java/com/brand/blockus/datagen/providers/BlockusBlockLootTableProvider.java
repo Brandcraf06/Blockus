@@ -45,79 +45,79 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
     public void generate() {
         HolderLookup.RegistryLookup<Enchantment> impl = this.registriesFuture.lookupOrThrow(Registries.ENCHANTMENT);
 
-        for (BSSWBundle bsswType : BSSWBundle.values()) {
-            this.addBlockStairsandSlabDrops(bsswType.block(), bsswType.stairs(), bsswType.slab());
-            if (bsswType.wall() != null) {
-                this.dropSelf(bsswType.wall());
+        for (BSSWBundle bundle : BSSWBundle.values()) {
+            this.addBlockStairsandSlabDrops(bundle.block(), bundle.stairs(), bundle.slab());
+            if (bundle.wall() != null) {
+                this.dropSelf(bundle.wall());
             }
         }
 
-        for (CopperBSSWBundle copper : CopperBSSWBundle.values()) {
-            this.addBlockStairsandSlabDrops(copper.block(), copper.stairs(), copper.slab());
-            this.addBlockStairsandSlabDrops(copper.blockWaxed(), copper.stairsWaxed(), copper.slabWaxed());
-            this.dropSelf(copper.wall());
-            this.dropSelf(copper.wallWaxed());
+        for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
+            this.addBlockStairsandSlabDrops(bundle.block(), bundle.stairs(), bundle.slab());
+            this.addBlockStairsandSlabDrops(bundle.blockWaxed(), bundle.stairsWaxed(), bundle.slabWaxed());
+            this.dropSelf(bundle.wall());
+            this.dropSelf(bundle.wallWaxed());
         }
 
-        for (ConcreteBundle concrete : ConcreteBundle.values()) {
-            for (ConcreteBundle.ConcreteVariants variants : concrete.colorMap().values()) {
+        for (ConcreteBundle bundle : ConcreteBundle.values()) {
+            for (ConcreteBundle.ConcreteVariants variants : bundle.colorMap().values()) {
                 this.addBlockStairsandSlabDrops(variants.block(), variants.stairs(), variants.slab());
                 this.addDrops(variants.wall(), variants.chiseled(), variants.pillar());
             }
         }
 
-        for (WoodBundle woodBundle : WoodBundle.values()) {
-            this.addWoodSetDrop(woodBundle.planks(),
-                woodBundle.stairs(),
-                woodBundle.slab(),
-                woodBundle.fence(),
-                woodBundle.fenceGate(),
-                woodBundle.door(),
-                woodBundle.trapdoor(),
-                woodBundle.pressurePlate(),
-                woodBundle.button(),
-                woodBundle.shelf(),
-                woodBundle.standingSign(),
-                woodBundle.ceilingHangingSign());
+        for (WoodBundle bundle : WoodBundle.values()) {
+            this.addWoodSetDrop(bundle.planks(),
+                bundle.stairs(),
+                bundle.slab(),
+                bundle.fence(),
+                bundle.fenceGate(),
+                bundle.door(),
+                bundle.trapdoor(),
+                bundle.pressurePlate(),
+                bundle.button(),
+                bundle.shelf(),
+                bundle.standingSign(),
+                bundle.ceilingHangingSign());
         }
 
-        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            for (Block block : timberFrameBundle.all()) {
+        for (TimberFrameBundle bundle : TimberFrameBundle.values()) {
+            for (Block block : bundle.all()) {
                 this.addDrops(block);
             }
         }
 
-        for (var asphaltBundle : BlockusBlocks.ASPHALT.colorMap().values()) {
-            this.addBlockStairsandSlabDrops(asphaltBundle.block(), asphaltBundle.stairs(), asphaltBundle.slab());
+        for (var asphaltVariants : BlockusBlocks.ASPHALT.colorMap().values()) {
+            this.addBlockStairsandSlabDrops(asphaltVariants.block(), asphaltVariants.stairs(), asphaltVariants.slab());
         }
 
-        for (PottedLargeBundle pottedLargeBundle : PottedLargeBundle.values()) {
-            this.addPottedLargePlantDrop(pottedLargeBundle.block());
+        for (PottedLargeBundle bundle : PottedLargeBundle.values()) {
+            this.addPottedLargePlantDrop(bundle.block());
         }
 
-        for (WoolBundle woolBundle : WoolBundle.values()) {
-            for (var variants : woolBundle.colorMap().values()) {
+        for (WoolBundle bundle : WoolBundle.values()) {
+            for (var variants : bundle.colorMap().values()) {
                 this.addBlockStairsandSlabDrops(variants.block(), variants.stairs(), variants.slab());
                 this.dropSelf(variants.carpet());
             }
         }
 
-        for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-            this.dropSelf(coloredTilesVariants.block());
+        for (ColoredTilesBundle bundle : ColoredTilesBundle.values()) {
+            this.dropSelf(bundle.block());
         }
 
-        for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-            for (Block block : woodenPost.all()) {
+        for (WoodenPostBundle bundle : WoodenPostBundle.values()) {
+            for (Block block : bundle.all()) {
                 this.addDrops(block);
             }
         }
 
-        for (StainedBlockBundle stainedBlockBundle : List.of(NEON_BLOCK, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, STAINED_REDSTONE_LAMP, STAINED_REDSTONE_LAMP_LIT, COLORED_TILES)) {
-            stainedBlockBundle.colorMap().values().forEach(this::addDrops);
+        for (StainedBlockBundle bundle : List.of(NEON_BLOCK, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, STAINED_REDSTONE_LAMP, STAINED_REDSTONE_LAMP_LIT, COLORED_TILES)) {
+            bundle.colorMap().values().forEach(this::addDrops);
         }
 
-        for (ExtraWoodBundle<Block> extraWoodBundle : List.of(HERRINGBONE_PLANKS, SMALL_LOGS)) {
-            extraWoodBundle.bundle().values().forEach(this::addDrops);
+        for (ExtraWoodBundle<Block> bundle : List.of(HERRINGBONE_PLANKS, SMALL_LOGS)) {
+            bundle.bundle().values().forEach(this::addDrops);
         }
 
         COPPER_LANTERN_BLOCK.forEach(this::dropSelf);

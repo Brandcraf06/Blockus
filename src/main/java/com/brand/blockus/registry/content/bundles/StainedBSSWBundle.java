@@ -32,7 +32,7 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
     public static class Builder {
         private final String id;
         private final Map<DyeColor, Block> baseBlockColorMap;
-        private Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settings = null;
+        private Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties = null;
         private boolean includeWall = true;
         private boolean useMapColor = false;
 
@@ -42,8 +42,8 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
             this.baseBlockColorMap = baseBlockColorMap;
         }
 
-        public Builder settings(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settings) {
-            this.settings = settings;
+        public Builder properties(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties) {
+            this.properties = properties;
             return this;
         }
 
@@ -65,12 +65,12 @@ public record StainedBSSWBundle(Map<DyeColor, BSSWBundle> colorMap) {
                 Block baseBlock = baseBlockColorMap.get(color);
                 BlockBuilder blockBuilder = new BlockBuilder(baseBlock);
 
-                if (settings != null) {
-                    blockBuilder.settings(settings);
+                if (properties != null) {
+                    blockBuilder.properties(properties);
                 }
 
                 if (useMapColor) {
-                    blockBuilder.settings(s -> s.mapColor(BlockMaps.COLOR_MAP.get(color)));
+                    blockBuilder.properties(s -> s.mapColor(BlockMaps.COLOR_MAP.get(color)));
                 }
 
                 BSSWBundle bundle = BSSWBundle.of(blockPath, blockBuilder).includeWall(includeWall).register();

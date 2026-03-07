@@ -14,8 +14,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FertilizableFlowerBlock extends FlowerBlock implements BonemealableBlock, SuspiciousEffectHolder {
 
-    public FertilizableFlowerBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties settings) {
-        super(suspiciousStewEffect, effectDuration, settings);
+    public FertilizableFlowerBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
+        super(suspiciousStewEffect, effectDuration, properties);
     }
 
     @Override

@@ -41,8 +41,8 @@ public class LargeFlowerPotBlock extends Block {
         return CODEC;
     }
 
-    public LargeFlowerPotBlock(Block content, BlockBehaviour.Properties settings) {
-        super(settings);
+    public LargeFlowerPotBlock(Block content, BlockBehaviour.Properties properties) {
+        super(properties);
         this.content = content;
         CONTENT_TO_POTTED.put(content, this);
     }

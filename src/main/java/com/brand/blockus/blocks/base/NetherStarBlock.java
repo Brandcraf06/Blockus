@@ -13,8 +13,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class NetherStarBlock extends Block {
 
-    public NetherStarBlock(Properties settings) {
-        super(settings);
+    public NetherStarBlock(Properties properties) {
+        super(properties);
     }
 
     @Override

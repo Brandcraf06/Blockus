@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class AsphaltStairs extends StairBlock {
 
-    public AsphaltStairs(BlockState baseBlockState, Properties settings) {
-        super(baseBlockState, settings);
+    public AsphaltStairs(BlockState baseBlockState, Properties properties) {
+        super(baseBlockState, properties);
     }
 
     @Override

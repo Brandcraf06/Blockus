@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class LoveBlock extends Block {
 
-    public LoveBlock(Properties settings) {
-        super(settings);
+    public LoveBlock(Properties properties) {
+        super(properties);
     }
 
     @Environment(EnvType.CLIENT)

@@ -62,16 +62,16 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             @Override
             public void buildRecipes() {
 
-                for (BSSWBundle BSSWBundle : BSSWBundle.values()) {
-                    offerStairsRecipe(BSSWBundle.stairs(), BSSWBundle.block());
-                    slab(RecipeCategory.BUILDING_BLOCKS, BSSWBundle.slab(), BSSWBundle.block());
-                    if (BSSWBundle.wall() != null) {
-                        wall(RecipeCategory.DECORATIONS, BSSWBundle.wall(), BSSWBundle.block());
+                for (BSSWBundle bundle : BSSWBundle.values()) {
+                    offerStairsRecipe(bundle.stairs(), bundle.block());
+                    slab(RecipeCategory.BUILDING_BLOCKS, bundle.slab(), bundle.block());
+                    if (bundle.wall() != null) {
+                        wall(RecipeCategory.DECORATIONS, bundle.wall(), bundle.block());
                     }
                 }
 
-                for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-                    for (Map.Entry<DyeColor, ConcreteBundle.ConcreteVariants> entry : concreteType.colorMap().entrySet()) {
+                for (ConcreteBundle bundle : ConcreteBundle.values()) {
+                    for (Map.Entry<DyeColor, ConcreteBundle.ConcreteVariants> entry : bundle.colorMap().entrySet()) {
                         ConcreteBundle.ConcreteVariants variants = entry.getValue();
                         Block base = BlockMaps.CONCRETE_MAP.get(entry.getKey());
                         offerStonecuttingRecipe(variants.block(), base);
@@ -84,19 +84,19 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                     }
                 }
 
-                for (AsphaltBundle.AsphaltVariants asphaltBundle : ASPHALT.colorMap().values()) {
-                    offerStairsRecipe(asphaltBundle.stairs(), asphaltBundle.block());
-                    slab(RecipeCategory.BUILDING_BLOCKS, asphaltBundle.slab(), asphaltBundle.block());
-                    offerStonecuttingRecipe(asphaltBundle.stairs(), asphaltBundle.block());
-                    offerStonecuttingRecipe(asphaltBundle.slab(), 2, asphaltBundle.block());
+                for (AsphaltBundle.AsphaltVariants variants : ASPHALT.colorMap().values()) {
+                    offerStairsRecipe(variants.stairs(), variants.block());
+                    slab(RecipeCategory.BUILDING_BLOCKS, variants.slab(), variants.block());
+                    offerStonecuttingRecipe(variants.stairs(), variants.block());
+                    offerStonecuttingRecipe(variants.slab(), 2, variants.block());
                 }
 
-                for (WoolBundle woolBundle : WoolBundle.values()) {
-                    for (Map.Entry<DyeColor, WoolBundle.WoolVariants> entry : woolBundle.colorMap().entrySet()) {
+                for (WoolBundle bundle : WoolBundle.values()) {
+                    for (Map.Entry<DyeColor, WoolBundle.WoolVariants> entry : bundle.colorMap().entrySet()) {
                         WoolBundle.WoolVariants variants = entry.getValue();
-                        if (woolBundle == PATTERNED_WOOL) {
+                        if (bundle == PATTERNED_WOOL) {
                             offerPatternedWoolRecipe(variants.block(), BlockMaps.WOOL_MAP.get(entry.getKey()), variants.carpet(), BlockMaps.CARPET_MAP.get(entry.getKey()));
-                        } else if (woolBundle == GINGHAM_WOOL) {
+                        } else if (bundle == GINGHAM_WOOL) {
                             offerGinghamWoolRecipe(variants.block(), BlockMaps.WOOL_MAP.get(entry.getKey()));
                         }
 
@@ -106,8 +106,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                     }
                 }
 
-                for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
-                    offerColoredTilesRecipe(coloredTilesVariants.block(), coloredTilesVariants.tile1(), coloredTilesVariants.tile2());
+                for (ColoredTilesBundle bundle : ColoredTilesBundle.values()) {
+                    offerColoredTilesRecipe(bundle.block(), bundle.tile1(), bundle.tile2());
                 }
 
                 generateForEnabledBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA));
@@ -422,18 +422,18 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerCopperBricksRecipe(WEATHERED_COPPER_BRICKS, Blocks.WAXED_WEATHERED_COPPER, Blocks.WEATHERED_CUT_COPPER, Blocks.WAXED_WEATHERED_CUT_COPPER);
                 offerCopperBricksRecipe(OXIDIZED_COPPER_BRICKS, Blocks.WAXED_OXIDIZED_COPPER, Blocks.OXIDIZED_CUT_COPPER, Blocks.WAXED_OXIDIZED_CUT_COPPER);
 
-                for (CopperBSSWBundle copper : CopperBSSWBundle.values()) {
-                    offerWaxingRecipes(copper.block(), copper.blockWaxed());
-                    offerWaxingRecipes(copper.slab(), copper.slabWaxed());
-                    offerWaxingRecipes(copper.stairs(), copper.stairsWaxed());
-                    offerWaxingRecipes(copper.wall(), copper.wallWaxed());
-                    if (copper.type().contains("copper_tuff_bricks")) {
-                        offerStonecuttingRecipe(copper.stairs(), copper.block());
-                        offerStonecuttingRecipe(copper.slab(), 2, copper.block());
-                        offerStonecuttingRecipe(copper.wall(), copper.block());
-                        offerStonecuttingRecipe(copper.stairsWaxed(), copper.blockWaxed());
-                        offerStonecuttingRecipe(copper.slabWaxed(), 2, copper.blockWaxed());
-                        offerStonecuttingRecipe(copper.wallWaxed(), copper.blockWaxed());
+                for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
+                    offerWaxingRecipes(bundle.block(), bundle.blockWaxed());
+                    offerWaxingRecipes(bundle.slab(), bundle.slabWaxed());
+                    offerWaxingRecipes(bundle.stairs(), bundle.stairsWaxed());
+                    offerWaxingRecipes(bundle.wall(), bundle.wallWaxed());
+                    if (bundle.type().contains("copper_tuff_bricks")) {
+                        offerStonecuttingRecipe(bundle.stairs(), bundle.block());
+                        offerStonecuttingRecipe(bundle.slab(), 2, bundle.block());
+                        offerStonecuttingRecipe(bundle.wall(), bundle.block());
+                        offerStonecuttingRecipe(bundle.stairsWaxed(), bundle.blockWaxed());
+                        offerStonecuttingRecipe(bundle.slabWaxed(), 2, bundle.blockWaxed());
+                        offerStonecuttingRecipe(bundle.wallWaxed(), bundle.blockWaxed());
                     }
                 }
                 shaped(RecipeCategory.BUILDING_BLOCKS, COPPER_TUFF_BRICKS.block(), 2).define('#', Items.COPPER_INGOT).define('X', Blocks.TUFF_BRICKS).pattern("#X").pattern("X#").unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).unlockedBy(getHasName(Blocks.TUFF_BRICKS), has(Blocks.TUFF_BRICKS)).save(exporter);
@@ -592,8 +592,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                     offerSmallLogsRecipe(entry.getValue(), WoodMaps.LOG_MAP.get(entry.getKey()));
                 }
 
-                for (WoodenPostBundle woodenPost : WoodenPostBundle.values()) {
-                    for (var entry : woodenPost.woodMap().entrySet()) {
+                for (WoodenPostBundle bundle : WoodenPostBundle.values()) {
+                    for (var entry : bundle.woodMap().entrySet()) {
                         Block log = WoodMaps.LOG_MAP.get(entry.getKey().getId());
                         Block strippedLog = WoodMaps.STRIPPED_LOG_MAP.get(entry.getKey().getId());
                         if (log == null || strippedLog == null) {
@@ -618,8 +618,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 }
                 offerCharredSmeltingRecipe(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN, RecipeCategory.BUILDING_BLOCKS, HERRINGBONE_PLANKS.get(WoodMaps.CHARRED.getId()), "herringbone_planks");
 
-                for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-                    for (var entry : timberFrameBundle.woodMap().entrySet()) {
+                for (TimberFrameBundle bundle : TimberFrameBundle.values()) {
+                    for (var entry : bundle.woodMap().entrySet()) {
                         var variants = entry.getValue();
                         Block planks = WoodMaps.PLANKS_MAP.get(entry.getKey().getId());
                         createTimberFramesRecipes(planks, variants.block(), variants.diagonal(), variants.cross());

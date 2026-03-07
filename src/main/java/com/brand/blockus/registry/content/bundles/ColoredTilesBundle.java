@@ -132,7 +132,7 @@ public record ColoredTilesBundle(
             String type = getColor(tile1) + "_" + getColor(tile2) + "_colored_tiles";
 
             ColoredTilesBundle bundle = new ColoredTilesBundle(tile1, tile2,
-                registerCopy(type, settings -> new ColoredTilesBlock(tile1, tile2, settings), tile2)
+                registerCopy(type, properties -> new ColoredTilesBlock(tile1, tile2, properties), tile2)
             );
             LIST.add(bundle);
             return bundle;

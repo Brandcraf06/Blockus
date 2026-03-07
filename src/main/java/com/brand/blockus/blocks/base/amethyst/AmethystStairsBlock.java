@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class AmethystStairsBlock extends StairBlock {
-    public AmethystStairsBlock(BlockState state, Properties settings) {
-        super(state, settings);
+    public AmethystStairsBlock(BlockState state, Properties properties) {
+        super(state, properties);
     }
 
     public void onProjectileHit(Level level, BlockState state, BlockHitResult hitResult, Projectile projectile) {

@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class AmethystPillarBlock extends RotatedPillarBlock {
-    public AmethystPillarBlock(Properties settings) {
-        super(settings);
+    public AmethystPillarBlock(Properties properties) {
+        super(properties);
     }
 
     public void onProjectileHit(Level level, BlockState state, BlockHitResult hitResult, Projectile projectile) {

@@ -13,8 +13,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class AsphaltBlock extends Block {
 
-    public AsphaltBlock(Properties settings) {
-        super(settings);
+    public AsphaltBlock(Properties properties) {
+        super(properties);
     }
 
     public static void applySprintEffect(Level world, Entity entity) {

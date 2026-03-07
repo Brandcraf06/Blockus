@@ -22,9 +22,9 @@ public record TimberFrameBundle(Map<WoodMaps, TimberFrameVariants> woodMap) {
         return LIST;
     }
 
-    public static BlockBehaviour.Properties settings(Block base, boolean isBurnable) {
-        BlockBehaviour.Properties blockSettings = BlockFactory.createCopy(base).forceSolidOn();
-        return isBurnable ? blockSettings.ignitedByLava() : blockSettings;
+    public static BlockBehaviour.Properties properties(Block base, boolean isBurnable) {
+        BlockBehaviour.Properties blockProperties = BlockFactory.createCopy(base).forceSolidOn();
+        return isBurnable ? blockProperties.ignitedByLava() : blockProperties;
     }
 
     public List<Block> all() {
@@ -54,11 +54,11 @@ public record TimberFrameBundle(Map<WoodMaps, TimberFrameVariants> woodMap) {
                 System.err.println("[WARN] Missing planks for: " + wood.getId());
                 continue;
             }
-            Block block = BlockFactory.registerOf(wood.getId() + "_timber_frame", settings(planks, wood.data().isBurnable()));
-            Block diagonal = BlockFactory.registerOf(wood.getId() + "_diagonal_timber_frame", OrientableBlockBase::new, settings(planks, wood.data().isBurnable()));
-            Block cross = BlockFactory.registerOf(wood.getId() + "_cross_timber_frame", settings(planks, wood.data().isBurnable()));
+            Block block = BlockFactory.registerOf(wood.getId() + "_timber_frame", properties(planks, wood.data().isBurnable()));
+            Block diagonal = BlockFactory.registerOf(wood.getId() + "_diagonal_timber_frame", OrientableBlockBase::new, properties(planks, wood.data().isBurnable()));
+            Block cross = BlockFactory.registerOf(wood.getId() + "_cross_timber_frame", properties(planks, wood.data().isBurnable()));
             Block lattice = BlockFactory.registerCopy(wood.getId() + "_lattice", IronBarsBlock::new, planks);
-            Block grate = BlockFactory.registerCopy(wood.getId() + "_grate", WaterloggedTransparentBlock::new, planks, settings -> settings.noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never));
+            Block grate = BlockFactory.registerCopy(wood.getId() + "_grate", WaterloggedTransparentBlock::new, planks, properties -> properties.noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never));
 
             woodMap.put(wood, new TimberFrameVariants(block, diagonal, cross, lattice, grate));
         }

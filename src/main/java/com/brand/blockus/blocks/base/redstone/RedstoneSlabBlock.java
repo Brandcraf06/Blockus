@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class RedstoneSlabBlock extends SlabBlock {
-    public RedstoneSlabBlock(Properties settings) {
-        super(settings);
+    public RedstoneSlabBlock(Properties properties) {
+        super(properties);
     }
 
     public boolean isSignalSource(BlockState state) {

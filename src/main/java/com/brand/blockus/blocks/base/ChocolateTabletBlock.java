@@ -35,8 +35,8 @@ public class ChocolateTabletBlock extends DirectionalBlock implements SimpleWate
         return CODEC;
     }
 
-    public ChocolateTabletBlock(Properties settings) {
-        super(settings);
+    public ChocolateTabletBlock(Properties properties) {
+        super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.UP).setValue(WATERLOGGED, false));
     }
 

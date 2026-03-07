@@ -21,8 +21,8 @@ public class ObsidianPressurePlateBlock extends BasePressurePlateBlock {
         return CODEC;
     }
 
-    public ObsidianPressurePlateBlock(BlockBehaviour.Properties settings) {
-        super(settings, BlockSetType.STONE);
+    public ObsidianPressurePlateBlock(BlockBehaviour.Properties properties) {
+        super(properties, BlockSetType.STONE);
         this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false));
     }
 

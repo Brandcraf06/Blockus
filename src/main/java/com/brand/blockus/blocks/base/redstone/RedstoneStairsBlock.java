@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class RedstoneStairsBlock extends StairBlock {
-    public RedstoneStairsBlock(BlockState state, Properties settings) {
-        super(state, settings);
+    public RedstoneStairsBlock(BlockState state, Properties properties) {
+        super(state, properties);
     }
 
     public boolean isSignalSource(BlockState state) {

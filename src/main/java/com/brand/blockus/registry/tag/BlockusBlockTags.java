@@ -80,7 +80,7 @@ public class BlockusBlockTags {
     private BlockusBlockTags() {
     }
 
-    private static TagKey<Block> register(String id) {
-        return TagKey.create(Registries.BLOCK, Blockus.id(id));
+    private static TagKey<Block> register(String name) {
+        return TagKey.create(Registries.BLOCK, Blockus.id(name));
     }
 }

@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class FallingRedstoneBlock extends SimpleFallingBlock {
 
-    public FallingRedstoneBlock(Properties settings) {
-        super(settings);
+    public FallingRedstoneBlock(Properties properties) {
+        super(properties);
     }
 
     public boolean isSignalSource(BlockState state) {

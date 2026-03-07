@@ -15,8 +15,8 @@ import org.jetbrains.annotations.Nullable;
 public class AmethystLampBlock extends Block {
     public static final IntegerProperty POWER = BlockStateProperties.POWER;
 
-    public AmethystLampBlock(Properties settings) {
-        super(settings.lightLevel(state -> state.getValue(POWER)));
+    public AmethystLampBlock(Properties properties) {
+        super(properties.lightLevel(state -> state.getValue(POWER)));
         this.registerDefaultState(this.stateDefinition.any().setValue(POWER, 0));
     }
 

@@ -612,8 +612,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             }
         }
 
-        for (CopperBSSWBundle copper : CopperBSSWBundle.values()) {
-            for (Block block : copper.all()) {
+        for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
+            for (Block block : bundle.all()) {
                 if (block.toString().contains("tuff")) {
                     this.valueLookupBuilder(BlockusBlockTags.TUFF_BLOCKS)
                         .add(block);
@@ -624,7 +624,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             }
 
             this.valueLookupBuilder(BlockTags.WALLS)
-                .addAll(copper.allWalls());
+                .addAll(bundle.allWalls());
         }
 
         // Vanilla Block Tags

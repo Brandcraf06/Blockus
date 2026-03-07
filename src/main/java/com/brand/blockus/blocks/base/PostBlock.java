@@ -46,8 +46,8 @@ public class PostBlock extends RotatedPillarBlock implements SimpleWaterloggedBl
     public static final EnumProperty<ConnectionType>[] SIDES;
 
 
-    public PostBlock(Properties settings) {
-        super(settings);
+    public PostBlock(Properties properties) {
+        super(properties);
         this.registerDefaultState(this.stateDefinition.any()
             .setValue(WATERLOGGED, false)
             .setValue(AXIS, Axis.Y)

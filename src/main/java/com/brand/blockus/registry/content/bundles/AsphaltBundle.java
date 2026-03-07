@@ -43,14 +43,14 @@ public record AsphaltBundle(Map<DyeColor, AsphaltVariants> colorMap) {
 
     public static class Builder {
         private final String id;
-        private Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settings = Function.identity();
+        private Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties = Function.identity();
 
         public Builder(String id) {
             this.id = id;
         }
 
-        public Builder settings(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settings) {
-            this.settings = settings;
+        public Builder properties(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties) {
+            this.properties = properties;
             return this;
         }
 
@@ -61,9 +61,9 @@ public record AsphaltBundle(Map<DyeColor, AsphaltVariants> colorMap) {
                 String type = color.getName() + "_" + id;
                 String type2 = type.replace("black_" + id, id);
 
-                Block.Properties blockSettings = settings.apply(BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresCorrectToolForDrops());
+                Block.Properties blockProperties = properties.apply(BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresCorrectToolForDrops());
 
-                Block block = BlockFactory.registerOf(type2, AsphaltBlock::new, blockSettings);
+                Block block = BlockFactory.registerOf(type2, AsphaltBlock::new, blockProperties);
                 Block stairs = BlockFactory.registerOf(type2 + "_stairs", s -> new AsphaltStairs(block.defaultBlockState(), s), BlockBehaviour.Properties.ofFullCopy(block));
                 Block slab = BlockFactory.registerOf(type2 + "_slab", AsphaltSlab::new, BlockBehaviour.Properties.ofFullCopy(block));
 

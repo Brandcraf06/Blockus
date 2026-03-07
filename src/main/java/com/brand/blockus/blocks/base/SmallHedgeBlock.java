@@ -27,8 +27,8 @@ public class SmallHedgeBlock extends CrossCollisionBlock {
         return CODEC;
     }
 
-    public SmallHedgeBlock(BlockBehaviour.Properties settings) {
-        super(6.0F, 16.0F, 6.0F, 16.0F, 24.0F, settings);
+    public SmallHedgeBlock(BlockBehaviour.Properties properties) {
+        super(6.0F, 16.0F, 6.0F, 16.0F, 24.0F, properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, false).setValue(EAST, false).setValue(SOUTH, false).setValue(WEST, false).setValue(WATERLOGGED, false));
     }
 

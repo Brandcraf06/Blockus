@@ -25,7 +25,7 @@ public final class BlockusItemTags {
     private BlockusItemTags() {
     }
 
-    private static TagKey<Item> register(String id) {
-        return TagKey.create(Registries.ITEM, Blockus.id(id));
+    private static TagKey<Item> register(String name) {
+        return TagKey.create(Registries.ITEM, Blockus.id(name));
     }
 }

@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class RedstoneLantern extends LanternBlock {
 
-    public RedstoneLantern(Properties settings) {
-        super(settings);
+    public RedstoneLantern(Properties properties) {
+        super(properties);
     }
 
     public boolean isSignalSource(BlockState state) {

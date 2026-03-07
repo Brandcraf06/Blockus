@@ -11,8 +11,8 @@ public class OrientableBlockBase extends HorizontalDirectionalBlock {
     public static final MapCodec<OrientableBlockBase> CODEC = simpleCodec(OrientableBlockBase::new);
 
 
-    public OrientableBlockBase(Properties settings) {
-        super(settings);
+    public OrientableBlockBase(Properties properties) {
+        super(properties);
     }
 
     public MapCodec<OrientableBlockBase> codec() {

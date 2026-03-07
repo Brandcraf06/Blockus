@@ -59,9 +59,9 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(THATCH.stairs(), 60, 20);
 
         // Timber frames
-        for (TimberFrameBundle timberFrameBundle : TimberFrameBundle.values()) {
-            for (Block block : timberFrameBundle.all()) {
-                for (var entry : timberFrameBundle.woodMap().entrySet()) {
+        for (TimberFrameBundle bundle : TimberFrameBundle.values()) {
+            for (Block block : bundle.all()) {
+                for (var entry : bundle.woodMap().entrySet()) {
                     if (!entry.getKey().data().isBurnable()) continue;
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
                     FuelValueEvents.BUILD.register((builder, context) -> builder.add(block, 300));
@@ -70,8 +70,8 @@ public class Instance {
         }
 
         // Patterned wools
-        for (WoolBundle woolBundle : WoolBundle.values()) {
-            for (WoolBundle.WoolVariants blocks : woolBundle.colorMap().values()) {
+        for (WoolBundle bundle : WoolBundle.values()) {
+            for (WoolBundle.WoolVariants blocks : bundle.colorMap().values()) {
                 FlammableBlockRegistry.getDefaultInstance().add(blocks.block(), 30, 60);
                 FlammableBlockRegistry.getDefaultInstance().add(blocks.stairs(), 30, 60);
                 FlammableBlockRegistry.getDefaultInstance().add(blocks.slab(), 30, 60);
@@ -84,17 +84,17 @@ public class Instance {
         }
 
         // Wood set
-        for (WoodBundle woodBundle : WoodBundle.values()) {
-            if (woodBundle.burnable()) {
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.planks(), 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.stairs(), 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.slab(), 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fence(), 5, 20);
-                FlammableBlockRegistry.getDefaultInstance().add(woodBundle.fenceGate(), 5, 20);
+        for (WoodBundle bundle : WoodBundle.values()) {
+            if (bundle.burnable()) {
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.planks(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.slab(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.fence(), 5, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.fenceGate(), 5, 20);
                 FuelValueEvents.BUILD.register((builder, context) -> {
-                    builder.add(woodBundle.fence(), 300);
-                    builder.add(woodBundle.fenceGate(), 300);
-                    builder.add(woodBundle.shelf(), 300);
+                    builder.add(bundle.fence(), 300);
+                    builder.add(bundle.fenceGate(), 300);
+                    builder.add(bundle.shelf(), 300);
                 });
             }
         }
@@ -143,8 +143,8 @@ public class Instance {
         }
 
         // Posts
-        for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
-            for (var entry : woodenPostBundle.woodMap().entrySet()) {
+        for (WoodenPostBundle bundle : WoodenPostBundle.values()) {
+            for (var entry : bundle.woodMap().entrySet()) {
                 if (entry == null) continue;
                 if (!entry.getKey().data().isBurnable()) continue;
                 WoodenPostBundle.WoodenPostVariants variants = entry.getValue();
@@ -204,8 +204,8 @@ public class Instance {
     public static void addStrippables() {
         StrippableBlockRegistry.register(WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG);
         StrippableBlockRegistry.register(WHITE_OAK_WOOD, STRIPPED_WHITE_OAK_WOOD);
-        for (WoodenPostBundle woodenPostBundle : WoodenPostBundle.values()) {
-            for (WoodenPostBundle.WoodenPostVariants variants : woodenPostBundle.woodMap().values()) {
+        for (WoodenPostBundle bundle : WoodenPostBundle.values()) {
+            for (WoodenPostBundle.WoodenPostVariants variants : bundle.woodMap().values()) {
                 StrippableBlockRegistry.register(variants.block(), variants.stripped());
             }
         }

@@ -12,8 +12,8 @@ public class FullFacingBlock extends DirectionalBlock {
     public static final MapCodec<FullFacingBlock> CODEC = simpleCodec(FullFacingBlock::new);
 
 
-    public FullFacingBlock(Properties settings) {
-        super(settings);
+    public FullFacingBlock(Properties properties) {
+        super(properties);
     }
 
     public MapCodec<FullFacingBlock> codec() {

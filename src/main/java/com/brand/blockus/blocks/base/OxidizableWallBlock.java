@@ -11,8 +11,8 @@ public class OxidizableWallBlock extends WallBlock implements WeatheringCopper {
 
     private final WeatherState oxidationLevel;
 
-    public OxidizableWallBlock(WeatherState oxidationLevel, Properties settings) {
-        super(settings);
+    public OxidizableWallBlock(WeatherState oxidationLevel, Properties properties) {
+        super(properties);
         this.oxidationLevel = oxidationLevel;
     }
 

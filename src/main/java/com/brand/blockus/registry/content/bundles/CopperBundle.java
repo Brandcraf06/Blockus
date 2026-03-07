@@ -2,7 +2,10 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.client.particle.GlowParticle;
+import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.minecraft.world.level.block.WeatheringCopperDoorBlock;
@@ -26,26 +29,26 @@ public record CopperBundle(Block unaffected, Block exposed, Block weathered, Blo
         return LIST;
     }
 
-    public static <WaxedBlock extends Block, WeatheringBlock extends Block & WeatheringCopper> CopperBundle create(String baseId, TriFunction<String, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> registerFunction, Function<BlockBehaviour.Properties, WaxedBlock> waxedBlockFactory, BiFunction<WeatherState, BlockBehaviour.Properties, WeatheringBlock> unwaxedBlockFactory, Function<WeatherState, BlockBehaviour.Properties> settingsFromOxidationLevel) {
-        Block unaffected = registerFunction.apply(baseId, (Function)(settings) -> (Block)unwaxedBlockFactory.apply(WeatherState.UNAFFECTED, (BlockBehaviour.Properties) settings), settingsFromOxidationLevel.apply(WeatherState.UNAFFECTED).mapColor(MapColor.COLOR_ORANGE));
-        Block exposed = registerFunction.apply("exposed_" + baseId, (Function)(settings) -> (Block)unwaxedBlockFactory.apply(WeatherState.EXPOSED, (BlockBehaviour.Properties) settings), settingsFromOxidationLevel.apply(WeatherState.EXPOSED).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
-        Block weathered = registerFunction.apply("weathered_" + baseId, (Function)(settings) -> (Block)unwaxedBlockFactory.apply(WeatherState.WEATHERED, (BlockBehaviour.Properties) settings), settingsFromOxidationLevel.apply(WeatherState.WEATHERED).mapColor(MapColor.WARPED_STEM));
-        Block oxidized = registerFunction.apply("oxidized_" + baseId, (Function)(settings) -> (Block)unwaxedBlockFactory.apply(WeatherState.OXIDIZED, (BlockBehaviour.Properties) settings), settingsFromOxidationLevel.apply(WeatherState.OXIDIZED).mapColor(MapColor.WARPED_NYLIUM));
+    public static <WaxedBlock extends Block, WeatheringBlock extends Block & WeatheringCopper> CopperBundle create(String baseId, TriFunction<String, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> registerFunction, Function<BlockBehaviour.Properties, WaxedBlock> waxedBlockFactory, BiFunction<WeatherState, BlockBehaviour.Properties, WeatheringBlock> unwaxedBlockFactory, Function<WeatherState, BlockBehaviour.Properties> propertiesFromOxidationLevel) {
+        Block unaffected = registerFunction.apply(baseId, (Function)(properties) -> (Block)unwaxedBlockFactory.apply(WeatherState.UNAFFECTED, (BlockBehaviour.Properties) properties), propertiesFromOxidationLevel.apply(WeatherState.UNAFFECTED).mapColor(MapColor.COLOR_ORANGE));
+        Block exposed = registerFunction.apply("exposed_" + baseId, (Function)(properties) -> (Block)unwaxedBlockFactory.apply(WeatherState.EXPOSED, (BlockBehaviour.Properties) properties), propertiesFromOxidationLevel.apply(WeatherState.EXPOSED).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
+        Block weathered = registerFunction.apply("weathered_" + baseId, (Function)(properties) -> (Block)unwaxedBlockFactory.apply(WeatherState.WEATHERED, (BlockBehaviour.Properties) properties), propertiesFromOxidationLevel.apply(WeatherState.WEATHERED).mapColor(MapColor.WARPED_STEM));
+        Block oxidized = registerFunction.apply("oxidized_" + baseId, (Function)(properties) -> (Block)unwaxedBlockFactory.apply(WeatherState.OXIDIZED, (BlockBehaviour.Properties) properties), propertiesFromOxidationLevel.apply(WeatherState.OXIDIZED).mapColor(MapColor.WARPED_NYLIUM));
         Objects.requireNonNull(waxedBlockFactory);
-        Block waxed = registerFunction.apply("waxed_" + baseId, waxedBlockFactory::apply, settingsFromOxidationLevel.apply(WeatherState.UNAFFECTED).mapColor(MapColor.COLOR_ORANGE));
+        Block waxed = registerFunction.apply("waxed_" + baseId, waxedBlockFactory::apply, propertiesFromOxidationLevel.apply(WeatherState.UNAFFECTED).mapColor(MapColor.COLOR_ORANGE));
         Objects.requireNonNull(waxedBlockFactory);
-        Block waxedExposed = registerFunction.apply("waxed_exposed_" + baseId, waxedBlockFactory::apply, settingsFromOxidationLevel.apply(WeatherState.EXPOSED).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
+        Block waxedExposed = registerFunction.apply("waxed_exposed_" + baseId, waxedBlockFactory::apply, propertiesFromOxidationLevel.apply(WeatherState.EXPOSED).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
         Objects.requireNonNull(waxedBlockFactory);
-        Block waxedWeathered = registerFunction.apply("waxed_weathered_" + baseId, waxedBlockFactory::apply, settingsFromOxidationLevel.apply(WeatherState.WEATHERED).mapColor(MapColor.WARPED_STEM));
+        Block waxedWeathered = registerFunction.apply("waxed_weathered_" + baseId, waxedBlockFactory::apply, propertiesFromOxidationLevel.apply(WeatherState.WEATHERED).mapColor(MapColor.WARPED_STEM));
         Objects.requireNonNull(waxedBlockFactory);
-        Block waxedOxidized = registerFunction.apply("waxed_oxidized_" + baseId, waxedBlockFactory::apply, settingsFromOxidationLevel.apply(WeatherState.OXIDIZED).mapColor(MapColor.WARPED_NYLIUM));
+        Block waxedOxidized = registerFunction.apply("waxed_oxidized_" + baseId, waxedBlockFactory::apply, propertiesFromOxidationLevel.apply(WeatherState.OXIDIZED).mapColor(MapColor.WARPED_NYLIUM));
         CopperBundle bundle = new CopperBundle(unaffected, exposed, weathered, oxidized, waxed, waxedExposed, waxedWeathered, waxedOxidized);
         LIST.add(bundle);
         return bundle;
     }
 
     public static BiFunction<WeatherState, BlockBehaviour.Properties, WeatheringCopperDoorBlock> oxidizableDoor(BlockSetType type) {
-        return (oxidationLevel, settings) -> new WeatheringCopperDoorBlock(type, oxidationLevel, settings);
+        return (oxidationLevel, properties) -> new WeatheringCopperDoorBlock(type, oxidationLevel, properties);
     }
 
     public ImmutableBiMap<Block, Block> getOxidizingMap() {

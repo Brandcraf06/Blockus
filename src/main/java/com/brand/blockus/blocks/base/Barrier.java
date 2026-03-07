@@ -45,8 +45,8 @@ public class Barrier extends Block implements SimpleWaterloggedBlock {
     private static final VoxelShape TALL_WEST_SHAPE;
     private static final VoxelShape TALL_EAST_SHAPE;
 
-    public Barrier(Properties settings) {
-        super(settings);
+    public Barrier(Properties properties) {
+        super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(UP, true).setValue(NORTH_SHAPE, WallSide.NONE).setValue(EAST_SHAPE, WallSide.NONE).setValue(SOUTH_SHAPE, WallSide.NONE).setValue(WEST_SHAPE, WallSide.NONE).setValue(WATERLOGGED, false));
         this.shapeMap = this.getShapeMap(2.0F, 1.0F, 16.0F, 0.0F, 14.0F, 16.0F);
         this.collisionShapeMap = this.getShapeMap(2.0F, 1.0F, 24.0F, 0.0F, 24.0F, 24.0F);

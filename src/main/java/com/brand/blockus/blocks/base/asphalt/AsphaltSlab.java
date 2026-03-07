@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class AsphaltSlab extends SlabBlock {
 
-    public AsphaltSlab(Properties settings) {
-        super(settings);
+    public AsphaltSlab(Properties properties) {
+        super(properties);
     }
 
     @Override

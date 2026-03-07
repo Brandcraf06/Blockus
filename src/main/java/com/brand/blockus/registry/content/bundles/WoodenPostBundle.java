@@ -19,9 +19,9 @@ public record WoodenPostBundle(Map<WoodMaps, WoodenPostVariants> woodMap) {
         return LIST;
     }
 
-    public static BlockBehaviour.Properties settings(Block base, boolean isBurnable) {
-        BlockBehaviour.Properties blockSettings = BlockFactory.createCopy(base).forceSolidOn();
-        return isBurnable ? blockSettings.ignitedByLava() : blockSettings;
+    public static BlockBehaviour.Properties properties(Block base, boolean isBurnable) {
+        BlockBehaviour.Properties blockProperties = BlockFactory.createCopy(base).forceSolidOn();
+        return isBurnable ? blockProperties.ignitedByLava() : blockProperties;
     }
 
     public List<Block> all() {
@@ -52,8 +52,8 @@ public record WoodenPostBundle(Map<WoodMaps, WoodenPostVariants> woodMap) {
 
             String id = wood.getId() + "_post";
 
-            Block block = BlockFactory.registerOf(id, PostBlock::new, settings(log, wood.data().isBurnable()));
-            Block stripped = BlockFactory.registerOf("stripped_" + id, PostBlock::new, settings(strippedLog, wood.data().isBurnable()));
+            Block block = BlockFactory.registerOf(id, PostBlock::new, properties(log, wood.data().isBurnable()));
+            Block stripped = BlockFactory.registerOf("stripped_" + id, PostBlock::new, properties(strippedLog, wood.data().isBurnable()));
 
             woodMap.put(wood, new WoodenPostVariants(block, stripped));
         }

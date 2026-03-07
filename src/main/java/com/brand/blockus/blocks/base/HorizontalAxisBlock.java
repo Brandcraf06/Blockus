@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 public class HorizontalAxisBlock extends Block {
     public static final EnumProperty<Direction.Axis> HORIZONTAL_AXIS;
 
-    public HorizontalAxisBlock(Properties settings) {
-        super(settings);
+    public HorizontalAxisBlock(Properties properties) {
+        super(properties);
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

@@ -109,12 +109,12 @@ public class BlockusWorldgenFeatures {
         return modifiers(RarityFilter.onAverageOnceEvery(chance), heightModifier);
     }
 
-    public static ResourceKey<ConfiguredFeature<?, ?>> configured(String id) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Blockus.id(id));
+    public static ResourceKey<ConfiguredFeature<?, ?>> configured(String name) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Blockus.id(name));
     }
 
-    public static ResourceKey<PlacedFeature> placed(String id) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, Blockus.id(id));
+    public static ResourceKey<PlacedFeature> placed(String name) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, Blockus.id(name));
     }
 
     public static FallenTreeConfiguration.FallenTreeConfigurationBuilder fallen(Block log, int minLength, int maxLength) {

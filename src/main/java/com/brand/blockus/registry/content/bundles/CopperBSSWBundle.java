@@ -2,6 +2,7 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.OxidizableWallBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
+import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.minecraft.world.level.block.WeatheringCopperFullBlock;
@@ -99,13 +100,13 @@ public record CopperBSSWBundle(
         public CopperBSSWBundle register() {
             String prefix = oxidation.getPrefix();
             WeatherState oxidationLevel = oxidation.getLevel();
-            Block block = BlockFactory.registerCopy(prefix + type, (settings) -> new WeatheringCopperFullBlock(oxidation.getLevel(), settings), base);
+            Block block = BlockFactory.registerCopy(prefix + type, (properties) -> new WeatheringCopperFullBlock(oxidation.getLevel(), properties), base);
             Block blockWaxed = BlockFactory.registerCopy("waxed_" + prefix + type, base);
             CopperBSSWBundle bundle = new CopperBSSWBundle(type, base,
                 block,
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_stairs", (settings) -> new WeatheringCopperStairBlock(oxidationLevel, base.defaultBlockState(), settings), base),
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_slab", (settings) -> new WeatheringCopperSlabBlock(oxidationLevel, settings), base),
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_wall", (settings) -> new OxidizableWallBlock(oxidationLevel, settings), base),
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_stairs", (properties) -> new WeatheringCopperStairBlock(oxidationLevel, base.defaultBlockState(), properties), base),
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_slab", (properties) -> new WeatheringCopperSlabBlock(oxidationLevel, properties), base),
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_wall", (properties) -> new OxidizableWallBlock(oxidationLevel, properties), base),
                 blockWaxed,
                 BlockFactory.stairs(blockWaxed),
                 BlockFactory.slab(blockWaxed),

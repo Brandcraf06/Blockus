@@ -16,8 +16,8 @@ import java.util.function.Consumer;
 public class LegacyBlockItem extends BlockItem {
     private final String version;
 
-    public LegacyBlockItem(Block block, Properties settings, String version) {
-        super(block, settings);
+    public LegacyBlockItem(Block block, Properties properties, String version) {
+        super(block, properties);
         this.version = version;
     }
 

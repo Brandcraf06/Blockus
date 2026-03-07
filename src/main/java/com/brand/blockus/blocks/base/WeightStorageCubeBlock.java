@@ -15,8 +15,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class WeightStorageCubeBlock extends SimpleFallingBlock {
-    public WeightStorageCubeBlock(BlockBehaviour.Properties settings) {
-        super(settings);
+    public WeightStorageCubeBlock(BlockBehaviour.Properties properties) {
+        super(properties);
     }
 
     public InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {

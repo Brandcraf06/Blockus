@@ -21,26 +21,26 @@ import java.util.function.Supplier;
 
 public class BlockBuilder {
     public static final Function<BlockBehaviour.Properties, Block> DEFAULT_FACTORY = Block::new;
-    public static final Supplier<Item.Properties> DEFAULT_ITEM_SETTINGS = () -> new Item.Properties().useBlockDescriptionPrefix();
+    public static final Supplier<Item.Properties> DEFAULT_ITEM_PROPERTIES = () -> new Item.Properties().useBlockDescriptionPrefix();
 
     public Function<BlockBehaviour.Properties, Block> factory = DEFAULT_FACTORY;
-    public BlockBehaviour.Properties settings;
-
-    public Item.Properties itemSettings = DEFAULT_ITEM_SETTINGS.get();
+    public BlockBehaviour.Properties properties;
+    
+    public Item.Properties itemProperties = DEFAULT_ITEM_PROPERTIES.get();
 
     public Block base;
 
-    public BlockBuilder(Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
+    public BlockBuilder(Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
         this.factory = factory;
-        this.settings = settings;
+        this.properties = properties;
     }
 
-    public BlockBuilder(BlockBehaviour.Properties settings) {
-        this.settings = settings;
+    public BlockBuilder(BlockBehaviour.Properties properties) {
+        this.properties = properties;
     }
 
     public BlockBuilder(Block block) {
-        this.settings = BlockBehaviour.Properties.ofFullCopy(block);
+        this.properties = BlockBehaviour.Properties.ofFullCopy(block);
         this.base = block;
     }
 
@@ -49,28 +49,28 @@ public class BlockBuilder {
         return this;
     }
 
-    public BlockBuilder settings(BlockBehaviour.Properties settings) {
-        this.settings = settings;
+    public BlockBuilder properties(BlockBehaviour.Properties properties) {
+        this.properties = properties;
         return this;
     }
 
-    public BlockBuilder settings(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> settingsConsumer) {
-        this.settings = settingsConsumer.apply(this.settings);
+    public BlockBuilder properties(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> propertiesConsumer) {
+        this.properties = propertiesConsumer.apply(this.properties);
         return this;
     }
 
-    public BlockBuilder itemSettings(Item.Properties settings) {
-        this.itemSettings = settings;
+    public BlockBuilder itemProperties(Item.Properties properties) {
+        this.itemProperties = properties;
         return this;
     }
 
-    public BlockBuilder itemSettings(Function<Item.Properties, Item.Properties> settings) {
-        this.itemSettings = settings.apply(this.itemSettings);
+    public BlockBuilder itemProperties(Function<Item.Properties, Item.Properties> properties) {
+        this.itemProperties = properties.apply(this.itemProperties);
         return this;
     }
 
     public BlockBuilder noItem() {
-        this.itemSettings = null;
+        this.itemProperties = null;
         return this;
     }
 
@@ -78,14 +78,14 @@ public class BlockBuilder {
         return this.base;
     }
 
-    public Block register(String id, Function<Block, Item> itemFactory) {
-        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Blockus.id(id));
+    public Block register(String name, Function<Block, Item> itemFactory) {
+        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Blockus.id(name));
         if (this.factory == null) {
             throw new IllegalStateException("Cannot register block: factory is not set!");
         }
-        var block = this.factory.apply(this.settings.setId(key));
+        var block = this.factory.apply(this.properties.setId(key));
         Registry.register(BuiltInRegistries.BLOCK, key, block);
-        if (this.itemSettings instanceof Item.Properties) {
+        if (this.itemProperties instanceof Item.Properties) {
             var itemRegistryKey = ResourceKey.create(Registries.ITEM, key.identifier());
             Registry.register(BuiltInRegistries.ITEM, itemRegistryKey, itemFactory.apply(block)
             );
@@ -94,35 +94,35 @@ public class BlockBuilder {
         return block;
     }
 
-    public Block register(String id) {
-        return register(id, block -> {
-            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(id));
-            Item.Properties itemSettings = this.itemSettings;
-            if (BlockChecker.isNetherite(id) && itemSettings instanceof Item.Properties settings) {
-                itemSettings = settings.fireResistant();
+    public Block register(String name) {
+        return register(name, block -> {
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(name));
+            Item.Properties itemProperties = this.itemProperties;
+            if (BlockChecker.isNetherite(name) && itemProperties instanceof Item.Properties properties) {
+                itemProperties = properties.fireResistant();
             }
-            return new BlockItem(block, itemSettings.setId(itemRegistryKey));
+            return new BlockItem(block, itemProperties.setId(itemRegistryKey));
         });
     }
 
-    public Block registerNetherStarBlock(String id) {
-        return register(id, block -> {
-            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(id));
-            return new NetherStarBlockItem(block, this.itemSettings.setId(itemRegistryKey).rarity(Rarity.UNCOMMON));
+    public Block registerNetherStarBlock(String name) {
+        return register(name, block -> {
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(name));
+            return new NetherStarBlockItem(block, this.itemProperties.setId(itemRegistryKey).rarity(Rarity.UNCOMMON));
         });
     }
 
-    public Block registerLegacy(String id, String version) {
-        return register(id, block -> {
-            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(id));
-            return new LegacyBlockItem(block, this.itemSettings.setId(itemRegistryKey), version);
+    public Block registerLegacy(String name, String version) {
+        return register(name, block -> {
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(name));
+            return new LegacyBlockItem(block, this.itemProperties.setId(itemRegistryKey), version);
         });
     }
 
-    public Block registerColoredTiles(String id) {
-        return register(id, block -> {
-            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(id));
-            return new ColoredTilesBlockItem(block, this.itemSettings.setId(itemRegistryKey).overrideDescription(Util.makeDescriptionId("block", Blockus.id("colored_tiles"))));
+    public Block registerColoredTiles(String name) {
+        return register(name, block -> {
+            var itemRegistryKey = ResourceKey.create(Registries.ITEM, Blockus.id(name));
+            return new ColoredTilesBlockItem(block, this.itemProperties.setId(itemRegistryKey).overrideDescription(Util.makeDescriptionId("block", Blockus.id("colored_tiles"))));
         });
     }
 }

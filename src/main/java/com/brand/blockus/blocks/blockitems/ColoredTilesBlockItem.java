@@ -15,8 +15,8 @@ import java.util.function.Consumer;
 
 public class ColoredTilesBlockItem extends BlockItem {
 
-    public ColoredTilesBlockItem(Block block, Properties settings) {
-        super(block, settings);
+    public ColoredTilesBlockItem(Block block, Properties properties) {
+        super(block, properties);
     }
 
     @Override

@@ -16,8 +16,8 @@ import java.util.function.Consumer;
 
 public class NetherStarBlockItem extends BlockItem {
 
-    public NetherStarBlockItem(Block block, Properties settings) {
-        super(block, settings);
+    public NetherStarBlockItem(Block block, Properties properties) {
+        super(block, properties);
     }
 
     public boolean isFoil(ItemStack stack) {

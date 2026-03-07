@@ -17,8 +17,8 @@ public class SimpleFallingBlock extends FallingBlock {
         return state.getMapColor(world, pos).col;
     }
 
-    public SimpleFallingBlock(Properties settings) {
-        super(settings);
+    public SimpleFallingBlock(Properties properties) {
+        super(properties);
     }
 
 }

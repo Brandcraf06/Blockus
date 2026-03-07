@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class AmethystSlabBlock extends SlabBlock {
-    public AmethystSlabBlock(Properties settings) {
-        super(settings);
+    public AmethystSlabBlock(Properties properties) {
+        super(properties);
     }
 
     public void onProjectileHit(Level level, BlockState state, BlockHitResult hitResult, Projectile projectile) {

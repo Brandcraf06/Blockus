@@ -17,8 +17,8 @@ import net.minecraft.world.phys.BlockHitResult;
 public class LegacyStonecutterBlock extends Block {
     private static final Component TITLE = Component.translatable("container.stonecutter");
 
-    public LegacyStonecutterBlock(Properties settings) {
-        super(settings);
+    public LegacyStonecutterBlock(Properties properties) {
+        super(properties);
     }
 
     public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {

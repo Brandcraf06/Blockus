@@ -61,7 +61,7 @@ public record WoolBundle(Map<DyeColor, WoolVariants> colorMap) {
                 Block block = BlockFactory.registerCopy(type, BlockMaps.WOOL_MAP.get(color));
                 Block stairs = BlockFactory.stairs(block);
                 Block slab = BlockFactory.slab(block);
-                Block carpet = BlockFactory.registerCopy(type.replace("wool", "carpet"), (settings) -> new WoolCarpetBlock(color, settings), BlockMaps.CARPET_MAP.get(color));
+                Block carpet = BlockFactory.registerCopy(type.replace("wool", "carpet"), (properties) -> new WoolCarpetBlock(color, properties), BlockMaps.CARPET_MAP.get(color));
 
                 colorMap.put(color, new WoolVariants(block, stairs, slab, carpet));
             }
