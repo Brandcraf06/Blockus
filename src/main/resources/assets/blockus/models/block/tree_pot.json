@@ -24,7 +24,7 @@
 			"from": [6, 9, 6],
 			"to": [10, 17, 10],
 			"faces": {
-				"north": {"uv": [0, 0, 8, 17], "texture": "#log"},
+				"north": {"uv": [0, 0, 8, 16], "texture": "#log"},
 				"east": {"uv": [8, 0, 16, 16], "texture": "#log"},
 				"south": {"uv": [0, 0, 8, 16], "texture": "#log"},
 				"west": {"uv": [8, 0, 16, 16], "texture": "#log"},
