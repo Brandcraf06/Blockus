@@ -621,7 +621,6 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void createCookieBlock(BlockModelGenerators modelGenerator) {
         Block block = BlockusBlocks.COOKIE_BLOCK;
-        MultiVariant itemModel = plainVariant(TexturedModel.CUBE.create(block, modelGenerator.modelOutput));
         modelGenerator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(BlockusBlockStateProperties.BITES_9)
             .select(0, plainVariant(ModelLocationUtils.getModelLocation(block)))
             .select(1, plainVariant(ModelLocationUtils.getModelLocation(block, "_slice1")))
@@ -632,11 +631,11 @@ public class BlockusModelProvider extends FabricModelProvider {
             .select(6, plainVariant(ModelLocationUtils.getModelLocation(block, "_slice6")))
             .select(7, plainVariant(ModelLocationUtils.getModelLocation(block, "_slice7")))
             .select(8, plainVariant(ModelLocationUtils.getModelLocation(block, "_slice8")))));
+        modelGenerator.registerSimpleItemModel(block, TexturedModel.CUBE.create(block, modelGenerator.modelOutput));
     }
 
     public final void createAmethystLamp(BlockModelGenerators modelGenerator) {
         Block block = BlockusBlocks.AMETHYST_LAMP;
-        MultiVariant itemModel = plainVariant(TexturedModel.CUBE.create(block, modelGenerator.modelOutput));
         MultiVariant low = plainVariant(modelGenerator.createSuffixedVariant(block, "_low", ModelTemplates.CUBE_ALL, TextureMapping::cube));
         MultiVariant medium = plainVariant(modelGenerator.createSuffixedVariant(block, "_medium", ModelTemplates.CUBE_ALL, TextureMapping::cube));
         MultiVariant high = plainVariant(modelGenerator.createSuffixedVariant(block, "_high", ModelTemplates.CUBE_ALL, TextureMapping::cube));
@@ -645,6 +644,7 @@ public class BlockusModelProvider extends FabricModelProvider {
             .select(1, low).select(2, low).select(3, low).select(4, low).select(5, low)
             .select(6, medium).select(7, medium).select(8, medium).select(9, medium).select(10, medium)
             .select(11, high).select(12, high).select(13, high).select(14, high).select(15, high)));
+        modelGenerator.registerSimpleItemModel(block, TexturedModel.CUBE.create(block, modelGenerator.modelOutput));
     }
 
     public final void createHedge(BlockModelGenerators modelGenerator, Block block, Block texture) {
