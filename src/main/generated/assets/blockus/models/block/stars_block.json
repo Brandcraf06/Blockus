@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "blockus:block/neon_block_template",
   "textures": {
     "all": "blockus:block/stars_block"
   }

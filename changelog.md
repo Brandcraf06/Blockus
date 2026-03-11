@@ -6,3 +6,4 @@
 * Removed barriers `side_tall` models (identical and therefore replaced by `side` models).
 * Potted trees now use logs as texture instead of small logs.
 * Fixed wrong potted mangrove tree model.
+* Stars block is now emissive

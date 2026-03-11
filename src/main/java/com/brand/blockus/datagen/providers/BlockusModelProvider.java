@@ -540,7 +540,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.MEMBRANE_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.REDSTONE_SAND);
         modelGenerator.createTrivialCube(BlockusBlocks.ROTTEN_FLESH_BLOCK);
-        modelGenerator.createTrivialCube(BlockusBlocks.STARS_BLOCK);
+        this.createNeonBlock(modelGenerator, BlockusBlocks.STARS_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.SUGAR_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.WEIGHT_STORAGE_CUBE);
         modelGenerator.registerSimpleFlatItemModel(BlockusBlocks.GOLDEN_CHAIN.asItem());
