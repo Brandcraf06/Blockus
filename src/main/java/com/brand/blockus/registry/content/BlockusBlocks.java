@@ -319,7 +319,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LAPIS_DECORATED_SOUL_SANDSTONE = registerCopy("lapis_decorated_soul_sandstone", BlockusBlocks.SOUL_SANDSTONE.block());
 
     // Rainbow
-    public static final Block RAINBOW_ROSE = registerOf("rainbow_rose", properties -> new FertilizableFlowerBlock(MobEffects.GLOWING, 8, properties), create().mapColor(MapColor.PLANT).noCollision().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ));
+    public static final Block RAINBOW_ROSE = registerOf("rainbow_rose", properties -> new FlowerBlock(MobEffects.GLOWING, 8, properties), create().mapColor(MapColor.PLANT).noCollision().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ));
     public static final Block RAINBOW_PETALS = registerOf("rainbow_petals", FlowerBedBlock::new, create().mapColor(MapColor.PLANT).noCollision().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY));
 
     public static final Block POTTED_RAINBOW_ROSE = pottedPlant("potted_rainbow_rose", RAINBOW_ROSE);
