@@ -40,12 +40,12 @@ public class BlockusModels {
     }
 
 
-    public static ModelTemplate create(String parent, TextureSlot... requiredTextures) {
-        return new ModelTemplate(Optional.of(getBlockId(parent)), Optional.empty(), requiredTextures);
+    public static ModelTemplate create(String parent, TextureSlot... requiredSlots) {
+        return new ModelTemplate(Optional.of(getBlockId(parent)), Optional.empty(), requiredSlots);
     }
 
-    public static ModelTemplate create(String parent, String variant, TextureSlot... requiredTextures) {
-        return new ModelTemplate(Optional.of(getBlockId(parent)), Optional.of(variant), requiredTextures);
+    public static ModelTemplate create(String parent, String variant, TextureSlot... requiredSlots) {
+        return new ModelTemplate(Optional.of(getBlockId(parent)), Optional.of(variant), requiredSlots);
     }
 
     static {

@@ -15,8 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BellBlockMixin {
 
     @Inject(method = "canSurvive", at = @At("HEAD"), cancellable = true)
-    private void canSurvive(BlockState state, LevelReader world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        if (state.getValue(BellBlock.ATTACHMENT) == BellAttachType.CEILING && world.getBlockState(pos.above()).getBlock() instanceof PostBlock) {
+    private void canSurvive(BlockState state, LevelReader level, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
+        if (state.getValue(BellBlock.ATTACHMENT) == BellAttachType.CEILING && level.getBlockState(pos.above()).getBlock() instanceof PostBlock) {
             cir.setReturnValue(true);
         }
     }

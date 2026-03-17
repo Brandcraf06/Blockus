@@ -14,8 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LanternBlockMixin {
 
     @Inject(method = "canSurvive", at = @At("HEAD"), cancellable = true)
-    private void canSurvive(BlockState state, LevelReader world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        if (state.getValue(LanternBlock.HANGING) && world.getBlockState(pos.above()).getBlock() instanceof PostBlock) {
+    private void canSurvive(BlockState state, LevelReader level, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
+        if (state.getValue(LanternBlock.HANGING) && level.getBlockState(pos.above()).getBlock() instanceof PostBlock) {
             cir.setReturnValue(true);
         }
     }

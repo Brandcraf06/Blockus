@@ -5,9 +5,10 @@
   "client": [
     "RedstoneWireBlockMixin",
     "LanternBlockMixin",
-    "HangingSignBlockMixin",
+    "CeilingHangingSignBlockMixin",
     "BellBlockMixin",
-    "NetherPortalMixin"
+    "PortalShapeMixin",
+    "BaseFireBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
