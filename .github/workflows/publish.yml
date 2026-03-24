@@ -21,7 +21,7 @@ jobs:
           context: changelog
           workflow_id: publish.yml
       - uses: gradle/actions/wrapper-validation@v4
-      - run: ./gradlew checkVersion build publish publishMods -x check --stacktrace --no-configuration-cache
+      - run: ./gradlew build publish publishMods -x check --stacktrace --no-configuration-cache
         env:
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
