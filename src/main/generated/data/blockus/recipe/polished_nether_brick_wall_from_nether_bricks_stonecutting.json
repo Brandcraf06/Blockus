@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:nether_bricks",
+  "result": {
+    "id": "blockus:polished_nether_brick_wall"
+  }
+}
