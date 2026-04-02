@@ -1,8 +1,8 @@
 {
   "parent": "blockus:block/large_flower_pot_double_cross",
   "textures": {
-    "plant_top": "block/peony_top",
-    "plant_bottom": "block/peony_bottom",
-    "soil": "block/dirt"
+    "bottom": "minecraft:block/peony_bottom",
+    "soil": "minecraft:block/dirt",
+    "top": "minecraft:block/peony_top"
   }
 }

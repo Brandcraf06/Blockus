@@ -1,7 +1,7 @@
 {
   "parent": "blockus:block/template_potted_azalea_large",
   "textures": {
-    "side": "block/azalea_side",
-    "top": "block/azalea_top"
+    "side": "minecraft:block/azalea_side",
+    "top": "minecraft:block/azalea_top"
   }
 }

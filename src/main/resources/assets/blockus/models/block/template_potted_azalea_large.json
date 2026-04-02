@@ -4,7 +4,7 @@
 		"plant": "block/azalea_plant",
 		"particle": "blockus:block/large_flower_pot",
 		"pot": "blockus:block/large_flower_pot",
-		"dirt": "block/moss_block"
+		"soil": "block/moss_block"
 	},
 	"elements": [
 		{
@@ -55,7 +55,7 @@
 			"from": [3, 0, 3],
 			"to": [13, 9, 13],
 			"faces": {
-				"up": {"uv": [13, 13, 3, 3], "texture": "#dirt"},
+				"up": {"uv": [13, 13, 3, 3], "texture": "#soil"},
 				"down": {"uv": [11, 1, 1, 11], "texture": "#pot", "cullface": "down"}
 			}
 		},
@@ -79,7 +79,7 @@
 			"from": [16, 14, 0],
 			"to": [16, 25, 16],
 			"faces": {
-				"east": {"uv": [0, 0, 16, 11], "texture": "#side", "cullface": "east"},
+				"east": {"uv": [0, 0, 16, 11], "texture": "#side"},
 				"west": {"uv": [16, 0, 0, 11], "texture": "#side"}
 			}
 		},
@@ -88,7 +88,7 @@
 			"to": [0, 25, 16],
 			"faces": {
 				"east": {"uv": [16, 0, 0, 11], "texture": "#side"},
-				"west": {"uv": [0, 0, 16, 11], "texture": "#side", "cullface": "west"}
+				"west": {"uv": [0, 0, 16, 11], "texture": "#side"}
 			}
 		},
 		{
@@ -96,14 +96,14 @@
 			"to": [16, 25, 16],
 			"faces": {
 				"north": {"uv": [16, 0, 0, 11], "texture": "#side"},
-				"south": {"uv": [0, 0, 16, 11], "texture": "#side", "cullface": "south"}
+				"south": {"uv": [0, 0, 16, 11], "texture": "#side"}
 			}
 		},
 		{
 			"from": [0, 14, 0],
 			"to": [16, 25, 0],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 11], "texture": "#side", "cullface": "north"},
+				"north": {"uv": [0, 0, 16, 11], "texture": "#side"},
 				"south": {"uv": [16, 0, 0, 11], "texture": "#side"}
 			}
 		},

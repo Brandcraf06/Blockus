@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "blockus:viridite"
+  },
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_viridite_wall"
+  }
+}

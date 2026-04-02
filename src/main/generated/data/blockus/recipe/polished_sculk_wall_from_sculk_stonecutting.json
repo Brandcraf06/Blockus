@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:sculk"
+  },
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_sculk_wall"
+  }
+}

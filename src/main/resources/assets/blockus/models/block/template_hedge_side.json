@@ -1,17 +1,17 @@
 {
 	"textures": {
-		"particle": "#hedge"
+		"particle": "#texture"
 	},
 	"elements": [
 		{
 			"from": [5, 0, 0],
 			"to": [11, 16, 5],
 			"faces": {
-				"north": {"uv": [5, 0, 11, 16], "texture": "#hedge", "tintindex": 0},
-				"east": {"uv": [11, 0, 16, 16], "texture": "#hedge", "tintindex": 0},
-				"west": {"uv": [0, 0, 5, 16], "texture": "#hedge", "tintindex": 0},
-				"up": {"uv": [5, 0, 11, 5], "texture": "#hedge", "tintindex": 0},
-				"down": {"uv": [5, 11, 11, 16], "texture": "#hedge", "tintindex": 0}
+				"north": {"uv": [5, 0, 11, 16], "texture": "#texture", "tintindex": 0},
+				"east": {"uv": [11, 0, 16, 16], "texture": "#texture", "tintindex": 0},
+				"west": {"uv": [0, 0, 5, 16], "texture": "#texture", "tintindex": 0},
+				"up": {"uv": [5, 0, 11, 5], "texture": "#texture", "tintindex": 0},
+				"down": {"uv": [5, 11, 11, 16], "texture": "#texture", "tintindex": 0}
 			}
 		}
 	]

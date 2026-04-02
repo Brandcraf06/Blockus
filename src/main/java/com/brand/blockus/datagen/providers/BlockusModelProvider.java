@@ -498,7 +498,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.MEMBRANE_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.REDSTONE_SAND);
         modelGenerator.createTrivialCube(BlockusBlocks.ROTTEN_FLESH_BLOCK);
-        modelGenerator.createTrivialCube(BlockusBlocks.STARS_BLOCK);
+        this.registerNeonBlock(modelGenerator, BlockusBlocks.STARS_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.SUGAR_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.WEIGHT_STORAGE_CUBE);
         modelGenerator.createSimpleFlatItemModel(BlockusBlocks.GOLDEN_CHAIN.asItem());
@@ -620,7 +620,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void registerSmallHedge(BlockModelGenerators modelGenerator, Block hedgeBlock, Block textureSource) {
-        TextureMapping textureMap = TextureMapping.singleSlot(BlockusTextureKey.HEDGE, TextureMapping.getBlockTexture(textureSource));
+        TextureMapping textureMap = TextureMapping.singleSlot(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(textureSource));
         ResourceLocation identifier = BlockusModels.TEMPLATE_HEDGE_POST.create(hedgeBlock, textureMap, modelGenerator.modelOutput);
         ResourceLocation identifier2 = BlockusModels.TEMPLATE_HEDGE_SIDE.create(hedgeBlock, textureMap, modelGenerator.modelOutput);
         ResourceLocation identifier3 = BlockusModels.TEMPLATE_HEDGE_SIDE_ALT.create(hedgeBlock, textureMap, modelGenerator.modelOutput);

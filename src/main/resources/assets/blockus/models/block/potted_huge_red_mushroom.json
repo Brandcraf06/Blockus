@@ -1,8 +1,9 @@
 {
-  "parent": "blockus:block/large_tree_pot",
+  "parent": "blockus:block/tree_pot",
   "textures": {
-    "log": "block/mushroom_stem",
-    "leaves": "block/red_mushroom_block",
-    "soil": "block/mycelium_top"
+    "leaves": "minecraft:block/red_mushroom_block",
+    "log": "minecraft:block/mushroom_stem",
+    "log_top": "minecraft:block/mushroom_stem",
+    "soil": "minecraft:block/mycelium_top"
   }
 }

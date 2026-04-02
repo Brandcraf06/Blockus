@@ -1,20 +1,19 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"particle": "#barrier"
+		"particle": "#texture"
 	},
 	"elements": [
 		{
-			"name": "barrier post",
 			"from": [6, 0, 6],
 			"to": [10, 16, 10],
 			"faces": {
-				"north": {"uv": [6, 0, 10, 16], "texture": "#barrier", "tintindex": 0},
-				"east": {"uv": [6, 0, 10, 16], "texture": "#barrier", "tintindex": 0},
-				"south": {"uv": [6, 0, 10, 16], "texture": "#barrier", "tintindex": 0},
-				"west": {"uv": [6, 0, 10, 16], "texture": "#barrier", "tintindex": 0},
-				"up": {"uv": [6, 0, 10, 4], "texture": "#barrier", "tintindex": 0},
-				"down": {"uv": [6, 0, 10, 4], "texture": "#barrier", "cullface": "down", "tintindex": 0}
+				"north": {"uv": [12, 0, 16, 16], "texture": "#texture"},
+				"east": {"uv": [12, 0, 16, 16], "texture": "#texture"},
+				"south": {"uv": [12, 0, 16, 16], "texture": "#texture"},
+				"west": {"uv": [12, 0, 16, 16], "texture": "#texture"},
+				"up": {"uv": [8, 0, 12, 4], "texture": "#texture"},
+				"down": {"uv": [8, 0, 12, 4], "texture": "#texture", "cullface": "down"}
 			}
 		}
 	]
