@@ -73,7 +73,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block MUD_BRICK_PILLAR = pillar(Blocks.MUD_BRICKS);
 
     // Dripstone
-    public static final BSSWBundle POLISHED_DRIPSTONE = BSSWBundle.of("polished_dripstone", Blocks.DRIPSTONE_BLOCK).includeWall(false).register();
+    public static final BSSWBundle POLISHED_DRIPSTONE = BSSWBundle.of("polished_dripstone", Blocks.DRIPSTONE_BLOCK).register();
     public static final BSSWBundle DRIPSTONE_BRICKS = BSSWBundle.of("dripstone_bricks", BlockusBlocks.POLISHED_DRIPSTONE.block()).register();
     public static final BSSWBundle MOSSY_DRIPSTONE_BRICKS = BSSWBundle.of("mossy_dripstone_bricks", BlockusBlocks.DRIPSTONE_BRICKS.block()).register();
     public static final Block CRACKED_DRIPSTONE_BRICKS = registerCopy("cracked_dripstone_bricks", BlockusBlocks.DRIPSTONE_BRICKS.block());
@@ -98,13 +98,13 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STURDY_DEEPSLATE = pistonProof("sturdy_deepslate", Blocks.COBBLED_DEEPSLATE);
 
     // Sculk
-    public static final BSSWBundle POLISHED_SCULK = BSSWBundle.of("polished_sculk", Blocks.POLISHED_DEEPSLATE, MapColor.COLOR_CYAN).includeWall(false).register();
+    public static final BSSWBundle POLISHED_SCULK = BSSWBundle.of("polished_sculk", Blocks.POLISHED_DEEPSLATE, MapColor.COLOR_CYAN).register();
     public static final BSSWBundle SCULK_BRICKS = BSSWBundle.of("sculk_bricks", BlockusBlocks.POLISHED_SCULK.block()).register();
     public static final Block CHISELED_SCULK_BRICKS = registerCopy("chiseled_sculk_bricks", BlockusBlocks.SCULK_BRICKS.block());
     public static final Block SCULK_PILLAR = pillar("sculk", BlockusBlocks.SCULK_BRICKS.block());
 
     // Amethyst
-    public static final BSSWBundle POLISHED_AMETHYST = BSSWBundle.of("polished_amethyst", Blocks.AMETHYST_BLOCK).includeWall(false).register();
+    public static final BSSWBundle POLISHED_AMETHYST = BSSWBundle.of("polished_amethyst", Blocks.AMETHYST_BLOCK).register();
     public static final BSSWBundle AMETHYST_BRICKS = BSSWBundle.of("amethyst_bricks", POLISHED_AMETHYST.block()).register();
     public static final Block CHISELED_AMETHYST = registerCopy("chiseled_amethyst", AmethystBlock::new, AMETHYST_BRICKS.block());
     public static final Block AMETHYST_PILLAR = registerCopy("amethyst_pillar", AmethystPillarBlock::new, AMETHYST_BRICKS.block());
@@ -136,7 +136,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Limestone
     public static final BSSWBundle LIMESTONE = BSSWBundle.of("limestone", Blocks.STONE, MapColor.WOOD).register();
-    public static final BSSWBundle POLISHED_LIMESTONE = BSSWBundle.of("polished_limestone", BlockusBlocks.LIMESTONE.block()).includeWall(false).register();
+    public static final BSSWBundle POLISHED_LIMESTONE = BSSWBundle.of("polished_limestone", BlockusBlocks.LIMESTONE.block()).register();
     public static final BSSWBundle LIMESTONE_BRICKS = BSSWBundle.of("limestone_bricks", LIMESTONE.block()).register();
     public static final BSSWBundle SMALL_LIMESTONE_BRICKS = BSSWBundle.of("small_limestone_bricks", LIMESTONE_BRICKS.block()).register();
     public static final BSSWBundle LIMESTONE_TILES = BSSWBundle.of("limestone_tiles", LIMESTONE_BRICKS.block()).register();
@@ -150,7 +150,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Marble
     public static final BSSWBundle MARBLE = BSSWBundle.of("marble", Blocks.STONE, MapColor.QUARTZ).register();
-    public static final BSSWBundle POLISHED_MARBLE = BSSWBundle.of("polished_marble", BlockusBlocks.MARBLE.block()).includeWall(false).register();
+    public static final BSSWBundle POLISHED_MARBLE = BSSWBundle.of("polished_marble", BlockusBlocks.MARBLE.block()).register();
     public static final BSSWBundle MARBLE_BRICKS = BSSWBundle.of("marble_bricks", MARBLE.block()).register();
     public static final BSSWBundle SMALL_MARBLE_BRICKS = BSSWBundle.of("small_marble_bricks", MARBLE_BRICKS.block()).register();
     public static final BSSWBundle MARBLE_TILES = BSSWBundle.of("marble_tiles", MARBLE_BRICKS.block()).register();
@@ -164,7 +164,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Bluestone
     public static final BSSWBundle BLUESTONE = BSSWBundle.of("bluestone", Blocks.STONE, MapColor.COLOR_CYAN).register();
-    public static final BSSWBundle POLISHED_BLUESTONE = BSSWBundle.of("polished_bluestone", BlockusBlocks.BLUESTONE.block()).includeWall(false).register();
+    public static final BSSWBundle POLISHED_BLUESTONE = BSSWBundle.of("polished_bluestone", BlockusBlocks.BLUESTONE.block()).register();
     public static final BSSWBundle BLUESTONE_BRICKS = BSSWBundle.of("bluestone_bricks", BLUESTONE.block()).register();
     public static final BSSWBundle SMALL_BLUESTONE_BRICKS = BSSWBundle.of("small_bluestone_bricks", BLUESTONE_BRICKS.block()).register();
     public static final BSSWBundle BLUESTONE_TILES = BSSWBundle.of("bluestone_tiles", BLUESTONE_BRICKS.block()).register();
@@ -178,7 +178,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Viridite
     public static final BSSWBundle VIRIDITE = BSSWBundle.of("viridite", Blocks.DEEPSLATE, MapColor.PLANT).register();
-    public static final BSSWBundle POLISHED_VIRIDITE = BSSWBundle.of("polished_viridite", BlockusBlocks.VIRIDITE.block()).includeWall(false).register();
+    public static final BSSWBundle POLISHED_VIRIDITE = BSSWBundle.of("polished_viridite", BlockusBlocks.VIRIDITE.block()).register();
     public static final BSSWBundle VIRIDITE_BRICKS = BSSWBundle.of("viridite_bricks", VIRIDITE.block()).register();
     public static final BSSWBundle SMALL_VIRIDITE_BRICKS = BSSWBundle.of("small_viridite_bricks", VIRIDITE_BRICKS.block()).register();
     public static final BSSWBundle VIRIDITE_TILES = BSSWBundle.of("viridite_tiles", VIRIDITE_BRICKS.block()).register();
@@ -222,7 +222,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block GLOWING_OBSIDIAN = registerCopy("glowing_obsidian", Blocks.OBSIDIAN, settings -> settings.mapColor(MapColor.COLOR_RED).pushReaction(PushReaction.BLOCK).lightLevel((state) -> 15));
 
     // Netherrack
-    public static final BSSWBundle POLISHED_NETHERRACK = BSSWBundle.of("polished_netherrack", Blocks.NETHERRACK).includeWall(false).register();
+    public static final BSSWBundle POLISHED_NETHERRACK = BSSWBundle.of("polished_netherrack", Blocks.NETHERRACK).register();
     public static final BSSWBundle NETHERRACK_BRICKS = BSSWBundle.of("netherrack_bricks", Blocks.NETHERRACK).register();
     public static final Block NETHERRACK_CIRCULAR_PAVING = registerCopy("netherrack_circular_paving", OrientableBlockBase::new, BlockusBlocks.POLISHED_NETHERRACK.block());
 
@@ -241,8 +241,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BLAZE_LANTERN = lampBlock("blaze_lantern", 0.3F, 0.3F, SoundType.GLASS, 15, MapColor.COLOR_ORANGE);
 
     // Nether Bricks
-    public static final BSSWBundle POLISHED_NETHER_BRICKS = BSSWBundle.of("polished_nether_bricks", Blocks.NETHER_BRICKS).includeWall(false).register();
-    public static final BSSWBundle POLISHED_RED_NETHER_BRICKS = BSSWBundle.of("polished_red_nether_bricks", Blocks.RED_NETHER_BRICKS).includeWall(false).register();
+    public static final BSSWBundle POLISHED_NETHER_BRICKS = BSSWBundle.of("polished_nether_bricks", Blocks.NETHER_BRICKS).register();
+    public static final BSSWBundle POLISHED_RED_NETHER_BRICKS = BSSWBundle.of("polished_red_nether_bricks", Blocks.RED_NETHER_BRICKS).register();
     public static final Block HERRINGBONE_NETHER_BRICKS = registerCopy("herringbone_nether_bricks", Blocks.NETHER_BRICKS);
     public static final Block HERRINGBONE_RED_NETHER_BRICKS = registerCopy("herringbone_red_nether_bricks", Blocks.RED_NETHER_BRICKS);
     public static final Block NETHER_BRICK_PILLAR = pillar(Blocks.NETHER_BRICKS);
@@ -251,13 +251,13 @@ public class BlockusBlocks extends BlockFactory {
 
     // Charred Nether Bricks
     public static final BSSWBundle CHARRED_NETHER_BRICKS = BSSWBundle.of("charred_nether_bricks", Blocks.NETHER_BRICKS, MapColor.COLOR_BLACK).register();
-    public static final BSSWBundle POLISHED_CHARRED_NETHER_BRICKS = BSSWBundle.of("polished_charred_nether_bricks", BlockusBlocks.CHARRED_NETHER_BRICKS.block()).includeWall(false).register();
+    public static final BSSWBundle POLISHED_CHARRED_NETHER_BRICKS = BSSWBundle.of("polished_charred_nether_bricks", BlockusBlocks.CHARRED_NETHER_BRICKS.block()).register();
     public static final Block HERRINGBONE_CHARRED_NETHER_BRICKS = registerCopy("herringbone_charred_nether_bricks", BlockusBlocks.CHARRED_NETHER_BRICKS.block());
     public static final Block CHARRED_NETHER_BRICK_PILLAR = pillar(BlockusBlocks.CHARRED_NETHER_BRICKS.block());
 
     // Teal Nether Bricks
     public static final BSSWBundle TEAL_NETHER_BRICKS = BSSWBundle.of("teal_nether_bricks", Blocks.NETHER_BRICKS, MapColor.COLOR_CYAN).register();
-    public static final BSSWBundle POLISHED_TEAL_NETHER_BRICKS = BSSWBundle.of("polished_teal_nether_bricks", BlockusBlocks.TEAL_NETHER_BRICKS.block()).includeWall(false).register();
+    public static final BSSWBundle POLISHED_TEAL_NETHER_BRICKS = BSSWBundle.of("polished_teal_nether_bricks", BlockusBlocks.TEAL_NETHER_BRICKS.block()).register();
     public static final Block HERRINGBONE_TEAL_NETHER_BRICKS = registerCopy("herringbone_teal_nether_bricks", BlockusBlocks.TEAL_NETHER_BRICKS.block());
     public static final Block TEAL_NETHER_BRICK_PILLAR = pillar(BlockusBlocks.TEAL_NETHER_BRICKS.block());
 
@@ -334,7 +334,7 @@ public class BlockusBlocks extends BlockFactory {
     // Purpur Blocks
     public static final BSSWBundle PURPUR_BRICKS = BSSWBundle.of("purpur_bricks", Blocks.PURPUR_BLOCK).register();
     public static final BSSWBundle SMALL_PURPUR_BRICKS = BSSWBundle.of("small_purpur_bricks", Blocks.PURPUR_BLOCK).register();
-    public static final BSSWBundle POLISHED_PURPUR = BSSWBundle.of("polished_purpur", Blocks.PURPUR_BLOCK).includeWall(false).register();
+    public static final BSSWBundle POLISHED_PURPUR = BSSWBundle.of("polished_purpur", Blocks.PURPUR_BLOCK).register();
     public static final Block CHISELED_PURPUR = registerCopy("chiseled_purpur", BlockusBlocks.PURPUR_BRICKS.block());
     public static final Block PURPUR_SQUARES = registerCopy("purpur_squares", BlockusBlocks.PURPUR_BRICKS.block());
     public static final Block PURPUR_LINES = pillar2("purpur_lines", BlockusBlocks.PURPUR_BRICKS.block());
@@ -343,14 +343,14 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle PHANTOM_PURPUR_BRICKS = BSSWBundle.of("phantom_purpur_bricks", Blocks.PURPUR_BLOCK).register();
     public static final BSSWBundle SMALL_PHANTOM_PURPUR_BRICKS = BSSWBundle.of("small_phantom_purpur_bricks", Blocks.PURPUR_BLOCK).register();
     public static final BSSWBundle PHANTOM_PURPUR_BLOCK = BSSWBundle.of("phantom_purpur_block", Blocks.PURPUR_BLOCK).includeWall(false).register();
-    public static final BSSWBundle POLISHED_PHANTOM_PURPUR = BSSWBundle.of("polished_phantom_purpur", Blocks.PURPUR_BLOCK).includeWall(false).register();
+    public static final BSSWBundle POLISHED_PHANTOM_PURPUR = BSSWBundle.of("polished_phantom_purpur", Blocks.PURPUR_BLOCK).register();
     public static final Block PHANTOM_PURPUR_PILLAR = pillar("phantom_purpur", Blocks.PURPUR_PILLAR);
     public static final Block CHISELED_PHANTOM_PURPUR = registerCopy("chiseled_phantom_purpur", BlockusBlocks.PHANTOM_PURPUR_BRICKS.block());
     public static final Block PHANTOM_PURPUR_SQUARES = registerCopy("phantom_purpur_squares", BlockusBlocks.PHANTOM_PURPUR_BRICKS.block());
     public static final Block PHANTOM_PURPUR_LINES = pillar2("phantom_purpur_lines", BlockusBlocks.PHANTOM_PURPUR_BRICKS.block());
 
     // End Stone
-    public static final BSSWBundle POLISHED_END_STONE = BSSWBundle.of("polished_end_stone", Blocks.END_STONE).includeWall(false).register();
+    public static final BSSWBundle POLISHED_END_STONE = BSSWBundle.of("polished_end_stone", Blocks.END_STONE).register();
     public static final BSSWBundle SMALL_END_STONE_BRICKS = BSSWBundle.of("small_end_stone_bricks", Blocks.END_STONE).register();
     public static final Block CHISELED_END_STONE_BRICKS = registerCopy("chiseled_end_stone_bricks", Blocks.END_STONE_BRICKS);
     public static final Block HERRINGBONE_END_STONE_BRICKS = registerCopy("herringbone_end_stone_bricks", Blocks.END_STONE_BRICKS);

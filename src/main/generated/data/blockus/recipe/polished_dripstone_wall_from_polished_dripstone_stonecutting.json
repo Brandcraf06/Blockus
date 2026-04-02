@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:polished_dripstone",
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_dripstone_wall"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "blockus:block/template_hedge_inventory",
   "textures": {
-    "hedge": "minecraft:block/birch_leaves"
+    "texture": "minecraft:block/birch_leaves"
   }
 }

@@ -1,9 +1,9 @@
 {
-  "parent": "blockus:block/tinted_large_tree_pot",
+  "parent": "blockus:block/tree_pot",
   "textures": {
-    "log_top": "blockus:block/small_white_oak_logs_top",
-    "log": "blockus:block/small_white_oak_logs",
     "leaves": "blockus:block/white_oak_leaves",
-    "soil": "block/dirt"
+    "log": "blockus:block/white_oak_log",
+    "log_top": "blockus:block/white_oak_log_top",
+    "soil": "minecraft:block/dirt"
   }
 }

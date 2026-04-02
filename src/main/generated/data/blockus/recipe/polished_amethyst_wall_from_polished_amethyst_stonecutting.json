@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:polished_amethyst",
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_amethyst_wall"
+  }
+}

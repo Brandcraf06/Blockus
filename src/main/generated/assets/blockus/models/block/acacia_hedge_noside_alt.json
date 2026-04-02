@@ -1,6 +1,6 @@
 {
   "parent": "blockus:block/template_hedge_noside_alt",
   "textures": {
-    "hedge": "minecraft:block/acacia_leaves"
+    "texture": "minecraft:block/acacia_leaves"
   }
 }

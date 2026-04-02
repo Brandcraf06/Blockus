@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:limestone",
+  "result": {
+    "count": 1,
+    "id": "blockus:polished_limestone_wall"
+  }
+}
