@@ -14,6 +14,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.storage.loot.IntRange;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -53,10 +54,10 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
         }
 
         for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
-            this.addBlockStairsandSlabDrops(bundle.block(), bundle.stairs(), bundle.slab());
-            this.addBlockStairsandSlabDrops(bundle.blockWaxed(), bundle.stairsWaxed(), bundle.slabWaxed());
-            this.dropSelf(bundle.wall());
-            this.dropSelf(bundle.wallWaxed());
+            bundle.block().forEach(this::dropSelf);
+            bundle.stairs().forEach(this::dropSelf);
+            bundle.slab().forEach((block) -> this.add(block, this::createSlabItemTable));
+            bundle.wall().forEach(this::dropSelf);
         }
 
         for (ConcreteBundle bundle : ConcreteBundle.values()) {
@@ -112,8 +113,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             }
         }
 
-        for (StainedBlockBundle bundle : List.of(NEON_BLOCK, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, STAINED_REDSTONE_LAMP, STAINED_REDSTONE_LAMP_LIT, COLORED_TILES)) {
-            bundle.colorMap().values().forEach(this::addDrops);
+        for (ColorCollection<Block> blocks : List.of(NEON_BLOCK, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, STAINED_REDSTONE_LAMP, STAINED_REDSTONE_LAMP_LIT, COLORED_TILES)) {
+            blocks.forEach(this::dropSelf);;
         }
 
         for (ExtraWoodBundle<Block> bundle : List.of(HERRINGBONE_PLANKS, SMALL_LOGS)) {
@@ -410,8 +411,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             ICE_BRICKS,
             ICE_PILLAR);
 
-        for (StainedBlockBundle bundle : List.of(STAINED_BEVELED_GLASS, STAINED_BEVELED_GLASS_PANE)) {
-            bundle.colorMap().values().forEach(this::addDropsWithSilkTouch);
+        for (ColorCollection<Block> blocks : List.of(STAINED_BEVELED_GLASS, STAINED_BEVELED_GLASS_PANE)) {
+            blocks.forEach(this::dropWhenSilkTouch);
         }
 
         this.add(RAINBOW_PETALS, this.createSegmentedBlockDrops(RAINBOW_PETALS));

@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:block/template_glass_pane_post",
   "textures": {
-    "edge": "blockus:block/beveled_glass_pane_top",
-    "pane": "blockus:block/green_beveled_glass"
+    "edge": {
+      "force_translucent": true,
+      "sprite": "blockus:block/beveled_glass_pane_top"
+    },
+    "pane": {
+      "force_translucent": true,
+      "sprite": "blockus:block/green_beveled_glass"
+    }
   }
 }

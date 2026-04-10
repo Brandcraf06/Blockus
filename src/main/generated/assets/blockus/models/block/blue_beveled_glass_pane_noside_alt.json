@@ -1,6 +1,9 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside_alt",
   "textures": {
-    "pane": "blockus:block/blue_beveled_glass"
+    "pane": {
+      "force_translucent": true,
+      "sprite": "blockus:block/blue_beveled_glass"
+    }
   }
 }

@@ -28,10 +28,11 @@ import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.WallSide;
+
+import java.util.List;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
@@ -129,25 +130,19 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Copper
         createCopperBlocks(modelGenerator, BlockusBlocks.COPPER_BRICKS, BlockusFamilies.COPPER_BRICKS);
-        createCopperBlocks(modelGenerator, BlockusBlocks.EXPOSED_COPPER_BRICKS, BlockusFamilies.EXPOSED_COPPER_BRICKS);
-        createCopperBlocks(modelGenerator, BlockusBlocks.WEATHERED_COPPER_BRICKS, BlockusFamilies.WEATHERED_COPPER_BRICKS);
-        createCopperBlocks(modelGenerator, BlockusBlocks.OXIDIZED_COPPER_BRICKS, BlockusFamilies.OXIDIZED_COPPER_BRICKS);
         createCopperBlocks(modelGenerator, BlockusBlocks.COPPER_TUFF_BRICKS, BlockusFamilies.COPPER_TUFF_BRICKS);
-        createCopperBlocks(modelGenerator, BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS, BlockusFamilies.EXPOSED_COPPER_TUFF_BRICKS);
-        createCopperBlocks(modelGenerator, BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS, BlockusFamilies.WEATHERED_COPPER_TUFF_BRICKS);
-        createCopperBlocks(modelGenerator, BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS, BlockusFamilies.OXIDIZED_COPPER_TUFF_BRICKS);
 
         // Stone
         this.createPillar(modelGenerator, BlockusBlocks.STONE_BRICK_PILLAR);
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_STONE_BRICKS);
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.STONE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.STONE_CIRCULAR_PAVING);
         modelGenerator.createDoor(BlockusBlocks.STONE_DOOR);
         modelGenerator.createOrientableTrapdoor(BlockusBlocks.STONE_TRAPDOOR);
         this.createSturdyStone(modelGenerator);
         this.createSmoothStoneStairs(modelGenerator);
 
         // Andesite
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.ANDESITE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.ANDESITE_CIRCULAR_PAVING);
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_ANDESITE_BRICKS);
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_ANDESITE_BRICKS);
         this.createPillar(modelGenerator, BlockusBlocks.POLISHED_ANDESITE_PILLAR);
@@ -157,7 +152,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Diorite
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_DIORITE_BRICKS);
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_DIORITE_BRICKS);
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.DIORITE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.DIORITE_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.POLISHED_DIORITE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_DIORITE_PRESSURE_PLATE, BlockusBlocks.POLISHED_DIORITE_BUTTON, Blocks.POLISHED_DIORITE);
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_DIORITE_BRICKS);
@@ -165,7 +160,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Granite
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_GRANITE_BRICKS);
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_GRANITE_BRICKS);
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.GRANITE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.GRANITE_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.POLISHED_GRANITE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_GRANITE_PRESSURE_PLATE, BlockusBlocks.POLISHED_GRANITE_BUTTON, Blocks.POLISHED_GRANITE);
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_GRANITE_BRICKS);
@@ -183,12 +178,12 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.CARVED_TUFF_BRICKS);
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_TUFF_BRICKS);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_TUFF_PRESSURE_PLATE, BlockusBlocks.POLISHED_TUFF_BUTTON, Blocks.POLISHED_TUFF);
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.TUFF_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.TUFF_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.TUFF_PILLAR);
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_TUFF_BRICKS);
 
         // Deepslate
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.DEEPSLATE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.DEEPSLATE_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.DEEPSLATE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE, BlockusBlocks.POLISHED_DEEPSLATE_BUTTON, Blocks.POLISHED_DEEPSLATE);
         modelGenerator.createTrivialCube(BlockusBlocks.STURDY_DEEPSLATE);
@@ -207,7 +202,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Blackstone
         modelGenerator.createOrientableTrapdoor(BlockusBlocks.BLACKSTONE_TRAPDOOR);
         this.createCubeColumnNoSuffix(modelGenerator, BlockusBlocks.GOLD_DECORATED_POLISHED_BLACKSTONE, Blocks.POLISHED_BLACKSTONE);
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.POLISHED_BLACKSTONE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.POLISHED_BLACKSTONE_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.POLISHED_BLACKSTONE_PILLAR);
         modelGenerator.createTrivialCube(BlockusBlocks.STURDY_BLACKSTONE);
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_POLISHED_BLACKSTONE_BRICKS);
@@ -216,7 +211,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Basalt
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_POLISHED_BASALT);
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_POLISHED_BASALT_BRICKS);
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.POLISHED_BASALT_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.POLISHED_BASALT_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.POLISHED_BASALT_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_BASALT_PRESSURE_PLATE, BlockusBlocks.POLISHED_BASALT_BUTTON, Blocks.POLISHED_BASALT, "_top");
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_POLISHED_BASALT_BRICKS);
@@ -224,7 +219,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Limestone
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_LIMESTONE);
         this.createAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_BRICKS, BlockusBlocks.POLISHED_LIMESTONE.block());
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.LIMESTONE_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.LIMESTONE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.LIMESTONE_PRESSURE_PLATE, BlockusBlocks.LIMESTONE_BUTTON, BlockusBlocks.LIMESTONE.block());
@@ -234,7 +229,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Marble
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_MARBLE);
         this.createAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_MARBLE_BRICKS, BlockusBlocks.POLISHED_MARBLE.block());
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.MARBLE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.MARBLE_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.MARBLE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_MARBLE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.MARBLE_PRESSURE_PLATE, BlockusBlocks.MARBLE_BUTTON, BlockusBlocks.MARBLE.block());
@@ -242,7 +237,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createLinesBlock(modelGenerator, BlockusBlocks.MARBLE_LINES);
 
         // Bluestone
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.BLUESTONE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.BLUESTONE_CIRCULAR_PAVING);
         this.createLinesBlock(modelGenerator, BlockusBlocks.BLUESTONE_LINES);
         this.createPillar(modelGenerator, BlockusBlocks.BLUESTONE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_PILLAR);
@@ -255,7 +250,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Viridite
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_VIRIDITE);
         this.createAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_BRICKS, BlockusBlocks.POLISHED_VIRIDITE.block());
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.VIRIDITE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.VIRIDITE_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.VIRIDITE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.VIRIDITE_PRESSURE_PLATE, BlockusBlocks.VIRIDITE_BUTTON, BlockusBlocks.VIRIDITE.block());
@@ -275,7 +270,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Obsidian
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_OBSIDIAN_BRICKS);
         modelGenerator.createTrivialCube(BlockusBlocks.GLOWING_OBSIDIAN);
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.OBSIDIAN_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.OBSIDIAN_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.OBSIDIAN_PILLAR);
         modelGenerator.createOrientableTrapdoor(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR);
         modelGenerator.createDoor(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR);
@@ -283,11 +278,11 @@ public class BlockusModelProvider extends FabricModelProvider {
 
 
         // Netherrack
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.NETHERRACK_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.NETHERRACK_CIRCULAR_PAVING);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_NETHERRACK_PRESSURE_PLATE, BlockusBlocks.POLISHED_NETHERRACK_BUTTON, BlockusBlocks.POLISHED_NETHERRACK.block());
 
         // Quartz Blocks
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.QUARTZ_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.QUARTZ_CIRCULAR_PAVING);
 
         // Magma Bricks
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_MAGMA_BRICKS);
@@ -313,7 +308,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_DARK_PRISMARINE);
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_PRISMARINE);
         this.createPillar(modelGenerator, BlockusBlocks.DARK_PRISMARINE_PILLAR);
-        modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.PRISMARINE_CIRCULAR_PAVING);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.PRISMARINE_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.PRISMARINE_PILLAR);
 
         // Bricks
@@ -444,36 +439,30 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Redstone Lamps
         this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.REDSTONE_LAMP_LIT);
         this.createRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.RAINBOW_LAMP_LIT);
-        for (DyeColor color : BlockOrder.COLOR) {
-            this.createRedstoneLamp(modelGenerator, BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().get(color), BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().get(color));
-        }
+        ColorCollection.zipApply((block, lit) -> this.createRedstoneLamp(modelGenerator, block, lit),
+            BlockusBlocks.STAINED_REDSTONE_LAMP, BlockusBlocks.STAINED_REDSTONE_LAMP_LIT
+        );
 
         // Neon Blocks
-        for (Block block : BlockusBlocks.NEON_BLOCK.colorMap().values()) {
-            this.createNeonBlock(modelGenerator, block);
-        }
+        BlockusBlocks.NEON_BLOCK.forEach((block) -> this.createNeonBlock(modelGenerator, block));
         this.createNeonBlock(modelGenerator, BlockusBlocks.RAINBOW_NEON);
 
         // Futurneo Blocks
-        for (Block block : BlockusBlocks.FUTURNEO_BLOCK.colorMap().values()) {
-            modelGenerator.createTrivialCube(block);
-        }
+        BlockusBlocks.FUTURNEO_BLOCK.forEach(modelGenerator::createTrivialCube);
         modelGenerator.createTrivialCube(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
 
         // Glass - Beveled Glass
         this.createBeveledGlassPane(modelGenerator, BlockusBlocks.RAINBOW_BEVELED_GLASS, BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
         modelGenerator.createGlassBlocks(BlockusBlocks.RAINBOW_GLASS, BlockusBlocks.RAINBOW_GLASS_PANE);
-        this.createBeveledGlassPane(modelGenerator, BlockusBlocks.BEVELED_GLASS, BlockusBlocks.BEVELED_GLASS_PANE);
-        for (DyeColor color : BlockOrder.COLOR) {
-            this.createBeveledGlassPane(modelGenerator, BlockusBlocks.STAINED_BEVELED_GLASS.colorMap().get(color), BlockusBlocks.STAINED_BEVELED_GLASS_PANE.colorMap().get(color));
-        }
+        modelGenerator.createGlassBlocks(BlockusBlocks.BEVELED_GLASS, BlockusBlocks.BEVELED_GLASS_PANE);
+        ColorCollection.zipApply((block, pane) -> this.createBeveledGlassPane(modelGenerator, block, pane),
+            BlockusBlocks.STAINED_BEVELED_GLASS, BlockusBlocks.STAINED_BEVELED_GLASS_PANE
+        );
         modelGenerator.createTrivialCube(BlockusBlocks.TINTED_BEVELED_GLASS);
 
         // Glazed Terracotta Pillars
-        for (Block block : BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.colorMap().values()) {
-            this.createPillar(modelGenerator, block);
-        }
+        BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.forEach((block) -> this.createPillar(modelGenerator, block));
 
         // Paper
         modelGenerator.createTrivialCube(BlockusBlocks.BURNT_PAPER_BLOCK);
@@ -490,7 +479,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createLantern(BlockusBlocks.REDSTONE_LANTERN);
         this.createCubeColumn(modelGenerator, BlockusBlocks.REDSTONE_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
         this.createCubeColumn(modelGenerator, BlockusBlocks.SOUL_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
-        BlockusBlocks.COPPER_LANTERN_BLOCK.getWaxingMap().forEach((unwaxed, waxed) -> this.createCopperCubeColumn(modelGenerator, unwaxed, waxed));
+        BlockusBlocks.COPPER_LANTERN_BLOCK.waxedMapping().forEach((unwaxed, waxed) -> this.createCopperCubeColumn(modelGenerator, unwaxed, waxed));
         this.createPumpkins(modelGenerator, BlockusBlocks.SOUL_O_LANTERN);
         this.createPumpkins(modelGenerator, BlockusBlocks.COPPER_JACK_O_LANTERN);
         this.createPumpkins(modelGenerator, BlockusBlocks.REDSTONE_O_LANTERN);
@@ -523,10 +512,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         createFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.LEGACY_BLUE_ROSE, BlockusBlocks.POTTED_LEGACY_BLUE_ROSE, PlantType.NOT_TINTED);
 
         // Colored Tiles
+        BlockusBlocks.COLORED_TILES.forEach((block) -> this.createColoredTilesSimple(modelGenerator, block));
         modelGenerator.createTrivialCube(BlockusBlocks.RAINBOW_COLORED_TILES);
-        for (DyeColor color : BlockOrder.COLOR) {
-            this.createColoredTilesSimple(modelGenerator, BlockusBlocks.COLORED_TILES.colorMap().get(color));
-        }
 
         // Other
         this.createStairsAndSlab(modelGenerator, BlockusBlocks.NETHERITE_STAIRS, BlockusBlocks.NETHERITE_SLAB, Blocks.NETHERITE_BLOCK);
@@ -549,7 +536,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleFlatItemModel(BlockusBlocks.WOODEN_FRAME);
         this.createGate(modelGenerator, BlockusBlocks.IRON_GATE);
         this.createGate(modelGenerator, BlockusBlocks.GOLDEN_GATE);
-        BlockusBlocks.COPPER_GATE.getWaxingMap().forEach((unwaxed, waxed) -> this.createCopperGate(modelGenerator, unwaxed, waxed));
+        BlockusBlocks.COPPER_GATE.waxedMapping().forEach((unwaxed, waxed) -> this.createCopperGate(modelGenerator, unwaxed, waxed));
         this.createBarrier(modelGenerator, BlockusBlocks.CAUTION_BARRIER);
         this.createBarrier(modelGenerator, BlockusBlocks.ROAD_BARRIER);
         modelGenerator.registerSimpleItemModel(BlockusBlocks.PATH, ModelLocationUtils.getModelLocation(BlockusBlocks.PATH, "4"));
@@ -752,7 +739,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         MultiVariant off = plainVariant(TexturedModel.CUBE.create(block, modelGenerator.modelOutput));
         MultiVariant on = plainVariant(modelGenerator.createSuffixedVariant(block, "_on", ModelTemplates.CUBE_ALL, TextureMapping::cube));
         modelGenerator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(createBooleanModelDispatch(BlockStateProperties.LIT, on, off)));
-
     }
 
     public final void createLitRedstoneLamp(BlockModelGenerators modelGenerator, Block block, Block lit) {
@@ -838,8 +824,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBlock(modelGenerator, block, ModelTemplates.CUBE_BOTTOM_TOP, mapping);
     }
 
-    public final void createCopperBlocks(BlockModelGenerators modelGenerator, CopperBSSWBundle block, BlockusFamilies.CopperFamily family) {
-        modelGenerator.family(block.block()).generateFor(family.unwaxed).donateModelTo(block.block(), block.blockWaxed()).generateFor(family.waxed);
+    public final void createCopperBlocks(BlockModelGenerators modelGenerator, CopperBSSWBundle block, WeatheringCopperCollection<BlockFamily> family) {
+        WeatheringCopper.WeatherState.forEach((state) -> modelGenerator.family(block.block().pick(state, false)).generateFor((BlockFamily) family.pick(state, false)).donateModelTo(block.block().pick(state, false), block.block().pick(state, true)).generateFor((BlockFamily) family.pick(state, true)));
     }
 
     public final void createCrate(BlockModelGenerators modelGenerator, Block block) {
@@ -871,17 +857,17 @@ public class BlockusModelProvider extends FabricModelProvider {
             .select(Direction.EAST, model.with(Y_ROT_90))));
     }
 
-    public final void createBeveledGlassPane(BlockModelGenerators modelGenerator, Block glass, Block glassPane) {
-        modelGenerator.createTrivialCube(glass);
-        TextureMapping mapping = TextureMapping.pane(glass, BlockusBlocks.BEVELED_GLASS_PANE);
-        MultiVariant post = plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(glassPane, mapping, modelGenerator.modelOutput));
-        MultiVariant side = plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(glassPane, mapping, modelGenerator.modelOutput));
-        MultiVariant sideAlt = plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(glassPane, mapping, modelGenerator.modelOutput));
-        MultiVariant noSide = plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE.create(glassPane, mapping, modelGenerator.modelOutput));
-        MultiVariant noSideAlt = plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE_ALT.create(glassPane, mapping, modelGenerator.modelOutput));
-        Item item = glassPane.asItem();
-        modelGenerator.registerSimpleItemModel(item, modelGenerator.createFlatItemModelWithBlockTexture(item, glass));
-        modelGenerator.blockStateOutput.accept(MultiPartGenerator.multiPart(glassPane).with(post).with(condition().term(BlockStateProperties.NORTH, true), side).with(condition().term(BlockStateProperties.EAST, true), side.with(Y_ROT_90)).with(condition().term(BlockStateProperties.SOUTH, true), sideAlt).with(condition().term(BlockStateProperties.WEST, true), sideAlt.with(Y_ROT_90)).with(condition().term(BlockStateProperties.NORTH, false), noSide).with(condition().term(BlockStateProperties.EAST, false), noSideAlt).with(condition().term(BlockStateProperties.SOUTH, false), noSideAlt.with(Y_ROT_90)).with(condition().term(BlockStateProperties.WEST, false), noSide.with(Y_ROT_270)));
+    public final void createBeveledGlassPane(BlockModelGenerators modelGenerator, Block block, Block pane) {
+        modelGenerator.createTrivialBlock(block, TexturedModel.CUBE.updateTexture(TextureMapping::forceAllTranslucent));
+        TextureMapping paneMapping = TextureMapping.pane(block, BlockusBlocks.BEVELED_GLASS_PANE).forceAllTranslucent();
+        MultiVariant post = plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(pane, paneMapping, modelGenerator.modelOutput));
+        MultiVariant side = plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(pane, paneMapping, modelGenerator.modelOutput));
+        MultiVariant sideAlt = plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(pane, paneMapping, modelGenerator.modelOutput));
+        MultiVariant noSide = plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE.create(pane, paneMapping, modelGenerator.modelOutput));
+        MultiVariant noSideAlt = plainVariant(ModelTemplates.STAINED_GLASS_PANE_NOSIDE_ALT.create(pane, paneMapping, modelGenerator.modelOutput));
+        Item paneItem = pane.asItem();
+        modelGenerator.registerSimpleItemModel(paneItem, modelGenerator.createFlatItemModelWithBlockTexture(paneItem, block));
+        modelGenerator.blockStateOutput.accept(MultiPartGenerator.multiPart(pane).with(post).with(condition().term(BlockStateProperties.NORTH, true), side).with(condition().term(BlockStateProperties.EAST, true), side.with(Y_ROT_90)).with(condition().term(BlockStateProperties.SOUTH, true), sideAlt).with(condition().term(BlockStateProperties.WEST, true), sideAlt.with(Y_ROT_90)).with(condition().term(BlockStateProperties.NORTH, false), noSide).with(condition().term(BlockStateProperties.EAST, false), noSideAlt).with(condition().term(BlockStateProperties.SOUTH, false), noSideAlt.with(Y_ROT_90)).with(condition().term(BlockStateProperties.WEST, false), noSide.with(Y_ROT_270)));
     }
 
     public static void createColoredTiles(BlockModelGenerators modelGenerator, Block block, Block tile1, Block tile2) {
@@ -1001,6 +987,11 @@ public class BlockusModelProvider extends FabricModelProvider {
     public final void createPottedAzaleaLarge(BlockModelGenerators modelGenerator, Block block, Block azalea) {
         TextureMapping mapping = TextureMapping.cubeTop(azalea);
         this.createBlock(modelGenerator, block, BlockusModels.POTTED_AZALEA_LARGE, mapping);
+    }
+
+    public final void createBlockWithStateRotations(BlockModelGenerators modelGenerator, TexturedModel.Provider modelProvider, Block block) {
+            MultiVariant model = plainVariant(modelProvider.create(block, modelGenerator.modelOutput));
+            modelGenerator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, model).with(PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING).select(Direction.SOUTH, NOP).select(Direction.WEST, Y_ROT_90).select(Direction.NORTH, Y_ROT_180).select(Direction.EAST, Y_ROT_270)));
     }
 
     public static PropertyDispatch createUpDefaultRotationStates() {

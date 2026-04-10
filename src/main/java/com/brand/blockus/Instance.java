@@ -3,10 +3,10 @@ package com.brand.blockus;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.registry.*;
-import net.fabricmc.fabric.impl.content.registry.OxidizableBlocksRegistryImpl;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.List;
 
@@ -212,29 +212,22 @@ public class Instance {
     }
 
     public static void addOxidizable() {
-        registerOxidizable(COPPER_BRICKS, EXPOSED_COPPER_BRICKS, WEATHERED_COPPER_BRICKS, OXIDIZED_COPPER_BRICKS);
-        registerOxidizable(COPPER_TUFF_BRICKS, EXPOSED_COPPER_TUFF_BRICKS, WEATHERED_COPPER_TUFF_BRICKS, OXIDIZED_COPPER_TUFF_BRICKS);
-        COPPER_LANTERN_BLOCK.getOxidizingMap().forEach(OxidizableBlocksRegistryImpl::registerNextStage);
-        COPPER_LANTERN_BLOCK.getWaxingMap().forEach(OxidizableBlocksRegistryImpl::registerWaxable);
-        COPPER_GATE.getOxidizingMap().forEach(OxidizableBlocksRegistryImpl::registerNextStage);
-        COPPER_GATE.getWaxingMap().forEach(OxidizableBlocksRegistryImpl::registerWaxable);
+        registerOxidizable(COPPER_BRICKS);
+        registerOxidizable(COPPER_TUFF_BRICKS);
+        registerOxidizable(COPPER_LANTERN_BLOCK);
+        registerOxidizable(COPPER_GATE);
     }
 
-    public static void registerOxidizable(Block block, Block exposed, Block weathered, Block oxidized, Block waxed, Block exposedwaxed, Block weatheredwaxed, Block oxidizedwaxed) {
-        OxidizableBlocksRegistry.registerNextStage(block, exposed);
-        OxidizableBlocksRegistry.registerNextStage(exposed, weathered);
-        OxidizableBlocksRegistry.registerNextStage(weathered, oxidized);
-        OxidizableBlocksRegistry.registerWaxable(block, waxed);
-        OxidizableBlocksRegistry.registerWaxable(exposed, exposedwaxed);
-        OxidizableBlocksRegistry.registerWaxable(weathered, weatheredwaxed);
-        OxidizableBlocksRegistry.registerWaxable(oxidized, oxidizedwaxed);
+    public static void registerOxidizable(WeatheringCopperCollection<Block> block) {
+        block.weatheringMapping().forEach(OxidizableBlocksRegistry::registerNextStage);
+        block.waxedMapping().forEach(OxidizableBlocksRegistry::registerWaxable);
     }
 
-    public static void registerOxidizable(CopperBSSWBundle block, CopperBSSWBundle exposed, CopperBSSWBundle weathered, CopperBSSWBundle oxidized) {
-        registerOxidizable(block.block(), exposed.block(), weathered.block(), oxidized.block(), block.blockWaxed(), exposed.blockWaxed(), weathered.blockWaxed(), oxidized.blockWaxed());
-        registerOxidizable(block.stairs(), exposed.stairs(), weathered.stairs(), oxidized.stairs(), block.stairsWaxed(), exposed.stairsWaxed(), weathered.stairsWaxed(), oxidized.stairsWaxed());
-        registerOxidizable(block.slab(), exposed.slab(), weathered.slab(), oxidized.slab(), block.slabWaxed(), exposed.slabWaxed(), weathered.slabWaxed(), oxidized.slabWaxed());
-        registerOxidizable(block.wall(), exposed.wall(), weathered.wall(), oxidized.wall(), block.wallWaxed(), exposed.wallWaxed(), weathered.wallWaxed(), oxidized.wallWaxed());
+    public static void registerOxidizable(CopperBSSWBundle block) {
+        registerOxidizable(block.block());
+        registerOxidizable(block.stairs());
+        registerOxidizable(block.slab());
+        registerOxidizable(block.wall());
     }
 
     public static void addPathBlocks() {

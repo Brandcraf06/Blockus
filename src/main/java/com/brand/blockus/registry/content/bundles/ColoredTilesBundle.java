@@ -23,66 +23,66 @@ public record ColoredTilesBundle(
     public static final Map<Block, Block[]> tilePairs = new LinkedHashMap<>();
 
     static {
-        tilePairs.put(Blocks.WHITE_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BLACK_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.RED_CONCRETE,
-            Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE, Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.CYAN_CONCRETE,
-            Blocks.LIGHT_BLUE_CONCRETE, Blocks.BLUE_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.white(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.black(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.red(),
+            Blocks.CONCRETE.orange(), Blocks.CONCRETE.yellow(), Blocks.CONCRETE.lime(), Blocks.CONCRETE.green(), Blocks.CONCRETE.cyan(),
+            Blocks.CONCRETE.lightBlue(), Blocks.CONCRETE.blue(), Blocks.CONCRETE.purple(), Blocks.CONCRETE.magenta(), Blocks.CONCRETE.pink()
         });
-        tilePairs.put(Blocks.BLACK_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.RED_CONCRETE,
-            Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE, Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE,
-            Blocks.CYAN_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE, Blocks.BLUE_CONCRETE, Blocks.PURPLE_CONCRETE,
-            Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.black(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.red(),
+            Blocks.CONCRETE.orange(), Blocks.CONCRETE.yellow(), Blocks.CONCRETE.lime(), Blocks.CONCRETE.green(),
+            Blocks.CONCRETE.cyan(), Blocks.CONCRETE.lightBlue(), Blocks.CONCRETE.blue(), Blocks.CONCRETE.purple(),
+            Blocks.CONCRETE.magenta(), Blocks.CONCRETE.pink()
         });
-        tilePairs.put(Blocks.RED_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
-            Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE, Blocks.BLUE_CONCRETE,
-            Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.red(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(), Blocks.CONCRETE.yellow(),
+            Blocks.CONCRETE.lime(), Blocks.CONCRETE.green(), Blocks.CONCRETE.cyan(), Blocks.CONCRETE.lightBlue(), Blocks.CONCRETE.blue(),
+            Blocks.CONCRETE.purple(), Blocks.CONCRETE.magenta(), Blocks.CONCRETE.pink()
         });
-        tilePairs.put(Blocks.BLUE_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
-            Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE, Blocks.PURPLE_CONCRETE,
-            Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.blue(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(), Blocks.CONCRETE.yellow(),
+            Blocks.CONCRETE.lime(), Blocks.CONCRETE.green(), Blocks.CONCRETE.cyan(), Blocks.CONCRETE.lightBlue(), Blocks.CONCRETE.purple(),
+            Blocks.CONCRETE.magenta(), Blocks.CONCRETE.pink()
         });
-        tilePairs.put(Blocks.LIGHT_BLUE_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
-            Blocks.LIME_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE,
-            Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.lightBlue(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(), Blocks.CONCRETE.yellow(),
+            Blocks.CONCRETE.lime(), Blocks.CONCRETE.green(), Blocks.CONCRETE.cyan(), Blocks.CONCRETE.purple(),
+            Blocks.CONCRETE.magenta(), Blocks.CONCRETE.pink()
         });
-        tilePairs.put(Blocks.GREEN_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
-            Blocks.LIME_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.green(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(), Blocks.CONCRETE.yellow(),
+            Blocks.CONCRETE.lime(), Blocks.CONCRETE.cyan(), Blocks.CONCRETE.purple(), Blocks.CONCRETE.magenta(), Blocks.CONCRETE.pink()
         });
-        tilePairs.put(Blocks.LIME_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.YELLOW_CONCRETE,
-            Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.lime(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(), Blocks.CONCRETE.yellow(),
+            Blocks.CONCRETE.cyan(), Blocks.CONCRETE.purple(), Blocks.CONCRETE.magenta(), Blocks.CONCRETE.pink()
         });
-        tilePairs.put(Blocks.YELLOW_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE,
-            Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.PINK_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.yellow(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(),
+            Blocks.CONCRETE.cyan(), Blocks.CONCRETE.purple(), Blocks.CONCRETE.magenta(), Blocks.CONCRETE.pink()
         });
-        tilePairs.put(Blocks.PINK_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE,
-            Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.MAGENTA_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.pink(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(),
+            Blocks.CONCRETE.cyan(), Blocks.CONCRETE.purple(), Blocks.CONCRETE.magenta()
         });
-        tilePairs.put(Blocks.PURPLE_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE,
-            Blocks.CYAN_CONCRETE, Blocks.MAGENTA_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.purple(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(),
+            Blocks.CONCRETE.cyan(), Blocks.CONCRETE.magenta()
         });
-        tilePairs.put(Blocks.MAGENTA_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.CYAN_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.magenta(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.orange(), Blocks.CONCRETE.cyan()
         });
-        tilePairs.put(Blocks.ORANGE_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.CYAN_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.orange(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown(), Blocks.CONCRETE.cyan()
         });
-        tilePairs.put(Blocks.CYAN_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.BROWN_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.cyan(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray(), Blocks.CONCRETE.brown()
         });
-        tilePairs.put(Blocks.BROWN_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE, Blocks.GRAY_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.brown(), new Block[]{
+            Blocks.CONCRETE.lightGray(), Blocks.CONCRETE.gray()
         });
-        tilePairs.put(Blocks.GRAY_CONCRETE, new Block[]{
-            Blocks.LIGHT_GRAY_CONCRETE
+        tilePairs.put(Blocks.CONCRETE.gray(), new Block[]{
+            Blocks.CONCRETE.lightGray()
         });
     }
 

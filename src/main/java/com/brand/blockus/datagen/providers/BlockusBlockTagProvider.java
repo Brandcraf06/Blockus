@@ -15,6 +15,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -71,10 +72,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.valueLookupBuilder(BlockusBlockTags.BEVELED_GLASS)
             .add(BEVELED_GLASS)
+            .addAll(STAINED_BEVELED_GLASS.asList())
             .add(RAINBOW_BEVELED_GLASS);
-        for (DyeColor color : BlockOrder.COLOR) {
-            valueLookupBuilder(BlockusBlockTags.BEVELED_GLASS).add(STAINED_BEVELED_GLASS.colorMap().get(color));
-        }
 
         this.valueLookupBuilder(BlockusBlockTags.BLACKSTONE_BLOCKS)
             .add(bsswBundle(POLISHED_BLACKSTONE_TILES))
@@ -125,9 +124,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(CHOCOLATE_SQUARES)
             .add(CHOCOLATE_TABLET);
 
-        for (DyeColor color : BlockOrder.COLOR) {
-            valueLookupBuilder(BlockusBlockTags.COLORED_TILES).add(COLORED_TILES.colorMap().get(color));
-        }
+        this.valueLookupBuilder(BlockusBlockTags.COLORED_TILES)
+            .addAll(COLORED_TILES.asList());
+
         for (ColoredTilesBundle coloredTilesVariants : ColoredTilesBundle.values()) {
             this.valueLookupBuilder(BlockusBlockTags.COLORED_TILES).add(coloredTilesVariants.block());
         }
@@ -199,14 +198,13 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(PAPER_DOOR)
             .add(PAPER_TRAPDOOR);
 
-        for (DyeColor color : BlockOrder.COLOR) {
-            valueLookupBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS).add(GLAZED_TERRACOTTA_PILLAR.colorMap().get(color));
-        }
+        this.valueLookupBuilder(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
+            .addAll(GLAZED_TERRACOTTA_PILLAR.asList());
 
         this.valueLookupBuilder(BlockusBlockTags.GATES)
             .add(GOLDEN_GATE)
             .add(IRON_GATE)
-            .addAll(COPPER_GATE.getAll());
+            .addAll(COPPER_GATE.asList());
 
         this.valueLookupBuilder(BlockusBlockTags.GRANITE_BLOCKS)
             .add(bsswBundle(GRANITE_BRICKS))
@@ -247,7 +245,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(SOUL_LANTERN_BLOCK)
             .add(REDSTONE_LANTERN_BLOCK)
             .add(AMETHYST_LANTERN_BLOCK)
-            .addAll(COPPER_LANTERN_BLOCK.getAll());
+            .addAll(COPPER_LANTERN_BLOCK.asList());
 
         this.valueLookupBuilder(BlockusBlockTags.LAVA_BRICKS)
             .add(bsswBundle(LAVA_BRICKS))
@@ -304,10 +302,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(MARBLE_LINES)
             .add(MARBLE_CIRCULAR_PAVING);
 
-        for (DyeColor color : BlockOrder.COLOR) {
-            valueLookupBuilder(BlockusBlockTags.NEON).add(NEON_BLOCK.colorMap().get(color));
-        }
         this.valueLookupBuilder(BlockusBlockTags.NEON)
+            .addAll(NEON_BLOCK.asList())
             .add(RAINBOW_NEON);
 
         this.valueLookupBuilder(BlockusBlockTags.NETHER_BRICKS)
@@ -613,18 +609,18 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         }
 
         for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
-            for (Block block : bundle.all()) {
+            for (WeatheringCopperCollection<Block> block : bundle.all()) {
                 if (block.toString().contains("tuff")) {
                     this.valueLookupBuilder(BlockusBlockTags.TUFF_BLOCKS)
-                        .add(block);
+                        .addAll(block.asList());
                 } else {
                     this.valueLookupBuilder(BlockusBlockTags.COPPER_BLOCKS)
-                        .add(block);
+                        .addAll(block.asList());
                 }
             }
 
             this.valueLookupBuilder(BlockTags.WALLS)
-                .addAll(bundle.allWalls());
+                .addAll(bundle.wall().asList());
         }
 
         // Vanilla Block Tags

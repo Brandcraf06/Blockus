@@ -9,6 +9,7 @@ import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.Collection;
 
@@ -412,8 +413,8 @@ public class BuildingBlocksGroup {
 
 
             for (CopperBSSWBundle copperBundle : CopperBSSWBundle.values()) {
-                for (Block block : copperBundle.all()) {
-                    entries.accept(block);
+                for (WeatheringCopperCollection<Block> block : copperBundle.all()) {
+                    block.forEach(entries::accept);
                 }
             }
             COPPER_GATE.forEach(entries::accept);

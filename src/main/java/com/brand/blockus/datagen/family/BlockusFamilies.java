@@ -7,6 +7,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.Map;
 import java.util.stream.Stream;
@@ -15,45 +16,28 @@ public class BlockusFamilies {
     public static final BlockFamily WHITE_OAK;
     public static final BlockFamily CHARRED;
     public static final BlockFamily RAW_BAMBOO;
-    public static final CopperFamily COPPER_BRICKS;
-    public static final CopperFamily EXPOSED_COPPER_BRICKS;
-    public static final CopperFamily WEATHERED_COPPER_BRICKS;
-    public static final CopperFamily OXIDIZED_COPPER_BRICKS;
-    public static final CopperFamily COPPER_TUFF_BRICKS;
-    public static final CopperFamily EXPOSED_COPPER_TUFF_BRICKS;
-    public static final CopperFamily WEATHERED_COPPER_TUFF_BRICKS;
-    public static final CopperFamily OXIDIZED_COPPER_TUFF_BRICKS;
+    public static final WeatheringCopperCollection<BlockFamily> COPPER_BRICKS;
+    public static final WeatheringCopperCollection<BlockFamily> COPPER_TUFF_BRICKS;
 
-    public static final Map<Block, BlockFamily> BASE_BLOCKS_TO_FAMILIES = Maps.newHashMap();
-
+    public static final Map<Block, BlockFamily> MAP = Maps.newHashMap();
 
     static {
         // Woods
-        WHITE_OAK = register(BlockusBlocks.WHITE_OAK, false);
-        CHARRED = register(BlockusBlocks.CHARRED, false);
-        RAW_BAMBOO = register(BlockusBlocks.RAW_BAMBOO, true);
+        WHITE_OAK = familyBuilder(BlockusBlocks.WHITE_OAK, false);
+        CHARRED = familyBuilder(BlockusBlocks.CHARRED, false);
+        RAW_BAMBOO = familyBuilder(BlockusBlocks.RAW_BAMBOO, true);
 
-        // Copper Bricks
-        COPPER_BRICKS = register(BlockusBlocks.COPPER_BRICKS);
-        EXPOSED_COPPER_BRICKS = register(BlockusBlocks.EXPOSED_COPPER_BRICKS);
-        WEATHERED_COPPER_BRICKS = register(BlockusBlocks.WEATHERED_COPPER_BRICKS);
-        OXIDIZED_COPPER_BRICKS = register(BlockusBlocks.OXIDIZED_COPPER_BRICKS);
-
-        // Copper Tuff Bricks
-        COPPER_TUFF_BRICKS = register(BlockusBlocks.COPPER_TUFF_BRICKS);
-        EXPOSED_COPPER_TUFF_BRICKS = register(BlockusBlocks.EXPOSED_COPPER_TUFF_BRICKS);
-        WEATHERED_COPPER_TUFF_BRICKS = register(BlockusBlocks.WEATHERED_COPPER_TUFF_BRICKS);
-        OXIDIZED_COPPER_TUFF_BRICKS = register(BlockusBlocks.OXIDIZED_COPPER_TUFF_BRICKS);
+        // Copper
+        COPPER_BRICKS = familyBuilder(BlockusBlocks.COPPER_BRICKS, "copper_bricks");
+        COPPER_TUFF_BRICKS = familyBuilder(BlockusBlocks.COPPER_TUFF_BRICKS, "copper_tuff_bricks");
     }
 
-    public static CopperFamily register(CopperBSSWBundle block) {
-        BlockFamily unwaxed = register(block.block()).slab(block.slab()).stairs(block.stairs()).wall(block.wall()).dontGenerateModel().getFamily();
-        BlockFamily waxed = register(block.blockWaxed()).slab(block.slabWaxed()).stairs(block.stairsWaxed()).wall(block.wallWaxed()).recipeGroupPrefix("waxed_" + BuiltInRegistries.BLOCK.getKey(block.block()).getPath()).dontGenerateModel().getFamily();
-        return new CopperFamily(unwaxed, waxed);
+    public static WeatheringCopperCollection<BlockFamily> familyBuilder(CopperBSSWBundle block, String name) {
+        return WeatheringCopperCollection.createFamily((prefix, state) -> familyBuilder(block.block().pick(state, true)).slab(block.slab().pick(state, true)).stairs(block.stairs().pick(state, true)).wall(block.wall().pick(state, true)).recipeGroupPrefix(prefix + name).dontGenerateModel().generateStonecutterRecipe().getFamily(), (var0, state) -> familyBuilder(block.block().pick(state, false)).slab(block.slab().pick(state, false)).stairs(block.stairs().pick(state, false)).wall(block.wall().pick(state, false)).dontGenerateModel().generateStonecutterRecipe().getFamily());
     }
 
-    public static BlockFamily register(WoodBundle wood, boolean customFence) {
-        BlockFamily.Builder builder = register(wood.planks())
+    public static BlockFamily familyBuilder(WoodBundle wood, boolean customFence) {
+        BlockFamily.Builder builder = familyBuilder(wood.planks())
             .button(wood.button())
             .pressurePlate(wood.pressurePlate())
             .sign(wood.standingSign(), wood.wallSign())
@@ -73,28 +57,18 @@ public class BlockusFamilies {
         return builder.getFamily();
     }
 
-    public static BlockFamily.Builder register(Block baseBlock) {
-        BlockFamily.Builder builder = new BlockFamily.Builder(baseBlock);
-        BlockFamily blockFamily = BASE_BLOCKS_TO_FAMILIES.put(baseBlock, builder.getFamily());
+    public static BlockFamily.Builder familyBuilder(Block base) {
+        BlockFamily.Builder builder = new BlockFamily.Builder(base);
+        BlockFamily blockFamily = MAP.put(base, builder.getFamily());
         if (blockFamily != null) {
-            throw new IllegalStateException("Duplicate family definition for " + BuiltInRegistries.BLOCK.getKey(baseBlock));
+            throw new IllegalStateException("Duplicate family definition for " + BuiltInRegistries.BLOCK.getKey(base));
         } else {
             return builder;
         }
     }
 
     public static Stream<BlockFamily> getAllFamilies() {
-        return BASE_BLOCKS_TO_FAMILIES.values().stream();
-    }
-
-    public static class CopperFamily {
-        public final BlockFamily unwaxed;
-        public final BlockFamily waxed;
-
-        public CopperFamily(BlockFamily unwaxed, BlockFamily waxed) {
-            this.unwaxed = unwaxed;
-            this.waxed = waxed;
-        }
+        return MAP.values().stream();
     }
 }
 

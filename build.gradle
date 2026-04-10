@@ -70,7 +70,7 @@ publishMods {
   modrinth {
     accessToken = providers.environmentVariable("MODRINTH_TOKEN")
     projectId = "zFiY2Go0"
-    minecraftVersions.addAll("${minecraft_version}", "26.1")
+    minecraftVersions.addAll("${minecraft_version}")
     requires {
       slug = "fabric-api"
     }
@@ -80,7 +80,7 @@ publishMods {
     accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
     projectId = "312289"
     displayName = "(${project.minecraft_version}) Blockus $project.version"
-    minecraftVersions.addAll("${minecraft_version}", "26.1")
+    minecraftVersions.addAll("${minecraft_version}")
     requires {
       slug = "fabric-api"
     }

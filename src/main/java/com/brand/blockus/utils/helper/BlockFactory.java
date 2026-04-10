@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class BlockFactory {
@@ -228,34 +229,43 @@ public class BlockFactory {
         return of(create().mapColor(color).strength(hardness, resistance).sound(sound).lightLevel((state) -> luminance)).register(id);
     }
 
-    public static Block neonBlock(String id, DyeColor color) {
-        return of(create().mapColor(color).lightLevel((state) -> 2).sound(SoundType.GLASS).strength(0.5f, 0.5f).emissiveRendering(BlockFactory::always).isValidSpawn(BlockFactory::never)).register(id);
+    public static Block lampBlock(String id, Block base) {
+        return registerCopy(id, base, properties -> properties.lightLevel(state -> 15));
     }
 
-    public static Block neonBlock(DyeColor color) {
-        return of(create().mapColor(color).lightLevel((state) -> 2).sound(SoundType.GLASS).strength(0.5f, 0.5f).emissiveRendering(BlockFactory::always).isValidSpawn(BlockFactory::never)).getBase();
+    public static BlockBehaviour.Properties neonProperties() {
+        return create().lightLevel((state) -> 2).sound(SoundType.GLASS).strength(0.5f, 0.5f).emissiveRendering(Blocks::always).isValidSpawn(Blocks::never);
     }
 
-    public static Block redstoneLamp(String id, MapColor mapColor) {
-        return registerCopy(id, RedstoneLampBlock::new, Blocks.REDSTONE_LAMP, properties -> properties.mapColor(mapColor).isValidSpawn(BlockFactory::always));
+    public static BlockBehaviour.Properties futurneoblockProperties() {
+        return create().lightLevel((state) -> 15).strength(0.5f, 0.5f).sound(SoundType.GLASS).isValidSpawn(Blocks::always);
     }
 
-    public static Block litRedstoneLamp(String id, Block base) {
-        return registerCopy(id, base, properties -> properties.lightLevel(state -> 15).isValidSpawn(BlockFactory::always));
+    // Dyed Blocks
+    public static Block dyedBlock(String id, DyeColor color, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, Block base) {
+        return copy(base).factory(properties -> factory.apply(color, properties)).register(id);
     }
 
-    public static Block futurneoBlock(String id, MapColor color) {
-        return of(create().mapColor(color).lightLevel((state) -> 15).strength(0.5f, 0.5f).sound(SoundType.GLASS).isValidSpawn(BlockFactory::always)).register(id);
+    public static Block dyedBlock(String id, DyeColor color, BlockBehaviour.Properties properties) {
+        return registerOf(id, Block::new, properties.mapColor(color));
     }
 
-    // Glass
-    public static Block stainedGlass(String id, DyeColor color, Block base) {
-        return copy(base, properties -> properties.isValidSpawn(BlockFactory::never).isRedstoneConductor(BlockFactory::never).isSuffocating(BlockFactory::never).isViewBlocking(BlockFactory::never)).factory(properties -> new StainedGlassBlock(color, properties)).register(id);
+    public static ColorCollection<Block> dyedBlocks(String id, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, Function<DyeColor, BlockBehaviour.Properties> properties) {
+        return ColorCollection.registerBlocks(id, BlockFactory::registerOf, factory, properties);
     }
 
-    public static Block stainedGlassPane(String id, DyeColor color, Block base) {
-        return copy(base).factory(properties -> new StainedGlassPaneBlock(color, properties)).register(id);
+    public static ColorCollection<Block> dyedBlocks(String id, Function<DyeColor, BlockBehaviour.Properties> properties) {
+        return dyedBlocks(id, (var0, p) -> new Block(p), properties);
     }
+
+    public static ColorCollection<Block> dyedBlocks(String id, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, ColorCollection<Block> base) {
+        return dyedBlocks(id, factory, color -> createCopy(base.pick(color)));
+    }
+
+    public static ColorCollection<Block> dyedBlocks(String id, ColorCollection<Block> base) {
+        return dyedBlocks(id, (var0, p) -> new Block(p), color -> createCopy(base.pick(color)));
+    }
+
 
     // Other
     public static Block woodenPane(String id) {

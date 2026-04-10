@@ -7,11 +7,11 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class OxidizableWallBlock extends WallBlock implements WeatheringCopper {
+public class WeatheringCopperWallBlock extends WallBlock implements WeatheringCopper {
 
     private final WeatherState oxidationLevel;
 
-    public OxidizableWallBlock(WeatherState oxidationLevel, Properties properties) {
+    public WeatheringCopperWallBlock(WeatherState oxidationLevel, Properties properties) {
         super(properties);
         this.oxidationLevel = oxidationLevel;
     }

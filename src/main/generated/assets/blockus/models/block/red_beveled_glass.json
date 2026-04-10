@@ -1,6 +1,9 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "blockus:block/red_beveled_glass"
+    "all": {
+      "force_translucent": true,
+      "sprite": "blockus:block/red_beveled_glass"
+    }
   }
 }

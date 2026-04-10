@@ -1,27 +1,19 @@
 package com.brand.blockus.registry.content.bundles;
 
-import com.brand.blockus.blocks.base.OxidizableWallBlock;
+import com.brand.blockus.blocks.base.WeatheringCopperWallBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
-import net.minecraft.world.level.block.WeatheringCopperFullBlock;
-import net.minecraft.world.level.block.WeatheringCopperSlabBlock;
-import net.minecraft.world.level.block.WeatheringCopperStairBlock;
+import net.minecraft.world.level.block.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public record CopperBSSWBundle(
     String type,
-    Block base,
-    Block block,
-    Block stairs,
-    Block slab,
-    Block wall,
-    Block blockWaxed,
-    Block stairsWaxed,
-    Block slabWaxed,
-    Block wallWaxed
+    Provider base,
+    WeatheringCopperCollection<Block> block,
+    WeatheringCopperCollection<Block> stairs,
+    WeatheringCopperCollection<Block> slab,
+    WeatheringCopperCollection<Block> wall
 ) {
 
     public static final List<CopperBSSWBundle> LIST = new ArrayList<>();
@@ -30,89 +22,23 @@ public record CopperBSSWBundle(
         return LIST;
     }
 
-    public static Builder of(String type, OxidationType oxidation, Block base) {
-        return new Builder(type, oxidation, base);
-    }
-
-    public List<Block> allBlocks() {
-        return List.of(block, blockWaxed);
-    }
-
-    public List<Block> allSlabs() {
-        return List.of(slab, slabWaxed);
-    }
-
-    public List<Block> allStairs() {
-        return List.of(stairs, stairsWaxed);
-    }
-
-    public List<Block> allWalls() {
-        return List.of(wall, wallWaxed);
-    }
-
-    public List<Block> allUnwaxed() {
+    public List<WeatheringCopperCollection<Block>> all() {
         return List.of(block, stairs, slab, wall);
     }
 
-    public List<Block> allWaxed() {
-        return List.of(blockWaxed, stairsWaxed, slabWaxed, wallWaxed);
+    public interface Provider {
+        Block pick(WeatheringCopper.WeatherState state);
     }
 
-    public List<Block> all() {
-        return List.of(block, stairs, slab, wall, blockWaxed, stairsWaxed, slabWaxed, wallWaxed);
-    }
-
-    public enum OxidationType {
-        UNAFFECTED(WeatherState.UNAFFECTED, ""),
-        EXPOSED(WeatherState.EXPOSED, "exposed_"),
-        WEATHERED(WeatherState.WEATHERED, "weathered_"),
-        OXIDIZED(WeatherState.OXIDIZED, "oxidized_");
-
-        private final WeatherState oxidationLevel;
-        private final String prefix;
-
-        OxidationType(WeatherState oxidationLevel, String prefix) {
-            this.oxidationLevel = oxidationLevel;
-            this.prefix = prefix;
-        }
-
-        public WeatherState getLevel() {
-            return oxidationLevel;
-        }
-
-        public String getPrefix() {
-            return prefix;
-        }
-    }
-
-    public static class Builder {
-        public final String type;
-        public final Block base;
-        public final OxidationType oxidation;
-
-        public Builder(String type, OxidationType oxidation, Block base) {
-            this.type = type;
-            this.base = base;
-            this.oxidation = oxidation;
-        }
-
-        public CopperBSSWBundle register() {
-            String prefix = oxidation.getPrefix();
-            WeatherState oxidationLevel = oxidation.getLevel();
-            Block block = BlockFactory.registerCopy(prefix + type, (properties) -> new WeatheringCopperFullBlock(oxidation.getLevel(), properties), base);
-            Block blockWaxed = BlockFactory.registerCopy("waxed_" + prefix + type, base);
-            CopperBSSWBundle bundle = new CopperBSSWBundle(type, base,
-                block,
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_stairs", (properties) -> new WeatheringCopperStairBlock(oxidationLevel, base.defaultBlockState(), properties), base),
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_slab", (properties) -> new WeatheringCopperSlabBlock(oxidationLevel, properties), base),
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_wall", (properties) -> new OxidizableWallBlock(oxidationLevel, properties), base),
-                blockWaxed,
-                BlockFactory.stairs(blockWaxed),
-                BlockFactory.slab(blockWaxed),
-                BlockFactory.wall(blockWaxed)
-            );
-            LIST.add(bundle);
-            return bundle;
-        }
+    public static CopperBSSWBundle register(String type, Provider base) {
+        WeatheringCopperCollection<Block> block = WeatheringCopperCollection.registerBlocks(type, BlockFactory::registerOf, (var0, p) -> new Block(p), WeatheringCopperFullBlock::new, (statex) -> BlockFactory.createCopy(base.pick(statex)));
+        CopperBSSWBundle bundle = new CopperBSSWBundle(type, base,
+            block,
+            WeatheringCopperCollection.registerBlocks(BlockFactory.replaceId(type) + "_stairs", BlockFactory::registerOf, (statex, p) -> new StairBlock(block.pick(statex, true).defaultBlockState(), p), (statex, p) -> new WeatheringCopperStairBlock(statex, block.pick(statex, false).defaultBlockState(), p), (statex) -> BlockFactory.createCopy(block.pick(statex, false))),
+            WeatheringCopperCollection.registerBlocks(BlockFactory.replaceId(type) + "_slab", BlockFactory::registerOf, (var0, p) -> new SlabBlock(p), WeatheringCopperSlabBlock::new, (statex) -> BlockFactory.createCopy(block.pick(statex, false))),
+            WeatheringCopperCollection.registerBlocks(BlockFactory.replaceId(type) + "_wall", BlockFactory::registerOf, (var0, p) -> new WallBlock(p), WeatheringCopperWallBlock::new, (statex) -> BlockFactory.createCopy(block.pick(statex, false)))
+        );
+        LIST.add(bundle);
+        return bundle;
     }
 }

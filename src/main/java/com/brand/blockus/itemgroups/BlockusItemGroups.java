@@ -40,7 +40,7 @@ public class BlockusItemGroups {
         );
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_TILES, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_colored_tiles").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(ColoredTilesBundle.get(Blocks.RED_CONCRETE, Blocks.BLUE_CONCRETE).block()))
+            .icon(() -> new ItemStack(ColoredTilesBundle.get(Blocks.CONCRETE.red(), Blocks.CONCRETE.blue()).block()))
             .build()
         );
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_NATURAL, FabricCreativeModeTab.builder()
