@@ -11,7 +11,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 
@@ -35,7 +34,7 @@ public class BlockusItemGroups {
         );
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_BLOCKS, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_colored").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(ASPHALT.colorMap().get(DyeColor.LIME).block()))
+            .icon(() -> new ItemStack(ASPHALT.block().lime()))
             .build()
         );
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_TILES, FabricCreativeModeTab.builder()

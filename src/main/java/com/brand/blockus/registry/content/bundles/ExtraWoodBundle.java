@@ -34,11 +34,7 @@ public class ExtraWoodBundle<T> {
         return new ExtraWoodBundle<>(map);
     }
 
-    public static ExtraWoodBundle<BSSWBundle> of(Function<String, String> string, Function<String, Block> baseBlockProvider) {
-        return of(string, baseBlockProvider, Set.of());
-    }
-
-    public static ExtraWoodBundle<BSSWBundle> of(Function<String, String> string, Function<String, Block> baseBlockProvider, Set<WoodMaps> exclude) {
+    public static ExtraWoodBundle<BSSWBundle> register(Function<String, String> string, Function<String, Block> baseBlockProvider, Set<WoodMaps> exclude) {
         Map<String, BSSWBundle> map = new LinkedHashMap<>();
         for (WoodMaps wood : WoodMaps.values()) {
             if (exclude.contains(wood)) continue;
@@ -48,6 +44,10 @@ public class ExtraWoodBundle<T> {
             map.put(wood.getId(), bundle);
         }
         return new ExtraWoodBundle<>(map);
+    }
+
+    public static ExtraWoodBundle<BSSWBundle> register(Function<String, String> string, Function<String, Block> baseBlockProvider) {
+        return register(string, baseBlockProvider, Set.of());
     }
 
     public static Set<WoodMaps> exclude(WoodMaps... types) {

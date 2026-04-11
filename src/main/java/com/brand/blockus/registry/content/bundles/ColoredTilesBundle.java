@@ -119,14 +119,7 @@ public record ColoredTilesBundle(
         return BuiltInRegistries.BLOCK.getKey(block).getPath().replace("_concrete", "");
     }
 
-    public static class Builder {
-        public final Block tile1;
-        public final Block tile2;
-
-        public Builder(Block tile1, Block tile2) {
-            this.tile1 = tile1;
-            this.tile2 = tile2;
-        }
+    public record Builder(Block tile1, Block tile2) {
 
         public ColoredTilesBundle register() {
             String type = getColor(tile1) + "_" + getColor(tile2) + "_colored_tiles";

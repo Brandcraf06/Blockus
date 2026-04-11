@@ -4,7 +4,6 @@ import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.registry.tag.BlockusItemTags;
-import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -16,7 +15,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -67,15 +65,17 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockusBlockTags.HEDGES, BlockusItemTags.HEDGES);
 
         this.copy(BlockusBlockTags.SOUL_SOILS, BlockusItemTags.SOUL_SOILS);
+        this.copy(BlockusBlockTags.DYED_STONE_BRICKS, BlockusItemTags.DYED_STONE_BRICKS);
+        this.copy(BlockusBlockTags.CONCRETE_BRICKS, BlockusItemTags.CONCRETE_BRICKS);
+        this.copy(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS, BlockusItemTags.GLAZED_TERRACOTTA_PILLARS);
 
-        this.valueLookupBuilder(BlockusItemTags.STAINED_STONE_BRICKS)
-            .add(Items.STONE_BRICKS);
-        for (DyeColor color : BlockOrder.COLOR) {
-            valueLookupBuilder(BlockusItemTags.STAINED_STONE_BRICKS).add(STAINED_STONE_BRICKS.colorMap().get(color).block().asItem());
-        }
+        this.valueLookupBuilder(ItemTags.GLAZED_TERRACOTTA)
+            .addTag(BlockusItemTags.GLAZED_TERRACOTTA_PILLARS);
+
+        this.valueLookupBuilder(ItemTags.CONCRETE)
+            .addTag(BlockusItemTags.CONCRETE_BRICKS);
 
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
-
         this.copy(BlockusBlockTags.WHITE_OAK_LOGS, BlockusItemTags.WHITE_OAK_LOGS);
 
         this.valueLookupBuilder(BlockusItemTags.PLANKS_THAT_BURN)

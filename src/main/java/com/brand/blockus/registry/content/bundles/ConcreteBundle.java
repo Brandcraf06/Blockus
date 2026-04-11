@@ -1,17 +1,20 @@
 package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.utils.helper.BlockFactory;
-import com.brand.blockus.utils.helper.BlockMaps;
-import com.brand.blockus.utils.helper.BlockOrder;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.*;
 
 import java.util.ArrayList;
-import java.util.EnumMap;
 import java.util.List;
-import java.util.Map;
 
-public record ConcreteBundle(Map<DyeColor, ConcreteVariants> colorMap) {
+public record ConcreteBundle(
+    String type,
+    ColorCollection<Block> block,
+    ColorCollection<Block> stairs,
+    ColorCollection<Block> slab,
+    ColorCollection<Block> wall,
+    ColorCollection<Block> chiseled,
+    ColorCollection<Block> pillar
+) {
 
     public static final List<ConcreteBundle> LIST = new ArrayList<>();
 
@@ -19,56 +22,24 @@ public record ConcreteBundle(Map<DyeColor, ConcreteVariants> colorMap) {
         return LIST;
     }
 
-    public static Builder of(String id) {
-        return new Builder(id);
+    public List<ColorCollection<Block>> all() {
+        return List.of(block, stairs, slab, wall, chiseled, pillar);
     }
 
-    public List<Block> all() {
-        List<Block> list = new ArrayList<>();
-        for (DyeColor color : BlockOrder.COLOR) {
-            ConcreteVariants variants = colorMap.get(color);
-            list.add(variants.block());
-            list.add(variants.stairs());
-            list.add(variants.slab());
-            list.add(variants.wall());
-            list.add(variants.chiseled());
-            list.add(variants.pillar());
-        }
-        return list;
-    }
+    public static ConcreteBundle register(String id) {
+        String type = BlockFactory.replaceId(id);
+        String removeBricks = type.replace("_brick", "");
+        ColorCollection<Block> block = BlockFactory.dyedBlocks(id, Blocks.CONCRETE);
+        ConcreteBundle bundle = new ConcreteBundle(type,
+            block,
+            BlockFactory.dyedBlocks(type + "_stairs", (color, p) -> new StairBlock(block.pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block)),
+            BlockFactory.dyedBlocks(type + "_slab", (var0, p) -> new SlabBlock(p), BlockFactory.copyDyedBlocks(block)),
+            BlockFactory.dyedBlocks(type + "_wall", (var0, p) -> new WallBlock(p), BlockFactory.copyDyedBlocks(block)),
+            BlockFactory.chiseledConcrete(block),
+            BlockFactory.dyedBlocks(removeBricks + "_pillar", (var0, p) -> new RotatedPillarBlock(p), BlockFactory.copyDyedBlocks(block))
+        );
 
-    public record ConcreteVariants(Block block, Block stairs, Block slab, Block wall, Block chiseled, Block pillar) {
-    }
-
-    public static class Builder {
-        public final String id;
-        public DyeColor color;
-
-        public Builder(String id) {
-            this.id = id;
-        }
-
-        public ConcreteBundle register() {
-            Map<DyeColor, ConcreteVariants> colorMap = new EnumMap<>(DyeColor.class);
-
-            for (DyeColor color : BlockOrder.COLOR) {
-                String type = color.getName() + "_" + id;
-                String removeBricks = type.replace("_bricks", "");
-                Block base = BlockMaps.CONCRETE_MAP.get(color);
-
-                Block block = BlockFactory.registerCopy(type, base);
-                Block stairs = BlockFactory.stairs(block);
-                Block slab = BlockFactory.slab(block);
-                Block wall = BlockFactory.wall(block);
-                Block chiseled = BlockFactory.registerCopy("chiseled_" + removeBricks, base);
-                Block pillar = BlockFactory.pillar2(removeBricks + "_pillar", base);
-
-                colorMap.put(color, new ConcreteVariants(block, stairs, slab, wall, chiseled, pillar));
-            }
-
-            ConcreteBundle bundle = new ConcreteBundle(colorMap);
-            LIST.add(bundle);
-            return bundle;
-        }
+        LIST.add(bundle);
+        return bundle;
     }
 }

@@ -3,6 +3,7 @@ package com.brand.blockus;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.registry.*;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -71,14 +72,14 @@ public class Instance {
 
         // Patterned wools
         for (WoolBundle bundle : WoolBundle.values()) {
-            for (WoolBundle.WoolVariants blocks : bundle.colorMap().values()) {
-                FlammableBlockRegistry.getDefaultInstance().add(blocks.block(), 30, 60);
-                FlammableBlockRegistry.getDefaultInstance().add(blocks.stairs(), 30, 60);
-                FlammableBlockRegistry.getDefaultInstance().add(blocks.slab(), 30, 60);
-                FlammableBlockRegistry.getDefaultInstance().add(blocks.carpet(), 60, 20);
+            for (DyeColor color : DyeColor.values()) {
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.block().pick(color), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs().pick(color), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.slab().pick(color), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.carpet().pick(color), 60, 20);
                 FuelValueEvents.BUILD.register((builder, context) -> {
-                    builder.add(blocks.stairs(), 100);
-                    builder.add(blocks.slab(), 50);
+                    builder.add(bundle.stairs().pick(color), 100);
+                    builder.add(bundle.slab().pick(color), 50);
                 });
             }
         }

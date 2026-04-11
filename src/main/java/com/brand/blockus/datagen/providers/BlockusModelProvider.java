@@ -9,7 +9,6 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.BlockusBlockStateProperties;
-import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
@@ -31,8 +30,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.WallSide;
-
-import java.util.List;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
@@ -73,22 +70,33 @@ public class BlockusModelProvider extends FabricModelProvider {
             }
         }
 
-        for (ConcreteBundle bundle : ConcreteBundle.values()) {
-            for (ConcreteBundle.ConcreteVariants variants : bundle.colorMap().values()) {
-                this.createBlockStairsSlabAndWall(modelGenerator, variants.block(), variants.stairs(), variants.slab(), variants.wall());
-                modelGenerator.createTrivialCube(variants.chiseled());
-                this.createPillar(modelGenerator, variants.pillar());
+        for (DyedBSSWBundle bundle : DyedBSSWBundle.values()) {
+            for (DyeColor color : DyeColor.values()) {
+                this.createBlockStairsAndSlab(modelGenerator, bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
+                if (bundle.wall() != null) {
+                    this.createWall(modelGenerator, bundle.wall().pick(color), bundle.block().pick(color));
+                }
             }
         }
 
-        for (AsphaltBundle.AsphaltVariants variants : BlockusBlocks.ASPHALT.colorMap().values()) {
-            this.createBlockStairsAndSlab(modelGenerator, variants.block(), variants.stairs(), variants.slab());
+        for (ConcreteBundle bundle : ConcreteBundle.values()) {
+            for (DyeColor color : DyeColor.values()) {
+                this.createBlockStairsSlabAndWall(modelGenerator, bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color), bundle.wall().pick(color));
+                modelGenerator.createTrivialCube(bundle.chiseled().pick(color));
+                this.createPillar(modelGenerator, bundle.pillar().pick(color));
+            }
+        }
+
+        for (AsphaltBundle bundle : AsphaltBundle.values()) {
+            for (DyeColor color : DyeColor.values()) {
+                this.createBlockStairsAndSlab(modelGenerator, bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
+            }
         }
 
         for (WoolBundle bundle : WoolBundle.values()) {
-            for (WoolBundle.WoolVariants variants : bundle.colorMap().values()) {
-                this.createBlockStairsAndSlab(modelGenerator, variants.block(), variants.stairs(), variants.slab());
-                this.createCarpet(modelGenerator, variants.block(), variants.carpet());
+            for (DyeColor color : DyeColor.values()) {
+                this.createBlockStairsAndSlab(modelGenerator, bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
+                this.createCarpet(modelGenerator, bundle.block().pick(color), bundle.carpet().pick(color));
             }
         }
 
@@ -437,14 +445,14 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.CHOCOLATE_SQUARES);
 
         // Redstone Lamps
-        this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.REDSTONE_LAMP_LIT);
-        this.createRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.RAINBOW_LAMP_LIT);
+        this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.LIT_REDSTONE_LAMP);
+        this.createRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.LIT_RAINBOW_LAMP);
         ColorCollection.zipApply((block, lit) -> this.createRedstoneLamp(modelGenerator, block, lit),
-            BlockusBlocks.STAINED_REDSTONE_LAMP, BlockusBlocks.STAINED_REDSTONE_LAMP_LIT
+            BlockusBlocks.DYED_REDSTONE_LAMP, BlockusBlocks.DYED_LIT_REDSTONE_LAMP
         );
 
         // Neon Blocks
-        BlockusBlocks.NEON_BLOCK.forEach((block) -> this.createNeonBlock(modelGenerator, block));
+        BlockusBlocks.NEON.forEach((block) -> this.createNeonBlock(modelGenerator, block));
         this.createNeonBlock(modelGenerator, BlockusBlocks.RAINBOW_NEON);
 
         // Futurneo Blocks
@@ -825,7 +833,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void createCopperBlocks(BlockModelGenerators modelGenerator, CopperBSSWBundle block, WeatheringCopperCollection<BlockFamily> family) {
-        WeatheringCopper.WeatherState.forEach((state) -> modelGenerator.family(block.block().pick(state, false)).generateFor((BlockFamily) family.pick(state, false)).donateModelTo(block.block().pick(state, false), block.block().pick(state, true)).generateFor((BlockFamily) family.pick(state, true)));
+        WeatheringCopper.WeatherState.forEach((state) -> modelGenerator.family(block.block().pick(state, false)).generateFor(family.pick(state, false)).donateModelTo(block.block().pick(state, false), block.block().pick(state, true)).generateFor(family.pick(state, true)));
     }
 
     public final void createCrate(BlockModelGenerators modelGenerator, Block block) {
@@ -990,8 +998,8 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void createBlockWithStateRotations(BlockModelGenerators modelGenerator, TexturedModel.Provider modelProvider, Block block) {
-            MultiVariant model = plainVariant(modelProvider.create(block, modelGenerator.modelOutput));
-            modelGenerator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, model).with(PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING).select(Direction.SOUTH, NOP).select(Direction.WEST, Y_ROT_90).select(Direction.NORTH, Y_ROT_180).select(Direction.EAST, Y_ROT_270)));
+        MultiVariant model = plainVariant(modelProvider.create(block, modelGenerator.modelOutput));
+        modelGenerator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, model).with(PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING).select(Direction.SOUTH, NOP).select(Direction.WEST, Y_ROT_90).select(Direction.NORTH, Y_ROT_180).select(Direction.EAST, Y_ROT_270)));
     }
 
     public static PropertyDispatch createUpDefaultRotationStates() {

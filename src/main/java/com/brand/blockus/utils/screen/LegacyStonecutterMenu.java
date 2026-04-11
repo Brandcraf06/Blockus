@@ -5,7 +5,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -86,7 +85,7 @@ public class LegacyStonecutterMenu extends AbstractContainerMenu {
                 access.execute((level, pos) -> {
                     long gameTime = level.getGameTime();
                     if (LegacyStonecutterMenu.this.lastSoundTime != gameTime) {
-                        level.playSound((Entity)null, pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        level.playSound(null, pos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
                         LegacyStonecutterMenu.this.lastSoundTime = gameTime;
                     }
 
@@ -162,7 +161,7 @@ public class LegacyStonecutterMenu extends AbstractContainerMenu {
     private void setupResultSlot(final int index) {
         Optional<RecipeHolder<StonecutterRecipe>> usedRecipe;
         if (!this.recipesForInput.isEmpty() && this.isValidRecipeIndex(index)) {
-            SelectableRecipe.SingleInputEntry<StonecutterRecipe> entry = (SelectableRecipe.SingleInputEntry)this.recipesForInput.entries().get(index);
+            SelectableRecipe.SingleInputEntry<StonecutterRecipe> entry = this.recipesForInput.entries().get(index);
             usedRecipe = entry.recipe().recipe();
         } else {
             usedRecipe = Optional.empty();
@@ -170,10 +169,10 @@ public class LegacyStonecutterMenu extends AbstractContainerMenu {
 
         usedRecipe.ifPresentOrElse((recipe) -> {
             this.resultContainer.setRecipeUsed(recipe);
-            this.resultSlot.set(((StonecutterRecipe)recipe.value()).assemble(new SingleRecipeInput(this.container.getItem(0))));
+            this.resultSlot.set(recipe.value().assemble(new SingleRecipeInput(this.container.getItem(0))));
         }, () -> {
             this.resultSlot.set(ItemStack.EMPTY);
-            this.resultContainer.setRecipeUsed((RecipeHolder)null);
+            this.resultContainer.setRecipeUsed(null);
         });
         this.broadcastChanges();
     }
@@ -192,7 +191,7 @@ public class LegacyStonecutterMenu extends AbstractContainerMenu {
 
     public ItemStack quickMoveStack(final Player player, final int slotIndex) {
         ItemStack clicked = ItemStack.EMPTY;
-        Slot slot = (Slot)this.slots.get(slotIndex);
+        Slot slot = this.slots.get(slotIndex);
         if (slot != null && slot.hasItem()) {
             ItemStack stack = slot.getItem();
             Item item = stack.getItem();

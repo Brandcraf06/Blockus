@@ -10,6 +10,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> AMETHYST_BLOCKS = register("amethyst_blocks");
     public static final TagKey<Block> ANDESITE_BLOCKS = register("andesite_blocks");
     public static final TagKey<Block> ASPHALT = register("asphalt");
+    public static final TagKey<Block> ALL_ASPHALT = register("all_asphalt");
     public static final TagKey<Block> BARRIERS = register("barriers");
     public static final TagKey<Block> BASALT_BLOCKS = register("basalt_blocks");
     public static final TagKey<Block> BEVELED_GLASS = register("beveled_glass");
@@ -19,7 +20,8 @@ public class BlockusBlockTags {
     public static final TagKey<Block> BRICKS_BLOCKS = register("bricks_blocks");
     public static final TagKey<Block> CHOCOLATE_BLOCKS = register("chocolate_blocks");
     public static final TagKey<Block> COLORED_TILES = register("colored_tiles");
-    public static final TagKey<Block> CONCRETE_BLOCKS = register("concrete_blocks");
+    public static final TagKey<Block> CONCRETE_BRICKS = register("concrete_bricks");
+    public static final TagKey<Block> ALL_CONCRETE_BRICKS = register("all_concrete_bricks");
     public static final TagKey<Block> COPPER_BLOCKS = register("copper_blocks");
     public static final TagKey<Block> DEEPSLATE_BLOCKS = register("deepslate_blocks");
     public static final TagKey<Block> DIORITE_BLOCKS = register("diorite_blocks");
@@ -59,7 +61,8 @@ public class BlockusBlockTags {
     public static final TagKey<Block> SNOW_BRICKS = register("snow_bricks");
     public static final TagKey<Block> SOUL_SANDSTONE = register("soul_sandstone");
     public static final TagKey<Block> SOUL_SOILS = register("soul_soils");
-    public static final TagKey<Block> STAINED_STONE_BRICKS = register("stained_stone_bricks");
+    public static final TagKey<Block> DYED_STONE_BRICKS = register("dyed_stone_bricks");
+    public static final TagKey<Block> ALL_DYED_STONE_BRICKS = register("all_dyed_stone_bricks");
     public static final TagKey<Block> STONE_BLOCKS = register("stone_blocks");
     public static final TagKey<Block> THATCH = register("thatch");
     public static final TagKey<Block> TIMBER_FRAMES = register("timber_frames");

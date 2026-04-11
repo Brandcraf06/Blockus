@@ -43,10 +43,6 @@ public record WoodBundle(
         return LIST;
     }
 
-    public static Builder of(String type, Block base, MapColor color, SoundType sound, WoodType woodType, BlockSetType blockSetType, boolean burnable) {
-        return new Builder(type, base, color, sound, woodType, blockSetType, burnable);
-    }
-
     public static BlockBehaviour.Properties copyLootTable(Block block, MapColor color, boolean burnable) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of().overrideLootTable(block.getLootTable()).overrideDescription(block.getDescriptionId()).mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F);
         if (burnable) {
@@ -55,64 +51,45 @@ public record WoodBundle(
         return properties;
     }
 
-    public static class Builder {
-        public final String type;
-        public final Block base;
-        public final MapColor color;
-        public final SoundType sound;
-        public final WoodType woodType;
-        public final BlockSetType blockSetType;
-        public final boolean burnable;
+    public static WoodBundle register(String type, Block base, MapColor color, SoundType sound, WoodType woodType, BlockSetType blockSetType, boolean burnable) {
+        BlockBehaviour.Properties blockProperties = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound);
+        BlockBehaviour.Properties doorTrapdoorProperties = BlockFactory.doorTrapdoorBlockProperties(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
+        BlockBehaviour.Properties signProperties = BlockFactory.create().mapColor(color).noCollision().strength(1.0F);
+        BlockBehaviour.Properties shelfProperties = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).sound(SoundType.SHELF).strength(2.0F, 3.0F);
 
-        public Builder(String type, Block base, MapColor color, SoundType sound, WoodType woodType, BlockSetType blockSetType, boolean burnable) {
-            this.type = type;
-            this.base = base;
-            this.color = color;
-            this.sound = sound;
-            this.woodType = woodType;
-            this.blockSetType = blockSetType;
-            this.burnable = burnable;
+        if (burnable) {
+            blockProperties = blockProperties.ignitedByLava();
+            doorTrapdoorProperties = doorTrapdoorProperties.ignitedByLava();
+            signProperties = signProperties.ignitedByLava();
+            shelfProperties = shelfProperties.ignitedByLava();
         }
 
-        public WoodBundle register() {
-            BlockBehaviour.Properties blockProperties = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound);
-            BlockBehaviour.Properties doorTrapdoorProperties = BlockFactory.doorTrapdoorBlockProperties(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
-            BlockBehaviour.Properties signProperties = BlockFactory.create().mapColor(color).noCollision().strength(1.0F);
-            BlockBehaviour.Properties shelfProperties = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).sound(SoundType.SHELF).strength(2.0F, 3.0F);
+        Block planks = BlockFactory.registerOf(type + "_planks", blockProperties);
+        Block stairs = BlockFactory.stairs(planks);
+        Block slab = BlockFactory.slab(planks);
+        Block fence = BlockFactory.registerCopy(type + "_fence", FenceBlock::new, base);
+        Block fenceGate = BlockFactory.registerCopy(type + "_fence_gate", (properties) -> new FenceGateBlock(woodType, properties), base);
+        Block door = BlockFactory.registerOf(type + "_door", (properties) -> new DoorBlock(blockSetType, properties), doorTrapdoorProperties);
+        Block trapdoor = BlockFactory.registerOf(type + "_trapdoor", (properties) -> new TrapDoorBlock(blockSetType, properties), doorTrapdoorProperties);
+        Block pressurePlate = BlockFactory.pressurePlate(planks, blockSetType);
+        Block button = BlockFactory.button(planks, blockSetType, 30);
+        Block shelf = BlockFactory.registerOf(type + "_shelf", ShelfBlock::new, shelfProperties);
 
-            if (burnable) {
-                blockProperties = blockProperties.ignitedByLava();
-                doorTrapdoorProperties = doorTrapdoorProperties.ignitedByLava();
-                signProperties = signProperties.ignitedByLava();
-                shelfProperties = shelfProperties.ignitedByLava();
-            }
+        Block standingSign = BlockFactory.registerNoItem(type + "_sign", (properties) -> new StandingSignBlock(woodType, properties), signProperties);
+        Block wallSign = BlockFactory.registerNoItem(type + "_wall_sign", (properties) -> new WallSignBlock(woodType, properties), WoodBundle.copyLootTable(standingSign, color, burnable));
+        Item sign = BlockusItems.register(standingSign, (block, properties) -> new SignItem(block, wallSign, properties), new Item.Properties().stacksTo(16));
 
-            Block planks = BlockFactory.registerOf(type + "_planks", blockProperties);
-            Block stairs = BlockFactory.stairs(planks);
-            Block slab = BlockFactory.slab(planks);
-            Block fence = BlockFactory.registerCopy(type + "_fence", FenceBlock::new, base);
-            Block fenceGate = BlockFactory.registerCopy(type + "_fence_gate", (properties) -> new FenceGateBlock(woodType, properties), base);
-            Block door = BlockFactory.registerOf(type + "_door", (properties) -> new DoorBlock(blockSetType, properties), doorTrapdoorProperties);
-            Block trapdoor = BlockFactory.registerOf(type + "_trapdoor", (properties) -> new TrapDoorBlock(blockSetType, properties), doorTrapdoorProperties);
-            Block pressurePlate = BlockFactory.pressurePlate(planks, blockSetType);
-            Block button = BlockFactory.button(planks, blockSetType, 30);
-            Block shelf = BlockFactory.registerOf(type + "_shelf", ShelfBlock::new, shelfProperties);
+        Block ceilingHangingSign = BlockFactory.registerNoItem(type + "_hanging_sign", (properties) -> new CeilingHangingSignBlock(woodType, properties), signProperties);
+        Block wallHangingSign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", (properties) -> new WallHangingSignBlock(woodType, properties), WoodBundle.copyLootTable(ceilingHangingSign, color, burnable));
+        Item hangingSign = BlockusItems.register(ceilingHangingSign, (block, properties) -> new HangingSignItem(block, wallHangingSign, properties), new Item.Properties().stacksTo(16));
 
-            Block standingSign = BlockFactory.registerNoItem(type + "_sign", (properties) -> new StandingSignBlock(woodType, properties), signProperties);
-            Block wallSign = BlockFactory.registerNoItem(type + "_wall_sign", (properties) -> new WallSignBlock(woodType, properties), WoodBundle.copyLootTable(standingSign, color, burnable));
-            Item sign = BlockusItems.register(standingSign, (block, properties) -> new SignItem(block, wallSign, properties), new Item.Properties().stacksTo(16));
+        WoodBundle bundle = new WoodBundle(type, burnable, base, planks, stairs, slab, fence, fenceGate, door, trapdoor, pressurePlate, button, shelf, standingSign, wallSign, sign, ceilingHangingSign, wallHangingSign, hangingSign);
 
-            Block ceilingHangingSign = BlockFactory.registerNoItem(type + "_hanging_sign", (properties) -> new CeilingHangingSignBlock(woodType, properties), signProperties);
-            Block wallHangingSign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", (properties) -> new WallHangingSignBlock(woodType, properties), WoodBundle.copyLootTable(ceilingHangingSign, color, burnable));
-            Item hangingSign = BlockusItems.register(ceilingHangingSign, (block, properties) -> new HangingSignItem(block, wallHangingSign, properties), new Item.Properties().stacksTo(16));
-
-            WoodBundle bundle = new WoodBundle(type, burnable, base, planks, stairs, slab, fence, fenceGate, door, trapdoor, pressurePlate, button, shelf, standingSign, wallSign, sign, ceilingHangingSign, wallHangingSign, hangingSign);
-
-            LIST.add(bundle);
-            return bundle;
-        }
+        LIST.add(bundle);
+        return bundle;
     }
 }
+
 
 
 

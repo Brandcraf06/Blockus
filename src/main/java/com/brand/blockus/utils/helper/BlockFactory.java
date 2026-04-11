@@ -241,6 +241,10 @@ public class BlockFactory {
         return create().lightLevel((state) -> 15).strength(0.5f, 0.5f).sound(SoundType.GLASS).isValidSpawn(Blocks::always);
     }
 
+    public static BlockBehaviour.Properties asphaltProperties() {
+        return create().instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresCorrectToolForDrops();
+    }
+
     // Dyed Blocks
     public static Block dyedBlock(String id, DyeColor color, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, Block base) {
         return copy(base).factory(properties -> factory.apply(color, properties)).register(id);
@@ -250,8 +254,24 @@ public class BlockFactory {
         return registerOf(id, Block::new, properties.mapColor(color));
     }
 
+    public static Function<DyeColor, BlockBehaviour.Properties> copyDyedBlocks(ColorCollection<Block> block) {
+        return color -> BlockFactory.createCopy(block.pick(color));
+    }
+
+    public static <T extends Block> ColorCollection<Block> dyedBlocksWithFixedId(String start, String end, Function<DyeColor, BlockBehaviour.Properties> properties) {
+        return ColorCollection.make((color) -> registerOf(start + color.getName() + end, Block::new, properties.apply(color)));
+    }
+
+    public static ColorCollection<Block> chiseledConcrete(ColorCollection<Block> base) {
+        return dyedBlocksWithFixedId("chiseled_", "_concrete", color -> createCopy(base.pick(color)));
+    }
+
     public static ColorCollection<Block> dyedBlocks(String id, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, Function<DyeColor, BlockBehaviour.Properties> properties) {
         return ColorCollection.registerBlocks(id, BlockFactory::registerOf, factory, properties);
+    }
+
+    public static ColorCollection<Block> dyedBlocks(String id, ColorCollection<Block> base) {
+        return dyedBlocks(id, (var0, p) -> new Block(p), copyDyedBlocks(base));
     }
 
     public static ColorCollection<Block> dyedBlocks(String id, Function<DyeColor, BlockBehaviour.Properties> properties) {
@@ -260,10 +280,6 @@ public class BlockFactory {
 
     public static ColorCollection<Block> dyedBlocks(String id, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, ColorCollection<Block> base) {
         return dyedBlocks(id, factory, color -> createCopy(base.pick(color)));
-    }
-
-    public static ColorCollection<Block> dyedBlocks(String id, ColorCollection<Block> base) {
-        return dyedBlocks(id, (var0, p) -> new Block(p), color -> createCopy(base.pick(color)));
     }
 
 

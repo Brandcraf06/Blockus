@@ -4,73 +4,44 @@ import com.brand.blockus.blocks.base.asphalt.AsphaltBlock;
 import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
 import com.brand.blockus.utils.helper.BlockFactory;
-import com.brand.blockus.utils.helper.BlockOrder;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
 import java.util.ArrayList;
-import java.util.EnumMap;
 import java.util.List;
-import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
+public record AsphaltBundle(
+    ColorCollection<Block> block,
+    ColorCollection<Block> stairs,
+    ColorCollection<Block> slab
+) {
 
-public record AsphaltBundle(Map<DyeColor, AsphaltVariants> colorMap) {
+    public static final List<AsphaltBundle> LIST = new ArrayList<>();
 
-    public static Builder of() {
-        return new Builder("asphalt");
+    public static List<AsphaltBundle> values() {
+        return LIST;
     }
 
-    public List<Block> all() {
-        List<Block> list = new ArrayList<>();
-        for (DyeColor color : BlockOrder.COLOR) {
-            AsphaltVariants variants = colorMap.get(color);
-            list.add(variants.block());
-            list.add(variants.stairs());
-            list.add(variants.slab());
-        }
-        return list;
+    public List<ColorCollection<Block>> all() {
+        return List.of(block, stairs, slab);
     }
 
-    public AsphaltVariants baseColor() {
-        return colorMap.get(DyeColor.BLACK);
+    public static <T extends Block> ColorCollection<Block> registerAsphaltBlocks(String id, final BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, Function<DyeColor, BlockBehaviour.Properties> properties) {
+        return ColorCollection.make((color) -> BlockFactory.registerOf(color == DyeColor.BLACK ? id : color.getName() + "_" + id, (Function) (p) -> (Block) factory.apply(color, (BlockBehaviour.Properties) p), properties.apply(color)));
     }
 
-    public record AsphaltVariants(Block block, Block stairs, Block slab) {
-    }
+    public static AsphaltBundle register(String id) {
+        ColorCollection<Block> block = registerAsphaltBlocks(id, (var0, p) -> new AsphaltBlock(p), color -> BlockFactory.asphaltProperties().mapColor(color));
+        AsphaltBundle bundle = new AsphaltBundle(block,
+            registerAsphaltBlocks(id + "_stairs", (color, p) -> new AsphaltStairs(block.pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block)),
+            registerAsphaltBlocks(id + "_slab", (var0, p) -> new AsphaltSlab(p), BlockFactory.copyDyedBlocks(block))
+        );
 
-    public static class Builder {
-        private final String id;
-        private Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties = Function.identity();
-
-        public Builder(String id) {
-            this.id = id;
-        }
-
-        public Builder properties(Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties) {
-            this.properties = properties;
-            return this;
-        }
-
-        public AsphaltBundle register() {
-            Map<DyeColor, AsphaltVariants> colorMap = new EnumMap<>(DyeColor.class);
-
-            for (DyeColor color : BlockOrder.COLOR) {
-                String type = color.getName() + "_" + id;
-                String type2 = type.replace("black_" + id, id);
-
-                Block.Properties blockProperties = properties.apply(BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresCorrectToolForDrops());
-
-                Block block = BlockFactory.registerOf(type2, AsphaltBlock::new, blockProperties);
-                Block stairs = BlockFactory.registerOf(type2 + "_stairs", s -> new AsphaltStairs(block.defaultBlockState(), s), BlockBehaviour.Properties.ofFullCopy(block));
-                Block slab = BlockFactory.registerOf(type2 + "_slab", AsphaltSlab::new, BlockBehaviour.Properties.ofFullCopy(block));
-
-                colorMap.put(color, new AsphaltVariants(block, stairs, slab));
-            }
-
-            return new AsphaltBundle(colorMap);
-        }
+        LIST.add(bundle);
+        return bundle;
     }
 }

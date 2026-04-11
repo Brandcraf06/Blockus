@@ -11,7 +11,6 @@ import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
 import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.BlockFactory;
-import com.brand.blockus.utils.helper.BlockMaps;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
@@ -367,19 +366,19 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block WHITE_OAK_WOOD = pillar2("white_oak_wood", WHITE_OAK_LOG);
     public static final Block STRIPPED_WHITE_OAK_WOOD = pillar2("stripped_white_oak_wood", WHITE_OAK_LOG);
     public static final Block WHITE_OAK_LEAVES = registerCopy("white_oak_leaves", properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 14061641), properties), Blocks.OAK_LEAVES, properties -> properties.mapColor(MapColor.COLOR_ORANGE).pushReaction(PushReaction.DESTROY).isValidSpawn(BlockusBlocks::canSpawnOnLeaves).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never));
-    public static final WoodBundle WHITE_OAK = WoodBundle.of("white_oak", Blocks.OAK_PLANKS, MapColor.QUARTZ, SoundType.WOOD, WHITE_OAK_WOOD_TYPE, BlockSetType.OAK, true).register();
+    public static final WoodBundle WHITE_OAK = WoodBundle.register("white_oak", Blocks.OAK_PLANKS, MapColor.QUARTZ, SoundType.WOOD, WHITE_OAK_WOOD_TYPE, BlockSetType.OAK, true);
 
     // Raw Bamboo
     private static final WoodType RAW_BAMBOO_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.BAMBOO).register(Blockus.id("raw_bamboo"), BlockSetTypeBuilder.copyOf(BlockSetType.BAMBOO).register(Blockus.id("raw_bamboo")));
-    public static final WoodBundle RAW_BAMBOO = WoodBundle.of("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.PLANT, SoundType.BAMBOO_WOOD, RAW_BAMBOO_WOOD_TYPE, BlockSetType.BAMBOO, true).register();
+    public static final WoodBundle RAW_BAMBOO = WoodBundle.register("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.PLANT, SoundType.BAMBOO_WOOD, RAW_BAMBOO_WOOD_TYPE, BlockSetType.BAMBOO, true);
 
     // Charred
     public static final WoodType CHARRED_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Blockus.id("charred"), BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Blockus.id("charred")));
-    public static final WoodBundle CHARRED = WoodBundle.of("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, SoundType.WOOD, CHARRED_WOOD_TYPE, BlockSetType.OAK, false).register();
+    public static final WoodBundle CHARRED = WoodBundle.register("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, SoundType.WOOD, CHARRED_WOOD_TYPE, BlockSetType.OAK, false);
 
     // Extra Wood Blocks
-    public static final ExtraWoodBundle<BSSWBundle> WOODEN_MOSAIC = ExtraWoodBundle.of(wood -> wood + "_mosaic", WoodMaps.PLANKS_MAP::get, ExtraWoodBundle.exclude(WoodMaps.BAMBOO));
-    public static final ExtraWoodBundle<BSSWBundle> MOSSY_PLANKS = ExtraWoodBundle.of(wood -> "mossy_" + wood + "_planks", WoodMaps.PLANKS_MAP::get);
+    public static final ExtraWoodBundle<BSSWBundle> WOODEN_MOSAIC = ExtraWoodBundle.register(wood -> wood + "_mosaic", WoodMaps.PLANKS_MAP::get, ExtraWoodBundle.exclude(WoodMaps.BAMBOO));
+    public static final ExtraWoodBundle<BSSWBundle> MOSSY_PLANKS = ExtraWoodBundle.register(wood -> "mossy_" + wood + "_planks", WoodMaps.PLANKS_MAP::get);
     public static final ExtraWoodBundle<Block> HERRINGBONE_PLANKS = ExtraWoodBundle.of(wood -> registerCopy("herringbone_" + wood + "_planks", WoodMaps.PLANKS_MAP.get(wood)));
     public static final ExtraWoodBundle<Block> SMALL_LOGS = ExtraWoodBundle.of(wood -> {
         Block log = WoodMaps.LOG_MAP.get(wood);
@@ -411,29 +410,29 @@ public class BlockusBlocks extends BlockFactory {
 
     // Large Flower Pots
     public static final Block LARGE_FLOWER_POT = largeFlowerPot("large_flower_pot");
-    public static final PottedLargeBundle POTTED_ROSE_BUSH = PottedLargeBundle.of("potted_rose_bush", Blocks.ROSE_BUSH).register();
-    public static final PottedLargeBundle POTTED_LILAC = PottedLargeBundle.of("potted_lilac", Blocks.LILAC).register();
-    public static final PottedLargeBundle POTTED_PEONY = PottedLargeBundle.of("potted_peony", Blocks.PEONY).register();
-    public static final PottedLargeBundle POTTED_LARGE_FERN = PottedLargeBundle.of("potted_large_fern", Blocks.LARGE_FERN).register();
-    public static final PottedLargeBundle POTTED_OAK = PottedLargeBundle.of("potted_oak", Blocks.OAK_SAPLING).register();
-    public static final PottedLargeBundle POTTED_SPRUCE = PottedLargeBundle.of("potted_spruce", Blocks.SPRUCE_SAPLING).register();
-    public static final PottedLargeBundle POTTED_BIRCH = PottedLargeBundle.of("potted_birch", Blocks.BIRCH_SAPLING).register();
-    public static final PottedLargeBundle POTTED_JUNGLE = PottedLargeBundle.of("potted_jungle", Blocks.JUNGLE_SAPLING).register();
-    public static final PottedLargeBundle POTTED_ACACIA = PottedLargeBundle.of("potted_acacia", Blocks.ACACIA_SAPLING).register();
-    public static final PottedLargeBundle POTTED_DARK_OAK = PottedLargeBundle.of("potted_dark_oak", Blocks.DARK_OAK_SAPLING).register();
-    public static final PottedLargeBundle POTTED_MANGROVE = PottedLargeBundle.of("potted_mangrove", Blocks.MANGROVE_PROPAGULE).register();
-    public static final PottedLargeBundle POTTED_CHERRY_BLOSSOM = PottedLargeBundle.of("potted_cherry_blossom", Blocks.CHERRY_SAPLING).register();
-    public static final PottedLargeBundle POTTED_PALE_OAK = PottedLargeBundle.of("potted_pale_oak", Blocks.PALE_OAK_SAPLING).register();
-    public static final PottedLargeBundle POTTED_WHITE_OAK = PottedLargeBundle.of("potted_white_oak", WHITE_OAK_SAPLING).register();
-    public static final PottedLargeBundle POTTED_HUGE_RED_MUSHROOM = PottedLargeBundle.of("potted_huge_red_mushroom", Blocks.RED_MUSHROOM).register();
-    public static final PottedLargeBundle POTTED_HUGE_BROWN_MUSHROOM = PottedLargeBundle.of("potted_huge_brown_mushroom", Blocks.BROWN_MUSHROOM).register();
-    public static final PottedLargeBundle POTTED_HUGE_CRIMSON_FUNGUS = PottedLargeBundle.of("potted_huge_crimson_fungus", Blocks.CRIMSON_FUNGUS).register();
-    public static final PottedLargeBundle POTTED_HUGE_WARPED_FUNGUS = PottedLargeBundle.of("potted_huge_warped_fungus", Blocks.WARPED_FUNGUS).register();
-    public static final PottedLargeBundle POTTED_CACTUS_LARGE = PottedLargeBundle.of("potted_cactus_large", Blocks.CACTUS).register();
-    public static final PottedLargeBundle POTTED_BAMBOO_LARGE = PottedLargeBundle.of("potted_bamboo_large", Blocks.BAMBOO).register();
-    public static final PottedLargeBundle POTTED_AZALEA_LARGE = PottedLargeBundle.of("potted_azalea_large", Blocks.AZALEA).register();
-    public static final PottedLargeBundle POTTED_FLOWERING_AZALEA_LARGE = PottedLargeBundle.of("potted_flowering_azalea_large", Blocks.FLOWERING_AZALEA).register();
-    public static final PottedLargeBundle POTTED_PITCHER_PLANT = PottedLargeBundle.of("potted_pitcher_plant", Blocks.PITCHER_PLANT).register();
+    public static final PottedLargeBundle POTTED_ROSE_BUSH = PottedLargeBundle.register("potted_rose_bush", Blocks.ROSE_BUSH);
+    public static final PottedLargeBundle POTTED_LILAC = PottedLargeBundle.register("potted_lilac", Blocks.LILAC);
+    public static final PottedLargeBundle POTTED_PEONY = PottedLargeBundle.register("potted_peony", Blocks.PEONY);
+    public static final PottedLargeBundle POTTED_LARGE_FERN = PottedLargeBundle.register("potted_large_fern", Blocks.LARGE_FERN);
+    public static final PottedLargeBundle POTTED_OAK = PottedLargeBundle.register("potted_oak", Blocks.OAK_SAPLING);
+    public static final PottedLargeBundle POTTED_SPRUCE = PottedLargeBundle.register("potted_spruce", Blocks.SPRUCE_SAPLING);
+    public static final PottedLargeBundle POTTED_BIRCH = PottedLargeBundle.register("potted_birch", Blocks.BIRCH_SAPLING);
+    public static final PottedLargeBundle POTTED_JUNGLE = PottedLargeBundle.register("potted_jungle", Blocks.JUNGLE_SAPLING);
+    public static final PottedLargeBundle POTTED_ACACIA = PottedLargeBundle.register("potted_acacia", Blocks.ACACIA_SAPLING);
+    public static final PottedLargeBundle POTTED_DARK_OAK = PottedLargeBundle.register("potted_dark_oak", Blocks.DARK_OAK_SAPLING);
+    public static final PottedLargeBundle POTTED_MANGROVE = PottedLargeBundle.register("potted_mangrove", Blocks.MANGROVE_PROPAGULE);
+    public static final PottedLargeBundle POTTED_CHERRY_BLOSSOM = PottedLargeBundle.register("potted_cherry_blossom", Blocks.CHERRY_SAPLING);
+    public static final PottedLargeBundle POTTED_PALE_OAK = PottedLargeBundle.register("potted_pale_oak", Blocks.PALE_OAK_SAPLING);
+    public static final PottedLargeBundle POTTED_WHITE_OAK = PottedLargeBundle.register("potted_white_oak", WHITE_OAK_SAPLING);
+    public static final PottedLargeBundle POTTED_HUGE_RED_MUSHROOM = PottedLargeBundle.register("potted_huge_red_mushroom", Blocks.RED_MUSHROOM);
+    public static final PottedLargeBundle POTTED_HUGE_BROWN_MUSHROOM = PottedLargeBundle.register("potted_huge_brown_mushroom", Blocks.BROWN_MUSHROOM);
+    public static final PottedLargeBundle POTTED_HUGE_CRIMSON_FUNGUS = PottedLargeBundle.register("potted_huge_crimson_fungus", Blocks.CRIMSON_FUNGUS);
+    public static final PottedLargeBundle POTTED_HUGE_WARPED_FUNGUS = PottedLargeBundle.register("potted_huge_warped_fungus", Blocks.WARPED_FUNGUS);
+    public static final PottedLargeBundle POTTED_CACTUS_LARGE = PottedLargeBundle.register("potted_cactus_large", Blocks.CACTUS);
+    public static final PottedLargeBundle POTTED_BAMBOO_LARGE = PottedLargeBundle.register("potted_bamboo_large", Blocks.BAMBOO);
+    public static final PottedLargeBundle POTTED_AZALEA_LARGE = PottedLargeBundle.register("potted_azalea_large", Blocks.AZALEA);
+    public static final PottedLargeBundle POTTED_FLOWERING_AZALEA_LARGE = PottedLargeBundle.register("potted_flowering_azalea_large", Blocks.FLOWERING_AZALEA);
+    public static final PottedLargeBundle POTTED_PITCHER_PLANT = PottedLargeBundle.register("potted_pitcher_plant", Blocks.PITCHER_PLANT);
 
     // Chocolate
     public static final BSSWBundle CHOCOLATE_BLOCK = BSSWBundle.of("chocolate_block", 1.0F, 1.0F, MapColor.COLOR_BROWN).includeWall(false).register();
@@ -474,20 +473,20 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BREAD_BOX = registerCopy("bread_box", OrientableBlockBase::new, Blocks.OAK_PLANKS, properties -> properties.strength(2.5f));
 
     // Stained Stone Bricks
-    public static final StainedBSSWBundle STAINED_STONE_BRICKS = StainedBSSWBundle.of("stone_bricks", Blocks.STONE_BRICKS).useMapColor().register();
+    public static final DyedBSSWBundle DYED_STONE_BRICKS = DyedBSSWBundle.register("stone_bricks", color -> createCopy(Blocks.STONE_BRICKS));
 
     // Concrete
-    public static final ConcreteBundle CONCRETE_BRICKS = ConcreteBundle.of("concrete_bricks").register();
+    public static final ConcreteBundle CONCRETE_BRICKS = ConcreteBundle.register("concrete_bricks");
 
     // Redstone Lamps
-    public static final Block REDSTONE_LAMP_LIT = lampBlock("redstone_lamp_lit", Blocks.REDSTONE_LAMP);
-    public static final ColorCollection<Block> STAINED_REDSTONE_LAMP = dyedBlocks("redstone_lamp", (var0, p) -> new RedstoneLampBlock(p), color -> createCopy(Blocks.REDSTONE_LAMP).mapColor(color.getMapColor()));
-    public static final ColorCollection<Block> STAINED_REDSTONE_LAMP_LIT = dyedBlocks("redstone_lamp_lit", color -> createCopy(STAINED_REDSTONE_LAMP.pick(color)).lightLevel(state -> 15));
+    public static final Block LIT_REDSTONE_LAMP = lampBlock("redstone_lamp_lit", Blocks.REDSTONE_LAMP);
+    public static final ColorCollection<Block> DYED_REDSTONE_LAMP = dyedBlocks("redstone_lamp", (var0, p) -> new RedstoneLampBlock(p), color -> createCopy(Blocks.REDSTONE_LAMP).mapColor(color.getMapColor()));
+    public static final ColorCollection<Block> DYED_LIT_REDSTONE_LAMP = dyedBlocks("redstone_lamp_lit", color -> createCopy(DYED_REDSTONE_LAMP.pick(color)).lightLevel(state -> 15));
     public static final Block RAINBOW_LAMP = dyedBlock("rainbow_lamp", DyeColor.ORANGE, (var0, p) -> new RedstoneLampBlock(p), Blocks.REDSTONE_LAMP);
-    public static final Block RAINBOW_LAMP_LIT = lampBlock("rainbow_lamp_lit", RAINBOW_LAMP);
+    public static final Block LIT_RAINBOW_LAMP = lampBlock("rainbow_lamp_lit", RAINBOW_LAMP);
 
     // Neon Blocks
-    public static final ColorCollection<Block> NEON_BLOCK = dyedBlocks("neon", color -> neonProperties().mapColor(color.getMapColor()));
+    public static final ColorCollection<Block> NEON = dyedBlocks("neon", color -> neonProperties().mapColor(color.getMapColor()));
     public static final Block RAINBOW_NEON = dyedBlock("rainbow_neon", DyeColor.LIGHT_BLUE, neonProperties());
 
     // Futurneo Blocks
@@ -496,12 +495,12 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block RAINBOW_FUTURNEO_BLOCK = dyedBlock("rainbow_futurneo_block", DyeColor.BLACK, futurneoblockProperties());
 
     // Asphalt
-    public static final AsphaltBundle ASPHALT = AsphaltBundle.of().register();
+    public static final AsphaltBundle ASPHALT = AsphaltBundle.register("asphalt");
     public static final Block RAINBOW_ASPHALT = registerOf("rainbow_asphalt", RainbowAsphalt::new, create().mapColor(DyeColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresCorrectToolForDrops());
 
     // Shingles
     public static final BSSWBundle SHINGLES = BSSWBundle.of("shingles", Blocks.TERRACOTTA, SoundType.NETHER_BRICKS).includeWall(false).register();
-    public static final StainedBSSWBundle STAINED_SHINGLES = StainedBSSWBundle.of("shingles", BlockMaps.TERRACOTTA_MAP).properties(properties -> properties.sound(SoundType.NETHER_BRICKS)).includeWall(false).register();
+    public static final DyedBSSWBundle DYED_SHINGLES = DyedBSSWBundle.register("shingles", color -> createCopy(Blocks.DYED_TERRACOTTA.pick(color)).sound(SoundType.NETHER_BRICKS), false);
 
     // Glass - Beveled Glass
     public static final Block RAINBOW_GLASS = dyedBlock("rainbow_glass", DyeColor.YELLOW, StainedGlassBlock::new, Blocks.GLASS);
@@ -515,8 +514,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS, properties -> properties.isValidSpawn(BlockusBlocks::never).isRedstoneConductor(BlockusBlocks::never).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never));
 
     // Patterned Wools
-    public static final WoolBundle PATTERNED_WOOL = WoolBundle.of("patterned_wool").register();
-    public static final WoolBundle GINGHAM_WOOL = WoolBundle.of("gingham_wool").register();
+    public static final WoolBundle PATTERNED_WOOL = WoolBundle.register("patterned_wool");
+    public static final WoolBundle GINGHAM_WOOL = WoolBundle.register("gingham_wool");
 
     // Glazed Terracotta Pillars
     public static final ColorCollection<Block> GLAZED_TERRACOTTA_PILLAR = dyedBlocks("glazed_terracotta_pillar", (var0, p) -> new RotatedPillarBlock(p), Blocks.GLAZED_TERRACOTTA);
@@ -611,7 +610,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Legacy
     public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", properties -> new SaplingBlock(BlockusSaplingGenerator.LEGACY_OAK, properties), createCopy(Blocks.OAK_SAPLING), "Indev");
-    public static final PottedLargeBundle POTTED_LEGACY_TREE = PottedLargeBundle.of("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING).register();
+    public static final PottedLargeBundle POTTED_LEGACY_TREE = PottedLargeBundle.register("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING);
     public static final Block POTTED_LEGACY_SAPLING = pottedPlant("potted_legacy_sapling", LEGACY_SAPLING);
     public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", createCopy(Blocks.GRASS_BLOCK), "Cave game");
     public static final Block LEGACY_GRASS_BLOCK = registerLegacy("legacy_grass_block", createCopy(Blocks.GRASS_BLOCK), "Pre-Classic");

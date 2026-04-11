@@ -40,7 +40,7 @@ public class WhiteOakFoliagePlacer extends FoliagePlacer {
         this.placeLeavesRow(level, foliageSetter, random, config, foliagePos, currentRadius - 1, foliageHeight - 3, doubleTrunk);
         this.placeLeavesRow(level, foliageSetter, random, config, foliagePos, currentRadius - 1, foliageHeight - 4, doubleTrunk);
 
-        for(int y = foliageHeight - 5; y >= 0; --y) {
+        for (int y = foliageHeight - 5; y >= 0; --y) {
             this.placeLeavesRow(level, foliageSetter, random, config, foliagePos, currentRadius, y, doubleTrunk);
         }
 

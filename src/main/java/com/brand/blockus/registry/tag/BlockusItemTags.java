@@ -14,7 +14,9 @@ public final class BlockusItemTags {
     public static final TagKey<Item> ALL_PATTERNED_WOOLS = register("all_patterned_wools");
     public static final TagKey<Item> HEDGES = register("hedges");
     public static final TagKey<Item> SOUL_SOILS = register("soul_soils");
-    public static final TagKey<Item> STAINED_STONE_BRICKS = register("stained_stone_bricks");
+    public static final TagKey<Item> DYED_STONE_BRICKS = register("dyed_stone_bricks");
+    public static final TagKey<Item> CONCRETE_BRICKS = register("concrete_bricks");
+    public static final TagKey<Item> GLAZED_TERRACOTTA_PILLARS = register("glazed_terracotta_pillars");
     public static final TagKey<Item> WARPED_NETHER_GRASS = register("warped_nether_grass");
     public static final TagKey<Item> WHITE_OAK_LOGS = register("white_oak_logs");
     public static final TagKey<Item> PLANKS_THAT_BURN = register("planks_that_burn");

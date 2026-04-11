@@ -2,7 +2,6 @@ package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
-import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -15,6 +14,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.List;
@@ -48,11 +48,13 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.valueLookupBuilder(BlockTags.VIBRATION_RESONATORS)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
 
-        for (Block block : ASPHALT.all()) {
-            valueLookupBuilder(BlockusBlockTags.ASPHALT).add(block);
-        }
         this.valueLookupBuilder(BlockusBlockTags.ASPHALT)
+            .addAll(ASPHALT.block().asList())
             .add(RAINBOW_ASPHALT);
+        this.valueLookupBuilder(BlockusBlockTags.ALL_ASPHALT)
+            .addTag(BlockusBlockTags.ASPHALT)
+            .addAll(ASPHALT.stairs().asList())
+            .addAll(ASPHALT.slab().asList());
 
         this.valueLookupBuilder(BlockusBlockTags.BARRIERS)
             .add(CAUTION_BARRIER)
@@ -133,10 +135,22 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.valueLookupBuilder(BlockusBlockTags.COLORED_TILES)
             .add(RAINBOW_COLORED_TILES);
 
-        for (ConcreteBundle concreteType : ConcreteBundle.values()) {
-            this.valueLookupBuilder(BlockusBlockTags.CONCRETE_BLOCKS)
-                .addAll(concreteType.all());
+        for (ConcreteBundle bundle : ConcreteBundle.values()) {
+            for (DyeColor color : DyeColor.values()) {
+                this.valueLookupBuilder(BlockTags.STAIRS).add(bundle.stairs().pick(color));
+                this.valueLookupBuilder(BlockTags.SLABS).add(bundle.slab().pick(color));
+                this.valueLookupBuilder(BlockTags.WALLS).add(bundle.wall().pick(color));
+            }
         }
+        this.valueLookupBuilder(BlockusBlockTags.CONCRETE_BRICKS)
+            .addAll(CONCRETE_BRICKS.block().asList())
+            .addAll(CONCRETE_BRICKS.chiseled().asList())
+            .addAll(CONCRETE_BRICKS.pillar().asList());
+        this.valueLookupBuilder(BlockusBlockTags.ALL_CONCRETE_BRICKS)
+            .addTag(BlockusBlockTags.CONCRETE_BRICKS)
+            .addAll(CONCRETE_BRICKS.stairs().asList())
+            .addAll(CONCRETE_BRICKS.slab().asList())
+            .addAll(CONCRETE_BRICKS.wall().asList());
 
         this.valueLookupBuilder(BlockTags.CRYSTAL_SOUND_BLOCKS)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
@@ -303,7 +317,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(MARBLE_CIRCULAR_PAVING);
 
         this.valueLookupBuilder(BlockusBlockTags.NEON)
-            .addAll(NEON_BLOCK.asList())
+            .addAll(NEON.asList())
             .add(RAINBOW_NEON);
 
         this.valueLookupBuilder(BlockusBlockTags.NETHER_BRICKS)
@@ -349,19 +363,16 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(GLOWING_OBSIDIAN)
             .add(LEGACY_GLOWING_OBSIDIAN);
 
-        this.valueLookupBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
-            .addTag(BlockusBlockTags.PATTERNED_WOOL);
-
-        for (WoolBundle woolBundle : WoolBundle.values()) {
-            for (var variants : woolBundle.colorMap().values()) {
-                this.valueLookupBuilder(BlockusBlockTags.PATTERNED_WOOL)
-                    .add(variants.block());
-                this.valueLookupBuilder(BlockusBlockTags.PATTERNED_CARPETS)
-                    .add(variants.carpet());
-                this.valueLookupBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
-                    .add(variants.stairs())
-                    .add(variants.slab());
-            }
+        for (WoolBundle block : WoolBundle.values()) {
+            this.valueLookupBuilder(BlockusBlockTags.PATTERNED_WOOL)
+                .addAll(block.block().asList());
+            this.valueLookupBuilder(BlockusBlockTags.PATTERNED_CARPETS)
+                .addAll(block.carpet().asList());
+            this.valueLookupBuilder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
+                .addTag(BlockusBlockTags.PATTERNED_WOOL)
+                .addAll(block.stairs().asList())
+                .addAll(block.slab().asList())
+                .addTag(BlockusBlockTags.PATTERNED_CARPETS);
         }
 
         this.valueLookupBuilder(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS)
@@ -433,11 +444,12 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.valueLookupBuilder(BlockusBlockTags.SHINGLES)
             .add(bsswBundle(SHINGLES));
 
-        for (DyeColor color : BlockOrder.COLOR) {
-            for (Block block : STAINED_SHINGLES.colorMap().get(color).all()) {
-                valueLookupBuilder(BlockusBlockTags.SHINGLES).add(block);
-            }
+        for (ColorCollection<Block> block : DYED_SHINGLES.all()) {
+            this.valueLookupBuilder(BlockusBlockTags.SHINGLES).addAll(block.asList());
         }
+
+        this.valueLookupBuilder(BlockusBlockTags.SHINGLES)
+            .addAll(STAINED_BEVELED_GLASS.asList());
 
         for (Block block : WOODEN_POST.all()) {
             valueLookupBuilder(BlockusBlockTags.WOODEN_POSTS).add(block);
@@ -491,11 +503,12 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(Blocks.SOUL_SAND)
             .add(Blocks.SOUL_SOIL);
 
-        for (DyeColor color : BlockOrder.COLOR) {
-            for (Block block : STAINED_STONE_BRICKS.colorMap().get(color).all()) {
-                valueLookupBuilder(BlockusBlockTags.STAINED_STONE_BRICKS).add(block);
-            }
-        }
+        this.valueLookupBuilder(BlockusBlockTags.DYED_STONE_BRICKS).addAll(DYED_STONE_BRICKS.block().asList());
+        this.valueLookupBuilder(BlockusBlockTags.ALL_DYED_STONE_BRICKS)
+            .addTag(BlockusBlockTags.DYED_STONE_BRICKS)
+            .addAll(DYED_STONE_BRICKS.stairs().asList())
+            .addAll(DYED_STONE_BRICKS.slab().asList())
+            .addAll(DYED_STONE_BRICKS.wall().asList());
 
         this.valueLookupBuilder(BlockusBlockTags.STONE_BLOCKS)
             .add(bsswBundle(COBBLESTONE_BRICKS))
@@ -686,7 +699,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(NETHERITE_BRICKS))
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
-            .addTag(BlockusBlockTags.STAINED_STONE_BRICKS)
+            .addTag(BlockusBlockTags.ALL_DYED_STONE_BRICKS)
             .addTag(BlockusBlockTags.MARBLE)
             .addTag(BlockusBlockTags.LIMESTONE)
             .addTag(BlockusBlockTags.BLUESTONE)
@@ -716,13 +729,13 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.HONEYCOMB_BLOCKS)
             .addTag(BlockusBlockTags.END_STONE_BLOCKS)
             .addTag(BlockusBlockTags.RAINBOW_BLOCKS)
-            .addTag(BlockusBlockTags.CONCRETE_BLOCKS)
+            .addTag(BlockusBlockTags.ALL_CONCRETE_BRICKS)
             .addTag(BlockusBlockTags.DEEPSLATE_BLOCKS)
             .addTag(BlockusBlockTags.SCULK_BLOCKS)
             .addTag(BlockusBlockTags.TUFF_BLOCKS)
             .addTag(BlockusBlockTags.DRIPSTONE_BLOCKS)
             .addTag(BlockusBlockTags.CHOCOLATE_BLOCKS)
-            .addTag(BlockusBlockTags.ASPHALT)
+            .addTag(BlockusBlockTags.ALL_ASPHALT)
             .addTag(BlockusBlockTags.SHINGLES)
             .addTag(BlockusBlockTags.COLORED_TILES)
             .addTag(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
@@ -968,11 +981,21 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             }
         }
 
-        for (ConcreteBundle concrete : ConcreteBundle.values()) {
-            for (var variants : concrete.colorMap().values()) {
-                this.valueLookupBuilder(BlockTags.STAIRS).add(variants.stairs());
-                this.valueLookupBuilder(BlockTags.SLABS).add(variants.slab());
-                this.valueLookupBuilder(BlockTags.WALLS).add(variants.wall());
+        for (DyedBSSWBundle bundle : DyedBSSWBundle.values()) {
+            for (DyeColor color : DyeColor.values()) {
+                this.valueLookupBuilder(BlockTags.STAIRS).add(bundle.stairs().pick(color));
+                this.valueLookupBuilder(BlockTags.SLABS).add(bundle.slab().pick(color));
+                if (bundle.wall() != null) {
+                    this.valueLookupBuilder(BlockTags.WALLS).add(bundle.wall().pick(color));
+                }
+            }
+        }
+
+        for (ConcreteBundle bundle : ConcreteBundle.values()) {
+            for (DyeColor color : DyeColor.values()) {
+                this.valueLookupBuilder(BlockTags.STAIRS).add(bundle.stairs().pick(color));
+                this.valueLookupBuilder(BlockTags.SLABS).add(bundle.slab().pick(color));
+                this.valueLookupBuilder(BlockTags.WALLS).add(bundle.wall().pick(color));
             }
         }
 

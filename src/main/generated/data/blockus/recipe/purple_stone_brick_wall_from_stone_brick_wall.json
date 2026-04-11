@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "stained_stone_brick_wall",
+  "group": "dyed_stone_brick_wall",
   "key": {
     "#": "minecraft:purple_dye",
     "X": "minecraft:stone_brick_wall"

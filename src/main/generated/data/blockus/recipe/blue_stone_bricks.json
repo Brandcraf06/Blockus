@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "stained_stone_bricks",
+  "group": "dyed_stone_bricks",
   "key": {
     "#": "minecraft:blue_dye",
     "X": "minecraft:stone_bricks"

@@ -25,7 +25,7 @@ public class BlockBuilder {
 
     public Function<BlockBehaviour.Properties, Block> factory = DEFAULT_FACTORY;
     public BlockBehaviour.Properties properties;
-    
+
     public Item.Properties itemProperties = DEFAULT_ITEM_PROPERTIES.get();
 
     public Block base;

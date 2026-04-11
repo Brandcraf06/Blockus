@@ -33,7 +33,7 @@ public class FunctionalBlocksGroup {
 
             entries.accept(BLAZE_LANTERN);
 
-            ColoredGroups.addDyed(entries, BlockusBlocks.STAINED_REDSTONE_LAMP);
+            ColoredGroups.addDyed(entries, BlockusBlocks.DYED_REDSTONE_LAMP);
             entries.accept(RAINBOW_LAMP);
             entries.accept(RAINBOW_GLOWSTONE);
             entries.accept(GLOWING_OBSIDIAN);
