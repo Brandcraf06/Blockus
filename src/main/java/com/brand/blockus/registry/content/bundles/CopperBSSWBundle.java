@@ -2,6 +2,7 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.WeatheringCopperWallBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 
 import java.util.ArrayList;
@@ -24,6 +25,10 @@ public record CopperBSSWBundle(
 
     public List<WeatheringCopperCollection<Block>> all() {
         return List.of(block, stairs, slab, wall);
+    }
+
+    public List<Item> asItem() {
+        return block.asList().stream().map(Block::asItem).toList();
     }
 
     public interface Provider {

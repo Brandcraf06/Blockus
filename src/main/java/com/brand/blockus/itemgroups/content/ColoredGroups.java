@@ -8,12 +8,10 @@ import com.brand.blockus.registry.content.bundles.DyedBSSWBundle;
 import com.brand.blockus.utils.helper.BlockOrder;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ColorCollection;
 
 import java.util.Collection;
-import java.util.List;
 
 public class ColoredGroups {
 

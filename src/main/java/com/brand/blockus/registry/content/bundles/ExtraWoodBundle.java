@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class ExtraWoodBundle<T> {
@@ -21,6 +22,14 @@ public class ExtraWoodBundle<T> {
 
     public T get(String wood) {
         return blocks.get(wood);
+    }
+
+    public void forEach(Consumer<T> consumer) {
+        for (T block : blocks.values()) {
+            if (block != null) {
+                consumer.accept(block);
+            }
+        }
     }
 
     public static <T> ExtraWoodBundle<T> of(Function<String, T> blockFactory) {

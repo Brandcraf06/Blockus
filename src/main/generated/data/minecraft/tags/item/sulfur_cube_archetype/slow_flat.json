@@ -1,0 +1,21 @@
+{
+  "values": [
+    "blockus:iron_plating",
+    "blockus:gold_plating",
+    "blockus:iron_bricks",
+    "blockus:gold_bricks",
+    "blockus:copper_bricks",
+    "blockus:waxed_copper_bricks",
+    "blockus:exposed_copper_bricks",
+    "blockus:waxed_exposed_copper_bricks",
+    "blockus:weathered_copper_bricks",
+    "blockus:waxed_weathered_copper_bricks",
+    "blockus:oxidized_copper_bricks",
+    "blockus:waxed_oxidized_copper_bricks",
+    "blockus:netherite_bricks",
+    "blockus:legacy_iron_block",
+    "blockus:legacy_gold_block",
+    "blockus:legacy_explosion_proof_gold_block",
+    "#blockus:lantern_blocks"
+  ]
+}

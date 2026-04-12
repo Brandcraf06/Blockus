@@ -30,6 +30,7 @@ public record ConcreteBundle(
         String type = BlockFactory.replaceId(id);
         String removeBricks = type.replace("_brick", "");
         ColorCollection<Block> block = BlockFactory.dyedBlocks(id, Blocks.CONCRETE);
+
         ConcreteBundle bundle = new ConcreteBundle(type,
             block,
             BlockFactory.dyedBlocks(type + "_stairs", (color, p) -> new StairBlock(block.pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block)),

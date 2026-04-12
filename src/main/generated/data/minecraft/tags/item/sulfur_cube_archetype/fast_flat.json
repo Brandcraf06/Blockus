@@ -1,0 +1,18 @@
+{
+  "values": [
+    "blockus:large_resin_bricks",
+    "blockus:herringbone_resin_bricks",
+    "blockus:resin_brick_pillar",
+    "blockus:polished_sculk",
+    "blockus:sculk_bricks",
+    "blockus:chiseled_sculk_bricks",
+    "blockus:sculk_pillar",
+    "blockus:soul_o_lantern",
+    "blockus:copper_jack_o_lantern",
+    "blockus:redstone_o_lantern",
+    "blockus:thatch",
+    "blockus:rotten_flesh_block",
+    "blockus:chorus_block",
+    "blockus:legacy_sponge"
+  ]
+}
