@@ -13,7 +13,7 @@ public class ExtraWoodBundle<T> {
     private final Map<String, T> blocks;
 
     private ExtraWoodBundle(Map<String, T> blocks) {
-        this.blocks = Map.copyOf(blocks);
+        this.blocks = blocks;
     }
 
     public Map<String, T> bundle() {

@@ -22,6 +22,9 @@ public final class BlockusItemTags {
     public static final TagKey<Item> GLAZED_TERRACOTTA_PILLARS = register("glazed_terracotta_pillars");
     public static final TagKey<Item> COLORED_TILES = register("colored_tiles");
     public static final TagKey<Item> ASPHALT = register("asphalt");
+    public static final TagKey<Item> NEON = register("neon");
+    public static final TagKey<Item> FUTURNEO_BLOCKS = register("futurneo_blocks");
+    public static final TagKey<Item> LIT_REDSTONE_LAMPS = register("lit_redstone_lamps");
     public static final TagKey<Item> WARPED_NETHER_GRASS = register("warped_nether_grass");
     public static final TagKey<Item> WHITE_OAK_LOGS = register("white_oak_logs");
     public static final TagKey<Item> PLANKS_THAT_BURN = register("planks_that_burn");

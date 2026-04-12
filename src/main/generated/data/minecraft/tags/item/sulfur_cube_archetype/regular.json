@@ -240,6 +240,9 @@
     "blockus:legacy_lapis_block",
     "#blockus:dyed_stone_bricks",
     "#blockus:asphalt",
+    "#blockus:lit_redstone_lamps",
+    "#blockus:neon",
+    "#blockus:futurneo_blocks",
     "#blockus:colored_tiles"
   ]
 }

@@ -40,6 +40,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> MAGMA_BRICKS = register("magma_bricks");
     public static final TagKey<Block> MARBLE = register("marble");
     public static final TagKey<Block> NEON = register("neon");
+    public static final TagKey<Block> FUTURNEO_BLOCKS = register("futurneo_blocks");
     public static final TagKey<Block> NETHER_BRICKS = register("nether_bricks");
     public static final TagKey<Block> NETHERRACK_BLOCKS = register("netherrack_blocks");
     public static final TagKey<Block> OBSIDIAN = register("obsidian");
@@ -53,6 +54,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> PURPUR_BLOCKS = register("purpur_blocks");
     public static final TagKey<Block> QUARTZ_BLOCKS = register("quartz_blocks");
     public static final TagKey<Block> RAINBOW_BLOCKS = register("rainbow_blocks");
+    public static final TagKey<Block> LIT_REDSTONE_LAMPS = register("lit_redstone_lamps");
     public static final TagKey<Block> RED_SANDSTONE = register("red_sandstone");
     public static final TagKey<Block> SANDSTONE = register("sandstone");
     public static final TagKey<Block> SCULK_BLOCKS = register("sculk_blocks");

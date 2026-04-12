@@ -2,6 +2,7 @@ package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
+import com.brand.blockus.utils.helper.BlockOrder;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -131,6 +132,12 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addAll(CONCRETE_BRICKS.stairs().asList())
             .addAll(CONCRETE_BRICKS.slab().asList())
             .addAll(CONCRETE_BRICKS.wall().asList());
+
+        this.valueLookupBuilder(BlockusBlockTags.LIT_REDSTONE_LAMPS)
+            .add(LIT_REDSTONE_LAMP)
+            .addAll(DYED_LIT_REDSTONE_LAMP.asList())
+            .add(LIT_RAINBOW_LAMP);
+
 
         this.valueLookupBuilder(BlockusBlockTags.DEEPSLATE_BLOCKS)
             .add(bsswBundle(COBBLED_DEEPSLATE_BRICKS))
@@ -277,6 +284,11 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.valueLookupBuilder(BlockusBlockTags.NEON)
             .addAll(NEON.asList())
             .add(RAINBOW_NEON);
+
+        this.valueLookupBuilder(BlockusBlockTags.FUTURNEO_BLOCKS)
+            .addAll(FUTURNEO_BLOCK.asList())
+            .add(GRAY_BRIGHT_FUTURNEO_BLOCK)
+            .add(RAINBOW_FUTURNEO_BLOCK);
 
         this.valueLookupBuilder(BlockusBlockTags.NETHER_BRICKS)
             .add(bsswBundle(POLISHED_NETHER_BRICKS))

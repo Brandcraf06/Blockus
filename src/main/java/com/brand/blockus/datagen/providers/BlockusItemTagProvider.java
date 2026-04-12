@@ -52,6 +52,9 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockusBlockTags.CONCRETE_BRICKS, BlockusItemTags.CONCRETE_BRICKS);
         this.copy(BlockusBlockTags.SHINGLES, BlockusItemTags.SHINGLES);
         this.copy(BlockusBlockTags.COLORED_TILES, BlockusItemTags.COLORED_TILES);
+        this.copy(BlockusBlockTags.LIT_REDSTONE_LAMPS, BlockusItemTags.LIT_REDSTONE_LAMPS);
+        this.copy(BlockusBlockTags.NEON, BlockusItemTags.NEON);
+        this.copy(BlockusBlockTags.FUTURNEO_BLOCKS, BlockusItemTags.FUTURNEO_BLOCKS);
         this.copy(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS, BlockusItemTags.GLAZED_TERRACOTTA_PILLARS);
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
         this.copy(BlockusBlockTags.WHITE_OAK_LOGS, BlockusItemTags.WHITE_OAK_LOGS);
@@ -511,14 +514,22 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(LEGACY_LAPIS_BLOCK.asItem())
             .addTag(BlockusItemTags.DYED_STONE_BRICKS)
             .addTag(BlockusItemTags.ASPHALT)
+            .addTag(BlockusItemTags.LIT_REDSTONE_LAMPS)
+            .addTag(BlockusItemTags.NEON)
+            .addTag(BlockusItemTags.FUTURNEO_BLOCKS)
             .addTag(BlockusItemTags.COLORED_TILES);
 
-        this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_BOUNCY)
-            .addTag(BlockusItemTags.TIMBER_FRAMES);
         var bouncy = this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_BOUNCY);
         WOODEN_MOSAIC.forEach(block -> bouncy.add(block.block().asItem()));
         MOSSY_PLANKS.forEach(block -> bouncy.add(block.block().asItem()));
         HERRINGBONE_PLANKS.forEach(block -> bouncy.add(block.asItem()));
+        bouncy.add(FRAMED_PAPER_BLOCK.asItem())
+            .add(SALMON_CRATE.asItem())
+            .add(PUFFERFISH_CRATE.asItem())
+            .add(TROPICAL_FISH_CRATE.asItem())
+            .add(COD_CRATE.asItem())
+            .add(BREAD_BOX.asItem())
+            .addTag(BlockusItemTags.TIMBER_FRAMES);
 
         this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING)
             .add(ICE_BRICKS.asItem())
@@ -547,10 +558,12 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(LARGE_RESIN_BRICKS.block().asItem())
             .add(HERRINGBONE_RESIN_BRICKS.asItem())
             .add(RESIN_BRICK_PILLAR.asItem())
-            .add(POLISHED_SCULK.block().asItem())
-            .add(SCULK_BRICKS.block().asItem())
-            .add(CHISELED_SCULK_BRICKS.asItem())
-            .add(SCULK_PILLAR.asItem())
+//            .add(POLISHED_SCULK.block().asItem())
+//            .add(SCULK_BRICKS.block().asItem())
+//            .add(CHISELED_SCULK_BRICKS.asItem())
+//            .add(SCULK_PILLAR.asItem())
+            .add(PAPER_BLOCK.asItem())
+            .add(BURNT_PAPER_BLOCK.asItem())
             .add(SOUL_O_LANTERN.asItem())
             .add(COPPER_JACK_O_LANTERN.asItem())
             .add(REDSTONE_O_LANTERN.asItem())

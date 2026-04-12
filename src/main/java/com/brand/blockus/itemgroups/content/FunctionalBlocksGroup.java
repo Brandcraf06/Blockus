@@ -23,7 +23,7 @@ public class FunctionalBlocksGroup {
 
             entries.accept(REDSTONE_O_LANTERN);
             entries.accept(REDSTONE_SAND);
-            BuildingBlocksGroup.addBssw(entries, REDSTONE_BRICKS);
+            BuildingBlocksGroup.addBSSW(entries, REDSTONE_BRICKS);
 
             entries.accept(AMETHYST_LAMP);
 
