@@ -1588,6 +1588,7 @@
   "entity.blockus.white_oak_boat": "White Oak Boat",
   "entity.blockus.white_oak_chest_boat": "White Oak Boat with Chest",
   "gamerule.blockus.enable_asphalt_sprint": "Enable Asphalt Sprint",
+  "gamerule.category.blockus.blockus": "Blockus",
   "item.blockus.charred_boat": "Charred Boat",
   "item.blockus.charred_chest_boat": "Charred Boat with Chest",
   "item.blockus.raw_bamboo_chest_raft": "Raw Bamboo Raft with Chest",
