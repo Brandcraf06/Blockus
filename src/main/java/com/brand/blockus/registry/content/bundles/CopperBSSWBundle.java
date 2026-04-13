@@ -1,6 +1,6 @@
 package com.brand.blockus.registry.content.bundles;
 
-import com.brand.blockus.blocks.base.OxidizableWallBlock;
+import com.brand.blockus.blocks.base.WeatheringCopperWallBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
@@ -105,7 +105,7 @@ public record CopperBSSWBundle(
                 block,
                 BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_stairs", (settings) -> new WeatheringCopperStairBlock(oxidationLevel, base.defaultBlockState(), settings), base),
                 BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_slab", (settings) -> new WeatheringCopperSlabBlock(oxidationLevel, settings), base),
-                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_wall", (settings) -> new OxidizableWallBlock(oxidationLevel, settings), base),
+                BlockFactory.registerCopy(prefix + BlockFactory.replaceId(type) + "_wall", (settings) -> new WeatheringCopperWallBlock(oxidationLevel, settings), base),
                 blockWaxed,
                 BlockFactory.stairs(blockWaxed),
                 BlockFactory.slab(blockWaxed),
