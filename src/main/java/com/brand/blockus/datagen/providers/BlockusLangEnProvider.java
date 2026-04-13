@@ -40,6 +40,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS, "Legacy Blocks");
         translationBuilder.add("blockitem.blockus.when_stepped_on", "When stepped on:");
         translationBuilder.add("blockitem.blockus.legacy", "Legacy");
+        translationBuilder.add(BlockusGamerules.BLOCKUS_CATEGORY.getDescriptionId().toLanguageKey("gamerule.category"), "Blockus");
         translationBuilder.add(BlockusGamerules.ENABLE_ASPHALT_SPRINT.getDescriptionId(), "Enable Asphalt Sprint");
 
         // Blaze
