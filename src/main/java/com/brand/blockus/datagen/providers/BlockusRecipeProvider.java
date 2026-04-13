@@ -819,10 +819,6 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 polishedBuilder(RecipeCategory.BUILDING_BLOCKS, output, Ingredient.of(input)).unlockedBy(getHasName(input), has(input)).save(exporter);
             }
 
-            public RecipeBuilder createCondensingRecipe(RecipeCategory category, ItemLike output, int count, Ingredient input, String group) {
-                return shaped(category, output, count).define('S', input).group(group).pattern("SS").pattern("SS");
-            }
-
             public void offerShapelessRecipe2(ItemLike output, ItemLike input, int outputCount) {
                 shapeless(RecipeCategory.BUILDING_BLOCKS, output, outputCount).requires(input).unlockedBy(getHasName(input), has(input)).save(exporter);
             }
@@ -908,7 +904,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 createEnclosedRecipe(wall, Ingredient.of(Blocks.STONE_BRICK_WALL), dye).group("dyed_stone_brick_wall").unlockedBy(getHasName(Blocks.STONE_BRICKS), has(Blocks.STONE_BRICKS)).save(exporter, getConversionRecipeName(wall, Blocks.STONE_BRICK_WALL));
                 offerStonecuttingRecipe(stairs, block);
                 offerStonecuttingRecipe(slab, 2, block);
-                offerStonecuttingRecipe(wall, block);
+                offerStonecuttingRecipe(RecipeCategory.DECORATIONS, wall, block);
             }
 
             public void offerDyedShinglesRecipe(ItemLike dye, ItemLike terracotta, ItemLike block, ItemLike stairs, ItemLike slab) {
@@ -927,22 +923,22 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerStonecuttingRecipe(block, concrete);
                 offerStonecuttingRecipe(stairs, concrete, block);
                 offerStonecuttingRecipe(slab, 2, concrete, block);
-                offerStonecuttingRecipe(wall, concrete, block);
+                offerStonecuttingRecipe(RecipeCategory.DECORATIONS, wall, concrete, block);
                 offerStonecuttingRecipe(chiseled, concrete, block);
                 offerStonecuttingRecipe(pillar, concrete, block);
                 offerPolishedStoneRecipe(block, concrete);
             }
 
-            public void offerOreBricksRecipe(BSSWBundle ore_bricks, ItemLike ore_block, ItemLike ore) {
-                offerStonecuttingRecipe(ore_bricks.block(), ore_block);
-                offerStonecuttingRecipe(ore_bricks.stairs(), ore_bricks.block(), ore_block);
-                offerStonecuttingRecipe(ore_bricks.slab(), 2, ore_bricks.block(), ore_block);
-                offerStonecuttingRecipe(ore_bricks.wall(), ore_bricks.block(), ore_block);
-                offerPolishedStoneRecipe(ore_bricks.block(), ore_block);
-                oneToOneConversionRecipe(ore, ore_bricks.block(), ore.toString(), 9);
-                oneToOneConversionRecipe(ore, ore_bricks.stairs(), ore.toString(), 9);
-                oneToOneConversionRecipe(ore, ore_bricks.slab(), ore.toString(), 4);
-                oneToOneConversionRecipe(ore, ore_bricks.wall(), ore.toString(), 9);
+            public void offerOreBricksRecipe(BSSWBundle oreBricks, ItemLike oreBlock, ItemLike ore) {
+                offerStonecuttingRecipe(oreBricks.block(), oreBlock);
+                offerStonecuttingRecipe(oreBricks.stairs(), oreBricks.block(), oreBlock);
+                offerStonecuttingRecipe(oreBricks.slab(), 2, oreBricks.block(), oreBlock);
+                offerStonecuttingRecipe(RecipeCategory.DECORATIONS, oreBricks.wall(), oreBricks.block(), oreBlock);
+                offerPolishedStoneRecipe(oreBricks.block(), oreBlock);
+                oneToOneConversionRecipe(ore, oreBricks.block(), ore.toString(), 9);
+                oneToOneConversionRecipe(ore, oreBricks.stairs(), ore.toString(), 9);
+                oneToOneConversionRecipe(ore, oreBricks.slab(), ore.toString(), 4);
+                oneToOneConversionRecipe(ore, oreBricks.wall(), ore.toString(), 9);
             }
 
             public void offerCopperBricksRecipe() {
@@ -980,9 +976,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 createEnclosedRecipe(slab, Ingredient.of(ASPHALT.slab().black()), dye).group("asphalt_slab").unlockedBy(getHasName(ASPHALT.slab().black()), has(ASPHALT.slab().black())).save(exporter, getConversionRecipeName(slab, ASPHALT.slab().black()));
             }
 
-            public void offerPatternedWoolRecipe(ItemLike output, ItemLike wool, ItemLike output_carpet, ItemLike carpet) {
+            public void offerPatternedWoolRecipe(ItemLike output, ItemLike wool, ItemLike outputCarpet, ItemLike carpet) {
                 offerPolishedStoneRecipe(output, wool);
-                polishedBuilder(RecipeCategory.BUILDING_BLOCKS, output_carpet, Ingredient.of(carpet)).group("patterned_carpet").unlockedBy(getHasName(carpet), has(carpet)).save(exporter, getConversionRecipeName(output_carpet, carpet));
+                polishedBuilder(RecipeCategory.BUILDING_BLOCKS, outputCarpet, Ingredient.of(carpet)).group("patterned_carpet").unlockedBy(getHasName(carpet), has(carpet)).save(exporter, getConversionRecipeName(outputCarpet, carpet));
             }
 
             public void offerGinghamWoolRecipe(ItemLike output, ItemLike wool) {
@@ -993,17 +989,17 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 stairBuilder(output, Ingredient.of(input)).unlockedBy(getHasName(input), has(input)).save(exporter);
             }
 
-            public void offerStainedBeveledGlassRecipe(ItemLike output, ItemLike output_pane, ItemLike input, ItemLike dye) {
+            public void offerStainedBeveledGlassRecipe(ItemLike output, ItemLike outputPane, ItemLike input, ItemLike dye) {
                 polishedBuilder(RecipeCategory.BUILDING_BLOCKS, output, Ingredient.of(input)).group("beveled_glass").unlockedBy(getHasName(input), has(input)).save(exporter);
                 createEnclosedRecipe(output, Ingredient.of(BEVELED_GLASS), dye).group("beveled_glass_2").unlockedBy(getHasName(BEVELED_GLASS), has(BEVELED_GLASS)).save(exporter, getConversionRecipeName(output, BEVELED_GLASS));
-                shaped(RecipeCategory.BUILDING_BLOCKS, output_pane, 16).define('#', output).pattern("###").pattern("###").group("beveled_glass_pane").unlockedBy(getHasName(BEVELED_GLASS_PANE), has(output)).save(exporter);
-                createEnclosedRecipe(output_pane, Ingredient.of(BEVELED_GLASS_PANE), dye).group("beveled_glass_pane_2").unlockedBy(getHasName(BEVELED_GLASS_PANE), has(BEVELED_GLASS_PANE)).save(exporter, getConversionRecipeName(output, BEVELED_GLASS_PANE));
+                shaped(RecipeCategory.BUILDING_BLOCKS, outputPane, 16).define('#', output).pattern("###").pattern("###").group("beveled_glass_pane").unlockedBy(getHasName(BEVELED_GLASS_PANE), has(output)).save(exporter);
+                createEnclosedRecipe(outputPane, Ingredient.of(BEVELED_GLASS_PANE), dye).group("beveled_glass_pane_2").unlockedBy(getHasName(BEVELED_GLASS_PANE), has(BEVELED_GLASS_PANE)).save(exporter, getConversionRecipeName(output, BEVELED_GLASS_PANE));
             }
 
-            public void offerStainedRedstoneLampRecipe(ItemLike output, ItemLike dye, ItemLike output_lit) {
+            public void offerStainedRedstoneLampRecipe(ItemLike output, ItemLike dye, ItemLike outputLit) {
                 shaped(RecipeCategory.BUILDING_BLOCKS, output).define('S', dye).define('#', Blocks.REDSTONE_LAMP).pattern(" S ").pattern("S#S").pattern(" S ").group("redstone_lamps").unlockedBy(getHasName(Blocks.REDSTONE_LAMP), has(Blocks.REDSTONE_LAMP)).save(exporter);
-                shapeless(RecipeCategory.BUILDING_BLOCKS, output_lit).requires(output).requires(Blocks.REDSTONE_TORCH).group("lit_redstone_lamps").unlockedBy(getHasName(output), has(output)).save(exporter);
-                shaped(RecipeCategory.BUILDING_BLOCKS, output_lit).define('S', dye).define('#', LIT_REDSTONE_LAMP).pattern(" S ").pattern("S#S").pattern(" S ").group("lit_redstone_lamps").unlockedBy(getHasName(Blocks.REDSTONE_LAMP), has(Blocks.REDSTONE_LAMP)).save(exporter, getSimpleRecipeName(output) + "_alt");
+                shapeless(RecipeCategory.BUILDING_BLOCKS, outputLit).requires(output).requires(Blocks.REDSTONE_TORCH).group("lit_redstone_lamps").unlockedBy(getHasName(output), has(output)).save(exporter);
+                shaped(RecipeCategory.BUILDING_BLOCKS, outputLit).define('S', dye).define('#', LIT_REDSTONE_LAMP).pattern(" S ").pattern("S#S").pattern(" S ").group("lit_redstone_lamps").unlockedBy(getHasName(Blocks.REDSTONE_LAMP), has(Blocks.REDSTONE_LAMP)).save(exporter, getSimpleRecipeName(output) + "_alt");
             }
 
             public void offerNeonRecipe(ItemLike output, ItemLike dye) {
@@ -1045,13 +1041,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                     offerStonecuttingRecipe(bsswBundle.stairs(), ingredients);
                     offerStonecuttingRecipe(bsswBundle.slab(), 2, ingredients);
                     if (bsswBundle.wall() != null) {
-                        offerStonecuttingRecipe(bsswBundle.wall(), ingredients);
+                        offerStonecuttingRecipe(RecipeCategory.DECORATIONS,bsswBundle.wall(), ingredients);
                     }
                 }
                 offerStonecuttingRecipe(bsswBundle.stairs(), bsswBundle.block());
                 offerStonecuttingRecipe(bsswBundle.slab(), 2, bsswBundle.block());
                 if (bsswBundle.wall() != null) {
-                    offerStonecuttingRecipe(bsswBundle.wall(), bsswBundle.block());
+                    offerStonecuttingRecipe(RecipeCategory.DECORATIONS, bsswBundle.wall(), bsswBundle.block());
                 }
             }
 
@@ -1060,9 +1056,17 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             }
 
             public void offerStonecuttingRecipe(ItemLike output, int count, ItemLike... ingredients) {
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, output, count, ingredients);
+            }
+
+            public void offerStonecuttingRecipe(RecipeCategory category,ItemLike output, ItemLike... ingredients) {
+                offerStonecuttingRecipe(category, output, 1,  ingredients);
+            }
+
+            public void offerStonecuttingRecipe(RecipeCategory category, ItemLike output, int count, ItemLike... ingredients) {
 
                 for (ItemLike itemConvertible : ingredients) {
-                    SingleItemRecipeBuilder var10000 = SingleItemRecipeBuilder.stonecutting(Ingredient.of(itemConvertible), RecipeCategory.BUILDING_BLOCKS, output, count).unlockedBy(getHasName(itemConvertible), has(itemConvertible));
+                    SingleItemRecipeBuilder var10000 = SingleItemRecipeBuilder.stonecutting(Ingredient.of(itemConvertible), category, output, count).unlockedBy(getHasName(itemConvertible), has(itemConvertible));
                     String var10002 = getConversionRecipeName(output, itemConvertible);
                     var10000.save(exporter, var10002 + "_stonecutting");
                 }
