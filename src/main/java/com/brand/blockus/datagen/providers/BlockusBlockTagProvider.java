@@ -592,9 +592,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
                         .add(block);
                 }
             }
-
-            this.getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(copperBundle.allWalls().toArray(new Block[0]));
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(copperBundle.allStairs().toArray(new Block[0]));
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(copperBundle.allSlabs().toArray(new Block[0]));
+            this.getOrCreateTagBuilder(BlockTags.WALLS).add(copperBundle.allWalls().toArray(new Block[0]));
         }
 
         this.getOrCreateTagBuilder(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "bars")))
