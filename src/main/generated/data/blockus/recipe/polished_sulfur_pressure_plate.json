@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "minecraft:polished_sulfur"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "blockus:polished_sulfur_pressure_plate"
+  }
+}

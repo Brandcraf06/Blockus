@@ -340,6 +340,16 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(DEEPSLATE_CIRCULAR_PAVING.asItem())
             .add(STURDY_DEEPSLATE.asItem())
 
+            .add(SULFUR_TILES.block().asItem())
+            .add(HERRINGBONE_SULFUR_BRICKS.asItem())
+            .add(SULFUR_PILLAR.asItem())
+            .add(SULFUR_CIRCULAR_PAVING.asItem())
+
+            .add(CINNABAR_TILES.block().asItem())
+            .add(HERRINGBONE_CINNABAR_BRICKS.asItem())
+            .add(CINNABAR_PILLAR.asItem())
+            .add(CINNABAR_CIRCULAR_PAVING.asItem())
+
             .add(MOSSY_TUFF_BRICKS.block().asItem())
             .add(TUFF_TILES.block().asItem())
             .add(CRACKED_TUFF_BRICKS.asItem())

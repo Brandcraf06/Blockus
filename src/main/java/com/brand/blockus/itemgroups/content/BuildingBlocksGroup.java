@@ -281,6 +281,20 @@ public class BuildingBlocksGroup {
             entries.accept(GOLD_DECORATED_SOUL_SANDSTONE);
             entries.accept(LAPIS_DECORATED_SOUL_SANDSTONE);
 
+            entries.accept(POLISHED_CINNABAR_PRESSURE_PLATE);
+            entries.accept(POLISHED_CINNABAR_BUTTON);
+            addBSSW(entries, CINNABAR_TILES);
+            entries.accept(HERRINGBONE_CINNABAR_BRICKS);
+            entries.accept(CINNABAR_PILLAR);
+            entries.accept(CINNABAR_CIRCULAR_PAVING);
+
+            entries.accept(POLISHED_SULFUR_PRESSURE_PLATE);
+            entries.accept(POLISHED_SULFUR_BUTTON);
+            addBSSW(entries, SULFUR_TILES);
+            entries.accept(HERRINGBONE_SULFUR_BRICKS);
+            entries.accept(SULFUR_PILLAR);
+            entries.accept(SULFUR_CIRCULAR_PAVING);
+
             entries.accept(PRISMARINE_CIRCULAR_PAVING);
             entries.accept(CHISELED_DARK_PRISMARINE);
             entries.accept(DARK_PRISMARINE_PILLAR);

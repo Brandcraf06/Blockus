@@ -162,6 +162,20 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             SCULK_PILLAR,
             POLISHED_SCULK_PRESSURE_PLATE,
 
+            // Sulfur
+            HERRINGBONE_SULFUR_BRICKS,
+            SULFUR_CIRCULAR_PAVING,
+            SULFUR_PILLAR,
+            POLISHED_SULFUR_PRESSURE_PLATE,
+            POLISHED_SULFUR_BUTTON,
+
+            // Cinnabar
+            HERRINGBONE_CINNABAR_BRICKS,
+            CINNABAR_CIRCULAR_PAVING,
+            CINNABAR_PILLAR,
+            POLISHED_CINNABAR_PRESSURE_PLATE,
+            POLISHED_CINNABAR_BUTTON,
+
             // Other
             LEGACY_LOG,
             LEGACY_SAPLING,

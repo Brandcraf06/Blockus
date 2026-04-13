@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sulfur_tiles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:sulfur_tiles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:sulfur_tile_slab_from_sulfur_tiles_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sulfur_tiles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:sulfur_tile_slab_from_sulfur_tiles_stonecutting"
+    ]
+  }
+}

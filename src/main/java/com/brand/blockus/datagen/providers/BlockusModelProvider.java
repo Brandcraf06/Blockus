@@ -182,6 +182,18 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_DRIPSTONE_BRICKS);
         this.createPillar(modelGenerator, BlockusBlocks.DRIPSTONE_PILLAR);
 
+        // Sulfur
+        this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_SULFUR_PRESSURE_PLATE, BlockusBlocks.POLISHED_SULFUR_BUTTON, Blocks.POLISHED_SULFUR);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.SULFUR_CIRCULAR_PAVING);
+        this.createPillar(modelGenerator, BlockusBlocks.SULFUR_PILLAR);
+        modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_SULFUR_BRICKS);
+
+        // Cinnabar
+        this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.POLISHED_CINNABAR_PRESSURE_PLATE, BlockusBlocks.POLISHED_CINNABAR_BUTTON, Blocks.POLISHED_CINNABAR);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.CINNABAR_CIRCULAR_PAVING);
+        this.createPillar(modelGenerator, BlockusBlocks.CINNABAR_PILLAR);
+        modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_CINNABAR_BRICKS);
+
         // Tuff
         modelGenerator.createTrivialCube(BlockusBlocks.CARVED_TUFF_BRICKS);
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_TUFF_BRICKS);

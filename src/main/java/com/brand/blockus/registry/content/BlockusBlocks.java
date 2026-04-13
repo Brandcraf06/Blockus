@@ -77,6 +77,18 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CHISELED_DRIPSTONE = registerCopy("chiseled_dripstone", BlockusBlocks.DRIPSTONE_BRICKS.block());
     public static final Block DRIPSTONE_PILLAR = pillar("dripstone", BlockusBlocks.DRIPSTONE_BRICKS.block());
 
+    // Sulfur
+    public static final BSSWBundle SULFUR_TILES = BSSWBundle.of("sulfur_tiles", Blocks.SULFUR_BRICKS).register();
+    public static final Block HERRINGBONE_SULFUR_BRICKS = registerCopy("herringbone_sulfur_bricks", Blocks.SULFUR_BRICKS);
+    public static final Block SULFUR_CIRCULAR_PAVING = registerCopy("sulfur_circular_paving", OrientableBlockBase::new, Blocks.SULFUR_BRICKS);
+    public static final Block SULFUR_PILLAR = pillar("sulfur", Blocks.SULFUR_BRICKS);
+
+    // Cinnabar
+    public static final BSSWBundle CINNABAR_TILES = BSSWBundle.of("cinnabar_tiles", Blocks.CINNABAR_BRICKS).register();
+    public static final Block HERRINGBONE_CINNABAR_BRICKS = registerCopy("herringbone_cinnabar_bricks", Blocks.CINNABAR_BRICKS);
+    public static final Block CINNABAR_CIRCULAR_PAVING = registerCopy("cinnabar_circular_paving", OrientableBlockBase::new, Blocks.CINNABAR_BRICKS);
+    public static final Block CINNABAR_PILLAR = pillar("cinnabar", Blocks.CINNABAR_BRICKS);
+
     // Tuff
     public static final BSSWBundle MOSSY_TUFF_BRICKS = BSSWBundle.of("mossy_tuff_bricks", Blocks.TUFF_BRICKS).register();
     public static final BSSWBundle TUFF_TILES = BSSWBundle.of("tuff_tiles", Blocks.TUFF_BRICKS).register();
@@ -84,7 +96,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CARVED_TUFF_BRICKS = registerCopy("carved_tuff_bricks", Blocks.TUFF_BRICKS);
     public static final Block HERRINGBONE_TUFF_BRICKS = registerCopy("herringbone_tuff_bricks", Blocks.TUFF_BRICKS);
     public static final Block TUFF_CIRCULAR_PAVING = registerCopy("tuff_circular_paving", OrientableBlockBase::new, Blocks.TUFF_BRICKS);
-    public static final Block TUFF_PILLAR = pillar("tuff", Blocks.POLISHED_TUFF);
+    public static final Block TUFF_PILLAR = pillar("tuff", Blocks.TUFF_BRICKS);
 
     // Deepslate
     public static final BSSWBundle COBBLED_DEEPSLATE_BRICKS = BSSWBundle.of("cobbled_deepslate_bricks", Blocks.COBBLED_DEEPSLATE).register();
@@ -532,6 +544,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block POLISHED_END_STONE_PRESSURE_PLATE = stonePressurePlate(BlockusBlocks.POLISHED_END_STONE.block());
     public static final Block POLISHED_BASALT_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_BASALT);
     public static final Block POLISHED_DEEPSLATE_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_DEEPSLATE);
+    public static final Block POLISHED_SULFUR_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_SULFUR);
+    public static final Block POLISHED_CINNABAR_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_CINNABAR);
     public static final Block POLISHED_TUFF_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_TUFF);
     public static final Block POLISHED_SCULK_PRESSURE_PLATE = stonePressurePlate(BlockusBlocks.POLISHED_SCULK.block());
     public static final Block OBSIDIAN_PRESSURE_PLATE = registerOf("obsidian_pressure_plate", ObsidianPressurePlateBlock::new, pressurePlateButtonProperties(Blocks.OBSIDIAN).forceSolidOn());
@@ -548,6 +562,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block POLISHED_END_STONE_BUTTON = stoneButton(BlockusBlocks.POLISHED_END_STONE.block());
     public static final Block POLISHED_BASALT_BUTTON = stoneButton(Blocks.POLISHED_BASALT);
     public static final Block POLISHED_DEEPSLATE_BUTTON = stoneButton(Blocks.POLISHED_DEEPSLATE);
+    public static final Block POLISHED_SULFUR_BUTTON = stoneButton(Blocks.POLISHED_SULFUR);
+    public static final Block POLISHED_CINNABAR_BUTTON = stoneButton(Blocks.POLISHED_CINNABAR);
     public static final Block POLISHED_TUFF_BUTTON = stoneButton(Blocks.POLISHED_TUFF);
     public static final Block POLISHED_SCULK_BUTTON = stoneButton(BlockusBlocks.POLISHED_SCULK.block());
 

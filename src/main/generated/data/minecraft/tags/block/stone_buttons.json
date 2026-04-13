@@ -6,12 +6,14 @@
     "blockus:limestone_button",
     "blockus:marble_button",
     "blockus:bluestone_button",
+    "blockus:viridite_button",
     "blockus:polished_netherrack_button",
     "blockus:polished_end_stone_button",
     "blockus:polished_basalt_button",
     "blockus:polished_deepslate_button",
+    "blockus:polished_sulfur_button",
+    "blockus:polished_cinnabar_button",
     "blockus:polished_tuff_button",
-    "blockus:polished_sculk_button",
-    "blockus:viridite_button"
+    "blockus:polished_sculk_button"
   ]
 }

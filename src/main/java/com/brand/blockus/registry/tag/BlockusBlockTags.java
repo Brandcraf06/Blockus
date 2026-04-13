@@ -72,6 +72,8 @@ public class BlockusBlockTags {
     public static final TagKey<Block> WOODEN_LATTICES = register("wooden_lattices");
     public static final TagKey<Block> WOODEN_GRATES = register("wooden_grates");
     public static final TagKey<Block> TUFF_BLOCKS = register("tuff_blocks");
+    public static final TagKey<Block> SULFUR_BLOCKS = register("sulfur_blocks");
+    public static final TagKey<Block> CINNABAR_BLOCKS = register("cinnabar_blocks");
     public static final TagKey<Block> VIRIDITE = register("viridite");
     public static final TagKey<Block> WARPED_NETHER_GRASS = register("warped_nether_grass");
     public static final TagKey<Block> WATER_BRICKS = register("water_bricks");

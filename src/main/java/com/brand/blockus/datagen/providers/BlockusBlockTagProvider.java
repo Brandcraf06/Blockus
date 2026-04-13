@@ -492,6 +492,18 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             this.valueLookupBuilder(BlockusBlockTags.WOODEN_GRATES).add(variants.grate());
         }
 
+        this.valueLookupBuilder(BlockusBlockTags.SULFUR_BLOCKS)
+            .add(bsswBundle(SULFUR_TILES))
+            .add(HERRINGBONE_SULFUR_BRICKS)
+            .add(SULFUR_PILLAR)
+            .add(SULFUR_CIRCULAR_PAVING);
+
+        this.valueLookupBuilder(BlockusBlockTags.CINNABAR_BLOCKS)
+            .add(bsswBundle(CINNABAR_TILES))
+            .add(HERRINGBONE_CINNABAR_BRICKS)
+            .add(CINNABAR_PILLAR)
+            .add(CINNABAR_CIRCULAR_PAVING);
+
         this.valueLookupBuilder(BlockusBlockTags.TUFF_BLOCKS)
             .add(bsswBundle(MOSSY_TUFF_BRICKS))
             .add(bsswBundle(TUFF_TILES))
@@ -647,6 +659,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.DEEPSLATE_BLOCKS)
             .addTag(BlockusBlockTags.SCULK_BLOCKS)
             .addTag(BlockusBlockTags.TUFF_BLOCKS)
+            .addTag(BlockusBlockTags.SULFUR_BLOCKS)
+            .addTag(BlockusBlockTags.CINNABAR_BLOCKS)
             .addTag(BlockusBlockTags.DRIPSTONE_BLOCKS)
             .addTag(BlockusBlockTags.CHOCOLATE_BLOCKS)
             .addTag(BlockusBlockTags.ALL_ASPHALT)
@@ -790,13 +804,15 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(LIMESTONE_PRESSURE_PLATE)
             .add(MARBLE_PRESSURE_PLATE)
             .add(BLUESTONE_PRESSURE_PLATE)
+            .add(VIRIDITE_PRESSURE_PLATE)
             .add(POLISHED_NETHERRACK_PRESSURE_PLATE)
             .add(POLISHED_END_STONE_PRESSURE_PLATE)
             .add(POLISHED_BASALT_PRESSURE_PLATE)
             .add(POLISHED_DEEPSLATE_PRESSURE_PLATE)
-            .add(POLISHED_SCULK_PRESSURE_PLATE)
+            .add(POLISHED_SULFUR_PRESSURE_PLATE)
+            .add(POLISHED_CINNABAR_PRESSURE_PLATE)
             .add(POLISHED_TUFF_PRESSURE_PLATE)
-            .add(VIRIDITE_PRESSURE_PLATE);
+            .add(POLISHED_SCULK_PRESSURE_PLATE);
 
         this.valueLookupBuilder(BlockTags.STONE_BUTTONS)
             .add(POLISHED_ANDESITE_BUTTON)
@@ -805,13 +821,15 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(LIMESTONE_BUTTON)
             .add(MARBLE_BUTTON)
             .add(BLUESTONE_BUTTON)
+            .add(VIRIDITE_BUTTON)
             .add(POLISHED_NETHERRACK_BUTTON)
             .add(POLISHED_END_STONE_BUTTON)
             .add(POLISHED_BASALT_BUTTON)
             .add(POLISHED_DEEPSLATE_BUTTON)
+            .add(POLISHED_SULFUR_BUTTON)
+            .add(POLISHED_CINNABAR_BUTTON)
             .add(POLISHED_TUFF_BUTTON)
-            .add(POLISHED_SCULK_BUTTON)
-            .add(VIRIDITE_BUTTON);
+            .add(POLISHED_SCULK_BUTTON);
 
 
         this.valueLookupBuilder(BlockTags.DOORS)

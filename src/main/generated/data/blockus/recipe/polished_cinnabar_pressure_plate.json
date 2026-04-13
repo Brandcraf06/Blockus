@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "minecraft:polished_cinnabar"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "blockus:polished_cinnabar_pressure_plate"
+  }
+}

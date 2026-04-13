@@ -110,6 +110,22 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerStonecuttingRecipe(CHISELED_DRIPSTONE, Blocks.DRIPSTONE_BLOCK, POLISHED_DRIPSTONE.block(), DRIPSTONE_BRICKS.block());
                 offerStonecuttingRecipe(DRIPSTONE_PILLAR, Blocks.DRIPSTONE_BLOCK, POLISHED_DRIPSTONE.block(), DRIPSTONE_BRICKS.block());
 
+                // Sulfur
+                offerBSSWCuttingRecipe(SULFUR_TILES, Blocks.SULFUR, Blocks.POLISHED_SULFUR, Blocks.SULFUR_BRICKS);
+                offerPolishedStoneRecipe(SULFUR_TILES.block(), Blocks.SULFUR_BRICKS);
+                offerStonecuttingRecipe(SULFUR_PILLAR, Blocks.SULFUR, Blocks.POLISHED_SULFUR, Blocks.SULFUR_BRICKS);
+                offerStonecuttingRecipe(HERRINGBONE_SULFUR_BRICKS, Blocks.SULFUR, Blocks.POLISHED_SULFUR, Blocks.SULFUR_BRICKS);
+                offerStonecuttingRecipe(SULFUR_CIRCULAR_PAVING, Blocks.SULFUR, Blocks.POLISHED_SULFUR, Blocks.SULFUR_BRICKS);
+                offerPressurePlateButtonRecipe(POLISHED_SULFUR_PRESSURE_PLATE, POLISHED_SULFUR_BUTTON, Blocks.POLISHED_SULFUR);
+
+                // Cinnabar
+                offerBSSWCuttingRecipe(CINNABAR_TILES, Blocks.CINNABAR, Blocks.POLISHED_CINNABAR, Blocks.CINNABAR_BRICKS);
+                offerPolishedStoneRecipe(CINNABAR_TILES.block(), Blocks.CINNABAR_BRICKS);
+                offerStonecuttingRecipe(CINNABAR_PILLAR, Blocks.CINNABAR, Blocks.POLISHED_CINNABAR, Blocks.CINNABAR_BRICKS);
+                offerStonecuttingRecipe(HERRINGBONE_CINNABAR_BRICKS, Blocks.CINNABAR, Blocks.POLISHED_CINNABAR, Blocks.CINNABAR_BRICKS);
+                offerStonecuttingRecipe(CINNABAR_CIRCULAR_PAVING, Blocks.CINNABAR, Blocks.POLISHED_CINNABAR, Blocks.CINNABAR_BRICKS);
+                offerPressurePlateButtonRecipe(POLISHED_CINNABAR_PRESSURE_PLATE, POLISHED_CINNABAR_BUTTON, Blocks.POLISHED_CINNABAR);
+
                 // Tuff
                 offerBSSWCuttingRecipe(TUFF_TILES, Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
                 offerPolishedStoneRecipe(TUFF_TILES.block(), Blocks.TUFF_BRICKS);

@@ -104,6 +104,8 @@
     "#blockus:deepslate_blocks",
     "#blockus:sculk_blocks",
     "#blockus:tuff_blocks",
+    "#blockus:sulfur_blocks",
+    "#blockus:cinnabar_blocks",
     "#blockus:dripstone_blocks",
     "#blockus:chocolate_blocks",
     "#blockus:all_asphalt",

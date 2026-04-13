@@ -555,6 +555,22 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.CHISELED_DRIPSTONE, "Chiseled Dripstone");
         translationBuilder.add(BlockusBlocks.DRIPSTONE_PILLAR, "Dripstone Pillar");
 
+        // Sulfur
+        addBssw(translationBuilder, BlockusBlocks.SULFUR_TILES, "Sulfur Tiles");
+        translationBuilder.add(BlockusBlocks.SULFUR_PILLAR, "Sulfur Pillar");
+        translationBuilder.add(BlockusBlocks.HERRINGBONE_SULFUR_BRICKS, "Herringbone Sulfur Bricks");
+        translationBuilder.add(BlockusBlocks.SULFUR_CIRCULAR_PAVING, "Sulfur Circular Paving");
+        translationBuilder.add(BlockusBlocks.POLISHED_SULFUR_PRESSURE_PLATE, "Polished Sulfur Pressure Plate");
+        translationBuilder.add(BlockusBlocks.POLISHED_SULFUR_BUTTON, "Polished Sulfur Button");
+
+        // Cinnabar
+        addBssw(translationBuilder, BlockusBlocks.CINNABAR_TILES, "Cinnabar Tiles");
+        translationBuilder.add(BlockusBlocks.CINNABAR_PILLAR, "Cinnabar Pillar");
+        translationBuilder.add(BlockusBlocks.HERRINGBONE_CINNABAR_BRICKS, "Herringbone Cinnabar Bricks");
+        translationBuilder.add(BlockusBlocks.CINNABAR_CIRCULAR_PAVING, "Cinnabar Circular Paving");
+        translationBuilder.add(BlockusBlocks.POLISHED_CINNABAR_PRESSURE_PLATE, "Polished Cinnabar Pressure Plate");
+        translationBuilder.add(BlockusBlocks.POLISHED_CINNABAR_BUTTON, "Polished Cinnabar Button");
+
         // Tuff
         addBssw(translationBuilder, BlockusBlocks.TUFF_TILES, "Tuff Tiles");
         translationBuilder.add(BlockusBlocks.CRACKED_TUFF_BRICKS, "Cracked Tuff Bricks");

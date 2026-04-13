@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:cinnabar_tiles",
+  "result": {
+    "id": "blockus:cinnabar_tile_stairs"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cinnabar_tiles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:cinnabar_tiles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:cinnabar_tile_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cinnabar_tiles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:cinnabar_tile_slab"
+    ]
+  }
+}
