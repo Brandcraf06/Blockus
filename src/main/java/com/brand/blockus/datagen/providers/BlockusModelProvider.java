@@ -872,8 +872,8 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void createBeveledGlassPane(BlockModelGenerators modelGenerator, Block glass, Block glassPane) {
-        modelGenerator.createTrivialCube(glass);
-        TextureMapping mapping = TextureMapping.pane(glass, BlockusBlocks.BEVELED_GLASS_PANE);
+        modelGenerator.createTrivialBlock(glass, TexturedModel.CUBE.updateTexture(TextureMapping::forceAllTranslucent));
+        TextureMapping mapping = TextureMapping.pane(glass, BlockusBlocks.BEVELED_GLASS_PANE).forceAllTranslucent();
         MultiVariant post = plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(glassPane, mapping, modelGenerator.modelOutput));
         MultiVariant side = plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(glassPane, mapping, modelGenerator.modelOutput));
         MultiVariant sideAlt = plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(glassPane, mapping, modelGenerator.modelOutput));

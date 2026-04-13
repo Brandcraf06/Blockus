@@ -622,9 +622,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
                         .add(block);
                 }
             }
-
-            this.valueLookupBuilder(BlockTags.WALLS)
-                .addAll(bundle.allWalls());
+            this.valueLookupBuilder(BlockTags.STAIRS).addAll(bundle.allStairs());
+            this.valueLookupBuilder(BlockTags.SLABS).addAll(bundle.allSlabs());
+            this.valueLookupBuilder(BlockTags.WALLS).addAll(bundle.allWalls());
         }
 
         // Vanilla Block Tags

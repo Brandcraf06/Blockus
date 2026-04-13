@@ -74,6 +74,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                     for (Map.Entry<DyeColor, ConcreteBundle.ConcreteVariants> entry : bundle.colorMap().entrySet()) {
                         ConcreteBundle.ConcreteVariants variants = entry.getValue();
                         Block base = BlockMaps.CONCRETE_MAP.get(entry.getKey());
+                        offerStairsRecipe(variants.stairs(), variants.block());
+                        slab(RecipeCategory.BUILDING_BLOCKS, variants.slab(), variants.block());
+                        wall(RecipeCategory.DECORATIONS, variants.wall(), variants.block());
                         offerStonecuttingRecipe(variants.block(), base);
                         offerStonecuttingRecipe(variants.stairs(), base, variants.block());
                         offerStonecuttingRecipe(variants.slab(), 2, base, variants.block());
