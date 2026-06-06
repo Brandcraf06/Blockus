@@ -1,2 +1,1 @@
-* Fixed concrete brick stairs/slabs/wall missing crafting recipes
-* Updated zh translations by SolidBlock
+* Fixed Colored Tiles don't cull [#374](https://github.com/Brandcraf06/Blockus/issues/374)
