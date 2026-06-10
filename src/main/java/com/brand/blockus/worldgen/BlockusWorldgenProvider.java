@@ -20,6 +20,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.PlaceOnGroundDecorator;
@@ -69,6 +70,7 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
     }
 
     public static void bootstrapConfiguredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+        BlockStateProvider belowTrunkProvider = TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(context.lookup(Registries.BIOME));
         FeatureUtils.register(context, LIMESTONE, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.LIMESTONE.block().defaultBlockState(), 64));
         FeatureUtils.register(context, MARBLE, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.MARBLE.block().defaultBlockState(), 64));
         FeatureUtils.register(context, BLUESTONE, Feature.ORE, new OreConfiguration(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), BlockusBlocks.BLUESTONE.block().defaultBlockState(), 64));
@@ -77,11 +79,11 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
 
         PlaceOnGroundDecorator placeOnGroundTreeDecorator = new PlaceOnGroundDecorator(96, 4, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 3)));
         PlaceOnGroundDecorator placeOnGroundTreeDecorator2 = new PlaceOnGroundDecorator(150, 2, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 4)));
-        FeatureUtils.register(context, WHITE_OAK, Feature.TREE, createWhiteOak().build());
-        FeatureUtils.register(context, WHITE_OAK_LEAF_LITTER, Feature.TREE, createWhiteOak().decorators(ImmutableList.of(placeOnGroundTreeDecorator, placeOnGroundTreeDecorator2)).build());
+        FeatureUtils.register(context, WHITE_OAK, Feature.TREE, createWhiteOak(belowTrunkProvider).build());
+        FeatureUtils.register(context, WHITE_OAK_LEAF_LITTER, Feature.TREE, createWhiteOak(belowTrunkProvider).decorators(ImmutableList.of(placeOnGroundTreeDecorator, placeOnGroundTreeDecorator2)).build());
         FeatureUtils.register(context, FALLEN_WHITE_OAK, Feature.FALLEN_TREE, fallen(BlockusBlocks.WHITE_OAK_LOG, 4, 9).build());
 
-        FeatureUtils.register(context, LEGACY_OAK, Feature.TREE, createLegacyOak().build());
+        FeatureUtils.register(context, LEGACY_OAK, Feature.TREE, createLegacyOak(belowTrunkProvider).build());
         FeatureUtils.register(context, RAINBOW_ROSE, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(BlockusBlocks.RAINBOW_ROSE)));
     }
 

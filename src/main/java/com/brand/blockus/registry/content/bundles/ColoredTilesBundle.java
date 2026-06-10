@@ -2,6 +2,7 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.blocks.base.ColoredTilesBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
+import com.brand.blockus.utils.references.BlockusIds;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -112,7 +113,7 @@ public record ColoredTilesBundle(
     }
 
     public static Block registerCopy(String id, Function<BlockBehaviour.Properties, Block> factory, Block base) {
-        return BlockFactory.copy(base).factory(factory).registerColoredTiles(id);
+        return BlockFactory.copy(base).factory(factory).registerColoredTiles(BlockusIds.create(id));
     }
 
     public static String getColor(Block block) {

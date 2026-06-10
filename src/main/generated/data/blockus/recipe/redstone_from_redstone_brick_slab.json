@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "group": "minecraft:redstone",
   "ingredients": [
     "blockus:redstone_brick_slab"

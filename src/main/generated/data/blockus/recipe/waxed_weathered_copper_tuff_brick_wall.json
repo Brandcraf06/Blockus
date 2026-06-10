@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "waxed_weathered_copper_tuff_bricks_wall",
   "key": {
     "#": "blockus:waxed_weathered_copper_tuff_bricks"

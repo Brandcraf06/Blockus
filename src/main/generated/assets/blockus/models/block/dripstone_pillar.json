@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "blockus:block/dripstone_pillar_top",
-    "side": "blockus:block/dripstone_pillar"
+    "side": "blockus:block/dripstone_pillar_side"
   }
 }

@@ -5,11 +5,11 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.BSSWBundle;
 import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
 import com.brand.blockus.registry.content.bundles.DyedBSSWBundle;
+import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
 import com.brand.blockus.utils.helper.BlockOrder;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ColorCollection;
 
 import java.util.Collection;
 
@@ -20,12 +20,12 @@ public class ColoredGroups {
 
         CreativeModeTabEvents.modifyOutputEvent(BlockusItemGroups.BLOCKUS_COLORED_BLOCKS).register((entries) -> {
 
-            for (ColorCollection<Block> collection : BlockusBlocks.ASPHALT.all()) {
+            for (ColorBlockItemCollection collection : BlockusBlocks.ASPHALT.all()) {
                 addDyed(entries, collection);
             }
             entries.accept(BlockusBlocks.RAINBOW_ASPHALT);
 
-            for (ColorCollection<Block> collection : BlockusBlocks.PATTERNED_WOOL.all()) {
+            for (ColorBlockItemCollection collection : BlockusBlocks.PATTERNED_WOOL.all()) {
                 addDyed(entries, collection);
             }
 
@@ -36,7 +36,7 @@ public class ColoredGroups {
 
             addDyedBSSW(entries, BlockusBlocks.DYED_STONE_BRICKS);
 
-            for (ColorCollection<Block> collection : BlockusBlocks.CONCRETE_BRICKS.all()) {
+            for (ColorBlockItemCollection collection : BlockusBlocks.CONCRETE_BRICKS.all()) {
                 addDyed(entries, collection);
             }
 
@@ -90,12 +90,12 @@ public class ColoredGroups {
         }
     }
 
-    public static void addDyed(FabricCreativeModeTabOutput entries, ColorCollection<Block> block) {
-        BlockOrder.COLOR.forEach(color -> entries.accept(block.pick(color)));
+    public static void addDyed(FabricCreativeModeTabOutput entries, ColorBlockItemCollection block) {
+        BlockOrder.COLOR.forEach(color -> entries.accept(block.items().pick(color)));
     }
 
     public static void addDyedBSSW(FabricCreativeModeTabOutput entries, DyedBSSWBundle block) {
-        for (ColorCollection<Block> collection : block.all()) {
+        for (ColorBlockItemCollection collection : block.all()) {
             addDyed(entries, collection);
         }
     }

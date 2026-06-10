@@ -3,6 +3,8 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.utils.BlockChecker;
 import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.BlockFactory;
+import com.brand.blockus.utils.references.BlockusIds;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.world.level.block.AmethystBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PoweredBlock;
@@ -60,6 +62,17 @@ public record BSSWBundle(
         return new Builder(type, new BlockBuilder(BlockFactory.create()).properties(properties -> properties.strength(hardness, resistance).mapColor(color)));
     }
 
+    public BlockItemId[] allIds() {
+        List<BlockItemId> list = new ArrayList<>();
+        list.add(BlockBuilder.getId(block));
+        list.add(BlockBuilder.getId(stairs));
+        list.add(BlockBuilder.getId(slab));
+        if (wall != null) {
+            list.add(BlockBuilder.getId(wall));
+        }
+        return list.toArray(new BlockItemId[0]);
+    }
+
     public Block[] all() {
         List<Block> list = new ArrayList<>();
         list.add(block);
@@ -69,6 +82,14 @@ public record BSSWBundle(
             list.add(wall);
         }
         return list.toArray(new Block[0]);
+    }
+
+    public BlockItemId[] idsNoWall() {
+        List<BlockItemId> list = new ArrayList<>();
+        list.add(BlockBuilder.getId(block));
+        list.add(BlockBuilder.getId(stairs));
+        list.add(BlockBuilder.getId(slab));
+        return list.toArray(new BlockItemId[0]);
     }
 
     public List<Block> noWall() {
@@ -99,7 +120,7 @@ public record BSSWBundle(
                 blockBuilder.factory(Block::new);
             }
             Block base = blockBuilder.getBase();
-            Block block = blockBuilder.register(type);
+            Block block = blockBuilder.register(BlockusIds.create(type));
             BSSWBundle bundle = new BSSWBundle(type,
                 base,
                 block,

@@ -8,11 +8,18 @@ import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneSlabBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneStairsBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneWallBlock;
+import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.utils.BlockChecker;
+import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
+import com.brand.blockus.utils.blocks.CopperBlockItemCollection;
+import com.brand.blockus.utils.references.BlockusIds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -21,6 +28,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -49,15 +57,15 @@ public class BlockFactory {
     }
 
     public static Block registerNoItem(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
-        return of(factory, properties).noItem().register(id);
+        return of(factory, properties).noItem().register(BlockusIds.create(id));
     }
 
     public static Block registerOf(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
-        return of(factory, properties).register(id);
+        return of(factory, properties).register(BlockusIds.create(id));
     }
 
     public static Block registerOf(String id, BlockBehaviour.Properties properties) {
-        return of(properties).register(id);
+        return of(properties).register(BlockusIds.create(id));
     }
 
     public static BlockBuilder copy(Block block) {
@@ -69,23 +77,23 @@ public class BlockFactory {
     }
 
     public static Block registerCopy(String id, Block base, Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties) {
-        return copy(base, properties).register(id);
+        return copy(base, properties).register(BlockusIds.create(id));
     }
 
     public static Block registerCopy(String id, Function<BlockBehaviour.Properties, Block> factory, Block base, Function<BlockBehaviour.Properties, BlockBehaviour.Properties> properties) {
-        return copy(base, properties).factory(factory).register(id);
+        return copy(base, properties).factory(factory).register(BlockusIds.create(id));
     }
 
     public static Block registerCopy(String id, Block base) {
-        return copy(base).register(id);
+        return copy(base).register(BlockusIds.create(id));
     }
 
     public static Block registerCopy(String id, Function<BlockBehaviour.Properties, Block> factory, Block base) {
-        return copy(base).factory(factory).register(id);
+        return copy(base).factory(factory).register(BlockusIds.create(id));
     }
 
     public static Block pistonProof(String id, Block base) {
-        return copy(base, properties -> properties.pushReaction(PushReaction.BLOCK)).register(id);
+        return copy(base, properties -> properties.pushReaction(PushReaction.BLOCK)).register(BlockusIds.create(id));
     }
 
     // Pillar
@@ -93,12 +101,12 @@ public class BlockFactory {
         return copy(base).factory(RotatedPillarBlock::new);
     }
 
-    public static Block pillar(String baseId, Block base) {
-        return basePillar(base).register(replaceId(baseId) + "_pillar");
+    public static Block pillar(String id, Block base) {
+        return basePillar(base).register(BlockusIds.create(replaceId(id) + "_pillar"));
     }
 
     public static Block pillar2(String id, Block base) {
-        return basePillar(base).register(id);
+        return basePillar(base).register(BlockusIds.create(id));
     }
 
     public static Block pillar(Block base) {
@@ -106,14 +114,14 @@ public class BlockFactory {
     }
 
     // Slab
-    public static Block slab(String baseId, Block base) {
-        String slabId = replaceId(baseId) + "_slab";
-        if (BlockChecker.isAmethyst(baseId)) {
-            return copy(base).factory(AmethystSlabBlock::new).register(slabId);
-        } else if (BlockChecker.isRedstone(baseId)) {
-            return copy(base).factory(RedstoneSlabBlock::new).register(slabId);
+    public static Block slab(String id, Block base) {
+        String slabId = replaceId(id) + "_slab";
+        if (BlockChecker.isAmethyst(id)) {
+            return copy(base).factory(AmethystSlabBlock::new).register(BlockusIds.create(slabId));
+        } else if (BlockChecker.isRedstone(id)) {
+            return copy(base).factory(RedstoneSlabBlock::new).register(BlockusIds.create(slabId));
         } else {
-            return copy(base).factory(SlabBlock::new).register(slabId);
+            return copy(base).factory(SlabBlock::new).register(BlockusIds.create(slabId));
         }
     }
 
@@ -122,14 +130,14 @@ public class BlockFactory {
     }
 
     // Stairs
-    public static Block stairs(String baseId, Block base) {
-        String stairsId = replaceId(baseId) + "_stairs";
-        if (BlockChecker.isAmethyst(baseId)) {
-            return copy(base).factory(properties -> new AmethystStairsBlock(base.defaultBlockState(), properties)).register(stairsId);
-        } else if (BlockChecker.isRedstone(baseId)) {
-            return copy(base).factory(properties -> new RedstoneStairsBlock(base.defaultBlockState(), properties)).register(stairsId);
+    public static Block stairs(String id, Block base) {
+        String stairsId = replaceId(id) + "_stairs";
+        if (BlockChecker.isAmethyst(id)) {
+            return copy(base).factory(properties -> new AmethystStairsBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(stairsId));
+        } else if (BlockChecker.isRedstone(id)) {
+            return copy(base).factory(properties -> new RedstoneStairsBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(stairsId));
         } else {
-            return copy(base).factory(properties -> new StairBlock(base.defaultBlockState(), properties)).register(stairsId);
+            return copy(base).factory(properties -> new StairBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(stairsId));
         }
     }
 
@@ -138,14 +146,14 @@ public class BlockFactory {
     }
 
     // Wall
-    public static Block wall(String baseId, Block base) {
-        String wallId = replaceId(baseId) + "_wall";
-        if (BlockChecker.isAmethyst(baseId)) {
-            return copy(base).factory(AmethystWallBlock::new).register(wallId);
-        } else if (BlockChecker.isRedstone(baseId)) {
-            return copy(base).factory(RedstoneWallBlock::new).register(wallId);
+    public static Block wall(String id, Block base) {
+        String wallId = replaceId(id) + "_wall";
+        if (BlockChecker.isAmethyst(id)) {
+            return copy(base).factory(AmethystWallBlock::new).register(BlockusIds.create(wallId));
+        } else if (BlockChecker.isRedstone(id)) {
+            return copy(base).factory(RedstoneWallBlock::new).register(BlockusIds.create(wallId));
         } else {
-            return copy(base).factory(WallBlock::new).register(wallId);
+            return copy(base).factory(WallBlock::new).register(BlockusIds.create(wallId));
         }
     }
 
@@ -154,7 +162,7 @@ public class BlockFactory {
     }
 
     public static Block hedge(String id, Block base) {
-        return copy(base).factory(SmallHedgeBlock::new).register(id);
+        return copy(base).factory(SmallHedgeBlock::new).register(BlockusIds.create(id));
     }
 
     // Pressure Plate & Button
@@ -162,8 +170,8 @@ public class BlockFactory {
         return create().mapColor(base.defaultMapColor()).strength(0.5f).instrument(base.defaultBlockState().instrument()).noCollision().pushReaction(PushReaction.DESTROY);
     }
 
-    public static Block pressurePlate(String baseId, Block base, BlockSetType blockSetType) {
-        return of(pressurePlateButtonProperties(base).forceSolidOn()).factory(properties -> new PressurePlateBlock(blockSetType, properties)).register(replaceId(baseId) + "_pressure_plate");
+    public static Block pressurePlate(String id, Block base, BlockSetType blockSetType) {
+        return of(pressurePlateButtonProperties(base).forceSolidOn()).factory(properties -> new PressurePlateBlock(blockSetType, properties)).register(BlockusIds.create(replaceId(id) + "_pressure_plate"));
     }
 
     public static Block pressurePlate(Block base, BlockSetType blockSetType) {
@@ -174,8 +182,8 @@ public class BlockFactory {
         return pressurePlate(base, BlockSetType.STONE);
     }
 
-    public static Block button(String baseId, Block base, BlockSetType blockSetType, int pressTicks) {
-        return of(pressurePlateButtonProperties(base)).factory(properties -> new ButtonBlock(blockSetType, pressTicks, properties)).register(replaceId(baseId) + "_button");
+    public static Block button(String id, Block base, BlockSetType blockSetType, int pressTicks) {
+        return of(pressurePlateButtonProperties(base)).factory(properties -> new ButtonBlock(blockSetType, pressTicks, properties)).register(BlockusIds.create(replaceId(id) + "_button"));
     }
 
     public static Block button(Block base, BlockSetType blockSetType, int pressTicks) {
@@ -192,15 +200,15 @@ public class BlockFactory {
     }
 
     public static Block pottedPlant(String id, Block content) {
-        return of(create().instrument(NoteBlockInstrument.BASEDRUM).instabreak().pushReaction(PushReaction.DESTROY).noOcclusion()).factory(properties -> new FlowerPotBlock(content, properties)).noItem().register(id);
+        return of(create().instrument(NoteBlockInstrument.BASEDRUM).instabreak().pushReaction(PushReaction.DESTROY).noOcclusion()).factory(properties -> new FlowerPotBlock(content, properties)).noItem().register(BlockusIds.create(id));
     }
 
     public static Block largePottedPlant(String id, Block content) {
-        return of(largeFlowerPotProperties()).factory(properties -> new LargeFlowerPotBlock(content, properties)).noItem().register(id);
+        return of(largeFlowerPotProperties()).factory(properties -> new LargeFlowerPotBlock(content, properties)).noItem().register(BlockusIds.create(id));
     }
 
     public static Block largeFlowerPot(String id) {
-        return of(largeFlowerPotProperties()).factory(properties -> new LargeFlowerPotBlock(Blocks.AIR, properties)).register(id);
+        return of(largeFlowerPotProperties()).factory(properties -> new LargeFlowerPotBlock(Blocks.AIR, properties)).register(BlockusIds.create(id));
     }
 
     // Door & Trapdoor
@@ -209,24 +217,24 @@ public class BlockFactory {
     }
 
     public static Block woodenDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
-        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new DoorBlock(blockSetType, properties)).register(id);
+        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new DoorBlock(blockSetType, properties)).register(BlockusIds.create(id));
     }
 
     public static Block stoneDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
-        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()).factory(properties -> new DoorBlock(blockSetType, properties)).register(id);
+        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()).factory(properties -> new DoorBlock(blockSetType, properties)).register(BlockusIds.create(id));
     }
 
     public static Block woodenTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
-        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).register(id);
+        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).register(BlockusIds.create(id));
     }
 
     public static Block stoneTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
-        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).register(id);
+        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).register(BlockusIds.create(id));
     }
 
     // Light
     public static Block lampBlock(String id, float hardness, float resistance, SoundType sound, int luminance, MapColor color) {
-        return of(create().mapColor(color).strength(hardness, resistance).sound(sound).lightLevel((state) -> luminance)).register(id);
+        return of(create().mapColor(color).strength(hardness, resistance).sound(sound).lightLevel((state) -> luminance)).register(BlockusIds.create(id));
     }
 
     public static Block lampBlock(String id, Block base) {
@@ -234,7 +242,7 @@ public class BlockFactory {
     }
 
     public static BlockBehaviour.Properties neonProperties() {
-        return create().lightLevel((state) -> 2).sound(SoundType.GLASS).strength(0.5f, 0.5f).emissiveRendering(Blocks::always).isValidSpawn(Blocks::never);
+        return create().lightLevel((state) -> 2).sound(SoundType.GLASS).strength(0.5f, 0.5f).emissiveRendering((var0) -> true).isValidSpawn(Blocks::never);
     }
 
     public static BlockBehaviour.Properties futurneoblockProperties() {
@@ -247,7 +255,7 @@ public class BlockFactory {
 
     // Dyed Blocks
     public static Block dyedBlock(String id, DyeColor color, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, Block base) {
-        return copy(base).factory(properties -> factory.apply(color, properties)).register(id);
+        return copy(base).factory(properties -> factory.apply(color, properties)).register(BlockusIds.create(id));
     }
 
     public static Block dyedBlock(String id, DyeColor color, BlockBehaviour.Properties properties) {
@@ -258,30 +266,31 @@ public class BlockFactory {
         return color -> BlockFactory.createCopy(block.pick(color));
     }
 
-    public static <T extends Block> ColorCollection<Block> dyedBlocksWithFixedId(String start, String end, Function<DyeColor, BlockBehaviour.Properties> properties) {
-        return ColorCollection.make((color) -> registerOf(start + color.getName() + end, Block::new, properties.apply(color)));
+    public static <WaxedBlock extends Block, WeatheringBlock extends Block & WeatheringCopper, Id> CopperBlockItemCollection registerCopperBlocks(WeatheringCopperCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, BiFunction<WeatheringCopper.WeatherState, BlockBehaviour.Properties, WaxedBlock> waxedBlockFactory, final BiFunction<WeatheringCopper.WeatherState, BlockBehaviour.Properties, WeatheringBlock> weatheringFactory, Function<WeatheringCopper.WeatherState, BlockBehaviour.Properties> properties) {
+        WeatheringCopperCollection<Block> blocks = WeatheringCopperCollection.registerBlocks(ids, register, waxedBlockFactory, weatheringFactory, properties);
+        WeatheringCopperCollection<Item> items = WeatheringCopperCollection.registerItems(ids, blocks, (id, block) -> BlockusItems.registerBlockItem((BlockItemId) id, block));
+
+        return new CopperBlockItemCollection(blocks, items);
     }
 
-    public static ColorCollection<Block> chiseledConcrete(ColorCollection<Block> base) {
-        return dyedBlocksWithFixedId("chiseled_", "_concrete", color -> createCopy(base.pick(color)));
+    public static <B extends Block, Id> ColorBlockItemCollection registerDyedBlocks(ColorCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, BiFunction<DyeColor, BlockBehaviour.Properties, B> factory, Function<DyeColor, BlockBehaviour.Properties> properties) {
+        ColorCollection<Block> blocks = ColorCollection.registerBlocks(ids, register, factory, properties);
+        ColorCollection<Item> items = ColorCollection.registerBlockItems(ids, blocks, (id, block, var2) -> BlockusItems.registerBlockItem((BlockItemId) id, block));
+
+        return new ColorBlockItemCollection(blocks, items);
     }
 
-    public static ColorCollection<Block> dyedBlocks(String id, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, Function<DyeColor, BlockBehaviour.Properties> properties) {
-        return ColorCollection.registerBlocks(id, BlockFactory::registerOf, factory, properties);
+    public static <Id> ColorBlockItemCollection registerDyedBlocks(ColorCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, ColorCollection<Block> base) {
+        return registerDyedBlocks(ids, register, (var0, p) -> new Block(p), copyDyedBlocks(base));
     }
 
-    public static ColorCollection<Block> dyedBlocks(String id, ColorCollection<Block> base) {
-        return dyedBlocks(id, (var0, p) -> new Block(p), copyDyedBlocks(base));
+    public static <Id> ColorBlockItemCollection registerDyedBlocks(ColorCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, Function<DyeColor, BlockBehaviour.Properties> properties) {
+        return registerDyedBlocks(ids, register, (var0, p) -> new Block(p), properties);
     }
 
-    public static ColorCollection<Block> dyedBlocks(String id, Function<DyeColor, BlockBehaviour.Properties> properties) {
-        return dyedBlocks(id, (var0, p) -> new Block(p), properties);
+    public static <Id> ColorBlockItemCollection registerDyedBlocks(ColorCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, ColorCollection<Block> base) {
+        return registerDyedBlocks(ids, register, factory, color -> createCopy(base.pick(color)));
     }
-
-    public static ColorCollection<Block> dyedBlocks(String id, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, ColorCollection<Block> base) {
-        return dyedBlocks(id, factory, color -> createCopy(base.pick(color)));
-    }
-
 
     // Other
     public static Block woodenPane(String id) {
@@ -302,24 +311,16 @@ public class BlockFactory {
 
     // Register
     public static Block registerNetherStarBlock(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
-        return new BlockBuilder(factory, properties).registerNetherStarBlock(id);
+        return new BlockBuilder(factory, properties).registerNetherStarBlock(BlockusIds.create(id));
     }
 
     public static Block registerLegacy(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties, String version) {
         BlockBuilder builder = (factory == null) ? new BlockBuilder(properties) : new BlockBuilder(factory, properties);
-        return builder.registerLegacy(id, version);
+        return builder.registerLegacy(BlockusIds.create(id), version);
     }
 
     public static Block registerLegacy(String id, BlockBehaviour.Properties properties, String version) {
         return registerLegacy(id, null, properties, version);
-    }
-
-    public static boolean always(BlockState state, BlockGetter world, BlockPos pos) {
-        return true;
-    }
-
-    public static Boolean always(BlockState state, BlockGetter world, BlockPos pos, EntityType<?> type) {
-        return true;
     }
 
     public static boolean never(BlockState state, BlockGetter world, BlockPos pos) {
@@ -331,6 +332,6 @@ public class BlockFactory {
     }
 
     public static Boolean canSpawnOnLeaves(BlockState state, BlockGetter world, BlockPos pos, EntityType<?> type) {
-        return type == EntityType.OCELOT || type == EntityType.PARROT;
+        return type == EntityTypes.OCELOT || type == EntityTypes.PARROT;
     }
 }

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "group": "coal",
   "ingredients": [
     "blockus:legacy_coal_block"

@@ -72,31 +72,31 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         for (DyedBSSWBundle bundle : DyedBSSWBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                this.createBlockStairsAndSlab(modelGenerator, bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
+                this.createBlockStairsAndSlab(modelGenerator, bundle.block().blocks().pick(color), bundle.stairs().blocks().pick(color), bundle.slab().blocks().pick(color));
                 if (bundle.wall() != null) {
-                    this.createWall(modelGenerator, bundle.wall().pick(color), bundle.block().pick(color));
+                    this.createWall(modelGenerator, bundle.wall().blocks().pick(color), bundle.block().blocks().pick(color));
                 }
             }
         }
 
         for (ConcreteBundle bundle : ConcreteBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                this.createBlockStairsSlabAndWall(modelGenerator, bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color), bundle.wall().pick(color));
-                modelGenerator.createTrivialCube(bundle.chiseled().pick(color));
-                this.createPillar(modelGenerator, bundle.pillar().pick(color));
+                this.createBlockStairsSlabAndWall(modelGenerator, bundle.block().blocks().pick(color), bundle.stairs().blocks().pick(color), bundle.slab().blocks().pick(color), bundle.wall().blocks().pick(color));
+                modelGenerator.createTrivialCube(bundle.chiseled().blocks().pick(color));
+                this.createPillar(modelGenerator, bundle.pillar().blocks().pick(color));
             }
         }
 
         for (AsphaltBundle bundle : AsphaltBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                this.createBlockStairsAndSlab(modelGenerator, bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
+                this.createBlockStairsAndSlab(modelGenerator, bundle.block().blocks().pick(color), bundle.stairs().blocks().pick(color), bundle.slab().blocks().pick(color));
             }
         }
 
         for (WoolBundle bundle : WoolBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                this.createBlockStairsAndSlab(modelGenerator, bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
-                this.createCarpet(modelGenerator, bundle.block().pick(color), bundle.carpet().pick(color));
+                this.createBlockStairsAndSlab(modelGenerator, bundle.block().blocks().pick(color), bundle.stairs().blocks().pick(color), bundle.slab().blocks().pick(color));
+                this.createCarpet(modelGenerator, bundle.block().blocks().pick(color), bundle.carpet().blocks().pick(color));
             }
         }
 
@@ -366,7 +366,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Purpur Blocks
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_PURPUR);
-        modelGenerator.createTrivialBlock(BlockusBlocks.PURPUR_DECORATED_END_STONE, TexturedModel.COLUMN_ALT);
+        this.createCubeColumn(modelGenerator, BlockusBlocks.PURPUR_DECORATED_END_STONE, BlockusBlocks.PURPUR_DECORATED_END_STONE);
         this.createLinesBlock(modelGenerator, BlockusBlocks.PURPUR_LINES);
         modelGenerator.createTrivialCube(BlockusBlocks.PURPUR_SQUARES);
 
@@ -391,9 +391,9 @@ public class BlockusModelProvider extends FabricModelProvider {
         createFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.WHITE_OAK_SAPLING, BlockusBlocks.POTTED_WHITE_OAK_SAPLING, PlantType.NOT_TINTED);
 
         // Hanging Signs
-        modelGenerator.createHangingSign(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK.ceilingHangingSign(), BlockusBlocks.WHITE_OAK.wallHangingSign());
-        modelGenerator.createHangingSign(BlockusBlocks.RAW_BAMBOO.planks(), BlockusBlocks.RAW_BAMBOO.ceilingHangingSign(), BlockusBlocks.RAW_BAMBOO.wallHangingSign());
-        modelGenerator.createHangingSign(BlockusBlocks.CHARRED.planks(), BlockusBlocks.CHARRED.ceilingHangingSign(), BlockusBlocks.CHARRED.wallHangingSign());
+        createHangingSign(modelGenerator, BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK.ceilingHangingSign(), BlockusBlocks.WHITE_OAK.wallHangingSign());
+        createHangingSign(modelGenerator, BlockusBlocks.RAW_BAMBOO.planks(), BlockusBlocks.RAW_BAMBOO.ceilingHangingSign(), BlockusBlocks.RAW_BAMBOO.wallHangingSign());
+        createHangingSign(modelGenerator, BlockusBlocks.CHARRED.planks(), BlockusBlocks.CHARRED.ceilingHangingSign(), BlockusBlocks.CHARRED.wallHangingSign());
 
         // Herringbone Planks
         for (Block block : BlockusBlocks.HERRINGBONE_PLANKS.bundle().values()) {
@@ -459,16 +459,14 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Redstone Lamps
         this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.LIT_REDSTONE_LAMP);
         this.createRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.LIT_RAINBOW_LAMP);
-        ColorCollection.zipApply((block, lit) -> this.createRedstoneLamp(modelGenerator, block, lit),
-            BlockusBlocks.DYED_REDSTONE_LAMP, BlockusBlocks.DYED_LIT_REDSTONE_LAMP
-        );
+        ColorCollection.zipApply(BlockusBlocks.DYED_REDSTONE_LAMP.blocks(), BlockusBlocks.DYED_LIT_REDSTONE_LAMP.blocks(), (block, lit) -> this.createRedstoneLamp(modelGenerator, block, lit));
 
         // Neon Blocks
-        BlockusBlocks.NEON.forEach((block) -> this.createNeonBlock(modelGenerator, block));
+        BlockusBlocks.NEON.blocks().forEach((block) -> this.createNeonBlock(modelGenerator, block));
         this.createNeonBlock(modelGenerator, BlockusBlocks.RAINBOW_NEON);
 
         // Futurneo Blocks
-        BlockusBlocks.FUTURNEO_BLOCK.forEach(modelGenerator::createTrivialCube);
+        BlockusBlocks.FUTURNEO_BLOCK.blocks().forEach(modelGenerator::createTrivialCube);
         modelGenerator.createTrivialCube(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK);
         modelGenerator.createTrivialCube(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK);
 
@@ -476,13 +474,11 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBeveledGlassPane(modelGenerator, BlockusBlocks.RAINBOW_BEVELED_GLASS, BlockusBlocks.RAINBOW_BEVELED_GLASS_PANE);
         modelGenerator.createGlassBlocks(BlockusBlocks.RAINBOW_GLASS, BlockusBlocks.RAINBOW_GLASS_PANE);
         modelGenerator.createGlassBlocks(BlockusBlocks.BEVELED_GLASS, BlockusBlocks.BEVELED_GLASS_PANE);
-        ColorCollection.zipApply((block, pane) -> this.createBeveledGlassPane(modelGenerator, block, pane),
-            BlockusBlocks.STAINED_BEVELED_GLASS, BlockusBlocks.STAINED_BEVELED_GLASS_PANE
-        );
+        ColorCollection.zipApply(BlockusBlocks.STAINED_BEVELED_GLASS.blocks(), BlockusBlocks.STAINED_BEVELED_GLASS_PANE.blocks(), (block, pane) -> this.createBeveledGlassPane(modelGenerator, block, pane));
         modelGenerator.createTrivialCube(BlockusBlocks.TINTED_BEVELED_GLASS);
 
         // Glazed Terracotta Pillars
-        BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.forEach((block) -> this.createPillar(modelGenerator, block));
+        BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.blocks().forEach((block) -> this.createPillar(modelGenerator, block));
 
         // Paper
         modelGenerator.createTrivialCube(BlockusBlocks.BURNT_PAPER_BLOCK);
@@ -499,7 +495,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createLantern(BlockusBlocks.REDSTONE_LANTERN);
         this.createCubeColumn(modelGenerator, BlockusBlocks.REDSTONE_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
         this.createCubeColumn(modelGenerator, BlockusBlocks.SOUL_LANTERN_BLOCK, BlockusBlocks.LANTERN_BLOCK);
-        BlockusBlocks.COPPER_LANTERN_BLOCK.waxedMapping().forEach((unwaxed, waxed) -> this.createCopperCubeColumn(modelGenerator, unwaxed, waxed));
+        BlockusBlocks.COPPER_LANTERN_BLOCK.blocks().zipUnwaxedWaxed((unwaxed, waxed) -> this.createCopperCubeColumn(modelGenerator, unwaxed, waxed));
         this.createPumpkins(modelGenerator, BlockusBlocks.SOUL_O_LANTERN);
         this.createPumpkins(modelGenerator, BlockusBlocks.COPPER_JACK_O_LANTERN);
         this.createPumpkins(modelGenerator, BlockusBlocks.REDSTONE_O_LANTERN);
@@ -532,7 +528,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         createFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.LEGACY_BLUE_ROSE, BlockusBlocks.POTTED_LEGACY_BLUE_ROSE, PlantType.NOT_TINTED);
 
         // Colored Tiles
-        BlockusBlocks.COLORED_TILES.forEach((block) -> this.createColoredTilesSimple(modelGenerator, block));
+        BlockusBlocks.COLORED_TILES.blocks().forEach((block) -> this.createColoredTilesSimple(modelGenerator, block));
         modelGenerator.createTrivialCube(BlockusBlocks.RAINBOW_COLORED_TILES);
 
         // Other
@@ -556,7 +552,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.registerSimpleFlatItemModel(BlockusBlocks.WOODEN_FRAME);
         this.createGate(modelGenerator, BlockusBlocks.IRON_GATE);
         this.createGate(modelGenerator, BlockusBlocks.GOLDEN_GATE);
-        BlockusBlocks.COPPER_GATE.waxedMapping().forEach((unwaxed, waxed) -> this.createCopperGate(modelGenerator, unwaxed, waxed));
+        BlockusBlocks.COPPER_GATE.blocks().zipUnwaxedWaxed((unwaxed, waxed) -> this.createCopperGate(modelGenerator, unwaxed, waxed));
         this.createBarrier(modelGenerator, BlockusBlocks.CAUTION_BARRIER);
         this.createBarrier(modelGenerator, BlockusBlocks.ROAD_BARRIER);
         modelGenerator.registerSimpleItemModel(BlockusBlocks.PATH, ModelLocationUtils.getModelLocation(BlockusBlocks.PATH, "4"));
@@ -573,7 +569,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void createPillar(BlockModelGenerators modelGenerator, Block block) {
-        modelGenerator.createRotatedPillarWithHorizontalVariant(block, TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT);
+        modelGenerator.createRotatedPillarWithHorizontalVariant(block, TexturedModel.COLUMN, TexturedModel.COLUMN_HORIZONTAL);
     }
 
     public final void createLinesBlock(BlockModelGenerators modelGenerator, Block block) {
@@ -845,7 +841,7 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void createCopperBlocks(BlockModelGenerators modelGenerator, CopperBSSWBundle block, WeatheringCopperCollection<BlockFamily> family) {
-        WeatheringCopper.WeatherState.forEach((state) -> modelGenerator.family(block.block().pick(state, false)).generateFor(family.pick(state, false)).donateModelTo(block.block().pick(state, false), block.block().pick(state, true)).generateFor(family.pick(state, true)));
+        WeatheringCopper.WeatherState.forEach((state) -> modelGenerator.family(block.block().blocks().weathering().pick(state)).generateFor(family.weathering().pick(state)).donateModelTo(block.block().blocks().weathering().pick(state), block.block().blocks().waxed().pick(state)).generateFor(family.waxed().pick(state)));
     }
 
     public final void createCrate(BlockModelGenerators modelGenerator, Block block) {
@@ -910,6 +906,14 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public final void createBlock(BlockModelGenerators modelGenerator, Block block, TextureMapping mapping) {
         modelGenerator.blockStateOutput.accept(createSimpleBlock(block, plainVariant(ModelTemplates.CUBE_ALL.create(block, mapping, modelGenerator.modelOutput))));
+    }
+
+    public final void createHangingSign(BlockModelGenerators modelGenerator, Block particleBlock, Block hangingSign, Block wallVariant) {
+        TextureMapping mapping = (new TextureMapping()).put(TextureSlot.ALL, TextureMapping.getBlockTexture(hangingSign)).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(particleBlock));
+        modelGenerator.blockStateOutput.accept(BlockModelGenerators.createHangingSign(hangingSign, BlockModelGenerators.plainVariant(ModelTemplates.HANGING_SIGN_ROT_0.create(ModelLocationUtils.getModelLocation(hangingSign, "_rot_0"), mapping, modelGenerator.modelOutput)), BlockModelGenerators.plainVariant(ModelTemplates.HANGING_SIGN_ROT_1.create(ModelLocationUtils.getModelLocation(hangingSign, "_rot_1"), mapping, modelGenerator.modelOutput)), BlockModelGenerators.plainVariant(ModelTemplates.HANGING_SIGN_ROT_2.create(ModelLocationUtils.getModelLocation(hangingSign, "_rot_2"), mapping, modelGenerator.modelOutput)), BlockModelGenerators.plainVariant(ModelTemplates.HANGING_SIGN_ROT_3.create(ModelLocationUtils.getModelLocation(hangingSign, "_rot_3"), mapping, modelGenerator.modelOutput)), BlockModelGenerators.plainVariant(ModelTemplates.ATTACHED_HANGING_SIGN_ROT_0.create(ModelLocationUtils.getModelLocation(hangingSign, "_attached_rot_0"), mapping, modelGenerator.modelOutput)), BlockModelGenerators.plainVariant(ModelTemplates.ATTACHED_HANGING_SIGN_ROT_1.create(ModelLocationUtils.getModelLocation(hangingSign, "_attached_rot_1"), mapping, modelGenerator.modelOutput)), BlockModelGenerators.plainVariant(ModelTemplates.ATTACHED_HANGING_SIGN_ROT_2.create(ModelLocationUtils.getModelLocation(hangingSign, "_attached_rot_2"), mapping, modelGenerator.modelOutput)), BlockModelGenerators.plainVariant(ModelTemplates.ATTACHED_HANGING_SIGN_ROT_3.create(ModelLocationUtils.getModelLocation(hangingSign, "_attached_rot_3"), mapping, modelGenerator.modelOutput))));
+        MultiVariant wallModel = BlockModelGenerators.plainVariant(ModelTemplates.WALL_HANGING_SIGN.create(wallVariant, mapping, modelGenerator.modelOutput));
+        modelGenerator.blockStateOutput.accept(MultiVariantGenerator.dispatch(wallVariant, wallModel).with(PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING).select(Direction.SOUTH, NOP).select(Direction.WEST, Y_ROT_90).select(Direction.NORTH, Y_ROT_180).select(Direction.EAST, Y_ROT_270)));
+        modelGenerator.registerSimpleFlatItemModel(hangingSign.asItem());
     }
 
     public final void createStairs(BlockModelGenerators modelGenerator, Block block, TextureMapping mapping) {

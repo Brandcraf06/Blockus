@@ -73,13 +73,13 @@ public class Instance {
         // Patterned wools
         for (WoolBundle bundle : WoolBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                FlammableBlockRegistry.getDefaultInstance().add(bundle.block().pick(color), 30, 60);
-                FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs().pick(color), 30, 60);
-                FlammableBlockRegistry.getDefaultInstance().add(bundle.slab().pick(color), 30, 60);
-                FlammableBlockRegistry.getDefaultInstance().add(bundle.carpet().pick(color), 60, 20);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.block().blocks().pick(color), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs().blocks().pick(color), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.slab().blocks().pick(color), 30, 60);
+                FlammableBlockRegistry.getDefaultInstance().add(bundle.carpet().blocks().pick(color), 60, 20);
                 FuelValueEvents.BUILD.register((builder, context) -> {
-                    builder.add(bundle.stairs().pick(color), 100);
-                    builder.add(bundle.slab().pick(color), 50);
+                    builder.add(bundle.stairs().blocks().pick(color), 100);
+                    builder.add(bundle.slab().blocks().pick(color), 50);
                 });
             }
         }
@@ -215,20 +215,20 @@ public class Instance {
     public static void addOxidizable() {
         registerOxidizable(COPPER_BRICKS);
         registerOxidizable(COPPER_TUFF_BRICKS);
-        registerOxidizable(COPPER_LANTERN_BLOCK);
-        registerOxidizable(COPPER_GATE);
+        registerOxidizable(COPPER_LANTERN_BLOCK.blocks());
+        registerOxidizable(COPPER_GATE.blocks());
     }
 
     public static void registerOxidizable(WeatheringCopperCollection<Block> block) {
-        block.weatheringMapping().forEach(OxidizableBlocksRegistry::registerNextStage);
-        block.waxedMapping().forEach(OxidizableBlocksRegistry::registerWaxable);
+        block.weathering().progressMapping(OxidizableBlocksRegistry::registerNextStage);
+        block.zipUnwaxedWaxed(OxidizableBlocksRegistry::registerWaxable);
     }
 
     public static void registerOxidizable(CopperBSSWBundle block) {
-        registerOxidizable(block.block());
-        registerOxidizable(block.stairs());
-        registerOxidizable(block.slab());
-        registerOxidizable(block.wall());
+        registerOxidizable(block.block().blocks());
+        registerOxidizable(block.stairs().blocks());
+        registerOxidizable(block.slab().blocks());
+        registerOxidizable(block.wall().blocks());
     }
 
     public static void addPathBlocks() {

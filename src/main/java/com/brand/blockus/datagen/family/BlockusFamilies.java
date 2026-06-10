@@ -33,7 +33,7 @@ public class BlockusFamilies {
     }
 
     public static WeatheringCopperCollection<BlockFamily> familyBuilder(CopperBSSWBundle block, String name) {
-        return WeatheringCopperCollection.createFamily((prefix, state) -> familyBuilder(block.block().pick(state, true)).slab(block.slab().pick(state, true)).stairs(block.stairs().pick(state, true)).wall(block.wall().pick(state, true)).recipeGroupPrefix(prefix + name).dontGenerateModel().generateStonecutterRecipe().getFamily(), (var0, state) -> familyBuilder(block.block().pick(state, false)).slab(block.slab().pick(state, false)).stairs(block.stairs().pick(state, false)).wall(block.wall().pick(state, false)).dontGenerateModel().generateStonecutterRecipe().getFamily());
+        return WeatheringCopperCollection.createFamily((prefix, state) -> familyBuilder(block.block().blocks().waxed().pick(state)).slab(block.slab().blocks().waxed().pick(state)).stairs(block.stairs().blocks().waxed().pick(state)).wall(block.wall().blocks().waxed().pick(state)).recipeGroupPrefix(prefix + name).dontGenerateModel().generateStonecutterRecipe().getFamily(), (var0, state) -> familyBuilder(block.block().blocks().weathering().pick(state)).slab(block.slab().blocks().weathering().pick(state)).stairs(block.stairs().blocks().weathering().pick(state)).wall(block.wall().blocks().weathering().pick(state)).dontGenerateModel().generateStonecutterRecipe().getFamily());
     }
 
     public static BlockFamily familyBuilder(WoodBundle wood, boolean customFence) {

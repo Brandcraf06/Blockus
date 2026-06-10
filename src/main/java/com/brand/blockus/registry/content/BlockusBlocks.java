@@ -10,8 +10,12 @@ import com.brand.blockus.blocks.base.redstone.RedstoneLantern;
 import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
 import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
 import com.brand.blockus.registry.content.bundles.*;
+import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
+import com.brand.blockus.utils.blocks.CopperBlockItemCollection;
+import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.WoodMaps;
+import com.brand.blockus.utils.references.BlockusIds;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.core.particles.ColorParticleOption;
@@ -462,10 +466,10 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle NETHERITE_BRICKS = BSSWBundle.of("netherite_bricks", Blocks.NETHERITE_BLOCK).register();
 
     // Copper
-    public static final CopperBSSWBundle COPPER_BRICKS = CopperBSSWBundle.register("copper_bricks", state -> Blocks.COPPER_BLOCK.pick(state, false));
-    public static final CopperBSSWBundle COPPER_TUFF_BRICKS = CopperBSSWBundle.register("copper_tuff_bricks", state -> Blocks.TUFF_BRICKS);
-    public static final WeatheringCopperCollection<Block> COPPER_LANTERN_BLOCK = WeatheringCopperCollection.registerBlocks("copper_lantern_block", BlockFactory::registerOf, (var0, p) -> new Block(p), WeatheringCopperFullBlock::new, (statex) -> createCopy(Blocks.COPPER_LANTERN.pick(statex, false)).pushReaction(PushReaction.NORMAL));
-    public static final WeatheringCopperCollection<Block> COPPER_GATE = WeatheringCopperCollection.registerBlocks("copper_gate", BlockFactory::registerOf, (var0, p) -> new DoorBlock(BlockSetType.COPPER, p), (statex, p) -> new WeatheringCopperDoorBlock(BlockSetType.COPPER, statex, p), (statex) -> createCopy(Blocks.COPPER_DOOR.pick(statex, false)));
+    public static final CopperBSSWBundle COPPER_BRICKS = CopperBSSWBundle.register(BlockusIds.COPPER_BRICKS, BlockusIds.COPPER_BRICK_STAIRS, BlockusIds.COPPER_BRICK_SLAB, BlockusIds.COPPER_BRICK_WALL, BlockBuilder::registerBlock, state -> Blocks.COPPER_BLOCK.weathering().pick(state));
+    public static final CopperBSSWBundle COPPER_TUFF_BRICKS = CopperBSSWBundle.register(BlockusIds.COPPER_TUFF_BRICKS, BlockusIds.COPPER_TUFF_BRICK_STAIRS, BlockusIds.COPPER_TUFF_BRICK_SLAB, BlockusIds.COPPER_TUFF_BRICK_WALL, BlockBuilder::registerBlock, state -> Blocks.TUFF_BRICKS);
+    public static final CopperBlockItemCollection COPPER_LANTERN_BLOCK = registerCopperBlocks(BlockusIds.COPPER_LANTERN_BLOCK, BlockBuilder::registerBlock, (var0, p) -> new Block(p), WeatheringCopperFullBlock::new, (statex) -> createCopy(Blocks.COPPER_LANTERN.weathering().pick(statex)).pushReaction(PushReaction.NORMAL));
+    public static final CopperBlockItemCollection COPPER_GATE = registerCopperBlocks(BlockusIds.COPPER_GATE, BlockBuilder::registerBlock, (var0, p) -> new DoorBlock(BlockSetType.COPPER, p), (statex, p) -> new WeatheringCopperDoorBlock(BlockSetType.COPPER, statex, p), (statex) -> createCopy(Blocks.COPPER_DOOR.weathering().pick(statex)));
 
     // Food Blocks
     public static final Block SWEET_BERRIES_CRATE = crate("sweet_berries_crate");
@@ -485,52 +489,52 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BREAD_BOX = registerCopy("bread_box", OrientableBlockBase::new, Blocks.OAK_PLANKS, properties -> properties.strength(2.5f));
 
     // Stained Stone Bricks
-    public static final DyedBSSWBundle DYED_STONE_BRICKS = DyedBSSWBundle.register("stone_bricks", color -> createCopy(Blocks.STONE_BRICKS));
+    public static final DyedBSSWBundle DYED_STONE_BRICKS = DyedBSSWBundle.register(BlockusIds.DYED_STONE_BRICKS, BlockusIds.DYED_STONE_BRICK_STAIRS, BlockusIds.DYED_STONE_BRICK_SLAB, BlockusIds.DYED_STONE_BRICK_WALL, BlockBuilder::registerBlock, color -> createCopy(Blocks.STONE_BRICKS));
 
     // Concrete
-    public static final ConcreteBundle CONCRETE_BRICKS = ConcreteBundle.register("concrete_bricks");
+    public static final ConcreteBundle CONCRETE_BRICKS = ConcreteBundle.register(BlockusIds.CONCRETE_BRICKS, BlockusIds.CONCRETE_BRICK_STAIRS, BlockusIds.CONCRETE_BRICK_SLAB, BlockusIds.CONCRETE_BRICK_WALL, BlockusIds.CHISELED_CONCRETE, BlockusIds.CONCRETE_PILLAR, BlockBuilder::registerBlock);
 
     // Redstone Lamps
     public static final Block LIT_REDSTONE_LAMP = lampBlock("redstone_lamp_lit", Blocks.REDSTONE_LAMP);
-    public static final ColorCollection<Block> DYED_REDSTONE_LAMP = dyedBlocks("redstone_lamp", (var0, p) -> new RedstoneLampBlock(p), color -> createCopy(Blocks.REDSTONE_LAMP).mapColor(color.getMapColor()));
-    public static final ColorCollection<Block> DYED_LIT_REDSTONE_LAMP = dyedBlocks("redstone_lamp_lit", color -> createCopy(DYED_REDSTONE_LAMP.pick(color)).lightLevel(state -> 15));
+    public static final ColorBlockItemCollection DYED_REDSTONE_LAMP = registerDyedBlocks(BlockusIds.DYED_REDSTONE_LAMP, BlockBuilder::registerBlock, (var0, p) -> new RedstoneLampBlock(p), color -> createCopy(Blocks.REDSTONE_LAMP).mapColor(color.getMapColor()));
+    public static final ColorBlockItemCollection DYED_LIT_REDSTONE_LAMP = registerDyedBlocks(BlockusIds.DYED_LIT_REDSTONE_LAMP, BlockBuilder::registerBlock, color -> createCopy(DYED_REDSTONE_LAMP.blocks().pick(color)).lightLevel(state -> 15));
     public static final Block RAINBOW_LAMP = dyedBlock("rainbow_lamp", DyeColor.ORANGE, (var0, p) -> new RedstoneLampBlock(p), Blocks.REDSTONE_LAMP);
     public static final Block LIT_RAINBOW_LAMP = lampBlock("rainbow_lamp_lit", RAINBOW_LAMP);
 
     // Neon Blocks
-    public static final ColorCollection<Block> NEON = dyedBlocks("neon", color -> neonProperties().mapColor(color.getMapColor()));
+    public static final ColorBlockItemCollection NEON = registerDyedBlocks(BlockusIds.NEON, BlockBuilder::registerBlock, color -> neonProperties().mapColor(color.getMapColor()));
     public static final Block RAINBOW_NEON = dyedBlock("rainbow_neon", DyeColor.LIGHT_BLUE, neonProperties());
 
     // Futurneo Blocks
-    public static final ColorCollection<Block> FUTURNEO_BLOCK = dyedBlocks("futurneo_block", color -> futurneoblockProperties().mapColor(DyeColor.BLACK));
+    public static final ColorBlockItemCollection FUTURNEO_BLOCK = registerDyedBlocks(BlockusIds.FUTURNEO_BLOCK, BlockBuilder::registerBlock, color -> futurneoblockProperties().mapColor(DyeColor.BLACK));
     public static final Block GRAY_BRIGHT_FUTURNEO_BLOCK = dyedBlock("gray_bright_futurneo_block", DyeColor.WHITE, futurneoblockProperties());
     public static final Block RAINBOW_FUTURNEO_BLOCK = dyedBlock("rainbow_futurneo_block", DyeColor.BLACK, futurneoblockProperties());
 
     // Asphalt
-    public static final AsphaltBundle ASPHALT = AsphaltBundle.register("asphalt");
+    public static final AsphaltBundle ASPHALT = AsphaltBundle.register(BlockusIds.ASPHALT, BlockusIds.ASPHALT_STAIRS, BlockusIds.ASPHALT_SLAB, BlockBuilder::registerBlock);
     public static final Block RAINBOW_ASPHALT = registerOf("rainbow_asphalt", RainbowAsphalt::new, create().mapColor(DyeColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresCorrectToolForDrops());
 
     // Shingles
     public static final BSSWBundle SHINGLES = BSSWBundle.of("shingles", Blocks.TERRACOTTA, SoundType.NETHER_BRICKS).includeWall(false).register();
-    public static final DyedBSSWBundle DYED_SHINGLES = DyedBSSWBundle.register("shingles", color -> createCopy(Blocks.DYED_TERRACOTTA.pick(color)).sound(SoundType.NETHER_BRICKS), false);
+    public static final DyedBSSWBundle DYED_SHINGLES = DyedBSSWBundle.register(BlockusIds.DYED_SHINGLES, BlockusIds.DYED_SHINGLES_STAIRS, BlockusIds.DYED_SHINGLES_SLAB, null, BlockBuilder::registerBlock, color -> createCopy(Blocks.STONE_BRICKS), false);
 
     // Glass - Beveled Glass
     public static final Block RAINBOW_GLASS = dyedBlock("rainbow_glass", DyeColor.YELLOW, StainedGlassBlock::new, Blocks.GLASS);
     public static final Block RAINBOW_GLASS_PANE = dyedBlock("rainbow_glass_pane", DyeColor.YELLOW, StainedGlassPaneBlock::new, Blocks.GLASS_PANE);
     public static final Block BEVELED_GLASS = registerCopy("beveled_glass", TransparentBlock::new, Blocks.GLASS);
-    public static final ColorCollection<Block> STAINED_BEVELED_GLASS = dyedBlocks("beveled_glass", StainedGlassBlock::new, Blocks.STAINED_GLASS);
+    public static final ColorBlockItemCollection STAINED_BEVELED_GLASS = registerDyedBlocks(BlockusIds.STAINED_BEVELED_GLASS, BlockBuilder::registerBlock, StainedGlassBlock::new, Blocks.STAINED_GLASS);
     public static final Block RAINBOW_BEVELED_GLASS = dyedBlock("rainbow_beveled_glass", DyeColor.YELLOW, StainedGlassBlock::new, RAINBOW_GLASS);
     public static final Block BEVELED_GLASS_PANE = registerCopy("beveled_glass_pane", IronBarsBlock::new, Blocks.GLASS_PANE);
-    public static final ColorCollection<Block> STAINED_BEVELED_GLASS_PANE = dyedBlocks("beveled_glass_pane", StainedGlassPaneBlock::new, Blocks.STAINED_GLASS_PANE);
+    public static final ColorBlockItemCollection STAINED_BEVELED_GLASS_PANE = registerDyedBlocks(BlockusIds.STAINED_BEVELED_GLASS_PANE, BlockBuilder::registerBlock, StainedGlassPaneBlock::new, Blocks.STAINED_GLASS_PANE);
     public static final Block RAINBOW_BEVELED_GLASS_PANE = dyedBlock("rainbow_beveled_glass_pane", DyeColor.YELLOW, StainedGlassPaneBlock::new, RAINBOW_GLASS_PANE);
     public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS, properties -> properties.isValidSpawn(BlockusBlocks::never).isRedstoneConductor(BlockusBlocks::never).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never));
 
     // Patterned Wools
-    public static final WoolBundle PATTERNED_WOOL = WoolBundle.register("patterned_wool");
-    public static final WoolBundle GINGHAM_WOOL = WoolBundle.register("gingham_wool");
+    public static final WoolBundle PATTERNED_WOOL = WoolBundle.register(BlockusIds.PATTERNED_WOOL, BlockusIds.PATTERNED_WOOL_STAIRS, BlockusIds.PATTERNED_WOOL_SLAB, BlockusIds.PATTERNED_CARPET, BlockBuilder::registerBlock);
+    public static final WoolBundle GINGHAM_WOOL = WoolBundle.register(BlockusIds.GINGHAM_WOOL, BlockusIds.GINGHAM_WOOL_STAIRS, BlockusIds.GINGHAM_WOOL_SLAB, BlockusIds.GINGHAM_CARPET, BlockBuilder::registerBlock);
 
     // Glazed Terracotta Pillars
-    public static final ColorCollection<Block> GLAZED_TERRACOTTA_PILLAR = dyedBlocks("glazed_terracotta_pillar", (var0, p) -> new RotatedPillarBlock(p), Blocks.GLAZED_TERRACOTTA);
+    public static final ColorBlockItemCollection GLAZED_TERRACOTTA_PILLAR = registerDyedBlocks(BlockusIds.GLAZED_TERRACOTTA_PILLAR, BlockBuilder::registerBlock, (var0, p) -> new RotatedPillarBlock(p), Blocks.GLAZED_TERRACOTTA);
 
     // Pressure Plates
     public static final Block POLISHED_ANDESITE_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_ANDESITE);
@@ -660,7 +664,7 @@ public class BlockusBlocks extends BlockFactory {
     /**
      * <p>Bicolor variants in {@link ColoredTilesBundle}.
      */
-    public static final ColorCollection<Block> COLORED_TILES = dyedBlocks("colored_tiles", Blocks.CONCRETE);
+    public static final ColorBlockItemCollection COLORED_TILES = registerDyedBlocks(BlockusIds.COLORED_TILES, BlockBuilder::registerBlock, Blocks.CONCRETE);
     public static final Block RAINBOW_COLORED_TILES = registerCopy("rainbow_colored_tiles", HorizontalAxisBlock::new, Blocks.CONCRETE.lightBlue());
 
 }

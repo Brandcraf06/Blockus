@@ -86,7 +86,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBssw(translationBuilder, BlockusBlocks.SHINGLES, "Shingles");
         translationBuilder.add(BlockusBlocks.RAINBOW_ASPHALT, "Rainbow Asphalt");
         for (DyeColor color : DyeColor.values()) {
-            translationBuilder.add(BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.pick(color), name(color.getName()) + " Glazed Terracotta Pillar");
+            translationBuilder.add(BlockusBlocks.GLAZED_TERRACOTTA_PILLAR.blocks().pick(color), name(color.getName()) + " Glazed Terracotta Pillar");
             addDyedBlockStairsSlabWall(translationBuilder, BlockusBlocks.DYED_STONE_BRICKS, color, " Stone Bricks");
             addDyedBlockStairsSlab(translationBuilder, BlockusBlocks.DYED_SHINGLES, color, name(color.getName()) + " Shingles");
             addConcreteBricks(translationBuilder, BlockusBlocks.CONCRETE_BRICKS, color, name(color.getName()) + " Concrete Bricks");
@@ -129,7 +129,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         // Colored Tiles
         translationBuilder.add("block.blockus.colored_tiles", "Colored Tiles");
         for (DyeColor color : DyeColor.values()) {
-            translationBuilder.add(BlockusBlocks.COLORED_TILES.pick(color), name(color.getName()) + " Colored Tiles");
+            translationBuilder.add(BlockusBlocks.COLORED_TILES.blocks().pick(color), name(color.getName()) + " Colored Tiles");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_COLORED_TILES, "Rainbow Colored Tiles");
 
@@ -292,8 +292,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.RAINBOW_GLASS_PANE, "Rainbow Glass Pane");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS, "Beveled Glass");
         for (DyeColor color : DyeColor.values()) {
-            translationBuilder.add(BlockusBlocks.STAINED_BEVELED_GLASS.pick(color), name(color.getName()) + " Beveled Glass");
-            translationBuilder.add(BlockusBlocks.STAINED_BEVELED_GLASS_PANE.pick(color), name(color.getName()) + " Beveled Glass Pane");
+            translationBuilder.add(BlockusBlocks.STAINED_BEVELED_GLASS.blocks().pick(color), name(color.getName()) + " Beveled Glass");
+            translationBuilder.add(BlockusBlocks.STAINED_BEVELED_GLASS_PANE.blocks().pick(color), name(color.getName()) + " Beveled Glass Pane");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_BEVELED_GLASS, "Rainbow Beveled Glass");
         translationBuilder.add(BlockusBlocks.BEVELED_GLASS_PANE, "Beveled Glass Pane");
@@ -404,8 +404,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.LIT_REDSTONE_LAMP, "Lit Redstone Lamp");
 
         for (DyeColor color : DyeColor.values()) {
-            translationBuilder.add(BlockusBlocks.DYED_REDSTONE_LAMP.pick(color), name(color.getName()) + " Redstone Lamp");
-            translationBuilder.add(BlockusBlocks.DYED_LIT_REDSTONE_LAMP.pick(color), "Lit " + name(color.getName()) + " Redstone Lamp");
+            translationBuilder.add(BlockusBlocks.DYED_REDSTONE_LAMP.blocks().pick(color), name(color.getName()) + " Redstone Lamp");
+            translationBuilder.add(BlockusBlocks.DYED_LIT_REDSTONE_LAMP.blocks().pick(color), "Lit " + name(color.getName()) + " Redstone Lamp");
         }
 
         // Food Crates
@@ -443,13 +443,13 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Neons
         for (DyeColor color : DyeColor.values()) {
-            translationBuilder.add(BlockusBlocks.NEON.pick(color), name(color.getName()) + " Neon");
+            translationBuilder.add(BlockusBlocks.NEON.blocks().pick(color), name(color.getName()) + " Neon");
         }
         translationBuilder.add(BlockusBlocks.RAINBOW_NEON, "Rainbow Neon");
 
         // Futurneo Blocks
         for (DyeColor color : DyeColor.values()) {
-            translationBuilder.add(BlockusBlocks.FUTURNEO_BLOCK.pick(color), name(color.getName()) + " Futurneo Block");
+            translationBuilder.add(BlockusBlocks.FUTURNEO_BLOCK.blocks().pick(color), name(color.getName()) + " Futurneo Block");
         }
         translationBuilder.add(BlockusBlocks.GRAY_BRIGHT_FUTURNEO_BLOCK, "Gray Bright Futurneo Block");
         translationBuilder.add(BlockusBlocks.RAINBOW_FUTURNEO_BLOCK, "Rainbow Futurneo Block");
@@ -622,8 +622,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         // Copper
         addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.COPPER_BRICKS, "Copper Bricks");
         addCopperBlockStairsSlabWall(translationBuilder, BlockusBlocks.COPPER_TUFF_BRICKS, "Copper Tuff Bricks");
-        addCopper(translationBuilder, BlockusBlocks.COPPER_LANTERN_BLOCK, "Copper Lantern Block");
-        addCopper(translationBuilder, BlockusBlocks.COPPER_GATE, "Copper Gate");
+        addCopper(translationBuilder, BlockusBlocks.COPPER_LANTERN_BLOCK.blocks(), "Copper Lantern Block");
+        addCopper(translationBuilder, BlockusBlocks.COPPER_GATE.blocks(), "Copper Gate");
 
         // Legacy Blocks
         translationBuilder.add(BlockusBlocks.LEGACY_BRICKS, "Bricks");
@@ -752,52 +752,52 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
     // Dyed blocks
     public static void addDyedBlockStairsSlab(TranslationBuilder translationBuilder, DyedBSSWBundle block, DyeColor color, String string) {
-        addBlockStairsSlab(translationBuilder, block.block().pick(color), block.stairs().pick(color), block.slab().pick(color), string);
+        addBlockStairsSlab(translationBuilder, block.block().blocks().pick(color), block.stairs().blocks().pick(color), block.slab().blocks().pick(color), string);
     }
 
     public static void addDyedBlockStairsSlabWall(TranslationBuilder translationBuilder, DyedBSSWBundle block, DyeColor color, String string) {
         addDyedBlockStairsSlab(translationBuilder, block, color, name(color.getName()) + string);
         if (block.wall() != null) {
-            translationBuilder.add(block.wall().pick(color), name(color.getName()) + editedString(string) + " Wall"
+            translationBuilder.add(block.wall().blocks().pick(color), name(color.getName()) + editedString(string) + " Wall"
             );
         }
     }
 
     public static void addConcreteBricks(TranslationBuilder translationBuilder, ConcreteBundle block, DyeColor color, String string) {
         String removeBricks = string.replace(" Bricks", "");
-        addBlockStairsSlabWall(translationBuilder, block.block().pick(color), block.stairs().pick(color), block.slab().pick(color), block.wall().pick(color), string);
-        translationBuilder.add(block.chiseled().pick(color), "Chiseled " + removeBricks);
-        translationBuilder.add(block.pillar().pick(color), removeBricks + " Pillar");
+        addBlockStairsSlabWall(translationBuilder, block.block().blocks().pick(color), block.stairs().blocks().pick(color), block.slab().blocks().pick(color), block.wall().blocks().pick(color), string);
+        translationBuilder.add(block.chiseled().blocks().pick(color), "Chiseled " + removeBricks);
+        translationBuilder.add(block.pillar().blocks().pick(color), removeBricks + " Pillar");
     }
 
     // Patterned Wools
     public static void addWool(TranslationBuilder translationBuilder, WoolBundle block, DyeColor color, String string) {
-        addBlockStairsSlab(translationBuilder, block.block().pick(color), block.stairs().pick(color), block.slab().pick(color), string);
-        translationBuilder.add(block.carpet().pick(color), string.replace("Wool", "Carpet"));
+        addBlockStairsSlab(translationBuilder, block.block().blocks().pick(color), block.stairs().blocks().pick(color), block.slab().blocks().pick(color), string);
+        translationBuilder.add(block.carpet().blocks().pick(color), string.replace("Wool", "Carpet"));
     }
 
     // Asphalt
     public static void addAsphalt(TranslationBuilder translationBuilder, AsphaltBundle block, DyeColor color, String string) {
-        addBlockStairsSlab(translationBuilder, block.block().pick(color), block.stairs().pick(color), block.slab().pick(color), string);
+        addBlockStairsSlab(translationBuilder, block.block().blocks().pick(color), block.stairs().blocks().pick(color), block.slab().blocks().pick(color), string);
     }
 
     // Copper
     public static void addCopper(TranslationBuilder translationBuilder, WeatheringCopperCollection<Block> block, String string) {
-        translationBuilder.add(block.unaffected(), string);
-        translationBuilder.add(block.exposed(), "Exposed " + string);
-        translationBuilder.add(block.weathered(), "Weathered " + string);
-        translationBuilder.add(block.oxidized(), "Oxidized " + string);
-        translationBuilder.add(block.waxed(), "Waxed " + string);
-        translationBuilder.add(block.waxedExposed(), "Waxed Exposed " + string);
-        translationBuilder.add(block.waxedWeathered(), "Waxed Weathered " + string);
-        translationBuilder.add(block.waxedOxidized(), "Waxed Oxidized " + string);
+        translationBuilder.add(block.weathering().unaffected(), string);
+        translationBuilder.add(block.weathering().exposed(), "Exposed " + string);
+        translationBuilder.add(block.weathering().weathered(), "Weathered " + string);
+        translationBuilder.add(block.weathering().oxidized(), "Oxidized " + string);
+        translationBuilder.add(block.waxed().unaffected(), "Waxed " + string);
+        translationBuilder.add(block.waxed().exposed(), "Waxed Exposed " + string);
+        translationBuilder.add(block.waxed().weathered(), "Waxed Weathered " + string);
+        translationBuilder.add(block.waxed().oxidized(), "Waxed Oxidized " + string);
     }
 
     public static void addCopperBlockStairsSlabWall(TranslationBuilder translationBuilder, CopperBSSWBundle bundle, String string) {
-        addCopper(translationBuilder, bundle.block(), string);
-        addCopper(translationBuilder, bundle.stairs(), editedString(string) + " Stairs");
-        addCopper(translationBuilder, bundle.slab(), editedString(string) + " Slab");
-        addCopper(translationBuilder, bundle.wall(), editedString(string) + " Wall");
+        addCopper(translationBuilder, bundle.block().blocks(), string);
+        addCopper(translationBuilder, bundle.stairs().blocks(), editedString(string) + " Stairs");
+        addCopper(translationBuilder, bundle.slab().blocks(), editedString(string) + " Slab");
+        addCopper(translationBuilder, bundle.wall().blocks(), editedString(string) + " Wall");
     }
 
     public static String name(String id) {

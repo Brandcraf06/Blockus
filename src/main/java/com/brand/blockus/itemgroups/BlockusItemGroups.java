@@ -34,7 +34,7 @@ public class BlockusItemGroups {
         );
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_BLOCKS, FabricCreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blockus_colored").append(BLOCKUS_GROUPS_TEXT))
-            .icon(() -> new ItemStack(ASPHALT.block().lime()))
+            .icon(() -> new ItemStack(ASPHALT.block().blocks().lime()))
             .build()
         );
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKUS_COLORED_TILES, FabricCreativeModeTab.builder()

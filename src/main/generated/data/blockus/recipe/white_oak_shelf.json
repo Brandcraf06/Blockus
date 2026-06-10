@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "shelf",
   "key": {
     "#": "blockus:stripped_white_oak_log"

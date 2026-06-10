@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "blockus:block/purple_concrete_pillar_top",
-    "side": "blockus:block/purple_concrete_pillar"
+    "side": "blockus:block/purple_concrete_pillar_side"
   }
 }

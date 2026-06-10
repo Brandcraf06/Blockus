@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "group": "carpet",
   "key": {
     "#": "blockus:black_gingham_wool"

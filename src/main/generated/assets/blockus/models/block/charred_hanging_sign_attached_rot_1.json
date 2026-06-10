@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_attached_hanging_sign_rot_1",
+  "textures": {
+    "all": "blockus:block/charred_hanging_sign",
+    "particle": "blockus:block/charred_planks"
+  }
+}

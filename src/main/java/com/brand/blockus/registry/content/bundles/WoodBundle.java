@@ -77,11 +77,11 @@ public record WoodBundle(
 
         Block standingSign = BlockFactory.registerNoItem(type + "_sign", (properties) -> new StandingSignBlock(woodType, properties), signProperties);
         Block wallSign = BlockFactory.registerNoItem(type + "_wall_sign", (properties) -> new WallSignBlock(woodType, properties), WoodBundle.copyLootTable(standingSign, color, burnable));
-        Item sign = BlockusItems.register(standingSign, (block, properties) -> new SignItem(block, wallSign, properties), new Item.Properties().stacksTo(16));
+        Item sign = BlockusItems.registerSign(type + "_sign", standingSign, (block, properties) -> new SignItem(block, wallSign, properties), new Item.Properties().stacksTo(16));
 
         Block ceilingHangingSign = BlockFactory.registerNoItem(type + "_hanging_sign", (properties) -> new CeilingHangingSignBlock(woodType, properties), signProperties);
         Block wallHangingSign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", (properties) -> new WallHangingSignBlock(woodType, properties), WoodBundle.copyLootTable(ceilingHangingSign, color, burnable));
-        Item hangingSign = BlockusItems.register(ceilingHangingSign, (block, properties) -> new HangingSignItem(block, wallHangingSign, properties), new Item.Properties().stacksTo(16));
+        Item hangingSign = BlockusItems.registerSign(type + "_hanging_sign", ceilingHangingSign, (block, properties) -> new HangingSignItem(block, wallHangingSign, properties), new Item.Properties().stacksTo(16));
 
         WoodBundle bundle = new WoodBundle(type, burnable, base, planks, stairs, slab, fence, fenceGate, door, trapdoor, pressurePlate, button, shelf, standingSign, wallSign, sign, ceilingHangingSign, wallHangingSign, hangingSign);
 

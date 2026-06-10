@@ -1,24 +1,30 @@
 package com.brand.blockus.datagen.providers;
 
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.registry.tag.BlockusItemTags;
+import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.WoodMaps;
+import com.brand.blockus.utils.references.BlockusIds;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.references.BlockItemId;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -59,86 +65,86 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
         this.copy(BlockusBlockTags.WHITE_OAK_LOGS, BlockusItemTags.WHITE_OAK_LOGS);
 
-        this.valueLookupBuilder(BlockusItemTags.PLANKS_THAT_BURN)
-            .add(Items.OAK_PLANKS)
-            .add(Items.SPRUCE_PLANKS)
-            .add(Items.BIRCH_PLANKS)
-            .add(Items.JUNGLE_PLANKS)
-            .add(Items.ACACIA_PLANKS)
-            .add(Items.DARK_OAK_PLANKS)
-            .add(Items.MANGROVE_PLANKS)
-            .add(Items.CHERRY_PLANKS)
-            .add(Items.PALE_OAK_PLANKS)
-            .add(Items.BAMBOO_PLANKS)
-            .add(RAW_BAMBOO.planks().asItem())
-            .add(WHITE_OAK.planks().asItem())
-            .add(LEGACY_PLANKS.asItem());
+        this.builder(BlockusItemTags.PLANKS_THAT_BURN)
+            .add(BlockItemIds.OAK_PLANKS)
+            .add(BlockItemIds.SPRUCE_PLANKS)
+            .add(BlockItemIds.BIRCH_PLANKS)
+            .add(BlockItemIds.JUNGLE_PLANKS)
+            .add(BlockItemIds.ACACIA_PLANKS)
+            .add(BlockItemIds.DARK_OAK_PLANKS)
+            .add(BlockItemIds.MANGROVE_PLANKS)
+            .add(BlockItemIds.CHERRY_PLANKS)
+            .add(BlockItemIds.PALE_OAK_PLANKS)
+            .add(BlockItemIds.BAMBOO_PLANKS)
+            .add(toId(RAW_BAMBOO.planks()))
+            .add(toId(WHITE_OAK.planks()))
+            .add(toId(LEGACY_PLANKS));
 
-        this.valueLookupBuilder(BlockusItemTags.SHELVES_THAT_BURN)
-            .add(Items.OAK_SHELF)
-            .add(Items.SPRUCE_SHELF)
-            .add(Items.BIRCH_SHELF)
-            .add(Items.JUNGLE_SHELF)
-            .add(Items.ACACIA_SHELF)
-            .add(Items.DARK_OAK_SHELF)
-            .add(Items.MANGROVE_SHELF)
-            .add(Items.CHERRY_SHELF)
-            .add(Items.PALE_OAK_SHELF)
-            .add(Items.BAMBOO_SHELF)
-            .add(RAW_BAMBOO.shelf().asItem())
-            .add(WHITE_OAK.shelf().asItem());
+        this.builder(BlockusItemTags.SHELVES_THAT_BURN)
+            .add(BlockItemIds.OAK_SHELF)
+            .add(BlockItemIds.SPRUCE_SHELF)
+            .add(BlockItemIds.BIRCH_SHELF)
+            .add(BlockItemIds.JUNGLE_SHELF)
+            .add(BlockItemIds.ACACIA_SHELF)
+            .add(BlockItemIds.DARK_OAK_SHELF)
+            .add(BlockItemIds.MANGROVE_SHELF)
+            .add(BlockItemIds.CHERRY_SHELF)
+            .add(BlockItemIds.PALE_OAK_SHELF)
+            .add(BlockItemIds.BAMBOO_SHELF)
+            .add(toId(RAW_BAMBOO.shelf()))
+            .add(toId(WHITE_OAK.shelf()));
 
-        this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
-            .add(Blocks.BAMBOO_MOSAIC.asItem());
+        this.builder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
+            .add(BlockItemIds.BAMBOO_MOSAIC);
         for (var wood : WoodMaps.values()) {
             if (!wood.data().isBurnable()) continue;
             var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
             if (herringbonePlanks != null) {
-                this.valueLookupBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN).add(herringbonePlanks.asItem());
+                this.builder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN).add(toId(herringbonePlanks));
             }
             var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
             if (woodMosaic != null) {
-                this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN).add(woodMosaic.block().asItem());
+                this.builder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN).add(toId(woodMosaic.block()));
             }
         }
 
         this.copy(Identifier.fromNamespaceAndPath("c", "planks_that_burn"));
 
         // Conventional Item Tags
-        this.valueLookupBuilder(ConventionalItemTags.CHAINS).add(GOLDEN_CHAIN.asItem());
+        this.builder(ConventionalItemTags.CHAINS).add(toId(GOLDEN_CHAIN));
         this.copy(ConventionalBlockTags.SMALL_FLOWERS, ConventionalItemTags.SMALL_FLOWERS);
 
         // Vanilla Tags
-        this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
-        this.copy(BlockTags.SPRUCE_LOGS, ItemTags.SPRUCE_LOGS);
-        this.copy(BlockTags.BIRCH_LOGS, ItemTags.BIRCH_LOGS);
+        this.copy(BlockItemTags.OAK_LOGS.block(), ItemTags.OAK_LOGS);
+        this.copy(BlockItemTags.SPRUCE_LOGS.block(), ItemTags.SPRUCE_LOGS);
+        this.copy(BlockItemTags.BIRCH_LOGS.block(), ItemTags.BIRCH_LOGS);
         this.copy(BlockTags.JUNGLE_LOGS, ItemTags.JUNGLE_LOGS);
-        this.copy(BlockTags.ACACIA_LOGS, ItemTags.ACACIA_LOGS);
-        this.copy(BlockTags.DARK_OAK_LOGS, ItemTags.DARK_OAK_LOGS);
-        this.copy(BlockTags.MANGROVE_LOGS, ItemTags.MANGROVE_LOGS);
-        this.copy(BlockTags.CHERRY_LOGS, ItemTags.CHERRY_LOGS);
+        this.copy(BlockItemTags.ACACIA_LOGS.block(), ItemTags.ACACIA_LOGS);
+        this.copy(BlockItemTags.DARK_OAK_LOGS.block(), ItemTags.DARK_OAK_LOGS);
+        this.copy(BlockItemTags.MANGROVE_LOGS.block(), ItemTags.MANGROVE_LOGS);
+        this.copy(BlockItemTags.CHERRY_LOGS.block(), ItemTags.CHERRY_LOGS);
         this.copy(BlockTags.PALE_OAK_LOGS, ItemTags.PALE_OAK_LOGS);
-        this.copy(BlockTags.CRIMSON_STEMS, ItemTags.CRIMSON_STEMS);
-        this.copy(BlockTags.WARPED_STEMS, ItemTags.WARPED_STEMS);
-        this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
+        this.copy(BlockItemTags.CRIMSON_STEMS.block(), ItemTags.CRIMSON_STEMS);
+        this.copy(BlockItemTags.WARPED_STEMS.block(), ItemTags.WARPED_STEMS);
+        this.copy(BlockItemTags.LOGS_THAT_BURN.block(), ItemTags.LOGS_THAT_BURN);
         this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
         this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
 
-        this.valueLookupBuilder(ItemTags.BOATS)
-            .add(BlockusItems.RAW_BAMBOO_RAFT)
-            .add(BlockusItems.CHARRED_BOAT)
-            .add(BlockusItems.WHITE_OAK_BOAT);
+        this.builder(ItemTags.BOATS)
+            .add(toId(BlockusItems.RAW_BAMBOO_RAFT))
+            .add(toId(BlockusItems.CHARRED_BOAT))
+            .add(toId(BlockusItems.WHITE_OAK_BOAT));
 
-        this.valueLookupBuilder(ItemTags.CHEST_BOATS)
-            .add(BlockusItems.RAW_BAMBOO_CHEST_RAFT)
-            .add(BlockusItems.CHARRED_CHEST_BOAT)
-            .add(BlockusItems.WHITE_OAK_CHEST_BOAT);
+        this.builder(ItemTags.CHEST_BOATS)
+            .add(toId(BlockusItems.RAW_BAMBOO_CHEST_RAFT))
+            .add(toId(BlockusItems.CHARRED_CHEST_BOAT))
+            .add(toId(BlockusItems.WHITE_OAK_CHEST_BOAT));
 
         for (WoodBundle woodBundle : WoodBundle.values()) {
-            this.valueLookupBuilder(ItemTags.WOODEN_DOORS).add(woodBundle.door().asItem());
-            this.valueLookupBuilder(ItemTags.WOODEN_TRAPDOORS).add(woodBundle.trapdoor().asItem());
-            this.valueLookupBuilder(ItemTags.SIGNS).add(woodBundle.sign().asItem());
-            this.valueLookupBuilder(ItemTags.HANGING_SIGNS).add(woodBundle.hangingSign().asItem());
+            this.builder(ItemTags.WOODEN_DOORS).add(toId(woodBundle.door()));
+            this.builder(ItemTags.WOODEN_TRAPDOORS).add(toId(woodBundle.trapdoor()));
+            this.builder(ItemTags.SIGNS).add(toId(woodBundle.sign()));
+            this.builder(ItemTags.HANGING_SIGNS).add(toId(woodBundle.hangingSign()));
         }
 
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
@@ -149,379 +155,379 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
         this.copy(BlockTags.FENCE_GATES, ItemTags.FENCE_GATES);
 
-        var nonFlammableWood = this.valueLookupBuilder(ItemTags.NON_FLAMMABLE_WOOD);
+        var nonFlammableWood = this.builder(ItemTags.NON_FLAMMABLE_WOOD);
         nonFlammableWood
-            .add(CHARRED.planks().asItem())
-            .add(CHARRED.slab().asItem())
-            .add(CHARRED.pressurePlate().asItem())
-            .add(CHARRED.fence().asItem())
-            .add(CHARRED.trapdoor().asItem())
-            .add(CHARRED.fenceGate().asItem())
-            .add(CHARRED.stairs().asItem())
-            .add(CHARRED.button().asItem())
-            .add(CHARRED.door().asItem())
-            .add(BlockusItems.CHARRED_BOAT)
-            .add(BlockusItems.CHARRED_CHEST_BOAT)
-            .add(CHARRED.sign())
-            .add(CHARRED.hangingSign())
-            .add(SMALL_LOGS.get(WoodMaps.WARPED.getId()).asItem())
-            .add(SMALL_LOGS.get(WoodMaps.CRIMSON.getId()).asItem());
+            .add(toId(CHARRED.planks()))
+            .add(toId(CHARRED.slab()))
+            .add(toId(CHARRED.pressurePlate()))
+            .add(toId(CHARRED.fence()))
+            .add(toId(CHARRED.trapdoor()))
+            .add(toId(CHARRED.fenceGate()))
+            .add(toId(CHARRED.stairs()))
+            .add(toId(CHARRED.button()))
+            .add(toId(CHARRED.door()))
+            .add(toId(BlockusItems.CHARRED_BOAT))
+            .add(toId(BlockusItems.CHARRED_CHEST_BOAT))
+            .add(toId(CHARRED.sign()))
+            .add(toId(CHARRED.hangingSign()))
+            .add(toId(SMALL_LOGS.get(WoodMaps.WARPED.getId())))
+            .add(toId(SMALL_LOGS.get(WoodMaps.CRIMSON.getId())));
         for (var wood : WoodMaps.values()) {
             if (wood.data().isBurnable()) continue;
             var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
             if (woodMosaic != null) {
-                nonFlammableWood.add(woodMosaic.block().asItem());
+                nonFlammableWood.add(toId(woodMosaic.block()));
             }
             var mossyPlanks = MOSSY_PLANKS.bundle().get(wood.getId());
             if (mossyPlanks != null) {
-                nonFlammableWood.add(mossyPlanks.block().asItem());
+                nonFlammableWood.add(toId(mossyPlanks.block()));
             }
             var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
             if (herringbonePlanks != null) {
-                nonFlammableWood.add(herringbonePlanks.asItem());
+                nonFlammableWood.add(toId(herringbonePlanks));
             }
         }
 
-        this.copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
-        this.copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
+        this.copy(BlockItemTags.SAPLINGS.block(), ItemTags.SAPLINGS);
+        this.copy(BlockTags.SMALL_FLOWERS, BlockItemTags.SMALL_FLOWERS.item());
         this.copy(BlockTags.DIRT, ItemTags.DIRT);
-        this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
-        this.copy(BlockTags.SLABS, ItemTags.SLABS);
+        this.copy(BlockTags.STAIRS, BlockItemTags.STAIRS.item());
+        this.copy(BlockTags.SLABS, BlockItemTags.SLABS.item());
         this.copy(BlockTags.WALLS, ItemTags.WALLS);
-        this.valueLookupBuilder(ItemTags.BUTTONS)
-            .add(POLISHED_ANDESITE_BUTTON.asItem())
-            .add(POLISHED_DIORITE_BUTTON.asItem())
-            .add(POLISHED_GRANITE_BUTTON.asItem())
-            .add(LIMESTONE_BUTTON.asItem())
-            .add(MARBLE_BUTTON.asItem())
-            .add(BLUESTONE_BUTTON.asItem())
-            .add(POLISHED_NETHERRACK_BUTTON.asItem())
-            .add(POLISHED_END_STONE_BUTTON.asItem())
-            .add(VIRIDITE_BUTTON.asItem());
+        this.builder(BlockItemTags.BUTTONS.item())
+            .add(toId(POLISHED_ANDESITE_BUTTON))
+            .add(toId(POLISHED_DIORITE_BUTTON))
+            .add(toId(POLISHED_GRANITE_BUTTON))
+            .add(toId(LIMESTONE_BUTTON))
+            .add(toId(MARBLE_BUTTON))
+            .add(toId(BLUESTONE_BUTTON))
+            .add(toId(POLISHED_NETHERRACK_BUTTON))
+            .add(toId(POLISHED_END_STONE_BUTTON))
+            .add(toId(VIRIDITE_BUTTON));
 
-        this.copy(BlockTags.STONE_BUTTONS, ItemTags.STONE_BUTTONS);
+        this.copy(BlockTags.STONE_BUTTONS, BlockItemTags.STONE_BUTTONS.item());
 
-        this.valueLookupBuilder(ItemTags.DOORS)
-            .add(PAPER_DOOR.asItem())
-            .add(OBSIDIAN_REINFORCED_DOOR.asItem())
-            .add(STONE_DOOR.asItem())
-            .add(BLACKSTONE_DOOR.asItem());
+        this.builder(BlockItemTags.DOORS.item())
+            .add(toId(PAPER_DOOR))
+            .add(toId(OBSIDIAN_REINFORCED_DOOR))
+            .add(toId(STONE_DOOR))
+            .add(toId(BLACKSTONE_DOOR));
 
-        this.valueLookupBuilder(ItemTags.TRAPDOORS)
-            .add(PAPER_TRAPDOOR.asItem())
-            .add(OBSIDIAN_REINFORCED_TRAPDOOR.asItem())
-            .add(STONE_TRAPDOOR.asItem())
-            .add(BLACKSTONE_TRAPDOOR.asItem());
+        this.builder(BlockItemTags.TRAPDOORS.item())
+            .add(toId(PAPER_TRAPDOOR))
+            .add(toId(OBSIDIAN_REINFORCED_TRAPDOOR))
+            .add(toId(STONE_TRAPDOOR))
+            .add(toId(BLACKSTONE_TRAPDOOR));
 
-        this.valueLookupBuilder(ItemTags.WOOL).addTag(BlockusItemTags.PATTERNED_WOOL);
+        this.builder(ItemTags.WOOL).addTag(BlockusItemTags.PATTERNED_WOOL);
         this.copy(BlockTags.WOOL_CARPETS, ItemTags.WOOL_CARPETS);
         this.copy(BlockTags.CONCRETE, ItemTags.CONCRETE);
         this.copy(BlockTags.GLAZED_TERRACOTTA, ItemTags.GLAZED_TERRACOTTA);
-        this.copy(BlockTags.BARS, ItemTags.BARS);
-        this.copy(BlockTags.CHAINS, ItemTags.CHAINS);
-        this.copy(BlockTags.LANTERNS, ItemTags.LANTERNS);
+        this.copy(BlockTags.BARS, BlockItemTags.BARS.item());
+        this.copy(BlockTags.CHAINS, BlockItemTags.CHAINS.item());
+        this.copy(BlockTags.LANTERNS, BlockItemTags.LANTERNS.item());
 
-        this.valueLookupBuilder(BlockusItemTags.NATURAL_ICE)
-            .add(Items.ICE)
-            .add(Items.PACKED_ICE)
-            .add(Items.BLUE_ICE);
+        this.builder(BlockusItemTags.NATURAL_ICE)
+            .add(BlockItemIds.ICE)
+            .add(BlockItemIds.PACKED_ICE)
+            .add(BlockItemIds.BLUE_ICE);
 
         this.copy(BlockTags.BEE_ATTRACTIVE, ItemTags.BEE_FOOD);
 
-        this.valueLookupBuilder(ItemTags.PIGLIN_LOVED)
-            .add(LEGACY_GOLD_BLOCK.asItem())
-            .add(LEGACY_EXPLOSION_PROOF_GOLD_BLOCK.asItem())
-            .add(GOLDEN_CHAIN.asItem())
-            .add(GOLDEN_BARS.asItem())
-            .add(GOLDEN_GATE.asItem())
-            .add(GOLD_DECORATED_SANDSTONE.asItem())
-            .add(GOLD_DECORATED_RED_SANDSTONE.asItem())
-            .add(GOLD_DECORATED_SOUL_SANDSTONE.asItem())
-            .add(GOLD_DECORATED_POLISHED_BLACKSTONE.asItem())
-            .add(GOLD_PLATING.block().asItem())
-            .add(GOLD_PLATING.stairs().asItem())
-            .add(GOLD_PLATING.slab().asItem())
-            .add(GOLD_BRICKS.block().asItem())
-            .add(GOLD_BRICKS.stairs().asItem())
-            .add(GOLD_BRICKS.slab().asItem())
-            .add(GOLD_BRICKS.wall().asItem())
-            .add(GOLDEN_APPLE_CRATE.asItem())
-            .add(GOLDEN_CARROT_CRATE.asItem());
+        this.builder(ItemTags.PIGLIN_LOVED)
+            .add(toId(LEGACY_GOLD_BLOCK))
+            .add(toId(LEGACY_EXPLOSION_PROOF_GOLD_BLOCK))
+            .add(toId(GOLDEN_CHAIN))
+            .add(toId(GOLDEN_BARS))
+            .add(toId(GOLDEN_GATE))
+            .add(toId(GOLD_DECORATED_SANDSTONE))
+            .add(toId(GOLD_DECORATED_RED_SANDSTONE))
+            .add(toId(GOLD_DECORATED_SOUL_SANDSTONE))
+            .add(toId(GOLD_DECORATED_POLISHED_BLACKSTONE))
+            .add(toId(GOLD_PLATING.block()))
+            .add(toId(GOLD_PLATING.stairs()))
+            .add(toId(GOLD_PLATING.slab()))
+            .add(toId(GOLD_BRICKS.block()))
+            .add(toId(GOLD_BRICKS.stairs()))
+            .add(toId(GOLD_BRICKS.slab()))
+            .add(toId(GOLD_BRICKS.wall()))
+            .add(toId(GOLDEN_APPLE_CRATE))
+            .add(toId(GOLDEN_CARROT_CRATE));
 
         this.copy(BlockTags.PIGLIN_REPELLENTS, ItemTags.PIGLIN_REPELLENTS);
 
         // Sulfur Cube
-        this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_REGULAR)
-            .add(COBBLESTONE_BRICKS.block().asItem())
-            .add(MOSSY_COBBLESTONE_BRICKS.block().asItem())
-            .add(STONE_TILES.block().asItem())
-            .add(STONE_BRICK_PILLAR.asItem())
-            .add(HERRINGBONE_STONE_BRICKS.asItem())
-            .add(STONE_CIRCULAR_PAVING.asItem())
-            .add(STURDY_STONE.asItem())
+        this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_REGULAR)
+            .add(toId(COBBLESTONE_BRICKS.block()))
+            .add(toId(MOSSY_COBBLESTONE_BRICKS.block()))
+            .add(toId(STONE_TILES.block()))
+            .add(toId(BlockusBlocks.STONE_BRICK_PILLAR))
+            .add(toId(HERRINGBONE_STONE_BRICKS))
+            .add(toId(STONE_CIRCULAR_PAVING))
+            .add(toId(STURDY_STONE))
 
-            .add(POLISHED_AMETHYST.block().asItem())
-            .add(AMETHYST_BRICKS.block().asItem())
-            .add(CHISELED_AMETHYST.asItem())
-            .add(AMETHYST_PILLAR.asItem())
+            .add(toId(POLISHED_AMETHYST.block()))
+            .add(toId(AMETHYST_BRICKS.block()))
+            .add(toId(CHISELED_AMETHYST))
+            .add(toId(AMETHYST_PILLAR))
 
-            .add(ANDESITE_BRICKS.block().asItem())
-            .add(HERRINGBONE_ANDESITE_BRICKS.asItem())
-            .add(CHISELED_ANDESITE_BRICKS.asItem())
-            .add(CRACKED_ANDESITE_BRICKS.asItem())
-            .add(POLISHED_ANDESITE_PILLAR.asItem())
-            .add(ANDESITE_CIRCULAR_PAVING.asItem())
+            .add(toId(ANDESITE_BRICKS.block()))
+            .add(toId(HERRINGBONE_ANDESITE_BRICKS))
+            .add(toId(CHISELED_ANDESITE_BRICKS))
+            .add(toId(CRACKED_ANDESITE_BRICKS))
+            .add(toId(POLISHED_ANDESITE_PILLAR))
+            .add(toId(ANDESITE_CIRCULAR_PAVING))
 
-            .add(DIORITE_BRICKS.block().asItem())
-            .add(HERRINGBONE_DIORITE_BRICKS.asItem())
-            .add(CHISELED_DIORITE_BRICKS.asItem())
-            .add(CRACKED_DIORITE_BRICKS.asItem())
-            .add(POLISHED_DIORITE_PILLAR.asItem())
-            .add(DIORITE_CIRCULAR_PAVING.asItem())
+            .add(toId(DIORITE_BRICKS.block()))
+            .add(toId(HERRINGBONE_DIORITE_BRICKS))
+            .add(toId(CHISELED_DIORITE_BRICKS))
+            .add(toId(CRACKED_DIORITE_BRICKS))
+            .add(toId(POLISHED_DIORITE_PILLAR))
+            .add(toId(DIORITE_CIRCULAR_PAVING))
 
-            .add(GRANITE_BRICKS.block().asItem())
-            .add(HERRINGBONE_GRANITE_BRICKS.asItem())
-            .add(CHISELED_GRANITE_BRICKS.asItem())
-            .add(CRACKED_GRANITE_BRICKS.asItem())
-            .add(POLISHED_GRANITE_PILLAR.asItem())
-            .add(GRANITE_CIRCULAR_PAVING.asItem())
+            .add(toId(GRANITE_BRICKS.block()))
+            .add(toId(HERRINGBONE_GRANITE_BRICKS))
+            .add(toId(CHISELED_GRANITE_BRICKS))
+            .add(toId(CRACKED_GRANITE_BRICKS))
+            .add(toId(POLISHED_GRANITE_PILLAR))
+            .add(toId(GRANITE_CIRCULAR_PAVING))
 
-            .add(ROUGH_BASALT.block().asItem())
-            .add(POLISHED_BASALT_BRICKS.block().asItem())
-            .add(CHISELED_POLISHED_BASALT.asItem())
-            .add(CRACKED_POLISHED_BASALT_BRICKS.asItem())
-            .add(POLISHED_BASALT_PILLAR.asItem())
-            .add(HERRINGBONE_POLISHED_BASALT_BRICKS.asItem())
-            .add(POLISHED_BASALT_CIRCULAR_PAVING.asItem())
+            .add(toId(ROUGH_BASALT.block()))
+            .add(toId(POLISHED_BASALT_BRICKS.block()))
+            .add(toId(CHISELED_POLISHED_BASALT))
+            .add(toId(CRACKED_POLISHED_BASALT_BRICKS))
+            .add(toId(POLISHED_BASALT_PILLAR))
+            .add(toId(HERRINGBONE_POLISHED_BASALT_BRICKS))
+            .add(toId(POLISHED_BASALT_CIRCULAR_PAVING))
 
-            .add(POLISHED_BLACKSTONE_TILES.block().asItem())
-            .add(POLISHED_BLACKSTONE_PILLAR.asItem())
-            .add(HERRINGBONE_POLISHED_BLACKSTONE_BRICKS.asItem())
-            .add(POLISHED_BLACKSTONE_CIRCULAR_PAVING.asItem())
-            .add(CRIMSON_WARTY_BLACKSTONE_BRICKS.block().asItem())
-            .add(WARPED_WARTY_BLACKSTONE_BRICKS.block().asItem())
-            .add(GOLD_DECORATED_POLISHED_BLACKSTONE.asItem())
+            .add(toId(POLISHED_BLACKSTONE_TILES.block()))
+            .add(toId(POLISHED_BLACKSTONE_PILLAR))
+            .add(toId(HERRINGBONE_POLISHED_BLACKSTONE_BRICKS))
+            .add(toId(POLISHED_BLACKSTONE_CIRCULAR_PAVING))
+            .add(toId(CRIMSON_WARTY_BLACKSTONE_BRICKS.block()))
+            .add(toId(WARPED_WARTY_BLACKSTONE_BRICKS.block()))
+            .add(toId(GOLD_DECORATED_POLISHED_BLACKSTONE))
 
-            .add(LARGE_BRICKS.block().asItem())
-            .add(HERRINGBONE_BRICKS.asItem())
-            .add(SOAKED_BRICKS.block().asItem())
-            .add(HERRINGBONE_SOAKED_BRICKS.asItem())
-            .add(SANDY_BRICKS.block().asItem())
-            .add(HERRINGBONE_SANDY_BRICKS.asItem())
-            .add(CHARRED_BRICKS.block().asItem())
-            .add(HERRINGBONE_CHARRED_BRICKS.asItem())
+            .add(toId(LARGE_BRICKS.block()))
+            .add(toId(HERRINGBONE_BRICKS))
+            .add(toId(SOAKED_BRICKS.block()))
+            .add(toId(HERRINGBONE_SOAKED_BRICKS))
+            .add(toId(SANDY_BRICKS.block()))
+            .add(toId(HERRINGBONE_SANDY_BRICKS))
+            .add(toId(CHARRED_BRICKS.block()))
+            .add(toId(HERRINGBONE_CHARRED_BRICKS))
 
-            .add(CHISELED_MUD_BRICKS.asItem())
-            .add(MUD_BRICK_PILLAR.asItem())
-            .add(WATER_BRICKS.block().asItem())
-            .add(CHISELED_WATER_BRICKS.asItem())
-            .add(LAVA_BRICKS.block().asItem())
-            .add(CHISELED_LAVA_BRICKS.asItem())
-            .add(LAVA_POLISHED_BLACKSTONE_BRICKS.block().asItem())
-            .add(CHISELED_LAVA_POLISHED_BLACKSTONE.asItem())
-            .add(MAGMA_BRICKS.block().asItem())
-            .add(SMALL_MAGMA_BRICKS.block().asItem())
-            .add(CHISELED_MAGMA_BRICKS.asItem())
-            .add(BLAZE_BRICKS.block().asItem())
-            .add(BLAZE_PILLAR.asItem())
+            .add(toId(CHISELED_MUD_BRICKS))
+            .add(toId(MUD_BRICK_PILLAR))
+            .add(toId(WATER_BRICKS.block()))
+            .add(toId(CHISELED_WATER_BRICKS))
+            .add(toId(LAVA_BRICKS.block()))
+            .add(toId(CHISELED_LAVA_BRICKS))
+            .add(toId(LAVA_POLISHED_BLACKSTONE_BRICKS.block()))
+            .add(toId(CHISELED_LAVA_POLISHED_BLACKSTONE))
+            .add(toId(MAGMA_BRICKS.block()))
+            .add(toId(SMALL_MAGMA_BRICKS.block()))
+            .add(toId(CHISELED_MAGMA_BRICKS))
+            .add(toId(BLAZE_BRICKS.block()))
+            .add(toId(BLAZE_PILLAR))
 
-            .add(RAINBOW_BLOCK.asItem())
-            .add(RAINBOW_BRICKS.block().asItem())
+            .add(toId(RAINBOW_BLOCK))
+            .add(toId(RAINBOW_BRICKS.block()))
 
-            .add(CHOCOLATE_BLOCK.block().asItem())
-            .add(CHOCOLATE_BRICKS.block().asItem())
-            .add(CHOCOLATE_SQUARES.asItem())
+            .add(toId(CHOCOLATE_BLOCK.block()))
+            .add(toId(CHOCOLATE_BRICKS.block()))
+            .add(toId(CHOCOLATE_SQUARES))
 
-            .add(COBBLED_DEEPSLATE_BRICKS.block().asItem())
-            .add(MOSSY_DEEPSLATE_BRICKS.block().asItem())
+            .add(toId(COBBLED_DEEPSLATE_BRICKS.block()))
+            .add(toId(MOSSY_DEEPSLATE_BRICKS.block()))
 
-            .add(HERRINGBONE_DEEPSLATE_BRICKS.asItem())
-            .add(DEEPSLATE_PILLAR.asItem())
-            .add(DEEPSLATE_CIRCULAR_PAVING.asItem())
-            .add(STURDY_DEEPSLATE.asItem())
+            .add(toId(HERRINGBONE_DEEPSLATE_BRICKS))
+            .add(toId(DEEPSLATE_PILLAR))
+            .add(toId(DEEPSLATE_CIRCULAR_PAVING))
+            .add(toId(STURDY_DEEPSLATE))
 
-            .add(SULFUR_TILES.block().asItem())
-            .add(HERRINGBONE_SULFUR_BRICKS.asItem())
-            .add(SULFUR_PILLAR.asItem())
-            .add(SULFUR_CIRCULAR_PAVING.asItem())
+            .add(toId(SULFUR_TILES.block()))
+            .add(toId(HERRINGBONE_SULFUR_BRICKS))
+            .add(toId(SULFUR_PILLAR))
+            .add(toId(SULFUR_CIRCULAR_PAVING))
 
-            .add(CINNABAR_TILES.block().asItem())
-            .add(HERRINGBONE_CINNABAR_BRICKS.asItem())
-            .add(CINNABAR_PILLAR.asItem())
-            .add(CINNABAR_CIRCULAR_PAVING.asItem())
+            .add(toId(CINNABAR_TILES.block()))
+            .add(toId(HERRINGBONE_CINNABAR_BRICKS))
+            .add(toId(CINNABAR_PILLAR))
+            .add(toId(CINNABAR_CIRCULAR_PAVING))
 
-            .add(MOSSY_TUFF_BRICKS.block().asItem())
-            .add(TUFF_TILES.block().asItem())
-            .add(CRACKED_TUFF_BRICKS.asItem())
-            .add(CARVED_TUFF_BRICKS.asItem())
-            .add(HERRINGBONE_TUFF_BRICKS.asItem())
-            .add(TUFF_PILLAR.asItem())
-            .add(TUFF_CIRCULAR_PAVING.asItem())
-            .addAll(COPPER_TUFF_BRICKS.asItem())
+            .add(toId(MOSSY_TUFF_BRICKS.block()))
+            .add(toId(TUFF_TILES.block()))
+            .add(toId(CRACKED_TUFF_BRICKS))
+            .add(toId(CARVED_TUFF_BRICKS))
+            .add(toId(HERRINGBONE_TUFF_BRICKS))
+            .add(toId(TUFF_PILLAR))
+            .add(toId(TUFF_CIRCULAR_PAVING))
+            .addAll(toIds(BlockusIds.COPPER_TUFF_BRICKS))
 
-            .add(POLISHED_DRIPSTONE.block().asItem())
-            .add(DRIPSTONE_BRICKS.block().asItem())
-            .add(MOSSY_DRIPSTONE_BRICKS.block().asItem())
-            .add(CRACKED_DRIPSTONE_BRICKS.asItem())
-            .add(CHISELED_DRIPSTONE.asItem())
-            .add(DRIPSTONE_PILLAR.asItem())
+            .add(toId(POLISHED_DRIPSTONE.block()))
+            .add(toId(DRIPSTONE_BRICKS.block()))
+            .add(toId(MOSSY_DRIPSTONE_BRICKS.block()))
+            .add(toId(CRACKED_DRIPSTONE_BRICKS))
+            .add(toId(CHISELED_DRIPSTONE))
+            .add(toId(DRIPSTONE_PILLAR))
 
-            .add(CHISELED_END_STONE_BRICKS.asItem())
-            .add(HERRINGBONE_END_STONE_BRICKS.asItem())
-            .add(POLISHED_END_STONE.block().asItem())
-            .add(CRACKED_END_STONE_BRICKS.asItem())
-            .add(END_STONE_PILLAR.asItem())
-            .add(SMALL_END_STONE_BRICKS.block().asItem())
-            .add(PURPUR_DECORATED_END_STONE.asItem())
-            .add(PHANTOM_PURPUR_DECORATED_END_STONE.asItem())
+            .add(toId(CHISELED_END_STONE_BRICKS))
+            .add(toId(HERRINGBONE_END_STONE_BRICKS))
+            .add(toId(POLISHED_END_STONE.block()))
+            .add(toId(CRACKED_END_STONE_BRICKS))
+            .add(toId(END_STONE_PILLAR))
+            .add(toId(SMALL_END_STONE_BRICKS.block()))
+            .add(toId(PURPUR_DECORATED_END_STONE))
+            .add(toId(PHANTOM_PURPUR_DECORATED_END_STONE))
 
-            .add(LIMESTONE.block().asItem())
-            .add(POLISHED_LIMESTONE.block().asItem())
-            .add(LIMESTONE_BRICKS.block().asItem())
-            .add(LIMESTONE_TILES.block().asItem())
-            .add(LIMESTONE_PILLAR.asItem())
-            .add(LIMESTONE_SQUARES.asItem())
-            .add(SMALL_LIMESTONE_BRICKS.block().asItem())
-            .add(CHISELED_LIMESTONE.asItem())
-            .add(CHISELED_LIMESTONE_PILLAR.asItem())
-            .add(CHISELED_LIMESTONE_BRICKS.asItem())
-            .add(LIMESTONE_LINES.asItem())
-            .add(LIMESTONE_CIRCULAR_PAVING.asItem())
+            .add(toId(LIMESTONE.block()))
+            .add(toId(POLISHED_LIMESTONE.block()))
+            .add(toId(LIMESTONE_BRICKS.block()))
+            .add(toId(LIMESTONE_TILES.block()))
+            .add(toId(LIMESTONE_PILLAR))
+            .add(toId(LIMESTONE_SQUARES))
+            .add(toId(SMALL_LIMESTONE_BRICKS.block()))
+            .add(toId(CHISELED_LIMESTONE))
+            .add(toId(CHISELED_LIMESTONE_PILLAR))
+            .add(toId(CHISELED_LIMESTONE_BRICKS))
+            .add(toId(LIMESTONE_LINES))
+            .add(toId(LIMESTONE_CIRCULAR_PAVING))
 
-            .add(MARBLE.block().asItem())
-            .add(POLISHED_MARBLE.block().asItem())
-            .add(MARBLE_BRICKS.block().asItem())
-            .add(MARBLE_TILES.block().asItem())
-            .add(MARBLE_PILLAR.asItem())
-            .add(MARBLE_SQUARES.asItem())
-            .add(SMALL_MARBLE_BRICKS.block().asItem())
-            .add(CHISELED_MARBLE_PILLAR.asItem())
-            .add(CHISELED_MARBLE_BRICKS.asItem())
-            .add(CHISELED_MARBLE.asItem())
-            .add(MARBLE_LINES.asItem())
-            .add(MARBLE_CIRCULAR_PAVING.asItem())
+            .add(toId(MARBLE.block()))
+            .add(toId(POLISHED_MARBLE.block()))
+            .add(toId(MARBLE_BRICKS.block()))
+            .add(toId(MARBLE_TILES.block()))
+            .add(toId(MARBLE_PILLAR))
+            .add(toId(MARBLE_SQUARES))
+            .add(toId(SMALL_MARBLE_BRICKS.block()))
+            .add(toId(CHISELED_MARBLE_PILLAR))
+            .add(toId(CHISELED_MARBLE_BRICKS))
+            .add(toId(CHISELED_MARBLE))
+            .add(toId(MARBLE_LINES))
+            .add(toId(MARBLE_CIRCULAR_PAVING))
 
-            .add(BLUESTONE.block().asItem())
-            .add(BLUESTONE_PILLAR.asItem())
-            .add(BLUESTONE_BRICKS.block().asItem())
-            .add(BLUESTONE_TILES.block().asItem())
-            .add(POLISHED_BLUESTONE.block().asItem())
-            .add(BLUESTONE_SQUARES.asItem())
-            .add(SMALL_BLUESTONE_BRICKS.block().asItem())
-            .add(CHISELED_BLUESTONE.asItem())
-            .add(BLUESTONE_CIRCULAR_PAVING.asItem())
-            .add(CHISELED_BLUESTONE_PILLAR.asItem())
-            .add(CHISELED_BLUESTONE_BRICKS.asItem())
-            .add(BLUESTONE_LINES.asItem())
+            .add(toId(BLUESTONE.block()))
+            .add(toId(BLUESTONE_PILLAR))
+            .add(toId(BLUESTONE_BRICKS.block()))
+            .add(toId(BLUESTONE_TILES.block()))
+            .add(toId(POLISHED_BLUESTONE.block()))
+            .add(toId(BLUESTONE_SQUARES))
+            .add(toId(SMALL_BLUESTONE_BRICKS.block()))
+            .add(toId(CHISELED_BLUESTONE))
+            .add(toId(BLUESTONE_CIRCULAR_PAVING))
+            .add(toId(CHISELED_BLUESTONE_PILLAR))
+            .add(toId(CHISELED_BLUESTONE_BRICKS))
+            .add(toId(BLUESTONE_LINES))
 
-            .add(VIRIDITE.block().asItem())
-            .add(POLISHED_VIRIDITE.block().asItem())
-            .add(VIRIDITE_BRICKS.block().asItem())
-            .add(VIRIDITE_TILES.block().asItem())
-            .add(VIRIDITE_PILLAR.asItem())
-            .add(VIRIDITE_SQUARES.asItem())
-            .add(SMALL_VIRIDITE_BRICKS.block().asItem())
-            .add(CHISELED_VIRIDITE.asItem())
-            .add(CHISELED_VIRIDITE_PILLAR.asItem())
-            .add(CHISELED_VIRIDITE_BRICKS.asItem())
-            .add(VIRIDITE_CIRCULAR_PAVING.asItem())
-            .add(VIRIDITE_LINES.asItem())
+            .add(toId(VIRIDITE.block()))
+            .add(toId(POLISHED_VIRIDITE.block()))
+            .add(toId(VIRIDITE_BRICKS.block()))
+            .add(toId(VIRIDITE_TILES.block()))
+            .add(toId(VIRIDITE_PILLAR))
+            .add(toId(VIRIDITE_SQUARES))
+            .add(toId(SMALL_VIRIDITE_BRICKS.block()))
+            .add(toId(CHISELED_VIRIDITE))
+            .add(toId(CHISELED_VIRIDITE_PILLAR))
+            .add(toId(CHISELED_VIRIDITE_BRICKS))
+            .add(toId(VIRIDITE_CIRCULAR_PAVING))
+            .add(toId(VIRIDITE_LINES))
 
-            .add(ROUGH_SANDSTONE.block().asItem())
-            .add(SANDSTONE_BRICKS.block().asItem())
-            .add(SMALL_SANDSTONE_BRICKS.block().asItem())
-            .add(GOLD_DECORATED_SANDSTONE.asItem())
-            .add(LAPIS_DECORATED_SANDSTONE.asItem())
-            .add(SANDSTONE_PILLAR.asItem())
+            .add(toId(ROUGH_SANDSTONE.block()))
+            .add(toId(SANDSTONE_BRICKS.block()))
+            .add(toId(SMALL_SANDSTONE_BRICKS.block()))
+            .add(toId(GOLD_DECORATED_SANDSTONE))
+            .add(toId(LAPIS_DECORATED_SANDSTONE))
+            .add(toId(SANDSTONE_PILLAR))
 
-            .add(ROUGH_RED_SANDSTONE.block().asItem())
-            .add(RED_SANDSTONE_BRICKS.block().asItem())
-            .add(SMALL_RED_SANDSTONE_BRICKS.block().asItem())
-            .add(GOLD_DECORATED_RED_SANDSTONE.asItem())
-            .add(LAPIS_DECORATED_RED_SANDSTONE.asItem())
-            .add(RED_SANDSTONE_PILLAR.asItem())
+            .add(toId(ROUGH_RED_SANDSTONE.block()))
+            .add(toId(RED_SANDSTONE_BRICKS.block()))
+            .add(toId(SMALL_RED_SANDSTONE_BRICKS.block()))
+            .add(toId(GOLD_DECORATED_RED_SANDSTONE))
+            .add(toId(LAPIS_DECORATED_RED_SANDSTONE))
+            .add(toId(RED_SANDSTONE_PILLAR))
 
-            .add(POLISHED_NETHER_BRICKS.block().asItem())
-            .add(POLISHED_RED_NETHER_BRICKS.block().asItem())
-            .add(HERRINGBONE_NETHER_BRICKS.asItem())
-            .add(HERRINGBONE_RED_NETHER_BRICKS.asItem())
-            .add(NETHER_BRICK_PILLAR.asItem())
-            .add(RED_NETHER_BRICK_PILLAR.asItem())
-            .add(CHARRED_NETHER_BRICKS.block().asItem())
-            .add(POLISHED_CHARRED_NETHER_BRICKS.block().asItem())
-            .add(HERRINGBONE_CHARRED_NETHER_BRICKS.asItem())
-            .add(CHARRED_NETHER_BRICK_PILLAR.asItem())
-            .add(TEAL_NETHER_BRICKS.block().asItem())
-            .add(POLISHED_TEAL_NETHER_BRICKS.block().asItem())
-            .add(HERRINGBONE_TEAL_NETHER_BRICKS.asItem())
-            .add(TEAL_NETHER_BRICK_PILLAR.asItem())
+            .add(toId(POLISHED_NETHER_BRICKS.block()))
+            .add(toId(POLISHED_RED_NETHER_BRICKS.block()))
+            .add(toId(HERRINGBONE_NETHER_BRICKS))
+            .add(toId(HERRINGBONE_RED_NETHER_BRICKS))
+            .add(toId(NETHER_BRICK_PILLAR))
+            .add(toId(RED_NETHER_BRICK_PILLAR))
+            .add(toId(CHARRED_NETHER_BRICKS.block()))
+            .add(toId(POLISHED_CHARRED_NETHER_BRICKS.block()))
+            .add(toId(HERRINGBONE_CHARRED_NETHER_BRICKS))
+            .add(toId(CHARRED_NETHER_BRICK_PILLAR))
+            .add(toId(TEAL_NETHER_BRICKS.block()))
+            .add(toId(POLISHED_TEAL_NETHER_BRICKS.block()))
+            .add(toId(HERRINGBONE_TEAL_NETHER_BRICKS))
+            .add(toId(TEAL_NETHER_BRICK_PILLAR))
 
-            .add(POLISHED_NETHERRACK.block().asItem())
-            .add(NETHERRACK_BRICKS.block().asItem())
-            .add(NETHERRACK_CIRCULAR_PAVING.asItem())
-            .add(NETHER_TILES.block().asItem())
-            .add(END_TILES.block().asItem())
+            .add(toId(POLISHED_NETHERRACK.block()))
+            .add(toId(NETHERRACK_BRICKS.block()))
+            .add(toId(NETHERRACK_CIRCULAR_PAVING))
+            .add(toId(NETHER_TILES.block()))
+            .add(toId(END_TILES.block()))
 
-            .add(QUARTZ_TILES.block().asItem())
-            .add(QUARTZ_CIRCULAR_PAVING.asItem())
+            .add(toId(QUARTZ_TILES.block()))
+            .add(toId(QUARTZ_CIRCULAR_PAVING))
 
-            .add(OBSIDIAN_BRICKS.block().asItem())
-            .add(CRACKED_OBSIDIAN_BRICKS.asItem())
-            .add(SMALL_OBSIDIAN_BRICKS.block().asItem())
-            .add(OBSIDIAN_PILLAR.asItem())
-            .add(OBSIDIAN_CIRCULAR_PAVING.asItem())
-            .add(GLOWING_OBSIDIAN.asItem())
-            .add(LEGACY_CRYING_OBSIDIAN.asItem())
-            .add(LEGACY_GLOWING_OBSIDIAN.asItem())
+            .add(toId(OBSIDIAN_BRICKS.block()))
+            .add(toId(CRACKED_OBSIDIAN_BRICKS))
+            .add(toId(SMALL_OBSIDIAN_BRICKS.block()))
+            .add(toId(OBSIDIAN_PILLAR))
+            .add(toId(OBSIDIAN_CIRCULAR_PAVING))
+            .add(toId(GLOWING_OBSIDIAN))
+            .add(toId(LEGACY_CRYING_OBSIDIAN))
+            .add(toId(LEGACY_GLOWING_OBSIDIAN))
 
-            .add(PRISMARINE_CIRCULAR_PAVING.asItem())
-            .add(CHISELED_DARK_PRISMARINE.asItem())
-            .add(DARK_PRISMARINE_PILLAR.asItem())
-            .add(CHISELED_PRISMARINE.asItem())
-            .add(PRISMARINE_PILLAR.asItem())
-            .add(PRISMARINE_TILES.block().asItem())
+            .add(toId(PRISMARINE_CIRCULAR_PAVING))
+            .add(toId(CHISELED_DARK_PRISMARINE))
+            .add(toId(DARK_PRISMARINE_PILLAR))
+            .add(toId(CHISELED_PRISMARINE))
+            .add(toId(PRISMARINE_PILLAR))
+            .add(toId(PRISMARINE_TILES.block()))
 
-            .add(PURPUR_BRICKS.block().asItem())
-            .add(POLISHED_PURPUR.block().asItem())
-            .add(PURPUR_SQUARES.asItem())
-            .add(SMALL_PURPUR_BRICKS.block().asItem())
-            .add(CHISELED_PURPUR.asItem())
-            .add(PURPUR_LINES.asItem())
+            .add(toId(PURPUR_BRICKS.block()))
+            .add(toId(POLISHED_PURPUR.block()))
+            .add(toId(PURPUR_SQUARES))
+            .add(toId(SMALL_PURPUR_BRICKS.block()))
+            .add(toId(CHISELED_PURPUR))
+            .add(toId(PURPUR_LINES))
 
-            .add(PHANTOM_PURPUR_BLOCK.block().asItem())
-            .add(PHANTOM_PURPUR_PILLAR.asItem())
-            .add(PHANTOM_PURPUR_BRICKS.block().asItem())
-            .add(POLISHED_PHANTOM_PURPUR.block().asItem())
-            .add(PHANTOM_PURPUR_SQUARES.asItem())
-            .add(SMALL_PHANTOM_PURPUR_BRICKS.block().asItem())
-            .add(CHISELED_PHANTOM_PURPUR.asItem())
-            .add(PHANTOM_PURPUR_LINES.asItem())
+            .add(toId(PHANTOM_PURPUR_BLOCK.block()))
+            .add(toId(PHANTOM_PURPUR_PILLAR))
+            .add(toId(PHANTOM_PURPUR_BRICKS.block()))
+            .add(toId(POLISHED_PHANTOM_PURPUR.block()))
+            .add(toId(PHANTOM_PURPUR_SQUARES))
+            .add(toId(SMALL_PHANTOM_PURPUR_BRICKS.block()))
+            .add(toId(CHISELED_PHANTOM_PURPUR))
+            .add(toId(PHANTOM_PURPUR_LINES))
 
-            .add(LAPIS_BRICKS.block().asItem())
-            .add(REDSTONE_BRICKS.block().asItem())
-            .add(EMERALD_BRICKS.block().asItem())
-            .add(DIAMOND_BRICKS.block().asItem())
-            .add(CHARCOAL_BLOCK.asItem())
-            .add(ENDER_BLOCK.asItem())
-            .add(NETHER_STAR_BLOCK.asItem())
-            .add(LOVE_BLOCK.asItem())
-            .add(WEIGHT_STORAGE_CUBE.asItem())
-            .add(COMPANION_CUBE.asItem())
-            .add(CAUTION_BLOCK.asItem())
-            .add(STARS_BLOCK.asItem())
-            .add(SUGAR_BLOCK.asItem())
-            .add(REDSTONE_SAND.asItem())
-            .add(SUGAR_BLOCK.asItem())
-            .add(LEGACY_FIRST_GRASS_BLOCK.asItem())
-            .add(LEGACY_GRASS_BLOCK.asItem())
-            .add(LEGACY_GRAVEL.asItem())
-            .add(LEGACY_BRICKS.asItem())
-            .add(LEGACY_FIRST_COBBLESTONE.asItem())
-            .add(LEGACY_COBBLESTONE.asItem())
-            .add(LEGACY_MOSSY_COBBLESTONE.asItem())
-            .add(LEGACY_COAL_BLOCK.asItem())
-            .add(LEGACY_DIAMOND_BLOCK.asItem())
-            .add(LEGACY_LAPIS_BLOCK.asItem())
+            .add(toId(LAPIS_BRICKS.block()))
+            .add(toId(REDSTONE_BRICKS.block()))
+            .add(toId(EMERALD_BRICKS.block()))
+            .add(toId(DIAMOND_BRICKS.block()))
+            .add(toId(CHARCOAL_BLOCK))
+            .add(toId(ENDER_BLOCK))
+            .add(toId(NETHER_STAR_BLOCK))
+            .add(toId(LOVE_BLOCK))
+            .add(toId(WEIGHT_STORAGE_CUBE))
+            .add(toId(COMPANION_CUBE))
+            .add(toId(CAUTION_BLOCK))
+            .add(toId(STARS_BLOCK))
+            .add(toId(SUGAR_BLOCK))
+            .add(toId(REDSTONE_SAND))
+            .add(toId(SUGAR_BLOCK))
+            .add(toId(LEGACY_FIRST_GRASS_BLOCK))
+            .add(toId(LEGACY_GRASS_BLOCK))
+            .add(toId(LEGACY_GRAVEL))
+            .add(toId(LEGACY_BRICKS))
+            .add(toId(LEGACY_FIRST_COBBLESTONE))
+            .add(toId(LEGACY_COBBLESTONE))
+            .add(toId(LEGACY_MOSSY_COBBLESTONE))
+            .add(toId(LEGACY_COAL_BLOCK))
+            .add(toId(LEGACY_DIAMOND_BLOCK))
+            .add(toId(LEGACY_LAPIS_BLOCK))
             .addTag(BlockusItemTags.DYED_STONE_BRICKS)
             .addTag(BlockusItemTags.ASPHALT)
             .addTag(BlockusItemTags.LIT_REDSTONE_LAMPS)
@@ -529,72 +535,83 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .addTag(BlockusItemTags.FUTURNEO_BLOCKS)
             .addTag(BlockusItemTags.COLORED_TILES);
 
-        var bouncy = this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_BOUNCY);
-        WOODEN_MOSAIC.forEach(block -> bouncy.add(block.block().asItem()));
-        MOSSY_PLANKS.forEach(block -> bouncy.add(block.block().asItem()));
-        HERRINGBONE_PLANKS.forEach(block -> bouncy.add(block.asItem()));
-        bouncy.add(FRAMED_PAPER_BLOCK.asItem())
-            .add(SALMON_CRATE.asItem())
-            .add(PUFFERFISH_CRATE.asItem())
-            .add(TROPICAL_FISH_CRATE.asItem())
-            .add(COD_CRATE.asItem())
-            .add(BREAD_BOX.asItem())
+        var bouncy = this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_BOUNCY);
+        WOODEN_MOSAIC.forEach(block -> bouncy.add(toId(block.block())));
+        MOSSY_PLANKS.forEach(block -> bouncy.add(toId(block.block())));
+        HERRINGBONE_PLANKS.forEach(block -> bouncy.add(toId(block)));
+        bouncy.add(toId(FRAMED_PAPER_BLOCK))
+            .add(toId(SALMON_CRATE))
+            .add(toId(PUFFERFISH_CRATE))
+            .add(toId(TROPICAL_FISH_CRATE))
+            .add(toId(COD_CRATE))
+            .add(toId(BREAD_BOX))
             .addTag(BlockusItemTags.TIMBER_FRAMES);
 
-        this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING)
-            .add(ICE_BRICKS.asItem())
-            .add(ICE_PILLAR.asItem())
-            .add(SNOW_BRICKS.block().asItem())
-            .add(SNOW_PILLAR.asItem());
+        this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING)
+            .add(toId(ICE_BRICKS))
+            .add(toId(ICE_PILLAR))
+            .add(toId(SNOW_BRICKS.block()))
+            .add(toId(SNOW_PILLAR));
 
-        this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_SLIDING)
-            .add(CRIMSON_WART_BRICKS.block().asItem())
-            .add(WARPED_WART_BRICKS.block().asItem());
+        this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_SLIDING)
+            .add(toId(CRIMSON_WART_BRICKS.block()))
+            .add(toId(WARPED_WART_BRICKS.block()));
 
-        this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_HIGH_RESISTANCE)
-            .add(SOUL_SANDSTONE.block().asItem())
-            .add(ROUGH_SOUL_SANDSTONE.block().asItem())
-            .add(SMOOTH_SOUL_SANDSTONE.block().asItem())
-            .add(SOUL_SANDSTONE_BRICKS.block().asItem())
-            .add(SMALL_SOUL_SANDSTONE_BRICKS.block().asItem())
-            .add(CUT_SOUL_SANDSTONE.asItem())
-            .add(CUT_SOUL_SANDSTONE_SLAB.asItem())
-            .add(CHISELED_SOUL_SANDSTONE.asItem())
-            .add(GOLD_DECORATED_SOUL_SANDSTONE.asItem())
-            .add(LAPIS_DECORATED_SOUL_SANDSTONE.asItem())
-            .add(SOUL_SANDSTONE_PILLAR.asItem());
+        this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_HIGH_RESISTANCE)
+            .add(toId(SOUL_SANDSTONE.block()))
+            .add(toId(ROUGH_SOUL_SANDSTONE.block()))
+            .add(toId(SMOOTH_SOUL_SANDSTONE.block()))
+            .add(toId(SOUL_SANDSTONE_BRICKS.block()))
+            .add(toId(SMALL_SOUL_SANDSTONE_BRICKS.block()))
+            .add(toId(CUT_SOUL_SANDSTONE))
+            .add(toId(CUT_SOUL_SANDSTONE_SLAB))
+            .add(toId(CHISELED_SOUL_SANDSTONE))
+            .add(toId(GOLD_DECORATED_SOUL_SANDSTONE))
+            .add(toId(LAPIS_DECORATED_SOUL_SANDSTONE))
+            .add(toId(SOUL_SANDSTONE_PILLAR));
 
-        this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_FLAT)
-            .add(LARGE_RESIN_BRICKS.block().asItem())
-            .add(HERRINGBONE_RESIN_BRICKS.asItem())
-            .add(RESIN_BRICK_PILLAR.asItem())
-//            .add(POLISHED_SCULK.block().asItem())
-//            .add(SCULK_BRICKS.block().asItem())
-//            .add(CHISELED_SCULK_BRICKS.asItem())
-//            .add(SCULK_PILLAR.asItem())
-            .add(PAPER_BLOCK.asItem())
-            .add(BURNT_PAPER_BLOCK.asItem())
-            .add(SOUL_O_LANTERN.asItem())
-            .add(COPPER_JACK_O_LANTERN.asItem())
-            .add(REDSTONE_O_LANTERN.asItem())
-            .add(THATCH.block().asItem())
-            .add(ROTTEN_FLESH_BLOCK.asItem())
-            .add(CHORUS_BLOCK.asItem())
-            .add(LEGACY_SPONGE.asItem());
+        this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_FLAT)
+            .add(toId(LARGE_RESIN_BRICKS.block()))
+            .add(toId(HERRINGBONE_RESIN_BRICKS))
+            .add(toId(RESIN_BRICK_PILLAR))
+//            .add(id(POLISHED_SCULK.block()))
+//            .add(id(SCULK_BRICKS.block()))
+//            .add(id(CHISELED_SCULK_BRICKS))
+//            .add(id(SCULK_PILLAR))
+            .add(toId(PAPER_BLOCK))
+            .add(toId(BURNT_PAPER_BLOCK))
+            .add(toId(SOUL_O_LANTERN))
+            .add(toId(COPPER_JACK_O_LANTERN))
+            .add(toId(REDSTONE_O_LANTERN))
+            .add(toId(THATCH.block()))
+            .add(toId(ROTTEN_FLESH_BLOCK))
+            .add(toId(CHORUS_BLOCK))
+            .add(toId(LEGACY_SPONGE));
 
-        this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_FLAT)
-            .add(IRON_PLATING.block().asItem())
-            .add(GOLD_PLATING.block().asItem())
-            .add(IRON_BRICKS.block().asItem())
-            .add(GOLD_BRICKS.block().asItem())
-            .addAll(COPPER_BRICKS.asItem())
-            .add(NETHERITE_BRICKS.block().asItem())
-            .add(LEGACY_IRON_BLOCK.asItem())
-            .add(LEGACY_GOLD_BLOCK.asItem())
-            .add(LEGACY_EXPLOSION_PROOF_GOLD_BLOCK.asItem())
+        this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_FLAT)
+            .add(toId(IRON_PLATING.block()))
+            .add(toId(GOLD_PLATING.block()))
+            .add(toId(IRON_BRICKS.block()))
+            .add(toId(GOLD_BRICKS.block()))
+            .addAll(toIds(BlockusIds.COPPER_BRICKS))
+            .add(toId(NETHERITE_BRICKS.block()))
+            .add(toId(LEGACY_IRON_BLOCK))
+            .add(toId(LEGACY_GOLD_BLOCK))
+            .add(toId(LEGACY_EXPLOSION_PROOF_GOLD_BLOCK))
             .addTag(BlockusItemTags.LANTERN_BLOCKS);
 
-        this.valueLookupBuilder(ItemTags.SULFUR_CUBE_ARCHETYPE_STICKY).add(HONEYCOMB_BRICKS.block().asItem());
+        this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_STICKY).add(toId(HONEYCOMB_BRICKS.block()));
     }
 
+    public BlockItemId toId(Block block) {
+        return BlockBuilder.getId(Block.byItem(block.asItem()));
+    }
+
+    public ResourceKey<Item> toId(Item item) {
+        return BlockusItems.getId(item);
+    }
+
+    private static WeatheringCopperCollection<ResourceKey<Item>> toIds(final WeatheringCopperCollection<BlockItemId> ids) {
+        return ids.map(BlockItemId::item);
+    }
 }

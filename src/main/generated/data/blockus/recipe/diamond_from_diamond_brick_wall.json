@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "group": "minecraft:diamond",
   "ingredients": [
     "blockus:diamond_brick_wall"

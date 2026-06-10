@@ -1,19 +1,22 @@
 package com.brand.blockus.registry.content.bundles;
 
+import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
 import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public record ConcreteBundle(
-    String type,
-    ColorCollection<Block> block,
-    ColorCollection<Block> stairs,
-    ColorCollection<Block> slab,
-    ColorCollection<Block> wall,
-    ColorCollection<Block> chiseled,
-    ColorCollection<Block> pillar
+    ColorBlockItemCollection block,
+    ColorBlockItemCollection stairs,
+    ColorBlockItemCollection slab,
+    ColorBlockItemCollection wall,
+    ColorBlockItemCollection chiseled,
+    ColorBlockItemCollection pillar
 ) {
 
     public static final List<ConcreteBundle> LIST = new ArrayList<>();
@@ -22,24 +25,19 @@ public record ConcreteBundle(
         return LIST;
     }
 
-    public List<ColorCollection<Block>> all() {
+    public List<ColorBlockItemCollection> all() {
         return List.of(block, stairs, slab, wall, chiseled, pillar);
     }
 
-    public static ConcreteBundle register(String id) {
-        String type = BlockFactory.replaceId(id);
-        String removeBricks = type.replace("_brick", "");
-        ColorCollection<Block> block = BlockFactory.dyedBlocks(id, Blocks.CONCRETE);
-
-        ConcreteBundle bundle = new ConcreteBundle(type,
-            block,
-            BlockFactory.dyedBlocks(type + "_stairs", (color, p) -> new StairBlock(block.pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block)),
-            BlockFactory.dyedBlocks(type + "_slab", (var0, p) -> new SlabBlock(p), BlockFactory.copyDyedBlocks(block)),
-            BlockFactory.dyedBlocks(type + "_wall", (var0, p) -> new WallBlock(p), BlockFactory.copyDyedBlocks(block)),
-            BlockFactory.chiseledConcrete(block),
-            BlockFactory.dyedBlocks(removeBricks + "_pillar", (var0, p) -> new RotatedPillarBlock(p), BlockFactory.copyDyedBlocks(block))
+    public static <Id> ConcreteBundle register(ColorCollection<Id> ids, ColorCollection<Id> idsStairs, ColorCollection<Id> idsSlab, ColorCollection<Id> idsWall, ColorCollection<Id> idsChiseled, ColorCollection<Id> idsPillar, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register) {
+        ColorBlockItemCollection block = BlockFactory.registerDyedBlocks(ids, register, Blocks.CONCRETE);
+        ConcreteBundle bundle = new ConcreteBundle(block,
+            BlockFactory.registerDyedBlocks(idsStairs, register, (color, p) -> new StairBlock(block.blocks().pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block.blocks())),
+            BlockFactory.registerDyedBlocks(idsSlab, register, (var0, p) -> new SlabBlock(p), BlockFactory.copyDyedBlocks(block.blocks())),
+            BlockFactory.registerDyedBlocks(idsWall, register, (var0, p) -> new WallBlock(p), BlockFactory.copyDyedBlocks(block.blocks())),
+            BlockFactory.registerDyedBlocks(idsChiseled, register, block.blocks()),
+            BlockFactory.registerDyedBlocks(idsPillar, register, (var0, p) -> new RotatedPillarBlock(p), BlockFactory.copyDyedBlocks(block.blocks()))
         );
-
         LIST.add(bundle);
         return bundle;
     }

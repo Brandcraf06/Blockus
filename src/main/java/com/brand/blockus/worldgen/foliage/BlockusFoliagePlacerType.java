@@ -7,20 +7,11 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 
-public class BlockusFoliagePlacerType<P extends FoliagePlacer> {
+public record BlockusFoliagePlacerType<P extends FoliagePlacer>(MapCodec<P> codec) {
     public static final FoliagePlacerType<WhiteOakFoliagePlacer> WHITE_OAK_FOLIAGE_PLACER;
-    public final MapCodec<P> codec;
 
     public static <P extends FoliagePlacer> FoliagePlacerType register(String name, MapCodec<P> codec) {
         return Registry.register(BuiltInRegistries.FOLIAGE_PLACER_TYPE, Blockus.id(name), new FoliagePlacerType(codec));
-    }
-
-    public BlockusFoliagePlacerType(MapCodec<P> codec) {
-        this.codec = codec;
-    }
-
-    public MapCodec<P> codec() {
-        return this.codec;
     }
 
     static {

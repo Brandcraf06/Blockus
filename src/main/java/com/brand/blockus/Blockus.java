@@ -15,7 +15,7 @@ import com.brand.blockus.worldgen.foliage.BlockusFoliagePlacerType;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,11 +50,11 @@ public class Blockus implements ModInitializer {
         BlockusAliases.init();
 
         for (WoodBundle woodBundle : WoodBundle.values()) {
-            BlockEntityType.SIGN.addValidBlock(woodBundle.standingSign());
-            BlockEntityType.SIGN.addValidBlock(woodBundle.wallSign());
-            BlockEntityType.HANGING_SIGN.addValidBlock(woodBundle.ceilingHangingSign());
-            BlockEntityType.HANGING_SIGN.addValidBlock(woodBundle.wallHangingSign());
-            BlockEntityType.SHELF.addValidBlock(woodBundle.shelf());
+            BlockEntityTypes.SIGN.addValidBlock(woodBundle.standingSign());
+            BlockEntityTypes.SIGN.addValidBlock(woodBundle.wallSign());
+            BlockEntityTypes.HANGING_SIGN.addValidBlock(woodBundle.ceilingHangingSign());
+            BlockEntityTypes.HANGING_SIGN.addValidBlock(woodBundle.wallHangingSign());
+            BlockEntityTypes.SHELF.addValidBlock(woodBundle.shelf());
         }
     }
 }

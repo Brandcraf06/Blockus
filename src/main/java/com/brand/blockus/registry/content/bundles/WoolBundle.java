@@ -1,16 +1,20 @@
 package com.brand.blockus.registry.content.bundles;
 
+import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
 import com.brand.blockus.utils.helper.BlockFactory;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public record WoolBundle(
-    ColorCollection<Block> block,
-    ColorCollection<Block> stairs,
-    ColorCollection<Block> slab,
-    ColorCollection<Block> carpet
+    ColorBlockItemCollection block,
+    ColorBlockItemCollection stairs,
+    ColorBlockItemCollection slab,
+    ColorBlockItemCollection carpet
 ) {
 
     public static final List<WoolBundle> LIST = new ArrayList<>();
@@ -19,18 +23,17 @@ public record WoolBundle(
         return LIST;
     }
 
-    public List<ColorCollection<Block>> all() {
+    public List<ColorBlockItemCollection> all() {
         return List.of(block, stairs, slab, carpet);
     }
 
-    public static WoolBundle register(String id) {
-        ColorCollection<Block> block = BlockFactory.dyedBlocks(id, Blocks.WOOL);
+    public static <Id> WoolBundle register(ColorCollection<Id> ids, ColorCollection<Id> idsStairs, ColorCollection<Id> idsSlab, ColorCollection<Id> idsCarpet, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register) {
+        ColorBlockItemCollection block = BlockFactory.registerDyedBlocks(ids, register, Blocks.WOOL);
         WoolBundle bundle = new WoolBundle(block,
-            BlockFactory.dyedBlocks(id + "_stairs", (color, p) -> new StairBlock(block.pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block)),
-            BlockFactory.dyedBlocks(id + "_slab", (var0, p) -> new SlabBlock(p), BlockFactory.copyDyedBlocks(block)),
-            BlockFactory.dyedBlocks(id.replace("wool", "carpet"), WoolCarpetBlock::new, BlockFactory.copyDyedBlocks(Blocks.CARPET))
+            BlockFactory.registerDyedBlocks(idsStairs, register, (color, p) -> new StairBlock(block.blocks().pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block.blocks())),
+            BlockFactory.registerDyedBlocks(idsSlab, register, (var0, p) -> new SlabBlock(p), BlockFactory.copyDyedBlocks(block.blocks())),
+            BlockFactory.registerDyedBlocks(idsCarpet, register, WoolCarpetBlock::new, BlockFactory.copyDyedBlocks(Blocks.CARPET))
         );
-
         LIST.add(bundle);
         return bundle;
     }

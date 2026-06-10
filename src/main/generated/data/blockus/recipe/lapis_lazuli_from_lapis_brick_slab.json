@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "group": "minecraft:lapis_lazuli",
   "ingredients": [
     "blockus:lapis_brick_slab"

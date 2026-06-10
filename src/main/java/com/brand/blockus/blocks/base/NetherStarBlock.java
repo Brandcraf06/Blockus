@@ -5,7 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -19,7 +19,7 @@ public class NetherStarBlock extends Block {
 
     @Override
     public void stepOn(Level world, BlockPos pos, BlockState state, Entity entity) {
-        if (entity.getType() == EntityType.PLAYER) {
+        if (entity.getType() == EntityTypes.PLAYER) {
             ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1, 3, true, false, false));
             ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 900, 3, true, false, true));
             ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.STRENGTH, 80, 2, true, false, true));

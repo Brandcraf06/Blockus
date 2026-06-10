@@ -5,11 +5,11 @@ import com.brand.blockus.registry.content.bundles.BSSWBundle;
 import com.brand.blockus.registry.content.bundles.CopperBSSWBundle;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
+import com.brand.blockus.utils.blocks.CopperBlockItemCollection;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.Collection;
 
@@ -427,11 +427,11 @@ public class BuildingBlocksGroup {
 
 
             for (CopperBSSWBundle copperBundle : CopperBSSWBundle.values()) {
-                for (WeatheringCopperCollection<Block> block : copperBundle.all()) {
-                    block.forEach(entries::accept);
+                for (CopperBlockItemCollection block : copperBundle.all()) {
+                    block.items().forEach(entries::accept);
                 }
             }
-            COPPER_GATE.forEach(entries::accept);
+            COPPER_GATE.items().forEach(entries::accept);
 
             entries.accept(CHARCOAL_BLOCK);
             entries.accept(ENDER_BLOCK);

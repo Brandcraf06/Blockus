@@ -5,7 +5,7 @@ import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
 import com.brand.blockus.registry.content.bundles.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
-import net.minecraft.advancements.criterion.StatePropertiesPredicate;
+import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.DyeColor;
@@ -55,30 +55,30 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
 
         for (DyedBSSWBundle bundle : DyedBSSWBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                this.addBlockStairsandSlabDrops(bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
+                this.addBlockStairsandSlabDrops(bundle.block().blocks().pick(color), bundle.stairs().blocks().pick(color), bundle.slab().blocks().pick(color));
                 if (bundle.wall() != null) {
-                    this.dropSelf(bundle.wall().pick(color));
+                    this.dropSelf(bundle.wall().blocks().pick(color));
                 }
             }
         }
 
         for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
-            bundle.block().forEach(this::dropSelf);
-            bundle.stairs().forEach(this::dropSelf);
-            bundle.slab().forEach((block) -> this.add(block, this::createSlabItemTable));
-            bundle.wall().forEach(this::dropSelf);
+            bundle.block().blocks().forEach(this::dropSelf);
+            bundle.stairs().blocks().forEach(this::dropSelf);
+            bundle.slab().blocks().forEach((block) -> this.add(block, this::createSlabItemTable));
+            bundle.wall().blocks().forEach(this::dropSelf);
         }
 
         for (ConcreteBundle bundle : ConcreteBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                this.addBlockStairsandSlabDrops(bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
-                this.addDrops(bundle.wall().pick(color), bundle.chiseled().pick(color), bundle.pillar().pick(color));
+                this.addBlockStairsandSlabDrops(bundle.block().blocks().pick(color), bundle.stairs().blocks().pick(color), bundle.slab().blocks().pick(color));
+                this.addDrops(bundle.wall().blocks().pick(color), bundle.chiseled().blocks().pick(color), bundle.pillar().blocks().pick(color));
             }
         }
 
         for (AsphaltBundle bundle : AsphaltBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                this.addBlockStairsandSlabDrops(bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
+                this.addBlockStairsandSlabDrops(bundle.block().blocks().pick(color), bundle.stairs().blocks().pick(color), bundle.slab().blocks().pick(color));
             }
         }
 
@@ -109,8 +109,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
 
         for (WoolBundle bundle : WoolBundle.values()) {
             for (DyeColor color : DyeColor.values()) {
-                this.addBlockStairsandSlabDrops(bundle.block().pick(color), bundle.stairs().pick(color), bundle.slab().pick(color));
-                this.dropSelf(bundle.carpet().pick(color));
+                this.addBlockStairsandSlabDrops(bundle.block().blocks().pick(color), bundle.stairs().blocks().pick(color), bundle.slab().blocks().pick(color));
+                this.dropSelf(bundle.carpet().blocks().pick(color));
             }
         }
 
@@ -124,7 +124,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             }
         }
 
-        for (ColorCollection<Block> blocks : List.of(NEON, FUTURNEO_BLOCK, GLAZED_TERRACOTTA_PILLAR, DYED_REDSTONE_LAMP, DYED_LIT_REDSTONE_LAMP, COLORED_TILES)) {
+        for (ColorCollection<Block> blocks : List.of(NEON.blocks(), FUTURNEO_BLOCK.blocks(), GLAZED_TERRACOTTA_PILLAR.blocks(), DYED_REDSTONE_LAMP.blocks(), DYED_LIT_REDSTONE_LAMP.blocks(), COLORED_TILES.blocks())) {
             blocks.forEach(this::dropSelf);
         }
 
@@ -132,8 +132,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             bundle.bundle().values().forEach(this::addDrops);
         }
 
-        COPPER_LANTERN_BLOCK.forEach(this::dropSelf);
-        COPPER_GATE.forEach((block) -> this.add(block, this::createDoorTable));
+        COPPER_LANTERN_BLOCK.blocks().forEach(this::dropSelf);
+        COPPER_GATE.blocks().forEach((block) -> this.add(block, this::createDoorTable));
 
         this.addDrops(CHISELED_MUD_BRICKS,
             MUD_BRICK_PILLAR,
@@ -436,7 +436,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             ICE_BRICKS,
             ICE_PILLAR);
 
-        for (ColorCollection<Block> blocks : List.of(STAINED_BEVELED_GLASS, STAINED_BEVELED_GLASS_PANE)) {
+        for (ColorCollection<Block> blocks : List.of(STAINED_BEVELED_GLASS.blocks(), STAINED_BEVELED_GLASS_PANE.blocks())) {
             blocks.forEach(this::dropWhenSilkTouch);
         }
 

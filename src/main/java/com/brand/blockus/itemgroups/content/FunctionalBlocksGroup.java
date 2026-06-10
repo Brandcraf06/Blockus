@@ -19,7 +19,7 @@ public class FunctionalBlocksGroup {
             entries.accept(SOUL_LANTERN_BLOCK);
             entries.accept(AMETHYST_LANTERN_BLOCK);
             entries.accept(REDSTONE_LANTERN_BLOCK);
-            COPPER_LANTERN_BLOCK.forEach(entries::accept);
+            COPPER_LANTERN_BLOCK.items().forEach(entries::accept);
 
             entries.accept(REDSTONE_O_LANTERN);
             entries.accept(REDSTONE_SAND);
