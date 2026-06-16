@@ -141,11 +141,12 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addAll(toIds(BlockusIds.CONCRETE_BRICK_SLAB))
             .addAll(toIds(BlockusIds.CONCRETE_BRICK_WALL));
 
-        this.builder(BlockusBlockTags.LIT_REDSTONE_LAMPS)
+        this.builder(BlockusBlockTags.REDSTONE_LAMPS)
             .add(toId(LIT_REDSTONE_LAMP))
+            .addAll(toIds(BlockusIds.DYED_REDSTONE_LAMP))
             .addAll(toIds(BlockusIds.DYED_LIT_REDSTONE_LAMP))
+            .add(toId(RAINBOW_LAMP))
             .add(toId(LIT_RAINBOW_LAMP));
-
 
         this.builder(BlockusBlockTags.DEEPSLATE_BLOCKS)
             .add(bsswBundle(COBBLED_DEEPSLATE_BRICKS))

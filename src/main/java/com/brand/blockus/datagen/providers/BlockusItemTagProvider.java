@@ -58,7 +58,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockusBlockTags.CONCRETE_BRICKS, BlockusItemTags.CONCRETE_BRICKS);
         this.copy(BlockusBlockTags.SHINGLES, BlockusItemTags.SHINGLES);
         this.copy(BlockusBlockTags.COLORED_TILES, BlockusItemTags.COLORED_TILES);
-        this.copy(BlockusBlockTags.LIT_REDSTONE_LAMPS, BlockusItemTags.LIT_REDSTONE_LAMPS);
+        this.copy(BlockusBlockTags.REDSTONE_LAMPS, BlockusItemTags.REDSTONE_LAMPS);
         this.copy(BlockusBlockTags.NEON, BlockusItemTags.NEON);
         this.copy(BlockusBlockTags.FUTURNEO_BLOCKS, BlockusItemTags.FUTURNEO_BLOCKS);
         this.copy(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS, BlockusItemTags.GLAZED_TERRACOTTA_PILLARS);
@@ -259,6 +259,16 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
 
         // Sulfur Cube
         this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_REGULAR)
+            .add(toId(CHOCOLATE_BLOCK.block()))
+            .add(toId(CHOCOLATE_BRICKS.block()))
+            .add(toId(CHOCOLATE_SQUARES))
+            .add(toId(CHARCOAL_BLOCK))
+            .add(toId(SUGAR_BLOCK))
+            .add(toId(LEGACY_FIRST_GRASS_BLOCK))
+            .add(toId(LEGACY_GRASS_BLOCK))
+            .add(toId(LEGACY_COAL_BLOCK));
+
+        this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_BOUNCY)
             .add(toId(COBBLESTONE_BRICKS.block()))
             .add(toId(MOSSY_COBBLESTONE_BRICKS.block()))
             .add(toId(STONE_TILES.block()))
@@ -334,10 +344,6 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
 
             .add(toId(RAINBOW_BLOCK))
             .add(toId(RAINBOW_BRICKS.block()))
-
-            .add(toId(CHOCOLATE_BLOCK.block()))
-            .add(toId(CHOCOLATE_BRICKS.block()))
-            .add(toId(CHOCOLATE_SQUARES))
 
             .add(toId(COBBLED_DEEPSLATE_BRICKS.block()))
             .add(toId(MOSSY_DEEPSLATE_BRICKS.block()))
@@ -505,10 +511,8 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(PHANTOM_PURPUR_LINES))
 
             .add(toId(LAPIS_BRICKS.block()))
-            .add(toId(REDSTONE_BRICKS.block()))
             .add(toId(EMERALD_BRICKS.block()))
             .add(toId(DIAMOND_BRICKS.block()))
-            .add(toId(CHARCOAL_BLOCK))
             .add(toId(ENDER_BLOCK))
             .add(toId(NETHER_STAR_BLOCK))
             .add(toId(LOVE_BLOCK))
@@ -516,22 +520,15 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(COMPANION_CUBE))
             .add(toId(CAUTION_BLOCK))
             .add(toId(STARS_BLOCK))
-            .add(toId(SUGAR_BLOCK))
-            .add(toId(REDSTONE_SAND))
-            .add(toId(SUGAR_BLOCK))
-            .add(toId(LEGACY_FIRST_GRASS_BLOCK))
-            .add(toId(LEGACY_GRASS_BLOCK))
-            .add(toId(LEGACY_GRAVEL))
             .add(toId(LEGACY_BRICKS))
             .add(toId(LEGACY_FIRST_COBBLESTONE))
             .add(toId(LEGACY_COBBLESTONE))
             .add(toId(LEGACY_MOSSY_COBBLESTONE))
-            .add(toId(LEGACY_COAL_BLOCK))
             .add(toId(LEGACY_DIAMOND_BLOCK))
             .add(toId(LEGACY_LAPIS_BLOCK))
             .addTag(BlockusItemTags.DYED_STONE_BRICKS)
             .addTag(BlockusItemTags.ASPHALT)
-            .addTag(BlockusItemTags.LIT_REDSTONE_LAMPS)
+            .addTag(BlockusItemTags.REDSTONE_LAMPS)
             .addTag(BlockusItemTags.NEON)
             .addTag(BlockusItemTags.FUTURNEO_BLOCKS)
             .addTag(BlockusItemTags.COLORED_TILES);
@@ -539,7 +536,6 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         var bouncy = this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_BOUNCY);
         WOODEN_MOSAIC.forEach(block -> bouncy.add(toId(block.block())));
         MOSSY_PLANKS.forEach(block -> bouncy.add(toId(block.block())));
-        HERRINGBONE_PLANKS.forEach(block -> bouncy.add(toId(block)));
         bouncy.add(toId(FRAMED_PAPER_BLOCK))
             .add(toId(SALMON_CRATE))
             .add(toId(PUFFERFISH_CRATE))
