@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_bed_head",
+  "textures": {
+    "east": "blockus:block/rainbow_bed_head_east",
+    "up": "blockus:block/rainbow_bed_head_up",
+    "west": "blockus:block/rainbow_bed_head_west"
+  }
+}

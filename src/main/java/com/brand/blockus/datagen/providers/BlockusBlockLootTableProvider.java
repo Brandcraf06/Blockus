@@ -13,8 +13,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ColorCollection;
+import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.storage.loot.IntRange;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -175,6 +177,10 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             CINNABAR_PILLAR,
             POLISHED_CINNABAR_PRESSURE_PLATE,
             POLISHED_CINNABAR_BUTTON,
+
+            // Wool
+            RAINBOW_WOOL,
+            RAINBOW_CARPET,
 
             // Other
             LEGACY_LOG,
@@ -441,6 +447,8 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
         }
 
         this.add(RAINBOW_PETALS, this.createSegmentedBlockDrops(RAINBOW_PETALS));
+        this.add(RAINBOW_BED, this.createSinglePropConditionTable(RAINBOW_BED, BedBlock.PART, BedPart.HEAD));
+
         this.addPottedPlantDropsBatch(POTTED_WHITE_OAK_SAPLING, POTTED_RAINBOW_ROSE, POTTED_LEGACY_SAPLING, POTTED_LEGACY_ROSE, POTTED_LEGACY_BLUE_ROSE);
 
         this.add(LEGACY_LEAVES, (block) -> this.createLeavesDrops(block, LEGACY_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));

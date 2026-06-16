@@ -25,6 +25,9 @@ public class ColoredGroups {
             }
             entries.accept(BlockusBlocks.RAINBOW_ASPHALT);
 
+            entries.accept(BlockusBlocks.RAINBOW_WOOL);
+            entries.accept(BlockusBlocks.RAINBOW_CARPET);
+            entries.accept(BlockusBlocks.RAINBOW_BED);
             for (ColorBlockItemCollection collection : BlockusBlocks.PATTERNED_WOOL.all()) {
                 addDyed(entries, collection);
             }

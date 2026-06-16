@@ -55,6 +55,8 @@ public class FunctionalBlocksGroup {
             entries.accept(BlockusItems.RAW_BAMBOO_CHEST_RAFT);
             entries.accept(BlockusItems.CHARRED_BOAT);
             entries.accept(BlockusItems.CHARRED_CHEST_BOAT);
+
+            entries.accept(BlockusBlocks.RAINBOW_BED);
         });
     }
 }

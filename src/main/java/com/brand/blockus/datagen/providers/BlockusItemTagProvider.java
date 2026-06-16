@@ -219,8 +219,9 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(STONE_TRAPDOOR))
             .add(toId(BLACKSTONE_TRAPDOOR));
 
-        this.builder(ItemTags.WOOL).addTag(BlockusItemTags.PATTERNED_WOOL);
+        this.builder(ItemTags.WOOL).addTag(BlockusItemTags.PATTERNED_WOOL).add(toId(RAINBOW_WOOL));
         this.copy(BlockTags.WOOL_CARPETS, ItemTags.WOOL_CARPETS);
+        this.copy(BlockTags.BEDS, ItemTags.BEDS);
         this.copy(BlockTags.CONCRETE, ItemTags.CONCRETE);
         this.copy(BlockTags.GLAZED_TERRACOTTA, ItemTags.GLAZED_TERRACOTTA);
         this.copy(BlockTags.BARS, BlockItemTags.BARS.item());

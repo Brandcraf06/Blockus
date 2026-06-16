@@ -868,8 +868,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(LEGACY_GRASS_BLOCK))
             .add(toId(LEGACY_FIRST_GRASS_BLOCK));
 
-        this.builder(BlockTags.WOOL).addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS);
-        this.builder(BlockTags.WOOL_CARPETS).addTag(BlockusBlockTags.PATTERNED_CARPETS);
+        this.builder(BlockTags.WOOL).addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS).add(toId(RAINBOW_WOOL));
+        this.builder(BlockTags.WOOL_CARPETS).addTag(BlockusBlockTags.PATTERNED_CARPETS).add(toId(RAINBOW_CARPET));
+        this.builder(BlockTags.BEDS).add(toId(RAINBOW_BED));
         this.builder(BlockTags.CONCRETE).addTag(BlockusBlockTags.CONCRETE_BRICKS);
         this.builder(BlockTags.GLAZED_TERRACOTTA).addTag(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS);
         this.builder(BlockTags.TERRACOTTA).addTag(BlockusBlockTags.SHINGLES);

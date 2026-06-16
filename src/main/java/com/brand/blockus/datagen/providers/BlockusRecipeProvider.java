@@ -25,7 +25,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.WeatheringCopper;
+import org.jspecify.annotations.Nullable;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
@@ -683,6 +685,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                         carpet(block.carpet().blocks().pick(color), block.block().blocks().pick(color));
                     }
                 }
+                this.colorItemWithRainbow(RAINBOW_WOOL, Items.WOOL.asList(), "rainbow_wool", RecipeCategory.BUILDING_BLOCKS);
+                carpet(RAINBOW_CARPET, RAINBOW_WOOL);
+                this.colorItemWithRainbow(RAINBOW_CARPET, Items.CARPET.asList(), "rainbow_carpet", RecipeCategory.DECORATIONS);
+                bedFromPlanksAndWool(RAINBOW_BED, RAINBOW_WOOL);
+                this.colorItemWithRainbow(RAINBOW_BED, Items.BED.asList(), "rainbow_bed", RecipeCategory.DECORATIONS);
+
 
                 // Glass - Beveled Glass
                 offerPolishedStoneRecipe(TINTED_BEVELED_GLASS, Blocks.TINTED_GLASS);
@@ -812,7 +820,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 shapeless(RecipeCategory.BUILDING_BLOCKS, LEGACY_PLANKS, 4).requires(LEGACY_LOG).group("planks").unlockedBy("has_logs", has(LEGACY_LOG)).save(exporter);
             }
 
-            private void offerLanternBlockRecipe(Block output, Block lantern, Item nugget) {
+            public void offerLanternBlockRecipe(Block output, Block lantern, Item nugget) {
                 shaped(RecipeCategory.BUILDING_BLOCKS, output).define('X', lantern).define('#', nugget).pattern(" # ").pattern("#X#").pattern(" # ").unlockedBy(getHasName(lantern), has(lantern)).save(exporter);
             }
 
@@ -998,9 +1006,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 createEnclosedRecipe(slab, Ingredient.of(ASPHALT.slab().blocks().black()), dye).group("asphalt_slab").unlockedBy(getHasName(ASPHALT.slab().blocks().black()), has(ASPHALT.slab().blocks().black())).save(exporter, getConversionRecipeName(slab, ASPHALT.slab().blocks().black()));
             }
 
+            public void colorItemWithRainbow(ItemLike dyedItem, List<Item> sourceItems, @Nullable String group, RecipeCategory category) {
+                shapeless(category, dyedItem).requires(RAINBOW_PETALS.asItem()).requires(Ingredient.of(sourceItems.stream())).group(group).unlockedBy(getHasName(RAINBOW_PETALS.asItem()), this.has(RAINBOW_PETALS.asItem())).save(this.output, getItemName(dyedItem) + "_from_rainbow_petals");
+            }
+
             public void offerPatternedWoolRecipe(ItemLike output, ItemLike wool, ItemLike outputCarpet, ItemLike carpet) {
                 offerPolishedStoneRecipe(output, wool);
-                polishedBuilder(RecipeCategory.BUILDING_BLOCKS, outputCarpet, Ingredient.of(carpet)).group("patterned_carpet").unlockedBy(getHasName(carpet), has(carpet)).save(exporter, getConversionRecipeName(outputCarpet, carpet));
+                polishedBuilder(RecipeCategory.DECORATIONS, outputCarpet, Ingredient.of(carpet)).group("patterned_carpet").unlockedBy(getHasName(carpet), has(carpet)).save(exporter, getConversionRecipeName(outputCarpet, carpet));
             }
 
             public void offerGinghamWoolRecipe(ItemLike output, ItemLike wool) {

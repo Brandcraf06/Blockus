@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "group": "patterned_carpet",
   "key": {
     "S": "minecraft:yellow_carpet"

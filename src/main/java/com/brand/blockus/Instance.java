@@ -83,6 +83,8 @@ public class Instance {
                 });
             }
         }
+        FlammableBlockRegistry.getDefaultInstance().add(RAINBOW_BLOCK, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(RAINBOW_CARPET, 60, 20);
 
         // Wood set
         for (WoodBundle bundle : WoodBundle.values()) {

@@ -10,6 +10,7 @@ import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.BlockusBlockStateProperties;
 import com.brand.blockus.utils.helper.WoodMaps;
+import com.mojang.math.Transformation;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -28,8 +29,10 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.WallSide;
+import org.joml.Vector3f;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
@@ -99,6 +102,10 @@ public class BlockusModelProvider extends FabricModelProvider {
                 this.createCarpet(modelGenerator, bundle.block().blocks().pick(color), bundle.carpet().blocks().pick(color));
             }
         }
+
+        modelGenerator.createTrivialCube(BlockusBlocks.RAINBOW_WOOL);
+        this.createCarpet(modelGenerator, BlockusBlocks.RAINBOW_WOOL, BlockusBlocks.RAINBOW_CARPET);
+        this.createBed(modelGenerator, BlockusBlocks.RAINBOW_BED);
 
         for (ColoredTilesBundle bundle : ColoredTilesBundle.values()) {
             createColoredTiles(modelGenerator, bundle.block(), bundle.tile1(), bundle.tile2());
@@ -672,6 +679,13 @@ public class BlockusModelProvider extends FabricModelProvider {
         } else {
             modelGenerator.registerSimpleItemModel(block, inventory);
         }
+    }
+
+    public final void createBed(BlockModelGenerators modelGenerator, Block bed) {
+        Identifier head = ModelTemplates.BED_HEAD.createWithSuffix(bed, "_" + BedPart.HEAD, TextureMapping.bed(bed, BedPart.HEAD), modelGenerator.modelOutput);
+        Identifier foot = ModelTemplates.BED_FOOT.createWithSuffix(bed, "_" + BedPart.FOOT, TextureMapping.bed(bed, BedPart.FOOT), modelGenerator.modelOutput);
+        modelGenerator.blockStateOutput.accept(BlockModelGenerators.createBed(bed, plainVariant(head), plainVariant(foot)));
+        modelGenerator.itemModelOutput.accept(bed.asItem(), ItemModelUtils.composite(ItemModelUtils.plainModel(head), ItemModelUtils.plainModel(foot, new Transformation(new Vector3f(0.0F, 0.0F, 1.0F), null, null, null))));
     }
 
     public final void createCarpet(BlockModelGenerators modelGenerator, Block wool, Block carpet) {
