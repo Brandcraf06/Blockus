@@ -20,14 +20,14 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class SmallHedgeBlock extends CrossCollisionBlock {
-    public static final MapCodec<SmallHedgeBlock> CODEC = simpleCodec(SmallHedgeBlock::new);
+public class HedgeBlock extends CrossCollisionBlock {
+    public static final MapCodec<HedgeBlock> CODEC = simpleCodec(HedgeBlock::new);
 
-    public MapCodec<? extends SmallHedgeBlock> codec() {
+    public MapCodec<? extends HedgeBlock> codec() {
         return CODEC;
     }
 
-    public SmallHedgeBlock(BlockBehaviour.Properties properties) {
+    public HedgeBlock(BlockBehaviour.Properties properties) {
         super(6.0F, 16.0F, 6.0F, 16.0F, 24.0F, properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, false).setValue(EAST, false).setValue(SOUTH, false).setValue(WEST, false).setValue(WATERLOGGED, false));
     }

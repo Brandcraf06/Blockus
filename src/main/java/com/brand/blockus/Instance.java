@@ -36,7 +36,7 @@ public class Instance {
         // General
         FlammableBlockRegistry.getDefaultInstance().add(WOODEN_FRAME, 30, 60);
 
-        // Small hedges
+        // Hedges
         FlammableBlockRegistry.getDefaultInstance().add(OAK_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(ACACIA_HEDGE, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(BIRCH_HEDGE, 30, 60);

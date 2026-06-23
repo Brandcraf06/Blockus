@@ -5,6 +5,7 @@ import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.BSSWBundle;
 import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
 import com.brand.blockus.registry.content.bundles.DyedBSSWBundle;
+import com.brand.blockus.registry.content.bundles.WoolBundle;
 import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
 import com.brand.blockus.utils.helper.BlockOrder;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
@@ -28,8 +29,11 @@ public class ColoredGroups {
             entries.accept(BlockusBlocks.RAINBOW_WOOL);
             entries.accept(BlockusBlocks.RAINBOW_CARPET);
             entries.accept(BlockusBlocks.RAINBOW_BED);
-            for (ColorBlockItemCollection collection : BlockusBlocks.PATTERNED_WOOL.all()) {
-                addDyed(entries, collection);
+
+            for (WoolBundle woolBundle : WoolBundle.values()) {
+                for (ColorBlockItemCollection collection : woolBundle.all()) {
+                    addDyed(entries, collection);
+                }
             }
 
             addBSSW(entries, BlockusBlocks.SHINGLES);

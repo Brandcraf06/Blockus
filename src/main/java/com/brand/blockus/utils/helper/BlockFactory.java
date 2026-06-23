@@ -1,7 +1,7 @@
 package com.brand.blockus.utils.helper;
 
 import com.brand.blockus.blocks.base.LargeFlowerPotBlock;
-import com.brand.blockus.blocks.base.SmallHedgeBlock;
+import com.brand.blockus.blocks.base.HedgeBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystSlabBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystStairsBlock;
 import com.brand.blockus.blocks.base.amethyst.AmethystWallBlock;
@@ -162,7 +162,7 @@ public class BlockFactory {
     }
 
     public static Block hedge(String id, Block base) {
-        return copy(base).factory(SmallHedgeBlock::new).register(BlockusIds.create(id));
+        return copy(base).factory(HedgeBlock::new).register(BlockusIds.create(id));
     }
 
     // Pressure Plate & Button

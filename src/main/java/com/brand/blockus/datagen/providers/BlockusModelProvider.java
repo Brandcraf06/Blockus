@@ -426,7 +426,7 @@ public class BlockusModelProvider extends FabricModelProvider {
             modelGenerator.createGlassBlocks(entry.getValue().grate(), entry.getValue().lattice());
         }
 
-        // Small Hedges
+        // Hedges
         this.createHedge(modelGenerator, BlockusBlocks.OAK_HEDGE, Blocks.OAK_LEAVES, -12012264);
         this.createHedge(modelGenerator, BlockusBlocks.SPRUCE_HEDGE, Blocks.SPRUCE_LEAVES, -10380959);
         this.createHedge(modelGenerator, BlockusBlocks.BIRCH_HEDGE, Blocks.BIRCH_LEAVES, -8345771);

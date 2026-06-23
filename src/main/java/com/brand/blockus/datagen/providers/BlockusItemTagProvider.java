@@ -59,6 +59,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockusBlockTags.SHINGLES, BlockusItemTags.SHINGLES);
         this.copy(BlockusBlockTags.COLORED_TILES, BlockusItemTags.COLORED_TILES);
         this.copy(BlockusBlockTags.REDSTONE_LAMPS, BlockusItemTags.REDSTONE_LAMPS);
+        this.copy(BlockusBlockTags.LIT_REDSTONE_LAMPS, BlockusItemTags.LIT_REDSTONE_LAMPS);
         this.copy(BlockusBlockTags.NEON, BlockusItemTags.NEON);
         this.copy(BlockusBlockTags.FUTURNEO_BLOCKS, BlockusItemTags.FUTURNEO_BLOCKS);
         this.copy(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS, BlockusItemTags.GLAZED_TERRACOTTA_PILLARS);

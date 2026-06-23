@@ -1,6 +1,6 @@
 {
   "values": [
-    "blockus:redstone_lamp_lit",
+    "minecraft:redstone_lamp",
     "blockus:white_redstone_lamp",
     "blockus:orange_redstone_lamp",
     "blockus:magenta_redstone_lamp",
@@ -17,23 +17,7 @@
     "blockus:green_redstone_lamp",
     "blockus:red_redstone_lamp",
     "blockus:black_redstone_lamp",
-    "blockus:white_redstone_lamp_lit",
-    "blockus:orange_redstone_lamp_lit",
-    "blockus:magenta_redstone_lamp_lit",
-    "blockus:light_blue_redstone_lamp_lit",
-    "blockus:yellow_redstone_lamp_lit",
-    "blockus:lime_redstone_lamp_lit",
-    "blockus:pink_redstone_lamp_lit",
-    "blockus:gray_redstone_lamp_lit",
-    "blockus:light_gray_redstone_lamp_lit",
-    "blockus:cyan_redstone_lamp_lit",
-    "blockus:purple_redstone_lamp_lit",
-    "blockus:blue_redstone_lamp_lit",
-    "blockus:brown_redstone_lamp_lit",
-    "blockus:green_redstone_lamp_lit",
-    "blockus:red_redstone_lamp_lit",
-    "blockus:black_redstone_lamp_lit",
     "blockus:rainbow_lamp",
-    "blockus:rainbow_lamp_lit"
+    "#blockus:lit_redstone_lamps"
   ]
 }

@@ -578,23 +578,23 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                     }
                 }
 
-                // Small Hedges
-                offerSmallHedgesRecipe(OAK_HEDGE, Blocks.OAK_LEAVES);
-                offerSmallHedgesRecipe(SPRUCE_HEDGE, Blocks.SPRUCE_LEAVES);
-                offerSmallHedgesRecipe(BIRCH_HEDGE, Blocks.BIRCH_LEAVES);
-                offerSmallHedgesRecipe(JUNGLE_HEDGE, Blocks.JUNGLE_LEAVES);
-                offerSmallHedgesRecipe(ACACIA_HEDGE, Blocks.ACACIA_LEAVES);
-                offerSmallHedgesRecipe(DARK_OAK_HEDGE, Blocks.DARK_OAK_LEAVES);
-                offerSmallHedgesRecipe(MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES);
-                offerSmallHedgesRecipe(CHERRY_HEDGE, Blocks.CHERRY_LEAVES);
-                offerSmallHedgesRecipe(PALE_OAK_HEDGE, Blocks.PALE_OAK_LEAVES);
-                offerSmallHedgesRecipe(WARPED_HEDGE, Blocks.WARPED_WART_BLOCK);
-                offerSmallHedgesRecipe(CRIMSON_HEDGE, Blocks.NETHER_WART_BLOCK);
-                offerSmallHedgesRecipe(WHITE_OAK_HEDGE, WHITE_OAK_LEAVES);
-                offerSmallHedgesRecipe(AZALEA_HEDGE, Blocks.AZALEA_LEAVES);
-                offerSmallHedgesRecipe(FLOWERING_AZALEA_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
-                offerSmallHedgesRecipe(MOSS_HEDGE, Blocks.MOSS_BLOCK);
-                offerSmallHedgesRecipe(PALE_MOSS_HEDGE, Blocks.PALE_MOSS_BLOCK);
+                // Hedges
+                offerHedgeRecipe(OAK_HEDGE, Blocks.OAK_LEAVES);
+                offerHedgeRecipe(SPRUCE_HEDGE, Blocks.SPRUCE_LEAVES);
+                offerHedgeRecipe(BIRCH_HEDGE, Blocks.BIRCH_LEAVES);
+                offerHedgeRecipe(JUNGLE_HEDGE, Blocks.JUNGLE_LEAVES);
+                offerHedgeRecipe(ACACIA_HEDGE, Blocks.ACACIA_LEAVES);
+                offerHedgeRecipe(DARK_OAK_HEDGE, Blocks.DARK_OAK_LEAVES);
+                offerHedgeRecipe(MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES);
+                offerHedgeRecipe(CHERRY_HEDGE, Blocks.CHERRY_LEAVES);
+                offerHedgeRecipe(PALE_OAK_HEDGE, Blocks.PALE_OAK_LEAVES);
+                offerHedgeRecipe(WARPED_HEDGE, Blocks.WARPED_WART_BLOCK);
+                offerHedgeRecipe(CRIMSON_HEDGE, Blocks.NETHER_WART_BLOCK);
+                offerHedgeRecipe(WHITE_OAK_HEDGE, WHITE_OAK_LEAVES);
+                offerHedgeRecipe(AZALEA_HEDGE, Blocks.AZALEA_LEAVES);
+                offerHedgeRecipe(FLOWERING_AZALEA_HEDGE, Blocks.FLOWERING_AZALEA_LEAVES);
+                offerHedgeRecipe(MOSS_HEDGE, Blocks.MOSS_BLOCK);
+                offerHedgeRecipe(PALE_MOSS_HEDGE, Blocks.PALE_MOSS_BLOCK);
 
                 // Large Flower Pots
                 shaped(RecipeCategory.BUILDING_BLOCKS, LARGE_FLOWER_POT).define('#', Items.BRICK).pattern("# #").pattern("###").pattern("###").unlockedBy("has_flower_pot", has(Items.FLOWER_POT)).save(exporter);
@@ -886,7 +886,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 2).requires(post.stripped()).group("planks").unlockedBy("has_stripped_wooden_post", has(post.stripped())).save(exporter, getConversionRecipeName(planks, post.stripped()));
             }
 
-            public void offerSmallHedgesRecipe(ItemLike output, ItemLike input) {
+            public void offerHedgeRecipe(ItemLike output, ItemLike input) {
                 shaped(RecipeCategory.BUILDING_BLOCKS, output, 6).define('#', input).pattern("###").pattern("###").group("hedge").unlockedBy(getHasName(input), has(input)).save(exporter);
             }
 
