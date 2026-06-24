@@ -1,9 +1,6 @@
 package com.brand.blockus.datagen.providers;
 
-import com.brand.blockus.registry.content.bundles.BSSWBundle;
-import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
-import com.brand.blockus.registry.content.bundles.PottedLargeBundle;
-import com.brand.blockus.registry.content.bundles.WoodBundle;
+import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.WoodMaps;
@@ -718,8 +715,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(REDSTONE_SAND))
             .add(toId(LEGACY_FIRST_GRASS_BLOCK))
             .add(toId(LEGACY_GRASS_BLOCK))
-            .add(toId(LEGACY_GRAVEL))
-            .add(toId(SUGAR_BLOCK));
+            .add(toId(LEGACY_GRAVEL));
 
         this.builder(BlockTags.SWORD_EFFICIENT)
             .add(toId(SOUL_O_LANTERN))
@@ -785,31 +781,53 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockTags.PLANKS).add(toId(LEGACY_PLANKS));
         HERRINGBONE_PLANKS.forEach(block -> this.builder(BlockTags.PLANKS).add(toId(block)));
 
-        for (BSSWBundle bsswBundle : BSSWBundle.values()) {
-            this.builder(BlockTags.STAIRS).add(toId(bsswBundle.stairs()));
-            this.builder(BlockTags.SLABS).add(toId(bsswBundle.slab()));
-            if (bsswBundle.wall() != null) {
-                this.builder(BlockTags.WALLS).add(toId(bsswBundle.wall()));
+        for (BSSWBundle bundle : BSSWBundle.values()) {
+            this.builder(BlockTags.STAIRS).add(toId(bundle.stairs()));
+            this.builder(BlockTags.SLABS).add(toId(bundle.slab()));
+            if (bundle.wall() != null) {
+                this.builder(BlockTags.WALLS).add(toId(bundle.wall()));
+            }
+        }
+
+        for (DyedBSSWBundle bundle : DyedBSSWBundle.values()) {
+            this.builder(BlockTags.STAIRS).addAll(toIds(bundle.stairsId()));
+            this.builder(BlockTags.SLABS).addAll(toIds(bundle.slabId()));
+            if (bundle.wall() != null) {
+                this.builder(BlockTags.WALLS).addAll(toIds(bundle.wallId()));
+            }
+        }
+
+        for (ConcreteBundle bundle : ConcreteBundle.values()) {
+            this.builder(BlockTags.STAIRS).addAll(toIds(bundle.stairsId()));
+            this.builder(BlockTags.SLABS).addAll(toIds(bundle.slabId()));
+            if (bundle.wall() != null) {
+                this.builder(BlockTags.WALLS).addAll(toIds(bundle.wallId()));
+            }
+        }
+
+        for (AsphaltBundle bundle : AsphaltBundle.values()) {
+            this.builder(BlockTags.STAIRS).addAll(toIds(bundle.stairsId()));
+            this.builder(BlockTags.SLABS).addAll(toIds(bundle.slabId()));
+        }
+
+        for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
+            this.builder(BlockTags.STAIRS).addAll(toIds(bundle.stairsId()));
+            this.builder(BlockTags.SLABS).addAll(toIds(bundle.slabId()));
+            if (bundle.wall() != null) {
+                this.builder(BlockTags.WALLS).addAll(toIds(bundle.wallId()));
             }
         }
 
         this.builder(BlockTags.STAIRS)
-            .addAll(toIds(BlockusIds.DYED_STONE_BRICK_STAIRS))
-            .addAll(toIds(BlockusIds.DYED_SHINGLES_STAIRS))
-            .addAll(toIds(BlockusIds.CONCRETE_BRICK_STAIRS))
-            .addAll(toIds(BlockusIds.COPPER_BRICK_STAIRS))
-            .addAll(toIds(BlockusIds.COPPER_TUFF_BRICK_STAIRS));
+            .add(toId(NETHERITE_STAIRS))
+            .add(toId(SMOOTH_STONE_STAIRS));
+
         this.builder(BlockTags.SLABS)
-            .addAll(toIds(BlockusIds.DYED_STONE_BRICK_SLAB))
-            .addAll(toIds(BlockusIds.DYED_SHINGLES_SLAB))
-            .addAll(toIds(BlockusIds.CONCRETE_BRICK_SLAB))
-            .addAll(toIds(BlockusIds.COPPER_BRICK_SLAB))
-            .addAll(toIds(BlockusIds.COPPER_TUFF_BRICK_SLAB));
+            .add(toId(CUT_SOUL_SANDSTONE_SLAB))
+            .add(toId(NETHERITE_SLAB));
+
         this.builder(BlockTags.WALLS)
-            .addAll(toIds(BlockusIds.DYED_STONE_BRICK_WALL))
-            .addAll(toIds(BlockusIds.CONCRETE_BRICK_WALL))
-            .addAll(toIds(BlockusIds.COPPER_BRICK_WALL))
-            .addAll(toIds(BlockusIds.COPPER_TUFF_BRICK_WALL))
+            .add(toId(ICE_BRICK_WALL))
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.builder(BlockTags.PRESSURE_PLATES).add(toId(OBSIDIAN_PRESSURE_PLATE));

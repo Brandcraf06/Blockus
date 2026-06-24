@@ -8,7 +8,7 @@ import com.brand.blockus.blocks.base.asphalt.RainbowAsphalt;
 import com.brand.blockus.blocks.base.redstone.FallingRedstoneBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneLantern;
 import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
-import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
+import com.brand.blockus.blocks.generator.BlockusTreeGrower;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
 import com.brand.blockus.utils.blocks.CopperBlockItemCollection;
@@ -375,7 +375,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // White Oak Wood
     public static final WoodType WHITE_OAK_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Blockus.id("white_oak"), BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Blockus.id("white_oak")));
-    public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", properties -> new SaplingBlock(BlockusSaplingGenerator.WHITE_OAK, properties), Blocks.OAK_SAPLING, properties -> properties.pushReaction(PushReaction.DESTROY));
+    public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", properties -> new SaplingBlock(BlockusTreeGrower.WHITE_OAK, properties), Blocks.OAK_SAPLING, properties -> properties.pushReaction(PushReaction.DESTROY));
     public static final Block POTTED_WHITE_OAK_SAPLING = pottedPlant("potted_white_oak_sapling", WHITE_OAK_SAPLING);
     public static final Block WHITE_OAK_LOG = registerCopy("white_oak_log", RotatedPillarBlock::new, Blocks.OAK_LOG, properties -> properties.mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
     public static final Block STRIPPED_WHITE_OAK_LOG = pillar2("stripped_white_oak_log", WHITE_OAK_LOG);
@@ -632,7 +632,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STARS_BLOCK = registerOf("stars_block", create().mapColor(MapColor.COLOR_BLACK).strength(5.0f, 6.0f));
 
     // Legacy
-    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", properties -> new SaplingBlock(BlockusSaplingGenerator.LEGACY_OAK, properties), createCopy(Blocks.OAK_SAPLING), "Indev");
+    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", properties -> new SaplingBlock(BlockusTreeGrower.LEGACY_OAK, properties), createCopy(Blocks.OAK_SAPLING), "Indev");
     public static final PottedLargeBundle POTTED_LEGACY_TREE = PottedLargeBundle.register("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING);
     public static final Block POTTED_LEGACY_SAPLING = pottedPlant("potted_legacy_sapling", LEGACY_SAPLING);
     public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", createCopy(Blocks.GRASS_BLOCK), "Cave game");

@@ -5,6 +5,7 @@ import com.brand.blockus.blocks.base.asphalt.AsphaltSlab;
 import com.brand.blockus.blocks.base.asphalt.AsphaltStairs;
 import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
 import com.brand.blockus.utils.helper.BlockFactory;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,7 +18,10 @@ import java.util.function.Function;
 public record AsphaltBundle(
     ColorBlockItemCollection block,
     ColorBlockItemCollection stairs,
-    ColorBlockItemCollection slab
+    ColorBlockItemCollection slab,
+    ColorCollection<BlockItemId> blockId,
+    ColorCollection<BlockItemId> stairsId,
+    ColorCollection<BlockItemId> slabId
 ) {
 
     public static final List<AsphaltBundle> LIST = new ArrayList<>();
@@ -34,7 +38,8 @@ public record AsphaltBundle(
         ColorBlockItemCollection block = BlockFactory.registerDyedBlocks(ids, register, (var0, p) -> new AsphaltBlock(p), color -> BlockFactory.asphaltProperties().mapColor(color));
         AsphaltBundle bundle = new AsphaltBundle(block,
             BlockFactory.registerDyedBlocks(idsStairs, register, (color, p) -> new AsphaltStairs(block.blocks().pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block.blocks())),
-            BlockFactory.registerDyedBlocks(idsSlab, register, (var0, p) -> new AsphaltSlab(p), BlockFactory.copyDyedBlocks(block.blocks()))
+            BlockFactory.registerDyedBlocks(idsSlab, register, (var0, p) -> new AsphaltSlab(p), BlockFactory.copyDyedBlocks(block.blocks())),
+            (ColorCollection<BlockItemId>) ids, (ColorCollection<BlockItemId>) idsStairs, (ColorCollection<BlockItemId>) idsSlab
         );
         LIST.add(bundle);
         return bundle;

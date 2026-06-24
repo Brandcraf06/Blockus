@@ -2,6 +2,7 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
 import com.brand.blockus.utils.helper.BlockFactory;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.apache.commons.lang3.function.TriFunction;
@@ -16,7 +17,13 @@ public record ConcreteBundle(
     ColorBlockItemCollection slab,
     ColorBlockItemCollection wall,
     ColorBlockItemCollection chiseled,
-    ColorBlockItemCollection pillar
+    ColorBlockItemCollection pillar,
+    ColorCollection<BlockItemId> blockId,
+    ColorCollection<BlockItemId> stairsId,
+    ColorCollection<BlockItemId> slabId,
+    ColorCollection<BlockItemId> wallId,
+    ColorCollection<BlockItemId> chiseledId,
+    ColorCollection<BlockItemId> pillarId
 ) {
 
     public static final List<ConcreteBundle> LIST = new ArrayList<>();
@@ -36,7 +43,9 @@ public record ConcreteBundle(
             BlockFactory.registerDyedBlocks(idsSlab, register, (var0, p) -> new SlabBlock(p), BlockFactory.copyDyedBlocks(block.blocks())),
             BlockFactory.registerDyedBlocks(idsWall, register, (var0, p) -> new WallBlock(p), BlockFactory.copyDyedBlocks(block.blocks())),
             BlockFactory.registerDyedBlocks(idsChiseled, register, block.blocks()),
-            BlockFactory.registerDyedBlocks(idsPillar, register, (var0, p) -> new RotatedPillarBlock(p), BlockFactory.copyDyedBlocks(block.blocks()))
+            BlockFactory.registerDyedBlocks(idsPillar, register, (var0, p) -> new RotatedPillarBlock(p), BlockFactory.copyDyedBlocks(block.blocks())),
+            (ColorCollection<BlockItemId>) ids, (ColorCollection<BlockItemId>) idsStairs, (ColorCollection<BlockItemId>) idsSlab, (ColorCollection<BlockItemId>) idsWall, (ColorCollection<BlockItemId>) idsChiseled, (ColorCollection<BlockItemId>) idsPillar
+
         );
         LIST.add(bundle);
         return bundle;

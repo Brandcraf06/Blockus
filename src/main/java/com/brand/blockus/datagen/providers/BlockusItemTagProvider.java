@@ -273,7 +273,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(COBBLESTONE_BRICKS.block()))
             .add(toId(MOSSY_COBBLESTONE_BRICKS.block()))
             .add(toId(STONE_TILES.block()))
-            .add(toId(BlockusBlocks.STONE_BRICK_PILLAR))
+            .add(toId(STONE_BRICK_PILLAR))
             .add(toId(HERRINGBONE_STONE_BRICKS))
             .add(toId(STONE_CIRCULAR_PAVING))
             .add(toId(STURDY_STONE))
