@@ -220,7 +220,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block SNOW_PILLAR = pillar("snow", SNOW_BRICKS.block());
 
     // Ice Bricks
-    public static final Block ICE_BRICKS = registerOf("ice_bricks", create().mapColor(MapColor.ICE).friction(0.98F).strength(0.5F).sound(SoundType.GLASS));
+    public static final Block ICE_BRICKS = registerCopy("ice_bricks", Blocks.PACKED_ICE);
     public static final Block ICE_BRICK_WALL = wall(ICE_BRICKS);
     public static final Block ICE_PILLAR = pillar("ice", ICE_BRICKS);
 
