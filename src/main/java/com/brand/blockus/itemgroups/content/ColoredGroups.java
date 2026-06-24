@@ -26,7 +26,7 @@ public class ColoredGroups {
             }
             entries.accept(BlockusBlocks.RAINBOW_ASPHALT);
 
-            entries.accept(BlockusBlocks.RAINBOW_WOOL);
+            addBSSW(entries, BlockusBlocks.RAINBOW_WOOL);
             entries.accept(BlockusBlocks.RAINBOW_CARPET);
             entries.accept(BlockusBlocks.RAINBOW_BED);
 

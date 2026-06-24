@@ -8,7 +8,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.IntProviders;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 
@@ -33,7 +33,7 @@ public class WhiteOakFoliagePlacer extends FoliagePlacer {
         return BlockusFoliagePlacerType.WHITE_OAK_FOLIAGE_PLACER;
     }
 
-    protected void createFoliage(WorldGenLevel level, FoliagePlacer.FoliageSetter foliageSetter, RandomSource random, TreeConfiguration config, int treeHeight, FoliagePlacer.FoliageAttachment foliageAttachment, int foliageHeight, int leafRadius, int offset) {
+    protected void createFoliage(WorldGenLevel level, FoliagePlacer.FoliageSetter foliageSetter, RandomSource random, TreeFeature config, int treeHeight, FoliagePlacer.FoliageAttachment foliageAttachment, int foliageHeight, int leafRadius, int offset) {
         boolean doubleTrunk = foliageAttachment.doubleTrunk();
         BlockPos foliagePos = foliageAttachment.pos().above(offset - 3);
         int currentRadius = leafRadius + foliageAttachment.radiusOffset() - 1;
@@ -47,7 +47,7 @@ public class WhiteOakFoliagePlacer extends FoliagePlacer {
         this.placeLeavesRowWithHangingLeavesBelow(level, foliageSetter, random, config, foliagePos, currentRadius, -1, doubleTrunk, this.hangingLeavesChance, this.hangingLeavesExtensionChance);
     }
 
-    public int foliageHeight(RandomSource random, int treeHeight, TreeConfiguration config) {
+    public int foliageHeight(RandomSource random, int treeHeight, TreeFeature config) {
         return this.height.sample(random);
     }
 

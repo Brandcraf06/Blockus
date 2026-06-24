@@ -1,9 +1,6 @@
 package com.brand.blockus.datagen.providers;
 
-import com.brand.blockus.registry.content.bundles.BSSWBundle;
-import com.brand.blockus.registry.content.bundles.ColoredTilesBundle;
-import com.brand.blockus.registry.content.bundles.PottedLargeBundle;
-import com.brand.blockus.registry.content.bundles.WoodBundle;
+import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.WoodMaps;
@@ -77,6 +74,11 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(BEVELED_GLASS))
             .addAll(toIds(BlockusIds.STAINED_BEVELED_GLASS))
             .add(toId(RAINBOW_BEVELED_GLASS));
+
+        this.builder(BlockusBlockTags.BEVELED_GLASS_PANES)
+            .add(toId(BEVELED_GLASS_PANE))
+            .addAll(toIds(BlockusIds.STAINED_BEVELED_GLASS_PANE))
+            .add(toId(RAINBOW_BEVELED_GLASS_PANE));
 
         this.builder(BlockusBlockTags.BLACKSTONE_BLOCKS)
             .add(bsswBundle(POLISHED_BLACKSTONE_TILES))
@@ -352,12 +354,16 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockusBlockTags.PATTERNED_CARPETS)
             .addAll(toIds(BlockusIds.PATTERNED_CARPET))
             .addAll(toIds(BlockusIds.GINGHAM_CARPET));
+        this.builder(BlockusBlockTags.PATTERNED_WOOL_STAIRS)
+            .addAll(toIds(BlockusIds.PATTERNED_WOOL_STAIRS))
+            .addAll(toIds(BlockusIds.GINGHAM_WOOL_STAIRS));
+        this.builder(BlockusBlockTags.PATTERNED_WOOL_SLABS)
+            .addAll(toIds(BlockusIds.PATTERNED_WOOL_SLAB))
+            .addAll(toIds(BlockusIds.GINGHAM_WOOL_SLAB));
         this.builder(BlockusBlockTags.ALL_PATTERNED_WOOLS)
             .addTag(BlockusBlockTags.PATTERNED_WOOL)
-            .addAll(toIds(BlockusIds.PATTERNED_WOOL_STAIRS))
-            .addAll(toIds(BlockusIds.PATTERNED_WOOL_SLAB))
-            .addAll(toIds(BlockusIds.GINGHAM_WOOL_STAIRS))
-            .addAll(toIds(BlockusIds.GINGHAM_WOOL_SLAB))
+            .addTag(BlockusBlockTags.PATTERNED_WOOL_STAIRS)
+            .addTag(BlockusBlockTags.PATTERNED_WOOL_SLABS)
             .addTag(BlockusBlockTags.PATTERNED_CARPETS);
 
         this.builder(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS)
@@ -596,6 +602,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         // Conventional Block Tags
         this.builder(ConventionalBlockTags.GLASS_BLOCKS).addTag(BlockusBlockTags.BEVELED_GLASS);
+        this.builder(ConventionalBlockTags.GLASS_BLOCKS_COLORLESS).add(toId(BEVELED_GLASS));
+        this.builder(ConventionalBlockTags.GLASS_PANES).addTag(BlockusBlockTags.BEVELED_GLASS_PANES);
+        this.builder(ConventionalBlockTags.GLASS_PANES_COLORLESS).add(toId(BEVELED_GLASS_PANE));
         this.builder(ConventionalBlockTags.SMALL_FLOWERS).add(toId(RAINBOW_ROSE));
 
         // Mining Block Tags
@@ -718,8 +727,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(REDSTONE_SAND))
             .add(toId(LEGACY_FIRST_GRASS_BLOCK))
             .add(toId(LEGACY_GRASS_BLOCK))
-            .add(toId(LEGACY_GRAVEL))
-            .add(toId(SUGAR_BLOCK));
+            .add(toId(LEGACY_GRAVEL));
 
         this.builder(BlockTags.SWORD_EFFICIENT)
             .add(toId(SOUL_O_LANTERN))
@@ -785,31 +793,54 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockTags.PLANKS).add(toId(LEGACY_PLANKS));
         HERRINGBONE_PLANKS.forEach(block -> this.builder(BlockTags.PLANKS).add(toId(block)));
 
-        for (BSSWBundle bsswBundle : BSSWBundle.values()) {
-            this.builder(BlockTags.STAIRS).add(toId(bsswBundle.stairs()));
-            this.builder(BlockTags.SLABS).add(toId(bsswBundle.slab()));
-            if (bsswBundle.wall() != null) {
-                this.builder(BlockTags.WALLS).add(toId(bsswBundle.wall()));
+        for (BSSWBundle bundle : BSSWBundle.values()) {
+            this.builder(BlockTags.STAIRS).add(toId(bundle.stairs()));
+            this.builder(BlockTags.SLABS).add(toId(bundle.slab()));
+            if (bundle.wall() != null) {
+                this.builder(BlockTags.WALLS).add(toId(bundle.wall()));
+            }
+            this.builder(BlockTags.BLOCKS_MOTION_NO_LEAVES).add(toId(bundle.block()));
+        }
+
+        for (DyedBSSWBundle bundle : DyedBSSWBundle.values()) {
+            this.builder(BlockTags.STAIRS).addAll(toIds(bundle.stairsId()));
+            this.builder(BlockTags.SLABS).addAll(toIds(bundle.slabId()));
+            if (bundle.wall() != null) {
+                this.builder(BlockTags.WALLS).addAll(toIds(bundle.wallId()));
+            }
+        }
+
+        for (ConcreteBundle bundle : ConcreteBundle.values()) {
+            this.builder(BlockTags.STAIRS).addAll(toIds(bundle.stairsId()));
+            this.builder(BlockTags.SLABS).addAll(toIds(bundle.slabId()));
+            if (bundle.wall() != null) {
+                this.builder(BlockTags.WALLS).addAll(toIds(bundle.wallId()));
+            }
+        }
+
+        for (AsphaltBundle bundle : AsphaltBundle.values()) {
+            this.builder(BlockTags.STAIRS).addAll(toIds(bundle.stairsId()));
+            this.builder(BlockTags.SLABS).addAll(toIds(bundle.slabId()));
+        }
+
+        for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
+            this.builder(BlockTags.STAIRS).addAll(toIds(bundle.stairsId()));
+            this.builder(BlockTags.SLABS).addAll(toIds(bundle.slabId()));
+            if (bundle.wall() != null) {
+                this.builder(BlockTags.WALLS).addAll(toIds(bundle.wallId()));
             }
         }
 
         this.builder(BlockTags.STAIRS)
-            .addAll(toIds(BlockusIds.DYED_STONE_BRICK_STAIRS))
-            .addAll(toIds(BlockusIds.DYED_SHINGLES_STAIRS))
-            .addAll(toIds(BlockusIds.CONCRETE_BRICK_STAIRS))
-            .addAll(toIds(BlockusIds.COPPER_BRICK_STAIRS))
-            .addAll(toIds(BlockusIds.COPPER_TUFF_BRICK_STAIRS));
+            .add(toId(NETHERITE_STAIRS))
+            .add(toId(SMOOTH_STONE_STAIRS));
+
         this.builder(BlockTags.SLABS)
-            .addAll(toIds(BlockusIds.DYED_STONE_BRICK_SLAB))
-            .addAll(toIds(BlockusIds.DYED_SHINGLES_SLAB))
-            .addAll(toIds(BlockusIds.CONCRETE_BRICK_SLAB))
-            .addAll(toIds(BlockusIds.COPPER_BRICK_SLAB))
-            .addAll(toIds(BlockusIds.COPPER_TUFF_BRICK_SLAB));
+            .add(toId(CUT_SOUL_SANDSTONE_SLAB))
+            .add(toId(NETHERITE_SLAB));
+
         this.builder(BlockTags.WALLS)
-            .addAll(toIds(BlockusIds.DYED_STONE_BRICK_WALL))
-            .addAll(toIds(BlockusIds.CONCRETE_BRICK_WALL))
-            .addAll(toIds(BlockusIds.COPPER_BRICK_WALL))
-            .addAll(toIds(BlockusIds.COPPER_TUFF_BRICK_WALL))
+            .add(toId(ICE_BRICK_WALL))
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.builder(BlockTags.PRESSURE_PLATES).add(toId(OBSIDIAN_PRESSURE_PLATE));
@@ -847,7 +878,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(POLISHED_TUFF_BUTTON))
             .add(toId(POLISHED_SCULK_BUTTON));
 
-
         this.builder(BlockTags.DOORS)
             .add(toId(OBSIDIAN_REINFORCED_DOOR))
             .add(toId(STONE_DOOR))
@@ -873,8 +903,10 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(LEGACY_GRASS_BLOCK))
             .add(toId(LEGACY_FIRST_GRASS_BLOCK));
 
-        this.builder(BlockTags.WOOL).addTag(BlockusBlockTags.ALL_PATTERNED_WOOLS).add(toId(RAINBOW_WOOL));
-        this.builder(BlockTags.WOOL_CARPETS).addTag(BlockusBlockTags.PATTERNED_CARPETS).add(toId(RAINBOW_CARPET));
+        this.builder(BlockTags.WOOL).addTag(BlockusBlockTags.PATTERNED_WOOL).add(toId(RAINBOW_WOOL.block()));
+        this.builder(BlockItemTags.WOOL_STAIRS.block()).addTag(BlockusBlockTags.PATTERNED_WOOL_STAIRS).add(toId(RAINBOW_WOOL.stairs()));
+        this.builder(BlockItemTags.WOOL_SLABS.block()).addTag(BlockusBlockTags.PATTERNED_WOOL_SLABS).add(toId(RAINBOW_WOOL.slab()));
+        this.builder(BlockItemTags.WOOL_CARPETS.block()).addTag(BlockusBlockTags.PATTERNED_CARPETS).add(toId(RAINBOW_CARPET));
         this.builder(BlockTags.BEDS).add(toId(RAINBOW_BED));
         this.builder(BlockTags.CONCRETE).addTag(BlockusBlockTags.CONCRETE_BRICKS);
         this.builder(BlockTags.GLAZED_TERRACOTTA).addTag(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS);
@@ -978,17 +1010,123 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockTags.PIGLIN_REPELLENTS)
             .add(toId(SOUL_LANTERN_BLOCK))
             .add(toId(SOUL_O_LANTERN));
+
+        this.builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
+            .add(toId(RAINBOW_BLOCK))
+            .add(toId(CHOCOLATE_SQUARES))
+            .add(toId(CHARCOAL_BLOCK))
+            .add(toId(SUGAR_BLOCK))
+            .add(toId(BURNT_PAPER_BLOCK))
+            .add(toId(SOUL_O_LANTERN))
+            .add(toId(COPPER_JACK_O_LANTERN))
+            .add(toId(REDSTONE_O_LANTERN))
+            .add(toId(WOODEN_FRAME))
+            .add(toId(CHARCOAL_BLOCK))
+            .add(toId(ROTTEN_FLESH_BLOCK))
+            .add(toId(CHORUS_BLOCK))
+            .add(toId(ENDER_BLOCK))
+            .add(toId(NETHER_STAR_BLOCK))
+            .add(toId(LOVE_BLOCK))
+            .add(toId(WEIGHT_STORAGE_CUBE))
+            .add(toId(COMPANION_CUBE))
+            .add(toId(CAUTION_BLOCK))
+            .add(toId(PATH))
+            .add(toId(SUGAR_BLOCK))
+            .add(toId(REDSTONE_SAND))
+            .add(toId(LEGACY_FIRST_GRASS_BLOCK))
+            .add(toId(LEGACY_GRASS_BLOCK))
+            .add(toId(LEGACY_GRAVEL))
+            .add(toId(LEGACY_BRICKS))
+            .add(toId(LEGACY_FIRST_COBBLESTONE))
+            .add(toId(LEGACY_COBBLESTONE))
+            .add(toId(LEGACY_MOSSY_COBBLESTONE))
+            .add(toId(LEGACY_IRON_BLOCK))
+            .add(toId(LEGACY_GOLD_BLOCK))
+            .add(toId(LEGACY_COAL_BLOCK))
+            .add(toId(LEGACY_EXPLOSION_PROOF_GOLD_BLOCK))
+            .add(toId(LEGACY_DIAMOND_BLOCK))
+            .add(toId(LEGACY_LAPIS_BLOCK))
+            .add(toId(LEGACY_STONECUTTER))
+            .add(toId(LEGACY_NETHER_REACTOR_CORE))
+            .add(toId(CHISELED_MUD_BRICKS))
+            .add(toId(MUD_BRICK_PILLAR))
+            .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
+            .addTag(BlockusBlockTags.OBSIDIAN)
+            .addTag(BlockusBlockTags.ALL_DYED_STONE_BRICKS)
+            .addTag(BlockusBlockTags.MARBLE)
+            .addTag(BlockusBlockTags.LIMESTONE)
+            .addTag(BlockusBlockTags.BLUESTONE)
+            .addTag(BlockusBlockTags.VIRIDITE)
+            .addTag(BlockusBlockTags.PURPUR_BLOCKS)
+            .addTag(BlockusBlockTags.QUARTZ_BLOCKS)
+            .addTag(BlockusBlockTags.SANDSTONE)
+            .addTag(BlockusBlockTags.RED_SANDSTONE)
+            .addTag(BlockusBlockTags.SOUL_SANDSTONE)
+            .addTag(BlockusBlockTags.STONE_BLOCKS)
+            .addTag(BlockusBlockTags.ANDESITE_BLOCKS)
+            .addTag(BlockusBlockTags.DIORITE_BLOCKS)
+            .addTag(BlockusBlockTags.GRANITE_BLOCKS)
+            .addTag(BlockusBlockTags.BLACKSTONE_BLOCKS)
+            .addTag(BlockusBlockTags.BASALT_BLOCKS)
+            .addTag(BlockusBlockTags.LAVA_BRICKS)
+            .addTag(BlockusBlockTags.LAVA_POLISHED_BLACKSTONE_BRICKS)
+            .addTag(BlockusBlockTags.WATER_BRICKS)
+            .addTag(BlockusBlockTags.SNOW_BRICKS)
+            .addTag(BlockusBlockTags.ICE_BRICKS)
+            .addTag(BlockusBlockTags.MAGMA_BRICKS)
+            .addTag(BlockusBlockTags.BLAZE_BRICKS)
+            .addTag(BlockusBlockTags.NETHERRACK_BLOCKS)
+            .addTag(BlockusBlockTags.NETHER_BRICKS)
+            .addTag(BlockusBlockTags.PRISMARINE_BLOCKS)
+            .addTag(BlockusBlockTags.BRICKS_BLOCKS)
+            .addTag(BlockusBlockTags.HONEYCOMB_BLOCKS)
+            .addTag(BlockusBlockTags.END_STONE_BLOCKS)
+            .addTag(BlockusBlockTags.RAINBOW_BLOCKS)
+            .addTag(BlockusBlockTags.ALL_CONCRETE_BRICKS)
+            .addTag(BlockusBlockTags.DEEPSLATE_BLOCKS)
+            .addTag(BlockusBlockTags.SCULK_BLOCKS)
+            .addTag(BlockusBlockTags.TUFF_BLOCKS)
+            .addTag(BlockusBlockTags.SULFUR_BLOCKS)
+            .addTag(BlockusBlockTags.CINNABAR_BLOCKS)
+            .addTag(BlockusBlockTags.DRIPSTONE_BLOCKS)
+            .addTag(BlockusBlockTags.CHOCOLATE_BLOCKS)
+            .addTag(BlockusBlockTags.ALL_ASPHALT)
+            .addTag(BlockusBlockTags.ALL_SHINGLES)
+            .addTag(BlockusBlockTags.COLORED_TILES)
+            .addTag(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS)
+            .addTag(BlockusBlockTags.PLATINGS)
+            .addTag(BlockusBlockTags.COPPER_BLOCKS)
+            .addTag(BlockusBlockTags.RESIN_BLOCKS)
+            .addTag(BlockusBlockTags.LANTERN_BLOCKS)
+            .addTag(BlockusBlockTags.GATES)
+            .addTag(BlockusBlockTags.ALL_WOODEN_MOSAICS)
+            .addTag(BlockusBlockTags.ALL_MOSSY_PLANKS)
+            .addTag(BlockusBlockTags.TIMBER_FRAMES)
+            .addTag(BlockusBlockTags.WOODEN_LATTICES)
+            .addTag(BlockusBlockTags.WOODEN_GRATES)
+            .addTag(BlockusBlockTags.WOODEN_POSTS)
+            .addTag(BlockusBlockTags.FRAMED_PAPER_BLOCKS)
+            .addTag(BlockusBlockTags.FOOD_CRATES)
+            .addTag(BlockusBlockTags.THATCH)
+            .addTag(BlockusBlockTags.REDSTONE_LAMPS)
+            .addTag(BlockusBlockTags.NEON)
+            .addTag(BlockusBlockTags.FUTURNEO_BLOCKS)
+            .addTag(BlockusBlockTags.BEVELED_GLASS)
+            .addTag(BlockusBlockTags.BEVELED_GLASS_PANES);
+
+        this.builder(BlockTags.BLOCKS_MOTION).addTag(BlockusBlockTags.HEDGES);
+
     }
 
     public BlockItemId toId(Block block) {
         return BlockBuilder.getId(block);
     }
 
-    private static ColorCollection<ResourceKey<Block>> toIds(ColorCollection<BlockItemId> ids) {
+    public static ColorCollection<ResourceKey<Block>> toIds(ColorCollection<BlockItemId> ids) {
         return ids.map(BlockItemId::block);
     }
 
-    private static WeatheringCopperCollection<ResourceKey<Block>> toIds(WeatheringCopperCollection<BlockItemId> ids) {
+    public static WeatheringCopperCollection<ResourceKey<Block>> toIds(WeatheringCopperCollection<BlockItemId> ids) {
         return ids.map(BlockItemId::block);
     }
 

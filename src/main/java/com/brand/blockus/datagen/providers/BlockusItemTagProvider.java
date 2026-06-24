@@ -1,6 +1,5 @@
 package com.brand.blockus.datagen.providers;
 
-import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.registry.content.bundles.WoodBundle;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
@@ -48,6 +47,8 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockusBlockTags.BARRIERS, BlockusItemTags.BARRIERS);
         this.copy(BlockusBlockTags.LANTERN_BLOCKS, BlockusItemTags.LANTERN_BLOCKS);
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
+        this.copy(BlockusBlockTags.PATTERNED_WOOL_STAIRS, BlockusItemTags.PATTERNED_WOOL_STAIRS);
+        this.copy(BlockusBlockTags.PATTERNED_WOOL_SLABS, BlockusItemTags.PATTERNED_WOOL_SLABS);
         this.copy(BlockusBlockTags.PATTERNED_CARPETS, BlockusItemTags.PATTERNED_CARPETS);
         this.copy(BlockusBlockTags.ALL_PATTERNED_WOOLS, BlockusItemTags.ALL_PATTERNED_WOOLS);
         this.copy(BlockusBlockTags.HEDGES, BlockusItemTags.HEDGES);
@@ -220,8 +221,10 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(STONE_TRAPDOOR))
             .add(toId(BLACKSTONE_TRAPDOOR));
 
-        this.builder(ItemTags.WOOL).addTag(BlockusItemTags.PATTERNED_WOOL).add(toId(RAINBOW_WOOL));
-        this.copy(BlockTags.WOOL_CARPETS, ItemTags.WOOL_CARPETS);
+        this.copy(BlockTags.WOOL, ItemTags.WOOL);
+        this.copy(BlockItemTags.WOOL_STAIRS.block(), BlockItemTags.WOOL_STAIRS.item());
+        this.copy(BlockItemTags.WOOL_SLABS.block(), BlockItemTags.WOOL_SLABS.item());
+        this.copy(BlockItemTags.WOOL_CARPETS.block(), BlockItemTags.WOOL_CARPETS.item());
         this.copy(BlockTags.BEDS, ItemTags.BEDS);
         this.copy(BlockTags.CONCRETE, ItemTags.CONCRETE);
         this.copy(BlockTags.GLAZED_TERRACOTTA, ItemTags.GLAZED_TERRACOTTA);
@@ -273,7 +276,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(COBBLESTONE_BRICKS.block()))
             .add(toId(MOSSY_COBBLESTONE_BRICKS.block()))
             .add(toId(STONE_TILES.block()))
-            .add(toId(BlockusBlocks.STONE_BRICK_PILLAR))
+            .add(toId(STONE_BRICK_PILLAR))
             .add(toId(HERRINGBONE_STONE_BRICKS))
             .add(toId(STONE_CIRCULAR_PAVING))
             .add(toId(STURDY_STONE))

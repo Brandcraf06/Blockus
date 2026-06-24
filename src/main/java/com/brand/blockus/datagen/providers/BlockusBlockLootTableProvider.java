@@ -179,7 +179,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             POLISHED_CINNABAR_BUTTON,
 
             // Wool
-            RAINBOW_WOOL,
             RAINBOW_CARPET,
 
             // Other

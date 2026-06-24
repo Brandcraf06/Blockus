@@ -685,10 +685,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                         carpet(block.carpet().blocks().pick(color), block.block().blocks().pick(color));
                     }
                 }
-                this.colorItemWithRainbow(RAINBOW_WOOL, Items.WOOL.asList(), "rainbow_wool", RecipeCategory.BUILDING_BLOCKS);
-                carpet(RAINBOW_CARPET, RAINBOW_WOOL);
+                this.colorItemWithRainbow(RAINBOW_WOOL.block(), Items.WOOL.asList(), "rainbow_wool", RecipeCategory.BUILDING_BLOCKS);
+                this.colorItemWithRainbow(RAINBOW_WOOL.stairs(), Items.WOOL_STAIRS.asList(), "rainbow_wool_stairs", RecipeCategory.BUILDING_BLOCKS);
+                this.colorItemWithRainbow(RAINBOW_WOOL.slab(), Items.WOOL_SLAB.asList(), "rainbow_wool_slab", RecipeCategory.BUILDING_BLOCKS);
                 this.colorItemWithRainbow(RAINBOW_CARPET, Items.CARPET.asList(), "rainbow_carpet", RecipeCategory.DECORATIONS);
-                bedFromPlanksAndWool(RAINBOW_BED, RAINBOW_WOOL);
+                carpet(RAINBOW_CARPET, RAINBOW_WOOL.block());
+                bedFromPlanksAndWool(RAINBOW_BED, RAINBOW_WOOL.block());
                 this.colorItemWithRainbow(RAINBOW_BED, Items.BED.asList(), "rainbow_bed", RecipeCategory.DECORATIONS);
 
 

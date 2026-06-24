@@ -14,6 +14,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> BARRIERS = register("barriers");
     public static final TagKey<Block> BASALT_BLOCKS = register("basalt_blocks");
     public static final TagKey<Block> BEVELED_GLASS = register("beveled_glass");
+    public static final TagKey<Block> BEVELED_GLASS_PANES = register("beveled_glass_panes");
     public static final TagKey<Block> BLACKSTONE_BLOCKS = register("blackstone_blocks");
     public static final TagKey<Block> BLAZE_BRICKS = register("blaze_bricks");
     public static final TagKey<Block> BLUESTONE = register("bluestone");
@@ -46,6 +47,8 @@ public class BlockusBlockTags {
     public static final TagKey<Block> OBSIDIAN = register("obsidian");
     public static final TagKey<Block> NETHER_PORTAL_FRAME_BLOCKS = register("nether_portal_frame_blocks");
     public static final TagKey<Block> PATTERNED_WOOL = register("patterned_wool");
+    public static final TagKey<Block> PATTERNED_WOOL_STAIRS = register("patterned_wool_stairs");
+    public static final TagKey<Block> PATTERNED_WOOL_SLABS = register("patterned_wool_slabs");
     public static final TagKey<Block> PATTERNED_CARPETS = register("patterned_carpets");
     public static final TagKey<Block> ALL_PATTERNED_WOOLS = register("all_patterned_wools");
     public static final TagKey<Block> PHANTOM_PURPUR_BLOCKS = register("phantom_purpur_blocks");

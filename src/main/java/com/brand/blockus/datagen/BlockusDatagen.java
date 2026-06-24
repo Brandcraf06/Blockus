@@ -28,7 +28,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
 
     @Override
     public void buildRegistry(RegistrySetBuilder registryBuilder) {
-        registryBuilder.add(Registries.CONFIGURED_FEATURE, BlockusWorldgenProvider::bootstrapConfiguredFeatures);
+        registryBuilder.add(Registries.FEATURE, BlockusWorldgenProvider::bootstrapFeatures);
         registryBuilder.add(Registries.PLACED_FEATURE, BlockusWorldgenProvider::bootstrapPlacedFeatures);
     }
 

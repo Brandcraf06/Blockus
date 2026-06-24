@@ -10,6 +10,8 @@ public final class BlockusItemTags {
     public static final TagKey<Item> BARRIERS = register("barriers");
     public static final TagKey<Item> NATURAL_ICE = register("natural_ice");
     public static final TagKey<Item> PATTERNED_WOOL = register("patterned_wool");
+    public static final TagKey<Item> PATTERNED_WOOL_STAIRS = register("patterned_wool_stairs");
+    public static final TagKey<Item> PATTERNED_WOOL_SLABS = register("patterned_wool_slabs");
     public static final TagKey<Item> PATTERNED_CARPETS = register("patterned_carpets");
     public static final TagKey<Item> ALL_PATTERNED_WOOLS = register("all_patterned_wools");
     public static final TagKey<Item> TIMBER_FRAMES = register("timber_frames");

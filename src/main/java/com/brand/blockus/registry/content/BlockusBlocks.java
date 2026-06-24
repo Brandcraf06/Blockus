@@ -8,7 +8,7 @@ import com.brand.blockus.blocks.base.asphalt.RainbowAsphalt;
 import com.brand.blockus.blocks.base.redstone.FallingRedstoneBlock;
 import com.brand.blockus.blocks.base.redstone.RedstoneLantern;
 import com.brand.blockus.blocks.base.redstone.RedstonePumpkinBlock;
-import com.brand.blockus.blocks.generator.BlockusSaplingGenerator;
+import com.brand.blockus.blocks.generator.BlockusTreeGrower;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.blocks.ColorBlockItemCollection;
 import com.brand.blockus.utils.blocks.CopperBlockItemCollection;
@@ -24,6 +24,7 @@ import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -334,7 +335,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Rainbow
     public static final Block RAINBOW_ROSE = registerOf("rainbow_rose", properties -> new FlowerBlock(MobEffects.GLOWING, 8, properties), create().mapColor(MapColor.PLANT).noCollision().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ));
-    public static final Block RAINBOW_PETALS = registerOf("rainbow_petals", FlowerBedBlock::new, create().mapColor(MapColor.PLANT).noCollision().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY));
+    public static final Block RAINBOW_PETALS = registerOf("rainbow_petals", (p) -> new FlowerBedBlock(p, 3), create().mapColor(MapColor.PLANT).noCollision().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY));
 
     public static final Block POTTED_RAINBOW_ROSE = pottedPlant("potted_rainbow_rose", RAINBOW_ROSE);
     public static final Block RAINBOW_BLOCK = registerOf("rainbow_block", FullFacingBlock::new, create().mapColor(MapColor.COLOR_LIGHT_BLUE).strength(5.0f, 6.0f).requiresCorrectToolForDrops());
@@ -375,13 +376,13 @@ public class BlockusBlocks extends BlockFactory {
 
     // White Oak Wood
     public static final WoodType WHITE_OAK_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Blockus.id("white_oak"), BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Blockus.id("white_oak")));
-    public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", properties -> new SaplingBlock(BlockusSaplingGenerator.WHITE_OAK, properties), Blocks.OAK_SAPLING, properties -> properties.pushReaction(PushReaction.DESTROY));
+    public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", properties -> new SaplingBlock(BlockusTreeGrower.WHITE_OAK, properties), Blocks.OAK_SAPLING, properties -> properties.pushReaction(PushReaction.DESTROY));
     public static final Block POTTED_WHITE_OAK_SAPLING = pottedPlant("potted_white_oak_sapling", WHITE_OAK_SAPLING);
     public static final Block WHITE_OAK_LOG = registerCopy("white_oak_log", RotatedPillarBlock::new, Blocks.OAK_LOG, properties -> properties.mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
     public static final Block STRIPPED_WHITE_OAK_LOG = pillar2("stripped_white_oak_log", WHITE_OAK_LOG);
     public static final Block WHITE_OAK_WOOD = pillar2("white_oak_wood", WHITE_OAK_LOG);
     public static final Block STRIPPED_WHITE_OAK_WOOD = pillar2("stripped_white_oak_wood", WHITE_OAK_LOG);
-    public static final Block WHITE_OAK_LEAVES = registerCopy("white_oak_leaves", properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 14061641), properties), Blocks.OAK_LEAVES, properties -> properties.mapColor(MapColor.COLOR_ORANGE).pushReaction(PushReaction.DESTROY).isValidSpawn(BlockusBlocks::canSpawnOnLeaves).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never));
+    public static final Block WHITE_OAK_LEAVES = registerOf("white_oak_leaves", (p) -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 14061641), AmbientLeavesBlockSoundPlayer.noAmbientSound(), p), Blocks.leavesProperties(SoundType.GRASS));
     public static final WoodBundle WHITE_OAK = WoodBundle.register("white_oak", Blocks.OAK_PLANKS, MapColor.QUARTZ, SoundType.WOOD, WHITE_OAK_WOOD_TYPE, BlockSetType.OAK, true);
 
     // Raw Bamboo
@@ -529,8 +530,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block RAINBOW_BEVELED_GLASS_PANE = dyedBlock("rainbow_beveled_glass_pane", DyeColor.YELLOW, StainedGlassPaneBlock::new, RAINBOW_GLASS_PANE);
     public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS, properties -> properties.isValidSpawn(BlockusBlocks::never).isRedstoneConductor(BlockusBlocks::never).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never));
 
-    // Patterned Wools
-    public static final Block RAINBOW_WOOL = dyedBlock("rainbow_wool", DyeColor.YELLOW, (var0, p) -> new Block(p), Blocks.WOOL.white());
+    // Wools
+    public static final BSSWBundle RAINBOW_WOOL = BSSWBundle.of("rainbow_wool", Blocks.WOOL.yellow()).includeWall(false).register();
     public static final Block RAINBOW_CARPET = dyedBlock("rainbow_carpet", DyeColor.YELLOW, WoolCarpetBlock::new, Blocks.CARPET.white());
     public static final Block RAINBOW_BED = dyedBlock("rainbow_bed", DyeColor.YELLOW, BedBlock::new, Blocks.BED.white());
     public static final WoolBundle PATTERNED_WOOL = WoolBundle.register(BlockusIds.PATTERNED_WOOL, BlockusIds.PATTERNED_WOOL_STAIRS, BlockusIds.PATTERNED_WOOL_SLAB, BlockusIds.PATTERNED_CARPET, BlockBuilder::registerBlock);
@@ -617,7 +618,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block NETHERITE_SLAB = slab(Blocks.NETHERITE_BLOCK);
 
     // Other
-    public static final Block PATH = registerCopy("path", DirtPathBlock::new, Blocks.DIRT_PATH);
+    public static final Block PATH = registerCopy("path", (p) -> new PathBlock(Blocks.DIRT, p), Blocks.DIRT_PATH);
     public static final Block CHARCOAL_BLOCK = registerCopy("charcoal_block", Blocks.COAL_BLOCK);
     public static final Block SUGAR_BLOCK = registerOf("sugar_block", SimpleFallingBlock::new, create().mapColor(MapColor.QUARTZ).strength(0.5F).sound(SoundType.SAND));
     public static final Block ENDER_BLOCK = registerOf("ender_block", create().mapColor(MapColor.TERRACOTTA_GREEN).strength(5.0f, 6.0f));
@@ -632,7 +633,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STARS_BLOCK = registerOf("stars_block", create().mapColor(MapColor.COLOR_BLACK).strength(5.0f, 6.0f));
 
     // Legacy
-    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", properties -> new SaplingBlock(BlockusSaplingGenerator.LEGACY_OAK, properties), createCopy(Blocks.OAK_SAPLING), "Indev");
+    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", properties -> new SaplingBlock(BlockusTreeGrower.LEGACY_OAK, properties), createCopy(Blocks.OAK_SAPLING), "Indev");
     public static final PottedLargeBundle POTTED_LEGACY_TREE = PottedLargeBundle.register("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING);
     public static final Block POTTED_LEGACY_SAPLING = pottedPlant("potted_legacy_sapling", LEGACY_SAPLING);
     public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", createCopy(Blocks.GRASS_BLOCK), "Cave game");

@@ -94,7 +94,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
             addWool(translationBuilder, BlockusBlocks.PATTERNED_WOOL, color, name(color.getName()) + " Patterned Wool");
             addWool(translationBuilder, BlockusBlocks.GINGHAM_WOOL, color, name(color.getName()) + " Gingham Wool");
         }
-        translationBuilder.add(BlockusBlocks.RAINBOW_WOOL, "Rainbow Wool");
+        addBssw(translationBuilder, BlockusBlocks.RAINBOW_WOOL, "Rainbow Wool");
         translationBuilder.add(BlockusBlocks.RAINBOW_CARPET, "Rainbow Carpet");
         translationBuilder.add(BlockusBlocks.RAINBOW_BED, "Rainbow Bed");
 

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rainbow_petals": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:rainbow_petals"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:rainbow_wool_stairs_from_rainbow_petals"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rainbow_petals"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:rainbow_wool_stairs_from_rainbow_petals"
+    ]
+  }
+}

@@ -144,6 +144,7 @@
     "blockus:waxed_exposed_copper_tuff_brick_wall",
     "blockus:waxed_weathered_copper_tuff_brick_wall",
     "blockus:waxed_oxidized_copper_tuff_brick_wall",
+    "blockus:ice_brick_wall",
     "#blockus:barriers"
   ]
 }
