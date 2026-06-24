@@ -197,6 +197,24 @@
     "blockus:brown_concrete_brick_stairs",
     "blockus:green_concrete_brick_stairs",
     "blockus:red_concrete_brick_stairs",
-    "blockus:black_concrete_brick_stairs"
+    "blockus:black_concrete_brick_stairs",
+    "blockus:white_asphalt_stairs",
+    "blockus:orange_asphalt_stairs",
+    "blockus:magenta_asphalt_stairs",
+    "blockus:light_blue_asphalt_stairs",
+    "blockus:yellow_asphalt_stairs",
+    "blockus:lime_asphalt_stairs",
+    "blockus:pink_asphalt_stairs",
+    "blockus:gray_asphalt_stairs",
+    "blockus:light_gray_asphalt_stairs",
+    "blockus:cyan_asphalt_stairs",
+    "blockus:purple_asphalt_stairs",
+    "blockus:blue_asphalt_stairs",
+    "blockus:brown_asphalt_stairs",
+    "blockus:green_asphalt_stairs",
+    "blockus:red_asphalt_stairs",
+    "blockus:asphalt_stairs",
+    "blockus:netherite_stairs",
+    "blockus:smooth_stone_stairs"
   ]
 }

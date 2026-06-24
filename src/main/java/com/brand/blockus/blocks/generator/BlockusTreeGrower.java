@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 
 import java.util.Optional;
 
-public final class BlockusSaplingGenerator {
+public final class BlockusTreeGrower {
     public static final TreeGrower WHITE_OAK;
     public static final TreeGrower LEGACY_OAK;
 

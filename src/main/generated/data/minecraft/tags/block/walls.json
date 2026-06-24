@@ -142,6 +142,7 @@
     "blockus:green_concrete_brick_wall",
     "blockus:red_concrete_brick_wall",
     "blockus:black_concrete_brick_wall",
+    "blockus:ice_brick_wall",
     "#blockus:barriers"
   ]
 }
