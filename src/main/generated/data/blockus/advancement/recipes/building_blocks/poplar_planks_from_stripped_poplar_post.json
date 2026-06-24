@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_wooden_post": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:stripped_poplar_post"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:poplar_planks_from_stripped_poplar_post"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_wooden_post"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:poplar_planks_from_stripped_poplar_post"
+    ]
+  }
+}

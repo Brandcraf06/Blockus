@@ -175,6 +175,9 @@ public class Instance {
         CompostableRegistry.INSTANCE.add(MANGROVE_HEDGE, 0.30f);
         CompostableRegistry.INSTANCE.add(CHERRY_HEDGE, 0.30f);
         CompostableRegistry.INSTANCE.add(PALE_OAK_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(RED_POPLAR_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(ORANGE_POPLAR_HEDGE, 0.30f);
+        CompostableRegistry.INSTANCE.add(YELLOW_POPLAR_HEDGE, 0.30f);
         CompostableRegistry.INSTANCE.add(AZALEA_HEDGE, 0.30f);
         CompostableRegistry.INSTANCE.add(WHITE_OAK_HEDGE, 0.30f);
         CompostableRegistry.INSTANCE.add(WHITE_OAK_LEAVES, 0.30f);

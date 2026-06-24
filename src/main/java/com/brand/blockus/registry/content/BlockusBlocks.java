@@ -417,6 +417,10 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block MANGROVE_HEDGE = hedge("mangrove_hedge", Blocks.MANGROVE_LEAVES);
     public static final Block CHERRY_HEDGE = hedge("cherry_hedge", Blocks.CHERRY_LEAVES);
     public static final Block PALE_OAK_HEDGE = hedge("pale_oak_hedge", Blocks.PALE_OAK_LEAVES);
+    public static final Block RED_POPLAR_HEDGE = hedge("red_poplar_hedge", Blocks.RED_POPLAR_LEAVES);
+    public static final Block ORANGE_POPLAR_HEDGE = hedge("orange_poplar_hedge", Blocks.ORANGE_POPLAR_LEAVES);
+    public static final Block YELLOW_POPLAR_HEDGE = hedge("yellow_poplar_hedge", Blocks.YELLOW_POPLAR_LEAVES);
+
     public static final Block WHITE_OAK_HEDGE = hedge("white_oak_hedge", WHITE_OAK_LEAVES);
     public static final Block AZALEA_HEDGE = hedge("azalea_hedge", Blocks.AZALEA_LEAVES);
     public static final Block FLOWERING_AZALEA_HEDGE = hedge("flowering_azalea_hedge", Blocks.FLOWERING_AZALEA_LEAVES);
@@ -440,6 +444,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final PottedLargeBundle POTTED_MANGROVE = PottedLargeBundle.register("potted_mangrove", Blocks.MANGROVE_PROPAGULE);
     public static final PottedLargeBundle POTTED_CHERRY_BLOSSOM = PottedLargeBundle.register("potted_cherry_blossom", Blocks.CHERRY_SAPLING);
     public static final PottedLargeBundle POTTED_PALE_OAK = PottedLargeBundle.register("potted_pale_oak", Blocks.PALE_OAK_SAPLING);
+    public static final PottedLargeBundle POTTED_POPLAR = PottedLargeBundle.register("potted_poplar", Blocks.POPLAR_SAPLING);
     public static final PottedLargeBundle POTTED_WHITE_OAK = PottedLargeBundle.register("potted_white_oak", WHITE_OAK_SAPLING);
     public static final PottedLargeBundle POTTED_HUGE_RED_MUSHROOM = PottedLargeBundle.register("potted_huge_red_mushroom", Blocks.RED_MUSHROOM);
     public static final PottedLargeBundle POTTED_HUGE_BROWN_MUSHROOM = PottedLargeBundle.register("potted_huge_brown_mushroom", Blocks.BROWN_MUSHROOM);

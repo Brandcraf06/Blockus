@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_poplar_lattice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:poplar_lattice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:poplar_lattice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_poplar_lattice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:poplar_lattice"
+    ]
+  }
+}

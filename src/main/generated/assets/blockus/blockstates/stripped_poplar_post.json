@@ -1,0 +1,139 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post"
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post",
+        "x": 90
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post_connect_top",
+        "x": 90
+      },
+      "when": {
+        "north": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post_connect",
+        "x": 90
+      },
+      "when": {
+        "south": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post_connect_top",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "east": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post_connect",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "west": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post_connect_top"
+      },
+      "when": {
+        "up": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/stripped_poplar_post_connect"
+      },
+      "when": {
+        "down": "post"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect_top",
+        "x": 90
+      },
+      "when": {
+        "north": "chain"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect",
+        "x": 90
+      },
+      "when": {
+        "south": "chain"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect_top",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "east": "chain"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "west": "chain"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect_top"
+      },
+      "when": {
+        "up": "chain"
+      }
+    },
+    {
+      "apply": {
+        "model": "blockus:block/chain_connect"
+      },
+      "when": {
+        "down": "chain"
+      }
+    }
+  ]
+}

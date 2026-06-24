@@ -1,0 +1,6 @@
+{
+  "parent": "blockus:block/template_hedge_post",
+  "textures": {
+    "texture": "minecraft:block/yellow_poplar_leaves"
+  }
+}

@@ -19,6 +19,7 @@ public enum WoodMaps {
     MANGROVE("mangrove", Blocks.MANGROVE_PLANKS, Blocks.MANGROVE_SLAB, Blocks.MANGROVE_LOG, Blocks.STRIPPED_MANGROVE_LOG, true),
     CHERRY("cherry", Blocks.CHERRY_PLANKS, Blocks.CHERRY_SLAB, Blocks.CHERRY_LOG, Blocks.STRIPPED_CHERRY_LOG, true),
     PALE_OAK("pale_oak", Blocks.PALE_OAK_PLANKS, Blocks.PALE_OAK_SLAB, Blocks.PALE_OAK_LOG, Blocks.STRIPPED_PALE_OAK_LOG, true),
+    POPLAR("poplar", Blocks.POPLAR_PLANKS, Blocks.POPLAR_SLAB, Blocks.POPLAR_LOG, Blocks.STRIPPED_POPLAR_LOG, true),
     BAMBOO("bamboo", Blocks.BAMBOO_PLANKS, Blocks.BAMBOO_SLAB, null, null, true),
     RAW_BAMBOO("raw_bamboo", BlockusBlocks.RAW_BAMBOO.planks(), BlockusBlocks.RAW_BAMBOO.slab(), null, null, true),
     WHITE_OAK("white_oak", BlockusBlocks.WHITE_OAK.planks(), BlockusBlocks.WHITE_OAK.slab(), BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.STRIPPED_WHITE_OAK_LOG, true),

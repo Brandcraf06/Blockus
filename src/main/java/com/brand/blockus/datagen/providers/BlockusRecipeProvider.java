@@ -588,6 +588,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerHedgeRecipe(MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES);
                 offerHedgeRecipe(CHERRY_HEDGE, Blocks.CHERRY_LEAVES);
                 offerHedgeRecipe(PALE_OAK_HEDGE, Blocks.PALE_OAK_LEAVES);
+                offerHedgeRecipe(RED_POPLAR_HEDGE, Blocks.RED_POPLAR_LEAVES);
+                offerHedgeRecipe(ORANGE_POPLAR_HEDGE, Blocks.ORANGE_POPLAR_LEAVES);
+                offerHedgeRecipe(YELLOW_POPLAR_HEDGE, Blocks.YELLOW_POPLAR_LEAVES);
                 offerHedgeRecipe(WARPED_HEDGE, Blocks.WARPED_WART_BLOCK);
                 offerHedgeRecipe(CRIMSON_HEDGE, Blocks.NETHER_WART_BLOCK);
                 offerHedgeRecipe(WHITE_OAK_HEDGE, WHITE_OAK_LEAVES);

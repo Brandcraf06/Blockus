@@ -124,6 +124,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createNonTemplateModelBlock(BlockusBlocks.POTTED_MANGROVE.block());
         createTreePot(modelGenerator, BlockusBlocks.POTTED_CHERRY_BLOSSOM.block(), Blocks.CHERRY_LEAVES, Blocks.CHERRY_LOG, Blocks.MOSS_BLOCK);
         createTreePot(modelGenerator, BlockusBlocks.POTTED_PALE_OAK.block(), Blocks.PALE_OAK_LEAVES, Blocks.PALE_OAK_LOG, Blocks.PALE_MOSS_BLOCK);
+        createTreePot(modelGenerator, BlockusBlocks.POTTED_POPLAR.block(), Blocks.ORANGE_POPLAR_LEAVES, Blocks.POPLAR_LOG);
         createTreePot(modelGenerator, BlockusBlocks.POTTED_WHITE_OAK.block(), BlockusBlocks.WHITE_OAK_LEAVES, BlockusBlocks.WHITE_OAK_LOG);
         createTreePot(modelGenerator, BlockusBlocks.POTTED_LEGACY_TREE.block(), BlockusBlocks.LEGACY_LEAVES, BlockusBlocks.LEGACY_LOG, "legacy_grass_block_top");
         createHugeRedMushroomPot(modelGenerator, BlockusBlocks.POTTED_HUGE_RED_MUSHROOM.block());
@@ -434,6 +435,9 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createHedge(modelGenerator, BlockusBlocks.MANGROVE_HEDGE, Blocks.MANGROVE_LEAVES, -7158200);
         this.createHedge(modelGenerator, BlockusBlocks.CHERRY_HEDGE, Blocks.CHERRY_LEAVES);
         this.createHedge(modelGenerator, BlockusBlocks.PALE_OAK_HEDGE, Blocks.PALE_OAK_LEAVES);
+        this.createHedge(modelGenerator, BlockusBlocks.RED_POPLAR_HEDGE, Blocks.RED_POPLAR_LEAVES);
+        this.createHedge(modelGenerator, BlockusBlocks.ORANGE_POPLAR_HEDGE, Blocks.ORANGE_POPLAR_LEAVES);
+        this.createHedge(modelGenerator, BlockusBlocks.YELLOW_POPLAR_HEDGE, Blocks.YELLOW_POPLAR_LEAVES);
         this.createHedge(modelGenerator, BlockusBlocks.WARPED_HEDGE, Blocks.WARPED_WART_BLOCK);
         this.createHedge(modelGenerator, BlockusBlocks.CRIMSON_HEDGE, Blocks.NETHER_WART_BLOCK);
         this.createHedge(modelGenerator, BlockusBlocks.WHITE_OAK_HEDGE, BlockusBlocks.WHITE_OAK_LEAVES);

@@ -456,6 +456,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(MANGROVE_HEDGE))
             .add(toId(CHERRY_HEDGE))
             .add(toId(PALE_OAK_HEDGE))
+            .add(toId(RED_POPLAR_HEDGE))
+            .add(toId(ORANGE_POPLAR_HEDGE))
+            .add(toId(YELLOW_POPLAR_HEDGE))
             .add(toId(WHITE_OAK_HEDGE))
             .add(toId(CRIMSON_HEDGE))
             .add(toId(WARPED_HEDGE))
@@ -568,6 +571,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(BlockItemIds.MANGROVE_PLANKS)
             .add(BlockItemIds.CHERRY_PLANKS)
             .add(BlockItemIds.PALE_OAK_PLANKS)
+            .add(BlockItemIds.POPLAR_PLANKS)
             .add(BlockItemIds.BAMBOO_PLANKS)
             .add(toId(RAW_BAMBOO.planks()))
             .add(toId(WHITE_OAK.planks()))
@@ -756,12 +760,13 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockItemTags.OAK_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.OAK.getId())));
         this.builder(BlockItemTags.SPRUCE_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.SPRUCE.getId())));
         this.builder(BlockItemTags.BIRCH_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.BIRCH.getId())));
-        this.builder(BlockTags.JUNGLE_LOGS).add(toId(SMALL_LOGS.get(WoodMaps.JUNGLE.getId())));
+        this.builder(BlockItemTags.JUNGLE_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.JUNGLE.getId())));
         this.builder(BlockItemTags.ACACIA_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.ACACIA.getId())));
         this.builder(BlockItemTags.DARK_OAK_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.DARK_OAK.getId())));
         this.builder(BlockItemTags.MANGROVE_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.MANGROVE.getId())));
         this.builder(BlockItemTags.CHERRY_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.CHERRY.getId())));
-        this.builder(BlockTags.PALE_OAK_LOGS).add(toId(SMALL_LOGS.get(WoodMaps.PALE_OAK.getId())));
+        this.builder(BlockItemTags.PALE_OAK_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.PALE_OAK.getId())));
+        this.builder(BlockItemTags.POPLAR_LOGS.block()).add(toId(SMALL_LOGS.get(WoodMaps.POPLAR.getId())));
         this.builder(BlockItemTags.CRIMSON_STEMS.block()).add(toId(SMALL_LOGS.get(WoodMaps.CRIMSON.getId())));
         this.builder(BlockItemTags.WARPED_STEMS.block()).add(toId(SMALL_LOGS.get(WoodMaps.WARPED.getId())));
         this.builder(BlockItemTags.LOGS_THAT_BURN.block())

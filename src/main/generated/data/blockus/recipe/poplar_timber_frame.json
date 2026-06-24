@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "timber_frame",
+  "key": {
+    "#": "minecraft:paper",
+    "X": "minecraft:poplar_planks"
+  },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "count": 2,
+    "id": "blockus:poplar_timber_frame"
+  }
+}

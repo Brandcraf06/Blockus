@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cross_timber_frame",
+  "key": {
+    "#": "blockus:poplar_diagonal_timber_frame"
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 4,
+    "id": "blockus:poplar_cross_timber_frame"
+  }
+}

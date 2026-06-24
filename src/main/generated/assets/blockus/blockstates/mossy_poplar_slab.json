@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/mossy_poplar_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/mossy_poplar_planks"
+    },
+    "type=top": {
+      "model": "blockus:block/mossy_poplar_slab_top"
+    }
+  }
+}

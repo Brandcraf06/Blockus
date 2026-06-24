@@ -77,6 +77,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(BlockItemIds.MANGROVE_PLANKS)
             .add(BlockItemIds.CHERRY_PLANKS)
             .add(BlockItemIds.PALE_OAK_PLANKS)
+            .add(BlockItemIds.POPLAR_PLANKS)
             .add(BlockItemIds.BAMBOO_PLANKS)
             .add(toId(RAW_BAMBOO.planks()))
             .add(toId(WHITE_OAK.planks()))
@@ -92,6 +93,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(BlockItemIds.MANGROVE_SHELF)
             .add(BlockItemIds.CHERRY_SHELF)
             .add(BlockItemIds.PALE_OAK_SHELF)
+            .add(BlockItemIds.POPLAR_SHELF)
             .add(BlockItemIds.BAMBOO_SHELF)
             .add(toId(RAW_BAMBOO.shelf()))
             .add(toId(WHITE_OAK.shelf()));
@@ -120,12 +122,13 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockItemTags.OAK_LOGS.block(), ItemTags.OAK_LOGS);
         this.copy(BlockItemTags.SPRUCE_LOGS.block(), ItemTags.SPRUCE_LOGS);
         this.copy(BlockItemTags.BIRCH_LOGS.block(), ItemTags.BIRCH_LOGS);
-        this.copy(BlockTags.JUNGLE_LOGS, ItemTags.JUNGLE_LOGS);
+        this.copy(BlockItemTags.JUNGLE_LOGS.block(), ItemTags.JUNGLE_LOGS);
         this.copy(BlockItemTags.ACACIA_LOGS.block(), ItemTags.ACACIA_LOGS);
         this.copy(BlockItemTags.DARK_OAK_LOGS.block(), ItemTags.DARK_OAK_LOGS);
         this.copy(BlockItemTags.MANGROVE_LOGS.block(), ItemTags.MANGROVE_LOGS);
         this.copy(BlockItemTags.CHERRY_LOGS.block(), ItemTags.CHERRY_LOGS);
-        this.copy(BlockTags.PALE_OAK_LOGS, ItemTags.PALE_OAK_LOGS);
+        this.copy(BlockItemTags.PALE_OAK_LOGS.block(), ItemTags.PALE_OAK_LOGS);
+        this.copy(BlockItemTags.POPLAR_LOGS.block(), ItemTags.POPLAR_LOGS);
         this.copy(BlockItemTags.CRIMSON_STEMS.block(), ItemTags.CRIMSON_STEMS);
         this.copy(BlockItemTags.WARPED_STEMS.block(), ItemTags.WARPED_STEMS);
         this.copy(BlockItemTags.LOGS_THAT_BURN.block(), ItemTags.LOGS_THAT_BURN);

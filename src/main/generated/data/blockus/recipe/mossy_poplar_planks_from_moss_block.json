@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_poplar_planks",
+  "ingredients": [
+    "minecraft:poplar_planks",
+    "minecraft:moss_block"
+  ],
+  "result": {
+    "id": "blockus:mossy_poplar_planks"
+  }
+}
