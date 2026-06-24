@@ -1,7 +1,7 @@
 plugins {
-	id 'fabric-loom' version "${loom_version}"
-	id 'maven-publish'
-	id "me.modmuss50.mod-publish-plugin" version "0.8.4"
+  id 'fabric-loom' version "${loom_version}"
+  id 'maven-publish'
+  id "me.modmuss50.mod-publish-plugin" version "1.1.0"
 }
 
 version = "${mod_version}+${minecraft_version}"
@@ -12,11 +12,7 @@ base {
 }
 
 repositories {
-	maven { url 'https://server.bbkr.space/artifactory/libs-release' }
-	maven { url 'https://maven.terraformersmc.com/' }
-	maven { url "https://maven.shedaniel.me/" }
-	maven { url 'https://www.cursemaven.com' }
-	maven { url 'https://maven.minecraftforge.net/' }
+  maven { url 'https://maven.terraformersmc.com/' }
 }
 
 dependencies {
@@ -28,18 +24,9 @@ dependencies {
 	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	// Cloth
-	modImplementation "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
-
 	// Terraform
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
-/*  modImplementation "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_version}"
-/*  modImplementation "com.terraformersmc:biolith:${biolith_version}"
-
-	// Promenade
-	modImplementation "curse.maven:promenade-399648:${project.promenade_version}"
-	modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"*/
 }
 
 fabricApi {

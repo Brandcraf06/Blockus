@@ -1,5 +1,6 @@
 package com.brand.blockus.datagen.providers;
 
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.helper.BlockOrder;
@@ -724,8 +725,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(REDSTONE_SAND)
             .add(LEGACY_FIRST_GRASS_BLOCK)
             .add(LEGACY_GRASS_BLOCK)
-            .add(LEGACY_GRAVEL)
-            .add(SUGAR_BLOCK);
+            .add(LEGACY_GRAVEL);
 
         this.getOrCreateTagBuilder(BlockTags.ACACIA_LOGS)
             .add(SMALL_LOGS.get(WoodMaps.ACACIA.getId()));
@@ -972,7 +972,21 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             }
         }
 
+        for (AsphaltBundle.AsphaltVariants variants : BlockusBlocks.ASPHALT.colorMap().values()) {
+            this.getOrCreateTagBuilder(BlockTags.STAIRS).add(variants.stairs());
+            this.getOrCreateTagBuilder(BlockTags.SLABS).add(variants.slab());
+        }
+
+        this.getOrCreateTagBuilder(BlockTags.STAIRS)
+            .add(NETHERITE_STAIRS)
+            .add(SMOOTH_STONE_STAIRS);
+
+        this.getOrCreateTagBuilder(BlockTags.SLABS)
+            .add(CUT_SOUL_SANDSTONE_SLAB)
+            .add(NETHERITE_SLAB);
+
         this.getOrCreateTagBuilder(BlockTags.WALLS)
+            .add(ICE_BRICK_WALL)
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.getOrCreateTagBuilder(BlockTags.WARPED_STEMS)

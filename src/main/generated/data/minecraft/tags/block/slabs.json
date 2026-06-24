@@ -194,6 +194,24 @@
     "blockus:brown_concrete_brick_slab",
     "blockus:green_concrete_brick_slab",
     "blockus:red_concrete_brick_slab",
-    "blockus:black_concrete_brick_slab"
+    "blockus:black_concrete_brick_slab",
+    "blockus:white_asphalt_slab",
+    "blockus:orange_asphalt_slab",
+    "blockus:magenta_asphalt_slab",
+    "blockus:light_blue_asphalt_slab",
+    "blockus:yellow_asphalt_slab",
+    "blockus:lime_asphalt_slab",
+    "blockus:pink_asphalt_slab",
+    "blockus:gray_asphalt_slab",
+    "blockus:light_gray_asphalt_slab",
+    "blockus:cyan_asphalt_slab",
+    "blockus:purple_asphalt_slab",
+    "blockus:blue_asphalt_slab",
+    "blockus:brown_asphalt_slab",
+    "blockus:green_asphalt_slab",
+    "blockus:red_asphalt_slab",
+    "blockus:asphalt_slab",
+    "blockus:cut_soul_sandstone_slab",
+    "blockus:netherite_slab"
   ]
 }
