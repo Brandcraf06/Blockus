@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_redstone_lamp": {
+    "has_redstone_lamp_lit": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:redstone_lamp"
+            "items": "blockus:redstone_lamp_lit"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:purple_redstone_lamp_alt"
+        "recipe": "blockus:cyan_redstone_lamp_lit_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_redstone_lamp"
+      "has_redstone_lamp_lit"
     ]
   ],
   "rewards": {
     "recipes": [
-      "blockus:purple_redstone_lamp_alt"
+      "blockus:cyan_redstone_lamp_lit_alt"
     ]
   }
 }

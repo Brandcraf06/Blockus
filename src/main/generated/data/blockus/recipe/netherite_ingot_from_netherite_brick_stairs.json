@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "minecraft:netherite_ingot",
+  "group": "netherite_ingot",
   "ingredients": [
     "blockus:netherite_brick_stairs"
   ],

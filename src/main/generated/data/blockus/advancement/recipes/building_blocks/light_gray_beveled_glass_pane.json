@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_beveled_glass_pane": {
+    "has_light_gray_beveled_glass": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_beveled_glass_pane"
+      "has_light_gray_beveled_glass"
     ]
   ],
   "rewards": {
