@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "group": "hedge",
   "key": {
     "#": "blockus:white_oak_leaves"

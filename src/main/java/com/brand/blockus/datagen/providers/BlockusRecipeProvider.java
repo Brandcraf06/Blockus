@@ -761,8 +761,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 offerLanternBlockRecipe(COPPER_LANTERN_BLOCK.blocks().waxed().oxidized(), Blocks.COPPER_LANTERN.waxed().oxidized(), Items.COPPER_NUGGET);
 
                 // Barriers
-                shaped(RecipeCategory.BUILDING_BLOCKS, ROAD_BARRIER, 5).define('#', Items.IRON_INGOT).define('X', Blocks.STONE).pattern("X#X").pattern("X#X").unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT)).save(exporter);
-                shapeless(RecipeCategory.BUILDING_BLOCKS, CAUTION_BARRIER).requires(CAUTION_BLOCK).requires(ROAD_BARRIER).unlockedBy(getHasName(CAUTION_BLOCK), has(CAUTION_BLOCK)).unlockedBy(getHasName(ROAD_BARRIER), has(ROAD_BARRIER)).save(exporter);
+                shaped(RecipeCategory.DECORATIONS, ROAD_BARRIER, 5).define('#', Items.IRON_INGOT).define('X', Blocks.STONE).pattern("X#X").pattern("X#X").unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT)).save(exporter);
+                shapeless(RecipeCategory.DECORATIONS, CAUTION_BARRIER).requires(CAUTION_BLOCK).requires(ROAD_BARRIER).unlockedBy(getHasName(CAUTION_BLOCK), has(CAUTION_BLOCK)).unlockedBy(getHasName(ROAD_BARRIER), has(ROAD_BARRIER)).save(exporter);
 
                 // Netherite Blocks
                 offerStairsRecipe(NETHERITE_STAIRS, Blocks.NETHERITE_BLOCK);
@@ -911,7 +911,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             }
 
             public void offerHedgeRecipe(ItemLike output, ItemLike input) {
-                shaped(RecipeCategory.BUILDING_BLOCKS, output, 6).define('#', input).pattern("###").pattern("###").group("hedge").unlockedBy(getHasName(input), has(input)).save(exporter);
+                shaped(RecipeCategory.DECORATIONS, output, 6).define('#', input).pattern("###").pattern("###").group("hedge").unlockedBy(getHasName(input), has(input)).save(exporter);
             }
 
 
