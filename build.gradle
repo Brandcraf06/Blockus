@@ -1,7 +1,7 @@
 plugins {
   id 'net.fabricmc.fabric-loom' version "${loom_version}"
   id 'maven-publish'
-  id "me.modmuss50.mod-publish-plugin" version "1.1.0"
+  id "me.modmuss50.mod-publish-plugin" version "2.1.1"
 }
 
 version = "${mod_version}+${minecraft_version}"
@@ -62,6 +62,7 @@ jar {
 }
 
 publishMods {
+  def startVersion = "26.1"
   file = jar.archiveFile
   changelog = file("changelog.md").text
   type = STABLE
@@ -70,20 +71,24 @@ publishMods {
   modrinth {
     accessToken = providers.environmentVariable("MODRINTH_TOKEN")
     projectId = "zFiY2Go0"
-    minecraftVersions.addAll("${minecraft_version}", "26.1.1", "26.1")
-    requires {
-      slug = "fabric-api"
+    minecraftVersionRange {
+      start = startVersion
+      end = "${minecraft_version}"
     }
+    requires ("fabric-api")
   }
 
   curseforge {
     accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
     projectId = "312289"
-    displayName = "(${project.minecraft_version}) Blockus $project.version"
-    minecraftVersions.addAll("${minecraft_version}", "26.1.1", "26.1")
-    requires {
-      slug = "fabric-api"
+    displayName = "(${minecraft_version}) Blockus $project.version"
+    minecraftVersionRange {
+      start = startVersion
+      end = "${minecraft_version}"
     }
+    requires ("fabric-api")
+    client = true
+    server = true
   }
 }
 
