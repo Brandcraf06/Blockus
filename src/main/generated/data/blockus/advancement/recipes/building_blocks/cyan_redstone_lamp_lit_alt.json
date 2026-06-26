@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_beveled_glass": {
+    "has_redstone_lamp_lit": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:beveled_glass_pane"
+            "items": "blockus:redstone_lamp_lit"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:beveled_glass_pane"
+        "recipe": "blockus:cyan_redstone_lamp_lit_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_beveled_glass"
+      "has_redstone_lamp_lit"
     ]
   ],
   "rewards": {
     "recipes": [
-      "blockus:beveled_glass_pane"
+      "blockus:cyan_redstone_lamp_lit_alt"
     ]
   }
 }

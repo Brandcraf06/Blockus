@@ -1,1 +1,6 @@
-* Fixed missing asphalt stairs/slab, netherite stairs/slab, cut soul sandstone slab, smooth stone stairs & ice brick wall in stairs, slabs & wall tags.
+* Fixed wrong item required to unlock the beveled glass pane recipe
+* Fixed wrong item required to unlock the stained lit redstone lamps recipes
+* Fixed wrong item required to unlock the rough sandstone recipes
+* Fixed wrong boats recipes categories
+* Fixed wrong dyed stone brick walls, copper walls, beveled glass panes, hedges & barriers recipes categories
+* Fixed wrong redstone lamps, redstone sand, redstone lantern, redstone lantern block, redstone o lantern, redstone bricks & amethyst lamp recipes categories
