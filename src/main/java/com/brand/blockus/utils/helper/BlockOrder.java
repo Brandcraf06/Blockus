@@ -13,9 +13,10 @@ public class BlockOrder {
     );
 
     public static final WoodMaps[] WOOD = {
+        // Used in Extended Block Shapes mod
         WoodMaps.OAK, WoodMaps.SPRUCE, WoodMaps.BIRCH, WoodMaps.JUNGLE,
-        WoodMaps.ACACIA, WoodMaps.DARK_OAK, WoodMaps.MANGROVE, WoodMaps.CHERRY,
-        WoodMaps.PALE_OAK, WoodMaps.BAMBOO, WoodMaps.RAW_BAMBOO, WoodMaps.POPLAR, WoodMaps.WHITE_OAK,
+        WoodMaps.ACACIA, WoodMaps.DARK_OAK, WoodMaps.MANGROVE, WoodMaps.POPLAR, WoodMaps.CHERRY,
+        WoodMaps.PALE_OAK, WoodMaps.BAMBOO, WoodMaps.RAW_BAMBOO, WoodMaps.WHITE_OAK,
         WoodMaps.CRIMSON, WoodMaps.WARPED, WoodMaps.CHARRED
     };
 }

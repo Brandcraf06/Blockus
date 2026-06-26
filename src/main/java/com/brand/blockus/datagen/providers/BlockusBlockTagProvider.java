@@ -560,38 +560,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(BlockItemIds.BAMBOO_MOSAIC_STAIRS)
             .add(BlockItemIds.BAMBOO_MOSAIC_SLAB);
 
-        var planksThatBurn = this.builder(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "planks_that_burn")));
-        planksThatBurn
-            .add(BlockItemIds.OAK_PLANKS)
-            .add(BlockItemIds.SPRUCE_PLANKS)
-            .add(BlockItemIds.BIRCH_PLANKS)
-            .add(BlockItemIds.JUNGLE_PLANKS)
-            .add(BlockItemIds.ACACIA_PLANKS)
-            .add(BlockItemIds.DARK_OAK_PLANKS)
-            .add(BlockItemIds.MANGROVE_PLANKS)
-            .add(BlockItemIds.CHERRY_PLANKS)
-            .add(BlockItemIds.PALE_OAK_PLANKS)
-            .add(BlockItemIds.POPLAR_PLANKS)
-            .add(BlockItemIds.BAMBOO_PLANKS)
-            .add(toId(RAW_BAMBOO.planks()))
-            .add(toId(WHITE_OAK.planks()))
-            .add(toId(LEGACY_PLANKS));
-        for (var wood : WoodMaps.values()) {
-            if (!wood.data().isBurnable()) continue;
-            var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
-            if (woodMosaic != null) {
-                planksThatBurn.add(toId(woodMosaic.block()));
-            }
-            var mossyPlanks = MOSSY_PLANKS.bundle().get(wood.getId());
-            if (mossyPlanks != null) {
-                planksThatBurn.add(toId(mossyPlanks.block()));
-            }
-            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
-            if (herringbonePlanks != null) {
-                planksThatBurn.add(toId(herringbonePlanks));
-            }
-        }
-
         this.builder(BlockusBlockTags.TUFF_BLOCKS)
             .addAll(toIds(BlockusIds.COPPER_TUFF_BRICKS))
             .addAll(toIds(BlockusIds.COPPER_TUFF_BRICK_STAIRS))
@@ -1015,6 +983,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockTags.PIGLIN_REPELLENTS)
             .add(toId(SOUL_LANTERN_BLOCK))
             .add(toId(SOUL_O_LANTERN));
+
+        this.builder(BlockTags.WASHED_AWAY_BY_FLUIDS).add(toId(RAINBOW_ROSE)).add(toId(RAINBOW_PETALS));
 
         this.builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
             .add(toId(RAINBOW_BLOCK))

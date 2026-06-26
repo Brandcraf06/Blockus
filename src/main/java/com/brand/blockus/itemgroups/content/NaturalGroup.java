@@ -25,11 +25,11 @@ public class NaturalGroup {
             entries.accept(BlockusBlocks.ACACIA_HEDGE);
             entries.accept(BlockusBlocks.DARK_OAK_HEDGE);
             entries.accept(BlockusBlocks.MANGROVE_HEDGE);
-            entries.accept(BlockusBlocks.CHERRY_HEDGE);
-            entries.accept(BlockusBlocks.PALE_OAK_HEDGE);
             entries.accept(BlockusBlocks.RED_POPLAR_HEDGE);
             entries.accept(BlockusBlocks.ORANGE_POPLAR_HEDGE);
             entries.accept(BlockusBlocks.YELLOW_POPLAR_HEDGE);
+            entries.accept(BlockusBlocks.CHERRY_HEDGE);
+            entries.accept(BlockusBlocks.PALE_OAK_HEDGE);
             entries.accept(BlockusBlocks.WHITE_OAK_HEDGE);
             entries.accept(BlockusBlocks.CRIMSON_HEDGE);
             entries.accept(BlockusBlocks.WARPED_HEDGE);

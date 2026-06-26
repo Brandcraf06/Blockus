@@ -531,13 +531,12 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
 
                 shaped(RecipeCategory.DECORATIONS, CHARRED.hangingSign(), 2).group("hanging_sign").define('#', CHARRED.planks()).define('X', Items.IRON_CHAIN).pattern("X X").pattern("###").pattern("###").unlockedBy(getHasName(CHARRED.planks()), has(CHARRED.planks())).save(exporter);
                 shaped(RecipeCategory.DECORATIONS, CHARRED.shelf(), 2).group("shelf").define('#', CHARRED.planks()).pattern("###").pattern("   ").pattern("###").unlockedBy(getHasName(CHARRED.planks()), has(CHARRED.planks())).save(exporter);
-                offerCharredSmeltingRecipe(BlockusItemTags.SHELVES_THAT_BURN, RecipeCategory.DECORATIONS, CHARRED.shelf(), "shelves");
 
                 shapeless(RecipeCategory.BUILDING_BLOCKS, RAW_BAMBOO.planks(), 2).requires(Blocks.BAMBOO_BLOCK).group("planks").unlockedBy("has_log", has(Blocks.BAMBOO_BLOCK)).save(exporter);
                 offerBoatsRecipe(BlockusItems.WHITE_OAK_BOAT, BlockusItems.WHITE_OAK_CHEST_BOAT, WHITE_OAK.planks());
                 offerBoatsRecipe(BlockusItems.RAW_BAMBOO_RAFT, BlockusItems.RAW_BAMBOO_CHEST_RAFT, RAW_BAMBOO.planks());
                 offerBoatsRecipe(BlockusItems.CHARRED_BOAT, BlockusItems.CHARRED_CHEST_BOAT, CHARRED.planks());
-                SimpleCookingRecipeBuilder.smelting(tag(BlockusItemTags.PLANKS_THAT_BURN), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, CHARRED.planks(), 0.1F, 200).unlockedBy("has_planks", has(BlockusItemTags.PLANKS_THAT_BURN)).save(exporter);
+                SimpleCookingRecipeBuilder.smelting(tag(BlockusItemTags.PLANKS_THAT_CAN_BE_CHARRED), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, CHARRED.planks(), 0.1F, 200).unlockedBy("has_planks", has(BlockusItemTags.PLANKS_THAT_CAN_BE_CHARRED)).save(exporter);
 
                 for (var entry : SMALL_LOGS.bundle().entrySet()) {
                     offerSmallLogsRecipe(entry.getValue(), WoodMaps.LOG_MAP.get(entry.getKey()));
@@ -561,13 +560,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 for (var entry : WOODEN_MOSAIC.bundle().entrySet()) {
                     mosaicBuilder(RecipeCategory.DECORATIONS, entry.getValue().block(), WoodMaps.SLAB_MAP.get(entry.getKey()));
                 }
-                offerCharredSmeltingRecipe(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN, RecipeCategory.BUILDING_BLOCKS, WOODEN_MOSAIC.get(WoodMaps.CHARRED.getId()).block(), "mosaic");
+                offerCharredSmeltingRecipe(BlockusItemTags.WOODEN_MOSAICS_THAT_CAN_BE_CHARRED, RecipeCategory.BUILDING_BLOCKS, WOODEN_MOSAIC.get(WoodMaps.CHARRED.getId()).block(), "mosaic");
 
 
                 for (var entry : HERRINGBONE_PLANKS.bundle().entrySet()) {
                     offerHerringBoneRecipe(entry.getValue(), WoodMaps.PLANKS_MAP.get(entry.getKey()));
                 }
-                offerCharredSmeltingRecipe(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN, RecipeCategory.BUILDING_BLOCKS, HERRINGBONE_PLANKS.get(WoodMaps.CHARRED.getId()), "herringbone_planks");
+                offerCharredSmeltingRecipe(BlockusItemTags.HERRINGBONE_PLANKS_THAT_CAN_BE_CHARRED, RecipeCategory.BUILDING_BLOCKS, HERRINGBONE_PLANKS.get(WoodMaps.CHARRED.getId()), "herringbone_planks");
 
                 for (TimberFrameBundle bundle : TimberFrameBundle.values()) {
                     for (var entry : bundle.woodMap().entrySet()) {

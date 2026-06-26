@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#blockus:wooden_mosaic_that_burn"
+            "items": "#blockus:wooden_mosaics_that_can_be_charred"
           }
         ]
       },
