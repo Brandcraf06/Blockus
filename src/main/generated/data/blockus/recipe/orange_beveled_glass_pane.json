@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "group": "beveled_glass_pane",
   "key": {
     "#": "blockus:orange_beveled_glass"

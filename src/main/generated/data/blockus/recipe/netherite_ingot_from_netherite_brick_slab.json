@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "minecraft:netherite_ingot",
+  "group": "netherite_ingot",
   "ingredients": [
     "blockus:netherite_brick_slab"
   ],

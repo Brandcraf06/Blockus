@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "group": "beveled_glass_pane_2",
   "key": {
     "#": "minecraft:black_dye",

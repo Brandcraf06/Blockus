@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "minecraft:iron_ingot",
+  "group": "iron_ingot",
   "ingredients": [
     "blockus:iron_brick_slab"
   ],

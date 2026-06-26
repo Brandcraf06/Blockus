@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "blockus:beveled_glass_pane"
+            "items": "blockus:orange_beveled_glass"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:beveled_glass_pane"
+        "recipe": "blockus:orange_beveled_glass_pane"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "blockus:beveled_glass_pane"
+      "blockus:orange_beveled_glass_pane"
     ]
   }
 }

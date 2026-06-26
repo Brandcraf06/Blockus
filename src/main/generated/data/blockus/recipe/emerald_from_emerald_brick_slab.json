@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "minecraft:emerald",
+  "group": "emerald",
   "ingredients": [
     "blockus:emerald_brick_slab"
   ],

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_beveled_glass_pane": {
+    "has_beveled_glass": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:yellow_beveled_glass"
+            "items": "blockus:black_beveled_glass"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_beveled_glass_pane"
+        "recipe": "blockus:black_beveled_glass_pane"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_beveled_glass_pane"
+      "has_beveled_glass"
     ]
   ],
   "rewards": {
     "recipes": [
-      "blockus:yellow_beveled_glass_pane"
+      "blockus:black_beveled_glass_pane"
     ]
   }
 }
