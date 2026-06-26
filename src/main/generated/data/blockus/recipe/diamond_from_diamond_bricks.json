@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "minecraft:diamond",
+  "group": "diamond",
   "ingredients": [
     "blockus:diamond_bricks"
   ],

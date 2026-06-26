@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "group": "hedge",
   "key": {
     "#": "minecraft:yellow_poplar_leaves"

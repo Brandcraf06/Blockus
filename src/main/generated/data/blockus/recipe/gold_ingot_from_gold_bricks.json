@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "minecraft:gold_ingot",
+  "group": "gold_ingot",
   "ingredients": [
     "blockus:gold_bricks"
   ],

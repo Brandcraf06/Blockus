@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "minecraft:lapis_lazuli",
+  "group": "lapis_lazuli",
   "ingredients": [
     "blockus:lapis_brick_wall"
   ],
