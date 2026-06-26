@@ -1069,7 +1069,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
             public void offerStainedRedstoneLampRecipe(ItemLike redstoneLamp, ItemLike dye, ItemLike litRedstoneLamp) {
                 shaped(RecipeCategory.REDSTONE, redstoneLamp).define('S', dye).define('#', Blocks.REDSTONE_LAMP).pattern(" S ").pattern("S#S").pattern(" S ").group("redstone_lamps").unlockedBy(getHasName(Blocks.REDSTONE_LAMP), has(Blocks.REDSTONE_LAMP)).save(exporter);
                 shapeless(RecipeCategory.BUILDING_BLOCKS, litRedstoneLamp).requires(redstoneLamp).requires(Blocks.REDSTONE_TORCH).group("lit_redstone_lamps").unlockedBy(getHasName(redstoneLamp), has(redstoneLamp)).save(exporter);
-                shaped(RecipeCategory.BUILDING_BLOCKS, litRedstoneLamp).define('S', dye).define('#', LIT_REDSTONE_LAMP).pattern(" S ").pattern("S#S").pattern(" S ").group("lit_redstone_lamps").unlockedBy(getHasName(LIT_REDSTONE_LAMP), has(LIT_REDSTONE_LAMP)).save(exporter, getSimpleRecipeName(redstoneLamp) + "_alt");
+                shaped(RecipeCategory.BUILDING_BLOCKS, litRedstoneLamp).define('S', dye).define('#', LIT_REDSTONE_LAMP).pattern(" S ").pattern("S#S").pattern(" S ").group("lit_redstone_lamps").unlockedBy(getHasName(LIT_REDSTONE_LAMP), has(LIT_REDSTONE_LAMP)).save(exporter, getSimpleRecipeName(litRedstoneLamp) + "_alt");
             }
 
             public void offerNeonRecipe(ItemLike output, ItemLike dye) {

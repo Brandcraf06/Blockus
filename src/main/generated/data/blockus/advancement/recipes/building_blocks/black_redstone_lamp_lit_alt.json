@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:black_redstone_lamp_alt"
+        "recipe": "blockus:black_redstone_lamp_lit_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "blockus:black_redstone_lamp_alt"
+      "blockus:black_redstone_lamp_lit_alt"
     ]
   }
 }
