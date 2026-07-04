@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#blockus:herringbone_planks_that_burn"
+            "items": "#blockus:herringbone_planks_that_can_be_charred"
           }
         ]
       },

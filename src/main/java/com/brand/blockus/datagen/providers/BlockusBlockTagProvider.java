@@ -582,37 +582,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(Blocks.BAMBOO_MOSAIC_STAIRS)
             .add(Blocks.BAMBOO_MOSAIC_SLAB);
 
-        var planksThatBurn = this.valueLookupBuilder(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "planks_that_burn")));
-        planksThatBurn
-            .add(Blocks.OAK_PLANKS)
-            .add(Blocks.SPRUCE_PLANKS)
-            .add(Blocks.BIRCH_PLANKS)
-            .add(Blocks.JUNGLE_PLANKS)
-            .add(Blocks.ACACIA_PLANKS)
-            .add(Blocks.DARK_OAK_PLANKS)
-            .add(Blocks.MANGROVE_PLANKS)
-            .add(Blocks.CHERRY_PLANKS)
-            .add(Blocks.PALE_OAK_PLANKS)
-            .add(Blocks.BAMBOO_PLANKS)
-            .add(RAW_BAMBOO.planks())
-            .add(WHITE_OAK.planks())
-            .add(LEGACY_PLANKS);
-        for (var wood : WoodMaps.values()) {
-            if (!wood.data().isBurnable()) continue;
-            var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
-            if (woodMosaic != null) {
-                planksThatBurn.add(woodMosaic.block());
-            }
-            var mossyPlanks = MOSSY_PLANKS.bundle().get(wood.getId());
-            if (mossyPlanks != null) {
-                planksThatBurn.add(mossyPlanks.block());
-            }
-            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
-            if (herringbonePlanks != null) {
-                planksThatBurn.add(herringbonePlanks);
-            }
-        }
-
         for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
             for (Block block : bundle.all()) {
                 if (block.toString().contains("tuff")) {

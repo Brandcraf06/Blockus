@@ -78,7 +78,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
 
         this.copy(BlockusBlockTags.WHITE_OAK_LOGS, BlockusItemTags.WHITE_OAK_LOGS);
 
-        this.valueLookupBuilder(BlockusItemTags.PLANKS_THAT_BURN)
+        this.valueLookupBuilder(BlockusItemTags.PLANKS_THAT_CAN_BE_CHARRED)
             .add(Items.OAK_PLANKS)
             .add(Items.SPRUCE_PLANKS)
             .add(Items.BIRCH_PLANKS)
@@ -88,40 +88,20 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(Items.MANGROVE_PLANKS)
             .add(Items.CHERRY_PLANKS)
             .add(Items.PALE_OAK_PLANKS)
-            .add(Items.BAMBOO_PLANKS)
-            .add(RAW_BAMBOO.planks().asItem())
             .add(WHITE_OAK.planks().asItem())
             .add(LEGACY_PLANKS.asItem());
 
-        this.valueLookupBuilder(BlockusItemTags.SHELVES_THAT_BURN)
-            .add(Items.OAK_SHELF)
-            .add(Items.SPRUCE_SHELF)
-            .add(Items.BIRCH_SHELF)
-            .add(Items.JUNGLE_SHELF)
-            .add(Items.ACACIA_SHELF)
-            .add(Items.DARK_OAK_SHELF)
-            .add(Items.MANGROVE_SHELF)
-            .add(Items.CHERRY_SHELF)
-            .add(Items.PALE_OAK_SHELF)
-            .add(Items.BAMBOO_SHELF)
-            .add(RAW_BAMBOO.shelf().asItem())
-            .add(WHITE_OAK.shelf().asItem());
-
-        this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN)
-            .add(Blocks.BAMBOO_MOSAIC.asItem());
         for (var wood : WoodMaps.values()) {
-            if (!wood.data().isBurnable()) continue;
+            if (!wood.data().isBurnable() || wood == WoodMaps.RAW_BAMBOO) continue;
             var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
-            if (herringbonePlanks != null) {
-                this.valueLookupBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_BURN).add(herringbonePlanks.asItem());
+            if (herringbonePlanks != null && wood != WoodMaps.BAMBOO) {
+                this.valueLookupBuilder(BlockusItemTags.HERRINGBONE_PLANKS_THAT_CAN_BE_CHARRED).add(herringbonePlanks.asItem());
             }
             var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
             if (woodMosaic != null) {
-                this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAIC_THAT_BURN).add(woodMosaic.block().asItem());
+                this.valueLookupBuilder(BlockusItemTags.WOODEN_MOSAICS_THAT_CAN_BE_CHARRED).add(woodMosaic.block().asItem());
             }
         }
-
-        this.copy(Identifier.fromNamespaceAndPath("c", "planks_that_burn"));
 
         this.copy(BlockTags.ACACIA_LOGS, ItemTags.ACACIA_LOGS);
 
