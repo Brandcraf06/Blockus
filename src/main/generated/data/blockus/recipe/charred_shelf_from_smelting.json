@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "category": "blocks",
-  "experience": 0.1,
-  "ingredient": "#blockus:shelves_that_burn",
-  "result": {
-    "id": "blockus:charred_shelf"
-  }
-}
