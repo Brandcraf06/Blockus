@@ -9,14 +9,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.references.BlockItemIds;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.WeatheringCopperCollection;
@@ -986,6 +983,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.builder(BlockTags.WASHED_AWAY_BY_FLUIDS).add(toId(RAINBOW_ROSE)).add(toId(RAINBOW_PETALS));
 
+        this.builder(BlockTags.TURNS_INTO_DIRT_PATH).add(toId(LEGACY_GRASS_BLOCK)).add(toId(LEGACY_FIRST_GRASS_BLOCK));
+        this.builder(BlockTags.TURNS_INTO_FARMLAND).add(toId(PATH)).add(toId(LEGACY_GRASS_BLOCK)).add(toId(LEGACY_FIRST_GRASS_BLOCK));
+
         this.builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
             .add(toId(RAINBOW_BLOCK))
             .add(toId(CHOCOLATE_SQUARES))
@@ -1090,7 +1090,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.BEVELED_GLASS_PANES);
 
         this.builder(BlockTags.BLOCKS_MOTION).addTag(BlockusBlockTags.HEDGES);
-
     }
 
     public BlockItemId toId(Block block) {

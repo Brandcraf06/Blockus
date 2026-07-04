@@ -1,6 +1,5 @@
 package com.brand.blockus.blocks.base;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -21,7 +20,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class ChocolateTabletBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
-    public static final MapCodec<ChocolateTabletBlock> CODEC = simpleCodec(ChocolateTabletBlock::new);
 
     protected static final VoxelShape UP_SHAPE;
     protected static final VoxelShape DOWN_SHAPE;
@@ -30,10 +28,6 @@ public class ChocolateTabletBlock extends DirectionalBlock implements SimpleWate
     protected static final VoxelShape SOUTH_SHAPE;
     protected static final VoxelShape NORTH_SHAPE;
     public static final BooleanProperty WATERLOGGED;
-
-    public MapCodec<ChocolateTabletBlock> codec() {
-        return CODEC;
-    }
 
     public ChocolateTabletBlock(Properties properties) {
         super(properties);

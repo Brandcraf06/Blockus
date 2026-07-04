@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "group": "patterned_carpet",
   "key": {
-    "S": "minecraft:purple_carpet"
+    "#": "minecraft:purple_carpet"
   },
   "pattern": [
-    "SS",
-    "SS"
+    "##",
+    "##"
   ],
   "result": {
     "count": 4,

@@ -1,7 +1,6 @@
 package com.brand.blockus.blocks.base;
 
 import com.brand.blockus.registry.tag.BlockusBlockTags;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -21,12 +20,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HedgeBlock extends CrossCollisionBlock {
-    public static final MapCodec<HedgeBlock> CODEC = simpleCodec(HedgeBlock::new);
-
-    public MapCodec<? extends HedgeBlock> codec() {
-        return CODEC;
-    }
-
     public HedgeBlock(BlockBehaviour.Properties properties) {
         super(6.0F, 16.0F, 6.0F, 16.0F, 24.0F, properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, false).setValue(EAST, false).setValue(SOUTH, false).setValue(WEST, false).setValue(WATERLOGGED, false));

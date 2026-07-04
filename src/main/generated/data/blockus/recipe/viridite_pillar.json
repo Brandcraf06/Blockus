@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "blockus:polished_end_stone"
+    "#": "blockus:viridite_bricks"
   },
   "pattern": [
-    "##",
-    "##"
+    "#",
+    "#"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:end_stone_bricks"
+    "count": 2,
+    "id": "blockus:viridite_pillar"
   }
 }

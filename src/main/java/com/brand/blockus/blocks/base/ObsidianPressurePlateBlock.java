@@ -1,6 +1,5 @@
 package com.brand.blockus.blocks.base;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -14,12 +13,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
 public class ObsidianPressurePlateBlock extends BasePressurePlateBlock {
-    public static final MapCodec<ObsidianPressurePlateBlock> CODEC = simpleCodec(ObsidianPressurePlateBlock::new);
     public static final BooleanProperty POWERED;
-
-    public MapCodec<ObsidianPressurePlateBlock> codec() {
-        return CODEC;
-    }
 
     public ObsidianPressurePlateBlock(BlockBehaviour.Properties properties) {
         super(properties, BlockSetType.STONE);

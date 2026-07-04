@@ -2,11 +2,8 @@ package com.brand.blockus.blocks.base;
 
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.google.common.collect.Maps;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -32,14 +29,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.Map;
 
 public class LargeFlowerPotBlock extends Block {
-    public static final MapCodec<LargeFlowerPotBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(BuiltInRegistries.BLOCK.byNameCodec().fieldOf("potted").forGetter((block) -> block.content), propertiesCodec()).apply(instance, LargeFlowerPotBlock::new));
     private static final Map<Block, Block> CONTENT_TO_POTTED = Maps.newHashMap();
     protected static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 10.0, 15.0);
     private final Block content;
-
-    public MapCodec<LargeFlowerPotBlock> codec() {
-        return CODEC;
-    }
 
     public LargeFlowerPotBlock(Block content, BlockBehaviour.Properties properties) {
         super(properties);

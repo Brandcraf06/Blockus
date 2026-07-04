@@ -62,7 +62,7 @@ jar {
 }
 
 publishMods {
-  def versions = "${minecraft_version}"
+  def startVersion = "26.3"
   file = jar.archiveFile
   changelog = file("changelog.md").text
   type = STABLE
@@ -71,7 +71,10 @@ publishMods {
   modrinth {
     accessToken = providers.environmentVariable("MODRINTH_TOKEN")
     projectId = "zFiY2Go0"
-    minecraftVersionList(versions)
+    minecraftVersionRange {
+      start = startVersion
+      end = "${minecraft_version}"
+    }
     requires ("fabric-api")
   }
 
@@ -79,7 +82,10 @@ publishMods {
     accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
     projectId = "312289"
     displayName = "(${minecraft_version}) Blockus $project.version"
-    minecraftVersionList(versions)
+    minecraftVersionRange {
+      start = startVersion
+      end = "${minecraft_version}"
+    }
     requires ("fabric-api")
     client = true
     server = true

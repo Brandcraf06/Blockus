@@ -204,20 +204,20 @@ public class Instance {
 
 // Other
 
-        addStrippables();
+//        addStrippables();
         addOxidizable();
-        addPathBlocks();
+//        addPathBlocks();
     }
 
-    public static void addStrippables() {
-        StrippableBlockRegistry.register(WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG);
-        StrippableBlockRegistry.register(WHITE_OAK_WOOD, STRIPPED_WHITE_OAK_WOOD);
-        for (WoodenPostBundle bundle : WoodenPostBundle.values()) {
-            for (WoodenPostBundle.WoodenPostVariants variants : bundle.woodMap().values()) {
-                StrippableBlockRegistry.register(variants.block(), variants.stripped());
-            }
-        }
-    }
+//    public static void addStrippables() {
+//        StrippableBlockRegistry.register(WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG);
+//        StrippableBlockRegistry.register(WHITE_OAK_WOOD, STRIPPED_WHITE_OAK_WOOD);
+//        for (WoodenPostBundle bundle : WoodenPostBundle.values()) {
+//            for (WoodenPostBundle.WoodenPostVariants variants : bundle.woodMap().values()) {
+//                StrippableBlockRegistry.register(variants.block(), variants.stripped());
+//            }
+//        }
+//    }
 
     public static void addOxidizable() {
         registerOxidizable(COPPER_BRICKS);
@@ -238,8 +238,8 @@ public class Instance {
         registerOxidizable(block.wall().blocks());
     }
 
-    public static void addPathBlocks() {
-        FlattenableBlockRegistry.register(Blocks.DIRT_PATH, PATH.defaultBlockState());
-        FlattenableBlockRegistry.register(PATH, Blocks.DIRT.defaultBlockState());
-    }
+//    public static void addPathBlocks() {
+//        FlattenableBlockRegistry.register(Blocks.DIRT_PATH, PATH.defaultBlockState());
+//        FlattenableBlockRegistry.register(PATH, Blocks.DIRT.defaultBlockState());
+//    }
 }
