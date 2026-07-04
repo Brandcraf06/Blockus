@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:crimson_roots",
+    "minecraft:crimson_roots",
+    "minecraft:crimson_roots",
+    "minecraft:crimson_roots",
+    "minecraft:crimson_roots",
+    "minecraft:crimson_roots",
+    "minecraft:crimson_roots",
+    "minecraft:crimson_roots",
+    "minecraft:crimson_roots"
+  ],
+  "result": {
+    "id": "minecraft:nether_wart_block"
+  }
+}

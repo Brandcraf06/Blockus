@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cut_soul_sandstone": {
+    "has_soul_sandstone_slab": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:cut_soul_sandstone"
+            "items": "blockus:soul_sandstone_slab"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cut_soul_sandstone"
+      "has_soul_sandstone_slab"
     ]
   ],
   "rewards": {

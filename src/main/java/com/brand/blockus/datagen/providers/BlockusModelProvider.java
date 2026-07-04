@@ -442,8 +442,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.CHOCOLATE_SQUARES);
 
         // Redstone Lamps
-        this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.REDSTONE_LAMP_LIT);
-        this.createRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.RAINBOW_LAMP_LIT);
+        this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.LIT_REDSTONE_LAMP);
+        this.createRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.LIT_RAINBOW_LAMP);
         for (DyeColor color : BlockOrder.COLOR) {
             this.createRedstoneLamp(modelGenerator, BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().get(color), BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().get(color));
         }

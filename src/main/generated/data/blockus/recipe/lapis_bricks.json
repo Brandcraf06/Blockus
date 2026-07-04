@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "S": "minecraft:lapis_block"
+    "#": "minecraft:lapis_block"
   },
   "pattern": [
-    "SS",
-    "SS"
+    "##",
+    "##"
   ],
   "result": {
     "count": 4,

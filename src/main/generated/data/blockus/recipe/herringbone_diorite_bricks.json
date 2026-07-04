@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "blockus:diorite_bricks"
+  },
+  "pattern": [
+    "#  ",
+    "###",
+    "  #"
+  ],
+  "result": {
+    "count": 5,
+    "id": "blockus:herringbone_diorite_bricks"
+  }
+}

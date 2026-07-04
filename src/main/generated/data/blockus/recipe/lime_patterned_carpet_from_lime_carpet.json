@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "group": "patterned_carpet",
   "key": {
-    "S": "minecraft:lime_carpet"
+    "#": "minecraft:lime_carpet"
   },
   "pattern": [
-    "SS",
-    "SS"
+    "##",
+    "##"
   ],
   "result": {
     "count": 4,

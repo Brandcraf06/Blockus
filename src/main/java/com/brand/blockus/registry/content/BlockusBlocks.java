@@ -488,10 +488,10 @@ public class BlockusBlocks extends BlockFactory {
 
     // Redstone Lamps
     public static final StainedBlockBundle STAINED_REDSTONE_LAMP = StainedBlockBundle.of("redstone_lamp", (id, color) -> BlockFactory.redstoneLamp(id, BlockMaps.COLOR_MAP.get(color)));
-    public static final Block REDSTONE_LAMP_LIT = litRedstoneLamp("redstone_lamp_lit", Blocks.REDSTONE_LAMP);
+    public static final Block LIT_REDSTONE_LAMP = litRedstoneLamp("redstone_lamp_lit", Blocks.REDSTONE_LAMP);
     public static final StainedBlockBundle STAINED_REDSTONE_LAMP_LIT = StainedBlockBundle.of("redstone_lamp_lit", STAINED_REDSTONE_LAMP.colorMap(), BlockFactory::litRedstoneLamp);
     public static final Block RAINBOW_LAMP = redstoneLamp("rainbow_lamp", MapColor.TERRACOTTA_ORANGE);
-    public static final Block RAINBOW_LAMP_LIT = litRedstoneLamp("rainbow_lamp_lit", RAINBOW_LAMP);
+    public static final Block LIT_RAINBOW_LAMP = litRedstoneLamp("rainbow_lamp_lit", RAINBOW_LAMP);
 
     // Neon Blocks
     public static final StainedBlockBundle NEON_BLOCK = StainedBlockBundle.of("neon", BlockFactory::neonBlock);

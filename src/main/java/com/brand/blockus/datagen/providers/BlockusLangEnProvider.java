@@ -415,8 +415,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Redstone Lamps
         translationBuilder.add(BlockusBlocks.RAINBOW_LAMP, "Rainbow Lamp");
-        translationBuilder.add(BlockusBlocks.RAINBOW_LAMP_LIT, "Lit Rainbow Lamp");
-        translationBuilder.add(BlockusBlocks.REDSTONE_LAMP_LIT, "Lit Redstone Lamp");
+        translationBuilder.add(BlockusBlocks.LIT_RAINBOW_LAMP, "Lit Rainbow Lamp");
+        translationBuilder.add(BlockusBlocks.LIT_REDSTONE_LAMP, "Lit Redstone Lamp");
         for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().entrySet()) {
             translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Redstone Lamp");
         }

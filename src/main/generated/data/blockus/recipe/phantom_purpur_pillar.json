@@ -2,13 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "blockus:phantom_purpur_slab"
+    "#": "blockus:phantom_purpur_block"
   },
   "pattern": [
     "#",
     "#"
   ],
   "result": {
+    "count": 2,
     "id": "blockus:phantom_purpur_pillar"
   }
 }

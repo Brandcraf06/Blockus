@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "group": "patterned_carpet",
   "key": {
-    "S": "minecraft:blue_carpet"
+    "#": "minecraft:blue_carpet"
   },
   "pattern": [
-    "SS",
-    "SS"
+    "##",
+    "##"
   ],
   "result": {
     "count": 4,
