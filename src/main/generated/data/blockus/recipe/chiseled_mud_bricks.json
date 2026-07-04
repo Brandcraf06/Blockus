@@ -2,14 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "blockus:polished_dripstone"
+    "#": "minecraft:mud_brick_slab"
   },
   "pattern": [
-    "##",
-    "##"
+    "#",
+    "#"
   ],
   "result": {
-    "count": 4,
-    "id": "blockus:dripstone_bricks"
+    "id": "blockus:chiseled_mud_bricks"
   }
 }
