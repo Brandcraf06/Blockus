@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_green_concrete_brick_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:green_concrete_brick_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:chiseled_green_concrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_green_concrete_brick_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:chiseled_green_concrete"
+    ]
+  }
+}

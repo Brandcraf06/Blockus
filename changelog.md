@@ -1,7 +1,6 @@
-* Fixed wrong item required to unlock the beveled glass pane recipe
-* Fixed wrong item required to unlock the stained lit redstone lamps recipes
-* Fixed wrong item required to unlock the rough sandstone recipes
-* Fixed wrong boats recipes categories
-* Fixed wrong dyed stone brick walls, copper walls, beveled glass panes, hedges & barriers recipes categories
-* Fixed wrong redstone lamps, redstone sand, redstone lantern, redstone lantern block, redstone o lantern, redstone bricks & amethyst lamp recipes categories
-* Fixed wrong lit redstone lamps alt recipe name
+* Blockus pillars can now be made using crafting table, like vanilla ones (2 blocks vertically)
+* Blockus chiseled blocks can now be made using crafting table, like vanilla ones (2 slabs vertically)
+* Blockus chiseled pillars can now be made using crafting table (2 pillars vertically)
+* Blockus herringbone blocks can now be made using crafting table, with the same shape as herringbone planks.
+* Changed vanilla purpur pillar recipe to need purpur blocks instead of slabs
+* Crimson/Nether Wart Block recipe using crimson roots no longer override the vanilla recipe

@@ -15,6 +15,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
 
         final FabricDataGenerator.Pack pack = dataGenerator.createPack();
         pack.addProvider(BlockusRecipeProvider::new);
+        pack.addProvider(VanillaRecipeOverride::new);
 
         BlockusBlockTagProvider blockTags = pack.addProvider(BlockusBlockTagProvider::new);
         pack.addProvider((output, registries) -> new BlockusItemTagProvider(output, registries, blockTags));
