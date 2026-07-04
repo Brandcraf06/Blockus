@@ -8,6 +8,8 @@
     "minecraft:dark_oak_planks",
     "minecraft:mangrove_planks",
     "minecraft:cherry_planks",
-    "minecraft:pale_oak_planks"
+    "minecraft:pale_oak_planks",
+    "blockus:white_oak_planks",
+    "blockus:legacy_planks"
   ]
 }

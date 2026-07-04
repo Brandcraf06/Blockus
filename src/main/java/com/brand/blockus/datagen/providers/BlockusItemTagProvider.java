@@ -75,9 +75,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(BlockItemIds.DARK_OAK_PLANKS)
             .add(BlockItemIds.MANGROVE_PLANKS)
             .add(BlockItemIds.CHERRY_PLANKS)
-            .add(BlockItemIds.PALE_OAK_PLANKS);
-
-        this.builder(BlockusItemTags.WOODEN_MOSAICS_THAT_CAN_BE_CHARRED)
+            .add(BlockItemIds.PALE_OAK_PLANKS)
             .add(toId(WHITE_OAK.planks()))
             .add(toId(LEGACY_PLANKS));
 
