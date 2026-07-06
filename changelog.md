@@ -1,3 +1,4 @@
+* Added limestone, marble, bluestone, viridite, purpur, phantom purpur & chocolate squares stairs, slabs & walls.
 * Blockus pillars can now be made using crafting table, like vanilla ones (2 blocks vertically)
 * Blockus chiseled blocks can now be made using crafting table, like vanilla ones (2 slabs vertically)
 * Blockus chiseled pillars can now be made using crafting table (2 pillars vertically)

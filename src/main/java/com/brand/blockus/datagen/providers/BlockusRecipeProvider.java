@@ -219,7 +219,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 chiseled(CHISELED_LIMESTONE_BRICKS, LIMESTONE_BRICKS.slab(), LIMESTONE_BRICKS.block(), LIMESTONE.block(), POLISHED_LIMESTONE.block());
                 pillar(CHISELED_LIMESTONE_PILLAR, LIMESTONE_PILLAR, LIMESTONE_BRICKS.block(), LIMESTONE.block(), POLISHED_LIMESTONE.block());
                 pillar(LIMESTONE_PILLAR, LIMESTONE_BRICKS.block(), LIMESTONE.block(), POLISHED_LIMESTONE.block());
-                stonecuttingRecipe(LIMESTONE_SQUARES, LIMESTONE_BRICKS.block(), LIMESTONE.block(), POLISHED_LIMESTONE.block());
+                blockStairsSlabWallCuttingRecipe(LIMESTONE_SQUARES, LIMESTONE_BRICKS.block(), LIMESTONE.block(), POLISHED_LIMESTONE.block());
                 stonecuttingRecipe(LIMESTONE_CIRCULAR_PAVING, LIMESTONE_BRICKS.block(), LIMESTONE.block(), POLISHED_LIMESTONE.block());
                 stonecuttingRecipe(LIMESTONE_LINES, LIMESTONE_BRICKS.block(), LIMESTONE.block(), POLISHED_LIMESTONE.block());
                 pressurePlateButton(LIMESTONE_PRESSURE_PLATE, LIMESTONE_BUTTON, LIMESTONE.block());
@@ -239,7 +239,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 chiseled(CHISELED_MARBLE_BRICKS, MARBLE_BRICKS.slab(), MARBLE_BRICKS.block(), MARBLE.block(), POLISHED_MARBLE.block());
                 pillar(CHISELED_MARBLE_PILLAR, MARBLE_PILLAR, MARBLE_BRICKS.block(), MARBLE.block(), POLISHED_MARBLE.block());
                 pillar(MARBLE_PILLAR, MARBLE_BRICKS.block(), MARBLE.block(), POLISHED_MARBLE.block());
-                stonecuttingRecipe(MARBLE_SQUARES, MARBLE_BRICKS.block(), MARBLE.block(), POLISHED_MARBLE.block());
+                blockStairsSlabWallCuttingRecipe(MARBLE_SQUARES, MARBLE_BRICKS.block(), MARBLE.block(), POLISHED_MARBLE.block());
                 stonecuttingRecipe(MARBLE_CIRCULAR_PAVING, MARBLE_BRICKS.block(), MARBLE.block(), POLISHED_MARBLE.block());
                 stonecuttingRecipe(MARBLE_LINES, MARBLE_BRICKS.block(), MARBLE.block(), POLISHED_MARBLE.block());
                 pressurePlateButton(MARBLE_PRESSURE_PLATE, MARBLE_BUTTON, MARBLE.block());
@@ -258,7 +258,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 chiseled(CHISELED_BLUESTONE_BRICKS, BLUESTONE_BRICKS.slab(), BLUESTONE_BRICKS.block(), BLUESTONE.block(), POLISHED_BLUESTONE.block());
                 pillar(CHISELED_BLUESTONE_PILLAR, BLUESTONE_PILLAR, BLUESTONE_BRICKS.block(), BLUESTONE.block(), POLISHED_BLUESTONE.block());
                 pillar(BLUESTONE_PILLAR, BLUESTONE_BRICKS.block(), BLUESTONE.block(), POLISHED_BLUESTONE.block());
-                stonecuttingRecipe(BLUESTONE_SQUARES, BLUESTONE_BRICKS.block(), BLUESTONE.block(), POLISHED_BLUESTONE.block());
+                blockStairsSlabWallCuttingRecipe(BLUESTONE_SQUARES, BLUESTONE_BRICKS.block(), BLUESTONE.block(), POLISHED_BLUESTONE.block());
                 stonecuttingRecipe(BLUESTONE_CIRCULAR_PAVING, BLUESTONE_BRICKS.block(), BLUESTONE.block(), POLISHED_BLUESTONE.block());
                 stonecuttingRecipe(BLUESTONE_LINES, BLUESTONE_BRICKS.block(), BLUESTONE.block(), POLISHED_BLUESTONE.block());
                 pressurePlateButton(BLUESTONE_PRESSURE_PLATE, BLUESTONE_BUTTON, BLUESTONE.block());
@@ -278,7 +278,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 chiseled(CHISELED_VIRIDITE_BRICKS, VIRIDITE_BRICKS.slab(), VIRIDITE_BRICKS.block(), VIRIDITE.block(), POLISHED_VIRIDITE.block());
                 pillar(CHISELED_VIRIDITE_PILLAR, VIRIDITE_PILLAR, VIRIDITE_BRICKS.block(), VIRIDITE.block(), POLISHED_VIRIDITE.block());
                 pillar(VIRIDITE_PILLAR, VIRIDITE_BRICKS.block(), VIRIDITE.block(), POLISHED_VIRIDITE.block());
-                stonecuttingRecipe(VIRIDITE_SQUARES, VIRIDITE_BRICKS.block(), VIRIDITE.block(), POLISHED_VIRIDITE.block());
+                blockStairsSlabWallCuttingRecipe(VIRIDITE_SQUARES, VIRIDITE_BRICKS.block(), VIRIDITE.block(), POLISHED_VIRIDITE.block());
                 stonecuttingRecipe(VIRIDITE_CIRCULAR_PAVING, VIRIDITE_BRICKS.block(), VIRIDITE.block(), POLISHED_VIRIDITE.block());
                 stonecuttingRecipe(VIRIDITE_LINES, VIRIDITE_BRICKS.block(), VIRIDITE.block(), POLISHED_VIRIDITE.block());
                 pressurePlateButton(VIRIDITE_PRESSURE_PLATE, VIRIDITE_BUTTON, VIRIDITE.block());
@@ -479,7 +479,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 blockStairsSlabWallCuttingRecipe(SMALL_PURPUR_BRICKS, Blocks.PURPUR_BLOCK, POLISHED_PURPUR.block(), PURPUR_BRICKS.block());
                 chiseled(CHISELED_PURPUR, Blocks.PURPUR_SLAB, Blocks.PURPUR_BLOCK, POLISHED_PURPUR.block(), PURPUR_BRICKS.block());
                 stonecuttingRecipe(Blocks.PURPUR_PILLAR, POLISHED_PURPUR.block(), PURPUR_BRICKS.block());
-                stonecuttingRecipe(PURPUR_SQUARES, Blocks.PURPUR_BLOCK, POLISHED_PURPUR.block(), PURPUR_BRICKS.block());
+                blockStairsSlabWallCuttingRecipe(PURPUR_SQUARES, Blocks.PURPUR_BLOCK, POLISHED_PURPUR.block(), PURPUR_BRICKS.block());
                 stonecuttingRecipe(PURPUR_LINES, Blocks.PURPUR_BLOCK, POLISHED_PURPUR.block(), PURPUR_BRICKS.block());
 
                 // Phantom Purpur Blocks
@@ -497,8 +497,8 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 phantomPurpur(CHISELED_PHANTOM_PURPUR, CHISELED_PURPUR);
                 pillar(PHANTOM_PURPUR_PILLAR, PHANTOM_PURPUR_BLOCK.block(), POLISHED_PHANTOM_PURPUR.block(), PHANTOM_PURPUR_BRICKS.block());
                 phantomPurpur(PHANTOM_PURPUR_PILLAR, Blocks.PURPUR_PILLAR);
-                stonecuttingRecipe(PHANTOM_PURPUR_SQUARES, PHANTOM_PURPUR_BLOCK.block(), POLISHED_PHANTOM_PURPUR.block(), PHANTOM_PURPUR_BRICKS.block());
-                phantomPurpur(PHANTOM_PURPUR_SQUARES, PURPUR_SQUARES);
+                blockStairsSlabWallCuttingRecipe(PHANTOM_PURPUR_SQUARES, PHANTOM_PURPUR_BLOCK.block(), POLISHED_PHANTOM_PURPUR.block(), PHANTOM_PURPUR_BRICKS.block());
+                phantomPurpur(PHANTOM_PURPUR_SQUARES.block(), PURPUR_SQUARES.block());
                 stonecuttingRecipe(PHANTOM_PURPUR_LINES, PHANTOM_PURPUR_BLOCK.block(), POLISHED_PHANTOM_PURPUR.block(), PHANTOM_PURPUR_BRICKS.block());
                 phantomPurpur(PHANTOM_PURPUR_LINES, PURPUR_LINES);
 
@@ -605,10 +605,10 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 blockStairsSlabWallCuttingRecipe(CHOCOLATE_BLOCK);
                 blockStairsSlabWallCuttingRecipe(CHOCOLATE_BRICKS, CHOCOLATE_BLOCK.block());
                 twoByTwoToFour(CHOCOLATE_BRICKS.block(), CHOCOLATE_BLOCK.block());
-                twoByTwoToFour(CHOCOLATE_SQUARES, CHOCOLATE_BRICKS.block());
-                stonecuttingRecipe(CHOCOLATE_SQUARES, CHOCOLATE_BLOCK.block(), CHOCOLATE_BRICKS.block());
-                shaped(RecipeCategory.DECORATIONS, CHOCOLATE_TABLET, 3).define('#', CHOCOLATE_SQUARES).pattern("##").unlockedBy(getHasName(CHOCOLATE_SQUARES), has(CHOCOLATE_SQUARES)).save(output);
-                stonecuttingRecipe(CHOCOLATE_TABLET, 2, CHOCOLATE_BLOCK.block(), CHOCOLATE_BRICKS.block(), CHOCOLATE_SQUARES);
+                twoByTwoToFour(CHOCOLATE_SQUARES.block(), CHOCOLATE_BRICKS.block());
+                blockStairsSlabWallCuttingRecipe(CHOCOLATE_SQUARES, CHOCOLATE_BLOCK.block(), CHOCOLATE_BRICKS.block());
+                shaped(RecipeCategory.DECORATIONS, CHOCOLATE_TABLET, 3).define('#', CHOCOLATE_SQUARES.block()).pattern("##").unlockedBy(getHasName(CHOCOLATE_SQUARES.block()), has(CHOCOLATE_SQUARES.block())).save(output);
+                stonecuttingRecipe(CHOCOLATE_TABLET, 2, CHOCOLATE_BLOCK.block(), CHOCOLATE_BRICKS.block(), CHOCOLATE_SQUARES.block());
 
                 // Food Blocks
                 nineBlockStorageRecipes(RecipeCategory.FOOD, Items.SWEET_BERRIES, RecipeCategory.BUILDING_BLOCKS, SWEET_BERRIES_CRATE);

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_purpur_squares": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:purpur_squares"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:purpur_squares_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_purpur_squares"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:purpur_squares_slab"
+    ]
+  }
+}
