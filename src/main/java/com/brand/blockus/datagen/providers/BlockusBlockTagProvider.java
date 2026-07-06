@@ -99,7 +99,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(BLUESTONE_BRICKS))
             .add(bsswBundle(BLUESTONE_TILES))
             .add(bsswBundle(POLISHED_BLUESTONE))
-            .add(toId(BLUESTONE_SQUARES))
+            .add(bsswBundle(BLUESTONE_SQUARES))
             .add(bsswBundle(SMALL_BLUESTONE_BRICKS))
             .add(toId(CHISELED_BLUESTONE))
             .add(toId(BLUESTONE_CIRCULAR_PAVING))
@@ -120,7 +120,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockusBlockTags.CHOCOLATE_BLOCKS)
             .add(bsswBundle(CHOCOLATE_BLOCK))
             .add(bsswBundle(CHOCOLATE_BRICKS))
-            .add(toId(CHOCOLATE_SQUARES))
+            .add(bsswBundle(CHOCOLATE_SQUARES))
             .add(toId(CHOCOLATE_TABLET));
 
         this.builder(BlockusBlockTags.COLORED_TILES)
@@ -252,7 +252,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(LIMESTONE_BRICKS))
             .add(bsswBundle(LIMESTONE_TILES))
             .add(toId(LIMESTONE_PILLAR))
-            .add(toId(LIMESTONE_SQUARES))
+            .add(bsswBundle(LIMESTONE_SQUARES))
             .add(bsswBundle(SMALL_LIMESTONE_BRICKS))
             .add(toId(CHISELED_LIMESTONE))
             .add(toId(CHISELED_LIMESTONE_PILLAR))
@@ -266,7 +266,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(VIRIDITE_BRICKS))
             .add(bsswBundle(VIRIDITE_TILES))
             .add(toId(VIRIDITE_PILLAR))
-            .add(toId(VIRIDITE_SQUARES))
+            .add(bsswBundle(VIRIDITE_SQUARES))
             .add(bsswBundle(SMALL_VIRIDITE_BRICKS))
             .add(toId(CHISELED_VIRIDITE))
             .add(toId(CHISELED_VIRIDITE_PILLAR))
@@ -285,7 +285,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(MARBLE_BRICKS))
             .add(bsswBundle(MARBLE_TILES))
             .add(toId(MARBLE_PILLAR))
-            .add(toId(MARBLE_SQUARES))
+            .add(bsswBundle(MARBLE_SQUARES))
             .add(bsswBundle(SMALL_MARBLE_BRICKS))
             .add(toId(CHISELED_MARBLE_PILLAR))
             .add(toId(CHISELED_MARBLE_BRICKS))
@@ -368,7 +368,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(PHANTOM_PURPUR_PILLAR))
             .add(bsswBundle(PHANTOM_PURPUR_BRICKS))
             .add(bsswBundle(POLISHED_PHANTOM_PURPUR))
-            .add(toId(PHANTOM_PURPUR_SQUARES))
+            .add(bsswBundle(PHANTOM_PURPUR_SQUARES))
             .add(bsswBundle(SMALL_PHANTOM_PURPUR_BRICKS))
             .add(toId(CHISELED_PHANTOM_PURPUR))
             .add(toId(PHANTOM_PURPUR_LINES));
@@ -388,7 +388,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockusBlockTags.PURPUR_BLOCKS)
             .add(bsswBundle(PURPUR_BRICKS))
             .add(bsswBundle(POLISHED_PURPUR))
-            .add(toId(PURPUR_SQUARES))
+            .add(bsswBundle(PURPUR_SQUARES))
             .add(bsswBundle(SMALL_PURPUR_BRICKS))
             .add(toId(CHISELED_PURPUR))
             .add(toId(PURPUR_LINES))
@@ -769,7 +769,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             if (bundle.wall() != null) {
                 this.builder(BlockTags.WALLS).add(toId(bundle.wall()));
             }
-            this.builder(BlockTags.BLOCKS_MOTION_NO_LEAVES).add(toId(bundle.block()));
         }
 
         for (DyedBSSWBundle bundle : DyedBSSWBundle.values()) {
@@ -988,7 +987,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
             .add(toId(RAINBOW_BLOCK))
-            .add(toId(CHOCOLATE_SQUARES))
             .add(toId(CHARCOAL_BLOCK))
             .add(toId(SUGAR_BLOCK))
             .add(toId(BURNT_PAPER_BLOCK))
@@ -1023,8 +1021,22 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(LEGACY_LAPIS_BLOCK))
             .add(toId(LEGACY_STONECUTTER))
             .add(toId(LEGACY_NETHER_REACTOR_CORE))
+            .add(toId(CRIMSON_WART_BRICKS.block()))
+            .add(toId(WARPED_WART_BRICKS.block()))
+            .add(toId(NETHER_TILES.block()))
+            .add(toId(END_TILES.block()))
             .add(toId(CHISELED_MUD_BRICKS))
             .add(toId(MUD_BRICK_PILLAR))
+            .add(toId(IRON_BRICKS.block()))
+            .add(toId(GOLD_BRICKS.block()))
+            .add(toId(LAPIS_BRICKS.block()))
+            .add(toId(REDSTONE_BRICKS.block()))
+            .add(toId(EMERALD_BRICKS.block()))
+            .add(toId(DIAMOND_BRICKS.block()))
+            .add(toId(NETHERITE_BRICKS.block()))
+            .add(toId(CHOCOLATE_BLOCK.block()))
+            .add(toId(CHOCOLATE_BRICKS.block()))
+            .add(toId(CHOCOLATE_SQUARES.block()))
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.ALL_DYED_STONE_BRICKS)
@@ -1064,7 +1076,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.SULFUR_BLOCKS)
             .addTag(BlockusBlockTags.CINNABAR_BLOCKS)
             .addTag(BlockusBlockTags.DRIPSTONE_BLOCKS)
-            .addTag(BlockusBlockTags.CHOCOLATE_BLOCKS)
             .addTag(BlockusBlockTags.ALL_ASPHALT)
             .addTag(BlockusBlockTags.ALL_SHINGLES)
             .addTag(BlockusBlockTags.COLORED_TILES)

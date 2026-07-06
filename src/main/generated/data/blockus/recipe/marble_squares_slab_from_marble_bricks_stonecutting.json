@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:marble_bricks",
+  "result": {
+    "count": 2,
+    "id": "blockus:marble_squares_slab"
+  }
+}

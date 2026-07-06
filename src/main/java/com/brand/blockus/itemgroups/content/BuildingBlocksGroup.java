@@ -154,11 +154,11 @@ public class BuildingBlocksGroup {
             addBSSW(entries, LIMESTONE_BRICKS);
             addBSSW(entries, SMALL_LIMESTONE_BRICKS);
             addBSSW(entries, LIMESTONE_TILES);
+            addBSSW(entries, LIMESTONE_SQUARES);
             entries.accept(CHISELED_LIMESTONE);
             entries.accept(CHISELED_LIMESTONE_BRICKS);
             entries.accept(LIMESTONE_PILLAR);
             entries.accept(CHISELED_LIMESTONE_PILLAR);
-            entries.accept(LIMESTONE_SQUARES);
             entries.accept(LIMESTONE_CIRCULAR_PAVING);
             entries.accept(LIMESTONE_LINES);
 
@@ -169,11 +169,11 @@ public class BuildingBlocksGroup {
             addBSSW(entries, MARBLE_BRICKS);
             addBSSW(entries, SMALL_MARBLE_BRICKS);
             addBSSW(entries, MARBLE_TILES);
+            addBSSW(entries, MARBLE_SQUARES);
             entries.accept(CHISELED_MARBLE);
             entries.accept(CHISELED_MARBLE_BRICKS);
             entries.accept(MARBLE_PILLAR);
             entries.accept(CHISELED_MARBLE_PILLAR);
-            entries.accept(MARBLE_SQUARES);
             entries.accept(MARBLE_CIRCULAR_PAVING);
             entries.accept(MARBLE_LINES);
 
@@ -210,11 +210,11 @@ public class BuildingBlocksGroup {
             addBSSW(entries, BLUESTONE_BRICKS);
             addBSSW(entries, SMALL_BLUESTONE_BRICKS);
             addBSSW(entries, BLUESTONE_TILES);
+            addBSSW(entries, BLUESTONE_SQUARES);
             entries.accept(CHISELED_BLUESTONE);
             entries.accept(CHISELED_BLUESTONE_BRICKS);
             entries.accept(BLUESTONE_PILLAR);
             entries.accept(CHISELED_BLUESTONE_PILLAR);
-            entries.accept(BLUESTONE_SQUARES);
             entries.accept(BLUESTONE_CIRCULAR_PAVING);
             entries.accept(BLUESTONE_LINES);
 
@@ -225,11 +225,11 @@ public class BuildingBlocksGroup {
             addBSSW(entries, VIRIDITE_BRICKS);
             addBSSW(entries, SMALL_VIRIDITE_BRICKS);
             addBSSW(entries, VIRIDITE_TILES);
+            addBSSW(entries, VIRIDITE_SQUARES);
             entries.accept(CHISELED_VIRIDITE);
             entries.accept(CHISELED_VIRIDITE_BRICKS);
             entries.accept(VIRIDITE_PILLAR);
             entries.accept(CHISELED_VIRIDITE_PILLAR);
-            entries.accept(VIRIDITE_SQUARES);
             entries.accept(VIRIDITE_CIRCULAR_PAVING);
             entries.accept(VIRIDITE_LINES);
 
@@ -383,18 +383,18 @@ public class BuildingBlocksGroup {
 
             addBSSW(entries, END_TILES);
             addBSSW(entries, PURPUR_BRICKS);
-            addBSSW(entries, POLISHED_PURPUR);
-            entries.accept(PURPUR_SQUARES);
             addBSSW(entries, SMALL_PURPUR_BRICKS);
+            addBSSW(entries, POLISHED_PURPUR);
+            addBSSW(entries, PURPUR_SQUARES);
             entries.accept(CHISELED_PURPUR);
             entries.accept(PURPUR_LINES);
 
             addBSSW(entries, PHANTOM_PURPUR_BLOCK);
             entries.accept(PHANTOM_PURPUR_PILLAR);
             addBSSW(entries, PHANTOM_PURPUR_BRICKS);
-            addBSSW(entries, POLISHED_PHANTOM_PURPUR);
-            entries.accept(PHANTOM_PURPUR_SQUARES);
             addBSSW(entries, SMALL_PHANTOM_PURPUR_BRICKS);
+            addBSSW(entries, POLISHED_PHANTOM_PURPUR);
+            addBSSW(entries, PHANTOM_PURPUR_SQUARES);
             entries.accept(CHISELED_PHANTOM_PURPUR);
             entries.accept(PHANTOM_PURPUR_LINES);
 
@@ -448,7 +448,7 @@ public class BuildingBlocksGroup {
 
             addBSSW(entries, CHOCOLATE_BLOCK);
             addBSSW(entries, CHOCOLATE_BRICKS);
-            entries.accept(CHOCOLATE_SQUARES);
+            addBSSW(entries, CHOCOLATE_SQUARES);
             entries.accept(CHOCOLATE_TABLET);
 
             entries.accept(ROTTEN_FLESH_BLOCK);

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "blockus:phantom_purpur_squares_wall"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

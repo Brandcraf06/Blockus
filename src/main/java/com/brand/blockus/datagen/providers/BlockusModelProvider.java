@@ -249,7 +249,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.LIMESTONE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.LIMESTONE_PRESSURE_PLATE, BlockusBlocks.LIMESTONE_BUTTON, BlockusBlocks.LIMESTONE.block());
-        modelGenerator.createTrivialCube(BlockusBlocks.LIMESTONE_SQUARES);
         this.createLinesBlock(modelGenerator, BlockusBlocks.LIMESTONE_LINES);
 
         // Marble
@@ -259,7 +258,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.MARBLE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_MARBLE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.MARBLE_PRESSURE_PLATE, BlockusBlocks.MARBLE_BUTTON, BlockusBlocks.MARBLE.block());
-        modelGenerator.createTrivialCube(BlockusBlocks.MARBLE_SQUARES);
         this.createLinesBlock(modelGenerator, BlockusBlocks.MARBLE_LINES);
 
         // Bluestone
@@ -268,7 +266,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.BLUESTONE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.BLUESTONE_PRESSURE_PLATE, BlockusBlocks.BLUESTONE_BUTTON, BlockusBlocks.BLUESTONE.block());
-        modelGenerator.createTrivialCube(BlockusBlocks.BLUESTONE_SQUARES);
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_BLUESTONE);
         this.createAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_BRICKS, BlockusBlocks.POLISHED_BLUESTONE.block());
 
@@ -280,7 +277,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.VIRIDITE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.VIRIDITE_PRESSURE_PLATE, BlockusBlocks.VIRIDITE_BUTTON, BlockusBlocks.VIRIDITE.block());
-        modelGenerator.createTrivialCube(BlockusBlocks.VIRIDITE_SQUARES);
         this.createLinesBlock(modelGenerator, BlockusBlocks.VIRIDITE_LINES);
 
         // Lava & Water Bricks
@@ -374,14 +370,12 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_PURPUR);
         this.createCubeColumn(modelGenerator, BlockusBlocks.PURPUR_DECORATED_END_STONE, BlockusBlocks.PURPUR_DECORATED_END_STONE);
         this.createLinesBlock(modelGenerator, BlockusBlocks.PURPUR_LINES);
-        modelGenerator.createTrivialCube(BlockusBlocks.PURPUR_SQUARES);
 
         // Phantom Purpur Blocks
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_PHANTOM_PURPUR);
         this.createCubeColumn(modelGenerator, BlockusBlocks.PHANTOM_PURPUR_DECORATED_END_STONE, BlockusBlocks.PURPUR_DECORATED_END_STONE);
         this.createLinesBlock(modelGenerator, BlockusBlocks.PHANTOM_PURPUR_LINES);
         this.createPillar(modelGenerator, BlockusBlocks.PHANTOM_PURPUR_PILLAR);
-        modelGenerator.createTrivialCube(BlockusBlocks.PHANTOM_PURPUR_SQUARES);
 
         // End Stone
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_END_STONE_BRICKS);
@@ -462,8 +456,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBreadBox(modelGenerator, BlockusBlocks.BREAD_BOX);
         this.createAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHORUS_BLOCK);
         this.createCookieBlock(modelGenerator);
-        this.createDirectionalCarpet(modelGenerator, BlockusBlocks.CHOCOLATE_SQUARES, BlockusBlocks.CHOCOLATE_TABLET);
-        modelGenerator.createTrivialCube(BlockusBlocks.CHOCOLATE_SQUARES);
+        this.createDirectionalCarpet(modelGenerator, BlockusBlocks.CHOCOLATE_SQUARES.block(), BlockusBlocks.CHOCOLATE_TABLET);
 
         // Redstone Lamps
         this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.LIT_REDSTONE_LAMP);

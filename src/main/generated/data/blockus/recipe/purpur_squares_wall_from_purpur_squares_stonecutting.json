@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:purpur_squares",
+  "result": {
+    "id": "blockus:purpur_squares_wall"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_marble_squares": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:marble_squares"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:marble_squares_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_marble_squares"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:marble_squares_slab"
+    ]
+  }
+}
