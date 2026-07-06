@@ -23,7 +23,7 @@ public class VanillaRecipeOverride extends FabricRecipeProvider {
             public void buildRecipes() {
                 shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.BAMBOO_PLANKS, 2).requires(Blocks.STRIPPED_BAMBOO_BLOCK).group("planks").unlockedBy(getHasName(Blocks.STRIPPED_BAMBOO_BLOCK), has(Blocks.STRIPPED_BAMBOO_BLOCK)).save(output);
                 polished(RecipeCategory.BUILDING_BLOCKS, Blocks.END_STONE_BRICKS, BlockusBlocks.POLISHED_END_STONE.block());
-                shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.PURPUR_PILLAR).define('#', Blocks.PURPUR_BLOCK).pattern("#").pattern("#").unlockedBy(getHasName(Blocks.PURPUR_BLOCK), has(Blocks.PURPUR_BLOCK)).save(output);
+                shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.PURPUR_PILLAR, 2).define('#', Blocks.PURPUR_BLOCK).pattern("#").pattern("#").unlockedBy(getHasName(Blocks.PURPUR_BLOCK), has(Blocks.PURPUR_BLOCK)).save(output);
             }
         };
     }
