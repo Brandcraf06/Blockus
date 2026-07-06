@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_viridite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:polished_viridite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:viridite_squares_stairs_from_polished_viridite_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_viridite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:viridite_squares_stairs_from_polished_viridite_stonecutting"
+    ]
+  }
+}

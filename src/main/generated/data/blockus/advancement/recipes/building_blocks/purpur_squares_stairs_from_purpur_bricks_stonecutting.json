@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_purpur_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:purpur_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:purpur_squares_stairs_from_purpur_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_purpur_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:purpur_squares_stairs_from_purpur_bricks_stonecutting"
+    ]
+  }
+}

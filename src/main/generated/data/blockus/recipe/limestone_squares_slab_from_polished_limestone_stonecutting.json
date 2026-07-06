@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:polished_limestone",
+  "result": {
+    "count": 2,
+    "id": "blockus:limestone_squares_slab"
+  }
+}

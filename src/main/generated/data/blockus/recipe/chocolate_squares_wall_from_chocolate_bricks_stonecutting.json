@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:chocolate_bricks",
+  "result": {
+    "id": "blockus:chocolate_squares_wall"
+  }
+}
