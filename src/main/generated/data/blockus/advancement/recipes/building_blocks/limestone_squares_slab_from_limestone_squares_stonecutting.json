@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_limestone_squares": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:limestone_squares"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:limestone_squares_slab_from_limestone_squares_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_limestone_squares"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:limestone_squares_slab_from_limestone_squares_stonecutting"
+    ]
+  }
+}

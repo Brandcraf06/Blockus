@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "minecraft:emerald",
+  "group": "emerald",
   "ingredients": [
     "blockus:emerald_brick_wall"
   ],

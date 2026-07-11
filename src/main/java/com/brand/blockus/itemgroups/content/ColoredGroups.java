@@ -48,9 +48,9 @@ public class ColoredGroups {
 
             add(entries, BlockusBlocks.STAINED_REDSTONE_LAMP);
             entries.accept(BlockusBlocks.RAINBOW_LAMP);
-            entries.accept(BlockusBlocks.REDSTONE_LAMP_LIT);
+            entries.accept(BlockusBlocks.LIT_REDSTONE_LAMP);
             add(entries, BlockusBlocks.STAINED_REDSTONE_LAMP_LIT);
-            entries.accept(BlockusBlocks.RAINBOW_LAMP_LIT);
+            entries.accept(BlockusBlocks.LIT_RAINBOW_LAMP);
 
             entries.accept(BlockusBlocks.BEVELED_GLASS);
             entries.accept(BlockusBlocks.TINTED_BEVELED_GLASS);

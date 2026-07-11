@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "minecraft:gold_ingot",
+  "group": "gold_ingot",
   "ingredients": [
     "blockus:gold_brick_stairs"
   ],

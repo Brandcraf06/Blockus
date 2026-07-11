@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_purpur": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockus:polished_purpur"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockus:purpur_squares_stairs_from_polished_purpur_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_purpur"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockus:purpur_squares_stairs_from_polished_purpur_stonecutting"
+    ]
+  }
+}

@@ -39,6 +39,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusItemGroups.BLOCKUS_LEGACY_BLOCKS, "Legacy Blocks");
         translationBuilder.add("blockitem.blockus.when_stepped_on", "When stepped on:");
         translationBuilder.add("blockitem.blockus.legacy", "Legacy");
+        translationBuilder.add(BlockusGamerules.BLOCKUS_CATEGORY.getDescriptionId().toLanguageKey("gamerule.category"), "Blockus");
         translationBuilder.add(BlockusGamerules.ENABLE_ASPHALT_SPRINT.getDescriptionId(), "Enable Asphalt Sprint");
 
         // Blaze
@@ -205,20 +206,20 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Purpur
         addBssw(translationBuilder, BlockusBlocks.PURPUR_BRICKS, "Purpur Bricks");
-        addBssw(translationBuilder, BlockusBlocks.POLISHED_PURPUR, "Polished Purpur");
-        translationBuilder.add(BlockusBlocks.PURPUR_LINES, "Purpur Lines");
-        translationBuilder.add(BlockusBlocks.PURPUR_SQUARES, "Purpur Squares");
         addBssw(translationBuilder, BlockusBlocks.SMALL_PURPUR_BRICKS, "Small Purpur Bricks");
+        addBssw(translationBuilder, BlockusBlocks.POLISHED_PURPUR, "Polished Purpur");
+        addBssw(translationBuilder, BlockusBlocks.PURPUR_SQUARES, "Purpur Squares");
+        translationBuilder.add(BlockusBlocks.PURPUR_LINES, "Purpur Lines");
         translationBuilder.add(BlockusBlocks.CHISELED_PURPUR, "Chiseled Purpur");
 
         addBssw(translationBuilder, BlockusBlocks.PHANTOM_PURPUR_BLOCK, "Phantom Purpur Block");
         addBssw(translationBuilder, BlockusBlocks.PHANTOM_PURPUR_BRICKS, "Phantom Purpur Bricks");
+        addBssw(translationBuilder, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS, "Small Phantom Purpur Bricks");
         addBssw(translationBuilder, BlockusBlocks.POLISHED_PHANTOM_PURPUR, "Polished Phantom Purpur");
+        addBssw(translationBuilder, BlockusBlocks.PHANTOM_PURPUR_SQUARES, "Phantom Purpur Squares");
+        translationBuilder.add(BlockusBlocks.CHISELED_PHANTOM_PURPUR, "Chiseled Phantom Purpur");
         translationBuilder.add(BlockusBlocks.PHANTOM_PURPUR_PILLAR, "Phantom Purpur Pillar");
         translationBuilder.add(BlockusBlocks.PHANTOM_PURPUR_LINES, "Phantom Purpur Lines");
-        translationBuilder.add(BlockusBlocks.PHANTOM_PURPUR_SQUARES, "Phantom Purpur Squares");
-        addBssw(translationBuilder, BlockusBlocks.SMALL_PHANTOM_PURPUR_BRICKS, "Small Phantom Purpur Bricks");
-        translationBuilder.add(BlockusBlocks.CHISELED_PHANTOM_PURPUR, "Chiseled Phantom Purpur");
         translationBuilder.add(BlockusBlocks.PURPUR_DECORATED_END_STONE, "Purpur-Decorated End Stone");
         translationBuilder.add(BlockusBlocks.PHANTOM_PURPUR_DECORATED_END_STONE, "Phantom Purpur-Decorated End Stone");
         addBssw(translationBuilder, BlockusBlocks.END_TILES, "End Tiles");
@@ -342,52 +343,52 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBssw(translationBuilder, BlockusBlocks.LIMESTONE, "Limestone");
         addBssw(translationBuilder, BlockusBlocks.POLISHED_LIMESTONE, "Polished Limestone");
         addBssw(translationBuilder, BlockusBlocks.LIMESTONE_BRICKS, "Limestone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.LIMESTONE_TILES, "Limestone Tiles");
         addBssw(translationBuilder, BlockusBlocks.SMALL_LIMESTONE_BRICKS, "Small Limestone Bricks");
+        addBssw(translationBuilder, BlockusBlocks.LIMESTONE_TILES, "Limestone Tiles");
+        addBssw(translationBuilder, BlockusBlocks.LIMESTONE_SQUARES, "Limestone Squares");
         translationBuilder.add(BlockusBlocks.LIMESTONE_PILLAR, "Limestone Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_LIMESTONE, "Chiseled Limestone");
         translationBuilder.add(BlockusBlocks.CHISELED_LIMESTONE_PILLAR, "Chiseled Limestone Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_LIMESTONE_BRICKS, "Chiseled Limestone Bricks");
-        translationBuilder.add(BlockusBlocks.LIMESTONE_SQUARES, "Limestone Squares");
         translationBuilder.add(BlockusBlocks.LIMESTONE_LINES, "Limestone Lines");
 
         // Marble
         addBssw(translationBuilder, BlockusBlocks.MARBLE, "Marble");
         addBssw(translationBuilder, BlockusBlocks.POLISHED_MARBLE, "Polished Marble");
         addBssw(translationBuilder, BlockusBlocks.MARBLE_BRICKS, "Marble Bricks");
-        addBssw(translationBuilder, BlockusBlocks.MARBLE_TILES, "Marble Tiles");
         addBssw(translationBuilder, BlockusBlocks.SMALL_MARBLE_BRICKS, "Small Marble Bricks");
+        addBssw(translationBuilder, BlockusBlocks.MARBLE_TILES, "Marble Tiles");
+        addBssw(translationBuilder, BlockusBlocks.MARBLE_SQUARES, "Marble Squares");
         translationBuilder.add(BlockusBlocks.MARBLE_PILLAR, "Marble Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_MARBLE, "Chiseled Marble");
         translationBuilder.add(BlockusBlocks.CHISELED_MARBLE_PILLAR, "Chiseled Marble Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_MARBLE_BRICKS, "Chiseled Marble Bricks");
-        translationBuilder.add(BlockusBlocks.MARBLE_SQUARES, "Marble Squares");
         translationBuilder.add(BlockusBlocks.MARBLE_LINES, "Marble Lines");
 
         // Bluestone
         addBssw(translationBuilder, BlockusBlocks.BLUESTONE, "Bluestone");
         addBssw(translationBuilder, BlockusBlocks.POLISHED_BLUESTONE, "Polished Bluestone");
         addBssw(translationBuilder, BlockusBlocks.BLUESTONE_BRICKS, "Bluestone Bricks");
-        addBssw(translationBuilder, BlockusBlocks.BLUESTONE_TILES, "Bluestone Tiles");
         addBssw(translationBuilder, BlockusBlocks.SMALL_BLUESTONE_BRICKS, "Small Bluestone Bricks");
+        addBssw(translationBuilder, BlockusBlocks.BLUESTONE_TILES, "Bluestone Tiles");
+        addBssw(translationBuilder, BlockusBlocks.BLUESTONE_SQUARES, "Bluestone Squares");
         translationBuilder.add(BlockusBlocks.BLUESTONE_PILLAR, "Bluestone Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_BLUESTONE, "Chiseled Bluestone");
         translationBuilder.add(BlockusBlocks.CHISELED_BLUESTONE_PILLAR, "Chiseled Bluestone Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_BLUESTONE_BRICKS, "Chiseled Bluestone Bricks");
-        translationBuilder.add(BlockusBlocks.BLUESTONE_SQUARES, "Bluestone Squares");
         translationBuilder.add(BlockusBlocks.BLUESTONE_LINES, "Bluestone Lines");
 
         // Viridite
         addBssw(translationBuilder, BlockusBlocks.VIRIDITE, "Viridite");
         addBssw(translationBuilder, BlockusBlocks.POLISHED_VIRIDITE, "Polished Viridite");
         addBssw(translationBuilder, BlockusBlocks.VIRIDITE_BRICKS, "Viridite Bricks");
-        addBssw(translationBuilder, BlockusBlocks.VIRIDITE_TILES, "Viridite Tiles");
         addBssw(translationBuilder, BlockusBlocks.SMALL_VIRIDITE_BRICKS, "Small Viridite Bricks");
+        addBssw(translationBuilder, BlockusBlocks.VIRIDITE_TILES, "Viridite Tiles");
+        addBssw(translationBuilder, BlockusBlocks.VIRIDITE_SQUARES, "Viridite Squares");
         translationBuilder.add(BlockusBlocks.VIRIDITE_PILLAR, "Viridite Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_VIRIDITE, "Chiseled Viridite");
         translationBuilder.add(BlockusBlocks.CHISELED_VIRIDITE_PILLAR, "Chiseled Viridite Pillar");
         translationBuilder.add(BlockusBlocks.CHISELED_VIRIDITE_BRICKS, "Chiseled Viridite Bricks");
-        translationBuilder.add(BlockusBlocks.VIRIDITE_SQUARES, "Viridite Squares");
         translationBuilder.add(BlockusBlocks.VIRIDITE_LINES, "Viridite Lines");
 
         // Circular Pavings
@@ -414,8 +415,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
 
         // Redstone Lamps
         translationBuilder.add(BlockusBlocks.RAINBOW_LAMP, "Rainbow Lamp");
-        translationBuilder.add(BlockusBlocks.RAINBOW_LAMP_LIT, "Lit Rainbow Lamp");
-        translationBuilder.add(BlockusBlocks.REDSTONE_LAMP_LIT, "Lit Redstone Lamp");
+        translationBuilder.add(BlockusBlocks.LIT_RAINBOW_LAMP, "Lit Rainbow Lamp");
+        translationBuilder.add(BlockusBlocks.LIT_REDSTONE_LAMP, "Lit Redstone Lamp");
         for (var entry : BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().entrySet()) {
             translationBuilder.add(entry.getValue(), name(entry.getKey().getName()) + " Redstone Lamp");
         }
@@ -614,7 +615,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         // Chocolate
         addBssw(translationBuilder, BlockusBlocks.CHOCOLATE_BLOCK, "Chocolate Block");
         addBssw(translationBuilder, BlockusBlocks.CHOCOLATE_BRICKS, "Chocolate Bricks");
-        translationBuilder.add(BlockusBlocks.CHOCOLATE_SQUARES, "Chocolate Squares");
+        addBssw(translationBuilder, BlockusBlocks.CHOCOLATE_SQUARES, "Chocolate Squares");
         translationBuilder.add(BlockusBlocks.CHOCOLATE_TABLET, "Chocolate Tablet");
 
         // Ore Bricks

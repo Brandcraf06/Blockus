@@ -134,7 +134,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             VIRIDITE_CIRCULAR_PAVING,
             VIRIDITE_PILLAR,
             VIRIDITE_PRESSURE_PLATE,
-            VIRIDITE_SQUARES,
             VIRIDITE_LINES,
 
             // Amethyst
@@ -163,7 +162,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             BLUESTONE_LINES,
             BLUESTONE_PILLAR,
             BLUESTONE_PRESSURE_PLATE,
-            BLUESTONE_SQUARES,
             BREAD_BOX,
             CARROT_CRATE,
             CAUTION_BARRIER,
@@ -257,14 +255,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             LIMESTONE_CIRCULAR_PAVING,
             LIMESTONE_PILLAR,
             LIMESTONE_PRESSURE_PLATE,
-            LIMESTONE_SQUARES,
             LIMESTONE_LINES,
             LOVE_BLOCK,
             MARBLE_BUTTON,
             MARBLE_CIRCULAR_PAVING,
             MARBLE_PILLAR,
             MARBLE_PRESSURE_PLATE,
-            MARBLE_SQUARES,
             MARBLE_LINES,
             MEMBRANE_BLOCK,
             MOSS_HEDGE,
@@ -284,7 +280,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             PHANTOM_PURPUR_DECORATED_END_STONE,
             PHANTOM_PURPUR_LINES,
             PHANTOM_PURPUR_PILLAR,
-            PHANTOM_PURPUR_SQUARES,
             POLISHED_ANDESITE_BUTTON,
             POLISHED_ANDESITE_PILLAR,
             POLISHED_ANDESITE_PRESSURE_PLATE,
@@ -314,7 +309,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             PUFFERFISH_CRATE,
             PURPUR_DECORATED_END_STONE,
             PURPUR_LINES,
-            PURPUR_SQUARES,
             QUARTZ_CIRCULAR_PAVING,
             RAINBOW_ASPHALT,
             RAINBOW_BEVELED_GLASS,
@@ -325,11 +319,11 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             RAINBOW_GLASS,
             RAINBOW_GLASS_PANE,
             RAINBOW_LAMP,
-            RAINBOW_LAMP_LIT,
+            LIT_RAINBOW_LAMP,
             RAINBOW_NEON,
             RED_NETHER_BRICK_PILLAR,
             RED_SANDSTONE_PILLAR,
-            REDSTONE_LAMP_LIT,
+                LIT_REDSTONE_LAMP,
             REDSTONE_LANTERN,
             REDSTONE_LANTERN_BLOCK,
             REDSTONE_SAND,
@@ -384,8 +378,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             HERRINGBONE_TUFF_BRICKS,
             RAINBOW_ROSE,
             TINTED_BEVELED_GLASS,
-            CHOCOLATE_TABLET,
-            CHOCOLATE_SQUARES);
+            CHOCOLATE_TABLET);
 
         this.addDrops(this::createSlabItemTable, CUT_SOUL_SANDSTONE_SLAB, NETHERITE_SLAB);
         this.addDrops(this::createDoorTable, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_REINFORCED_DOOR, PAPER_DOOR, STONE_DOOR);

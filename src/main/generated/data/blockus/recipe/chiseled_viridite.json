@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "blockus:viridite_slab"
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "id": "blockus:chiseled_viridite"
+  }
+}

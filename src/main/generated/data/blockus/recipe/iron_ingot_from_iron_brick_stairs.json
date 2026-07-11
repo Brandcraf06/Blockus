@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "minecraft:iron_ingot",
+  "group": "iron_ingot",
   "ingredients": [
     "blockus:iron_brick_stairs"
   ],

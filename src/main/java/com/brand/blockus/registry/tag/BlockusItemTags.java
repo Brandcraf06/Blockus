@@ -17,10 +17,9 @@ public final class BlockusItemTags {
     public static final TagKey<Item> STAINED_STONE_BRICKS = register("stained_stone_bricks");
     public static final TagKey<Item> WARPED_NETHER_GRASS = register("warped_nether_grass");
     public static final TagKey<Item> WHITE_OAK_LOGS = register("white_oak_logs");
-    public static final TagKey<Item> PLANKS_THAT_BURN = register("planks_that_burn");
-    public static final TagKey<Item> HERRINGBONE_PLANKS_THAT_BURN = register("herringbone_planks_that_burn");
-    public static final TagKey<Item> WOODEN_MOSAIC_THAT_BURN = register("wooden_mosaic_that_burn");
-    public static final TagKey<Item> SHELVES_THAT_BURN = register("shelves_that_burn");
+    public static final TagKey<Item> PLANKS_THAT_CAN_BE_CHARRED = register("planks_that_can_be_charred");
+    public static final TagKey<Item> HERRINGBONE_PLANKS_THAT_CAN_BE_CHARRED = register("herringbone_planks_that_can_be_charred");
+    public static final TagKey<Item> WOODEN_MOSAICS_THAT_CAN_BE_CHARRED = register("wooden_mosaics_that_can_be_charred");
 
     private BlockusItemTags() {
     }

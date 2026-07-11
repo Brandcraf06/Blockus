@@ -228,7 +228,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.LIMESTONE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_LIMESTONE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.LIMESTONE_PRESSURE_PLATE, BlockusBlocks.LIMESTONE_BUTTON, BlockusBlocks.LIMESTONE.block());
-        modelGenerator.createTrivialCube(BlockusBlocks.LIMESTONE_SQUARES);
         this.createLinesBlock(modelGenerator, BlockusBlocks.LIMESTONE_LINES);
 
         // Marble
@@ -238,7 +237,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.MARBLE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_MARBLE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.MARBLE_PRESSURE_PLATE, BlockusBlocks.MARBLE_BUTTON, BlockusBlocks.MARBLE.block());
-        modelGenerator.createTrivialCube(BlockusBlocks.MARBLE_SQUARES);
         this.createLinesBlock(modelGenerator, BlockusBlocks.MARBLE_LINES);
 
         // Bluestone
@@ -247,7 +245,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.BLUESTONE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.BLUESTONE_PRESSURE_PLATE, BlockusBlocks.BLUESTONE_BUTTON, BlockusBlocks.BLUESTONE.block());
-        modelGenerator.createTrivialCube(BlockusBlocks.BLUESTONE_SQUARES);
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_BLUESTONE);
         this.createAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHISELED_BLUESTONE_BRICKS, BlockusBlocks.POLISHED_BLUESTONE.block());
 
@@ -259,7 +256,6 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.VIRIDITE_PILLAR);
         this.createPillar(modelGenerator, BlockusBlocks.CHISELED_VIRIDITE_PILLAR);
         this.createButtonAndPressurePlate(modelGenerator, BlockusBlocks.VIRIDITE_PRESSURE_PLATE, BlockusBlocks.VIRIDITE_BUTTON, BlockusBlocks.VIRIDITE.block());
-        modelGenerator.createTrivialCube(BlockusBlocks.VIRIDITE_SQUARES);
         this.createLinesBlock(modelGenerator, BlockusBlocks.VIRIDITE_LINES);
 
         // Lava & Water Bricks
@@ -347,20 +343,18 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createFlowerBed(BlockusBlocks.RAINBOW_PETALS);
         this.createUpDefaultFacingBlock(modelGenerator, BlockusBlocks.RAINBOW_BLOCK);
         this.createTopBottomFacingBottom(modelGenerator, BlockusBlocks.RAINBOW_ASPHALT);
-        createFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.RAINBOW_ROSE, BlockusBlocks.POTTED_RAINBOW_ROSE, PlantType.NOT_TINTED);
+        modelGenerator.createPlantWithDefaultItem(BlockusBlocks.RAINBOW_ROSE, BlockusBlocks.POTTED_RAINBOW_ROSE, PlantType.NOT_TINTED);
 
         // Purpur Blocks
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_PURPUR);
         modelGenerator.createTrivialBlock(BlockusBlocks.PURPUR_DECORATED_END_STONE, TexturedModel.COLUMN_ALT);
         this.createLinesBlock(modelGenerator, BlockusBlocks.PURPUR_LINES);
-        modelGenerator.createTrivialCube(BlockusBlocks.PURPUR_SQUARES);
 
         // Phantom Purpur Blocks
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_PHANTOM_PURPUR);
         this.createCubeColumn(modelGenerator, BlockusBlocks.PHANTOM_PURPUR_DECORATED_END_STONE, BlockusBlocks.PURPUR_DECORATED_END_STONE);
         this.createLinesBlock(modelGenerator, BlockusBlocks.PHANTOM_PURPUR_LINES);
         this.createPillar(modelGenerator, BlockusBlocks.PHANTOM_PURPUR_PILLAR);
-        modelGenerator.createTrivialCube(BlockusBlocks.PHANTOM_PURPUR_SQUARES);
 
         // End Stone
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_END_STONE_BRICKS);
@@ -373,7 +367,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.woodProvider(BlockusBlocks.WHITE_OAK_LOG).logWithHorizontal(BlockusBlocks.WHITE_OAK_LOG).wood(BlockusBlocks.WHITE_OAK_WOOD);
         modelGenerator.createTrivialBlock(BlockusBlocks.WHITE_OAK_LEAVES, TexturedModel.LEAVES);
         modelGenerator.woodProvider(BlockusBlocks.STRIPPED_WHITE_OAK_LOG).logWithHorizontal(BlockusBlocks.STRIPPED_WHITE_OAK_LOG).wood(BlockusBlocks.STRIPPED_WHITE_OAK_WOOD);
-        createFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.WHITE_OAK_SAPLING, BlockusBlocks.POTTED_WHITE_OAK_SAPLING, PlantType.NOT_TINTED);
+        modelGenerator.createPlantWithDefaultItem(BlockusBlocks.WHITE_OAK_SAPLING, BlockusBlocks.POTTED_WHITE_OAK_SAPLING, PlantType.NOT_TINTED);
 
         // Hanging Signs
         modelGenerator.createHangingSign(BlockusBlocks.WHITE_OAK_LOG, BlockusBlocks.WHITE_OAK.ceilingHangingSign(), BlockusBlocks.WHITE_OAK.wallHangingSign());
@@ -438,12 +432,11 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createBreadBox(modelGenerator, BlockusBlocks.BREAD_BOX);
         this.createAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.CHORUS_BLOCK);
         this.createCookieBlock(modelGenerator);
-        this.createDirectionalCarpet(modelGenerator, BlockusBlocks.CHOCOLATE_SQUARES, BlockusBlocks.CHOCOLATE_TABLET);
-        modelGenerator.createTrivialCube(BlockusBlocks.CHOCOLATE_SQUARES);
+        this.createDirectionalCarpet(modelGenerator, BlockusBlocks.CHOCOLATE_SQUARES.block(), BlockusBlocks.CHOCOLATE_TABLET);
 
         // Redstone Lamps
-        this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.REDSTONE_LAMP_LIT);
-        this.createRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.RAINBOW_LAMP_LIT);
+        this.createLitRedstoneLamp(modelGenerator, Blocks.REDSTONE_LAMP, BlockusBlocks.LIT_REDSTONE_LAMP);
+        this.createRedstoneLamp(modelGenerator, BlockusBlocks.RAINBOW_LAMP, BlockusBlocks.LIT_RAINBOW_LAMP);
         for (DyeColor color : BlockOrder.COLOR) {
             this.createRedstoneLamp(modelGenerator, BlockusBlocks.STAINED_REDSTONE_LAMP.colorMap().get(color), BlockusBlocks.STAINED_REDSTONE_LAMP_LIT.colorMap().get(color));
         }
@@ -498,7 +491,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Legacy
         this.createLegacyStonecutter(modelGenerator, BlockusBlocks.LEGACY_STONECUTTER);
         modelGenerator.createTrivialBlock(BlockusBlocks.LEGACY_LEAVES, TexturedModel.LEAVES);
-        createFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.LEGACY_SAPLING, BlockusBlocks.POTTED_LEGACY_SAPLING, PlantType.NOT_TINTED);
+        modelGenerator.createPlantWithDefaultItem(BlockusBlocks.LEGACY_SAPLING, BlockusBlocks.POTTED_LEGACY_SAPLING, PlantType.NOT_TINTED);
         this.createAxisRotatedCubeColumn(modelGenerator, BlockusBlocks.LEGACY_LOG);
         modelGenerator.createTrivialCube(BlockusBlocks.LEGACY_NETHER_REACTOR_CORE);
         modelGenerator.createTrivialCube(BlockusBlocks.LEGACY_PLANKS);
@@ -519,8 +512,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.LEGACY_CRYING_OBSIDIAN);
         modelGenerator.createTrivialCube(BlockusBlocks.LEGACY_GLOWING_OBSIDIAN);
         modelGenerator.createTrivialCube(BlockusBlocks.LEGACY_GLOWSTONE);
-        createFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.LEGACY_ROSE, BlockusBlocks.POTTED_LEGACY_ROSE, PlantType.NOT_TINTED);
-        createFlowerPotPlantAndItem(modelGenerator, BlockusBlocks.LEGACY_BLUE_ROSE, BlockusBlocks.POTTED_LEGACY_BLUE_ROSE, PlantType.NOT_TINTED);
+        modelGenerator.createPlantWithDefaultItem(BlockusBlocks.LEGACY_ROSE, BlockusBlocks.POTTED_LEGACY_ROSE, PlantType.NOT_TINTED);
+        modelGenerator.createPlantWithDefaultItem(BlockusBlocks.LEGACY_BLUE_ROSE, BlockusBlocks.POTTED_LEGACY_BLUE_ROSE, PlantType.NOT_TINTED);
 
         // Colored Tiles
         modelGenerator.createTrivialCube(BlockusBlocks.RAINBOW_COLORED_TILES);
@@ -872,8 +865,8 @@ public class BlockusModelProvider extends FabricModelProvider {
     }
 
     public final void createBeveledGlassPane(BlockModelGenerators modelGenerator, Block glass, Block glassPane) {
-        modelGenerator.createTrivialCube(glass);
-        TextureMapping mapping = TextureMapping.pane(glass, BlockusBlocks.BEVELED_GLASS_PANE);
+        modelGenerator.createTrivialBlock(glass, TexturedModel.CUBE.updateTexture(TextureMapping::forceAllTranslucent));
+        TextureMapping mapping = TextureMapping.pane(glass, BlockusBlocks.BEVELED_GLASS_PANE).forceAllTranslucent();
         MultiVariant post = plainVariant(ModelTemplates.STAINED_GLASS_PANE_POST.create(glassPane, mapping, modelGenerator.modelOutput));
         MultiVariant side = plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE.create(glassPane, mapping, modelGenerator.modelOutput));
         MultiVariant sideAlt = plainVariant(ModelTemplates.STAINED_GLASS_PANE_SIDE_ALT.create(glassPane, mapping, modelGenerator.modelOutput));
@@ -1066,28 +1059,5 @@ public class BlockusModelProvider extends FabricModelProvider {
 
     public static TextureMapping treePot(Block leaves, Block log, Material logTop, Material soil) {
         return (new TextureMapping()).put(BlockusTextureSlot.LEAVES, TextureMapping.getBlockTexture(leaves)).put(BlockusTextureSlot.LOG, TextureMapping.getBlockTexture(log)).put(BlockusTextureSlot.LOG_TOP, logTop).put(BlockusTextureSlot.SOIL, soil);
-    }
-
-    // Tint
-    public final void createTintableCrossBlockState(BlockModelGenerators modelGenerator, Block block, PlantType tintType) {
-        TextureMapping mapping = tintType.getTextureMapping(block);
-        this.createTintableCrossBlockState(modelGenerator, block, mapping);
-    }
-
-    public final void createTintableCrossBlockState(BlockModelGenerators modelGenerator, Block block, TextureMapping crossTexture) {
-        MultiVariant model = plainVariant(ModelTemplates.CROSS.create(block, crossTexture, modelGenerator.modelOutput));
-        modelGenerator.blockStateOutput.accept(createSimpleBlock(block, model));
-    }
-
-    public final void createFlowerPotPlantAndItem(BlockModelGenerators modelGenerator, Block block, Block flowerPotBlock, PlantType crossType) {
-        modelGenerator.registerSimpleItemModel(block.asItem(), crossType.createItemModel(modelGenerator, block));
-        this.createFlowerPotPlant(modelGenerator, block, flowerPotBlock, crossType);
-    }
-
-    public final void createFlowerPotPlant(BlockModelGenerators modelGenerator, Block plantBlock, Block flowerPotBlock, PlantType tintType) {
-        this.createTintableCrossBlockState(modelGenerator, plantBlock, tintType);
-        TextureMapping mapping = tintType.getPlantTextureMapping(plantBlock);
-        MultiVariant model = plainVariant(tintType.getCrossPot().create(flowerPotBlock, mapping, modelGenerator.modelOutput));
-        modelGenerator.blockStateOutput.accept(createSimpleBlock(flowerPotBlock, model));
     }
 }

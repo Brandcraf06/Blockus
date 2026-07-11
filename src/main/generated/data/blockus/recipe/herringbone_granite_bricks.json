@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "blockus:granite_bricks"
+  },
+  "pattern": [
+    "#  ",
+    "###",
+    "  #"
+  ],
+  "result": {
+    "count": 5,
+    "id": "blockus:herringbone_granite_bricks"
+  }
+}

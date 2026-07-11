@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "redstone",
   "key": {
-    "S": "minecraft:redstone_block"
+    "#": "minecraft:redstone_block"
   },
   "pattern": [
-    "SS",
-    "SS"
+    "##",
+    "##"
   ],
   "result": {
     "count": 4,

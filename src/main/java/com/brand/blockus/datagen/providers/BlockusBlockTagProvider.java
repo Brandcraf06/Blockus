@@ -1,5 +1,6 @@
 package com.brand.blockus.datagen.providers;
 
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.helper.BlockOrder;
@@ -98,7 +99,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(BLUESTONE_BRICKS))
             .add(bsswBundle(BLUESTONE_TILES))
             .add(bsswBundle(POLISHED_BLUESTONE))
-            .add(BLUESTONE_SQUARES)
+            .add(bsswBundle(BLUESTONE_SQUARES))
             .add(bsswBundle(SMALL_BLUESTONE_BRICKS))
             .add(CHISELED_BLUESTONE)
             .add(BLUESTONE_CIRCULAR_PAVING)
@@ -122,7 +123,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.valueLookupBuilder(BlockusBlockTags.CHOCOLATE_BLOCKS)
             .add(bsswBundle(CHOCOLATE_BLOCK))
             .add(bsswBundle(CHOCOLATE_BRICKS))
-            .add(CHOCOLATE_SQUARES)
+            .add(bsswBundle(CHOCOLATE_SQUARES))
             .add(CHOCOLATE_TABLET);
 
         for (DyeColor color : BlockOrder.COLOR) {
@@ -261,10 +262,10 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(LIMESTONE))
             .add(bsswBundle(POLISHED_LIMESTONE))
             .add(bsswBundle(LIMESTONE_BRICKS))
-            .add(bsswBundle(LIMESTONE_TILES))
-            .add(LIMESTONE_PILLAR)
-            .add(LIMESTONE_SQUARES)
             .add(bsswBundle(SMALL_LIMESTONE_BRICKS))
+            .add(bsswBundle(LIMESTONE_TILES))
+            .add(bsswBundle(LIMESTONE_SQUARES))
+            .add(LIMESTONE_PILLAR)
             .add(CHISELED_LIMESTONE)
             .add(CHISELED_LIMESTONE_PILLAR)
             .add(CHISELED_LIMESTONE_BRICKS)
@@ -275,10 +276,10 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(VIRIDITE))
             .add(bsswBundle(POLISHED_VIRIDITE))
             .add(bsswBundle(VIRIDITE_BRICKS))
-            .add(bsswBundle(VIRIDITE_TILES))
-            .add(VIRIDITE_PILLAR)
-            .add(VIRIDITE_SQUARES)
             .add(bsswBundle(SMALL_VIRIDITE_BRICKS))
+            .add(bsswBundle(VIRIDITE_TILES))
+            .add(bsswBundle(VIRIDITE_SQUARES))
+            .add(VIRIDITE_PILLAR)
             .add(CHISELED_VIRIDITE)
             .add(CHISELED_VIRIDITE_PILLAR)
             .add(CHISELED_VIRIDITE_BRICKS)
@@ -294,10 +295,10 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(MARBLE))
             .add(bsswBundle(POLISHED_MARBLE))
             .add(bsswBundle(MARBLE_BRICKS))
-            .add(bsswBundle(MARBLE_TILES))
-            .add(MARBLE_PILLAR)
-            .add(MARBLE_SQUARES)
             .add(bsswBundle(SMALL_MARBLE_BRICKS))
+            .add(bsswBundle(MARBLE_TILES))
+            .add(bsswBundle(MARBLE_SQUARES))
+            .add(MARBLE_PILLAR)
             .add(CHISELED_MARBLE_PILLAR)
             .add(CHISELED_MARBLE_BRICKS)
             .add(CHISELED_MARBLE)
@@ -370,11 +371,12 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.valueLookupBuilder(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS)
             .add(bsswBundle(PHANTOM_PURPUR_BLOCK))
-            .add(PHANTOM_PURPUR_PILLAR)
             .add(bsswBundle(PHANTOM_PURPUR_BRICKS))
-            .add(bsswBundle(POLISHED_PHANTOM_PURPUR))
-            .add(PHANTOM_PURPUR_SQUARES)
             .add(bsswBundle(SMALL_PHANTOM_PURPUR_BRICKS))
+            .add(bsswBundle(POLISHED_PHANTOM_PURPUR))
+            .add(bsswBundle(PHANTOM_PURPUR_SQUARES))
+            .add(PHANTOM_PURPUR_PILLAR)
+
             .add(CHISELED_PHANTOM_PURPUR)
             .add(PHANTOM_PURPUR_LINES);
 
@@ -392,9 +394,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.valueLookupBuilder(BlockusBlockTags.PURPUR_BLOCKS)
             .add(bsswBundle(PURPUR_BRICKS))
-            .add(bsswBundle(POLISHED_PURPUR))
-            .add(PURPUR_SQUARES)
             .add(bsswBundle(SMALL_PURPUR_BRICKS))
+            .add(bsswBundle(POLISHED_PURPUR))
+            .add(bsswBundle(PURPUR_SQUARES))
             .add(CHISELED_PURPUR)
             .add(PURPUR_LINES)
             .addTag(BlockusBlockTags.PHANTOM_PURPUR_BLOCKS);
@@ -581,37 +583,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(Blocks.BAMBOO_MOSAIC_STAIRS)
             .add(Blocks.BAMBOO_MOSAIC_SLAB);
 
-        var planksThatBurn = this.valueLookupBuilder(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "planks_that_burn")));
-        planksThatBurn
-            .add(Blocks.OAK_PLANKS)
-            .add(Blocks.SPRUCE_PLANKS)
-            .add(Blocks.BIRCH_PLANKS)
-            .add(Blocks.JUNGLE_PLANKS)
-            .add(Blocks.ACACIA_PLANKS)
-            .add(Blocks.DARK_OAK_PLANKS)
-            .add(Blocks.MANGROVE_PLANKS)
-            .add(Blocks.CHERRY_PLANKS)
-            .add(Blocks.PALE_OAK_PLANKS)
-            .add(Blocks.BAMBOO_PLANKS)
-            .add(RAW_BAMBOO.planks())
-            .add(WHITE_OAK.planks())
-            .add(LEGACY_PLANKS);
-        for (var wood : WoodMaps.values()) {
-            if (!wood.data().isBurnable()) continue;
-            var woodMosaic = WOODEN_MOSAIC.bundle().get(wood.getId());
-            if (woodMosaic != null) {
-                planksThatBurn.add(woodMosaic.block());
-            }
-            var mossyPlanks = MOSSY_PLANKS.bundle().get(wood.getId());
-            if (mossyPlanks != null) {
-                planksThatBurn.add(mossyPlanks.block());
-            }
-            var herringbonePlanks = HERRINGBONE_PLANKS.bundle().get(wood.getId());
-            if (herringbonePlanks != null) {
-                planksThatBurn.add(herringbonePlanks);
-            }
-        }
-
         for (CopperBSSWBundle bundle : CopperBSSWBundle.values()) {
             for (Block block : bundle.all()) {
                 if (block.toString().contains("tuff")) {
@@ -622,9 +593,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
                         .add(block);
                 }
             }
-
-            this.valueLookupBuilder(BlockTags.WALLS)
-                .addAll(bundle.allWalls());
+            this.valueLookupBuilder(BlockTags.STAIRS).addAll(bundle.allStairs());
+            this.valueLookupBuilder(BlockTags.SLABS).addAll(bundle.allSlabs());
+            this.valueLookupBuilder(BlockTags.WALLS).addAll(bundle.allWalls());
         }
 
         // Vanilla Block Tags
@@ -745,8 +716,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(REDSTONE_SAND)
             .add(LEGACY_FIRST_GRASS_BLOCK)
             .add(LEGACY_GRASS_BLOCK)
-            .add(LEGACY_GRAVEL)
-            .add(SUGAR_BLOCK);
+            .add(LEGACY_GRAVEL);
 
         this.valueLookupBuilder(BlockTags.SWORD_EFFICIENT)
             .add(SOUL_O_LANTERN)
@@ -980,7 +950,21 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             }
         }
 
+        for (AsphaltBundle.AsphaltVariants variants : BlockusBlocks.ASPHALT.colorMap().values()) {
+            this.valueLookupBuilder(BlockTags.STAIRS).add(variants.stairs());
+            this.valueLookupBuilder(BlockTags.SLABS).add(variants.slab());
+        }
+
+        this.valueLookupBuilder(BlockTags.STAIRS)
+            .add(NETHERITE_STAIRS)
+            .add(SMOOTH_STONE_STAIRS);
+
+        this.valueLookupBuilder(BlockTags.SLABS)
+            .add(CUT_SOUL_SANDSTONE_SLAB)
+            .add(NETHERITE_SLAB);
+
         this.valueLookupBuilder(BlockTags.WALLS)
+            .add(ICE_BRICK_WALL)
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.valueLookupBuilder(BlockTags.WARPED_STEMS)

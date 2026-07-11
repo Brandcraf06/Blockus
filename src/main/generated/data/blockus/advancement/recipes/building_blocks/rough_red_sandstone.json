@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_red_sandstone": {
+    "has_red_sandstone_slab": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:red_sandstone"
+            "items": "minecraft:red_sandstone_slab"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_red_sandstone"
+      "has_red_sandstone_slab"
     ]
   ],
   "rewards": {
