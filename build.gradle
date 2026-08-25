@@ -15,6 +15,12 @@ repositories {
   maven { url 'https://maven.terraformersmc.com/' }
 }
 
+loom {
+  runs.configureEach {
+    it.jvmArguments.add("-XX:StackShadowPages=32")
+  }
+}
+
 fabricApi {
   configureDataGeneration {
     client = true

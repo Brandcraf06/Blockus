@@ -67,10 +67,6 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs().blocks().pick(color), 30, 60);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.slab().blocks().pick(color), 30, 60);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.carpet().blocks().pick(color), 60, 20);
-//                FuelValueEvents.BUILD.register((builder, context) -> {
-//                    builder.add(bundle.stairs().blocks().pick(color), 100);
-//                    builder.add(bundle.slab().blocks().pick(color), 50);
-//                });
             }
         }
         FlammableBlockRegistry.getDefaultInstance().add(RAINBOW_WOOL.block(), 30, 60);

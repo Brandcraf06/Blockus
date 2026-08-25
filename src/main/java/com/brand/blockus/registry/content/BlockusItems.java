@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class BlockusItems {
 
@@ -36,8 +37,16 @@ public class BlockusItems {
         return Registry.register(BuiltInRegistries.ITEM, id, item);
     }
 
-    public static Item registerBlockItem(BlockItemId id, Block block) {
-        return registerItem(id.item(), (p) -> new BlockItem(block, p), new Item.Properties().useBlockDescriptionPrefix().requiredFeatures(block.requiredFeatures()));
+    public static Item registerBlock(BlockItemId id, Block block, BiFunction<Block, Item.Properties, Item> itemFactory, Item.Properties properties) {
+        return registerItem(id.item(), (p) -> itemFactory.apply(block, p), properties.useBlockDescriptionPrefix().requiredFeatures(block.requiredFeatures()));
+    }
+
+    public static Item registerBlock(BlockItemId id, Block block) {
+        return registerBlock(id, block, BlockItem::new, new Item.Properties());
+    }
+
+    public static Item registerBlock(BlockItemId id, Block block, UnaryOperator<Item.Properties> propertiesFunction) {
+        return registerBlock(id, block, (BiFunction)((b, p) -> new BlockItem((Block) b, propertiesFunction.apply((Item.Properties) p))), new Item.Properties());
     }
 
     public static Item registerItem(ResourceKey<Item> id, Function<Item.Properties, Item> itemFactory, Item.Properties properties) {

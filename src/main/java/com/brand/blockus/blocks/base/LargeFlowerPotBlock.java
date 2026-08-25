@@ -1,5 +1,6 @@
 package com.brand.blockus.blocks.base;
 
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -75,7 +76,7 @@ public class LargeFlowerPotBlock extends Block {
                 player.drop(plant, false, Prediction.PREDICTED);
             }
 
-            level.setBlockAndUpdate(pos, Blocks.FLOWER_POT.defaultBlockState());
+            level.setBlockAndUpdate(pos, BlockusBlocks.LARGE_FLOWER_POT.defaultBlockState());
             level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
             return InteractionResult.SUCCESS;
         }

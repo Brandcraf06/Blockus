@@ -536,8 +536,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS);
 
     // Wools
-    public static final BSSWBundle RAINBOW_WOOL = BSSWBundle.of("rainbow_wool", Blocks.WOOL.yellow()).includeWall(false).register();
-    public static final Block RAINBOW_CARPET = dyedBlock("rainbow_carpet", DyeColor.YELLOW, WoolCarpetBlock::new, Blocks.CARPET.white());
+    public static final BSSWBundle RAINBOW_WOOL = BSSWBundle.of("rainbow_wool", Blocks.WOOL.yellow()).includeWall(false).register(); // need to add cookingFuel
+    public static final Block RAINBOW_CARPET = dyedBlock("rainbow_carpet", DyeColor.YELLOW, WoolCarpetBlock::new, Blocks.CARPET.white(), p -> p.cookingFuel(NumberProviders.COOKING_TIME_WOOL_CARPETS));
     public static final Block RAINBOW_BED = dyedBlock("rainbow_bed", DyeColor.YELLOW, BedBlock::new, Blocks.BED.white());
     public static final WoolBundle PATTERNED_WOOL = WoolBundle.register(BlockusIds.PATTERNED_WOOL, BlockusIds.PATTERNED_WOOL_STAIRS, BlockusIds.PATTERNED_WOOL_SLAB, BlockusIds.PATTERNED_CARPET, BlockBuilder::registerBlock);
     public static final WoolBundle GINGHAM_WOOL = WoolBundle.register(BlockusIds.GINGHAM_WOOL, BlockusIds.GINGHAM_WOOL_STAIRS, BlockusIds.GINGHAM_WOOL_SLAB, BlockusIds.GINGHAM_CARPET, BlockBuilder::registerBlock);

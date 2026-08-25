@@ -276,6 +276,10 @@ public class BlockFactory {
         return copy(base).factory(properties -> factory.apply(color, properties)).register(BlockusIds.create(id));
     }
 
+    public static Block dyedBlock(String id, DyeColor color, BiFunction<DyeColor, BlockBehaviour.Properties, Block> factory, Block base, UnaryOperator<Item.Properties> itemProperties) {
+        return copy(base).factory(properties -> factory.apply(color, properties)).itemProperties(itemProperties).register(BlockusIds.create(id));
+    }
+
     public static Block dyedBlock(String id, DyeColor color, BlockBehaviour.Properties properties) {
         return registerOf(id, Block::new, properties.mapColor(color));
     }
@@ -286,16 +290,20 @@ public class BlockFactory {
 
     public static <WaxedBlock extends Block, WeatheringBlock extends Block & WeatheringCopper, Id> CopperBlockItemCollection registerCopperBlocks(WeatheringCopperCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, BiFunction<WeatheringCopper.WeatherState, BlockBehaviour.Properties, WaxedBlock> waxedBlockFactory, final BiFunction<WeatheringCopper.WeatherState, BlockBehaviour.Properties, WeatheringBlock> weatheringFactory, Function<WeatheringCopper.WeatherState, BlockBehaviour.Properties> properties) {
         WeatheringCopperCollection<Block> blocks = WeatheringCopperCollection.registerBlocks(ids, register, waxedBlockFactory, weatheringFactory, properties);
-        WeatheringCopperCollection<Item> items = WeatheringCopperCollection.registerItems(ids, blocks, (id, block) -> BlockusItems.registerBlockItem((BlockItemId) id, block));
+        WeatheringCopperCollection<Item> items = WeatheringCopperCollection.registerItems(ids, blocks, (id, block) -> BlockusItems.registerBlock((BlockItemId) id, block));
 
         return new CopperBlockItemCollection(blocks, items);
     }
 
-    public static <B extends Block, Id> ColorBlockItemCollection registerDyedBlocks(ColorCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, BiFunction<DyeColor, BlockBehaviour.Properties, B> factory, Function<DyeColor, BlockBehaviour.Properties> properties) {
+    public static <B extends Block, Id> ColorBlockItemCollection registerDyedBlocks(ColorCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, BiFunction<DyeColor, BlockBehaviour.Properties, B> factory, Function<DyeColor, BlockBehaviour.Properties> properties, TriFunction<Id, Block, DyeColor, Item> itemRegister) {
         ColorCollection<Block> blocks = ColorCollection.registerBlocks(ids, register, factory, properties);
-        ColorCollection<Item> items = ColorCollection.registerBlockItems(ids, blocks, (id, block, var2) -> BlockusItems.registerBlockItem((BlockItemId) id, block));
+        ColorCollection<Item> items = ColorCollection.registerBlockItems(ids, blocks, itemRegister);
 
         return new ColorBlockItemCollection(blocks, items);
+    }
+
+    public static <B extends Block, Id> ColorBlockItemCollection registerDyedBlocks(ColorCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, BiFunction<DyeColor, BlockBehaviour.Properties, B> factory, Function<DyeColor, BlockBehaviour.Properties> properties) {
+        return registerDyedBlocks(ids, register, factory, properties, (id, block, var2) -> BlockusItems.registerBlock((BlockItemId) id, block));
     }
 
     public static <Id> ColorBlockItemCollection registerDyedBlocks(ColorCollection<Id> ids, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register, ColorCollection<Block> base) {
