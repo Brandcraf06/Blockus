@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:magenta_stone_brick_stairs_from_magenta_stone_bricks_stonecutting"
+        "recipes": "blockus:magenta_stone_brick_stairs_from_magenta_stone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

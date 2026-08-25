@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:oxidized_copper_tuff_brick_stairs"
+        "recipes": "blockus:oxidized_copper_tuff_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

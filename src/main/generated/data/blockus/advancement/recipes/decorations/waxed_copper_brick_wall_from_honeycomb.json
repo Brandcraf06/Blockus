@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:waxed_copper_brick_wall_from_honeycomb"
+        "recipes": "blockus:waxed_copper_brick_wall_from_honeycomb"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

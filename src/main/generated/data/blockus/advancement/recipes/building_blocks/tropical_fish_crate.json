@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:tropical_fish_crate"
+        "recipes": "blockus:tropical_fish_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:netherrack_brick_stairs"
+        "recipes": "blockus:netherrack_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

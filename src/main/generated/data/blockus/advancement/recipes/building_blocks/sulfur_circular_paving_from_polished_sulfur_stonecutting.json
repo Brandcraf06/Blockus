@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sulfur_circular_paving_from_polished_sulfur_stonecutting"
+        "recipes": "blockus:sulfur_circular_paving_from_polished_sulfur_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

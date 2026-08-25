@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:waxed_weathered_copper_tuff_brick_slab"
+        "recipes": "blockus:waxed_weathered_copper_tuff_brick_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

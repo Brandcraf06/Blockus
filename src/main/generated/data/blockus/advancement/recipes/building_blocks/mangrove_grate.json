@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mangrove_grate"
+        "recipes": "blockus:mangrove_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

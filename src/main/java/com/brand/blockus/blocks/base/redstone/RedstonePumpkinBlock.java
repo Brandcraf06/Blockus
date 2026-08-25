@@ -20,6 +20,9 @@ public class RedstonePumpkinBlock extends CarvedPumpkinBlock {
         return state.getValue(FACING).getOpposite() == direction ? 15 : 0;
     }
 
+    public boolean shouldRedstoneWireConnectTo(BlockState state, final BlockGetter level, BlockPos pos, Direction direction) {
+            return direction == state.getValue(FACING).getOpposite();
+    }
 }
 
 

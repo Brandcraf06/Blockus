@@ -3,6 +3,7 @@ package com.brand.blockus.utils.screen;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -33,8 +34,8 @@ public class LegacyStonecutterMenu extends AbstractContainerMenu {
     private SelectableRecipe.SingleInputSet<StonecutterRecipe> recipesForInput;
     private ItemStack input;
     private long lastSoundTime;
-    final Slot inputSlot;
-    final Slot resultSlot;
+    private final Slot inputSlot;
+    private final Slot resultSlot;
     private Runnable slotUpdateListener;
     public final Container container;
     private final ResultContainer resultContainer;
@@ -230,7 +231,7 @@ public class LegacyStonecutterMenu extends AbstractContainerMenu {
 
             slot.onTake(player, stack);
             if (slotIndex == 1) {
-                player.drop(stack, false);
+                player.drop(stack, false, Prediction.PREDICTED);
             }
 
             this.broadcastChanges();

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_sapling"
+        "recipes": "blockus:legacy_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

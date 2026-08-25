@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:charred_shelf"
+        "recipes": "blockus:charred_shelf"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

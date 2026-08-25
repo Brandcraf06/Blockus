@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:red_glazed_terracotta_pillar"
+        "recipes": "blockus:red_glazed_terracotta_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

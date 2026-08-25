@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:burnt_paper_block"
+        "recipes": "blockus:burnt_paper_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

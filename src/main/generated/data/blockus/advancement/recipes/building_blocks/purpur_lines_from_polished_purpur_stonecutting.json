@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:purpur_lines_from_polished_purpur_stonecutting"
+        "recipes": "blockus:purpur_lines_from_polished_purpur_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

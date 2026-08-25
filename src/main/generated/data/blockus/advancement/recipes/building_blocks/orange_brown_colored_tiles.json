@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:orange_brown_colored_tiles"
+        "recipes": "blockus:orange_brown_colored_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

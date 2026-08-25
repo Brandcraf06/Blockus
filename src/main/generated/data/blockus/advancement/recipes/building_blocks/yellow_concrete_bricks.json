@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_concrete_bricks"
+        "recipes": "blockus:yellow_concrete_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rainbow_petals_from_rainbow_rose"
+        "recipes": "blockus:rainbow_petals_from_rainbow_rose"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

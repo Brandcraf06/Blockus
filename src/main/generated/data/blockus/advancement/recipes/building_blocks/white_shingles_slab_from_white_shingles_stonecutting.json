@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_shingles_slab_from_white_shingles_stonecutting"
+        "recipes": "blockus:white_shingles_slab_from_white_shingles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

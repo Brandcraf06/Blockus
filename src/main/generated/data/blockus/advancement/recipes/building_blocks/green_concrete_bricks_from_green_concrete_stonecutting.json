@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:green_concrete_bricks_from_green_concrete_stonecutting"
+        "recipes": "blockus:green_concrete_bricks_from_green_concrete_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

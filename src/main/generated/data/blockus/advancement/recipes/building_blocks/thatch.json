@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:thatch"
+        "recipes": "blockus:thatch"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

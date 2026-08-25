@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:red_shingles"
+        "recipes": "blockus:red_shingles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

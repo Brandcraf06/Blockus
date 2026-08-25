@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:stripped_oak_post"
+        "recipes": "blockus:stripped_oak_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

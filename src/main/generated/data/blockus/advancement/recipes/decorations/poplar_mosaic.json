@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:poplar_mosaic"
+        "recipes": "blockus:poplar_mosaic"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

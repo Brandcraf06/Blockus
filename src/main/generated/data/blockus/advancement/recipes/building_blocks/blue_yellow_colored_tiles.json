@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:blue_yellow_colored_tiles"
+        "recipes": "blockus:blue_yellow_colored_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

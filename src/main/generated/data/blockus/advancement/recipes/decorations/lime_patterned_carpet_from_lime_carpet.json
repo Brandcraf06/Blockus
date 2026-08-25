@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lime_patterned_carpet_from_lime_carpet"
+        "recipes": "blockus:lime_patterned_carpet_from_lime_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

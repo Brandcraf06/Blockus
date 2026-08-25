@@ -45,7 +45,6 @@ public class BlockusBlockTags {
     public static final TagKey<Block> NETHER_BRICKS = register("nether_bricks");
     public static final TagKey<Block> NETHERRACK_BLOCKS = register("netherrack_blocks");
     public static final TagKey<Block> OBSIDIAN = register("obsidian");
-    public static final TagKey<Block> NETHER_PORTAL_FRAME_BLOCKS = register("nether_portal_frame_blocks");
     public static final TagKey<Block> PATTERNED_WOOL = register("patterned_wool");
     public static final TagKey<Block> PATTERNED_WOOL_STAIRS = register("patterned_wool_stairs");
     public static final TagKey<Block> PATTERNED_WOOL_SLABS = register("patterned_wool_slabs");

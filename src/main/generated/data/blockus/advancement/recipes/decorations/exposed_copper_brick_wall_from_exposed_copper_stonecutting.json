@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:exposed_copper_brick_wall_from_exposed_copper_stonecutting"
+        "recipes": "blockus:exposed_copper_brick_wall_from_exposed_copper_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

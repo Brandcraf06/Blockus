@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:small_end_stone_brick_stairs_from_polished_end_stone_stonecutting"
+        "recipes": "blockus:small_end_stone_brick_stairs_from_polished_end_stone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_gold_block_from_gold_block_stonecutting"
+        "recipes": "blockus:legacy_gold_block_from_gold_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

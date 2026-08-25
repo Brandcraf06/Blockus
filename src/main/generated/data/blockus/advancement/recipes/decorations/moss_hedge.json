@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:moss_hedge"
+        "recipes": "blockus:moss_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

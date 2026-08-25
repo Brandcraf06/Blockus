@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:raw_bamboo_mosaic"
+        "recipes": "blockus:raw_bamboo_mosaic"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

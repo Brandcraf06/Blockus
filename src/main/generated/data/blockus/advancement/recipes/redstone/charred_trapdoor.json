@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:charred_trapdoor"
+        "recipes": "blockus:charred_trapdoor"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:purple_gingham_carpet"
+        "recipes": "blockus:purple_gingham_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

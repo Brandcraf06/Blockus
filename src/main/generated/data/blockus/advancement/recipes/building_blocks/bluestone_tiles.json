@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:bluestone_tiles"
+        "recipes": "blockus:bluestone_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

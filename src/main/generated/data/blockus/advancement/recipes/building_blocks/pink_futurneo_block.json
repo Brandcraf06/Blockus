@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:pink_futurneo_block"
+        "recipes": "blockus:pink_futurneo_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

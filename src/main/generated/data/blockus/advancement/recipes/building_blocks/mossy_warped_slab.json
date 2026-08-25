@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mossy_warped_slab"
+        "recipes": "blockus:mossy_warped_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

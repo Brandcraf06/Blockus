@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_nether_reactor_core"
+        "recipes": "blockus:legacy_nether_reactor_core"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

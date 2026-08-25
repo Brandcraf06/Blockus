@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:brown_patterned_carpet_from_brown_carpet"
+        "recipes": "blockus:brown_patterned_carpet_from_brown_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

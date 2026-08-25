@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_bluestone"
+        "recipes": "blockus:polished_bluestone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

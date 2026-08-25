@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_gravel_from_gravel_stonecutting"
+        "recipes": "blockus:legacy_gravel_from_gravel_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

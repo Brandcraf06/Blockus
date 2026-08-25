@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:soaked_brick_slab"
+        "recipes": "blockus:soaked_brick_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

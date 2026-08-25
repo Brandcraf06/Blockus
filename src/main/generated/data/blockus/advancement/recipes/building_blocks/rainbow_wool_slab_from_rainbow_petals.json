@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rainbow_wool_slab_from_rainbow_petals"
+        "recipes": "blockus:rainbow_wool_slab_from_rainbow_petals"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

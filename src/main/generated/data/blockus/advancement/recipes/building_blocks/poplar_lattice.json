@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:poplar_lattice"
+        "recipes": "blockus:poplar_lattice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_granite_bricks_from_granite_bricks_stonecutting"
+        "recipes": "blockus:chiseled_granite_bricks_from_granite_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

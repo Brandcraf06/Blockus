@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cobblestone_bricks_from_cobblestone_stonecutting"
+        "recipes": "blockus:cobblestone_bricks_from_cobblestone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

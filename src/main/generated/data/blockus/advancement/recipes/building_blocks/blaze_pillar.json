@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:blaze_pillar"
+        "recipes": "blockus:blaze_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

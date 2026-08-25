@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rainbow_bricks"
+        "recipes": "blockus:rainbow_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

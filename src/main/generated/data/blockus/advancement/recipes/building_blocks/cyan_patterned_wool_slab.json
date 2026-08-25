@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cyan_patterned_wool_slab"
+        "recipes": "blockus:cyan_patterned_wool_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

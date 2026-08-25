@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_sculk_stairs_from_sculk_stonecutting"
+        "recipes": "blockus:polished_sculk_stairs_from_sculk_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

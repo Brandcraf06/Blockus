@@ -31,6 +31,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.storage.loot.providers.number.NumberProviders;
 
 public class BlockusBlocks extends BlockFactory {
 
@@ -226,14 +227,14 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block ICE_PILLAR = pillar("ice", ICE_BRICKS);
 
     // Obsidian
-    public static final BSSWBundle OBSIDIAN_BRICKS = BSSWBundle.of("obsidian_bricks", Blocks.OBSIDIAN, PushReaction.BLOCK).register();
+    public static final BSSWBundle OBSIDIAN_BRICKS = BSSWBundle.of("obsidian_bricks", Blocks.OBSIDIAN, PushReaction.IMMOVEABLE).register();
     public static final BSSWBundle SMALL_OBSIDIAN_BRICKS = BSSWBundle.of("small_obsidian_bricks", OBSIDIAN_BRICKS.block()).register();
     public static final Block CRACKED_OBSIDIAN_BRICKS = registerCopy("cracked_obsidian_bricks", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_PILLAR = pillar("obsidian", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_CIRCULAR_PAVING = registerCopy("obsidian_circular_paving", OrientableBlockBase::new, BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_REINFORCED_DOOR = stoneDoor("obsidian_reinforced_door", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
     public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = stoneTrapdoor("obsidian_reinforced_trapdoor", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
-    public static final Block GLOWING_OBSIDIAN = registerCopy("glowing_obsidian", Blocks.OBSIDIAN, properties -> properties.mapColor(MapColor.COLOR_RED).pushReaction(PushReaction.BLOCK).lightLevel((state) -> 15));
+    public static final Block GLOWING_OBSIDIAN = registerCopy("glowing_obsidian", Blocks.OBSIDIAN, p -> p.mapColor(MapColor.COLOR_RED).pushReaction(PushReaction.IMMOVEABLE).lightLevel((state) -> 15));
 
     // Netherrack
     public static final BSSWBundle POLISHED_NETHERRACK = BSSWBundle.of("polished_netherrack", Blocks.NETHERRACK).register();
@@ -334,8 +335,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LAPIS_DECORATED_SOUL_SANDSTONE = registerCopy("lapis_decorated_soul_sandstone", BlockusBlocks.SOUL_SANDSTONE.block());
 
     // Rainbow
-    public static final Block RAINBOW_ROSE = registerOf("rainbow_rose", properties -> new FlowerBlock(MobEffects.GLOWING, 8, properties), create().mapColor(MapColor.PLANT).noCollision().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ));
-    public static final Block RAINBOW_PETALS = registerOf("rainbow_petals", (p) -> new FlowerBedBlock(p, 3), create().mapColor(MapColor.PLANT).noCollision().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY));
+    public static final Block RAINBOW_ROSE = registerOf("rainbow_rose", properties -> new FlowerBlock(MobEffects.GLOWING, 8, properties), create().mapColor(MapColor.PLANT).noCollision().instabreak().pushReaction(PushReaction.POPPED).sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ), p -> p.compostable(NumberProviders.COMPOSTABLE_MEDIUM));
+    public static final Block RAINBOW_PETALS = registerOf("rainbow_petals", (p) -> new FlowerBedBlock(p, 3), create().mapColor(MapColor.PLANT).noCollision().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.POPPED), p -> p.compostable(NumberProviders.COMPOSTABLE_LOW));
 
     public static final Block POTTED_RAINBOW_ROSE = pottedPlant("potted_rainbow_rose", RAINBOW_ROSE);
     public static final Block RAINBOW_BLOCK = registerOf("rainbow_block", FullFacingBlock::new, create().mapColor(MapColor.COLOR_LIGHT_BLUE).strength(5.0f, 6.0f).requiresCorrectToolForDrops());
@@ -376,13 +377,13 @@ public class BlockusBlocks extends BlockFactory {
 
     // White Oak Wood
     public static final WoodType WHITE_OAK_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Blockus.id("white_oak"), BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Blockus.id("white_oak")));
-    public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", properties -> new SaplingBlock(BlockusTreeGrower.WHITE_OAK, properties), Blocks.OAK_SAPLING, properties -> properties.pushReaction(PushReaction.DESTROY));
+    public static final Block WHITE_OAK_SAPLING = registerCopy("white_oak_sapling", properties -> new SaplingBlock(BlockusTreeGrower.WHITE_OAK, properties), Blocks.OAK_SAPLING, p -> p.pushReaction(PushReaction.POPPED), p -> p.compostable(NumberProviders.COMPOSTABLE_LOW));
     public static final Block POTTED_WHITE_OAK_SAPLING = pottedPlant("potted_white_oak_sapling", WHITE_OAK_SAPLING);
-    public static final Block WHITE_OAK_LOG = registerCopy("white_oak_log", RotatedPillarBlock::new, Blocks.OAK_LOG, properties -> properties.mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
+    public static final Block WHITE_OAK_LOG = registerCopy("white_oak_log", RotatedPillarBlock::new, Blocks.OAK_LOG, p -> p.mapColor(MapColor.TERRACOTTA_LIGHT_GRAY));
     public static final Block STRIPPED_WHITE_OAK_LOG = pillar2("stripped_white_oak_log", WHITE_OAK_LOG);
     public static final Block WHITE_OAK_WOOD = pillar2("white_oak_wood", WHITE_OAK_LOG);
     public static final Block STRIPPED_WHITE_OAK_WOOD = pillar2("stripped_white_oak_wood", WHITE_OAK_LOG);
-    public static final Block WHITE_OAK_LEAVES = registerOf("white_oak_leaves", (p) -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 14061641), AmbientLeavesBlockSoundPlayer.noAmbientSound(), p), Blocks.leavesProperties(SoundType.GRASS));
+    public static final Block WHITE_OAK_LEAVES = registerOf("white_oak_leaves", (p) -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 14061641), AmbientLeavesBlockSoundPlayer.noAmbientSound(), p), Blocks.leavesProperties(SoundType.GRASS), p -> p.compostable(NumberProviders.COMPOSTABLE_LOW));
     public static final WoodBundle WHITE_OAK = WoodBundle.register("white_oak", Blocks.OAK_PLANKS, MapColor.QUARTZ, SoundType.WOOD, WHITE_OAK_WOOD_TYPE, BlockSetType.OAK, true);
 
     // Raw Bamboo
@@ -405,29 +406,28 @@ public class BlockusBlocks extends BlockFactory {
     });
     public static final WoodenPostBundle WOODEN_POST = WoodenPostBundle.register();
     public static final TimberFrameBundle TIMBER_FRAME = TimberFrameBundle.register();
-    public static final Block WOODEN_FRAME = woodenPane("wooden_frame");
+    public static final Block WOODEN_FRAME = woodenPane("wooden_frame", NumberProviders.COOKING_TIME_WOOD_BLOCKS);
 
     // Hedges
-    public static final Block OAK_HEDGE = hedge("oak_hedge", Blocks.OAK_LEAVES);
-    public static final Block SPRUCE_HEDGE = hedge("spruce_hedge", Blocks.SPRUCE_LEAVES);
-    public static final Block BIRCH_HEDGE = hedge("birch_hedge", Blocks.BIRCH_LEAVES);
-    public static final Block JUNGLE_HEDGE = hedge("jungle_hedge", Blocks.JUNGLE_LEAVES);
-    public static final Block ACACIA_HEDGE = hedge("acacia_hedge", Blocks.ACACIA_LEAVES);
-    public static final Block DARK_OAK_HEDGE = hedge("dark_oak_hedge", Blocks.DARK_OAK_LEAVES);
-    public static final Block MANGROVE_HEDGE = hedge("mangrove_hedge", Blocks.MANGROVE_LEAVES);
-    public static final Block CHERRY_HEDGE = hedge("cherry_hedge", Blocks.CHERRY_LEAVES);
-    public static final Block PALE_OAK_HEDGE = hedge("pale_oak_hedge", Blocks.PALE_OAK_LEAVES);
-    public static final Block RED_POPLAR_HEDGE = hedge("red_poplar_hedge", Blocks.RED_POPLAR_LEAVES);
-    public static final Block ORANGE_POPLAR_HEDGE = hedge("orange_poplar_hedge", Blocks.ORANGE_POPLAR_LEAVES);
-    public static final Block YELLOW_POPLAR_HEDGE = hedge("yellow_poplar_hedge", Blocks.YELLOW_POPLAR_LEAVES);
-
-    public static final Block WHITE_OAK_HEDGE = hedge("white_oak_hedge", WHITE_OAK_LEAVES);
-    public static final Block AZALEA_HEDGE = hedge("azalea_hedge", Blocks.AZALEA_LEAVES);
-    public static final Block FLOWERING_AZALEA_HEDGE = hedge("flowering_azalea_hedge", Blocks.FLOWERING_AZALEA_LEAVES);
-    public static final Block MOSS_HEDGE = hedge("moss_hedge", Blocks.MOSS_BLOCK);
-    public static final Block PALE_MOSS_HEDGE = hedge("pale_moss_hedge", Blocks.PALE_MOSS_BLOCK);
-    public static final Block CRIMSON_HEDGE = hedge("crimson_hedge", Blocks.NETHER_WART_BLOCK);
-    public static final Block WARPED_HEDGE = hedge("warped_hedge", Blocks.WARPED_WART_BLOCK);
+    public static final Block OAK_HEDGE = hedge("oak_hedge", Blocks.OAK_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block SPRUCE_HEDGE = hedge("spruce_hedge", Blocks.SPRUCE_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block BIRCH_HEDGE = hedge("birch_hedge", Blocks.BIRCH_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block JUNGLE_HEDGE = hedge("jungle_hedge", Blocks.JUNGLE_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block ACACIA_HEDGE = hedge("acacia_hedge", Blocks.ACACIA_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block DARK_OAK_HEDGE = hedge("dark_oak_hedge", Blocks.DARK_OAK_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block MANGROVE_HEDGE = hedge("mangrove_hedge", Blocks.MANGROVE_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block CHERRY_HEDGE = hedge("cherry_hedge", Blocks.CHERRY_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block PALE_OAK_HEDGE = hedge("pale_oak_hedge", Blocks.PALE_OAK_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block RED_POPLAR_HEDGE = hedge("red_poplar_hedge", Blocks.RED_POPLAR_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block ORANGE_POPLAR_HEDGE = hedge("orange_poplar_hedge", Blocks.ORANGE_POPLAR_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block YELLOW_POPLAR_HEDGE = hedge("yellow_poplar_hedge", Blocks.YELLOW_POPLAR_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block WHITE_OAK_HEDGE = hedge("white_oak_hedge", WHITE_OAK_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block AZALEA_HEDGE = hedge("azalea_hedge", Blocks.AZALEA_LEAVES, NumberProviders.COMPOSTABLE_LOW);
+    public static final Block FLOWERING_AZALEA_HEDGE = hedge("flowering_azalea_hedge", Blocks.FLOWERING_AZALEA_LEAVES, NumberProviders.COMPOSTABLE_LOW_MEDIUM);
+    public static final Block MOSS_HEDGE = hedge("moss_hedge", Blocks.MOSS_BLOCK, NumberProviders.COMPOSTABLE_MEDIUM);
+    public static final Block PALE_MOSS_HEDGE = hedge("pale_moss_hedge", Blocks.PALE_MOSS_BLOCK, NumberProviders.COMPOSTABLE_MEDIUM);
+    public static final Block CRIMSON_HEDGE = hedge("crimson_hedge", Blocks.NETHER_WART_BLOCK, NumberProviders.COMPOSTABLE_MEDIUM_HIGH);
+    public static final Block WARPED_HEDGE = hedge("warped_hedge", Blocks.WARPED_WART_BLOCK, NumberProviders.COMPOSTABLE_MEDIUM_HIGH);
 
     // Large Flower Pots
     public static final Block LARGE_FLOWER_POT = largeFlowerPot("large_flower_pot");
@@ -460,7 +460,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle CHOCOLATE_BLOCK = BSSWBundle.of("chocolate_block", 1.0F, 1.0F, MapColor.COLOR_BROWN).includeWall(false).register();
     public static final BSSWBundle CHOCOLATE_BRICKS = BSSWBundle.of("chocolate_bricks", BlockusBlocks.CHOCOLATE_BLOCK.block()).register();
     public static final BSSWBundle CHOCOLATE_SQUARES = BSSWBundle.of("chocolate_squares", BlockusBlocks.CHOCOLATE_BRICKS.block()).register();
-    public static final Block CHOCOLATE_TABLET = registerCopy("chocolate_tablet", ChocolateTabletBlock::new, BlockusBlocks.CHOCOLATE_BLOCK.block(), properties -> properties.strength(0.2F, 1.0F));
+    public static final Block CHOCOLATE_TABLET = registerCopy("chocolate_tablet", ChocolateTabletBlock::new, BlockusBlocks.CHOCOLATE_BLOCK.block(), p -> p.strength(0.2F, 1.0F));
 
     // Ore Bricks
     public static final BSSWBundle IRON_BRICKS = BSSWBundle.of("iron_bricks", Blocks.IRON_BLOCK).register();
@@ -474,7 +474,7 @@ public class BlockusBlocks extends BlockFactory {
     // Copper
     public static final CopperBSSWBundle COPPER_BRICKS = CopperBSSWBundle.register(BlockusIds.COPPER_BRICKS, BlockusIds.COPPER_BRICK_STAIRS, BlockusIds.COPPER_BRICK_SLAB, BlockusIds.COPPER_BRICK_WALL, BlockBuilder::registerBlock, state -> Blocks.COPPER_BLOCK.weathering().pick(state));
     public static final CopperBSSWBundle COPPER_TUFF_BRICKS = CopperBSSWBundle.register(BlockusIds.COPPER_TUFF_BRICKS, BlockusIds.COPPER_TUFF_BRICK_STAIRS, BlockusIds.COPPER_TUFF_BRICK_SLAB, BlockusIds.COPPER_TUFF_BRICK_WALL, BlockBuilder::registerBlock, state -> Blocks.TUFF_BRICKS);
-    public static final CopperBlockItemCollection COPPER_LANTERN_BLOCK = registerCopperBlocks(BlockusIds.COPPER_LANTERN_BLOCK, BlockBuilder::registerBlock, (var0, p) -> new Block(p), WeatheringCopperFullBlock::new, (statex) -> createCopy(Blocks.COPPER_LANTERN.weathering().pick(statex)).pushReaction(PushReaction.NORMAL));
+    public static final CopperBlockItemCollection COPPER_LANTERN_BLOCK = registerCopperBlocks(BlockusIds.COPPER_LANTERN_BLOCK, BlockBuilder::registerBlock, (var0, p) -> new Block(p), WeatheringCopperFullBlock::new, (statex) -> createCopy(Blocks.COPPER_LANTERN.weathering().pick(statex)).pushReaction(PushReaction.PUSH_PULL));
     public static final CopperBlockItemCollection COPPER_GATE = registerCopperBlocks(BlockusIds.COPPER_GATE, BlockBuilder::registerBlock, (var0, p) -> new DoorBlock(BlockSetType.COPPER, p), (statex, p) -> new WeatheringCopperDoorBlock(BlockSetType.COPPER, statex, p), (statex) -> createCopy(Blocks.COPPER_DOOR.weathering().pick(statex)));
 
     // Food Blocks
@@ -484,7 +484,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block PUFFERFISH_CRATE = crate("pufferfish_crate");
     public static final Block TROPICAL_FISH_CRATE = crate("tropical_fish_crate");
     public static final Block COD_CRATE = crate("cod_crate");
-    public static final Block COOKIE_BLOCK = registerOf("cookie_block", CookieBlock::new, create().mapColor(MapColor.COLOR_ORANGE).strength(0.5F).sound(SoundType.GRASS));
+    public static final Block COOKIE_BLOCK = registerOf("cookie_block", CookieBlock::new, create().mapColor(MapColor.COLOR_ORANGE).strength(0.5F).sound(SoundType.GRASS), p -> p.compostable(NumberProviders.COMPOSTABLE_ALWAYS_ADD_ONE));
     public static final Block CHORUS_BLOCK = registerOf("chorus_block", RotatedPillarBlock::new, create().mapColor(MapColor.COLOR_PURPLE).strength(0.5f).sound(SoundType.GRASS));
     public static final Block POTATO_CRATE = crate("potato_crate");
     public static final Block APPLE_CRATE = crate("apple_crate");
@@ -492,7 +492,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BEETROOT_CRATE = crate("beetroot_crate");
     public static final Block CARROT_CRATE = crate("carrot_crate");
     public static final Block GOLDEN_CARROT_CRATE = crate("golden_carrot_crate");
-    public static final Block BREAD_BOX = registerCopy("bread_box", OrientableBlockBase::new, Blocks.OAK_PLANKS, properties -> properties.strength(2.5f));
+    public static final Block BREAD_BOX = registerCopy("bread_box", OrientableBlockBase::new, Blocks.OAK_PLANKS, p -> p.strength(2.5f));
 
     // Stained Stone Bricks
     public static final DyedBSSWBundle DYED_STONE_BRICKS = DyedBSSWBundle.register(BlockusIds.DYED_STONE_BRICKS, BlockusIds.DYED_STONE_BRICK_STAIRS, BlockusIds.DYED_STONE_BRICK_SLAB, BlockusIds.DYED_STONE_BRICK_WALL, BlockBuilder::registerBlock, color -> createCopy(Blocks.STONE_BRICKS));
@@ -533,7 +533,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block BEVELED_GLASS_PANE = registerCopy("beveled_glass_pane", IronBarsBlock::new, Blocks.GLASS_PANE);
     public static final ColorBlockItemCollection STAINED_BEVELED_GLASS_PANE = registerDyedBlocks(BlockusIds.STAINED_BEVELED_GLASS_PANE, BlockBuilder::registerBlock, StainedGlassPaneBlock::new, Blocks.STAINED_GLASS_PANE);
     public static final Block RAINBOW_BEVELED_GLASS_PANE = dyedBlock("rainbow_beveled_glass_pane", DyeColor.YELLOW, StainedGlassPaneBlock::new, RAINBOW_GLASS_PANE);
-    public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS, properties -> properties.isValidSpawn(BlockusBlocks::never).isRedstoneConductor(BlockusBlocks::never).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never));
+    public static final Block TINTED_BEVELED_GLASS = registerCopy("tinted_beveled_glass", TintedGlassBlock::new, Blocks.TINTED_GLASS);
 
     // Wools
     public static final BSSWBundle RAINBOW_WOOL = BSSWBundle.of("rainbow_wool", Blocks.WOOL.yellow()).includeWall(false).register();
@@ -586,11 +586,11 @@ public class BlockusBlocks extends BlockFactory {
     // Paper
     public static final Block PAPER_BLOCK = registerOf("paper_block", create().mapColor(MapColor.QUARTZ).strength(0.1f, 0.8f).sound(SoundType.GRASS));
     public static final Block BURNT_PAPER_BLOCK = registerOf("burnt_paper_block", create().mapColor(MapColor.STONE).strength(0.1f, 0.8f).sound(SoundType.GRASS));
-    public static final Block FRAMED_PAPER_BLOCK = registerOf("framed_paper_block", create().mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(SoundType.WOOD).ignitedByLava());
-    public static final Block PAPER_WALL = woodenPane("paper_wall");
-    public static final Block PAPER_DOOR = woodenDoor("paper_door", 0.1f, 0.8f, SoundType.WOOD, MapColor.QUARTZ, BlockSetType.OAK);
-    public static final Block PAPER_TRAPDOOR = woodenTrapdoor("paper_trapdoor", 0.1f, 0.8f, SoundType.WOOD, MapColor.QUARTZ, BlockSetType.OAK);
-    public static final Block PAPER_LAMP = registerOf("paper_lamp", PaperLampBlock::new, create().mapColor(MapColor.QUARTZ).strength(0.1f, 0.8f).sound(SoundType.GRASS).lightLevel((state) -> 15).instrument(NoteBlockInstrument.BASS));
+    public static final Block FRAMED_PAPER_BLOCK = registerOf("framed_paper_block", create().mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(SoundType.WOOD).ignitedByLava(), p -> p.cookingFuel(NumberProviders.COOKING_TIME_WOOD_BLOCKS));
+    public static final Block PAPER_WALL = woodenPane("paper_wall", NumberProviders.COOKING_TIME_WOOD_SLABS);
+    public static final Block PAPER_DOOR = woodenDoor("paper_door", 0.1f, 0.8f, SoundType.WOOD, MapColor.QUARTZ, BlockSetType.OAK, NumberProviders.COOKING_TIME_WOOD_ITEMS_EXTRA_SMALL);
+    public static final Block PAPER_TRAPDOOR = woodenTrapdoor("paper_trapdoor", 0.1f, 0.8f, SoundType.WOOD, MapColor.QUARTZ, BlockSetType.OAK, NumberProviders.COOKING_TIME_WOOD_SLABS);
+    public static final Block PAPER_LAMP = registerOf("paper_lamp", PaperLampBlock::new, create().mapColor(MapColor.QUARTZ).strength(0.1f, 0.8f).sound(SoundType.GRASS).lightLevel((state) -> 15).instrument(NoteBlockInstrument.BASS), p -> p.cookingFuel(NumberProviders.COOKING_TIME_WOOD_BLOCKS));
 
     // Plating
     public static final BSSWBundle IRON_PLATING = BSSWBundle.of("iron_plating", Blocks.IRON_BLOCK, MapColor.STONE).includeWall(false).register();
@@ -599,19 +599,19 @@ public class BlockusBlocks extends BlockFactory {
     // Gates - chains - bars
     public static final Block IRON_GATE = registerCopy("iron_gate", properties -> new DoorBlock(BlockSetType.IRON, properties), Blocks.IRON_DOOR);
     public static final Block GOLDEN_GATE = registerCopy("golden_gate", properties -> new DoorBlock(BlockSetType.GOLD, properties), Blocks.IRON_DOOR);
-    public static final Block GOLDEN_BARS = registerCopy("golden_bars", IronBarsBlock::new, Blocks.IRON_BARS, properties -> properties.sound(SoundType.METAL));
+    public static final Block GOLDEN_BARS = registerCopy("golden_bars", IronBarsBlock::new, Blocks.IRON_BARS, p -> p.sound(SoundType.METAL));
     public static final Block GOLDEN_CHAIN = registerCopy("golden_chain", ChainBlock::new, Blocks.IRON_CHAIN);
 
     // Lantern Blocks
-    public static final Block LANTERN_BLOCK = registerCopy("lantern_block", Blocks.LANTERN, properties -> properties.pushReaction(PushReaction.NORMAL));
-    public static final Block SOUL_LANTERN_BLOCK = registerCopy("soul_lantern_block", Blocks.SOUL_LANTERN, properties -> properties.pushReaction(PushReaction.NORMAL));
+    public static final Block LANTERN_BLOCK = registerCopy("lantern_block", Blocks.LANTERN, p -> p.pushReaction(PushReaction.PUSH_PULL));
+    public static final Block SOUL_LANTERN_BLOCK = registerCopy("soul_lantern_block", Blocks.SOUL_LANTERN, p -> p.pushReaction(PushReaction.PUSH_PULL));
     public static final Block AMETHYST_LANTERN = registerCopy("amethyst_lantern", LanternBlock::new, Blocks.LANTERN);
-    public static final Block AMETHYST_LANTERN_BLOCK = registerCopy("amethyst_lantern_block", Blocks.LANTERN, properties -> properties.pushReaction(PushReaction.NORMAL));
-    public static final Block REDSTONE_LANTERN = registerCopy("redstone_lantern", RedstoneLantern::new, Blocks.LANTERN, properties -> properties.lightLevel((state) -> 7));
-    public static final Block REDSTONE_LANTERN_BLOCK = registerCopy("redstone_lantern_block", PoweredBlock::new, REDSTONE_LANTERN, properties -> properties.lightLevel((state) -> 7).pushReaction(PushReaction.NORMAL));
-    public static final Block SOUL_O_LANTERN = registerCopy("soul_o_lantern", CarvedPumpkinBlock::new, Blocks.JACK_O_LANTERN, properties -> properties.lightLevel((state) -> 10));
+    public static final Block AMETHYST_LANTERN_BLOCK = registerCopy("amethyst_lantern_block", Blocks.LANTERN, p -> p.pushReaction(PushReaction.PUSH_PULL));
+    public static final Block REDSTONE_LANTERN = registerCopy("redstone_lantern", RedstoneLantern::new, Blocks.LANTERN, p -> p.lightLevel((state) -> 7));
+    public static final Block REDSTONE_LANTERN_BLOCK = registerCopy("redstone_lantern_block", PoweredBlock::new, REDSTONE_LANTERN, p -> p.lightLevel((state) -> 7).pushReaction(PushReaction.PUSH_PULL));
+    public static final Block SOUL_O_LANTERN = registerCopy("soul_o_lantern", CarvedPumpkinBlock::new, Blocks.JACK_O_LANTERN, p -> p.lightLevel((state) -> 10));
     public static final Block COPPER_JACK_O_LANTERN = registerCopy("copper_jack_o_lantern", CarvedPumpkinBlock::new, Blocks.JACK_O_LANTERN);
-    public static final Block REDSTONE_O_LANTERN = registerCopy("redstone_o_lantern", RedstonePumpkinBlock::new, Blocks.JACK_O_LANTERN, properties -> properties.lightLevel((state) -> 7));
+    public static final Block REDSTONE_O_LANTERN = registerCopy("redstone_o_lantern", RedstonePumpkinBlock::new, Blocks.JACK_O_LANTERN, p -> p.lightLevel((state) -> 7));
     public static final Block AMETHYST_LAMP = registerCopy("amethyst_lamp", AmethystLampBlock::new, Blocks.AMETHYST_BLOCK);
 
     // Barriers
@@ -624,13 +624,13 @@ public class BlockusBlocks extends BlockFactory {
 
     // Other
     public static final Block PATH = registerCopy("path", (p) -> new PathBlock(Blocks.DIRT, p), Blocks.DIRT_PATH);
-    public static final Block CHARCOAL_BLOCK = registerCopy("charcoal_block", Blocks.COAL_BLOCK);
+    public static final Block CHARCOAL_BLOCK = registerCopyWithItemProperties("charcoal_block", Blocks.COAL_BLOCK, p -> p.cookingFuel(NumberProviders.COOKING_TIME_COAL_BLOCK));
     public static final Block SUGAR_BLOCK = registerOf("sugar_block", SimpleFallingBlock::new, create().mapColor(MapColor.QUARTZ).strength(0.5F).sound(SoundType.SAND));
     public static final Block ENDER_BLOCK = registerOf("ender_block", create().mapColor(MapColor.TERRACOTTA_GREEN).strength(5.0f, 6.0f));
     public static final Block ROTTEN_FLESH_BLOCK = registerOf("rotten_flesh_block", create().mapColor(MapColor.TERRACOTTA_RED).strength(0.5f).sound(SoundType.SLIME_BLOCK));
     public static final Block MEMBRANE_BLOCK = registerOf("membrane_block", create().mapColor(MapColor.TERRACOTTA_WHITE).strength(0.5f).sound(SoundType.SLIME_BLOCK));
     public static final Block NETHER_STAR_BLOCK = registerNetherStarBlock("nether_stars_block", NetherStarBlock::new, create().mapColor(MapColor.QUARTZ).strength(5.0f, 6.0f).requiresCorrectToolForDrops());
-    public static final Block REDSTONE_SAND = registerCopy("redstone_sand", FallingRedstoneBlock::new, Blocks.SAND, properties -> properties.mapColor(MapColor.FIRE));
+    public static final Block REDSTONE_SAND = registerCopy("redstone_sand", FallingRedstoneBlock::new, Blocks.SAND, p -> p.mapColor(MapColor.FIRE));
     public static final Block LOVE_BLOCK = registerOf("love_block", LoveBlock::new, create().mapColor(MapColor.COLOR_PINK).strength(2, 6.0f).requiresCorrectToolForDrops());
     public static final Block WEIGHT_STORAGE_CUBE = registerOf("weight_storage_cube", WeightStorageCubeBlock::new, create().mapColor(MapColor.METAL).strength(0.1f, 6.0f));
     public static final Block COMPANION_CUBE = registerOf("companion_cube", SimpleFallingBlock::new, create().mapColor(MapColor.METAL).strength(0.1F, 6.0F).sound(SoundType.STONE));
@@ -638,12 +638,12 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STARS_BLOCK = registerOf("stars_block", create().mapColor(MapColor.COLOR_BLACK).strength(5.0f, 6.0f));
 
     // Legacy
-    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", properties -> new SaplingBlock(BlockusTreeGrower.LEGACY_OAK, properties), createCopy(Blocks.OAK_SAPLING), "Indev");
+    public static final Block LEGACY_SAPLING = registerLegacy("legacy_sapling", properties -> new SaplingBlock(BlockusTreeGrower.LEGACY_OAK, properties), createCopy(Blocks.OAK_SAPLING), p -> p.compostable(NumberProviders.COMPOSTABLE_LOW), "Indev");
     public static final PottedLargeBundle POTTED_LEGACY_TREE = PottedLargeBundle.register("potted_legacy_tree", BlockusBlocks.LEGACY_SAPLING);
     public static final Block POTTED_LEGACY_SAPLING = pottedPlant("potted_legacy_sapling", LEGACY_SAPLING);
     public static final Block LEGACY_FIRST_GRASS_BLOCK = registerLegacy("legacy_first_grass_block", createCopy(Blocks.GRASS_BLOCK), "Cave game");
     public static final Block LEGACY_GRASS_BLOCK = registerLegacy("legacy_grass_block", createCopy(Blocks.GRASS_BLOCK), "Pre-Classic");
-    public static final Block LEGACY_LEAVES = registerLegacy("legacy_leaves", properties -> new TintedParticleLeavesBlock(0, properties), createCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_LIGHT_GREEN).isValidSpawn(BlockusBlocks::canSpawnOnLeaves).isSuffocating(BlockusBlocks::never).isViewBlocking(BlockusBlocks::never), "Classic 0.0.15a");
+    public static final Block LEGACY_LEAVES = registerLegacy("legacy_leaves", properties -> new TintedParticleLeavesBlock(0, properties), createCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_LIGHT_GREEN), "Classic 0.0.15a");
     public static final Block LEGACY_LOG = registerLegacy("legacy_log", RotatedPillarBlock::new, createCopy(Blocks.OAK_LOG), "Classic 0.0.14a");
     public static final Block LEGACY_BRICKS = registerLegacy("legacy_bricks", createCopy(Blocks.BRICKS), "Classic 0.26");
     public static final Block LEGACY_PLANKS = registerLegacy("legacy_planks", createCopy(Blocks.OAK_PLANKS), "Pre-Classic");
@@ -654,11 +654,11 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LEGACY_IRON_BLOCK = registerLegacy("legacy_iron_block", createCopy(Blocks.IRON_BLOCK), "Classic 0.26");
     public static final Block LEGACY_GOLD_BLOCK = registerLegacy("legacy_gold_block", createCopy(Blocks.GOLD_BLOCK), "Classic 0.26");
     public static final Block LEGACY_EXPLOSION_PROOF_GOLD_BLOCK = registerLegacy("legacy_explosion_proof_gold_block", createCopy(Blocks.GOLD_BLOCK).strength(5.0f, 6000.0f), "Classic 0.0.20a");
-    public static final Block LEGACY_COAL_BLOCK = registerLegacy("legacy_coal_block", createCopy(Blocks.COAL_BLOCK), "2.0 April Fool");
+    public static final Block LEGACY_COAL_BLOCK = registerLegacy("legacy_coal_block", createCopy(Blocks.COAL_BLOCK), p -> p.cookingFuel(NumberProviders.COOKING_TIME_COAL_BLOCK), "2.0 April Fool");
     public static final Block LEGACY_DIAMOND_BLOCK = registerLegacy("legacy_diamond_block", createCopy(Blocks.DIAMOND_BLOCK), "Indev");
     public static final Block LEGACY_LAPIS_BLOCK = registerLegacy("legacy_lapis_block", createCopy(Blocks.LAPIS_BLOCK), "Beta 1.2");
     public static final Block LEGACY_SPONGE = registerLegacy("legacy_sponge", SpongeBlock::new, createCopy(Blocks.SPONGE), "Classic 0.0.19a");
-    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", createCopy(Blocks.CRYING_OBSIDIAN).pushReaction(PushReaction.BLOCK), "Beta 1.3 (texture)");
+    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", createCopy(Blocks.CRYING_OBSIDIAN).pushReaction(PushReaction.IMMOVEABLE), "Beta 1.3 (texture)");
     public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone", createCopy(Blocks.GLOWSTONE), "Alpha 1.2.0");
     public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", LegacyStonecutterBlock::new, createCopy(Blocks.COBBLESTONE).strength(1.5f, 17.5f), "PE Alpha");
     public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createCopy(BlockusBlocks.GLOWING_OBSIDIAN), "PE Alpha");

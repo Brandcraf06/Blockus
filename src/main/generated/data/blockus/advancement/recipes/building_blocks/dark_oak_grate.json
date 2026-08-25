@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:dark_oak_grate"
+        "recipes": "blockus:dark_oak_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

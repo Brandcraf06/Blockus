@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:acacia_mosaic"
+        "recipes": "blockus:acacia_mosaic"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

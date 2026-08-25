@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:glowing_obsidian"
+        "recipes": "blockus:glowing_obsidian"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

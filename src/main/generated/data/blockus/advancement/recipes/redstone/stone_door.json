@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:stone_door"
+        "recipes": "blockus:stone_door"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

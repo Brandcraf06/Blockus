@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:bluestone_button"
+        "recipes": "blockus:bluestone_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

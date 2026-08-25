@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_oak_stairs"
+        "recipes": "blockus:white_oak_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

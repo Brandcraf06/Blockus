@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_white_concrete"
+        "recipes": "blockus:chiseled_white_concrete"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

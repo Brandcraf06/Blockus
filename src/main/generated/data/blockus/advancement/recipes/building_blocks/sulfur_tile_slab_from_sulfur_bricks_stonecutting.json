@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sulfur_tile_slab_from_sulfur_bricks_stonecutting"
+        "recipes": "blockus:sulfur_tile_slab_from_sulfur_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

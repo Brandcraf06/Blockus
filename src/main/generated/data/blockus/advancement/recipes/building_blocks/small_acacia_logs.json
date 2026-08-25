@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:small_acacia_logs"
+        "recipes": "blockus:small_acacia_logs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

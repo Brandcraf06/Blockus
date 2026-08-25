@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_amethyst"
+        "recipes": "blockus:polished_amethyst"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

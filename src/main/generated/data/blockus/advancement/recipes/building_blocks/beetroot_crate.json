@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:beetroot_crate"
+        "recipes": "blockus:beetroot_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

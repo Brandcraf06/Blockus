@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_dripstone"
+        "recipes": "blockus:chiseled_dripstone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

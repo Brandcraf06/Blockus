@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:brown_stone_brick_wall_from_stone_brick_wall"
+        "recipes": "blockus:brown_stone_brick_wall_from_stone_brick_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

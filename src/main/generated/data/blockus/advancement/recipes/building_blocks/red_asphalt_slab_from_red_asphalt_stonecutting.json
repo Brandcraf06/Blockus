@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:red_asphalt_slab_from_red_asphalt_stonecutting"
+        "recipes": "blockus:red_asphalt_slab_from_red_asphalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

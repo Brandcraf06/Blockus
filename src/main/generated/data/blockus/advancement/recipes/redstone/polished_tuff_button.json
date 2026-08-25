@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_tuff_button"
+        "recipes": "blockus:polished_tuff_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

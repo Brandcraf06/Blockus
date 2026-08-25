@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:waxed_oxidized_copper_tuff_brick_slab_from_honeycomb"
+        "recipes": "blockus:waxed_oxidized_copper_tuff_brick_slab_from_honeycomb"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

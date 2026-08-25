@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:gray_futurneo_block"
+        "recipes": "blockus:gray_futurneo_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

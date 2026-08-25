@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:large_flower_pot"
+        "recipes": "blockus:large_flower_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

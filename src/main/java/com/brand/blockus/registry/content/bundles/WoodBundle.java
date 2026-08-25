@@ -2,9 +2,10 @@ package com.brand.blockus.registry.content.bundles;
 
 import com.brand.blockus.registry.content.BlockusItems;
 import com.brand.blockus.utils.helper.BlockFactory;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -77,7 +78,7 @@ public record WoodBundle(
 
         Block standingSign = BlockFactory.registerNoItem(type + "_sign", (properties) -> new StandingSignBlock(woodType, properties), signProperties);
         Block wallSign = BlockFactory.registerNoItem(type + "_wall_sign", (properties) -> new WallSignBlock(woodType, properties), WoodBundle.copyLootTable(standingSign, color, burnable));
-        Item sign = BlockusItems.registerSign(type + "_sign", standingSign, (block, properties) -> new SignItem(block, wallSign, properties), new Item.Properties().stacksTo(16));
+        Item sign = BlockusItems.registerSign(type + "_sign", standingSign, (block, properties) -> new StandingAndWallBlockItem(block, wallSign, Direction.DOWN, properties), new Item.Properties().stacksTo(16));
 
         Block ceilingHangingSign = BlockFactory.registerNoItem(type + "_hanging_sign", (properties) -> new CeilingHangingSignBlock(woodType, properties), signProperties);
         Block wallHangingSign = BlockFactory.registerNoItem(type + "_wall_hanging_sign", (properties) -> new WallHangingSignBlock(woodType, properties), WoodBundle.copyLootTable(ceilingHangingSign, color, burnable));

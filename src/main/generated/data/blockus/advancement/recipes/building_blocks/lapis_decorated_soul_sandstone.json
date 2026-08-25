@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lapis_decorated_soul_sandstone"
+        "recipes": "blockus:lapis_decorated_soul_sandstone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

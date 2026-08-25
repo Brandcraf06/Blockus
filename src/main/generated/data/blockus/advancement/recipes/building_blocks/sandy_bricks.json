@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sandy_bricks"
+        "recipes": "blockus:sandy_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

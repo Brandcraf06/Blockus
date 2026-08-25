@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:green_shingles_from_green_terracotta_stonecutting"
+        "recipes": "blockus:green_shingles_from_green_terracotta_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

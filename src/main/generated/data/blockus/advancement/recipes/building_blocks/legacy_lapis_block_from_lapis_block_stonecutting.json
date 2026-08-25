@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_lapis_block_from_lapis_block_stonecutting"
+        "recipes": "blockus:legacy_lapis_block_from_lapis_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

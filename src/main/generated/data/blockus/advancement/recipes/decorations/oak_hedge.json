@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:oak_hedge"
+        "recipes": "blockus:oak_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

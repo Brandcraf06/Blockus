@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:diorite_circular_paving_from_diorite_bricks_stonecutting"
+        "recipes": "blockus:diorite_circular_paving_from_diorite_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

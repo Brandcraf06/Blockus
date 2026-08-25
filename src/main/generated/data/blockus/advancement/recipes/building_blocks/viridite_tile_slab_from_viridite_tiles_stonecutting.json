@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:viridite_tile_slab_from_viridite_tiles_stonecutting"
+        "recipes": "blockus:viridite_tile_slab_from_viridite_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

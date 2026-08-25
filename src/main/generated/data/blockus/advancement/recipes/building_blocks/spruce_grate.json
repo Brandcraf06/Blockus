@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:spruce_grate"
+        "recipes": "blockus:spruce_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

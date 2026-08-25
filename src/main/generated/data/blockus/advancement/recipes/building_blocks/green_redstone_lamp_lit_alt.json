@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:green_redstone_lamp_lit_alt"
+        "recipes": "blockus:green_redstone_lamp_lit_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

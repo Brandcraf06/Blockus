@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:netherite_stairs"
+        "recipes": "blockus:netherite_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

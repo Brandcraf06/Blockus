@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:light_gray_shingles_slab_from_light_gray_shingles_stonecutting"
+        "recipes": "blockus:light_gray_shingles_slab_from_light_gray_shingles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

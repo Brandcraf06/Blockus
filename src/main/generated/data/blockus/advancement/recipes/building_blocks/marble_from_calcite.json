@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:marble_from_calcite"
+        "recipes": "blockus:marble_from_calcite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

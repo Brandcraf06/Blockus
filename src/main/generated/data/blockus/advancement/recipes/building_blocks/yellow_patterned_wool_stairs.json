@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_patterned_wool_stairs"
+        "recipes": "blockus:yellow_patterned_wool_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

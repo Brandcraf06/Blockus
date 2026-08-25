@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:warped_grate"
+        "recipes": "blockus:warped_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

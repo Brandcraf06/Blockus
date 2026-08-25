@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mangrove_lattice"
+        "recipes": "blockus:mangrove_lattice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

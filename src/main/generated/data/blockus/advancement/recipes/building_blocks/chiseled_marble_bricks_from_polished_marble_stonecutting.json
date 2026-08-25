@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_marble_bricks_from_polished_marble_stonecutting"
+        "recipes": "blockus:chiseled_marble_bricks_from_polished_marble_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

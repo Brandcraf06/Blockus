@@ -8,9 +8,11 @@ import com.brand.blockus.utils.CollectionUtils;
 import com.brand.blockus.utils.helper.WoodMaps;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.*;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.flag.FeatureFlagSet;
@@ -20,6 +22,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -34,13 +37,13 @@ import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 
 public class BlockusRecipeProvider extends FabricRecipeProvider {
-    public BlockusRecipeProvider(FabricPackOutput result, CompletableFuture<HolderLookup.Provider> registriesFuture) {
-        super(result, registriesFuture);
+    public BlockusRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+        super(output, registryLookupFuture);
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registriesFuture, RecipeOutput output) {
-        return new RecipeProvider(registriesFuture, output) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+        return new RecipeProvider(recipes, advancements) {
             @Override
             public void buildRecipes() {
 

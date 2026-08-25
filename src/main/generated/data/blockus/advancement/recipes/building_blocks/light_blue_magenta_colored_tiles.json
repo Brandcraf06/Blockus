@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:light_blue_magenta_colored_tiles"
+        "recipes": "blockus:light_blue_magenta_colored_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

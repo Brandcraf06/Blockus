@@ -335,16 +335,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(LEGACY_CRYING_OBSIDIAN))
             .add(toId(LEGACY_GLOWING_OBSIDIAN));
 
-        this.builder(BlockusBlockTags.NETHER_PORTAL_FRAME_BLOCKS)
-            .add(BlockItemIds.OBSIDIAN)
-            .add(toId(OBSIDIAN_BRICKS.block()))
-            .add(toId(CRACKED_OBSIDIAN_BRICKS))
-            .add(toId(SMALL_OBSIDIAN_BRICKS.block()))
-            .add(toId(OBSIDIAN_PILLAR))
-            .add(toId(OBSIDIAN_CIRCULAR_PAVING))
-            .add(toId(GLOWING_OBSIDIAN))
-            .add(toId(LEGACY_GLOWING_OBSIDIAN));
-
         this.builder(BlockusBlockTags.PATTERNED_WOOL)
             .addAll(toIds(BlockusIds.PATTERNED_WOOL))
             .addAll(toIds(BlockusIds.GINGHAM_WOOL));
@@ -872,14 +862,16 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(LEGACY_GRASS_BLOCK))
             .add(toId(LEGACY_FIRST_GRASS_BLOCK));
 
-        this.builder(BlockTags.WOOL).addTag(BlockusBlockTags.PATTERNED_WOOL).add(toId(RAINBOW_WOOL.block()));
+        this.builder(BlockItemTags.WOOL.block()).addTag(BlockusBlockTags.PATTERNED_WOOL).add(toId(RAINBOW_WOOL.block()));
         this.builder(BlockItemTags.WOOL_STAIRS.block()).addTag(BlockusBlockTags.PATTERNED_WOOL_STAIRS).add(toId(RAINBOW_WOOL.stairs()));
         this.builder(BlockItemTags.WOOL_SLABS.block()).addTag(BlockusBlockTags.PATTERNED_WOOL_SLABS).add(toId(RAINBOW_WOOL.slab()));
         this.builder(BlockItemTags.WOOL_CARPETS.block()).addTag(BlockusBlockTags.PATTERNED_CARPETS).add(toId(RAINBOW_CARPET));
-        this.builder(BlockTags.BEDS).add(toId(RAINBOW_BED));
-        this.builder(BlockTags.CONCRETE).addTag(BlockusBlockTags.CONCRETE_BRICKS);
-        this.builder(BlockTags.GLAZED_TERRACOTTA).addTag(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS);
-        this.builder(BlockTags.TERRACOTTA).addTag(BlockusBlockTags.SHINGLES);
+        this.builder(BlockItemTags.BEDS.block()).add(toId(RAINBOW_BED));
+        this.builder(BlockItemTags.CONCRETE.block()).addTag(BlockusBlockTags.CONCRETE_BRICKS);
+        this.builder(BlockItemTags.CONCRETE_STAIRS.block()).addAll(toIds(BlockusIds.CONCRETE_BRICK_STAIRS));
+        this.builder(BlockItemTags.CONCRETE_SLABS.block()).addAll(toIds(BlockusIds.CONCRETE_BRICK_SLAB));
+        this.builder(BlockItemTags.GLAZED_TERRACOTTA.block()).addTag(BlockusBlockTags.GLAZED_TERRACOTTA_PILLARS);
+        this.builder(BlockItemTags.TERRACOTTA.block()).addTag(BlockusBlockTags.SHINGLES);
         this.builder(BlockTags.BARS).add(toId(GOLDEN_BARS));
         this.builder(BlockTags.CHAINS).add(toId(GOLDEN_CHAIN));
         this.builder(BlockTags.LANTERNS)
@@ -935,6 +927,24 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockTags.ICE)
             .addTag(BlockusBlockTags.ICE_BRICKS)
             .add(toId(ICE_BRICK_WALL));
+
+        this.builder(BlockTags.NETHER_PORTAL_FRAME)
+            .add(BlockItemIds.OBSIDIAN)
+            .add(toId(OBSIDIAN_BRICKS.block()))
+            .add(toId(CRACKED_OBSIDIAN_BRICKS))
+            .add(toId(SMALL_OBSIDIAN_BRICKS.block()))
+            .add(toId(OBSIDIAN_PILLAR))
+            .add(toId(OBSIDIAN_CIRCULAR_PAVING))
+            .add(toId(GLOWING_OBSIDIAN))
+            .add(toId(LEGACY_GLOWING_OBSIDIAN));
+
+        this.builder(BlockTags.CONDUIT_EFFECT_BLOCK)
+            .add(toId(PRISMARINE_CIRCULAR_PAVING))
+            .add(toId(CHISELED_DARK_PRISMARINE))
+            .add(toId(DARK_PRISMARINE_PILLAR))
+            .add(toId(CHISELED_PRISMARINE))
+            .add(toId(PRISMARINE_PILLAR))
+            .add(toId(PRISMARINE_TILES.block()));
 
         this.builder(BlockTags.BEACON_BASE_BLOCKS)
             .add(toId(LEGACY_GOLD_BLOCK))

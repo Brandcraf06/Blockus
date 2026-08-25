@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cod"
+        "recipes": "blockus:cod"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

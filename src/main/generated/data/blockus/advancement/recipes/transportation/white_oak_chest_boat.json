@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_oak_chest_boat"
+        "recipes": "blockus:white_oak_chest_boat"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

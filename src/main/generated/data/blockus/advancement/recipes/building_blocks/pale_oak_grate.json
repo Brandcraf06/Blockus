@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:pale_oak_grate"
+        "recipes": "blockus:pale_oak_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

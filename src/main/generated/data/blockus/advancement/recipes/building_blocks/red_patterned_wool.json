@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:red_patterned_wool"
+        "recipes": "blockus:red_patterned_wool"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

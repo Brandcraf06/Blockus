@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:amethyst_pillar"
+        "recipes": "blockus:amethyst_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

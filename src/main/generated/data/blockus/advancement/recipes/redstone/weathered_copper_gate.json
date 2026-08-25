@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:weathered_copper_gate"
+        "recipes": "blockus:weathered_copper_gate"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

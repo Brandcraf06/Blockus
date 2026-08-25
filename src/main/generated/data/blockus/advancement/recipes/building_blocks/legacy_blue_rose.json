@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_blue_rose"
+        "recipes": "blockus:legacy_blue_rose"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

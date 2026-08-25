@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:thatch_stairs"
+        "recipes": "blockus:thatch_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

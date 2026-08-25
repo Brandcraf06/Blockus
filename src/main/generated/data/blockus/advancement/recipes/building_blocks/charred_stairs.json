@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:charred_stairs"
+        "recipes": "blockus:charred_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

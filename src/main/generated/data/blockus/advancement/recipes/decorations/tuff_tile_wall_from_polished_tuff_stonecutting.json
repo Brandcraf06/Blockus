@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:tuff_tile_wall_from_polished_tuff_stonecutting"
+        "recipes": "blockus:tuff_tile_wall_from_polished_tuff_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

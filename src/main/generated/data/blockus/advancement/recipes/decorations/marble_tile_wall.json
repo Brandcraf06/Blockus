@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:marble_tile_wall"
+        "recipes": "blockus:marble_tile_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

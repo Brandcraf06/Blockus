@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:copper_jack_o_lantern"
+        "recipes": "blockus:copper_jack_o_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

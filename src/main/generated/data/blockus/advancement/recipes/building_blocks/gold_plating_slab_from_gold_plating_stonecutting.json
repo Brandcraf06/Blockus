@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:gold_plating_slab_from_gold_plating_stonecutting"
+        "recipes": "blockus:gold_plating_slab_from_gold_plating_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:quartz_tiles"
+        "recipes": "blockus:quartz_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

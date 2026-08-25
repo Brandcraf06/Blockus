@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:flowering_azalea_hedge"
+        "recipes": "blockus:flowering_azalea_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

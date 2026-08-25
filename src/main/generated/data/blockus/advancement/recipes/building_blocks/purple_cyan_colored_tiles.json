@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:purple_cyan_colored_tiles"
+        "recipes": "blockus:purple_cyan_colored_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:paper_wall"
+        "recipes": "blockus:paper_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chorus_block"
+        "recipes": "blockus:chorus_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

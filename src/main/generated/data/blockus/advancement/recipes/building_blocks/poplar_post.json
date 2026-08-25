@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:poplar_post"
+        "recipes": "blockus:poplar_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

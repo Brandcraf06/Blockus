@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_concrete_brick_stairs_from_white_concrete_bricks_stonecutting"
+        "recipes": "blockus:white_concrete_brick_stairs_from_white_concrete_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

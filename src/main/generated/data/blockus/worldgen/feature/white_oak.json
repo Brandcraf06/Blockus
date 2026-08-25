@@ -13,9 +13,7 @@
         },
         "then": {
           "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "minecraft:dirt"
-          }
+          "state": "minecraft:dirt"
         }
       }
     ]
@@ -33,14 +31,7 @@
   },
   "foliage_provider": {
     "type": "minecraft:simple_state_provider",
-    "state": {
-      "Name": "blockus:white_oak_leaves",
-      "Properties": {
-        "distance": "7",
-        "persistent": "false",
-        "waterlogged": "false"
-      }
-    }
+    "state": "blockus:white_oak_leaves"
   },
   "ignore_vines": true,
   "minimum_size": {
@@ -54,11 +45,6 @@
   },
   "trunk_provider": {
     "type": "minecraft:simple_state_provider",
-    "state": {
-      "Name": "blockus:white_oak_log",
-      "Properties": {
-        "axis": "y"
-      }
-    }
+    "state": "blockus:white_oak_log"
   }
 }

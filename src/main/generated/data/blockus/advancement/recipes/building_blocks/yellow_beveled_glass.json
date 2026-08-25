@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_beveled_glass"
+        "recipes": "blockus:yellow_beveled_glass"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

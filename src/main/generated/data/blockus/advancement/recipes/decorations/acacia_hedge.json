@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:acacia_hedge"
+        "recipes": "blockus:acacia_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

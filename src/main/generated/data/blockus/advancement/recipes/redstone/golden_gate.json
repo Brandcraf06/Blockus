@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:golden_gate"
+        "recipes": "blockus:golden_gate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

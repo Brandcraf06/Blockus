@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_colored_tiles"
+        "recipes": "blockus:yellow_colored_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

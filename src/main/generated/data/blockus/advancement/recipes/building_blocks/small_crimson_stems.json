@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:small_crimson_stems"
+        "recipes": "blockus:small_crimson_stems"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

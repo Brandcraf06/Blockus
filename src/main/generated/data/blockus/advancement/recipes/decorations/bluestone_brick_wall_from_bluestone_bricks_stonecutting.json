@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:bluestone_brick_wall_from_bluestone_bricks_stonecutting"
+        "recipes": "blockus:bluestone_brick_wall_from_bluestone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

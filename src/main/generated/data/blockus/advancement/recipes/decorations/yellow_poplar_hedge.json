@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_poplar_hedge"
+        "recipes": "blockus:yellow_poplar_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

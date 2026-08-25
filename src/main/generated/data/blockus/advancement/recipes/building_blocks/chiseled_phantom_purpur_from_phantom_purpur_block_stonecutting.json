@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_phantom_purpur_from_phantom_purpur_block_stonecutting"
+        "recipes": "blockus:chiseled_phantom_purpur_from_phantom_purpur_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

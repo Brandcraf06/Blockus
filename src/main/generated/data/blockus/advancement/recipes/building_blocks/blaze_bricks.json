@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:blaze_bricks"
+        "recipes": "blockus:blaze_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

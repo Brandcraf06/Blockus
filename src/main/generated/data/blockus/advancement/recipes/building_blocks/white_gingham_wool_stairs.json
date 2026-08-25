@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_gingham_wool_stairs"
+        "recipes": "blockus:white_gingham_wool_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

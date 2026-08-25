@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_futurneo_block"
+        "recipes": "blockus:yellow_futurneo_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

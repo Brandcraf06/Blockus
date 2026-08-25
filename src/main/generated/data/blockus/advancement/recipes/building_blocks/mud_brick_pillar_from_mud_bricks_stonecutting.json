@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mud_brick_pillar_from_mud_bricks_stonecutting"
+        "recipes": "blockus:mud_brick_pillar_from_mud_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

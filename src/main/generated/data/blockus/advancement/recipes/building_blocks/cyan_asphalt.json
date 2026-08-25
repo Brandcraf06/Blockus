@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cyan_asphalt"
+        "recipes": "blockus:cyan_asphalt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

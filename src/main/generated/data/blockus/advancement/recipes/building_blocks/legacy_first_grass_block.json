@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_first_grass_block"
+        "recipes": "blockus:legacy_first_grass_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

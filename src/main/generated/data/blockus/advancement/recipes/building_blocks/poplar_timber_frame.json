@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:poplar_timber_frame"
+        "recipes": "blockus:poplar_timber_frame"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

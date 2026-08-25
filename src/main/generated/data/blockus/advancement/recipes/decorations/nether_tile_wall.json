@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:nether_tile_wall"
+        "recipes": "blockus:nether_tile_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:orange_shingles_stairs_from_orange_terracotta_stonecutting"
+        "recipes": "blockus:orange_shingles_stairs_from_orange_terracotta_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

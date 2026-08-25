@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:soaked_brick_wall_from_soaked_bricks_stonecutting"
+        "recipes": "blockus:soaked_brick_wall_from_soaked_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

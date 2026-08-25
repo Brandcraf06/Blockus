@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:bluestone_slab"
+        "recipes": "blockus:bluestone_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

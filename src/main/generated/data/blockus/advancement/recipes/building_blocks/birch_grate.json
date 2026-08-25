@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:birch_grate"
+        "recipes": "blockus:birch_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

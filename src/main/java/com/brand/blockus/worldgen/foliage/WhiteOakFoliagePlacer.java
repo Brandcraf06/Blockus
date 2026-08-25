@@ -33,10 +33,10 @@ public class WhiteOakFoliagePlacer extends FoliagePlacer {
         return BlockusFoliagePlacerType.WHITE_OAK_FOLIAGE_PLACER;
     }
 
-    protected void createFoliage(WorldGenLevel level, FoliagePlacer.FoliageSetter foliageSetter, RandomSource random, TreeFeature config, int treeHeight, FoliagePlacer.FoliageAttachment foliageAttachment, int foliageHeight, int leafRadius, int offset) {
+    protected void createFoliage(WorldGenLevel level, FoliageSetter foliageSetter, RandomSource random, TreeFeature config, int treeHeight, FoliageAttachment foliageAttachment, int foliageHeight, int leafRadius, int offset) {
         boolean doubleTrunk = foliageAttachment.doubleTrunk();
         BlockPos foliagePos = foliageAttachment.pos().above(offset - 3);
-        int currentRadius = leafRadius + foliageAttachment.radiusOffset() - 1;
+        int currentRadius = leafRadius + foliageAttachment.radiusOffsetXZ() - 1;
         this.placeLeavesRow(level, foliageSetter, random, config, foliagePos, currentRadius - 1, foliageHeight - 3, doubleTrunk);
         this.placeLeavesRow(level, foliageSetter, random, config, foliagePos, currentRadius - 1, foliageHeight - 4, doubleTrunk);
 

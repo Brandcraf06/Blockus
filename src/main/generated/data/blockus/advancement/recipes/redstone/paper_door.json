@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:paper_door"
+        "recipes": "blockus:paper_door"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

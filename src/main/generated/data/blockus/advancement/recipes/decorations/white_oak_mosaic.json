@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_oak_mosaic"
+        "recipes": "blockus:white_oak_mosaic"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

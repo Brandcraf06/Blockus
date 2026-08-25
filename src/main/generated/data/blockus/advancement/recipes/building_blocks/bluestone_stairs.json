@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:bluestone_stairs"
+        "recipes": "blockus:bluestone_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

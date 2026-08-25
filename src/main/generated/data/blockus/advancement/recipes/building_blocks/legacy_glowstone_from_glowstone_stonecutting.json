@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_glowstone_from_glowstone_stonecutting"
+        "recipes": "blockus:legacy_glowstone_from_glowstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

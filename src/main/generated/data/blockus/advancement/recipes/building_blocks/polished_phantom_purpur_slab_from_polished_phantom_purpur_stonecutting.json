@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_phantom_purpur_slab_from_polished_phantom_purpur_stonecutting"
+        "recipes": "blockus:polished_phantom_purpur_slab_from_polished_phantom_purpur_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

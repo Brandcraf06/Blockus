@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mangrove_mosaic_slab"
+        "recipes": "blockus:mangrove_mosaic_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

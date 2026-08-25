@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:raw_bamboo_lattice"
+        "recipes": "blockus:raw_bamboo_lattice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

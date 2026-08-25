@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lapis_brick_stairs"
+        "recipes": "blockus:lapis_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

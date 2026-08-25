@@ -7,10 +7,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.BedBlock;
@@ -21,13 +19,14 @@ import net.minecraft.world.level.storage.loot.IntRange;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.UniformContainerBase;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.LimitCount;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
@@ -38,16 +37,13 @@ import java.util.function.Function;
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
 
 public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
-    public final HolderLookup.Provider registriesFuture;
 
-    public BlockusBlockLootTableProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
-        super(output, registriesFuture);
-        this.registriesFuture = registriesFuture.join();
+    public BlockusBlockLootTableProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
+        super(output, registryLookup);
     }
 
     @Override
     public void generate() {
-        HolderLookup.RegistryLookup<Enchantment> enchantments = this.registriesFuture.lookupOrThrow(Registries.ENCHANTMENT);
 
         for (BSSWBundle bundle : BSSWBundle.values()) {
             this.addBlockStairsandSlabDrops(bundle.block(), bundle.stairs(), bundle.slab());
@@ -499,17 +495,15 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
     }
 
     public LootItemFunction.Builder setCookieCount(Block block, float count, int bites) {
-        return SetItemCountFunction.setCount(ConstantValue.exactly(count)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CookieBlock.BITES, bites)));
+        return SetItemCountFunction.setCount(ConstantValue.exactly(count)).when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(CookieBlock.BITES, bites)));
     }
 
     public LootTable.Builder glowstoneDrops(Block block) {
-        HolderLookup.RegistryLookup<Enchantment> enchantments = this.registriesFuture.lookupOrThrow(Registries.ENCHANTMENT);
         return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.GLOWSTONE_DUST).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))).apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE))).apply(LimitCount.limitCount(IntRange.range(1, 4)))));
     }
 
     public LootTable.Builder stickDrops(Block block) {
-        HolderLookup.RegistryLookup<Enchantment> enchantments = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return createSilkTouchOrShearsDispatchTable(block, ((LootPoolSingletonContainer.Builder)applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))).when(BonusLevelTableCondition.bonusLevelFlatChance(enchantments.getOrThrow(Enchantments.FORTUNE), 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F)));
+        return createSilkTouchOrShearsDispatchTable(block, (LootPoolEntryContainer.Builder)((UniformContainerBase.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))).when(BonusLevelTableCondition.bonusLevelFlatChance(enchantments.getOrThrow(Enchantments.FORTUNE), 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F)));
     }
 
     public LootTable.Builder pottedLargePlantDrops(ItemLike plant) {
@@ -517,6 +511,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
     }
 
     public void addPottedLargePlantDrop(Block block) {
-        this.add(block, (flowerPot) -> this.pottedLargePlantDrops(((LargeFlowerPotBlock) flowerPot).getContent()));
+        this.add(block, (flowerPot) -> this.pottedLargePlantDrops(((LargeFlowerPotBlock) flowerPot).getPotted()));
     }
 }

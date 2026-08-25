@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cherry_grate"
+        "recipes": "blockus:cherry_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

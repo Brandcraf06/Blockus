@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mangrove_post"
+        "recipes": "blockus:mangrove_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

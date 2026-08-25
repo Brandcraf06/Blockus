@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sculk_brick_wall_from_sculk_stonecutting"
+        "recipes": "blockus:sculk_brick_wall_from_sculk_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

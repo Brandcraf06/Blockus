@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:purple_concrete_pillar"
+        "recipes": "blockus:purple_concrete_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lime_purple_colored_tiles"
+        "recipes": "blockus:lime_purple_colored_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

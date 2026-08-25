@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_bluestone_pillar"
+        "recipes": "blockus:chiseled_bluestone_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

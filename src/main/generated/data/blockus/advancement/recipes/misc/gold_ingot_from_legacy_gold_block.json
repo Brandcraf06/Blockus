@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:gold_ingot_from_legacy_gold_block"
+        "recipes": "blockus:gold_ingot_from_legacy_gold_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

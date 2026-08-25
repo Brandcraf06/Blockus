@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:redstone_from_redstone_bricks"
+        "recipes": "blockus:redstone_from_redstone_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

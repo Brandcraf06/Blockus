@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:crimson_grate"
+        "recipes": "blockus:crimson_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

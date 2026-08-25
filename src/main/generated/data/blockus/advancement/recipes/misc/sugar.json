@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sugar"
+        "recipes": "blockus:sugar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

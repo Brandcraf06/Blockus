@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:warped_mosaic_slab"
+        "recipes": "blockus:warped_mosaic_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

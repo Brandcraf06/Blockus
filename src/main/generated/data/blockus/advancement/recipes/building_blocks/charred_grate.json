@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:charred_grate"
+        "recipes": "blockus:charred_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

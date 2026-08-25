@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:warped_wart_bricks"
+        "recipes": "blockus:warped_wart_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

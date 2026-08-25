@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:love_block"
+        "recipes": "blockus:love_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

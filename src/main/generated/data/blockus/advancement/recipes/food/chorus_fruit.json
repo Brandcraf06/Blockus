@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chorus_fruit"
+        "recipes": "blockus:chorus_fruit"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

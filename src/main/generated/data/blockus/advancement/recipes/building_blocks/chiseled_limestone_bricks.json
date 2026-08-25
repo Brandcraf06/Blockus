@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_limestone_bricks"
+        "recipes": "blockus:chiseled_limestone_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

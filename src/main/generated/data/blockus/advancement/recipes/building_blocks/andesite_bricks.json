@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:andesite_bricks"
+        "recipes": "blockus:andesite_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

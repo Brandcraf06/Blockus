@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:iron_ingot_from_legacy_iron_block"
+        "recipes": "blockus:iron_ingot_from_legacy_iron_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

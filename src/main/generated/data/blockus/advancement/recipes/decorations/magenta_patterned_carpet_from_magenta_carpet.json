@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:magenta_patterned_carpet_from_magenta_carpet"
+        "recipes": "blockus:magenta_patterned_carpet_from_magenta_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

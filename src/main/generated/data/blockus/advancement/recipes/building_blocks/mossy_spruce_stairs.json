@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mossy_spruce_stairs"
+        "recipes": "blockus:mossy_spruce_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

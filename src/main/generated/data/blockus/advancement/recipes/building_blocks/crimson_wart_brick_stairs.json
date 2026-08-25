@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:crimson_wart_brick_stairs"
+        "recipes": "blockus:crimson_wart_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cobbled_deepslate_brick_slab_from_cobbled_deepslate_bricks_stonecutting"
+        "recipes": "blockus:cobbled_deepslate_brick_slab_from_cobbled_deepslate_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

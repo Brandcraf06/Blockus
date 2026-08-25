@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cherry_hedge"
+        "recipes": "blockus:cherry_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:weight_storage_cube"
+        "recipes": "blockus:weight_storage_cube"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

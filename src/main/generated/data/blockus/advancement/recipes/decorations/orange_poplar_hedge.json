@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:orange_poplar_hedge"
+        "recipes": "blockus:orange_poplar_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

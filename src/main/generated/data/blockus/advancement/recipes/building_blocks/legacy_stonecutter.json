@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_stonecutter"
+        "recipes": "blockus:legacy_stonecutter"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

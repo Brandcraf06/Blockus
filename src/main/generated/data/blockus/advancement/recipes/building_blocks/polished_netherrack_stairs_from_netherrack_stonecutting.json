@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_netherrack_stairs_from_netherrack_stonecutting"
+        "recipes": "blockus:polished_netherrack_stairs_from_netherrack_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

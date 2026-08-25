@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:snow_bricks"
+        "recipes": "blockus:snow_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

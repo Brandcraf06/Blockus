@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cyan_shingles_stairs_from_cyan_terracotta_stonecutting"
+        "recipes": "blockus:cyan_shingles_stairs_from_cyan_terracotta_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:iron_plating"
+        "recipes": "blockus:iron_plating"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

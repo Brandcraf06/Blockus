@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_dripstone_stairs"
+        "recipes": "blockus:polished_dripstone_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

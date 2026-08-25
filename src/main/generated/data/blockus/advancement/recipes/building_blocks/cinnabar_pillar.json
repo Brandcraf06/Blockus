@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cinnabar_pillar"
+        "recipes": "blockus:cinnabar_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

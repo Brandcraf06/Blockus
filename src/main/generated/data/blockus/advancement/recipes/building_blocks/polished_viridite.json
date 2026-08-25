@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_viridite"
+        "recipes": "blockus:polished_viridite"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

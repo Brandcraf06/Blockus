@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:nether_tile_slab_from_nether_tiles_stonecutting"
+        "recipes": "blockus:nether_tile_slab_from_nether_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

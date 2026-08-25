@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:magma_brick_wall"
+        "recipes": "blockus:magma_brick_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

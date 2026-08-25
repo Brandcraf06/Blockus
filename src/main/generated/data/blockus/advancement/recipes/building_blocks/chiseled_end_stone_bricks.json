@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_end_stone_bricks"
+        "recipes": "blockus:chiseled_end_stone_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

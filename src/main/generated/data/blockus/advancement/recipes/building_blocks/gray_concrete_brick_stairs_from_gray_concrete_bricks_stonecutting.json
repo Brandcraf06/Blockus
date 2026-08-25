@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:gray_concrete_brick_stairs_from_gray_concrete_bricks_stonecutting"
+        "recipes": "blockus:gray_concrete_brick_stairs_from_gray_concrete_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

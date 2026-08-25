@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:andesite_bricks_from_polished_andesite_stonecutting"
+        "recipes": "blockus:andesite_bricks_from_polished_andesite_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

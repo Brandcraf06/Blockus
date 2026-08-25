@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:honeycomb_brick_slab"
+        "recipes": "blockus:honeycomb_brick_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

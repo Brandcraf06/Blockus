@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:gray_patterned_carpet_from_gray_carpet"
+        "recipes": "blockus:gray_patterned_carpet_from_gray_carpet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

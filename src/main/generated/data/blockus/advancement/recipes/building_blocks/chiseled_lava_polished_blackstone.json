@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_lava_polished_blackstone"
+        "recipes": "blockus:chiseled_lava_polished_blackstone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

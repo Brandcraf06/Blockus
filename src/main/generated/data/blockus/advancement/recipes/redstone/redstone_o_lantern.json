@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:redstone_o_lantern"
+        "recipes": "blockus:redstone_o_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

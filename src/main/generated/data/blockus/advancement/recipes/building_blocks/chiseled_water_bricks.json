@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_water_bricks"
+        "recipes": "blockus:chiseled_water_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

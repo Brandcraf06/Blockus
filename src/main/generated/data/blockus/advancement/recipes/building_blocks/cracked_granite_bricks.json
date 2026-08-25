@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cracked_granite_bricks"
+        "recipes": "blockus:cracked_granite_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

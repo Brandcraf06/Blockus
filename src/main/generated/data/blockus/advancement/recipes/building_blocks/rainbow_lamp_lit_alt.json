@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rainbow_lamp_lit_alt"
+        "recipes": "blockus:rainbow_lamp_lit_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cinnabar_tile_slab_from_cinnabar_bricks_stonecutting"
+        "recipes": "blockus:cinnabar_tile_slab_from_cinnabar_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

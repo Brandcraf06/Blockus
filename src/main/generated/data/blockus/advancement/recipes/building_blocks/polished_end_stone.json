@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_end_stone"
+        "recipes": "blockus:polished_end_stone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

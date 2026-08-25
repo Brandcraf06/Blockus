@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rainbow_glowstone"
+        "recipes": "blockus:rainbow_glowstone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

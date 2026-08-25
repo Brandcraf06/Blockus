@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:smooth_soul_sandstone_stairs"
+        "recipes": "blockus:smooth_soul_sandstone_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

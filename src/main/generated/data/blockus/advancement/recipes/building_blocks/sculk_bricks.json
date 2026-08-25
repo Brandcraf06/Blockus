@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sculk_bricks"
+        "recipes": "blockus:sculk_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

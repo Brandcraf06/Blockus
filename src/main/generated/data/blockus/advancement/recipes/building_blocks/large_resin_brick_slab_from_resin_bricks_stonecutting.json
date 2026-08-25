@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:large_resin_brick_slab_from_resin_bricks_stonecutting"
+        "recipes": "blockus:large_resin_brick_slab_from_resin_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

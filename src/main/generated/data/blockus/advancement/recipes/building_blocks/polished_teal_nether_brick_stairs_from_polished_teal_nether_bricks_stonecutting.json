@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_teal_nether_brick_stairs_from_polished_teal_nether_bricks_stonecutting"
+        "recipes": "blockus:polished_teal_nether_brick_stairs_from_polished_teal_nether_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

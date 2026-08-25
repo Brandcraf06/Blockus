@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_colored_tiles_from_yellow_concrete_stonecutting"
+        "recipes": "blockus:yellow_colored_tiles_from_yellow_concrete_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:stars_block"
+        "recipes": "blockus:stars_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:small_sandstone_brick_wall"
+        "recipes": "blockus:small_sandstone_brick_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

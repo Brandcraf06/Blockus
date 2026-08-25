@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:limestone_brick_stairs_from_polished_limestone_stonecutting"
+        "recipes": "blockus:limestone_brick_stairs_from_polished_limestone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

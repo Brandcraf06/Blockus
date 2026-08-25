@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:soul_lantern_block"
+        "recipes": "blockus:soul_lantern_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

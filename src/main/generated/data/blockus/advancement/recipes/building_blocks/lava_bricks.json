@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lava_bricks"
+        "recipes": "blockus:lava_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

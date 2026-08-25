@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:herringbone_tuff_bricks_from_polished_tuff_stonecutting"
+        "recipes": "blockus:herringbone_tuff_bricks_from_polished_tuff_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

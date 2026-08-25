@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:bread_box"
+        "recipes": "blockus:bread_box"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

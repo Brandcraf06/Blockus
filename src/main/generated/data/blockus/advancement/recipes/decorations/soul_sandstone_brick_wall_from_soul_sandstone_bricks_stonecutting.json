@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:soul_sandstone_brick_wall_from_soul_sandstone_bricks_stonecutting"
+        "recipes": "blockus:soul_sandstone_brick_wall_from_soul_sandstone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

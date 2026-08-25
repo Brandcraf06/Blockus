@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:limestone_slab"
+        "recipes": "blockus:limestone_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

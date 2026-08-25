@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_amethyst_stairs_from_polished_amethyst_stonecutting"
+        "recipes": "blockus:polished_amethyst_stairs_from_polished_amethyst_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

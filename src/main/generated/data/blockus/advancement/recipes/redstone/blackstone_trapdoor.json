@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:blackstone_trapdoor"
+        "recipes": "blockus:blackstone_trapdoor"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

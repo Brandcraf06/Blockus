@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sturdy_blackstone"
+        "recipes": "blockus:sturdy_blackstone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

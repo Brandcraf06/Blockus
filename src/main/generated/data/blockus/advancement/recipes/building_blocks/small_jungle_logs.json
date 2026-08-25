@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:small_jungle_logs"
+        "recipes": "blockus:small_jungle_logs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

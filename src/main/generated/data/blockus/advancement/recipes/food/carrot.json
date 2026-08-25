@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:carrot"
+        "recipes": "blockus:carrot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

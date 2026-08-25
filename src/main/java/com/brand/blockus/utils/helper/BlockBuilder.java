@@ -14,11 +14,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class BlockBuilder {
     public static final Function<BlockBehaviour.Properties, Block> DEFAULT_FACTORY = Block::new;
@@ -49,6 +51,21 @@ public class BlockBuilder {
 
     public BlockBuilder factory(Function<BlockBehaviour.Properties, Block> factory) {
         this.factory = factory;
+        return this;
+    }
+
+    public BlockBuilder itemProperties(UnaryOperator<Item.Properties> itemPropertiesFunction) {
+        this.itemProperties = itemPropertiesFunction.apply(DEFAULT_ITEM_PROPERTIES.get());
+        return this;
+    }
+
+    public BlockBuilder cookingFuel(ResourceKey<NumberProvider> burnTime) {
+        this.itemProperties.cookingFuel(burnTime);
+        return this;
+    }
+
+    public BlockBuilder compostable(ResourceKey<NumberProvider> compostable) {
+        this.itemProperties.compostable(compostable);
         return this;
     }
 

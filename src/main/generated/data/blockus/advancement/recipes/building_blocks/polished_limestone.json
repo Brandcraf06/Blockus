@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_limestone"
+        "recipes": "blockus:polished_limestone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_phantom_purpur"
+        "recipes": "blockus:polished_phantom_purpur"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

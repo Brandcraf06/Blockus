@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rough_basalt_stairs"
+        "recipes": "blockus:rough_basalt_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

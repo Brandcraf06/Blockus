@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lime_gingham_wool"
+        "recipes": "blockus:lime_gingham_wool"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

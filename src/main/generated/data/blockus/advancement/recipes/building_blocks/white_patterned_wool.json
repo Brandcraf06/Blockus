@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_patterned_wool"
+        "recipes": "blockus:white_patterned_wool"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

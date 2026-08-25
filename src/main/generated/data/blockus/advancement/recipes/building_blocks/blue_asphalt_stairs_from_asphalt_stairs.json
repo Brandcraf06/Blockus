@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:blue_asphalt_stairs_from_asphalt_stairs"
+        "recipes": "blockus:blue_asphalt_stairs_from_asphalt_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

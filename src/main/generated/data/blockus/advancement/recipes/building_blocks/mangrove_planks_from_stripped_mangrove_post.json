@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mangrove_planks_from_stripped_mangrove_post"
+        "recipes": "blockus:mangrove_planks_from_stripped_mangrove_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

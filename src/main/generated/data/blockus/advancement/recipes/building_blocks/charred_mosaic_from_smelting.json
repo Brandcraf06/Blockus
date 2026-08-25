@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:charred_mosaic_from_smelting"
+        "recipes": "blockus:charred_mosaic_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

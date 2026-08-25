@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:caution_barrier"
+        "recipes": "blockus:caution_barrier"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

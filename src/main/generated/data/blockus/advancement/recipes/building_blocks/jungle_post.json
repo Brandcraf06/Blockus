@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:jungle_post"
+        "recipes": "blockus:jungle_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

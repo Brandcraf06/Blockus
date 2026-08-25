@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chocolate_squares_slab"
+        "recipes": "blockus:chocolate_squares_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

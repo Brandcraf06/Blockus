@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chocolate_tablet"
+        "recipes": "blockus:chocolate_tablet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

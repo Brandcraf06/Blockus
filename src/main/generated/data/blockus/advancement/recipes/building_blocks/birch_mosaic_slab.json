@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:birch_mosaic_slab"
+        "recipes": "blockus:birch_mosaic_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

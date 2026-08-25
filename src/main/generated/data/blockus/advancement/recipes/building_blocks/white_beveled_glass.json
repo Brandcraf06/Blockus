@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_beveled_glass"
+        "recipes": "blockus:white_beveled_glass"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

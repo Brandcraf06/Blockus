@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:amethyst_lamp"
+        "recipes": "blockus:amethyst_lamp"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

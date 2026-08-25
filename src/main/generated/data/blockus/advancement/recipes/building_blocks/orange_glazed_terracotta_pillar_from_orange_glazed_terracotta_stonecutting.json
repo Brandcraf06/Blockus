@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:orange_glazed_terracotta_pillar_from_orange_glazed_terracotta_stonecutting"
+        "recipes": "blockus:orange_glazed_terracotta_pillar_from_orange_glazed_terracotta_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

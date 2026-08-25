@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:small_white_oak_logs"
+        "recipes": "blockus:small_white_oak_logs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

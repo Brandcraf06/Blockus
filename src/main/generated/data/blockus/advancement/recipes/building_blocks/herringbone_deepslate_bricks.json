@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:herringbone_deepslate_bricks"
+        "recipes": "blockus:herringbone_deepslate_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

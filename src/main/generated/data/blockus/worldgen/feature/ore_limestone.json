@@ -4,9 +4,7 @@
   "size": 64,
   "targets": [
     {
-      "state": {
-        "Name": "blockus:limestone"
-      },
+      "state": "blockus:limestone",
       "target": {
         "predicate_type": "minecraft:tag_match",
         "tag": "minecraft:base_stone_overworld"

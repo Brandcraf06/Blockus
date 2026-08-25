@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:end_tiles"
+        "recipes": "blockus:end_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

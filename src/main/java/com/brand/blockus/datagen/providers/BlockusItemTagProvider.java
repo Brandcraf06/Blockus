@@ -203,13 +203,15 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(STONE_TRAPDOOR))
             .add(toId(BLACKSTONE_TRAPDOOR));
 
-        this.copy(BlockTags.WOOL, ItemTags.WOOL);
+        this.copy(BlockItemTags.WOOL.block(), BlockItemTags.WOOL.item());
         this.copy(BlockItemTags.WOOL_STAIRS.block(), BlockItemTags.WOOL_STAIRS.item());
         this.copy(BlockItemTags.WOOL_SLABS.block(), BlockItemTags.WOOL_SLABS.item());
         this.copy(BlockItemTags.WOOL_CARPETS.block(), BlockItemTags.WOOL_CARPETS.item());
-        this.copy(BlockTags.BEDS, ItemTags.BEDS);
-        this.copy(BlockTags.CONCRETE, ItemTags.CONCRETE);
-        this.copy(BlockTags.GLAZED_TERRACOTTA, ItemTags.GLAZED_TERRACOTTA);
+        this.copy(BlockItemTags.BEDS.block(), BlockItemTags.BEDS.item());
+        this.copy(BlockItemTags.CONCRETE.block(), BlockItemTags.CONCRETE.item());
+        this.copy(BlockItemTags.CONCRETE_STAIRS.block(), BlockItemTags.CONCRETE_STAIRS.item());
+        this.copy(BlockItemTags.CONCRETE_SLABS.block(), BlockItemTags.CONCRETE_SLABS.item());
+        this.copy(BlockItemTags.GLAZED_TERRACOTTA.block(), BlockItemTags.GLAZED_TERRACOTTA.item());
         this.copy(BlockTags.BARS, BlockItemTags.BARS.item());
         this.copy(BlockTags.CHAINS, BlockItemTags.CHAINS.item());
         this.copy(BlockTags.LANTERNS, BlockItemTags.LANTERNS.item());

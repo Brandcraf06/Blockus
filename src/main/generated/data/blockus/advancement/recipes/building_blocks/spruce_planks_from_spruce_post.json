@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:spruce_planks_from_spruce_post"
+        "recipes": "blockus:spruce_planks_from_spruce_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lime_redstone_lamp"
+        "recipes": "blockus:lime_redstone_lamp"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

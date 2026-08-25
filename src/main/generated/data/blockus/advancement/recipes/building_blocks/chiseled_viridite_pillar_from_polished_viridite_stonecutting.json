@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_viridite_pillar_from_polished_viridite_stonecutting"
+        "recipes": "blockus:chiseled_viridite_pillar_from_polished_viridite_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

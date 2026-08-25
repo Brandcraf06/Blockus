@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:warped_lattice"
+        "recipes": "blockus:warped_lattice"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

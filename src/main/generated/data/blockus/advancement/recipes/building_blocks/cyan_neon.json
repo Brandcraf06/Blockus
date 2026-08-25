@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cyan_neon"
+        "recipes": "blockus:cyan_neon"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

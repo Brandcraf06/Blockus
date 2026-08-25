@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:charred_fence_gate"
+        "recipes": "blockus:charred_fence_gate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

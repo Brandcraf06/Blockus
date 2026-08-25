@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:small_end_stone_brick_stairs"
+        "recipes": "blockus:small_end_stone_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

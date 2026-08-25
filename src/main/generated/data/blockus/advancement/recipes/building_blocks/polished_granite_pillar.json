@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_granite_pillar"
+        "recipes": "blockus:polished_granite_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

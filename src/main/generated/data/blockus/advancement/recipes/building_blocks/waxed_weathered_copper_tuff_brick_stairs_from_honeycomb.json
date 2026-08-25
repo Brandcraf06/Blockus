@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:waxed_weathered_copper_tuff_brick_stairs_from_honeycomb"
+        "recipes": "blockus:waxed_weathered_copper_tuff_brick_stairs_from_honeycomb"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_planks"
+        "recipes": "blockus:legacy_planks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

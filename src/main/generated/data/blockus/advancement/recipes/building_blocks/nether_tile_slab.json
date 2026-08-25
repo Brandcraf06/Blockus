@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:nether_tile_slab"
+        "recipes": "blockus:nether_tile_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

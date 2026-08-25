@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lapis_brick_slab_from_lapis_block_stonecutting"
+        "recipes": "blockus:lapis_brick_slab_from_lapis_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

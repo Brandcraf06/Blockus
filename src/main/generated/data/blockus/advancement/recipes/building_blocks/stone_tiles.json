@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:stone_tiles"
+        "recipes": "blockus:stone_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

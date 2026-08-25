@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:teal_nether_bricks"
+        "recipes": "blockus:teal_nether_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

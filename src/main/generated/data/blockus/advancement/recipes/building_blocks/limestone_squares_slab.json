@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:limestone_squares_slab"
+        "recipes": "blockus:limestone_squares_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

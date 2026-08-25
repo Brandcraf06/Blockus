@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:beveled_glass"
+        "recipes": "blockus:beveled_glass"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

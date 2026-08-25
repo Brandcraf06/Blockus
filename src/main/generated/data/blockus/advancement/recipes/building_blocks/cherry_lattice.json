@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cherry_lattice"
+        "recipes": "blockus:cherry_lattice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

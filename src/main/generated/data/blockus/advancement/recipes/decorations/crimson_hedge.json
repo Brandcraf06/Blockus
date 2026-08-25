@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:crimson_hedge"
+        "recipes": "blockus:crimson_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_oak_lattice"
+        "recipes": "blockus:white_oak_lattice"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

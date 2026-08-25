@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:netherite_bricks"
+        "recipes": "blockus:netherite_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

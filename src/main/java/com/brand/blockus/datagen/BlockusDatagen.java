@@ -20,7 +20,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         BlockusBlockTagProvider blockTags = pack.addProvider(BlockusBlockTagProvider::new);
         pack.addProvider((output, registries) -> new BlockusItemTagProvider(output, registries, blockTags));
 
-        pack.addProvider(BlockusBlockLootTableProvider::new);
+//        pack.addProvider(BlockusBlockLootTableProvider::new);
         pack.addProvider(BlockusWorldgenProvider::new);
         pack.addProvider(BlockusLangEnProvider::new);
         pack.addProvider(BlockusModelProvider::new);

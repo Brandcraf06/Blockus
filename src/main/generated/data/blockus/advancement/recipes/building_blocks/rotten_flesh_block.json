@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rotten_flesh_block"
+        "recipes": "blockus:rotten_flesh_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

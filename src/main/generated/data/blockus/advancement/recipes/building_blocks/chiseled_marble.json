@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_marble"
+        "recipes": "blockus:chiseled_marble"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

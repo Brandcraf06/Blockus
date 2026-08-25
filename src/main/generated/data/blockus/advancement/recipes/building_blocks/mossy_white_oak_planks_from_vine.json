@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mossy_white_oak_planks_from_vine"
+        "recipes": "blockus:mossy_white_oak_planks_from_vine"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:warped_warty_blackstone_brick_stairs_from_warped_warty_blackstone_bricks_stonecutting"
+        "recipes": "blockus:warped_warty_blackstone_brick_stairs_from_warped_warty_blackstone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

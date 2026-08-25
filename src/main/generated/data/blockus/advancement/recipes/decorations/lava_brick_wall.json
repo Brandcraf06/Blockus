@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lava_brick_wall"
+        "recipes": "blockus:lava_brick_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

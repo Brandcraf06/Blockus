@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cyan_asphalt_stairs_from_cyan_asphalt_stonecutting"
+        "recipes": "blockus:cyan_asphalt_stairs_from_cyan_asphalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

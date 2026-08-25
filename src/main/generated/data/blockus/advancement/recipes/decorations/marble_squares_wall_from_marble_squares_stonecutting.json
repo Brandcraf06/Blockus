@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:marble_squares_wall_from_marble_squares_stonecutting"
+        "recipes": "blockus:marble_squares_wall_from_marble_squares_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

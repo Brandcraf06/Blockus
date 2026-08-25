@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:yellow_gingham_wool"
+        "recipes": "blockus:yellow_gingham_wool"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

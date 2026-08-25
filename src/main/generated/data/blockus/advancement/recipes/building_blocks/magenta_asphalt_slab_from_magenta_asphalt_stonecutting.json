@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:magenta_asphalt_slab_from_magenta_asphalt_stonecutting"
+        "recipes": "blockus:magenta_asphalt_slab_from_magenta_asphalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

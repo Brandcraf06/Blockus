@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:warped_cross_timber_frame"
+        "recipes": "blockus:warped_cross_timber_frame"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

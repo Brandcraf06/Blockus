@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:gray_neon"
+        "recipes": "blockus:gray_neon"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

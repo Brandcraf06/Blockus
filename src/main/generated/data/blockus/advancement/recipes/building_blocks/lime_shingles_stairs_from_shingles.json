@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lime_shingles_stairs_from_shingles"
+        "recipes": "blockus:lime_shingles_stairs_from_shingles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

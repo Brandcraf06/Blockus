@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:purpur_squares_wall"
+        "recipes": "blockus:purpur_squares_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

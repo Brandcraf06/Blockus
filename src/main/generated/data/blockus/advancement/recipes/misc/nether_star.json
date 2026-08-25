@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:nether_star"
+        "recipes": "blockus:nether_star"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

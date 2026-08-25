@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rainbow_asphalt"
+        "recipes": "blockus:rainbow_asphalt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

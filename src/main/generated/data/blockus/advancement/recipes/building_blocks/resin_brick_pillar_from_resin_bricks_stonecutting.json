@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:resin_brick_pillar_from_resin_bricks_stonecutting"
+        "recipes": "blockus:resin_brick_pillar_from_resin_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

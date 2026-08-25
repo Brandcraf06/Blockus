@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:charred_nether_brick_pillar"
+        "recipes": "blockus:charred_nether_brick_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

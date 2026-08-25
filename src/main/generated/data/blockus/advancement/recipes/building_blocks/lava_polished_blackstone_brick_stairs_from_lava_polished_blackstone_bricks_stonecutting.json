@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lava_polished_blackstone_brick_stairs_from_lava_polished_blackstone_bricks_stonecutting"
+        "recipes": "blockus:lava_polished_blackstone_brick_stairs_from_lava_polished_blackstone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

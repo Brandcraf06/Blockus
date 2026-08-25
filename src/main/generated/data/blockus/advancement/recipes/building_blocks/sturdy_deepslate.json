@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sturdy_deepslate"
+        "recipes": "blockus:sturdy_deepslate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

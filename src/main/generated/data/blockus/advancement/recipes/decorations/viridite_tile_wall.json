@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:viridite_tile_wall"
+        "recipes": "blockus:viridite_tile_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

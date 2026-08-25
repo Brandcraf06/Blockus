@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:viridite_bricks_from_viridite_stonecutting"
+        "recipes": "blockus:viridite_bricks_from_viridite_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

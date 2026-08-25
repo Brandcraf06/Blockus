@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:prismarine_tile_stairs"
+        "recipes": "blockus:prismarine_tile_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

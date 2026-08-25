@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:blackstone_door"
+        "recipes": "blockus:blackstone_door"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

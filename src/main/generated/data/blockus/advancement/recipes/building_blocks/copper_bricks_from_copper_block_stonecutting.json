@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:copper_bricks_from_copper_block_stonecutting"
+        "recipes": "blockus:copper_bricks_from_copper_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

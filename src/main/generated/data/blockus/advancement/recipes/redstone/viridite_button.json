@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:viridite_button"
+        "recipes": "blockus:viridite_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

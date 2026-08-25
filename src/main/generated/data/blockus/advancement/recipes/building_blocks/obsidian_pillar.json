@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:obsidian_pillar"
+        "recipes": "blockus:obsidian_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

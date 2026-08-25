@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:sturdy_stone_alt"
+        "recipes": "blockus:sturdy_stone_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

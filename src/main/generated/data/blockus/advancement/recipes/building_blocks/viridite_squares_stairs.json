@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:viridite_squares_stairs"
+        "recipes": "blockus:viridite_squares_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:light_blue_concrete_brick_wall_from_light_blue_concrete_stonecutting"
+        "recipes": "blockus:light_blue_concrete_brick_wall_from_light_blue_concrete_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

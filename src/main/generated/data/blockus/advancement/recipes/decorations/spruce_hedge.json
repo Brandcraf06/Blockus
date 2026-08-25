@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:spruce_hedge"
+        "recipes": "blockus:spruce_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:phantom_purpur_lines_from_soul_sand"
+        "recipes": "blockus:phantom_purpur_lines_from_soul_sand"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

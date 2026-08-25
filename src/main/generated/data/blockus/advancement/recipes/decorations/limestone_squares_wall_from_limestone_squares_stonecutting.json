@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:limestone_squares_wall_from_limestone_squares_stonecutting"
+        "recipes": "blockus:limestone_squares_wall_from_limestone_squares_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

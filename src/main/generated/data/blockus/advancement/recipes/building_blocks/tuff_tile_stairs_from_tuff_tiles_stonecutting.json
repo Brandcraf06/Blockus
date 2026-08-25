@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:tuff_tile_stairs_from_tuff_tiles_stonecutting"
+        "recipes": "blockus:tuff_tile_stairs_from_tuff_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

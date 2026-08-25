@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cherry_planks_from_cherry_post"
+        "recipes": "blockus:cherry_planks_from_cherry_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

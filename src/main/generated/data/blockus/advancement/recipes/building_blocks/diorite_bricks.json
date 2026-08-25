@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:diorite_bricks"
+        "recipes": "blockus:diorite_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

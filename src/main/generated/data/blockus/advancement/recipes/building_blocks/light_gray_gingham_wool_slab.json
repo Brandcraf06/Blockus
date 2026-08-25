@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:light_gray_gingham_wool_slab"
+        "recipes": "blockus:light_gray_gingham_wool_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

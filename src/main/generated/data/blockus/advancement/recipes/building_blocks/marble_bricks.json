@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:marble_bricks"
+        "recipes": "blockus:marble_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

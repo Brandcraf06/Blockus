@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:ice_pillar"
+        "recipes": "blockus:ice_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

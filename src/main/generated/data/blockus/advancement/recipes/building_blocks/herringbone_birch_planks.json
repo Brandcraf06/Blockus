@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:herringbone_birch_planks"
+        "recipes": "blockus:herringbone_birch_planks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

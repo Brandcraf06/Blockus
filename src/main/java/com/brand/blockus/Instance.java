@@ -2,11 +2,10 @@ package com.brand.blockus;
 
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.WoodMaps;
-import net.fabricmc.fabric.api.registry.*;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.List;
@@ -19,19 +18,11 @@ public class Instance {
 
 // Burning
         // Fuel
-        FuelValueEvents.BUILD.register((builder, context) -> {
-            builder.add(Items.DRIED_KELP, 200);
-            builder.add(LEGACY_COAL_BLOCK, 16000);
-            builder.add(CHARCOAL_BLOCK, 16000);
-            builder.add(WOODEN_FRAME, 300);
-            builder.add(Items.PAPER, 100);
-            builder.add(PAPER_DOOR, 100);
-            builder.add(PAPER_TRAPDOOR, 150);
-            builder.add(FRAMED_PAPER_BLOCK, 300);
-            builder.add(PAPER_WALL, 150);
-            builder.add(PAPER_LAMP, 300);
-            builder.add(PAPER_BLOCK, 400);
-        });
+//        FuelValueEvents.BUILD.register((builder, context) -> {
+//            builder.add(Items.DRIED_KELP, 200);
+//            builder.add(Items.PAPER, 100);
+//            builder.add(PAPER_BLOCK, 400);
+//        });
 
         // General
         FlammableBlockRegistry.getDefaultInstance().add(WOODEN_FRAME, 30, 60);
@@ -65,7 +56,6 @@ public class Instance {
                 for (var entry : bundle.woodMap().entrySet()) {
                     if (!entry.getKey().data().isBurnable()) continue;
                     FlammableBlockRegistry.getDefaultInstance().add(block, 5, 20);
-                    FuelValueEvents.BUILD.register((builder, context) -> builder.add(block, 300));
                 }
             }
         }
@@ -77,10 +67,10 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs().blocks().pick(color), 30, 60);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.slab().blocks().pick(color), 30, 60);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.carpet().blocks().pick(color), 60, 20);
-                FuelValueEvents.BUILD.register((builder, context) -> {
-                    builder.add(bundle.stairs().blocks().pick(color), 100);
-                    builder.add(bundle.slab().blocks().pick(color), 50);
-                });
+//                FuelValueEvents.BUILD.register((builder, context) -> {
+//                    builder.add(bundle.stairs().blocks().pick(color), 100);
+//                    builder.add(bundle.slab().blocks().pick(color), 50);
+//                });
             }
         }
         FlammableBlockRegistry.getDefaultInstance().add(RAINBOW_WOOL.block(), 30, 60);
@@ -96,11 +86,11 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.slab(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.fence(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.fenceGate(), 5, 20);
-                FuelValueEvents.BUILD.register((builder, context) -> {
-                    builder.add(bundle.fence(), 300);
-                    builder.add(bundle.fenceGate(), 300);
-                    builder.add(bundle.shelf(), 300);
-                });
+//                FuelValueEvents.BUILD.register((builder, context) -> {
+//                    builder.add(bundle.fence(), 300);
+//                    builder.add(bundle.fenceGate(), 300);
+//                    builder.add(bundle.shelf(), 300);
+//                });
             }
         }
 
@@ -121,11 +111,11 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.slab(), 5, 20);
 
-                FuelValueEvents.BUILD.register((builder, context) -> {
-                    builder.add(bundle.block(), 300);
-                    builder.add(bundle.stairs(), 300);
-                    builder.add(bundle.slab(), 150);
-                });
+//                FuelValueEvents.BUILD.register((builder, context) -> {
+//                    builder.add(bundle.block(), 300);
+//                    builder.add(bundle.stairs(), 300);
+//                    builder.add(bundle.slab(), 150);
+//                });
             }
         }
 
@@ -155,10 +145,6 @@ public class Instance {
                 WoodenPostBundle.WoodenPostVariants variants = entry.getValue();
                 FlammableBlockRegistry.getDefaultInstance().add(variants.block(), 5, 5);
                 FlammableBlockRegistry.getDefaultInstance().add(variants.stripped(), 5, 5);
-                FuelValueEvents.BUILD.register((builder, context) -> {
-                    builder.add(variants.block(), 150);
-                    builder.add(variants.stripped(), 150);
-                });
             }
         }
 
@@ -166,41 +152,9 @@ public class Instance {
         FlammableBlockRegistry.getDefaultInstance().add(LEGACY_LOG, 5, 5);
 
 // Composting
-        CompostableRegistry.INSTANCE.add(OAK_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(ACACIA_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(BIRCH_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(DARK_OAK_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(JUNGLE_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(SPRUCE_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(MANGROVE_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(CHERRY_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(PALE_OAK_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(RED_POPLAR_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(ORANGE_POPLAR_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(YELLOW_POPLAR_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(AZALEA_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(WHITE_OAK_HEDGE, 0.30f);
-        CompostableRegistry.INSTANCE.add(WHITE_OAK_LEAVES, 0.30f);
-        CompostableRegistry.INSTANCE.add(WHITE_OAK_SAPLING, 0.30f);
-        CompostableRegistry.INSTANCE.add(LEGACY_SAPLING, 0.30f);
-        CompostableRegistry.INSTANCE.add(RAINBOW_PETALS, 0.30f);
-        CompostableRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
-        CompostableRegistry.INSTANCE.add(SWEET_BERRIES_CRATE, 0.50f);
-        CompostableRegistry.INSTANCE.add(FLOWERING_AZALEA_HEDGE, 0.50f);
-        CompostableRegistry.INSTANCE.add(MOSS_HEDGE, 0.65f);
-        CompostableRegistry.INSTANCE.add(PALE_MOSS_HEDGE, 0.65f);
-        CompostableRegistry.INSTANCE.add(RAINBOW_ROSE, 0.65f);
-        CompostableRegistry.INSTANCE.add(THATCH.slab(), 0.65f);
-        CompostableRegistry.INSTANCE.add(THATCH.block(), 0.75f);
-        CompostableRegistry.INSTANCE.add(THATCH.stairs(), 0.75f);
-        CompostableRegistry.INSTANCE.add(WARPED_HEDGE, 0.85f);
-        CompostableRegistry.INSTANCE.add(CRIMSON_HEDGE, 0.85f);
-        CompostableRegistry.INSTANCE.add(APPLE_CRATE, 0.95f);
-        CompostableRegistry.INSTANCE.add(BEETROOT_CRATE, 0.95f);
-        CompostableRegistry.INSTANCE.add(CARROT_CRATE, 0.95f);
-        CompostableRegistry.INSTANCE.add(POTATO_CRATE, 0.95f);
-        CompostableRegistry.INSTANCE.add(BREAD_BOX, 1.0f);
-        CompostableRegistry.INSTANCE.add(COOKIE_BLOCK, 1.0f);
+//        CompostableRegistry.INSTANCE.add(THATCH.slab(), 0.65f);
+//        CompostableRegistry.INSTANCE.add(THATCH.block(), 0.75f);
+//        CompostableRegistry.INSTANCE.add(THATCH.stairs(), 0.75f);
 
 // Other
 

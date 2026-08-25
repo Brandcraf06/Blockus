@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:smooth_stone_stairs_from_smooth_stone_stonecutting"
+        "recipes": "blockus:smooth_stone_stairs_from_smooth_stone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

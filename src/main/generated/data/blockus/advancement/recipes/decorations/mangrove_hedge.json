@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:mangrove_hedge"
+        "recipes": "blockus:mangrove_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:dark_oak_hedge"
+        "recipes": "blockus:dark_oak_hedge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

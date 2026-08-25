@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:purple_neon"
+        "recipes": "blockus:purple_neon"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

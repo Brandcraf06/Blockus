@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:large_bricks"
+        "recipes": "blockus:large_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

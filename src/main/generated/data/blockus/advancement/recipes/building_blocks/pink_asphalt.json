@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:pink_asphalt"
+        "recipes": "blockus:pink_asphalt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:emerald_from_emerald_brick_stairs"
+        "recipes": "blockus:emerald_from_emerald_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

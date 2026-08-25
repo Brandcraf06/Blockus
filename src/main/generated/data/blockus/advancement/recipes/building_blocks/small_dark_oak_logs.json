@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:small_dark_oak_logs"
+        "recipes": "blockus:small_dark_oak_logs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

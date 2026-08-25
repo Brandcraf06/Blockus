@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:weathered_copper_bricks_from_weathered_cut_copper_stonecutting"
+        "recipes": "blockus:weathered_copper_bricks_from_weathered_cut_copper_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

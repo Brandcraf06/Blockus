@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:jungle_lattice"
+        "recipes": "blockus:jungle_lattice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

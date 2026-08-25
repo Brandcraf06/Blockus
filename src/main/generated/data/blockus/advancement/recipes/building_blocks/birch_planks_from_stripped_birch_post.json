@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:birch_planks_from_stripped_birch_post"
+        "recipes": "blockus:birch_planks_from_stripped_birch_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

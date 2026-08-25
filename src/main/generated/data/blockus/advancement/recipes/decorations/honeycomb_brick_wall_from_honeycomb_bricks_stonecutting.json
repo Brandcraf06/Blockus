@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:honeycomb_brick_wall_from_honeycomb_bricks_stonecutting"
+        "recipes": "blockus:honeycomb_brick_wall_from_honeycomb_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

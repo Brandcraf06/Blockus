@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:waxed_copper_lantern_block"
+        "recipes": "blockus:waxed_copper_lantern_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

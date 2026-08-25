@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:red_shingles_slab_from_shingles_slab"
+        "recipes": "blockus:red_shingles_slab_from_shingles_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:membrane_block"
+        "recipes": "blockus:membrane_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

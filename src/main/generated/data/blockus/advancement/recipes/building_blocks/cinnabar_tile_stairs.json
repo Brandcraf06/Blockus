@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:cinnabar_tile_stairs"
+        "recipes": "blockus:cinnabar_tile_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

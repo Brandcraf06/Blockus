@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:phantom_purpur_bricks"
+        "recipes": "blockus:phantom_purpur_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

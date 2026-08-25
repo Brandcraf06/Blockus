@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:legacy_mossy_cobblestone_from_mossy_cobblestone_stonecutting"
+        "recipes": "blockus:legacy_mossy_cobblestone_from_mossy_cobblestone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

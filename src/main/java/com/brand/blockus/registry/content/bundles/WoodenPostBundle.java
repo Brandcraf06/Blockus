@@ -3,13 +3,16 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.blocks.base.PostBlock;
 import com.brand.blockus.utils.helper.BlockFactory;
 import com.brand.blockus.utils.helper.WoodMaps;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.storage.loot.providers.number.NumberProviders;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.UnaryOperator;
 
 public record WoodenPostBundle(Map<WoodMaps, WoodenPostVariants> woodMap) {
 
@@ -22,6 +25,10 @@ public record WoodenPostBundle(Map<WoodMaps, WoodenPostVariants> woodMap) {
     public static BlockBehaviour.Properties properties(Block base, boolean isBurnable) {
         BlockBehaviour.Properties blockProperties = BlockFactory.createCopy(base).forceSolidOn();
         return isBurnable ? blockProperties.ignitedByLava() : blockProperties;
+    }
+
+    public static UnaryOperator<Item.Properties> itemProperties(boolean isBurnable) {
+        return isBurnable ? p -> p.cookingFuel(NumberProviders.COOKING_TIME_WOOD_SLABS) : UnaryOperator.identity();
     }
 
     public List<Block> all() {
@@ -52,8 +59,8 @@ public record WoodenPostBundle(Map<WoodMaps, WoodenPostVariants> woodMap) {
 
             String id = wood.getId() + "_post";
 
-            Block block = BlockFactory.registerOf(id, PostBlock::new, properties(log, wood.data().isBurnable()));
-            Block stripped = BlockFactory.registerOf("stripped_" + id, PostBlock::new, properties(strippedLog, wood.data().isBurnable()));
+            Block block = BlockFactory.registerOf(id, PostBlock::new, properties(log, wood.data().isBurnable()), itemProperties(wood.data().isBurnable()));
+            Block stripped = BlockFactory.registerOf("stripped_" + id, PostBlock::new, properties(strippedLog, wood.data().isBurnable()), itemProperties(wood.data().isBurnable()));
 
             woodMap.put(wood, new WoodenPostVariants(block, stripped));
         }

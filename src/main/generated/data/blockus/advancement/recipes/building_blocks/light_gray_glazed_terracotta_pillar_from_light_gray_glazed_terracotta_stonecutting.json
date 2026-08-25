@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:light_gray_glazed_terracotta_pillar_from_light_gray_glazed_terracotta_stonecutting"
+        "recipes": "blockus:light_gray_glazed_terracotta_pillar_from_light_gray_glazed_terracotta_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

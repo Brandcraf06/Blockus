@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lime_asphalt_stairs_from_lime_asphalt_stonecutting"
+        "recipes": "blockus:lime_asphalt_stairs_from_lime_asphalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

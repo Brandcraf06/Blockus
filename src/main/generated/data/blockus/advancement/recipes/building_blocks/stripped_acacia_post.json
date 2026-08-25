@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:stripped_acacia_post"
+        "recipes": "blockus:stripped_acacia_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:poplar_planks_from_stripped_poplar_post"
+        "recipes": "blockus:poplar_planks_from_stripped_poplar_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

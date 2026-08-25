@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:viridite_squares_slab_from_viridite_squares_stonecutting"
+        "recipes": "blockus:viridite_squares_slab_from_viridite_squares_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

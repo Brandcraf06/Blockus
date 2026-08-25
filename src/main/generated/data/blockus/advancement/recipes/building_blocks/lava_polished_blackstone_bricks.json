@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:lava_polished_blackstone_bricks"
+        "recipes": "blockus:lava_polished_blackstone_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

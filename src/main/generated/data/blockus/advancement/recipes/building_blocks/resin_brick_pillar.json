@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:resin_brick_pillar"
+        "recipes": "blockus:resin_brick_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

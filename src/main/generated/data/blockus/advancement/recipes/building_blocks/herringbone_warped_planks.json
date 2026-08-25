@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:herringbone_warped_planks"
+        "recipes": "blockus:herringbone_warped_planks"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:emerald_bricks"
+        "recipes": "blockus:emerald_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

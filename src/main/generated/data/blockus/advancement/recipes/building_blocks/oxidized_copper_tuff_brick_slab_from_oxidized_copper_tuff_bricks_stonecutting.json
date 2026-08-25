@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:oxidized_copper_tuff_brick_slab_from_oxidized_copper_tuff_bricks_stonecutting"
+        "recipes": "blockus:oxidized_copper_tuff_brick_slab_from_oxidized_copper_tuff_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

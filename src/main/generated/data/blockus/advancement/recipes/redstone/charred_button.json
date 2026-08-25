@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:charred_button"
+        "recipes": "blockus:charred_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

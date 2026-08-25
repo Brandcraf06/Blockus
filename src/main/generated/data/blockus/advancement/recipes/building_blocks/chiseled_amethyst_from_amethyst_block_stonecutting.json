@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_amethyst_from_amethyst_block_stonecutting"
+        "recipes": "blockus:chiseled_amethyst_from_amethyst_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

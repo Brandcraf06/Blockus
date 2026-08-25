@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:dark_oak_mosaic_stairs"
+        "recipes": "blockus:dark_oak_mosaic_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

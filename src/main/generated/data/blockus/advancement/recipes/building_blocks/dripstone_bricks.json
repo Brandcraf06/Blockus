@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:dripstone_bricks"
+        "recipes": "blockus:dripstone_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

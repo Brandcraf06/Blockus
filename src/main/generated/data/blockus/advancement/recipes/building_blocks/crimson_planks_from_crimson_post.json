@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:crimson_planks_from_crimson_post"
+        "recipes": "blockus:crimson_planks_from_crimson_post"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

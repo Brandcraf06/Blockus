@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:prismarine_pillar"
+        "recipes": "blockus:prismarine_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

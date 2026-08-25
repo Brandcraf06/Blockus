@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:spruce_cross_timber_frame"
+        "recipes": "blockus:spruce_cross_timber_frame"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

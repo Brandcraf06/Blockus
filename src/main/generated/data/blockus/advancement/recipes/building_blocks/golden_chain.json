@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:golden_chain"
+        "recipes": "blockus:golden_chain"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

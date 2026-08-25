@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:crimson_wart_brick_wall_from_crimson_wart_bricks_stonecutting"
+        "recipes": "blockus:crimson_wart_brick_wall_from_crimson_wart_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

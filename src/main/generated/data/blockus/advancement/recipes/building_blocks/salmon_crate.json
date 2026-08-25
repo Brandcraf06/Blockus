@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:salmon_crate"
+        "recipes": "blockus:salmon_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

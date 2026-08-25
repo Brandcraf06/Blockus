@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:spruce_mosaic"
+        "recipes": "blockus:spruce_mosaic"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

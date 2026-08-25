@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:soul_sandstone_pillar"
+        "recipes": "blockus:soul_sandstone_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

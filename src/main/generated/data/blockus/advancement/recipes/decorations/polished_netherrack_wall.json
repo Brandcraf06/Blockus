@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_netherrack_wall"
+        "recipes": "blockus:polished_netherrack_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

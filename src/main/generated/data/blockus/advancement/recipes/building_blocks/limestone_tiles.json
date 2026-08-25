@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:limestone_tiles"
+        "recipes": "blockus:limestone_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

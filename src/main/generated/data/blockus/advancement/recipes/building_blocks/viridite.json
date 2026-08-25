@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:viridite"
+        "recipes": "blockus:viridite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

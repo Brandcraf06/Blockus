@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:gray_shingles_stairs_from_gray_shingles_stonecutting"
+        "recipes": "blockus:gray_shingles_stairs_from_gray_shingles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

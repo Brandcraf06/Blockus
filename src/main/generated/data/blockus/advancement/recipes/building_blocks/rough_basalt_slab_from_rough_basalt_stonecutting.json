@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rough_basalt_slab_from_rough_basalt_stonecutting"
+        "recipes": "blockus:rough_basalt_slab_from_rough_basalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

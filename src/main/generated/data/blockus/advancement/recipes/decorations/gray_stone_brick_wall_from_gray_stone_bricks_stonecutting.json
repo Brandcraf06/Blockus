@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:gray_stone_brick_wall_from_gray_stone_bricks_stonecutting"
+        "recipes": "blockus:gray_stone_brick_wall_from_gray_stone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

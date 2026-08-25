@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:magenta_concrete_pillar"
+        "recipes": "blockus:magenta_concrete_pillar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

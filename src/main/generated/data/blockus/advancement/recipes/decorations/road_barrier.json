@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:road_barrier"
+        "recipes": "blockus:road_barrier"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

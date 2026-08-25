@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_blackstone_circular_paving_from_blackstone_stonecutting"
+        "recipes": "blockus:polished_blackstone_circular_paving_from_blackstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

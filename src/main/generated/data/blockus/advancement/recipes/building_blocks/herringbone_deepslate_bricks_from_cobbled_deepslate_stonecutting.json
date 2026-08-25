@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:herringbone_deepslate_bricks_from_cobbled_deepslate_stonecutting"
+        "recipes": "blockus:herringbone_deepslate_bricks_from_cobbled_deepslate_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

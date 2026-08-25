@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chocolate_stairs_from_chocolate_block_stonecutting"
+        "recipes": "blockus:chocolate_stairs_from_chocolate_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

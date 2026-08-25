@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:shingles_stairs"
+        "recipes": "blockus:shingles_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

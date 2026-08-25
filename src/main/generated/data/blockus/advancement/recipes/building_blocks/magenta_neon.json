@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:magenta_neon"
+        "recipes": "blockus:magenta_neon"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

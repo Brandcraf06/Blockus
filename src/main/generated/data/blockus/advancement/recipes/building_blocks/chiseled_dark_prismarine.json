@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_dark_prismarine"
+        "recipes": "blockus:chiseled_dark_prismarine"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

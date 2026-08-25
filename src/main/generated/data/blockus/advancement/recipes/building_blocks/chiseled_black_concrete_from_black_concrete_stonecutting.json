@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_black_concrete_from_black_concrete_stonecutting"
+        "recipes": "blockus:chiseled_black_concrete_from_black_concrete_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

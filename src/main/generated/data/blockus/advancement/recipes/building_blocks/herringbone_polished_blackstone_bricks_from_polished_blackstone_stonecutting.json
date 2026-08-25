@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:herringbone_polished_blackstone_bricks_from_polished_blackstone_stonecutting"
+        "recipes": "blockus:herringbone_polished_blackstone_bricks_from_polished_blackstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

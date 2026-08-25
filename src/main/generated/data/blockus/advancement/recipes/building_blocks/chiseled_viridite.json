@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_viridite"
+        "recipes": "blockus:chiseled_viridite"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

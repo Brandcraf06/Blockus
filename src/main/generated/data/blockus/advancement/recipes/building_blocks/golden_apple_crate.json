@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:golden_apple_crate"
+        "recipes": "blockus:golden_apple_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

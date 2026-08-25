@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:polished_charred_nether_bricks"
+        "recipes": "blockus:polished_charred_nether_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

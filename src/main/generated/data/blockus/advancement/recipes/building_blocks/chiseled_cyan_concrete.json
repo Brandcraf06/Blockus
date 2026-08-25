@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:chiseled_cyan_concrete"
+        "recipes": "blockus:chiseled_cyan_concrete"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

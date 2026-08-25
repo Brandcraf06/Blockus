@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:potato"
+        "recipes": "blockus:potato"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

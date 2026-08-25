@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:white_asphalt_slab_from_white_asphalt_stonecutting"
+        "recipes": "blockus:white_asphalt_slab_from_white_asphalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
