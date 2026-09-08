@@ -14,7 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -59,12 +59,12 @@ public class BlockBuilder {
         return this;
     }
 
-    public BlockBuilder cookingFuel(ResourceKey<NumberProvider> burnTime) {
+    public BlockBuilder cookingFuel(ResourceKey<ContextIntProvider> burnTime) {
         this.itemProperties.cookingFuel(burnTime);
         return this;
     }
 
-    public BlockBuilder compostable(ResourceKey<NumberProvider> compostable) {
+    public BlockBuilder compostable(ResourceKey<ContextIntProvider> compostable) {
         this.itemProperties.compostable(compostable);
         return this;
     }

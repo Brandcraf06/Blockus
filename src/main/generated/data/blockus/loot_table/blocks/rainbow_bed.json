@@ -2,27 +2,23 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "blockus:rainbow_bed",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "part": "head"
-              }
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "blockus:rainbow_bed",
+            "state": {
+              "part": "head"
             }
-          ],
+          },
           "name": "blockus:rainbow_bed"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ]
 }

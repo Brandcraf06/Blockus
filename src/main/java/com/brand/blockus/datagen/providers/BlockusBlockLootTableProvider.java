@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.state.properties.BedPart;
-import net.minecraft.world.level.storage.loot.IntRange;
+import net.minecraft.world.level.storage.loot.IntLimit;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -27,8 +27,7 @@ import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -446,24 +445,24 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
         this.add(LEGACY_LEAVES, (block) -> this.createLeavesDrops(block, LEGACY_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(LEGACY_GLOWSTONE, this::glowstoneDrops);
         this.add(LEGACY_GRAVEL, (block) -> createSilkTouchDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.FLINT).when(BonusLevelTableCondition.bonusLevelFlatChance(enchantments.getOrThrow(Enchantments.FORTUNE), 0.1F, 0.14285715F, 0.25F, 1.0F)).otherwise(LootItem.lootTableItem(block)))));
-        this.add(LEGACY_NETHER_REACTOR_CORE, (block) -> LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(3.0F)).add(LootItem.lootTableItem(Items.DIAMOND)))).withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(6.0F)).add(LootItem.lootTableItem(Items.IRON_INGOT)))));
+        this.add(LEGACY_NETHER_REACTOR_CORE, (block) -> LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ContextIntProviders.exactly(3)).add(LootItem.lootTableItem(Items.DIAMOND)))).withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ContextIntProviders.exactly(6)).add(LootItem.lootTableItem(Items.IRON_INGOT)))));
 
         this.add(WHITE_OAK_LEAVES, (block) -> this.createOakLeavesDrops(block, WHITE_OAK_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
-        this.add(BLAZE_LANTERN, (block) -> this.createSingleItemTableWithSilkTouch(block, Items.BLAZE_POWDER, ConstantValue.exactly(9.0F)));
-        this.add(BURNT_PAPER_BLOCK, (block) -> this.createSingleItemTableWithSilkTouch(block, Items.GUNPOWDER, ConstantValue.exactly(2.0F)));
-        this.add(NETHER_STAR_BLOCK, (block) -> createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.NETHER_STAR).apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 9.0F))).apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE), 2)).apply(LimitCount.limitCount(IntRange.range(8, 9))))));
+        this.add(BLAZE_LANTERN, (block) -> this.createSingleItemTableWithSilkTouch(block, Items.BLAZE_POWDER, ContextIntProviders.exactly(9)));
+        this.add(BURNT_PAPER_BLOCK, (block) -> this.createSingleItemTableWithSilkTouch(block, Items.GUNPOWDER, ContextIntProviders.exactly(2)));
+        this.add(NETHER_STAR_BLOCK, (block) -> createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.NETHER_STAR).apply(SetItemCountFunction.setCount(ContextIntProviders.between(8, 9))).apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE), 2)).apply(LimitCount.limitCount(IntLimit.range(8, 9))))));
         this.add(RAINBOW_GLOWSTONE, this::glowstoneDrops);
 
-        this.add(COOKIE_BLOCK, (block) -> LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(this.applyExplosionDecay(block,
-            LootItem.lootTableItem(Items.COOKIE).apply(setCookieCount(block, 9.0F, 0))
-                .apply(setCookieCount(block, 8.0F, 1))
-                .apply(setCookieCount(block, 7.0F, 2))
-                .apply(setCookieCount(block, 6.0F, 3))
-                .apply(setCookieCount(block, 5.0F, 4))
-                .apply(setCookieCount(block, 4.0F, 5))
-                .apply(setCookieCount(block, 3.0F, 6))
-                .apply(setCookieCount(block, 2.0F, 7))
-                .apply(setCookieCount(block, 1.0F, 8))))));
+        this.add(COOKIE_BLOCK, (block) -> LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ContextIntProviders.exactly(1)).add(this.applyExplosionDecay(block,
+            LootItem.lootTableItem(Items.COOKIE).apply(setCookieCount(block, 9, 0))
+                .apply(setCookieCount(block, 8, 1))
+                .apply(setCookieCount(block, 7, 2))
+                .apply(setCookieCount(block, 6, 3))
+                .apply(setCookieCount(block, 5, 4))
+                .apply(setCookieCount(block, 4, 5))
+                .apply(setCookieCount(block, 3, 6))
+                .apply(setCookieCount(block, 2, 7))
+                .apply(setCookieCount(block, 1, 8))))));
     }
 
 
@@ -494,20 +493,20 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
         this.add(door, this::createDoorTable);
     }
 
-    public LootItemFunction.Builder setCookieCount(Block block, float count, int bites) {
-        return SetItemCountFunction.setCount(ConstantValue.exactly(count)).when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(CookieBlock.BITES, bites)));
+    public LootItemFunction.Builder setCookieCount(Block block, int count, int bites) {
+        return SetItemCountFunction.setCount(ContextIntProviders.exactly(count)).when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(CookieBlock.BITES, bites)));
     }
 
     public LootTable.Builder glowstoneDrops(Block block) {
-        return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.GLOWSTONE_DUST).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))).apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE))).apply(LimitCount.limitCount(IntRange.range(1, 4)))));
+        return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.GLOWSTONE_DUST).apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4))).apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE))).apply(LimitCount.limitCount(IntLimit.range(1, 4)))));
     }
 
     public LootTable.Builder stickDrops(Block block) {
-        return createSilkTouchOrShearsDispatchTable(block, (LootPoolEntryContainer.Builder)((UniformContainerBase.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))).when(BonusLevelTableCondition.bonusLevelFlatChance(enchantments.getOrThrow(Enchantments.FORTUNE), 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F)));
+        return createSilkTouchOrShearsDispatchTable(block, (LootPoolEntryContainer.Builder)((UniformContainerBase.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2))))).when(BonusLevelTableCondition.bonusLevelFlatChance(enchantments.getOrThrow(Enchantments.FORTUNE), 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F)));
     }
 
     public LootTable.Builder pottedLargePlantDrops(ItemLike plant) {
-        return LootTable.lootTable().withPool(applyExplosionCondition(LARGE_FLOWER_POT, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(LARGE_FLOWER_POT)))).withPool(applyExplosionCondition(plant, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(plant))));
+        return LootTable.lootTable().withPool(applyExplosionCondition(LARGE_FLOWER_POT, LootPool.lootPool().setRolls(ContextIntProviders.exactly(1)).add(LootItem.lootTableItem(LARGE_FLOWER_POT)))).withPool(applyExplosionCondition(plant, LootPool.lootPool().setRolls(ContextIntProviders.exactly(1)).add(LootItem.lootTableItem(plant))));
     }
 
     public void addPottedLargePlantDrop(Block block) {

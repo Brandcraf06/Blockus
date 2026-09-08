@@ -1,7 +1,6 @@
 {
   "type": "minecraft:simple_block",
   "to_place": {
-    "type": "minecraft:simple_state_provider",
-    "state": "blockus:rainbow_rose"
+    "id": "blockus:rainbow_rose"
   }
 }

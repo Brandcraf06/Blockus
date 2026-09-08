@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:rule_based",
+  "rules": [
+    {
+      "if_true": {
+        "type": "minecraft:matching_block_tag",
+        "tag": "minecraft:substrate_overworld"
+      },
+      "then": {
+       "id": "blockus:legacy_grass_block"
+      }
+    }
+  ]
+}

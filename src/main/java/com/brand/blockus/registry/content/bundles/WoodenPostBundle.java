@@ -6,7 +6,7 @@ import com.brand.blockus.utils.helper.WoodMaps;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.storage.loot.providers.number.NumberProviders;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -28,7 +28,7 @@ public record WoodenPostBundle(Map<WoodMaps, WoodenPostVariants> woodMap) {
     }
 
     public static UnaryOperator<Item.Properties> itemProperties(boolean isBurnable) {
-        return isBurnable ? p -> p.cookingFuel(NumberProviders.COOKING_TIME_WOOD_SLABS) : UnaryOperator.identity();
+        return isBurnable ? p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_SLABS) : UnaryOperator.identity();
     }
 
     public List<Block> all() {

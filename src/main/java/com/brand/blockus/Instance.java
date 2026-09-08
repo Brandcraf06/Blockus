@@ -2,10 +2,12 @@ package com.brand.blockus;
 
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.utils.helper.WoodMaps;
+import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WeatheringCopperCollection;
 
 import java.util.List;
@@ -154,22 +156,28 @@ public class Instance {
 
 // Other
 
-//        addStrippables();
-        addOxidizable();
-//        addPathBlocks();
+        addStrippables();
+        addFlattenables();
+        addOxidizables();
     }
 
-//    public static void addStrippables() {
-//        StrippableBlockRegistry.register(WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG);
-//        StrippableBlockRegistry.register(WHITE_OAK_WOOD, STRIPPED_WHITE_OAK_WOOD);
-//        for (WoodenPostBundle bundle : WoodenPostBundle.values()) {
-//            for (WoodenPostBundle.WoodenPostVariants variants : bundle.woodMap().values()) {
-//                StrippableBlockRegistry.register(variants.block(), variants.stripped());
-//            }
-//        }
-//    }
 
-    public static void addOxidizable() {
+    public static void addStrippables() {
+        BlockTransformerHelper.registerStripping(WHITE_OAK_LOG, STRIPPED_WHITE_OAK_LOG);
+        BlockTransformerHelper.registerStripping(WHITE_OAK_WOOD, STRIPPED_WHITE_OAK_WOOD);
+        for (WoodenPostBundle bundle : WoodenPostBundle.values()) {
+            for (WoodenPostBundle.WoodenPostVariants variants : bundle.woodMap().values()) {
+                BlockTransformerHelper.registerStripping(variants.block(), variants.stripped());
+            }
+        }
+    }
+
+    public static void addFlattenables() {
+        BlockTransformerHelper.registerFlattening(Blocks.DIRT_PATH, PATH.defaultBlockState());
+        BlockTransformerHelper.registerFlattening(PATH, Blocks.DIRT.defaultBlockState());
+    }
+
+    public static void addOxidizables() {
         registerOxidizable(COPPER_BRICKS);
         registerOxidizable(COPPER_TUFF_BRICKS);
         registerOxidizable(COPPER_LANTERN_BLOCK.blocks());
@@ -188,8 +196,4 @@ public class Instance {
         registerOxidizable(block.wall().blocks());
     }
 
-//    public static void addPathBlocks() {
-//        FlattenableBlockRegistry.register(Blocks.DIRT_PATH, PATH.defaultBlockState());
-//        FlattenableBlockRegistry.register(PATH, Blocks.DIRT.defaultBlockState());
-//    }
 }

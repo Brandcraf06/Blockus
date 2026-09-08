@@ -20,7 +20,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
         BlockusBlockTagProvider blockTags = pack.addProvider(BlockusBlockTagProvider::new);
         pack.addProvider((output, registries) -> new BlockusItemTagProvider(output, registries, blockTags));
 
-//        pack.addProvider(BlockusBlockLootTableProvider::new);
+        pack.addProvider(BlockusBlockLootTableProvider::new);
         pack.addProvider(BlockusWorldgenProvider::new);
         pack.addProvider(BlockusLangEnProvider::new);
         pack.addProvider(BlockusModelProvider::new);
@@ -31,6 +31,7 @@ public class BlockusDatagen implements DataGeneratorEntrypoint {
     public void buildRegistry(RegistrySetBuilder registryBuilder) {
         registryBuilder.add(Registries.FEATURE, BlockusWorldgenProvider::bootstrapFeatures);
         registryBuilder.add(Registries.PLACED_FEATURE, BlockusWorldgenProvider::bootstrapPlacedFeatures);
+        registryBuilder.add(Registries.BLOCK_STATE_PROVIDER, BlockusWorldgenProvider::bootstrapBlockStateProvider);
     }
 
     public static ResourceCondition getLoadCondition(String... modIds) {

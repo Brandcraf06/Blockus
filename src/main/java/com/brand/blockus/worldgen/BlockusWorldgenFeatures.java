@@ -3,14 +3,13 @@ package com.brand.blockus.worldgen;
 import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.worldgen.foliage.WhiteOakFoliagePlacer;
-import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -19,14 +18,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.FallenTreeFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLogsDecorator;
@@ -67,12 +64,16 @@ public class BlockusWorldgenFeatures {
     public static final ResourceKey<Feature> RAINBOW_ROSE = configured("rainbow_rose");
     public static final ResourceKey<PlacedFeature> PLACED_RAINBOW_ROSE = placed("rainbow_rose");
 
-    public static TreeFeature.Builder createWhiteOak(BlockStateProvider belowTrunkProvider) {
-        return new TreeFeature.Builder(BlockStateProvider.simple(BlockusBlocks.WHITE_OAK_LOG), new StraightTrunkPlacer(7, 1, 0), BlockStateProvider.simple(BlockusBlocks.WHITE_OAK_LEAVES), new WhiteOakFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(6), 0.33F, 0.25F, 0.25F, 0.50F), new TwoLayersFeatureSize(1, 0, 1), belowTrunkProvider).ignoreVines();
+    public static TreeFeature.Builder createWhiteOak(Holder<BlockStateProvider> belowTrunkProvider) {
+        return new TreeFeature.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG), new StraightTrunkPlacer(7, 1, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES), new WhiteOakFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(6), 0.33F, 0.25F, 0.25F, 0.50F), new TwoLayersFeatureSize(1, 0, 1), belowTrunkProvider).ignoreVines();
     }
 
-    public static TreeFeature.Builder createLegacyOak(BlockStateProvider belowTrunkProvider) {
-        return new TreeFeature.Builder(BlockStateProvider.simple(BlockusBlocks.LEGACY_LOG), new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.simple(BlockusBlocks.LEGACY_LEAVES), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1), belowTrunkProvider).decorators(ImmutableList.of(new AlterGroundDecorator(RuleBasedStateProvider.ifTrueThenProvide(BlockPredicate.matchesTag(BlockTags.SUBSTRATE_OVERWORLD), BlockusBlocks.LEGACY_GRASS_BLOCK))));
+    public static TreeFeature.Builder createLegacyOak(Holder<BlockStateProvider> belowTrunkProvider, Holder<BlockStateProvider> legacyGrass) {
+        return new TreeFeature.Builder(BlockStateProvider.of(BlockusBlocks.LEGACY_LOG), new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.of(BlockusBlocks.LEGACY_LEAVES), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1), belowTrunkProvider).decorators(List.of(new AlterGroundDecorator(legacyGrass)));
+    }
+
+    public static FallenTreeFeature.Builder createFallenTrees(Block logBlock, int minLength, int maxLength) {
+        return FallenTreeFeature.builder(BlockStateProvider.of(logBlock), UniformInt.of(minLength, maxLength)).logDecorator(new AttachedToLogsDecorator(0.1F, Holder.direct(new WeightedStateProvider(WeightedList.<BlockState>builder().add(Blocks.RED_MUSHROOM.defaultBlockState(), 2).add(Blocks.BROWN_MUSHROOM.defaultBlockState(), 1))), List.of(Direction.UP)));
     }
 
     public static void registerConfiguredFeature() {
@@ -114,9 +115,5 @@ public class BlockusWorldgenFeatures {
 
     public static ResourceKey<PlacedFeature> placed(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, Blockus.id(name));
-    }
-
-    public static FallenTreeFeature.Builder fallen(Block log, int minLength, int maxLength) {
-        return new FallenTreeFeature.Builder(BlockStateProvider.simple(log), UniformInt.of(minLength, maxLength)).logDecorator(new AttachedToLogsDecorator(0.1F, new WeightedStateProvider(WeightedList.<BlockState>builder().add(Blocks.RED_MUSHROOM.defaultBlockState(), 2).add(Blocks.BROWN_MUSHROOM.defaultBlockState(), 1)), List.of(Direction.UP)));
     }
 }

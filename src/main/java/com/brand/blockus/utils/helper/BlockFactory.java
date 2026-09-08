@@ -24,7 +24,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
 import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.function.BiFunction;
@@ -179,7 +179,7 @@ public class BlockFactory {
         return wall(BuiltInRegistries.BLOCK.getKey(base).getPath(), base);
     }
 
-    public static Block hedge(String id, Block base, ResourceKey<NumberProvider> compostable) {
+    public static Block hedge(String id, Block base, ResourceKey<ContextIntProvider> compostable) {
         return copy(base).factory(HedgeBlock::new).itemProperties(p -> p.compostable(compostable)).register(BlockusIds.create(id));
     }
 
@@ -234,7 +234,7 @@ public class BlockFactory {
         return create().mapColor(color).instrument(instrument).strength(hardness, resistance).sound(sound).noOcclusion().pushReaction(PushReaction.POPPED);
     }
 
-    public static Block woodenDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<NumberProvider> cookingFuel) {
+    public static Block woodenDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> cookingFuel) {
         return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new DoorBlock(blockSetType, properties)).itemProperties(p -> p.cookingFuel(cookingFuel)).register(BlockusIds.create(id));
     }
 
@@ -242,7 +242,7 @@ public class BlockFactory {
         return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()).factory(properties -> new DoorBlock(blockSetType, properties)).register(BlockusIds.create(id));
     }
 
-    public static Block woodenTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<NumberProvider> cookingFuel) {
+    public static Block woodenTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> cookingFuel) {
         return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).itemProperties(p -> p.cookingFuel(cookingFuel)).register(BlockusIds.create(id));
     }
 
@@ -319,7 +319,7 @@ public class BlockFactory {
     }
 
     // Other
-    public static Block woodenPane(String id, ResourceKey<NumberProvider> cookingFuel) {
+    public static Block woodenPane(String id, ResourceKey<ContextIntProvider> cookingFuel) {
         return registerOf(id, IronBarsBlock::new, create().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(SoundType.WOOD).ignitedByLava(), p -> p.cookingFuel(cookingFuel));
     }
 

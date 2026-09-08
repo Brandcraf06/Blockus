@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.WaterloggedTransparentBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.storage.loot.providers.number.NumberProviders;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -31,7 +31,7 @@ public record TimberFrameBundle(Map<WoodMaps, TimberFrameVariants> woodMap) {
     }
 
     public static UnaryOperator<Item.Properties> itemProperties(boolean isBurnable) {
-        return isBurnable ? p -> p.cookingFuel(NumberProviders.COOKING_TIME_WOOD_BLOCKS) : UnaryOperator.identity();
+        return isBurnable ? p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS) : UnaryOperator.identity();
     }
 
     public List<Block> all() {
