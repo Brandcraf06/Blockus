@@ -3,8 +3,6 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.utils.BlockChecker;
 import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.BlockFactory;
-import com.brand.blockus.utils.helper.BlockOrder;
-import com.brand.blockus.utils.helper.WoodMaps;
 import com.brand.blockus.utils.references.BlockusIds;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
@@ -16,7 +14,6 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.UnaryOperator;
 
