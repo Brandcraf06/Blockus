@@ -58,7 +58,6 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_VIRIDITE_EXTRA);
 
         entries.add(registries.lookupOrThrow(Registries.FEATURE), WHITE_OAK);
-        entries.add(registries.lookupOrThrow(Registries.FEATURE), WHITE_OAK_LEAF_LITTER);
         entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_WHITE_OAK);
         entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_WHITE_OAK_RARE);
         entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), WHITE_OAK_CHECKED);
@@ -85,10 +84,7 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         context.register(VIRIDITE, new OreFeature(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block().defaultBlockState(), 33));
         context.register(VIRIDITE_EXTRA, new OreFeature(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), BlockusBlocks.VIRIDITE.block().defaultBlockState(), 42));
 
-        PlaceOnGroundDecorator sparseLeafLitter = new PlaceOnGroundDecorator(96, 4, 2, Holder.direct(new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 3))));
-        PlaceOnGroundDecorator thickLeafLitter = new PlaceOnGroundDecorator(150, 2, 2, Holder.direct(new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 4))));
         context.register(WHITE_OAK, createWhiteOak(belowTrunkProvider).build());
-        context.register(WHITE_OAK_LEAF_LITTER, createWhiteOak(belowTrunkProvider).decorators(ImmutableList.of(sparseLeafLitter, thickLeafLitter)).build());
         context.register(FALLEN_WHITE_OAK, createFallenTrees(BlockusBlocks.WHITE_OAK_LOG, 4, 9).build());
         context.register(LEGACY_OAK, createLegacyOak(belowTrunkProvider, blockStateProviders.getOrThrow(LEGACY_GRASS_BENEATH_TREE)).build());
         context.register(RAINBOW_ROSE, new SimpleBlockFeature(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)));
@@ -113,10 +109,10 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         PlacementUtils.register(context, PLACED_VIRIDITE_EXTRA, configuredFeatures.getOrThrow(VIRIDITE_EXTRA), modifiersWithCount(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(-16))));
 
         // white oak
-        Holder<Feature> whiteOakLeafLitter = configuredFeatures.getOrThrow(WHITE_OAK_LEAF_LITTER);
-        PlacementUtils.register(context, PLACED_WHITE_OAK, whiteOakLeafLitter, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.04F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
-        PlacementUtils.register(context, PLACED_WHITE_OAK_RARE, whiteOakLeafLitter, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.0125F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
-        PlacementUtils.register(context, WHITE_OAK_CHECKED, configuredFeatures.getOrThrow(WHITE_OAK), PlacementUtils.filteredByBlockSurvival(BlockusBlocks.WHITE_OAK_SAPLING));
+        Holder<Feature> whiteOak = configuredFeatures.getOrThrow(WHITE_OAK);
+        PlacementUtils.register(context, PLACED_WHITE_OAK, whiteOak, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.04F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
+        PlacementUtils.register(context, PLACED_WHITE_OAK_RARE, whiteOak, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.0125F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
+        PlacementUtils.register(context, WHITE_OAK_CHECKED, whiteOak, PlacementUtils.filteredByBlockSurvival(BlockusBlocks.WHITE_OAK_SAPLING));
         PlacementUtils.register(context, PLACED_FALLEN_WHITE_OAK, configuredFeatures.getOrThrow(FALLEN_WHITE_OAK), VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.0125F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
 
         // legacy oak

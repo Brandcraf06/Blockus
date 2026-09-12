@@ -51,7 +51,6 @@ public class BlockusWorldgenFeatures {
     public static final ResourceKey<PlacedFeature> PLACED_VIRIDITE_EXTRA = placed("ore_viridite_extra");
 
     public static final ResourceKey<Feature> WHITE_OAK = configured("white_oak");
-    public static final ResourceKey<Feature> WHITE_OAK_LEAF_LITTER = configured("white_oak_leaf_litter");
     public static final ResourceKey<PlacedFeature> PLACED_WHITE_OAK = placed("white_oak");
     public static final ResourceKey<PlacedFeature> PLACED_WHITE_OAK_RARE = placed("white_oak_rare");
     public static final ResourceKey<PlacedFeature> WHITE_OAK_CHECKED = placed("white_oak_checked");
@@ -88,8 +87,8 @@ public class BlockusWorldgenFeatures {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Decoration.UNDERGROUND_ORES, PLACED_VIRIDITE);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.DEEP_DARK), GenerationStep.Decoration.UNDERGROUND_ORES, PLACED_VIRIDITE_EXTRA);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.FOREST, Biomes.DARK_FOREST, Biomes.FLOWER_FOREST), GenerationStep.Decoration.VEGETAL_DECORATION, PLACED_WHITE_OAK);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.FOREST, Biomes.DARK_FOREST, Biomes.FLOWER_FOREST), GenerationStep.Decoration.VEGETAL_DECORATION, PLACED_FALLEN_WHITE_OAK);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.FOREST, Biomes.DARK_FOREST, Biomes.FLOWER_FOREST, Biomes.CHERRY_GROVE), GenerationStep.Decoration.VEGETAL_DECORATION, PLACED_WHITE_OAK);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.FOREST, Biomes.FLOWER_FOREST), GenerationStep.Decoration.VEGETAL_DECORATION, PLACED_FALLEN_WHITE_OAK);
         BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.IS_PLAINS), GenerationStep.Decoration.VEGETAL_DECORATION, PLACED_WHITE_OAK_RARE);
         BiomeModifications.addFeature(BiomeSelectors.tag(ConventionalBiomeTags.IS_PLAINS), GenerationStep.Decoration.VEGETAL_DECORATION, PLACED_FALLEN_WHITE_OAK);
 

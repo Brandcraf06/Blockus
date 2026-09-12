@@ -385,7 +385,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STRIPPED_WHITE_OAK_LOG = pillar2("stripped_white_oak_log", WHITE_OAK_LOG);
     public static final Block WHITE_OAK_WOOD = pillar2("white_oak_wood", WHITE_OAK_LOG);
     public static final Block STRIPPED_WHITE_OAK_WOOD = pillar2("stripped_white_oak_wood", WHITE_OAK_LOG);
-    public static final Block WHITE_OAK_LEAVES = registerOf("white_oak_leaves", (p) -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 14061641), AmbientLeavesBlockSoundPlayer.noAmbientSound(), p), Blocks.leavesProperties(SoundType.GRASS), p -> p.compostable(ContextIntProviders.COMPOSTABLE_LOW));
+    public static final Block WHITE_OAK_LEAVES = registerOf("white_oak_leaves", (p) -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 12224701), AmbientLeavesBlockSoundPlayer.noAmbientSound(), p), Blocks.leavesProperties(SoundType.GRASS), p -> p.compostable(ContextIntProviders.COMPOSTABLE_LOW));
     public static final WoodBundle WHITE_OAK = WoodBundle.register("white_oak", Blocks.OAK_PLANKS, MapColor.QUARTZ, SoundType.WOOD, WHITE_OAK_WOOD_TYPE, BlockSetType.OAK, true);
 
     // Raw Bamboo

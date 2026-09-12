@@ -3,7 +3,11 @@
 * Added Red, Orange & Yellow Poplar Small Hedges 
 * Added Large Potted Poplar
 * Added Rainbow Wool Stairs & Slab
-* Prismarine blocks can now be used as in conduit structure
+* Changed White Oak Leaves texture (now purple instead of orange)
+* White Oak no longer generate with leaf litters
+* White Oak now generate in Cherry Groves
+* Fallen White Oak no longer generate in Dark Forests
+* Prismarine blocks can now be used in conduit structure
 * Food crates and bread boxes can no longer be composted
 * Paper and Dried Kelp can no longer be used as fuel (vanilla behavior that was modified by the mod)
 * Added `beveled_glass_panes` block tag
