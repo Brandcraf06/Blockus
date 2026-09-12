@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.function.BiFunction;
@@ -35,6 +36,10 @@ public class BlockFactory {
 
     public static String replaceId(String id) {
         return id.replace("bricks", "brick").replace("tiles", "tile").replace("_block", "").replace("_planks", "");
+    }
+
+    public static String getBlockId(Block block) {
+        return BuiltInRegistries.BLOCK.getKey(block).getPath();
     }
 
     // Base
@@ -127,60 +132,76 @@ public class BlockFactory {
         return basePillar(base).register(BlockusIds.create(id));
     }
 
+    public static Block pillar2(String id, Block base, UnaryOperator<Item.Properties> itemProperties) {
+        return basePillar(base).itemProperties(itemProperties).register(BlockusIds.create(id));
+    }
+
     public static Block pillar(Block base) {
-        return pillar(BuiltInRegistries.BLOCK.getKey(base).getPath(), base);
+        return pillar(getBlockId(base), base);
     }
 
     // Slab
-    public static Block slab(String id, Block base) {
-        String slabId = replaceId(id) + "_slab";
-        if (BlockChecker.isAmethyst(id)) {
-            return copy(base).factory(AmethystSlabBlock::new).register(BlockusIds.create(slabId));
-        } else if (BlockChecker.isRedstone(id)) {
-            return copy(base).factory(RedstoneSlabBlock::new).register(BlockusIds.create(slabId));
+    public static Block slab(String type, Block base) {
+        String id = replaceId(type) + "_slab";
+        if (BlockChecker.isAmethyst(type)) {
+            return copy(base).factory(AmethystSlabBlock::new).register(BlockusIds.create(id));
+        } else if (BlockChecker.isRedstone(type)) {
+            return copy(base).factory(RedstoneSlabBlock::new).register(BlockusIds.create(id));
+        } else if (type == "thatch") {
+            return copy(base).factory(SlabBlock::new).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM).register(BlockusIds.create(id));
         } else {
-            return copy(base).factory(SlabBlock::new).register(BlockusIds.create(slabId));
+            return copy(base).factory(SlabBlock::new).register(BlockusIds.create(id));
         }
     }
 
     public static Block slab(Block base) {
-        return slab(BuiltInRegistries.BLOCK.getKey(base).getPath(), base);
+        return slab(getBlockId(base), base);
+    }
+
+    public static Block slab(Block base, UnaryOperator<Item.Properties> itemProperties) {
+        return registerCopyWithItemProperties(replaceId(getBlockId(base)) + "_slab", SlabBlock::new, base, itemProperties);
     }
 
     // Stairs
-    public static Block stairs(String id, Block base) {
-        String stairsId = replaceId(id) + "_stairs";
-        if (BlockChecker.isAmethyst(id)) {
-            return copy(base).factory(properties -> new AmethystStairsBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(stairsId));
-        } else if (BlockChecker.isRedstone(id)) {
-            return copy(base).factory(properties -> new RedstoneStairsBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(stairsId));
+    public static Block stairs(String type, Block base) {
+        String id = replaceId(type) + "_stairs";
+        if (BlockChecker.isAmethyst(type)) {
+            return copy(base).factory(properties -> new AmethystStairsBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(id));
+        } else if (BlockChecker.isRedstone(type)) {
+            return copy(base).factory(properties -> new RedstoneStairsBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(id));
+        } else if (type.equals("thatch")) {
+            return copy(base).factory(properties -> new StairBlock(base.defaultBlockState(), properties)).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM_HIGH).register(BlockusIds.create(id));
         } else {
-            return copy(base).factory(properties -> new StairBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(stairsId));
+            return copy(base).factory(properties -> new StairBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(id));
         }
     }
 
     public static Block stairs(Block base) {
-        return stairs(BuiltInRegistries.BLOCK.getKey(base).getPath(), base);
+        return stairs(getBlockId(base), base);
+    }
+
+    public static Block stairs(Block base, UnaryOperator<Item.Properties> itemProperties) {
+        return registerCopyWithItemProperties(replaceId(getBlockId(base)) + "_stairs", properties -> new StairBlock(base.defaultBlockState(), properties), base, itemProperties);
     }
 
     // Wall
-    public static Block wall(String id, Block base) {
-        String wallId = replaceId(id) + "_wall";
-        if (BlockChecker.isAmethyst(id)) {
-            return copy(base).factory(AmethystWallBlock::new).register(BlockusIds.create(wallId));
-        } else if (BlockChecker.isRedstone(id)) {
-            return copy(base).factory(RedstoneWallBlock::new).register(BlockusIds.create(wallId));
+    public static Block wall(String type, Block base) {
+        String id = replaceId(type) + "_wall";
+        if (BlockChecker.isAmethyst(type)) {
+            return copy(base).factory(AmethystWallBlock::new).register(BlockusIds.create(id));
+        } else if (BlockChecker.isRedstone(type)) {
+            return copy(base).factory(RedstoneWallBlock::new).register(BlockusIds.create(id));
         } else {
-            return copy(base).factory(WallBlock::new).register(BlockusIds.create(wallId));
+            return copy(base).factory(WallBlock::new).register(BlockusIds.create(id));
         }
     }
 
     public static Block wall(Block base) {
-        return wall(BuiltInRegistries.BLOCK.getKey(base).getPath(), base);
+        return wall(getBlockId(base), base);
     }
 
     public static Block hedge(String id, Block base, ResourceKey<ContextIntProvider> compostable) {
-        return copy(base).factory(HedgeBlock::new).itemProperties(p -> p.compostable(compostable)).register(BlockusIds.create(id));
+        return copy(base).factory(HedgeBlock::new).compostable(compostable).register(BlockusIds.create(id));
     }
 
     // Pressure Plate & Button
@@ -188,24 +209,24 @@ public class BlockFactory {
         return create().mapColor(base.defaultMapColor()).strength(0.5f).instrument(base.defaultBlockState().instrument()).noCollision().pushReaction(PushReaction.POPPED);
     }
 
-    public static Block pressurePlate(String id, Block base, BlockSetType blockSetType) {
-        return of(pressurePlateButtonProperties(base).forceSolidOn()).factory(properties -> new PressurePlateBlock(blockSetType, properties)).register(BlockusIds.create(replaceId(id) + "_pressure_plate"));
+    public static Block pressurePlate(Block base, BlockSetType blockSetType) {
+        return of(pressurePlateButtonProperties(base).forceSolidOn()).factory(properties -> new PressurePlateBlock(blockSetType, properties)).register(BlockusIds.create(replaceId(getBlockId(base)) + "_pressure_plate"));
     }
 
-    public static Block pressurePlate(Block base, BlockSetType blockSetType) {
-        return pressurePlate(BuiltInRegistries.BLOCK.getKey(base).getPath(), base, blockSetType);
+    public static Block pressurePlate(Block base, BlockSetType blockSetType, UnaryOperator<Item.Properties> itemProperties) {
+        return of(pressurePlateButtonProperties(base).forceSolidOn()).factory(properties -> new PressurePlateBlock(blockSetType, properties)).itemProperties(itemProperties).register(BlockusIds.create(replaceId(getBlockId(base)) + "_pressure_plate"));
     }
 
     public static Block stonePressurePlate(Block base) {
         return pressurePlate(base, BlockSetType.STONE);
     }
 
-    public static Block button(String id, Block base, BlockSetType blockSetType, int pressTicks) {
-        return of(pressurePlateButtonProperties(base)).factory(properties -> new ButtonBlock(blockSetType, pressTicks, properties)).register(BlockusIds.create(replaceId(id) + "_button"));
+    public static Block button(Block base, BlockSetType blockSetType, int pressTicks) {
+        return of(pressurePlateButtonProperties(base)).factory(properties -> new ButtonBlock(blockSetType, pressTicks, properties)).register(BlockusIds.create(replaceId(getBlockId(base)) + "_button"));
     }
 
-    public static Block button(Block base, BlockSetType blockSetType, int pressTicks) {
-        return button(BuiltInRegistries.BLOCK.getKey(base).getPath(), base, blockSetType, pressTicks);
+    public static Block button(Block base, BlockSetType blockSetType, int pressTicks, UnaryOperator<Item.Properties> itemProperties) {
+        return of(pressurePlateButtonProperties(base)).factory(properties -> new ButtonBlock(blockSetType, pressTicks, properties)).itemProperties(itemProperties).register(BlockusIds.create(replaceId(getBlockId(base)) + "_button"));
     }
 
     public static Block stoneButton(Block base) {
@@ -235,7 +256,7 @@ public class BlockFactory {
     }
 
     public static Block woodenDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> cookingFuel) {
-        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new DoorBlock(blockSetType, properties)).itemProperties(p -> p.cookingFuel(cookingFuel)).register(BlockusIds.create(id));
+        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new DoorBlock(blockSetType, properties)).cookingFuel(cookingFuel).register(BlockusIds.create(id));
     }
 
     public static Block stoneDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
@@ -243,7 +264,7 @@ public class BlockFactory {
     }
 
     public static Block woodenTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> cookingFuel) {
-        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).itemProperties(p -> p.cookingFuel(cookingFuel)).register(BlockusIds.create(id));
+        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).cookingFuel(cookingFuel).register(BlockusIds.create(id));
     }
 
     public static Block stoneTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {

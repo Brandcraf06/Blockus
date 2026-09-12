@@ -19,13 +19,6 @@ public class Instance {
 
 
 // Burning
-        // Fuel
-//        FuelValueEvents.BUILD.register((builder, context) -> {
-//            builder.add(Items.DRIED_KELP, 200);
-//            builder.add(Items.PAPER, 100);
-//            builder.add(PAPER_BLOCK, 400);
-//        });
-
         // General
         FlammableBlockRegistry.getDefaultInstance().add(WOODEN_FRAME, 30, 60);
 
@@ -84,11 +77,6 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.slab(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.fence(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.fenceGate(), 5, 20);
-//                FuelValueEvents.BUILD.register((builder, context) -> {
-//                    builder.add(bundle.fence(), 300);
-//                    builder.add(bundle.fenceGate(), 300);
-//                    builder.add(bundle.shelf(), 300);
-//                });
             }
         }
 
@@ -108,12 +96,6 @@ public class Instance {
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.block(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.stairs(), 5, 20);
                 FlammableBlockRegistry.getDefaultInstance().add(bundle.slab(), 5, 20);
-
-//                FuelValueEvents.BUILD.register((builder, context) -> {
-//                    builder.add(bundle.block(), 300);
-//                    builder.add(bundle.stairs(), 300);
-//                    builder.add(bundle.slab(), 150);
-//                });
             }
         }
 
@@ -148,11 +130,6 @@ public class Instance {
 
         // Legacy blocks
         FlammableBlockRegistry.getDefaultInstance().add(LEGACY_LOG, 5, 5);
-
-// Composting
-//        CompostableRegistry.INSTANCE.add(THATCH.slab(), 0.65f);
-//        CompostableRegistry.INSTANCE.add(THATCH.block(), 0.75f);
-//        CompostableRegistry.INSTANCE.add(THATCH.stairs(), 0.75f);
 
 // Other
 

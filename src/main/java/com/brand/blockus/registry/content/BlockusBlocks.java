@@ -33,6 +33,8 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
+import java.util.function.UnaryOperator;
+
 public class BlockusBlocks extends BlockFactory {
 
     // Stone
@@ -387,7 +389,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final WoodBundle WHITE_OAK = WoodBundle.register("white_oak", Blocks.OAK_PLANKS, MapColor.QUARTZ, SoundType.WOOD, WHITE_OAK_WOOD_TYPE, BlockSetType.OAK, true);
 
     // Raw Bamboo
-    private static final WoodType RAW_BAMBOO_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.BAMBOO).register(Blockus.id("raw_bamboo"), BlockSetTypeBuilder.copyOf(BlockSetType.BAMBOO).register(Blockus.id("raw_bamboo")));
+    public static final WoodType RAW_BAMBOO_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.BAMBOO).register(Blockus.id("raw_bamboo"), BlockSetTypeBuilder.copyOf(BlockSetType.BAMBOO).register(Blockus.id("raw_bamboo")));
     public static final WoodBundle RAW_BAMBOO = WoodBundle.register("raw_bamboo", Blocks.BAMBOO_PLANKS, MapColor.PLANT, SoundType.BAMBOO_WOOD, RAW_BAMBOO_WOOD_TYPE, BlockSetType.BAMBOO, true);
 
     // Charred
@@ -397,12 +399,11 @@ public class BlockusBlocks extends BlockFactory {
     // Extra Wood Blocks
     public static final ExtraWoodBundle<BSSWBundle> WOODEN_MOSAIC = ExtraWoodBundle.register(wood -> wood + "_mosaic", WoodMaps.PLANKS_MAP::get, ExtraWoodBundle.exclude(WoodMaps.BAMBOO));
     public static final ExtraWoodBundle<BSSWBundle> MOSSY_PLANKS = ExtraWoodBundle.register(wood -> "mossy_" + wood + "_planks", WoodMaps.PLANKS_MAP::get);
-    public static final ExtraWoodBundle<Block> HERRINGBONE_PLANKS = ExtraWoodBundle.of(wood -> registerCopy("herringbone_" + wood + "_planks", WoodMaps.PLANKS_MAP.get(wood)));
+    public static final ExtraWoodBundle<Block> HERRINGBONE_PLANKS = ExtraWoodBundle.of(wood -> registerCopyWithItemProperties("herringbone_" + wood.getId() + "_planks", WoodMaps.PLANKS_MAP.get(wood.getId()), wood.data().isBurnable() ? p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS) : UnaryOperator.identity()));
     public static final ExtraWoodBundle<Block> SMALL_LOGS = ExtraWoodBundle.of(wood -> {
-        Block log = WoodMaps.LOG_MAP.get(wood);
+        Block log = WoodMaps.LOG_MAP.get(wood.getId());
         if (log == null) return null;
-        String suffix = (wood.equals(WoodMaps.CRIMSON.getId()) || wood.equals(WoodMaps.WARPED.getId())) ? "stems" : "logs";
-        return pillar2("small_" + wood + "_" + suffix, log);
+        return pillar2("small_" + wood.getId() + "_" + ((wood == WoodMaps.CRIMSON || wood == WoodMaps.WARPED) ? "stems" : "logs"), log, wood.data().isBurnable() ? p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS) : UnaryOperator.identity());
     });
     public static final WoodenPostBundle WOODEN_POST = WoodenPostBundle.register();
     public static final TimberFrameBundle TIMBER_FRAME = TimberFrameBundle.register();
@@ -584,7 +585,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle THATCH = BSSWBundle.of("thatch", Blocks.HAY_BLOCK).includeWall(false).register();
 
     // Paper
-    public static final Block PAPER_BLOCK = registerOf("paper_block", create().mapColor(MapColor.QUARTZ).strength(0.1f, 0.8f).sound(SoundType.GRASS));
+    public static final Block PAPER_BLOCK = registerOf("paper_block", create().mapColor(MapColor.QUARTZ).strength(0.1f, 0.8f).sound(SoundType.GRASS), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     public static final Block BURNT_PAPER_BLOCK = registerOf("burnt_paper_block", create().mapColor(MapColor.STONE).strength(0.1f, 0.8f).sound(SoundType.GRASS));
     public static final Block FRAMED_PAPER_BLOCK = registerOf("framed_paper_block", create().mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(SoundType.WOOD).ignitedByLava(), p -> p.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS));
     public static final Block PAPER_WALL = woodenPane("paper_wall", ContextIntProviders.COOKING_TIME_WOOD_SLABS);

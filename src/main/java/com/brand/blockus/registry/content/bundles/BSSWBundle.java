@@ -3,17 +3,22 @@ package com.brand.blockus.registry.content.bundles;
 import com.brand.blockus.utils.BlockChecker;
 import com.brand.blockus.utils.helper.BlockBuilder;
 import com.brand.blockus.utils.helper.BlockFactory;
+import com.brand.blockus.utils.helper.BlockOrder;
+import com.brand.blockus.utils.helper.WoodMaps;
 import com.brand.blockus.utils.references.BlockusIds;
 import net.minecraft.references.BlockItemId;
-import net.minecraft.world.level.block.AmethystBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.PoweredBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.UnaryOperator;
 
 public record BSSWBundle(
     String type,
@@ -28,6 +33,10 @@ public record BSSWBundle(
 
     public static List<BSSWBundle> values() {
         return LIST;
+    }
+
+    public static UnaryOperator<Item.Properties> itemProperties(ResourceKey<ContextIntProvider> burnTime, boolean isBurnable) {
+        return isBurnable ? p -> p.cookingFuel(burnTime) : UnaryOperator.identity();
     }
 
     public static Builder of(String type, BlockBuilder blockBuilder) {
@@ -111,7 +120,8 @@ public record BSSWBundle(
             return this;
         }
 
-        public BSSWBundle register() {
+        public BSSWBundle register(boolean isBurnable) {
+            Block base = blockBuilder.getBase();
             if (BlockChecker.isAmethyst(type)) {
                 blockBuilder.factory(AmethystBlock::new);
             } else if (BlockChecker.isRedstone(type)) {
@@ -119,17 +129,29 @@ public record BSSWBundle(
             } else {
                 blockBuilder.factory(Block::new);
             }
-            Block base = blockBuilder.getBase();
-            Block block = blockBuilder.register(BlockusIds.create(type));
+
+            Block block;
+            if (isBurnable) {
+                block = blockBuilder.cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS).register(BlockusIds.create(type));
+            } else if (base == Blocks.HAY_BLOCK) {
+                block = blockBuilder.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM_HIGH).register(BlockusIds.create(type));
+            } else {
+                block = blockBuilder.register(BlockusIds.create(type));
+            }
+
             BSSWBundle bundle = new BSSWBundle(type,
                 base,
                 block,
-                BlockFactory.stairs(block),
-                BlockFactory.slab(block),
+                BlockFactory.stairs(block, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable)),
+                BlockFactory.slab(block, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_SLABS, isBurnable)),
                 includeWall ? BlockFactory.wall(block) : null
             );
             LIST.add(bundle);
             return bundle;
+        }
+
+        public BSSWBundle register() {
+            return register(false);
         }
     }
 }

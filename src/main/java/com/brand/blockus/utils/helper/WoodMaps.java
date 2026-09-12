@@ -54,13 +54,7 @@ public enum WoodMaps {
         return data;
     }
 
-    public record WoodData(
-        Block planks,
-        Block slab,
-        Block log,
-        Block strippedLog,
-        boolean isBurnable
-    ) {
+    public record WoodData(Block planks, Block slab, Block log, Block strippedLog, boolean isBurnable) {
         public boolean isBurnable() {
             return isBurnable;
         }

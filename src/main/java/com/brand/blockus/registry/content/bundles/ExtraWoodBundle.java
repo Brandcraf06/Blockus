@@ -32,10 +32,10 @@ public class ExtraWoodBundle<T> {
         }
     }
 
-    public static <T> ExtraWoodBundle<T> of(Function<String, T> blockFactory) {
+    public static <T> ExtraWoodBundle<T> of(Function<WoodMaps, T> blockFactory) {
         Map<String, T> map = new LinkedHashMap<>();
         for (WoodMaps wood : WoodMaps.values()) {
-            T block = blockFactory.apply(wood.getId());
+            T block = blockFactory.apply(wood);
             if (block != null) {
                 map.put(wood.getId(), block);
             }
@@ -49,7 +49,7 @@ public class ExtraWoodBundle<T> {
             if (exclude.contains(wood)) continue;
             String id = string.apply(wood.getId());
             Block baseBlock = baseBlockProvider.apply(wood.getId());
-            BSSWBundle bundle = BSSWBundle.of(id, baseBlock).includeWall(false).register();
+            BSSWBundle bundle = BSSWBundle.of(id, baseBlock).includeWall(false).register(wood.data().isBurnable());
             map.put(wood.getId(), bundle);
         }
         return new ExtraWoodBundle<>(map);
