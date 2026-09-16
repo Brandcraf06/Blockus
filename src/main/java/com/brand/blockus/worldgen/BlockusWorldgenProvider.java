@@ -2,41 +2,90 @@ package com.brand.blockus.worldgen;
 
 import com.brand.blockus.Blockus;
 import com.brand.blockus.registry.content.BlockusBlocks;
-import com.google.common.collect.ImmutableList;
+import com.brand.blockus.worldgen.foliage.WhiteOakFoliagePlacer;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.random.WeightedList;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.OreFeature;
-import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
+import net.minecraft.world.level.levelgen.feature.*;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
-import net.minecraft.world.level.levelgen.feature.treedecorators.PlaceOnGroundDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLogsDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static com.brand.blockus.worldgen.BlockusWorldgenFeatures.*;
-
 public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
-    public static ResourceKey<BlockStateProvider> LEGACY_GRASS_BENEATH_TREE = key("legacy_grass_beneath_tree");
+
+    public static final ResourceKey<BlockStateProvider> LEGACY_GRASS_BENEATH_TREE = ResourceKey.create(Registries.BLOCK_STATE_PROVIDER, Blockus.id("legacy_grass_beneath_tree"));
+
+    public static final ResourceKey<Feature> LIMESTONE = configured("ore_limestone");
+    public static final ResourceKey<PlacedFeature> PLACED_LIMESTONE_UPPER = placed("ore_limestone_upper");
+    public static final ResourceKey<PlacedFeature> PLACED_LIMESTONE_LOWER = placed("ore_limestone_lower");
+
+    public static final ResourceKey<Feature> MARBLE = configured("ore_marble");
+    public static final ResourceKey<PlacedFeature> PLACED_MARBLE = placed("ore_marble");
+
+    public static final ResourceKey<Feature> BLUESTONE = configured("ore_bluestone");
+    public static final ResourceKey<PlacedFeature> PLACED_BLUESTONE = placed("ore_bluestone");
+
+    public static final ResourceKey<Feature> VIRIDITE = configured("ore_viridite");
+    public static final ResourceKey<PlacedFeature> PLACED_VIRIDITE = placed("ore_viridite");
+
+    public static final ResourceKey<Feature> VIRIDITE_EXTRA = configured("ore_viridite_extra");
+    public static final ResourceKey<PlacedFeature> PLACED_VIRIDITE_EXTRA = placed("ore_viridite_extra");
+
+    public static final ResourceKey<Feature> WHITE_OAK = configured("white_oak");
+    public static final ResourceKey<PlacedFeature> PLACED_WHITE_OAK = placed("white_oak");
+    public static final ResourceKey<PlacedFeature> PLACED_WHITE_OAK_RARE = placed("white_oak_rare");
+    public static final ResourceKey<PlacedFeature> WHITE_OAK_CHECKED = placed("white_oak_checked");
+    public static final ResourceKey<Feature> FALLEN_WHITE_OAK = configured("fallen_white_oak");
+    public static final ResourceKey<PlacedFeature> PLACED_FALLEN_WHITE_OAK = placed("fallen_white_oak");
+
+    public static final ResourceKey<Feature> LEGACY_OAK = configured("legacy_oak");
+    public static final ResourceKey<PlacedFeature> LEGACY_OAK_CHECKED = placed("legacy_oak_checked");
+
+    public static final ResourceKey<Feature> RAINBOW_ROSE = configured("rainbow_rose");
+    public static final ResourceKey<PlacedFeature> PLACED_RAINBOW_ROSE = placed("rainbow_rose");
 
     public BlockusWorldgenProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
+    }
+
+    public static TreeFeature.Builder createWhiteOak(Holder<BlockStateProvider> belowTrunkProvider) {
+        return new TreeFeature.Builder(BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LOG), new StraightTrunkPlacer(7, 1, 0), BlockStateProvider.of(BlockusBlocks.WHITE_OAK_LEAVES), new WhiteOakFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(6), 0.33F, 0.25F, 0.25F, 0.50F), new TwoLayersFeatureSize(1, 0, 1), belowTrunkProvider).ignoreVines();
+    }
+
+    public static TreeFeature.Builder createLegacyOak(Holder<BlockStateProvider> belowTrunkProvider, Holder<BlockStateProvider> legacyGrass) {
+        return new TreeFeature.Builder(BlockStateProvider.of(BlockusBlocks.LEGACY_LOG), new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.of(BlockusBlocks.LEGACY_LEAVES), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1), belowTrunkProvider).decorators(List.of(new AlterGroundDecorator(legacyGrass)));
+    }
+
+    public static FallenTreeFeature.Builder createFallenTrees(Block logBlock, int minLength, int maxLength) {
+        return FallenTreeFeature.builder(BlockStateProvider.of(logBlock), UniformInt.of(minLength, maxLength)).logDecorator(new AttachedToLogsDecorator(0.1F, Holder.direct(new WeightedStateProvider(WeightedList.<BlockState>builder().add(Blocks.RED_MUSHROOM.defaultBlockState(), 2).add(Blocks.BROWN_MUSHROOM.defaultBlockState(), 1))), List.of(Direction.UP)));
     }
 
     @Override
@@ -69,6 +118,8 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
 
         entries.add(registries.lookupOrThrow(Registries.FEATURE), RAINBOW_ROSE);
         entries.add(registries.lookupOrThrow(Registries.PLACED_FEATURE), PLACED_RAINBOW_ROSE);
+
+        entries.add(registries.lookupOrThrow(Registries.BLOCK_STATE_PROVIDER), LEGACY_GRASS_BENEATH_TREE);
     }
 
     public static void bootstrapBlockStateProvider(BootstrapContext<BlockStateProvider> context) {
@@ -111,9 +162,9 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         // white oak
         Holder<Feature> whiteOak = configuredFeatures.getOrThrow(WHITE_OAK);
         PlacementUtils.register(context, PLACED_WHITE_OAK, whiteOak, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.04F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
-        PlacementUtils.register(context, PLACED_WHITE_OAK_RARE, whiteOak, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.0125F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
+        PlacementUtils.register(context, PLACED_WHITE_OAK_RARE, whiteOak, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.01F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
         PlacementUtils.register(context, WHITE_OAK_CHECKED, whiteOak, PlacementUtils.filteredByBlockSurvival(BlockusBlocks.WHITE_OAK_SAPLING));
-        PlacementUtils.register(context, PLACED_FALLEN_WHITE_OAK, configuredFeatures.getOrThrow(FALLEN_WHITE_OAK), VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.0125F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
+        PlacementUtils.register(context, PLACED_FALLEN_WHITE_OAK, configuredFeatures.getOrThrow(FALLEN_WHITE_OAK), VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.01F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
 
         // legacy oak
         PlacementUtils.register(context, LEGACY_OAK_CHECKED, configuredFeatures.getOrThrow(LEGACY_OAK), PlacementUtils.filteredByBlockSurvival(BlockusBlocks.LEGACY_SAPLING));
@@ -122,8 +173,24 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         PlacementUtils.register(context, PLACED_RAINBOW_ROSE, configuredFeatures.getOrThrow(RAINBOW_ROSE), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), CountPlacement.of(12), OffsetPlacement.ofTriangle(7, 2), BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE));
     }
 
-    private static ResourceKey<BlockStateProvider> key(String id) {
-        return ResourceKey.create(Registries.BLOCK_STATE_PROVIDER, Blockus.id(id));
+    private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
+        return List.of(countModifier, InSquarePlacement.spread(), heightModifier, BiomeFilter.biome());
+    }
+
+    public static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
+        return modifiers(CountPlacement.of(count), heightModifier);
+    }
+
+    public static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {
+        return modifiers(RarityFilter.onAverageOnceEvery(chance), heightModifier);
+    }
+
+    public static ResourceKey<Feature> configured(String name) {
+        return ResourceKey.create(Registries.FEATURE, Blockus.id(name));
+    }
+
+    public static ResourceKey<PlacedFeature> placed(String name) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, Blockus.id(name));
     }
 
     @Override

@@ -7,7 +7,7 @@
         "tag": "minecraft:substrate_overworld"
       },
       "then": {
-       "id": "blockus:legacy_grass_block"
+        "id": "blockus:legacy_grass_block"
       }
     }
   ]

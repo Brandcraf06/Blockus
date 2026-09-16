@@ -46,7 +46,7 @@ public class Blockus implements ModInitializer {
         LegacyGroup.init();
 
         Instance.init();
-        BlockusWorldgenFeatures.registerConfiguredFeature();
+        BlockusWorldgenFeatures.registerFeature();
         BlockusAliases.init();
 
         for (WoodBundle woodBundle : WoodBundle.values()) {

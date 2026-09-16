@@ -255,16 +255,16 @@ public class BlockFactory {
         return create().mapColor(color).instrument(instrument).strength(hardness, resistance).sound(sound).noOcclusion().pushReaction(PushReaction.POPPED);
     }
 
-    public static Block woodenDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> cookingFuel) {
-        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new DoorBlock(blockSetType, properties)).cookingFuel(cookingFuel).register(BlockusIds.create(id));
+    public static Block woodenDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> burnTime) {
+        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new DoorBlock(blockSetType, properties)).cookingFuel(burnTime).register(BlockusIds.create(id));
     }
 
     public static Block stoneDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
         return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()).factory(properties -> new DoorBlock(blockSetType, properties)).register(BlockusIds.create(id));
     }
 
-    public static Block woodenTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> cookingFuel) {
-        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).cookingFuel(cookingFuel).register(BlockusIds.create(id));
+    public static Block woodenTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> burnTime) {
+        return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).cookingFuel(burnTime).register(BlockusIds.create(id));
     }
 
     public static Block stoneTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
@@ -340,8 +340,8 @@ public class BlockFactory {
     }
 
     // Other
-    public static Block woodenPane(String id, ResourceKey<ContextIntProvider> cookingFuel) {
-        return registerOf(id, IronBarsBlock::new, create().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(SoundType.WOOD).ignitedByLava(), p -> p.cookingFuel(cookingFuel));
+    public static Block woodenPane(String id, ResourceKey<ContextIntProvider> burnTime) {
+        return registerOf(id, IronBarsBlock::new, create().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(SoundType.WOOD).ignitedByLava(), p -> p.cookingFuel(burnTime));
     }
 
     public static BlockBehaviour.Properties crateProperties() {
