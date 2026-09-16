@@ -12,7 +12,7 @@ public class BlockChecker {
         return BlockusIds.create(id).toString().contains("redstone");
     }
 
-    public static <T> boolean isNetherite(String id) {
-        return BlockusIds.create(id).toString().contains("netherite");
+    public static <T> boolean isThatch(String id) {
+        return BlockusIds.create(id).toString().contains("thatch");
     }
 }

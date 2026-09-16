@@ -64,7 +64,7 @@ public record TimberFrameBundle(Map<WoodMaps, TimberFrameVariants> woodMap) {
             Block block = BlockFactory.registerOf(wood.getId() + "_timber_frame", properties(planks, wood.data().isBurnable()), itemProperties(wood.data().isBurnable()));
             Block diagonal = BlockFactory.registerOf(wood.getId() + "_diagonal_timber_frame", OrientableBlockBase::new, properties(planks, wood.data().isBurnable()), itemProperties(wood.data().isBurnable()));
             Block cross = BlockFactory.registerOf(wood.getId() + "_cross_timber_frame", properties(planks, wood.data().isBurnable()), itemProperties(wood.data().isBurnable()));
-            Block lattice = BlockFactory.registerCopyWithItemProperties(wood.getId() + "_lattice", IronBarsBlock::new, planks, itemProperties(wood.data().isBurnable()));
+            Block lattice = BlockFactory.registerCopyWithItemProperties(wood.getId() + "_lattice", planks, IronBarsBlock::new, itemProperties(wood.data().isBurnable()));
             Block grate = BlockFactory.registerCopy(wood.getId() + "_grate", WaterloggedTransparentBlock::new, planks, properties -> properties.noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never), itemProperties(wood.data().isBurnable()));
 
             woodMap.put(wood, new TimberFrameVariants(block, diagonal, cross, lattice, grate));

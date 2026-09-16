@@ -69,7 +69,7 @@ public class HedgeBlock extends CrossCollisionBlock {
     public final boolean connectsTo(BlockState state, boolean faceFullSquare, Direction side) {
         Block block = state.getBlock();
         boolean bl = block instanceof FenceGateBlock && FenceGateBlock.connectsToDirection(state, side);
-        return state.is(BlockusBlockTags.HEDGES) || block instanceof LeavesBlock || !isExceptionForConnection(state) && faceFullSquare || block instanceof IronBarsBlock || bl;
+        return state.is(BlockusBlockTags.HEDGES) || block instanceof LeavesBlock || !isExceptionForConnection(state) && faceFullSquare || bl;
     }
 
     public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

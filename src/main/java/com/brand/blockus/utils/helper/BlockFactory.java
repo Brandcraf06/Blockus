@@ -107,7 +107,7 @@ public class BlockFactory {
         return copy(base).itemProperties(itemProperties).register(BlockusIds.create(id));
     }
 
-    public static Block registerCopyWithItemProperties(String id, Function<BlockBehaviour.Properties, Block> factory, Block base, UnaryOperator<Item.Properties> itemProperties) {
+    public static Block registerCopyWithItemProperties(String id, Block base, Function<BlockBehaviour.Properties, Block> factory, UnaryOperator<Item.Properties> itemProperties) {
         return copy(base).factory(factory).itemProperties(itemProperties).register(BlockusIds.create(id));
     }
 
@@ -141,63 +141,51 @@ public class BlockFactory {
     }
 
     // Slab
-    public static Block slab(String type, Block base) {
-        String id = replaceId(type) + "_slab";
-        if (BlockChecker.isAmethyst(type)) {
-            return copy(base).factory(AmethystSlabBlock::new).register(BlockusIds.create(id));
-        } else if (BlockChecker.isRedstone(type)) {
-            return copy(base).factory(RedstoneSlabBlock::new).register(BlockusIds.create(id));
-        } else if (type == "thatch") {
-            return copy(base).factory(SlabBlock::new).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM).register(BlockusIds.create(id));
+    public static Block slab(Block base, UnaryOperator<Item.Properties> itemProperties) {
+        String id = replaceId(getBlockId(base)) + "_slab";
+        if (BlockChecker.isAmethyst(getBlockId(base))) {
+            return registerCopyWithItemProperties(id, base, AmethystSlabBlock::new, itemProperties);
+        } else if (BlockChecker.isRedstone(getBlockId(base))) {
+            return registerCopyWithItemProperties(id, base, RedstoneSlabBlock::new, itemProperties);
+        } else if (BlockChecker.isThatch(getBlockId(base))) {
+            return registerCopyWithItemProperties(id, base, SlabBlock::new, p -> p.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM));
         } else {
-            return copy(base).factory(SlabBlock::new).register(BlockusIds.create(id));
+            return registerCopyWithItemProperties(id, base, SlabBlock::new, itemProperties);
         }
     }
 
     public static Block slab(Block base) {
-        return slab(getBlockId(base), base);
-    }
-
-    public static Block slab(Block base, UnaryOperator<Item.Properties> itemProperties) {
-        return registerCopyWithItemProperties(replaceId(getBlockId(base)) + "_slab", SlabBlock::new, base, itemProperties);
+        return copy(base).factory(SlabBlock::new).register(BlockusIds.create(replaceId(getBlockId(base)) + "_slab"));
     }
 
     // Stairs
-    public static Block stairs(String type, Block base) {
-        String id = replaceId(type) + "_stairs";
-        if (BlockChecker.isAmethyst(type)) {
-            return copy(base).factory(properties -> new AmethystStairsBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(id));
-        } else if (BlockChecker.isRedstone(type)) {
-            return copy(base).factory(properties -> new RedstoneStairsBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(id));
-        } else if (type.equals("thatch")) {
-            return copy(base).factory(properties -> new StairBlock(base.defaultBlockState(), properties)).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM_HIGH).register(BlockusIds.create(id));
+    public static Block stairs(Block base, UnaryOperator<Item.Properties> itemProperties) {
+        String id = replaceId(getBlockId(base)) + "_stairs";
+        if (BlockChecker.isAmethyst(getBlockId(base))) {
+            return registerCopyWithItemProperties(id, base, properties -> new AmethystStairsBlock(base.defaultBlockState(), properties), itemProperties);
+        } else if (BlockChecker.isRedstone(getBlockId(base))) {
+            return registerCopyWithItemProperties(id, base, properties -> new RedstoneStairsBlock(base.defaultBlockState(), properties), itemProperties);
+        } else if (BlockChecker.isThatch(getBlockId(base))) {
+            return registerCopyWithItemProperties(id, base, properties -> new StairBlock(base.defaultBlockState(), properties), p -> p.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM_HIGH));
         } else {
-            return copy(base).factory(properties -> new StairBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(id));
+            return registerCopyWithItemProperties(id, base, properties -> new StairBlock(base.defaultBlockState(), properties), itemProperties);
         }
     }
 
     public static Block stairs(Block base) {
-        return stairs(getBlockId(base), base);
-    }
-
-    public static Block stairs(Block base, UnaryOperator<Item.Properties> itemProperties) {
-        return registerCopyWithItemProperties(replaceId(getBlockId(base)) + "_stairs", properties -> new StairBlock(base.defaultBlockState(), properties), base, itemProperties);
+        return copy(base).factory(properties -> new StairBlock(base.defaultBlockState(), properties)).register(BlockusIds.create(replaceId(getBlockId(base)) + "_stairs"));
     }
 
     // Wall
-    public static Block wall(String type, Block base) {
-        String id = replaceId(type) + "_wall";
-        if (BlockChecker.isAmethyst(type)) {
+    public static Block wall(Block base) {
+        String id = replaceId(getBlockId(base)) + "_wall";
+        if (BlockChecker.isAmethyst(getBlockId(base))) {
             return copy(base).factory(AmethystWallBlock::new).register(BlockusIds.create(id));
-        } else if (BlockChecker.isRedstone(type)) {
+        } else if (BlockChecker.isRedstone(getBlockId(base))) {
             return copy(base).factory(RedstoneWallBlock::new).register(BlockusIds.create(id));
         } else {
             return copy(base).factory(WallBlock::new).register(BlockusIds.create(id));
         }
-    }
-
-    public static Block wall(Block base) {
-        return wall(getBlockId(base), base);
     }
 
     public static Block hedge(String id, Block base, ResourceKey<ContextIntProvider> compostable) {

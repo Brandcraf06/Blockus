@@ -76,8 +76,8 @@ public record WoodBundle(
         Block planks = BlockFactory.registerOf(type + "_planks", blockProperties, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable));
         Block stairs = BlockFactory.stairs(planks, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable));
         Block slab = BlockFactory.slab(planks, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_SLABS, isBurnable));
-        Block fence = BlockFactory.registerCopyWithItemProperties(type + "_fence", FenceBlock::new, base, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable));
-        Block fenceGate = BlockFactory.registerCopyWithItemProperties(type + "_fence_gate", (properties) -> new FenceGateBlock(woodType, properties), base, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable));
+        Block fence = BlockFactory.registerCopyWithItemProperties(type + "_fence", base, FenceBlock::new, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable));
+        Block fenceGate = BlockFactory.registerCopyWithItemProperties(type + "_fence_gate", base, (properties) -> new FenceGateBlock(woodType, properties), itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable));
         Block door = BlockFactory.registerOf(type + "_door", (properties) -> new DoorBlock(blockSetType, properties), doorTrapdoorBlockProperties, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE, isBurnable));
         Block trapdoor = BlockFactory.registerOf(type + "_trapdoor", (properties) -> new TrapDoorBlock(blockSetType, properties), doorTrapdoorBlockProperties, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable));
         Block pressurePlate = BlockFactory.pressurePlate(planks, blockSetType, itemProperties(ContextIntProviders.COOKING_TIME_WOOD_BLOCKS, isBurnable));
