@@ -234,8 +234,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CRACKED_OBSIDIAN_BRICKS = registerCopy("cracked_obsidian_bricks", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_PILLAR = pillar("obsidian", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_CIRCULAR_PAVING = registerCopy("obsidian_circular_paving", OrientableBlockBase::new, BlockusBlocks.OBSIDIAN_BRICKS.block());
-    public static final Block OBSIDIAN_REINFORCED_DOOR = stoneDoor("obsidian_reinforced_door", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
-    public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = stoneTrapdoor("obsidian_reinforced_trapdoor", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
+    public static final Block OBSIDIAN_DOOR = stoneDoor("obsidian_door", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
+    public static final Block OBSIDIAN_TRAPDOOR = stoneTrapdoor("obsidian_trapdoor", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
     public static final Block GLOWING_OBSIDIAN = registerCopy("glowing_obsidian", Blocks.OBSIDIAN, p -> p.mapColor(MapColor.COLOR_RED).pushReaction(PushReaction.IMMOVEABLE).lightLevel((state) -> 15));
 
     // Netherrack

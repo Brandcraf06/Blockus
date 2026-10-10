@@ -294,8 +294,8 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.GLOWING_OBSIDIAN);
         this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.OBSIDIAN_CIRCULAR_PAVING);
         this.createPillar(modelGenerator, BlockusBlocks.OBSIDIAN_PILLAR);
-        modelGenerator.createOrientableTrapdoor(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR);
-        modelGenerator.createDoor(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR);
+        modelGenerator.createOrientableTrapdoor(BlockusBlocks.OBSIDIAN_TRAPDOOR);
+        modelGenerator.createDoor(BlockusBlocks.OBSIDIAN_DOOR);
         this.createPressurePlate(modelGenerator, BlockusBlocks.OBSIDIAN_PRESSURE_PLATE, TextureMapping.getBlockTexture(Blocks.OBSIDIAN));
 
 

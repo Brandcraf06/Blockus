@@ -193,13 +193,13 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
 
         this.builder(BlockItemTags.DOORS.item())
             .add(toId(PAPER_DOOR))
-            .add(toId(OBSIDIAN_REINFORCED_DOOR))
+            .add(toId(OBSIDIAN_DOOR))
             .add(toId(STONE_DOOR))
             .add(toId(BLACKSTONE_DOOR));
 
         this.builder(BlockItemTags.TRAPDOORS.item())
             .add(toId(PAPER_TRAPDOOR))
-            .add(toId(OBSIDIAN_REINFORCED_TRAPDOOR))
+            .add(toId(OBSIDIAN_TRAPDOOR))
             .add(toId(STONE_TRAPDOOR))
             .add(toId(BLACKSTONE_TRAPDOOR));
 

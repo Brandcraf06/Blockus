@@ -307,8 +307,8 @@ public class BuildingBlocksGroup {
             addBssw(entries, SMALL_OBSIDIAN_BRICKS);
             entries.accept(OBSIDIAN_PILLAR);
             entries.accept(OBSIDIAN_CIRCULAR_PAVING);
-            entries.accept(OBSIDIAN_REINFORCED_DOOR);
-            entries.accept(OBSIDIAN_REINFORCED_TRAPDOOR);
+            entries.accept(OBSIDIAN_DOOR);
+            entries.accept(OBSIDIAN_TRAPDOOR);
             entries.accept(GLOWING_OBSIDIAN);
 
             addBssw(entries, POLISHED_NETHERRACK);

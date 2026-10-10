@@ -8,7 +8,14 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blockus:obsidian_reinforced_trapdoor"
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "blockus:obsidian_door",
+            "state": {
+              "half": "lower"
+            }
+          },
+          "name": "blockus:obsidian_door"
         }
       ],
       "rolls": 1

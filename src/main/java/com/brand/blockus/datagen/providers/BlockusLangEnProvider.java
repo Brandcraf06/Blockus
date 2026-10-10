@@ -322,8 +322,8 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.CRACKED_OBSIDIAN_BRICKS, "Cracked Obsidian Bricks");
         translationBuilder.add(BlockusBlocks.OBSIDIAN_PILLAR, "Obsidian Pillar");
         translationBuilder.add(BlockusBlocks.OBSIDIAN_CIRCULAR_PAVING, "Obsidian Circular Paving");
-        translationBuilder.add(BlockusBlocks.OBSIDIAN_REINFORCED_DOOR, "Obsidian Reinforced Door");
-        translationBuilder.add(BlockusBlocks.OBSIDIAN_REINFORCED_TRAPDOOR, "Obsidian Reinforced Trapdoor");
+        translationBuilder.add(BlockusBlocks.OBSIDIAN_DOOR, "Obsidian Door");
+        translationBuilder.add(BlockusBlocks.OBSIDIAN_TRAPDOOR, "Obsidian Trapdoor");
         translationBuilder.add(BlockusBlocks.OBSIDIAN_PRESSURE_PLATE, "Obsidian Pressure Plate");
         translationBuilder.add(BlockusBlocks.GLOWING_OBSIDIAN, "Glowing Obsidian");
 

@@ -369,7 +369,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 blockStairsSlabWallCuttingRecipe(SMALL_OBSIDIAN_BRICKS, OBSIDIAN_BRICKS.block(), Blocks.OBSIDIAN);
                 pillar(OBSIDIAN_PILLAR, OBSIDIAN_BRICKS.block(), Blocks.OBSIDIAN);
                 stonecuttingRecipe(OBSIDIAN_CIRCULAR_PAVING, OBSIDIAN_BRICKS.block(), Blocks.OBSIDIAN);
-                doorTrapdoor(OBSIDIAN_REINFORCED_DOOR, OBSIDIAN_REINFORCED_TRAPDOOR, Blocks.OBSIDIAN);
+                doorTrapdoor(OBSIDIAN_DOOR, OBSIDIAN_TRAPDOOR, Blocks.OBSIDIAN);
                 pressurePlate(OBSIDIAN_PRESSURE_PLATE, Blocks.OBSIDIAN);
                 shaped(RecipeCategory.BUILDING_BLOCKS, GLOWING_OBSIDIAN, 4).define('S', Blocks.OBSIDIAN).define('#', Blocks.SHROOMLIGHT).pattern(" S ").pattern("S#S").pattern(" S ").unlockedBy(getHasName(Blocks.SHROOMLIGHT), has(Blocks.SHROOMLIGHT)).save(output);
 

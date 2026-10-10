@@ -11,8 +11,8 @@
     "blockus:small_obsidian_brick_wall",
     "blockus:obsidian_pillar",
     "blockus:obsidian_circular_paving",
-    "blockus:obsidian_reinforced_door",
-    "blockus:obsidian_reinforced_trapdoor",
+    "blockus:obsidian_door",
+    "blockus:obsidian_trapdoor",
     "blockus:glowing_obsidian",
     "blockus:legacy_crying_obsidian",
     "blockus:legacy_glowing_obsidian"

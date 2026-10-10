@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "blockus:obsidian_reinforced_trapdoor"
+        "recipes": "blockus:obsidian_trapdoor"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "blockus:obsidian_reinforced_trapdoor"
+      "blockus:obsidian_trapdoor"
     ]
   }
 }

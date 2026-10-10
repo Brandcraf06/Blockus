@@ -1,5 +1,3 @@
-* Hedges no longer "connect" to bars, panes and lattices
-* Fixed shade override for neon blocks, large potted bamboo, post chain & large double flower pot
-* Fixed Redstone & Amethyst Stairs & Slab don't have the correct factory
-* Fixed Thatch Stairs & Slab can't be composted
-* Updated zh translations by SolidBlocks
+* Changed/Tweaked every Blockus obsidian blocks textures
+* Renamed Obsidian Reinforced Door to Obsidian Door
+* Renamed Obsidian Reinforced Trapdoor to Obsidian Trapdoor

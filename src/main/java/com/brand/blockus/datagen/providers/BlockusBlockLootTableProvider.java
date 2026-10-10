@@ -297,7 +297,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             OBSIDIAN_CIRCULAR_PAVING,
             OBSIDIAN_PILLAR,
             OBSIDIAN_PRESSURE_PLATE,
-            OBSIDIAN_REINFORCED_TRAPDOOR,
+            OBSIDIAN_TRAPDOOR,
             PALE_MOSS_HEDGE,
             PAPER_BLOCK,
             PAPER_LAMP,
@@ -408,7 +408,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             CHOCOLATE_TABLET);
 
         this.addDrops(this::createSlabItemTable, CUT_SOUL_SANDSTONE_SLAB, NETHERITE_SLAB);
-        this.addDrops(this::createDoorTable, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_REINFORCED_DOOR, PAPER_DOOR, STONE_DOOR);
+        this.addDrops(this::createDoorTable, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_DOOR, PAPER_DOOR, STONE_DOOR);
         this.addDrops(this::stickDrops,
             ACACIA_HEDGE,
             AZALEA_HEDGE,
