@@ -244,8 +244,8 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CRACKED_CRYING_OBSIDIAN_BRICKS = registerCopy("cracked_crying_obsidian_bricks", BlockusBlocks.CRYING_OBSIDIAN_BRICKS.block());
     public static final Block CRYING_OBSIDIAN_PILLAR = pillar("crying_obsidian", BlockusBlocks.CRYING_OBSIDIAN_BRICKS.block());
     public static final Block CRYING_OBSIDIAN_CIRCULAR_PAVING = registerCopy("crying_obsidian_circular_paving", OrientableBlockBase::new, BlockusBlocks.CRYING_OBSIDIAN_BRICKS.block());
-    public static final Block CRYING_OBSIDIAN_DOOR = stoneDoor("crying_obsidian_door", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
-    public static final Block CRYING_OBSIDIAN_TRAPDOOR = stoneTrapdoor("crying_obsidian_trapdoor", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
+    public static final Block CRYING_OBSIDIAN_DOOR = registerCopy("crying_obsidian_door", properties -> new DoorBlock(BlockSetType.GOLD, properties), BlockusBlocks.OBSIDIAN_DOOR, p -> p.lightLevel((state) -> 10));
+    public static final Block CRYING_OBSIDIAN_TRAPDOOR = registerCopy("crying_obsidian_trapdoor", properties -> new TrapDoorBlock(BlockSetType.GOLD, properties), BlockusBlocks.OBSIDIAN_TRAPDOOR, p -> p.lightLevel((state) -> 10));
 
     // Netherrack
     public static final BSSWBundle POLISHED_NETHERRACK = BSSWBundle.of("polished_netherrack", Blocks.NETHERRACK).register();
