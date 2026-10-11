@@ -311,6 +311,14 @@ public class BuildingBlocksGroup {
             entries.accept(OBSIDIAN_TRAPDOOR);
             entries.accept(GLOWING_OBSIDIAN);
 
+            addBssw(entries, CRYING_OBSIDIAN_BRICKS);
+            entries.accept(CRACKED_CRYING_OBSIDIAN_BRICKS);
+            addBssw(entries, SMALL_CRYING_OBSIDIAN_BRICKS);
+            entries.accept(CRYING_OBSIDIAN_PILLAR);
+            entries.accept(CRYING_OBSIDIAN_CIRCULAR_PAVING);
+            entries.accept(CRYING_OBSIDIAN_DOOR);
+            entries.accept(CRYING_OBSIDIAN_TRAPDOOR);
+
             addBssw(entries, POLISHED_NETHERRACK);
             entries.accept(POLISHED_NETHERRACK_PRESSURE_PLATE);
             entries.accept(POLISHED_NETHERRACK_BUTTON);

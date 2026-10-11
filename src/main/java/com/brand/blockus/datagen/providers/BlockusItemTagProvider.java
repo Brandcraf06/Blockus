@@ -194,12 +194,14 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.builder(BlockItemTags.DOORS.item())
             .add(toId(PAPER_DOOR))
             .add(toId(OBSIDIAN_DOOR))
+            .add(toId(CRYING_OBSIDIAN_DOOR))
             .add(toId(STONE_DOOR))
             .add(toId(BLACKSTONE_DOOR));
 
         this.builder(BlockItemTags.TRAPDOORS.item())
             .add(toId(PAPER_TRAPDOOR))
             .add(toId(OBSIDIAN_TRAPDOOR))
+            .add(toId(CRYING_OBSIDIAN_TRAPDOOR))
             .add(toId(STONE_TRAPDOOR))
             .add(toId(BLACKSTONE_TRAPDOOR));
 
@@ -472,8 +474,14 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(OBSIDIAN_PILLAR))
             .add(toId(OBSIDIAN_CIRCULAR_PAVING))
             .add(toId(GLOWING_OBSIDIAN))
-            .add(toId(LEGACY_CRYING_OBSIDIAN))
             .add(toId(LEGACY_GLOWING_OBSIDIAN))
+
+            .add(toId(CRYING_OBSIDIAN_BRICKS.block()))
+            .add(toId(CRACKED_CRYING_OBSIDIAN_BRICKS))
+            .add(toId(SMALL_CRYING_OBSIDIAN_BRICKS.block()))
+            .add(toId(CRYING_OBSIDIAN_PILLAR))
+            .add(toId(CRYING_OBSIDIAN_CIRCULAR_PAVING))
+            .add(toId(LEGACY_CRYING_OBSIDIAN))
 
             .add(toId(PRISMARINE_CIRCULAR_PAVING))
             .add(toId(CHISELED_DARK_PRISMARINE))

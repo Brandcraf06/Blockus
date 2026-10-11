@@ -332,8 +332,18 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(OBSIDIAN_DOOR))
             .add(toId(OBSIDIAN_TRAPDOOR))
             .add(toId(GLOWING_OBSIDIAN))
-            .add(toId(LEGACY_CRYING_OBSIDIAN))
-            .add(toId(LEGACY_GLOWING_OBSIDIAN));
+            .add(toId(LEGACY_GLOWING_OBSIDIAN))
+            .addTag(BlockusBlockTags.CRYING_OBSIDIAN);
+
+        this.builder(BlockusBlockTags.CRYING_OBSIDIAN)
+            .add(bsswBundle(CRYING_OBSIDIAN_BRICKS))
+            .add(toId(CRACKED_CRYING_OBSIDIAN_BRICKS))
+            .add(bsswBundle(SMALL_CRYING_OBSIDIAN_BRICKS))
+            .add(toId(CRYING_OBSIDIAN_PILLAR))
+            .add(toId(CRYING_OBSIDIAN_CIRCULAR_PAVING))
+            .add(toId(CRYING_OBSIDIAN_DOOR))
+            .add(toId(CRYING_OBSIDIAN_TRAPDOOR))
+            .add(toId(LEGACY_CRYING_OBSIDIAN));
 
         this.builder(BlockusBlockTags.PATTERNED_WOOL)
             .addAll(toIds(BlockusIds.PATTERNED_WOOL))
@@ -839,6 +849,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.builder(BlockTags.DOORS)
             .add(toId(OBSIDIAN_DOOR))
+            .add(toId(CRYING_OBSIDIAN_DOOR))
             .add(toId(STONE_DOOR))
             .add(toId(BLACKSTONE_DOOR))
             .addTag(BlockusBlockTags.GATES);
@@ -847,6 +858,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.builder(BlockTags.TRAPDOORS)
             .add(toId(OBSIDIAN_TRAPDOOR))
+            .add(toId(CRYING_OBSIDIAN_TRAPDOOR))
             .add(toId(STONE_TRAPDOOR))
             .add(toId(BLACKSTONE_TRAPDOOR));
         this.builder(BlockTags.WOODEN_TRAPDOORS).add(toId(PAPER_TRAPDOOR));
@@ -929,7 +941,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(ICE_BRICK_WALL));
 
         this.builder(BlockTags.NETHER_PORTAL_FRAME)
-            .add(BlockItemIds.OBSIDIAN)
             .add(toId(OBSIDIAN_BRICKS.block()))
             .add(toId(CRACKED_OBSIDIAN_BRICKS))
             .add(toId(SMALL_OBSIDIAN_BRICKS.block()))

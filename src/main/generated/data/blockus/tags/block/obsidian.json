@@ -14,7 +14,7 @@
     "blockus:obsidian_door",
     "blockus:obsidian_trapdoor",
     "blockus:glowing_obsidian",
-    "blockus:legacy_crying_obsidian",
-    "blockus:legacy_glowing_obsidian"
+    "blockus:legacy_glowing_obsidian",
+    "#blockus:crying_obsidian"
   ]
 }

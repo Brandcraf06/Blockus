@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "blockus:block/crying_obsidian_door_bottom",
+    "top": "blockus:block/crying_obsidian_door_top"
+  }
+}
