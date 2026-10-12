@@ -327,11 +327,21 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(SMALL_OBSIDIAN_BRICKS))
             .add(toId(OBSIDIAN_PILLAR))
             .add(toId(OBSIDIAN_CIRCULAR_PAVING))
-            .add(toId(OBSIDIAN_REINFORCED_DOOR))
-            .add(toId(OBSIDIAN_REINFORCED_TRAPDOOR))
+            .add(toId(OBSIDIAN_DOOR))
+            .add(toId(OBSIDIAN_TRAPDOOR))
             .add(toId(GLOWING_OBSIDIAN))
-            .add(toId(LEGACY_CRYING_OBSIDIAN))
-            .add(toId(LEGACY_GLOWING_OBSIDIAN));
+            .add(toId(LEGACY_GLOWING_OBSIDIAN))
+            .addTag(BlockusBlockTags.CRYING_OBSIDIAN);
+
+        this.builder(BlockusBlockTags.CRYING_OBSIDIAN)
+            .add(bsswBundle(CRYING_OBSIDIAN_BRICKS))
+            .add(toId(CRACKED_CRYING_OBSIDIAN_BRICKS))
+            .add(bsswBundle(SMALL_CRYING_OBSIDIAN_BRICKS))
+            .add(toId(CRYING_OBSIDIAN_PILLAR))
+            .add(toId(CRYING_OBSIDIAN_CIRCULAR_PAVING))
+            .add(toId(CRYING_OBSIDIAN_DOOR))
+            .add(toId(CRYING_OBSIDIAN_TRAPDOOR))
+            .add(toId(LEGACY_CRYING_OBSIDIAN));
 
         this.builder(BlockusBlockTags.NETHER_PORTAL_FRAME_BLOCKS)
             .add(BlockItemIds.OBSIDIAN)
@@ -836,7 +846,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
 
         this.builder(BlockTags.DOORS)
-            .add(toId(OBSIDIAN_REINFORCED_DOOR))
+            .add(toId(OBSIDIAN_DOOR))
+            .add(toId(CRYING_OBSIDIAN_DOOR))
             .add(toId(STONE_DOOR))
             .add(toId(BLACKSTONE_DOOR))
             .addTag(BlockusBlockTags.GATES);
@@ -844,7 +855,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
 
         this.builder(BlockTags.TRAPDOORS)
-            .add(toId(OBSIDIAN_REINFORCED_TRAPDOOR))
+            .add(toId(OBSIDIAN_TRAPDOOR))
+            .add(toId(CRYING_OBSIDIAN_TRAPDOOR))
             .add(toId(STONE_TRAPDOOR))
             .add(toId(BLACKSTONE_TRAPDOOR));
         this.builder(BlockTags.WOODEN_TRAPDOORS).add(toId(PAPER_TRAPDOOR));

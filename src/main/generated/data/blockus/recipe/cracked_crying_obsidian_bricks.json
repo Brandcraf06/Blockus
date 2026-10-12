@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "experience": 0.1,
+  "ingredient": "blockus:crying_obsidian_bricks",
+  "result": {
+    "id": "blockus:cracked_crying_obsidian_bricks"
+  }
+}

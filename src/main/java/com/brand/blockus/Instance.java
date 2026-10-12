@@ -180,7 +180,6 @@ public class Instance {
         CompostableRegistry.INSTANCE.add(LEGACY_SAPLING, 0.30f);
         CompostableRegistry.INSTANCE.add(RAINBOW_PETALS, 0.30f);
         CompostableRegistry.INSTANCE.add(Items.BAMBOO, 0.50f);
-        CompostableRegistry.INSTANCE.add(SWEET_BERRIES_CRATE, 0.50f);
         CompostableRegistry.INSTANCE.add(FLOWERING_AZALEA_HEDGE, 0.50f);
         CompostableRegistry.INSTANCE.add(MOSS_HEDGE, 0.65f);
         CompostableRegistry.INSTANCE.add(PALE_MOSS_HEDGE, 0.65f);
@@ -190,11 +189,6 @@ public class Instance {
         CompostableRegistry.INSTANCE.add(THATCH.stairs(), 0.75f);
         CompostableRegistry.INSTANCE.add(WARPED_HEDGE, 0.85f);
         CompostableRegistry.INSTANCE.add(CRIMSON_HEDGE, 0.85f);
-        CompostableRegistry.INSTANCE.add(APPLE_CRATE, 0.95f);
-        CompostableRegistry.INSTANCE.add(BEETROOT_CRATE, 0.95f);
-        CompostableRegistry.INSTANCE.add(CARROT_CRATE, 0.95f);
-        CompostableRegistry.INSTANCE.add(POTATO_CRATE, 0.95f);
-        CompostableRegistry.INSTANCE.add(BREAD_BOX, 1.0f);
         CompostableRegistry.INSTANCE.add(COOKIE_BLOCK, 1.0f);
 
 // Other

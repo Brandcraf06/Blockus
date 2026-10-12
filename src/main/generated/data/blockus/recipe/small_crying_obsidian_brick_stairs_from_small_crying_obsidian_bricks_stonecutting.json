@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:small_crying_obsidian_bricks",
+  "result": {
+    "id": "blockus:small_crying_obsidian_brick_stairs"
+  }
+}

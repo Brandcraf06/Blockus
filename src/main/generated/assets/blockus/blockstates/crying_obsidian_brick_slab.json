@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/crying_obsidian_brick_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/crying_obsidian_bricks"
+    },
+    "type=top": {
+      "model": "blockus:block/crying_obsidian_brick_slab_top"
+    }
+  }
+}

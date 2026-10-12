@@ -230,9 +230,18 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CRACKED_OBSIDIAN_BRICKS = registerCopy("cracked_obsidian_bricks", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_PILLAR = pillar("obsidian", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_CIRCULAR_PAVING = registerCopy("obsidian_circular_paving", OrientableBlockBase::new, BlockusBlocks.OBSIDIAN_BRICKS.block());
-    public static final Block OBSIDIAN_REINFORCED_DOOR = stoneDoor("obsidian_reinforced_door", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
-    public static final Block OBSIDIAN_REINFORCED_TRAPDOOR = stoneTrapdoor("obsidian_reinforced_trapdoor", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
+    public static final Block OBSIDIAN_DOOR = stoneDoor("obsidian_door", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
+    public static final Block OBSIDIAN_TRAPDOOR = stoneTrapdoor("obsidian_trapdoor", 50.0F, 1200.0F, SoundType.STONE, MapColor.COLOR_BLACK, BlockSetType.GOLD);
     public static final Block GLOWING_OBSIDIAN = registerCopy("glowing_obsidian", Blocks.OBSIDIAN, properties -> properties.mapColor(MapColor.COLOR_RED).pushReaction(PushReaction.BLOCK).lightLevel((state) -> 15));
+
+    // Crying Obsidian
+    public static final BSSWBundle CRYING_OBSIDIAN_BRICKS = BSSWBundle.of("crying_obsidian_bricks", Blocks.CRYING_OBSIDIAN, PushReaction.BLOCK).register();
+    public static final BSSWBundle SMALL_CRYING_OBSIDIAN_BRICKS = BSSWBundle.of("small_crying_obsidian_bricks", CRYING_OBSIDIAN_BRICKS.block()).register();
+    public static final Block CRACKED_CRYING_OBSIDIAN_BRICKS = registerCopy("cracked_crying_obsidian_bricks", BlockusBlocks.CRYING_OBSIDIAN_BRICKS.block());
+    public static final Block CRYING_OBSIDIAN_PILLAR = pillar("crying_obsidian", BlockusBlocks.CRYING_OBSIDIAN_BRICKS.block());
+    public static final Block CRYING_OBSIDIAN_CIRCULAR_PAVING = registerCopy("crying_obsidian_circular_paving", OrientableBlockBase::new, BlockusBlocks.CRYING_OBSIDIAN_BRICKS.block());
+    public static final Block CRYING_OBSIDIAN_DOOR = registerCopy("crying_obsidian_door", properties -> new DoorBlock(BlockSetType.GOLD, properties), BlockusBlocks.OBSIDIAN_DOOR, p -> p.lightLevel((state) -> 10));
+    public static final Block CRYING_OBSIDIAN_TRAPDOOR = registerCopy("crying_obsidian_trapdoor", properties -> new TrapDoorBlock(BlockSetType.GOLD, properties), BlockusBlocks.OBSIDIAN_TRAPDOOR, p -> p.lightLevel((state) -> 10));
 
     // Netherrack
     public static final BSSWBundle POLISHED_NETHERRACK = BSSWBundle.of("polished_netherrack", Blocks.NETHERRACK).register();

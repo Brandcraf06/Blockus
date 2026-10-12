@@ -28,7 +28,8 @@ public class BlockusAliases {
         }
         addBlockAndItemAlias("crimson_small_stems", "small_crimson_stems");
         addBlockAndItemAlias("warped_small_stems", "small_warped_stems");
-
+        addBlockAndItemAlias("obsidian_reinforced_door", "obsidian_door");
+        addBlockAndItemAlias("obsidian_reinforced_trapdoor", "obsidian_trapdoor");
     }
 
     private static void addBlockAndItemAlias(String from, String to) {

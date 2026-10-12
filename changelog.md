@@ -1,11 +1,7 @@
-* Added limestone, marble, bluestone, viridite, purpur, phantom purpur & chocolate squares stairs, slabs & walls.
-* Blockus pillars can now be made using crafting table, like vanilla ones (2 blocks vertically)
-* Blockus chiseled blocks can now be made using crafting table, like vanilla ones (2 slabs vertically)
-* Blockus chiseled pillars can now be made using crafting table (2 pillars vertically)
-* Blockus herringbone blocks can now be made using crafting table, with the same shape as herringbone planks.
-* Changed vanilla purpur pillar recipe to need purpur blocks instead of slabs
-* Crimson/Nether Wart Block recipe using crimson roots no longer override the vanilla recipe
-* Charred planks/mosaic can no longer be made from bamboo/raw bamboo planks/mosaic
-* Charred shelves can no longer be made from shelves
-* Removed planks_that_burn, herringbone_planks_that_burn, wooden_mosaic_that_burn, shelves_that_burn item tags
-* Added planks_that_can_be_charred, herringbone_planks_that_can_be_charred & wooden_mosaics_that_can_be_charred item tags
+* Added Crying Obsidian Bricks (Stairs/Slab/Wall), Cracked Crying Obsidian Bricks, Small Crying Obsidian Bricks (Stairs/Slab/Wall), Crying Obsidian Pillar, Crying Obsidian Circular Paving, Crying Obsidian Door & Crying Obsidian Trapdoor
+  * Unlike regular Crying Obsidian, these blocks don't produce particles
+* Changed/Tweaked every Blockus obsidian blocks textures
+* Renamed Obsidian Reinforced Door to Obsidian Door
+* Renamed Obsidian Reinforced Trapdoor to Obsidian Trapdoor
+* Food crates and bread boxes can no longer be composted
+* Hedges no longer "connect" to bars, panes and lattices
