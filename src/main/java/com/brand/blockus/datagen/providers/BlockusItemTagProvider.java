@@ -130,7 +130,8 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
 
         this.valueLookupBuilder(ItemTags.DOORS)
             .add(PAPER_DOOR.asItem())
-            .add(OBSIDIAN_REINFORCED_DOOR.asItem())
+            .add(OBSIDIAN_DOOR.asItem())
+            .add(CRYING_OBSIDIAN_DOOR.asItem())
             .add(STONE_DOOR.asItem())
             .add(BLACKSTONE_DOOR.asItem());
 
@@ -216,7 +217,8 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
 
         this.valueLookupBuilder(ItemTags.TRAPDOORS)
             .add(PAPER_TRAPDOOR.asItem())
-            .add(OBSIDIAN_REINFORCED_TRAPDOOR.asItem())
+            .add(OBSIDIAN_TRAPDOOR.asItem())
+            .add(CRYING_OBSIDIAN_TRAPDOOR.asItem())
             .add(STONE_TRAPDOOR.asItem())
             .add(BLACKSTONE_TRAPDOOR.asItem());
 

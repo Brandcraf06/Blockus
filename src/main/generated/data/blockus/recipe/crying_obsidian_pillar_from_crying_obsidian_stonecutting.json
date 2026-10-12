@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:crying_obsidian",
+  "result": {
+    "id": "blockus:crying_obsidian_pillar"
+  }
+}

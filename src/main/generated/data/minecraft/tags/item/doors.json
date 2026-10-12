@@ -1,7 +1,8 @@
 {
   "values": [
     "blockus:paper_door",
-    "blockus:obsidian_reinforced_door",
+    "blockus:obsidian_door",
+    "blockus:crying_obsidian_door",
     "blockus:stone_door",
     "blockus:blackstone_door"
   ]

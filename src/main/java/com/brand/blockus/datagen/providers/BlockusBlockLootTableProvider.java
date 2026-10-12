@@ -149,6 +149,19 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             SCULK_PILLAR,
             POLISHED_SCULK_PRESSURE_PLATE,
 
+            // Obsidian
+            CRACKED_OBSIDIAN_BRICKS,
+            OBSIDIAN_CIRCULAR_PAVING,
+            OBSIDIAN_PILLAR,
+            OBSIDIAN_PRESSURE_PLATE,
+            OBSIDIAN_TRAPDOOR,
+            GLOWING_OBSIDIAN,
+
+            CRACKED_CRYING_OBSIDIAN_BRICKS,
+            CRYING_OBSIDIAN_CIRCULAR_PAVING,
+            CRYING_OBSIDIAN_PILLAR,
+            CRYING_OBSIDIAN_TRAPDOOR,
+
             // Other
             LEGACY_LOG,
             LEGACY_SAPLING,
@@ -202,7 +215,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             CRACKED_DRIPSTONE_BRICKS,
             CRACKED_END_STONE_BRICKS,
             CRACKED_GRANITE_BRICKS,
-            CRACKED_OBSIDIAN_BRICKS,
             CRACKED_POLISHED_BASALT_BRICKS,
             CRACKED_TUFF_BRICKS,
             CRIMSON_HEDGE,
@@ -216,7 +228,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             ENDER_BLOCK,
             FRAMED_PAPER_BLOCK,
             GLOW_BERRIES_CRATE,
-            GLOWING_OBSIDIAN,
             GOLD_DECORATED_POLISHED_BLACKSTONE,
             GOLD_DECORATED_RED_SANDSTONE,
             GOLD_DECORATED_SANDSTONE,
@@ -267,10 +278,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             NETHER_BRICK_PILLAR,
             NETHERITE_STAIRS,
             NETHERRACK_CIRCULAR_PAVING,
-            OBSIDIAN_CIRCULAR_PAVING,
-            OBSIDIAN_PILLAR,
-            OBSIDIAN_PRESSURE_PLATE,
-            OBSIDIAN_REINFORCED_TRAPDOOR,
             PALE_MOSS_HEDGE,
             PAPER_BLOCK,
             PAPER_LAMP,
@@ -323,7 +330,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             RAINBOW_NEON,
             RED_NETHER_BRICK_PILLAR,
             RED_SANDSTONE_PILLAR,
-                LIT_REDSTONE_LAMP,
+            LIT_REDSTONE_LAMP,
             REDSTONE_LANTERN,
             REDSTONE_LANTERN_BLOCK,
             REDSTONE_SAND,
@@ -381,7 +388,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             CHOCOLATE_TABLET);
 
         this.addDrops(this::createSlabItemTable, CUT_SOUL_SANDSTONE_SLAB, NETHERITE_SLAB);
-        this.addDrops(this::createDoorTable, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_REINFORCED_DOOR, PAPER_DOOR, STONE_DOOR);
+        this.addDrops(this::createDoorTable, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_DOOR, CRYING_OBSIDIAN_DOOR, PAPER_DOOR, STONE_DOOR);
         this.addDrops(this::stickDrops,
             ACACIA_HEDGE,
             AZALEA_HEDGE,

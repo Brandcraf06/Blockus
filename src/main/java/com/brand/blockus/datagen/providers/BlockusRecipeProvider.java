@@ -407,9 +407,18 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 blockStairsSlabWallCuttingRecipe(SMALL_OBSIDIAN_BRICKS, OBSIDIAN_BRICKS.block(), Blocks.OBSIDIAN);
                 pillar(OBSIDIAN_PILLAR, OBSIDIAN_BRICKS.block(), Blocks.OBSIDIAN);
                 stonecuttingRecipe(OBSIDIAN_CIRCULAR_PAVING, OBSIDIAN_BRICKS.block(), Blocks.OBSIDIAN);
-                doorTrapdoor(OBSIDIAN_REINFORCED_DOOR, OBSIDIAN_REINFORCED_TRAPDOOR, Blocks.OBSIDIAN);
+                doorTrapdoor(OBSIDIAN_DOOR, OBSIDIAN_TRAPDOOR, Blocks.OBSIDIAN);
                 pressurePlate(OBSIDIAN_PRESSURE_PLATE, Blocks.OBSIDIAN);
                 shaped(RecipeCategory.BUILDING_BLOCKS, GLOWING_OBSIDIAN, 4).define('S', Blocks.OBSIDIAN).define('#', Blocks.SHROOMLIGHT).pattern(" S ").pattern("S#S").pattern(" S ").unlockedBy(getHasName(Blocks.SHROOMLIGHT), has(Blocks.SHROOMLIGHT)).save(output);
+
+                // Crying Obsidian
+                blockStairsSlabWallCuttingRecipe(CRYING_OBSIDIAN_BRICKS, Blocks.CRYING_OBSIDIAN);
+                twoByTwoToFour(CRYING_OBSIDIAN_BRICKS.block(), Blocks.CRYING_OBSIDIAN);
+                smeltingResultFromBase(CRACKED_CRYING_OBSIDIAN_BRICKS, CRYING_OBSIDIAN_BRICKS.block());
+                blockStairsSlabWallCuttingRecipe(SMALL_CRYING_OBSIDIAN_BRICKS, CRYING_OBSIDIAN_BRICKS.block(), Blocks.CRYING_OBSIDIAN);
+                pillar(CRYING_OBSIDIAN_PILLAR, CRYING_OBSIDIAN_BRICKS.block(), Blocks.CRYING_OBSIDIAN);
+                stonecuttingRecipe(CRYING_OBSIDIAN_CIRCULAR_PAVING, CRYING_OBSIDIAN_BRICKS.block(), Blocks.CRYING_OBSIDIAN);
+                doorTrapdoor(CRYING_OBSIDIAN_DOOR, CRYING_OBSIDIAN_TRAPDOOR, Blocks.CRYING_OBSIDIAN);
 
                 // Ore Bricks
                 oreBricks(IRON_BRICKS, Blocks.IRON_BLOCK, Items.IRON_INGOT);

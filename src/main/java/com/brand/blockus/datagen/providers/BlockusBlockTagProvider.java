@@ -338,11 +338,20 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(SMALL_OBSIDIAN_BRICKS))
             .add(OBSIDIAN_PILLAR)
             .add(OBSIDIAN_CIRCULAR_PAVING)
-            .add(OBSIDIAN_REINFORCED_DOOR)
-            .add(OBSIDIAN_REINFORCED_TRAPDOOR)
+            .add(OBSIDIAN_DOOR)
+            .add(OBSIDIAN_TRAPDOOR)
             .add(GLOWING_OBSIDIAN)
-            .add(LEGACY_CRYING_OBSIDIAN)
-            .add(LEGACY_GLOWING_OBSIDIAN);
+            .add(LEGACY_GLOWING_OBSIDIAN)
+            .addTag(BlockusBlockTags.CRYING_OBSIDIAN);
+
+        this.valueLookupBuilder(BlockusBlockTags.CRYING_OBSIDIAN)
+            .add(bsswBundle(CRYING_OBSIDIAN_BRICKS))
+            .add(CRACKED_CRYING_OBSIDIAN_BRICKS)
+            .add(bsswBundle(SMALL_CRYING_OBSIDIAN_BRICKS))
+            .add(CRYING_OBSIDIAN_PILLAR)
+            .add(CRYING_OBSIDIAN_CIRCULAR_PAVING)
+            .add(CRYING_OBSIDIAN_DOOR)
+            .add(CRYING_OBSIDIAN_TRAPDOOR);
 
         this.valueLookupBuilder(BlockusBlockTags.NETHER_PORTAL_FRAME_BLOCKS)
             .add(Blocks.OBSIDIAN)
@@ -782,7 +791,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(VIRIDITE.block());
 
         this.valueLookupBuilder(BlockTags.DOORS)
-            .add(OBSIDIAN_REINFORCED_DOOR)
+            .add(OBSIDIAN_DOOR)
+            .add(CRYING_OBSIDIAN_DOOR)
             .add(STONE_DOOR)
             .add(BLACKSTONE_DOOR)
             .addTag(BlockusBlockTags.GATES);
@@ -929,7 +939,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(OBSIDIAN_PRESSURE_PLATE);
 
         this.valueLookupBuilder(BlockTags.TRAPDOORS)
-            .add(OBSIDIAN_REINFORCED_TRAPDOOR)
+            .add(OBSIDIAN_TRAPDOOR)
+            .add(CRYING_OBSIDIAN_TRAPDOOR)
             .add(STONE_TRAPDOOR)
             .add(BLACKSTONE_TRAPDOOR);
 
