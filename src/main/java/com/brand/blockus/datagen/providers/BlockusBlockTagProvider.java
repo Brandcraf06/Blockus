@@ -613,6 +613,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(EMERALD_BRICKS))
             .add(bsswBundle(DIAMOND_BRICKS))
             .add(bsswBundle(NETHERITE_BRICKS))
+            .add(toId(FROZEN_MAGMA_BLOCK))
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.ALL_DYED_STONE_BRICKS)
@@ -1006,6 +1007,11 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockTags.TURNS_INTO_DIRT_PATH).add(toId(LEGACY_GRASS_BLOCK)).add(toId(LEGACY_FIRST_GRASS_BLOCK));
         this.builder(BlockTags.TURNS_INTO_FARMLAND).add(toId(PATH)).add(toId(LEGACY_GRASS_BLOCK)).add(toId(LEGACY_FIRST_GRASS_BLOCK));
 
+        this.builder(BlockTags.DANGEROUS_FOR_TELEPORTATION).add(toId(FROZEN_MAGMA_BLOCK));
+        this.builder(BlockTags.CANNOT_SUPPORT_SEAGRASS).add(toId(FROZEN_MAGMA_BLOCK));
+        this.builder(BlockTags.CANNOT_SUPPORT_KELP).add(toId(FROZEN_MAGMA_BLOCK));
+        this.builder(BlockTags.HAPPY_GHAST_AVOIDS).add(toId(FROZEN_MAGMA_BLOCK));
+
         this.builder(BlockTags.BLOCKS_MOTION_NO_LEAVES)
             .add(toId(RAINBOW_BLOCK))
             .add(toId(CHARCOAL_BLOCK))
@@ -1058,6 +1064,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(CHOCOLATE_BLOCK.block()))
             .add(toId(CHOCOLATE_BRICKS.block()))
             .add(toId(CHOCOLATE_SQUARES.block()))
+            .add(toId(FROZEN_MAGMA_BLOCK))
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.ALL_DYED_STONE_BRICKS)

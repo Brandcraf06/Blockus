@@ -7,6 +7,7 @@
     "blockus:sugar_block",
     "blockus:legacy_first_grass_block",
     "blockus:legacy_grass_block",
-    "blockus:legacy_coal_block"
+    "blockus:legacy_coal_block",
+    "blockus:frozen_magma_block"
   ]
 }

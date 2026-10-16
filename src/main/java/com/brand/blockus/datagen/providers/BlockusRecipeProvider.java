@@ -312,11 +312,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 twoByTwoRecipe(RecipeCategory.BUILDING_BLOCKS, ICE_BRICKS, BlockusItemTags.NATURAL_ICE, 4, "has_ice");
                 wall(RecipeCategory.BUILDING_BLOCKS, ICE_BRICK_WALL, ICE_BRICKS);
 
-                // Magma Bricks
+                // Magma
                 blockStairsSlabWallCuttingRecipe(MAGMA_BRICKS, Blocks.MAGMA_BLOCK);
                 twoByTwoToFour(MAGMA_BRICKS.block(), Blocks.MAGMA_BLOCK);
                 blockStairsSlabWallCuttingRecipe(SMALL_MAGMA_BRICKS, MAGMA_BRICKS.block(), Blocks.MAGMA_BLOCK);
                 chiseled(CHISELED_MAGMA_BRICKS, MAGMA_BRICKS.slab(), MAGMA_BRICKS.block(), Blocks.MAGMA_BLOCK);
+                shapeless(RecipeCategory.BUILDING_BLOCKS, FROZEN_MAGMA_BLOCK, 1).requires(Blocks.MAGMA_BLOCK).requires(Blocks.BLUE_ICE).unlockedBy(getHasName(Blocks.MAGMA_BLOCK), has(Blocks.MAGMA_BLOCK)).unlockedBy(getHasName(Blocks.BLUE_ICE), has(Blocks.BLUE_ICE)).save(output);
+
 
                 // Blaze Bricks
                 blockStairsSlabWallCuttingRecipe(BLAZE_BRICKS);
