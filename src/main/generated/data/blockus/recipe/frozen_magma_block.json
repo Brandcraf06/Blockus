@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:magma_block",
+    "minecraft:blue_ice"
+  ],
+  "result": {
+    "id": "blockus:frozen_magma_block"
+  }
+}

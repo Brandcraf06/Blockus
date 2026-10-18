@@ -313,6 +313,7 @@ public class BuildingBlocksGroup {
             addBssw(entries, MAGMA_BRICKS);
             addBssw(entries, SMALL_MAGMA_BRICKS);
             entries.accept(CHISELED_MAGMA_BRICKS);
+            entries.accept(FROZEN_MAGMA_BLOCK);
 
             addBssw(entries, CRIMSON_WART_BRICKS);
             addBssw(entries, WARPED_WART_BRICKS);

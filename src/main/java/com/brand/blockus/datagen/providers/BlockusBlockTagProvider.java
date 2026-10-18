@@ -9,10 +9,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -668,6 +665,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(EMERALD_BRICKS))
             .add(bsswBundle(DIAMOND_BRICKS))
             .add(bsswBundle(NETHERITE_BRICKS))
+            .add(FROZEN_MAGMA_BLOCK)
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.STAINED_STONE_BRICKS)
@@ -944,7 +942,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(STONE_TRAPDOOR)
             .add(BLACKSTONE_TRAPDOOR);
 
-
         for (BSSWBundle bsswBundle : BSSWBundle.values()) {
             this.valueLookupBuilder(BlockTags.STAIRS).add(bsswBundle.stairs());
             this.valueLookupBuilder(BlockTags.SLABS).add(bsswBundle.slab());
@@ -1027,6 +1024,10 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.valueLookupBuilder(ConventionalBlockTags.SMALL_FLOWERS)
             .add(RAINBOW_ROSE);
+
+        this.valueLookupBuilder(BlockTags.CANNOT_SUPPORT_SEAGRASS).add(FROZEN_MAGMA_BLOCK);
+        this.valueLookupBuilder(BlockTags.CANNOT_SUPPORT_KELP).add(FROZEN_MAGMA_BLOCK);
+        this.valueLookupBuilder(BlockTags.HAPPY_GHAST_AVOIDS).add(FROZEN_MAGMA_BLOCK);
     }
 
     public static Block[] bsswBundle(BSSWBundle block) {

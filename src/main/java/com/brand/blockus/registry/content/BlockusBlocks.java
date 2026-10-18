@@ -18,6 +18,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
@@ -238,10 +240,11 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle QUARTZ_TILES = BSSWBundle.of("quartz_tiles", Blocks.QUARTZ_BLOCK).register();
     public static final Block QUARTZ_CIRCULAR_PAVING = registerCopy("quartz_circular_paving", OrientableBlockBase::new, BlockusBlocks.QUARTZ_TILES.block());
 
-    // Magma Bricks
+    // Magma
     public static final BSSWBundle MAGMA_BRICKS = BSSWBundle.of("magma_bricks", Blocks.MAGMA_BLOCK, 15).register();
     public static final BSSWBundle SMALL_MAGMA_BRICKS = BSSWBundle.of("small_magma_bricks", Blocks.MAGMA_BLOCK, 15).register();
     public static final Block CHISELED_MAGMA_BRICKS = registerCopy("chiseled_magma_bricks", BlockusBlocks.MAGMA_BRICKS.block());
+    public static final Block FROZEN_MAGMA_BLOCK = registerOf("frozen_magma_block", FrozenMagmaBlock::new, create().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.5F).isValidSpawn((state, blockGetter, blockPos, entityType) -> entityType == BuiltInRegistries.ENTITY_TYPE.getTagOrEmpty(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)).postProcess((state, blockGetter, blockPos) -> blockPos.above()));
 
     // Blaze Bricks
     public static final BSSWBundle BLAZE_BRICKS = BSSWBundle.of("blaze_bricks", Blocks.NETHER_BRICKS, 15).register();

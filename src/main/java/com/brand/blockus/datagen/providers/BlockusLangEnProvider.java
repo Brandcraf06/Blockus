@@ -308,6 +308,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         addBssw(translationBuilder, BlockusBlocks.MAGMA_BRICKS, "Magma Bricks");
         addBssw(translationBuilder, BlockusBlocks.SMALL_MAGMA_BRICKS, "Small Magma Bricks");
         translationBuilder.add(BlockusBlocks.CHISELED_MAGMA_BRICKS, "Chiseled Magma Bricks");
+        translationBuilder.add(BlockusBlocks.FROZEN_MAGMA_BLOCK, "Frozen Magma Block");
 
         // End Stone
         addBssw(translationBuilder, BlockusBlocks.POLISHED_END_STONE, "Polished End Stone");
