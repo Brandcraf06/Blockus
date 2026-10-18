@@ -249,7 +249,8 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(SUGAR_BLOCK))
             .add(toId(LEGACY_FIRST_GRASS_BLOCK))
             .add(toId(LEGACY_GRASS_BLOCK))
-            .add(toId(LEGACY_COAL_BLOCK));
+            .add(toId(LEGACY_COAL_BLOCK))
+            .add(toId(FROZEN_MAGMA_BLOCK));
 
         this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_BOUNCY)
             .add(toId(COBBLESTONE_BRICKS.block()))

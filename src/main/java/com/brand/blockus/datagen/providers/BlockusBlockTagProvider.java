@@ -611,6 +611,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(EMERALD_BRICKS))
             .add(bsswBundle(DIAMOND_BRICKS))
             .add(bsswBundle(NETHERITE_BRICKS))
+            .add(toId(FROZEN_MAGMA_BLOCK))
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS)
             .addTag(BlockusBlockTags.OBSIDIAN)
             .addTag(BlockusBlockTags.ALL_DYED_STONE_BRICKS)
@@ -977,6 +978,10 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.builder(BlockTags.PIGLIN_REPELLENTS)
             .add(toId(SOUL_LANTERN_BLOCK))
             .add(toId(SOUL_O_LANTERN));
+
+        this.builder(BlockTags.CANNOT_SUPPORT_SEAGRASS).add(toId(FROZEN_MAGMA_BLOCK));
+        this.builder(BlockTags.CANNOT_SUPPORT_KELP).add(toId(FROZEN_MAGMA_BLOCK));
+        this.builder(BlockTags.HAPPY_GHAST_AVOIDS).add(toId(FROZEN_MAGMA_BLOCK));
     }
 
     public BlockItemId toId(Block block) {

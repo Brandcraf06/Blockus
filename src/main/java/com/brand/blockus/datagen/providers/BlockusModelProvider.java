@@ -25,6 +25,7 @@ import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -313,8 +314,9 @@ public class BlockusModelProvider extends FabricModelProvider {
         // Quartz Blocks
         this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.QUARTZ_CIRCULAR_PAVING);
 
-        // Magma Bricks
+        // Magma
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_MAGMA_BRICKS);
+        modelGenerator.createTrivialCube(BlockusBlocks.FROZEN_MAGMA_BLOCK);
 
         // Blaze Bricks
         this.createPillar(modelGenerator, BlockusBlocks.BLAZE_PILLAR);
