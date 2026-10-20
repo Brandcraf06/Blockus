@@ -210,11 +210,6 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockTags.CHAINS, BlockItemTags.CHAINS.item());
         this.copy(BlockTags.LANTERNS, BlockItemTags.LANTERNS.item());
 
-        this.builder(BlockusItemTags.NATURAL_ICE)
-            .add(BlockItemIds.ICE)
-            .add(BlockItemIds.PACKED_ICE)
-            .add(BlockItemIds.BLUE_ICE);
-
         this.copy(BlockTags.BEE_ATTRACTIVE, ItemTags.BEE_FOOD);
 
         this.builder(ItemTags.PIGLIN_LOVED)
@@ -534,8 +529,9 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .addTag(BlockusItemTags.TIMBER_FRAMES);
 
         this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING)
-            .add(toId(ICE_BRICKS))
-            .add(toId(ICE_PILLAR))
+            .add(toId(PACKED_ICE_BRICKS.block()))
+            .add(toId(CHISELED_PACKED_ICE))
+            .add(toId(PACKED_ICE_PILLAR))
             .add(toId(SNOW_BRICKS.block()))
             .add(toId(SNOW_PILLAR));
 

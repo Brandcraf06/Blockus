@@ -53,6 +53,7 @@
     "blockus:lava_polished_blackstone_brick_wall",
     "blockus:water_brick_wall",
     "blockus:snow_brick_wall",
+    "blockus:packed_ice_brick_wall",
     "blockus:obsidian_brick_wall",
     "blockus:small_obsidian_brick_wall",
     "blockus:crying_obsidian_brick_wall",
@@ -153,7 +154,6 @@
     "blockus:waxed_exposed_copper_tuff_brick_wall",
     "blockus:waxed_weathered_copper_tuff_brick_wall",
     "blockus:waxed_oxidized_copper_tuff_brick_wall",
-    "blockus:ice_brick_wall",
     "#blockus:barriers"
   ]
 }
