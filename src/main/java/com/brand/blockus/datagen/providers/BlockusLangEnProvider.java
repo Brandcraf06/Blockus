@@ -543,9 +543,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         // Snow & Ice
         addBssw(translationBuilder, BlockusBlocks.SNOW_BRICKS, "Snow Bricks");
         translationBuilder.add(BlockusBlocks.SNOW_PILLAR, "Snow Pillar");
-        translationBuilder.add(BlockusBlocks.ICE_BRICKS, "Ice Bricks");
-        translationBuilder.add(BlockusBlocks.ICE_BRICK_WALL, "Ice Brick Wall");
-        translationBuilder.add(BlockusBlocks.ICE_PILLAR, "Ice Pillar");
+        addBssw(translationBuilder, BlockusBlocks.PACKED_ICE_BRICKS, "Packed Ice Bricks");
+        translationBuilder.add(BlockusBlocks.CHISELED_PACKED_ICE, "Chiseled Packed Ice");
+        translationBuilder.add(BlockusBlocks.PACKED_ICE_PILLAR, "Packed Ice Pillar");
 
         // Netherite
         translationBuilder.add(BlockusBlocks.NETHERITE_STAIRS, "Swaggiest Stairs Ever");

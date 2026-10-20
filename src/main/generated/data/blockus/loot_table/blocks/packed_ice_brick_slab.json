@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": "minecraft:tool/can_silk_touch",
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "blockus:packed_ice_brick_slab"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

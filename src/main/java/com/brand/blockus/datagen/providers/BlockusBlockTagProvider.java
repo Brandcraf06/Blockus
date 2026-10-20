@@ -222,8 +222,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.builder(BlockusBlockTags.HONEYCOMB_BLOCKS).add(bsswBundle(HONEYCOMB_BRICKS));
         this.builder(BlockusBlockTags.ICE_BRICKS)
-            .add(toId(ICE_BRICKS))
-            .add(toId(ICE_PILLAR));
+            .add(bsswBundle(PACKED_ICE_BRICKS))
+            .add(toId(CHISELED_PACKED_ICE))
+            .add(toId(PACKED_ICE_PILLAR));
 
         this.builder(BlockusBlockTags.LARGE_FLOWER_POTS).add(toId(LARGE_FLOWER_POT));
         for (PottedLargeBundle pottedLargeType : PottedLargeBundle.values()) {
@@ -810,7 +811,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(NETHERITE_SLAB));
 
         this.builder(BlockTags.WALLS)
-            .add(toId(ICE_BRICK_WALL))
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.builder(BlockTags.PRESSURE_PLATES).add(toId(OBSIDIAN_PRESSURE_PLATE));
@@ -938,8 +938,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(POTTED_LEGACY_BLUE_ROSE));
 
         this.builder(BlockTags.ICE)
-            .addTag(BlockusBlockTags.ICE_BRICKS)
-            .add(toId(ICE_BRICK_WALL));
+            .addTag(BlockusBlockTags.ICE_BRICKS);
 
         this.builder(BlockTags.NETHER_PORTAL_FRAME)
             .add(toId(OBSIDIAN_BRICKS.block()))

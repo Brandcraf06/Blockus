@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "blockus:block/packed_ice_bricks",
+    "side": "blockus:block/packed_ice_bricks",
+    "top": "blockus:block/packed_ice_bricks"
+  }
+}
