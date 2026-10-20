@@ -218,8 +218,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(bsswBundle(HONEYCOMB_BRICKS));
 
         this.valueLookupBuilder(BlockusBlockTags.ICE_BRICKS)
-            .add(ICE_BRICKS)
-            .add(ICE_PILLAR);
+            .add(bsswBundle(PACKED_ICE_BRICKS))
+            .add(CHISELED_PACKED_ICE)
+            .add(PACKED_ICE_PILLAR);
 
         this.valueLookupBuilder(BlockusBlockTags.LARGE_FLOWER_POTS)
             .add(LARGE_FLOWER_POT)
@@ -821,8 +822,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(GOLDEN_CARROT_CRATE);
 
         this.valueLookupBuilder(BlockTags.ICE)
-            .addTag(BlockusBlockTags.ICE_BRICKS)
-            .add(ICE_BRICK_WALL);
+            .addTag(BlockusBlockTags.ICE_BRICKS);
 
         this.valueLookupBuilder(BlockTags.IMPERMEABLE)
             .addTag(BlockusBlockTags.BEVELED_GLASS)
@@ -972,7 +972,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(NETHERITE_SLAB);
 
         this.valueLookupBuilder(BlockTags.WALLS)
-            .add(ICE_BRICK_WALL)
             .addTag(BlockusBlockTags.BARRIERS);
 
         this.valueLookupBuilder(BlockTags.WARPED_STEMS)

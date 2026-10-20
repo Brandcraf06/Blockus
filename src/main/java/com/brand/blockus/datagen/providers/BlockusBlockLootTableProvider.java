@@ -406,9 +406,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
         this.addDropsWithSilkTouch(
             BEVELED_GLASS,
             BEVELED_GLASS_PANE,
-            ICE_BRICK_WALL,
-            ICE_BRICKS,
-            ICE_PILLAR);
+            PACKED_ICE_BRICKS.block(),
+            PACKED_ICE_BRICKS.stairs(),
+            PACKED_ICE_BRICKS.slab(),
+            PACKED_ICE_BRICKS.wall(),
+            CHISELED_PACKED_ICE,
+            PACKED_ICE_PILLAR);
 
         for (StainedBlockBundle bundle : List.of(STAINED_BEVELED_GLASS, STAINED_BEVELED_GLASS_PANE)) {
             bundle.colorMap().values().forEach(this::addDropsWithSilkTouch);

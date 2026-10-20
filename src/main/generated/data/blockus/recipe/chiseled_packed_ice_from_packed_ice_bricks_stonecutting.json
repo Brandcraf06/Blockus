@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "blockus:packed_ice_bricks",
+  "result": {
+    "id": "blockus:chiseled_packed_ice"
+  }
+}

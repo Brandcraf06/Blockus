@@ -30,6 +30,9 @@ public class BlockusAliases {
         addBlockAndItemAlias("warped_small_stems", "small_warped_stems");
         addBlockAndItemAlias("obsidian_reinforced_door", "obsidian_door");
         addBlockAndItemAlias("obsidian_reinforced_trapdoor", "obsidian_trapdoor");
+        addBlockAndItemAlias("ice_bricks", "packed_ice_bricks");
+        addBlockAndItemAlias("ice_brick_wall", "packed_ice_brick_wall");
+        addBlockAndItemAlias("ice_pillar", "packed_ice_pillar");
     }
 
     private static void addBlockAndItemAlias(String from, String to) {

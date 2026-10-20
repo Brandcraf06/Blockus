@@ -8,7 +8,6 @@ import net.minecraft.world.item.Item;
 public final class BlockusItemTags {
 
     public static final TagKey<Item> BARRIERS = register("barriers");
-    public static final TagKey<Item> NATURAL_ICE = register("natural_ice");
     public static final TagKey<Item> PATTERNED_WOOL = register("patterned_wool");
     public static final TagKey<Item> PATTERNED_CARPETS = register("patterned_carpets");
     public static final TagKey<Item> ALL_PATTERNED_WOOLS = register("all_patterned_wools");

@@ -98,9 +98,9 @@ public class BuildingBlocksGroup {
             addBssw(entries, SNOW_BRICKS);
             entries.accept(SNOW_PILLAR);
 
-            entries.accept(ICE_BRICKS);
-            entries.accept(ICE_BRICK_WALL);
-            entries.accept(ICE_PILLAR);
+            addBssw(entries, PACKED_ICE_BRICKS);
+            entries.accept(CHISELED_PACKED_ICE);
+            entries.accept(PACKED_ICE_PILLAR);
 
             addBssw(entries, COBBLESTONE_BRICKS);
             addBssw(entries, STONE_TILES);

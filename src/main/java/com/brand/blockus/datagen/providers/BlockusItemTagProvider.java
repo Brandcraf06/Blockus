@@ -137,11 +137,6 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
 
         this.copy(BlockTags.BEE_ATTRACTIVE, ItemTags.BEE_FOOD);
 
-        this.valueLookupBuilder(BlockusItemTags.NATURAL_ICE)
-            .add(Items.ICE)
-            .add(Items.PACKED_ICE)
-            .add(Items.BLUE_ICE);
-
         this.copy(BlockTags.JUNGLE_LOGS, ItemTags.JUNGLE_LOGS);
 
         this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
@@ -260,6 +255,5 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(GOLDEN_CHAIN.asItem());
 
         this.copy(ConventionalBlockTags.SMALL_FLOWERS, ConventionalItemTags.SMALL_FLOWERS);
-
     }
 }
