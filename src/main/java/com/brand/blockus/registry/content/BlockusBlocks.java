@@ -222,11 +222,11 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CHISELED_WATER_BRICKS = registerCopy("chiseled_water_bricks", BlockusBlocks.WATER_BRICKS.block());
 
     // Snow Bricks
-    public static final BSSWBundle SNOW_BRICKS = BSSWBundle.of("snow_bricks", Blocks.STONE_BRICKS, 1.0f, 3.0f, MapColor.SNOW).register();
+    public static final BSSWBundle SNOW_BRICKS = BSSWBundle.of("snow_bricks", Blocks.SNOW_BLOCK, 0.6f).register();
     public static final Block SNOW_PILLAR = pillar("snow", SNOW_BRICKS.block());
 
     // Ice Bricks
-    public static final BSSWBundle PACKED_ICE_BRICKS = BSSWBundle.of("packed_ice_bricks", new BlockBuilder(BlockFactory.create()).properties(properties -> properties.mapColor(MapColor.ICE).instrument(NoteBlockInstrument.CHIME).friction(0.6F).strength(0.5F).sound(SoundType.GLASS))).register();
+    public static final BSSWBundle PACKED_ICE_BRICKS = BSSWBundle.of("packed_ice_bricks", new BlockBuilder(BlockFactory.create()).properties(properties -> properties.mapColor(MapColor.ICE).instrument(NoteBlockInstrument.CHIME).friction(0.6F).strength(0.5F).requiresCorrectToolForDrops().sound(SoundType.GLASS))).register();
     public static final Block CHISELED_PACKED_ICE = registerCopy("chiseled_packed_ice", PACKED_ICE_BRICKS.block());
     public static final Block PACKED_ICE_PILLAR = pillar("packed_ice", PACKED_ICE_BRICKS.block());
 

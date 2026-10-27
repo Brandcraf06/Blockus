@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "blockus:snow_bricks",
-  "result": {
-    "id": "blockus:snow_pillar"
-  }
-}
