@@ -417,7 +417,9 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             HERRINGBONE_TUFF_BRICKS,
             RAINBOW_ROSE,
             TINTED_BEVELED_GLASS,
-            CHOCOLATE_TABLET);
+            CHOCOLATE_TABLET,
+            CHISELED_PACKED_ICE,
+            PACKED_ICE_PILLAR);
 
         this.addDrops(this::createSlabItemTable, CUT_SOUL_SANDSTONE_SLAB, NETHERITE_SLAB);
         this.addDrops(this::createDoorTable, BLACKSTONE_DOOR, GOLDEN_GATE, IRON_GATE, OBSIDIAN_DOOR, CRYING_OBSIDIAN_DOOR, PAPER_DOOR, STONE_DOOR);
@@ -437,13 +439,7 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
 
         this.addDropsWithSilkTouch(
             BEVELED_GLASS,
-            BEVELED_GLASS_PANE,
-            PACKED_ICE_BRICKS.block(),
-            PACKED_ICE_BRICKS.stairs(),
-            PACKED_ICE_BRICKS.slab(),
-            PACKED_ICE_BRICKS.wall(),
-            CHISELED_PACKED_ICE,
-            PACKED_ICE_PILLAR);
+            BEVELED_GLASS_PANE);
 
         for (ColorCollection<Block> blocks : List.of(STAINED_BEVELED_GLASS.blocks(), STAINED_BEVELED_GLASS_PANE.blocks())) {
             blocks.forEach(this::dropWhenSilkTouch);

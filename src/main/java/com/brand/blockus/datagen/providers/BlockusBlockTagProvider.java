@@ -631,7 +631,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.LAVA_BRICKS)
             .addTag(BlockusBlockTags.LAVA_POLISHED_BLACKSTONE_BRICKS)
             .addTag(BlockusBlockTags.WATER_BRICKS)
-            .addTag(BlockusBlockTags.SNOW_BRICKS)
             .addTag(BlockusBlockTags.ICE_BRICKS)
             .addTag(BlockusBlockTags.MAGMA_BRICKS)
             .addTag(BlockusBlockTags.BLAZE_BRICKS)
@@ -663,6 +662,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockTags.STONE_PRESSURE_PLATES)
             .add(toId(OBSIDIAN_PRESSURE_PLATE));
 
+        this.builder(BlockTags.MINEABLE_WITH_PICKAXE)
+            .remove(toId(SNOW_BRICKS.wall()).block());
+
         this.builder(BlockTags.MINEABLE_WITH_AXE)
             .add(toId(LEGACY_PLANKS))
             .add(toId(SOUL_O_LANTERN))
@@ -693,7 +695,8 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(REDSTONE_SAND))
             .add(toId(LEGACY_FIRST_GRASS_BLOCK))
             .add(toId(LEGACY_GRASS_BLOCK))
-            .add(toId(LEGACY_GRAVEL));
+            .add(toId(LEGACY_GRAVEL))
+            .addTag(BlockusBlockTags.SNOW_BRICKS);
 
         this.builder(BlockTags.SWORD_EFFICIENT)
             .add(toId(SOUL_O_LANTERN))
