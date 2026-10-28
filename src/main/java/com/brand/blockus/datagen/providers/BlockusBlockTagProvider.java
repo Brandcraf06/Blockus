@@ -688,7 +688,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.LAVA_BRICKS)
             .addTag(BlockusBlockTags.LAVA_POLISHED_BLACKSTONE_BRICKS)
             .addTag(BlockusBlockTags.WATER_BRICKS)
-            .addTag(BlockusBlockTags.SNOW_BRICKS)
             .addTag(BlockusBlockTags.ICE_BRICKS)
             .addTag(BlockusBlockTags.MAGMA_BRICKS)
             .addTag(BlockusBlockTags.BLAZE_BRICKS)
@@ -724,7 +723,11 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(REDSTONE_SAND)
             .add(LEGACY_FIRST_GRASS_BLOCK)
             .add(LEGACY_GRASS_BLOCK)
-            .add(LEGACY_GRAVEL);
+            .add(LEGACY_GRAVEL)
+            .addTag(BlockusBlockTags.SNOW_BRICKS);
+
+        this.valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+            .remove(SNOW_BRICKS.wall());
 
         this.valueLookupBuilder(BlockTags.SWORD_EFFICIENT)
             .add(SOUL_O_LANTERN)
@@ -822,7 +825,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(GOLDEN_CARROT_CRATE);
 
         this.valueLookupBuilder(BlockTags.ICE)
-            .addTag(BlockusBlockTags.ICE_BRICKS);
+            .add(PACKED_ICE_BRICKS.block())
+            .add(CHISELED_PACKED_ICE)
+            .add(PACKED_ICE_PILLAR);
 
         this.valueLookupBuilder(BlockTags.IMPERMEABLE)
             .addTag(BlockusBlockTags.BEVELED_GLASS)

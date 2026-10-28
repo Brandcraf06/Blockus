@@ -56,6 +56,10 @@ public record BSSWBundle(
         return new Builder(type, new BlockBuilder(base).properties(properties -> properties.strength(hardness, resistance).mapColor(mapcolor)));
     }
 
+    public static Builder of(String type, Block base, float strength) {
+        return new Builder(type, new BlockBuilder(base).properties(properties -> properties.strength(strength)));
+    }
+
     public static Builder of(String type, float hardness, float resistance, MapColor color) {
         return new Builder(type, new BlockBuilder(BlockFactory.create()).properties(properties -> properties.strength(hardness, resistance).mapColor(color)));
     }

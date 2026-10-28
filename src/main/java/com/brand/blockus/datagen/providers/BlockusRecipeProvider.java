@@ -340,8 +340,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 enclosedRecipeToEight(WATER_BRICKS.block(), Ingredient.of(Blocks.STONE_BRICKS), Items.WATER_BUCKET).unlockedBy(getHasName(Items.WATER_BUCKET), has(Items.WATER_BUCKET)).unlockedBy(getHasName(Blocks.STONE_BRICKS), has(Blocks.STONE_BRICKS)).save(output);
 
                 // Snow Bricks
-                blockStairsSlabWallCuttingRecipe(SNOW_BRICKS);
-                pillar(SNOW_PILLAR, SNOW_BRICKS.block());
+                twoInVertical(SNOW_PILLAR, SNOW_BRICKS.block(), 2);
                 twoByTwoToFour(SNOW_BRICKS.block(), Blocks.SNOW_BLOCK);
 
                 // Ice Bricks

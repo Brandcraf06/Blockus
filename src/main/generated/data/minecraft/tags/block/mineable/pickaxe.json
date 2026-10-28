@@ -1,4 +1,7 @@
 {
+  "fabric:remove": [
+    "blockus:snow_brick_wall"
+  ],
   "values": [
     "blockus:netherite_stairs",
     "blockus:netherite_slab",
@@ -90,7 +93,6 @@
     "#blockus:lava_bricks",
     "#blockus:lava_polished_blackstone_bricks",
     "#blockus:water_bricks",
-    "#blockus:snow_bricks",
     "#blockus:ice_bricks",
     "#blockus:magma_bricks",
     "#blockus:blaze_bricks",
