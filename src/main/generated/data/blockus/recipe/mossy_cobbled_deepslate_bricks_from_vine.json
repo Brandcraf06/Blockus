@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_cobbled_deepslate_bricks",
+  "ingredients": [
+    "blockus:cobbled_deepslate_bricks",
+    "minecraft:vine"
+  ],
+  "result": {
+    "id": "blockus:mossy_cobbled_deepslate_bricks"
+  }
+}

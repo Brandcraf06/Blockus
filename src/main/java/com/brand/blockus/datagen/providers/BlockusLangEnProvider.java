@@ -603,7 +603,9 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE, "Polished Deepslate Pressure Plate");
         translationBuilder.add(BlockusBlocks.POLISHED_DEEPSLATE_BUTTON, "Polished Deepslate Button");
         addBssw(translationBuilder, BlockusBlocks.MOSSY_DEEPSLATE_BRICKS, "Mossy Deepslate Bricks");
+        addBssw(translationBuilder, BlockusBlocks.MOSSY_COBBLED_DEEPSLATE, "Mossy Cobbled Deepslate");
         addBssw(translationBuilder, BlockusBlocks.COBBLED_DEEPSLATE_BRICKS, "Cobbled Deepslate Bricks");
+        addBssw(translationBuilder, BlockusBlocks.MOSSY_COBBLED_DEEPSLATE_BRICKS, "Mossy Cobbled Deepslate Bricks");
 
         // Sculk
         addBssw(translationBuilder, BlockusBlocks.POLISHED_SCULK, "Polished Sculk");

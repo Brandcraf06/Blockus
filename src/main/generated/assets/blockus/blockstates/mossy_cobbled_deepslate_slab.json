@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blockus:block/mossy_cobbled_deepslate_slab"
+    },
+    "type=double": {
+      "model": "blockus:block/mossy_cobbled_deepslate"
+    },
+    "type=top": {
+      "model": "blockus:block/mossy_cobbled_deepslate_slab_top"
+    }
+  }
+}
