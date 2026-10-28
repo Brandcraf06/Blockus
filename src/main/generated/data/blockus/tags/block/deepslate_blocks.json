@@ -1,9 +1,17 @@
 {
   "values": [
+    "blockus:mossy_cobbled_deepslate",
+    "blockus:mossy_cobbled_deepslate_stairs",
+    "blockus:mossy_cobbled_deepslate_slab",
+    "blockus:mossy_cobbled_deepslate_wall",
     "blockus:cobbled_deepslate_bricks",
     "blockus:cobbled_deepslate_brick_stairs",
     "blockus:cobbled_deepslate_brick_slab",
     "blockus:cobbled_deepslate_brick_wall",
+    "blockus:mossy_cobbled_deepslate_bricks",
+    "blockus:mossy_cobbled_deepslate_brick_stairs",
+    "blockus:mossy_cobbled_deepslate_brick_slab",
+    "blockus:mossy_cobbled_deepslate_brick_wall",
     "blockus:mossy_deepslate_bricks",
     "blockus:mossy_deepslate_brick_stairs",
     "blockus:mossy_deepslate_brick_slab",

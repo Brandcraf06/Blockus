@@ -17,3 +17,4 @@
 * Updated the textures of all Blockus obsidian blocks
 * Renamed Obsidian Reinforced Door to Obsidian Door
 * Renamed Obsidian Reinforced Trapdoor to Obsidian Trapdoor
+* Added Mossy Cobbled Deepslate (Stairs/Slab/Wall) & Mossy Cobbled Deepslate Bricks (Stairs/Slab/Wall)

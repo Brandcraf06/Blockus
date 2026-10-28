@@ -331,7 +331,9 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(RAINBOW_BLOCK))
             .add(toId(RAINBOW_BRICKS.block()))
 
+            .add(toId(MOSSY_COBBLED_DEEPSLATE.block()))
             .add(toId(COBBLED_DEEPSLATE_BRICKS.block()))
+            .add(toId(MOSSY_COBBLED_DEEPSLATE_BRICKS.block()))
             .add(toId(MOSSY_DEEPSLATE_BRICKS.block()))
 
             .add(toId(HERRINGBONE_DEEPSLATE_BRICKS))

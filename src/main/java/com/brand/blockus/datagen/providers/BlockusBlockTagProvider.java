@@ -152,7 +152,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.LIT_REDSTONE_LAMPS);
 
         this.builder(BlockusBlockTags.DEEPSLATE_BLOCKS)
+            .add(bsswBundle(MOSSY_COBBLED_DEEPSLATE))
             .add(bsswBundle(COBBLED_DEEPSLATE_BRICKS))
+            .add(bsswBundle(MOSSY_COBBLED_DEEPSLATE_BRICKS))
             .add(bsswBundle(MOSSY_DEEPSLATE_BRICKS))
             .add(toId(HERRINGBONE_DEEPSLATE_BRICKS))
             .add(toId(DEEPSLATE_PILLAR))

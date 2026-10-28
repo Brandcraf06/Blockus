@@ -202,6 +202,8 @@ public class BuildingBlocksGroup {
             entries.accept(DEEPSLATE_PILLAR);
             entries.accept(DEEPSLATE_CIRCULAR_PAVING);
             entries.accept(STURDY_DEEPSLATE);
+            addBssw(entries, MOSSY_COBBLED_DEEPSLATE);
+            addBssw(entries, MOSSY_COBBLED_DEEPSLATE_BRICKS);
 
             addBssw(entries, BLUESTONE);
             entries.accept(BLUESTONE_PRESSURE_PLATE);

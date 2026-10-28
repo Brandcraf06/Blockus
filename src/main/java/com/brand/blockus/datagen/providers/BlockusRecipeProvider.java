@@ -157,7 +157,11 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 shaped(RecipeCategory.REDSTONE, AMETHYST_LAMP).define('#', Items.AMETHYST_SHARD).define('X', Items.REDSTONE).pattern(" # ").pattern("#X#").pattern(" # ").unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD)).save(output);
 
                 // Deepslate
+                blockStairsSlabWallCuttingRecipe(MOSSY_COBBLED_DEEPSLATE);
                 blockStairsSlabWallCuttingRecipe(COBBLED_DEEPSLATE_BRICKS, Blocks.COBBLED_DEEPSLATE, Blocks.DEEPSLATE);
+                blockStairsSlabWallCuttingRecipe(MOSSY_COBBLED_DEEPSLATE_BRICKS, MOSSY_COBBLED_DEEPSLATE.block());
+                mossyBlocks(MOSSY_COBBLED_DEEPSLATE.block(), Blocks.COBBLED_DEEPSLATE);
+                mossyBlocks(MOSSY_COBBLED_DEEPSLATE_BRICKS.block(), COBBLED_DEEPSLATE_BRICKS.block());
                 mossyBlocks(MOSSY_DEEPSLATE_BRICKS.block(), Blocks.DEEPSLATE_BRICKS);
                 blockStairsSlabWallCuttingRecipe(MOSSY_DEEPSLATE_BRICKS);
                 pillar(DEEPSLATE_PILLAR, Blocks.DEEPSLATE_BRICKS, Blocks.COBBLED_DEEPSLATE, Blocks.DEEPSLATE, Blocks.POLISHED_DEEPSLATE);
