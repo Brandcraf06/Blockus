@@ -667,6 +667,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockTags.STONE_PRESSURE_PLATES)
             .add(toId(OBSIDIAN_PRESSURE_PLATE));
 
+        this.builder(BlockTags.MINEABLE_WITH_PICKAXE)
+            .remove(toId(SNOW_BRICKS.wall()).block());
+
         this.builder(BlockTags.MINEABLE_WITH_AXE)
             .add(toId(LEGACY_PLANKS))
             .add(toId(SOUL_O_LANTERN))

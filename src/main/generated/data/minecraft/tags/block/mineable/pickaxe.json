@@ -1,4 +1,7 @@
 {
+  "fabric:remove": [
+    "blockus:snow_brick_wall"
+  ],
   "values": [
     "blockus:netherite_stairs",
     "blockus:netherite_slab",
