@@ -92,7 +92,9 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block TUFF_PILLAR = pillar("tuff", Blocks.POLISHED_TUFF);
 
     // Deepslate
+    public static final BSSWBundle MOSSY_COBBLED_DEEPSLATE = BSSWBundle.of("mossy_cobbled_deepslate", Blocks.COBBLED_DEEPSLATE).register();
     public static final BSSWBundle COBBLED_DEEPSLATE_BRICKS = BSSWBundle.of("cobbled_deepslate_bricks", Blocks.COBBLED_DEEPSLATE).register();
+    public static final BSSWBundle MOSSY_COBBLED_DEEPSLATE_BRICKS = BSSWBundle.of("mossy_cobbled_deepslate_bricks", MOSSY_COBBLED_DEEPSLATE.block()).register();
     public static final BSSWBundle MOSSY_DEEPSLATE_BRICKS = BSSWBundle.of("mossy_deepslate_bricks", Blocks.DEEPSLATE_BRICKS).register();
     public static final Block DEEPSLATE_PILLAR = pillar("deepslate", Blocks.POLISHED_DEEPSLATE);
     public static final Block HERRINGBONE_DEEPSLATE_BRICKS = registerCopy("herringbone_deepslate_bricks", Blocks.DEEPSLATE_BRICKS);

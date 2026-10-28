@@ -141,7 +141,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.AMETHYST_BLOCKS);
 
         this.valueLookupBuilder(BlockusBlockTags.DEEPSLATE_BLOCKS)
+            .add(bsswBundle(MOSSY_COBBLED_DEEPSLATE))
             .add(bsswBundle(COBBLED_DEEPSLATE_BRICKS))
+            .add(bsswBundle(MOSSY_COBBLED_DEEPSLATE_BRICKS))
             .add(bsswBundle(MOSSY_DEEPSLATE_BRICKS))
             .add(HERRINGBONE_DEEPSLATE_BRICKS)
             .add(DEEPSLATE_PILLAR)
