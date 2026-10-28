@@ -941,7 +941,9 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(POTTED_LEGACY_BLUE_ROSE));
 
         this.builder(BlockTags.ICE)
-            .addTag(BlockusBlockTags.ICE_BRICKS);
+            .add(toId(PACKED_ICE_BRICKS.block()))
+            .add(toId(CHISELED_PACKED_ICE))
+            .add(toId(PACKED_ICE_PILLAR));
 
         this.builder(BlockTags.NETHER_PORTAL_FRAME)
             .add(toId(OBSIDIAN_BRICKS.block()))
