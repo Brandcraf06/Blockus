@@ -1,3 +1,7 @@
+### Blockus 2.16.8
+* Updated zh translations by SolidBlocks
+
+### Blockus 2.16.7
 * Added Frozen Magma Block, which behaves like Magma Block but inflicts freezing damage
   * Mobs wearing leather armor or immune to freezing are immune
   * Mobs vulnerable to freezing (Blaze, Magma Cube, Strider) take additional damages

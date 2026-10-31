@@ -216,7 +216,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block PACKED_ICE_PILLAR = pillar("packed_ice", PACKED_ICE_BRICKS.block());
 
     // Obsidian
-    public static final BSSWBundle OBSIDIAN_BRICKS = BSSWBundle.of("obsidian_bricks", Blocks.OBSIDIAN, PushReaction.BLOCK).register();
+    public static final BSSWBundle OBSIDIAN_BRICKS = BSSWBundle.of("obsidian_bricks", Blocks.OBSIDIAN).register();
     public static final BSSWBundle SMALL_OBSIDIAN_BRICKS = BSSWBundle.of("small_obsidian_bricks", OBSIDIAN_BRICKS.block()).register();
     public static final Block CRACKED_OBSIDIAN_BRICKS = registerCopy("cracked_obsidian_bricks", BlockusBlocks.OBSIDIAN_BRICKS.block());
     public static final Block OBSIDIAN_PILLAR = pillar("obsidian", BlockusBlocks.OBSIDIAN_BRICKS.block());
@@ -226,7 +226,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block GLOWING_OBSIDIAN = registerCopy("glowing_obsidian", Blocks.OBSIDIAN, properties -> properties.mapColor(MapColor.COLOR_RED).pushReaction(PushReaction.BLOCK).lightLevel((state) -> 15));
 
     // Crying Obsidian
-    public static final BSSWBundle CRYING_OBSIDIAN_BRICKS = BSSWBundle.of("crying_obsidian_bricks", Blocks.CRYING_OBSIDIAN, PushReaction.BLOCK).register();
+    public static final BSSWBundle CRYING_OBSIDIAN_BRICKS = BSSWBundle.of("crying_obsidian_bricks", Blocks.CRYING_OBSIDIAN).register();
     public static final BSSWBundle SMALL_CRYING_OBSIDIAN_BRICKS = BSSWBundle.of("small_crying_obsidian_bricks", CRYING_OBSIDIAN_BRICKS.block()).register();
     public static final Block CRACKED_CRYING_OBSIDIAN_BRICKS = registerCopy("cracked_crying_obsidian_bricks", BlockusBlocks.CRYING_OBSIDIAN_BRICKS.block());
     public static final Block CRYING_OBSIDIAN_PILLAR = pillar("crying_obsidian", BlockusBlocks.CRYING_OBSIDIAN_BRICKS.block());
@@ -652,7 +652,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block LEGACY_DIAMOND_BLOCK = registerLegacy("legacy_diamond_block", createCopy(Blocks.DIAMOND_BLOCK), "Indev");
     public static final Block LEGACY_LAPIS_BLOCK = registerLegacy("legacy_lapis_block", createCopy(Blocks.LAPIS_BLOCK), "Beta 1.2");
     public static final Block LEGACY_SPONGE = registerLegacy("legacy_sponge", SpongeBlock::new, createCopy(Blocks.SPONGE), "Classic 0.0.19a");
-    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", createCopy(Blocks.CRYING_OBSIDIAN).pushReaction(PushReaction.BLOCK), "Beta 1.3 (texture)");
+    public static final Block LEGACY_CRYING_OBSIDIAN = registerLegacy("legacy_crying_obsidian", createCopy(Blocks.CRYING_OBSIDIAN), "Beta 1.3 (texture)");
     public static final Block LEGACY_GLOWSTONE = registerLegacy("legacy_glowstone", createCopy(Blocks.GLOWSTONE), "Alpha 1.2.0");
     public static final Block LEGACY_STONECUTTER = registerLegacy("legacy_stonecutter", LegacyStonecutterBlock::new, createCopy(Blocks.COBBLESTONE).strength(1.5f, 17.5f), "PE Alpha");
     public static final Block LEGACY_GLOWING_OBSIDIAN = registerLegacy("legacy_glowing_obsidian", createCopy(BlockusBlocks.GLOWING_OBSIDIAN), "PE Alpha");
