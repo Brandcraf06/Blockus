@@ -1,3 +1,9 @@
+### Blockus 2.17.5
+* Fixed [#383](https://github.com/Brandcraf06/Blockus/issues/383) - Shingles sound differs from dyed shingles
+* Fixed wrong dyed shingles map colors
+* Updated zh translations by SolidBlocks
+
+### Blockus 2.17.4
 * Added Frozen Magma Block, which behaves like Magma Block but inflicts freezing damage
   * Mobs wearing leather armor or immune to freezing are immune
   * Mobs vulnerable to freezing (Blaze, Magma Cube, Strider) take additional damages

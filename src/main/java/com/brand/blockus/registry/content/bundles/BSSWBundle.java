@@ -46,16 +46,8 @@ public record BSSWBundle(
         return new Builder(type, new BlockBuilder(base).properties(properties -> properties.lightLevel((state) -> luminance)));
     }
 
-    public static Builder of(String type, Block base, PushReaction pistonBehavior) {
-        return new Builder(type, new BlockBuilder(base).properties(properties -> properties.pushReaction(pistonBehavior)));
-    }
-
     public static Builder of(String type, Block base, SoundType sound) {
         return new Builder(type, new BlockBuilder(base).properties(properties -> properties.sound(sound)));
-    }
-
-    public static Builder of(String type, Block base, float hardness, float resistance, MapColor mapcolor) {
-        return new Builder(type, new BlockBuilder(base).properties(properties -> properties.strength(hardness, resistance).mapColor(mapcolor)));
     }
 
     public static Builder of(String type, Block base, float strength) {
