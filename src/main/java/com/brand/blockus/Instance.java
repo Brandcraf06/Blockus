@@ -1,30 +1,26 @@
 package com.brand.blockus;
 
-import com.brand.blockus.registry.content.bundles.*;
-import com.brand.blockus.utils.helper.WoodMaps;
+import com.brand.blockus.registry.content.bundles.WoodenPostBundle;
 import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.CookingFuel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.WeatheringCopperCollection;
 import net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
-import java.util.List;
-
 import static com.brand.blockus.registry.content.BlockusBlocks.*;
+
+//import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+//import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 
 public class Instance {
     public static void init() {
+/*
 // Burning
         // General
         FlammableBlockRegistry.getDefaultInstance().add(WOODEN_FRAME, 30, 60);
@@ -138,6 +134,7 @@ public class Instance {
         // Legacy blocks
         FlammableBlockRegistry.getDefaultInstance().add(LEGACY_LOG, 5, 5);
 
+*/
         // Fuel
         addCookingFuel(Items.DRIED_KELP, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE);
         addCookingFuel(Items.PAPER, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_EXTRA_SMALL);
@@ -145,7 +142,7 @@ public class Instance {
 // Other
         addStrippables();
         addFlattenables();
-        addOxidizables();
+//        addOxidizables();
     }
 
     public static void addStrippables() {
@@ -162,6 +159,7 @@ public class Instance {
         BlockTransformerHelper.registerFlattening(Blocks.DIRT_PATH, PATH.defaultBlockState());
         BlockTransformerHelper.registerFlattening(PATH, Blocks.DIRT.defaultBlockState());
     }
+/*
 
     public static void addOxidizables() {
         registerOxidizable(COPPER_BRICKS);
@@ -181,6 +179,8 @@ public class Instance {
         registerOxidizable(block.slab().blocks());
         registerOxidizable(block.wall().blocks());
     }
+
+*/
 
     public static void addCookingFuel(Item item, ResourceKey<ContextIntProvider> burnTime) {
         DefaultItemComponentEvents.MODIFY.register(modifyContext -> modifyContext.modify(item, builder -> builder.set(DataComponents.COOKING_FUEL, new CookingFuel(burnTime, ContextFloatProviders.COOKING_DEFAULT_SPEED_MULTIPLIER))));

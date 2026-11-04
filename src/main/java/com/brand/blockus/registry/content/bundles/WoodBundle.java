@@ -8,6 +8,8 @@ import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.sounds.BlockSoundSet;
+import net.minecraft.world.level.block.sounds.BlockSoundSets;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -60,11 +62,11 @@ public record WoodBundle(
         return properties;
     }
 
-    public static WoodBundle register(String type, Block base, MapColor color, SoundType sound, WoodType woodType, BlockSetType blockSetType, boolean isBurnable) {
+    public static WoodBundle register(String type, Block base, MapColor color, ResourceKey<BlockSoundSet> sound, WoodType woodType, BlockSetType blockSetType, boolean isBurnable) {
         BlockBehaviour.Properties blockProperties = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound);
         BlockBehaviour.Properties doorTrapdoorBlockProperties = BlockFactory.doorTrapdoorBlockProperties(0.1f, 0.8f, sound, color, NoteBlockInstrument.BASS);
         BlockBehaviour.Properties signBlockProperties = BlockFactory.create().mapColor(color).noCollision().strength(1.0F);
-        BlockBehaviour.Properties shelfBlockProperties = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).sound(SoundType.SHELF).strength(2.0F, 3.0F);
+        BlockBehaviour.Properties shelfBlockProperties = BlockFactory.create().mapColor(color).instrument(NoteBlockInstrument.BASS).sound(BlockSoundSets.SHELF).strength(2.0F, 3.0F);
 
         if (isBurnable) {
             blockProperties = blockProperties.ignitedByLava();

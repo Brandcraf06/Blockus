@@ -65,8 +65,8 @@ public class LegacyStonecutterMenu extends AbstractContainerMenu {
         this.resultContainer = new ResultContainer();
         this.access = access;
         this.level = inventory.player.level();
-        this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
-        this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
+        this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33, Slot.Section.INPUT));
+        this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33, Slot.Section.RESULT) {
             {
                 Objects.requireNonNull(LegacyStonecutterMenu.this);
             }
@@ -110,12 +110,12 @@ public class LegacyStonecutterMenu extends AbstractContainerMenu {
         return this.recipesForInput;
     }
 
-    public int getNumberOfVisibleRecipes() {
-        return this.recipesForInput.size();
-    }
-
     public boolean hasInputItem() {
         return this.inputSlot.hasItem() && !this.recipesForInput.isEmpty();
+    }
+
+    public ItemStack getInputItem() {
+        return this.inputSlot.getItem();
     }
 
     public boolean stillValid(final Player player) {

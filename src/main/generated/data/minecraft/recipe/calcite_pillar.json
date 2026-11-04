@@ -2,13 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "blockus:packed_ice_bricks"
+    "#": "minecraft:calcite"
   },
   "pattern": [
-    "###"
+    "#",
+    "#"
   ],
   "result": {
-    "count": 6,
-    "id": "blockus:packed_ice_brick_slab"
+    "count": 2,
+    "id": "minecraft:calcite_pillar"
   }
 }

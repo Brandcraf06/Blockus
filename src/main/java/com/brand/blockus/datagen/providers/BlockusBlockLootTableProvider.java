@@ -413,7 +413,6 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             RAINBOW_ROSE,
             TINTED_BEVELED_GLASS,
             CHOCOLATE_TABLET,
-            CHISELED_PACKED_ICE,
             PACKED_ICE_PILLAR);
 
         this.addDrops(this::createSlabItemTable, CUT_SOUL_SANDSTONE_SLAB, NETHERITE_SLAB);

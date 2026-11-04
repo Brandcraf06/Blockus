@@ -9,6 +9,7 @@ import net.minecraft.references.BlockItemId;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ColorCollection;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public record AsphaltBundle(
     }
 
     public static <Id> AsphaltBundle register(ColorCollection<Id> ids, ColorCollection<Id> idsStairs, ColorCollection<Id> idsSlab, TriFunction<Id, Function<BlockBehaviour.Properties, Block>, BlockBehaviour.Properties, Block> register) {
-        ColorBlockItemCollection block = BlockFactory.registerDyedBlocks(ids, register, (var0, p) -> new AsphaltBlock(p), color -> BlockFactory.asphaltProperties().mapColor(color));
+        ColorBlockItemCollection block = BlockFactory.registerDyedBlocks(ids, register, (var0, p) -> new AsphaltBlock(p), color -> BlockFactory.asphaltProperties().mapColor(MapColor.DYE_TO_DEFAULT_COLOR.pick(color)));
         AsphaltBundle bundle = new AsphaltBundle(block,
             BlockFactory.registerDyedBlocks(idsStairs, register, (color, p) -> new AsphaltStairs(block.blocks().pick(color).defaultBlockState(), p), BlockFactory.copyDyedBlocks(block.blocks())),
             BlockFactory.registerDyedBlocks(idsSlab, register, (var0, p) -> new AsphaltSlab(p), BlockFactory.copyDyedBlocks(block.blocks())),

@@ -8,8 +8,8 @@ import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.sounds.BlockSoundSet;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
@@ -52,7 +52,7 @@ public record BSSWBundle(
         return new Builder(type, new BlockBuilder(base).properties(properties -> properties.lightLevel((state) -> luminance)));
     }
 
-    public static Builder of(String type, Block base, SoundType sound) {
+    public static Builder of(String type, Block base, ResourceKey<BlockSoundSet> sound) {
         return new Builder(type, new BlockBuilder(base).properties(properties -> properties.sound(sound)));
     }
 

@@ -224,8 +224,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.builder(BlockusBlockTags.HONEYCOMB_BLOCKS).add(bsswBundle(HONEYCOMB_BRICKS));
         this.builder(BlockusBlockTags.ICE_BRICKS)
-            .add(bsswBundle(PACKED_ICE_BRICKS))
-            .add(toId(CHISELED_PACKED_ICE))
             .add(toId(PACKED_ICE_PILLAR));
 
         this.builder(BlockusBlockTags.LARGE_FLOWER_POTS).add(toId(LARGE_FLOWER_POT));
@@ -468,7 +466,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(PALE_MOSS_HEDGE));
 
         this.builder(BlockusBlockTags.SNOW_BRICKS)
-            .add(bsswBundle(SNOW_BRICKS))
             .add(toId(SNOW_PILLAR));
 
         this.builder(BlockusBlockTags.SOUL_SANDSTONE)
@@ -668,9 +665,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.GATES)
             .addTag(BlockTags.STONE_PRESSURE_PLATES)
             .add(toId(OBSIDIAN_PRESSURE_PLATE));
-
-        this.builder(BlockTags.MINEABLE_WITH_PICKAXE)
-            .remove(toId(SNOW_BRICKS.wall()).block());
 
         this.builder(BlockTags.MINEABLE_WITH_AXE)
             .add(toId(LEGACY_PLANKS))
@@ -943,8 +937,6 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(POTTED_LEGACY_BLUE_ROSE));
 
         this.builder(BlockTags.ICE)
-            .add(toId(PACKED_ICE_BRICKS.block()))
-            .add(toId(CHISELED_PACKED_ICE))
             .add(toId(PACKED_ICE_PILLAR));
 
         this.builder(BlockTags.NETHER_PORTAL_FRAME)

@@ -19,6 +19,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.sounds.BlockSoundSet;
+import net.minecraft.world.level.block.sounds.BlockSoundSets;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -239,28 +241,28 @@ public class BlockFactory {
     }
 
     // Door & Trapdoor
-    public static BlockBehaviour.Properties doorTrapdoorBlockProperties(float hardness, float resistance, SoundType sound, MapColor color, NoteBlockInstrument instrument) {
+    public static BlockBehaviour.Properties doorTrapdoorBlockProperties(float hardness, float resistance, ResourceKey<BlockSoundSet> sound, MapColor color, NoteBlockInstrument instrument) {
         return create().mapColor(color).instrument(instrument).strength(hardness, resistance).sound(sound).noOcclusion().pushReaction(PushReaction.POPPED);
     }
 
-    public static Block woodenDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> burnTime) {
+    public static Block woodenDoor(String id, float hardness, float resistance, ResourceKey<BlockSoundSet> sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> burnTime) {
         return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new DoorBlock(blockSetType, properties)).cookingFuel(burnTime).register(BlockusIds.create(id));
     }
 
-    public static Block stoneDoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
+    public static Block stoneDoor(String id, float hardness, float resistance, ResourceKey<BlockSoundSet> sound, MapColor color, BlockSetType blockSetType) {
         return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()).factory(properties -> new DoorBlock(blockSetType, properties)).register(BlockusIds.create(id));
     }
 
-    public static Block woodenTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> burnTime) {
+    public static Block woodenTrapdoor(String id, float hardness, float resistance, ResourceKey<BlockSoundSet> sound, MapColor color, BlockSetType blockSetType, ResourceKey<ContextIntProvider> burnTime) {
         return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASS).ignitedByLava()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).cookingFuel(burnTime).register(BlockusIds.create(id));
     }
 
-    public static Block stoneTrapdoor(String id, float hardness, float resistance, SoundType sound, MapColor color, BlockSetType blockSetType) {
+    public static Block stoneTrapdoor(String id, float hardness, float resistance, ResourceKey<BlockSoundSet> sound, MapColor color, BlockSetType blockSetType) {
         return of(doorTrapdoorBlockProperties(hardness, resistance, sound, color, NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops()).factory(properties -> new TrapDoorBlock(blockSetType, properties)).register(BlockusIds.create(id));
     }
 
     // Light
-    public static Block lampBlock(String id, float hardness, float resistance, SoundType sound, int luminance, MapColor color) {
+    public static Block lampBlock(String id, float hardness, float resistance, ResourceKey<BlockSoundSet> sound, int luminance, MapColor color) {
         return of(create().mapColor(color).strength(hardness, resistance).sound(sound).lightLevel((state) -> luminance)).register(BlockusIds.create(id));
     }
 
@@ -269,11 +271,11 @@ public class BlockFactory {
     }
 
     public static BlockBehaviour.Properties neonProperties() {
-        return create().lightLevel((state) -> 2).sound(SoundType.GLASS).strength(0.5f, 0.5f).emissiveRendering((var0) -> true).isValidSpawn(Blocks::never);
+        return create().lightLevel((state) -> 2).sound(BlockSoundSets.GLASS).strength(0.5f, 0.5f).emissiveRendering((var0) -> true).isValidSpawn(Blocks::never);
     }
 
     public static BlockBehaviour.Properties futurneoblockProperties() {
-        return create().lightLevel((state) -> 15).strength(0.5f, 0.5f).sound(SoundType.GLASS).isValidSpawn(Blocks::always);
+        return create().lightLevel((state) -> 15).strength(0.5f, 0.5f).sound(BlockSoundSets.GLASS).isValidSpawn(Blocks::always);
     }
 
     public static BlockBehaviour.Properties asphaltProperties() {
@@ -289,7 +291,7 @@ public class BlockFactory {
         return copy(base).factory(properties -> factory.apply(color, properties)).itemProperties(itemProperties).register(BlockusIds.create(id));
     }
 
-    public static Block dyedBlock(String id, DyeColor color, BlockBehaviour.Properties properties) {
+    public static Block dyedBlock(String id, MapColor color, BlockBehaviour.Properties properties) {
         return registerOf(id, Block::new, properties.mapColor(color));
     }
 
@@ -329,11 +331,11 @@ public class BlockFactory {
 
     // Other
     public static Block woodenPane(String id, ResourceKey<ContextIntProvider> burnTime) {
-        return registerOf(id, IronBarsBlock::new, create().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(SoundType.WOOD).ignitedByLava(), p -> p.cookingFuel(burnTime));
+        return registerOf(id, IronBarsBlock::new, create().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(0.1f, 0.8f).sound(BlockSoundSets.WOOD).ignitedByLava(), p -> p.cookingFuel(burnTime));
     }
 
     public static BlockBehaviour.Properties crateProperties() {
-        return create().mapColor(Blocks.OAK_PLANKS.defaultMapColor()).strength(2.5f).instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD);
+        return create().mapColor(Blocks.OAK_PLANKS.defaultMapColor()).strength(2.5f).instrument(NoteBlockInstrument.BASS).sound(BlockSoundSets.WOOD);
     }
 
     public static Block crate(String id) {

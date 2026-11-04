@@ -68,7 +68,7 @@ jar {
 }
 
 publishMods {
-  def startVersion = "26.3"
+  def startVersion = "26.4"
   file = jar.archiveFile
   changelog = file("changelog.md").text
   type = STABLE

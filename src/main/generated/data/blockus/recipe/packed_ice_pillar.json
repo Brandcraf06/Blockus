@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "blockus:packed_ice_bricks"
+    "#": "minecraft:packed_ice_bricks"
   },
   "pattern": [
     "#",

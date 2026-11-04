@@ -7,6 +7,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.minecraft.client.color.block.BlockTintSources;
+import net.minecraft.client.core.registries.BuiltInClientRegistries;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.model.object.boat.RaftModel;
@@ -22,9 +23,9 @@ import java.util.List;
 
 public class BlockusClient implements ClientModInitializer {
 
-    public static <T extends Entity> void register(EntityType<? extends @NotNull T> entityType, ModelLayerLocation modelLayer, ModelLayerRegistry.TexturedLayerDefinitionProvider provider, EntityRendererProvider<T> renderer) {
+    public static <T extends Entity> EntityRendererProvider<?> register(EntityType<? extends @NotNull T> entityType, ModelLayerLocation modelLayer, ModelLayerRegistry.TexturedLayerDefinitionProvider provider, EntityRendererProvider<T> renderer) {
         ModelLayerRegistry.registerModelLayer(modelLayer, provider);
-        EntityRenderers.register(entityType, renderer);
+        return EntityRenderers.register(BuiltInClientRegistries.ENTITY_RENDERER, entityType, renderer);
     }
 
     @Override
@@ -43,10 +44,9 @@ public class BlockusClient implements ClientModInitializer {
         register(BlockusEntities.CHARRED_CHEST_BOAT, modelLayers(BoatTypes.CHARRED.chestBoatLayer), BoatModel::createChestBoatModel, (context) -> new BoatRenderer(context, modelLayers(BoatTypes.CHARRED.chestBoatLayer)));
         register(BlockusEntities.RAW_BAMBOO_RAFT, modelLayers(BoatTypes.RAW_BAMBOO.raftLayer), RaftModel::createRaftModel, (context) -> new RaftRenderer(context, modelLayers(BoatTypes.RAW_BAMBOO.raftLayer)));
         register(BlockusEntities.RAW_BAMBOO_CHEST_RAFT, modelLayers(BoatTypes.RAW_BAMBOO.chestRaftLayer), RaftModel::createChestRaftModel, (context) -> new RaftRenderer(context, modelLayers(BoatTypes.RAW_BAMBOO.chestRaftLayer)));
-
     }
 
-    public ModelLayerLocation modelLayers(String name) {
+    public static ModelLayerLocation modelLayers(String name) {
         return new ModelLayerLocation(Blockus.id(name), "main");
     }
 }

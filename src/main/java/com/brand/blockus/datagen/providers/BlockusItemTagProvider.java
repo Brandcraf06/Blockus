@@ -539,10 +539,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .addTag(BlockusItemTags.TIMBER_FRAMES);
 
         this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING)
-            .add(toId(PACKED_ICE_BRICKS.block()))
-            .add(toId(CHISELED_PACKED_ICE))
             .add(toId(PACKED_ICE_PILLAR))
-            .add(toId(SNOW_BRICKS.block()))
             .add(toId(SNOW_PILLAR));
 
         this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_SLIDING)

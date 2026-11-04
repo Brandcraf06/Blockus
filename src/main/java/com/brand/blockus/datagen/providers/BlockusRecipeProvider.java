@@ -305,15 +305,9 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 chiseled(CHISELED_WATER_BRICKS, WATER_BRICKS.slab(), WATER_BRICKS.block());
                 enclosedRecipeToEight(WATER_BRICKS.block(), Ingredient.of(Blocks.STONE_BRICKS), Items.WATER_BUCKET).unlockedBy(getHasName(Items.WATER_BUCKET), has(Items.WATER_BUCKET)).unlockedBy(getHasName(Blocks.STONE_BRICKS), has(Blocks.STONE_BRICKS)).save(output);
 
-                // Snow Bricks
-                twoInVertical(SNOW_PILLAR, SNOW_BRICKS.block(), 2);
-                twoByTwoToFour(SNOW_BRICKS.block(), Blocks.SNOW_BLOCK);
-
-                // Ice Bricks
-                blockStairsSlabWallCuttingRecipe(PACKED_ICE_BRICKS, Blocks.PACKED_ICE);
-                pillar(PACKED_ICE_PILLAR, PACKED_ICE_BRICKS.block(), Blocks.PACKED_ICE);
-                chiseled(CHISELED_PACKED_ICE, PACKED_ICE_BRICKS.slab(), PACKED_ICE_BRICKS.block(), Blocks.PACKED_ICE);
-                twoByTwoRecipe(RecipeCategory.BUILDING_BLOCKS, PACKED_ICE_BRICKS.block(), Blocks.PACKED_ICE, 4);
+                // Snow/Ice Bricks
+                twoInVertical(SNOW_PILLAR, Blocks.SNOW_BRICKS, 2);
+                pillar(PACKED_ICE_PILLAR, Blocks.PACKED_ICE_BRICKS, Blocks.PACKED_ICE);
 
                 // Magma
                 blockStairsSlabWallCuttingRecipe(MAGMA_BRICKS, Blocks.MAGMA_BLOCK);

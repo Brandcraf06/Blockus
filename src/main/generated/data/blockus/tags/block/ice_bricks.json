@@ -1,10 +1,5 @@
 {
   "values": [
-    "blockus:packed_ice_bricks",
-    "blockus:packed_ice_brick_stairs",
-    "blockus:packed_ice_brick_slab",
-    "blockus:packed_ice_brick_wall",
-    "blockus:chiseled_packed_ice",
     "blockus:packed_ice_pillar"
   ]
 }

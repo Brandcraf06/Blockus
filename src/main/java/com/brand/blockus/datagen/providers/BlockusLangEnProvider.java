@@ -541,10 +541,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.POLISHED_END_STONE_BUTTON, "Polished End Stone Button");
 
         // Snow & Ice
-        addBssw(translationBuilder, BlockusBlocks.SNOW_BRICKS, "Snow Bricks");
         translationBuilder.add(BlockusBlocks.SNOW_PILLAR, "Snow Pillar");
-        addBssw(translationBuilder, BlockusBlocks.PACKED_ICE_BRICKS, "Packed Ice Bricks");
-        translationBuilder.add(BlockusBlocks.CHISELED_PACKED_ICE, "Chiseled Packed Ice");
         translationBuilder.add(BlockusBlocks.PACKED_ICE_PILLAR, "Packed Ice Pillar");
 
         // Netherite

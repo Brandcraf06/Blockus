@@ -2,41 +2,43 @@ package com.brand.blockus.registry;
 
 import com.brand.blockus.Blockus;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
 
 public class BlockusAliases {
     public static void init() {
-        addBlockAndItemAlias("rainbow_petal", "rainbow_petals");
-        String[] hedges = {
-            "oak", "spruce", "birch", "jungle", "acacia", "dark_oak",
-            "mangrove", "cherry", "pale_oak", "white_oak",
-            "azalea", "moss", "pale_moss",
-            "crimson", "warped"
-        };
-
-        for (String type : hedges) {
-            addBlockAndItemAlias(type + "_small_hedge", type + "_hedge");
-        }
-        addBlockAndItemAlias("azalea_small_hedge_flowers", "flowering_azalea_hedge");
-
-        String[] smallLogs = {
-            "oak", "spruce", "birch", "jungle", "acacia", "dark_oak",
-            "mangrove", "cherry", "pale_oak", "white_oak"
-        };
-
-        for (String type : smallLogs) {
-            addBlockAndItemAlias(type + "_small_logs", "small_" + type + "_logs");
-        }
-        addBlockAndItemAlias("crimson_small_stems", "small_crimson_stems");
-        addBlockAndItemAlias("warped_small_stems", "small_warped_stems");
         addBlockAndItemAlias("obsidian_reinforced_door", "obsidian_door");
         addBlockAndItemAlias("obsidian_reinforced_trapdoor", "obsidian_trapdoor");
-        addBlockAndItemAlias("ice_bricks", "packed_ice_bricks");
-        addBlockAndItemAlias("ice_brick_wall", "packed_ice_brick_wall");
+
+        addBlockAndItemAlias("ice_bricks", Identifier.withDefaultNamespace("packed_ice_bricks"));
+        addBlockAndItemAlias("ice_brick_wall", Identifier.withDefaultNamespace("packed_ice_brick_wall"));
         addBlockAndItemAlias("ice_pillar", "packed_ice_pillar");
+
+        addDefaultNamespaceAlias("packed_ice_bricks");
+        addDefaultNamespaceAlias("packed_ice_brick_stairs");
+        addDefaultNamespaceAlias("packed_ice_brick_slab");
+        addDefaultNamespaceAlias("packed_ice_brick_wall");
+        addDefaultNamespaceAlias("chiseled_packed_ice");
+
+        addDefaultNamespaceAlias("snow_bricks");
+        addDefaultNamespaceAlias("snow_brick_stairs");
+        addDefaultNamespaceAlias("snow_brick_slab");
+        addDefaultNamespaceAlias("snow_brick_wall");
+    }
+
+    private static void addBlockAndItemAlias(Identifier from, Identifier to) {
+        BuiltInRegistries.BLOCK.addAlias(from, to);
+        BuiltInRegistries.ITEM.addAlias(from, to);
+    }
+
+    private static void addBlockAndItemAlias(String from, Identifier to) {
+        addBlockAndItemAlias(Blockus.id(from), to);
     }
 
     private static void addBlockAndItemAlias(String from, String to) {
-        BuiltInRegistries.BLOCK.addAlias(Blockus.id(from), Blockus.id(to));
-        BuiltInRegistries.ITEM.addAlias(Blockus.id(from), Blockus.id(to));
+        addBlockAndItemAlias(Blockus.id(from), Blockus.id(to));
+    }
+
+    private static void addDefaultNamespaceAlias(String name) {
+        addBlockAndItemAlias(Blockus.id(name), Identifier.withDefaultNamespace(name));
     }
 }
