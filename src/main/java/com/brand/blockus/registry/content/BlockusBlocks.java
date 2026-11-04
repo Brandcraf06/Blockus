@@ -553,7 +553,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final WoolBundle GINGHAM_WOOL = WoolBundle.register(BlockusIds.GINGHAM_WOOL, BlockusIds.GINGHAM_WOOL_STAIRS, BlockusIds.GINGHAM_WOOL_SLAB, BlockusIds.GINGHAM_CARPET, BlockBuilder::registerBlock);
 
     // Glazed Terracotta Pillars
-    public static final ColorBlockItemCollection GLAZED_TERRACOTTA_PILLAR = registerDyedBlocks(BlockusIds.GLAZED_TERRACOTTA_PILLAR, BlockBuilder::registerBlock, (var0, p) -> new RotatedPillarBlock(p), Blocks.DYED_TERRACOTTA);
+    public static final ColorBlockItemCollection GLAZED_TERRACOTTA_PILLAR = registerDyedBlocks(BlockusIds.GLAZED_TERRACOTTA_PILLAR, BlockBuilder::registerBlock, (var0, p) -> new RotatedPillarBlock(p), Blocks.GLAZED_TERRACOTTA);
 
     // Pressure Plates
     public static final Block POLISHED_ANDESITE_PRESSURE_PLATE = stonePressurePlate(Blocks.POLISHED_ANDESITE);
