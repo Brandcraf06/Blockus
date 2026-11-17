@@ -47,7 +47,11 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.copy(BlockusBlockTags.ALL_PATTERNED_WOOLS, BlockusItemTags.ALL_PATTERNED_WOOLS);
         this.copy(BlockusBlockTags.HEDGES, BlockusItemTags.HEDGES);
         this.copy(BlockusBlockTags.SOUL_SOILS, BlockusItemTags.SOUL_SOILS);
-        this.copy(BlockusBlockTags.STAINED_STONE_BRICKS, BlockusItemTags.STAINED_STONE_BRICKS);
+        this.valueLookupBuilder(BlockusItemTags.STAINED_STONE_BRICKS)
+            .add(Items.STONE_BRICKS);
+        for (DyeColor color : BlockOrder.COLOR) {
+            valueLookupBuilder(BlockusItemTags.STAINED_STONE_BRICKS).add(STAINED_STONE_BRICKS.colorMap().get(color).block().asItem());
+        }
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
         this.copy(BlockusBlockTags.WHITE_OAK_LOGS, BlockusItemTags.WHITE_OAK_LOGS);
 
