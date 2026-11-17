@@ -394,10 +394,10 @@ public class BlockusBlocks extends BlockFactory {
     public static final WoodBundle CHARRED = WoodBundle.of("charred", Blocks.OAK_PLANKS, MapColor.TERRACOTTA_GRAY, SoundType.WOOD, CHARRED_WOOD_TYPE, BlockSetType.OAK, false).register();
 
     // Extra Wood Blocks
-    public static final ExtraWoodBundle<BSSWBundle> WOODEN_MOSAIC = ExtraWoodBundle.of(wood -> wood + "_mosaic", WoodMaps.PLANKS_MAP::get, ExtraWoodBundle.exclude(WoodMaps.BAMBOO));
-    public static final ExtraWoodBundle<BSSWBundle> MOSSY_PLANKS = ExtraWoodBundle.of(wood -> "mossy_" + wood + "_planks", WoodMaps.PLANKS_MAP::get);
-    public static final ExtraWoodBundle<Block> HERRINGBONE_PLANKS = ExtraWoodBundle.of(wood -> registerCopy("herringbone_" + wood + "_planks", WoodMaps.PLANKS_MAP.get(wood)));
-    public static final ExtraWoodBundle<Block> SMALL_LOGS = ExtraWoodBundle.of(wood -> {
+    public static final ExtraWoodBundle<BSSWBundle> WOODEN_MOSAIC = ExtraWoodBundle.register(wood -> wood + "_mosaic", WoodMaps.PLANKS_MAP::get, ExtraWoodBundle.exclude(WoodMaps.BAMBOO));
+    public static final ExtraWoodBundle<BSSWBundle> MOSSY_PLANKS = ExtraWoodBundle.register(wood -> "mossy_" + wood + "_planks", WoodMaps.PLANKS_MAP::get);
+    public static final ExtraWoodBundle<Block> HERRINGBONE_PLANKS = ExtraWoodBundle.register(wood -> registerCopy("herringbone_" + wood + "_planks", WoodMaps.PLANKS_MAP.get(wood)));
+    public static final ExtraWoodBundle<Block> SMALL_LOGS = ExtraWoodBundle.register(wood -> {
         Block log = WoodMaps.LOG_MAP.get(wood);
         if (log == null) return null;
         String suffix = (wood.equals(WoodMaps.CRIMSON.getId()) || wood.equals(WoodMaps.WARPED.getId())) ? "stems" : "logs";

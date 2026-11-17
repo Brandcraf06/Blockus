@@ -6,13 +6,14 @@ import net.minecraft.world.level.block.Block;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class ExtraWoodBundle<T> {
     private final Map<String, T> blocks;
 
     private ExtraWoodBundle(Map<String, T> blocks) {
-        this.blocks = Map.copyOf(blocks);
+        this.blocks = blocks;
     }
 
     public Map<String, T> bundle() {
@@ -23,7 +24,15 @@ public class ExtraWoodBundle<T> {
         return blocks.get(wood);
     }
 
-    public static <T> ExtraWoodBundle<T> of(Function<String, T> blockFactory) {
+    public void forEach(Consumer<T> consumer) {
+        for (T block : blocks.values()) {
+            if (block != null) {
+                consumer.accept(block);
+            }
+        }
+    }
+
+    public static <T> ExtraWoodBundle<T> register(Function<String, T> blockFactory) {
         Map<String, T> map = new LinkedHashMap<>();
         for (WoodMaps wood : WoodMaps.values()) {
             T block = blockFactory.apply(wood.getId());
@@ -34,11 +43,7 @@ public class ExtraWoodBundle<T> {
         return new ExtraWoodBundle<>(map);
     }
 
-    public static ExtraWoodBundle<BSSWBundle> of(Function<String, String> string, Function<String, Block> baseBlockProvider) {
-        return of(string, baseBlockProvider, Set.of());
-    }
-
-    public static ExtraWoodBundle<BSSWBundle> of(Function<String, String> string, Function<String, Block> baseBlockProvider, Set<WoodMaps> exclude) {
+    public static ExtraWoodBundle<BSSWBundle> register(Function<String, String> string, Function<String, Block> baseBlockProvider, Set<WoodMaps> exclude) {
         Map<String, BSSWBundle> map = new LinkedHashMap<>();
         for (WoodMaps wood : WoodMaps.values()) {
             if (exclude.contains(wood)) continue;
@@ -48,6 +53,10 @@ public class ExtraWoodBundle<T> {
             map.put(wood.getId(), bundle);
         }
         return new ExtraWoodBundle<>(map);
+    }
+
+    public static ExtraWoodBundle<BSSWBundle> register(Function<String, String> string, Function<String, Block> baseBlockProvider) {
+        return register(string, baseBlockProvider, Set.of());
     }
 
     public static Set<WoodMaps> exclude(WoodMaps... types) {

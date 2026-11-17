@@ -13,6 +13,7 @@ public class BlockusBlockTags {
     public static final TagKey<Block> BARRIERS = register("barriers");
     public static final TagKey<Block> BASALT_BLOCKS = register("basalt_blocks");
     public static final TagKey<Block> BEVELED_GLASS = register("beveled_glass");
+    public static final TagKey<Block> BEVELED_GLASS_PANES = register("beveled_glass_panes");
     public static final TagKey<Block> BLACKSTONE_BLOCKS = register("blackstone_blocks");
     public static final TagKey<Block> BLAZE_BRICKS = register("blaze_bricks");
     public static final TagKey<Block> BLUESTONE = register("bluestone");

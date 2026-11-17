@@ -42,52 +42,25 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
     protected void addTags(HolderLookup.Provider registries) {
 
         this.copy(BlockusBlockTags.BARRIERS, BlockusItemTags.BARRIERS);
-        this.copy(BlockTags.BARS, ItemTags.BARS);
-
-        this.valueLookupBuilder(ItemTags.BOATS)
-            .add(BlockusItems.RAW_BAMBOO_RAFT)
-            .add(BlockusItems.CHARRED_BOAT)
-            .add(BlockusItems.WHITE_OAK_BOAT);
-
-        this.copy(BlockTags.CHAINS, ItemTags.CHAINS);
-
-        this.valueLookupBuilder(ItemTags.CHEST_BOATS)
-            .add(BlockusItems.RAW_BAMBOO_CHEST_RAFT)
-            .add(BlockusItems.CHARRED_CHEST_BOAT)
-            .add(BlockusItems.WHITE_OAK_CHEST_BOAT);
-
-        this.copy(BlockTags.LANTERNS, ItemTags.LANTERNS);
-
-        this.copy(BlockTags.STONE_BUTTONS, ItemTags.STONE_BUTTONS);
-
         this.copy(BlockusBlockTags.PATTERNED_WOOL, BlockusItemTags.PATTERNED_WOOL);
         this.copy(BlockusBlockTags.PATTERNED_CARPETS, BlockusItemTags.PATTERNED_CARPETS);
         this.copy(BlockusBlockTags.ALL_PATTERNED_WOOLS, BlockusItemTags.ALL_PATTERNED_WOOLS);
-
         this.copy(BlockusBlockTags.HEDGES, BlockusItemTags.HEDGES);
-
         this.copy(BlockusBlockTags.SOUL_SOILS, BlockusItemTags.SOUL_SOILS);
-
-        this.valueLookupBuilder(BlockusItemTags.STAINED_STONE_BRICKS)
-            .add(Items.STONE_BRICKS);
-        for (DyeColor color : BlockOrder.COLOR) {
-            valueLookupBuilder(BlockusItemTags.STAINED_STONE_BRICKS).add(STAINED_STONE_BRICKS.colorMap().get(color).block().asItem());
-        }
-
+        this.copy(BlockusBlockTags.STAINED_STONE_BRICKS, BlockusItemTags.STAINED_STONE_BRICKS);
         this.copy(BlockusBlockTags.WARPED_NETHER_GRASS, BlockusItemTags.WARPED_NETHER_GRASS);
-
         this.copy(BlockusBlockTags.WHITE_OAK_LOGS, BlockusItemTags.WHITE_OAK_LOGS);
 
         this.valueLookupBuilder(BlockusItemTags.PLANKS_THAT_CAN_BE_CHARRED)
-            .add(Items.OAK_PLANKS)
-            .add(Items.SPRUCE_PLANKS)
-            .add(Items.BIRCH_PLANKS)
-            .add(Items.JUNGLE_PLANKS)
-            .add(Items.ACACIA_PLANKS)
-            .add(Items.DARK_OAK_PLANKS)
-            .add(Items.MANGROVE_PLANKS)
-            .add(Items.CHERRY_PLANKS)
-            .add(Items.PALE_OAK_PLANKS)
+            .add(Blocks.OAK_PLANKS.asItem())
+            .add(Blocks.SPRUCE_PLANKS.asItem())
+            .add(Blocks.BIRCH_PLANKS.asItem())
+            .add(Blocks.JUNGLE_PLANKS.asItem())
+            .add(Blocks.ACACIA_PLANKS.asItem())
+            .add(Blocks.DARK_OAK_PLANKS.asItem())
+            .add(Blocks.MANGROVE_PLANKS.asItem())
+            .add(Blocks.CHERRY_PLANKS.asItem())
+            .add(Blocks.PALE_OAK_PLANKS.asItem())
             .add(WHITE_OAK.planks().asItem())
             .add(LEGACY_PLANKS.asItem());
 
@@ -103,47 +76,50 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             }
         }
 
-        this.copy(BlockTags.ACACIA_LOGS, ItemTags.ACACIA_LOGS);
+        // Conventional Item Tags
+        this.valueLookupBuilder(ConventionalItemTags.CHAINS).add(GOLDEN_CHAIN.asItem());
+        this.copy(ConventionalBlockTags.SMALL_FLOWERS, ConventionalItemTags.SMALL_FLOWERS);
 
+        // Vanilla Tags
+        this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
+        this.copy(BlockTags.SPRUCE_LOGS, ItemTags.SPRUCE_LOGS);
         this.copy(BlockTags.BIRCH_LOGS, ItemTags.BIRCH_LOGS);
-
-        this.valueLookupBuilder(ItemTags.BUTTONS)
-            .add(POLISHED_ANDESITE_BUTTON.asItem())
-            .add(POLISHED_DIORITE_BUTTON.asItem())
-            .add(POLISHED_GRANITE_BUTTON.asItem())
-            .add(LIMESTONE_BUTTON.asItem())
-            .add(MARBLE_BUTTON.asItem())
-            .add(BLUESTONE_BUTTON.asItem())
-            .add(POLISHED_NETHERRACK_BUTTON.asItem())
-            .add(POLISHED_END_STONE_BUTTON.asItem())
-            .add(VIRIDITE_BUTTON.asItem());
-
-        this.copy(BlockTags.PALE_OAK_LOGS, ItemTags.PALE_OAK_LOGS);
-
-        this.copy(BlockTags.CHERRY_LOGS, ItemTags.CHERRY_LOGS);
-
-        this.copy(BlockTags.CRIMSON_STEMS, ItemTags.CRIMSON_STEMS);
-
-        this.copy(BlockTags.DARK_OAK_LOGS, ItemTags.DARK_OAK_LOGS);
-
-        this.copy(BlockTags.FENCE_GATES, ItemTags.FENCE_GATES);
-
-        this.valueLookupBuilder(ItemTags.DOORS)
-            .add(PAPER_DOOR.asItem())
-            .add(OBSIDIAN_DOOR.asItem())
-            .add(CRYING_OBSIDIAN_DOOR.asItem())
-            .add(STONE_DOOR.asItem())
-            .add(BLACKSTONE_DOOR.asItem());
-
-        this.copy(BlockTags.BEE_ATTRACTIVE, ItemTags.BEE_FOOD);
-
         this.copy(BlockTags.JUNGLE_LOGS, ItemTags.JUNGLE_LOGS);
-
-        this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
-
-        this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
-
+        this.copy(BlockTags.ACACIA_LOGS, ItemTags.ACACIA_LOGS);
+        this.copy(BlockTags.DARK_OAK_LOGS, ItemTags.DARK_OAK_LOGS);
         this.copy(BlockTags.MANGROVE_LOGS, ItemTags.MANGROVE_LOGS);
+        this.copy(BlockTags.CHERRY_LOGS, ItemTags.CHERRY_LOGS);
+        this.copy(BlockTags.PALE_OAK_LOGS, ItemTags.PALE_OAK_LOGS);
+        this.copy(BlockTags.CRIMSON_STEMS, ItemTags.CRIMSON_STEMS);
+        this.copy(BlockTags.WARPED_STEMS, ItemTags.WARPED_STEMS);
+        this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
+        this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
+        this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
+
+        this.valueLookupBuilder(ItemTags.BOATS)
+            .add(BlockusItems.RAW_BAMBOO_RAFT.asItem())
+            .add(BlockusItems.CHARRED_BOAT.asItem())
+            .add(BlockusItems.WHITE_OAK_BOAT.asItem());
+
+        this.valueLookupBuilder(ItemTags.CHEST_BOATS)
+            .add(BlockusItems.RAW_BAMBOO_CHEST_RAFT.asItem())
+            .add(BlockusItems.CHARRED_CHEST_BOAT.asItem())
+            .add(BlockusItems.WHITE_OAK_CHEST_BOAT.asItem());
+
+        for (WoodBundle woodBundle : WoodBundle.values()) {
+            this.valueLookupBuilder(ItemTags.WOODEN_DOORS).add(woodBundle.door().asItem());
+            this.valueLookupBuilder(ItemTags.WOODEN_TRAPDOORS).add(woodBundle.trapdoor().asItem());
+            this.valueLookupBuilder(ItemTags.SIGNS).add(woodBundle.sign().asItem());
+            this.valueLookupBuilder(ItemTags.HANGING_SIGNS).add(woodBundle.hangingSign().asItem());
+        }
+
+        this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
+        this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
+        this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
+        this.copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
+        this.copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
+        this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
+        this.copy(BlockTags.FENCE_GATES, ItemTags.FENCE_GATES);
 
         var nonFlammableWood = this.valueLookupBuilder(ItemTags.NON_FLAMMABLE_WOOD);
         nonFlammableWood
@@ -158,8 +134,8 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(CHARRED.door().asItem())
             .add(BlockusItems.CHARRED_BOAT)
             .add(BlockusItems.CHARRED_CHEST_BOAT)
-            .add(CHARRED.sign())
-            .add(CHARRED.hangingSign())
+            .add(CHARRED.sign().asItem())
+            .add(CHARRED.hangingSign().asItem())
             .add(SMALL_LOGS.get(WoodMaps.WARPED.getId()).asItem())
             .add(SMALL_LOGS.get(WoodMaps.CRIMSON.getId()).asItem());
         for (var wood : WoodMaps.values()) {
@@ -178,7 +154,46 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             }
         }
 
-        this.copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
+        this.copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
+        this.copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
+        this.copy(BlockTags.DIRT, ItemTags.DIRT);
+        this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
+        this.copy(BlockTags.SLABS, ItemTags.SLABS);
+        this.copy(BlockTags.WALLS, ItemTags.WALLS);
+        this.valueLookupBuilder(ItemTags.BUTTONS)
+            .add(POLISHED_ANDESITE_BUTTON.asItem())
+            .add(POLISHED_DIORITE_BUTTON.asItem())
+            .add(POLISHED_GRANITE_BUTTON.asItem())
+            .add(LIMESTONE_BUTTON.asItem())
+            .add(MARBLE_BUTTON.asItem())
+            .add(BLUESTONE_BUTTON.asItem())
+            .add(POLISHED_NETHERRACK_BUTTON.asItem())
+            .add(POLISHED_END_STONE_BUTTON.asItem())
+            .add(VIRIDITE_BUTTON.asItem());
+
+        this.copy(BlockTags.STONE_BUTTONS, ItemTags.STONE_BUTTONS);
+
+        this.valueLookupBuilder(ItemTags.DOORS)
+            .add(PAPER_DOOR.asItem())
+            .add(OBSIDIAN_DOOR.asItem())
+            .add(CRYING_OBSIDIAN_DOOR.asItem())
+            .add(STONE_DOOR.asItem())
+            .add(BLACKSTONE_DOOR.asItem());
+
+        this.valueLookupBuilder(ItemTags.TRAPDOORS)
+            .add(PAPER_TRAPDOOR.asItem())
+            .add(OBSIDIAN_TRAPDOOR.asItem())
+            .add(CRYING_OBSIDIAN_TRAPDOOR.asItem())
+            .add(STONE_TRAPDOOR.asItem())
+            .add(BLACKSTONE_TRAPDOOR.asItem());
+
+        this.copy(BlockTags.WOOL, ItemTags.WOOL);
+        this.copy(BlockTags.WOOL_CARPETS, ItemTags.WOOL_CARPETS);
+        this.copy(BlockTags.BARS, ItemTags.BARS);
+        this.copy(BlockTags.CHAINS, ItemTags.CHAINS);
+        this.copy(BlockTags.LANTERNS, ItemTags.LANTERNS);
+
+        this.copy(BlockTags.BEE_ATTRACTIVE, ItemTags.BEE_FOOD);
 
         this.valueLookupBuilder(ItemTags.PIGLIN_LOVED)
             .add(LEGACY_GOLD_BLOCK.asItem())
@@ -201,59 +216,5 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(GOLDEN_CARROT_CRATE.asItem());
 
         this.copy(BlockTags.PIGLIN_REPELLENTS, ItemTags.PIGLIN_REPELLENTS);
-
-        this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
-
-        this.copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
-
-        this.copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
-
-        this.copy(BlockTags.SPRUCE_LOGS, ItemTags.SPRUCE_LOGS);
-
-        this.valueLookupBuilder(ItemTags.TRAPDOORS)
-            .add(PAPER_TRAPDOOR.asItem())
-            .add(OBSIDIAN_TRAPDOOR.asItem())
-            .add(CRYING_OBSIDIAN_TRAPDOOR.asItem())
-            .add(STONE_TRAPDOOR.asItem())
-            .add(BLACKSTONE_TRAPDOOR.asItem());
-
-        this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
-
-        this.copy(BlockTags.SLABS, ItemTags.SLABS);
-
-        this.copy(BlockTags.WALLS, ItemTags.WALLS);
-
-        this.copy(BlockTags.WARPED_STEMS, ItemTags.WARPED_STEMS);
-
-        for (WoodBundle woodBundle : WoodBundle.values()) {
-            this.valueLookupBuilder(ItemTags.WOODEN_DOORS).add(woodBundle.door().asItem());
-            this.valueLookupBuilder(ItemTags.WOODEN_TRAPDOORS).add(woodBundle.trapdoor().asItem());
-            this.valueLookupBuilder(ItemTags.SIGNS).add(woodBundle.sign().asItem());
-            this.valueLookupBuilder(ItemTags.HANGING_SIGNS).add(woodBundle.hangingSign().asItem());
-        }
-
-        this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
-
-        this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
-
-        this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
-
-        this.copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
-
-        this.copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
-
-        this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
-
-        this.valueLookupBuilder(ItemTags.WOOL)
-            .addTag(BlockusItemTags.PATTERNED_WOOL);
-
-        this.copy(BlockTags.WOOL_CARPETS, ItemTags.WOOL_CARPETS);
-        this.copy(BlockTags.DIRT, ItemTags.DIRT);
-
-        // Conventional Item Tags
-        this.valueLookupBuilder(ConventionalItemTags.CHAINS)
-            .add(GOLDEN_CHAIN.asItem());
-
-        this.copy(ConventionalBlockTags.SMALL_FLOWERS, ConventionalItemTags.SMALL_FLOWERS);
     }
 }
