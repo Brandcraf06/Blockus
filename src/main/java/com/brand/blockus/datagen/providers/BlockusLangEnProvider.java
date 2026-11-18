@@ -197,6 +197,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         // Stone
         addBssw(translationBuilder, BlockusBlocks.COBBLESTONE_BRICKS, "Cobblestone Bricks");
         addBssw(translationBuilder, BlockusBlocks.MOSSY_COBBLESTONE_BRICKS, "Mossy Cobblestone Bricks");
+        translationBuilder.add(BlockusBlocks.CHISELED_STONE, "Chiseled Stone");
         addBssw(translationBuilder, BlockusBlocks.STONE_TILES, "Stone Tiles");
         translationBuilder.add(BlockusBlocks.STONE_BRICK_PILLAR, "Stone Brick Pillar");
         translationBuilder.add(BlockusBlocks.SMOOTH_STONE_STAIRS, "Smooth Stone Stairs");

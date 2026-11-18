@@ -42,6 +42,7 @@ public class BlockusBlocks extends BlockFactory {
     // Stone
     public static final BSSWBundle COBBLESTONE_BRICKS = BSSWBundle.of("cobblestone_bricks", Blocks.COBBLESTONE).register();
     public static final BSSWBundle MOSSY_COBBLESTONE_BRICKS = BSSWBundle.of("mossy_cobblestone_bricks", Blocks.MOSSY_COBBLESTONE).register();
+    public static final Block CHISELED_STONE = registerCopy("chiseled_stone", Blocks.STONE);
     public static final BSSWBundle STONE_TILES = BSSWBundle.of("stone_tiles", Blocks.STONE_BRICKS).register();
     public static final Block STONE_BRICK_PILLAR = pillar(Blocks.STONE_BRICKS);
     public static final Block HERRINGBONE_STONE_BRICKS = registerCopy("herringbone_stone_bricks", Blocks.STONE_BRICKS);
