@@ -137,7 +137,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
         COPPER_LANTERN_BLOCK.blocks().forEach(this::dropSelf);
         COPPER_GATE.blocks().forEach((block) -> this.add(block, this::createDoorTable));
 
-        this.addDrops(CHISELED_MUD_BRICKS,
+        this.addDrops(
+            // Stone
+            CHISELED_STONE,
+
+            // Mud
+            CHISELED_MUD_BRICKS,
             MUD_BRICK_PILLAR,
 
             // Viridite

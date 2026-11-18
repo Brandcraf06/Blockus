@@ -34,13 +34,6 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         super(output, registriesFuture, blockTagProvider);
     }
 
-    private void copy(Identifier id) {
-        TagKey<Block> blockTag = TagKey.create(Registries.BLOCK, id);
-        TagKey<Item> itemTag = TagKey.create(Registries.ITEM, id);
-
-        this.copy(blockTag, itemTag);
-    }
-
     @Override
     protected void addTags(HolderLookup.Provider registries) {
 
@@ -249,6 +242,7 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         this.builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_BOUNCY)
             .add(toId(COBBLESTONE_BRICKS.block()))
             .add(toId(MOSSY_COBBLESTONE_BRICKS.block()))
+            .add(toId(CHISELED_STONE))
             .add(toId(STONE_TILES.block()))
             .add(toId(STONE_BRICK_PILLAR))
             .add(toId(HERRINGBONE_STONE_BRICKS))
