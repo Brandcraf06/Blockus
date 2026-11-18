@@ -31,13 +31,6 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
         super(output, registriesFuture, blockTagProvider);
     }
 
-    private void copy(Identifier id) {
-        TagKey<Block> blockTag = TagKey.create(Registries.BLOCK, id);
-        TagKey<Item> itemTag = TagKey.create(Registries.ITEM, id);
-
-        this.copy(blockTag, itemTag);
-    }
-
     @Override
     protected void addTags(HolderLookup.Provider registries) {
 

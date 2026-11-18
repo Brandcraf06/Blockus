@@ -139,6 +139,7 @@ public class BlockusModelProvider extends FabricModelProvider {
 
         // Stone
         this.createPillar(modelGenerator, BlockusBlocks.STONE_BRICK_PILLAR);
+        modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_STONE);
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_STONE_BRICKS);
         modelGenerator.createColoredBlockWithStateRotations(TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.STONE_CIRCULAR_PAVING);
         modelGenerator.createDoor(BlockusBlocks.STONE_DOOR);

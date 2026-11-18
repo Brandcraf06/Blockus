@@ -103,6 +103,7 @@ public class BuildingBlocksGroup {
             entries.accept(PACKED_ICE_PILLAR);
 
             addBssw(entries, COBBLESTONE_BRICKS);
+            entries.accept(CHISELED_STONE);
             addBssw(entries, STONE_TILES);
             entries.accept(STONE_BRICK_PILLAR);
             entries.accept(HERRINGBONE_STONE_BRICKS);

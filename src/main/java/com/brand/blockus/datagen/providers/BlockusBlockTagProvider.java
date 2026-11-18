@@ -471,6 +471,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
         this.valueLookupBuilder(BlockusBlockTags.STONE_BLOCKS)
             .add(bsswBundle(COBBLESTONE_BRICKS))
             .add(bsswBundle(MOSSY_COBBLESTONE_BRICKS))
+            .add(CHISELED_STONE)
             .add(bsswBundle(STONE_TILES))
             .add(STONE_BRICK_PILLAR)
             .add(HERRINGBONE_STONE_BRICKS)
