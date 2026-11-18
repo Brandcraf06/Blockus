@@ -70,6 +70,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 mossyBlocks(MOSSY_COBBLESTONE_BRICKS.block(), COBBLESTONE_BRICKS.block());
                 blockStairsSlabWallCuttingRecipe(STONE_TILES, Blocks.STONE, Blocks.STONE_BRICKS);
                 twoByTwoToFour(STONE_TILES.block(), Blocks.STONE_BRICKS);
+                chiseled(CHISELED_STONE, Blocks.STONE_SLAB, Blocks.STONE);
                 pillar(STONE_BRICK_PILLAR, Blocks.STONE_BRICKS, Blocks.STONE);
                 herringbone(HERRINGBONE_STONE_BRICKS, Blocks.STONE_BRICKS, Blocks.STONE);
                 stonecuttingRecipe(STONE_CIRCULAR_PAVING, Blocks.STONE, Blocks.STONE_BRICKS);

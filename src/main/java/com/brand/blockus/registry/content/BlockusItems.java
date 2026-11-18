@@ -14,6 +14,7 @@ import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,8 +27,8 @@ public class BlockusItems {
     public static final Map<Item, ResourceKey<Item>> IDS = new HashMap<>();
     public static Item WHITE_OAK_BOAT = registerBoat(BoatTypes.WHITE_OAK.boat, BlockusEntities.WHITE_OAK_BOAT);
     public static Item WHITE_OAK_CHEST_BOAT = registerBoat(BoatTypes.WHITE_OAK.chestBoat, BlockusEntities.WHITE_OAK_CHEST_BOAT);
-    public static Item CHARRED_BOAT = registerBoat(BoatTypes.CHARRED.boat, BlockusEntities.CHARRED_BOAT);
-    public static Item CHARRED_CHEST_BOAT = registerBoat(BoatTypes.CHARRED.chestBoat, BlockusEntities.CHARRED_CHEST_BOAT);
+    public static Item CHARRED_BOAT = registerBoat(BoatTypes.CHARRED.boat, BlockusEntities.CHARRED_BOAT, false);
+    public static Item CHARRED_CHEST_BOAT = registerBoat(BoatTypes.CHARRED.chestBoat, BlockusEntities.CHARRED_CHEST_BOAT, false);
     public static Item RAW_BAMBOO_RAFT = registerBoat(BoatTypes.RAW_BAMBOO.raft, BlockusEntities.RAW_BAMBOO_RAFT);
     public static Item RAW_BAMBOO_CHEST_RAFT = registerBoat(BoatTypes.RAW_BAMBOO.chestRaft, BlockusEntities.RAW_BAMBOO_CHEST_RAFT);
 
@@ -65,10 +66,15 @@ public class BlockusItems {
         return registerItem(BlockusIds.create(name).item(), block, itemFactory, properties);
     }
 
-    public static Item registerBoat(String name, EntityType<? extends AbstractBoat> boatEntity) {
-        Item item = registerItem(BlockusIds.create(name).item(), (p) -> new BoatItem(boatEntity, p), new Item.Properties().stacksTo(1));
-        DispenserBlock.registerBehavior(item, new BoatDispenseItemBehavior(boatEntity));
+    public static Item registerBoat(String name, EntityType<? extends AbstractBoat> type, boolean isBurnable) {
+        Item.Properties properties = new Item.Properties().stacksTo(1);
+        Item item = registerItem(BlockusIds.create(name).item(), (p) -> new BoatItem(type, p), isBurnable ? properties.cookingFuel(ContextIntProviders.COOKING_TIME_BOATS) : properties);
+        DispenserBlock.registerBehavior(item, new BoatDispenseItemBehavior(type));
         return item;
+    }
+
+    public static Item registerBoat(String name, EntityType<? extends AbstractBoat> type) {
+        return registerBoat(name, type, true);
     }
 
     public static ResourceKey<Item> getId(Item item) {
