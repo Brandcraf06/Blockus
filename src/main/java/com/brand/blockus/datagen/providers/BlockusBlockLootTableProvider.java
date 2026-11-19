@@ -141,6 +141,12 @@ public class BlockusBlockLootTableProvider extends FabricBlockLootSubProvider {
             CHISELED_MUD_BRICKS,
             MUD_BRICK_PILLAR,
 
+            // CALCITE
+            CHISELED_POLISHED_CALCITE,
+            POLISHED_CALCITE_PILLAR,
+            HERRINGBONE_POLISHED_CALCITE_BRICKS,
+            POLISHED_CALCITE_CIRCULAR_PAVING,
+
             // Viridite
             CHISELED_VIRIDITE,
             CHISELED_VIRIDITE_PILLAR,

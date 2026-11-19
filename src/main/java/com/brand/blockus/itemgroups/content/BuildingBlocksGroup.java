@@ -96,9 +96,6 @@ public class BuildingBlocksGroup {
             entries.accept(PAPER_TRAPDOOR);
             entries.accept(PAPER_LAMP);
 
-            entries.accept(SNOW_PILLAR);
-            entries.accept(PACKED_ICE_PILLAR);
-
             addBssw(entries, COBBLESTONE_BRICKS);
             entries.accept(CHISELED_STONE);
             addBssw(entries, STONE_TILES);
@@ -293,6 +290,16 @@ public class BuildingBlocksGroup {
             entries.accept(HERRINGBONE_SULFUR_BRICKS);
             entries.accept(SULFUR_PILLAR);
             entries.accept(SULFUR_CIRCULAR_PAVING);
+
+            entries.accept(PACKED_ICE_PILLAR);
+
+            entries.accept(SNOW_PILLAR);
+
+            addBssw(entries, POLISHED_CALCITE_TILES);
+            entries.accept(CHISELED_POLISHED_CALCITE);
+            entries.accept(POLISHED_CALCITE_PILLAR);
+            entries.accept(HERRINGBONE_POLISHED_CALCITE_BRICKS);
+            entries.accept(POLISHED_CALCITE_CIRCULAR_PAVING);
 
             entries.accept(PRISMARINE_CIRCULAR_PAVING);
             entries.accept(CHISELED_DARK_PRISMARINE);

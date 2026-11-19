@@ -136,6 +136,13 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 stonecuttingRecipe(CINNABAR_CIRCULAR_PAVING, Blocks.CINNABAR_BRICKS, Blocks.CINNABAR, Blocks.POLISHED_CINNABAR);
                 pressurePlateButton(POLISHED_CINNABAR_PRESSURE_PLATE, POLISHED_CINNABAR_BUTTON, Blocks.POLISHED_CINNABAR);
 
+                // Calcite
+                blockStairsSlabWallCuttingRecipe(POLISHED_CALCITE_TILES, Blocks.POLISHED_CALCITE_BRICKS, Blocks.CALCITE, Blocks.POLISHED_CALCITE);
+                chiseled(CHISELED_POLISHED_CALCITE, Blocks.POLISHED_CALCITE_BRICK_SLAB, Blocks.POLISHED_CALCITE_BRICKS, Blocks.CALCITE, Blocks.POLISHED_CALCITE);
+                pillar(POLISHED_CALCITE_PILLAR, Blocks.POLISHED_CALCITE_BRICKS, Blocks.CALCITE, Blocks.POLISHED_CALCITE);
+                herringbone(HERRINGBONE_POLISHED_CALCITE_BRICKS, Blocks.POLISHED_CALCITE_BRICKS, Blocks.CALCITE, Blocks.POLISHED_CALCITE);
+                stonecuttingRecipe(POLISHED_CALCITE_CIRCULAR_PAVING, Blocks.POLISHED_CALCITE_BRICKS, Blocks.CALCITE, Blocks.POLISHED_CALCITE);
+
                 // Tuff
                 blockStairsSlabWallCuttingRecipe(TUFF_TILES, Blocks.TUFF_BRICKS, Blocks.TUFF, Blocks.POLISHED_TUFF);
                 twoByTwoToFour(TUFF_TILES.block(), Blocks.TUFF_BRICKS);

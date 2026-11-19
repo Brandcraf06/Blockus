@@ -585,6 +585,14 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.POLISHED_CINNABAR_PRESSURE_PLATE, "Polished Cinnabar Pressure Plate");
         translationBuilder.add(BlockusBlocks.POLISHED_CINNABAR_BUTTON, "Polished Cinnabar Button");
 
+
+        // Calcite
+        addBssw(translationBuilder, BlockusBlocks.POLISHED_CALCITE_TILES, "Polished Calcite Tiles");
+        translationBuilder.add(BlockusBlocks.CHISELED_POLISHED_CALCITE, "Chiseled Polished Calcite");
+        translationBuilder.add(BlockusBlocks.POLISHED_CALCITE_PILLAR, "Polished Calcite Pillar");
+        translationBuilder.add(BlockusBlocks.HERRINGBONE_POLISHED_CALCITE_BRICKS, "Herringbone Polished Calcite Bricks");
+        translationBuilder.add(BlockusBlocks.POLISHED_CALCITE_CIRCULAR_PAVING, "Polished Calcite Circular Paving");
+
         // Tuff
         addBssw(translationBuilder, BlockusBlocks.TUFF_TILES, "Tuff Tiles");
         translationBuilder.add(BlockusBlocks.CRACKED_TUFF_BRICKS, "Cracked Tuff Bricks");

@@ -100,6 +100,13 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CINNABAR_CIRCULAR_PAVING = registerCopy("cinnabar_circular_paving", OrientableBlockBase::new, Blocks.CINNABAR_BRICKS);
     public static final Block CINNABAR_PILLAR = pillar("cinnabar", Blocks.CINNABAR_BRICKS);
 
+    // Calcite
+    public static final BSSWBundle POLISHED_CALCITE_TILES = BSSWBundle.of("polished_calcite_tiles", Blocks.POLISHED_CALCITE_BRICKS).register();
+    public static final Block CHISELED_POLISHED_CALCITE = registerCopy("chiseled_polished_calcite", Blocks.POLISHED_CALCITE_BRICKS);
+    public static final Block POLISHED_CALCITE_PILLAR = pillar("polished_calcite", Blocks.POLISHED_CALCITE_BRICKS);
+    public static final Block HERRINGBONE_POLISHED_CALCITE_BRICKS = registerCopy("herringbone_polished_calcite_bricks", Blocks.POLISHED_CALCITE_BRICKS);
+    public static final Block POLISHED_CALCITE_CIRCULAR_PAVING = registerCopy("polished_calcite_circular_paving", OrientableBlockBase::new, Blocks.POLISHED_CALCITE_BRICKS);
+
     // Tuff
     public static final BSSWBundle MOSSY_TUFF_BRICKS = BSSWBundle.of("mossy_tuff_bricks", Blocks.TUFF_BRICKS).register();
     public static final BSSWBundle TUFF_TILES = BSSWBundle.of("tuff_tiles", Blocks.TUFF_BRICKS).register();

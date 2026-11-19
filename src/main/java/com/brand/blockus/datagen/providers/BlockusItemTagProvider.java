@@ -345,6 +345,12 @@ public class BlockusItemTagProvider extends FabricTagsProvider.ItemTagsProvider 
             .add(toId(CINNABAR_PILLAR))
             .add(toId(CINNABAR_CIRCULAR_PAVING))
 
+            .add(toId(POLISHED_CALCITE_TILES.block()))
+            .add(toId(CHISELED_POLISHED_CALCITE))
+            .add(toId(HERRINGBONE_POLISHED_CALCITE_BRICKS))
+            .add(toId(POLISHED_CALCITE_PILLAR))
+            .add(toId(POLISHED_CALCITE_CIRCULAR_PAVING))
+
             .add(toId(MOSSY_TUFF_BRICKS.block()))
             .add(toId(TUFF_TILES.block()))
             .add(toId(CRACKED_TUFF_BRICKS))

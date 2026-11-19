@@ -535,6 +535,13 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .add(toId(TUFF_PILLAR))
             .add(toId(TUFF_CIRCULAR_PAVING));
 
+        this.builder(BlockusBlockTags.CALCITE_BLOCKS)
+            .add(bsswBundle(POLISHED_CALCITE_TILES))
+            .add(toId(CHISELED_POLISHED_CALCITE))
+            .add(toId(HERRINGBONE_POLISHED_CALCITE_BRICKS))
+            .add(toId(POLISHED_CALCITE_PILLAR))
+            .add(toId(POLISHED_CALCITE_CIRCULAR_PAVING));
+
         this.builder(BlockusBlockTags.WARPED_NETHER_GRASS)
             .add(BlockItemIds.NETHER_SPROUTS)
             .add(BlockItemIds.WARPED_ROOTS);
@@ -652,6 +659,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.TUFF_BLOCKS)
             .addTag(BlockusBlockTags.SULFUR_BLOCKS)
             .addTag(BlockusBlockTags.CINNABAR_BLOCKS)
+            .addTag(BlockusBlockTags.CALCITE_BLOCKS)
             .addTag(BlockusBlockTags.DRIPSTONE_BLOCKS)
             .addTag(BlockusBlockTags.CHOCOLATE_BLOCKS)
             .addTag(BlockusBlockTags.ALL_ASPHALT)
@@ -1103,6 +1111,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
             .addTag(BlockusBlockTags.SULFUR_BLOCKS)
             .addTag(BlockusBlockTags.CINNABAR_BLOCKS)
             .addTag(BlockusBlockTags.DRIPSTONE_BLOCKS)
+            .addTag(BlockusBlockTags.CALCITE_BLOCKS)
             .addTag(BlockusBlockTags.ALL_ASPHALT)
             .addTag(BlockusBlockTags.ALL_SHINGLES)
             .addTag(BlockusBlockTags.COLORED_TILES)

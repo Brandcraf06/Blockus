@@ -201,6 +201,12 @@ public class BlockusModelProvider extends FabricModelProvider {
         this.createPillar(modelGenerator, BlockusBlocks.CINNABAR_PILLAR);
         modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_CINNABAR_BRICKS);
 
+        // Calcite
+        this.createCubeColumn(modelGenerator, BlockusBlocks.CHISELED_POLISHED_CALCITE);
+        this.createPillar(modelGenerator, BlockusBlocks.POLISHED_CALCITE_PILLAR);
+        this.createBlockWithStateRotations(modelGenerator, TexturedModel.GLAZED_TERRACOTTA, BlockusBlocks.POLISHED_CALCITE_CIRCULAR_PAVING);
+        modelGenerator.createTrivialCube(BlockusBlocks.HERRINGBONE_POLISHED_CALCITE_BRICKS);
+
         // Tuff
         modelGenerator.createTrivialCube(BlockusBlocks.CARVED_TUFF_BRICKS);
         modelGenerator.createTrivialCube(BlockusBlocks.CRACKED_TUFF_BRICKS);
@@ -797,6 +803,10 @@ public class BlockusModelProvider extends FabricModelProvider {
     public final void createCubeColumn(BlockModelGenerators modelGenerator, Block block, Block end) {
         TextureMapping mapping = TextureMapping.column(TextureMapping.getBlockTexture(block), TextureMapping.getBlockTexture(end, "_top"));
         this.createBlock(modelGenerator, block, ModelTemplates.CUBE_COLUMN, mapping);
+    }
+
+    public final void createCubeColumn(BlockModelGenerators modelGenerator, Block block) {
+        createCubeColumn(modelGenerator, block, block);
     }
 
     public final void createCopperCubeColumn(BlockModelGenerators modelGenerator, Block unwaxed, Block waxed) {
