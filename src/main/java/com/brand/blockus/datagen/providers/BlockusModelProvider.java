@@ -287,6 +287,7 @@ public class BlockusModelProvider extends FabricModelProvider {
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_WATER_BRICKS);
 
         // Snow & Ice Bricks
+        modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_SNOW_BRICKS);
         this.createPillar(modelGenerator, BlockusBlocks.SNOW_PILLAR);
         modelGenerator.createTrivialCube(BlockusBlocks.CHISELED_PACKED_ICE);
         this.createPillar(modelGenerator, BlockusBlocks.PACKED_ICE_PILLAR);
