@@ -345,6 +345,7 @@ public class BlockusRecipeProvider extends FabricRecipeProvider {
                 enclosedRecipeToEight(WATER_BRICKS.block(), Ingredient.of(Blocks.STONE_BRICKS), Items.WATER_BUCKET).unlockedBy(getHasName(Items.WATER_BUCKET), has(Items.WATER_BUCKET)).unlockedBy(getHasName(Blocks.STONE_BRICKS), has(Blocks.STONE_BRICKS)).save(output);
 
                 // Snow Bricks
+                twoInVertical(CHISELED_SNOW_BRICKS, SNOW_BRICKS.slab(), 1);
                 twoInVertical(SNOW_PILLAR, SNOW_BRICKS.block(), 2);
                 twoByTwoToFour(SNOW_BRICKS.block(), Blocks.SNOW_BLOCK);
 

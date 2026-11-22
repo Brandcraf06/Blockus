@@ -443,6 +443,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.valueLookupBuilder(BlockusBlockTags.SNOW_BRICKS)
             .add(bsswBundle(SNOW_BRICKS))
+            .add(CHISELED_SNOW_BRICKS)
             .add(SNOW_PILLAR);
 
         this.valueLookupBuilder(BlockusBlockTags.SOUL_SANDSTONE)
