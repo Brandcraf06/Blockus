@@ -226,6 +226,7 @@ public class BlockusBlocks extends BlockFactory {
 
     // Snow Bricks
     public static final BSSWBundle SNOW_BRICKS = BSSWBundle.of("snow_bricks", Blocks.SNOW_BLOCK, 0.6f).register();
+    public static final Block CHISELED_SNOW_BRICKS = registerCopy("chiseled_snow_bricks", SNOW_BRICKS.block());
     public static final Block SNOW_PILLAR = pillar("snow", SNOW_BRICKS.block());
 
     // Ice Bricks

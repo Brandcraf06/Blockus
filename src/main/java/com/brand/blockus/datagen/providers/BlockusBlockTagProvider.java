@@ -469,6 +469,7 @@ public class BlockusBlockTagProvider extends FabricTagsProvider.BlockTagsProvide
 
         this.builder(BlockusBlockTags.SNOW_BRICKS)
             .add(bsswBundle(SNOW_BRICKS))
+            .add(toId(CHISELED_SNOW_BRICKS))
             .add(toId(SNOW_PILLAR));
 
         this.builder(BlockusBlockTags.SOUL_SANDSTONE)
