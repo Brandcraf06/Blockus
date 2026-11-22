@@ -542,6 +542,7 @@ public class BlockusLangEnProvider extends FabricLanguageProvider {
         translationBuilder.add(BlockusBlocks.POLISHED_END_STONE_BUTTON, "Polished End Stone Button");
 
         // Snow & Ice
+        translationBuilder.add(BlockusBlocks.CHISELED_SNOW_BRICKS, "Chiseled Snow Bricks");
         translationBuilder.add(BlockusBlocks.SNOW_PILLAR, "Snow Pillar");
         translationBuilder.add(BlockusBlocks.PACKED_ICE_PILLAR, "Packed Ice Pillar");
 

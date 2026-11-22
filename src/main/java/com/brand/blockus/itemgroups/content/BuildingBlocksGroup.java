@@ -293,6 +293,7 @@ public class BuildingBlocksGroup {
 
             entries.accept(PACKED_ICE_PILLAR);
 
+            entries.accept(CHISELED_SNOW_BRICKS);
             entries.accept(SNOW_PILLAR);
 
             addBssw(entries, POLISHED_CALCITE_TILES);

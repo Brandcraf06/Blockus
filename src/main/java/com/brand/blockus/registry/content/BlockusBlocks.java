@@ -232,6 +232,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block CHISELED_WATER_BRICKS = registerCopy("chiseled_water_bricks", BlockusBlocks.WATER_BRICKS.block());
 
     // Snow/Ice Bricks
+    public static final Block CHISELED_SNOW_BRICKS = registerCopy("chiseled_snow_bricks", Blocks.SNOW_BRICKS);
     public static final Block SNOW_PILLAR = pillar("snow", Blocks.SNOW_BRICKS);
     public static final Block PACKED_ICE_PILLAR = pillar("packed_ice", Blocks.PACKED_ICE_BRICKS);
 
